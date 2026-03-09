@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — PipeMath Pro</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 700px; margin: 0 auto; padding: 24px; line-height: 1.6; color: #222; }
+        h1 { font-size: 1.8em; margin-bottom: 0.2em; }
+        h2 { font-size: 1.2em; margin-top: 1.5em; }
+        h3 { font-size: 1.05em; margin-top: 1.2em; }
+        .subtitle { color: #666; font-size: 1em; margin-bottom: 2em; }
+        ul { padding-left: 1.2em; }
+        table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+        th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #e0e0e0; }
+        th { font-weight: 600; background: #f8f8f8; }
+    </style>
+</head>
+<body>
+
+<h1>PipeMath Pro</h1>
+<p class="subtitle">Support — Version 1.0</p>
+
+<h2>About the App</h2>
+<p>PipeMath Pro is a professional pipe calculator for iOS. It includes six calculators: Pipe Offset (simple & rolling), Pipe Sizing, Drain Slope, Pressure Drop, and Fixture Units. All calculations are saved locally and can be exported as PDF reports. The App works 100% offline.</p>
+
+<h2>Calculators</h2>
+<table>
+    <tr><th>Calculator</th><th>What It Does</th></tr>
+    <tr><td>Pipe Offset</td><td>Travel and spread for simple and rolling offsets at 22.5°, 30°, 45°, 60°</td></tr>
+    <tr><td>Pipe Sizing</td><td>Recommended pipe diameter from flow rate and velocity</td></tr>
+    <tr><td>Slope</td><td>Drain pipe slope with IPC 704.1 code compliance check</td></tr>
+    <tr><td>Pressure Drop</td><td>Hazen-Williams friction loss for copper, PVC, cast iron</td></tr>
+    <tr><td>Fixture Units</td><td>Total DFU and minimum drain pipe size per IPC Table 709.1</td></tr>
+    <tr><td>History</td><td>Saved calculations with project tagging and PDF export</td></tr>
+</table>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Does the app work offline?</h3>
+<p>Yes. PipeMath Pro works 100% offline with no internet connection required. All calculations are performed on your device.</p>
+
+<h3>How do I switch between Imperial and Metric?</h3>
+<p>Use the Imperial/Metric toggle at the top of each calculator. All inputs and results convert automatically.</p>
+
+<h3>What angles are supported for pipe offsets?</h3>
+<p>The four standard fitting angles: 22.5°, 30°, 45°, and 60°. Both simple offsets and rolling offsets are supported.</p>
+
+<h3>How do I calculate a rolling offset?</h3>
+<p>Open the Offset calculator, switch the Type to "Rolling", select your angle, and enter the Offset and Roll distances. The app calculates true offset and travel automatically.</p>
+
+<h3>How do I export a PDF report?</h3>
+<p>Save a calculation to History, then tap the PDF icon next to any saved entry to generate and share a report. Reports include your inputs, results, and project name.</p>
+
+<h3>Can I tag calculations by project?</h3>
+<p>Yes. Each calculator has a "Job" field where you can enter a project name. This name appears in History and on PDF reports.</p>
+
+<h3>Where is my data stored?</h3>
+<p>All data is stored locally on your device. Nothing is sent to external servers. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+<h3>How do I delete saved calculations?</h3>
+<p>Go to the History tab. Swipe left on individual entries to delete them, or use the trash icon to clear all history.</p>
+
+<h3>What iOS version is required?</h3>
+<p>iOS 17.0 or later. Runs on all iPhones that support iOS 17, including iPhone SE (2nd generation) and later.</p>
+
+<h3>Is there a subscription?</h3>
+<p>No. PipeMath Pro is a one-time purchase. No subscriptions, no ads, no in-app purchases.</p>
+
+<h2>Formulas</h2>
+
+<h3>Pipe Offset</h3>
+<p><strong>Simple:</strong> Travel = Offset ÷ sin(angle), Spread = Offset ÷ tan(angle)</p>
+<p><strong>Rolling:</strong> True Offset = √(offset² + roll²), Travel = True Offset ÷ sin(angle)</p>
+
+<table>
+    <tr><th>Angle</th><th>Multiplier</th></tr>
+    <tr><td>22.5°</td><td>×2.6131</td></tr>
+    <tr><td>30°</td><td>×2.0000</td></tr>
+    <tr><td>45°</td><td>×1.4142</td></tr>
+    <tr><td>60°</td><td>×1.1547</td></tr>
+</table>
+
+<h3>Pipe Sizing</h3>
+<p>D = √(4 × Q ÷ (π × V)), rounded up to nearest standard pipe size.</p>
+
+<h3>Drain Slope</h3>
+<p>Total Drop = Pipe Length × Slope. Code compliance per IPC 704.1 (min 1/8"/ft, recommended 1/4"/ft).</p>
+
+<h3>Pressure Drop (Hazen-Williams)</h3>
+<p>h<sub>f</sub> = 10.67 × L × Q<sup>1.852</sup> ÷ (C<sup>1.852</sup> × D<sup>4.87</sup>)</p>
+
+<table>
+    <tr><th>Material</th><th>C</th></tr>
+    <tr><td>Copper</td><td>130</td></tr>
+    <tr><td>PVC</td><td>150</td></tr>
+    <tr><td>Cast Iron (new)</td><td>130</td></tr>
+    <tr><td>Cast Iron (old)</td><td>100</td></tr>
+</table>
+
+<h3>Fixture Units</h3>
+<p>DFU values per IPC Table 709.1. Minimum drain pipe size from IPC Table 710.1.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>The app won't install</h3>
+<p>Make sure your iPhone runs iOS 17.0 or later. Check in Settings → General → Software Update.</p>
+
+<h3>Calculations seem incorrect</h3>
+<p>Verify your unit system (Imperial vs Metric) is set correctly. If you believe there is an error, email us with your inputs and expected result.</p>
+
+<h3>I lost my calculation history</h3>
+<p>History is stored locally. If you deleted the app, the history was removed. Export important calculations as PDF before making changes.</p>
+
+<h2>Contact</h2>
+<p>For questions, bug reports, or feature requests:</p>
+<ul>
+    <li>Email: <a href="mailto:love8ko.apps@gmail.com">love8ko.apps@gmail.com</a></li>
+    <li>GitHub: <a href="https://github.com/love8ko/PipeMathPro/issues">Report an Issue</a></li>
+</ul>
+
+</body>
+</html>
