@@ -18,66 +18,33 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        .hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .hero h1 span { color: #D4AF37; }
-        .hero .subtitle {
-            font-size: 20px;
-            color: #aaa;
-            margin-bottom: 30px;
-        }
-        .badge {
-            display: inline-block;
-            margin: 20px 0;
-        }
+        .hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 10px; }
+        .hero h1 span { color: #F0C75E; }
+        .hero .subtitle { font-size: 20px; color: #aaa; margin-bottom: 30px; }
+        .badge { display: inline-block; margin: 20px 0; }
         .badge img { height: 54px; }
-        .features {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        .feature {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-        .feature-icon {
-            font-size: 28px;
-            margin-right: 15px;
-            min-width: 40px;
-            text-align: center;
-        }
+        .features { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+        .feature { display: flex; align-items: flex-start; margin-bottom: 25px; }
+        .feature-icon { font-size: 28px; margin-right: 15px; min-width: 40px; text-align: center; }
         .feature h3 { font-size: 18px; margin-bottom: 4px; }
         .feature p { color: #aaa; font-size: 15px; }
-        .pricing {
+        .cta {
             text-align: center;
             padding: 40px 20px;
             border-top: 1px solid #222;
         }
-        .pricing h2 { font-size: 28px; margin-bottom: 20px; }
-        .price-card {
+        .cta h2 { font-size: 28px; margin-bottom: 10px; }
+        .cta p { color: #aaa; margin-bottom: 20px; }
+        .cta a {
             display: inline-block;
-            background: #1a1a1a;
-            border: 1px solid #333;
+            background: #F0C75E;
+            color: #000;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 14px 40px;
             border-radius: 12px;
-            padding: 20px 30px;
-            margin: 10px;
-            min-width: 200px;
+            text-decoration: none;
         }
-        .price-card.popular {
-            border-color: #D4AF37;
-        }
-        .price-card .label {
-            font-size: 12px;
-            color: #D4AF37;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .price-card .amount { font-size: 28px; font-weight: 700; }
-        .price-card .period { color: #888; font-size: 14px; }
         .footer {
             text-align: center;
             padding: 40px 20px;
@@ -86,66 +53,72 @@
             border-top: 1px solid #222;
         }
         .footer a { color: #888; text-decoration: none; margin: 0 10px; }
-        .footer a:hover { color: #D4AF37; }
+        .footer a:hover { color: #F0C75E; }
     </style>
 </head>
 <body>
     <div class="hero">
         <h1><span>WatchSnap</span></h1>
-        <p class="subtitle">Is that Rolex real? Scan any watch — get instant AI identification, authenticity check, and market value.</p>
-        <p style="color:#D4AF37; font-size: 16px; margin-bottom: 20px;">3 free scans. No account required.</p>
+        <p class="subtitle">Real or fake? Scan any watch — get instant AI identification, authenticity verdict, and market value in seconds.</p>
+        <p style="color:#F0C75E; font-size: 16px;">3 free scans. No account required.</p>
     </div>
 
     <div class="features">
         <div class="feature">
-            <div class="feature-icon">🔍</div>
+            <div class="feature-icon">📸</div>
             <div>
                 <h3>Instant Identification</h3>
-                <p>Brand, model, reference number, and year — identified from a single photo. Rolex, Omega, Patek Philippe, and 200+ brands.</p>
+                <p>Brand, model, reference number, and production year — identified from a single photo. Rolex, Omega, Patek Philippe, and hundreds more.</p>
             </div>
         </div>
         <div class="feature">
             <div class="feature-icon">🛡</div>
             <div>
                 <h3>Authenticity Check</h3>
-                <p>AI analyzes 50+ markers: dial printing, crown logo, indices alignment, bezel quality, date magnification, and more.</p>
+                <p>AI analyzes 50+ markers — dial printing, crown logo, bezel, case back, indices, date magnification — and delivers a Likely Genuine or Potential Replica verdict.</p>
             </div>
         </div>
         <div class="feature">
             <div class="feature-icon">💰</div>
             <div>
                 <h3>Market Value</h3>
-                <p>Current price range based on model, year, condition, and real-time market data. Know the fair price before you buy or sell.</p>
-            </div>
-        </div>
-        <div class="feature">
-            <div class="feature-icon">📦</div>
-            <div>
-                <h3>Watch Collection</h3>
-                <p>Save every scan. Track total portfolio value. Monitor appreciation over time.</p>
+                <p>Current price range based on model, year, and condition. Know the fair price before you buy or sell.</p>
             </div>
         </div>
         <div class="feature">
             <div class="feature-icon">💬</div>
             <div>
-                <h3>AI Watch Expert</h3>
-                <p>Ask follow-up questions about any scanned watch — history, servicing, investment potential.</p>
+                <h3>Ask the Watch Expert</h3>
+                <p>Chat with a certified horologist 24/7. Ask about service history, investment potential, how to spot fakes, or when to sell.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🏪</div>
+            <div>
+                <h3>Where to Sell</h3>
+                <p>Get direct links to Chrono24, eBay, WatchBox, and Bob's Watches — with a pre-written listing based on your scan.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📦</div>
+            <div>
+                <h3>Collection Dashboard</h3>
+                <p>Save every scan. Track your total portfolio value at a glance. Perfect for insurance documentation.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📤</div>
+            <div>
+                <h3>Share Report</h3>
+                <p>Share a clean report card with brand, model, value, and authenticity verdict — to Messages, Instagram, WhatsApp, or anywhere.</p>
             </div>
         </div>
     </div>
 
-    <div class="pricing">
-        <h2>WatchSnap Pro</h2>
-        <div class="price-card popular">
-            <div class="label">Most Popular</div>
-            <div class="amount">$6.99</div>
-            <div class="period">/week with 3-day free trial</div>
-        </div>
-        <div class="price-card">
-            <div class="label">Best Value</div>
-            <div class="amount">$39.99</div>
-            <div class="period">/year</div>
-        </div>
+    <div class="cta">
+        <h2>Try WatchSnap Free</h2>
+        <p>Your first 3 scans are on us. Point, snap, know.</p>
+        <a href="https://apps.apple.com/app/id6761362953">Download on the App Store</a>
     </div>
 
     <div class="footer">
@@ -155,6 +128,7 @@
             <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
         </p>
         <p style="margin-top: 15px;">&copy; 2026 Valeriy Loveyko</p>
+        <p style="margin-top: 8px; font-size: 11px;">WatchSnap provides AI-generated estimates for informational purposes only. Always consult a professional for high-value transactions.</p>
     </div>
 </body>
 </html>
