@@ -19,7 +19,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="date">Effective date: April 7, 2026</p>
+<p class="date">Effective date: April 9, 2026</p>
 
 <p>ColorCheck: AI Color Analysis ("the App") is developed and published by Valeriy Loveiko. We take your privacy seriously and are committed to protecting your personal information. This privacy policy explains how the App collects, uses, stores, and protects your data.</p>
 
@@ -39,7 +39,19 @@
 </ul>
 <p>The App does not access photos beyond what you explicitly select or capture. We do not scan your photo library, and we do not collect EXIF metadata (location, date, camera model) from your photos.</p>
 
-<h3>1.2 Color Analysis Data</h3>
+<h3>1.2 Face Data</h3>
+<p>To determine your seasonal color type, ColorCheck asks you to capture three optional photos: (1) a face selfie, (2) an eye close-up, and (3) an inner wrist photo. We refer to these collectively as "face data." This section explains exactly how this data is handled, in compliance with Apple App Store guideline 5.1.1.</p>
+<ul>
+    <li><strong>What is collected:</strong> Up to three still photos containing the user's face, eyes, and inner wrist. These photos are captured only at the user's explicit request, and only as part of the optional Color Analysis flow.</li>
+    <li><strong>Purpose — color analysis only:</strong> The face data is used exclusively to visually analyze skin undertone, eye color, hair color, contrast level, and vein color, in order to assign a 12-season color type (e.g. Warm Autumn). The App does <strong>not</strong> perform face recognition, face identification, biometric template extraction, biometric enrollment, emotion detection, age/gender estimation, or any other biometric analysis. The face data is never used to identify, authenticate, or distinguish between individual users.</li>
+    <li><strong>On-device processing:</strong> Apple's Vision framework is used on-device only to verify that a face is present in the selfie image (a simple presence check). No facial landmarks, face embeddings, or biometric templates are computed, stored, or transmitted.</li>
+    <li><strong>Transmission:</strong> The three photos are transmitted via encrypted HTTPS to OpenAI's GPT-4o Vision API for color analysis. They are routed through a Cloudflare Worker proxy that forwards the request to OpenAI without logging or storing image content. No personal identifiers are sent alongside the photos.</li>
+    <li><strong>Third-party sharing:</strong> The face data is shared only with OpenAI (via the Cloudflare proxy) for the sole purpose of color analysis. It is not shared with any other third party, advertiser, analytics service, or data broker. OpenAI processes API inputs under a zero-retention policy and does not use them to train models. See <a href="https://openai.com/policies/api-data-usage-policies">OpenAI's API Data Usage Policy</a>.</li>
+    <li><strong>Retention:</strong> After analysis, the face selfie may be retained on the user's device only as a local profile avatar (visible inside the App). The eye close-up and wrist photos are not retained after analysis. None of the face data is retained on OpenAI's or our own servers — neither the developer nor any third party stores the photos remotely. The user can delete the locally retained selfie at any time by replacing it within the App or by uninstalling the App.</li>
+    <li><strong>User control:</strong> Color Analysis (and the associated capture of face data) is entirely optional. The user can revoke camera access at any time via iOS Settings → ColorCheck. Deleting the App removes all locally stored face data.</li>
+</ul>
+
+<h3>1.3 Color Analysis Data</h3>
 <p>When you complete your color analysis, the AI generates the following information:</p>
 <ul>
     <li>Your seasonal color type (e.g., Warm Autumn, Cool Winter) from the 12-season system</li>
@@ -51,7 +63,7 @@
 </ul>
 <p>This data is stored exclusively on your device and is never transmitted to any external server after initial generation.</p>
 
-<h3>1.3 Clothing Scan Data</h3>
+<h3>1.4 Clothing Scan Data</h3>
 <p>When you scan a clothing item, the AI analyzes:</p>
 <ul>
     <li>The dominant colors of the item</li>
@@ -61,13 +73,13 @@
 </ul>
 <p>Scan results are stored locally on your device in your scan history.</p>
 
-<h3>1.4 Chat Data</h3>
+<h3>1.5 Chat Data</h3>
 <p>When you use the AI Stylist Chat, your messages and the AI's responses are stored locally on your device. Messages are sent to our AI provider for generating responses and are not retained by the provider after processing.</p>
 
-<h3>1.5 Subscription Information</h3>
+<h3>1.6 Subscription Information</h3>
 <p>ColorCheck offers optional premium subscriptions managed entirely through Apple's App Store and StoreKit framework. All payment processing, billing, and subscription management are handled by Apple. We do not collect, process, or store any payment information. We use RevenueCat, a third-party subscription management service, to track subscription status. RevenueCat receives an anonymous app user ID — no personal information is shared. For details, see <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a> and <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
 
-<h3>1.6 Information We Do NOT Collect</h3>
+<h3>1.7 Information We Do NOT Collect</h3>
 <p>ColorCheck does <strong>not</strong> collect:</p>
 <ul>
     <li>Your name, email address, phone number, or any contact information</li>
@@ -75,7 +87,8 @@
     <li>Device identifiers (IDFA, IDFV) for advertising or tracking purposes</li>
     <li>Browsing history or activity outside the App</li>
     <li>Contacts, calendar, or any other personal data from your device</li>
-    <li>Health, fitness, or biometric data</li>
+    <li>Health or fitness data</li>
+    <li>Biometric identifiers, face recognition templates, face embeddings, or any biometric data used to identify or authenticate individuals (the face photos described in section 1.2 are used solely for visual color analysis and are never converted into biometric templates)</li>
     <li>Social media accounts or login credentials</li>
 </ul>
 
@@ -147,6 +160,7 @@
 
 <h2>5. Data Retention</h2>
 <ul>
+    <li><strong>Face data (selfie):</strong> The face selfie may be retained on the user's device only as a local profile avatar. The eye close-up and wrist photos are not retained after analysis. None of the face data is retained on OpenAI's or our own servers.</li>
     <li><strong>Local data:</strong> Retained on your device until you delete individual items or uninstall the App</li>
     <li><strong>AI analysis requests (OpenAI):</strong> Not retained after processing — zero-retention policy for API usage</li>
     <li><strong>Text generation requests (DeepSeek):</strong> Not retained after processing</li>
