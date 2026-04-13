@@ -46,7 +46,7 @@
     <h2>3. Data Sent to External Services</h2>
     <p>BumpCheck connects to the following services to provide core functionality:</p>
     <ul>
-        <li><strong>OpenAI API</strong> (via our Cloudflare Worker proxy) — for ingredient extraction from photos you scan and for BumpBot educational chat. Only the cropped image or text you submit is sent. Images are not stored after processing. Queries are not linked to your identity.</li>
+        <li><strong>OpenAI API</strong> (via our Cloudflare Worker proxy) — for ingredient extraction from photos you scan. Only the cropped label image is sent. Images are not stored after processing. Queries are not linked to your identity.</li>
         <li><strong>DeepSeek API</strong> (via our Cloudflare Worker proxy) — for educational verdict reasoning on flagged ingredients. Only the ingredient name and your stage selection are sent.</li>
         <li><strong>NIH RxNav API</strong> (rxnav.nlm.nih.gov) — to look up medications and potential interactions. Only the medication name is sent.</li>
         <li><strong>NIH LactMed API</strong> (wsearch.nlm.nih.gov) — to reference breastfeeding compatibility information. Only the substance name is sent.</li>
