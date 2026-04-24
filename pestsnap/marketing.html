@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PestSnap — Bug ID for Homes</title>
+    <meta name="description" content="Scan any pest in seconds. Four modes — bug, bite, evidence, on pet — with a plain-English verdict and next-step actions. For US homeowners.">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+        header {
+            text-align: center;
+            padding: 60px 0 30px;
+        }
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+        }
+        .tagline {
+            font-size: 20px;
+            color: #C8A165;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-top: 40px;
+            letter-spacing: -0.005em;
+            color: #1a1a1a;
+        }
+        .mode-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .mode-card {
+            background: #fbf7ec;
+            padding: 18px 20px;
+            border-radius: 10px;
+            border-left: 3px solid #C8A165;
+        }
+        .mode-icon {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+        .mode-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .mode-desc {
+            font-size: 14px;
+            color: #555;
+        }
+        .verdict-row {
+            display: flex;
+            gap: 14px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        .verdict-chip {
+            flex: 1 1 200px;
+            background: #f7f7f9;
+            padding: 14px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        .chip-harmless { border-left: 3px solid #4C9F70; }
+        .chip-monitor { border-left: 3px solid #D4A640; }
+        .chip-urgent { border-left: 3px solid #D94A3D; }
+        .cta {
+            display: block;
+            text-align: center;
+            margin: 40px auto 10px;
+            padding: 14px 32px;
+            background: #C8A165;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            max-width: 260px;
+        }
+        .price-card {
+            background: #fbf7ec;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 16px 0;
+            border: 1px solid #eee4cf;
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0e9d4;
+        }
+        .price-row:last-child { border-bottom: none; }
+        .price-row strong { color: #1a1a1a; }
+        a { color: #B8893E; }
+        .footer-disclaimer {
+            margin-top: 60px;
+            padding: 20px;
+            background: #f7f7f9;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .footer-links {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer-links a { margin: 0 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PestSnap</h1>
+        <p class="tagline">Scan Pests. Get Rid Fast.</p>
+        <p>Bedbugs in the mattress. Roach in the kitchen. Termite near the porch. Scan it, know in 3 seconds.</p>
+    </header>
+
+    <h2>Four ways to scan</h2>
+    <div class="mode-grid">
+        <div class="mode-card">
+            <div class="mode-icon">🐛</div>
+            <div class="mode-title">Scan the Bug</div>
+            <div class="mode-desc">Identify what you just spotted — roach, spider, ant, wasp, or anything else crawling.</div>
+        </div>
+        <div class="mode-card">
+            <div class="mode-icon">🩹</div>
+            <div class="mode-title">Scan the Bite</div>
+            <div class="mode-desc">Find what pattern a bite on you or your kid is consistent with. Not medical advice.</div>
+        </div>
+        <div class="mode-card">
+            <div class="mode-icon">🕵️</div>
+            <div class="mode-title">Scan the Evidence</div>
+            <div class="mode-desc">Droppings, mud tubes, shed skins — when you see signs but no bug.</div>
+        </div>
+        <div class="mode-card">
+            <div class="mode-icon">🐕</div>
+            <div class="mode-title">Scan on Pet</div>
+            <div class="mode-desc">Ticks, fleas, mites on your dog or cat. Not veterinary advice.</div>
+        </div>
+    </div>
+
+    <h2>Plain-English verdicts — not Latin lessons</h2>
+    <p>Every scan returns a traffic-light verdict and the one next step that matters:</p>
+    <div class="verdict-row">
+        <div class="verdict-chip chip-harmless">🟢 <strong>Harmless</strong> — no action needed, info only</div>
+        <div class="verdict-chip chip-monitor">🟡 <strong>Monitor</strong> — manageable with DIY methods</div>
+        <div class="verdict-chip chip-urgent">🔴 <strong>Infestation risk</strong> — recommend a licensed pro</div>
+    </div>
+
+    <h2>From scan to solution in one tap</h2>
+    <ul>
+        <li><strong>25+ common US household pests</strong> — roach, bedbug, ant, termite, tick, spider, wasp, mosquito, silverfish, flea, fruit fly, pantry moth, and more.</li>
+        <li><strong>3–5 DIY methods per pest</strong> — products, traps, natural remedies ($5–50).</li>
+        <li><strong>One-tap exterminator finder</strong> — licensed businesses in your area, sorted by rating and distance.</li>
+        <li><strong>AI chat assistant</strong> — ask follow-up questions in plain English, get answers framed for homeowners.</li>
+        <li><strong>Emergency strip</strong> — Poison Control (1-800-222-1222) and Pet Poison Helpline (1-855-764-7661) one tap away when it matters.</li>
+    </ul>
+
+    <h2>Built for homeowners</h2>
+    <ul>
+        <li>Homeowners protecting property value</li>
+        <li>Renters fighting apartment pests</li>
+        <li>Parents worried about bites on kids</li>
+        <li>Pet owners tracking fleas and ticks</li>
+        <li>Anyone who opens a drawer and sees <em>something</em> move</li>
+    </ul>
+
+    <h2>Pricing</h2>
+    <div class="price-card">
+        <div class="price-row">
+            <div><strong>Weekly</strong><br><span style="font-size: 13px; color: #666;">With 7-day free trial</span></div>
+            <div>$4.99 / week</div>
+        </div>
+        <div class="price-row">
+            <div><strong>Annual</strong><br><span style="font-size: 13px; color: #666;">Save ~85% vs weekly</span></div>
+            <div>$39.99 / year</div>
+        </div>
+    </div>
+    <p style="font-size: 13px; color: #666;">Subscriptions auto-renew unless cancelled 24 hours before the period end. Manage or cancel in Settings → Apple ID → Subscriptions. Prices may vary by region.</p>
+
+    <h2>Privacy by design</h2>
+    <ul>
+        <li>All scan history, photos, and chats stored locally on your device.</li>
+        <li>No account required. No sign-in.</li>
+        <li>No third-party analytics. No ad trackers.</li>
+        <li>Photos sent for identification only; not retained after the response.</li>
+    </ul>
+    <p>Full details in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+    <div class="footer-disclaimer">
+        <strong>Important.</strong> PestSnap is an identification reference tool. It is <strong>not</strong> a medical device, <strong>not</strong> a diagnostic tool, and <strong>not</strong> veterinary software. AI identification is not 100% accurate. For severe bite reactions — difficulty breathing, facial or throat swelling, fever, expanding redness — call <strong>911</strong> or <strong>Poison Control at 1-800-222-1222</strong>. For pet emergencies, contact the <strong>Pet Poison Helpline at 1-855-764-7661</strong> or a licensed veterinarian. For any significant infestation, consult a licensed pest control professional.
+    </div>
+
+    <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a> ·
+        <a href="support.html">Support</a> ·
+        <a href="mailto:loveykovl@gmail.com">Contact</a>
+    </div>
+</body>
+</html>
