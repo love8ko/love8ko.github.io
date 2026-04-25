@@ -16,7 +16,7 @@
   h1 { font-size: 30px; margin-bottom: 4px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
   h2 { font-size: 22px; margin-bottom: 8px; margin-top: 8px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
   h3 { font-size: 16px; margin-bottom: 4px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
-  .lede { color: #5a5a60; margin-bottom: 32px; max-width: 720px; }
+  .lede { color: #5a5a60; margin-bottom: 32px; max-width: 720px; line-height: 1.5; }
   .meta-info { font-size: 12px; color: #8a8a90; margin-bottom: 24px; }
 
   section {
@@ -26,15 +26,16 @@
     margin-bottom: 32px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.05);
   }
+  .section-intro { color: #5a5a60; font-size: 14px; line-height: 1.5; margin-bottom: 8px; max-width: 800px; }
 
   /* === Palette grid === */
-  .palette-grid {
+  .palette-grid, .concepts-grid, .ss-strategy-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
     margin-top: 16px;
   }
-  .palette-col {
+  .palette-col, .concept-card, .ss-strategy-card {
     background: #fafafa;
     border: 1px solid #ebebef;
     border-radius: 14px;
@@ -45,287 +46,278 @@
     cursor: pointer;
     transition: all 0.2s ease;
   }
-  .palette-col:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .palette-col:hover, .concept-card:hover, .ss-strategy-card:hover {
+    transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
   .palette-col.selected { border: 3px solid #2e6b3a; background: #f0f9f1; }
+  .concept-card.selected { border: 3px solid #b85a1a; background: #fff5ec; }
+  .ss-strategy-card.selected { border: 3px solid #4a5fc1; background: #f0f3ff; }
+
   .col-header { text-align: center; }
   .col-title { font-size: 16px; font-weight: 700; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
   .col-tagline { font-size: 11px; color: #6a6a70; font-style: italic; margin-top: 2px; }
-  .swatch-strip {
-    display: flex;
-    height: 28px;
-    border-radius: 6px;
-    overflow: hidden;
-  }
+
+  .swatch-strip { display: flex; height: 28px; border-radius: 6px; overflow: hidden; }
   .swatch-strip > div {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 8px;
-    font-family: ui-monospace, monospace;
-    font-weight: 700;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 8px; font-family: ui-monospace, monospace;
+    font-weight: 700; text-shadow: 0 1px 1px rgba(0,0,0,0.4);
   }
   .ss-mode-label {
-    font-size: 9px;
-    color: #6a6a70;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 700;
-    margin-top: 2px;
+    font-size: 9px; color: #6a6a70; text-align: center;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    font-weight: 700; margin-top: 2px;
   }
 
-  /* === Screenshot mockup === */
+  /* Screenshot mockup */
   .screenshot {
-    border-radius: 14px;
-    padding: 14px 12px;
-    aspect-ratio: 9/16;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    overflow: hidden;
+    border-radius: 14px; padding: 14px 12px; aspect-ratio: 9/16;
+    display: flex; flex-direction: column; gap: 8px; overflow: hidden;
   }
   .ss-headline {
     font-family: -apple-system, "SF Pro Rounded", sans-serif;
-    font-size: 14px;
-    font-weight: 800;
-    line-height: 1.15;
+    font-size: 14px; font-weight: 800; line-height: 1.15;
   }
   .ss-scene {
-    flex: 1;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 6px;
-    padding: 12px;
-    text-align: center;
+    flex: 1; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 6px; padding: 12px; text-align: center;
   }
   .scene-emoji { font-size: 32px; }
   .scene-waveform {
-    width: 100%;
-    height: 14px;
-    border-radius: 5px;
+    width: 100%; height: 14px; border-radius: 5px;
     background-image: linear-gradient(90deg, currentColor 30%, transparent 30%);
-    background-size: 5px 100%;
-    opacity: 0.4;
+    background-size: 5px 100%; opacity: 0.4;
   }
   .verdict-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 3px 9px;
-    border-radius: 999px;
-    font-size: 9px;
-    font-weight: 700;
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 9px; border-radius: 999px;
+    font-size: 9px; font-weight: 700;
   }
   .ss-subline { font-size: 10px; line-height: 1.3; }
   .ss-badge { display: flex; gap: 3px; justify-content: center; flex-wrap: wrap; margin-top: auto; }
   .ss-badge span {
-    background: rgba(0,0,0,0.06);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 7px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    opacity: 0.7;
+    background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px;
+    font-size: 7px; font-weight: 700; letter-spacing: 0.04em; opacity: 0.7;
   }
 
-  /* === Paywall mockup === */
-  .paywall {
-    border-radius: 12px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
+  /* Paywall mockup */
+  .paywall { border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 6px; }
   .paywall-title { font-size: 10px; font-weight: 700; }
   .plan {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 9px;
-    border-radius: 7px;
-    font-size: 9px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 9px; border-radius: 7px; font-size: 9px;
     border: 1.5px solid;
   }
   .plan.selected { color: white; }
   .plan-price { font-weight: 700; }
   .cta {
-    text-align: center;
-    padding: 8px;
-    border-radius: 999px;
-    font-size: 10px;
-    font-weight: 700;
-    color: white;
+    text-align: center; padding: 8px; border-radius: 999px;
+    font-size: 10px; font-weight: 700; color: white;
   }
 
   /* Icon row in palette card */
   .icon-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
-    background: #f5f5f7;
-    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 10px 0; background: #f5f5f7; border-radius: 10px;
   }
   .icon-cell {
-    width: 56px; height: 56px;
-    border-radius: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 56px; height: 56px; border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
     font-family: -apple-system, "SF Pro Rounded", sans-serif;
-    font-weight: 800;
-    font-size: 24px;
+    font-weight: 800; font-size: 24px;
   }
 
-  /* Icon concept grid */
-  .concepts-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    margin-top: 16px;
-  }
-  .concept-card {
-    background: #fafafa;
-    border: 1px solid #ebebef;
-    border-radius: 14px;
-    padding: 14px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .concept-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-  .concept-card.selected { border: 3px solid #b85a1a; background: #fff5ec; }
+  /* Icon concept */
+  .concept-card { text-align: center; }
   .concept-card h3 { margin-bottom: 4px; }
   .concept-tagline { font-size: 11px; color: #6a6a70; margin-bottom: 12px; min-height: 32px; }
   .concept-img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 22px;
-    overflow: hidden;
-    margin-bottom: 8px;
+    width: 100%; aspect-ratio: 1/1; border-radius: 22px;
+    overflow: hidden; margin-bottom: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   }
   .concept-img img { width: 100%; height: 100%; display: block; }
-  .concept-variants {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    margin-top: 6px;
-  }
+  .concept-variants { display: flex; gap: 6px; justify-content: center; margin-top: 6px; }
   .concept-variants .mini {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: transform 0.15s ease;
+    width: 36px; height: 36px; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer;
+    border: 2px solid transparent; transition: transform 0.15s ease;
   }
   .concept-variants .mini.active { border-color: #b85a1a; transform: scale(1.15); }
   .concept-variants .mini:hover { transform: scale(1.1); }
   .concept-variants .mini img { width: 100%; height: 100%; }
   .concept-meta { font-size: 11px; color: #6a6a70; margin-top: 8px; line-height: 1.4; }
 
+  /* === Screenshot Strategy mockups === */
+  .ss-strategy-card { padding: 14px; }
+  .ss-strategy-card h3 { margin-bottom: 4px; font-size: 15px; }
+  .ss-strategy-tagline { font-size: 11px; color: #6a6a70; margin-bottom: 10px; min-height: 36px; }
+  .ss-slot-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .ss-slot {
+    aspect-ratio: 9/19;
+    border-radius: 10px;
+    padding: 8px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+    font-size: 7px;
+    line-height: 1.2;
+  }
+  .ss-slot .num {
+    position: absolute;
+    background: rgba(255,255,255,0.85);
+    border-radius: 999px;
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1f;
+  }
+  .ss-slot.dark { background: #0F1115; color: #F2EDE5; }
+  .ss-slot.light-cream { background: #FAF7F2; color: #1A1A1F; }
+  .ss-slot.light-sage { background: #F5F2EC; color: #2A3328; }
+  .slot-headline { font-size: 8px; font-weight: 800; line-height: 1.1; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .slot-mini-scene {
+    flex: 1; border-radius: 4px; display: flex;
+    align-items: center; justify-content: center; flex-direction: column; gap: 3px;
+  }
+  .slot-mini-pill {
+    padding: 2px 5px; border-radius: 999px; font-size: 6px; font-weight: 700;
+  }
+  .slot-mini-bars {
+    display: flex; gap: 1.5px; align-items: center; height: 10px;
+  }
+  .slot-mini-bars > div {
+    width: 1.5px; background: currentColor; border-radius: 1px; opacity: 0.6;
+  }
+
+  /* === Consilium reasoning block === */
+  .consilium {
+    margin-top: 20px;
+    background: #f8f8fa;
+    border-radius: 12px;
+    padding: 16px 20px;
+  }
+  .consilium summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    color: #4a4a55;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+  }
+  .consilium summary::before {
+    content: "▶";
+    font-size: 10px;
+    color: #8a8a90;
+    transition: transform 0.2s ease;
+  }
+  .consilium[open] summary::before { transform: rotate(90deg); }
+  .consilium summary::-webkit-details-marker { display: none; }
+  .consilium-body { padding-top: 14px; font-size: 13px; line-height: 1.5; }
+  .vote-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 12px;
+  }
+  .vote-table th, .vote-table td {
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ebebef;
+  }
+  .vote-table th { background: #ebebef; font-weight: 700; font-size: 11px; }
+  .vote-table .winner { background: #e8f5e9; font-weight: 700; color: #2e6b3a; }
+  .vote-table .left { text-align: left; }
+  .voice-quote {
+    background: white;
+    border-left: 3px solid #ebebef;
+    padding: 10px 14px;
+    margin: 8px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .voice-quote .voice-name { font-weight: 700; color: #4a4a55; margin-bottom: 4px; font-size: 11px; }
+  .voice-quote.maya { border-color: #E8836A; }
+  .voice-quote.sarah { border-color: #4F8059; }
+  .voice-quote.lin { border-color: #6B8DAB; }
+  .voice-quote.carla { border-color: #C97A8C; }
+  .voice-quote.ux { border-color: #C49A4A; }
+  .voice-quote.ui { border-color: #5C5470; }
+
   /* Browse row */
   .browse-section .row {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    padding: 14px;
-    background: #f5f5f7;
-    border-radius: 12px;
-    overflow-x: auto;
-    margin-bottom: 12px;
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 14px; background: #f5f5f7; border-radius: 12px;
+    overflow-x: auto; margin-bottom: 12px;
   }
   .icon-mini {
-    width: 64px; height: 64px;
-    border-radius: 14px;
-    object-fit: cover;
-    flex-shrink: 0;
+    width: 64px; height: 64px; border-radius: 14px;
+    object-fit: cover; flex-shrink: 0;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   }
   .row-cell {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 4px; flex-shrink: 0;
   }
   .row-cell .label { font-size: 9px; color: #6a6a70; width: 64px; text-align: center; line-height: 1.2; }
 
   .pill {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 999px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
+    display: inline-block; padding: 3px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.02em;
   }
   .pill-recommended { background: #e8f5e9; color: #2e6b3a; }
   .pill-killer { background: #fff4e6; color: #b85a1a; }
+  .pill-strategy { background: #f0f3ff; color: #4a5fc1; }
 
   .footnote {
-    margin-top: 12px;
-    font-size: 12px;
-    color: #6a6a70;
-    line-height: 1.5;
+    margin-top: 12px; font-size: 12px; color: #6a6a70; line-height: 1.5;
   }
 
-  /* === Selection panel (sticky) === */
+  /* Selection panel */
   .selection-panel {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #1a1a1f;
-    color: #f2edd5;
-    padding: 16px 20px;
-    border-radius: 14px;
+    position: fixed; bottom: 20px; right: 20px;
+    background: #1a1a1f; color: #f2edd5;
+    padding: 16px 20px; border-radius: 14px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    min-width: 280px;
-    z-index: 100;
-    font-size: 13px;
+    min-width: 300px; z-index: 100; font-size: 13px;
   }
   .selection-panel h3 {
-    color: white;
-    margin-bottom: 8px;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    color: white; margin-bottom: 8px; font-size: 13px;
+    text-transform: uppercase; letter-spacing: 0.08em;
   }
   .selection-panel .field {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 6px;
-    gap: 12px;
+    display: flex; justify-content: space-between;
+    margin-bottom: 6px; gap: 12px;
   }
   .selection-panel .field-label { color: #9CA0A8; font-size: 12px; }
   .selection-panel .field-value { color: #F2967D; font-weight: 700; font-size: 12px; text-align: right; }
   .selection-panel button {
-    margin-top: 10px;
-    background: #F2967D;
-    color: #0F1115;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-weight: 700;
-    cursor: pointer;
-    font-size: 12px;
-    width: 100%;
+    margin-top: 10px; background: #F2967D; color: #0F1115;
+    border: none; padding: 8px 14px; border-radius: 999px;
+    font-weight: 700; cursor: pointer; font-size: 12px; width: 100%;
   }
   .selection-panel button:hover { background: #E8836A; color: white; }
 
   @media (max-width: 1100px) {
-    .palette-grid, .concepts-grid { grid-template-columns: repeat(2, 1fr); }
+    .palette-grid, .concepts-grid, .ss-strategy-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 600px) {
-    .palette-grid, .concepts-grid { grid-template-columns: 1fr; }
+    .palette-grid, .concepts-grid, .ss-strategy-grid { grid-template-columns: 1fr; }
     .selection-panel { position: static; margin-top: 20px; }
   }
 </style>
@@ -333,18 +325,18 @@
 <body>
 
 <h1>CrySnap — Design Workbench</h1>
-<p class="lede">Live workbench для выбора палитры + иконки. Кликни на карточку, чтобы выбрать. Выбор отображается в правом нижнем углу — потом скопируй и кинь мне в чат.</p>
+<p class="lede">3 предложения с консилиум-обоснованием: <b>Design system</b> (4 палитры) → <b>Иконка</b> (4 концепта) → <b>Screenshots</b> (4 стратегии). Кликни на карточку чтобы выбрать. Кликни «Почему консилиум так решил» под каждой секцией для развёрнутого обоснования.</p>
 <p class="meta-info">
-  Local: <code>file:///Users/sl/Documents/apps/12-crysnap/docs/palette-preview.html</code> ·
-  Deploy: <a href="https://love8ko.github.io/crysnap/design.html" target="_blank">love8ko.github.io/crysnap/design.html</a>
+  Live: <a href="https://love8ko.github.io/crysnap/design.html">love8ko.github.io/crysnap/design.html</a> ·
+  Local: <code>file:///Users/sl/Documents/apps/12-crysnap/docs/palette-preview.html</code>
 </p>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- SECTION 1: 4 PALETTE OPTIONS -->
+<!-- SECTION 1: PALETTE -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section>
-  <h2>1. Палитра — 4 варианта <span style="font-size: 12px; color: #6a6a70; font-weight: normal;">кликни чтобы выбрать</span></h2>
-  <p style="color: #6a6a70; margin-bottom: 8px;">Каждая показана в screenshot context (LIGHT — iter 2 решил что screenshots всегда light для CR). Сравни <b>icon</b> + <b>hero screenshot</b> + <b>paywall</b>.</p>
+  <h2>1. Palette — 4 предложения <span style="font-size: 12px; color: #6a6a70; font-weight: normal;">кликни чтобы выбрать</span></h2>
+  <p class="section-intro">Каждая палитра показана в screenshot context (LIGHT, потому что 100% конкурентов используют light backgrounds в App Store — iter 2 решил что dark в screenshots = -10% CR). Сравни <b>icon</b> + <b>hero screenshot</b> + <b>paywall</b>.</p>
 
   <div class="palette-grid">
 
@@ -352,7 +344,7 @@
     <div class="palette-col" data-palette="A" onclick="selectPalette(this, 'A — Coral')">
       <div class="col-header">
         <div class="col-title">A — Coral 🟧</div>
-        <div class="col-tagline">Iter 1 + 2 winner. Warm pediatric companion.</div>
+        <div class="col-tagline">Iter 1 winner. Warm pediatric companion.</div>
       </div>
       <div class="swatch-strip">
         <div style="background:#E8836A">#E8836A</div>
@@ -390,7 +382,7 @@
     <div class="palette-col" data-palette="B" onclick="selectPalette(this, 'B — Sage')">
       <div class="col-header">
         <div class="col-title">B — Sage 🌿</div>
-        <div class="col-tagline">Evidence-based wellness. AAP authority signal.</div>
+        <div class="col-tagline">Evidence-based wellness. AAP authority.</div>
       </div>
       <div class="swatch-strip">
         <div style="background:#7A9A6E">#7A9A6E</div>
@@ -429,7 +421,7 @@
       <div class="col-header">
         <div class="col-title">D — Coral + Sage 🟧🌿</div>
         <div class="col-tagline"><span class="pill pill-recommended">Recommended</span></div>
-        <div class="col-tagline" style="margin-top: 4px;">NEW. Coral для action, sage для trust.</div>
+        <div class="col-tagline" style="margin-top: 4px;">Coral для action, sage для trust.</div>
       </div>
       <div class="swatch-strip">
         <div style="background:#E8836A">#E8836A</div>
@@ -450,7 +442,7 @@
         <div class="ss-subline">We help you listen in 3 seconds.</div>
         <div class="ss-badge"><span>AAP</span><span>CDC</span><span>MAYO</span><span>LLL</span></div>
       </div>
-      <div class="ss-mode-label">Paywall (coral CTA, sage trust title)</div>
+      <div class="ss-mode-label">Paywall (coral CTA, sage trust)</div>
       <div class="paywall" style="background:#FFFFFF; border: 1px solid #DCDDC8;">
         <div class="paywall-title" style="color:#7A9A6E;">Your 24/7 baby team</div>
         <div class="plan selected" style="background:#E8836A; border-color:#E8836A;">
@@ -467,7 +459,7 @@
     <div class="palette-col" data-palette="C" onclick="selectPalette(this, 'C — Linen Rose')">
       <div class="col-header">
         <div class="col-title">C — Linen Rose 🍼</div>
-        <div class="col-tagline">Boutique premium. Justifies $59/yr tier.</div>
+        <div class="col-tagline">Boutique premium. Justifies $59/yr.</div>
       </div>
       <div class="swatch-strip">
         <div style="background:#C97A8C">#C97A8C</div>
@@ -500,201 +492,331 @@
         <div class="cta" style="background:#C97A8C;">Start 7-day free trial</div>
       </div>
     </div>
-
   </div>
+
+  <details class="consilium">
+    <summary>🧠 Почему консилиум выбрал D — Coral + Sage dual</summary>
+    <div class="consilium-body">
+      <table class="vote-table">
+        <tr><th>Voice</th><th>A Coral</th><th>B Sage</th><th class="winner">D Dual</th><th>C Rose</th></tr>
+        <tr><td class="left">👶 Maya (3am desperation)</td><td>9</td><td>7</td><td class="winner">9</td><td>6</td></tr>
+        <tr><td class="left">👩 Sarah (anxious "is normal?")</td><td>6</td><td>9</td><td class="winner">9</td><td>7</td></tr>
+        <tr><td class="left">🌙 Lin (chronic exhaustion)</td><td>9</td><td>8</td><td class="winner">10</td><td>7</td></tr>
+        <tr><td class="left">🍼 Carla (lactation self-blame)</td><td>7</td><td>8</td><td class="winner">10</td><td>9</td></tr>
+        <tr><td class="left">🎯 UX Analyst (CR-driven)</td><td>10</td><td>8</td><td class="winner">10</td><td>7</td></tr>
+        <tr><td class="left">🎨 UI Designer (visual)</td><td>9</td><td>8</td><td class="winner">10</td><td>7</td></tr>
+        <tr style="font-weight: 700;"><td class="left">Среднее</td><td>8.3</td><td>8.0</td><td class="winner">9.7</td><td>7.2</td></tr>
+      </table>
+
+      <p style="margin: 16px 0 8px;"><b>Ключевые insights консилиума:</b></p>
+
+      <div class="voice-quote ux">
+        <div class="voice-name">🎯 UX Analyst</div>
+        «Coral на CTA = urgency drives conversion (validated на 11 портфельных приложениях). Sage на chat bubbles = trust signal для anxious S2. Dual решает оба JTBD одновременно — не надо выбирать "warmth vs trust", получаем и то и то на разных surfaces.»
+      </div>
+
+      <div class="voice-quote ui">
+        <div class="voice-name">🎨 UI Designer</div>
+        «Wedge через unowned palette: 7 competitors → 2 teal, 1 orange, 2 purple, 2 pink. <b>0 sage</b>, <b>0 coral+sage</b>. Dual = strongest visual differentiation в App Store row + paywall конверсия не страдает.»
+      </div>
+
+      <div class="voice-quote sarah">
+        <div class="voice-name">👩 Sarah (S2 anxious)</div>
+        «Sage на chat bubble = "врач говорит со мной" (зелёный = nature, AAP-grounded). Coral CTA = "сейчас, click here". Не путаются роли цветов как в одно-цветной палитре.»
+      </div>
+
+      <div class="voice-quote carla">
+        <div class="voice-name">🍼 Carla (lactation)</div>
+        «Лучше всего из 4-х. Sage = nurturing без infantilizing (как у IBCLC's office). Coral CTA не agressive — теплый соблазн нажать.»
+      </div>
+
+      <p style="margin-top: 16px; font-size: 13px;"><b>Почему НЕ A:</b> Single-coral палитра — sage верстки 8.3 хорошо, но не использует «trust» wedge. <b>Почему НЕ B:</b> Sage primary — теряет emotional warmth coral для conversion. <b>Почему НЕ C:</b> Rose territory overlap с First Ascent / Ninja Chemist + premium aesthetic дороже execute.</p>
+    </div>
+  </details>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- SECTION 2: 4 ICON CONCEPTS -->
+<!-- SECTION 2: ICON CONCEPTS -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section>
   <h2>2. Иконка — 4 концепта <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">phase 2 sketch</span> <span style="font-size: 12px; color: #6a6a70; font-weight: normal;">кликни концепт + glow</span></h2>
-  <p style="color: #6a6a70; margin-bottom: 8px;">Каждый концепт — на dark navy bg <code>#0F1115</code>. Кликни на маленький превью под концептом чтобы переключить glow цвет (coral / sage). Главный preview обновится.</p>
+  <p class="section-intro">Каждый концепт — на dark navy bg <code>#0F1115</code>. Кликни на маленький превью под концептом чтобы переключить glow цвет. Главный preview обновится.</p>
 
   <div class="concepts-grid">
 
-    <!-- Concept 1: Letter C + Waveform Halo -->
     <div class="concept-card" data-concept="1" onclick="selectConcept(this, '1. C + Waveform Halo')">
       <h3>1. C + Waveform Halo</h3>
-      <p class="concept-tagline">Typographic. Letterform + crescent of sound bars above. Brand letter visible at small sizes.</p>
+      <p class="concept-tagline">Typographic. Letterform + crescent of sound bars above.</p>
       <div class="concept-img">
         <img id="img-1" src="icons/01-letter-c-waveform-coral.png" alt="C with waveform halo">
       </div>
       <div class="concept-variants">
-        <div class="mini active" data-glow="coral" data-base="01-letter-c-waveform" onclick="event.stopPropagation(); switchGlow(this, 1, 'coral')">
-          <img src="icons/01-letter-c-waveform-coral.png">
-        </div>
-        <div class="mini" data-glow="sage" data-base="01-letter-c-waveform" onclick="event.stopPropagation(); switchGlow(this, 1, 'sage')">
-          <img src="icons/01-letter-c-waveform-sage.png">
-        </div>
+        <div class="mini active" data-glow="coral" data-base="01-letter-c-waveform" onclick="event.stopPropagation(); switchGlow(this, 1, 'coral')"><img src="icons/01-letter-c-waveform-coral.png"></div>
+        <div class="mini" data-glow="sage" data-base="01-letter-c-waveform" onclick="event.stopPropagation(); switchGlow(this, 1, 'sage')"><img src="icons/01-letter-c-waveform-sage.png"></div>
       </div>
-      <div class="concept-meta"><b>Pros:</b> Brand letter clear · Familiar pattern · Works at 40×40<br><b>Cons:</b> «Just another C app»</div>
+      <div class="concept-meta"><b>Pros:</b> Brand letter clear · Works at 40×40<br><b>Cons:</b> «Just another C app»</div>
     </div>
 
-    <!-- Concept 2: Speech Bubble (Chat-first) -->
-    <div class="concept-card" data-concept="2" onclick="selectConcept(this, '2. Speech Bubble + Sound')">
+    <div class="concept-card" data-concept="2" onclick="selectConcept(this, '2. Speech Bubble + Sound')" style="border: 2px solid #b85a1a;">
       <h3>2. Speech Bubble + Sound</h3>
-      <p class="concept-tagline"><span class="pill pill-killer">Chat killer feature</span><br>Bubble = chat. Sound bars inside = cry/voice. Killer #1 + #2 combo.</p>
+      <p class="concept-tagline"><span class="pill pill-killer">Chat killer feature</span><br>Bubble = chat. Sound = cry/voice.</p>
       <div class="concept-img">
         <img id="img-2" src="icons/02-speech-bubble-coral.png" alt="Speech bubble with sound bars">
       </div>
       <div class="concept-variants">
-        <div class="mini active" data-glow="coral" data-base="02-speech-bubble" onclick="event.stopPropagation(); switchGlow(this, 2, 'coral')">
-          <img src="icons/02-speech-bubble-coral.png">
-        </div>
-        <div class="mini" data-glow="sage" data-base="02-speech-bubble" onclick="event.stopPropagation(); switchGlow(this, 2, 'sage')">
-          <img src="icons/02-speech-bubble-sage.png">
-        </div>
+        <div class="mini active" data-glow="coral" data-base="02-speech-bubble" onclick="event.stopPropagation(); switchGlow(this, 2, 'coral')"><img src="icons/02-speech-bubble-coral.png"></div>
+        <div class="mini" data-glow="sage" data-base="02-speech-bubble" onclick="event.stopPropagation(); switchGlow(this, 2, 'sage')"><img src="icons/02-speech-bubble-sage.png"></div>
       </div>
-      <div class="concept-meta"><b>Pros:</b> Tells «chat about cry» visually · Differentiates from Nanni labels · Most aligned с killer #1<br><b>Cons:</b> Could read «messaging app»</div>
+      <div class="concept-meta"><b>Pros:</b> Tells «chat about cry» visually · Aligned с killer #1<br><b>Cons:</b> Could read «messaging app»</div>
     </div>
 
-    <!-- Concept 3: Voice Waveform Abstract -->
     <div class="concept-card" data-concept="3" onclick="selectConcept(this, '3. Voice Waveform')">
       <h3>3. Voice Waveform</h3>
-      <p class="concept-tagline">Pure sound abstraction. Symmetric bell curve = listening + analysis. No letter.</p>
+      <p class="concept-tagline">Pure sound abstraction. Symmetric bell curve.</p>
       <div class="concept-img">
         <img id="img-3" src="icons/03-voice-waveform-coral.png" alt="Voice waveform abstract">
       </div>
       <div class="concept-variants">
-        <div class="mini active" data-glow="coral" data-base="03-voice-waveform" onclick="event.stopPropagation(); switchGlow(this, 3, 'coral')">
-          <img src="icons/03-voice-waveform-coral.png">
-        </div>
-        <div class="mini" data-glow="sage" data-base="03-voice-waveform" onclick="event.stopPropagation(); switchGlow(this, 3, 'sage')">
-          <img src="icons/03-voice-waveform-sage.png">
-        </div>
+        <div class="mini active" data-glow="coral" data-base="03-voice-waveform" onclick="event.stopPropagation(); switchGlow(this, 3, 'coral')"><img src="icons/03-voice-waveform-coral.png"></div>
+        <div class="mini" data-glow="sage" data-base="03-voice-waveform" onclick="event.stopPropagation(); switchGlow(this, 3, 'sage')"><img src="icons/03-voice-waveform-sage.png"></div>
       </div>
-      <div class="concept-meta"><b>Pros:</b> Unique shape · Voice mode wedge · Brand asset potential<br><b>Cons:</b> Could clash с Spotify/Voice memos</div>
+      <div class="concept-meta"><b>Pros:</b> Voice mode wedge · Brand asset potential<br><b>Cons:</b> Could clash с Spotify</div>
     </div>
 
-    <!-- Concept 4: Heart + ECG -->
     <div class="concept-card" data-concept="4" onclick="selectConcept(this, '4. Heart + Heartbeat')">
       <h3>4. Heart + Heartbeat</h3>
-      <p class="concept-tagline">Emotional + medical. Heart shape (warmth) + ECG line (pulse + sound).</p>
+      <p class="concept-tagline">Emotional + medical. Heart + ECG line.</p>
       <div class="concept-img">
         <img id="img-4" src="icons/04-heart-waveform-coral.png" alt="Heart with ECG line">
       </div>
       <div class="concept-variants">
-        <div class="mini active" data-glow="coral" data-base="04-heart-waveform" onclick="event.stopPropagation(); switchGlow(this, 4, 'coral')">
-          <img src="icons/04-heart-waveform-coral.png">
+        <div class="mini active" data-glow="coral" data-base="04-heart-waveform" onclick="event.stopPropagation(); switchGlow(this, 4, 'coral')"><img src="icons/04-heart-waveform-coral.png"></div>
+        <div class="mini" data-glow="sage" data-base="04-heart-waveform" onclick="event.stopPropagation(); switchGlow(this, 4, 'sage')"><img src="icons/04-heart-waveform-sage.png"></div>
+      </div>
+      <div class="concept-meta"><b>Pros:</b> Health & Fitness category fit<br><b>Cons:</b> Many competitors use heart</div>
+    </div>
+  </div>
+
+  <details class="consilium">
+    <summary>🧠 Почему консилиум выбрал #2 Speech Bubble + Sound</summary>
+    <div class="consilium-body">
+      <table class="vote-table">
+        <tr><th>Voice</th><th>1. C halo</th><th class="winner">2. Speech</th><th>3. Wave</th><th>4. Heart</th></tr>
+        <tr><td class="left">👶 Maya (3am)</td><td>6</td><td class="winner">9</td><td>8</td><td>7</td></tr>
+        <tr><td class="left">👩 Sarah (anxious)</td><td>5</td><td class="winner">9</td><td>6</td><td>8</td></tr>
+        <tr><td class="left">🌙 Lin (chronic)</td><td>6</td><td class="winner">8</td><td>7</td><td>6</td></tr>
+        <tr><td class="left">🍼 Carla (lactation)</td><td>6</td><td class="winner">9</td><td>5</td><td>7</td></tr>
+        <tr><td class="left">🎯 UX Analyst</td><td>7</td><td class="winner">10</td><td>7</td><td>5</td></tr>
+        <tr><td class="left">🎨 UI Designer</td><td>7</td><td class="winner">9</td><td>8</td><td>6</td></tr>
+        <tr style="font-weight: 700;"><td class="left">Среднее</td><td>6.2</td><td class="winner">9.0</td><td>6.8</td><td>6.5</td></tr>
+      </table>
+
+      <p style="margin: 16px 0 8px;"><b>Ключевые insights:</b></p>
+
+      <div class="voice-quote ux">
+        <div class="voice-name">🎯 UX Analyst — главный голос</div>
+        «Icon должен передать <b>killer feature #1</b> (3 chat personas) или <b>killer feature #2</b> (voice mode). Speech bubble делает оба: bubble = chat persona, sound bars = cry analysis + voice. <b>Один значок = весь продукт</b>. C halo / Heart / Wave каждый передаёт только часть.»
+      </div>
+
+      <div class="voice-quote ui">
+        <div class="voice-name">🎨 UI Designer</div>
+        «Speech bubble в категории Health & Fitness baby — НИКТО не использует. Все competitors используют либо realistic baby (Nanni 3D astronaut), либо waveform (First Ascent), либо abstract heart (нет в нише). Bubble = <b>unowned visual territory</b>.»
+      </div>
+
+      <div class="voice-quote maya">
+        <div class="voice-name">👶 Maya (3am)</div>
+        «В 3am scrolling мозг ищет "что мне поможет". Speech bubble мгновенно говорит "это разговор", "кто-то ответит". Это успокаивает. Heart — это generic "забота", не специфично. Wave — "звук", не понятно зачем.»
+      </div>
+
+      <div class="voice-quote carla">
+        <div class="voice-name">🍼 Carla (lactation)</div>
+        «Speech bubble = "я могу спросить эксперта". Это для меня — я хочу IBCLC в кармане. Heart — это "приложение для отношений", не для ID problems. C halo — typographic, безличный.»
+      </div>
+
+      <p style="margin-top: 16px; font-size: 13px;"><b>Почему НЕ #1 C halo:</b> Generic letter, не передаёт killer feature. <b>Почему НЕ #3 Wave:</b> Audio app perception, может clash с Spotify/Voice memos. <b>Почему НЕ #4 Heart:</b> Generic health app, многие competitors уже используют heart shape.</p>
+
+      <p style="margin-top: 12px; font-size: 13px; color: #b85a1a;"><b>Important caveat:</b> Эти иконки — sketch direction (PIL-сгенерированы). Финальная иконка = professional commission на основе chosen концепта + chosen палитры. Использовать workbench для выбора DIRECTION, не финального asset.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: SCREENSHOT STRATEGY -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <h2>3. Screenshots — 4 стратегии <span class="pill pill-strategy" style="font-size:10px; vertical-align:middle;">App Store CR</span> <span style="font-size: 12px; color: #6a6a70; font-weight: normal;">кликни стратегию</span></h2>
+  <p class="section-intro">8 слотов в App Store. Первые 3 = 85% CR (показываются БЕЗ тапа в search). Каждая стратегия — разный mode mix + разная storytelling логика. Цифры внутри маленьких прямоугольников = номер слота. 🌙 = dark, ☀️ = light.</p>
+
+  <div class="ss-strategy-grid">
+
+    <!-- Strategy A: 1 dark + 7 light (recommended) -->
+    <div class="ss-strategy-card" style="border: 2px solid #4a5fc1;" data-strategy="1d-7l" onclick="selectStrategy(this, 'A: 1 dark + 7 light (slot 3 voice)')">
+      <h3>A. 1 dark + 7 light</h3>
+      <p class="ss-strategy-tagline"><span class="pill pill-recommended">Recommended</span> Iter 2 winner. Story-peak dark slot 3 (voice 3am).</p>
+      <div class="ss-slot-trio">
+        <div class="ss-slot light-cream" style="position: relative;">
+          <span class="num">1</span>
+          <div class="slot-headline">Hook scene</div>
+          <div class="slot-mini-scene"><div style="font-size:18px;">👩‍🍼</div><div class="slot-mini-pill" style="background:#7A9A6E; color:white;">🟢 87%</div></div>
         </div>
-        <div class="mini" data-glow="sage" data-base="04-heart-waveform" onclick="event.stopPropagation(); switchGlow(this, 4, 'sage')">
-          <img src="icons/04-heart-waveform-sage.png">
+        <div class="ss-slot light-cream" style="position: relative;">
+          <span class="num">2</span>
+          <div class="slot-headline">vs Nanni</div>
+          <div class="slot-mini-scene" style="font-size:6px; flex-direction:row; gap:4px;"><div style="opacity:0.5;">label</div>→<div style="background:#7A9A6E; padding:2px; border-radius:3px; color:white; font-size:5px;">chat</div></div>
+        </div>
+        <div class="ss-slot dark" style="position: relative;">
+          <span class="num">3</span>
+          <div class="slot-headline">3am voice</div>
+          <div class="slot-mini-scene"><div class="slot-mini-bars" style="color:#F2967D;"><div style="height:4px"></div><div style="height:7px"></div><div style="height:9px"></div><div style="height:5px"></div><div style="height:3px"></div></div></div>
         </div>
       </div>
-      <div class="concept-meta"><b>Pros:</b> Emotional warmth · Health & Fitness fit<br><b>Cons:</b> Generic «health app» · Many use heart</div>
+      <div style="display: flex; gap: 4px; justify-content: center; font-size: 9px; color: #6a6a70;">+ 5 more LIGHT slots (4-8)</div>
+      <div class="concept-meta" style="margin-top: 8px;"><b>Pros:</b> Save dark wedge через slot 3 + win conversion through rest · Best of both<br><b>Cons:</b> Story-peak требует execution skill</div>
+    </div>
+
+    <!-- Strategy B: All light (safe) -->
+    <div class="ss-strategy-card" data-strategy="all-light" onclick="selectStrategy(this, 'B: All light (safe)')">
+      <h3>B. All light</h3>
+      <p class="ss-strategy-tagline">Match всех 7 competitors. Highest browse-context CR, но теряем dark wedge.</p>
+      <div class="ss-slot-trio">
+        <div class="ss-slot light-cream" style="position: relative;"><span class="num">1</span><div class="slot-headline">Hook</div><div class="slot-mini-scene"><div style="font-size:18px;">👩‍🍼</div></div></div>
+        <div class="ss-slot light-cream" style="position: relative;"><span class="num">2</span><div class="slot-headline">vs Nanni</div><div class="slot-mini-scene" style="font-size:5px;">label vs chat</div></div>
+        <div class="ss-slot light-cream" style="position: relative;"><span class="num">3</span><div class="slot-headline">9 cries grid</div><div class="slot-mini-scene"><div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px;"><div style="width:5px;height:5px;background:#7A9A6E;"></div><div style="width:5px;height:5px;background:#C49A4A;"></div><div style="width:5px;height:5px;background:#C25C4F;"></div><div style="width:5px;height:5px;background:#7A9A6E;"></div><div style="width:5px;height:5px;background:#7A9A6E;"></div><div style="width:5px;height:5px;background:#C49A4A;"></div></div></div></div>
+      </div>
+      <div style="display: flex; gap: 4px; justify-content: center; font-size: 9px; color: #6a6a70;">+ 5 more LIGHT slots (4-8)</div>
+      <div class="concept-meta" style="margin-top: 8px;"><b>Pros:</b> Matches browser psychology · No risky dark beat<br><b>Cons:</b> «Just another baby app» · Wastes 3am voice mode wedge</div>
+    </div>
+
+    <!-- Strategy C: 3 dark committed -->
+    <div class="ss-strategy-card" data-strategy="3d-5l" onclick="selectStrategy(this, 'C: 3 dark + 5 light (committed)')">
+      <h3>C. 3 dark + 5 light</h3>
+      <p class="ss-strategy-tagline">Committed dark wedge: slots 1+3+5 dark. Stronger differentiation, риск browse depression.</p>
+      <div class="ss-slot-trio">
+        <div class="ss-slot dark" style="position: relative;"><span class="num">1</span><div class="slot-headline">Dark hero</div><div class="slot-mini-scene"><div style="font-size:18px;">🌙</div><div class="slot-mini-pill" style="background:#F2967D; color:#0F1115;">🟢 87%</div></div></div>
+        <div class="ss-slot light-cream" style="position: relative;"><span class="num">2</span><div class="slot-headline">vs Nanni</div><div class="slot-mini-scene" style="font-size:5px;">label vs chat</div></div>
+        <div class="ss-slot dark" style="position: relative;"><span class="num">3</span><div class="slot-headline">3am voice</div><div class="slot-mini-scene"><div class="slot-mini-bars" style="color:#F2967D;"><div style="height:4px"></div><div style="height:7px"></div><div style="height:9px"></div><div style="height:5px"></div><div style="height:3px"></div></div></div></div>
+      </div>
+      <div style="display: flex; gap: 4px; justify-content: center; font-size: 9px; color: #6a6a70;">5 = dark · 4,6,7,8 = LIGHT</div>
+      <div class="concept-meta" style="margin-top: 8px;"><b>Pros:</b> Strongest dark wedge<br><b>Cons:</b> -5-10pp browse anxiety · loses authority strip readability</div>
+    </div>
+
+    <!-- Strategy D: All dark -->
+    <div class="ss-strategy-card" data-strategy="all-dark" onclick="selectStrategy(this, 'D: All dark (risky)')">
+      <h3>D. All dark</h3>
+      <p class="ss-strategy-tagline">Iter 1 plan. Strongest visual standout, но iter 2 voice avg 5.0 — все JTBD voices dropped.</p>
+      <div class="ss-slot-trio">
+        <div class="ss-slot dark" style="position: relative;"><span class="num">1</span><div class="slot-headline">Dark hero</div><div class="slot-mini-scene"><div style="font-size:18px;">🌙</div></div></div>
+        <div class="ss-slot dark" style="position: relative;"><span class="num">2</span><div class="slot-headline">vs Nanni</div><div class="slot-mini-scene" style="font-size:5px; color:#9CB892;">labels vs chat</div></div>
+        <div class="ss-slot dark" style="position: relative;"><span class="num">3</span><div class="slot-headline">Voice</div><div class="slot-mini-scene"><div class="slot-mini-bars" style="color:#F2967D;"><div style="height:4px"></div><div style="height:7px"></div><div style="height:9px"></div><div style="height:5px"></div><div style="height:3px"></div></div></div></div>
+      </div>
+      <div style="display: flex; gap: 4px; justify-content: center; font-size: 9px; color: #6a6a70;">all 8 = DARK</div>
+      <div class="concept-meta" style="margin-top: 8px;"><b>Pros:</b> Strongest visual standout · Full 3am brand identity<br><b>Cons:</b> «Depressing» browse perception · CR -8-15pp</div>
     </div>
 
   </div>
 
-  <p class="footnote">
-    💡 Все иконки — sketch direction (программно сгенерированы PIL). Финальный icon = professional commission после approval концепта + палитры. Это proof-of-concept для выбора direction.
-  </p>
+  <details class="consilium">
+    <summary>🧠 Почему консилиум выбрал A — 1 dark + 7 light</summary>
+    <div class="consilium-body">
+      <table class="vote-table">
+        <tr><th>Voice</th><th class="winner">A: 1d+7l</th><th>B: all light</th><th>C: 3d+5l</th><th>D: all dark</th></tr>
+        <tr><td class="left">👶 Maya (3am)</td><td class="winner">9</td><td>6</td><td>7</td><td>4</td></tr>
+        <tr><td class="left">👩 Sarah (anxious)</td><td class="winner">9</td><td>8</td><td>6</td><td>5</td></tr>
+        <tr><td class="left">🌙 Lin (chronic)</td><td class="winner">10</td><td>7</td><td>7</td><td>5</td></tr>
+        <tr><td class="left">🍼 Carla (lactation)</td><td class="winner">10</td><td>7</td><td>6</td><td>6</td></tr>
+        <tr><td class="left">🎯 UX Analyst</td><td class="winner">10</td><td>7</td><td>5</td><td>4</td></tr>
+        <tr><td class="left">🎨 UI Designer</td><td class="winner">10</td><td>7</td><td>7</td><td>6</td></tr>
+        <tr style="font-weight: 700;"><td class="left">Среднее</td><td class="winner">9.7</td><td>7.0</td><td>6.3</td><td>5.0</td></tr>
+      </table>
+
+      <p style="margin: 16px 0 8px;"><b>Объективные данные что мы видели:</b></p>
+      <ul style="margin-left: 20px; line-height: 1.7;">
+        <li><b>0 из 7 competitors</b> используют dark backgrounds в App Store screenshots</li>
+        <li>Даже <b>Huckleberry</b> (у которого dark mode ЕСТЬ как feature) показывает dark mode на <b>светлой marketing-frame</b> (brightness 208/255)</li>
+        <li><b>Sleep apps</b> (Calm, Pillow) — единственные где dark screenshots работают (category=sleep сам по себе night-context)</li>
+        <li><b>Browse moment ≠ use moment.</b> Parent скроллит App Store днём → light environment + dark screenshot = «depressing/empty/wrong vibe»</li>
+      </ul>
+
+      <p style="margin: 16px 0 8px;"><b>Почему именно 1 dark slot 3?</b></p>
+
+      <div class="voice-quote ux">
+        <div class="voice-name">🎯 UX Analyst</div>
+        «Slot 3 = idealный момент для surprise dark beat. Browser уже engaged (прошёл slot 1+2 light), готов к narrative beat. Dark voice mode 3am = unique selling proposition (никто из competitors voice mode не имеет) + memorable enough чтобы remember at actual 3am later.»
+      </div>
+
+      <div class="voice-quote ui">
+        <div class="voice-name">🎨 UI Designer</div>
+        «Один dark slot среди 7 light = visual scroll-stopper. Vs all-dark где browser устаёт от темноты, или all-light где we исчезаем в категории. <b>Контраст работает — однообразие нет.</b>»
+      </div>
+
+      <div class="voice-quote maya">
+        <div class="voice-name">👶 Maya (3am)</div>
+        «Browse в 14:00 в waiting room — мне нужно уверенность что app серьёзный (light + AAP badges). Но slot 3 dark "3am phone dead-tired" — заставляет меня <b>помнить эту app именно ВНОЧЬЮ</b>. Это remembered experience.»
+      </div>
+
+      <div class="voice-quote sarah">
+        <div class="voice-name">👩 Sarah (anxious)</div>
+        «Если все слоты dark — выглядит как "edgy startup", не "medical companion". Нам нужны AAP badges visible (light), а dark только когда mention 3am crisis context.»
+      </div>
+
+      <p style="margin: 16px 0 8px;"><b>CR-prediction:</b></p>
+      <table class="vote-table">
+        <tr><th>Lever</th><th>D all-dark (iter 1)</th><th class="winner">A 1d+7l (iter 2)</th><th>Δ</th></tr>
+        <tr><td class="left">Screenshot CTR (first 3)</td><td>-10%</td><td>+5%</td><td>+15pp</td></tr>
+        <tr><td class="left">Onboarding completion</td><td>-5%</td><td>+3%</td><td>+8pp</td></tr>
+        <tr><td class="left">Trial start rate</td><td>-8%</td><td>+5%</td><td>+13pp</td></tr>
+        <tr><td class="left"><b>Overall T2P + install</b></td><td><b>-8%</b></td><td><b>+10-15%</b></td><td><b>+18-23pp</b></td></tr>
+      </table>
+    </div>
+  </details>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- SECTION 3: BROWSE ROW SIMULATION -->
+<!-- SECTION 4: BROWSE ROW -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="browse-section">
-  <h2>3. App Store browse row simulation</h2>
-  <p style="color: #6a6a70; margin-bottom: 4px;">Левая половина — наши 8 кандидатов. Правая — реальные иконки 7 конкурентов.</p>
+  <h2>4. App Store browse row simulation</h2>
+  <p class="section-intro">Левая половина — наши 8 кандидатов. Правая — реальные иконки 7 конкурентов.</p>
 
   <h3 style="margin-top: 16px;">Наши 8 кандидатов</h3>
   <div class="row">
-    <div class="row-cell">
-      <img class="icon-mini" src="icons/01-letter-c-waveform-coral.png">
-      <div class="label">C halo coral</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="icons/01-letter-c-waveform-sage.png">
-      <div class="label">C halo sage</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="icons/02-speech-bubble-coral.png">
-      <div class="label">Speech coral</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="icons/02-speech-bubble-sage.png">
-      <div class="label">Speech sage</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="icons/03-voice-waveform-coral.png">
-      <div class="label">Wave coral</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="icons/03-voice-waveform-sage.png">
-      <div class="label">Wave sage</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="icons/04-heart-waveform-coral.png">
-      <div class="label">Heart coral</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="icons/04-heart-waveform-sage.png">
-      <div class="label">Heart sage</div>
-    </div>
+    <div class="row-cell"><img class="icon-mini" src="icons/01-letter-c-waveform-coral.png"><div class="label">C halo coral</div></div>
+    <div class="row-cell"><img class="icon-mini" src="icons/01-letter-c-waveform-sage.png"><div class="label">C halo sage</div></div>
+    <div class="row-cell"><img class="icon-mini" src="icons/02-speech-bubble-coral.png"><div class="label">Speech coral</div></div>
+    <div class="row-cell"><img class="icon-mini" src="icons/02-speech-bubble-sage.png"><div class="label">Speech sage</div></div>
+    <div class="row-cell"><img class="icon-mini" src="icons/03-voice-waveform-coral.png"><div class="label">Wave coral</div></div>
+    <div class="row-cell"><img class="icon-mini" src="icons/03-voice-waveform-sage.png"><div class="label">Wave sage</div></div>
+    <div class="row-cell"><img class="icon-mini" src="icons/04-heart-waveform-coral.png"><div class="label">Heart coral</div></div>
+    <div class="row-cell"><img class="icon-mini" src="icons/04-heart-waveform-sage.png"><div class="label">Heart sage</div></div>
   </div>
 
   <h3 style="margin-top: 20px;">7 конкурентов</h3>
   <div class="row">
-    <div class="row-cell">
-      <img class="icon-mini" src="competitors/02-nanni-ai.png">
-      <div class="label">Nanni AI</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="competitors/03-aya.png">
-      <div class="label">AYA</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="competitors/01-huckleberry.png">
-      <div class="label">Huckleberry</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="competitors/04-chatterbaby.png">
-      <div class="label">ChatterBaby</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="competitors/05-gowalk-translator.png">
-      <div class="label">Gowalk</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="competitors/06-cry-stopper-ninja.png">
-      <div class="label">Ninja Chemist</div>
-    </div>
-    <div class="row-cell">
-      <img class="icon-mini" src="competitors/07-cry-analyzer-first-ascent.png">
-      <div class="label">First Ascent</div>
-    </div>
+    <div class="row-cell"><img class="icon-mini" src="competitors/02-nanni-ai.png"><div class="label">Nanni AI</div></div>
+    <div class="row-cell"><img class="icon-mini" src="competitors/03-aya.png"><div class="label">AYA</div></div>
+    <div class="row-cell"><img class="icon-mini" src="competitors/01-huckleberry.png"><div class="label">Huckleberry</div></div>
+    <div class="row-cell"><img class="icon-mini" src="competitors/04-chatterbaby.png"><div class="label">ChatterBaby</div></div>
+    <div class="row-cell"><img class="icon-mini" src="competitors/05-gowalk-translator.png"><div class="label">Gowalk</div></div>
+    <div class="row-cell"><img class="icon-mini" src="competitors/06-cry-stopper-ninja.png"><div class="label">Ninja Chemist</div></div>
+    <div class="row-cell"><img class="icon-mini" src="competitors/07-cry-analyzer-first-ascent.png"><div class="label">First Ascent</div></div>
   </div>
 
-  <p class="footnote">
-    💡 <b>Все 8 наших кандидатов выделяются</b> за счёт dark backgrounds (vs все competitors на light).
-  </p>
+  <p class="footnote">💡 <b>Все 8 наших кандидатов выделяются</b> за счёт dark backgrounds vs light/colorful у конкурентов.</p>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- SELECTION PANEL (sticky) -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- Selection panel -->
 <div class="selection-panel">
   <h3>📋 Твой выбор</h3>
-  <div class="field">
-    <span class="field-label">Палитра:</span>
-    <span class="field-value" id="sel-palette">не выбрано</span>
-  </div>
-  <div class="field">
-    <span class="field-label">Icon концепт:</span>
-    <span class="field-value" id="sel-concept">не выбран</span>
-  </div>
-  <div class="field">
-    <span class="field-label">Icon glow:</span>
-    <span class="field-value" id="sel-glow">не выбран</span>
-  </div>
+  <div class="field"><span class="field-label">Палитра:</span><span class="field-value" id="sel-palette">не выбрано</span></div>
+  <div class="field"><span class="field-label">Icon концепт:</span><span class="field-value" id="sel-concept">не выбран</span></div>
+  <div class="field"><span class="field-label">Icon glow:</span><span class="field-value" id="sel-glow">не выбран</span></div>
+  <div class="field"><span class="field-label">Screenshot strategy:</span><span class="field-value" id="sel-strategy">не выбрана</span></div>
   <button onclick="copySelection()">📋 Скопировать выбор</button>
   <div id="copy-toast" style="display:none; margin-top:8px; font-size:11px; color:#9CB892; text-align:center;">Скопировано!</div>
 </div>
 
 <script>
-  const selection = { palette: null, concept: null, glow: null };
+  const selection = { palette: null, concept: null, glow: null, strategy: null };
 
   function selectPalette(el, label) {
     document.querySelectorAll('.palette-col').forEach(c => c.classList.remove('selected'));
@@ -708,12 +830,10 @@
     el.classList.add('selected');
     selection.concept = label;
     document.getElementById('sel-concept').textContent = label;
-    // Auto-set glow from current active variant within this concept
     const activeMini = el.querySelector('.mini.active');
     if (activeMini) {
-      const glow = activeMini.dataset.glow;
-      selection.glow = glow;
-      document.getElementById('sel-glow').textContent = glow;
+      selection.glow = activeMini.dataset.glow;
+      document.getElementById('sel-glow').textContent = selection.glow;
     }
   }
 
@@ -729,8 +849,15 @@
     }
   }
 
+  function selectStrategy(el, label) {
+    document.querySelectorAll('.ss-strategy-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    selection.strategy = label;
+    document.getElementById('sel-strategy').textContent = label;
+  }
+
   function copySelection() {
-    const text = `Палитра: ${selection.palette || 'не выбрано'}\nIcon концепт: ${selection.concept || 'не выбран'}\nIcon glow: ${selection.glow || 'не выбран'}`;
+    const text = `Палитра: ${selection.palette || 'не выбрано'}\nIcon концепт: ${selection.concept || 'не выбран'}\nIcon glow: ${selection.glow || 'не выбран'}\nScreenshot strategy: ${selection.strategy || 'не выбрана'}`;
     navigator.clipboard.writeText(text).then(() => {
       const toast = document.getElementById('copy-toast');
       toast.style.display = 'block';
