@@ -1139,9 +1139,572 @@
   <h2>4. Концепты 3 первых screenshots <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">85% CR decision</span></h2>
   <p class="section-intro">Apple показывает первые 3 БЕЗ тапа в search results — это и есть весь download decision. Каждый слот должен показать конкретную killer feature + JTBD pain в один взгляд (0.4 sec scan time). Расположение элементов и copy подбираются чтобы поднять CTR install.</p>
 
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- 4.0 — COMPREHENSIVE JTBD BRIEF (NEW) -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <style>
+    .audience-deep {
+      margin: 16px 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .audience-row {
+      background: white;
+      border: 2px solid #ebebef;
+      border-radius: 14px;
+      padding: 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+    }
+    .audience-row.rank-1 { border-color: #E8836A; }
+    .audience-row.rank-2 { border-color: #C49A4A; }
+    .audience-row.rank-3 { border-color: #7A9A6E; }
+    .audience-row.rank-4 { border-color: #C97A8C; }
+
+    .audience-header {
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .audience-row.rank-1 .audience-header { background: linear-gradient(160deg, #E8836A, #c25c4f); }
+    .audience-row.rank-2 .audience-header { background: linear-gradient(160deg, #C49A4A, #9a7a30); }
+    .audience-row.rank-3 .audience-header { background: linear-gradient(160deg, #7A9A6E, #4F8059); }
+    .audience-row.rank-4 .audience-header { background: linear-gradient(160deg, #C97A8C, #9d5868); }
+
+    .audience-rank-big {
+      font-size: 28px;
+      font-weight: 800;
+      font-family: -apple-system, "SF Pro Rounded", sans-serif;
+      line-height: 1;
+    }
+    .audience-emoji-big { font-size: 40px; line-height: 1; margin: 4px 0; }
+    .audience-name-big { font-size: 16px; font-weight: 700; }
+    .audience-stats { font-size: 11px; opacity: 0.9; line-height: 1.4; }
+
+    .audience-content {
+      padding: 16px 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .audience-block { font-size: 12px; line-height: 1.45; }
+    .audience-block .block-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6a6a70;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .audience-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .audience-block li {
+      padding: 4px 0;
+      font-size: 11.5px;
+      line-height: 1.4;
+      color: #2a2a30;
+    }
+    .audience-block li::before {
+      content: "›";
+      color: #b0b0b8;
+      margin-right: 6px;
+      font-weight: 700;
+    }
+
+    .pain-quote {
+      font-style: italic;
+      color: #b85a4d;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .wow-tag {
+      display: inline-block;
+      background: #fff4e6;
+      color: #b85a1a;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      margin: 2px 3px 2px 0;
+    }
+    .slot-pin {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      margin: 2px 3px 2px 0;
+    }
+    .pin-1 { background: #fff4e6; color: #b85a1a; }
+    .pin-2 { background: #f0f3ff; color: #4a5fc1; }
+    .pin-3 { background: #1a1a1f; color: #F2967D; }
+    .pin-other { background: #ebebef; color: #4a4a55; }
+
+    @media (max-width: 1100px) {
+      .audience-row { grid-template-columns: 1fr; }
+      .audience-content { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .audience-content { grid-template-columns: 1fr; }
+    }
+
+    /* WOW inventory */
+    .wow-inventory {
+      margin: 24px 0;
+      background: linear-gradient(135deg, #fff4e6 0%, #fff8f4 100%);
+      border-radius: 16px;
+      padding: 24px;
+      border: 2px solid #E8836A;
+    }
+    .wow-inventory h3 {
+      color: #b85a1a;
+      font-size: 18px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .wow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .wow-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(232, 131, 106, 0.1);
+    }
+    .wow-card .wow-tier {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b85a1a;
+      margin-bottom: 4px;
+    }
+    .wow-card h4 {
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-family: -apple-system, "SF Pro Rounded", sans-serif;
+      line-height: 1.2;
+    }
+    .wow-card .wow-quote {
+      font-size: 12px;
+      color: #1a1a1f;
+      background: #fafafa;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border-left: 3px solid #E8836A;
+      margin: 8px 0;
+      font-style: italic;
+      line-height: 1.4;
+    }
+    .wow-card .wow-why {
+      font-size: 11px;
+      color: #6a6a70;
+      line-height: 1.45;
+      margin-top: 8px;
+    }
+    .wow-card .wow-where {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed #ebebef;
+      font-size: 10px;
+      color: #4a4a55;
+    }
+    @media (max-width: 800px) {
+      .wow-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <h3 style="font-size: 18px; margin: 24px 0 4px;">🎯 4.0 — Полный JTBD-brief: что показывать каждой аудитории</h3>
+  <p style="font-size: 12.5px; color: #6a6a70; margin-bottom: 8px; line-height: 1.5;">
+    Для каждой аудитории (priority 1→4): <b>визуал что резонирует</b> + <b>copy hooks в порядке impact</b> + <b>где размещаем</b>. Это brief для дизайнера/копирайтера.
+  </p>
+
+  <div class="audience-deep">
+
+    <!-- ═════════ Maya — Rank 1 ═════════ -->
+    <div class="audience-row rank-1">
+      <div class="audience-header">
+        <div class="audience-rank-big">🥇 #1</div>
+        <div class="audience-emoji-big">👶</div>
+        <div class="audience-name-big">Maya 28</div>
+        <div class="audience-stats">
+          S1 new mother<br>
+          0-4 mo postpartum<br>
+          <b>2-3M US active</b><br>
+          🔴 EXTREME WTP
+        </div>
+      </div>
+      <div class="audience-content">
+        <div class="audience-block">
+          <div class="block-label">😣 Pain</div>
+          <p class="pain-quote">«Он плачет уже 40 минут. Я fed, changed, rocked. Сейчас сама заплачу. На Reddit ответ через 6 часов. Маму будить 3am стыдно.»</p>
+          <ul style="margin-top: 8px;">
+            <li>Sleep 3-5h fragmented</li>
+            <li>Hormonal turbulence</li>
+            <li>Guilt + helplessness</li>
+            <li>Eyes hurt от screens</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎨 Visual cues что резонируют</div>
+          <ul>
+            <li>Dim warm bedside lamp glow</li>
+            <li>Mom curled with baby (mid-shot)</li>
+            <li>Phone with coral pulse glow</li>
+            <li>Soft moonlight через окно</li>
+            <li>NO realistic crying baby (aversive)</li>
+            <li>Solidarity vibe «оба exhausted»</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">💬 Copy hooks (в порядке impact)</div>
+          <ul>
+            <li><b>«3am. Phone dead-tired.»</b> (slot 3 hero)</li>
+            <li><b>«Don't even open your eyes.»</b></li>
+            <li><b>«We get this moment.»</b></li>
+            <li>«5 seconds to answer.»</li>
+            <li>«Works offline — no WiFi needed.»</li>
+            <li>«You're not failing. We're here.»</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎁 WOW что закроет install</div>
+          <span class="wow-tag">🎙 Voice mode — hands-free</span>
+          <span class="wow-tag">⚡ 5 sec to verdict</span>
+          <span class="wow-tag">📴 Offline-first</span>
+          <span class="wow-tag">🔇 Silent on phone</span>
+          <p style="margin-top: 8px; font-size: 11px; color: #4a4a55;"><b>Где:</b></p>
+          <span class="slot-pin pin-3">SLOT 3 (peak)</span>
+          <span class="slot-pin pin-1">SLOT 1 (verdict pill)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════ Sarah — Rank 2 ═════════ -->
+    <div class="audience-row rank-2">
+      <div class="audience-header">
+        <div class="audience-rank-big">🥈 #2</div>
+        <div class="audience-emoji-big">😰</div>
+        <div class="audience-name-big">Sarah 31</div>
+        <div class="audience-stats">
+          S1+S2 first-time<br>
+          anxious parents<br>
+          <b>4-5M US incl dads</b><br>
+          🟠 HIGH WTP
+        </div>
+      </div>
+      <div class="audience-content">
+        <div class="audience-block">
+          <div class="block-label">😣 Pain</div>
+          <p class="pain-quote">«Это нормально что он так долго плачет? Reddit пугает, Google пугает, мама не помнит. Я не доверяю себе.»</p>
+          <ul style="margin-top: 8px;">
+            <li>Self-doubt + lack of reference</li>
+            <li>Reads pediatric blogs</li>
+            <li>4 mom FB groups</li>
+            <li>Compares к friends' babies</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎨 Visual cues что резонируют</div>
+          <ul>
+            <li>AAP/CDC/Mayo authority badges</li>
+            <li>Pediatric Nurse persona avatar</li>
+            <li>Chat bubble с reasoning (not labels)</li>
+            <li>«Powered by» credentialing strip</li>
+            <li>Soft daytime warm lighting</li>
+            <li>Confidence % visible always</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">💬 Copy hooks (в порядке impact)</div>
+          <ul>
+            <li><b>«Others give labels. We give answers.»</b> (slot 2 hero)</li>
+            <li><b>«Powered by AAP guidelines.»</b></li>
+            <li><b>«Real reasons. Real next steps.»</b></li>
+            <li>«Pediatric Nurse · 15 years at Children's Hospital»</li>
+            <li>«Validated on 10,000+ recordings — 89% accurate»</li>
+            <li>«When to call 911 — always visible»</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎁 WOW что закроет install</div>
+          <span class="wow-tag">💬 3 expert personas</span>
+          <span class="wow-tag">📚 AAP/CDC grounded</span>
+          <span class="wow-tag">🚨 ER triggers visible</span>
+          <span class="wow-tag">🩺 «15-yr nurse» credentialing</span>
+          <p style="margin-top: 8px; font-size: 11px; color: #4a4a55;"><b>Где:</b></p>
+          <span class="slot-pin pin-2">SLOT 2 (diff)</span>
+          <span class="slot-pin pin-1">SLOT 1 (badges)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════ Lin — Rank 3 ═════════ -->
+    <div class="audience-row rank-3">
+      <div class="audience-header">
+        <div class="audience-rank-big">🥉 #3</div>
+        <div class="audience-emoji-big">😴</div>
+        <div class="audience-name-big">Lin 33</div>
+        <div class="audience-stats">
+          S1 chronic<br>
+          2-4 mo postpartum<br>
+          <b>1.5M US</b><br>
+          🟡 MED-HIGH WTP
+        </div>
+      </div>
+      <div class="audience-content">
+        <div class="audience-block">
+          <div class="block-label">😣 Pain</div>
+          <p class="pain-quote">«Я сплю 3 часа в сутки, когда это кончится? Никакой плана нет. Партнёр не понимает. Sleep training — слишком жёстко?»</p>
+          <ul style="margin-top: 8px;">
+            <li>Chronic недосып normalized</li>
+            <li>Frustrated с partner</li>
+            <li>Wants predictability</li>
+            <li>Optimizing для sleep prediction</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎨 Visual cues что резонируют</div>
+          <ul>
+            <li>Calendar / timeline UI</li>
+            <li>Sleep prediction widget</li>
+            <li>Sleep Coach 🌙 persona avatar</li>
+            <li>Pattern visualization (7-day chart)</li>
+            <li>«Predicted nap 2:15 PM» callout</li>
+            <li>Method-neutral copy (no «cry-it-out»)</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">💬 Copy hooks (в порядке impact)</div>
+          <ul>
+            <li><b>«Predict the next nap.»</b></li>
+            <li><b>«Finally, a plan that respects your style.»</b></li>
+            <li><b>«Reclaim 1 hour/night — gently.»</b></li>
+            <li>«Sleep Coach grounded в Healthy Sleep Habits + RIE»</li>
+            <li>«Method-neutral — no cry-it-out forced»</li>
+            <li>«Built from YOUR baby's last 7 days»</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎁 WOW что закроет install</div>
+          <span class="wow-tag">🌙 Sleep Coach persona</span>
+          <span class="wow-tag">📈 Sleep prediction (V1.1)</span>
+          <span class="wow-tag">🎵 Soothing sounds 24/7</span>
+          <span class="wow-tag">⏰ Smart wake-window timer</span>
+          <p style="margin-top: 8px; font-size: 11px; color: #4a4a55;"><b>Где:</b></p>
+          <span class="slot-pin pin-2">SLOT 2 (badge)</span>
+          <span class="slot-pin pin-other">Slots 5-6 (deeper)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════ Carla — Rank 4 ═════════ -->
+    <div class="audience-row rank-4">
+      <div class="audience-header">
+        <div class="audience-rank-big">#4</div>
+        <div class="audience-emoji-big">🍼</div>
+        <div class="audience-name-big">Carla 29</div>
+        <div class="audience-stats">
+          Breastfeeding<br>
+          self-blame<br>
+          <b>1M US</b><br>
+          🟡 MED-HIGH WTP
+        </div>
+      </div>
+      <div class="audience-content">
+        <div class="audience-block">
+          <div class="block-label">😣 Pain</div>
+          <p class="pain-quote">«Что не так с моим молоком? Baby плачет после feeds. Партнёр предлагает formula — это значит я fail?»</p>
+          <ul style="margin-top: 8px;">
+            <li>Self-blame + supply anxiety</li>
+            <li>«Failed mom» framing</li>
+            <li>Defensive vs formula-pushers</li>
+            <li>Lactation chair, late evening</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎨 Visual cues что резонируют</div>
+          <ul>
+            <li>IBCLC + La Leche League badges</li>
+            <li>Lactation Consultant 🍼 persona</li>
+            <li>Gentle nursing iconography</li>
+            <li>Hunger vs gas distinction visual</li>
+            <li>Encouraging warm tones</li>
+            <li>Inclusive (skin tones varied)</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">💬 Copy hooks (в порядке impact)</div>
+          <ul>
+            <li><b>«Hunger or gas? We help you tell.»</b></li>
+            <li><b>«Lactation expert in your pocket.»</b></li>
+            <li><b>«No judgment. Just answers.»</b></li>
+            <li>«Cluster feeding is normal at 6 wks — here's why»</li>
+            <li>«IBCLC + La Leche League grounded»</li>
+            <li>«You're doing great. Let's troubleshoot together.»</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎁 WOW что закроет install</div>
+          <span class="wow-tag">🍼 Lactation persona 24/7</span>
+          <span class="wow-tag">📚 LLL/IBCLC grounded</span>
+          <span class="wow-tag">🔬 Hunger vs gas precision</span>
+          <span class="wow-tag">💚 No-judgment framing</span>
+          <p style="margin-top: 8px; font-size: 11px; color: #4a4a55;"><b>Где:</b></p>
+          <span class="slot-pin pin-2">SLOT 2 (badge)</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- WOW INVENTORY (NEW) -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="wow-inventory">
+    <h3>🤯 WOW Inventory — фишки которые заставят сказать «скачиваю»</h3>
+    <p style="font-size: 12px; color: #4a4a55; margin: 4px 0 8px;">
+      Каждая = scroll-stopping + share-worthy + конкретная цифра / уникальная механика. <b>Tier S</b> = должны быть в первых 3 screenshots. <b>Tier A</b> = slots 4-8 + paywall. <b>Tier B</b> = onboarding / app body.
+    </p>
+
+    <div class="wow-grid">
+
+      <!-- WOW 1: Voice mode 3am -->
+      <div class="wow-card" style="border: 2px solid #E8836A;">
+        <div class="wow-tier">🌟 Tier S · Slot 3</div>
+        <h4>🎙 «Don't open your eyes»</h4>
+        <div class="wow-quote">«It's 3am. He won't stop crying. ...» → answer plays via TTS — hands-free.</div>
+        <div class="wow-why"><b>Why WOW:</b> NONE из 7 competitors имеют voice mode. Visceral 3am moment каждый родитель узнаёт. Phone & mom both tired.</div>
+        <div class="wow-where"><b>Slot:</b> Hero slot 3 dark + onboarding WOW demo</div>
+      </div>
+
+      <!-- WOW 2: 3 sec verdict -->
+      <div class="wow-card" style="border: 2px solid #E8836A;">
+        <div class="wow-tier">🌟 Tier S · Slot 1</div>
+        <h4>⚡ «3 seconds vs 6 hours on Reddit»</h4>
+        <div class="wow-quote">Visible counter «00:03» рядом с verdict pill. Caption: «Reddit avg response: 6h. CrySnap: 3 sec.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Concrete time comparison. Quantifies pain (Reddit wait) vs solution. Shareable stat.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 1 hero + paywall value anchor</div>
+      </div>
+
+      <!-- WOW 3: Reasons not labels -->
+      <div class="wow-card" style="border: 2px solid #E8836A;">
+        <div class="wow-tier">🌟 Tier S · Slot 2</div>
+        <h4>💬 «Others give labels. We give reasons.»</h4>
+        <div class="wow-quote">Split: Nanni «HUNGRY» vs CrySnap «Try side-lying — easier latch when tongue tired by evening»</div>
+        <div class="wow-why"><b>Why WOW:</b> Direct compare = highest-CR pattern. Anxious mom мгновенно чувствует разницу. NB: формулировка subtle, не attack.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 2 hero only</div>
+      </div>
+
+      <!-- WOW 4: $1000 expert -->
+      <div class="wow-card">
+        <div class="wow-tier">⭐ Tier A · Slot 8 + paywall</div>
+        <h4>💰 «$1,000 of expert help for $39.99/yr»</h4>
+        <div class="wow-quote">Visual: $500 night nurse + $300 lactation + $150 sleep coach = $39.99 CrySnap</div>
+        <div class="wow-why"><b>Why WOW:</b> 25× value anchor. Justifies pricing. Memorable math.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 8 (pricing) + paywall hero</div>
+      </div>
+
+      <!-- WOW 5: Privacy moat -->
+      <div class="wow-card">
+        <div class="wow-tier">⭐ Tier A · Slot 7</div>
+        <h4>🔒 «Your baby's audio NEVER leaves your phone»</h4>
+        <div class="wow-quote">«100% on-device AI — even works on airplane mode. No cloud. No leaks.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Privacy moat for anxious S2. Apple-aligned messaging. Differentiator vs competitors using cloud APIs.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 7 + paywall trust strip</div>
+      </div>
+
+      <!-- WOW 6: Sleep prediction -->
+      <div class="wow-card">
+        <div class="wow-tier">⭐ Tier A · Slot 6</div>
+        <h4>📈 «Predict next nap from YOUR baby's pattern»</h4>
+        <div class="wow-quote">«Tonight: 10:00 PM swaddle, wake 2:15 AM (88% confidence). Tap to set alarm.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Personalization wow. Specific predicted time = concrete promise. Lin's exact need.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 6 + V1.1 paywall trigger</div>
+      </div>
+
+      <!-- WOW 7: 89% accuracy stat -->
+      <div class="wow-card">
+        <div class="wow-tier">⭐ Tier A · Slot 1 badges</div>
+        <h4>🔬 «89% accurate · 10,000+ recordings»</h4>
+        <div class="wow-quote">«Validated on 10,000+ peer-reviewed cry samples. Powered by DeepInfant + AAP guidelines.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Concrete authority stat. Anxiety relief signal. Differentiator vs «AI» buzzword.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 1 micro-strip + onb-4 proof</div>
+      </div>
+
+      <!-- WOW 8: 7-day trial -->
+      <div class="wow-card">
+        <div class="wow-tier">⭐ Tier A · Paywall</div>
+        <h4>🎁 «7 days free. Cancel anytime.»</h4>
+        <div class="wow-quote">«Get full 24/7 chat + voice + sounds for 7 days. Decide after.»</div>
+        <div class="wow-why"><b>Why WOW:</b> 7d > 3d (SOSA T2P 37.4% vs 25.5%, +47%). Covers peak cry week. Low-risk trial.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 8 + every paywall surface</div>
+      </div>
+
+      <!-- WOW 9: Live counter -->
+      <div class="wow-card">
+        <div class="wow-tier">📌 Tier B · Onboarding</div>
+        <h4>🌍 «5,247 parents helped tonight»</h4>
+        <div class="wow-quote">Live-feeling counter в onboarding screen 4 (proof). Updates monthly.</div>
+        <div class="wow-why"><b>Why WOW:</b> Social proof. Не «trusted by 1M» (vague), а concrete current usage. Caveat: добавляем когда реально ≥1000 nightly.</div>
+        <div class="wow-where"><b>Slot:</b> Onboarding-4 proof (V1.1+)</div>
+      </div>
+
+      <!-- WOW 10: PDF for pediatrician -->
+      <div class="wow-card">
+        <div class="wow-tier">📌 Tier B · App body</div>
+        <h4>📄 «PDF report for pediatrician visit»</h4>
+        <div class="wow-quote">«Tap → 1-page summary of week's patterns. Bring to appointment.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Practical utility. Validates app investment to skeptical partner. V1.1 feature.</div>
+        <div class="wow-where"><b>Slot:</b> App body + V1.1 paywall trigger</div>
+      </div>
+
+      <!-- WOW 11: Multi-baby -->
+      <div class="wow-card">
+        <div class="wow-tier">📌 Tier B · Profile</div>
+        <h4>👶👶 «Twins? Switch profiles in one tap»</h4>
+        <div class="wow-quote">Multi-baby support — separate cry history per child.</div>
+        <div class="wow-why"><b>Why WOW:</b> Underserved twin parents (~3% всех births = 110K/yr US). Mention в slot 5 personas «built for twin caregivers too».</div>
+        <div class="wow-where"><b>Slot:</b> Slot 5 sub-bullet (V1.1)</div>
+      </div>
+
+      <!-- WOW 12: Apple Watch -->
+      <div class="wow-card">
+        <div class="wow-tier">📌 Tier B · Future</div>
+        <h4>⌚ «One-tap scan from Apple Watch» (V2)</h4>
+        <div class="wow-quote">«Wrist tap → record cry → result on watch. Don't put baby down.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Hands-still-holding-baby moment. Wrist UX. Mention as «coming» в App Store description (V2).</div>
+        <div class="wow-where"><b>Slot:</b> Description V2 hint</div>
+      </div>
+
+    </div>
+
+    <p style="margin-top: 16px; padding: 10px 14px; background: white; border-radius: 8px; font-size: 12px; color: #4a4a55; line-height: 1.5;">
+      💡 <b>Slot allocation principle:</b> Tier S WOWs (3 штуки) → каждая получает свой слот в первых 3 screenshots. Tier A (5) → распределены по слотам 4-8 + paywall. Tier B (4) → onboarding / app body / V1.1+ paywall triggers.
+    </p>
+  </div>
+
   <!-- JTBD × Killer Features Matrix (visible, not collapsed) -->
   <div class="jtbd-matrix">
-    <h3>📊 JTBD pains × наши killer features → mapping на 3 слота</h3>
+    <h3>📊 4.1 — Quick reference: JTBD × killer features × slots</h3>
     <p style="font-size: 12px; color: #6a6a70; margin-bottom: 8px;">Каждая JTBD-боль решается конкретной killer feature. Те 3 слота которые охватывают maximum audience × pain intensity = первые 3 screenshots.</p>
 
     <table class="matrix-table">
