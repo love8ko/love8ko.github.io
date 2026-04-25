@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CrySnap — Design Workbench</title>
-<meta name="robots" content="noindex">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -43,7 +42,11 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
+  .palette-col:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .palette-col.selected { border: 3px solid #2e6b3a; background: #f0f9f1; }
   .col-header { text-align: center; }
   .col-title { font-size: 16px; font-weight: 700; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
   .col-tagline { font-size: 11px; color: #6a6a70; font-style: italic; margin-top: 2px; }
@@ -160,7 +163,7 @@
     color: white;
   }
 
-  /* Icon row */
+  /* Icon row in palette card */
   .icon-row {
     display: flex;
     align-items: center;
@@ -180,67 +183,6 @@
     font-size: 24px;
   }
 
-  /* Browse row */
-  .browse-row {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    overflow-x: auto;
-    padding: 16px;
-    background: #f5f5f7;
-    border-radius: 12px;
-    margin-top: 12px;
-  }
-  .browse-cell {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    flex-shrink: 0;
-  }
-  .browse-cell img {
-    width: 72px;
-    height: 72px;
-    border-radius: 16px;
-    object-fit: cover;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  }
-  .browse-icon-letter {
-    width: 72px; height: 72px;
-    border-radius: 16px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 28px;
-    font-family: -apple-system, "SF Pro Rounded", sans-serif;
-    font-weight: 800;
-    color: white;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  }
-  .browse-icon-img {
-    width: 72px;
-    height: 72px;
-    border-radius: 16px;
-    object-fit: cover;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  }
-  .browse-cell .label {
-    font-size: 10px;
-    color: #6a6a70;
-    width: 72px;
-    text-align: center;
-  }
-  .browse-divider {
-    width: 1px;
-    height: 90px;
-    background: #d0d0d6;
-    margin: 0 6px;
-  }
-  .browse-cell strong {
-    font-size: 9px;
-    color: #2a2a30;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
   /* Icon concept grid */
   .concepts-grid {
     display: grid;
@@ -254,7 +196,11 @@
     border-radius: 14px;
     padding: 14px;
     text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
+  .concept-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .concept-card.selected { border: 3px solid #b85a1a; background: #fff5ec; }
   .concept-card h3 { margin-bottom: 4px; }
   .concept-tagline { font-size: 11px; color: #6a6a70; margin-bottom: 12px; min-height: 32px; }
   .concept-img {
@@ -282,11 +228,12 @@
     border: 2px solid transparent;
     transition: transform 0.15s ease;
   }
-  .concept-variants .mini:hover { transform: scale(1.1); border-color: #ddd; }
+  .concept-variants .mini.active { border-color: #b85a1a; transform: scale(1.15); }
+  .concept-variants .mini:hover { transform: scale(1.1); }
   .concept-variants .mini img { width: 100%; height: 100%; }
-  .concept-meta { font-size: 11px; color: #6a6a70; margin-top: 8px; }
+  .concept-meta { font-size: 11px; color: #6a6a70; margin-top: 8px; line-height: 1.4; }
 
-  /* Browse row — 8 our icons + 7 competitor */
+  /* Browse row */
   .browse-section .row {
     display: flex;
     gap: 10px;
@@ -331,34 +278,78 @@
     line-height: 1.5;
   }
 
+  /* === Selection panel (sticky) === */
+  .selection-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #1a1a1f;
+    color: #f2edd5;
+    padding: 16px 20px;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    min-width: 280px;
+    z-index: 100;
+    font-size: 13px;
+  }
+  .selection-panel h3 {
+    color: white;
+    margin-bottom: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .selection-panel .field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    gap: 12px;
+  }
+  .selection-panel .field-label { color: #9CA0A8; font-size: 12px; }
+  .selection-panel .field-value { color: #F2967D; font-weight: 700; font-size: 12px; text-align: right; }
+  .selection-panel button {
+    margin-top: 10px;
+    background: #F2967D;
+    color: #0F1115;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100%;
+  }
+  .selection-panel button:hover { background: #E8836A; color: white; }
+
   @media (max-width: 1100px) {
     .palette-grid, .concepts-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 600px) {
     .palette-grid, .concepts-grid { grid-template-columns: 1fr; }
+    .selection-panel { position: static; margin-top: 20px; }
   }
 </style>
 </head>
 <body>
 
 <h1>CrySnap — Design Workbench</h1>
-<p class="lede">Live workbench для выбора палитры + иконки. Обновляется по мере итераций. Скрин в работе — не для public.</p>
+<p class="lede">Live workbench для выбора палитры + иконки. Кликни на карточку, чтобы выбрать. Выбор отображается в правом нижнем углу — потом скопируй и кинь мне в чат.</p>
 <p class="meta-info">
-  Source of truth: <code>apps/12-crysnap/docs/CONSILIUM_DESIGN_SYSTEM_2026-04-25_iter2.md</code> ·
-  <code>SCREENSHOTS_BRIEF_FIRST3.md</code>
+  Local: <code>file:///Users/sl/Documents/apps/12-crysnap/docs/palette-preview.html</code> ·
+  Deploy: <a href="https://love8ko.github.io/crysnap/design.html" target="_blank">love8ko.github.io/crysnap/design.html</a>
 </p>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!-- SECTION 1: 4 PALETTE OPTIONS -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section>
-  <h2>1. Палитра — 4 варианта</h2>
+  <h2>1. Палитра — 4 варианта <span style="font-size: 12px; color: #6a6a70; font-weight: normal;">кликни чтобы выбрать</span></h2>
   <p style="color: #6a6a70; margin-bottom: 8px;">Каждая показана в screenshot context (LIGHT — iter 2 решил что screenshots всегда light для CR). Сравни <b>icon</b> + <b>hero screenshot</b> + <b>paywall</b>.</p>
 
   <div class="palette-grid">
 
     <!-- A: Coral -->
-    <div class="palette-col">
+    <div class="palette-col" data-palette="A" onclick="selectPalette(this, 'A — Coral')">
       <div class="col-header">
         <div class="col-title">A — Coral 🟧</div>
         <div class="col-tagline">Iter 1 + 2 winner. Warm pediatric companion.</div>
@@ -396,7 +387,7 @@
     </div>
 
     <!-- B: Sage -->
-    <div class="palette-col">
+    <div class="palette-col" data-palette="B" onclick="selectPalette(this, 'B — Sage')">
       <div class="col-header">
         <div class="col-title">B — Sage 🌿</div>
         <div class="col-tagline">Evidence-based wellness. AAP authority signal.</div>
@@ -434,7 +425,7 @@
     </div>
 
     <!-- D: Coral + Sage Dual -->
-    <div class="palette-col" style="border: 2px solid #2e6b3a;">
+    <div class="palette-col" data-palette="D" onclick="selectPalette(this, 'D — Coral+Sage dual')">
       <div class="col-header">
         <div class="col-title">D — Coral + Sage 🟧🌿</div>
         <div class="col-tagline"><span class="pill pill-recommended">Recommended</span></div>
@@ -473,7 +464,7 @@
     </div>
 
     <!-- C: Linen Rose -->
-    <div class="palette-col">
+    <div class="palette-col" data-palette="C" onclick="selectPalette(this, 'C — Linen Rose')">
       <div class="col-header">
         <div class="col-title">C — Linen Rose 🍼</div>
         <div class="col-tagline">Boutique premium. Justifies $59/yr tier.</div>
@@ -517,23 +508,23 @@
 <!-- SECTION 2: 4 ICON CONCEPTS -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section>
-  <h2>2. Иконка — 4 концепта <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">phase 2 sketch</span></h2>
-  <p style="color: #6a6a70; margin-bottom: 8px;">Каждый концепт — на dark navy bg `#0F1115`. Большой preview = coral вариант. Маленькие справа = тот же концепт в sage `#9CB892`. Финальная palette будет согласована с выбором палитры из раздела 1.</p>
+  <h2>2. Иконка — 4 концепта <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">phase 2 sketch</span> <span style="font-size: 12px; color: #6a6a70; font-weight: normal;">кликни концепт + glow</span></h2>
+  <p style="color: #6a6a70; margin-bottom: 8px;">Каждый концепт — на dark navy bg <code>#0F1115</code>. Кликни на маленький превью под концептом чтобы переключить glow цвет (coral / sage). Главный preview обновится.</p>
 
   <div class="concepts-grid">
 
     <!-- Concept 1: Letter C + Waveform Halo -->
-    <div class="concept-card">
+    <div class="concept-card" data-concept="1" onclick="selectConcept(this, '1. C + Waveform Halo')">
       <h3>1. C + Waveform Halo</h3>
       <p class="concept-tagline">Typographic. Letterform + crescent of sound bars above. Brand letter visible at small sizes.</p>
       <div class="concept-img">
-        <img src="icons/01-letter-c-waveform-coral.png" alt="C with waveform halo (coral)">
+        <img id="img-1" src="icons/01-letter-c-waveform-coral.png" alt="C with waveform halo">
       </div>
       <div class="concept-variants">
-        <div class="mini" title="Coral variant">
+        <div class="mini active" data-glow="coral" data-base="01-letter-c-waveform" onclick="event.stopPropagation(); switchGlow(this, 1, 'coral')">
           <img src="icons/01-letter-c-waveform-coral.png">
         </div>
-        <div class="mini" title="Sage variant">
+        <div class="mini" data-glow="sage" data-base="01-letter-c-waveform" onclick="event.stopPropagation(); switchGlow(this, 1, 'sage')">
           <img src="icons/01-letter-c-waveform-sage.png">
         </div>
       </div>
@@ -541,63 +532,63 @@
     </div>
 
     <!-- Concept 2: Speech Bubble (Chat-first) -->
-    <div class="concept-card" style="border: 2px solid #b85a1a;">
+    <div class="concept-card" data-concept="2" onclick="selectConcept(this, '2. Speech Bubble + Sound')">
       <h3>2. Speech Bubble + Sound</h3>
-      <p class="concept-tagline"><span class="pill pill-killer">Chat killer feature</span><br>Bubble = chat metaphor. Sound bars inside = cry/voice. Combines killer feature #1 + #2.</p>
+      <p class="concept-tagline"><span class="pill pill-killer">Chat killer feature</span><br>Bubble = chat. Sound bars inside = cry/voice. Killer #1 + #2 combo.</p>
       <div class="concept-img">
-        <img src="icons/02-speech-bubble-coral.png" alt="Speech bubble with sound bars (coral)">
+        <img id="img-2" src="icons/02-speech-bubble-coral.png" alt="Speech bubble with sound bars">
       </div>
       <div class="concept-variants">
-        <div class="mini" title="Coral variant">
+        <div class="mini active" data-glow="coral" data-base="02-speech-bubble" onclick="event.stopPropagation(); switchGlow(this, 2, 'coral')">
           <img src="icons/02-speech-bubble-coral.png">
         </div>
-        <div class="mini" title="Sage variant">
+        <div class="mini" data-glow="sage" data-base="02-speech-bubble" onclick="event.stopPropagation(); switchGlow(this, 2, 'sage')">
           <img src="icons/02-speech-bubble-sage.png">
         </div>
       </div>
-      <div class="concept-meta"><b>Pros:</b> Tells «chat about cry» visually · Differentiates from Nanni/AYA labels · Most aligned с killer #1<br><b>Cons:</b> Could read «messaging app» without context</div>
+      <div class="concept-meta"><b>Pros:</b> Tells «chat about cry» visually · Differentiates from Nanni labels · Most aligned с killer #1<br><b>Cons:</b> Could read «messaging app»</div>
     </div>
 
     <!-- Concept 3: Voice Waveform Abstract -->
-    <div class="concept-card">
+    <div class="concept-card" data-concept="3" onclick="selectConcept(this, '3. Voice Waveform')">
       <h3>3. Voice Waveform</h3>
       <p class="concept-tagline">Pure sound abstraction. Symmetric bell curve = listening + analysis. No letter.</p>
       <div class="concept-img">
-        <img src="icons/03-voice-waveform-coral.png" alt="Voice waveform abstract (coral)">
+        <img id="img-3" src="icons/03-voice-waveform-coral.png" alt="Voice waveform abstract">
       </div>
       <div class="concept-variants">
-        <div class="mini" title="Coral variant">
+        <div class="mini active" data-glow="coral" data-base="03-voice-waveform" onclick="event.stopPropagation(); switchGlow(this, 3, 'coral')">
           <img src="icons/03-voice-waveform-coral.png">
         </div>
-        <div class="mini" title="Sage variant">
+        <div class="mini" data-glow="sage" data-base="03-voice-waveform" onclick="event.stopPropagation(); switchGlow(this, 3, 'sage')">
           <img src="icons/03-voice-waveform-sage.png">
         </div>
       </div>
-      <div class="concept-meta"><b>Pros:</b> Unique shape · Voice mode wedge · Could become brand asset<br><b>Cons:</b> «Audio app»? Could clash с Spotify/Voice memos perception</div>
+      <div class="concept-meta"><b>Pros:</b> Unique shape · Voice mode wedge · Brand asset potential<br><b>Cons:</b> Could clash с Spotify/Voice memos</div>
     </div>
 
     <!-- Concept 4: Heart + ECG -->
-    <div class="concept-card">
+    <div class="concept-card" data-concept="4" onclick="selectConcept(this, '4. Heart + Heartbeat')">
       <h3>4. Heart + Heartbeat</h3>
       <p class="concept-tagline">Emotional + medical. Heart shape (warmth) + ECG line (pulse + sound).</p>
       <div class="concept-img">
-        <img src="icons/04-heart-waveform-coral.png" alt="Heart with ECG line (coral)">
+        <img id="img-4" src="icons/04-heart-waveform-coral.png" alt="Heart with ECG line">
       </div>
       <div class="concept-variants">
-        <div class="mini" title="Coral variant">
+        <div class="mini active" data-glow="coral" data-base="04-heart-waveform" onclick="event.stopPropagation(); switchGlow(this, 4, 'coral')">
           <img src="icons/04-heart-waveform-coral.png">
         </div>
-        <div class="mini" title="Sage variant">
+        <div class="mini" data-glow="sage" data-base="04-heart-waveform" onclick="event.stopPropagation(); switchGlow(this, 4, 'sage')">
           <img src="icons/04-heart-waveform-sage.png">
         </div>
       </div>
-      <div class="concept-meta"><b>Pros:</b> Emotional warmth · Health & Fitness category fit · Recognizable<br><b>Cons:</b> Generic «health app» · Many competitors use heart</div>
+      <div class="concept-meta"><b>Pros:</b> Emotional warmth · Health & Fitness fit<br><b>Cons:</b> Generic «health app» · Many use heart</div>
     </div>
 
   </div>
 
   <p class="footnote">
-    💡 Все иконки — sketch direction (программно сгенерированы PIL). Финальный icon = professional commission после approval концепта + палитры. Это ranged proof-of-concept чтобы выбрать direction, не финальный asset.
+    💡 Все иконки — sketch direction (программно сгенерированы PIL). Финальный icon = professional commission после approval концепта + палитры. Это proof-of-concept для выбора direction.
   </p>
 </section>
 
@@ -606,7 +597,7 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="browse-section">
   <h2>3. App Store browse row simulation</h2>
-  <p style="color: #6a6a70; margin-bottom: 4px;">Левая половина — наши 8 кандидатов (4 концепта × 2 палитры). Правая — реальные иконки 7 конкурентов.</p>
+  <p style="color: #6a6a70; margin-bottom: 4px;">Левая половина — наши 8 кандидатов. Правая — реальные иконки 7 конкурентов.</p>
 
   <h3 style="margin-top: 16px;">Наши 8 кандидатов</h3>
   <div class="row">
@@ -677,37 +668,80 @@
   </div>
 
   <p class="footnote">
-    💡 <b>Все 8 наших кандидатов выделяются</b> за счёт dark backgrounds (vs все competitors на light). Главные вопросы:
-    <ol style="margin: 10px 0 0 24px; line-height: 1.7;">
-      <li>Какой <b>концепт</b> — letter / speech / waveform / heart?</li>
-      <li>Какая <b>палитра glow</b> — coral (warm/active) или sage (calm/trust)?</li>
-      <li>Чёрный фон (наш default) — стоит ли реально его держать, или попробовать medium navy для ещё большего contrast?</li>
-    </ol>
+    💡 <b>Все 8 наших кандидатов выделяются</b> за счёт dark backgrounds (vs все competitors на light).
   </p>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- SECTION 4: VOTING -->
+<!-- SELECTION PANEL (sticky) -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section>
-  <h2>4. Что нужно решить</h2>
-  <ul style="margin-left: 20px; line-height: 1.8;">
-    <li><b>Палитра:</b> A coral / B sage / <span class="pill pill-recommended">D coral+sage dual</span> / C linen rose</li>
-    <li><b>Icon концепт:</b> 1. C halo / <span class="pill pill-killer">2. Speech bubble (chat killer)</span> / 3. Voice waveform / 4. Heart ECG</li>
-    <li><b>Icon glow:</b> coral (warm) или sage (calm/trust)</li>
-    <li><b>Default mode:</b> System + smart 3am prompt ✓ (locked iter 2)</li>
-    <li><b>Screenshots mode:</b> 7 light + 1 dark slot 3 (voice mode 3am) ✓ (recommended iter 2)</li>
-    <li><b>Hero treatment slot 1:</b> Illustrated mom + baby + waveform overlay + AAP badges ✓ (recommended SCREENSHOTS_BRIEF_FIRST3.md)</li>
-  </ul>
-  <p class="footnote" style="margin-top: 16px;">
-    Скажи в чате что выбираешь по каждому пункту → обновлю DESIGN_SYSTEM.md, meta.yaml, sync на дашборд.
-  </p>
-</section>
+<div class="selection-panel">
+  <h3>📋 Твой выбор</h3>
+  <div class="field">
+    <span class="field-label">Палитра:</span>
+    <span class="field-value" id="sel-palette">не выбрано</span>
+  </div>
+  <div class="field">
+    <span class="field-label">Icon концепт:</span>
+    <span class="field-value" id="sel-concept">не выбран</span>
+  </div>
+  <div class="field">
+    <span class="field-label">Icon glow:</span>
+    <span class="field-value" id="sel-glow">не выбран</span>
+  </div>
+  <button onclick="copySelection()">📋 Скопировать выбор</button>
+  <div id="copy-toast" style="display:none; margin-top:8px; font-size:11px; color:#9CB892; text-align:center;">Скопировано!</div>
+</div>
+
+<script>
+  const selection = { palette: null, concept: null, glow: null };
+
+  function selectPalette(el, label) {
+    document.querySelectorAll('.palette-col').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    selection.palette = label;
+    document.getElementById('sel-palette').textContent = label;
+  }
+
+  function selectConcept(el, label) {
+    document.querySelectorAll('.concept-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    selection.concept = label;
+    document.getElementById('sel-concept').textContent = label;
+    // Auto-set glow from current active variant within this concept
+    const activeMini = el.querySelector('.mini.active');
+    if (activeMini) {
+      const glow = activeMini.dataset.glow;
+      selection.glow = glow;
+      document.getElementById('sel-glow').textContent = glow;
+    }
+  }
+
+  function switchGlow(miniEl, conceptNum, glow) {
+    const card = miniEl.closest('.concept-card');
+    card.querySelectorAll('.mini').forEach(m => m.classList.remove('active'));
+    miniEl.classList.add('active');
+    const base = miniEl.dataset.base;
+    document.getElementById(`img-${conceptNum}`).src = `icons/${base}-${glow}.png`;
+    if (card.classList.contains('selected')) {
+      selection.glow = glow;
+      document.getElementById('sel-glow').textContent = glow;
+    }
+  }
+
+  function copySelection() {
+    const text = `Палитра: ${selection.palette || 'не выбрано'}\nIcon концепт: ${selection.concept || 'не выбран'}\nIcon glow: ${selection.glow || 'не выбран'}`;
+    navigator.clipboard.writeText(text).then(() => {
+      const toast = document.getElementById('copy-toast');
+      toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 2000);
+    });
+  }
+</script>
 
 <p style="margin-top: 24px; color: #8a8a90; font-size: 11px; text-align: center;">
   Source: <code>apps/12-crysnap/docs/CONSILIUM_DESIGN_SYSTEM_2026-04-25_iter2.md</code> ·
-  CrySnap design workbench · 2026-04-25 ·
-  <a href="https://github.com/love8ko/love8ko.github.io/tree/main/crysnap" style="color: #8a8a90;">repo</a>
+  CrySnap design workbench · 2026-04-25
 </p>
 
 </body>
