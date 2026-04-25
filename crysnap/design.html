@@ -1039,9 +1039,254 @@
   }
 </style>
 
+<style>
+  .jtbd-matrix {
+    margin: 16px 0 24px;
+    background: #fafafa;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid #ebebef;
+  }
+  .jtbd-matrix h3 { margin-bottom: 8px; font-size: 16px; }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 13px;
+  }
+  .matrix-table th {
+    background: #f0f0f3;
+    padding: 10px;
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #4a4a55;
+    border-bottom: 2px solid #ddd;
+  }
+  .matrix-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ebebef;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .matrix-table tr:last-child td { border-bottom: none; }
+  .matrix-table .pain { color: #b85a4d; font-weight: 600; font-size: 12.5px; }
+  .matrix-table .feat { font-size: 11.5px; color: #2e6b3a; }
+  .matrix-table .slot-tag {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 2px 3px 2px 0;
+  }
+  .matrix-table .slot-1 { background: #fff4e6; color: #b85a1a; }
+  .matrix-table .slot-2 { background: #f0f3ff; color: #4a5fc1; }
+  .matrix-table .slot-3 { background: #1a1a1f; color: #F2967D; }
+  .matrix-table .audience-rank {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .ar-1 { background: #ffe5d4; color: #b85a1a; }
+  .ar-2 { background: #ffeac9; color: #c97500; }
+  .ar-3 { background: #fff4d4; color: #a07b00; }
+  .ar-4 { background: #f0f0f3; color: #6a6a70; }
+
+  .killer-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .killer-card {
+    background: white;
+    border: 2px solid #ebebef;
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .killer-card.tier-1 { border-color: #E8836A; background: #fff8f4; }
+  .killer-card.tier-2 { border-color: #C49A4A; background: #fffbf2; }
+  .killer-card .tier-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .killer-card.tier-1 .tier-label { color: #b85a1a; }
+  .killer-card.tier-2 .tier-label { color: #a07b00; }
+  .killer-card h4 { font-size: 14px; margin-bottom: 6px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .killer-card p { font-size: 12px; line-height: 1.45; color: #4a4a55; }
+  .killer-card .competitive {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #6a6a70;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  @media (max-width: 800px) {
+    .killer-card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
 <section>
   <h2>4. Концепты 3 первых screenshots <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">85% CR decision</span></h2>
   <p class="section-intro">Apple показывает первые 3 БЕЗ тапа в search results — это и есть весь download decision. Каждый слот должен показать конкретную killer feature + JTBD pain в один взгляд (0.4 sec scan time). Расположение элементов и copy подбираются чтобы поднять CTR install.</p>
+
+  <!-- JTBD × Killer Features Matrix (visible, not collapsed) -->
+  <div class="jtbd-matrix">
+    <h3>📊 JTBD pains × наши killer features → mapping на 3 слота</h3>
+    <p style="font-size: 12px; color: #6a6a70; margin-bottom: 8px;">Каждая JTBD-боль решается конкретной killer feature. Те 3 слота которые охватывают maximum audience × pain intensity = первые 3 screenshots.</p>
+
+    <table class="matrix-table">
+      <tr>
+        <th style="width: 18%;">Audience</th>
+        <th style="width: 28%;">Главная боль (JTBD)</th>
+        <th style="width: 28%;">Какая киллер фича решает</th>
+        <th style="width: 26%;">На каких слотах размещаем</th>
+      </tr>
+
+      <tr>
+        <td>
+          <span class="audience-rank ar-1">🥇 #1</span><br>
+          <b>Maya 28</b><br>
+          <span style="font-size: 11px; color: #6a6a70;">S1 new mother 0-4 mo<br>2-3M US active<br>🔴 EXTREME WTP</span>
+        </td>
+        <td><span class="pain">«3am, baby плачет 40 минут, fed/changed/rocked — ничего не работает. Я сама сейчас заплачу.»</span><br>
+          <span style="font-size: 11px; color: #6a6a70; margin-top: 4px; display:block;">Состояние: exhaustion + guilt + desperation</span>
+        </td>
+        <td>
+          <span class="feat">🎙 <b>Voice mode</b> — hands-free 3am, не открывает глаза, ~5 sec ответ</span><br><br>
+          <span class="feat">🔊 <b>9-class cry analyzer</b> — DeepInfant 3 sec verdict «🟢 hungry 87%»</span>
+        </td>
+        <td>
+          <span class="slot-tag slot-3">SLOT 3 (peak)</span><br>
+          <span style="font-size: 11px; color: #6a6a70;">Voice mode dark «3am phone dead-tired»</span><br><br>
+          <span class="slot-tag slot-1">SLOT 1 (hook)</span><br>
+          <span style="font-size: 11px; color: #6a6a70;">Cry verdict pill в hero</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <span class="audience-rank ar-2">🥈 #2</span><br>
+          <b>Sarah 31</b><br>
+          <span style="font-size: 11px; color: #6a6a70;">First-time anxious<br>4-5M US incl dads<br>🟠 HIGH WTP</span>
+        </td>
+        <td><span class="pain">«Это нормально что он так долго плачет? Reddit ответит через 6 часов. Мама не знает. Google пугает.»</span><br>
+          <span style="font-size: 11px; color: #6a6a70; margin-top: 4px; display:block;">Состояние: anxiety + self-doubt + isolation</span>
+        </td>
+        <td>
+          <span class="feat">💬 <b>3 expert chat personas</b> — Pediatric Nurse 24/7 даёт REASONS не labels</span><br><br>
+          <span class="feat">📚 <b>AAP/CDC/Mayo grounding</b> — RAG-cited authority</span>
+        </td>
+        <td>
+          <span class="slot-tag slot-2">SLOT 2 (diff)</span><br>
+          <span style="font-size: 11px; color: #6a6a70;">«Others give labels» split-screen с nurse persona</span><br><br>
+          <span class="slot-tag slot-1">SLOT 1</span>
+          <span style="font-size: 11px; color: #6a6a70;">AAP badge strip</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <span class="audience-rank ar-3">🥉 #3</span><br>
+          <b>Lin 33</b><br>
+          <span style="font-size: 11px; color: #6a6a70;">2-4 mo postpartum<br>1.5M US<br>🟡 MED-HIGH WTP</span>
+        </td>
+        <td><span class="pain">«Я сплю 3 часа в сутки, когда это кончится? Партнёр не понимает.»</span><br>
+          <span style="font-size: 11px; color: #6a6a70; margin-top: 4px; display:block;">Состояние: chronic exhaustion + frustration</span>
+        </td>
+        <td>
+          <span class="feat">🌙 <b>Sleep Coach persona</b> — wake windows, sleep regression help</span><br><br>
+          <span class="feat">📈 <b>Sleep prediction (V1.1)</b> — when next nap based on 7d patterns</span>
+        </td>
+        <td>
+          <span class="slot-tag slot-2">SLOT 2</span>
+          <span style="font-size: 11px; color: #6a6a70;">«SLEEP COACH» badge в персонах</span><br><br>
+          <span style="font-size: 11px; color: #6a6a70;">+ Slots 5-6 (deeper)</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <span class="audience-rank ar-4">#4</span><br>
+          <b>Carla 29</b><br>
+          <span style="font-size: 11px; color: #6a6a70;">Breastfeeding<br>1M US<br>🟡 MED-HIGH WTP</span>
+        </td>
+        <td><span class="pain">«Что не так с моим молоком? Baby плачет после feeds. Партнёр предлагает formula. Я feel failed.»</span><br>
+          <span style="font-size: 11px; color: #6a6a70; margin-top: 4px; display:block;">Состояние: self-blame + supply anxiety</span>
+        </td>
+        <td>
+          <span class="feat">🍼 <b>Lactation Consultant persona</b> — IBCLC + La Leche grounding</span><br><br>
+          <span class="feat">🔊 <b>Hunger vs discomfort discrimination</b> — точный verdict</span>
+        </td>
+        <td>
+          <span class="slot-tag slot-2">SLOT 2</span>
+          <span style="font-size: 11px; color: #6a6a70;">«LACTATION» badge в персонах</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Killer Features Cards -->
+  <h3 style="margin-top: 24px; font-size: 16px;">🚀 Наши killer features (что мы умеем уникально)</h3>
+  <p style="font-size: 12px; color: #6a6a70; margin: 4px 0 0;">Tier 1 (must-be-in-first-3-screenshots) + Tier 2 (slots 4-8 + paywall).</p>
+
+  <div class="killer-card-grid">
+
+    <div class="killer-card tier-1">
+      <div class="tier-label">🥇 Tier 1 · Killer #1</div>
+      <h4>💬 3 expert chat personas</h4>
+      <p>Pediatric Nurse / Sleep Coach / Lactation Consultant — 24/7. DeepSeek V3 + RAG (AAP/CDC/Mayo/LLL).</p>
+      <div class="competitive">vs Nanni: <b>label only, no chat</b><br>vs AYA: <b>tracker only, no chat</b><br>vs ChatterBaby: <b>abandoned 5y</b></div>
+    </div>
+
+    <div class="killer-card tier-1">
+      <div class="tier-label">🥇 Tier 1 · Killer #2</div>
+      <h4>🎙 Voice mode hands-free 3am</h4>
+      <p>Whisper STT → DeepSeek → Apple TTS = ~5 sec. Не открывая глаз. UNIQUE feature.</p>
+      <div class="competitive">vs ВСЕ 7 competitors: <b>NONE имеют voice mode</b></div>
+    </div>
+
+    <div class="killer-card tier-1">
+      <div class="tier-label">🥇 Tier 1 · Killer #3</div>
+      <h4>🔊 9-class cry analyzer + traffic-light</h4>
+      <p>DeepInfant V2 CoreML on-device, 89% accuracy. Hungry/burp/cold-hot 🟢 · tired/lonely/discomfort 🟡 · pain/scared/unknown 🔴.</p>
+      <div class="competitive">Most competitors дают label only без bucket framework + actions</div>
+    </div>
+
+    <div class="killer-card tier-2">
+      <div class="tier-label">🥈 Tier 2</div>
+      <h4>📚 AAP / CDC / Mayo / LLL grounding</h4>
+      <p>RAG-cited responses в каждом chat reply. Authority moat для anxious S2 audience.</p>
+      <div class="competitive">Nanni имеет «WHO/MIT/McGill» — proven CR converter. Мы делаем то же.</div>
+    </div>
+
+    <div class="killer-card tier-2">
+      <div class="tier-label">🥈 Tier 2</div>
+      <h4>🔒 On-device privacy</h4>
+      <p>DeepInfant CoreML — audio NEVER leaves device. Works offline в 3am no WiFi.</p>
+      <div class="competitive">Privacy moat для anxious parents (S2 segment)</div>
+    </div>
+
+    <div class="killer-card tier-2">
+      <div class="tier-label">🥈 Tier 2</div>
+      <h4>🌊 In-app soothing sounds</h4>
+      <p>White noise / womb / shushing (Karp 70dB) / lullabies / heartbeat. Background audio mode.</p>
+      <div class="competitive">«I'd buy app just for sounds» reaction. Day 1 immediate utility.</div>
+    </div>
+  </div>
+
+  <p style="font-size: 13px; color: #4a4a55; margin: 8px 0 16px; padding: 10px 14px; background: #fff4e6; border-radius: 8px; border-left: 3px solid #E8836A;">
+    🎯 <b>Slot allocation logic:</b> Из 3 Tier-1 killer features → каждый получает свой слот. Из 4 JTBDs → #1 (Maya 3am extreme) занимает slot 1 + slot 3 (largest audience × extreme pain), #2 (Sarah anxious) занимает slot 2 (validates с chat persona). #3 + #4 покрываются через slot 2 personas badge strip + slots 4-8 deeper.
+  </p>
 
   <div class="hero-trio">
 
