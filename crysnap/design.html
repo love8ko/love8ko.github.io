@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CrySnap — Design Workbench</title>
+<meta name="robots" content="noindex">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    background: #f0f0f3;
+    color: #1a1a1f;
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 30px; margin-bottom: 4px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  h2 { font-size: 22px; margin-bottom: 8px; margin-top: 8px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  h3 { font-size: 16px; margin-bottom: 4px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .lede { color: #5a5a60; margin-bottom: 32px; max-width: 720px; }
+  .meta-info { font-size: 12px; color: #8a8a90; margin-bottom: 24px; }
+
+  section {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+
+  /* === Palette grid === */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 16px;
+  }
+  .palette-col {
+    background: #fafafa;
+    border: 1px solid #ebebef;
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .col-header { text-align: center; }
+  .col-title { font-size: 16px; font-weight: 700; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .col-tagline { font-size: 11px; color: #6a6a70; font-style: italic; margin-top: 2px; }
+  .swatch-strip {
+    display: flex;
+    height: 28px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .swatch-strip > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 8px;
+    font-family: ui-monospace, monospace;
+    font-weight: 700;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  }
+  .ss-mode-label {
+    font-size: 9px;
+    color: #6a6a70;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+
+  /* === Screenshot mockup === */
+  .screenshot {
+    border-radius: 14px;
+    padding: 14px 12px;
+    aspect-ratio: 9/16;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+  }
+  .ss-headline {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+  .ss-scene {
+    flex: 1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+    text-align: center;
+  }
+  .scene-emoji { font-size: 32px; }
+  .scene-waveform {
+    width: 100%;
+    height: 14px;
+    border-radius: 5px;
+    background-image: linear-gradient(90deg, currentColor 30%, transparent 30%);
+    background-size: 5px 100%;
+    opacity: 0.4;
+  }
+  .verdict-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 9px;
+    font-weight: 700;
+  }
+  .ss-subline { font-size: 10px; line-height: 1.3; }
+  .ss-badge { display: flex; gap: 3px; justify-content: center; flex-wrap: wrap; margin-top: auto; }
+  .ss-badge span {
+    background: rgba(0,0,0,0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    opacity: 0.7;
+  }
+
+  /* === Paywall mockup === */
+  .paywall {
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .paywall-title { font-size: 10px; font-weight: 700; }
+  .plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 9px;
+    border-radius: 7px;
+    font-size: 9px;
+    border: 1.5px solid;
+  }
+  .plan.selected { color: white; }
+  .plan-price { font-weight: 700; }
+  .cta {
+    text-align: center;
+    padding: 8px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+  }
+
+  /* Icon row */
+  .icon-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    background: #f5f5f7;
+    border-radius: 10px;
+  }
+  .icon-cell {
+    width: 56px; height: 56px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+  }
+
+  /* Browse row */
+  .browse-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding: 16px;
+    background: #f5f5f7;
+    border-radius: 12px;
+    margin-top: 12px;
+  }
+  .browse-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .browse-cell img {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  .browse-icon-letter {
+    width: 72px; height: 72px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  .browse-icon-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  .browse-cell .label {
+    font-size: 10px;
+    color: #6a6a70;
+    width: 72px;
+    text-align: center;
+  }
+  .browse-divider {
+    width: 1px;
+    height: 90px;
+    background: #d0d0d6;
+    margin: 0 6px;
+  }
+  .browse-cell strong {
+    font-size: 9px;
+    color: #2a2a30;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Icon concept grid */
+  .concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 16px;
+  }
+  .concept-card {
+    background: #fafafa;
+    border: 1px solid #ebebef;
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+  }
+  .concept-card h3 { margin-bottom: 4px; }
+  .concept-tagline { font-size: 11px; color: #6a6a70; margin-bottom: 12px; min-height: 32px; }
+  .concept-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 22px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+  .concept-img img { width: 100%; height: 100%; display: block; }
+  .concept-variants {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 6px;
+  }
+  .concept-variants .mini {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.15s ease;
+  }
+  .concept-variants .mini:hover { transform: scale(1.1); border-color: #ddd; }
+  .concept-variants .mini img { width: 100%; height: 100%; }
+  .concept-meta { font-size: 11px; color: #6a6a70; margin-top: 8px; }
+
+  /* Browse row — 8 our icons + 7 competitor */
+  .browse-section .row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 14px;
+    background: #f5f5f7;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin-bottom: 12px;
+  }
+  .icon-mini {
+    width: 64px; height: 64px;
+    border-radius: 14px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  .row-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .row-cell .label { font-size: 9px; color: #6a6a70; width: 64px; text-align: center; line-height: 1.2; }
+
+  .pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .pill-recommended { background: #e8f5e9; color: #2e6b3a; }
+  .pill-killer { background: #fff4e6; color: #b85a1a; }
+
+  .footnote {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #6a6a70;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1100px) {
+    .palette-grid, .concepts-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .palette-grid, .concepts-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<h1>CrySnap — Design Workbench</h1>
+<p class="lede">Live workbench для выбора палитры + иконки. Обновляется по мере итераций. Скрин в работе — не для public.</p>
+<p class="meta-info">
+  Source of truth: <code>apps/12-crysnap/docs/CONSILIUM_DESIGN_SYSTEM_2026-04-25_iter2.md</code> ·
+  <code>SCREENSHOTS_BRIEF_FIRST3.md</code>
+</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: 4 PALETTE OPTIONS -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <h2>1. Палитра — 4 варианта</h2>
+  <p style="color: #6a6a70; margin-bottom: 8px;">Каждая показана в screenshot context (LIGHT — iter 2 решил что screenshots всегда light для CR). Сравни <b>icon</b> + <b>hero screenshot</b> + <b>paywall</b>.</p>
+
+  <div class="palette-grid">
+
+    <!-- A: Coral -->
+    <div class="palette-col">
+      <div class="col-header">
+        <div class="col-title">A — Coral 🟧</div>
+        <div class="col-tagline">Iter 1 + 2 winner. Warm pediatric companion.</div>
+      </div>
+      <div class="swatch-strip">
+        <div style="background:#E8836A">#E8836A</div>
+        <div style="background:#5A8A6B">#5A8A6B</div>
+        <div style="background:#C49A4A">#C49A4A</div>
+        <div style="background:#C25C4F">#C25C4F</div>
+      </div>
+      <div class="ss-mode-label">Icon — dark</div>
+      <div class="icon-row"><div class="icon-cell" style="background:#0F1115; color:#F2967D">C</div></div>
+      <div class="ss-mode-label">Screenshot — light</div>
+      <div class="screenshot" style="background:#FAF7F2; color:#1A1A1F;">
+        <div class="ss-headline">Your baby has<br>something to say.</div>
+        <div class="ss-scene" style="background:#F2EDE5;">
+          <div class="scene-emoji">👩‍🍼</div>
+          <div class="scene-waveform" style="color:#E8836A;"></div>
+          <div class="verdict-pill" style="background:#5A8A6B; color:white;">🟢 HUNGRY 87%</div>
+        </div>
+        <div class="ss-subline">We help you listen in 3 seconds.</div>
+        <div class="ss-badge"><span>AAP</span><span>CDC</span><span>MAYO</span><span>LLL</span></div>
+      </div>
+      <div class="ss-mode-label">Paywall</div>
+      <div class="paywall" style="background:#FFFFFF; border: 1px solid #EAE5DD;">
+        <div class="paywall-title">Your 24/7 baby team</div>
+        <div class="plan selected" style="background:#E8836A; border-color:#E8836A;">
+          <span>Weekly + 7-day trial</span><span class="plan-price">$4.99</span>
+        </div>
+        <div class="plan" style="border-color:#E0D9CF;">
+          <span>Annual SAVE 85%</span><span class="plan-price">$39.99</span>
+        </div>
+        <div class="cta" style="background:#E8836A;">Start 7-day free trial</div>
+      </div>
+    </div>
+
+    <!-- B: Sage -->
+    <div class="palette-col">
+      <div class="col-header">
+        <div class="col-title">B — Sage 🌿</div>
+        <div class="col-tagline">Evidence-based wellness. AAP authority signal.</div>
+      </div>
+      <div class="swatch-strip">
+        <div style="background:#7A9A6E">#7A9A6E</div>
+        <div style="background:#C97D4F">#C97D4F</div>
+        <div style="background:#4F8059">#4F8059</div>
+        <div style="background:#B85A4D">#B85A4D</div>
+      </div>
+      <div class="ss-mode-label">Icon — dark</div>
+      <div class="icon-row"><div class="icon-cell" style="background:#1A1F1C; color:#9CB892">C</div></div>
+      <div class="ss-mode-label">Screenshot — light</div>
+      <div class="screenshot" style="background:#F5F2EC; color:#2A3328;">
+        <div class="ss-headline">Your baby has<br>something to say.</div>
+        <div class="ss-scene" style="background:#EAE5DA;">
+          <div class="scene-emoji">👩‍🍼</div>
+          <div class="scene-waveform" style="color:#7A9A6E;"></div>
+          <div class="verdict-pill" style="background:#4F8059; color:white;">🟢 HUNGRY 87%</div>
+        </div>
+        <div class="ss-subline">We help you listen in 3 seconds.</div>
+        <div class="ss-badge"><span>AAP</span><span>CDC</span><span>MAYO</span><span>LLL</span></div>
+      </div>
+      <div class="ss-mode-label">Paywall</div>
+      <div class="paywall" style="background:#FFFFFF; border: 1px solid #DCD4BD;">
+        <div class="paywall-title">Your 24/7 baby team</div>
+        <div class="plan selected" style="background:#C97D4F; border-color:#C97D4F;">
+          <span>Weekly + 7-day trial</span><span class="plan-price">$4.99</span>
+        </div>
+        <div class="plan" style="border-color:#D9D2C2;">
+          <span>Annual SAVE 85%</span><span class="plan-price">$39.99</span>
+        </div>
+        <div class="cta" style="background:#C97D4F;">Start 7-day free trial</div>
+      </div>
+    </div>
+
+    <!-- D: Coral + Sage Dual -->
+    <div class="palette-col" style="border: 2px solid #2e6b3a;">
+      <div class="col-header">
+        <div class="col-title">D — Coral + Sage 🟧🌿</div>
+        <div class="col-tagline"><span class="pill pill-recommended">Recommended</span></div>
+        <div class="col-tagline" style="margin-top: 4px;">NEW. Coral для action, sage для trust.</div>
+      </div>
+      <div class="swatch-strip">
+        <div style="background:#E8836A">#E8836A</div>
+        <div style="background:#7A9A6E">#7A9A6E</div>
+        <div style="background:#C49A4A">#C49A4A</div>
+        <div style="background:#C25C4F">#C25C4F</div>
+      </div>
+      <div class="ss-mode-label">Icon — dark</div>
+      <div class="icon-row"><div class="icon-cell" style="background:#0F1115; color:#F2967D">C</div></div>
+      <div class="ss-mode-label">Screenshot — light</div>
+      <div class="screenshot" style="background:#FAF7F2; color:#1A1A1F;">
+        <div class="ss-headline">Your baby has<br>something to say.</div>
+        <div class="ss-scene" style="background:#EFEDDB;">
+          <div class="scene-emoji">👩‍🍼</div>
+          <div class="scene-waveform" style="color:#7A9A6E;"></div>
+          <div class="verdict-pill" style="background:#7A9A6E; color:white;">🟢 HUNGRY 87%</div>
+        </div>
+        <div class="ss-subline">We help you listen in 3 seconds.</div>
+        <div class="ss-badge"><span>AAP</span><span>CDC</span><span>MAYO</span><span>LLL</span></div>
+      </div>
+      <div class="ss-mode-label">Paywall (coral CTA, sage trust title)</div>
+      <div class="paywall" style="background:#FFFFFF; border: 1px solid #DCDDC8;">
+        <div class="paywall-title" style="color:#7A9A6E;">Your 24/7 baby team</div>
+        <div class="plan selected" style="background:#E8836A; border-color:#E8836A;">
+          <span>Weekly + 7-day trial</span><span class="plan-price">$4.99</span>
+        </div>
+        <div class="plan" style="border-color:#E0D9CF;">
+          <span>Annual SAVE 85%</span><span class="plan-price">$39.99</span>
+        </div>
+        <div class="cta" style="background:#E8836A;">Start 7-day free trial</div>
+      </div>
+    </div>
+
+    <!-- C: Linen Rose -->
+    <div class="palette-col">
+      <div class="col-header">
+        <div class="col-title">C — Linen Rose 🍼</div>
+        <div class="col-tagline">Boutique premium. Justifies $59/yr tier.</div>
+      </div>
+      <div class="swatch-strip">
+        <div style="background:#C97A8C">#C97A8C</div>
+        <div style="background:#6B8D7E">#6B8D7E</div>
+        <div style="background:#C49870">#C49870</div>
+        <div style="background:#B25555">#B25555</div>
+      </div>
+      <div class="ss-mode-label">Icon — dark</div>
+      <div class="icon-row"><div class="icon-cell" style="background:#1F1A19; color:#D89AAB">C</div></div>
+      <div class="ss-mode-label">Screenshot — light</div>
+      <div class="screenshot" style="background:#F4EFE8; color:#3A2D26;">
+        <div class="ss-headline" style="font-family: New York, Georgia, serif;">Your baby has<br>something to say.</div>
+        <div class="ss-scene" style="background:#EBE3D6;">
+          <div class="scene-emoji">👩‍🍼</div>
+          <div class="scene-waveform" style="color:#C97A8C;"></div>
+          <div class="verdict-pill" style="background:#6B8D7E; color:white;">🟢 HUNGRY 87%</div>
+        </div>
+        <div class="ss-subline" style="font-family: New York, Georgia, serif;">We help you listen in 3 seconds.</div>
+        <div class="ss-badge"><span>AAP</span><span>CDC</span><span>MAYO</span><span>LLL</span></div>
+      </div>
+      <div class="ss-mode-label">Paywall</div>
+      <div class="paywall" style="background:#FBF7F1; border: 1px solid #DBCFBE;">
+        <div class="paywall-title">Your 24/7 baby team</div>
+        <div class="plan selected" style="background:#C97A8C; border-color:#C97A8C;">
+          <span>Weekly + 7-day trial</span><span class="plan-price">$4.99</span>
+        </div>
+        <div class="plan" style="border-color:#DBCFBE;">
+          <span>Annual SAVE 85%</span><span class="plan-price">$39.99</span>
+        </div>
+        <div class="cta" style="background:#C97A8C;">Start 7-day free trial</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: 4 ICON CONCEPTS -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <h2>2. Иконка — 4 концепта <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">phase 2 sketch</span></h2>
+  <p style="color: #6a6a70; margin-bottom: 8px;">Каждый концепт — на dark navy bg `#0F1115`. Большой preview = coral вариант. Маленькие справа = тот же концепт в sage `#9CB892`. Финальная palette будет согласована с выбором палитры из раздела 1.</p>
+
+  <div class="concepts-grid">
+
+    <!-- Concept 1: Letter C + Waveform Halo -->
+    <div class="concept-card">
+      <h3>1. C + Waveform Halo</h3>
+      <p class="concept-tagline">Typographic. Letterform + crescent of sound bars above. Brand letter visible at small sizes.</p>
+      <div class="concept-img">
+        <img src="icons/01-letter-c-waveform-coral.png" alt="C with waveform halo (coral)">
+      </div>
+      <div class="concept-variants">
+        <div class="mini" title="Coral variant">
+          <img src="icons/01-letter-c-waveform-coral.png">
+        </div>
+        <div class="mini" title="Sage variant">
+          <img src="icons/01-letter-c-waveform-sage.png">
+        </div>
+      </div>
+      <div class="concept-meta"><b>Pros:</b> Brand letter clear · Familiar pattern · Works at 40×40<br><b>Cons:</b> «Just another C app»</div>
+    </div>
+
+    <!-- Concept 2: Speech Bubble (Chat-first) -->
+    <div class="concept-card" style="border: 2px solid #b85a1a;">
+      <h3>2. Speech Bubble + Sound</h3>
+      <p class="concept-tagline"><span class="pill pill-killer">Chat killer feature</span><br>Bubble = chat metaphor. Sound bars inside = cry/voice. Combines killer feature #1 + #2.</p>
+      <div class="concept-img">
+        <img src="icons/02-speech-bubble-coral.png" alt="Speech bubble with sound bars (coral)">
+      </div>
+      <div class="concept-variants">
+        <div class="mini" title="Coral variant">
+          <img src="icons/02-speech-bubble-coral.png">
+        </div>
+        <div class="mini" title="Sage variant">
+          <img src="icons/02-speech-bubble-sage.png">
+        </div>
+      </div>
+      <div class="concept-meta"><b>Pros:</b> Tells «chat about cry» visually · Differentiates from Nanni/AYA labels · Most aligned с killer #1<br><b>Cons:</b> Could read «messaging app» without context</div>
+    </div>
+
+    <!-- Concept 3: Voice Waveform Abstract -->
+    <div class="concept-card">
+      <h3>3. Voice Waveform</h3>
+      <p class="concept-tagline">Pure sound abstraction. Symmetric bell curve = listening + analysis. No letter.</p>
+      <div class="concept-img">
+        <img src="icons/03-voice-waveform-coral.png" alt="Voice waveform abstract (coral)">
+      </div>
+      <div class="concept-variants">
+        <div class="mini" title="Coral variant">
+          <img src="icons/03-voice-waveform-coral.png">
+        </div>
+        <div class="mini" title="Sage variant">
+          <img src="icons/03-voice-waveform-sage.png">
+        </div>
+      </div>
+      <div class="concept-meta"><b>Pros:</b> Unique shape · Voice mode wedge · Could become brand asset<br><b>Cons:</b> «Audio app»? Could clash с Spotify/Voice memos perception</div>
+    </div>
+
+    <!-- Concept 4: Heart + ECG -->
+    <div class="concept-card">
+      <h3>4. Heart + Heartbeat</h3>
+      <p class="concept-tagline">Emotional + medical. Heart shape (warmth) + ECG line (pulse + sound).</p>
+      <div class="concept-img">
+        <img src="icons/04-heart-waveform-coral.png" alt="Heart with ECG line (coral)">
+      </div>
+      <div class="concept-variants">
+        <div class="mini" title="Coral variant">
+          <img src="icons/04-heart-waveform-coral.png">
+        </div>
+        <div class="mini" title="Sage variant">
+          <img src="icons/04-heart-waveform-sage.png">
+        </div>
+      </div>
+      <div class="concept-meta"><b>Pros:</b> Emotional warmth · Health & Fitness category fit · Recognizable<br><b>Cons:</b> Generic «health app» · Many competitors use heart</div>
+    </div>
+
+  </div>
+
+  <p class="footnote">
+    💡 Все иконки — sketch direction (программно сгенерированы PIL). Финальный icon = professional commission после approval концепта + палитры. Это ranged proof-of-concept чтобы выбрать direction, не финальный asset.
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: BROWSE ROW SIMULATION -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="browse-section">
+  <h2>3. App Store browse row simulation</h2>
+  <p style="color: #6a6a70; margin-bottom: 4px;">Левая половина — наши 8 кандидатов (4 концепта × 2 палитры). Правая — реальные иконки 7 конкурентов.</p>
+
+  <h3 style="margin-top: 16px;">Наши 8 кандидатов</h3>
+  <div class="row">
+    <div class="row-cell">
+      <img class="icon-mini" src="icons/01-letter-c-waveform-coral.png">
+      <div class="label">C halo coral</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="icons/01-letter-c-waveform-sage.png">
+      <div class="label">C halo sage</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="icons/02-speech-bubble-coral.png">
+      <div class="label">Speech coral</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="icons/02-speech-bubble-sage.png">
+      <div class="label">Speech sage</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="icons/03-voice-waveform-coral.png">
+      <div class="label">Wave coral</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="icons/03-voice-waveform-sage.png">
+      <div class="label">Wave sage</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="icons/04-heart-waveform-coral.png">
+      <div class="label">Heart coral</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="icons/04-heart-waveform-sage.png">
+      <div class="label">Heart sage</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 20px;">7 конкурентов</h3>
+  <div class="row">
+    <div class="row-cell">
+      <img class="icon-mini" src="competitors/02-nanni-ai.png">
+      <div class="label">Nanni AI</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="competitors/03-aya.png">
+      <div class="label">AYA</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="competitors/01-huckleberry.png">
+      <div class="label">Huckleberry</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="competitors/04-chatterbaby.png">
+      <div class="label">ChatterBaby</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="competitors/05-gowalk-translator.png">
+      <div class="label">Gowalk</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="competitors/06-cry-stopper-ninja.png">
+      <div class="label">Ninja Chemist</div>
+    </div>
+    <div class="row-cell">
+      <img class="icon-mini" src="competitors/07-cry-analyzer-first-ascent.png">
+      <div class="label">First Ascent</div>
+    </div>
+  </div>
+
+  <p class="footnote">
+    💡 <b>Все 8 наших кандидатов выделяются</b> за счёт dark backgrounds (vs все competitors на light). Главные вопросы:
+    <ol style="margin: 10px 0 0 24px; line-height: 1.7;">
+      <li>Какой <b>концепт</b> — letter / speech / waveform / heart?</li>
+      <li>Какая <b>палитра glow</b> — coral (warm/active) или sage (calm/trust)?</li>
+      <li>Чёрный фон (наш default) — стоит ли реально его держать, или попробовать medium navy для ещё большего contrast?</li>
+    </ol>
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: VOTING -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section>
+  <h2>4. Что нужно решить</h2>
+  <ul style="margin-left: 20px; line-height: 1.8;">
+    <li><b>Палитра:</b> A coral / B sage / <span class="pill pill-recommended">D coral+sage dual</span> / C linen rose</li>
+    <li><b>Icon концепт:</b> 1. C halo / <span class="pill pill-killer">2. Speech bubble (chat killer)</span> / 3. Voice waveform / 4. Heart ECG</li>
+    <li><b>Icon glow:</b> coral (warm) или sage (calm/trust)</li>
+    <li><b>Default mode:</b> System + smart 3am prompt ✓ (locked iter 2)</li>
+    <li><b>Screenshots mode:</b> 7 light + 1 dark slot 3 (voice mode 3am) ✓ (recommended iter 2)</li>
+    <li><b>Hero treatment slot 1:</b> Illustrated mom + baby + waveform overlay + AAP badges ✓ (recommended SCREENSHOTS_BRIEF_FIRST3.md)</li>
+  </ul>
+  <p class="footnote" style="margin-top: 16px;">
+    Скажи в чате что выбираешь по каждому пункту → обновлю DESIGN_SYSTEM.md, meta.yaml, sync на дашборд.
+  </p>
+</section>
+
+<p style="margin-top: 24px; color: #8a8a90; font-size: 11px; text-align: center;">
+  Source: <code>apps/12-crysnap/docs/CONSILIUM_DESIGN_SYSTEM_2026-04-25_iter2.md</code> ·
+  CrySnap design workbench · 2026-04-25 ·
+  <a href="https://github.com/love8ko/love8ko.github.io/tree/main/crysnap" style="color: #8a8a90;">repo</a>
+</p>
+
+</body>
+</html>
