@@ -772,10 +772,529 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- SECTION 4: BROWSE ROW -->
+<!-- SECTION 4: FIRST 3 SCREENSHOTS — DETAILED -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<style>
+  /* Full-size hero screenshot mockups */
+  .hero-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+  }
+  .hero-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-card h3 {
+    font-size: 15px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-card .slot-meta {
+    font-size: 11px;
+    color: #6a6a70;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .hero-screenshot {
+    aspect-ratio: 9/19.5;
+    border-radius: 28px;
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-screenshot.cream { background: #FAF7F2; color: #1A1A1F; }
+  .hero-screenshot.dark { background: #0F1115; color: #F2EDE5; }
+
+  .hero-headline {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .hero-subhead {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: 0.7;
+  }
+
+  .hero-stage {
+    flex: 1;
+    border-radius: 18px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .hero-screenshot.cream .hero-stage { background: #F2EDE5; }
+  .hero-screenshot.dark .hero-stage { background: #181B22; }
+
+  .hero-emoji-scene {
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-emoji-scene.small { font-size: 44px; }
+
+  .hero-waveform-bars {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    height: 20px;
+  }
+  .hero-waveform-bars > div {
+    width: 3px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+
+  .hero-verdict-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .hero-action-hint {
+    font-size: 11px;
+    opacity: 0.6;
+    text-align: center;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+  .hero-badges span {
+    background: rgba(0,0,0,0.06);
+    padding: 4px 9px;
+    border-radius: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+  }
+  .hero-screenshot.dark .hero-badges span {
+    background: rgba(255,255,255,0.06);
+    color: #9CA0A8;
+  }
+
+  /* Slot 2 split screen */
+  .split-stage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+  .split-side {
+    border-radius: 12px;
+    padding: 12px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  .split-side.left {
+    background: #ebebef;
+    color: #8a8a90;
+    opacity: 0.85;
+  }
+  .split-side.right {
+    background: white;
+    color: #1A1A1F;
+  }
+  .split-label {
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+  }
+  .nanni-label {
+    background: #d0d0d6;
+    padding: 6px 14px;
+    border-radius: 999px;
+    color: #6a6a70;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .persona-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+    text-align: left;
+  }
+  .persona-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #E8836A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .persona-bubble {
+    background: #F2EDE5;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 9px;
+    line-height: 1.35;
+    color: #1A1A1F;
+    flex: 1;
+  }
+  .persona-name {
+    font-size: 8px;
+    color: #5a5a60;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .ask-followup {
+    color: #E8836A;
+    font-weight: 700;
+    margin-top: 4px;
+    font-size: 9px;
+  }
+
+  /* Slot 3 voice mode */
+  .voice-pulse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 14px 0;
+  }
+  .voice-pulse > div {
+    width: 4px;
+    border-radius: 2px;
+    background: #F2967D;
+    opacity: 0.85;
+  }
+  .voice-bubble {
+    background: rgba(242, 150, 125, 0.15);
+    border: 1px solid rgba(242, 150, 125, 0.3);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #F2EDE5;
+    align-self: stretch;
+  }
+  .response-bubble {
+    background: rgba(242, 237, 229, 0.06);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #F2EDE5;
+    align-self: stretch;
+  }
+  .voice-bubble .label, .response-bubble .label {
+    font-size: 8px;
+    font-weight: 700;
+    opacity: 0.7;
+    margin-bottom: 3px;
+  }
+
+  .killer-feature-strip {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .killer-feature-strip .kf-pill {
+    background: #fff4e6;
+    color: #b85a1a;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 1100px) {
+    .hero-trio { grid-template-columns: 1fr; max-width: 380px; margin: 20px auto 0; }
+  }
+</style>
+
+<section>
+  <h2>4. Концепты 3 первых screenshots <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">85% CR decision</span></h2>
+  <p class="section-intro">Apple показывает первые 3 БЕЗ тапа в search results — это и есть весь download decision. Каждый слот должен показать конкретную killer feature + JTBD pain в один взгляд (0.4 sec scan time). Расположение элементов и copy подбираются чтобы поднять CTR install.</p>
+
+  <div class="hero-trio">
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SLOT 1 — HOOK: Lifestyle Scene + Verdict + AAP -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="hero-card">
+      <h3>Slot 1 — HOOK 🎯</h3>
+      <p class="slot-meta">
+        <b>Job:</b> Стоп scroll. JTBD-1 recognition в 0.4 sec.<br>
+        <b>JTBD:</b> #1 «3am 40 min crying»<br>
+        <b>Killer features:</b>
+      </p>
+      <div class="killer-feature-strip">
+        <span class="kf-pill">9-class cry analyzer</span>
+        <span class="kf-pill">Traffic-light verdict</span>
+        <span class="kf-pill">AAP authority</span>
+      </div>
+
+      <div class="hero-screenshot cream">
+        <div class="hero-headline">Your baby has<br>something to say.</div>
+        <div class="hero-subhead">Decode 9 cry types in 3 seconds — on-device AI.</div>
+
+        <div class="hero-stage">
+          <div class="hero-emoji-scene">👩‍🍼</div>
+          <div class="hero-waveform-bars" style="color: #E8836A;">
+            <div style="height: 6px"></div>
+            <div style="height: 12px"></div>
+            <div style="height: 18px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 10px"></div>
+            <div style="height: 16px"></div>
+            <div style="height: 8px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 18px"></div>
+            <div style="height: 12px"></div>
+            <div style="height: 6px"></div>
+          </div>
+          <div class="hero-verdict-pill" style="background: #5A8A6B;">
+            🟢 HUNGRY · 87%
+          </div>
+          <div class="hero-action-hint">→ Try side-lying feed</div>
+        </div>
+
+        <div class="hero-badges">
+          <span>AAP</span>
+          <span>CDC</span>
+          <span>MAYO</span>
+          <span>LLL</span>
+        </div>
+      </div>
+
+      <p class="slot-meta" style="margin-top: 4px;">
+        <b>Why works:</b> Pain validation в 1 sentence (recognition > aspiration). Verdict pill = product mechanic в sec 1. AAP strip = trust в sec 2. NO realistic crying baby (lowers CR).
+      </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SLOT 2 — DIFFERENTIATOR: Split vs Nanni -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="hero-card">
+      <h3>Slot 2 — DIFFERENTIATOR ⚔️</h3>
+      <p class="slot-meta">
+        <b>Job:</b> Show wedge vs Nanni/AYA. Validate JTBD-2.<br>
+        <b>JTBD:</b> #2 «Это нормально что плачет?»<br>
+        <b>Killer features:</b>
+      </p>
+      <div class="killer-feature-strip">
+        <span class="kf-pill">3 chat personas (KILLER #1)</span>
+        <span class="kf-pill">Actionable answers</span>
+      </div>
+
+      <div class="hero-screenshot cream">
+        <div class="hero-headline">Others give<br>labels.</div>
+        <div class="hero-subhead">We give you answers — chat 24/7.</div>
+
+        <div class="hero-stage" style="padding: 12px;">
+          <div class="split-stage">
+            <div class="split-side left">
+              <div class="split-label">Others</div>
+              <div class="nanni-label">HUNGRY</div>
+              <div style="font-size: 8px; color: #8a8a90; margin-top: 4px;">— that's it.</div>
+            </div>
+            <div class="split-side right">
+              <div class="split-label" style="color: #E8836A;">CrySnap</div>
+              <div class="persona-row">
+                <div class="persona-avatar">👩‍⚕️</div>
+                <div class="persona-bubble">
+                  <div class="persona-name">Pediatric Nurse</div>
+                  Try side-lying feed — easier latch when tongue is tired by evening.
+                  <div class="ask-followup">[Ask follow-up →]</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-badges">
+          <span>NURSE</span>
+          <span>SLEEP COACH</span>
+          <span>LACTATION</span>
+        </div>
+      </div>
+
+      <p class="slot-meta" style="margin-top: 4px;">
+        <b>Why works:</b> Split-screen = highest-CR pattern. LEFT honest grey ≠ attacking competitor. RIGHT warm coral persona = killer #1 viscerally. «Ask follow-up» = ongoing depth signal.
+      </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SLOT 3 — MEMORABLE BEAT: Voice Mode 3am DARK -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="hero-card">
+      <h3>Slot 3 — MEMORABLE BEAT 🌙</h3>
+      <p class="slot-meta">
+        <b>Job:</b> Make them REMEMBER us at 3am. Cement install.<br>
+        <b>JTBD:</b> #1 (peak emotional moment)<br>
+        <b>Killer features:</b>
+      </p>
+      <div class="killer-feature-strip">
+        <span class="kf-pill">Voice mode (KILLER #2)</span>
+        <span class="kf-pill">Hands-free</span>
+        <span class="kf-pill">Unique to us</span>
+      </div>
+
+      <div class="hero-screenshot dark">
+        <div class="hero-headline" style="color: white;">3am.<br>Phone dead-tired.</div>
+        <div class="hero-subhead">Just ask. We'll answer — hands-free.</div>
+
+        <div class="hero-stage">
+          <div class="hero-emoji-scene small">🌙</div>
+
+          <div class="voice-pulse">
+            <div style="height: 8px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 20px"></div>
+            <div style="height: 28px"></div>
+            <div style="height: 22px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 8px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 22px"></div>
+            <div style="height: 28px"></div>
+            <div style="height: 20px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 8px"></div>
+          </div>
+
+          <div class="voice-bubble">
+            <div class="label">🎙 You</div>
+            «It's 3am. He won't stop.»
+          </div>
+
+          <div class="response-bubble">
+            <div class="label">👩‍⚕️ Nurse</div>
+            Cluster feeding likely at 6 wks. Try swaddle + side-lying. 5-min hold...
+          </div>
+        </div>
+
+        <div class="hero-badges">
+          <span>POWERED BY AAP</span>
+        </div>
+      </div>
+
+      <p class="slot-meta" style="margin-top: 4px;">
+        <b>Why works:</b> ONLY dark slot = visual surprise after 2 light → memorable. «Phone dead-tired» = empathy framing (phone & mom both tired). 3am voice mode = unique vs ALL competitors.
+      </p>
+    </div>
+
+  </div>
+
+  <details class="consilium">
+    <summary>🧠 Почему именно эти 3 концепта (full reasoning)</summary>
+    <div class="consilium-body">
+
+      <h3 style="margin-top: 8px;">JTBD ranking (audience size × WTP)</h3>
+      <table class="vote-table">
+        <tr><th>Rank</th><th class="left">JTBD</th><th>Audience</th><th>WTP</th></tr>
+        <tr><td>🥇</td><td class="left">«40 min crying, не пойму почему» — 3am desperation</td><td>2-3M S1 mothers</td><td>🔴 EXTREME</td></tr>
+        <tr><td>🥈</td><td class="left">«Это нормально что он так долго плачет?»</td><td>4-5M first-timers</td><td>🟠 HIGH</td></tr>
+        <tr><td>🥉</td><td class="left">«Я сплю 3 часа в сутки»</td><td>1.5M 2-4mo postpartum</td><td>🟡 MED-HIGH</td></tr>
+        <tr><td>4</td><td class="left">«Что не так с моим молоком?»</td><td>1M breastfeeding</td><td>🟡 MED-HIGH</td></tr>
+      </table>
+
+      <h3 style="margin-top: 16px;">Killer features ranking</h3>
+      <table class="vote-table">
+        <tr><th>Tier</th><th class="left">Feature</th><th>Why killer</th></tr>
+        <tr><td>🥇 1</td><td class="left">3 expert chat personas</td><td>NONE из 7 competitors имеют</td></tr>
+        <tr><td>🥇 2</td><td class="left">Voice mode 3am hands-free</td><td>NONE из 7 competitors имеют</td></tr>
+        <tr><td>🥇 3</td><td class="left">9-class + traffic-light + AAP grounding</td><td>Combo never seen в нише</td></tr>
+        <tr><td>🥈 4</td><td class="left">On-device privacy (DeepInfant CoreML)</td><td>Privacy moat</td></tr>
+        <tr><td>🥈 5</td><td class="left">In-app soothing sounds</td><td>Immediate utility</td></tr>
+      </table>
+
+      <h3 style="margin-top: 16px;">Slot allocation logic</h3>
+      <ul style="margin-left: 20px; line-height: 1.7;">
+        <li><b>Slot 1 = JTBD #1 (largest × extreme WTP)</b> + show killer #3 (verdict) + #4 (AAP) — recognition framing pulls them in</li>
+        <li><b>Slot 2 = JTBD #2 (anxious need REASONS not labels)</b> + show killer #1 (chat personas) — split-screen = highest-CR format</li>
+        <li><b>Slot 3 = JTBD #1 emotional peak</b> + show killer #2 (voice mode) — memorable dark beat for later recall</li>
+      </ul>
+
+      <h3 style="margin-top: 16px;">Голоса консилиума по 3 концептам</h3>
+
+      <div class="voice-quote ux">
+        <div class="voice-name">🎯 UX Analyst</div>
+        «Slot 1 hook должен work без context — никакой brand awareness не assumed. "Your baby has something to say" — каждый родитель так подумал в 3am. Verdict pill «🟢 HUNGRY 87%» в той же frame = доказывает что мы реально решаем боль за 1 sec. AAP badges = trust enabler перед даже brand familiarity.»
+      </div>
+
+      <div class="voice-quote ui">
+        <div class="voice-name">🎨 UI Designer</div>
+        «Split-screen в slot 2 = validated highest-CR pattern (across categories). LEFT side держим honest grey — не агрессивный outdated label, просто бледный. RIGHT side = warm coral nurse bubble с actual answer. Зритель сам делает вывод "этот лучше". Никаких stamp'ов "BETTER" — Apple guideline + user preference.»
+      </div>
+
+      <div class="voice-quote maya">
+        <div class="voice-name">👶 Maya (3am)</div>
+        «Когда я вижу slot 3 dark "3am phone dead-tired" — это меня убивает наповал. Phone и я оба exhausted = solidarity. Voice mode = я ДАЖЕ НЕ ОТКРЫВАЮ ГЛАЗА. Это и есть sale moment — я скачаю, чтобы у меня была эта app в next 3am.»
+      </div>
+
+      <div class="voice-quote sarah">
+        <div class="voice-name">👩 Sarah (anxious)</div>
+        «Slot 2 для меня critical. Я хочу REASONS не labels — Nanni даёт "hungry" и я опять Google'ю. Coral nurse bubble «Try side-lying feed — easier latch when tongue is tired» — это объясняет ПОЧЕМУ. Мне это нужно для anxiety relief.»
+      </div>
+
+      <div class="voice-quote carla">
+        <div class="voice-name">🍼 Carla (lactation)</div>
+        «Lactation Consultant как одна из 3 personas в slot 2 badges = я знаю что меня видят. Не general "baby app", а специфично включает мой contexto. Это дифференциация vs Nanni которые лечат всех одинаково.»
+      </div>
+
+      <div class="voice-quote lin">
+        <div class="voice-name">🌙 Lin (chronic exhaustion)</div>
+        «Slot 3 voice + ответ "cluster feeding likely at 6 wks" — это ЭКСПЕРТНЫЙ ответ за 5 sec, не Reddit ждать 6h. Это меня cement'ит. Я готова заплатить $40/year не задумываясь.»
+      </div>
+
+      <h3 style="margin-top: 16px;">CR prediction для этих 3 concepts</h3>
+      <table class="vote-table">
+        <tr><th>Metric</th><th>Predicted impact</th></tr>
+        <tr><td class="left">Browse stop rate (impression → tap)</td><td>+30-40% vs single-screenshot competitors</td></tr>
+        <tr><td class="left">Tap → preview scroll past slot 1</td><td>+25% (recognition headline)</td></tr>
+        <tr><td class="left">Preview → install</td><td>+20-30% (memorable dark slot 3)</td></tr>
+        <tr><td class="left">Authority trust signal reach</td><td>100% viewers (slot 1 carries it)</td></tr>
+      </table>
+
+      <p style="margin-top: 16px; font-size: 13px; color: #b85a1a;"><b>Note:</b> Mockups в HTML — sketch direction для briefing illustrator/designer. Финальные screenshots = professional commission на основе approved layout + chosen palette + chosen icon. Используем workbench как brief, не как final asset.</p>
+
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: BROWSE ROW (renumbered) -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="browse-section">
-  <h2>4. App Store browse row simulation</h2>
+  <h2>5. App Store browse row simulation</h2>
   <p class="section-intro">Левая половина — наши 8 кандидатов. Правая — реальные иконки 7 конкурентов.</p>
 
   <h3 style="margin-top: 16px;">Наши 8 кандидатов</h3>
