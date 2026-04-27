@@ -335,9 +335,48 @@
     .palette-grid, .concepts-grid, .ss-strategy-grid { grid-template-columns: 1fr; }
     .selection-panel { position: static; margin-top: 20px; }
   }
+
+  /* Top navigation */
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid #e4e4ea; border-radius: 999px;
+    padding: 8px 14px; margin: -8px 0 18px; width: fit-content;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  }
+  .top-nav a {
+    text-decoration: none; color: #4a4a55;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 700;
+    transition: all 0.15s ease;
+  }
+  .top-nav a:hover { background: #FFF5F1; color: #E8836A; }
+  .top-nav a.featured {
+    background: linear-gradient(135deg, #E8836A 0%, #F2967D 100%);
+    color: white; box-shadow: 0 2px 8px rgba(232, 131, 106, 0.35);
+  }
+  .top-nav a.featured:hover { color: white; transform: translateY(-1px); }
+  .top-nav .sep { color: #d0d0d8; font-size: 10px; margin: 0 2px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 </style>
 </head>
 <body>
+
+<nav class="top-nav" aria-label="Page sections">
+  <a href="#palette">1 · Палитра</a>
+  <span class="sep">·</span>
+  <a href="#icon">2 · Иконка</a>
+  <span class="sep">·</span>
+  <a href="#screenshots">3 · Screenshots</a>
+  <span class="sep">·</span>
+  <a href="#concepts">4 · Концепты</a>
+  <span class="sep">·</span>
+  <a href="#browse">5 · Browse row</a>
+  <span class="sep">·</span>
+  <a href="#paywall-workbench" class="featured">💸 6 · Paywall</a>
+</nav>
 
 <h1>CrySnap — Design Workbench</h1>
 <div style="background: linear-gradient(135deg, #E8836A 0%, #7A9A6E 100%); color: white; padding: 16px 22px; border-radius: 14px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(232, 131, 106, 0.25);">
@@ -356,7 +395,7 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!-- SECTION 1: PALETTE -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section>
+<section id="palette">
   <h2>1. Palette — D Coral + Sage Dual <span class="pill" style="background: #2e6b3a; color: white; vertical-align: middle;">✅ LOCKED 2026-04-25</span></h2>
   <p class="section-intro">Финальная палитра. Coral для action/CTA, sage для chat/trust. Mode = SYSTEM + smart 3am prompt. Screenshots = 7 light + 1 dark. Решение основано на консилиуме iter 2 (avg 9.7).</p>
 
@@ -530,7 +569,7 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!-- SECTION 2: ICON CONCEPTS -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section>
+<section id="icon">
   <h2>2. Иконка — 4 концепта <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">phase 2 sketch</span> <span style="font-size: 12px; color: #6a6a70; font-weight: normal;">кликни концепт + glow</span></h2>
   <p class="section-intro">Каждый концепт — на dark navy bg <code>#0F1115</code>. Кликни на маленький превью под концептом чтобы переключить glow цвет. Главный preview обновится.</p>
 
@@ -635,7 +674,7 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!-- SECTION 3: SCREENSHOT STRATEGY -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section>
+<section id="screenshots">
   <h2>3. Screenshots — 4 стратегии <span class="pill pill-strategy" style="font-size:10px; vertical-align:middle;">App Store CR</span> <span style="font-size: 12px; color: #6a6a70; font-weight: normal;">кликни стратегию</span></h2>
   <p class="section-intro">8 слотов в App Store. Первые 3 = 85% CR (показываются БЕЗ тапа в search). Каждая стратегия — разный mode mix + разная storytelling логика. Цифры внутри маленьких прямоугольников = номер слота. 🌙 = dark, ☀️ = light.</p>
 
@@ -1127,7 +1166,7 @@
   }
 </style>
 
-<section>
+<section id="concepts">
   <h2>4. Концепты 3 первых screenshots <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">85% CR decision</span></h2>
   <p class="section-intro">Apple показывает первые 3 БЕЗ тапа в search results — это и есть весь download decision. Каждый слот должен показать конкретную killer feature + JTBD pain в один взгляд (0.4 sec scan time). Расположение элементов и copy подбираются чтобы поднять CTR install.</p>
 
@@ -2093,7 +2132,7 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!-- SECTION 5: BROWSE ROW (renumbered) -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section class="browse-section">
+<section id="browse" class="browse-section">
   <h2>5. App Store browse row simulation</h2>
   <p class="section-intro">Левая половина — наши 8 кандидатов. Правая — реальные иконки 7 конкурентов.</p>
 
@@ -2121,6 +2160,508 @@
   </div>
 
   <p class="footnote">💡 <b>Все 8 наших кандидатов выделяются</b> за счёт dark backgrounds vs light/colorful у конкурентов.</p>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: PAYWALL WORKBENCH (v2 — flexible, real iPhone 6.9, 10 presets) -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<style>
+  /* ═══ Section 6 v2 ═══ */
+  #paywall-workbench { background: #0F1115; color: #F2EDE5; padding: 36px 28px; }
+  #paywall-workbench h2 { color: white; }
+  #paywall-workbench h3 { color: white; font-size: 22px; }
+
+  .pw-banner {
+    text-align: center; padding: 18px 0 30px; border-bottom: 1px solid #2a2d35;
+    margin-bottom: 26px;
+  }
+  .pw-banner .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: #8a8a90; margin-bottom: 8px;
+  }
+  .pw-banner h2 {
+    font-size: 30px; font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    line-height: 1.15; max-width: 720px; margin: 0 auto 10px;
+  }
+  .pw-banner p {
+    font-size: 14px; color: #9CA0A8; max-width: 680px; margin: 0 auto;
+    line-height: 1.55;
+  }
+
+  .pw-step { margin-bottom: 28px; padding-bottom: 4px; border-bottom: 1px solid #1f222a; }
+  .pw-step:last-child { border-bottom: none; }
+  .pw-step-h { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+  .pw-step-n { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #6a6a70; }
+  .pw-step-i { font-size: 13px; color: #9CA0A8; max-width: 720px; line-height: 1.55; margin: 4px 0 16px; }
+
+  /* 01 Hero */
+  .pw-hero-card {
+    display: grid; grid-template-columns: 220px 1fr; gap: 18px;
+    background: #1a1d24; border: 1px solid #262932; border-radius: 16px;
+    padding: 18px;
+  }
+  .pw-dropzone {
+    background-image: repeating-linear-gradient(45deg, #232631, #232631 8px, #1c1f27 8px, #1c1f27 16px);
+    border: 2px dashed #3a3d47; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: #8a8a90; font-size: 11px; text-align: center; line-height: 1.4;
+    cursor: pointer; transition: all 0.15s ease;
+    background-size: cover; background-position: center;
+  }
+  .pw-dropzone:hover, .pw-dropzone.dragging { border-color: #E8836A; color: #E8836A; }
+  .pw-dropzone.has-image { border-style: solid; }
+  .pw-hero-fields { display: flex; flex-direction: column; gap: 12px; }
+  .pw-hero-fields .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pw-step .field { display: flex; flex-direction: column; gap: 4px; }
+  .pw-step .field label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    color: #8a8a90; text-transform: uppercase;
+  }
+  .pw-step input[type="text"], .pw-step input[type="email"], .pw-step textarea, .pw-step select {
+    background: #11141a; border: 1px solid #2a2d35; color: #F2EDE5;
+    padding: 8px 10px; border-radius: 8px; font-size: 13px;
+    font-family: inherit; width: 100%;
+  }
+  .pw-step input[type="text"]:focus, .pw-step textarea:focus, .pw-step select:focus {
+    outline: none; border-color: #E8836A;
+  }
+  .pw-step input[type="range"] { width: 100%; accent-color: #E8836A; }
+  .pw-step .field .out { font-size: 11px; color: #9CA0A8; }
+
+  .pw-builtin { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .pw-builtin .label { font-size: 11px; color: #8a8a90; align-self: center; }
+  .hero-pick {
+    display: flex; align-items: center; gap: 8px;
+    background: #1a1d24; border: 1px solid #2a2d35; color: #F2EDE5;
+    padding: 6px 10px 6px 6px; border-radius: 8px; cursor: pointer;
+    font-size: 12px; font-weight: 600;
+    transition: all 0.15s ease;
+  }
+  .hero-pick:hover { border-color: #E8836A; }
+  .hero-pick.active { border-color: #E8836A; box-shadow: 0 0 0 2px rgba(232,131,106,0.25); }
+  .hero-pick img { width: 40px; height: 28px; border-radius: 4px; object-fit: cover; }
+
+  .pw-btn {
+    background: #1a1d24; border: 1px solid #2a2d35; color: #F2EDE5;
+    padding: 7px 12px; border-radius: 8px; font-size: 12px; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all 0.15s ease;
+  }
+  .pw-btn:hover { border-color: #E8836A; color: #E8836A; }
+  .pw-btn.ghost { border-style: dashed; color: #8a8a90; }
+  .pw-btn.primary { background: linear-gradient(135deg, #E8836A 0%, #F2967D 100%); color: white; border-color: transparent; }
+  .pw-btn.primary:hover { color: white; transform: translateY(-1px); }
+
+  /* 02 Brief */
+  .pw-brief {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    background: #1a1d24; border: 1px solid #262932; border-radius: 16px;
+    padding: 18px;
+  }
+  .pw-brief textarea { resize: vertical; min-height: 60px; }
+
+  /* 03 Tokens */
+  .pw-tokens {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  }
+  .tk {
+    background: #1a1d24; border: 1px solid #262932; border-radius: 14px;
+    padding: 14px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .tk .tk-sw { width: 100%; height: 70px; border-radius: 10px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
+  .tk label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #8a8a90; text-transform: uppercase; }
+  .tk input { font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; }
+
+  /* 04 Gallery */
+  .pw-gallery {
+    display: flex; gap: 14px; overflow-x: auto;
+    padding: 4px 4px 18px; scroll-snap-type: x proximity;
+  }
+  .pw-gallery::-webkit-scrollbar { height: 8px; }
+  .pw-gallery::-webkit-scrollbar-track { background: #1a1d24; border-radius: 4px; }
+  .pw-gallery::-webkit-scrollbar-thumb { background: #3a3d47; border-radius: 4px; }
+  .preset-thumb {
+    flex: 0 0 auto; width: 200px;
+    display: flex; flex-direction: column; gap: 8px;
+    cursor: pointer; scroll-snap-align: start;
+    transition: transform 0.15s ease;
+  }
+  .preset-thumb:hover { transform: translateY(-3px); }
+  .preset-thumb.active .preset-thumb-frame {
+    box-shadow: 0 0 0 3px #E8836A, 0 16px 36px rgba(232,131,106,0.3);
+  }
+  .preset-thumb-frame {
+    width: 200px; height: 410px;
+    background: #0F1115; border-radius: 26px; padding: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    position: relative; overflow: hidden;
+  }
+  .preset-thumb-screen {
+    width: 430px; height: 932px;
+    transform: scale(0.4372); transform-origin: top left;
+    border-radius: 22px; overflow: hidden;
+    pointer-events: none;
+    position: absolute; top: 6px; left: 6px;
+  }
+  .preset-thumb-info { display: flex; flex-direction: column; gap: 2px; padding: 0 4px; }
+  .preset-thumb-info .num { font-size: 11px; color: #6a6a70; font-weight: 700; letter-spacing: 0.1em; }
+  .preset-thumb-info .name { font-size: 13px; font-weight: 700; color: #F2EDE5; line-height: 1.3; }
+  .preset-thumb-info .desc { font-size: 11px; color: #8a8a90; line-height: 1.4; }
+
+  /* 05 Deep dive */
+  .pw-dive {
+    display: grid; grid-template-columns: 454px 1fr; gap: 24px; align-items: start;
+  }
+  .pw-dive-frame { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .pw-realdevice {
+    width: 454px; height: 956px;
+    background: linear-gradient(180deg, #1a1d24 0%, #0F1115 100%);
+    border-radius: 60px; padding: 12px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+    position: relative;
+  }
+  .pw-realdevice .island {
+    position: absolute; top: 24px; left: 50%; transform: translateX(-50%);
+    width: 124px; height: 36px; background: #000; border-radius: 999px; z-index: 10;
+  }
+  .pw-realdevice .screen {
+    width: 100%; height: 100%; border-radius: 48px; overflow: hidden;
+    position: relative; background: #FBF8F4;
+  }
+  .pw-realdevice .screen-content {
+    width: 100%; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  }
+  .pw-realdevice .screen-content::-webkit-scrollbar { width: 0; }
+  .pw-dive-cap { font-size: 11px; color: #8a8a90; }
+
+  .pw-dive-tweaks {
+    background: #1a1d24; border: 1px solid #262932; border-radius: 14px;
+    padding: 18px; display: flex; flex-direction: column; gap: 10px;
+    position: sticky; top: 80px;
+  }
+  .pw-dive-tweaks .tw-h {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: #8a8a90; margin-bottom: 4px;
+  }
+  .pw-dive-tweaks .tw-row { font-size: 13px; color: #F2EDE5; }
+  .pw-dive-tweaks .tw-row label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+  .pw-dive-tweaks .tw-row select { margin-left: auto; max-width: 180px; }
+
+  /* Export pane */
+  .pw-export-pane {
+    background: #11141a; border: 1px solid #262932; border-radius: 14px;
+    padding: 16px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .pw-export-pane pre {
+    white-space: pre-wrap; word-break: break-word; max-height: 320px; overflow-y: auto;
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; line-height: 1.5;
+    color: #F2967D; margin: 0;
+  }
+  .pw-export-pane .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .pw-export-pane #pw-copy-toast { font-size: 11px; color: #9CB892; }
+
+  /* ═══ Paywall content (rendered into both thumbs and deep-dive) ═══ */
+  .pw-paywall {
+    width: 100%; min-height: 100%;
+    background: var(--pw-bg, #FBF8F4); color: var(--pw-fg, #1A1A1F);
+    display: flex; flex-direction: column;
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+  }
+  .pw-paywall .pw-status {
+    height: 59px; flex-shrink: 0; padding: 0 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 17px; font-weight: 600; padding-top: 16px;
+  }
+  .pw-paywall .pw-close {
+    position: absolute; top: 70px; right: 22px; z-index: 5;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.7); display: flex;
+    align-items: center; justify-content: center;
+    color: #1A1A1F; font-weight: 700;
+  }
+  .pw-paywall.scheme-dark .pw-close { background: rgba(255,255,255,0.12); color: white; }
+  .pw-paywall .pw-back {
+    position: absolute; top: 70px; left: 18px; z-index: 5;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.7); display: flex;
+    align-items: center; justify-content: center;
+    color: #1A1A1F; font-weight: 700;
+  }
+  .pw-paywall.scheme-dark .pw-back { background: rgba(255,255,255,0.12); color: white; }
+
+  .pw-pw-hero {
+    width: 100%; position: relative;
+    background-color: #2A3328; background-repeat: no-repeat;
+    flex-shrink: 0;
+  }
+  .pw-pw-hero.placeholder {
+    background: repeating-linear-gradient(135deg, #EDE8DF 0 12px, #E5DFD2 12px 24px);
+  }
+  .pw-paywall.scheme-dark .pw-pw-hero.placeholder {
+    background: repeating-linear-gradient(135deg, #1d2128 0 12px, #16191f 12px 24px);
+  }
+  .pw-pw-hero .placeholder-tag {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.85); color: #1A1A1F;
+    padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace; letter-spacing: 0.04em;
+  }
+  .pw-paywall.scheme-dark .pw-pw-hero .placeholder-tag {
+    background: rgba(255,255,255,0.12); color: white;
+  }
+  .pw-pw-hero.overlay-fade::after {
+    content:""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, transparent 50%, var(--pw-bg) 100%);
+  }
+  .pw-pw-hero.overlay-strong::after {
+    content:""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 30%, var(--pw-bg) 100%);
+  }
+  .pw-pw-hero.overlay-tint::after {
+    content:""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(135deg, rgba(232,131,106,0.18), rgba(122,154,110,0.18));
+  }
+  .pw-pw-hero .hero-text {
+    position: absolute; left: 0; right: 0; bottom: 22px; padding: 0 28px;
+    color: white; z-index: 2; text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .pw-pw-hero .hero-text .eyb {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--pw-pri); margin-bottom: 4px;
+  }
+
+  .pw-pw-body { padding: 24px 28px 32px; display: flex; flex-direction: column; gap: 18px; flex: 1; }
+  .pw-pw-headline {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 28px; font-weight: 800; line-height: 1.15; text-align: center;
+  }
+  .pw-pw-subtitle { font-size: 15px; line-height: 1.45; text-align: center; opacity: 0.78; }
+
+  .pw-pw-trust {
+    display: inline-flex; align-items: center; gap: 8px; align-self: center;
+    background: var(--pw-trust-bg, rgba(122,154,110,0.16));
+    color: var(--pw-acc); padding: 6px 14px; border-radius: 999px;
+    font-size: 12px; font-weight: 700;
+  }
+  .pw-paywall.scheme-dark .pw-pw-trust { background: rgba(122,154,110,0.18); }
+
+  /* Features list */
+  .pw-pw-features { display: flex; flex-direction: column; gap: 14px; }
+  .pw-pw-feature { display: flex; gap: 14px; align-items: flex-start; }
+  .pw-pw-feature .ico {
+    width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .pw-paywall.scheme-dark .pw-pw-feature .ico { background: rgba(255,255,255,0.08); }
+  .pw-pw-feature .ft-title { font-size: 15px; font-weight: 700; line-height: 1.25; }
+  .pw-pw-feature .ft-sub { font-size: 13px; opacity: 0.65; line-height: 1.4; margin-top: 2px; }
+
+  /* Plans */
+  .pw-pw-plans.stacked { display: flex; flex-direction: column; gap: 10px; }
+  .pw-pw-plans.side { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pw-pw-plans.single { display: flex; }
+  .pw-pw-plans.single .pw-pw-plan { width: 100%; }
+
+  .pw-pw-plan {
+    border: 2px solid rgba(0,0,0,0.10); border-radius: 16px;
+    padding: 14px 16px; background: rgba(255,255,255,0.6);
+    position: relative; cursor: pointer;
+  }
+  .pw-paywall.scheme-dark .pw-pw-plan { border-color: rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); }
+  .pw-pw-plan.selected { border-color: var(--pw-pri); background: rgba(232,131,106,0.10); }
+  .pw-pw-plan .plan-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .pw-pw-plan .plan-name { font-size: 16px; font-weight: 800; }
+  .pw-pw-plan .plan-price { font-size: 18px; font-weight: 800; color: var(--pw-pri); }
+  .pw-pw-plan .plan-price .pu { font-size: 13px; opacity: 0.7; font-weight: 700; }
+  .pw-pw-plan .plan-sub { font-size: 12px; opacity: 0.65; margin-top: 4px; }
+  .pw-pw-plan .plan-badge {
+    position: absolute; top: -10px; left: 14px;
+    padding: 2px 10px; border-radius: 999px; font-size: 9px; font-weight: 800;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .pw-pw-plan.weekly .plan-badge { background: var(--pw-pri); color: white; }
+  .pw-pw-plan.annual .plan-badge { background: var(--pw-acc); color: white; }
+  .pw-pw-plans.side .pw-pw-plan { padding: 16px 14px; }
+  .pw-pw-plans.side .pw-pw-plan .plan-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+  /* Anchor */
+  .pw-pw-anchor {
+    background: rgba(122,154,110,0.10); border-left: 3px solid var(--pw-acc);
+    padding: 10px 12px; border-radius: 0 10px 10px 0;
+    font-size: 13px; line-height: 1.5;
+  }
+  .pw-paywall.scheme-dark .pw-pw-anchor { background: rgba(122,154,110,0.14); }
+
+  /* Timeline */
+  .pw-pw-timeline { display: grid; grid-template-columns: auto 1fr; gap: 10px 14px; }
+  .pw-pw-timeline .tl-icon {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+  }
+  .pw-pw-timeline .tl-icon.today { background: var(--pw-acc); color: white; }
+  .pw-pw-timeline .tl-icon.day5  { background: rgba(232,131,106,0.20); color: var(--pw-pri); }
+  .pw-pw-timeline .tl-icon.day7  { background: rgba(0,0,0,0.10); color: inherit; }
+  .pw-paywall.scheme-dark .pw-pw-timeline .tl-icon.day7 { background: rgba(255,255,255,0.10); }
+  .pw-pw-timeline .tl-text { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .pw-pw-timeline .tl-when { font-size: 13px; font-weight: 700; }
+  .pw-pw-timeline .tl-what { font-size: 13px; opacity: 0.7; }
+
+  /* CTA */
+  .pw-pw-cta {
+    text-align: center; padding: 16px; border-radius: 999px;
+    background: var(--pw-pri); color: white;
+    font-weight: 800; font-size: 17px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    box-shadow: 0 8px 22px rgba(232,131,106,0.35);
+  }
+
+  .pw-pw-compliance {
+    background: rgba(255,200,0,0.08); border-radius: 8px; padding: 8px 10px;
+    font-size: 10px; opacity: 0.75; line-height: 1.45;
+  }
+
+  .pw-pw-fine {
+    display: flex; gap: 14px; justify-content: center;
+    font-size: 11px; opacity: 0.6;
+  }
+
+  @media (max-width: 1100px) {
+    .pw-tokens { grid-template-columns: repeat(2, 1fr); }
+    .pw-brief { grid-template-columns: 1fr; }
+    .pw-dive { grid-template-columns: 1fr; }
+    .pw-hero-card { grid-template-columns: 1fr; }
+  }
+</style>
+
+<section id="paywall-workbench">
+  <div class="pw-banner">
+    <div class="eyebrow">Paywall · Project template</div>
+    <h2>Загрузи hero — собери пейволл — экспорт в Swift</h2>
+    <p>Шаги: 1) подмени hero · 2) уточни JTBD-бриф · 3) подкрути токены · 4) выбери из 10 пресетов · 5) deep-dive в реальный iPhone 16 Pro Max · 6) скопируй JSON или Claude-промпт.</p>
+  </div>
+
+  <!-- 01 HERO -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">01</span><h3>Hero-картинка</h3></div>
+    <p class="pw-step-i">Загрузи свой hero (drop/click/URL). Дальше выбери высоту, fit, position и overlay. Это включит режим hero=image автоматически. Кнопка <code>Clear</code> возвращает к built-in hero (A/B).</p>
+    <div class="pw-hero-card">
+      <div class="pw-dropzone" id="pw-dropzone" tabindex="0">
+        <div>CLICK or DROP<br>image here</div>
+      </div>
+      <div class="pw-hero-fields">
+        <div class="field"><label>IMAGE URL</label><input type="text" id="pw-h-url" placeholder="https://… or upload above"></div>
+        <div class="row2">
+          <div class="field"><label>HEIGHT</label><input type="range" id="pw-h-height" min="0" max="520" step="10"><span class="out" id="pw-h-h-out">280px</span></div>
+          <div class="field"><label>FIT</label><select id="pw-h-fit"><option value="cover">Cover</option><option value="contain">Contain</option></select></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>POSITION</label><select id="pw-h-pos"><option value="center">Center</option><option value="top">Top</option><option value="bottom">Bottom</option></select></div>
+          <div class="field"><label>OVERLAY</label><select id="pw-h-ov"><option value="fade">Fade to bg</option><option value="strong">Strong fade</option><option value="tint">Tint</option><option value="none">None</option></select></div>
+        </div>
+        <button class="pw-btn ghost" id="pw-h-clear">Clear & use built-in hero</button>
+      </div>
+    </div>
+    <div class="pw-builtin">
+      <span class="label">Built-in:</span>
+      <button class="hero-pick" data-pw-builtin="A"><img src="paywall-heroes/onb-8-paywall.png" alt="Hero A">Hero A · rational</button>
+      <button class="hero-pick" data-pw-builtin="B"><img src="paywall-heroes/onb-8-paywall-B.png" alt="Hero B">Hero B · emotional</button>
+      <button class="hero-pick" data-pw-builtin="none">No image (gradient)</button>
+    </div>
+  </div>
+
+  <!-- 02 JTBD -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">02</span><h3>JTBD-бриф</h3></div>
+    <p class="pw-step-i">Эти данные подставятся в Claude-промпт и помогут разметить экраны под аудиторию. В копи пресетов используются токены <code>{brand}</code>, <code>{audience}</code>, <code>{weeklyPrice}</code>, <code>{annualPrice}</code>, <code>{valueAnchor}</code>, <code>{trustLine}</code>.</p>
+    <div class="pw-brief">
+      <div class="field"><label>BRAND / PRODUCT</label><input id="pw-b-brand" type="text"></div>
+      <div class="field"><label>PRIMARY AUDIENCE</label><input id="pw-b-audience" type="text"></div>
+      <div class="field"><label>CORE PAIN</label><textarea id="pw-b-pain" rows="2"></textarea></div>
+      <div class="field"><label>KILLER FEATURE</label><textarea id="pw-b-killer" rows="2"></textarea></div>
+      <div class="field"><label>WEEKLY PRICE</label><input id="pw-b-weekly" type="text"></div>
+      <div class="field"><label>ANNUAL PRICE</label><input id="pw-b-annual" type="text"></div>
+      <div class="field"><label>VALUE ANCHOR</label><input id="pw-b-anchor" type="text"></div>
+      <div class="field"><label>TRUST LINE</label><input id="pw-b-trust" type="text"></div>
+    </div>
+  </div>
+
+  <!-- 03 TOKENS -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">03</span><h3>Бренд-токены</h3></div>
+    <p class="pw-step-i">4 цвета — primary CTA, trust accent, light bg, dark bg. Меняй hex чтобы перекрасить и thumbnails, и deep-dive.</p>
+    <div class="pw-tokens">
+      <div class="tk"><div class="tk-sw" id="tk-sw-primary"></div><label>PRIMARY / CTA</label><input id="pw-t-primary" type="text"></div>
+      <div class="tk"><div class="tk-sw" id="tk-sw-accent"></div><label>TRUST / ACCENT</label><input id="pw-t-accent" type="text"></div>
+      <div class="tk"><div class="tk-sw" id="tk-sw-lightbg" style="box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);"></div><label>LIGHT BG</label><input id="pw-t-lightbg" type="text"></div>
+      <div class="tk"><div class="tk-sw" id="tk-sw-darkbg"></div><label>DARK BG</label><input id="pw-t-darkbg" type="text"></div>
+    </div>
+  </div>
+
+  <!-- 04 GALLERY -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">04</span><h3>Галерея пресетов <span style="font-size: 13px; color: #9CA0A8; font-weight: 400;" id="pw-preset-count"></span></h3></div>
+    <p class="pw-step-i">Кликни чтобы загрузить пресет в deep-dive (секция 05). Hero подменится из секции 01, копи — из 02, цвета — из 03.</p>
+    <div class="pw-gallery" id="pw-gallery"><!-- presets --></div>
+  </div>
+
+  <!-- 05 DEEP DIVE -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">05</span><h3>Систематизатор пейволла · <span id="pw-active-pname" style="color:#E8836A;">—</span></h3></div>
+    <p class="pw-step-i">Выбранный пресет в реальных размерах iPhone 16 Pro Max (430×932 pt). Скроллится внутри экрана. Tweaks справа — крути любой блок отдельно.</p>
+    <div class="pw-dive">
+      <div class="pw-dive-frame">
+        <div class="pw-realdevice">
+          <div class="island"></div>
+          <div class="screen">
+            <div class="screen-content" id="pw-real-content"><!-- rendered --></div>
+          </div>
+        </div>
+        <div class="pw-dive-cap">iPhone 16 Pro Max · 430×932 pt · реальные размеры</div>
+      </div>
+      <div class="pw-dive-tweaks">
+        <div class="tw-h">Tweaks</div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showHero" checked> Hero block</label></div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showTrust" checked> Trust badge</label></div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showFeatures" checked> Features list</label></div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showAnchor" checked> Value anchor</label></div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showTimeline" checked> Trial timeline</label></div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showCompliance" checked> Compliance</label></div>
+        <div class="tw-row"><label>Scheme:
+          <select data-pw-tw="scheme">
+            <option value="auto">auto (preset)</option>
+            <option value="light">light</option>
+            <option value="dark">dark</option>
+          </select>
+        </label></div>
+        <div class="tw-row"><label>Plans:
+          <select data-pw-tw="plans">
+            <option value="auto">auto (preset)</option>
+            <option value="stacked">stacked</option>
+            <option value="side">side-by-side</option>
+            <option value="single-weekly">weekly only</option>
+            <option value="single-annual">annual only</option>
+          </select>
+        </label></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPORT -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">⤓</span><h3>Экспорт</h3></div>
+    <p class="pw-step-i">JSON — снапшот state. Swift — готовые константы для <code>PaywallView.swift</code>. Claude prompt — полный бриф для углубления в новой беседе.</p>
+    <div class="pw-export-pane">
+      <pre id="pw-export-view">// pick a preset to preview</pre>
+      <div class="actions">
+        <button class="pw-btn" id="pw-copy-json">Copy JSON</button>
+        <button class="pw-btn" id="pw-copy-swift">Copy as Swift</button>
+        <button class="pw-btn primary" id="pw-copy-claude">Copy as Claude prompt</button>
+        <button class="pw-btn ghost" id="pw-reset-state">↺ Reset workbench</button>
+        <span id="pw-copy-toast" style="display:none">✔ copied</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Selection panel -->
@@ -2183,6 +2724,751 @@
       setTimeout(() => toast.style.display = 'none', 2000);
     });
   }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // SECTION 6 — PAYWALL WORKBENCH v2 (flexible, real iPhone 6.9, 10 presets)
+  //
+  // ┌─────────────────────────────────────────────────────────────────────┐
+  // │  PORTING TO A NEW PROJECT — edit ONLY this block (HEROES / DEFAULT_*│
+  // │  / PRESETS) and copy these files to <new-project>/ on gh-pages:    │
+  // │    1. design.html (this file)                                       │
+  // │    2. paywall-heroes/  (your 2-3 hero candidates)                   │
+  // │    3. paywall-refs/    (optional reference images)                  │
+  // │  See PAYWALL_WORKBENCH_PORTING.md for the full checklist.           │
+  // └─────────────────────────────────────────────────────────────────────┘
+  // ═══════════════════════════════════════════════════════════════════════
+  (function () {
+    // ═══ ▼ EDIT FOR NEW PROJECT ▼ ═══════════════════════════════════════════
+    // Paths are relative to the HTML file. Add as many as you like; the
+    // built-in picker only shows the first 2 by default — add more buttons
+    // in the HTML if needed.
+    const HEROES = {
+      A: 'paywall-heroes/onb-8-paywall.png',
+      B: 'paywall-heroes/onb-8-paywall-B.png',
+    };
+
+    // Brand tokens. From CrySnap "Coral + Sage Dual" — replace with your
+    // project's locked palette (see Section 1 of design.html).
+    const DEFAULT_TOKENS = {
+      primary: '#E8836A',  accent: '#7A9A6E',          // CTA / trust accent
+      lightBg: '#FBF8F4',  darkBg: '#0F1115',          // light/dark scheme bg
+      textOnLight: '#1A1A1F', textOnDark: '#F2EDE5',   // body text
+    };
+
+    // JTBD brief — feeds {tokens} interpolation in preset copy.
+    // Pull from <project>/PERSONAS.md, RESEARCH.md, MARKETING.md.
+    const DEFAULT_BRIEF = {
+      brand: 'CrySnap',
+      audience: 'New mom 0–4mo postpartum (Maya, 28)',
+      corePain: '3am, baby crying 40 min, fed/changed/rocked. Reddit takes 6h.',
+      killerFeature: '9-class cry decoder + voice mode hands-free + 3 expert chat personas',
+      weeklyPrice: '$4.99',
+      annualPrice: '$39.99',
+      valueAnchor: '$500 nurse + $300 lactation + $150 sleep coach ≈ $1,000/yr',
+      trustLine: 'AAP-trained · Cancel anytime',
+    };
+    // ═══ ▲ EDIT FOR NEW PROJECT ▲ ═══════════════════════════════════════════
+    const DEFAULT_HERO = {
+      src: '', builtIn: 'A', height: 280, fit: 'cover', position: 'center', overlay: 'fade',
+    };
+    const DEFAULT_TWEAKS = {
+      showHero: true, showTrust: true, showFeatures: true,
+      showAnchor: true, showTimeline: true, showCompliance: true,
+      scheme: 'auto', plans: 'auto',
+    };
+
+    // ═══ ▼ EDIT FOR NEW PROJECT ▼ ═══════════════════════════════════════════
+    // Preset library — flexible, data-driven. Headline / subtitle / cta /
+    // features / badges support {brand} {audience} {weeklyPrice} {annualPrice}
+    // {valueAnchor} {trustLine} interpolation from DEFAULT_BRIEF above.
+    //
+    // Per-preset fields:
+    //   scheme:    'light' | 'dark'
+    //   plans:     'stacked' | 'side' | 'single-weekly' | 'single-annual'
+    //   showFeatures, showTimeline: bool
+    //   features:  [{ icon: '🎯', title: '...', sub: '...' }, ...]
+    //
+    // Add/remove presets freely — the gallery (section 04) auto-renders
+    // however many you ship.
+    const PRESETS = [
+      {
+        id: 'experts-weekly', num: 1,
+        name: 'Experts Weekly Trial',
+        desc: 'AAP, weekly preselected, reminder timeline',
+        scheme: 'light', plans: 'stacked', defaultPlan: 'weekly',
+        showFeatures: true, showTimeline: true,
+        features: [
+          { icon: '👶', title: 'Decode 9 cry types in 3s', sub: 'On-device DeepInfant V2 — 89% accurate.' },
+          { icon: '💬', title: 'Chat with 3 experts — 24/7', sub: 'Nurse, lactation, sleep coach.' },
+          { icon: '🎵', title: 'Soothing sounds library',  sub: 'White noise, womb, shushing, lullabies.' },
+        ],
+        eyebrow: '7-DAY FREE TRIAL',
+        headline: 'Unlock all of {brand}',
+        subtitle: 'Everything you need at 3am, in one app.',
+        ctaText: 'Start Free — 7 Days',
+        weeklyTitle: 'Weekly', weeklySub: 'Cancel anytime',
+        annualTitle: 'Annual', annualSub: '~$0.77/wk',
+        weeklyBadge: 'RECOMMENDED', annualBadge: 'BEST VALUE',
+      },
+      {
+        id: 'experts-annual', num: 2,
+        name: 'Experts Annual',
+        desc: 'Annual preselected, no trial framing',
+        scheme: 'light', plans: 'stacked', defaultPlan: 'annual',
+        showFeatures: true, showTimeline: false,
+        features: [
+          { icon: '👶', title: 'Decode 9 cry types in 3s', sub: 'On-device DeepInfant V2 — 89% accurate.' },
+          { icon: '💬', title: 'Chat with 3 experts',       sub: 'Nurse, lactation, sleep coach.' },
+          { icon: '🎵', title: 'Soothing sounds library',   sub: 'White noise, womb, shushing.' },
+        ],
+        eyebrow: 'SAVE 85% YEARLY',
+        headline: 'A year of {brand}',
+        subtitle: 'Save 85% vs weekly. {trustLine}.',
+        ctaText: 'Get Annual',
+        weeklyTitle: 'Weekly', weeklySub: 'Billed weekly',
+        annualTitle: 'Annual', annualSub: '~$0.77/wk · Save 85%',
+        weeklyBadge: '', annualBadge: 'BEST VALUE',
+      },
+      {
+        id: '3am-voice-dark', num: 3,
+        name: '3am Voice Mode',
+        desc: 'Maya peak — dark hero, voice killer feature',
+        scheme: 'dark', plans: 'side', defaultPlan: 'weekly',
+        showFeatures: true, showTimeline: true,
+        features: [
+          { icon: '🎙', title: 'Voice mode at 3am',  sub: "Hands-free. Don't even open your eyes." },
+          { icon: '💬', title: '3 expert chat personas', sub: 'Nurse, lactation, sleep coach — 24/7.' },
+          { icon: '🔒', title: 'On-device privacy',  sub: 'Audio never leaves your phone.' },
+        ],
+        eyebrow: '3AM · WE ARE HERE',
+        headline: '3am. Phone dead-tired.',
+        subtitle: "Just ask. We'll answer — hands-free.",
+        ctaText: 'Try Free for 7 Days',
+        weeklyTitle: 'Weekly', weeklySub: 'Cancel anytime',
+        annualTitle: 'Annual', annualSub: '~$0.77/wk',
+        weeklyBadge: '7-DAY FREE TRIAL', annualBadge: 'SAVE 85%',
+      },
+      {
+        id: 'features-first', num: 4,
+        name: 'Features-first',
+        desc: 'Sarah anxious — chat killer feature listed',
+        scheme: 'light', plans: 'stacked', defaultPlan: 'weekly',
+        showFeatures: true, showTimeline: false,
+        features: [
+          { icon: '👶', title: 'Decode 9 cry types',     sub: 'Hungry, tired, pain, gas + 5 more.' },
+          { icon: '💬', title: 'Chat with 3 experts',    sub: 'Real reasons, not just labels.' },
+          { icon: '🎙', title: 'Voice mode at 3am',      sub: 'Eyes-closed mode for night feeds.' },
+          { icon: '🎵', title: 'Soothing sounds',        sub: 'White noise, womb, shushing.' },
+          { icon: '📈', title: 'Sleep & feed tracking',  sub: 'See patterns, predict next nap.' },
+        ],
+        eyebrow: '',
+        headline: 'Unlock all of {brand}',
+        subtitle: 'Everything you need at 3am, in one app.',
+        ctaText: 'Start Free — 7 Days',
+        weeklyTitle: 'Weekly', weeklySub: 'Cancel anytime',
+        annualTitle: 'Annual', annualSub: '~$0.77/wk · Save 85%',
+        weeklyBadge: 'RECOMMENDED', annualBadge: 'BEST VALUE',
+      },
+      {
+        id: 'sleep-lin', num: 5,
+        name: 'Sleep / Lin',
+        desc: 'Sage primary — chronic exhaustion JTBD',
+        scheme: 'light', plans: 'stacked', defaultPlan: 'weekly',
+        showFeatures: true, showTimeline: true,
+        features: [
+          { icon: '🌙', title: 'Predict the next nap',     sub: '+/- 8 min from your tracked patterns.' },
+          { icon: '🔇', title: 'Dim soothing sounds',      sub: 'Auto-fade as baby drifts.' },
+          { icon: '🤱', title: 'Sleep coach chat (Lin)',   sub: '24/7 — Ferber, RIE, gentle methods.' },
+        ],
+        eyebrow: 'SLEEP TONIGHT',
+        headline: 'Sleep tonight. Tomorrow too.',
+        subtitle: '{audience} — Lin will get you both there.',
+        ctaText: 'Start Sleeping — 7 Days Free',
+        weeklyTitle: 'Weekly', weeklySub: 'Cancel anytime',
+        annualTitle: 'Annual', annualSub: '~$0.77/wk',
+        weeklyBadge: '7-DAY FREE TRIAL', annualBadge: 'BEST VALUE',
+      },
+      {
+        id: 'lactation-carla', num: 6,
+        name: 'Lactation / Carla',
+        desc: 'Single hero plan, lactation framing',
+        scheme: 'light', plans: 'single-annual', defaultPlan: 'annual',
+        showFeatures: true, showTimeline: false,
+        features: [
+          { icon: '🍼', title: 'Latch confidence in 24h',  sub: 'IBCLC-trained Carla — chat 24/7.' },
+          { icon: '⚖️', title: 'Track each feed',          sub: 'Side, duration, milk supply trend.' },
+          { icon: '👶', title: 'Decode hungry vs gassy',   sub: '89% accurate cry classifier.' },
+        ],
+        eyebrow: 'IBCLC-TRAINED · 24/7',
+        headline: 'Latch confidence in 24h',
+        subtitle: 'Real feeding help, when nights are hardest.',
+        ctaText: 'Get Annual — {annualPrice}',
+        weeklyTitle: '', weeklySub: '',
+        annualTitle: 'Annual · {annualPrice}', annualSub: '{trustLine}',
+        weeklyBadge: '', annualBadge: '',
+      },
+      {
+        id: 'zen-single', num: 7,
+        name: 'Zen / single-plan',
+        desc: 'Calm-style: one annual hero plan, no toggle, big trust',
+        scheme: 'light', plans: 'single-annual', defaultPlan: 'annual',
+        showFeatures: false, showTimeline: false,
+        features: [],
+        eyebrow: 'ONE PLAN. ONE PRICE.',
+        headline: 'Just $0.77 a day.',
+        subtitle: '{trustLine}. {valueAnchor}.',
+        ctaText: 'One year of {brand}',
+        weeklyTitle: '', weeklySub: '',
+        annualTitle: 'Annual · {annualPrice}', annualSub: '{trustLine}',
+        weeklyBadge: '', annualBadge: '',
+      },
+      {
+        id: 'streak-urgency', num: 8,
+        name: 'Streak / urgency',
+        desc: 'Duolingo-style: high-energy CTA, 2 plans wide',
+        scheme: 'light', plans: 'side', defaultPlan: 'weekly',
+        showFeatures: true, showTimeline: false,
+        features: [
+          { icon: '🔥', title: '7-day streak unlocks chat', sub: 'Keep going — Sarah is waiting.' },
+          { icon: '⚡', title: 'Faster decoding',           sub: '2.4s avg vs 6h Reddit.' },
+          { icon: '🎯', title: 'Daily check-in',            sub: 'Quick "is this normal?" pulse.' },
+        ],
+        eyebrow: "DON'T LOSE TONIGHT",
+        headline: "Don't lose tonight.",
+        subtitle: 'Every cry decoded. Every parent backed.',
+        ctaText: 'Save tonight — 7 days free',
+        weeklyTitle: 'Weekly', weeklySub: 'Cancel anytime',
+        annualTitle: 'Annual', annualSub: 'Save 85%',
+        weeklyBadge: '7-DAY FREE', annualBadge: 'SAVE 85%',
+      },
+      {
+        id: 'headspace-dark', num: 9,
+        name: 'Headspace / dark hero',
+        desc: 'Big dark image, soft single-plan annual',
+        scheme: 'dark', plans: 'single-annual', defaultPlan: 'annual',
+        showFeatures: true, showTimeline: false,
+        features: [
+          { icon: '🌙', title: 'Calm at 3am',         sub: 'Voice mode hands-free.' },
+          { icon: '💬', title: '3 expert personas',   sub: 'Nurse, lactation, sleep coach.' },
+          { icon: '🔒', title: 'On-device privacy',   sub: 'Audio never leaves your phone.' },
+        ],
+        eyebrow: 'FIND CALM',
+        headline: 'Find calm. Tonight.',
+        subtitle: '{trustLine}.',
+        ctaText: 'One year — {annualPrice}',
+        weeklyTitle: '', weeklySub: '',
+        annualTitle: 'Annual · {annualPrice}', annualSub: '{trustLine}',
+        weeklyBadge: '', annualBadge: '',
+      },
+      {
+        id: 'split-anchor', num: 10,
+        name: 'Split anchor',
+        desc: 'When nothing works — big anchor, 2 plans tight',
+        scheme: 'light', plans: 'stacked', defaultPlan: 'weekly',
+        showFeatures: false, showTimeline: true,
+        features: [],
+        eyebrow: 'WHEN NOTHING WORKS',
+        headline: 'When nothing works — try one more thing.',
+        subtitle: '{valueAnchor}.',
+        ctaText: 'Get Help Tonight — 7 Days Free',
+        weeklyTitle: 'Weekly', weeklySub: '7-day trial · Cancel anytime',
+        annualTitle: 'Annual', annualSub: 'Save 85% · {annualPrice}',
+        weeklyBadge: 'RECOMMENDED', annualBadge: 'SAVE 85%',
+      },
+    ];
+
+    // ═══ ▲ EDIT FOR NEW PROJECT ▲ ═══════════════════════════════════════════
+
+    // STORAGE_KEY uniquely scopes localStorage so each project's workbench
+    // doesn't collide. Change suffix when porting (e.g. 'pestsnap.paywall.v2').
+    const STORAGE_KEY = 'crysnap.paywall.v2';
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const s = JSON.parse(raw);
+          // backfill missing keys
+          s.hero   = Object.assign({}, DEFAULT_HERO,   s.hero   || {});
+          s.brief  = Object.assign({}, DEFAULT_BRIEF,  s.brief  || {});
+          s.tokens = Object.assign({}, DEFAULT_TOKENS, s.tokens || {});
+          s.tweaks = Object.assign({}, DEFAULT_TWEAKS, s.tweaks || {});
+          if (!s.presetId || !PRESETS.find(p => p.id === s.presetId)) s.presetId = PRESETS[0].id;
+          return s;
+        }
+      } catch (_) {}
+      return {
+        hero: { ...DEFAULT_HERO },
+        brief: { ...DEFAULT_BRIEF },
+        tokens: { ...DEFAULT_TOKENS },
+        tweaks: { ...DEFAULT_TWEAKS },
+        presetId: PRESETS[0].id,
+      };
+    }
+    function saveState() {
+      try {
+        // strip blob: URLs that won't survive reload (custom upload)
+        const serializable = JSON.parse(JSON.stringify(state));
+        if (serializable.hero.src && serializable.hero.src.startsWith('blob:')) {
+          serializable.hero.src = '';
+          serializable.hero.builtIn = state.hero.builtIn || 'A';
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(serializable));
+      } catch (_) {}
+    }
+
+    let state = loadState();
+
+    // === Helpers ===
+    const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+    const interp = (str) => String(str ?? '').replace(/\{(\w+)\}/g, (_, k) => state.brief[k] ?? '');
+
+    function activeHeroSrc() {
+      if (state.hero.src) return state.hero.src;
+      if (state.hero.builtIn && HEROES[state.hero.builtIn]) return HEROES[state.hero.builtIn];
+      return ''; // gradient placeholder
+    }
+
+    function effectiveScheme(preset) {
+      return state.tweaks.scheme === 'auto' ? preset.scheme : state.tweaks.scheme;
+    }
+    function effectivePlans(preset) {
+      return state.tweaks.plans === 'auto' ? preset.plans : state.tweaks.plans;
+    }
+
+    // === Renderer (returns full paywall HTML for the screen) ===
+    function renderPaywall(preset, opts = {}) {
+      const tw = opts.tweaks || state.tweaks;
+      const scheme = opts.scheme || effectiveScheme(preset);
+      const plans = opts.plans || effectivePlans(preset);
+      const heroSrc = opts.heroSrc !== undefined ? opts.heroSrc : activeHeroSrc();
+      const bg = scheme === 'dark' ? state.tokens.darkBg : state.tokens.lightBg;
+      const fg = scheme === 'dark' ? state.tokens.textOnDark : state.tokens.textOnLight;
+      const styleVars = `--pw-bg:${bg}; --pw-fg:${fg}; --pw-pri:${state.tokens.primary}; --pw-acc:${state.tokens.accent};`;
+
+      const heroHtml = (tw.showHero && state.hero.height > 0) ? renderHero(preset, heroSrc, scheme) : '';
+      const trustHtml = tw.showTrust && state.brief.trustLine
+        ? `<div class="pw-pw-trust">★ ${esc(interp(state.brief.trustLine))}</div>` : '';
+      const featuresHtml = (tw.showFeatures && preset.showFeatures !== false && preset.features?.length)
+        ? renderFeatures(preset.features) : '';
+      const plansHtml = renderPlans(preset, plans);
+      const anchorHtml = (tw.showAnchor && state.brief.valueAnchor)
+        ? `<div class="pw-pw-anchor">${esc(interp(state.brief.valueAnchor))}.</div>` : '';
+      const timelineHtml = (tw.showTimeline && preset.showTimeline) ? renderTimeline() : '';
+      const complianceHtml = tw.showCompliance
+        ? `<div class="pw-pw-compliance"><b>Safety:</b> ${esc(state.brief.brand)} is a companion app — not a medical device. ER triggers (fever / blue lips / lethargy / breathing) → call 911.</div>`
+        : '';
+
+      return `
+        <div class="pw-paywall scheme-${scheme}" style="${styleVars}">
+          <div class="pw-status"><span>9:41</span><span style="font-size:13px;">●●● 5G ●●●</span></div>
+          <div class="pw-back">‹</div>
+          <div class="pw-close">×</div>
+          ${heroHtml}
+          <div class="pw-pw-body">
+            <div class="pw-pw-headline">${esc(interp(preset.headline))}</div>
+            <div class="pw-pw-subtitle">${esc(interp(preset.subtitle))}</div>
+            ${trustHtml}
+            ${featuresHtml}
+            ${plansHtml}
+            ${anchorHtml}
+            ${timelineHtml}
+            <div class="pw-pw-cta">${esc(interp(preset.ctaText))}</div>
+            ${complianceHtml}
+            <div class="pw-pw-fine"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderHero(preset, heroSrc, scheme) {
+      const h = state.hero;
+      const overlayCls = h.overlay && h.overlay !== 'none' ? `overlay-${h.overlay}` : '';
+      const placeholder = !heroSrc;
+      const bgImage = heroSrc ? `background-image:url('${heroSrc}'); background-size:${h.fit}; background-position:${h.position};` : '';
+      const tagText = preset.eyebrow ? esc(preset.eyebrow) : 'hero / illustration / video poster';
+      return `
+        <div class="pw-pw-hero ${overlayCls} ${placeholder ? 'placeholder' : ''}" style="height:${h.height}px; ${bgImage}">
+          ${placeholder ? `<div class="placeholder-tag">${tagText}</div>` : ''}
+          ${heroSrc && preset.eyebrow ? `<div class="hero-text"><div class="eyb">${esc(preset.eyebrow)}</div></div>` : ''}
+        </div>
+      `;
+    }
+
+    function renderFeatures(features) {
+      return `
+        <div class="pw-pw-features">
+          ${features.map(f => `
+            <div class="pw-pw-feature">
+              <div class="ico">${esc(f.icon)}</div>
+              <div>
+                <div class="ft-title">${esc(interp(f.title))}</div>
+                <div class="ft-sub">${esc(interp(f.sub))}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function renderPlans(preset, plansLayout) {
+      const showWeekly = plansLayout !== 'single-annual';
+      const showAnnual = plansLayout !== 'single-weekly';
+      const layoutCls = ({
+        'side': 'side',
+        'single-weekly': 'single', 'single-annual': 'single',
+      })[plansLayout] || 'stacked';
+      const isWeeklyDefault = preset.defaultPlan === 'weekly';
+      const weekly = showWeekly ? `
+        <div class="pw-pw-plan weekly ${isWeeklyDefault ? 'selected' : ''}">
+          ${preset.weeklyBadge ? `<div class="plan-badge">${esc(interp(preset.weeklyBadge))}</div>` : ''}
+          <div class="plan-row">
+            <div>
+              <div class="plan-name">${esc(interp(preset.weeklyTitle || 'Weekly'))}</div>
+              <div class="plan-sub">${esc(interp(preset.weeklySub || ''))}</div>
+            </div>
+            <div class="plan-price">${esc(state.brief.weeklyPrice)}<span class="pu">/wk</span></div>
+          </div>
+        </div>` : '';
+      const annual = showAnnual ? `
+        <div class="pw-pw-plan annual ${!isWeeklyDefault ? 'selected' : ''}">
+          ${preset.annualBadge ? `<div class="plan-badge">${esc(interp(preset.annualBadge))}</div>` : ''}
+          <div class="plan-row">
+            <div>
+              <div class="plan-name">${esc(interp(preset.annualTitle || 'Annual'))}</div>
+              <div class="plan-sub">${esc(interp(preset.annualSub || ''))}</div>
+            </div>
+            <div class="plan-price">${esc(state.brief.annualPrice)}<span class="pu">/yr</span></div>
+          </div>
+        </div>` : '';
+      return `<div class="pw-pw-plans ${layoutCls}">${weekly}${annual}</div>`;
+    }
+
+    function renderTimeline() {
+      return `
+        <div class="pw-pw-timeline">
+          <div class="tl-icon today">✓</div>
+          <div class="tl-text"><span class="tl-when">Today</span><span class="tl-what">Full access to everything</span></div>
+          <div class="tl-icon day5">5</div>
+          <div class="tl-text"><span class="tl-when">Day 5</span><span class="tl-what">We'll remind you trial is ending</span></div>
+          <div class="tl-icon day7">7</div>
+          <div class="tl-text"><span class="tl-when">Day 7</span><span class="tl-what">${esc(state.brief.weeklyPrice)}/wk starts — cancel anytime</span></div>
+        </div>
+      `;
+    }
+
+    // === DOM bindings ===
+    const $ = (id) => document.getElementById(id);
+    const dz = $('pw-dropzone');
+    const heroUrl = $('pw-h-url');
+    const heroH = $('pw-h-height'), heroHOut = $('pw-h-h-out');
+    const heroFit = $('pw-h-fit'), heroPos = $('pw-h-pos'), heroOv = $('pw-h-ov');
+    const gallery = $('pw-gallery');
+    const realRoot = $('pw-real-content');
+    const exportView = $('pw-export-view');
+    const activeName = $('pw-active-pname');
+    const presetCount = $('pw-preset-count');
+
+    // ----- 01 Hero handlers -----
+    function applyHeroToControls() {
+      heroUrl.value = state.hero.src || '';
+      heroH.value = state.hero.height;
+      heroHOut.textContent = state.hero.height + 'px';
+      heroFit.value = state.hero.fit;
+      heroPos.value = state.hero.position;
+      heroOv.value = state.hero.overlay;
+      const src = activeHeroSrc();
+      if (src) {
+        dz.style.backgroundImage = `url('${src}')`;
+        dz.classList.add('has-image');
+        dz.firstElementChild && (dz.firstElementChild.style.opacity = '0');
+      } else {
+        dz.style.backgroundImage = '';
+        dz.classList.remove('has-image');
+        if (dz.firstElementChild) dz.firstElementChild.style.opacity = '1';
+      }
+      document.querySelectorAll('.hero-pick').forEach(b => {
+        b.classList.toggle('active', !state.hero.src && b.dataset.pwBuiltin === state.hero.builtIn);
+      });
+    }
+    function ingestFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const url = URL.createObjectURL(file);
+      state.hero.src = url;
+      state.hero.builtIn = null;
+      saveState();
+      applyHeroToControls();
+      renderAll();
+    }
+    dz.addEventListener('click', () => {
+      const i = document.createElement('input');
+      i.type = 'file'; i.accept = 'image/*';
+      i.onchange = () => ingestFile(i.files && i.files[0]);
+      i.click();
+    });
+    ['dragenter','dragover'].forEach(ev => dz.addEventListener(ev, (e) => { e.preventDefault(); dz.classList.add('dragging'); }));
+    ['dragleave','drop'].forEach(ev => dz.addEventListener(ev, (e) => { e.preventDefault(); dz.classList.remove('dragging'); }));
+    dz.addEventListener('drop', (e) => {
+      const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f) ingestFile(f);
+    });
+    heroUrl.addEventListener('input', () => {
+      state.hero.src = heroUrl.value.trim();
+      if (state.hero.src) state.hero.builtIn = null;
+      saveState(); applyHeroToControls(); renderAll();
+    });
+    heroH.addEventListener('input', () => {
+      state.hero.height = parseInt(heroH.value, 10);
+      heroHOut.textContent = state.hero.height + 'px';
+      saveState(); renderAll();
+    });
+    heroFit.addEventListener('change', () => { state.hero.fit = heroFit.value; saveState(); renderAll(); });
+    heroPos.addEventListener('change', () => { state.hero.position = heroPos.value; saveState(); renderAll(); });
+    heroOv.addEventListener('change',  () => { state.hero.overlay  = heroOv.value;  saveState(); renderAll(); });
+    $('pw-h-clear').addEventListener('click', () => {
+      state.hero.src = '';
+      state.hero.builtIn = state.hero.builtIn || 'A';
+      saveState(); applyHeroToControls(); renderAll();
+    });
+    document.querySelectorAll('.hero-pick').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const v = btn.dataset.pwBuiltin;
+        state.hero.builtIn = (v === 'none') ? null : v;
+        state.hero.src = '';
+        saveState(); applyHeroToControls(); renderAll();
+      });
+    });
+
+    // ----- 02 Brief handlers -----
+    const briefMap = {
+      'pw-b-brand':'brand','pw-b-audience':'audience','pw-b-pain':'corePain',
+      'pw-b-killer':'killerFeature','pw-b-weekly':'weeklyPrice','pw-b-annual':'annualPrice',
+      'pw-b-anchor':'valueAnchor','pw-b-trust':'trustLine',
+    };
+    function applyBriefToControls() {
+      Object.entries(briefMap).forEach(([id, key]) => { $(id).value = state.brief[key] || ''; });
+    }
+    Object.entries(briefMap).forEach(([id, key]) => {
+      $(id).addEventListener('input', () => {
+        state.brief[key] = $(id).value;
+        saveState(); renderAll();
+      });
+    });
+
+    // ----- 03 Tokens handlers -----
+    const tokenMap = {
+      'pw-t-primary':['primary','tk-sw-primary'],
+      'pw-t-accent':['accent','tk-sw-accent'],
+      'pw-t-lightbg':['lightBg','tk-sw-lightbg'],
+      'pw-t-darkbg':['darkBg','tk-sw-darkbg'],
+    };
+    function applyTokensToControls() {
+      Object.entries(tokenMap).forEach(([id, [key, swId]]) => {
+        $(id).value = state.tokens[key];
+        const sw = $(swId); if (sw) sw.style.background = state.tokens[key];
+      });
+    }
+    Object.entries(tokenMap).forEach(([id, [key, swId]]) => {
+      $(id).addEventListener('input', () => {
+        state.tokens[key] = $(id).value;
+        const sw = $(swId); if (sw) sw.style.background = state.tokens[key];
+        saveState(); renderAll();
+      });
+    });
+
+    // ----- Tweaks (05) -----
+    function applyTweaksToControls() {
+      document.querySelectorAll('[data-pw-tw]').forEach(el => {
+        const k = el.dataset.pwTw;
+        if (el.type === 'checkbox') el.checked = !!state.tweaks[k];
+        else el.value = state.tweaks[k];
+      });
+    }
+    document.querySelectorAll('[data-pw-tw]').forEach(el => {
+      el.addEventListener('change', () => {
+        const k = el.dataset.pwTw;
+        if (el.type === 'checkbox') state.tweaks[k] = el.checked;
+        else state.tweaks[k] = el.value;
+        saveState(); renderDeepDive();
+      });
+    });
+
+    // ----- 04 Gallery render -----
+    function renderGallery() {
+      gallery.innerHTML = PRESETS.map(p => `
+        <div class="preset-thumb ${p.id === state.presetId ? 'active' : ''}" data-pw-pick="${p.id}">
+          <div class="preset-thumb-frame">
+            <div class="preset-thumb-screen">${renderPaywall(p, { tweaks: DEFAULT_TWEAKS })}</div>
+          </div>
+          <div class="preset-thumb-info">
+            <div class="num">${String(p.num).padStart(2,'0')}</div>
+            <div class="name">${esc(p.name)}</div>
+            <div class="desc">${esc(p.desc)}</div>
+          </div>
+        </div>
+      `).join('');
+      presetCount.textContent = `(${PRESETS.length} готовых вариантов)`;
+    }
+    gallery.addEventListener('click', (e) => {
+      const t = e.target.closest('[data-pw-pick]');
+      if (!t) return;
+      state.presetId = t.dataset.pwPick;
+      saveState();
+      gallery.querySelectorAll('.preset-thumb').forEach(c => c.classList.toggle('active', c.dataset.pwPick === state.presetId));
+      renderDeepDive();
+      renderExport();
+      $('paywall-workbench').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    // ----- 05 Deep dive render -----
+    function activePreset() { return PRESETS.find(p => p.id === state.presetId) || PRESETS[0]; }
+    function renderDeepDive() {
+      const p = activePreset();
+      activeName.textContent = `${String(p.num).padStart(2,'0')} · ${p.name}`;
+      realRoot.innerHTML = renderPaywall(p);
+    }
+
+    // ----- Export pane -----
+    function renderExport() {
+      const p = activePreset();
+      const snap = {
+        presetId: p.id,
+        preset: p,
+        hero: state.hero,
+        brief: state.brief,
+        tokens: state.tokens,
+        tweaks: state.tweaks,
+      };
+      exportView.textContent = JSON.stringify(snap, null, 2);
+    }
+    function showToast() {
+      const t = $('pw-copy-toast');
+      t.style.display = 'inline'; setTimeout(() => t.style.display = 'none', 1600);
+    }
+    $('pw-copy-json').addEventListener('click', () => {
+      navigator.clipboard.writeText(exportView.textContent).then(showToast);
+    });
+    $('pw-copy-swift').addEventListener('click', () => {
+      const p = activePreset();
+      const swiftEsc = (s) => String(s ?? '').replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+      const heroAsset = state.hero.builtIn ? `PaywallHero${state.hero.builtIn}` : 'PaywallHeroCustom';
+      const lines = [
+        `// ${p.num.toString().padStart(2,'0')} · ${p.name} — generated by design.html workbench`,
+        `// Paste into Features/Paywall/PaywallView.swift`,
+        ``,
+        `let presetID         = "${p.id}"`,
+        `let scheme           = "${effectiveScheme(p)}"`,
+        `let plansLayout      = "${effectivePlans(p)}"`,
+        `let heroAsset        = "${heroAsset}"`,
+        `let heroHeight       = ${state.hero.height}`,
+        ``,
+        `let eyebrow          = "${swiftEsc(interp(p.eyebrow))}"`,
+        `let headline         = "${swiftEsc(interp(p.headline))}"`,
+        `let subtitle         = "${swiftEsc(interp(p.subtitle))}"`,
+        `let trustLine        = "${swiftEsc(state.brief.trustLine)}"`,
+        ``,
+        `let weeklyTitle      = "${swiftEsc(interp(p.weeklyTitle || ''))}"`,
+        `let weeklySub        = "${swiftEsc(interp(p.weeklySub || ''))}"`,
+        `let weeklyPrice      = "${swiftEsc(state.brief.weeklyPrice)}"`,
+        `let weeklyBadge      = "${swiftEsc(interp(p.weeklyBadge || ''))}"`,
+        ``,
+        `let annualTitle      = "${swiftEsc(interp(p.annualTitle || ''))}"`,
+        `let annualSub        = "${swiftEsc(interp(p.annualSub || ''))}"`,
+        `let annualPrice      = "${swiftEsc(state.brief.annualPrice)}"`,
+        `let annualBadge      = "${swiftEsc(interp(p.annualBadge || ''))}"`,
+        ``,
+        `let valueAnchor      = "${swiftEsc(state.brief.valueAnchor)}"`,
+        `let ctaText          = "${swiftEsc(interp(p.ctaText))}"`,
+        ``,
+        `// Brand tokens`,
+        `let primaryHex       = "${state.tokens.primary}"`,
+        `let accentHex        = "${state.tokens.accent}"`,
+        `let lightBgHex       = "${state.tokens.lightBg}"`,
+        `let darkBgHex        = "${state.tokens.darkBg}"`,
+      ];
+      if (p.features?.length) {
+        lines.push(``, `// Features`);
+        p.features.forEach((f, i) => {
+          lines.push(`let feature${i+1}Title  = "${swiftEsc(interp(f.title))}"`);
+          lines.push(`let feature${i+1}Sub    = "${swiftEsc(interp(f.sub))}"`);
+        });
+      }
+      navigator.clipboard.writeText(lines.join('\n')).then(showToast);
+    });
+    $('pw-copy-claude').addEventListener('click', () => {
+      const p = activePreset();
+      const prompt = `# Paywall implementation brief — ${p.name}
+
+**Source:** design.html paywall workbench (preset ${String(p.num).padStart(2,'0')} · ${p.id})
+
+## Project context
+- **Brand / product:** ${state.brief.brand}
+- **Primary audience:** ${state.brief.audience}
+- **Core pain:** ${state.brief.corePain}
+- **Killer feature:** ${state.brief.killerFeature}
+- **Pricing:** Weekly ${state.brief.weeklyPrice} (with 7-day trial) · Annual ${state.brief.annualPrice}
+- **Value anchor:** ${state.brief.valueAnchor}
+- **Trust line:** ${state.brief.trustLine}
+
+## Chosen preset
+- **Layout:** ${p.desc}
+- **Scheme:** ${effectiveScheme(p)}
+- **Plans:** ${effectivePlans(p)} (default plan: ${p.defaultPlan})
+- **Show features:** ${p.showFeatures ? 'yes' : 'no'} · **Show timeline:** ${p.showTimeline ? 'yes' : 'no'}
+
+## Copy (with brief tokens already interpolated)
+- **Eyebrow:** ${interp(p.eyebrow) || '—'}
+- **Headline:** ${interp(p.headline)}
+- **Subtitle:** ${interp(p.subtitle)}
+- **CTA:** ${interp(p.ctaText)}
+- **Weekly tile:** "${interp(p.weeklyTitle)}" · ${interp(p.weeklySub)} · ${state.brief.weeklyPrice} · badge="${interp(p.weeklyBadge)}"
+- **Annual tile:** "${interp(p.annualTitle)}" · ${interp(p.annualSub)} · ${state.brief.annualPrice} · badge="${interp(p.annualBadge)}"
+${p.features?.length ? '- **Features:**\n' + p.features.map((f,i) => `  ${i+1}. ${f.icon} **${interp(f.title)}** — ${interp(f.sub)}`).join('\n') : ''}
+
+## Brand tokens
+- Primary / CTA: \`${state.tokens.primary}\`
+- Trust / accent: \`${state.tokens.accent}\`
+- Light bg: \`${state.tokens.lightBg}\`
+- Dark bg: \`${state.tokens.darkBg}\`
+
+## Hero
+- Mode: ${state.hero.src ? 'custom upload' : (state.hero.builtIn ? 'built-in ' + state.hero.builtIn : 'no image / gradient')}
+- Height: ${state.hero.height}pt · Fit: ${state.hero.fit} · Position: ${state.hero.position} · Overlay: ${state.hero.overlay}
+
+## Tweaks (block visibility)
+${Object.entries(state.tweaks).filter(([k]) => k.startsWith('show')).map(([k,v]) => `- ${k}: ${v}`).join('\n')}
+
+## Task
+Implement this paywall in \`Features/Paywall/PaywallView.swift\` (SwiftUI, iOS 17+, RevenueCat). Match copy/scheme/plans layout above. Use existing \`PrimaryButton\` and design tokens from \`DesignTokens.swift\`. Do **not** invent new copy — use what's above verbatim. Compliance: never claim "diagnoses" / "cures crying" / "medical-grade" — keep "companion app, not medical device" + ER triggers footer. Reference golden source at \`apps/07-colorcheck/ColorCheck/ColorCheck/Views/Paywall/PaywallView.swift\`.`;
+      navigator.clipboard.writeText(prompt).then(showToast);
+    });
+    $('pw-reset-state').addEventListener('click', () => {
+      if (!confirm('Reset workbench to defaults? Your edits to brief, tokens, hero will be lost.')) return;
+      state = {
+        hero: { ...DEFAULT_HERO },
+        brief: { ...DEFAULT_BRIEF },
+        tokens: { ...DEFAULT_TOKENS },
+        tweaks: { ...DEFAULT_TWEAKS },
+        presetId: PRESETS[0].id,
+      };
+      saveState(); applyAllControls(); renderAll();
+    });
+
+    function applyAllControls() {
+      applyHeroToControls();
+      applyBriefToControls();
+      applyTokensToControls();
+      applyTweaksToControls();
+    }
+    function renderAll() {
+      renderGallery();
+      renderDeepDive();
+      renderExport();
+    }
+
+    applyAllControls();
+    renderAll();
+  })();
 </script>
 
 <p style="margin-top: 24px; color: #8a8a90; font-size: 11px; text-align: center;">
