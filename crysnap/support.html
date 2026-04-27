@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — CrySnap</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 720px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #222;
+        }
+        h1 { font-size: 28px; margin-bottom: 5px; letter-spacing: -0.01em; }
+        h2 { font-size: 20px; margin-top: 32px; letter-spacing: -0.005em; }
+        .app-name { color: #E8836A; font-weight: 600; }
+        .faq-q { font-weight: 600; margin-top: 18px; color: #1a1a1a; }
+        a { color: #C8624A; }
+        .warning {
+            background: #fff0ef;
+            padding: 14px 18px;
+            border-left: 3px solid #D94A3D;
+            border-radius: 4px;
+            margin: 18px 0;
+        }
+        .trust {
+            background: #f3f7ee;
+            padding: 14px 18px;
+            border-left: 3px solid #7A9A6E;
+            border-radius: 4px;
+            margin: 18px 0;
+        }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        code { background: #f5f3f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <h1>Support</h1>
+    <p class="app-name"><strong>CrySnap: Baby Cry Translator</strong></p>
+    <p>Version 1.0</p>
+
+    <h2>Contact Us</h2>
+    <p>For questions, bug reports, feature requests, or App Review inquiries:<br>
+    <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></p>
+    <p>We respond within 24 hours.</p>
+
+    <h2>Emergency</h2>
+    <div class="warning">
+        <p><strong>CrySnap is not a medical service.</strong> If your baby shows any of these signs — fever in a baby under 3 months (≥100.4°F / 38°C), lethargy or unresponsiveness, blue lips, difficulty breathing, signs of dehydration, or any sudden change you can't explain — call <strong>911</strong> or your pediatrician immediately. For suspected ingestion of a household substance, call <strong>Poison Control at 1-800-222-1222</strong>.</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <p class="faq-q">What does CrySnap do?</p>
+    <p>CrySnap is an AI parenting companion for new parents. Record a short clip of your baby crying and the app classifies it into one of 9 common cry categories (hungry, tired, gas, colic, pain, scared, lonely, discomfort, cold/hot) with a confidence score. A traffic-light verdict (🟢 Physical · 🟡 Comfort · 🔴 Regulation) tells you whether to act, observe, or escalate. Three expert chat personas — Pediatric Nurse, Sleep Coach, and Lactation Consultant — are available 24/7 to answer follow-up questions, and a hands-free Voice Mode is built for the moments at 3am when you can't open your eyes.</p>
+
+    <p class="faq-q">How does a cry scan work?</p>
+    <p>Tap the big <strong>Listen</strong> button on the Scan tab. The app records about 3 seconds of audio and runs the DeepInfant V2 cry classifier <strong>entirely on your iPhone</strong> using Apple's CoreML framework. A verdict card appears with the most likely cry type, a confidence percentage, three suggested next steps, and a one-tap option to ask a follow-up to the relevant chat persona. The audio recording never leaves your device.</p>
+
+    <p class="faq-q">Is CrySnap medical advice?</p>
+    <p><strong>No.</strong> CrySnap is a parenting companion app — not a medical device. It does not diagnose colic, reflux, GERD, allergies, infections, or any other medical condition. The chat personas provide general parenting guidance grounded in published clinical guidelines (AAP, CDC, La Leche League) and explicitly redirect any diagnostic question to your pediatrician. For severe symptoms, call 911 or your pediatrician immediately.</p>
+
+    <p class="faq-q">How accurate is the cry classifier?</p>
+    <p>The DeepInfant V2 model achieves 89% test accuracy across the 9 cry categories on standardised research datasets. Real-world accuracy depends on background noise, microphone quality, and how well the recording captures the cry vocalisation. CrySnap always shows a confidence score with each verdict; lower confidence means take the suggestion as one possibility among several. <strong>Always trust your parental instinct first.</strong></p>
+
+    <p class="faq-q">What are the 9 cry categories?</p>
+    <p>The 9 categories are grouped by traffic-light bucket:</p>
+    <ul>
+        <li><strong>🟢 Physical (immediate need):</strong> hungry · burp · cold/hot</li>
+        <li><strong>🟡 Comfort (try and observe):</strong> tired · lonely · discomfort</li>
+        <li><strong>🔴 Regulation (escalation triage):</strong> pain · scared · unknown</li>
+    </ul>
+
+    <p class="faq-q">Who are the chat personas?</p>
+    <p>Three expert AI personas are available 24/7:</p>
+    <ul>
+        <li><strong>👩‍⚕️ Pediatric Nurse (Sarah Chen, RN)</strong> — default for general parenting questions. Grounded in AAP and CDC guidelines.</li>
+        <li><strong>🌙 Sleep Coach (Maya Patel)</strong> — wake windows, nap planning, 4-month sleep regression, age-appropriate sleep hygiene.</li>
+        <li><strong>🍼 Lactation Consultant (Linda Hayes, IBCLC)</strong> — breastfeeding, pumping, latch issues, cluster feeding, judgement-free.</li>
+    </ul>
+    <p>The app auto-suggests the most relevant persona after a cry verdict (a tired-cry verdict opens with the Sleep Coach; a hungry-cry verdict with the Lactation Consultant), but you can switch personas at any time via the persona chips in the chat.</p>
+
+    <p class="faq-q">What is Voice Mode?</p>
+    <p>Voice Mode is built for 3am — when you can't open your eyes. Tap and hold the microphone button, speak your question, release. The app transcribes your speech via Whisper, sends the text to the active chat persona, and reads the response back to you using Apple's on-device text-to-speech. End-to-end about 5 seconds, completely hands-free.</p>
+
+    <p class="faq-q">Is my baby's audio sent to a server?</p>
+    <div class="trust">
+        <strong>No. Audio recordings of your baby's cry never leave your device.</strong> The DeepInfant cry classifier runs entirely on-device using Apple's CoreML framework. Voice Mode questions (your spoken voice) are transcribed via OpenAI Whisper and the resulting <em>text</em> is processed — the audio is not retained (<code>store: false</code>). Chat messages contain only text plus a small context block (baby age, last cry type, time of day).
+    </div>
+
+    <p class="faq-q">What soothing sounds are included?</p>
+    <p>Five fully procedural sounds are generated on-device using AVAudioEngine — no audio downloads, no licensing risk:</p>
+    <ul>
+        <li>White noise (multiple frequencies)</li>
+        <li>Womb sounds</li>
+        <li>Shushing (scientifically calibrated)</li>
+        <li>Lullabies in 4 languages</li>
+        <li>Heartbeat rhythms</li>
+    </ul>
+    <p>Each comes with a default 30-minute sleep timer. The chat personas can suggest a relevant sound after specific cry verdicts (e.g. "tired" → white noise + 30-minute timer).</p>
+
+    <p class="faq-q">How much does CrySnap cost?</p>
+    <p>CrySnap offers two subscription tiers:</p>
+    <ul>
+        <li><strong>Weekly</strong> — $4.99 per week with a 7-day free trial</li>
+        <li><strong>Annual</strong> — $39.99 per year (save ~85% vs weekly)</li>
+    </ul>
+    <p>Prices may vary by region. All subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period.</p>
+
+    <p class="faq-q">How do I cancel my subscription?</p>
+    <p>On your iPhone, go to <strong>Settings → Apple ID → Subscriptions → CrySnap</strong> and tap <strong>Cancel Subscription</strong>. You can also reach this from inside CrySnap via <strong>Settings → Manage Subscription</strong>. Cancellation must be at least 24 hours before the end of the current billing period to avoid the next charge.</p>
+
+    <p class="faq-q">How do I restore a subscription on a new device?</p>
+    <p>Open CrySnap, go to <strong>Settings → Restore Purchases</strong> while signed in to the same Apple ID that made the original purchase. The subscription will be restored within a few seconds.</p>
+
+    <p class="faq-q">Is my data private?</p>
+    <p>Yes. All cry scans, chat messages, baby profile, and preferences are stored <strong>locally on your device</strong> using SwiftData. No account is required. No analytics. No ad trackers. The audio recording of your baby's cry never leaves your device. See our <a href="privacy-policy.html">Privacy Policy</a> for full details.</p>
+
+    <p class="faq-q">Can I reset what the chat assistants know about my baby?</p>
+    <p>Yes — go to <strong>Settings → Reset Team Memory</strong>. This wipes the cross-thread summary that the personas use for context. Your scan history, baby profile, and chat threads remain untouched unless you delete those separately.</p>
+
+    <p class="faq-q">What iOS version is required?</p>
+    <p>CrySnap requires iOS 17.0 or later and runs on iPhone only (portrait orientation). Microphone access is required for cry scanning; you can grant or revoke this at any time via <strong>Settings → CrySnap → Microphone</strong>.</p>
+
+    <p class="faq-q">What if I get a network error in chat or Voice Mode?</p>
+    <p>Cry scanning works fully offline. Chat and Voice Mode require an internet connection (they use our Cloudflare Worker proxy to reach DeepSeek and Whisper). If you see "Reconnecting...", check Wi-Fi or cellular data. If you're on a region-restricted network the proxy may be unreachable; a VPN to a US endpoint usually resolves this.</p>
+
+    <p class="faq-q">Does CrySnap work outside the US?</p>
+    <p>Yes — the app is fully localized into 50 languages and works worldwide. Cry classification (on-device) and soothing sounds work everywhere with no internet. Chat and Voice Mode work in any country where the Cloudflare Worker proxy is reachable. Note that emergency contact numbers shown inside the app and on this support page are US numbers (911 / 1-800-222-1222) — please use your local emergency services for any urgent situation.</p>
+
+    <p class="faq-q">Will CrySnap make my baby stop crying?</p>
+    <p>CrySnap helps you understand <em>why</em> your baby is most likely crying so you can respond with the right action. It is not a magic stop button. Some crying — especially in the 6–8 week peak period — is normal and is part of healthy development. The app's job is to help you act with confidence, not to pretend every cry has a fix.</p>
+
+    <p class="faq-q">Report a bug or request a feature</p>
+    <p>Please email <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a> with:</p>
+    <ul>
+        <li>iPhone model and iOS version</li>
+        <li>CrySnap version (Settings → About)</li>
+        <li>A short description of what happened and what you expected</li>
+        <li>Screenshots or a screen recording, if possible</li>
+    </ul>
+</body>
+</html>

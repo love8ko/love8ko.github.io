@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrySnap — Baby Cry Translator</title>
+    <meta name="description" content="Decode your baby's cry in 3 seconds. AI nurse + sleep coach + lactation consultant in your pocket. Voice mode for 3am. Built for new parents.">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+        header {
+            text-align: center;
+            padding: 60px 0 30px;
+        }
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+        }
+        .tagline {
+            font-size: 20px;
+            color: #E8836A;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-top: 40px;
+            letter-spacing: -0.005em;
+            color: #1a1a1a;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .feature-card {
+            background: #fdf6f1;
+            padding: 18px 20px;
+            border-radius: 10px;
+            border-left: 3px solid #E8836A;
+        }
+        .feature-card.sage {
+            background: #f3f7ee;
+            border-left-color: #7A9A6E;
+        }
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .feature-desc {
+            font-size: 14px;
+            color: #555;
+        }
+        .verdict-row {
+            display: flex;
+            gap: 14px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        .verdict-chip {
+            flex: 1 1 200px;
+            background: #f7f7f9;
+            padding: 14px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        .chip-physical { border-left: 3px solid #7A9A6E; }
+        .chip-comfort { border-left: 3px solid #D4A640; }
+        .chip-regulation { border-left: 3px solid #D94A3D; }
+        .persona-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 14px;
+            margin: 24px 0;
+        }
+        .persona-card {
+            background: #f3f7ee;
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 3px solid #7A9A6E;
+            font-size: 14px;
+        }
+        .persona-name {
+            font-weight: 600;
+            margin: 6px 0 4px;
+            color: #1a1a1a;
+        }
+        .persona-icon {
+            font-size: 24px;
+        }
+        .cta {
+            display: block;
+            text-align: center;
+            margin: 40px auto 10px;
+            padding: 14px 32px;
+            background: #E8836A;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            max-width: 260px;
+        }
+        .price-card {
+            background: #fdf6f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 16px 0;
+            border: 1px solid #f3dccc;
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f5e2d2;
+        }
+        .price-row:last-child { border-bottom: none; }
+        .price-row strong { color: #1a1a1a; }
+        a { color: #C8624A; }
+        .footer-disclaimer {
+            margin-top: 60px;
+            padding: 20px;
+            background: #f7f7f9;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .footer-links {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer-links a { margin: 0 10px; }
+        @media (max-width: 600px) {
+            .persona-row { grid-template-columns: 1fr; }
+            .feature-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CrySnap</h1>
+        <p class="tagline">Decode your baby's cry in 3 seconds.</p>
+        <p>Hungry, tired, gas, colic? Stop guessing at 3am. Record. Get an AI verdict. Try the right thing first.</p>
+    </header>
+
+    <h2>Four reasons new parents are switching</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🎙️</div>
+            <div class="feature-title">3-Second Cry Translator</div>
+            <div class="feature-desc">Record. Get one of 9 most likely meanings — hungry, tired, colic, more — with a confidence score. Audio stays on your iPhone.</div>
+        </div>
+        <div class="feature-card sage">
+            <div class="feature-icon">💬</div>
+            <div class="feature-title">3 Expert Chat Personas</div>
+            <div class="feature-desc">Pediatric Nurse, Sleep Coach, Lactation Consultant — 24/7. Grounded in AAP, CDC, La Leche League guidelines.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌙</div>
+            <div class="feature-title">Voice Mode for 3am</div>
+            <div class="feature-desc">Eyes closed? Just talk. The app listens, transcribes, replies in seconds. Hands-free, made for the dark.</div>
+        </div>
+        <div class="feature-card sage">
+            <div class="feature-icon">🎵</div>
+            <div class="feature-title">Soothing Sounds + Sleep Timer</div>
+            <div class="feature-desc">White noise, womb sounds, shushing, lullabies, heartbeat. Generated on-device. 30-min auto-off by default.</div>
+        </div>
+    </div>
+
+    <h2>Traffic-light verdicts — not Latin lessons</h2>
+    <p>Every cry scan returns a clear traffic-light verdict and the next step that matters:</p>
+    <div class="verdict-row">
+        <div class="verdict-chip chip-physical">🟢 <strong>Physical</strong> — concrete next step (feed, burp, swaddle, change layers)</div>
+        <div class="verdict-chip chip-comfort">🟡 <strong>Comfort</strong> — try a soothing technique, observe 15 min, check in</div>
+        <div class="verdict-chip chip-regulation">🔴 <strong>Regulation</strong> — triage decision tree, ER trigger awareness</div>
+    </div>
+    <p>Plus a confidence percentage on every verdict ("87% likely hungry") — so you always know how much weight to give the suggestion. Every result and chat screen has a persistent safety strip with 911 and Poison Control one tap away.</p>
+
+    <h2>Three experts in your pocket — 24/7</h2>
+    <div class="persona-row">
+        <div class="persona-card">
+            <div class="persona-icon">👩‍⚕️</div>
+            <div class="persona-name">Pediatric Nurse</div>
+            Default for general questions. Day or night. Grounded in AAP &amp; CDC guidelines.
+        </div>
+        <div class="persona-card">
+            <div class="persona-icon">🌙</div>
+            <div class="persona-name">Sleep Coach</div>
+            Wake windows, nap planning, 4-month sleep regression, age-appropriate sleep hygiene.
+        </div>
+        <div class="persona-card">
+            <div class="persona-icon">🍼</div>
+            <div class="persona-name">Lactation Consultant</div>
+            Breastfeeding, pumping, latch issues, cluster feeding — without judgement.
+        </div>
+    </div>
+    <p>The app auto-suggests the right expert after each cry verdict (tired-cry → Sleep Coach; hungry-cry → Lactation Consultant). Switch any time with one tap.</p>
+
+    <h2>Built for the parents who really need this</h2>
+    <ul>
+        <li><strong>New mothers in the first 6 months</strong> — peak crying phase, peak desperation, peak need for fast answers.</li>
+        <li><strong>Dads who want to help but feel lost</strong> — give them an expert to ask without waking the baby (or you).</li>
+        <li><strong>Grandparents caring for grandchildren</strong> — modern guidance, gently delivered.</li>
+        <li><strong>Daycare workers and nannies</strong> — pattern recognition across lots of babies.</li>
+        <li><strong>Anyone exhausted at 3am</strong> wondering "why is he STILL crying?"</li>
+    </ul>
+
+    <h2>The math vs. the alternatives</h2>
+    <ul>
+        <li><strong>Pediatric nurse hotline:</strong> $300–500/year subscription</li>
+        <li><strong>Late-night ER visit (uninsured):</strong> $1,500–3,000</li>
+        <li><strong>Reddit r/beyondthebump answer:</strong> 2–6 hours wait</li>
+        <li><strong>CrySnap Premium:</strong> $39.99 / year &nbsp;·&nbsp; 7-day free trial</li>
+    </ul>
+
+    <h2>Pricing</h2>
+    <div class="price-card">
+        <div class="price-row">
+            <div><strong>Weekly</strong><br><span style="font-size: 13px; color: #666;">7-day free trial included</span></div>
+            <div>$4.99 / week</div>
+        </div>
+        <div class="price-row">
+            <div><strong>Annual</strong><br><span style="font-size: 13px; color: #666;">Save ~85% vs weekly</span></div>
+            <div>$39.99 / year</div>
+        </div>
+    </div>
+    <p style="font-size: 13px; color: #666;">Subscriptions auto-renew unless cancelled 24 hours before the period end. Manage or cancel in Settings → Apple ID → Subscriptions. Prices may vary by region.</p>
+
+    <h2>Privacy by design</h2>
+    <ul>
+        <li><strong>Audio of your baby's cry never leaves your iPhone.</strong> The cry classifier runs entirely on-device.</li>
+        <li>All scan history, chat threads, and baby profile stored locally on your device.</li>
+        <li>No account required. No sign-in. No analytics. No ad trackers.</li>
+        <li>Voice Mode transcripts are processed for the few seconds of transcription only and not retained.</li>
+    </ul>
+    <p>Full details in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+    <div class="footer-disclaimer">
+        <strong>Important.</strong> CrySnap is a parenting companion app. It is <strong>not</strong> a medical device, <strong>not</strong> a diagnostic tool, and <strong>not</strong> a substitute for professional medical advice, examination, diagnosis, or treatment. The cry classifier is not 100% accurate. The chat personas provide general guidance grounded in published clinical guidelines — they explicitly redirect any diagnostic question to your pediatrician. For severe symptoms — fever in a baby under 3 months (≥100.4°F / 38°C), lethargy, blue lips, difficulty breathing, or any sudden change you can't explain — call <strong>911</strong> or your pediatrician immediately. For suspected ingestion, call <strong>Poison Control at 1-800-222-1222</strong>. Always trust your parental instinct.
+    </div>
+
+    <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a> ·
+        <a href="support.html">Support</a> ·
+        <a href="terms.html">Terms</a> ·
+        <a href="mailto:loveykovl@gmail.com">Contact</a>
+    </div>
+</body>
+</html>

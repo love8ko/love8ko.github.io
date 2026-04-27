@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — CrySnap</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 720px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #222;
+        }
+        h1 { font-size: 28px; margin-bottom: 5px; letter-spacing: -0.01em; }
+        h2 { font-size: 19px; margin-top: 32px; letter-spacing: -0.005em; }
+        .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+        .app-name { color: #E8836A; font-weight: 600; letter-spacing: 0.01em; }
+        .highlight {
+            background: #fdf6f1;
+            padding: 14px 18px;
+            border-left: 3px solid #E8836A;
+            border-radius: 4px;
+            margin: 18px 0;
+        }
+        .warning {
+            background: #fff0ef;
+            padding: 14px 18px;
+            border-left: 3px solid #D94A3D;
+            border-radius: 4px;
+            margin: 18px 0;
+        }
+        .trust {
+            background: #f3f7ee;
+            padding: 14px 18px;
+            border-left: 3px solid #7A9A6E;
+            border-radius: 4px;
+            margin: 18px 0;
+        }
+        a { color: #C8624A; }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        code { background: #f5f3f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+        .disclaimer {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #eee4cf;
+            font-size: 13px;
+            color: #6b6b70;
+        }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy</h1>
+    <p class="app-name">CrySnap · AI Baby Cry Translator</p>
+    <p class="date">Effective date: April 27, 2026</p>
+
+    <div class="highlight">
+        <strong>Summary:</strong> CrySnap analyses your baby's cry on your device — the audio recording never leaves your iPhone. Chat messages and voice questions are sent as text only. No account is required. No analytics. No ad trackers. Your baby's audio is never uploaded.
+    </div>
+
+    <h2>1. Overview</h2>
+    <p>CrySnap is an AI-powered cry analysis and parenting companion app for new parents. It records a short clip of your baby crying, classifies it into one of nine common cry categories on-device, and returns a traffic-light verdict (🟢 Physical · 🟡 Comfort · 🔴 Regulation) with a confidence score and suggested next steps. Three expert chat personas (Pediatric Nurse, Sleep Coach, Lactation Consultant) answer follow-up questions, and a hands-free Voice Mode is available for the moments at 3am when you cannot open your eyes. CrySnap is a parenting companion. <strong>It is not a medical device, not a diagnostic tool, and not a substitute for professional medical advice.</strong></p>
+
+    <h2>2. Data Stored on Your Device</h2>
+    <p>The following data is stored <strong>locally on your device only</strong> using Apple's SwiftData framework and never leaves your device unless you explicitly share it:</p>
+    <ul>
+        <li>Cry scan history (verdict, identified cry type, confidence, timestamps, brief notes you add)</li>
+        <li>Baby profile (name, age in weeks, weight if you choose to enter it)</li>
+        <li>Chat conversations with the in-app expert personas</li>
+        <li>Onboarding completion status, disclaimer acceptance, notification preferences</li>
+        <li>Soothing sounds last-used / favourites, sleep timer preferences</li>
+        <li>Recent cry events (used by the optional D+1 reminder if you opt in to it)</li>
+    </ul>
+    <p>No account is required. No user profile, name, email, or identifying information is collected by CrySnap.</p>
+
+    <div class="trust">
+        <strong>Audio recordings of your baby's cry never leave your device.</strong> The DeepInfant V2 cry classifier runs entirely on-device using Apple's CoreML framework. We have no upload path for the raw audio.
+    </div>
+
+    <h2>3. Data Sent to External Services</h2>
+    <p>CrySnap connects to the following services to provide the chat and voice features. In every case, requests travel through our Cloudflare Worker proxy (<code>crysnap-api.love8ko.workers.dev</code>), which injects the upstream API keys so that no upstream credentials exist in the app bundle.</p>
+    <ul>
+        <li><strong>DeepSeek V3</strong> (via our Cloudflare Worker proxy) — text-only conversations with the three in-app expert chat personas. Each chat request includes only your typed (or voice-transcribed) message and a small context block (baby age, last cry type, time of day). No audio, no photos, no identifiers. DeepSeek does not retain queries past response generation per their published policy. Queries are not linked to your identity.</li>
+        <li><strong>OpenAI Whisper</strong> (via our Cloudflare Worker proxy) — Voice Mode speech-to-text. When you tap and hold the voice button, your spoken question is sent for transcription and the resulting text is fed into the chat persona. The audio is processed for the few seconds of transcription and is not retained on either OpenAI's or our infrastructure (<code>store: false</code> flag set in the request).</li>
+    </ul>
+    <p>Voice Mode replies are spoken back to you using <strong>Apple AVSpeechSynthesizer</strong>, which runs entirely on-device. No text-to-speech audio is generated on a server.</p>
+    <p>No personal information, device identifier, contact data, or location is sent to these services.</p>
+
+    <h2>4. Subscriptions</h2>
+    <p>Subscription purchases are managed by <strong>RevenueCat</strong>, a third-party subscription management service. RevenueCat receives:</p>
+    <ul>
+        <li>An anonymous device identifier generated by RevenueCat</li>
+        <li>Subscription status (active, trial, expired)</li>
+        <li>Product identifier of the purchased tier (Weekly / Annual)</li>
+    </ul>
+    <p>RevenueCat does not receive any cry scans, chat messages, baby profile data, or audio. See <a href="https://www.revenuecat.com/privacy">RevenueCat's Privacy Policy</a> for details.</p>
+
+    <h2>5. Analytics and Tracking</h2>
+    <p><strong>CrySnap does not use any third-party analytics, advertising networks, or tracking SDKs.</strong></p>
+    <p>Only Apple's built-in crash diagnostics are collected if you have them enabled. You can disable these in your device Settings under Privacy &amp; Security → Analytics &amp; Improvements.</p>
+
+    <h2>6. Notifications (Optional, Off by Default)</h2>
+    <p>If you opt in via Settings, CrySnap may send a single local notification the day after a cry scan suggesting you check in again ("Yesterday at this time you logged a tired cry. Tap to check in."). All scheduling happens on-device using Apple's <code>UNCalendarNotificationTrigger</code>. We do not use OneSignal or any push provider, no notification content is generated on a server, and the feature is hard-capped to one notification per day, three per week, with quiet hours 22:00–09:00 enforced. Three consecutive dismissals automatically disable the reminder.</p>
+
+    <h2>7. Children's Privacy</h2>
+    <p>CrySnap is rated 4+ and is intended for use by adult parents and caregivers. The app records ambient sound for cry analysis, which may incidentally capture an infant's voice — but this audio is processed on-device only and never uploaded. We do not knowingly collect any data <em>about</em> a child that is uploaded off-device. If you have concerns about your baby's data, deleting the CrySnap app permanently removes everything from your device.</p>
+
+    <h2>8. Medical Disclaimer</h2>
+    <div class="warning">
+        <p><strong>CrySnap is a parenting companion app. It is NOT a medical device, NOT a diagnostic tool, and NOT a substitute for professional medical advice, examination, diagnosis, or treatment.</strong></p>
+        <p>The cry classifier returns the most likely interpretation of a recording with a confidence score — it does not diagnose colic, reflux, GERD, or any other medical condition. The chat personas (Pediatric Nurse, Sleep Coach, Lactation Consultant) provide general parenting guidance grounded in published clinical guidelines (AAP, CDC, La Leche League) and explicitly redirect any diagnostic questions to your pediatrician.</p>
+        <p>For any of the following — call <strong>911</strong> or your pediatrician immediately:</p>
+        <ul>
+            <li>Fever in a baby under 3 months (rectal temperature ≥100.4°F / 38°C)</li>
+            <li>Lethargy or unresponsiveness</li>
+            <li>Blue lips or fingertips (cyanosis)</li>
+            <li>Difficulty breathing, grunting, or laboured breathing</li>
+            <li>Signs of dehydration (sunken fontanelle, no wet diapers for 8+ hours)</li>
+            <li>Suspected ingestion of a household substance — call <strong>Poison Control at 1-800-222-1222</strong></li>
+        </ul>
+        <p>AI cry classification is not 100% accurate. Always trust your parental instinct; if something feels wrong, contact your pediatrician.</p>
+    </div>
+
+    <h2>9. Pediatric Care Disclaimer</h2>
+    <p>CrySnap suggestions are not a substitute for a pediatrician's examination. For persistent crying that does not respond to feeding, changing, or soothing for over an hour; for any change in feeding, sleeping, or behaviour patterns that concerns you; or for any medical question — please contact your pediatrician or a registered children's nurse. The chat personas inside the app will say the same thing.</p>
+
+    <h2>10. Data Deletion</h2>
+    <p>All cry scans, chat messages, baby profile, and preferences are stored locally on your device. Deleting the CrySnap app permanently removes this data from your device. No server-side record of your scans, chats, or baby data exists to be deleted. Your RevenueCat anonymous ID resets when you reinstall.</p>
+    <p>You can also clear your team chat memory at any time via <strong>Settings → Reset Team Memory</strong> without deleting the app.</p>
+
+    <h2>11. Regional Compliance</h2>
+    <p>CrySnap complies with the General Data Protection Regulation (GDPR) for users in the European Economic Area, the UK Data Protection Act for UK users, and the California Consumer Privacy Act (CCPA) for California residents. Because we do not collect personally identifying information, most data-subject rights (access, rectification, portability, deletion) are satisfied automatically — you already hold full control over your data on your device.</p>
+    <p>The app is US-first: emergency phone numbers shown inside the app and in localized listings are US numbers (911 / 1-800-222-1222). Users outside the US should rely on local emergency services for any urgent situation.</p>
+
+    <h2>12. Changes to This Policy</h2>
+    <p>If we update this privacy policy, the revised version will be posted on this page with an updated effective date. Material changes will also be surfaced inside the app.</p>
+
+    <h2>13. Contact</h2>
+    <p>Questions about this privacy policy, data handling, or compliance?<br>
+    <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></p>
+    <p>We respond within 24 hours.</p>
+
+    <p class="disclaimer">
+        CrySnap is an independent parenting companion app. It is not affiliated with, endorsed by, or sponsored by the American Academy of Pediatrics (AAP), the Centers for Disease Control and Prevention (CDC), Mayo Clinic, La Leche League, or any other clinical guideline body referenced in the app. Such organisations are referenced only to indicate the published guidelines on which the chat personas' general advice is grounded.
+    </p>
+</body>
+</html>
