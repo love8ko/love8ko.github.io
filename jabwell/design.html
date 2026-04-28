@@ -94,6 +94,85 @@
     background: linear-gradient(180deg, #FFFFFF 0%, #F4F1DE 100%);
     box-shadow: 0 6px 20px rgba(38, 70, 83, 0.15);
   }
+
+  /* Compact locked palette strips (replaces full mockup card) */
+  .palette-locks-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .palette-lock-strip {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    border: 2px solid;
+  }
+  .palette-lock-strip.day {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F4F1DE 100%);
+    border-color: #264653;
+    color: #264653;
+    box-shadow: 0 4px 16px rgba(38, 70, 83, 0.12);
+  }
+  .palette-lock-strip.night {
+    background: linear-gradient(135deg, #0E1A2B 0%, #152741 100%);
+    border-color: #1B3A5F;
+    color: #F2EDE5;
+    box-shadow: 0 4px 16px rgba(14, 26, 43, 0.25);
+  }
+  .palette-lock-strip .lock-icon-cell {
+    width: 64px; height: 64px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    flex-shrink: 0;
+  }
+  .palette-lock-strip .lock-content {
+    flex: 1; min-width: 0;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .palette-lock-strip .lock-header {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .palette-lock-strip .lock-letter {
+    display: inline-block;
+    background: #264653; color: white;
+    width: 22px; height: 22px;
+    border-radius: 999px;
+    font-size: 11px; font-weight: 800;
+    text-align: center; line-height: 22px;
+    letter-spacing: 0;
+  }
+  .palette-lock-strip .lock-title {
+    font-size: 16px; font-weight: 800;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+  .palette-lock-strip .lock-badge {
+    font-size: 10px; font-weight: 800;
+    padding: 3px 9px; border-radius: 999px;
+    background: #264653; color: white;
+    letter-spacing: 0.04em;
+  }
+  .palette-lock-strip .lock-tagline {
+    font-size: 12px; line-height: 1.4;
+    opacity: 0.85; font-style: italic;
+  }
+  .palette-lock-strip .lock-tokens {
+    display: flex; gap: 5px; flex-wrap: wrap;
+    margin-top: 4px;
+  }
+  .palette-lock-strip .lock-tok {
+    font-size: 10px;
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 700;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+  }
   .rejected-toggle {
     background: #fafafa; border: 1px dashed #d0d0d8; border-radius: 12px;
     padding: 12px 18px; margin-top: 22px; cursor: pointer;
@@ -669,11 +748,14 @@
 
   @media (max-width: 1100px) {
     .palette-grid { grid-template-columns: repeat(2, 1fr); }
+    .palette-locks-row { grid-template-columns: 1fr; }
     .audience-row { grid-template-columns: 1fr; }
     .audience-content { grid-template-columns: repeat(2, 1fr); }
     .compliance-card .compliance-grid { grid-template-columns: 1fr; }
     .pw-brief { grid-template-columns: 1fr; }
     .pw-tokens { grid-template-columns: repeat(2, 1fr); }
+    .ss-priority-card { grid-template-columns: 1fr; }
+    .ss-lineup { grid-template-columns: repeat(4, 1fr); }
   }
   @media (max-width: 600px) {
     .palette-grid { grid-template-columns: 1fr; }
@@ -738,74 +820,47 @@
     Round 1 консилиум (8 голосов) выбрал <b>B "Clinical Apothecary"</b> как day system, подтвердив <b>A "Midnight" токены для AI Nurse chat surface</b> только. Голоса и rejected варианты — в audit trail ниже. Палитра выведена из <b>психологии аудитории JabWell</b> (S1 first-injection scared, S2 3am nausea, S3 cost-driven, S4 hair/skin), не дублирует портфельный визуальный язык.
   </p>
 
-  <!-- ✅ LOCKED palette · single prominent card -->
-  <div class="palette-grid locked">
+  <!-- ✅ LOCKED palette · compact horizontal strip (B day + A chat) -->
+  <div class="palette-locks-row">
 
-    <!-- B · Clinical Apothecary · WINNER (locked) -->
-    <div class="palette-col locked-winner selected">
-      <div class="col-header">
-        <div><span class="col-letter" style="background:#264653; color:white;">B</span><span class="col-title">Clinical Apothecary</span> <span style="font-size:11px; padding:2px 8px; background:#264653; color:white; border-radius:999px; font-weight:800; letter-spacing:0.04em; vertical-align:middle; margin-left:6px;">🏆 LOCKED</span></div>
-        <div class="col-tagline">"Доверенный аптекарь старой школы + AI mind"</div>
-        <div class="col-driver">DAY SYSTEM · primary brand</div>
-      </div>
-      <div class="swatch-strip">
-        <div style="background:#264653">#264653</div>
-        <div style="background:#E76F51">#E76F51</div>
-        <div style="background:#F4F1DE; color:#264653; text-shadow:none;">#F4F1DE</div>
-        <div style="background:#606C38">#606C38</div>
-      </div>
-      <div class="icon-row" style="background:#F4F1DE;">
-        <div class="icon-cell" style="background: linear-gradient(135deg,#264653,#1F3A45); color:#E76F51;">JW</div>
-      </div>
-      <div class="ss-mockup" style="background:#F4F1DE; color:#264653;">
-        <div class="ss-status" style="opacity:0.5;"><span>9:41</span><span>•••</span></div>
-        <div class="ss-headline">Tuesday · Wegovy® due</div>
-        <div class="ss-card" style="background:white;">
-          <div class="ss-row"><span style="font-weight:800;">AI Nurse</span><span class="ss-pill" style="background:#606C38; color:white;">Online</span></div>
-          <div style="font-size:7px; opacity:0.7;">"Nausea day 3? Common at week 4."</div>
+    <!-- B · Clinical Apothecary · WINNER (compact horizontal) -->
+    <div class="palette-lock-strip day">
+      <div class="lock-icon-cell" style="background: linear-gradient(135deg,#264653,#1F3A45); color:#E76F51;">JW</div>
+      <div class="lock-content">
+        <div class="lock-header">
+          <span class="lock-letter">B</span>
+          <span class="lock-title">Clinical Apothecary</span>
+          <span class="lock-badge">🏆 LOCKED · DAY</span>
         </div>
-        <div class="ss-card" style="background:white;">
-          <div class="ss-row"><span>Weight</span><span style="color:#E76F51; font-weight:800;">−12.4 lb</span></div>
-          <div class="ss-bar-row">
-            <div style="background:#E76F51; height:50%"></div>
-            <div style="background:#E76F51; height:65%"></div>
-            <div style="background:#E76F51; height:78%"></div>
-            <div style="background:#E76F51; height:60%"></div>
-            <div style="background:#E76F51; height:85%"></div>
-            <div style="background:#E76F51; height:90%"></div>
-            <div style="background:#E76F51; height:100%"></div>
-          </div>
+        <div class="lock-tagline">"Доверенный аптекарь старой школы + AI mind"</div>
+        <div class="lock-tokens">
+          <span class="lock-tok" style="background:#264653; color:white;">#264653 primary</span>
+          <span class="lock-tok" style="background:#E76F51; color:white;">#E76F51 accent</span>
+          <span class="lock-tok" style="background:#F4F1DE; color:#264653;">#F4F1DE bg</span>
+          <span class="lock-tok" style="background:#606C38; color:white;">#606C38 verdict</span>
         </div>
-      </div>
-      <div class="paywall-mock" style="background:#F4F1DE; color:#264653;">
-        <div class="pw-title">Got side effects? Just ask.</div>
-        <div class="plan selected" style="background:#264653; border-color:#264653;">
-          <span>Weekly + 7-day trial</span><span class="plan-price">$4.99</span>
-        </div>
-        <div class="plan" style="border-color:#D0CFB8; color:#5a5a60;">
-          <span>Annual SAVE 85%</span><span class="plan-price">$39.99</span>
-        </div>
-        <div class="cta" style="background:#E76F51;">Start 7-day trial</div>
-        <div class="pw-trust">Educational, not medical advice. Consult prescriber.</div>
       </div>
     </div>
 
-  </div>
+    <!-- A · Midnight · paired chat-surface (compact horizontal) -->
+    <div class="palette-lock-strip night">
+      <div class="lock-icon-cell" style="background: linear-gradient(135deg,#1B3A5F,#0E1A2B); color:#F2A65A;">JW</div>
+      <div class="lock-content">
+        <div class="lock-header">
+          <span class="lock-letter" style="background:#F2A65A; color:#0E1A2B;">A</span>
+          <span class="lock-title">Midnight Companion</span>
+          <span class="lock-badge" style="background:#F2A65A; color:#0E1A2B;">🌙 AI NURSE CHAT</span>
+        </div>
+        <div class="lock-tagline">3am nausea-panic surface · activates dark mode + 9pm-6am window</div>
+        <div class="lock-tokens">
+          <span class="lock-tok" style="background:#1B3A5F; color:white;">#1B3A5F bot</span>
+          <span class="lock-tok" style="background:#F2A65A; color:#0E1A2B;">#F2A65A accent</span>
+          <span class="lock-tok" style="background:#0E1A2B; color:#F2EDE5;">#0E1A2B bg</span>
+          <span class="lock-tok" style="background:#C44536; color:white;">#C44536 ER</span>
+        </div>
+      </div>
+    </div>
 
-  <!-- A · Midnight as paired chat-surface card -->
-  <div style="margin-top: 14px; padding: 14px 18px; background: #0E1A2B; color: #F2EDE5; border-radius: 12px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
-    <div style="font-size: 26px; line-height: 1;">🌙</div>
-    <div style="flex: 1; min-width: 240px;">
-      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; opacity: 0.7;">PAIRED · AI NURSE CHAT SURFACE</div>
-      <div style="font-size: 15px; font-weight: 800; margin-top: 2px; font-family: -apple-system, 'SF Pro Rounded', sans-serif;">A · Midnight Companion</div>
-      <div style="font-size: 12px; opacity: 0.85; margin-top: 4px; line-height: 1.45;">Активируется когда AI Nurse chat + время 9pm-6am + OS dark mode (или explicit toggle). 3am nausea-panic = canonical use case. Voice 6 (AI Nurse) scored A:9 vs B:8 для chat UX context.</div>
-    </div>
-    <div style="display: flex; gap: 6px; flex-shrink: 0;">
-      <div style="width: 32px; height: 32px; border-radius: 6px; background: #1B3A5F; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);" title="#1B3A5F primary"></div>
-      <div style="width: 32px; height: 32px; border-radius: 6px; background: #F2A65A;" title="#F2A65A accent"></div>
-      <div style="width: 32px; height: 32px; border-radius: 6px; background: #0E1A2B; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);" title="#0E1A2B bg"></div>
-      <div style="width: 32px; height: 32px; border-radius: 6px; background: #2E7D5B;" title="#2E7D5B verdict safe"></div>
-    </div>
   </div>
 
   <!-- Decision card · LOCKED · primary outcome view -->
