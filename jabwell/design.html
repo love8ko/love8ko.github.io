@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JabWell — Design Workbench</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    background: #eef0f3;
+    color: #1a1a1f;
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 30px; margin-bottom: 4px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  h2 { font-size: 22px; margin-bottom: 8px; margin-top: 8px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  h3 { font-size: 16px; margin-bottom: 4px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .lede { color: #5a5a60; margin-bottom: 24px; max-width: 760px; line-height: 1.55; }
+  .meta-info { font-size: 12px; color: #8a8a90; margin-bottom: 24px; }
+
+  section {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .section-intro { color: #5a5a60; font-size: 14px; line-height: 1.55; margin-bottom: 12px; max-width: 820px; }
+  code { font-family: ui-monospace, "SF Mono", monospace; background: #f3f3f6; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+
+  /* Top navigation */
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    background: rgba(255,255,255,0.94); backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid #e4e4ea; border-radius: 999px;
+    padding: 8px 14px; margin: -8px 0 18px; width: fit-content;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  }
+  .top-nav a {
+    text-decoration: none; color: #4a4a55;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 700;
+    transition: all 0.15s ease;
+  }
+  .top-nav a:hover { background: #F1F4FA; color: #264653; }
+  .top-nav a.featured {
+    background: linear-gradient(135deg, #1B3A5F 0%, #264653 100%);
+    color: white; box-shadow: 0 2px 8px rgba(27, 58, 95, 0.35);
+  }
+  .top-nav a.featured:hover { color: white; transform: translateY(-1px); }
+  .top-nav .sep { color: #d0d0d8; font-size: 10px; margin: 0 2px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  /* Hero summary card */
+  .hero-card {
+    background: linear-gradient(135deg, #1B3A5F 0%, #264653 100%);
+    color: white; padding: 22px 26px; border-radius: 16px; margin-bottom: 24px;
+    box-shadow: 0 6px 22px rgba(27, 58, 95, 0.28);
+  }
+  .hero-card .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; opacity: 0.92; }
+  .hero-card .one-liner { font-size: 22px; font-weight: 800; margin-top: 6px; font-family: -apple-system, "SF Pro Rounded", sans-serif; line-height: 1.25; }
+  .hero-card .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; font-size: 12px; }
+  .hero-card .meta-row span {
+    background: rgba(255,255,255,0.14); padding: 4px 10px; border-radius: 999px;
+    font-weight: 700; letter-spacing: 0.02em;
+  }
+
+  /* Palette grid */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 16px;
+  }
+  .palette-col {
+    background: #fafafa;
+    border: 1px solid #ebebef;
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .palette-col:hover {
+    transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .palette-col.selected { border: 3px solid #264653; background: #F0F5F4; }
+  .col-header { text-align: center; }
+  .col-title { font-size: 16px; font-weight: 800; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .col-letter { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 999px; background: #ebebef; color: #5a5a60; font-weight: 800; margin-right: 6px; vertical-align: middle; letter-spacing: 0.05em; }
+  .col-tagline { font-size: 11px; color: #6a6a70; font-style: italic; margin-top: 4px; min-height: 30px; }
+  .col-driver { font-size: 10px; color: #8a8a90; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+
+  .swatch-strip { display: flex; height: 30px; border-radius: 6px; overflow: hidden; }
+  .swatch-strip > div {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 8px; font-family: ui-monospace, monospace;
+    font-weight: 700; text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  }
+
+  /* Icon preview cell */
+  .icon-row {
+    display: flex; align-items: center; justify-content: center;
+    padding: 12px 0; background: #f3f3f6; border-radius: 10px;
+  }
+  .icon-cell {
+    width: 64px; height: 64px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 26px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+
+  /* Screenshot mockup (dashboard) */
+  .ss-mockup {
+    border-radius: 14px; padding: 12px 10px; aspect-ratio: 9/16;
+    display: flex; flex-direction: column; gap: 8px; overflow: hidden;
+  }
+  .ss-status { display: flex; justify-content: space-between; font-size: 8px; opacity: 0.6; }
+  .ss-headline {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 11px; font-weight: 800; line-height: 1.2;
+  }
+  .ss-card {
+    background: rgba(255,255,255,0.92); color: #1a1a1f;
+    border-radius: 8px; padding: 6px 8px;
+    display: flex; flex-direction: column; gap: 3px;
+    font-size: 8px;
+  }
+  .ss-row { display: flex; justify-content: space-between; align-items: center; gap: 4px; font-size: 7px; }
+  .ss-pill {
+    display: inline-flex; padding: 2px 6px; border-radius: 999px;
+    font-size: 7px; font-weight: 700;
+  }
+  .ss-bar-row { display: flex; align-items: end; gap: 1.5px; height: 14px; }
+  .ss-bar-row > div { flex: 1; border-radius: 1px; }
+
+  /* Paywall mockup */
+  .paywall-mock { border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+  .paywall-mock .pw-title { font-size: 9px; font-weight: 800; line-height: 1.15; }
+  .paywall-mock .plan {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 5px 9px; border-radius: 7px; font-size: 8px;
+    border: 1.5px solid;
+  }
+  .paywall-mock .plan.selected { color: white; }
+  .paywall-mock .plan-price { font-weight: 700; }
+  .paywall-mock .cta {
+    text-align: center; padding: 6px; border-radius: 999px;
+    font-size: 9px; font-weight: 800; color: white;
+  }
+  .paywall-mock .pw-trust { font-size: 7px; opacity: 0.7; text-align: center; line-height: 1.3; }
+
+  /* Vote table */
+  .vote-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 6px;
+    font-size: 12px;
+  }
+  .vote-table th, .vote-table td {
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ebebef;
+  }
+  .vote-table th { background: #ebebef; font-weight: 700; font-size: 11px; }
+  .vote-table .winner { background: #E5EFE9; font-weight: 700; color: #264653; }
+  .vote-table td.left, .vote-table th.left { text-align: left; }
+  .vote-table .reason { color: #6a6a70; font-size: 11px; text-align: left; }
+  .vote-pending { color: #b0b0b8; font-style: italic; font-size: 11px; }
+
+  /* Voice quotes (for palette consilium narrative) */
+  .voice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
+  .voice-quote {
+    background: #fafafa;
+    border-left: 3px solid #ebebef;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .voice-quote .voice-name { font-weight: 800; color: #264653; margin-bottom: 4px; font-size: 11px; letter-spacing: 0.02em; }
+
+  /* JTBD audience rows */
+  .audience-row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 0;
+    margin-top: 14px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid;
+    background: white;
+  }
+  .audience-row.rank-1 { border-color: #1B3A5F; }
+  .audience-row.rank-2 { border-color: #4F8059; }
+  .audience-row.rank-3 { border-color: #C49A4A; }
+  .audience-row.rank-4 { border-color: #8B6F94; }
+  .audience-row.rank-funnel { border-color: #C0C0C8; opacity: 0.85; }
+
+  .audience-header {
+    padding: 18px 18px;
+    color: white;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .audience-row.rank-1 .audience-header { background: linear-gradient(160deg, #1B3A5F 0%, #2A5F84 100%); }
+  .audience-row.rank-2 .audience-header { background: linear-gradient(160deg, #4F8059 0%, #6A9D6F 100%); }
+  .audience-row.rank-3 .audience-header { background: linear-gradient(160deg, #C49A4A 0%, #E0B85F 100%); }
+  .audience-row.rank-4 .audience-header { background: linear-gradient(160deg, #8B6F94 0%, #B091BA 100%); }
+  .audience-row.rank-funnel .audience-header { background: linear-gradient(160deg, #6a6a70 0%, #8a8a90 100%); }
+
+  .audience-rank-badge {
+    display: inline-block; font-size: 10px; font-weight: 800;
+    background: rgba(255,255,255,0.22); padding: 3px 9px; border-radius: 999px;
+    letter-spacing: 0.05em; align-self: flex-start;
+  }
+  .audience-emoji { font-size: 32px; }
+  .audience-name { font-size: 17px; font-weight: 800; font-family: -apple-system, "SF Pro Rounded", sans-serif; line-height: 1.2; }
+  .audience-stats { font-size: 11px; opacity: 0.92; line-height: 1.4; }
+  .audience-stats b { display: inline-block; margin-right: 6px; }
+
+  .audience-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .audience-block {
+    padding: 14px 16px;
+    border-right: 1px solid #ebebef;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .audience-block:last-child { border-right: none; }
+  .block-label {
+    font-size: 9px; font-weight: 800; color: #8a8a90;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .pain-quote {
+    font-size: 12px; line-height: 1.45; color: #1a1a1f;
+    font-style: italic;
+    border-left: 2px solid #d0d0d8; padding-left: 8px;
+  }
+  .killer-feature {
+    font-size: 12px; line-height: 1.45; color: #1a1a1f; font-weight: 600;
+  }
+  .wow-tag {
+    display: inline-block; align-self: flex-start;
+    background: linear-gradient(135deg, #1B3A5F 0%, #264653 100%);
+    color: white; padding: 4px 9px; border-radius: 6px;
+    font-size: 11px; font-weight: 700;
+    line-height: 1.35;
+  }
+  .slot-pin {
+    display: inline-block; background: #f3f3f6; color: #4a4a55;
+    padding: 3px 8px; border-radius: 6px;
+    font-size: 10px; font-weight: 700;
+    margin-right: 4px; margin-bottom: 4px;
+  }
+
+  /* Matrix table */
+  .matrix-table {
+    width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12px;
+  }
+  .matrix-table th, .matrix-table td {
+    padding: 10px 12px; text-align: left; border-bottom: 1px solid #ebebef;
+    vertical-align: top;
+  }
+  .matrix-table th {
+    background: #ebebef; font-weight: 700; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .matrix-table .rank-cell { font-weight: 800; width: 60px; }
+  .matrix-table .rank-1 { color: #1B3A5F; }
+  .matrix-table .rank-2 { color: #4F8059; }
+  .matrix-table .rank-3 { color: #C49A4A; }
+  .matrix-table .rank-4 { color: #8B6F94; }
+
+  /* Compliance reminder card */
+  .compliance-card {
+    background: #FFF8E6;
+    border: 2px solid #E0B85F;
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-top: 16px;
+  }
+  .compliance-card h3 { font-size: 15px; color: #8B6F1A; margin-bottom: 4px; }
+  .compliance-card .compliance-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 14px;
+  }
+  .compliance-block { background: white; border-radius: 10px; padding: 14px; }
+  .compliance-block .block-h { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+  .compliance-block.tm .block-h { color: #4A6585; }
+  .compliance-block.banned .block-h { color: #B33A3A; }
+  .compliance-block.required .block-h { color: #4F8059; }
+  .compliance-block ul { list-style: none; padding: 0; font-size: 12px; line-height: 1.5; color: #2a2a30; }
+  .compliance-block li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .compliance-block.tm li::before { content: "®"; position: absolute; left: 0; font-weight: 700; color: #4A6585; font-size: 10px; }
+  .compliance-block.banned li::before { content: "✗"; position: absolute; left: 0; font-weight: 700; color: #B33A3A; }
+  .compliance-block.required li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; color: #4F8059; }
+  .compliance-disclaimer {
+    margin-top: 14px; padding: 12px 14px; background: #FBF4E0;
+    border-radius: 8px; font-size: 11px; line-height: 1.5; color: #6A521A;
+  }
+
+  /* Competitor table */
+  .comp-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12px; }
+  .comp-table th, .comp-table td {
+    padding: 10px 12px; text-align: left; border-bottom: 1px solid #ebebef;
+    vertical-align: top;
+  }
+  .comp-table th {
+    background: #ebebef; font-weight: 700; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .comp-table tr.threat-high { background: #FFF1EE; }
+  .comp-table tr.threat-low { background: #fafafa; }
+  .swatch-chip {
+    display: inline-block; width: 18px; height: 18px;
+    border-radius: 5px; vertical-align: middle; margin-right: 6px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+  }
+  .hex-code { font-family: ui-monospace, monospace; font-size: 10px; color: #6a6a70; }
+  .wedge-text { color: #1B3A5F; font-weight: 700; }
+  .threat-pill {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.02em;
+  }
+  .threat-pill.high { background: #FFE5DF; color: #B33A3A; }
+  .threat-pill.med { background: #FFF1D9; color: #8B6F1A; }
+  .threat-pill.low { background: #E5EFE9; color: #4F8059; }
+
+  /* Composition gallery */
+  .comp-gallery {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .comp-tile {
+    background: #fafafa; border: 1px solid #ebebef; border-radius: 12px;
+    padding: 14px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .comp-tile .tile-h { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .comp-tile .tile-name { font-size: 14px; font-weight: 800; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .comp-tile .tile-arr { font-size: 10px; padding: 2px 8px; border-radius: 999px; background: #1B3A5F; color: white; font-weight: 700; }
+  .comp-tile .tile-thumbs {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+  }
+  .comp-tile .tile-thumb {
+    aspect-ratio: 9/19; background: #f3f3f6; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: #b0b0b8; font-size: 9px; font-weight: 700; text-align: center;
+    padding: 6px; line-height: 1.2;
+    overflow: hidden;
+    background-size: cover; background-position: center;
+  }
+  .comp-tile .rules { font-size: 11px; line-height: 1.45; color: #4a4a55; }
+  .comp-tile .rules div { margin-bottom: 4px; }
+  .comp-tile .rules b { color: #1a1a1f; font-weight: 700; }
+
+  /* Paywall workbench skeleton */
+  .pw-step {
+    background: #FAF7F2;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .pw-step-h { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .pw-step-n {
+    background: #1B3A5F; color: white;
+    width: 26px; height: 26px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800; font-family: ui-monospace, monospace;
+  }
+  .pw-step-i { font-size: 12px; color: #5a5a60; line-height: 1.5; margin-bottom: 12px; }
+
+  .pw-brief { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .pw-brief .field { display: flex; flex-direction: column; gap: 4px; }
+  .pw-brief label { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; color: #6a6a70; text-transform: uppercase; }
+  .pw-brief input, .pw-brief textarea {
+    padding: 8px 10px; border: 1px solid #d0d0d8; border-radius: 6px;
+    font-family: inherit; font-size: 12px; background: white;
+    color: #1a1a1f;
+  }
+  .pw-brief textarea { resize: vertical; min-height: 50px; }
+
+  .pw-tokens { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .pw-tokens .tk { display: flex; flex-direction: column; align-items: stretch; gap: 4px; }
+  .pw-tokens .tk-sw {
+    height: 52px; border-radius: 8px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+  }
+  .pw-tokens label { font-size: 10px; font-weight: 800; color: #6a6a70; text-transform: uppercase; letter-spacing: 0.06em; }
+  .pw-tokens input { padding: 6px 8px; border: 1px solid #d0d0d8; border-radius: 6px; font-family: ui-monospace, monospace; font-size: 11px; }
+
+  .pw-todo {
+    border: 2px dashed #C0C0C8; border-radius: 10px;
+    padding: 24px; text-align: center; color: #8a8a90;
+    font-size: 12px; line-height: 1.6;
+  }
+  .pw-todo .todo-h { font-size: 13px; font-weight: 800; color: #5a5a60; margin-bottom: 4px; }
+
+  .pill {
+    display: inline-block; padding: 3px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.02em;
+  }
+  .pill-pending { background: #f3f3f6; color: #6a6a70; }
+  .pill-priority { background: #1B3A5F; color: white; }
+
+  /* Selection panel */
+  .selection-panel {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #1a1a1f; color: #f2edd5;
+    padding: 16px 20px; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    min-width: 300px; z-index: 100; font-size: 13px;
+  }
+  .selection-panel h3 {
+    color: white; margin-bottom: 8px; font-size: 13px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .selection-panel .field {
+    display: flex; justify-content: space-between;
+    margin-bottom: 6px; gap: 12px;
+  }
+  .selection-panel .field-label { color: #9CA0A8; font-size: 12px; }
+  .selection-panel .field-value { color: #F2A65A; font-weight: 700; font-size: 12px; text-align: right; }
+  .selection-panel button {
+    margin-top: 10px; background: #F2A65A; color: #0F1115;
+    border: none; padding: 8px 14px; border-radius: 999px;
+    font-weight: 700; cursor: pointer; font-size: 12px; width: 100%;
+  }
+  .selection-panel button:hover { background: #E89A48; color: white; }
+
+  @media (max-width: 1100px) {
+    .palette-grid { grid-template-columns: repeat(2, 1fr); }
+    .audience-row { grid-template-columns: 1fr; }
+    .audience-content { grid-template-columns: repeat(2, 1fr); }
+    .compliance-card .compliance-grid { grid-template-columns: 1fr; }
+    .pw-brief { grid-template-columns: 1fr; }
+    .pw-tokens { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .palette-grid { grid-template-columns: 1fr; }
+    .audience-content { grid-template-columns: 1fr; }
+    .selection-panel { position: static; margin-top: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav" aria-label="Page sections">
+  <a href="#palette">1 · Палитра</a>
+  <span class="sep">·</span>
+  <a href="#jtbd">2 · JTBD</a>
+  <span class="sep">·</span>
+  <a href="#compliance">3 · Compliance</a>
+  <span class="sep">·</span>
+  <a href="#competitors">4 · Конкуренты</a>
+  <span class="sep">·</span>
+  <a href="#paywall-workbench" class="featured">💉 5 · Paywall</a>
+</nav>
+
+<h1>JabWell — Design Workbench</h1>
+
+<div class="hero-card">
+  <div class="eyebrow">🟦 IN PROGRESS · 2026-04-28 · Pre-build phase</div>
+  <div class="one-liner">Your AI nurse, dietitian, and side-effect coach — for every GLP-1 shot.</div>
+  <div class="meta-row">
+    <span>Health & Fitness</span>
+    <span>$4.99/wk + 7-day trial</span>
+    <span>$49.99/yr</span>
+    <span>Primary: S1 New patient (3M, 🔴 extreme WTP)</span>
+    <span>v0.1 · DeepSeek + on-device RAG</span>
+  </div>
+</div>
+
+<p class="lede">Workbench для итераций по палитре, JTBD-приоритезации, paywall и messaging. <b>Палитра — №1 на голосование (4 варианта, ни один не предзадан как winner).</b> JTBD-консилиум — следом. Paywall — каркас, дополняем по мере итераций. Кликни на карточку чтобы выбрать.</p>
+<p class="meta-info">
+  Live: <a href="https://love8ko.github.io/jabwell/design.html">love8ko.github.io/jabwell/design.html</a> ·
+  Source: <code>/Users/sl/Documents/apps/13-jabwell/</code> ·
+  Strategic plan: <code>JabWell_Strategic_Plan_v1.md</code> (LOCKED 2026-04-27)
+</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: PALETTE -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="palette">
+  <h2>1. Палитра <span class="pill pill-priority">⭐ PRIORITY · открытое голосование</span></h2>
+  <p class="section-intro">
+    4 варианта, выведены из <b>психологии аудитории JabWell</b>: S1 first-injection scared, S2 3am nausea crisis, S3 cost-driven OOP, S4 hair/skin recovery. <b>Не дублируем портфельный визуальный язык</b> — это отдельный продукт под отдельную аудиторию.
+  </p>
+  <p class="section-intro">
+    <b>Контекстные требования:</b> понизить тревогу 3am-юзера (не agressive saturation), не выглядеть как pharma giant (Pfizer/Novo sterile blue), дифференцироваться от Shotsy teal + MeAgain purple + Pep blue + GlucoPal Lilly-purple (blue/purple territory выжжена), поддержать medical credibility (Apple Health & Fitness review), read-friendly при тревоге (dark mode = first-class citizen).
+  </p>
+
+  <div class="palette-grid">
+
+    <!-- A · Midnight Companion -->
+    <div class="palette-col" onclick="selectPalette(this, 'A · Midnight Companion')">
+      <div class="col-header">
+        <div><span class="col-letter">A</span><span class="col-title">Midnight Companion</span></div>
+        <div class="col-tagline">"AI-врач рядом в 3 ночи когда страшно"</div>
+        <div class="col-driver">DRIVER · S2 night-anxiety</div>
+      </div>
+      <div class="swatch-strip">
+        <div style="background:#1B3A5F">#1B3A5F</div>
+        <div style="background:#F2A65A">#F2A65A</div>
+        <div style="background:#0E1A2B">#0E1A2B</div>
+        <div style="background:#2E7D5B">#2E7D5B</div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-cell" style="background: linear-gradient(135deg,#1B3A5F,#0E1A2B); color:#F2A65A;">JW</div>
+      </div>
+      <div class="ss-mockup" style="background:#0E1A2B; color:#F2EDE5;">
+        <div class="ss-status"><span>9:41</span><span>•••</span></div>
+        <div class="ss-headline">Tuesday · Wegovy® due</div>
+        <div class="ss-card" style="background:#152741; color:#F2EDE5;">
+          <div class="ss-row"><span style="font-weight:800;">AI Nurse</span><span class="ss-pill" style="background:#2E7D5B; color:white;">Online</span></div>
+          <div style="font-size:7px; opacity:0.85;">"Nausea day 3? Common at week 4."</div>
+        </div>
+        <div class="ss-card" style="background:#152741; color:#F2EDE5;">
+          <div class="ss-row"><span>Weight</span><span style="color:#F2A65A; font-weight:800;">−12.4 lb</span></div>
+          <div class="ss-bar-row">
+            <div style="background:#F2A65A; height:50%"></div>
+            <div style="background:#F2A65A; height:65%"></div>
+            <div style="background:#F2A65A; height:78%"></div>
+            <div style="background:#F2A65A; height:60%"></div>
+            <div style="background:#F2A65A; height:85%"></div>
+            <div style="background:#F2A65A; height:90%"></div>
+            <div style="background:#F2A65A; height:100%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="paywall-mock" style="background:#0E1A2B; color:#F2EDE5;">
+        <div class="pw-title">Got side effects? Just ask.</div>
+        <div class="plan selected" style="background:#1B3A5F; border-color:#1B3A5F;">
+          <span>Weekly + 7-day trial</span><span class="plan-price">$4.99</span>
+        </div>
+        <div class="plan" style="border-color:#2A3A4D; color:#9CA0A8;">
+          <span>Annual SAVE 81%</span><span class="plan-price">$49.99</span>
+        </div>
+        <div class="cta" style="background:#F2A65A; color:#0E1A2B;">Start 7-day trial</div>
+        <div class="pw-trust">Educational, not medical advice. Consult prescriber.</div>
+      </div>
+    </div>
+
+    <!-- B · Clinical Apothecary -->
+    <div class="palette-col" onclick="selectPalette(this, 'B · Clinical Apothecary')">
+      <div class="col-header">
+        <div><span class="col-letter">B</span><span class="col-title">Clinical Apothecary</span></div>
+        <div class="col-tagline">"Доверенный аптекарь старой школы + AI mind"</div>
+        <div class="col-driver">DRIVER · S1 first-Rx trust</div>
+      </div>
+      <div class="swatch-strip">
+        <div style="background:#264653">#264653</div>
+        <div style="background:#E76F51">#E76F51</div>
+        <div style="background:#F4F1DE">#F4F1DE</div>
+        <div style="background:#606C38">#606C38</div>
+      </div>
+      <div class="icon-row" style="background:#F4F1DE;">
+        <div class="icon-cell" style="background: linear-gradient(135deg,#264653,#1F3A45); color:#E76F51;">JW</div>
+      </div>
+      <div class="ss-mockup" style="background:#F4F1DE; color:#264653;">
+        <div class="ss-status" style="opacity:0.5;"><span>9:41</span><span>•••</span></div>
+        <div class="ss-headline">Tuesday · Wegovy® due</div>
+        <div class="ss-card" style="background:white;">
+          <div class="ss-row"><span style="font-weight:800;">AI Nurse</span><span class="ss-pill" style="background:#606C38; color:white;">Online</span></div>
+          <div style="font-size:7px; opacity:0.7;">"Nausea day 3? Common at week 4."</div>
+        </div>
+        <div class="ss-card" style="background:white;">
+          <div class="ss-row"><span>Weight</span><span style="color:#E76F51; font-weight:800;">−12.4 lb</span></div>
+          <div class="ss-bar-row">
+            <div style="background:#E76F51; height:50%"></div>
+            <div style="background:#E76F51; height:65%"></div>
+            <div style="background:#E76F51; height:78%"></div>
+            <div style="background:#E76F51; height:60%"></div>
+            <div style="background:#E76F51; height:85%"></div>
+            <div style="background:#E76F51; height:90%"></div>
+            <div style="background:#E76F51; height:100%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="paywall-mock" style="background:#F4F1DE; color:#264653;">
+        <div class="pw-title">Got side effects? Just ask.</div>
+        <div class="plan selected" style="background:#264653; border-color:#264653;">
+          <span>Weekly + 7-day trial</span><span class="plan-price">$4.99</span>
+        </div>
+        <div class="plan" style="border-color:#D0CFB8; color:#5a5a60;">
+          <span>Annual SAVE 81%</span><span class="plan-price">$49.99</span>
+        </div>
+        <div class="cta" style="background:#E76F51;">Start 7-day trial</div>
+        <div class="pw-trust">Educational, not medical advice. Consult prescriber.</div>
+      </div>
+    </div>
+
+    <!-- C · Cost-Smart Practical -->
+    <div class="palette-col" onclick="selectPalette(this, 'C · Cost-Smart Practical')">
+      <div class="col-header">
+        <div><span class="col-letter">C</span><span class="col-title">Cost-Smart Practical</span></div>
+        <div class="col-tagline">"$49.99/yr saves $1300/mo — practical premium"</div>
+        <div class="col-driver">DRIVER · S3 cost-driven OOP</div>
+      </div>
+      <div class="swatch-strip">
+        <div style="background:#2D5F4E">#2D5F4E</div>
+        <div style="background:#E0A458">#E0A458</div>
+        <div style="background:#FAFAF7">#FAFAF7</div>
+        <div style="background:#B33A3A">#B33A3A</div>
+      </div>
+      <div class="icon-row" style="background:#FAFAF7;">
+        <div class="icon-cell" style="background: linear-gradient(135deg,#2D5F4E,#1F4538); color:#E0A458;">JW</div>
+      </div>
+      <div class="ss-mockup" style="background:#FAFAF7; color:#2D5F4E;">
+        <div class="ss-status" style="opacity:0.5;"><span>9:41</span><span>•••</span></div>
+        <div class="ss-headline">Tuesday · Wegovy® due</div>
+        <div class="ss-card" style="background:white; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+          <div class="ss-row"><span style="font-weight:800;">AI Nurse</span><span class="ss-pill" style="background:#2D5F4E; color:white;">Online</span></div>
+          <div style="font-size:7px; opacity:0.7;">"Compounded compare: save $900/mo."</div>
+        </div>
+        <div class="ss-card" style="background:white;">
+          <div class="ss-row"><span>Weight</span><span style="color:#E0A458; font-weight:800;">−12.4 lb</span></div>
+          <div class="ss-bar-row">
+            <div style="background:#E0A458; height:50%"></div>
+            <div style="background:#E0A458; height:65%"></div>
+            <div style="background:#E0A458; height:78%"></div>
+            <div style="background:#E0A458; height:60%"></div>
+            <div style="background:#E0A458; height:85%"></div>
+            <div style="background:#E0A458; height:90%"></div>
+            <div style="background:#E0A458; height:100%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="paywall-mock" style="background:#FAFAF7; color:#2D5F4E;">
+        <div class="pw-title">$1300/mo Ozempic? Save $900.</div>
+        <div class="plan selected" style="background:#2D5F4E; border-color:#2D5F4E;">
+          <span>Weekly + 7-day trial</span><span class="plan-price">$4.99</span>
+        </div>
+        <div class="plan" style="border-color:#D0DCD7; color:#5a5a60;">
+          <span>Annual SAVE 81%</span><span class="plan-price">$49.99</span>
+        </div>
+        <div class="cta" style="background:#E0A458; color:#2D5F4E;">Start 7-day trial</div>
+        <div class="pw-trust">Educational, not medical advice. Consult prescriber.</div>
+      </div>
+    </div>
+
+    <!-- D · Recovery Skin -->
+    <div class="palette-col" onclick="selectPalette(this, 'D · Recovery Skin')">
+      <div class="col-header">
+        <div><span class="col-letter">D</span><span class="col-title">Recovery Skin</span></div>
+        <div class="col-tagline">"Восстановление тела — кожа, волосы, мышцы"</div>
+        <div class="col-driver">DRIVER · S4 hair/skin journal</div>
+      </div>
+      <div class="swatch-strip">
+        <div style="background:#7A5C4F">#7A5C4F</div>
+        <div style="background:#D4A574">#D4A574</div>
+        <div style="background:#FBF7F2">#FBF7F2</div>
+        <div style="background:#6B7A4F">#6B7A4F</div>
+      </div>
+      <div class="icon-row" style="background:#FBF7F2;">
+        <div class="icon-cell" style="background: linear-gradient(135deg,#7A5C4F,#5C4538); color:#D4A574;">JW</div>
+      </div>
+      <div class="ss-mockup" style="background:#FBF7F2; color:#7A5C4F;">
+        <div class="ss-status" style="opacity:0.5;"><span>9:41</span><span>•••</span></div>
+        <div class="ss-headline">Hair density · week 12</div>
+        <div class="ss-card" style="background:white;">
+          <div class="ss-row"><span style="font-weight:800;">Photo journal</span><span class="ss-pill" style="background:#6B7A4F; color:white;">−8%</span></div>
+          <div style="font-size:7px; opacity:0.7;">"Protein 1.2g/kg → recovery 6mo"</div>
+        </div>
+        <div class="ss-card" style="background:white;">
+          <div class="ss-row"><span>Weight</span><span style="color:#D4A574; font-weight:800;">−12.4 lb</span></div>
+          <div class="ss-bar-row">
+            <div style="background:#D4A574; height:50%"></div>
+            <div style="background:#D4A574; height:65%"></div>
+            <div style="background:#D4A574; height:78%"></div>
+            <div style="background:#D4A574; height:60%"></div>
+            <div style="background:#D4A574; height:85%"></div>
+            <div style="background:#D4A574; height:90%"></div>
+            <div style="background:#D4A574; height:100%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="paywall-mock" style="background:#FBF7F2; color:#7A5C4F;">
+        <div class="pw-title">Watch what GLP-1 does to your body.</div>
+        <div class="plan selected" style="background:#7A5C4F; border-color:#7A5C4F;">
+          <span>Weekly + 7-day trial</span><span class="plan-price">$4.99</span>
+        </div>
+        <div class="plan" style="border-color:#E0D5C7; color:#5a5a60;">
+          <span>Annual SAVE 81%</span><span class="plan-price">$49.99</span>
+        </div>
+        <div class="cta" style="background:#D4A574; color:#7A5C4F;">Start 7-day trial</div>
+        <div class="pw-trust">Educational, not medical advice. Consult prescriber.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Voting table -->
+  <h3 style="margin-top: 28px;">Голосование консилиума (8 голосов · 1–10)</h3>
+  <p class="section-intro" style="margin-top: 6px;">Каждый голос проставляет 1–10 + одну строку обоснования. Bottom row — average. Winner подсветится после реального голосования. Любой голос &lt;6 у winner'а — red flag, переголосовываем.</p>
+  <table class="vote-table">
+    <thead>
+      <tr>
+        <th class="left">Voice</th>
+        <th>A · Midnight</th>
+        <th>B · Apothecary</th>
+        <th>C · Cost-Smart</th>
+        <th>D · Recovery</th>
+        <th class="left">Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="left"><b>S1 New patient</b><br><span class="hex-code">Maya, 38, scared</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая палитра успокаивает в 3am pre-injection?</td></tr>
+      <tr><td class="left"><b>S2 Long-term plateau</b><br><span class="hex-code">Sarah, 45, exhausted</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая не давит ещё больше когда уже устал?</td></tr>
+      <tr><td class="left"><b>S3 Compounded OOP</b><br><span class="hex-code">Lin, 41, $1300/mo pain</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая выглядит "professional + savings", не cheap?</td></tr>
+      <tr><td class="left"><b>S4 Hair/skin</b><br><span class="hex-code">Carla, 52, aesthetics</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая подходит для photo journal?</td></tr>
+      <tr><td class="left"><b>Pharmacist persona</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Professional medical tool, не tech-bro toy?</td></tr>
+      <tr><td class="left"><b>AI Nurse voice</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">"Warm but credible" в chat UX?</td></tr>
+      <tr><td class="left"><b>ASO Strategist</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Выделится среди Shotsy/MeAgain/Pep/GlucoPal?</td></tr>
+      <tr><td class="left"><b>Brand Designer</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">System-устойчива (3+ года, dark/light, WCAG AA)?</td></tr>
+      <tr><td class="left"><b>Average</b></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <p class="section-intro" style="margin-top: 16px; font-size: 12px; color: #8a8a90;">
+    <b>Conventions:</b> verdict triad одинаков по семантике у всех вариантов (sage = safe / amber = caution / red = ER trigger), но конкретный hex меняется чтобы оставаться читаемым на каждом фоне. Critical/ER red используется ТОЛЬКО для true escalation triggers (vomiting&gt;24h, severe abdominal pain, jaundice) — не для UI errors.
+  </p>
+</section>
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: JTBD AUDIENCES -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="jtbd">
+  <h2>2. JTBD Audiences <span class="pill pill-pending">консилиум · приоритезация V1 слотов</span></h2>
+  <p class="section-intro">
+    6 сегментов из <code>PERSONAS.md</code>, ранжированы по WTP × volume × V1-fit. Первые 4 (S1, S2, S3, S5) — <b>primary V1</b>, видимы выше. S4 (pre-Rx funnel) и S6 (T2D) — <b>future / funnel</b>, спрятаны в раскрывашку. Каждый row показывает CORE PAIN (verbatim quote из <code>PRODUCT_DESIGN.md</code>), KILLER FEATURE, WOW MOMENT (что в demo cinch'ит trial) и SLOT ASSIGNMENTS (где сегмент появляется в onboarding/screenshot/paywall планах).
+  </p>
+
+  <!-- S1 — RANK 1 -->
+  <div class="audience-row rank-1">
+    <div class="audience-header">
+      <span class="audience-rank-badge">RANK 1 · PRIMARY V1</span>
+      <div class="audience-emoji">😰</div>
+      <div class="audience-name">S1 · New GLP-1 Patient</div>
+      <div class="audience-stats"><b>~3M</b> US active, first 90 days · 70% female · 25-55yo · <b>🔴 Extreme WTP</b> (desperation peak)</div>
+    </div>
+    <div class="audience-content">
+      <div class="audience-block">
+        <div class="block-label">Core pain</div>
+        <div class="pain-quote">"Never injected before. What if I mess up? What if I get nausea like everyone on TikTok says?"</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Killer feature</div>
+        <div class="killer-feature">AI Nurse pre-loaded Q&amp;A + "expect this week" timeline + injection video + site rotation map</div>
+        <span class="wow-tag">WOW · 3-tier triage live</span>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Wow moment in demo</div>
+        <div class="killer-feature">"I've had nausea 3 days, should I worry?" → 3-tier response (normal 40% / try X,Y,Z / call doctor if vomiting&gt;24h) with FDA + AAFP source badges</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Slot assignments</div>
+        <span class="slot-pin">Onb-1 Pain</span>
+        <span class="slot-pin">Onb-5 WOW</span>
+        <span class="slot-pin">Screenshot 1 HERO</span>
+        <span class="slot-pin">Screenshot 2 AI Nurse</span>
+        <span class="slot-pin">Paywall hero (default trigger)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2 — RANK 2 -->
+  <div class="audience-row rank-2">
+    <div class="audience-header">
+      <span class="audience-rank-badge">RANK 2 · PRIMARY V1</span>
+      <div class="audience-emoji">😩</div>
+      <div class="audience-name">S2 · Long-term User (3+ months)</div>
+      <div class="audience-stats"><b>~7M</b> US active · 30-65yo · <b>🟢 High WTP</b> (recurring revenue, retention play)</div>
+    </div>
+    <div class="audience-content">
+      <div class="audience-block">
+        <div class="block-label">Core pain</div>
+        <div class="pain-quote">"Lost 25 lbs, stuck 6 weeks. Am I wasting my money? Hair is shedding too. Nobody warned me."</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Killer feature</div>
+        <div class="killer-feature">Plateau Detector (auto-trigger 4+ wks flat) + Protein Coach 1g/kg + Hair/Skin Photo Journal + Doctor PDF</div>
+        <span class="wow-tag">WOW · plateau action card</span>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Wow moment in demo</div>
+        <div class="killer-feature">Plateau Card: "73% break by week X. 4 actions: protein, sleep, dose check, NEAT. Doctor question template ready."</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Slot assignments</div>
+        <span class="slot-pin">Onb-3 Trust scenarios</span>
+        <span class="slot-pin">Screenshot 5 Plateau</span>
+        <span class="slot-pin">Screenshot 6 Hair/Skin</span>
+        <span class="slot-pin">Paywall trigger: 4+ wks flat</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3 — RANK 3 -->
+  <div class="audience-row rank-3">
+    <div class="audience-header">
+      <span class="audience-rank-badge">RANK 3 · PRIMARY V1 + AFFILIATE</span>
+      <div class="audience-emoji">💸</div>
+      <div class="audience-name">S3 · Compounded / Out-of-Pocket</div>
+      <div class="audience-stats"><b>~1.5-2M</b> US · 30-55yo · $50-120K income · <b>🟢 High WTP app + 🔴 Extreme cost-savings drive</b></div>
+    </div>
+    <div class="audience-content">
+      <div class="audience-block">
+        <div class="block-label">Core pain</div>
+        <div class="pain-quote">"Insurance dropped me. $1,300/mo killing budget. Compounded $200/mo — is it safe? Hims/Ro reliable?"</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Killer feature</div>
+        <div class="killer-feature">Compounded Pharmacy Compare (Hims/Ro/Mochi/Henry/Eden) + pricing + safety reviews + affiliate links</div>
+        <span class="wow-tag">WOW · save $900/mo</span>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Wow moment in demo</div>
+        <div class="killer-feature">"Pay $1,300? Compare 5 compounded options — Mochi $189/mo, Henry $199/mo, Hims $249/mo. Save $900+/mo."</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Slot assignments</div>
+        <span class="slot-pin">Onb-4 Method (cost framing)</span>
+        <span class="slot-pin">Screenshot 8 Pricing/Value</span>
+        <span class="slot-pin">Paywall trigger: OOP detected</span>
+        <span class="slot-pin">Affiliate revenue stream 2 (~15% LTV)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5 — RANK 4 -->
+  <div class="audience-row rank-4">
+    <div class="audience-header">
+      <span class="audience-rank-badge">RANK 4 · PRIMARY V1 (BONUS)</span>
+      <div class="audience-emoji">🌅</div>
+      <div class="audience-name">S5 · Off-GLP-1 Maintenance</div>
+      <div class="audience-stats"><b>~2M</b> US · 30-65yo · <b>🟡 Medium WTP</b> (post-taper retention + maintenance mode)</div>
+    </div>
+    <div class="audience-content">
+      <div class="audience-block">
+        <div class="block-label">Core pain</div>
+        <div class="pain-quote">"Tapered off Wegovy®. Terrified of regain. Need to keep momentum without the drug crutch."</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Killer feature</div>
+        <div class="killer-feature">Maintenance Mode (V2): protein floor + weight floor alert + habit retention + "what to do if regain starts"</div>
+        <span class="wow-tag">WOW · regain alert</span>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Wow moment in demo</div>
+        <div class="killer-feature">"+3 lb 2 weeks in a row → Maintenance Alert: 4 levers (protein, sleep, NEAT, water) + question template for prescriber on possible micro-dose return"</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Slot assignments</div>
+        <span class="slot-pin">V1.1 — feature reveal</span>
+        <span class="slot-pin">App Store screenshot pool (rotating)</span>
+        <span class="slot-pin">Paywall trigger: post-taper detected</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4 + S6 in details -->
+  <details style="margin-top: 18px;">
+    <summary style="cursor: pointer; font-weight: 700; padding: 10px 14px; background: #f3f3f6; border-radius: 10px; user-select: none; font-size: 13px; color: #4a4a55;">
+      ▶ Future / funnel сегменты: S4 Pre-Rx (30M, content-only) + S6 T2D (38M, V2)
+    </summary>
+    <div style="margin-top: 12px;">
+
+      <div class="audience-row rank-funnel">
+        <div class="audience-header">
+          <span class="audience-rank-badge">FUNNEL · CONTENT</span>
+          <div class="audience-emoji">🤔</div>
+          <div class="audience-name">S4 · Pre-Prescription Considering</div>
+          <div class="audience-stats"><b>~30M+</b> US overweight · 25-65yo · <b>🟡 Low WTP pre-purchase</b> (content marketing, ASA, organic TikTok)</div>
+        </div>
+        <div class="audience-content">
+          <div class="audience-block">
+            <div class="block-label">Core pain</div>
+            <div class="pain-quote">"Doctor mentioned Wegovy. Should I? Reddit horror stories scare me. Need real info before committing."</div>
+          </div>
+          <div class="audience-block">
+            <div class="block-label">Killer feature</div>
+            <div class="killer-feature">"Should I start GLP-1?" decision tree + side-effect probability calculator + cost preview + question library for first appointment</div>
+          </div>
+          <div class="audience-block">
+            <div class="block-label">Wow moment in demo</div>
+            <div class="killer-feature">Free preview tier: "Get 3 personalized questions for your endo visit" — captures email, drips into S1 funnel post-Rx</div>
+          </div>
+          <div class="audience-block">
+            <div class="block-label">Slot assignments</div>
+            <span class="slot-pin">V2 — content / blog</span>
+            <span class="slot-pin">TikTok organic primary acquisition</span>
+            <span class="slot-pin">Reddit r/Ozempic engagement</span>
+            <span class="slot-pin">SEO long-tail (no app feature)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="audience-row rank-funnel">
+        <div class="audience-header">
+          <span class="audience-rank-badge">FUTURE · V2</span>
+          <div class="audience-emoji">🩸</div>
+          <div class="audience-name">S6 · Type 2 Diabetes</div>
+          <div class="audience-stats"><b>~38M</b> US T2D · 50-75yo · <b>🟢 Medium WTP</b> (V2 diabetes-focused mode, different ICP)</div>
+        </div>
+        <div class="audience-content">
+          <div class="audience-block">
+            <div class="block-label">Core pain</div>
+            <div class="pain-quote">"On Mounjaro for diabetes + weight. Need A1C tracking + GLP-1 dose + meal logs in one place. CGM integration?"</div>
+          </div>
+          <div class="audience-block">
+            <div class="block-label">Killer feature</div>
+            <div class="killer-feature">V2 Diabetes Mode: A1C history + CGM integration (Dexcom/Libre) + retinopathy/hypoglycemia escalation triggers</div>
+          </div>
+          <div class="audience-block">
+            <div class="block-label">Wow moment in demo</div>
+            <div class="killer-feature">CGM live overlay on injection log: "Mounjaro 5mg → glucose response curve" — visual A1C improvement story</div>
+          </div>
+          <div class="audience-block">
+            <div class="block-label">Slot assignments</div>
+            <span class="slot-pin">V2 — diabetes mode SKU</span>
+            <span class="slot-pin">Endo HCP partnerships</span>
+            <span class="slot-pin">Different keyword set</span>
+            <span class="slot-pin">Out-of-scope V1</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- Voting table (JTBD priority) -->
+  <h3 style="margin-top: 28px;">Голосование консилиума · сколько слотов отдать каждому сегменту</h3>
+  <p class="section-intro" style="margin-top: 6px;">7 голосов × 4 V1-сегмента (S1/S2/S3/S5). Каждый scores 1–10 для "сколько слотов в onboarding (5) + screenshot (8) + paywall (5 triggers) этому сегменту отдать". Average → итоговый bias V1 распределения.</p>
+  <table class="vote-table">
+    <thead>
+      <tr>
+        <th class="left">Voice</th>
+        <th>S1 New patient</th>
+        <th>S2 Long-term</th>
+        <th>S3 Compounded</th>
+        <th>S5 Maintenance</th>
+        <th class="left">Lens / question</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="left"><b>Founder</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Где максимум revenue × retention?</td></tr>
+      <tr><td class="left"><b>ASO Strategist</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая аудитория конвертит лучше из target keywords (`ozempic tracker`, `mounjaro tracker`)?</td></tr>
+      <tr><td class="left"><b>Paywall Designer</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какой trigger даст высший T2P в первые 7 дней?</td></tr>
+      <tr><td class="left"><b>AI Nurse voice</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Где RAG-grounded ответы дают maximum clinical value?</td></tr>
+      <tr><td class="left"><b>Compliance Officer</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая аудитория наименее risky под Apple medical review?</td></tr>
+      <tr><td class="left"><b>Affiliate Lead</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Где S3 даёт revenue stream 2 (Hims/Ro affiliate)?</td></tr>
+      <tr><td class="left"><b>UX Analyst</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая аудитория наиболее understood, least risk on JTBD-fit?</td></tr>
+      <tr><td class="left"><b>Average</b></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <!-- JTBD × Killer features matrix -->
+  <h3 style="margin-top: 24px;">JTBD × Killer features matrix · slot allocation</h3>
+  <p class="section-intro" style="margin-top: 6px;">Финальное распределение onboarding-экранов (5) + ASO screenshots (8) + paywall triggers (5) по 4 primary V1 сегментам. Сумма = budget plan для каждого сегмента.</p>
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>JTBD pain</th>
+        <th>Audience</th>
+        <th>WTP</th>
+        <th>Onboarding screens</th>
+        <th>App Store screenshots</th>
+        <th>Paywall triggers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank-cell rank-1">1</td>
+        <td>First injection scared (3am pre-Rx panic)</td>
+        <td>S1 New patient</td>
+        <td>🔴 Extreme</td>
+        <td>Onb-1 Pain · Onb-5 WOW</td>
+        <td>#1 HERO Dashboard · #2 AI Nurse · #3 Site rotation</td>
+        <td>Default + onboarding hard paywall</td>
+      </tr>
+      <tr>
+        <td class="rank-cell rank-2">2</td>
+        <td>Plateau month 4 + hair shedding</td>
+        <td>S2 Long-term</td>
+        <td>🟢 High</td>
+        <td>Onb-3 Trust scenarios</td>
+        <td>#5 Plateau · #6 Hair/Skin · #4 Protein Coach</td>
+        <td>Trigger: 4+ wks flat · hair flag · 3+ nausea</td>
+      </tr>
+      <tr>
+        <td class="rank-cell rank-3">3</td>
+        <td>$1300/mo cost-driven, compounded scared</td>
+        <td>S3 Compounded</td>
+        <td>🟢 High + 🔴 cost</td>
+        <td>Onb-4 Method (cost framing)</td>
+        <td>#8 Pricing/Value · #7 Doctor Visit Prep</td>
+        <td>Trigger: OOP detected · day-6 trial</td>
+      </tr>
+      <tr>
+        <td class="rank-cell rank-4">4</td>
+        <td>Post-taper regain anxiety</td>
+        <td>S5 Maintenance</td>
+        <td>🟡 Medium</td>
+        <td>(none in V1 — V1.1)</td>
+        <td>(rotating screenshot pool V1.1)</td>
+        <td>Trigger: post-taper detected</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: COMPLIANCE REMINDER -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="compliance">
+  <h2>3. Compliance Guardrails <span class="pill" style="background:#B33A3A; color:white;">🔴 HIGH RISK</span></h2>
+  <p class="section-intro">
+    Видимая карточка для любого агента, открывающего страницу для генерации копи. <b>GLP-1 = adult medication = HIGH RISK.</b> Один неосторожный «cure» / «medical-grade» / «replace your doctor» может triggerнуть Apple medical review rejection ИЛИ FTC complaint. Категория = <b>Health &amp; Fitness</b> (НЕ Medical — stricter review). Источник: <code>COMPLIANCE.md</code> LOCKED 2026-04-27.
+  </p>
+
+  <div class="compliance-card">
+    <h3>⚠️ Перед любой генерацией копи прочитай это</h3>
+    <p style="font-size:12px; color:#6A521A; line-height:1.5; margin-top:6px;">Caveat early, caveat often. ® на первом упоминании. AI всегда цитирует источник. ER triggers всегда escalate.</p>
+
+    <div class="compliance-grid">
+      <div class="compliance-block tm">
+        <div class="block-h">Trademark hygiene · ® always</div>
+        <ul>
+          <li>Ozempic® (Novo Nordisk)</li>
+          <li>Wegovy® (Novo Nordisk)</li>
+          <li>Rybelsus® (Novo Nordisk)</li>
+          <li>Saxenda® (Novo Nordisk)</li>
+          <li>Mounjaro® (Eli Lilly)</li>
+          <li>Zepbound® (Eli Lilly)</li>
+          <li>Trulicity® (Eli Lilly)</li>
+          <li><b>Pattern:</b> "for users on Ozempic®" (НЕ "Ozempic users")</li>
+        </ul>
+      </div>
+
+      <div class="compliance-block banned">
+        <div class="block-h">Banned phrases · НИКОГДА</div>
+        <ul>
+          <li>"cure", "медицинский класс", "medical-grade"</li>
+          <li>"FDA-approved app" / "Approved by Novo Nordisk"</li>
+          <li>"I diagnose..." / "You have..." (диагностический язык)</li>
+          <li>"Increase your dose" / "Skip your next shot"</li>
+          <li>"This is definitely..." (false certainty)</li>
+          <li>"Replace your doctor" / "Better than endo"</li>
+          <li>Brand logos / brand color mimicry</li>
+          <li>Direct comparison brand efficacy</li>
+        </ul>
+      </div>
+
+      <div class="compliance-block required">
+        <div class="block-h">Required phrases · ВСЕГДА</div>
+        <ul>
+          <li>"Educational, not medical advice. Consult prescriber."</li>
+          <li>"Talk to your prescriber"</li>
+          <li>Source citation в AI Nurse ("Per FDA prescribing info...")</li>
+          <li>ER triggers: vomiting&gt;24h, severe abdominal pain (pancreatitis), jaundice, suicidal ideation</li>
+          <li>"Call 911" / "Call 988" для true emergency</li>
+          <li>Trademark disclaimer footer (App Store)</li>
+          <li>"for users on Ozempic®" framing pattern</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="compliance-disclaimer">
+      <b>App Store footer disclaimer (mandatory):</b><br>
+      Ozempic®, Wegovy®, Rybelsus®, Saxenda®, Victoza® are registered trademarks of Novo Nordisk A/S. Mounjaro®, Zepbound®, Trulicity® are registered trademarks of Eli Lilly and Company. JabWell is not affiliated with, endorsed by, or sponsored by Novo Nordisk or Eli Lilly.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: COMPETITIVE LANDSCAPE -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="competitors">
+  <h2>4. Competitive Landscape</h2>
+  <p class="section-intro">
+    8 entries (1 self + 4 GROUP A category reference + 3 GROUP B ASO rivals) из <code>competitors/meta.yaml</code>. Цвета извлечены из App Store скриншотов (визуальный read 2026-04-28). UTP — verbatim hero claim из listing'а. Wedge — что мы кладём (coral text). Threat level — Shotsy red (Q3 2026 AI ship), остальные muted.
+  </p>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>App</th>
+        <th>ARR / Reviews</th>
+        <th>Primary</th>
+        <th>Accent</th>
+        <th>UTP / hero claim</th>
+        <th>Weakness · наш wedge</th>
+        <th>Threat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="threat-high">
+        <td><b>Shotsy</b><br><span class="hex-code">leader · GROUP A</span></td>
+        <td><b>$9.6M ARR</b><br>21,710 · ★4.84</td>
+        <td><span class="swatch-chip" style="background:#1A5F7A;"></span><span class="hex-code">#1A5F7A</span><br>clinical teal</td>
+        <td><span class="swatch-chip" style="background:#FF9A4D;"></span><span class="hex-code">#FF9A4D</span><br>warm coral</td>
+        <td>"GLP1 Zepbound, Wegovy, Ozempic" — multi-medication parity, clean tracker UX</td>
+        <td><span class="wedge-text">NO AI chat, NO triage, NO protein, NO hair/skin, NO plateau, NO compounded — utility-only.</span></td>
+        <td><span class="threat-pill high">HIGH · Q3 AI ship</span></td>
+      </tr>
+      <tr>
+        <td><b>OptiPin (Vitaloom)</b><br><span class="hex-code">peer · GROUP A</span></td>
+        <td>$42K ARR<br>~peptide niche</td>
+        <td><span class="swatch-chip" style="background:#5C3FB7;"></span><span class="hex-code">#5C3FB7</span><br>tech-purple</td>
+        <td><span class="swatch-chip" style="background:#A78BFA;"></span><span class="hex-code">#A78BFA</span><br>pastel violet</td>
+        <td>"Peptide stacking + GLP-1" — bodybuilder/longevity niche</td>
+        <td><span class="wedge-text">Confusing для consumer GLP-1 audience. Peptide stacking raises Apple flags. Different ICP.</span></td>
+        <td><span class="threat-pill low">LOW · non-overlap</span></td>
+      </tr>
+      <tr>
+        <td><b>MeAgain</b><br><span class="hex-code">aspirational · GROUP A</span></td>
+        <td>$50-200K ARR<br>~16K reviews</td>
+        <td><span class="swatch-chip" style="background:#6B4DFF;"></span><span class="hex-code">#6B4DFF</span><br>premium purple</td>
+        <td><span class="swatch-chip" style="background:#C94EFC;"></span><span class="hex-code">#C94EFC</span><br>magenta</td>
+        <td>"Your success plan" — premium $89.99/yr lifestyle positioning</td>
+        <td><span class="wedge-text">Diluted positioning, no RAG grounding, $40 overpriced. Мы $40 cheaper, more focused, AI Nurse + RAG.</span></td>
+        <td><span class="threat-pill med">MED · price compete</span></td>
+      </tr>
+      <tr>
+        <td><b>Pode (TrackIt)</b><br><span class="hex-code">peer · GROUP A</span></td>
+        <td>&lt;$50K · 80 reviews</td>
+        <td><span class="swatch-chip" style="background:#6B4DFF;"></span><span class="hex-code">#6B4DFF</span><br>weak purple</td>
+        <td><span class="swatch-chip" style="background:#4CAF50;"></span><span class="hex-code">#4CAF50</span><br>generic green</td>
+        <td>"Track Progress, Empower Change" — generic aspirational</td>
+        <td><span class="wedge-text">Branding chaos (TrackIt vs Ozempic Tracker), stale 12+ months, no AI.</span></td>
+        <td><span class="threat-pill low">LOW · stagnant</span></td>
+      </tr>
+      <tr>
+        <td><b>Pep</b><br><span class="hex-code">aso_rival · GROUP B</span></td>
+        <td>~$80K · ~730 reviews</td>
+        <td><span class="swatch-chip" style="background:#4D8AF5;"></span><span class="hex-code">#4D8AF5</span><br>saturated blue</td>
+        <td><span class="swatch-chip" style="background:#4CAF50;"></span><span class="hex-code">#4CAF50</span><br>checkmark green</td>
+        <td>"Track medication, side effects, meals, water &amp; progress" — feature-list-heavy</td>
+        <td><span class="wedge-text">Keyword-stuffed subtitle, multi-tier pricing chaos, no AI. Мы curate vs stuff.</span></td>
+        <td><span class="threat-pill med">MED · ASO rival</span></td>
+      </tr>
+      <tr>
+        <td><b>GlucoPal Zepbound</b><br><span class="hex-code">aso_rival · GROUP B</span></td>
+        <td>~$60K · 1,641 reviews</td>
+        <td><span class="swatch-chip" style="background:#6B4DFF;"></span><span class="hex-code">#6B4DFF</span><br>Lilly-adjacent purple</td>
+        <td><span class="swatch-chip" style="background:#4CAF50;"></span><span class="hex-code">#4CAF50</span><br>validation green</td>
+        <td>"Clear weight trends + never miss a dose" — brand-locked simplicity</td>
+        <td><span class="wedge-text">Brand-trapped (can't rebrand without losing 1641 reviews). $29.99/yr ceiling. No clinical depth.</span></td>
+        <td><span class="threat-pill med">MED · review moat</span></td>
+      </tr>
+      <tr>
+        <td><b>Injectly</b><br><span class="hex-code">aso_rival · GROUP B</span></td>
+        <td>$0 · 182 reviews</td>
+        <td><span class="swatch-chip" style="background:#5BA9A8;"></span><span class="hex-code">#5BA9A8</span><br>soft teal</td>
+        <td><span class="swatch-chip" style="background:#C8B6E0;"></span><span class="hex-code">#C8B6E0</span><br>pale lavender</td>
+        <td>"Free. No ads. No login. No data collection." — anti-pharma ethics</td>
+        <td><span class="wedge-text">Free = no team scaling. Generalist (peptides + insulin + HRT + GLP-1). No clinical AI.</span></td>
+        <td><span class="threat-pill low">LOW · no monetization</span></td>
+      </tr>
+      <tr style="background:#F0F5F4;">
+        <td><b>JabWell</b> (us)<br><span class="hex-code">self</span></td>
+        <td>TBD · 0 reviews · ASC pending Day 1</td>
+        <td><span class="swatch-chip" style="background:#1B3A5F;"></span><span class="hex-code">TBD</span><br><i>palette voting open</i></td>
+        <td><span class="swatch-chip" style="background:#F2A65A;"></span><span class="hex-code">TBD</span><br><i>palette voting open</i></td>
+        <td>"Your AI nurse, dietitian, and side-effect coach — for every GLP-1 shot."</td>
+        <td><span class="wedge-text">AI Nurse Chat (DeepSeek + on-device RAG) + Side Effect Triage + Protein Coach + Hair/Skin Journal + Plateau Detector + Doctor PDF + Compounded Pharmacy Compare</span></td>
+        <td><span class="threat-pill low">SELF</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Composition gallery -->
+  <h3 style="margin-top: 28px;">Composition gallery · funnel reference</h3>
+  <p class="section-intro" style="margin-top: 6px;">Извлечённые композиции конкурентских App Store hero screens — feeds наш funnel design. Когда пишем onboarding-копи или paywall hero, видим что делает Shotsy/MeAgain рядом и осознанно дифференцируемся. Полные composition rules: <code>13-jabwell/funnel-screenshots/competitors/&lt;name&gt;/composition.md</code>.</p>
+
+  <div class="comp-gallery">
+
+    <div class="comp-tile">
+      <div class="tile-h">
+        <span class="tile-name">Shotsy</span>
+        <span class="tile-arr">$9.6M ARR</span>
+      </div>
+      <div class="tile-thumbs">
+        <div class="tile-thumb" style="background-image: url('competitors/shotsy/hero.jpg');" title="Hero — multi-med dashboard"></div>
+        <div class="tile-thumb">Onb pending</div>
+        <div class="tile-thumb">Paywall pending</div>
+      </div>
+      <div class="rules">
+        <div><b>Hero claim:</b> "Track every dose. Stay on schedule."</div>
+        <div><b>Color usage:</b> Teal на CTA + multicolor med pills (rainbow brand differentiation)</div>
+        <div><b>Layout:</b> Single-column dashboard hero, levels chart bottom</div>
+        <div><b>Trust device:</b> Rating ★4.84 + 21K reviews badge, no clinical claim</div>
+      </div>
+    </div>
+
+    <div class="comp-tile">
+      <div class="tile-h">
+        <span class="tile-name">MeAgain</span>
+        <span class="tile-arr">$50-200K</span>
+      </div>
+      <div class="tile-thumbs">
+        <div class="tile-thumb" style="background-image: url('competitors/meagain/hero.jpg');" title="Hero — premium gradient"></div>
+        <div class="tile-thumb">Onb pending</div>
+        <div class="tile-thumb">Paywall pending</div>
+      </div>
+      <div class="rules">
+        <div><b>Hero claim:</b> "Your success plan" (aspirational, not feature)</div>
+        <div><b>Color usage:</b> Purple gradient hero → white app → magenta CTAs</div>
+        <div><b>Layout:</b> Onboarding-cinematic dark gradient, app = bright</div>
+        <div><b>Trust device:</b> "Leading GLP-1 app" claim, premium tier framing</div>
+      </div>
+    </div>
+
+    <div class="comp-tile">
+      <div class="tile-h">
+        <span class="tile-name">Pep</span>
+        <span class="tile-arr">~$80K</span>
+      </div>
+      <div class="tile-thumbs">
+        <div class="tile-thumb" style="background-image: url('competitors/pep/hero.jpg');" title="Hero — feature stack"></div>
+        <div class="tile-thumb">Onb pending</div>
+        <div class="tile-thumb">Paywall pending</div>
+      </div>
+      <div class="rules">
+        <div><b>Hero claim:</b> "Track medication, side effects, meals, water &amp; progress" (feature pile)</div>
+        <div><b>Color usage:</b> Saturated blue gradient + green checkmarks</div>
+        <div><b>Layout:</b> Feature-grid hero (5 features visible at once)</div>
+        <div><b>Trust device:</b> Feature-count, generic gamification (progress circles)</div>
+      </div>
+    </div>
+
+    <div class="comp-tile">
+      <div class="tile-h">
+        <span class="tile-name">GlucoPal Zepbound</span>
+        <span class="tile-arr">~$60K</span>
+      </div>
+      <div class="tile-thumbs">
+        <div class="tile-thumb" style="background-image: url('competitors/glucopal/hero.jpg');" title="Hero — brand-locked"></div>
+        <div class="tile-thumb">Onb pending</div>
+        <div class="tile-thumb">Paywall pending</div>
+      </div>
+      <div class="rules">
+        <div><b>Hero claim:</b> "Clear weight trends + never miss a dose"</div>
+        <div><b>Color usage:</b> Vivid Lilly-adjacent purple на hero, green checks для validation</div>
+        <div><b>Layout:</b> Diversity hero photo (hands/people) + chart preview</div>
+        <div><b>Trust device:</b> Brand-locked title (Zepbound Tracker) + 1641 review proof</div>
+      </div>
+    </div>
+
+    <div class="comp-tile">
+      <div class="tile-h">
+        <span class="tile-name">OptiPin</span>
+        <span class="tile-arr">$42K</span>
+      </div>
+      <div class="tile-thumbs">
+        <div class="tile-thumb" style="background-image: url('competitors/optipin/hero.jpg');" title="Hero — peptide niche"></div>
+        <div class="tile-thumb">Onb pending</div>
+        <div class="tile-thumb">Paywall pending</div>
+      </div>
+      <div class="rules">
+        <div><b>Hero claim:</b> "Peptide + GLP-1 stacking" (niche-confused)</div>
+        <div><b>Color usage:</b> Tech-purple primary + pastel violet</div>
+        <div><b>Layout:</b> Multi-feature stacking dashboard, dense</div>
+        <div><b>Trust device:</b> Peptide-bro community, not clinical</div>
+      </div>
+    </div>
+
+    <div class="comp-tile">
+      <div class="tile-h">
+        <span class="tile-name">Pode (TrackIt)</span>
+        <span class="tile-arr">&lt;$50K</span>
+      </div>
+      <div class="tile-thumbs">
+        <div class="tile-thumb" style="background-image: url('competitors/pode/hero.jpg');" title="Hero — generic"></div>
+        <div class="tile-thumb">Onb pending</div>
+        <div class="tile-thumb">Paywall pending</div>
+      </div>
+      <div class="rules">
+        <div><b>Hero claim:</b> "Track Progress, Empower Change" (generic aspirational)</div>
+        <div><b>Color usage:</b> Vivid purple primary + scattered pastel dots</div>
+        <div><b>Layout:</b> Branding-confused — "TrackIt" name vs "Ozempic Tracker" title</div>
+        <div><b>Trust device:</b> None visible (generic stock visuals)</div>
+      </div>
+    </div>
+
+    <div class="comp-tile">
+      <div class="tile-h">
+        <span class="tile-name">Injectly</span>
+        <span class="tile-arr">$0 free</span>
+      </div>
+      <div class="tile-thumbs">
+        <div class="tile-thumb" style="background-image: url('competitors/injectly/hero.jpg');" title="Hero — minimalist"></div>
+        <div class="tile-thumb">Onb pending</div>
+        <div class="tile-thumb">Paywall pending</div>
+      </div>
+      <div class="rules">
+        <div><b>Hero claim:</b> "Free. No ads. No login. No data collection."</div>
+        <div><b>Color usage:</b> Soft teal minimalist + muted pastel dots</div>
+        <div><b>Layout:</b> Zen single-column, lots of whitespace</div>
+        <div><b>Trust device:</b> Anti-pharma ethics framing, privacy as moat</div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="section-intro" style="margin-top: 18px; font-size: 12px; color: #8a8a90;">
+    <b>Композиционный gap для JabWell:</b> Никто не использует <b>warm-medical narrative + AI chat hero</b>. Все либо utility-grid (Shotsy/Pep), либо premium-aspirational (MeAgain), либо minimalist-anti (Injectly), либо generic-stock (Pode). Наш hero candidate: AI Nurse chat live demo на screenshot 2 (<b>3am moment</b>, dark mode, "Got nausea 3 days?" → 3-tier triage с FDA badge) — НИКТО не показывает RAG-grounded clinical conversation.
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: PAYWALL WORKBENCH (skeleton) -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="paywall-workbench" style="background: #FAF7F2;">
+  <h2>5. Paywall Workbench <span class="pill pill-pending">skeleton · дополняем по ходу</span></h2>
+  <p class="section-intro">
+    Каркас по 5-step structure из crysnap. JTBD-brief inputs <b>pre-filled</b> из <code>JabWell_Strategic_Plan_v1.md §7</code>. Tokens биндим к выбранной палитре после голосования (блок 1). Gallery + iPhone deep-dive — TODO, добавляем варианты по triggers (3+ nausea / plateau 4+ wks / hair flag / OOP / day-6) на каждом sprint'е paywall'а.
+  </p>
+
+  <!-- 01 HERO -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">01</span><h3>Hero-картинка</h3></div>
+    <p class="pw-step-i">Будет: dropzone для подменной hero (изображение AI Nurse chat 3am scene). Built-in: A rational ($1300/mo Ozempic vs $49.99/yr coach), B emotional (3am scared + AI). Сейчас — TODO до съёмки mockups.</p>
+    <div class="pw-todo">
+      <div class="todo-h">📷 Hero pending</div>
+      После выбора палитры (блок 1) — собираем 2 hero candidates:<br>
+      A · rational: split screen $1300/mo Ozempic ↔ $49.99/yr JabWell · B · emotional: 3am face-glow phone, AI Nurse chat overlay
+    </div>
+  </div>
+
+  <!-- 02 JTBD-brief -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">02</span><h3>JTBD-бриф · pre-filled S1 default trigger</h3></div>
+    <p class="pw-step-i">Эти данные подставятся в Claude-prompt и помогут разметить экраны под аудиторию. Pre-fill из стратегического плана — переопределяй per-trigger (S1 default / S2 plateau / S2 nausea-3+ / S3 OOP / day-6).</p>
+    <div class="pw-brief">
+      <div class="field"><label>BRAND / PRODUCT</label><input type="text" value="JabWell"></div>
+      <div class="field"><label>PRIMARY AUDIENCE</label><input type="text" value="S1 New GLP-1 patient first 90 days, 38yo female, on Wegovy® week 4"></div>
+      <div class="field"><label>CORE PAIN</label><textarea rows="2">3am nausea panic — week 4 dose escalation, scared of vomiting, scrolling Reddit at 2am unable to sleep, partner sleeping</textarea></div>
+      <div class="field"><label>KILLER FEATURE</label><textarea rows="2">AI Nurse Chat: 3-tier triage (common 40% / try X,Y,Z / call doctor if vomiting&gt;24h) with FDA + AAFP source badges, on-device RAG grounded</textarea></div>
+      <div class="field"><label>WEEKLY PRICE</label><input type="text" value="$4.99/wk + 7-day trial (DEFAULT preselected)"></div>
+      <div class="field"><label>ANNUAL PRICE</label><input type="text" value="$49.99/yr (SAVE 81% badge)"></div>
+      <div class="field"><label>VALUE ANCHOR</label><input type="text" value="$1,300/mo Ozempic out-of-pocket — $49.99/yr coach. Cancel anytime."></div>
+      <div class="field"><label>TRUST LINE</label><input type="text" value="FDA prescribing info + AAFP + Mayo + Cleveland Clinic + PubMed grounded. Educational, not medical advice."></div>
+    </div>
+  </div>
+
+  <!-- 03 TOKENS -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">03</span><h3>Бренд-токены · биндятся к выбранной палитре</h3></div>
+    <p class="pw-step-i">4 цвета — primary CTA, trust accent, light bg, dark bg. Сейчас pre-set под Variant A (Midnight Companion) как provisional. Переключаются после голосования.</p>
+    <div class="pw-tokens">
+      <div class="tk"><div class="tk-sw" style="background:#1B3A5F;"></div><label>PRIMARY / CTA</label><input type="text" value="#1B3A5F"></div>
+      <div class="tk"><div class="tk-sw" style="background:#F2A65A;"></div><label>TRUST / ACCENT</label><input type="text" value="#F2A65A"></div>
+      <div class="tk"><div class="tk-sw" style="background:#F5F1EA;"></div><label>LIGHT BG</label><input type="text" value="#F5F1EA"></div>
+      <div class="tk"><div class="tk-sw" style="background:#0E1A2B;"></div><label>DARK BG</label><input type="text" value="#0E1A2B"></div>
+    </div>
+  </div>
+
+  <!-- 04 GALLERY -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">04</span><h3>Галерея пресетов <span style="font-size: 13px; color: #9CA0A8; font-weight: 400;">0 / 5+ pending</span></h3></div>
+    <p class="pw-step-i">5 trigger-based вариантов из <code>JabWell_Strategic_Plan_v1.md §7</code>: default S1 onboarding hard paywall · 3+ nausea events · plateau 4+ weeks · hair shedding flagged · OOP user · day-6 trial-end. Дополняем по одному на каждый sprint paywall'а.</p>
+    <div class="pw-todo">
+      <div class="todo-h">🎨 Gallery pending — 5 пресетов в очереди</div>
+      <div style="text-align:left; max-width: 520px; margin: 8px auto 0;">
+        <span class="slot-pin">P1 default · onboarding hard paywall</span>
+        <span class="slot-pin">P2 trigger · 3+ nausea events week 4</span>
+        <span class="slot-pin">P3 trigger · plateau 4+ weeks flat</span>
+        <span class="slot-pin">P4 trigger · hair shedding flagged</span>
+        <span class="slot-pin">P5 trigger · OOP cost-driven</span>
+        <span class="slot-pin">P6 trigger · day-6 trial-end conversion hammer</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 DEEP DIVE -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">05</span><h3>Систематизатор пейволла · iPhone 16 Pro Max deep-dive</h3></div>
+    <p class="pw-step-i">Будет: real-frame iPhone 16 Pro Max (430×932 pt) с tweaks-панелью (hero/trust/features/anchor/timeline/compliance toggles + scheme/plans switcher). Подключаем после первого preset'а в gallery.</p>
+    <div class="pw-todo">
+      <div class="todo-h">📱 Deep-dive pending</div>
+      Активируется после первого preset'а в galery (04). Frame: iPhone 16 Pro Max 430×932 pt · scrollable inner content · tweaks panel справа.
+    </div>
+  </div>
+
+  <!-- EXPORT -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">⤓</span><h3>Экспорт · JSON · Swift · Claude prompt</h3></div>
+    <p class="pw-step-i">JSON snapshot state · Swift constants для <code>PaywallView.swift</code> (<code>jabwell_premium</code> entitlement, RC SDK) · Claude prompt — полный бриф для углубления в новой беседе.</p>
+    <div class="pw-todo">
+      <div class="todo-h">📋 Export pending</div>
+      Подключим после первого preset'а. Cribbed из crysnap workbench — JSON / Swift / Claude prompt buttons готовы к копированию.
+    </div>
+  </div>
+
+  <p class="section-intro" style="margin-top: 18px; font-size: 12px; color: #8a8a90;">
+    <b>Reference paywall:</b> <code>../07-colorcheck/ColorCheck/ColorCheck/Views/Paywall/PaywallView.swift</code> (golden source 7 слотов). <b>Pricing:</b> 2-tier Weekly $4.99 + 7-day trial DEFAULT preselected · Annual $49.99 SAVE 81%. <b>Entitlement:</b> <code>jabwell_premium</code>. <b>Product IDs:</b> <code>com.love8ko.jabwell.weekly</code> / <code>com.love8ko.jabwell.yearly</code>. <b>Offering:</b> <code>jabwell_default</code>.
+  </p>
+</section>
+
+<!-- Selection panel -->
+<div class="selection-panel">
+  <h3>📋 Твой выбор</h3>
+  <div class="field"><span class="field-label">Палитра:</span><span class="field-value" id="sel-palette">не выбрано</span></div>
+  <div class="field"><span class="field-label">JTBD priority:</span><span class="field-value" id="sel-jtbd">pending vote</span></div>
+  <div class="field"><span class="field-label">Paywall preset:</span><span class="field-value" id="sel-paywall">pending build</span></div>
+  <button onclick="copySelection()">📋 Скопировать выбор</button>
+  <div id="copy-toast" style="display:none; margin-top:8px; font-size:11px; color:#9CB892; text-align:center;">Скопировано!</div>
+</div>
+
+<script>
+  const selection = { palette: null, jtbd: null, paywall: null };
+
+  function selectPalette(el, label) {
+    document.querySelectorAll('.palette-col').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    selection.palette = label;
+    document.getElementById('sel-palette').textContent = label;
+  }
+
+  function copySelection() {
+    const text = `JabWell selection:\nПалитра: ${selection.palette || 'не выбрано'}\nJTBD priority: ${selection.jtbd || 'pending vote'}\nPaywall preset: ${selection.paywall || 'pending build'}`;
+    navigator.clipboard.writeText(text).then(() => {
+      const toast = document.getElementById('copy-toast');
+      toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
