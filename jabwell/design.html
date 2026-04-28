@@ -468,13 +468,14 @@
 <h1>JabWell — Design Workbench</h1>
 
 <div class="hero-card">
-  <div class="eyebrow">🟦 IN PROGRESS · 2026-04-28 · Pre-build phase</div>
+  <div class="eyebrow">🟢 ROUND 1 CONSILIUM DONE · 2026-04-28 · awaiting human counter-vote</div>
   <div class="one-liner">Your AI nurse, dietitian, and side-effect coach — for every GLP-1 shot.</div>
   <div class="meta-row">
     <span>Health & Fitness</span>
     <span>$4.99/wk + 7-day trial</span>
     <span>$39.99/yr</span>
-    <span>Primary: S1 New patient (3M, 🔴 extreme WTP)</span>
+    <span>🏆 Palette: B Apothecary (avg 8.0)</span>
+    <span>🏆 V1 priority: S1 → S2 → S3</span>
     <span>v0.1 · DeepSeek + on-device RAG</span>
   </div>
 </div>
@@ -699,31 +700,85 @@
   </div>
 
   <!-- Voting table -->
-  <h3 style="margin-top: 28px;">Голосование консилиума (8 голосов · 1–10)</h3>
-  <p class="section-intro" style="margin-top: 6px;">Каждый голос проставляет 1–10 + одну строку обоснования. Bottom row — average. Winner подсветится после реального голосования. Любой голос &lt;6 у winner'а — red flag, переголосовываем.</p>
+  <h3 style="margin-top: 28px;">Голосование консилиума · Round 1 (8 голосов · 1–10)</h3>
+  <p class="section-intro" style="margin-top: 6px;">
+    Round 1 — model-led консилиум, каждый голос обоснован одной строкой. <b>Awaiting human counter-vote</b> — оспаривай любой score, переголосовываем. Bottom row — average. Winner подсвечен. <b>Red flag rule:</b> любой голос &lt;6 у winner'а blocks lock — повторный round.
+  </p>
   <table class="vote-table">
     <thead>
       <tr>
         <th class="left">Voice</th>
         <th>A · Midnight</th>
-        <th>B · Apothecary</th>
+        <th class="winner">B · Apothecary 🏆</th>
         <th>C · Cost-Smart</th>
         <th>D · Recovery</th>
-        <th class="left">Note</th>
+        <th class="left">Reasoning</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td class="left"><b>S1 New patient</b><br><span class="hex-code">Maya, 38, scared</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая палитра успокаивает в 3am pre-injection?</td></tr>
-      <tr><td class="left"><b>S2 Long-term plateau</b><br><span class="hex-code">Sarah, 45, exhausted</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая не давит ещё больше когда уже устал?</td></tr>
-      <tr><td class="left"><b>S3 Compounded OOP</b><br><span class="hex-code">Lin, 41, $1300/mo pain</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая выглядит "professional + savings", не cheap?</td></tr>
-      <tr><td class="left"><b>S4 Hair/skin</b><br><span class="hex-code">Carla, 52, aesthetics</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая подходит для photo journal?</td></tr>
-      <tr><td class="left"><b>Pharmacist persona</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Professional medical tool, не tech-bro toy?</td></tr>
-      <tr><td class="left"><b>AI Nurse voice</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">"Warm but credible" в chat UX?</td></tr>
-      <tr><td class="left"><b>ASO Strategist</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Выделится среди Shotsy/MeAgain/Pep/GlucoPal?</td></tr>
-      <tr><td class="left"><b>Brand Designer</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">System-устойчива (3+ года, dark/light, WCAG AA)?</td></tr>
-      <tr><td class="left"><b>Average</b></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td></td></tr>
+      <tr>
+        <td class="left"><b>S1 New patient</b><br><span class="hex-code">Maya, 38, scared</span></td>
+        <td>9</td><td class="winner">8</td><td>5</td><td>4</td>
+        <td class="reason">A: dark не давит light в 3am, deep blue + amber успокаивает. B: warm linen + teal "trusted pharmacist", но light-only не оптимизировано под ночь. C: green = savings, не survival. D: taupe = beauty stage, не survival.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>S2 Long-term plateau</b><br><span class="hex-code">Sarah, 45, exhausted</span></td>
+        <td>8</td><td class="winner">9</td><td>6</td><td>7</td>
+        <td class="reason">A: calm dark, не давит. B: best fit — "тёплая забота старого аптекаря" не tech-pressure, terracotta = evening warmth. C: green триггерит cost-anxiety когда уже paying $1300. D: taupe supportive для recovery framing.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>S3 Compounded OOP</b><br><span class="hex-code">Lin, 41, $1300/mo pain</span></td>
+        <td>6</td><td class="winner">7</td><td>10</td><td>5</td>
+        <td class="reason">A: amber не сигналит "savings". B: terracotta + linen = "крафтовый premium", OK но не savings cue. C: built FOR Lin — money-green + gold = "professional financial advisor + medical coach". D: taupe слишком soft для transactional desperation.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>S4 Hair/skin</b><br><span class="hex-code">Carla, 52, aesthetics</span></td>
+        <td>5</td><td class="winner">7</td><td>6</td><td>10</td>
+        <td class="reason">A: dark mode не работает для photo review. B: warm linen comfortable backdrop, terracotta компанионит skin tones. C: green primary не подходит для skin photos. D: built FOR Carla — taupe = skin-tone fond, champagne = hair density highlights.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>Pharmacist persona</b></td>
+        <td>8</td><td class="winner">10</td><td>6</td><td>5</td>
+        <td class="reason">A: deep blue clinical, но dark+amber может прочитаться как luxury watch. B: ocean teal + olive + linen = аптекарь точно, terracotta = pharmacy bottle. C: green = wellness supplement (Olly/Goop) territory. D: taupe = spa, не аптека.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>AI Nurse voice</b></td>
+        <td>9</td><td class="winner">8</td><td>5</td><td>6</td>
+        <td class="reason">A: dark chat + honey amber = comfortable 3am companion. B: terracotta chat accents = warm without losing clinical edge. C: green chat = validation/correct gamification, не warm. D: champagne accent = "spa wellness coach" не nurse.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>ASO Strategist</b></td>
+        <td>10</td><td class="winner">7</td><td>6</td><td>8</td>
+        <td class="reason">A: единственный dark-mode-first в category — ВИДИМО pop'нет на Search Results page рядом с Shotsy/MeAgain/Pep light. B: warm linen + teal close to Shotsy teal — risk of blending. C: green near Pep blue/MeAgain purple OK, но wellness-supplement read. D: warm taupe полностью differentiates но рискует читаться как pregnancy app.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>Brand Designer</b></td>
+        <td>9</td><td class="winner">8</td><td>7</td><td>6</td>
+        <td class="reason">A: dark-first хорошо scale (Apple Health Mirror trend), amber WCAG-friendly на dark. B: warm linen рискует looking dated через 3 года, но teal+terracotta classic. C: green PR risk + WCAG AA tricky на cream. D: taupe trend-bound (skin-tone fashion 2025-2026), champagne accent low-contrast accessibility.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>Average</b></td>
+        <td><b>8.0</b></td>
+        <td class="winner"><b>8.0 🏆</b></td>
+        <td><b>6.4</b></td>
+        <td><b>6.4</b></td>
+        <td class="reason"><b>A and B tied at 8.0.</b> Tiebreak via red-flag rule: A has 5 (Carla), B's lowest is 7. <b>B wins clean</b>; A runner-up.</td>
+      </tr>
     </tbody>
   </table>
+
+  <!-- Decision card (round 1 outcome) -->
+  <div style="margin-top: 22px; background: linear-gradient(135deg, #264653 0%, #2A5560 100%); color: white; padding: 20px 24px; border-radius: 14px; box-shadow: 0 4px 18px rgba(38, 70, 83, 0.3);">
+    <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; opacity: 0.92;">🟢 ROUND 1 OUTCOME · awaiting human counter-vote</div>
+    <div style="font-size: 22px; font-weight: 800; margin-top: 6px; font-family: -apple-system, 'SF Pro Rounded', sans-serif;">Winner: B · Clinical Apothecary 🏺</div>
+    <div style="font-size: 13px; margin-top: 8px; line-height: 1.55; opacity: 0.95;">
+      Primary <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#264653</code> deep ocean teal · Accent <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#E76F51</code> terracotta · Bg <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#F4F1DE</code> warm linen · Verdict triad <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#606C38 / #DDA15E / #9B2226</code>.
+    </div>
+    <div style="font-size: 12px; margin-top: 12px; line-height: 1.55; opacity: 0.92;">
+      <b>Why B won:</b> Tied at 8.0 with A, но clean (no &lt;6 score). A failed S4 Carla red flag. Apothecary читается как "доверенный аптекарь старой школы + AI mind" — психологически противопоставлен sterile MeAgain/Shotsy positioning.<br>
+      <b>System recommendation:</b> Adopt B как primary. Borrow A's dark-mode tokens (<code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#0E1A2B + #1B3A5F + #F2A65A</code>) для AI Nurse chat surface specifically — Voice 6 (AI Nurse) gave A: 9, B: 8 dla chat context. Это <b>B-day + A-night</b> dual-mode design system.
+    </div>
+  </div>
 
   <p class="section-intro" style="margin-top: 16px; font-size: 12px; color: #8a8a90;">
     <b>Conventions:</b> verdict triad одинаков по семантике у всех вариантов (sage = safe / amber = caution / red = ER trigger), но конкретный hex меняется чтобы оставаться читаемым на каждом фоне. Critical/ER red используется ТОЛЬКО для true escalation triggers (vomiting&gt;24h, severe abdominal pain, jaundice) — не для UI errors.
@@ -937,30 +992,83 @@
   </details>
 
   <!-- Voting table (JTBD priority) -->
-  <h3 style="margin-top: 28px;">Голосование консилиума · сколько слотов отдать каждому сегменту</h3>
-  <p class="section-intro" style="margin-top: 6px;">7 голосов × 4 V1-сегмента (S1/S2/S3/S5). Каждый scores 1–10 для "сколько слотов в onboarding (5) + screenshot (8) + paywall (5 triggers) этому сегменту отдать". Average → итоговый bias V1 распределения.</p>
+  <h3 style="margin-top: 28px;">Голосование консилиума · Round 1 · сколько слотов отдать каждому сегменту</h3>
+  <p class="section-intro" style="margin-top: 6px;">7 голосов × 4 V1-сегмента (S1/S2/S3/S5). Каждый scores 1–10 для "сколько слотов в onboarding (5) + screenshot (8) + paywall (5 triggers) этому сегменту отдать". Average → итоговый bias V1 распределения. <b>Awaiting human counter-vote.</b></p>
   <table class="vote-table">
     <thead>
       <tr>
         <th class="left">Voice</th>
-        <th>S1 New patient</th>
+        <th class="winner">S1 New patient 🏆</th>
         <th>S2 Long-term</th>
         <th>S3 Compounded</th>
         <th>S5 Maintenance</th>
-        <th class="left">Lens / question</th>
+        <th class="left">Reasoning</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td class="left"><b>Founder</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Где максимум revenue × retention?</td></tr>
-      <tr><td class="left"><b>ASO Strategist</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая аудитория конвертит лучше из target keywords (`ozempic tracker`, `mounjaro tracker`)?</td></tr>
-      <tr><td class="left"><b>Paywall Designer</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какой trigger даст высший T2P в первые 7 дней?</td></tr>
-      <tr><td class="left"><b>AI Nurse voice</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Где RAG-grounded ответы дают maximum clinical value?</td></tr>
-      <tr><td class="left"><b>Compliance Officer</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая аудитория наименее risky под Apple medical review?</td></tr>
-      <tr><td class="left"><b>Affiliate Lead</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Где S3 даёт revenue stream 2 (Hims/Ro affiliate)?</td></tr>
-      <tr><td class="left"><b>UX Analyst</b></td><td>—</td><td>—</td><td>—</td><td>—</td><td class="reason">Какая аудитория наиболее understood, least risk on JTBD-fit?</td></tr>
-      <tr><td class="left"><b>Average</b></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td><span class="vote-pending">pending</span></td><td></td></tr>
+      <tr>
+        <td class="left"><b>Founder</b></td>
+        <td class="winner">9</td><td>9</td><td>8</td><td>5</td>
+        <td class="reason">S1+S2 равны — front-load funnel + retention. S3 economic moat (affiliate $12.5K/mo @ 100K MAU). S5 — V1.1 territory.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>ASO Strategist</b></td>
+        <td class="winner">10</td><td>6</td><td>7</td><td>4</td>
+        <td class="reason">Target keywords (`ozempic tracker`, `mounjaro tracker`) = first-Rx intent = S1. S2 plateau low search volume. S3 emerging (`compounded ozempic`). S5 keyword desert.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>Paywall Designer</b></td>
+        <td class="winner">9</td><td>8</td><td>9</td><td>5</td>
+        <td class="reason">S1 first-injection scared = max desperation = highest T2P (default trigger). S3 OOP math obvious ($1300/mo → $39.99/yr). S5 lower urgency than active-injection moments.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>AI Nurse voice</b></td>
+        <td class="winner">10</td><td>9</td><td>6</td><td>7</td>
+        <td class="reason">S1 first-Rx Q&A = AI Nurse killer use case. S2 plateau debug + side effects = high RAG value. S3 compounded = compliance grey zone, scope-constrain. S5 taper nuanced — AI shines.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>Compliance Officer</b></td>
+        <td class="winner">8</td><td>8</td><td>4</td><td>9</td>
+        <td class="reason">S1+S2 standard educational territory. S3 RED FLAG — affiliate links to third-party pharmacies = Apple flag risk + legal exposure. S5 cleanest (general health habits post-taper).</td>
+      </tr>
+      <tr>
+        <td class="left"><b>Affiliate Lead</b></td>
+        <td class="winner">6</td><td>6</td><td>10</td><td>3</td>
+        <td class="reason">S3 IS the affiliate stream ($12.5K/mo, CJ Hims/Ro/Mochi/Henry/Eden). S1+S2 = top-of-funnel feeding S3 conversion. S5 by definition off-drug, no affiliate match.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>UX Analyst</b></td>
+        <td class="winner">10</td><td>8</td><td>7</td><td>6</td>
+        <td class="reason">S1 strongest JTBD-fit ("pass first 30 days without quitting"). S2 multi-job risk (plateau + hair + side effects). S3 feature complexity (pharmacy compare + affiliate API). S5 weakest validation.</td>
+      </tr>
+      <tr>
+        <td class="left"><b>Average</b></td>
+        <td class="winner"><b>8.86 🏆</b></td>
+        <td><b>7.71</b></td>
+        <td><b>7.29</b></td>
+        <td><b>5.57</b></td>
+        <td class="reason"><b>S1 dominant winner</b> (8.86, single 6 from Affiliate Lead — within tolerance). S2 clean 2nd. <b>S3 RED FLAG: Compliance 4</b> — proceed but scope carefully. S5 deprioritized to V1.1.</td>
+      </tr>
     </tbody>
   </table>
+
+  <!-- Decision card (JTBD round 1 outcome) -->
+  <div style="margin-top: 22px; background: linear-gradient(135deg, #1B3A5F 0%, #2A5F84 100%); color: white; padding: 20px 24px; border-radius: 14px; box-shadow: 0 4px 18px rgba(27, 58, 95, 0.3);">
+    <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; opacity: 0.92;">🟢 ROUND 1 OUTCOME · awaiting human counter-vote</div>
+    <div style="font-size: 22px; font-weight: 800; margin-top: 6px; font-family: -apple-system, 'SF Pro Rounded', sans-serif;">V1 priority: S1 → S2 → S3 → (S5 V1.1)</div>
+    <div style="font-size: 13px; margin-top: 10px; line-height: 1.6; opacity: 0.95;">
+      <b>S1 (8.86):</b> dominant — все 7 голосов согласны, ASO-economic-clinical alignment максимальный. Front-load: 2 onb-screens, 3 ASO-screenshots, paywall hero default.<br>
+      <b>S2 (7.71):</b> clean 2nd — retention play, plateau detector + hair/skin journal earn screenshots 5-6.<br>
+      <b>S3 (7.29) ⚠️:</b> Compliance Officer red flag (4) — affiliate-pharmacy comparison legal grey zone. <b>Action:</b> ship S3 trigger paywall + screenshot 8 (pricing/value), но <b>defer compounded pharmacy compare feature до lawyer-review копи + Apple review safe-pattern</b>.<br>
+      <b>S5 (5.57):</b> multiple red flags (ASO 4, Affiliate 3) — V1.1 deferral confirmed.
+    </div>
+    <div style="font-size: 12px; margin-top: 14px; padding: 12px 14px; background: rgba(255,255,255,0.12); border-radius: 8px; line-height: 1.55;">
+      <b>Slot budget allocation (V1):</b><br>
+      • <b>Onboarding 5 screens:</b> S1×2 (Pain + WOW) · S2×1 (Trust scenarios) · S3×1 (Method/cost) · Universal×1 (compliance disclaimer)<br>
+      • <b>App Store 8 screenshots:</b> S1×3 (HERO, AI Nurse, Site Rotation) · S2×3 (Protein, Plateau, Hair/Skin) · S3×2 (Doctor PDF, Pricing/Value)<br>
+      • <b>Paywall 5 triggers:</b> S1 default (onb-end) · S2 nausea-3+ · S2 plateau-4wk · S3 OOP-detected · Universal day-6 trial-end
+    </div>
+  </div>
 
   <!-- JTBD × Killer features matrix -->
   <h3 style="margin-top: 24px;">JTBD × Killer features matrix · slot allocation</h3>
