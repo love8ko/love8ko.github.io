@@ -2686,27 +2686,5 @@
   </p>
 </section>
 
-<!-- Selection panel · reflects current locks -->
-<div class="selection-panel">
-  <h3>📋 Locks · 2026-04-28</h3>
-  <div class="field"><span class="field-label">Палитра:</span><span class="field-value">✅ B Apothecary + A-chat</span></div>
-  <div class="field"><span class="field-label">Audience scope:</span><span class="field-value">✅ S1+S2 + GEO</span></div>
-  <div class="field"><span class="field-label">JTBD hero:</span><span class="field-value">✅ S1 funnel-entry</span></div>
-  <div class="field"><span class="field-label">Paywall preset:</span><span class="field-value" style="color:#9CA0A8;">P1 pending build</span></div>
-  <button onclick="copySelection()">📋 Скопировать locks</button>
-  <div id="copy-toast" style="display:none; margin-top:8px; font-size:11px; color:#9CB892; text-align:center;">Скопировано!</div>
-</div>
-
-<script>
-  function copySelection() {
-    const text = `JabWell locks · 2026-04-28\nПалитра: B Clinical Apothecary (#264653 + #E76F51 on #F4F1DE) + A Midnight chat surface (#1B3A5F + #F2A65A on #0E1A2B)\nAudience scope: S1+S2 dual primary (~10M US), GEO US+UK+AU+CA+IE+NZ (~14-15M)\nJTBD hero: S1 funnel-entry · S2 retention play · S3 scoped (compliance) · S5→V1.1 · S6→V2 SKU · S4→content only\nPaywall preset: P1 pending build`;
-    navigator.clipboard.writeText(text).then(() => {
-      const toast = document.getElementById('copy-toast');
-      toast.style.display = 'block';
-      setTimeout(() => toast.style.display = 'none', 2000);
-    });
-  }
-</script>
-
 </body>
 </html>
