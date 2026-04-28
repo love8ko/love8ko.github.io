@@ -312,6 +312,204 @@
   .matrix-table .rank-3 { color: #C49A4A; }
   .matrix-table .rank-4 { color: #8B6F94; }
 
+  /* === Designer Brief · App Store Screenshots === */
+  .ss-lineup {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+    padding: 14px;
+    background: #f3f3f6;
+    border-radius: 12px;
+  }
+  .ss-mini {
+    aspect-ratio: 9/19;
+    border-radius: 8px;
+    padding: 6px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+    font-size: 7px;
+    line-height: 1.15;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .ss-mini:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+  .ss-mini.priority { box-shadow: 0 0 0 2px #264653, 0 4px 12px rgba(38,70,83,0.18); }
+  .ss-mini.priority::after {
+    content: "🥇"; position: absolute; top: -7px; right: -5px;
+    font-size: 14px; background: white; border-radius: 999px;
+    width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  }
+  .ss-mini .ss-num {
+    background: rgba(255,255,255,0.9); color: #1a1a1f;
+    border-radius: 999px; width: 16px; height: 16px;
+    font-size: 9px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    align-self: flex-start;
+  }
+  .ss-mini .ss-mini-h { font-weight: 800; font-size: 8px; line-height: 1.15; letter-spacing: 0; }
+  .ss-mini .ss-mini-body { flex: 1; display: flex; align-items: center; justify-content: center; opacity: 0.7; font-size: 18px; }
+
+  .ss-priority-stack {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 22px;
+  }
+  .ss-priority-card {
+    background: linear-gradient(135deg, #FAF7F2 0%, #F4F1DE 100%);
+    border: 2px solid #264653;
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 20px;
+  }
+  .ss-priority-card.dark {
+    background: linear-gradient(135deg, #0E1A2B 0%, #152741 100%);
+    color: #F2EDE5;
+    border-color: #1B3A5F;
+  }
+  .ss-priority-card .ss-mock {
+    aspect-ratio: 9/19;
+    border-radius: 14px;
+    padding: 14px 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+    font-size: 9px;
+    line-height: 1.25;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+  }
+  .ss-priority-card .ss-mock-headline {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 13px; font-weight: 800; line-height: 1.15;
+  }
+  .ss-priority-card .ss-mock-subline {
+    font-size: 10px; line-height: 1.3; margin-top: auto; opacity: 0.85;
+  }
+  .ss-priority-card .ss-spec-h {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .ss-priority-card .ss-slot-num {
+    background: #264653; color: white;
+    width: 32px; height: 32px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+  .ss-priority-card.dark .ss-slot-num { background: #F2A65A; color: #0E1A2B; }
+  .ss-priority-card .ss-spec-title {
+    font-size: 18px; font-weight: 800; font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+  .ss-priority-card .ss-meta-pill {
+    font-size: 10px; padding: 3px 9px; border-radius: 999px;
+    font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .ss-priority-card .ss-meta-owner { background: #1B3A5F; color: white; }
+  .ss-priority-card .ss-meta-mode-light { background: #F4F1DE; color: #264653; box-shadow: inset 0 0 0 1px #D0CFB8; }
+  .ss-priority-card .ss-meta-mode-dark { background: #0E1A2B; color: #F2A65A; }
+  .ss-priority-card.dark .ss-meta-owner { background: #F2A65A; color: #0E1A2B; }
+  .ss-priority-card .ss-copy-row {
+    background: rgba(38, 70, 83, 0.08);
+    border-left: 3px solid #264653;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+  .ss-priority-card.dark .ss-copy-row {
+    background: rgba(242, 166, 90, 0.12);
+    border-left-color: #F2A65A;
+  }
+  .ss-priority-card .ss-copy-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .ss-priority-card .ss-copy-text { font-size: 16px; font-weight: 800; line-height: 1.25; margin-top: 3px; }
+  .ss-priority-card .ss-copy-sub { font-size: 13px; font-weight: 600; line-height: 1.35; opacity: 0.85; margin-top: 2px; }
+  .ss-priority-card .ss-bullets {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 16px;
+    margin-top: 12px;
+  }
+  .ss-priority-card .ss-bullet-block .label {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    opacity: 0.65; margin-bottom: 4px;
+  }
+  .ss-priority-card .ss-bullet-block ul {
+    list-style: none; padding: 0; font-size: 12px; line-height: 1.45;
+  }
+  .ss-priority-card .ss-bullet-block li { padding-left: 14px; position: relative; margin-bottom: 3px; }
+  .ss-priority-card .ss-bullet-block li::before {
+    content: "•"; position: absolute; left: 4px; font-weight: 700; color: #E76F51;
+  }
+  .ss-priority-card.dark .ss-bullet-block li::before { color: #F2A65A; }
+  .ss-priority-card .ss-bullet-block.do li::before { content: "✓"; color: #606C38; }
+  .ss-priority-card .ss-bullet-block.dont li::before { content: "✗"; color: #9B2226; }
+  .ss-priority-card.dark .ss-bullet-block.do li::before { color: #2E7D5B; }
+  .ss-priority-card.dark .ss-bullet-block.dont li::before { color: #C44536; }
+  .ss-priority-card .ss-tokens-row {
+    display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap;
+  }
+  .ss-priority-card .ss-token-chip {
+    font-size: 10px; padding: 3px 8px; border-radius: 999px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 700;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+  }
+
+  .ss-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 22px;
+  }
+  .ss-summary-card {
+    background: #fafafa;
+    border: 1px solid #ebebef;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .ss-summary-card .ss-summary-h {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 4px;
+  }
+  .ss-summary-card .ss-summary-num {
+    background: #C49A4A; color: white;
+    width: 24px; height: 24px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800;
+  }
+  .ss-summary-card .ss-summary-title {
+    font-size: 13px; font-weight: 800; font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+  .ss-summary-card .ss-summary-owner {
+    font-size: 9px; padding: 2px 7px; border-radius: 999px;
+    background: #f3f3f6; color: #4a4a55;
+    font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    margin-left: auto;
+  }
+  .ss-summary-card .ss-summary-copy {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 13px; font-weight: 700; line-height: 1.3; color: #1a1a1f;
+  }
+  .ss-summary-card .ss-summary-sub {
+    font-size: 11px; line-height: 1.4; color: #5a5a60;
+  }
+  .ss-summary-card .ss-summary-vis {
+    font-size: 11px; color: #4a4a55; line-height: 1.45;
+    border-top: 1px dashed #ebebef; padding-top: 8px; margin-top: 4px;
+  }
+
   /* Compliance reminder card */
   .compliance-card {
     background: #FFF8E6;
@@ -491,11 +689,13 @@
   <span class="sep">·</span>
   <a href="#jtbd">2 · JTBD</a>
   <span class="sep">·</span>
-  <a href="#compliance">3 · Compliance</a>
+  <a href="#designer-brief" class="featured">📐 3 · Designer brief</a>
   <span class="sep">·</span>
-  <a href="#competitors">4 · Конкуренты</a>
+  <a href="#compliance">4 · Compliance</a>
   <span class="sep">·</span>
-  <a href="#paywall-workbench" class="featured">💉 5 · Paywall</a>
+  <a href="#competitors">5 · Конкуренты</a>
+  <span class="sep">·</span>
+  <a href="#paywall-workbench" class="featured">💉 6 · Paywall</a>
 </nav>
 
 <h1>JabWell — Design Workbench</h1>
@@ -513,7 +713,16 @@
   </div>
 </div>
 
-<p class="lede">Workbench для итераций по палитре, JTBD-приоритезации, paywall и messaging. <b>Палитра — №1 на голосование (4 варианта, ни один не предзадан как winner).</b> JTBD-консилиум — следом. Paywall — каркас, дополняем по мере итераций. Кликни на карточку чтобы выбрать.</p>
+<p class="lede">Workbench для итераций. Палитра + JTBD + audience scope ✅ <b>LOCKED 2026-04-28</b>. Дальше — App Store screenshots (top-3 = 85% conversion), затем paywall preset.</p>
+
+<a href="#designer-brief" style="display: flex; align-items: center; gap: 14px; background: linear-gradient(135deg, #264653 0%, #2A5560 100%); color: white; padding: 14px 20px; border-radius: 14px; margin-bottom: 22px; text-decoration: none; box-shadow: 0 4px 14px rgba(38, 70, 83, 0.22); transition: transform 0.15s ease;">
+  <div style="font-size: 26px; line-height: 1; flex-shrink: 0;">📐</div>
+  <div style="flex: 1; min-width: 0;">
+    <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85;">Дизайнер? Начни здесь →</div>
+    <div style="font-size: 15px; font-weight: 700; margin-top: 2px;">Designer Brief · App Store Screenshots — заголовки, копи, токены, иллюстрации, do/don't для top-3 экранов</div>
+  </div>
+  <div style="font-size: 22px; opacity: 0.85; flex-shrink: 0;">→</div>
+</a>
 <p class="meta-info">
   Live: <a href="https://love8ko.github.io/jabwell/design.html">love8ko.github.io/jabwell/design.html</a> ·
   Source: <code>/Users/sl/Documents/apps/13-jabwell/</code> ·
@@ -1207,10 +1416,466 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- SECTION 3: COMPLIANCE REMINDER -->
+<!-- SECTION 3: DESIGNER BRIEF · APP STORE SCREENSHOTS -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="designer-brief">
+  <h2>3. Designer Brief · App Store Screenshots <span class="pill" style="background:#264653; color:white;">📐 EXECUTABLE · top-3 = 85% conversion</span></h2>
+  <p class="section-intro">
+    Дизайнер заходит сюда — видит за 30 секунд: какие палитры использовать, какие копи на экране, что нарисовать, чего не делать. <b>Первые 3 скриншота отвечают за 85% conversion</b> (S1 hero suite — то, что пользователь видит до тапа "more"). Источник: <code>SCREENSHOTS.md</code> LOCKED 2026-04-27 + Strategic Plan §9.
+  </p>
+
+  <!-- Аesthetic guardrails quick band -->
+  <div style="margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <div style="background: #E5EFE9; border-left: 3px solid #4F8059; border-radius: 0 10px 10px 0; padding: 12px 16px;">
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #4F8059;">✓ DO</div>
+      <div style="font-size: 12px; line-height: 1.55; color: #2a2a30; margin-top: 6px;">Real UI dominant 60-70% · warm + supportive + science-backed · trust badges (FDA / AAFP / Mayo) prominent · diverse representation · soft warm colors · cartoon body silhouette OK · ® on first brand mention</div>
+    </div>
+    <div style="background: #FFF1EE; border-left: 3px solid #B33A3A; border-radius: 0 10px 10px 0; padding: 12px 16px;">
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #B33A3A;">✗ DON'T</div>
+      <div style="font-size: 12px; line-height: 1.55; color: #2a2a30; margin-top: 6px;">Before/after weight comparison · specific weight numbers as hero ("Lost 30 lbs!") · cold clinical lab aesthetic · body fixation imagery · skinny/fat-shaming subtext · "Ozempic Face" memes · pharma-mimicking blue-white · photo injection imagery (cartoon only)</div>
+    </div>
+  </div>
+
+  <!-- 8-screenshot lineup at-a-glance -->
+  <h3 style="margin-top: 22px;">App Store lineup · 8 screenshots в порядке показа</h3>
+  <p class="section-intro" style="margin-top: 4px; font-size: 12px;">Ленточка как видна в App Store Search Results. Первые 3 (с 🥇 badge) рендерятся в превью до tap'а — это поле боя за конверсию. Audience tag показывает кому slot принадлежит.</p>
+  <div class="ss-lineup">
+    <div class="ss-mini priority" style="background:#F4F1DE; color:#264653;" title="HERO Dashboard · S1">
+      <span class="ss-num">1</span>
+      <div class="ss-mini-h">Every shot. Every side effect.</div>
+      <div class="ss-mini-body">📋</div>
+    </div>
+    <div class="ss-mini priority" style="background:#0E1A2B; color:#F2EDE5;" title="AI Nurse Chat · S1">
+      <span class="ss-num" style="background:rgba(242,166,90,0.95); color:#0E1A2B;">2</span>
+      <div class="ss-mini-h">Got side effects? Just ask.</div>
+      <div class="ss-mini-body">💬</div>
+    </div>
+    <div class="ss-mini priority" style="background:#F4F1DE; color:#264653;" title="Site Rotation · S1">
+      <span class="ss-num">3</span>
+      <div class="ss-mini-h">Never inject the same spot twice.</div>
+      <div class="ss-mini-body">🎯</div>
+    </div>
+    <div class="ss-mini" style="background:#FAF7F2; color:#4F8059;" title="Protein Coach · S2">
+      <span class="ss-num">4</span>
+      <div class="ss-mini-h">Lose fat. Keep muscle.</div>
+      <div class="ss-mini-body">🥩</div>
+    </div>
+    <div class="ss-mini" style="background:#F4F1DE; color:#264653;" title="Plateau Detector · S2">
+      <span class="ss-num">5</span>
+      <div class="ss-mini-h">Stuck at the same weight?</div>
+      <div class="ss-mini-body">📊</div>
+    </div>
+    <div class="ss-mini" style="background:#FBF7F2; color:#7A5C4F;" title="Hair/Skin · S2">
+      <span class="ss-num">6</span>
+      <div class="ss-mini-h">Watch what GLP-1 does to your body.</div>
+      <div class="ss-mini-body">📸</div>
+    </div>
+    <div class="ss-mini" style="background:#FAF7F2; color:#264653;" title="Doctor PDF · S3">
+      <span class="ss-num">7</span>
+      <div class="ss-mini-h">Walk into your appointment ready.</div>
+      <div class="ss-mini-body">📄</div>
+    </div>
+    <div class="ss-mini" style="background:#F4F1DE; color:#264653;" title="Pricing/Value · S3">
+      <span class="ss-num">8</span>
+      <div class="ss-mini-h">Skip the dietitian.</div>
+      <div class="ss-mini-body">💸</div>
+    </div>
+  </div>
+
+  <!-- TOP-3 PRIORITY DETAILED CARDS -->
+  <h3 style="margin-top: 28px;">🥇 Top-3 priority · S1 hero suite (85% of conversion impact)</h3>
+  <p class="section-intro" style="margin-top: 4px; font-size: 12px;">Развёрнутая спецификация для дизайнера: верхняя/нижняя копи, что на экране, какие палитры используем, иллюстрации, trust devices, anti-pattern guard. Все 3 экрана работают на S1 (3M, first 90 days, 🔴 extreme WTP) — funnel-entry hero.</p>
+
+  <div class="ss-priority-stack">
+
+    <!-- SCREEN 1 — HERO Dashboard -->
+    <div class="ss-priority-card">
+      <!-- Mock preview -->
+      <div class="ss-mock" style="background:#F4F1DE; color:#264653;">
+        <div style="display:flex; justify-content:space-between; font-size:7px; opacity:0.5;"><span>9:41</span><span>•••</span></div>
+        <div class="ss-mock-headline">Every shot.<br>Every side effect.</div>
+        <div style="background:white; border-radius:8px; padding:6px 8px; display:flex; flex-direction:column; gap:3px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:8px;"><span style="font-weight:800;">Wegovy® · 0.5mg</span><span style="background:#606C38; color:white; padding:1px 6px; border-radius:999px; font-size:7px; font-weight:800;">Active</span></div>
+          <div style="font-size:7px; opacity:0.7;">Next dose · Tuesday · 3 days</div>
+        </div>
+        <div style="background:white; border-radius:8px; padding:6px 8px;">
+          <div style="display:flex; justify-content:space-between; font-size:8px;"><span>Weight</span><span style="color:#E76F51; font-weight:800;">−12.4 lb</span></div>
+          <div style="display:flex; gap:1px; align-items:end; height:14px; margin-top:2px;">
+            <div style="background:#E76F51; height:50%; flex:1; border-radius:1px;"></div>
+            <div style="background:#E76F51; height:65%; flex:1; border-radius:1px;"></div>
+            <div style="background:#E76F51; height:78%; flex:1; border-radius:1px;"></div>
+            <div style="background:#E76F51; height:60%; flex:1; border-radius:1px;"></div>
+            <div style="background:#E76F51; height:85%; flex:1; border-radius:1px;"></div>
+            <div style="background:#E76F51; height:90%; flex:1; border-radius:1px;"></div>
+            <div style="background:#E76F51; height:100%; flex:1; border-radius:1px;"></div>
+          </div>
+        </div>
+        <div style="background:#264653; color:white; border-radius:8px; padding:5px 8px; font-size:7px; display:flex; justify-content:space-between; align-items:center;"><span>🤖 AI Nurse online</span><span>→</span></div>
+        <div class="ss-mock-subline">One app, with AI by your side.</div>
+      </div>
+
+      <!-- Spec -->
+      <div>
+        <div class="ss-spec-h">
+          <div class="ss-slot-num">1</div>
+          <div class="ss-spec-title">HERO · Multi-medication dashboard</div>
+          <span class="ss-meta-pill ss-meta-owner">S1 New patient</span>
+          <span class="ss-meta-pill ss-meta-mode-light">Light · B Apothecary</span>
+        </div>
+
+        <div class="ss-copy-row">
+          <div class="ss-copy-label">Top headline (28 chars)</div>
+          <div class="ss-copy-text">Every shot. Every side effect.</div>
+          <div class="ss-copy-label" style="margin-top: 8px;">Bottom subline (35 chars)</div>
+          <div class="ss-copy-sub">One app, with AI by your side.</div>
+        </div>
+
+        <div class="ss-bullets">
+          <div class="ss-bullet-block">
+            <div class="label">Visual composition</div>
+            <ul>
+              <li>Today tab visible · weekly schedule (next injection 3-day countdown)</li>
+              <li>Multi-medication chips top: <code>Wegovy® · 0.5mg · Active</code> + secondary chip greyed (Mounjaro®/Ozempic®)</li>
+              <li>Recent log timeline (last 3 entries, abbreviated)</li>
+              <li>Weight trend chart bottom-right (8-week sparkline, terracotta line, no specific lb numbers as hero)</li>
+              <li>"AI Nurse online" badge top-right (deep teal, persistent)</li>
+            </ul>
+          </div>
+          <div class="ss-bullet-block">
+            <div class="label">Illustration / iconography</div>
+            <ul>
+              <li>Real UI 70% · zero illustration overlays</li>
+              <li>SF Symbols 5+ for medication chips, schedule icons</li>
+              <li>Custom injection-pen icon (warm terracotta) optional next to schedule card</li>
+              <li>Background: soft linen <code>#F4F1DE</code>, no white</li>
+            </ul>
+          </div>
+          <div class="ss-bullet-block do">
+            <div class="label">Trust devices</div>
+            <ul>
+              <li>® on Wegovy®/Ozempic®/Mounjaro® first mention</li>
+              <li>"AI Nurse online" badge signals clinical AI presence</li>
+              <li>Diversity hint: profile avatar bottom-left (warm-toned, gender-neutral)</li>
+            </ul>
+          </div>
+          <div class="ss-bullet-block dont">
+            <div class="label">Anti-patterns (don't be Shotsy)</div>
+            <ul>
+              <li>NO multicolor med pills rainbow (Shotsy's signature — looks utility-only)</li>
+              <li>NO before/after weight panel (Apple risk)</li>
+              <li>NO specific weight loss claim in hero copy</li>
+              <li>NO progress streak counter (ED safety)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ss-tokens-row">
+          <span class="ss-token-chip" style="background:#264653; color:white;">#264653 primary</span>
+          <span class="ss-token-chip" style="background:#E76F51; color:white;">#E76F51 chart</span>
+          <span class="ss-token-chip" style="background:#F4F1DE; color:#264653;">#F4F1DE bg</span>
+          <span class="ss-token-chip" style="background:#606C38; color:white;">#606C38 active state</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2 — AI Nurse Chat (DARK) -->
+    <div class="ss-priority-card dark">
+      <!-- Mock preview -->
+      <div class="ss-mock" style="background:#0E1A2B; color:#F2EDE5;">
+        <div style="display:flex; justify-content:space-between; font-size:7px; opacity:0.5;"><span>2:47 AM</span><span>•••</span></div>
+        <div class="ss-mock-headline">Got side effects? Just ask.</div>
+        <div style="background:#152741; border-radius:8px; padding:5px 7px; align-self:flex-end; max-width:85%; font-size:7px; line-height:1.3;">
+          I've had nausea for 3 days, should I worry?
+        </div>
+        <div style="background:#1B3A5F; border-radius:8px; padding:5px 7px; max-width:90%; font-size:7px; line-height:1.3;">
+          <div style="font-weight:800; color:#F2A65A; margin-bottom:2px;">AI Nurse</div>
+          <div style="opacity:0.95;">Common at week 4 — ~40% experience this.<br>Try ginger, smaller meals, electrolytes.<br><span style="color:#C44536; font-weight:700;">Call prescriber if vomiting &gt;24h.</span></div>
+          <div style="display:flex; gap:3px; margin-top:3px;">
+            <span style="background:rgba(242,166,90,0.2); color:#F2A65A; padding:1px 4px; border-radius:3px; font-size:6px; font-weight:800;">FDA</span>
+            <span style="background:rgba(242,166,90,0.2); color:#F2A65A; padding:1px 4px; border-radius:3px; font-size:6px; font-weight:800;">AAFP</span>
+            <span style="background:rgba(242,166,90,0.2); color:#F2A65A; padding:1px 4px; border-radius:3px; font-size:6px; font-weight:800;">Mayo</span>
+          </div>
+        </div>
+        <div style="background:rgba(196,69,54,0.15); border:1px solid rgba(196,69,54,0.4); border-radius:6px; padding:4px 6px; font-size:6px; opacity:0.85; margin-top:auto;">
+          Educational, not medical advice. Consult prescriber.
+        </div>
+        <div class="ss-mock-subline" style="opacity:0.95;">AI Nurse, available 24/7.</div>
+      </div>
+
+      <!-- Spec -->
+      <div>
+        <div class="ss-spec-h">
+          <div class="ss-slot-num">2</div>
+          <div class="ss-spec-title">DIFFERENTIATOR · AI Nurse Chat</div>
+          <span class="ss-meta-pill ss-meta-owner">S1 New patient</span>
+          <span class="ss-meta-pill ss-meta-mode-dark">Dark · A Midnight (3am)</span>
+          <span class="ss-meta-pill" style="background:#9B2226; color:white;">🏆 KILLER FEATURE</span>
+        </div>
+
+        <div class="ss-copy-row">
+          <div class="ss-copy-label">Top headline (24 chars)</div>
+          <div class="ss-copy-text">Got side effects? Just ask.</div>
+          <div class="ss-copy-label" style="margin-top: 8px;">Bottom subline (28 chars)</div>
+          <div class="ss-copy-sub">AI Nurse, available 24/7.</div>
+        </div>
+
+        <div class="ss-bullets">
+          <div class="ss-bullet-block">
+            <div class="label">Visual composition · 3-tier triage</div>
+            <ul>
+              <li>Status bar shows "2:47 AM" — 3am moment cue</li>
+              <li>User message (right, lighter bubble): <i>"I've had nausea for 3 days, should I worry?"</i></li>
+              <li>AI response (left, midnight bubble) with <b>3 visible tiers</b>:
+                <br>① "Common at week 4 — ~40% of users hit this."
+                <br>② "Try ginger, smaller meals, electrolytes."
+                <br>③ <span style="color:#C44536; font-weight:700;">"Call prescriber if vomiting &gt;24h."</span>
+              </li>
+              <li>Source badges row: <code>FDA</code> · <code>AAFP</code> · <code>Mayo</code> (honey amber, small caps)</li>
+              <li>Disclaimer banner at bottom (muted brick red border)</li>
+            </ul>
+          </div>
+          <div class="ss-bullet-block">
+            <div class="label">Illustration / iconography</div>
+            <ul>
+              <li>NO illustration — pure UI, "feels like real iMessage at 3am"</li>
+              <li>Honey amber accent <code>#F2A65A</code> for AI bot identity (warm presence)</li>
+              <li>Status indicator: small ● dot honey amber pulsing (online)</li>
+              <li>Background: midnight ink <code>#0E1A2B</code> — dark mode is canonical here</li>
+            </ul>
+          </div>
+          <div class="ss-bullet-block do">
+            <div class="label">Trust devices · clinical credibility</div>
+            <ul>
+              <li>3 source badges visible = "I cite my sources, not vibes"</li>
+              <li>3-tier output proves clinical depth (no competitor does this)</li>
+              <li>ER trigger language ("Call prescriber if vomiting &gt;24h") signals safety culture</li>
+              <li>Disclaimer banner permanent, не dismiss-able в скриншоте</li>
+            </ul>
+          </div>
+          <div class="ss-bullet-block dont">
+            <div class="label">Anti-patterns · compliance flags</div>
+            <ul>
+              <li>NO "I diagnose..." / "You have..." in AI bubble</li>
+              <li>NO "FDA-approved app" claim — only "FDA prescribing info" cited</li>
+              <li>NO dose recommendation ("increase to 1.7mg")</li>
+              <li>NO "replace your doctor" framing</li>
+              <li>Avoid emoji overload — clinical tone, max 1 emoji</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ss-tokens-row">
+          <span class="ss-token-chip" style="background:#1B3A5F; color:white;">#1B3A5F bot</span>
+          <span class="ss-token-chip" style="background:#F2A65A; color:#0E1A2B;">#F2A65A accent</span>
+          <span class="ss-token-chip" style="background:#0E1A2B; color:#F2EDE5;">#0E1A2B bg</span>
+          <span class="ss-token-chip" style="background:#C44536; color:white;">#C44536 ER trigger</span>
+          <span class="ss-token-chip" style="background:#2E7D5B; color:white;">#2E7D5B verdict safe</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3 — Site Rotation -->
+    <div class="ss-priority-card">
+      <!-- Mock preview -->
+      <div class="ss-mock" style="background:#F4F1DE; color:#264653;">
+        <div style="display:flex; justify-content:space-between; font-size:7px; opacity:0.5;"><span>9:41</span><span>•••</span></div>
+        <div class="ss-mock-headline">Never inject the same spot twice.</div>
+        <div style="flex:1; background:white; border-radius:10px; padding:6px; display:flex; align-items:center; justify-content:center; position:relative;">
+          <div style="font-size:50px; line-height:1; color:#D0CFB8;">👤</div>
+          <div style="position:absolute; top:30%; left:32%; width:6px; height:6px; border-radius:999px; background:#E76F51; box-shadow:0 0 0 3px rgba(231,111,81,0.25);" title="Site 1"></div>
+          <div style="position:absolute; top:30%; right:32%; width:6px; height:6px; border-radius:999px; background:#E76F51; opacity:0.5;" title="Site 2"></div>
+          <div style="position:absolute; bottom:35%; left:30%; width:6px; height:6px; border-radius:999px; background:#E76F51; opacity:0.5;"></div>
+          <div style="position:absolute; bottom:35%; right:30%; width:8px; height:8px; border-radius:999px; background:#606C38; box-shadow:0 0 0 4px rgba(96,108,56,0.3); animation: pulse 2s infinite;" title="Next recommended"></div>
+        </div>
+        <div style="background:white; border-radius:8px; padding:5px 7px; font-size:8px; display:flex; justify-content:space-between; align-items:center;"><span style="font-weight:800;">Next: right thigh</span><span style="background:#606C38; color:white; padding:1px 5px; border-radius:999px; font-size:7px;">Tap to log</span></div>
+        <div style="background:rgba(38,70,83,0.08); border-radius:6px; padding:4px 6px; font-size:7px; opacity:0.8;">4-day rotation rule · last 6 sites tracked</div>
+        <div class="ss-mock-subline">Smart rotation, one tap log.</div>
+      </div>
+
+      <!-- Spec -->
+      <div>
+        <div class="ss-spec-h">
+          <div class="ss-slot-num">3</div>
+          <div class="ss-spec-title">INJECTION GUIDE · Site rotation</div>
+          <span class="ss-meta-pill ss-meta-owner">S1 New patient</span>
+          <span class="ss-meta-pill ss-meta-mode-light">Light · B Apothecary</span>
+        </div>
+
+        <div class="ss-copy-row">
+          <div class="ss-copy-label">Top headline (32 chars)</div>
+          <div class="ss-copy-text">Never inject the same spot twice.</div>
+          <div class="ss-copy-label" style="margin-top: 8px;">Bottom subline (28 chars)</div>
+          <div class="ss-copy-sub">Smart rotation, one tap log.</div>
+        </div>
+
+        <div class="ss-bullets">
+          <div class="ss-bullet-block">
+            <div class="label">Visual composition</div>
+            <ul>
+              <li><b>Body silhouette</b> — front view, <b>gender-neutral cartoon</b> (round shoulders, no muscle definition, no body shape implication). Ideally illustrated 2D, не photo-real.</li>
+              <li>6 last sites visible as terracotta dots (varying opacity 50-100% per recency)</li>
+              <li>"Next recommended" site = larger olive green dot with pulsing halo (animated in marketing reel, static in screenshot — shows ring)</li>
+              <li>Tooltip card: <code>4-day rotation rule · last 6 sites tracked</code></li>
+              <li>Tap-to-log CTA: "Next: right thigh" with olive button</li>
+            </ul>
+          </div>
+          <div class="ss-bullet-block">
+            <div class="label">Illustration brief</div>
+            <ul>
+              <li><b>Commission custom body silhouette</b> — gender-neutral, warm flat illustration style (not medical textbook anatomical)</li>
+              <li>Body fill: warm off-white <code>#FBF7F2</code>, outline soft taupe <code>#D0CFB8</code></li>
+              <li>Show 4 typical injection zones: abdomen (×2), upper thighs (×2), upper arms — visual hint dotted outlines</li>
+              <li>Avoid: muscle definition, shading that implies body shape, gendered features (breasts, beard, etc.)</li>
+            </ul>
+          </div>
+          <div class="ss-bullet-block do">
+            <div class="label">Trust devices</div>
+            <ul>
+              <li>"4-day rotation rule" framing = clinical authority (per FDA prescribing info)</li>
+              <li>Last 6 sites tracked = data persistence, not just reminder</li>
+              <li>Olive green = "safe to use" verdict color (semantic consistency)</li>
+            </ul>
+          </div>
+          <div class="ss-bullet-block dont">
+            <div class="label">Anti-patterns · ED + medical safety</div>
+            <ul>
+              <li>NO realistic body / NO photo / NO athletic ideal silhouette</li>
+              <li>NO needle illustration anywhere (per SCREENSHOTS.md don't-list)</li>
+              <li>NO blood / bruising imagery</li>
+              <li>NO body imagery in any other screenshot — это ЕДИНСТВЕННЫЙ кадр с силуэтом</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ss-tokens-row">
+          <span class="ss-token-chip" style="background:#264653; color:white;">#264653 primary</span>
+          <span class="ss-token-chip" style="background:#E76F51; color:white;">#E76F51 site dots</span>
+          <span class="ss-token-chip" style="background:#606C38; color:white;">#606C38 next-recommended</span>
+          <span class="ss-token-chip" style="background:#F4F1DE; color:#264653;">#F4F1DE bg</span>
+          <span class="ss-token-chip" style="background:#FBF7F2; color:#7A5C4F;">#FBF7F2 silhouette fill</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCREENS 4-8 SUMMARY GRID -->
+  <h3 style="margin-top: 28px;">🥈 Screens 4-8 · S2/S3 retention + value (15% impact, increase install confidence)</h3>
+  <p class="section-intro" style="margin-top: 4px; font-size: 12px;">Compact spec — копи + visual short. Раскрываются в детали по запросу sprint'а. Все экраны — light B палитра кроме где явно указано.</p>
+
+  <div class="ss-summary-grid">
+
+    <div class="ss-summary-card">
+      <div class="ss-summary-h">
+        <div class="ss-summary-num">4</div>
+        <div class="ss-summary-title">Protein Coach</div>
+        <span class="ss-summary-owner">S2</span>
+      </div>
+      <div class="ss-summary-copy">"Lose fat. Keep muscle."</div>
+      <div class="ss-summary-sub">Personalized protein coach.</div>
+      <div class="ss-summary-vis">
+        <b>Visual:</b> daily protein progress ring (target 90g, logged 67g) · food log w/ high-protein suggestions · insight: <i>"GLP-1 reduces appetite. Protein protects muscle."</i><br>
+        <b>Tokens:</b> <code>#264653 ring · #4F8059 success · #F4F1DE bg</code>
+      </div>
+    </div>
+
+    <div class="ss-summary-card">
+      <div class="ss-summary-h">
+        <div class="ss-summary-num">5</div>
+        <div class="ss-summary-title">Plateau Detector</div>
+        <span class="ss-summary-owner">S2</span>
+      </div>
+      <div class="ss-summary-copy">"Stuck at the same weight?"</div>
+      <div class="ss-summary-sub">AI tells you what to discuss with your doctor.</div>
+      <div class="ss-summary-vis">
+        <b>Visual:</b> weight chart with 4-week flat zone highlighted · "📊 Plateau detected" card · AI analysis "73% break by week X" + 4 actions · "Generate doctor PDF" CTA<br>
+        <b>Tokens:</b> <code>#264653 chart · #DDA15E plateau highlight · #E76F51 CTA</code>
+      </div>
+    </div>
+
+    <div class="ss-summary-card">
+      <div class="ss-summary-h">
+        <div class="ss-summary-num">6</div>
+        <div class="ss-summary-title">Hair / Skin Tracker</div>
+        <span class="ss-summary-owner">S2</span>
+      </div>
+      <div class="ss-summary-copy">"Watch what GLP-1 does to your body."</div>
+      <div class="ss-summary-sub">Hair, skin, mood — all tracked.</div>
+      <div class="ss-summary-vis">
+        <b>Visual:</b> photo journal grid 4 weekly photos (blurred for privacy in marketing) · density trend chart · "−8% vs baseline" insight · "Increase protein to 1.2g/kg" recommendation<br>
+        <b>Tokens:</b> <code>#7A5C4F warm taupe overlay · #D4A574 photo border · #F4F1DE bg</code> (D Recovery accent OK here as secondary highlight on hair feature)
+      </div>
+    </div>
+
+    <div class="ss-summary-card">
+      <div class="ss-summary-h">
+        <div class="ss-summary-num">7</div>
+        <div class="ss-summary-title">Doctor Visit Prep</div>
+        <span class="ss-summary-owner">S3</span>
+      </div>
+      <div class="ss-summary-copy">"Walk into your appointment ready."</div>
+      <div class="ss-summary-sub">AI-generated visit summary.</div>
+      <div class="ss-summary-vis">
+        <b>Visual:</b> PDF preview with sections (Doses · Weight · Side Effects · Mood · Recommended Questions) · "Generate PDF" button · sample question: <i>"Should we discuss titration to 1.7mg?"</i><br>
+        <b>Tokens:</b> <code>#264653 PDF header · #F4F1DE bg · #E76F51 CTA</code>
+      </div>
+    </div>
+
+    <div class="ss-summary-card">
+      <div class="ss-summary-h">
+        <div class="ss-summary-num">8</div>
+        <div class="ss-summary-title">Pricing / Value</div>
+        <span class="ss-summary-owner">S3</span>
+      </div>
+      <div class="ss-summary-copy">"Skip the dietitian."</div>
+      <div class="ss-summary-sub">$39.99/yr = 1 doctor visit.</div>
+      <div class="ss-summary-vis">
+        <b>Visual:</b> "What costs more than JabWell?" comparison list · 1 endo visit $300-500 · 1 dietitian session $200-300 · annual GLP-1 brand $13-15K · <b>JabWell $39.99/year</b> (highlighted) · "7-day free trial" badge<br>
+        <b>Tokens:</b> <code>#264653 primary · #E76F51 highlight · #606C38 trial badge · #F4F1DE bg</code>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DESIGNER CHECKLIST -->
+  <h3 style="margin-top: 28px;">📋 Designer checklist · before delivery</h3>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px;">
+    <div style="background: #FAF7F2; border: 1px solid #E0D5C7; border-radius: 10px; padding: 14px 18px;">
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #264653;">Технические требования</div>
+      <ul style="list-style: none; padding: 0; font-size: 12px; line-height: 1.6; color: #2a2a30; margin-top: 8px;">
+        <li>☐ <b>6.9" iPhone 16 Pro Max</b> 1320×2868 — primary</li>
+        <li>☐ <b>6.5" iPhone 11 Pro Max</b> 1284×2778 — required</li>
+        <li>☐ <b>5.5" iPhone 8 Plus</b> 1242×2208 — required</li>
+        <li>☐ Real device frames (not bezel-less marketing crops)</li>
+        <li>☐ iOS system fonts (SF Pro Rounded headlines)</li>
+        <li>☐ V1: EN-US 8 deliverables. EN-GB Week 11. DE/FR Week 12.</li>
+        <li>☐ PNG export или 80% JPEG fallback</li>
+      </ul>
+    </div>
+    <div style="background: #FAF7F2; border: 1px solid #E0D5C7; border-radius: 10px; padding: 14px 18px;">
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #264653;">Brand + compliance hygiene</div>
+      <ul style="list-style: none; padding: 0; font-size: 12px; line-height: 1.6; color: #2a2a30; margin-top: 8px;">
+        <li>☐ ® on first brand mention per screen (Ozempic® / Wegovy® / Mounjaro® / Zepbound® / Rybelsus® / Saxenda®)</li>
+        <li>☐ Disclaimer banner visible on Screen 2 (AI Nurse) — non-dismissable</li>
+        <li>☐ Source badges (FDA · AAFP · Mayo) visible на Screen 2</li>
+        <li>☐ NO weight numbers in headline copy ever</li>
+        <li>☐ NO before/after grid anywhere</li>
+        <li>☐ Diverse avatar / silhouette implied across 8 screens</li>
+        <li>☐ B Apothecary palette (light) на 7/8 screens · A Midnight (dark) ТОЛЬКО на Screen 2 AI Nurse</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="section-intro" style="margin-top: 18px; font-size: 12px; color: #8a8a90; line-height: 1.6;">
+    <b>A/B testing roadmap (post-launch PPO):</b> Test 1 (Wk5+) Screen 1 hero copy 3 variants. Test 2 (Wk7+) Screen 2 chat content (Nausea / Plateau / Hair shedding Q&amp;A). Test 3 (Wk9+) Screen 8 pricing framing (cost vs time vs trust). См. <code>SCREENSHOTS.md</code> и <code>JabWell_Strategic_Plan_v1.md §9</code>.
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: COMPLIANCE REMINDER -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="compliance">
-  <h2>3. Compliance Guardrails <span class="pill" style="background:#B33A3A; color:white;">🔴 HIGH RISK</span></h2>
+  <h2>4. Compliance Guardrails <span class="pill" style="background:#B33A3A; color:white;">🔴 HIGH RISK</span></h2>
   <p class="section-intro">
     Видимая карточка для любого агента, открывающего страницу для генерации копи. <b>GLP-1 = adult medication = HIGH RISK.</b> Один неосторожный «cure» / «medical-grade» / «replace your doctor» может triggerнуть Apple medical review rejection ИЛИ FTC complaint. Категория = <b>Health &amp; Fitness</b> (НЕ Medical — stricter review). Источник: <code>COMPLIANCE.md</code> LOCKED 2026-04-27.
   </p>
@@ -1273,7 +1938,7 @@
 <!-- SECTION 4: COMPETITIVE LANDSCAPE -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="competitors">
-  <h2>4. Competitive Landscape</h2>
+  <h2>5. Competitive Landscape</h2>
   <p class="section-intro">
     8 entries (1 self + 4 GROUP A category reference + 3 GROUP B ASO rivals) из <code>competitors/meta.yaml</code>. Цвета извлечены из App Store скриншотов (визуальный read 2026-04-28). UTP — verbatim hero claim из listing'а. Wedge — что мы кладём (coral text). Threat level — Shotsy red (Q3 2026 AI ship), остальные muted.
   </p>
@@ -1509,7 +2174,7 @@
 <!-- SECTION 5: PAYWALL WORKBENCH (skeleton) -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="paywall-workbench" style="background: #FAF7F2;">
-  <h2>5. Paywall Workbench <span class="pill pill-pending">skeleton · дополняем по ходу</span></h2>
+  <h2>6. Paywall Workbench <span class="pill pill-pending">skeleton · дополняем по ходу</span></h2>
   <p class="section-intro">
     Каркас по 5-step structure из crysnap. JTBD-brief inputs <b>pre-filled</b> из <code>JabWell_Strategic_Plan_v1.md §7</code>. Tokens биндим к выбранной палитре после голосования (блок 1). Gallery + iPhone deep-dive — TODO, добавляем варианты по triggers (3+ nausea / plateau 4+ wks / hair flag / OOP / day-6) на каждом sprint'е paywall'а.
   </p>
