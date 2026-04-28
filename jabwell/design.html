@@ -391,6 +391,101 @@
   .matrix-table .rank-3 { color: #C49A4A; }
   .matrix-table .rank-4 { color: #8B6F94; }
 
+  /* === Headlines workbench · 4 strategies === */
+  .hl-strategies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .hl-strategy-card {
+    background: #fafafa;
+    border: 2px solid #ebebef;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.2s ease;
+  }
+  .hl-strategy-card.recommended {
+    border-color: #264653;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F4F1DE 100%);
+    box-shadow: 0 6px 20px rgba(38, 70, 83, 0.15);
+  }
+  .hl-strategy-card .hl-h {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .hl-strategy-card .hl-letter {
+    background: #6a6a70; color: white;
+    width: 24px; height: 24px;
+    border-radius: 999px;
+    font-size: 12px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hl-strategy-card.recommended .hl-letter { background: #264653; }
+  .hl-strategy-card .hl-title {
+    font-size: 14px; font-weight: 800;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+  .hl-strategy-card .hl-rec-badge {
+    font-size: 9px; padding: 2px 8px; border-radius: 999px;
+    background: #E76F51; color: white; font-weight: 800;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    margin-left: auto;
+  }
+  .hl-strategy-card .hl-tagline {
+    font-size: 11px; color: #5a5a60;
+    font-style: italic; line-height: 1.4;
+  }
+  .hl-strategy-card .hl-examples {
+    display: flex; flex-direction: column; gap: 6px;
+    margin-top: 4px;
+  }
+  .hl-strategy-card .hl-example {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 12px; line-height: 1.3;
+    background: white;
+    border-left: 3px solid #C0C0C8;
+    border-radius: 0 6px 6px 0;
+    padding: 6px 9px;
+  }
+  .hl-strategy-card.recommended .hl-example { border-left-color: #E76F51; }
+  .hl-strategy-card .hl-example-num {
+    font-size: 9px; font-weight: 800; letter-spacing: 0.04em;
+    color: #8a8a90; margin-right: 5px;
+  }
+  .hl-strategy-card .hl-example b { font-weight: 800; color: #1a1a1f; }
+  .hl-strategy-card .hl-example .sub { display: block; font-size: 10px; opacity: 0.7; font-weight: 600; margin-top: 1px; }
+  .hl-strategy-card .hl-pros, .hl-strategy-card .hl-cons {
+    font-size: 10px; line-height: 1.4;
+    padding-left: 14px; position: relative;
+  }
+  .hl-strategy-card .hl-pros { color: #4F8059; }
+  .hl-strategy-card .hl-cons { color: #B33A3A; }
+  .hl-strategy-card .hl-pros::before { content: "✓"; position: absolute; left: 2px; font-weight: 800; }
+  .hl-strategy-card .hl-cons::before { content: "✗"; position: absolute; left: 2px; font-weight: 800; }
+  .hl-strategy-card .hl-meters {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+    margin-top: auto; padding-top: 8px;
+    border-top: 1px dashed #ebebef;
+  }
+  .hl-strategy-card .hl-meter {
+    font-size: 9px; line-height: 1.3;
+  }
+  .hl-strategy-card .hl-meter .label {
+    font-weight: 800; color: #6a6a70;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    margin-bottom: 2px;
+  }
+  .hl-strategy-card .hl-meter .bar {
+    height: 4px; background: #ebebef; border-radius: 2px;
+    overflow: hidden;
+  }
+  .hl-strategy-card .hl-meter .bar > div {
+    height: 100%; border-radius: 2px;
+  }
+
   /* === Designer Brief · App Store Screenshots === */
   .ss-lineup {
     display: grid;
@@ -542,6 +637,104 @@
     font-weight: 700;
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
   }
+
+  /* JTBD audience block (per-screen, 4-col grid) */
+  .jtbd-block {
+    background: rgba(38, 70, 83, 0.06);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 10px 0 14px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 14px;
+  }
+  .ss-priority-card.dark .jtbd-block { background: rgba(242, 166, 90, 0.08); }
+  .jtbd-block .jtbd-cell .label {
+    font-size: 9px; font-weight: 800;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    opacity: 0.65; margin-bottom: 3px;
+  }
+  .jtbd-block .jtbd-cell .value { font-size: 12px; line-height: 1.4; }
+  .jtbd-block .jtbd-cell .value.quote {
+    font-style: italic;
+    border-left: 2px solid #E76F51;
+    padding-left: 8px;
+  }
+  .ss-priority-card.dark .jtbd-block .jtbd-cell .value.quote { border-left-color: #F2A65A; }
+
+  /* Variant rows (top headline / bottom subline / bullets / don't) */
+  .variant-row { margin-top: 12px; }
+  .variant-row .vr-label {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    font-size: 10px; font-weight: 800;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    opacity: 0.7; margin-bottom: 6px;
+  }
+  .variant-row .vr-hint {
+    font-size: 10px; font-weight: 600;
+    text-transform: none; letter-spacing: 0; opacity: 0.7;
+  }
+  .variant-list { display: flex; flex-direction: column; gap: 5px; }
+  .variant-item {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 6px; padding: 6px 10px;
+    font-size: 12px; line-height: 1.35;
+  }
+  .ss-priority-card.dark .variant-item { background: rgba(255, 255, 255, 0.06); }
+  .variant-item.recommended {
+    background: white;
+    box-shadow: inset 0 0 0 2px #264653;
+    font-weight: 700;
+  }
+  .ss-priority-card.dark .variant-item.recommended {
+    background: rgba(242, 166, 90, 0.14);
+    box-shadow: inset 0 0 0 2px #F2A65A;
+  }
+  .variant-item .vi-tag {
+    font-size: 9px; font-weight: 800;
+    padding: 1px 6px; border-radius: 999px;
+    background: #C0C0C8; color: white;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+  .variant-item .vi-tag.symptom { background: #E76F51; }
+  .variant-item .vi-tag.brand { background: #1B3A5F; }
+  .variant-item .vi-tag.glp1 { background: #606C38; }
+  .variant-item .vi-tag.hybrid { background: #264653; }
+  .ss-priority-card.dark .variant-item .vi-tag.hybrid { background: #F2A65A; color: #0E1A2B; }
+  .variant-item .vi-text {
+    flex: 1;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+  .variant-item .vi-meta {
+    font-size: 10px; opacity: 0.55;
+    flex-shrink: 0;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .variant-item .vi-current {
+    font-size: 9px; padding: 1px 6px; border-radius: 999px;
+    background: #FFF1D9; color: #8B6F1A; font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .bullet-list { display: flex; flex-direction: column; gap: 4px; }
+  .bullet-item {
+    font-size: 12px; line-height: 1.4;
+    padding-left: 16px; position: relative;
+  }
+  .bullet-item::before {
+    content: "•"; position: absolute; left: 4px;
+    color: #E76F51; font-weight: 800;
+  }
+  .ss-priority-card.dark .bullet-item::before { color: #F2A65A; }
+  .bullet-item.dont::before { content: "✗"; color: #B33A3A; }
+  .ss-priority-card.dark .bullet-item.dont::before { color: #C44536; }
+  .bullet-item code {
+    background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px;
+    font-size: 0.92em;
+  }
+  .ss-priority-card.dark .bullet-item code { background: rgba(255,255,255,0.08); }
 
   .ss-summary-grid {
     display: grid;
@@ -817,7 +1010,7 @@
 <section id="palette">
   <h2>1. Палитра <span class="pill" style="background:#264653; color:white;">✅ LOCKED 2026-04-28 · B + A-chat</span></h2>
   <p class="section-intro">
-    Round 1 консилиум (8 голосов) выбрал <b>B "Clinical Apothecary"</b> как day system, подтвердив <b>A "Midnight" токены для AI Nurse chat surface</b> только. Голоса и rejected варианты — в audit trail ниже. Палитра выведена из <b>психологии аудитории JabWell</b> (S1 first-injection scared, S2 3am nausea, S3 cost-driven, S4 hair/skin), не дублирует портфельный визуальный язык.
+    Round 1 консилиум (8 голосов) выбрал <b>B "Clinical Apothecary"</b> как day system, подтвердив <b>A "Midnight" токены для AI GLP-1 Coach chat surface</b> только. Голоса и rejected варианты — в audit trail ниже. Палитра выведена из <b>психологии аудитории JabWell</b> (S1 first-injection scared, S2 3am nausea, S3 cost-driven, S4 hair/skin), не дублирует портфельный визуальный язык.
   </p>
 
   <!-- ✅ LOCKED palette · compact horizontal strip (B day + A chat) -->
@@ -869,11 +1062,11 @@
     <div style="font-size: 24px; font-weight: 800; margin-top: 6px; font-family: -apple-system, 'SF Pro Rounded', sans-serif;">B · Clinical Apothecary 🏺 + A · Midnight (chat) 🌙</div>
     <div style="font-size: 13px; margin-top: 10px; line-height: 1.6; opacity: 0.95;">
       <b>Day system (B):</b> Primary <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#264653</code> · Accent <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#E76F51</code> · Bg <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#F4F1DE</code> linen · Verdict <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#606C38 / #DDA15E / #9B2226</code><br>
-      <b>Night system (A · AI Nurse chat surface only):</b> Primary <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#1B3A5F</code> · Accent <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#F2A65A</code> · Bg <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#0E1A2B</code> · Verdict <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#2E7D5B / #F2A65A / #C44536</code>
+      <b>Night system (A · AI GLP-1 Coach chat surface only):</b> Primary <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#1B3A5F</code> · Accent <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#F2A65A</code> · Bg <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#0E1A2B</code> · Verdict <code style="background: rgba(255,255,255,0.18); padding: 2px 6px; border-radius: 4px;">#2E7D5B / #F2A65A / #C44536</code>
     </div>
     <div style="font-size: 12px; margin-top: 14px; padding: 12px 14px; background: rgba(255,255,255,0.12); border-radius: 8px; line-height: 1.55; opacity: 0.95;">
       <b>Why B won:</b> Tied at 8.0 with A but clean (no &lt;6 score). A failed S4 Carla red flag. Apothecary reads as "доверенный аптекарь старой школы + AI mind" — психологически противопоставлен sterile MeAgain purple / Shotsy teal positioning.<br>
-      <b>Dual-mode logic:</b> B is the day-time system — onboarding, dashboard, paywall, screenshots. A activates on AI Nurse chat surface when user opens chat AND time 9pm-6am AND OS dark mode (or explicit toggle). Voice 6 (AI Nurse) scored A:9 vs B:8 for chat UX — dark midnight reduces eye strain at 3am nausea-panic moment, the canonical use case.<br>
+      <b>Dual-mode logic:</b> B is the day-time system — onboarding, dashboard, paywall, screenshots. A activates on AI GLP-1 Coach chat surface when user opens chat AND time 9pm-6am AND OS dark mode (or explicit toggle). Voice 6 (AI GLP-1 Coach) scored A:9 vs B:8 for chat UX — dark midnight reduces eye strain at 3am nausea-panic moment, the canonical use case.<br>
       <b>Specs:</b> <a href="https://github.com/love8ko/JabWell/blob/main/DESIGN_SYSTEM.md" style="color: #F2A65A; font-weight: 700;">DESIGN_SYSTEM.md</a>
     </div>
   </div>
@@ -908,7 +1101,7 @@
           <div class="ss-status"><span>9:41</span><span>•••</span></div>
           <div class="ss-headline">Tuesday · Wegovy® due</div>
           <div class="ss-card" style="background:#152741; color:#F2EDE5;">
-            <div class="ss-row"><span style="font-weight:800;">AI Nurse</span><span class="ss-pill" style="background:#2E7D5B; color:white;">Online</span></div>
+            <div class="ss-row"><span style="font-weight:800;">AI GLP-1 Coach</span><span class="ss-pill" style="background:#2E7D5B; color:white;">Online</span></div>
             <div style="font-size:7px; opacity:0.85;">"Nausea day 3? Common at week 4."</div>
           </div>
           <div class="ss-card" style="background:#152741; color:#F2EDE5;">
@@ -957,7 +1150,7 @@
           <div class="ss-status" style="opacity:0.5;"><span>9:41</span><span>•••</span></div>
           <div class="ss-headline">Tuesday · Wegovy® due</div>
           <div class="ss-card" style="background:white; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-            <div class="ss-row"><span style="font-weight:800;">AI Nurse</span><span class="ss-pill" style="background:#2D5F4E; color:white;">Online</span></div>
+            <div class="ss-row"><span style="font-weight:800;">AI GLP-1 Coach</span><span class="ss-pill" style="background:#2D5F4E; color:white;">Online</span></div>
             <div style="font-size:7px; opacity:0.7;">"Compounded compare: save $900/mo."</div>
           </div>
           <div class="ss-card" style="background:white;">
@@ -1079,7 +1272,7 @@
           <td class="reason">A: deep blue clinical, но dark+amber может прочитаться как luxury watch. B: ocean teal + olive + linen = аптекарь точно, terracotta = pharmacy bottle. C: green = wellness supplement (Olly/Goop) territory. D: taupe = spa, не аптека.</td>
         </tr>
         <tr>
-          <td class="left"><b>AI Nurse voice</b></td>
+          <td class="left"><b>AI GLP-1 Coach voice</b></td>
           <td>9</td><td class="winner">8</td><td>5</td><td>6</td>
           <td class="reason">A: dark chat + honey amber = comfortable 3am companion. B: terracotta chat accents = warm without losing clinical edge. C: green chat = validation/correct gamification, не warm. D: champagne accent = "spa wellness coach" не nurse.</td>
         </tr>
@@ -1099,7 +1292,7 @@
           <td class="winner"><b>8.0 🏆</b></td>
           <td><b>6.4</b></td>
           <td><b>6.4</b></td>
-          <td class="reason"><b>A and B tied at 8.0.</b> Tiebreak via red-flag rule: A has 5 (Carla), B's lowest is 7. <b>B wins clean</b>; A runner-up — its dark tokens promoted to AI Nurse chat surface use.</td>
+          <td class="reason"><b>A and B tied at 8.0.</b> Tiebreak via red-flag rule: A has 5 (Carla), B's lowest is 7. <b>B wins clean</b>; A runner-up — its dark tokens promoted to AI GLP-1 Coach chat surface use.</td>
         </tr>
       </tbody>
     </table>
@@ -1147,7 +1340,7 @@
       </div>
       <div class="audience-block">
         <div class="block-label">Killer feature</div>
-        <div class="killer-feature">AI Nurse pre-loaded Q&amp;A + "expect this week" timeline + injection video + site rotation map</div>
+        <div class="killer-feature">AI GLP-1 Coach pre-loaded Q&amp;A + "expect this week" timeline + injection video + site rotation map</div>
         <span class="wow-tag">WOW · 3-tier triage live</span>
       </div>
       <div class="audience-block">
@@ -1159,7 +1352,7 @@
         <span class="slot-pin">Onb-1 Pain</span>
         <span class="slot-pin">Onb-5 WOW</span>
         <span class="slot-pin">Screenshot 1 HERO</span>
-        <span class="slot-pin">Screenshot 2 AI Nurse</span>
+        <span class="slot-pin">Screenshot 2 AI GLP-1 Coach</span>
         <span class="slot-pin">Paywall hero (default trigger)</span>
       </div>
     </div>
@@ -1361,9 +1554,9 @@
         <td class="reason">S1 first-injection scared = max desperation = highest T2P (default trigger). S3 OOP math obvious ($1300/mo → $39.99/yr). S5 lower urgency than active-injection moments.</td>
       </tr>
       <tr>
-        <td class="left"><b>AI Nurse voice</b></td>
+        <td class="left"><b>AI GLP-1 Coach voice</b></td>
         <td class="winner">10</td><td>9</td><td>6</td><td>7</td>
-        <td class="reason">S1 first-Rx Q&A = AI Nurse killer use case. S2 plateau debug + side effects = high RAG value. S3 compounded = compliance grey zone, scope-constrain. S5 taper nuanced — AI shines.</td>
+        <td class="reason">S1 first-Rx Q&A = AI GLP-1 Coach killer use case. S2 plateau debug + side effects = high RAG value. S3 compounded = compliance grey zone, scope-constrain. S5 taper nuanced — AI shines.</td>
       </tr>
       <tr>
         <td class="left"><b>Compliance Officer</b></td>
@@ -1396,7 +1589,7 @@
     <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; opacity: 0.92;">✅ LOCKED 2026-04-28 · approved by user post round 1</div>
     <div style="font-size: 24px; font-weight: 800; margin-top: 6px; font-family: -apple-system, 'SF Pro Rounded', sans-serif;">V1 priority: S1+S2 dual primary · S1 = funnel-entry hero</div>
     <div style="font-size: 13px; margin-top: 10px; line-height: 1.6; opacity: 0.95;">
-      <b>S1 (8.86) funnel-entry hero:</b> ASO+economic+clinical alignment максимальный. Front-load: 2 onb-screens, 3 ASO-screenshots (HERO, AI Nurse, Site Rotation), paywall hero default. <b>Они ищут в App Store с картой в руках в момент паники.</b><br>
+      <b>S1 (8.86) funnel-entry hero:</b> ASO+economic+clinical alignment максимальный. Front-load: 2 onb-screens, 3 ASO-screenshots (HERO, AI GLP-1 Coach, Site Rotation), paywall hero default. <b>Они ищут в App Store с картой в руках в момент паники.</b><br>
       <b>S2 (7.71) retention play:</b> plateau detector + hair/skin journal + protein coach earn screenshots 4-6 + trigger paywalls (nausea-3+, plateau-4wk, hair-shedding). Tier-by-tier same product, разные moments.<br>
       <b>S3 (7.29) ⚠️ scoped:</b> Compliance Officer red flag (4) — affiliate-pharmacy comparison legal grey zone. <b>Action:</b> ship S3 trigger paywall + screenshot 8 (pricing/value), но <b>defer compounded pharmacy compare feature до lawyer-review копи + Apple review safe-pattern</b>. Affiliate revenue stream 2 не прерываем, но scope ограничен.<br>
       <b>S5 (5.57) → V1.1:</b> Maintenance Mode rotating screenshot pool, V1.1 feature reveal.<br>
@@ -1405,8 +1598,8 @@
     </div>
     <div style="font-size: 12px; margin-top: 14px; padding: 12px 14px; background: rgba(255,255,255,0.12); border-radius: 8px; line-height: 1.55; opacity: 0.95;">
       <b>Slot budget V1 (locked):</b><br>
-      • <b>Onboarding 5 screens:</b> S1×2 (Pain + WOW AI Nurse demo) · S2×1 (Trust — plateau scenario) · S3×1 (Method — cost framing) · Universal×1 (compliance disclaimer + first-injection log)<br>
-      • <b>App Store 8 screenshots:</b> S1×3 (1 HERO Dashboard, 2 AI Nurse Chat, 3 Site Rotation) · S2×3 (4 Protein Coach, 5 Plateau Detector, 6 Hair/Skin Journal) · S3×2 (7 Doctor Visit Prep PDF, 8 Pricing/Value)<br>
+      • <b>Onboarding 5 screens:</b> S1×2 (Pain + WOW AI GLP-1 Coach demo) · S2×1 (Trust — plateau scenario) · S3×1 (Method — cost framing) · Universal×1 (compliance disclaimer + first-injection log)<br>
+      • <b>App Store 8 screenshots:</b> S1×3 (1 HERO Dashboard, 2 AI GLP-1 Coach Chat, 3 Site Rotation) · S2×3 (4 Protein Coach, 5 Plateau Detector, 6 Hair/Skin Journal) · S3×2 (7 Doctor Visit Prep PDF, 8 Pricing/Value)<br>
       • <b>Paywall 5 triggers:</b> P1 S1 default (onb-end) · P2 S2 nausea-3+ events · P3 S2 plateau-4wk flat · P4 S3 OOP-detected · P5 Universal day-6 trial-end
     </div>
     <div style="font-size: 12px; margin-top: 12px; padding: 12px 14px; background: rgba(255,255,255,0.12); border-radius: 8px; line-height: 1.55; opacity: 0.95;">
@@ -1436,7 +1629,7 @@
         <td>S1 New patient</td>
         <td>🔴 Extreme</td>
         <td>Onb-1 Pain · Onb-5 WOW</td>
-        <td>#1 HERO Dashboard · #2 AI Nurse · #3 Site rotation</td>
+        <td>#1 HERO Dashboard · #2 AI GLP-1 Coach · #3 Site rotation</td>
         <td>Default + onboarding hard paywall</td>
       </tr>
       <tr>
@@ -1500,14 +1693,14 @@
       <div class="ss-mini-h">Every shot. Every side effect.</div>
       <div class="ss-mini-body">📋</div>
     </div>
-    <div class="ss-mini priority" style="background:#0E1A2B; color:#F2EDE5;" title="AI Nurse Chat · S1">
+    <div class="ss-mini priority" style="background:#0E1A2B; color:#F2EDE5;" title="AI GLP-1 Coach Chat · S1">
       <span class="ss-num" style="background:rgba(242,166,90,0.95); color:#0E1A2B;">2</span>
-      <div class="ss-mini-h">Got side effects? Just ask.</div>
+      <div class="ss-mini-h">Nausea on day 3? Just ask.</div>
       <div class="ss-mini-body">💬</div>
     </div>
     <div class="ss-mini priority" style="background:#F4F1DE; color:#264653;" title="Site Rotation · S1">
       <span class="ss-num">3</span>
-      <div class="ss-mini-h">Never inject the same spot twice.</div>
+      <div class="ss-mini-h">Smart rotation for every shot.</div>
       <div class="ss-mini-body">🎯</div>
     </div>
     <div class="ss-mini" style="background:#FAF7F2; color:#4F8059;" title="Protein Coach · S2">
@@ -1538,8 +1731,17 @@
   </div>
 
   <!-- TOP-3 PRIORITY DETAILED CARDS -->
-  <h3 style="margin-top: 28px;">🥇 Top-3 priority · S1 hero suite (85% of conversion impact)</h3>
-  <p class="section-intro" style="margin-top: 4px; font-size: 12px;">Развёрнутая спецификация для дизайнера: верхняя/нижняя копи, что на экране, какие палитры используем, иллюстрации, trust devices, anti-pattern guard. Все 3 экрана работают на S1 (3M, first 90 days, 🔴 extreme WTP) — funnel-entry hero.</p>
+  <h3 style="margin-top: 28px;">🥇 Top-3 priority · S1 hero suite · JTBD × Copy Matrix</h3>
+  <p class="section-intro" style="margin-top: 4px; font-size: 12px;">85% of conversion impact. Каждая карточка показывает: <b>(1) AUDIENCE</b> — кто персона, что хочет, что её пугает, когда триггер · <b>(2) COPY VARIANTS</b> — 4 варианта top headline + 4 bottom subline по стратегиям · <b>(3) ON-SCREEN BULLETS</b> — UI элементы внутри скриншота · <b>(4) DON'T WRITE</b> — compliance/anti-patterns. Recommended вариант помечен <code>🏆</code> outline.</p>
+
+  <!-- Strategy legend -->
+  <div style="margin-top: 12px; padding: 12px 16px; background: #FAF7F2; border-radius: 10px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+    <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #264653;">Headline strategy tags:</div>
+    <div style="display: flex; align-items: center; gap: 6px; font-size: 12px;"><span class="vi-tag hybrid" style="font-size:9px; font-weight:800; padding:2px 8px; border-radius:999px; background:#264653; color:white;">HYBRID</span> emotional top + GLP-1 bottom 🏆</div>
+    <div style="display: flex; align-items: center; gap: 6px; font-size: 12px;"><span class="vi-tag brand" style="font-size:9px; font-weight:800; padding:2px 8px; border-radius:999px; background:#1B3A5F; color:white;">BRAND</span> ®brand-explicit (Ozempic®/Wegovy®)</div>
+    <div style="display: flex; align-items: center; gap: 6px; font-size: 12px;"><span class="vi-tag glp1" style="font-size:9px; font-weight:800; padding:2px 8px; border-radius:999px; background:#606C38; color:white;">GLP-1</span> generic GLP-1 keyword</div>
+    <div style="display: flex; align-items: center; gap: 6px; font-size: 12px;"><span class="vi-tag symptom" style="font-size:9px; font-weight:800; padding:2px 8px; border-radius:999px; background:#E76F51; color:white;">SYMPTOM</span> pain-led (current default)</div>
+  </div>
 
   <div class="ss-priority-stack">
 
@@ -1565,8 +1767,8 @@
             <div style="background:#E76F51; height:100%; flex:1; border-radius:1px;"></div>
           </div>
         </div>
-        <div style="background:#264653; color:white; border-radius:8px; padding:5px 8px; font-size:7px; display:flex; justify-content:space-between; align-items:center;"><span>🤖 AI Nurse online</span><span>→</span></div>
-        <div class="ss-mock-subline">One app, with AI by your side.</div>
+        <div style="background:#264653; color:white; border-radius:8px; padding:5px 8px; font-size:7px; display:flex; justify-content:space-between; align-items:center;"><span>🤖 AI GLP-1 Coach online</span><span>→</span></div>
+        <div class="ss-mock-subline">Your AI GLP-1 Coach. For 6 brands.</div>
       </div>
 
       <!-- Spec -->
@@ -1574,53 +1776,106 @@
         <div class="ss-spec-h">
           <div class="ss-slot-num">1</div>
           <div class="ss-spec-title">HERO · Multi-medication dashboard</div>
-          <span class="ss-meta-pill ss-meta-owner">S1 New patient</span>
+          <span class="ss-meta-pill ss-meta-owner">S1 Maya · 38</span>
           <span class="ss-meta-pill ss-meta-mode-light">Light · B Apothecary</span>
         </div>
 
-        <div class="ss-copy-row">
-          <div class="ss-copy-label">Top headline (28 chars)</div>
-          <div class="ss-copy-text">Every shot. Every side effect.</div>
-          <div class="ss-copy-label" style="margin-top: 8px;">Bottom subline (35 chars)</div>
-          <div class="ss-copy-sub">One app, with AI by your side.</div>
+        <!-- AUDIENCE / JTBD -->
+        <div class="jtbd-block">
+          <div class="jtbd-cell">
+            <div class="label">Who</div>
+            <div class="value">Maya, 38, week 1-12 на GLP-1. Только что выписали Wegovy® / Ozempic® / Mounjaro®. Scared but proactive.</div>
+          </div>
+          <div class="jtbd-cell">
+            <div class="label">Что хочет (JTBD)</div>
+            <div class="value quote">"Покажи что эта апка про МЕНЯ, не generic injection tracker. Я в правильных руках?"</div>
+          </div>
+          <div class="jtbd-cell">
+            <div class="label">Что её пугает</div>
+            <div class="value">Получит generic tracker и останется одна с Reddit-ужастиками о Mounjaro®. Не справится с side effects week 4.</div>
+          </div>
+          <div class="jtbd-cell">
+            <div class="label">Trigger to install</div>
+            <div class="value">Только что вернулась от endo с prescription, scrolling App Store по `ozempic tracker` / `wegovy tracker`.</div>
+          </div>
         </div>
 
-        <div class="ss-bullets">
-          <div class="ss-bullet-block">
-            <div class="label">Visual composition</div>
-            <ul>
-              <li>Today tab visible · weekly schedule (next injection 3-day countdown)</li>
-              <li>Multi-medication chips top: <code>Wegovy® · 0.5mg · Active</code> + secondary chip greyed (Mounjaro®/Ozempic®)</li>
-              <li>Recent log timeline (last 3 entries, abbreviated)</li>
-              <li>Weight trend chart bottom-right (8-week sparkline, terracotta line, no specific lb numbers as hero)</li>
-              <li>"AI Nurse online" badge top-right (deep teal, persistent)</li>
-            </ul>
+        <!-- TOP HEADLINE variants -->
+        <div class="variant-row">
+          <div class="vr-label">Top headline <span class="vr-hint">28-35 chars · что user читает первым</span></div>
+          <div class="variant-list">
+            <div class="variant-item recommended">
+              <span class="vi-tag hybrid">HYBRID</span>
+              <span class="vi-text">Every shot. Every side effect.</span>
+              <span class="vi-meta">28 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag brand">BRAND</span>
+              <span class="vi-text">Track Ozempic®, Wegovy®, Mounjaro®.</span>
+              <span class="vi-meta">37 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag glp1">GLP-1</span>
+              <span class="vi-text">Your GLP-1, simplified.</span>
+              <span class="vi-meta">23 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag symptom">SYMPTOM</span>
+              <span class="vi-text">Track. Manage. Breathe.</span>
+              <span class="vi-meta">23 chars</span>
+            </div>
           </div>
-          <div class="ss-bullet-block">
-            <div class="label">Illustration / iconography</div>
-            <ul>
-              <li>Real UI 70% · zero illustration overlays</li>
-              <li>SF Symbols 5+ for medication chips, schedule icons</li>
-              <li>Custom injection-pen icon (warm terracotta) optional next to schedule card</li>
-              <li>Background: soft linen <code>#F4F1DE</code>, no white</li>
-            </ul>
+        </div>
+
+        <!-- BOTTOM SUBLINE variants -->
+        <div class="variant-row">
+          <div class="vr-label">Bottom subline <span class="vr-hint">35-50 chars · ОБЯЗАН нести GLP-1 контекст</span></div>
+          <div class="variant-list">
+            <div class="variant-item recommended">
+              <span class="vi-tag hybrid">HYBRID</span>
+              <span class="vi-text">Your AI GLP-1 Coach. For 6 brands.</span>
+              <span class="vi-meta">34 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag brand">BRAND</span>
+              <span class="vi-text">One app for Ozempic®, Wegovy® &amp; Mounjaro®.</span>
+              <span class="vi-meta">45 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag glp1">GLP-1</span>
+              <span class="vi-text">Smart tracker for every GLP-1 brand.</span>
+              <span class="vi-meta">37 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag symptom">SYMPTOM</span>
+              <span class="vi-text">One app, with AI by your side.</span>
+              <span class="vi-current">current</span>
+              <span class="vi-meta">⚠ no GLP-1 cue</span>
+            </div>
           </div>
-          <div class="ss-bullet-block do">
-            <div class="label">Trust devices</div>
-            <ul>
-              <li>® on Wegovy®/Ozempic®/Mounjaro® first mention</li>
-              <li>"AI Nurse online" badge signals clinical AI presence</li>
-              <li>Diversity hint: profile avatar bottom-left (warm-toned, gender-neutral)</li>
-            </ul>
+        </div>
+
+        <!-- ON-SCREEN BULLETS -->
+        <div class="variant-row">
+          <div class="vr-label">On-screen bullets <span class="vr-hint">UI-видимые элементы внутри скриншота</span></div>
+          <div class="bullet-list">
+            <div class="bullet-item">Active medication chip top: <code>Wegovy® · 0.5mg · Active</code> (olive Active pill) + secondary greyed chip Ozempic®/Mounjaro®</div>
+            <div class="bullet-item">Schedule card: <b>"Next dose · Tuesday · 3 days"</b> countdown</div>
+            <div class="bullet-item">Status badge top-right: <b>"AI GLP-1 Coach · Online"</b> (deep teal pill, persistent presence cue)</div>
+            <div class="bullet-item">Weight trend sparkline 8 недель — <b>terracotta bars only</b>, axis labels minimal, NO specific lb in hero copy</div>
+            <div class="bullet-item">Footer disclaimer: <i>"Educational, not medical advice."</i> (always visible, B14 small)</div>
           </div>
-          <div class="ss-bullet-block dont">
-            <div class="label">Anti-patterns (don't be Shotsy)</div>
-            <ul>
-              <li>NO multicolor med pills rainbow (Shotsy's signature — looks utility-only)</li>
-              <li>NO before/after weight panel (Apple risk)</li>
-              <li>NO specific weight loss claim in hero copy</li>
-              <li>NO progress streak counter (ED safety)</li>
-            </ul>
+        </div>
+
+        <!-- DON'T WRITE -->
+        <div class="variant-row">
+          <div class="vr-label" style="color:#B33A3A;">Don't write / draw</div>
+          <div class="bullet-list">
+            <div class="bullet-item dont"><b>"Lost 30 lbs!"</b> или любое specific weight в hero copy (ED safety + Apple flag)</div>
+            <div class="bullet-item dont"><b>"Cure your nausea"</b> / <b>"Stop side effects"</b> — false medical claims</div>
+            <div class="bullet-item dont"><b>"FDA-approved app"</b> — banned (Apple). OK: <i>"Cites FDA prescribing info"</i></div>
+            <div class="bullet-item dont">Multicolor med pills rainbow (Shotsy signature — looks utility-only)</div>
+            <div class="bullet-item dont">Streak counter / progress flame (ED safety, см. <code>SCREENSHOTS.md</code>)</div>
           </div>
         </div>
 
@@ -1628,22 +1883,22 @@
           <span class="ss-token-chip" style="background:#264653; color:white;">#264653 primary</span>
           <span class="ss-token-chip" style="background:#E76F51; color:white;">#E76F51 chart</span>
           <span class="ss-token-chip" style="background:#F4F1DE; color:#264653;">#F4F1DE bg</span>
-          <span class="ss-token-chip" style="background:#606C38; color:white;">#606C38 active state</span>
+          <span class="ss-token-chip" style="background:#606C38; color:white;">#606C38 active</span>
         </div>
       </div>
     </div>
 
-    <!-- SCREEN 2 — AI Nurse Chat (DARK) -->
+    <!-- SCREEN 2 — AI GLP-1 Coach Chat (DARK) -->
     <div class="ss-priority-card dark">
       <!-- Mock preview -->
       <div class="ss-mock" style="background:#0E1A2B; color:#F2EDE5;">
         <div style="display:flex; justify-content:space-between; font-size:7px; opacity:0.5;"><span>2:47 AM</span><span>•••</span></div>
-        <div class="ss-mock-headline">Got side effects? Just ask.</div>
+        <div class="ss-mock-headline">Nausea on day 3? Just ask.</div>
         <div style="background:#152741; border-radius:8px; padding:5px 7px; align-self:flex-end; max-width:85%; font-size:7px; line-height:1.3;">
           I've had nausea for 3 days, should I worry?
         </div>
         <div style="background:#1B3A5F; border-radius:8px; padding:5px 7px; max-width:90%; font-size:7px; line-height:1.3;">
-          <div style="font-weight:800; color:#F2A65A; margin-bottom:2px;">AI Nurse</div>
+          <div style="font-weight:800; color:#F2A65A; margin-bottom:2px;">AI GLP-1 Coach</div>
           <div style="opacity:0.95;">Common at week 4 — ~40% experience this.<br>Try ginger, smaller meals, electrolytes.<br><span style="color:#C44536; font-weight:700;">Call prescriber if vomiting &gt;24h.</span></div>
           <div style="display:flex; gap:3px; margin-top:3px;">
             <span style="background:rgba(242,166,90,0.2); color:#F2A65A; padding:1px 4px; border-radius:3px; font-size:6px; font-weight:800;">FDA</span>
@@ -1654,68 +1909,117 @@
         <div style="background:rgba(196,69,54,0.15); border:1px solid rgba(196,69,54,0.4); border-radius:6px; padding:4px 6px; font-size:6px; opacity:0.85; margin-top:auto;">
           Educational, not medical advice. Consult prescriber.
         </div>
-        <div class="ss-mock-subline" style="opacity:0.95;">AI Nurse, available 24/7.</div>
+        <div class="ss-mock-subline" style="opacity:0.95;">AI GLP-1 Coach. FDA + Mayo cited.</div>
       </div>
 
       <!-- Spec -->
       <div>
         <div class="ss-spec-h">
           <div class="ss-slot-num">2</div>
-          <div class="ss-spec-title">DIFFERENTIATOR · AI Nurse Chat</div>
-          <span class="ss-meta-pill ss-meta-owner">S1 New patient</span>
+          <div class="ss-spec-title">DIFFERENTIATOR · AI GLP-1 Coach Chat</div>
+          <span class="ss-meta-pill ss-meta-owner">S1 Maya · 38</span>
           <span class="ss-meta-pill ss-meta-mode-dark">Dark · A Midnight (3am)</span>
           <span class="ss-meta-pill" style="background:#9B2226; color:white;">🏆 KILLER FEATURE</span>
         </div>
 
-        <div class="ss-copy-row">
-          <div class="ss-copy-label">Top headline (24 chars)</div>
-          <div class="ss-copy-text">Got side effects? Just ask.</div>
-          <div class="ss-copy-label" style="margin-top: 8px;">Bottom subline (28 chars)</div>
-          <div class="ss-copy-sub">AI Nurse, available 24/7.</div>
+        <!-- AUDIENCE / JTBD -->
+        <div class="jtbd-block">
+          <div class="jtbd-cell">
+            <div class="label">Who · when</div>
+            <div class="value">Maya, 38, week 4 dose escalation на 1.0mg Wegovy®. <b>2:47 AM</b>, открыла телефон, partner спит рядом.</div>
+          </div>
+          <div class="jtbd-cell">
+            <div class="label">Что хочет (JTBD)</div>
+            <div class="value quote">"Скажи мне это normal или паниковать. Не хочу будить мужа из-за тошноты."</div>
+          </div>
+          <div class="jtbd-cell">
+            <div class="label">Что её пугает</div>
+            <div class="value">Pancreatitis, gallbladder, "завтра проснусь хуже". Reddit horror stories о неделе 6. Боится ER bill $3000.</div>
+          </div>
+          <div class="jtbd-cell">
+            <div class="label">Trigger</div>
+            <div class="value">Тошнота 3-й день подряд → scrolling Reddit r/Ozempic в 2-4am, не может уснуть. Это <b>3am moment</b> — наш canonical use case.</div>
+          </div>
         </div>
 
-        <div class="ss-bullets">
-          <div class="ss-bullet-block">
-            <div class="label">Visual composition · 3-tier triage</div>
-            <ul>
-              <li>Status bar shows "2:47 AM" — 3am moment cue</li>
-              <li>User message (right, lighter bubble): <i>"I've had nausea for 3 days, should I worry?"</i></li>
-              <li>AI response (left, midnight bubble) with <b>3 visible tiers</b>:
-                <br>① "Common at week 4 — ~40% of users hit this."
-                <br>② "Try ginger, smaller meals, electrolytes."
-                <br>③ <span style="color:#C44536; font-weight:700;">"Call prescriber if vomiting &gt;24h."</span>
-              </li>
-              <li>Source badges row: <code>FDA</code> · <code>AAFP</code> · <code>Mayo</code> (honey amber, small caps)</li>
-              <li>Disclaimer banner at bottom (muted brick red border)</li>
-            </ul>
+        <!-- TOP HEADLINE variants -->
+        <div class="variant-row">
+          <div class="vr-label">Top headline <span class="vr-hint">22-32 chars · specific pain wins over generic</span></div>
+          <div class="variant-list">
+            <div class="variant-item recommended">
+              <span class="vi-tag hybrid">HYBRID</span>
+              <span class="vi-text">Nausea on day 3? Just ask.</span>
+              <span class="vi-meta">26 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag brand">BRAND</span>
+              <span class="vi-text">Mounjaro® side effects? Just ask.</span>
+              <span class="vi-meta">35 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag glp1">GLP-1</span>
+              <span class="vi-text">GLP-1 nausea? Get answers.</span>
+              <span class="vi-meta">26 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag symptom">SYMPTOM</span>
+              <span class="vi-text">Got side effects? Just ask.</span>
+              <span class="vi-current">current</span>
+              <span class="vi-meta">⚠ generic — about what?</span>
+            </div>
           </div>
-          <div class="ss-bullet-block">
-            <div class="label">Illustration / iconography</div>
-            <ul>
-              <li>NO illustration — pure UI, "feels like real iMessage at 3am"</li>
-              <li>Honey amber accent <code>#F2A65A</code> for AI bot identity (warm presence)</li>
-              <li>Status indicator: small ● dot honey amber pulsing (online)</li>
-              <li>Background: midnight ink <code>#0E1A2B</code> — dark mode is canonical here</li>
-            </ul>
+        </div>
+
+        <!-- BOTTOM SUBLINE variants -->
+        <div class="variant-row">
+          <div class="vr-label">Bottom subline <span class="vr-hint">позиционирует AI + carries trust signal</span></div>
+          <div class="variant-list">
+            <div class="variant-item recommended">
+              <span class="vi-tag hybrid">HYBRID</span>
+              <span class="vi-text">AI GLP-1 Coach. FDA + Mayo cited.</span>
+              <span class="vi-meta">33 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag brand">BRAND</span>
+              <span class="vi-text">Your 24/7 AI Coach for any GLP-1.</span>
+              <span class="vi-meta">33 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag glp1">GLP-1</span>
+              <span class="vi-text">AI GLP-1 Coach with FDA prescribing info.</span>
+              <span class="vi-meta">42 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag symptom">SYMPTOM</span>
+              <span class="vi-text">AI GLP-1 Coach, available 24/7.</span>
+              <span class="vi-current">current</span>
+              <span class="vi-meta">31 chars · OK fallback</span>
+            </div>
           </div>
-          <div class="ss-bullet-block do">
-            <div class="label">Trust devices · clinical credibility</div>
-            <ul>
-              <li>3 source badges visible = "I cite my sources, not vibes"</li>
-              <li>3-tier output proves clinical depth (no competitor does this)</li>
-              <li>ER trigger language ("Call prescriber if vomiting &gt;24h") signals safety culture</li>
-              <li>Disclaimer banner permanent, не dismiss-able в скриншоте</li>
-            </ul>
+        </div>
+
+        <!-- ON-SCREEN BULLETS -->
+        <div class="variant-row">
+          <div class="vr-label">On-screen bullets <span class="vr-hint">3-tier triage = killer feature visible</span></div>
+          <div class="bullet-list">
+            <div class="bullet-item">Status bar: <b>"2:47 AM"</b> (3am cue, не "9:41" как у всех)</div>
+            <div class="bullet-item">User message bubble (right, lighter): <i>"I've had nausea for 3 days, should I worry?"</i></div>
+            <div class="bullet-item">AI response bubble (left, midnight) — <b>3 visible tiers stacked</b>:<br>① <i>"Common at week 4 — ~40% experience this."</i> (normal)<br>② <i>"Try ginger, smaller meals, electrolytes."</i> (action)<br>③ <span style="color:#C44536; font-weight:700;">"Call prescriber if vomiting &gt;24h."</span> (ER trigger, brick red)</div>
+            <div class="bullet-item">Source badges row под AI bubble: <code>FDA</code> · <code>AAFP</code> · <code>Mayo</code> (honey amber tags)</div>
+            <div class="bullet-item">Disclaimer banner bottom (brick red border, muted): <i>"Educational, not medical advice. Consult prescriber."</i></div>
           </div>
-          <div class="ss-bullet-block dont">
-            <div class="label">Anti-patterns · compliance flags</div>
-            <ul>
-              <li>NO "I diagnose..." / "You have..." in AI bubble</li>
-              <li>NO "FDA-approved app" claim — only "FDA prescribing info" cited</li>
-              <li>NO dose recommendation ("increase to 1.7mg")</li>
-              <li>NO "replace your doctor" framing</li>
-              <li>Avoid emoji overload — clinical tone, max 1 emoji</li>
-            </ul>
+        </div>
+
+        <!-- DON'T WRITE -->
+        <div class="variant-row">
+          <div class="vr-label" style="color:#C44536;">Don't write / draw · compliance landmines</div>
+          <div class="bullet-list">
+            <div class="bullet-item dont"><b>"AI Nurse"</b> — regulated title, banned in our own COMPLIANCE.md system prompt. Use <b>"AI GLP-1 Coach"</b>.</div>
+            <div class="bullet-item dont"><b>"I diagnose..."</b> / <b>"You have..."</b> — banned diagnostic language</div>
+            <div class="bullet-item dont"><b>"Increase your dose to 1.7mg"</b> — dose recommendation banned</div>
+            <div class="bullet-item dont"><b>"FDA-approved app"</b> — false claim. OK: <i>"FDA prescribing info cited"</i></div>
+            <div class="bullet-item dont"><b>"Replace your doctor"</b> — banned. OK: <i>"Educational companion. Consult prescriber."</i></div>
+            <div class="bullet-item dont">Emoji overload — max 1 emoji в AI bubble (clinical tone)</div>
           </div>
         </div>
 
@@ -1723,8 +2027,8 @@
           <span class="ss-token-chip" style="background:#1B3A5F; color:white;">#1B3A5F bot</span>
           <span class="ss-token-chip" style="background:#F2A65A; color:#0E1A2B;">#F2A65A accent</span>
           <span class="ss-token-chip" style="background:#0E1A2B; color:#F2EDE5;">#0E1A2B bg</span>
-          <span class="ss-token-chip" style="background:#C44536; color:white;">#C44536 ER trigger</span>
-          <span class="ss-token-chip" style="background:#2E7D5B; color:white;">#2E7D5B verdict safe</span>
+          <span class="ss-token-chip" style="background:#C44536; color:white;">#C44536 ER</span>
+          <span class="ss-token-chip" style="background:#2E7D5B; color:white;">#2E7D5B safe</span>
         </div>
       </div>
     </div>
@@ -1734,7 +2038,7 @@
       <!-- Mock preview -->
       <div class="ss-mock" style="background:#F4F1DE; color:#264653;">
         <div style="display:flex; justify-content:space-between; font-size:7px; opacity:0.5;"><span>9:41</span><span>•••</span></div>
-        <div class="ss-mock-headline">Never inject the same spot twice.</div>
+        <div class="ss-mock-headline">Smart rotation for every shot.</div>
         <div style="flex:1; background:white; border-radius:10px; padding:6px; display:flex; align-items:center; justify-content:center; position:relative;">
           <div style="font-size:50px; line-height:1; color:#D0CFB8;">👤</div>
           <div style="position:absolute; top:30%; left:32%; width:6px; height:6px; border-radius:999px; background:#E76F51; box-shadow:0 0 0 3px rgba(231,111,81,0.25);" title="Site 1"></div>
@@ -1744,7 +2048,7 @@
         </div>
         <div style="background:white; border-radius:8px; padding:5px 7px; font-size:8px; display:flex; justify-content:space-between; align-items:center;"><span style="font-weight:800;">Next: right thigh</span><span style="background:#606C38; color:white; padding:1px 5px; border-radius:999px; font-size:7px;">Tap to log</span></div>
         <div style="background:rgba(38,70,83,0.08); border-radius:6px; padding:4px 6px; font-size:7px; opacity:0.8;">4-day rotation rule · last 6 sites tracked</div>
-        <div class="ss-mock-subline">Smart rotation, one tap log.</div>
+        <div class="ss-mock-subline">4-day rule for any GLP-1.</div>
       </div>
 
       <!-- Spec -->
@@ -1752,62 +2056,129 @@
         <div class="ss-spec-h">
           <div class="ss-slot-num">3</div>
           <div class="ss-spec-title">INJECTION GUIDE · Site rotation</div>
-          <span class="ss-meta-pill ss-meta-owner">S1 New patient</span>
+          <span class="ss-meta-pill ss-meta-owner">S1 Maya · 38</span>
           <span class="ss-meta-pill ss-meta-mode-light">Light · B Apothecary</span>
         </div>
 
-        <div class="ss-copy-row">
-          <div class="ss-copy-label">Top headline (32 chars)</div>
-          <div class="ss-copy-text">Never inject the same spot twice.</div>
-          <div class="ss-copy-label" style="margin-top: 8px;">Bottom subline (28 chars)</div>
-          <div class="ss-copy-sub">Smart rotation, one tap log.</div>
+        <!-- AUDIENCE / JTBD -->
+        <div class="jtbd-block">
+          <div class="jtbd-cell">
+            <div class="label">Who · when</div>
+            <div class="value">Maya, 38, week 1, <b>день первой инъекции</b>. Watched 3 YouTube videos, держит pen в руках, открыла apп прямо перед уколом.</div>
+          </div>
+          <div class="jtbd-cell">
+            <div class="label">Что хочет (JTBD)</div>
+            <div class="value quote">"Где правильно колоть в этот раз? Не повторить ошибку прошлой недели."</div>
+          </div>
+          <div class="jtbd-cell">
+            <div class="label">Что её пугает</div>
+            <div class="value"><b>Lipohypertrophy</b> — узлы под кожей если колоть в одно место. Endo предупредил, но nurse training прошла невнимательно.</div>
+          </div>
+          <div class="jtbd-cell">
+            <div class="label">Trigger</div>
+            <div class="value">Inject day → "куда я колола в прошлый раз?" → открывает app до тапа на pen. Action-oriented момент.</div>
+          </div>
         </div>
 
-        <div class="ss-bullets">
-          <div class="ss-bullet-block">
-            <div class="label">Visual composition</div>
-            <ul>
-              <li><b>Body silhouette</b> — front view, <b>gender-neutral cartoon</b> (round shoulders, no muscle definition, no body shape implication). Ideally illustrated 2D, не photo-real.</li>
-              <li>6 last sites visible as terracotta dots (varying opacity 50-100% per recency)</li>
-              <li>"Next recommended" site = larger olive green dot with pulsing halo (animated in marketing reel, static in screenshot — shows ring)</li>
-              <li>Tooltip card: <code>4-day rotation rule · last 6 sites tracked</code></li>
-              <li>Tap-to-log CTA: "Next: right thigh" with olive button</li>
-            </ul>
+        <!-- TOP HEADLINE variants -->
+        <div class="variant-row">
+          <div class="vr-label">Top headline <span class="vr-hint">22-35 chars · action verb wins</span></div>
+          <div class="variant-list">
+            <div class="variant-item recommended">
+              <span class="vi-tag hybrid">HYBRID</span>
+              <span class="vi-text">Smart rotation for every shot.</span>
+              <span class="vi-meta">30 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag brand">BRAND</span>
+              <span class="vi-text">Track Wegovy®/Ozempic® injection sites.</span>
+              <span class="vi-meta">42 chars · over limit</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag glp1">GLP-1</span>
+              <span class="vi-text">Smart GLP-1 site rotation.</span>
+              <span class="vi-meta">26 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag symptom">SYMPTOM</span>
+              <span class="vi-text">Never inject the same spot twice.</span>
+              <span class="vi-current">current</span>
+              <span class="vi-meta">33 chars · pain-led</span>
+            </div>
           </div>
-          <div class="ss-bullet-block">
-            <div class="label">Illustration brief</div>
-            <ul>
-              <li><b>Commission custom body silhouette</b> — gender-neutral, warm flat illustration style (not medical textbook anatomical)</li>
-              <li>Body fill: warm off-white <code>#FBF7F2</code>, outline soft taupe <code>#D0CFB8</code></li>
-              <li>Show 4 typical injection zones: abdomen (×2), upper thighs (×2), upper arms — visual hint dotted outlines</li>
-              <li>Avoid: muscle definition, shading that implies body shape, gendered features (breasts, beard, etc.)</li>
-            </ul>
+        </div>
+
+        <!-- BOTTOM SUBLINE variants -->
+        <div class="variant-row">
+          <div class="vr-label">Bottom subline <span class="vr-hint">clinical authority + GLP-1 cue</span></div>
+          <div class="variant-list">
+            <div class="variant-item recommended">
+              <span class="vi-tag hybrid">HYBRID</span>
+              <span class="vi-text">4-day rule for any GLP-1.</span>
+              <span class="vi-meta">25 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag brand">BRAND</span>
+              <span class="vi-text">Tracks 6 GLP-1 brands. Lipohypertrophy-safe.</span>
+              <span class="vi-meta">45 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag glp1">GLP-1</span>
+              <span class="vi-text">Per FDA prescribing rotation guidance.</span>
+              <span class="vi-meta">39 chars</span>
+            </div>
+            <div class="variant-item">
+              <span class="vi-tag symptom">SYMPTOM</span>
+              <span class="vi-text">Smart rotation, one tap log.</span>
+              <span class="vi-current">current</span>
+              <span class="vi-meta">⚠ no GLP-1 cue</span>
+            </div>
           </div>
-          <div class="ss-bullet-block do">
-            <div class="label">Trust devices</div>
-            <ul>
-              <li>"4-day rotation rule" framing = clinical authority (per FDA prescribing info)</li>
-              <li>Last 6 sites tracked = data persistence, not just reminder</li>
-              <li>Olive green = "safe to use" verdict color (semantic consistency)</li>
-            </ul>
+        </div>
+
+        <!-- ON-SCREEN BULLETS -->
+        <div class="variant-row">
+          <div class="vr-label">On-screen bullets <span class="vr-hint">visible UI elements</span></div>
+          <div class="bullet-list">
+            <div class="bullet-item"><b>Body silhouette</b> — gender-neutral 2D cartoon, front view, warm flat illustration (NOT medical textbook anatomical, NOT photo)</div>
+            <div class="bullet-item"><b>6 last sites tracked</b> — terracotta dots, varying opacity 50-100% по recency. Ring пульсирует на самой свежей.</div>
+            <div class="bullet-item"><b>Next-recommended site</b> = larger olive green dot с pulsing halo (animated в reel, ring static в screenshot)</div>
+            <div class="bullet-item">Tooltip card: <code>4-day rotation rule · last 6 sites tracked</code></div>
+            <div class="bullet-item">Tap-to-log CTA: <b>"Next: right thigh"</b> с olive button (verdict-safe color)</div>
           </div>
-          <div class="ss-bullet-block dont">
-            <div class="label">Anti-patterns · ED + medical safety</div>
-            <ul>
-              <li>NO realistic body / NO photo / NO athletic ideal silhouette</li>
-              <li>NO needle illustration anywhere (per SCREENSHOTS.md don't-list)</li>
-              <li>NO blood / bruising imagery</li>
-              <li>NO body imagery in any other screenshot — это ЕДИНСТВЕННЫЙ кадр с силуэтом</li>
-            </ul>
+        </div>
+
+        <!-- ILLUSTRATION BRIEF (специфичное для этого экрана) -->
+        <div class="variant-row">
+          <div class="vr-label" style="color:#264653;">Illustration commission · body silhouette</div>
+          <div class="bullet-list">
+            <div class="bullet-item">Style: <b>warm flat 2D illustration</b>, не medical textbook anatomical, не photo-real, не athletic ideal</div>
+            <div class="bullet-item">Body fill: warm off-white <code>#FBF7F2</code>. Outline: soft taupe <code>#D0CFB8</code></div>
+            <div class="bullet-item">Show 4 typical injection zones: abdomen (×2 sides), upper thighs (×2), upper arms (×2) — dotted outline hints</div>
+            <div class="bullet-item">Round shoulders, no muscle definition, no breast/beard/gender markers, no athletic shading</div>
+            <div class="bullet-item">Это <b>ЕДИНСТВЕННЫЙ</b> screenshot с body imagery в lineup — body fixation safe</div>
+          </div>
+        </div>
+
+        <!-- DON'T WRITE -->
+        <div class="variant-row">
+          <div class="vr-label" style="color:#B33A3A;">Don't write / draw</div>
+          <div class="bullet-list">
+            <div class="bullet-item dont"><b>Realistic anatomy / photo silhouette</b> — too clinical, ED triggers</div>
+            <div class="bullet-item dont"><b>Athletic ideal / muscle definition / fitness body</b> — body fixation</div>
+            <div class="bullet-item dont"><b>Needle illustration anywhere</b> — per SCREENSHOTS.md don't-list</div>
+            <div class="bullet-item dont"><b>Blood / bruising / injection trauma</b> imagery</div>
+            <div class="bullet-item dont"><b>"Pain-free injections"</b> — false medical claim</div>
+            <div class="bullet-item dont">Any body imagery в screenshots 1, 2, 4-8 — only здесь</div>
           </div>
         </div>
 
         <div class="ss-tokens-row">
           <span class="ss-token-chip" style="background:#264653; color:white;">#264653 primary</span>
-          <span class="ss-token-chip" style="background:#E76F51; color:white;">#E76F51 site dots</span>
-          <span class="ss-token-chip" style="background:#606C38; color:white;">#606C38 next-recommended</span>
+          <span class="ss-token-chip" style="background:#E76F51; color:white;">#E76F51 dots</span>
+          <span class="ss-token-chip" style="background:#606C38; color:white;">#606C38 next-rec</span>
           <span class="ss-token-chip" style="background:#F4F1DE; color:#264653;">#F4F1DE bg</span>
-          <span class="ss-token-chip" style="background:#FBF7F2; color:#7A5C4F;">#FBF7F2 silhouette fill</span>
+          <span class="ss-token-chip" style="background:#FBF7F2; color:#7A5C4F;">#FBF7F2 silhouette</span>
         </div>
       </div>
     </div>
@@ -1911,12 +2282,12 @@
       <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #264653;">Brand + compliance hygiene</div>
       <ul style="list-style: none; padding: 0; font-size: 12px; line-height: 1.6; color: #2a2a30; margin-top: 8px;">
         <li>☐ ® on first brand mention per screen (Ozempic® / Wegovy® / Mounjaro® / Zepbound® / Rybelsus® / Saxenda®)</li>
-        <li>☐ Disclaimer banner visible on Screen 2 (AI Nurse) — non-dismissable</li>
+        <li>☐ Disclaimer banner visible on Screen 2 (AI GLP-1 Coach) — non-dismissable</li>
         <li>☐ Source badges (FDA · AAFP · Mayo) visible на Screen 2</li>
         <li>☐ NO weight numbers in headline copy ever</li>
         <li>☐ NO before/after grid anywhere</li>
         <li>☐ Diverse avatar / silhouette implied across 8 screens</li>
-        <li>☐ B Apothecary palette (light) на 7/8 screens · A Midnight (dark) ТОЛЬКО на Screen 2 AI Nurse</li>
+        <li>☐ B Apothecary palette (light) на 7/8 screens · A Midnight (dark) ТОЛЬКО на Screen 2 AI GLP-1 Coach</li>
       </ul>
     </div>
   </div>
@@ -1973,7 +2344,7 @@
         <ul>
           <li>"Educational, not medical advice. Consult prescriber."</li>
           <li>"Talk to your prescriber"</li>
-          <li>Source citation в AI Nurse ("Per FDA prescribing info...")</li>
+          <li>Source citation в AI GLP-1 Coach ("Per FDA prescribing info...")</li>
           <li>ER triggers: vomiting&gt;24h, severe abdominal pain (pancreatitis), jaundice, suicidal ideation</li>
           <li>"Call 911" / "Call 988" для true emergency</li>
           <li>Trademark disclaimer footer (App Store)</li>
@@ -2035,7 +2406,7 @@
         <td><span class="swatch-chip" style="background:#6B4DFF;"></span><span class="hex-code">#6B4DFF</span><br>premium purple</td>
         <td><span class="swatch-chip" style="background:#C94EFC;"></span><span class="hex-code">#C94EFC</span><br>magenta</td>
         <td>"Your success plan" — premium $89.99/yr lifestyle positioning</td>
-        <td><span class="wedge-text">Diluted positioning, no RAG grounding, $40 overpriced. Мы $40 cheaper, more focused, AI Nurse + RAG.</span></td>
+        <td><span class="wedge-text">Diluted positioning, no RAG grounding, $40 overpriced. Мы $40 cheaper, more focused, AI GLP-1 Coach + RAG.</span></td>
         <td><span class="threat-pill med">MED · price compete</span></td>
       </tr>
       <tr>
@@ -2080,7 +2451,7 @@
         <td><span class="swatch-chip" style="background:#1B3A5F;"></span><span class="hex-code">TBD</span><br><i>palette voting open</i></td>
         <td><span class="swatch-chip" style="background:#F2A65A;"></span><span class="hex-code">TBD</span><br><i>palette voting open</i></td>
         <td>"Your AI nurse, dietitian, and side-effect coach — for every GLP-1 shot."</td>
-        <td><span class="wedge-text">AI Nurse Chat (DeepSeek + on-device RAG) + Side Effect Triage + Protein Coach + Hair/Skin Journal + Plateau Detector + Doctor PDF + Compounded Pharmacy Compare</span></td>
+        <td><span class="wedge-text">AI GLP-1 Coach Chat (DeepSeek + on-device RAG) + Side Effect Triage + Protein Coach + Hair/Skin Journal + Plateau Detector + Doctor PDF + Compounded Pharmacy Compare</span></td>
         <td><span class="threat-pill low">SELF</span></td>
       </tr>
     </tbody>
@@ -2221,7 +2592,7 @@
   </div>
 
   <p class="section-intro" style="margin-top: 18px; font-size: 12px; color: #8a8a90;">
-    <b>Композиционный gap для JabWell:</b> Никто не использует <b>warm-medical narrative + AI chat hero</b>. Все либо utility-grid (Shotsy/Pep), либо premium-aspirational (MeAgain), либо minimalist-anti (Injectly), либо generic-stock (Pode). Наш hero candidate: AI Nurse chat live demo на screenshot 2 (<b>3am moment</b>, dark mode, "Got nausea 3 days?" → 3-tier triage с FDA badge) — НИКТО не показывает RAG-grounded clinical conversation.
+    <b>Композиционный gap для JabWell:</b> Никто не использует <b>warm-medical narrative + AI chat hero</b>. Все либо utility-grid (Shotsy/Pep), либо premium-aspirational (MeAgain), либо minimalist-anti (Injectly), либо generic-stock (Pode). Наш hero candidate: AI GLP-1 Coach chat live demo на screenshot 2 (<b>3am moment</b>, dark mode, "Got nausea 3 days?" → 3-tier triage с FDA badge) — НИКТО не показывает RAG-grounded clinical conversation.
   </p>
 </section>
 
@@ -2237,11 +2608,11 @@
   <!-- 01 HERO -->
   <div class="pw-step">
     <div class="pw-step-h"><span class="pw-step-n">01</span><h3>Hero-картинка</h3></div>
-    <p class="pw-step-i">Будет: dropzone для подменной hero (изображение AI Nurse chat 3am scene). Built-in: A rational ($1300/mo Ozempic vs $39.99/yr coach), B emotional (3am scared + AI). Сейчас — TODO до съёмки mockups.</p>
+    <p class="pw-step-i">Будет: dropzone для подменной hero (изображение AI GLP-1 Coach chat 3am scene). Built-in: A rational ($1300/mo Ozempic vs $39.99/yr coach), B emotional (3am scared + AI). Сейчас — TODO до съёмки mockups.</p>
     <div class="pw-todo">
       <div class="todo-h">📷 Hero pending</div>
       После выбора палитры (блок 1) — собираем 2 hero candidates:<br>
-      A · rational: split screen $1300/mo Ozempic ↔ $39.99/yr JabWell · B · emotional: 3am face-glow phone, AI Nurse chat overlay
+      A · rational: split screen $1300/mo Ozempic ↔ $39.99/yr JabWell · B · emotional: 3am face-glow phone, AI GLP-1 Coach chat overlay
     </div>
   </div>
 
@@ -2253,7 +2624,7 @@
       <div class="field"><label>BRAND / PRODUCT</label><input type="text" value="JabWell"></div>
       <div class="field"><label>PRIMARY AUDIENCE</label><input type="text" value="S1 New GLP-1 patient first 90 days, 38yo female, on Wegovy® week 4"></div>
       <div class="field"><label>CORE PAIN</label><textarea rows="2">3am nausea panic — week 4 dose escalation, scared of vomiting, scrolling Reddit at 2am unable to sleep, partner sleeping</textarea></div>
-      <div class="field"><label>KILLER FEATURE</label><textarea rows="2">AI Nurse Chat: 3-tier triage (common 40% / try X,Y,Z / call doctor if vomiting&gt;24h) with FDA + AAFP source badges, on-device RAG grounded</textarea></div>
+      <div class="field"><label>KILLER FEATURE</label><textarea rows="2">AI GLP-1 Coach Chat: 3-tier triage (common 40% / try X,Y,Z / call doctor if vomiting&gt;24h) with FDA + AAFP source badges, on-device RAG grounded</textarea></div>
       <div class="field"><label>WEEKLY PRICE</label><input type="text" value="$4.99/wk + 7-day trial (DEFAULT preselected)"></div>
       <div class="field"><label>ANNUAL PRICE</label><input type="text" value="$39.99/yr (SAVE 85% badge)"></div>
       <div class="field"><label>VALUE ANCHOR</label><input type="text" value="$1,300/mo Ozempic out-of-pocket — $39.99/yr coach. Cancel anytime."></div>
