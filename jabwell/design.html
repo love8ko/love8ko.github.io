@@ -944,6 +944,171 @@
   }
   .selection-panel button:hover { background: #E89A48; color: white; }
 
+  /* === Paywall Workbench v2 (gallery + full preview) === */
+  .pwb-locked-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px; margin-bottom: 18px; }
+  .pwb-lk { background: white; border: 1px solid #D0CFB8; border-radius: 10px; padding: 10px 14px; font-size: 12px; }
+  .pwb-lk .lk-label { font-size: 9px; color: #8A959A; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .pwb-lk .lk-value { font-size: 13px; font-weight: 800; color: #264653; line-height: 1.2; }
+  .pwb-lk .lk-meta { font-size: 11px; color: #5A5A60; margin-top: 3px; line-height: 1.4; }
+  .pwb-lk details summary { font-size: 11px; color: #264653; font-weight: 700; cursor: pointer; margin-top: 6px; outline: none; }
+  .pwb-lk details[open] summary { margin-bottom: 6px; }
+
+  .pwb-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 12px; }
+  .pwb-gallery.cols-7 { grid-template-columns: repeat(7, 1fr); }
+  .pwb-card { background: white; border: 2px solid #D0CFB8; border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; transition: border-color .15s, box-shadow .15s, transform .15s; }
+  .pwb-card:hover { border-color: #264653; box-shadow: 0 6px 18px rgba(38,70,83,.18); transform: translateY(-2px); }
+  .pwb-card.active { border-color: #E76F51; box-shadow: 0 6px 22px rgba(231,111,81,.30); }
+  .pwb-card .pc-head { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+  .pwb-card .pc-num { background: #264653; color: white; font-weight: 800; font-size: 10px; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.06em; }
+  .pwb-card .pc-score { font-size: 10px; color: #606C38; font-weight: 800; }
+  .pwb-card .pc-score.gold { color: #DDA15E; }
+  .pwb-card .pc-name { font-size: 13px; font-weight: 800; color: #264653; line-height: 1.2; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .pwb-card .pc-hook { font-size: 11px; color: #5A5A60; line-height: 1.35; min-height: 30px; }
+  .pwb-card .pc-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+  .pwb-card .pc-tag { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+  .pwb-card .pc-tag.weekly { background: #FCE3DB; color: #E76F51; }
+  .pwb-card .pc-tag.annual { background: #E0E5D2; color: #606C38; }
+  .pwb-card .pc-tag.s1 { background: #E8EFF1; color: #264653; }
+  .pwb-card .pc-tag.s2 { background: #F2EFE0; color: #6B6326; }
+  .pwb-card .pc-tag.s3 { background: #F0E5DA; color: #7A5C4F; }
+
+  .mini-pw { background: #F4F1DE; border-radius: 9px; aspect-ratio: 9/19; padding: 5px; display: flex; flex-direction: column; gap: 2.5px; font-size: 5px; line-height: 1.2; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(0,0,0,.18); }
+  .mini-pw .mp-status { display: flex; justify-content: space-between; padding: 0 3px 1px; font-size: 3.5px; color: #1A1A1F; font-weight: 800; }
+  .mini-pw .mp-band-experts { display: flex; gap: 4px; justify-content: space-around; padding: 4px 2px 2px; }
+  .mini-pw .mp-expert { width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, #DDA15E, #C18A4A); position: relative; flex-shrink: 0; box-shadow: 0 0 0 1px white; }
+  .mini-pw .mp-tag { position: absolute; top: -4px; right: -3px; background: #FBE9E5; color: #9B2226; font-size: 4px; padding: 0 2px; border-radius: 2px; text-decoration: line-through; font-weight: 800; }
+  .mini-pw .mp-headline { font-weight: 800; color: #1A1A1F; font-size: 5.5px; padding: 1px 3px; line-height: 1.2; }
+  .mini-pw .mp-trust { color: #606C38; font-weight: 800; font-size: 4px; padding: 0 3px; }
+  .mini-pw .mp-anchor { color: #264653; font-weight: 700; font-size: 4.5px; padding: 0 3px; line-height: 1.3; }
+  .mini-pw .mp-anchor-big { background: linear-gradient(135deg, #264653, #2A5560); color: white; text-align: center; padding: 4px 3px; border-radius: 4px; font-size: 5px; font-weight: 800; line-height: 1.3; }
+  .mini-pw .mp-features { background: #FFF; border-radius: 3px; padding: 2.5px 3px; }
+  .mini-pw .mp-features-line { color: #1A1A1F; font-size: 4px; line-height: 1.5; }
+  .mini-pw .mp-pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .mini-pw .mp-tier { background: #FFF; border-radius: 3px; padding: 3px; border: 1px solid #D0CFB8; font-size: 4px; line-height: 1.2; }
+  .mini-pw .mp-tier.sel-week { border: 1.5px solid #E76F51; background: #FCE3DB; }
+  .mini-pw .mp-tier.sel-year { border: 1.5px solid #606C38; background: #E0E5D2; }
+  .mini-pw .mp-tier-name { font-weight: 800; color: #1A1A1F; }
+  .mini-pw .mp-tier-price { color: #1A1A1F; font-weight: 800; font-size: 5.5px; }
+  .mini-pw .mp-timeline { background: #FFF; border-radius: 3px; padding: 2.5px 3px; font-size: 3.5px; color: #5A5A60; line-height: 1.5; }
+  .mini-pw .mp-cta { background: #E76F51; color: white; text-align: center; padding: 3.5px; border-radius: 999px; font-weight: 800; font-size: 5px; }
+  .mini-pw .mp-cta-teal { background: #264653; color: white; text-align: center; padding: 3.5px; border-radius: 999px; font-weight: 800; font-size: 5px; }
+  .mini-pw .mp-foot { display: flex; justify-content: center; gap: 4px; font-size: 3px; color: #8A959A; }
+  .mini-pw .mp-hero-img { background: url('paywall-hero.png') center/cover, linear-gradient(135deg, #F4F1DE, #E5DDC4); border-radius: 5px; height: 60px; display: flex; align-items: flex-end; justify-content: flex-start; padding: 4px; }
+  .mini-pw .mp-hero-img.full { height: 110px; }
+  .mini-pw .mp-source-stack { background: #FFF; border-radius: 3px; padding: 3px; display: flex; flex-direction: column; gap: 1.5px; }
+  .mini-pw .mp-source-line { color: #606C38; font-weight: 800; font-size: 3.5px; }
+  .mini-pw .mp-spacer { flex: 1; }
+  .mini-pw .mp-compliance { font-size: 3px; color: #8A959A; text-align: center; padding: 0 2px; line-height: 1.4; }
+
+  /* Full iPhone preview */
+  .pwb-deep { display: grid; grid-template-columns: 384px 1fr; gap: 24px; align-items: start; margin-top: 14px; }
+  .pwb-iphone-frame { width: 384px; padding: 10px; background: #0E1A2B; border-radius: 48px; box-shadow: 0 14px 44px rgba(0,0,0,.30), inset 0 0 0 2px #1a1a22; }
+  .pwb-iphone-screen { background: #F4F1DE; border-radius: 38px; overflow: hidden; min-height: 820px; display: flex; flex-direction: column; position: relative; }
+  .pwb-iphone-notch { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 116px; height: 30px; background: #1a1a1f; border-radius: 999px; z-index: 5; }
+  .pwb-iphone-status { display: flex; justify-content: space-between; padding: 16px 28px 0; font-size: 15px; font-weight: 800; color: #1A1A1F; height: 44px; align-items: center; }
+  .pwb-iphone-content { padding: 6px 18px 16px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+  .pwb-iphone-content .iph-close { align-self: flex-end; background: rgba(0,0,0,.06); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #5A5A60; }
+  .iph-experts-band { display: flex; justify-content: space-around; padding: 8px 0 4px; gap: 8px; }
+  .iph-expert { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; position: relative; }
+  .iph-expert-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #DDA15E 0%, #C18A4A 100%); display: flex; align-items: center; justify-content: center; font-size: 26px; box-shadow: 0 2px 6px rgba(0,0,0,.10); }
+  .iph-expert-tag { position: absolute; top: -4px; right: 12%; background: #FBE9E5; color: #9B2226; font-size: 10px; padding: 2px 6px; border-radius: 4px; text-decoration: line-through; font-weight: 800; box-shadow: 0 1px 3px rgba(0,0,0,.10); }
+  .iph-expert-name { font-size: 11px; font-weight: 800; color: #1A1A1F; }
+  .iph-expert-role { font-size: 9px; color: #5A5A60; font-style: italic; }
+  .iph-headline { font-size: 22px; font-weight: 800; color: #1A1A1F; line-height: 1.2; text-align: center; font-family: -apple-system, "SF Pro Rounded", sans-serif; padding: 0 6px; }
+  .iph-subline { font-size: 13px; color: #4B5A60; text-align: center; padding: 0 6px; line-height: 1.4; margin-top: -6px; }
+  .iph-trust-line { font-size: 11px; color: #606C38; font-weight: 700; text-align: center; padding: 0 6px; }
+  .iph-anchor-line { font-size: 11px; color: #5A5A60; text-align: center; padding: 0 6px; line-height: 1.4; }
+  .iph-anchor-line b { color: #606C38; font-weight: 800; }
+  .iph-features { background: white; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .iph-feat-row { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: #1A1A1F; line-height: 1.35; }
+  .iph-feat-icon { width: 24px; height: 24px; background: #E8EFF1; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+  .iph-feat-row b { display: block; font-weight: 800; }
+  .iph-feat-row .feat-sub { font-size: 11px; color: #4B5A60; }
+  .iph-pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .iph-tier { background: white; border: 1.5px solid #D0CFB8; border-radius: 10px; padding: 10px 12px; position: relative; }
+  .iph-tier.sel-week { border: 2px solid #E76F51; background: #FCE3DB; }
+  .iph-tier.sel-year { border: 2px solid #606C38; background: #E0E5D2; }
+  .iph-tier-pill { position: absolute; top: -8px; left: 12px; background: #E76F51; color: white; font-size: 9px; padding: 2px 7px; border-radius: 4px; font-weight: 800; letter-spacing: 0.04em; }
+  .iph-tier-pill.green { background: #606C38; }
+  .iph-tier-name { font-size: 13px; font-weight: 800; color: #1A1A1F; margin-top: 2px; }
+  .iph-tier-price { font-size: 18px; font-weight: 800; color: #1A1A1F; margin-top: 2px; }
+  .iph-tier-price small { font-size: 12px; font-weight: 700; color: #5A5A60; }
+  .iph-tier-sub { font-size: 10px; color: #5A5A60; margin-top: 2px; }
+  .iph-timeline { background: white; border-radius: 10px; padding: 10px 14px; display: flex; flex-direction: column; gap: 6px; }
+  .iph-tl-row { display: flex; gap: 10px; align-items: center; font-size: 12px; color: #1A1A1F; }
+  .iph-tl-icon { width: 20px; height: 20px; border-radius: 50%; background: #E8EFF1; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; }
+  .iph-tl-row b { font-weight: 800; min-width: 38px; }
+  .iph-cta { background: #E76F51; color: white; text-align: center; padding: 14px; border-radius: 999px; font-weight: 800; font-size: 14px; box-shadow: 0 4px 12px rgba(231,111,81,.30); animation: pulse-cta-orange 2.2s ease-in-out infinite; will-change: transform, box-shadow; }
+  .iph-cta-teal { background: #264653; color: white; text-align: center; padding: 14px; border-radius: 999px; font-weight: 800; font-size: 14px; box-shadow: 0 4px 12px rgba(38,70,83,.30); animation: pulse-cta-teal 2.2s ease-in-out infinite; will-change: transform, box-shadow; }
+
+  /* CTA pulse — призывает тыкнуть */
+  @keyframes pulse-cta-orange {
+    0%, 100% { box-shadow: 0 4px 12px rgba(231,111,81,.30); transform: scale(1); }
+    50%      { box-shadow: 0 6px 26px rgba(231,111,81,.55), 0 0 0 8px rgba(231,111,81,.16); transform: scale(1.025); }
+  }
+  @keyframes pulse-cta-teal {
+    0%, 100% { box-shadow: 0 4px 12px rgba(38,70,83,.30); transform: scale(1); }
+    50%      { box-shadow: 0 6px 26px rgba(38,70,83,.55), 0 0 0 8px rgba(38,70,83,.16); transform: scale(1.025); }
+  }
+  @keyframes pulse-mp-orange {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(231,111,81,.0); transform: scale(1); }
+    50%      { box-shadow: 0 0 0 3px rgba(231,111,81,.22); transform: scale(1.04); }
+  }
+  @keyframes pulse-mp-teal {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(38,70,83,.0); transform: scale(1); }
+    50%      { box-shadow: 0 0 0 3px rgba(38,70,83,.22); transform: scale(1.04); }
+  }
+  .mini-pw .mp-cta      { animation: pulse-mp-orange 2.2s ease-in-out infinite; will-change: transform, box-shadow; }
+  .mini-pw .mp-cta-teal { animation: pulse-mp-teal   2.2s ease-in-out infinite; will-change: transform, box-shadow; }
+  @media (prefers-reduced-motion: reduce) {
+    .iph-cta, .iph-cta-teal, .mini-pw .mp-cta, .mini-pw .mp-cta-teal { animation: none; }
+  }
+
+  /* JTBD brief block (Paywall Workbench) */
+  .pwb-brief { background: #1A1A1F; border-radius: 14px; padding: 18px 22px; margin-top: 14px; color: #E8E8EE; box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+  .pwb-brief .br-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 0.14em; color: #DDA15E; text-transform: uppercase; }
+  .pwb-brief h3 { font-size: 22px; font-weight: 800; margin: 4px 0 4px; color: #FFFFFF; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .pwb-brief .br-intro { font-size: 12px; color: #9CA0A8; line-height: 1.55; margin-bottom: 14px; }
+  .pwb-brief .br-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+  .pwb-brief .br-field { background: #25262E; border: 1px solid #34353F; border-radius: 9px; padding: 9px 12px; }
+  .pwb-brief .br-field .br-label { font-size: 9px; font-weight: 800; letter-spacing: 0.10em; color: #8A8E98; text-transform: uppercase; margin-bottom: 4px; }
+  .pwb-brief .br-field .br-value { font-size: 13px; font-weight: 700; color: #F2F2F5; line-height: 1.35; }
+  .pwb-brief .br-field .br-value b { color: #DDA15E; font-weight: 800; }
+  .pwb-brief .br-field.locked { border-color: #606C38; background: #1F2A1F; }
+  .pwb-brief .br-field.locked .br-label { color: #B5C28A; }
+  .pwb-brief .br-consilium { margin-top: 14px; padding-top: 12px; border-top: 1px solid #34353F; font-size: 11px; color: #9CA0A8; line-height: 1.55; }
+  .pwb-brief .br-consilium b { color: #DDA15E; }
+  @media (max-width: 900px) { .pwb-brief .br-grid { grid-template-columns: 1fr; } }
+  /* 6-col gallery layout */
+  .pwb-gallery.cols-6 { grid-template-columns: repeat(6, 1fr); }
+  @media (max-width: 1100px) { .pwb-gallery.cols-6 { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 720px)  { .pwb-gallery.cols-6 { grid-template-columns: repeat(2, 1fr); } }
+  .iph-cta-sub { font-size: 11px; color: #5A5A60; text-align: center; line-height: 1.4; }
+  .iph-foot { display: flex; justify-content: center; gap: 16px; font-size: 11px; color: #8A959A; padding-top: 4px; }
+  .iph-compliance { font-size: 10px; color: #8A959A; text-align: center; line-height: 1.4; padding: 0 4px; }
+  .iph-hero-image { background: #F4F1DE; border-radius: 10px; aspect-ratio: 1/1; background-size: cover; background-position: center; }
+
+  /* Block breakdown panel */
+  .pwb-blocks-list { display: flex; flex-direction: column; gap: 8px; }
+  .pwb-blk { background: white; border: 1px solid #D0CFB8; border-radius: 10px; padding: 12px 14px; }
+  .pwb-blk .blk-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .pwb-blk .blk-num { font-size: 10px; font-weight: 800; color: #264653; letter-spacing: 0.06em; }
+  .pwb-blk .blk-status { font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 700; }
+  .pwb-blk .blk-status.ok { background: #E0E5D2; color: #606C38; }
+  .pwb-blk .blk-status.warn { background: #FBE9D5; color: #9B2226; }
+  .pwb-blk .blk-name { font-size: 13px; font-weight: 800; color: #1A1A1F; }
+  .pwb-blk .blk-copy { font-size: 12px; color: #4B5A60; line-height: 1.5; margin-top: 4px; }
+  .pwb-blk .blk-copy code { background: #F4F1DE; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+
+  .pwb-pickbar { position: sticky; top: 14px; z-index: 50; background: linear-gradient(135deg, #264653 0%, #2A5560 100%); color: white; border-radius: 12px; padding: 10px 14px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; box-shadow: 0 6px 22px rgba(38,70,83,.32); margin-bottom: 14px; }
+  .pwb-pickbar .pb-label { font-size: 10px; opacity: .85; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pwb-pickbar .pb-current { font-size: 14px; font-weight: 800; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .pwb-pickbar .pb-chips { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+  .pwb-pickbar .pb-chip { background: rgba(255,255,255,.14); color: white; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; cursor: pointer; transition: background .12s; }
+  .pwb-pickbar .pb-chip:hover { background: rgba(255,255,255,.28); }
+  .pwb-pickbar .pb-chip.active { background: #E76F51; color: white; }
+  .pwb-pickbar .pb-export { background: #E76F51; color: white; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 800; cursor: pointer; border: none; }
+
   @media (max-width: 1100px) {
     .palette-grid { grid-template-columns: repeat(2, 1fr); }
     .palette-locks-row { grid-template-columns: 1fr; }
@@ -954,6 +1119,11 @@
     .pw-tokens { grid-template-columns: repeat(2, 1fr); }
     .ss-priority-card { grid-template-columns: 1fr; }
     .ss-lineup { grid-template-columns: repeat(4, 1fr); }
+    .pwb-locked-strip { grid-template-columns: repeat(2, 1fr); }
+    .pwb-gallery { grid-template-columns: repeat(2, 1fr); }
+    .pwb-gallery.cols-7 { grid-template-columns: repeat(2, 1fr); }
+    .pwb-deep { grid-template-columns: 1fr; }
+    .pwb-iphone-frame { margin: 0 auto; }
   }
   @media (max-width: 600px) {
     .palette-grid { grid-template-columns: 1fr; }
@@ -2367,91 +2537,564 @@
 <!-- SECTION 5: PAYWALL WORKBENCH (skeleton) -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="paywall-workbench" style="background: #FAF7F2;">
-  <h2>5. Paywall Workbench <span class="pill pill-pending">skeleton · дополняем по ходу</span></h2>
+  <h2>5. Paywall Workbench <span class="pill" style="background:#264653;color:white;">✅ Consilium R3 · 6 layouts · shared hero · CTA pulse</span></h2>
   <p class="section-intro">
-    Каркас по 5-step structure из crysnap. JTBD-brief inputs <b>pre-filled</b> из <code>JabWell_Strategic_Plan_v1.md §7</code>. Tokens биндим к выбранной палитре после голосования (блок 1). Gallery + iPhone deep-dive — TODO, добавляем варианты по triggers (3+ nausea / plateau 4+ wks / hair flag / OOP / day-6) на каждом sprint'е paywall'а.
+    Default S1 onboarding hard paywall · 2-tier $4.99/wk + 7-day trial preselected / $39.99/yr SAVE 85%. <b>Все 6 вариантов делят общий hero-band</b> (3 AI-эксперта + strikethrough price tags) — variability ТОЛЬКО через headline copy, timeline rows и выделяющийся блок (anchor / trust / pricing / features). CTA пульсирует чтобы призвать тап. <b>Полный консилиум →</b> <code>пейволл референсы/paywall-layouts-consilium-2026-04-30.md</code>.
   </p>
 
-  <!-- 01 HERO -->
-  <div class="pw-step">
-    <div class="pw-step-h"><span class="pw-step-n">01</span><h3>Hero-картинка</h3></div>
-    <p class="pw-step-i">Будет: dropzone для подменной hero (изображение AI GLP-1 Coach chat 3am scene). Built-in: A rational ($1300/mo Ozempic vs $39.99/yr coach), B emotional (3am scared + AI). Сейчас — TODO до съёмки mockups.</p>
-    <div class="pw-todo">
-      <div class="todo-h">📷 Hero pending</div>
-      После выбора палитры (блок 1) — собираем 2 hero candidates:<br>
-      A · rational: split screen $1300/mo Ozempic ↔ $39.99/yr JabWell · B · emotional: 3am face-glow phone, AI GLP-1 Coach chat overlay
+  <!-- Sticky variant pickbar -->
+  <div class="pwb-pickbar" id="pwb-pickbar">
+    <div>
+      <div class="pb-label">Selected variant</div>
+      <div class="pb-current" id="pb-current">V1 · Three Experts Weekly Trial</div>
+    </div>
+    <div class="pb-chips" id="pb-chips">
+      <!-- chips injected by JS -->
     </div>
   </div>
 
-  <!-- 02 JTBD-brief -->
-  <div class="pw-step">
-    <div class="pw-step-h"><span class="pw-step-n">02</span><h3>JTBD-бриф · pre-filled S1 default trigger</h3></div>
-    <p class="pw-step-i">Эти данные подставятся в Claude-prompt и помогут разметить экраны под аудиторию. Pre-fill из стратегического плана — переопределяй per-trigger (S1 default / S2 plateau / S2 nausea-3+ / S3 OOP / day-6).</p>
-    <div class="pw-brief">
-      <div class="field"><label>BRAND / PRODUCT</label><input type="text" value="JabWell"></div>
-      <div class="field"><label>PRIMARY AUDIENCE</label><input type="text" value="S1 New GLP-1 patient first 90 days, 38yo female, on Wegovy® week 4"></div>
-      <div class="field"><label>CORE PAIN</label><textarea rows="2">3am nausea panic — week 4 dose escalation, scared of vomiting, scrolling Reddit at 2am unable to sleep, partner sleeping</textarea></div>
-      <div class="field"><label>KILLER FEATURE</label><textarea rows="2">AI GLP-1 Coach Chat: 3-tier triage (common 40% / try X,Y,Z / call doctor if vomiting&gt;24h) with FDA + AAFP source badges, on-device RAG grounded</textarea></div>
-      <div class="field"><label>WEEKLY PRICE</label><input type="text" value="$4.99/wk + 7-day trial (DEFAULT preselected)"></div>
-      <div class="field"><label>ANNUAL PRICE</label><input type="text" value="$39.99/yr (SAVE 85% badge)"></div>
-      <div class="field"><label>VALUE ANCHOR</label><input type="text" value="$1,300/mo Ozempic out-of-pocket — $39.99/yr coach. Cancel anytime."></div>
-      <div class="field"><label>TRUST LINE</label><input type="text" value="FDA prescribing info + AAFP + Mayo + Cleveland Clinic + PubMed grounded. Educational, not medical advice."></div>
+  <!-- Locked inputs strip (compact) -->
+  <div class="pwb-locked-strip">
+    <div class="pwb-lk">
+      <div class="lk-label">Hero</div>
+      <div class="lk-value">B Phone-First ✅</div>
+      <div class="lk-meta"><code>пейволл референсы/hero/hero-B-final.png</code> · 720×720, no-face object hero</div>
+    </div>
+    <div class="pwb-lk">
+      <div class="lk-label">Audience</div>
+      <div class="lk-value">S1 default ✅</div>
+      <div class="lk-meta">38yo on Wegovy® week 4 · 3am nausea panic · ~3M US active</div>
+    </div>
+    <div class="pwb-lk">
+      <div class="lk-label">Palette</div>
+      <div class="lk-value">B Clinical Apothecary ✅</div>
+      <div class="lk-meta"><span style="display:inline-block;width:10px;height:10px;background:#264653;border-radius:50%;vertical-align:middle;"></span> #264653 · <span style="display:inline-block;width:10px;height:10px;background:#E76F51;border-radius:50%;vertical-align:middle;"></span> #E76F51 · <span style="display:inline-block;width:10px;height:10px;background:#F4F1DE;border-radius:50%;vertical-align:middle;border:1px solid #D0CFB8;"></span> #F4F1DE</div>
+    </div>
+    <div class="pwb-lk">
+      <div class="lk-label">Pricing</div>
+      <div class="lk-value">2-tier · Weekly preselected</div>
+      <div class="lk-meta">$4.99/wk + 7-day trial · $39.99/yr SAVE 85% · ~$0.77/wk · entitlement <code>jabwell_premium</code></div>
     </div>
   </div>
 
-  <!-- 03 TOKENS -->
-  <div class="pw-step">
-    <div class="pw-step-h"><span class="pw-step-n">03</span><h3>Бренд-токены · биндятся к выбранной палитре</h3></div>
-    <p class="pw-step-i">4 цвета — primary CTA, trust accent, light bg, dark bg. Сейчас pre-set под Variant A (Midnight Companion) как provisional. Переключаются после голосования.</p>
-    <div class="pw-tokens">
-      <div class="tk"><div class="tk-sw" style="background:#1B3A5F;"></div><label>PRIMARY / CTA</label><input type="text" value="#1B3A5F"></div>
-      <div class="tk"><div class="tk-sw" style="background:#F2A65A;"></div><label>TRUST / ACCENT</label><input type="text" value="#F2A65A"></div>
-      <div class="tk"><div class="tk-sw" style="background:#F5F1EA;"></div><label>LIGHT BG</label><input type="text" value="#F5F1EA"></div>
-      <div class="tk"><div class="tk-sw" style="background:#0E1A2B;"></div><label>DARK BG</label><input type="text" value="#0E1A2B"></div>
+  <!-- JTBD brief — locked via consilium 2026-04-30 (S1 funnel-entry hero) -->
+  <div class="pwb-brief">
+    <div class="br-eyebrow">02 · JTBD-бриф</div>
+    <h3>Что важно для S1 в 3am</h3>
+    <p class="br-intro">
+      Консилиум R3 (5 голосов: S1-persona / Copywriter / Compliance / Designer / Growth) определил, что зашить в каждый layout. Эти 8 значений — единый source-of-truth для всех 6 вариантов галереи ниже. <b>Variability только через надписи / таймлайн / выделяшки.</b> Hero-band (3 эксперта + price tags) — общий для всех, не варьируется.
+    </p>
+    <div class="br-grid">
+      <div class="br-field locked">
+        <div class="br-label">Brand / Product</div>
+        <div class="br-value">JabWell</div>
+      </div>
+      <div class="br-field locked">
+        <div class="br-label">Primary Audience</div>
+        <div class="br-value"><b>S1</b> · New GLP-1 patient · Maya 38, week 4 on Wegovy®</div>
+      </div>
+      <div class="br-field">
+        <div class="br-label">Core Pain</div>
+        <div class="br-value">3am, week 4, nausea day 4 после dose escalation. Reddit takes 6h. Endo $400 next visit.</div>
+      </div>
+      <div class="br-field">
+        <div class="br-label">Killer Feature</div>
+        <div class="br-value">AI Nurse + Dietitian + Side-Effect Coach — <b>FDA · AAFP · Mayo cited</b></div>
+      </div>
+      <div class="br-field locked">
+        <div class="br-label">Weekly Price</div>
+        <div class="br-value">$4.99/wk · 7-day trial · <b>preselected default</b></div>
+      </div>
+      <div class="br-field locked">
+        <div class="br-label">Annual Price</div>
+        <div class="br-value">$39.99/yr · ~$0.77/wk · <b>SAVE 85%</b></div>
+      </div>
+      <div class="br-field">
+        <div class="br-label">Value Anchor</div>
+        <div class="br-value">$400 endo + $200 dietitian + $150 coach = <b>$750+/visit replaced</b></div>
+      </div>
+      <div class="br-field">
+        <div class="br-label">Trust Line</div>
+        <div class="br-value">FDA-grounded · 8,400+ early-access · <b>Cancel anytime</b></div>
+      </div>
+    </div>
+    <div class="br-consilium">
+      <b>Consilium R3 votes (avg / 10):</b>
+      Audience S1 hero <b>9.4</b> · Pain «3am nausea» <b>9.2</b> · Killer «3 cited AI personas» <b>8.8</b> · Anchor «$750+/visit» <b>9.0</b> · Trust «FDA + 8,400+» <b>8.6</b>.
+      <b style="color:#E76F51;">Compliance flag:</b> AI personas labeled «AI Nurse / AI Dietitian / AI Coach» (NOT named humans à la CrySnap «Sarah Chen»). Никаких «cure», «medical-grade», «replace doctor».
     </div>
   </div>
 
-  <!-- 04 GALLERY -->
-  <div class="pw-step">
-    <div class="pw-step-h"><span class="pw-step-n">04</span><h3>Галерея пресетов <span style="font-size: 13px; color: #9CA0A8; font-weight: 400;">0 / 5+ pending</span></h3></div>
-    <p class="pw-step-i">5 trigger-based вариантов из <code>JabWell_Strategic_Plan_v1.md §7</code>: default S1 onboarding hard paywall · 3+ nausea events · plateau 4+ weeks · hair shedding flagged · OOP user · day-6 trial-end. Дополняем по одному на каждый sprint paywall'а.</p>
-    <div class="pw-todo">
-      <div class="todo-h">🎨 Gallery pending — 5 пресетов в очереди</div>
-      <div style="text-align:left; max-width: 520px; margin: 8px auto 0;">
-        <span class="slot-pin">P1 default · onboarding hard paywall</span>
-        <span class="slot-pin">P2 trigger · 3+ nausea events week 4</span>
-        <span class="slot-pin">P3 trigger · plateau 4+ weeks flat</span>
-        <span class="slot-pin">P4 trigger · hair shedding flagged</span>
-        <span class="slot-pin">P5 trigger · OOP cost-driven</span>
-        <span class="slot-pin">P6 trigger · day-6 trial-end conversion hammer</span>
+  <!-- Gallery: 6 variant cards with mini iPhone mockups (all share hero band) -->
+  <h3 style="margin-top:18px; font-size:18px; color:#1A1A1F;">Галерея · 6 вариантов <span style="font-size:12px; color:#5A5A60; font-weight:400;">общий hero · variability через надписи / таймлайн / выделяшки</span></h3>
+  <div class="pwb-gallery cols-6" id="pwb-gallery">
+    <!-- cards injected by JS -->
+  </div>
+
+  <!-- Deep dive: iPhone preview + block breakdown -->
+  <h3 style="margin-top:24px; font-size:18px; color:#1A1A1F;">📱 Deep dive · полный iPhone 16 Pro Max preview <span id="dd-variant-name" style="font-size:13px; color:#264653; font-weight:700;">V1 · Three Experts Weekly Trial</span></h3>
+  <div class="pwb-deep">
+    <!-- Full iPhone -->
+    <div class="pwb-iphone-frame">
+      <div class="pwb-iphone-screen">
+        <div class="pwb-iphone-notch"></div>
+        <div class="pwb-iphone-status"><span>9:41</span><span>•••• 􀙇 ◧</span></div>
+        <div class="pwb-iphone-content" id="iph-content">
+          <!-- variant content injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Block breakdown -->
+    <div>
+      <div class="pwb-blocks-list" id="iph-blocks">
+        <!-- block rows injected by JS -->
+      </div>
+
+      <div style="margin-top:16px; padding:14px 16px; background:white; border:1px solid #D0CFB8; border-radius:10px;">
+        <div style="font-size:11px; font-weight:800; color:#264653; letter-spacing:0.06em; margin-bottom:6px;">CONSILIUM R2 SCORE BREAKDOWN</div>
+        <div id="dd-score-breakdown" style="font-size:12px; line-height:1.6; color:#1A1A1F;"></div>
+      </div>
+
+      <div style="margin-top:10px; padding:14px 16px; background:#FBE9E5; border-radius:10px; border-left:4px solid #9B2226;" id="dd-compliance" hidden>
+        <div style="font-size:11px; font-weight:800; color:#9B2226; letter-spacing:0.06em; margin-bottom:4px;">⚠️ COMPLIANCE NOTE</div>
+        <div id="dd-compliance-text" style="font-size:12px; line-height:1.5; color:#1A1A1F;"></div>
       </div>
     </div>
   </div>
 
-  <!-- 05 DEEP DIVE -->
-  <div class="pw-step">
-    <div class="pw-step-h"><span class="pw-step-n">05</span><h3>Систематизатор пейволла · iPhone 16 Pro Max deep-dive</h3></div>
-    <p class="pw-step-i">Будет: real-frame iPhone 16 Pro Max (430×932 pt) с tweaks-панелью (hero/trust/features/anchor/timeline/compliance toggles + scheme/plans switcher). Подключаем после первого preset'а в gallery.</p>
-    <div class="pw-todo">
-      <div class="todo-h">📱 Deep-dive pending</div>
-      Активируется после первого preset'а в galery (04). Frame: iPhone 16 Pro Max 430×932 pt · scrollable inner content · tweaks panel справа.
+  <!-- Final ship strip -->
+  <div style="margin-top:18px; padding:14px 18px; background:linear-gradient(135deg, #264653 0%, #2A5560 100%); color:white; border-radius:12px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+    <div>
+      <div style="font-size:11px; opacity:.85; font-weight:800; letter-spacing:0.08em;">SHIP TO SWIFT</div>
+      <div style="font-size:14px; font-weight:700; margin-top:4px;">Recommended: <b>V1 default</b> + <b>V3 secondary</b> (трэк-paywall для S2/S3)</div>
+      <div style="font-size:11px; opacity:.78; margin-top:3px;">PaywallView.swift · enum <code style="background:rgba(255,255,255,.14);padding:1px 5px;border-radius:3px;">Variant { .threeExperts, .rationalAnchor }</code> · ColorCheck pattern</div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <a href="https://github.com/love8ko/13-jabwell/blob/main/JabWell/JabWell/Views/Paywall/PaywallView.swift" style="background:#E76F51; color:white; padding:8px 16px; border-radius:999px; font-size:12px; font-weight:800; text-decoration:none;">→ PaywallView.swift</a>
+      <a href="https://github.com/love8ko/13-jabwell/blob/main/%D0%BF%D0%B5%D0%B9%D0%B2%D0%BE%D0%BB%D0%BB%20%D1%80%D0%B5%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%81%D1%8B/paywall-layouts-consilium-2026-04-30.md" style="background:rgba(255,255,255,.14); color:white; padding:8px 16px; border-radius:999px; font-size:12px; font-weight:800; text-decoration:none;">📄 Consilium md</a>
     </div>
   </div>
-
-  <!-- EXPORT -->
-  <div class="pw-step">
-    <div class="pw-step-h"><span class="pw-step-n">⤓</span><h3>Экспорт · JSON · Swift · Claude prompt</h3></div>
-    <p class="pw-step-i">JSON snapshot state · Swift constants для <code>PaywallView.swift</code> (<code>jabwell_premium</code> entitlement, RC SDK) · Claude prompt — полный бриф для углубления в новой беседе.</p>
-    <div class="pw-todo">
-      <div class="todo-h">📋 Export pending</div>
-      Подключим после первого preset'а. Cribbed из crysnap workbench — JSON / Swift / Claude prompt buttons готовы к копированию.
-    </div>
-  </div>
-
-  <p class="section-intro" style="margin-top: 18px; font-size: 12px; color: #8a8a90;">
-    <b>Reference paywall:</b> <code>../07-colorcheck/ColorCheck/ColorCheck/Views/Paywall/PaywallView.swift</code> (golden source 7 слотов). <b>Pricing:</b> 2-tier Weekly $4.99 + 7-day trial DEFAULT preselected · Annual $39.99 SAVE 85%. <b>Entitlement:</b> <code>jabwell_premium</code>. <b>Product IDs:</b> <code>com.love8ko.jabwell.weekly</code> / <code>com.love8ko.jabwell.yearly</code>. <b>Offering:</b> <code>jabwell_default</code>.
-  </p>
 </section>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════
+// Paywall Workbench — variant data + render
+// ═══════════════════════════════════════════════════════════════════════
+const PWB_VARIANTS = [
+  {
+    id: 'V1',
+    name: 'Default · Weekly trial',
+    hook: 'Default headline «Your AI GLP-1 team» · 3-row timeline · Weekly preselected (orange highlight)',
+    score: 8.1,
+    weighted: 'gold',
+    tier: 'weekly',
+    audience: 's1',
+    headline: 'Your AI GLP-1 team — Nurse, Dietitian, Coach.',
+    subline: 'AI Nurse · AI Dietitian · AI Side-Effect Coach. Cited from FDA, AAFP, Mayo.',
+    trustLine: '✓ FDA-grounded · 8,400+ early-access patients',
+    anchorLine: '$400 endo + $200 dietitian + $150 coach · <b>Worth $750+/visit separately</b>',
+    features: [
+      { icon: '💬', title: 'AI Nurse 24/7', sub: 'Triage with FDA + AAFP citations.' },
+      { icon: '📊', title: 'Plateau detector', sub: 'Auto-built doctor visit PDF.' },
+      { icon: '💉', title: 'Site rotation visualizer', sub: 'Track injection map across body.' }
+    ],
+    weekly: { name: 'Weekly', price: '$4.99', sub: 'Cancel anytime', pill: '7-DAY TRIAL', pillColor: 'orange' },
+    annual: { name: 'Annual', price: '$39.99', sub: '~$0.77/wk', pill: 'SAVE 85%', pillColor: 'green' },
+    selected: 'weekly',
+    timeline: [
+      { day: 'Today', label: 'Full access · all 3 AI personas', icon: '✓' },
+      { day: 'Day 5', label: "We'll remind you trial is ending", icon: '🔔' },
+      { day: 'Day 7', label: '$4.99/week starts — cancel anytime', icon: '💳' }
+    ],
+    cta: 'Continue — Free for 7 Days',
+    ctaSub: 'Then $4.99/wk or $39.99/yr · Cancel anytime',
+    compliance: 'JabWell is an educational companion — not a medical device. Full disclaimer next.',
+    blocks: [
+      { num: 'BLOCK 1', name: '3-experts hero band', copy: 'AI Nurse · AI Dietitian · AI Coach с price tags strikethrough ($400 / $200 / $150) — value framing «replaces these costs», не false endorsement.', status: 'ok' },
+      { num: 'BLOCK 2', name: 'Headline (outcome)', copy: '«Your AI GLP-1 team — Nurse, Dietitian, Coach.» — sells the team, не feature.', status: 'ok' },
+      { num: 'BLOCK 3', name: 'Subline + Trust', copy: 'AI personas labeled · sources FDA · AAFP · Mayo inline (Block 4 merged).', status: 'ok' },
+      { num: 'BLOCK 6', name: 'Value Anchor', copy: '$400 + $200 + $150 = Worth $750+/visit separately. Math reads in 0.5s.', status: 'ok' },
+      { num: 'BLOCK 5', name: 'Pricing tiles', copy: 'Weekly $4.99 + 7-DAY TRIAL preselected (terracotta accent). Annual $39.99 SAVE 85% secondary.', status: 'ok' },
+      { num: 'BLOCK 7', name: 'Trial timeline', copy: 'Today / Day 5 / Day 7 — Apple ROSCA 3.1.2 transparency.', status: 'ok' },
+      { num: 'BLOCK 8', name: 'CTA', copy: '«Continue — Free for 7 Days» (Weekly preselected). Adapts to «Get Full Year — $39.99» if Annual tapped.', status: 'ok' },
+      { num: 'BLOCK 9', name: 'Compliance line', copy: 'Над CTA: «Educational companion — not a medical device». Trademark line в footer.', status: 'ok' }
+    ],
+    scoreText: '<b>S1: 8.5</b> · S2: 7.5 · S3: 7.0 · Designer: 8.5 · Copywriter: 8.5 · Compliance: 8.<br><b>Why win:</b> S1 closes JTBD «не одна, есть кому ответить» — funnel-entry hero. CrySnap-pattern proven across portfolio.',
+    complianceNote: 'AI personas labeling MUST be explicit (не «Sarah Chen, Pediatric Nurse» CrySnap-style). Use «AI Nurse Nora» / «AI Dietitian Mei» / «AI Coach Rhea» OR plain role-labels. Иллюстрации абстрактные.'
+  },
+  {
+    id: 'V2',
+    name: 'Annual preselected',
+    hook: 'Headline «for less than one endo visit» · 2-row timeline · Annual highlight (olive) · long-term framing',
+    score: 7.4,
+    tier: 'annual',
+    audience: 's2',
+    headline: 'Your AI GLP-1 team — for less than one endo visit.',
+    subline: 'AI Nurse · AI Dietitian · AI Side-Effect Coach. Annual access.',
+    trustLine: '✓ FDA-grounded · 8,400+ early-access patients',
+    anchorLine: '$400 endo + $200 dietitian + $150 coach = <b>$750+/visit · JabWell $39.99/year</b>',
+    features: [
+      { icon: '💬', title: 'AI Nurse 24/7', sub: 'Triage with FDA + AAFP citations.' },
+      { icon: '📊', title: 'Plateau detector', sub: 'Auto-built doctor visit PDF.' },
+      { icon: '💉', title: 'Site rotation visualizer', sub: 'Track injection map across body.' }
+    ],
+    weekly: { name: 'Weekly', price: '$4.99', sub: 'Cancel anytime', pill: '7-DAY TRIAL', pillColor: 'orange' },
+    annual: { name: 'Annual', price: '$39.99', sub: '~$0.77/wk', pill: 'SAVE 85%', pillColor: 'green' },
+    selected: 'annual',
+    timeline: [
+      { day: 'Today', label: 'Full year access — all 3 AI personas', icon: '✓' },
+      { day: '1 yr', label: '$39.99/year renews — cancel anytime', icon: '💳' }
+    ],
+    cta: 'Get Full Year — $39.99',
+    ctaSub: '$39.99 billed today · Cancel anytime in Settings',
+    compliance: 'JabWell is an educational companion — not a medical device. Full disclaimer next.',
+    blocks: [
+      { num: 'BLOCK 1', name: '3-experts hero band', copy: 'Same band as V1. Annual framing.', status: 'ok' },
+      { num: 'BLOCK 2', name: 'Headline', copy: '«For less than one endo visit» — anchor inline в headline.', status: 'ok' },
+      { num: 'BLOCK 5', name: 'Pricing tiles', copy: 'Annual $39.99 preselected (olive border). Weekly secondary.', status: 'ok' },
+      { num: 'BLOCK 7', name: 'Trial timeline', copy: 'No trial — Today / 1 year flow.', status: 'ok' },
+      { num: 'BLOCK 8', name: 'CTA', copy: '«Get Full Year — $39.99» — explicit price on CTA, Apple 3.1.2 dominant.', status: 'ok' }
+    ],
+    scoreText: '<b>S2: 8.5</b> (long-term commitment fit) · S3: 8.0 · Designer: 7.5.<br><b>Best for:</b> S2 plateau-trigger paywall (P3) where user уже опытен и готов на год. SOSA 2026 показывает что Annual T2P ниже но LTV выше.',
+    complianceNote: ''
+  },
+  {
+    id: 'V3',
+    name: 'Anchor headline',
+    hook: 'Headline = anchor math ($400/$200/$150 → $4.99/wk) · big teal anchor block выделяшка · 3-row timeline',
+    score: 8.5,
+    weighted: 'gold',
+    tier: 'weekly',
+    audience: 's3',
+    headline: '$400 endo. $200 dietitian. $150 coach.<br/><span style="color:#E76F51;">JabWell $4.99/wk.</span>',
+    subline: 'Same expertise, on-demand, cited.',
+    trustLine: '✓ FDA · AAFP · Mayo · Cleveland Clinic — every answer cited',
+    anchorLine: '<b>$750+/visit replaced</b> · 99% cheaper · Cancel anytime',
+    features: [
+      { icon: '💬', title: 'AI Nurse', sub: 'Replaces $400/visit endo Q&A — for week 4 nausea, dose questions.' },
+      { icon: '🥗', title: 'AI Dietitian', sub: 'Replaces $200/session protein + plateau plan.' },
+      { icon: '⚠️', title: 'AI Side-Effect Coach', sub: 'Replaces $150/telehealth — 3-tier triage.' }
+    ],
+    weekly: { name: 'Weekly', price: '$4.99', sub: '7-day free trial', pill: '7-DAY TRIAL', pillColor: 'orange' },
+    annual: { name: 'Annual', price: '$39.99', sub: '~$0.77/wk', pill: 'SAVE 85%', pillColor: 'green' },
+    selected: 'weekly',
+    timeline: [
+      { day: 'Today', label: 'Full access — start asking', icon: '✓' },
+      { day: 'Day 5', label: 'Trial-end reminder', icon: '🔔' },
+      { day: 'Day 7', label: '$4.99/week starts · cancel anytime', icon: '💳' }
+    ],
+    cta: 'Try Free for 7 Days',
+    ctaSub: 'Then $4.99/wk or $39.99/yr · Cancel anytime',
+    compliance: 'JabWell is an educational companion — not a medical device. Full disclaimer next.',
+    blocks: [
+      { num: 'BLOCK 6', name: 'Value Anchor (DOMINANT)', copy: 'Headline = anchor математика. Cost-driven JTBD точно попадает (S3 OOP $1300/mo killing).', status: 'ok' },
+      { num: 'BLOCK 2', name: 'Headline', copy: '«$400 / $200 / $150 → $4.99/wk» — читается за 1 секунду, не оставляет места для doubt.', status: 'ok' },
+      { num: 'BLOCK 4', name: 'Trust line', copy: 'Sources inline: FDA · AAFP · Mayo · Cleveland Clinic. Anti-hallucination.', status: 'ok' },
+      { num: 'BLOCK 5', name: 'Pricing', copy: 'Weekly preselected — но цена уже в headline.', status: 'ok' },
+      { num: 'BLOCK 7', name: 'Timeline', copy: 'Standard Today/Day 5/Day 7.', status: 'ok' },
+      { num: 'BLOCK 8', name: 'CTA', copy: '«Try Free for 7 Days» — outcome-focused.', status: 'ok' }
+    ],
+    scoreText: '<b>S3: 10.0</b> 🥇 · S2: 9.0 · Copywriter: 9.5 · Compliance: 9 · <b>Composite: 8.5</b><br><b>Best for:</b> P5 OOP cost-driven trigger (S3, 1.5M users) и P3 plateau (S2 retention). Loses S1 a little (цены пугают в day 0).',
+    complianceNote: ''
+  },
+  {
+    id: 'V4',
+    name: 'Sources highlight',
+    hook: 'Headline «Cited answers from FDA, AAFP, Mayo» · source-stack callout выделяшка · anti-hallucination',
+    score: 7.7,
+    tier: 'weekly',
+    audience: 's1',
+    headline: 'Cited answers from FDA, AAFP, Mayo, Cleveland Clinic.',
+    subline: 'Every AI response shows its source. No hallucinations.',
+    trustLine: '8,400+ early-access GLP-1 patients trust grounded answers',
+    anchorLine: 'Built on <b>30+ peer-reviewed sources</b> · ChatGPT не покажет источник, мы — да',
+    features: [
+      { icon: '🛡', title: 'FDA prescribing info', sub: 'Tier 1 source · all 6 GLP-1 brands.' },
+      { icon: '📖', title: 'AAFP + Mayo + Cleveland', sub: 'Patient-facing guidelines, weekly refreshed.' },
+      { icon: '🔬', title: '30+ PubMed studies', sub: 'On-device — no cloud privacy leak.' }
+    ],
+    weekly: { name: 'Weekly', price: '$4.99', sub: '7-day free trial', pill: '7-DAY TRIAL', pillColor: 'orange' },
+    annual: { name: 'Annual', price: '$39.99', sub: '~$0.77/wk', pill: 'SAVE 85%', pillColor: 'green' },
+    selected: 'weekly',
+    timeline: [
+      { day: 'Today', label: 'Source-cited answers from day 1', icon: '✓' },
+      { day: 'Day 5', label: 'Trial-end reminder', icon: '🔔' },
+      { day: 'Day 7', label: '$4.99/week · cancel anytime', icon: '💳' }
+    ],
+    cta: 'Try Free for 7 Days',
+    ctaSub: 'Then $4.99/wk or $39.99/yr · Cancel anytime',
+    compliance: 'JabWell is an educational companion — not a medical device. Full disclaimer next.',
+    blocks: [
+      { num: 'BLOCK 4', name: 'Trust Badge (DOMINANT)', copy: 'Source stack — наш wedge vs ChatGPT/Reddit. RAG compliance posture maximum.', status: 'ok' },
+      { num: 'BLOCK 2', name: 'Headline', copy: '«Cited answers from FDA, AAFP...» — anti-hallucination story.', status: 'ok' },
+      { num: 'BLOCK 5', name: 'Pricing', copy: 'Weekly preselected, standard.', status: 'ok' }
+    ],
+    scoreText: '<b>Compliance: 10</b> 🥇 (cleanest paywall) · S2: 8.5 · Designer: 7.0 (4 sources card occupies too much vertical).<br><b>Best for:</b> compliance-heavy spike OR Reddit-skeptical traffic where user pre-trusts cited claims.',
+    complianceNote: ''
+  },
+  {
+    id: 'V5',
+    name: '4-step timeline',
+    hook: 'Headline «Manage your first 90 days with clarity» · 4-row timeline (Today / Day 3 / Day 5 / Day 7) · concrete-dates выделяшка',
+    score: 7.2,
+    tier: 'weekly',
+    audience: 's1',
+    headline: 'Manage your first 90 days with clarity.',
+    subline: 'AI Nurse, dietitian, side-effect coach — for the GLP-1 journey.',
+    trustLine: '✓ Trusted by early-access GLP-1 patients',
+    anchorLine: 'Day 1 to month 12 — <b>one companion</b>, every dose escalation',
+    features: [
+      { icon: '📅', title: 'Track every dose escalation', sub: 'Site rotation + dose memory.' },
+      { icon: '💬', title: 'AI Nurse on-demand', sub: 'Cited from FDA + AAFP for every Q.' },
+      { icon: '📋', title: 'Doctor visit PDF', sub: 'Auto-built — print before next visit.' }
+    ],
+    weekly: { name: 'Weekly', price: '$4.99', sub: '7-day free trial', pill: '7-DAY TRIAL', pillColor: 'orange' },
+    annual: { name: 'Annual', price: '$39.99', sub: '~$0.77/wk', pill: 'SAVE 85%', pillColor: 'green' },
+    selected: 'weekly',
+    timeline: [
+      { day: 'Today', label: 'Full access · pre-injection prep tour', icon: '✓' },
+      { day: 'Day 3', label: 'First-injection check-in push', icon: '💉' },
+      { day: 'Day 5', label: 'Trial-end reminder', icon: '🔔' },
+      { day: 'Day 7', label: '$4.99/week starts · cancel anytime', icon: '💳' }
+    ],
+    cta: 'Begin My First 90 Days',
+    ctaSub: 'Then $4.99/wk or $39.99/yr · Cancel anytime',
+    compliance: 'JabWell is an educational companion — not a medical device. Full disclaimer next.',
+    blocks: [
+      { num: 'BLOCK 7', name: 'Trial Timeline (DOMINANT)', copy: 'Today / Day 3 / Day 5 / Day 7 — concrete dates снимают страх auto-charge у S1.', status: 'ok' },
+      { num: 'BLOCK 2', name: 'Headline', copy: '⚠️ Был «Without panic» (medical-relief claim). Rewrite to «Manage your first 90 days with clarity».', status: 'warn' }
+    ],
+    scoreText: '<b>S1: 8.5</b> (timeline снимает страх) · Compliance: 6 ⚠️ (headline rewrite required) · Composite: 7.2<br><b>Best for:</b> S1 funnel-entry — но ТОЛЬКО after compliance-approved headline.',
+    complianceNote: '⚠️ Original headline «Your first 90 days. Without panic.» близко к medical-relief claim. Rewritten to «Manage your first 90 days with clarity.» Apple medical review safer.'
+  },
+  {
+    id: 'V6',
+    name: 'Big-price minimal',
+    hook: 'Headline = price ($4.99/wk · 7 days free) · 2-row timeline · pricing-tile выделяшка · Apple 3.1.2 safest',
+    score: 7.9,
+    tier: 'weekly',
+    audience: 's2',
+    headline: '$4.99/week.<br/>7 days free.',
+    subline: 'Cancel anytime.',
+    trustLine: '',
+    anchorLine: 'Cited from FDA, AAFP, Mayo · Cancel any time before Day 7 · $0 charged today',
+    features: [],
+    weekly: { name: 'Weekly', price: '$4.99', sub: '7-day free trial', pill: '7-DAY TRIAL', pillColor: 'orange' },
+    annual: { name: 'Annual', price: '$39.99', sub: '~$0.77/wk', pill: 'SAVE 85%', pillColor: 'green' },
+    selected: 'weekly',
+    timeline: [
+      { day: 'Today', label: 'Full access', icon: '✓' },
+      { day: 'Day 7', label: '$4.99/week · cancel anytime', icon: '💳' }
+    ],
+    cta: 'Start Free — 7 Days',
+    ctaSub: '$0 charged today · Cancel anytime',
+    compliance: 'JabWell is an educational companion — not a medical device.',
+    blocks: [
+      { num: 'BLOCK 5', name: 'Pricing (DOMINANT)', copy: '$4.99 в headline — Apple 3.1.2 dominant-price compliance bulletproof.', status: 'ok' },
+      { num: 'BLOCK 8', name: 'CTA', copy: '«Start Free — 7 Days» — outcome-focused, минимум friction.', status: 'ok' }
+    ],
+    scoreText: '<b>Compliance: 10</b> · S3: 8.5 · S5: 8.0 · Designer: 8.0<br><b>Best for:</b> day-6 trial-end re-engagement OR App Store reviewer-friendly fallback if main variants flagged.',
+    complianceNote: ''
+  },
+];
+
+let pwbActiveIdx = 0;
+
+function renderPickbarChips() {
+  const c = document.getElementById('pb-chips');
+  c.innerHTML = PWB_VARIANTS.map((v, i) =>
+    `<span class="pb-chip ${i === pwbActiveIdx ? 'active' : ''}" onclick="pwbSelect(${i})">${v.id}</span>`
+  ).join('');
+}
+
+function renderGallery() {
+  const g = document.getElementById('pwb-gallery');
+  g.innerHTML = PWB_VARIANTS.map((v, i) => `
+    <div class="pwb-card ${i === pwbActiveIdx ? 'active' : ''}" onclick="pwbSelect(${i})">
+      <div class="pc-head">
+        <span class="pc-num">${v.id}</span>
+        <span class="pc-score ${v.weighted === 'gold' ? 'gold' : ''}">${v.weighted === 'gold' ? '🥇 ' : ''}${v.score}</span>
+      </div>
+      <div class="pc-name">${v.name}</div>
+      <div class="pc-tags">
+        <span class="pc-tag ${v.audience}">${v.audience.toUpperCase()}</span>
+        <span class="pc-tag ${v.tier}">${v.tier === 'weekly' ? 'Weekly trial' : 'Annual'}</span>
+      </div>
+      <div class="mini-pw">${miniMockHTML(v)}</div>
+      <div class="pc-hook">${v.hook}</div>
+    </div>
+  `).join('');
+}
+
+function miniMockHTML(v) {
+  // ALL variants share the 3-experts hero band — variability через надписи / таймлайн / выделяшки
+  const heroBlock = `
+    <div class="mp-band-experts">
+      <div class="mp-expert"><span class="mp-tag">$400</span></div>
+      <div class="mp-expert"><span class="mp-tag">$200</span></div>
+      <div class="mp-expert"><span class="mp-tag">$150</span></div>
+    </div>`;
+  const bigAnchor = v.id === 'V3' ? `<div class="mp-anchor-big">$400 + $200 + $150<br/>JabWell $4.99/wk</div>` : '';
+  const sourceStack = v.id === 'V4' ? `
+    <div class="mp-source-stack">
+      <div class="mp-source-line">🛡 FDA</div>
+      <div class="mp-source-line">📖 AAFP · Mayo</div>
+      <div class="mp-source-line">🔬 30+ PubMed</div>
+    </div>` : '';
+  const featuresBlock = v.features && v.features.length > 0 ? `
+    <div class="mp-features">
+      ${v.features.slice(0, 3).map(f => `<div class="mp-features-line">${f.icon} ${f.title}</div>`).join('')}
+    </div>` : '';
+  const headlineSize = v.id === 'V6' ? 'font-size:7px;' : '';
+  const ctaClass = v.tier === 'annual' ? 'mp-cta-teal' : 'mp-cta';
+  const sel = v.selected === 'annual' ? 'sel-year' : 'sel-week';
+  const otherSel = v.selected === 'annual' ? '' : '';
+
+  return `
+    <div class="mp-status"><span>9:41</span><span>•••</span></div>
+    ${heroBlock}
+    ${bigAnchor}
+    <div class="mp-headline" style="${headlineSize}">${v.headline.replace(/<br\/>/g, ' ').replace(/<[^>]+>/g, '').slice(0, 60)}</div>
+    ${v.trustLine ? `<div class="mp-trust">${v.trustLine.slice(0, 30)}</div>` : ''}
+    ${sourceStack}
+    ${featuresBlock}
+    <div class="mp-pricing">
+      <div class="mp-tier ${v.selected === 'weekly' ? 'sel-week' : ''}">
+        <div class="mp-tier-name">Weekly</div>
+        <div class="mp-tier-price">$4.99</div>
+      </div>
+      <div class="mp-tier ${v.selected === 'annual' ? 'sel-year' : ''}">
+        <div class="mp-tier-name">Annual</div>
+        <div class="mp-tier-price">$39.99</div>
+      </div>
+    </div>
+    <div class="mp-spacer"></div>
+    <div class="${ctaClass}">${v.cta.slice(0, 24)}</div>
+    <div class="mp-foot">Restore · Terms · Privacy</div>
+  `;
+}
+
+function renderDeepDive() {
+  const v = PWB_VARIANTS[pwbActiveIdx];
+  document.getElementById('pb-current').textContent = `${v.id} · ${v.name}`;
+  document.getElementById('dd-variant-name').textContent = `${v.id} · ${v.name}`;
+
+  // ALL variants share the 3-experts hero band
+  const expertsBand = `
+    <div class="iph-experts-band">
+      <div class="iph-expert">
+        <div class="iph-expert-avatar">🩺</div>
+        <span class="iph-expert-tag">$400</span>
+        <div class="iph-expert-name">AI Nurse</div>
+        <div class="iph-expert-role">Q&A · triage</div>
+      </div>
+      <div class="iph-expert">
+        <div class="iph-expert-avatar">🥗</div>
+        <span class="iph-expert-tag">$200</span>
+        <div class="iph-expert-name">AI Dietitian</div>
+        <div class="iph-expert-role">Protein · plateau</div>
+      </div>
+      <div class="iph-expert">
+        <div class="iph-expert-avatar">⚠️</div>
+        <span class="iph-expert-tag">$150</span>
+        <div class="iph-expert-name">AI Coach</div>
+        <div class="iph-expert-role">Side-effect</div>
+      </div>
+    </div>`;
+
+  const featuresHTML = v.features && v.features.length > 0 ? `
+    <div class="iph-features">
+      ${v.features.map(f => `
+        <div class="iph-feat-row">
+          <div class="iph-feat-icon">${f.icon}</div>
+          <div><b>${f.title}</b><div class="feat-sub">${f.sub}</div></div>
+        </div>
+      `).join('')}
+    </div>` : '';
+
+  const timelineHTML = `
+    <div class="iph-timeline">
+      ${v.timeline.map(t => `
+        <div class="iph-tl-row">
+          <div class="iph-tl-icon">${t.icon}</div>
+          <b>${t.day}</b><span>${t.label}</span>
+        </div>
+      `).join('')}
+    </div>`;
+
+  const pricingHTML = `
+    <div class="iph-pricing">
+      <div class="iph-tier ${v.selected === 'weekly' ? 'sel-week' : ''}">
+        ${v.weekly.pill ? `<span class="iph-tier-pill">${v.weekly.pill}</span>` : ''}
+        <div class="iph-tier-name">${v.weekly.name}</div>
+        <div class="iph-tier-price">${v.weekly.price}<small>/wk</small></div>
+        <div class="iph-tier-sub">${v.weekly.sub}</div>
+      </div>
+      <div class="iph-tier ${v.selected === 'annual' ? 'sel-year' : ''}">
+        ${v.annual.pill ? `<span class="iph-tier-pill ${v.annual.pillColor === 'green' ? 'green' : ''}">${v.annual.pill}</span>` : ''}
+        <div class="iph-tier-name">${v.annual.name}</div>
+        <div class="iph-tier-price">${v.annual.price}<small>/yr</small></div>
+        <div class="iph-tier-sub">${v.annual.sub}</div>
+      </div>
+    </div>`;
+
+  const ctaClass = v.selected === 'annual' ? 'iph-cta-teal' : 'iph-cta';
+
+  document.getElementById('iph-content').innerHTML = `
+    <div class="iph-close">✕</div>
+    ${expertsBand}
+    <div class="iph-headline">${v.headline}</div>
+    ${v.subline ? `<div class="iph-subline">${v.subline}</div>` : ''}
+    ${v.trustLine ? `<div class="iph-trust-line">${v.trustLine}</div>` : ''}
+    ${v.anchorLine ? `<div class="iph-anchor-line">${v.anchorLine}</div>` : ''}
+    ${featuresHTML}
+    ${pricingHTML}
+    ${timelineHTML}
+    <div class="iph-compliance">${v.compliance}</div>
+    <div class="${ctaClass}">${v.cta}</div>
+    <div class="iph-cta-sub">${v.ctaSub}</div>
+    <div class="iph-foot"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+  `;
+
+  // Block breakdown
+  document.getElementById('iph-blocks').innerHTML = v.blocks.map(b => `
+    <div class="pwb-blk">
+      <div class="blk-h">
+        <span class="blk-num">${b.num}</span>
+        <span class="blk-status ${b.status}">${b.status === 'ok' ? '✓ pass' : '⚠ flag'}</span>
+      </div>
+      <div class="blk-name">${b.name}</div>
+      <div class="blk-copy">${b.copy}</div>
+    </div>
+  `).join('');
+
+  // Score
+  document.getElementById('dd-score-breakdown').innerHTML = v.scoreText;
+
+  // Compliance
+  const cmp = document.getElementById('dd-compliance');
+  if (v.complianceNote) {
+    cmp.hidden = false;
+    document.getElementById('dd-compliance-text').textContent = v.complianceNote;
+  } else {
+    cmp.hidden = true;
+  }
+}
+
+function pwbSelect(idx) {
+  pwbActiveIdx = idx;
+  renderPickbarChips();
+  renderGallery();
+  renderDeepDive();
+  document.getElementById('pwb-pickbar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Initial render
+renderPickbarChips();
+renderGallery();
+renderDeepDive();
+</script>
 
 </body>
 </html>
