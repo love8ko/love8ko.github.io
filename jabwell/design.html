@@ -974,6 +974,12 @@
 
   .mini-pw { background: #F4F1DE; border-radius: 9px; aspect-ratio: 9/19; padding: 5px; display: flex; flex-direction: column; gap: 2.5px; font-size: 5px; line-height: 1.2; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(0,0,0,.18); }
   .mini-pw .mp-status { display: flex; justify-content: space-between; padding: 0 3px 1px; font-size: 3.5px; color: #1A1A1F; font-weight: 800; }
+  .mini-pw .mp-band-img { width: 100%; aspect-ratio: 1536 / 600; background: url('hero-band.png') center/cover; border-radius: 3px; position: relative; margin-top: 1px; }
+  .mini-pw .mp-band-img .mp-tag-abs { position: absolute; top: -2px; transform: translateX(-50%); background: #FBE9E5; color: #9B2226; font-size: 3.5px; padding: 0 1.5px; border-radius: 1.5px; text-decoration: line-through; font-weight: 800; }
+  .mini-pw .mp-band-img .mp-tag-abs.t1 { left: 16.5%; }
+  .mini-pw .mp-band-img .mp-tag-abs.t2 { left: 50%; }
+  .mini-pw .mp-band-img .mp-tag-abs.t3 { left: 83.5%; }
+  /* Legacy mini emoji-band — fallback */
   .mini-pw .mp-band-experts { display: flex; gap: 4px; justify-content: space-around; padding: 4px 2px 2px; }
   .mini-pw .mp-expert { width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, #DDA15E, #C18A4A); position: relative; flex-shrink: 0; box-shadow: 0 0 0 1px white; }
   .mini-pw .mp-tag { position: absolute; top: -4px; right: -3px; background: #FBE9E5; color: #9B2226; font-size: 4px; padding: 0 2px; border-radius: 2px; text-decoration: line-through; font-weight: 800; }
@@ -1008,6 +1014,19 @@
   .pwb-iphone-status { display: flex; justify-content: space-between; padding: 11px 18px 0; font-size: 11px; font-weight: 800; color: #1A1A1F; height: 32px; align-items: center; }
   .pwb-iphone-content { padding: 4px 12px 12px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
   .pwb-iphone-content .iph-close { align-self: flex-end; background: rgba(0,0,0,.06); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #5A5A60; }
+  /* Image-based hero band (V3 sketch · paywall-hero2.png cropped) */
+  .iph-band-img-wrap { position: relative; padding: 6px 0 0; }
+  .iph-band-img { width: 100%; aspect-ratio: 1536 / 600; background: url('hero-band.png') center/cover; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  .iph-band-tags { position: absolute; left: 0; right: 0; top: 6px; height: 0; pointer-events: none; }
+  .iph-band-tag { position: absolute; top: -2px; transform: translateX(-50%); background: #FBE9E5; color: #9B2226; font-size: 8px; padding: 1.5px 6px; border-radius: 3px; text-decoration: line-through; font-weight: 800; box-shadow: 0 1px 2px rgba(0,0,0,.12); white-space: nowrap; }
+  .iph-band-tag.t1 { left: 16.5%; }
+  .iph-band-tag.t2 { left: 50%; }
+  .iph-band-tag.t3 { left: 83.5%; }
+  .iph-band-labels { display: flex; padding: 4px 0 0; }
+  .iph-band-label { flex: 1; text-align: center; }
+  .iph-band-label b { display:block; font-size: 9px; font-weight: 800; color: #1A1A1F; line-height: 1.2; }
+  .iph-band-label span { display:block; font-size: 7.5px; color: #5A5A60; font-style: italic; line-height: 1.2; }
+  /* Legacy emoji-band — kept as fallback / для V1 watercolor когда сгенерим */
   .iph-experts-band { display: flex; justify-content: space-around; padding: 4px 0 2px; gap: 6px; }
   .iph-expert { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: 1; position: relative; }
   .iph-expert-avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, #DDA15E 0%, #C18A4A 100%); display: flex; align-items: center; justify-content: center; font-size: 19px; box-shadow: 0 2px 5px rgba(0,0,0,.10); }
@@ -2932,12 +2951,12 @@ function renderGallery() {
 }
 
 function miniMockHTML(v) {
-  // ALL variants share the 3-experts hero band — variability через надписи / таймлайн / выделяшки
+  // ALL variants share the 3-experts hero band image (V3 sketch · paywall-hero2.png cropped)
   const heroBlock = `
-    <div class="mp-band-experts">
-      <div class="mp-expert"><span class="mp-tag">$400</span></div>
-      <div class="mp-expert"><span class="mp-tag">$200</span></div>
-      <div class="mp-expert"><span class="mp-tag">$150</span></div>
+    <div class="mp-band-img">
+      <span class="mp-tag-abs t1">$400</span>
+      <span class="mp-tag-abs t2">$200</span>
+      <span class="mp-tag-abs t3">$150</span>
     </div>`;
   const bigAnchor = v.id === 'V3' ? `<div class="mp-anchor-big">$400 + $200 + $150<br/>JabWell $4.99/wk</div>` : '';
   const sourceStack = v.id === 'V4' ? `
@@ -2984,26 +3003,19 @@ function renderDeepDive() {
   document.getElementById('pb-current').textContent = `${v.id} · ${v.name}`;
   document.getElementById('dd-variant-name').textContent = `${v.id} · ${v.name}`;
 
-  // ALL variants share the 3-experts hero band
+  // ALL variants share the 3-experts hero band — V3 sketch image (paywall-hero2.png cropped)
   const expertsBand = `
-    <div class="iph-experts-band">
-      <div class="iph-expert">
-        <div class="iph-expert-avatar">🩺</div>
-        <span class="iph-expert-tag">$400</span>
-        <div class="iph-expert-name">AI Nurse</div>
-        <div class="iph-expert-role">Q&A · triage</div>
+    <div class="iph-band-img-wrap">
+      <div class="iph-band-img"></div>
+      <div class="iph-band-tags">
+        <span class="iph-band-tag t1">$400</span>
+        <span class="iph-band-tag t2">$200</span>
+        <span class="iph-band-tag t3">$150</span>
       </div>
-      <div class="iph-expert">
-        <div class="iph-expert-avatar">🥗</div>
-        <span class="iph-expert-tag">$200</span>
-        <div class="iph-expert-name">AI Dietitian</div>
-        <div class="iph-expert-role">Protein · plateau</div>
-      </div>
-      <div class="iph-expert">
-        <div class="iph-expert-avatar">⚠️</div>
-        <span class="iph-expert-tag">$150</span>
-        <div class="iph-expert-name">AI Coach</div>
-        <div class="iph-expert-role">Side-effect</div>
+      <div class="iph-band-labels">
+        <div class="iph-band-label"><b>AI Nurse</b><span>Q&A · triage</span></div>
+        <div class="iph-band-label"><b>AI Dietitian</b><span>Protein · plateau</span></div>
+        <div class="iph-band-label"><b>AI Coach</b><span>Side-effect</span></div>
       </div>
     </div>`;
 
