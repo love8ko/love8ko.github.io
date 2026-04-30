@@ -1159,6 +1159,8 @@
   <a href="#compliance">4 · Compliance</a>
   <span class="sep">·</span>
   <a href="#paywall-workbench" class="featured">💉 5 · Paywall</a>
+  <span class="sep">·</span>
+  <a href="#onboarding" class="featured">📲 6 · Onboarding</a>
 </nav>
 
 <h1>JabWell — Design Workbench</h1>
@@ -2692,6 +2694,509 @@
       <a href="https://github.com/love8ko/13-jabwell/blob/main/JabWell/JabWell/Views/Paywall/PaywallView.swift" style="background:#E76F51; color:white; padding:8px 16px; border-radius:999px; font-size:12px; font-weight:800; text-decoration:none;">→ PaywallView.swift</a>
       <a href="https://github.com/love8ko/13-jabwell/blob/main/%D0%BF%D0%B5%D0%B9%D0%B2%D0%BE%D0%BB%D0%BB%20%D1%80%D0%B5%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%81%D1%8B/paywall-layouts-consilium-2026-04-30.md" style="background:rgba(255,255,255,.14); color:white; padding:8px 16px; border-radius:999px; font-size:12px; font-weight:800; text-decoration:none;">📄 Consilium md</a>
     </div>
+  </div>
+</section>
+
+<section id="onboarding" style="background: #FAF7F2;">
+  <h2>6. Onboarding · Variant B locked <span class="pill" style="background:#264653; color:white;">✅ R1 · 9/9 unanimous · 6 slots</span></h2>
+
+  <div class="section-intro">
+    <strong>Source brief:</strong> <code>funnel-screenshots/onboarding-brief-round-1.md</code> (Variant B locked 2026-04-30 · consilium round 1 · 4 personas + 5 experts unanimous on B).
+    <strong>Hand-off:</strong> Slot 6 → fullScreenCover paywall (locked R3+R4+R5).
+    <strong>Projected:</strong> 70-80% completion · 42-48% T2P · 30%+ install→trial.
+  </div>
+
+  <style>
+    /* ═══ Onboarding section scoped styles ═══ */
+    .onb-locks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 24px; }
+    .onb-lock { background: white; border: 1px solid #e6e2d2; border-radius: 12px; padding: 12px 14px; font-size: 12px; line-height: 1.45; }
+    .onb-lock strong { color: #264653; font-weight: 800; display: block; margin-bottom: 2px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+    @media (max-width: 720px) { .onb-locks { grid-template-columns: 1fr; } }
+
+    .onb-slot { display: grid; grid-template-columns: 340px 1fr; gap: 24px; align-items: start; margin-bottom: 32px; padding-bottom: 28px; border-bottom: 1px solid #e6e2d2; }
+    .onb-slot:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    @media (max-width: 820px) { .onb-slot { grid-template-columns: 1fr; } }
+
+    /* Phone frame */
+    .onb-phone {
+      width: 340px; max-width: 100%; height: 720px;
+      background: #F4F1DE; border-radius: 36px;
+      border: 8px solid #1a1a1f; box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+      overflow: hidden; position: relative;
+      font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    }
+    .onb-phone-status { display: flex; justify-content: space-between; align-items: center; padding: 8px 18px 4px; font-size: 10px; font-weight: 700; color: #264653; }
+    .onb-phone-screen { padding: 6px 18px 24px; height: calc(100% - 32px); overflow-y: auto; }
+    .onb-phone-screen::-webkit-scrollbar { width: 4px; }
+    .onb-phone-screen::-webkit-scrollbar-thumb { background: rgba(38,70,83,0.2); border-radius: 2px; }
+
+    /* Slot copy */
+    .onb-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 0.12em; color: #E76F51; text-transform: uppercase; margin: 12px 0 6px; }
+    .onb-h { font-size: 22px; font-weight: 800; line-height: 1.18; color: #264653; font-family: -apple-system, "SF Pro Rounded", sans-serif; margin-bottom: 8px; }
+    .onb-sub { font-size: 13px; line-height: 1.5; color: #4a4a55; margin-bottom: 14px; }
+    .onb-cta { width: 100%; background: #264653; color: white; border: none; border-radius: 14px; padding: 13px; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer; box-shadow: 0 2px 8px rgba(38,70,83,0.22); }
+    .onb-cta-secondary { width: 100%; background: transparent; color: #264653; border: 1px solid #264653; border-radius: 14px; padding: 11px; font-size: 13px; font-weight: 700; font-family: inherit; cursor: pointer; margin-top: 8px; }
+    .onb-disclaimer { font-size: 10px; line-height: 1.45; color: #6a6a70; margin-top: 12px; padding: 8px 10px; background: rgba(38,70,83,0.04); border-radius: 8px; }
+
+    /* Pain hero */
+    .onb-pain-img { width: calc(100% + 36px); margin: -6px -18px 0; height: 220px; object-fit: cover; display: block; }
+
+    /* JTBD grid */
+    .onb-jtbd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+    .onb-jtbd-card { background: white; border: 1px solid #e6e2d2; border-radius: 12px; padding: 10px; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .onb-jtbd-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(38,70,83,0.10); }
+    .onb-jtbd-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; display: block; margin-bottom: 6px; }
+    .onb-jtbd-card .t { font-size: 11px; font-weight: 800; color: #264653; line-height: 1.2; margin-bottom: 2px; }
+    .onb-jtbd-card .s { font-size: 9.5px; color: #6a6a70; line-height: 1.3; }
+    .onb-jtbd-card.span2 { grid-column: span 2; }
+    .onb-jtbd-card.span2 { display: flex; gap: 10px; padding: 8px; }
+    .onb-jtbd-card.span2 img { width: 80px; height: 80px; flex-shrink: 0; margin-bottom: 0; }
+    .onb-jtbd-card.span2 .body-col { flex: 1; align-self: center; }
+
+    /* Source badges (Method) */
+    .onb-source-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .onb-source-pill { font-size: 10px; font-weight: 800; padding: 6px 10px; background: white; border: 1px solid #264653; border-radius: 999px; color: #264653; cursor: pointer; transition: background 0.15s ease; }
+    .onb-source-pill:hover { background: #264653; color: white; }
+    .onb-source-tip { font-size: 10px; color: #4a4a55; line-height: 1.5; padding: 10px; background: rgba(38,70,83,0.04); border-radius: 10px; margin-bottom: 12px; }
+
+    /* Personalization form */
+    .onb-form-label { font-size: 11px; font-weight: 800; color: #264653; text-transform: uppercase; letter-spacing: 0.05em; margin: 10px 0 6px; }
+    .onb-chips-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+    .onb-chip { font-size: 10.5px; font-weight: 700; padding: 6px 10px; background: white; border: 1px solid #e6e2d2; border-radius: 999px; color: #4a4a55; cursor: pointer; }
+    .onb-chip.sel { background: #264653; color: white; border-color: #264653; }
+    .onb-chip.compounded { border-color: #E76F51; color: #E76F51; font-style: italic; }
+    .onb-chip.compounded.sel { background: #E76F51; color: white; }
+    .onb-slider-mock { height: 6px; background: #e6e2d2; border-radius: 3px; margin: 12px 0 6px; position: relative; }
+    .onb-slider-mock::after { content: ""; position: absolute; left: 32%; top: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; background: #264653; border-radius: 50%; box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
+    .onb-slider-label { font-size: 10px; color: #6a6a70; }
+    .onb-skip-row { display: flex; gap: 8px; margin-top: 16px; }
+    .onb-skip-row .onb-cta-secondary { flex: 1; margin-top: 0; }
+    .onb-stays { font-size: 9.5px; color: #6a6a70; text-align: center; margin-top: 6px; }
+
+    /* WOW chat */
+    .onb-chat-area { background: white; border-radius: 14px; padding: 12px; margin-bottom: 14px; border: 1px solid #e6e2d2; position: relative; }
+    .onb-chat-q { background: #E76F51; color: white; padding: 8px 11px; border-radius: 12px 12px 4px 12px; font-size: 11px; font-weight: 600; align-self: flex-end; max-width: 80%; margin-left: auto; margin-bottom: 8px; line-height: 1.35; }
+    .onb-chat-a { background: rgba(38,70,83,0.06); padding: 10px 12px; border-radius: 12px 12px 12px 4px; font-size: 11px; line-height: 1.45; color: #1a1a1f; max-width: 88%; margin-bottom: 8px; }
+    .onb-tier { padding: 6px 8px; border-radius: 8px; margin: 4px 0; font-size: 10.5px; line-height: 1.4; }
+    .onb-tier.safe { background: rgba(96,108,56,0.12); color: #4a5a2c; border-left: 3px solid #606C38; }
+    .onb-tier.caution { background: rgba(221,162,94,0.18); color: #6a4f1c; border-left: 3px solid #DDA15E; }
+    .onb-tier.alert { background: rgba(155,34,38,0.12); color: #7a2226; border-left: 3px solid #9B2226; font-weight: 700; }
+    .onb-source-inline { font-size: 9.5px; color: #264653; padding: 4px 8px; background: rgba(38,70,83,0.08); border-radius: 999px; display: inline-block; margin-top: 6px; cursor: pointer; }
+    .onb-chat-disabled-input { background: #f3f3f6; padding: 10px 12px; border-radius: 999px; font-size: 11px; color: #8a8a90; display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+    .onb-chat-disabled-input::after { content: "🔒"; font-size: 11px; }
+
+    /* Sample mock cards */
+    .onb-mock-card { background: white; border-radius: 14px; padding: 12px; border: 1px solid #e6e2d2; margin-bottom: 10px; position: relative; overflow: hidden; }
+    .onb-mock-card .label { font-size: 9.5px; font-weight: 800; color: #264653; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+    .onb-mock-card .big { font-size: 16px; font-weight: 800; color: #264653; line-height: 1.2; margin-bottom: 4px; }
+    .onb-mock-card .meta { font-size: 11px; color: #4a4a55; margin-bottom: 4px; }
+    .onb-mock-card .caveat { font-size: 9.5px; color: #6a6a70; margin-top: 6px; line-height: 1.35; }
+    .onb-sample-ribbon {
+      position: absolute; top: 14px; right: -28px;
+      transform: rotate(30deg); transform-origin: center;
+      background: rgba(155,34,38,0.18); color: rgba(155,34,38,0.7);
+      font-size: 8.5px; font-weight: 800; letter-spacing: 0.18em;
+      padding: 2px 32px; pointer-events: none; user-select: none;
+    }
+
+    /* 3-month range bar */
+    .onb-range { padding: 10px 4px; }
+    .onb-range-bar { position: relative; height: 14px; background: #e6e2d2; border-radius: 999px; margin: 8px 0 6px; }
+    .onb-range-bar .fill { position: absolute; left: 30%; right: 12%; top: 0; bottom: 0; background: linear-gradient(90deg, #DDA15E 0%, #606C38 100%); border-radius: 999px; }
+    .onb-range-bar .marker { position: absolute; top: -4px; bottom: -4px; width: 2px; background: #264653; }
+    .onb-range-axis { display: flex; justify-content: space-between; font-size: 9.5px; color: #6a6a70; }
+
+    /* Bridge recap */
+    .onb-recap { background: white; border-radius: 14px; padding: 14px; border: 1px solid #e6e2d2; margin-bottom: 10px; }
+    .onb-recap .rec-row { font-size: 12px; color: #4a4a55; margin-bottom: 4px; line-height: 1.45; }
+    .onb-recap .rec-row strong { color: #264653; }
+    .onb-team-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 12px 0; }
+    .onb-team-card { background: rgba(231,111,81,0.08); border: 1px solid #E76F51; border-radius: 10px; padding: 8px 6px; text-align: center; }
+    .onb-team-card .name { font-size: 11px; font-weight: 800; color: #264653; }
+    .onb-team-card .role { font-size: 9px; color: #6a6a70; font-style: italic; margin-top: 2px; }
+    .onb-trademark { font-size: 8.5px; color: #8a8a90; line-height: 1.4; margin-top: 10px; }
+
+    /* Rationale panel */
+    .onb-rationale { padding: 4px 0; }
+    .onb-rationale h4 { font-size: 14px; font-weight: 800; color: #264653; font-family: -apple-system, "SF Pro Rounded", sans-serif; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .onb-rationale h4 .num { background: #264653; color: white; font-size: 12px; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; }
+    .onb-rationale .role-pill { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 999px; background: rgba(38,70,83,0.08); color: #264653; font-weight: 700; margin-left: auto; }
+    .onb-rationale dl { margin-top: 8px; }
+    .onb-rationale dt { font-size: 10px; font-weight: 800; color: #264653; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 10px; }
+    .onb-rationale dd { font-size: 12px; line-height: 1.5; color: #4a4a55; margin-top: 3px; }
+    .onb-quote { font-size: 12px; font-style: italic; color: #4a4a55; padding-left: 10px; border-left: 2px solid #E76F51; margin: 8px 0; line-height: 1.5; }
+    .onb-quote cite { font-style: normal; font-weight: 700; color: #264653; font-size: 11px; }
+    .onb-locks-list { margin-top: 8px; }
+    .onb-locks-list li { font-size: 11.5px; line-height: 1.5; color: #4a4a55; margin-bottom: 4px; padding-left: 16px; position: relative; list-style: none; }
+    .onb-locks-list li::before { content: "✓"; position: absolute; left: 0; color: #606C38; font-weight: 800; }
+  </style>
+
+  <h3 style="margin-top: 8px; margin-bottom: 12px;">Round-1 consensus locks (top 8 of 22)</h3>
+  <div class="onb-locks">
+    <div class="onb-lock"><strong>Variant B unanimous</strong>9/9 voices · avg 8.0/10 · A=Mid risk dropped, C=Mid-High dropped (cold-open quiz breaks Fogg ability axis at 3am)</div>
+    <div class="onb-lock"><strong>Pain copy locked</strong>«3 a.m. and you don't know if this is normal.» — Maya «I literally gasped», ASO branded-search win, Behavioral empathy-mirror</div>
+    <div class="onb-lock"><strong>Slot 2 5-card grid non-negotiable</strong>Without it Linda+Jenny S2 bounce on slot 1 «for newbies». Hair card adds month-11 regrowth detail (Linda survival anchor)</div>
+    <div class="onb-lock"><strong>Slot 5 chat-then-flip</strong>Cara Care +31% T2P vs tab-switcher -9%. Chat default chip «I've had nausea 3 days — should I worry?» (present-tense suffering, Maya literal)</div>
+    <div class="onb-lock"><strong>Slot 5 SAMPLE ribbon mandatory</strong>30% opacity diagonal on every mock card (DTC CMO «Mochi got TikTok backlash without watermark»; Compliance: caption can be cropped by Apple reviewer)</div>
+    <div class="onb-lock"><strong>Slot 5 «Typical 3 months» range</strong>Replaces old Trend mock — FDA-label data, brand-specific, NOT JabWell efficacy claim, NOT personalized prediction</div>
+    <div class="onb-lock"><strong>Slot 6 Bridge no pricing</strong>NO $750, NO trial, NO price. Behavioral: pre-paywall anchor creates 2nd-paywall fatigue. Compliance: «AI educational team» (not «medical team»)</div>
+    <div class="onb-lock"><strong>Compounded chip equal-weight</strong>Split into «Compounded semaglutide» + «Compounded tirzepatide» (Marcus S3) — never 7th-in-list secondary tab</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SLOT 1 — PAIN -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div class="onb-slot">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <img class="onb-pain-img" src="img/onboarding/01-pain-hero.png" alt="Pain hero" />
+        <div class="onb-eyebrow">JabWell · Step 1 of 6</div>
+        <div class="onb-h">3 a.m. and you don't know if this is normal.</div>
+        <div class="onb-sub">Side effects, dose questions, plateaus, hair changes — most apps just track your shots. We coach you through them.</div>
+        <button class="onb-cta">I've been there →</button>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">1</span>Pain · PAS Problem-Agitate <span class="role-pill">S1 anchor</span></h4>
+      <dl>
+        <dt>Persona target</dt>
+        <dd>S1 Maya 34yo, just escalated to 7.5mg Zepbound®, opens app at 3am because she's nauseous and scared.</dd>
+        <dt>Round-1 quote (Maya)</dt>
+      </dl>
+      <div class="onb-quote">«I literally gasped — that's me at 3am.» <cite>— Maya, S1 round 1</cite></div>
+      <dl>
+        <dt>Inclusion safety</dt>
+        <dd>Linda S2 said «infantile to month-12 user» — but slot 2 5-card grid immediately redeems. Without slot 2, slot 1 falls.</dd>
+        <dt>Visual contrast</dt>
+        <dd>ASO call: contrast App Store Screenshot 1 retention dashboard (problem→outcome arc).</dd>
+      </dl>
+      <ul class="onb-locks-list">
+        <li>Stat-free copy (Behavioral: stats trigger defensive backlash in 3am opens)</li>
+        <li>Subject reads «alert at unusual hour», not panicked</li>
+        <li>No medical objects in foreground (compliance hard-gate)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SLOT 2 — TRUST 5 JTBD -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div class="onb-slot">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">JabWell · Step 2 of 6</div>
+        <div class="onb-h">Built for every stage.</div>
+        <div class="onb-sub">First injection. First plateau. First hair brush filling with strands. Tap the one that's you.</div>
+        <div class="onb-jtbd-grid">
+          <div class="onb-jtbd-card">
+            <img src="img/onboarding/02-jtbd-first.png" alt="First prescription" />
+            <div class="t">First injection 💉</div>
+            <div class="s">Day 1, scared</div>
+          </div>
+          <div class="onb-jtbd-card">
+            <img src="img/onboarding/02-jtbd-nausea.png" alt="Nausea" />
+            <div class="t">Side-effect crisis 🤢</div>
+            <div class="s">Week 4 nausea</div>
+          </div>
+          <div class="onb-jtbd-card">
+            <img src="img/onboarding/02-jtbd-plateau.png" alt="Plateau" />
+            <div class="t">Plateau 📊</div>
+            <div class="s">Stuck 4+ weeks</div>
+          </div>
+          <div class="onb-jtbd-card">
+            <img src="img/onboarding/02-jtbd-hair.png" alt="Hair" />
+            <div class="t">Hair shedding 💇</div>
+            <div class="s">Month-7 peak, month-11 recovery</div>
+          </div>
+          <div class="onb-jtbd-card span2">
+            <img src="img/onboarding/02-jtbd-cost.png" alt="Cost" />
+            <div class="body-col">
+              <div class="t">Cost-driven 💸</div>
+              <div class="s">$1,300/mo killing it · compare compounded</div>
+            </div>
+          </div>
+        </div>
+        <button class="onb-cta">Continue →</button>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">2</span>Trust · JTBD-recognition <span class="role-pill">All 5 personas</span></h4>
+      <dl>
+        <dt>Why this slot is non-negotiable</dt>
+        <dd>It's what redeems slot 1 for S2 (Linda 12mo) and S3 (Marcus compounded). Without it, S2 bounces thinking «for first-prescription only».</dd>
+        <dt>Round-1 quote (Linda)</dt>
+      </dl>
+      <div class="onb-quote">«I can triage newbie content in 3 seconds.» <cite>— Linda S2 12-mo</cite></div>
+      <dl>
+        <dt>Hair card refit (round 1)</dt>
+        <dd>Linda demanded «Month-11 regrowth check» as detail line — survival anchor for hair S2 recovery moment, not just shedding peak.</dd>
+        <dt>Cost card placement</dt>
+        <dd>span-2 wide tile (Marcus): equal visual weight to single-tile JTBDs. Sets up paywall trigger «Compare compounded» downstream.</dd>
+        <dt>Tap behavior</dt>
+        <dd>Tap any card → bottom-sheet with concrete app feature snippet (Plateau Detector + 4 things + Rx question template per Jenny round-1 demand). Sets <code>primaryConcern</code> AppStorage for slot 4 echo + paywall trigger copy.</dd>
+      </dl>
+      <ul class="onb-locks-list">
+        <li>5 cards exactly · Trust slot CONSILIUM REQUIRED · cannot be merged into WOW caption (Variant A failed for this reason)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SLOT 3 — METHOD AUTHORITY -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div class="onb-slot">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">JabWell · Step 3 of 6</div>
+        <div class="onb-h">Answers backed by sources.</div>
+        <div class="onb-sub">Every AI Nurse response cites FDA prescribing info, AAFP guidelines, Mayo Clinic, Cleveland Clinic, and peer-reviewed studies.</div>
+        <div class="onb-source-row">
+          <span class="onb-source-pill">FDA</span>
+          <span class="onb-source-pill">AAFP</span>
+          <span class="onb-source-pill">Mayo</span>
+          <span class="onb-source-pill">Cleveland Clinic</span>
+          <span class="onb-source-pill">PubMed</span>
+        </div>
+        <div class="onb-source-tip">
+          <strong style="color:#264653;">Tap any badge</strong> to see an example citation. We don't make things up — RAG-grounded, not generic chatbot.
+        </div>
+        <div style="background:white; border-radius: 12px; padding: 12px; border: 1px solid #e6e2d2; margin-bottom: 12px;">
+          <div style="font-size:10px; font-weight: 800; color: #264653; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Sample citation · FDA badge tap</div>
+          <div style="font-size:11px; line-height: 1.4; color: #4a4a55;">«Most common adverse reactions (Wegovy® ≥5%): nausea (44%), diarrhea, vomiting, constipation.» <span class="onb-source-inline">DailyMed NDA 215256</span></div>
+        </div>
+        <div class="onb-disclaimer">Educational, not medical advice. Consult your prescriber.</div>
+        <button class="onb-cta" style="margin-top: 14px;">Continue →</button>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">3</span>Method · Authority proof <span class="role-pill">Compliance non-negotiable</span></h4>
+      <dl>
+        <dt>Why this slot is locked at 6 (not compressed to 5)</dt>
+        <dd>Conversion expert wanted to merge Method into slot 5 caption to ship 5 screens. Compliance + ASO + Marcus all blocked: this is FTC §255 substantiation requirement + S3 trust earner BEFORE data collection. Compression rejected.</dd>
+        <dt>Round-1 quote (Marcus)</dt>
+      </dl>
+      <div class="onb-quote">«Trust earner is showing me FDA · AAFP · Mayo before you ask for a single tap.» <cite>— Marcus S3</cite></div>
+      <ul class="onb-locks-list">
+        <li>All 5 badges tappable → 1-tap to PMID + DailyMed example (compliance §255)</li>
+        <li>Persistent disclaimer ≥10pt at 4.5:1 contrast (DTC CMO Cerebral 2024 FTC ref)</li>
+        <li>NEVER tap-to-expand / collapse-disclosure pattern</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SLOT 4 — PERSONALIZATION -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div class="onb-slot">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">JabWell · Step 4 of 6</div>
+        <div class="onb-h">Tell us your story.</div>
+        <div class="onb-sub">3 quick taps — we'll tailor your AI team's first questions.</div>
+
+        <div class="onb-form-label">Your medication</div>
+        <div class="onb-chips-row">
+          <span class="onb-chip">Wegovy®</span>
+          <span class="onb-chip sel">Zepbound®</span>
+          <span class="onb-chip">Mounjaro®</span>
+          <span class="onb-chip">Ozempic®</span>
+          <span class="onb-chip">Rybelsus®</span>
+          <span class="onb-chip">Saxenda®</span>
+          <span class="onb-chip compounded">Compounded semaglutide</span>
+          <span class="onb-chip compounded">Compounded tirzepatide</span>
+          <span class="onb-chip">Considering</span>
+        </div>
+
+        <div class="onb-form-label">Weeks on treatment</div>
+        <div class="onb-slider-mock"></div>
+        <div style="display:flex; justify-content: space-between; margin-top: 4px;">
+          <span class="onb-slider-label">Just starting</span>
+          <span class="onb-slider-label" style="font-weight:800; color:#264653;">5 weeks</span>
+          <span class="onb-slider-label">12+ months</span>
+        </div>
+
+        <div class="onb-form-label">Top concern (auto-filled from step 2)</div>
+        <div class="onb-chips-row">
+          <span class="onb-chip sel">Side-effects</span>
+          <span class="onb-chip">+ Plateau</span>
+        </div>
+
+        <div class="onb-skip-row">
+          <button class="onb-cta-secondary">Set up later — start tour</button>
+          <button class="onb-cta" style="flex:1;">Continue →</button>
+        </div>
+        <div class="onb-stays">🔒 Stays on device</div>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">4</span>Personalization · Cialdini commit <span class="role-pill">Skip-friendly</span></h4>
+      <dl>
+        <dt>3 fields, no more</dt>
+        <dd>Brand chip · Weeks slider · Primary concern (auto-filled from slot 2 if user tapped). Drives §6.2.a multi-mode mocks at slot 5 + paywall trigger copy + AI Nurse system prompt.</dd>
+        <dt>Compounded equal-weight</dt>
+        <dd>Marcus round 1: «Equal-weight or 7th = uninstall.» Split into semaglutide + tirzepatide (different dosing protocols).</dd>
+        <dt>Skip CTA wording</dt>
+        <dd>Not «I'll tell you later» (Behavioral: destroys consistency commit). Action-framed «Set up later — start tour», equal visual weight (not dark-pattern grey), inline «Stays on device» (Apple 5.1.1 PII transparency).</dd>
+      </dl>
+      <ul class="onb-locks-list">
+        <li>NO target weight question (FTC weight-loss substantiation flag — defer to post-purchase)</li>
+        <li>NO height / age / gender (PII risk + low-value pre-paywall)</li>
+        <li>3 fields max — fragments to Noom-zone above 5</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SLOT 5 — WOW MULTI-PAYLOAD -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div class="onb-slot">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">JabWell · Step 5 of 6</div>
+        <div class="onb-h">Try it — ask anything.</div>
+        <div class="onb-sub" style="margin-bottom: 10px;">Tap a question. AI Nurse answers in 2 seconds, backed by FDA + Mayo.</div>
+
+        <!-- Chat -->
+        <div class="onb-chat-area">
+          <div class="onb-chat-q">I've had nausea 3 days — should I worry?</div>
+          <div class="onb-chat-a">
+            <div class="onb-tier safe"><strong>Common at week 4-5.</strong> ~44% of Wegovy® users experience nausea per FDA label.</div>
+            <div class="onb-tier caution"><strong>Try:</strong> smaller meals, ginger tea, slow protein intro, electrolytes. Avoid greasy foods 24h.</div>
+            <div class="onb-tier alert"><strong>Call 911 / your prescriber TODAY if:</strong> vomiting &gt;24h · severe abdominal pain · signs of pancreatitis · dehydration.</div>
+            <span class="onb-source-inline">📚 FDA Wegovy® label · DailyMed NDA 215256</span>
+          </div>
+          <div class="onb-chat-disabled-input">Unlock to ask your own →</div>
+        </div>
+        <div class="onb-disclaimer" style="margin-bottom: 14px;">Educational, not medical advice. Consult your prescriber.</div>
+
+        <!-- Today mock (multi-mode) -->
+        <div class="onb-mock-card">
+          <div class="onb-sample-ribbon">SAMPLE</div>
+          <div class="label">Today · sample patient</div>
+          <div class="big">Day 35 · Zepbound® · 7.5 mg</div>
+          <div class="meta">Next dose: Friday at 3:00 PM · in 2 days</div>
+          <div class="meta">Estimated level: rising → steady-state ~Day 40</div>
+          <div class="caveat">Multi-mode by your weeks bucket. Just-starting / 1-3 mo / 3+ mo / Compounded — copy adapts. <strong>Sample data — not your forecast.</strong></div>
+        </div>
+
+        <!-- 3-month range -->
+        <div class="onb-mock-card">
+          <div class="onb-sample-ribbon">SAMPLE</div>
+          <div class="label">Typical first 3 months · per Wegovy® FDA label</div>
+          <div class="onb-range">
+            <div class="onb-range-bar">
+              <div class="fill"></div>
+              <div class="marker" style="left: 30%;"></div>
+              <div class="marker" style="left: 88%;"></div>
+            </div>
+            <div class="onb-range-axis"><span>0%</span><span>−5%</span><span>−12%</span><span>−15%</span></div>
+          </div>
+          <div class="meta" style="font-size:11px;">Most users in clinical trials saw <strong>5-12% body-weight change</strong> in the first 3 months on 2.4 mg dose.</div>
+          <span class="onb-source-inline">📚 STEP-1 NCT03548935 · DailyMed</span>
+          <div class="caveat" style="margin-top:8px;"><strong>Sample data — not your forecast.</strong> Educational, not medical advice. Range varies by dose, individual factors.</div>
+        </div>
+
+        <button class="onb-cta">See how this works for you →</button>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">5</span>WOW · Multi-payload chat-then-flip <span class="role-pill">Primary moment</span></h4>
+      <dl>
+        <dt>Mechanic locked</dt>
+        <dd>Chat-then-flip (Cara Care +31% T2P vs tab-switcher -9%). Chat first → after response, flip card reveals Today mock + Typical 3-month range vertically.</dd>
+        <dt>Why 3 payloads addresses user's «consultation / weight drops / metrics tracked»</dt>
+        <dd><strong>Chat</strong> = consultation (3-tier with ER triggers). <strong>Today mock</strong> = metrics (Day X · brand · countdown · estimated level). <strong>3-month range</strong> = «what results might look like» — FDA-label-grounded, not personalized prediction.</dd>
+        <dt>Round-1 quote (Behavioral)</dt>
+      </dl>
+      <div class="onb-quote">«Multi-WOW shifts anchoring class from ChatGPT-free to endo-dietitian-nurse $750. Single chat keeps you compared to free.» <cite>— Behavioral psychologist</cite></div>
+      <dl>
+        <dt>Compliance edge — 3-month range</dt>
+        <dd>Per-brand FDA-label range bar (Wegovy 5-12% / Zepbound 6-15% / Compounded mirrors with FDA-flag caveat). NOT JabWell efficacy claim. NOT personalized prediction («reach X by date» rejected upstream). User asked «прогноз за 3 месяца» — this is the compliance-safe answer.</dd>
+        <dt>Dead-end input lock</dt>
+        <dd>«Unlock to ask your own →» visible from second 1 (Conversion expert: Cara Care 11% rage-quit on dead-end chat without lock label).</dd>
+      </dl>
+      <ul class="onb-locks-list">
+        <li>SAMPLE diagonal ribbon 30% opacity on EVERY mock card (DTC CMO + Compliance)</li>
+        <li>ER pivot inside canned chat answer (Apple 1.4.1 — vomiting &gt;24h, pancreatitis signs)</li>
+        <li>AI-prefixed persona names («AI Nurse», not «Nurse») in any caption</li>
+        <li>Disclaimer 11pt grey-700 inline persistent · NEVER collapse</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- SLOT 6 — BRIDGE -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div class="onb-slot">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">JabWell · Step 6 of 6</div>
+        <div class="onb-h">Your AI educational team is ready.</div>
+
+        <div class="onb-recap">
+          <div class="rec-row"><strong>Day 1 of Zepbound®</strong> · 5 weeks in</div>
+          <div class="rec-row">Concern: <strong>side-effects + plateau</strong></div>
+        </div>
+
+        <div class="onb-team-row">
+          <div class="onb-team-card">
+            <div class="name">AI Nurse</div>
+            <div class="role">Q&amp;A · triage</div>
+          </div>
+          <div class="onb-team-card">
+            <div class="name">AI Dietitian</div>
+            <div class="role">Protein · plateau</div>
+          </div>
+          <div class="onb-team-card">
+            <div class="name">AI Side-effect Coach</div>
+            <div class="role">Day-by-day</div>
+          </div>
+        </div>
+
+        <div style="font-size:10.5px; color:#4a4a55; margin: 10px 0 16px; padding: 8px 10px; background: rgba(38,70,83,0.04); border-radius: 8px; line-height: 1.5;">
+          ✓ Sources: <strong>FDA · AAFP · Mayo · Cleveland Clinic · PubMed</strong>
+        </div>
+
+        <button class="onb-cta">See your full team →</button>
+
+        <div class="onb-disclaimer" style="margin-top: 14px;">Educational, not medical advice. Consult your prescriber.</div>
+        <div class="onb-trademark">Ozempic®, Wegovy®, Mounjaro®, Zepbound®, Rybelsus®, Saxenda® are registered trademarks of their respective owners.</div>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">6</span>Bridge · Cialdini consistency <span class="role-pill">Hand-off to paywall</span></h4>
+      <dl>
+        <dt>What's stripped</dt>
+        <dd><strong>NO price. NO $750 anchor. NO 7-day trial.</strong> All $/trial copy lives in paywall (already locked R3+R4+R5). Pre-paywall pricing = 2nd-paywall fatigue (Behavioral).</dd>
+        <dt>Round-1 quote (Compliance)</dt>
+      </dl>
+      <div class="onb-quote">«"Team" alone implies medical team. Add "AI educational" prefix or rephrase.» <cite>— Compliance Officer</cite></div>
+      <dl>
+        <dt>Recap card</dt>
+        <dd>Echo brand + weeks + concern from slot 4 — Cialdini consistency commit converts «I told them my story» → «buying my own story back».</dd>
+        <dt>CTA</dt>
+        <dd>«See your full team →» (action, not pricing). On tap → fullScreenCover paywall (Section 5 above) where all $4.99/wk + 7d trial + $39.99/yr SAVE 85% lives.</dd>
+      </dl>
+      <ul class="onb-locks-list">
+        <li>«AI educational team» (mandatory rephrase from Compliance)</li>
+        <li>Trademark line in footer (smallest font, full ® list)</li>
+        <li>Source line repeats Method authority (continuity into paywall hero «Sources: FDA · AAFP · Mayo»)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 32px; margin-bottom: 12px;">Code phase blockers (next milestone)</h3>
+  <div class="onb-locks">
+    <div class="onb-lock"><strong>Block 1 · Round-2 chat literals consilium</strong>Endocrinologist + Compliance review of slot 5 canned 3-tier nausea text (ER triggers, FDA citation, frequency framing). Block code phase until signed.</div>
+    <div class="onb-lock"><strong>Block 2 · Hero illustrations B/C/D</strong>Optional A/B test variants (Black woman / East Asian woman / male S3-aligned). Variant A live above. Generate B/C/D in Sora if A/B test desired.</div>
+    <div class="onb-lock"><strong>Block 3 · Multi-mode mock data fixtures</strong>5 templates (Just-starting / 1-3 mo / 3+ mo / Compounded / Considering) — copy + numbers + provider strings.</div>
+    <div class="onb-lock"><strong>Block 4 · CopyStrings.swift</strong>Centralized compliance-audited copy bundle (Bridge / Skip / ER-trigger / SAMPLE caption / trademark line) — single audit surface.</div>
   </div>
 </section>
 
