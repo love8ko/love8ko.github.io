@@ -1017,15 +1017,11 @@
   /* Image-based hero band (V3 sketch · paywall-hero2.png cropped) */
   .iph-band-img-wrap { position: relative; padding: 6px 0 0; }
   .iph-band-img { width: 100%; aspect-ratio: 1536 / 600; background: url('hero-band.png') center/cover; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
-  .iph-band-tags { position: absolute; left: 0; right: 0; top: 6px; height: 0; pointer-events: none; }
-  .iph-band-tag { position: absolute; top: -2px; transform: translateX(-50%); background: #FBE9E5; color: #9B2226; font-size: 8px; padding: 1.5px 6px; border-radius: 3px; text-decoration: line-through; font-weight: 800; box-shadow: 0 1px 2px rgba(0,0,0,.12); white-space: nowrap; }
-  .iph-band-tag.t1 { left: 16.5%; }
-  .iph-band-tag.t2 { left: 50%; }
-  .iph-band-tag.t3 { left: 83.5%; }
-  .iph-band-labels { display: flex; padding: 4px 0 0; }
-  .iph-band-label { flex: 1; text-align: center; }
-  .iph-band-label b { display:block; font-size: 9px; font-weight: 800; color: #1A1A1F; line-height: 1.2; }
-  .iph-band-label span { display:block; font-size: 7.5px; color: #5A5A60; font-style: italic; line-height: 1.2; }
+  .iph-band-labels { display: flex; padding: 5px 0 0; }
+  .iph-band-label { flex: 1; text-align: center; display: flex; flex-direction: column; gap: 1px; align-items: center; }
+  .iph-band-label b { font-size: 9.5px; font-weight: 800; color: #1A1A1F; line-height: 1.2; }
+  .iph-band-label .role { font-size: 7.5px; color: #5A5A60; font-style: italic; line-height: 1.2; }
+  .iph-band-label .price-tag { display: inline-block; margin-top: 2px; background: #FBE9E5; color: #9B2226; font-size: 8px; padding: 1.5px 7px; border-radius: 3px; text-decoration: line-through; font-weight: 800; box-shadow: 0 1px 2px rgba(0,0,0,.10); }
   /* Legacy emoji-band — kept as fallback / для V1 watercolor когда сгенерим */
   .iph-experts-band { display: flex; justify-content: space-around; padding: 4px 0 2px; gap: 6px; }
   .iph-expert { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: 1; position: relative; }
@@ -2707,7 +2703,7 @@ const PWB_VARIANTS = [
   {
     id: 'V1',
     name: 'Default · Weekly trial',
-    hook: 'Default headline «Your AI GLP-1 team» · 3-row timeline · Weekly preselected (orange highlight)',
+    hook: 'Headline «Your AI GLP-1 team» + hero band labels + anchor — features block убран (3× дублирование с hero band + headline + subline)',
     score: 8.1,
     weighted: 'gold',
     tier: 'weekly',
@@ -2716,11 +2712,7 @@ const PWB_VARIANTS = [
     subline: 'AI Nurse · AI Dietitian · AI Side-Effect Coach. Cited from FDA, AAFP, Mayo.',
     trustLine: '✓ FDA-grounded · 8,400+ early-access patients',
     anchorLine: '$400 endo + $200 dietitian + $150 coach · <b>Worth $750+/visit separately</b>',
-    features: [
-      { icon: '💬', title: 'AI Nurse 24/7', sub: 'Triage with FDA + AAFP citations.' },
-      { icon: '📊', title: 'Plateau detector', sub: 'Auto-built doctor visit PDF.' },
-      { icon: '💉', title: 'Site rotation visualizer', sub: 'Track injection map across body.' }
-    ],
+    features: [],
     weekly: { name: 'Weekly', price: '$4.99', sub: 'Cancel anytime', pill: '7-DAY TRIAL', pillColor: 'orange' },
     annual: { name: 'Annual', price: '$39.99', sub: '~$0.77/wk', pill: 'SAVE 85%', pillColor: 'green' },
     selected: 'weekly',
@@ -2733,16 +2725,17 @@ const PWB_VARIANTS = [
     ctaSub: 'Then $4.99/wk or $39.99/yr · Cancel anytime',
     compliance: 'JabWell is an educational companion — not a medical device. Full disclaimer next.',
     blocks: [
-      { num: 'BLOCK 1', name: '3-experts hero band', copy: 'AI Nurse · AI Dietitian · AI Coach с price tags strikethrough ($400 / $200 / $150) — value framing «replaces these costs», не false endorsement.', status: 'ok' },
+      { num: 'BLOCK 1', name: '3-experts hero band (image)', copy: 'V3 sketch hero · 3 back-view силуэта в circles (nurse / dietitian / coach). Под каждым кругом: role label + strikethrough price ($400 / $200 / $150) — value framing «replaces these costs», не false endorsement.', status: 'ok' },
       { num: 'BLOCK 2', name: 'Headline (outcome)', copy: '«Your AI GLP-1 team — Nurse, Dietitian, Coach.» — sells the team, не feature.', status: 'ok' },
       { num: 'BLOCK 3', name: 'Subline + Trust', copy: 'AI personas labeled · sources FDA · AAFP · Mayo inline (Block 4 merged).', status: 'ok' },
       { num: 'BLOCK 6', name: 'Value Anchor', copy: '$400 + $200 + $150 = Worth $750+/visit separately. Math reads in 0.5s.', status: 'ok' },
+      { num: 'BLOCK 4·5·6', name: 'Features list — REMOVED (V1)', copy: '🚫 Убран. AI Nurse / Dietitian / Side-Effect Coach уже названы в (1) hero band labels, (2) headline, (3) subline. Третий повтор перегружал экран без новой инфы. -1 блок, -3s reading time.', status: 'ok' },
       { num: 'BLOCK 5', name: 'Pricing tiles', copy: 'Weekly $4.99 + 7-DAY TRIAL preselected (terracotta accent). Annual $39.99 SAVE 85% secondary.', status: 'ok' },
       { num: 'BLOCK 7', name: 'Trial timeline', copy: 'Today / Day 5 / Day 7 — Apple ROSCA 3.1.2 transparency.', status: 'ok' },
       { num: 'BLOCK 8', name: 'CTA', copy: '«Continue — Free for 7 Days» (Weekly preselected). Adapts to «Get Full Year — $39.99» if Annual tapped.', status: 'ok' },
       { num: 'BLOCK 9', name: 'Compliance line', copy: 'Над CTA: «Educational companion — not a medical device». Trademark line в footer.', status: 'ok' }
     ],
-    scoreText: '<b>S1: 8.5</b> · S2: 7.5 · S3: 7.0 · Designer: 8.5 · Copywriter: 8.5 · Compliance: 8.<br><b>Why win:</b> S1 closes JTBD «не одна, есть кому ответить» — funnel-entry hero. CrySnap-pattern proven across portfolio.',
+    scoreText: '<b>S1: 8.5</b> · S2: 7.5 · S3: 7.0 · Designer: 8.5 · Copywriter: 8.5 · Compliance: 8.<br><b>Why win:</b> S1 closes JTBD «не одна, есть кому ответить» — funnel-entry hero. CrySnap-pattern proven. <b>R5 update 2026-04-30:</b> features list убран (3× дублирование hero band labels + headline + subline). Cleaner reading flow.',
     complianceNote: 'AI personas labeling MUST be explicit (не «Sarah Chen, Pediatric Nurse» CrySnap-style). Use «AI Nurse Nora» / «AI Dietitian Mei» / «AI Coach Rhea» OR plain role-labels. Иллюстрации абстрактные.'
   },
   {
@@ -2951,13 +2944,8 @@ function renderGallery() {
 }
 
 function miniMockHTML(v) {
-  // ALL variants share the 3-experts hero band image (V3 sketch · paywall-hero2.png cropped)
-  const heroBlock = `
-    <div class="mp-band-img">
-      <span class="mp-tag-abs t1">$400</span>
-      <span class="mp-tag-abs t2">$200</span>
-      <span class="mp-tag-abs t3">$150</span>
-    </div>`;
+  // ALL variants share the 3-experts hero band image (V3 sketch · clean image, tags rendered in deep-dive only)
+  const heroBlock = `<div class="mp-band-img"></div>`;
   const bigAnchor = v.id === 'V3' ? `<div class="mp-anchor-big">$400 + $200 + $150<br/>JabWell $4.99/wk</div>` : '';
   const sourceStack = v.id === 'V4' ? `
     <div class="mp-source-stack">
@@ -3007,15 +2995,10 @@ function renderDeepDive() {
   const expertsBand = `
     <div class="iph-band-img-wrap">
       <div class="iph-band-img"></div>
-      <div class="iph-band-tags">
-        <span class="iph-band-tag t1">$400</span>
-        <span class="iph-band-tag t2">$200</span>
-        <span class="iph-band-tag t3">$150</span>
-      </div>
       <div class="iph-band-labels">
-        <div class="iph-band-label"><b>AI Nurse</b><span>Q&A · triage</span></div>
-        <div class="iph-band-label"><b>AI Dietitian</b><span>Protein · plateau</span></div>
-        <div class="iph-band-label"><b>AI Coach</b><span>Side-effect</span></div>
+        <div class="iph-band-label"><b>AI Nurse</b><span class="role">Q&A · triage</span><span class="price-tag">$400</span></div>
+        <div class="iph-band-label"><b>AI Dietitian</b><span class="role">Protein · plateau</span><span class="price-tag">$200</span></div>
+        <div class="iph-band-label"><b>AI Coach</b><span class="role">Side-effect</span><span class="price-tag">$150</span></div>
       </div>
     </div>`;
 
