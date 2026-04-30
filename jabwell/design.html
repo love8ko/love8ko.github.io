@@ -1079,28 +1079,6 @@
   .pwb-brief .br-consilium { margin-top: 14px; padding-top: 12px; border-top: 1px solid #34353F; font-size: 11px; color: #9CA0A8; line-height: 1.55; }
   .pwb-brief .br-consilium b { color: #DDA15E; }
   @media (max-width: 900px) { .pwb-brief .br-grid { grid-template-columns: 1fr; } }
-  /* Hero prompts block */
-  .pwb-hero-prompts { background: #FFFCF6; border: 1.5px solid #DDA15E; border-radius: 12px; padding: 18px 22px; margin-top: 14px; box-shadow: 0 2px 8px rgba(221,161,94,.10); }
-  .pwb-hero-prompts > .hp-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 0.14em; color: #B5793A; text-transform: uppercase; }
-  .pwb-hero-prompts > h3 { font-size: 18px; font-weight: 800; margin: 4px 0 4px; color: #1A1A1F; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
-  .pwb-hero-prompts > p.hp-intro { font-size: 12px; color: #5A5A60; line-height: 1.55; margin-bottom: 14px; }
-  .hp-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .hp-card { background: white; border: 1px solid #E8E0CD; border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
-  .hp-card .hp-num { background: #264653; color: white; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.06em; align-self: flex-start; }
-  .hp-card .hp-name { font-size: 14px; font-weight: 800; color: #264653; line-height: 1.2; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
-  .hp-card .hp-tag { font-size: 11px; color: #5A5A60; line-height: 1.4; }
-  .hp-card .hp-tag b { color: #1A1A1F; font-weight: 800; }
-  .hp-card details { margin-top: 4px; }
-  .hp-card details summary { font-size: 11px; font-weight: 800; color: #E76F51; cursor: pointer; outline: none; padding: 6px 0; user-select: none; }
-  .hp-card details summary:hover { color: #C25B41; }
-  .hp-card details[open] summary { margin-bottom: 6px; }
-  .hp-card textarea { width: 100%; min-height: 200px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 10.5px; line-height: 1.45; color: #1A1A1F; background: #F8F5EC; border: 1px solid #D0CFB8; border-radius: 6px; padding: 8px 10px; resize: vertical; box-sizing: border-box; }
-  .hp-card .hp-neg { font-size: 10px; color: #5A5A60; line-height: 1.4; margin-top: 6px; padding: 6px 10px; background: #FBE9E5; border-radius: 5px; }
-  .hp-card .hp-copy-btn { background: #264653; color: white; border: 0; padding: 6px 12px; border-radius: 999px; font-size: 11px; font-weight: 800; cursor: pointer; align-self: flex-start; transition: background .15s; }
-  .hp-card .hp-copy-btn:hover { background: #1A323A; }
-  .hp-card .hp-copy-btn.done { background: #606C38; }
-  @media (max-width: 1100px) { .hp-cards { grid-template-columns: 1fr; } }
-
   /* 6-col gallery layout */
   .pwb-gallery.cols-6 { grid-template-columns: repeat(6, 1fr); }
   @media (max-width: 1100px) { .pwb-gallery.cols-6 { grid-template-columns: repeat(3, 1fr); } }
@@ -2650,87 +2628,6 @@
     </div>
   </div>
 
-  <!-- Hero asset prompts — 3 illustration directions for the locked 3-experts band (R4 verdict A) -->
-  <div class="pwb-hero-prompts">
-    <div class="hp-eyebrow">03 · Hero asset prompts</div>
-    <h3>3 prompt-вариации на 3-experts band</h3>
-    <p class="hp-intro">
-      Hero locked = A · 3-experts illustrated band (R4 · 8.07/10). Сейчас в превью emoji-плейсхолдеры (🩺 🥗 ⚠️) — нужны реальные illustrated assets. Три направления различаются по стилистике и compliance-risk profile: <b>V1 watercolor</b> (warmest, S1 hero) · <b>V2 geometric</b> (compliance-MAX) · <b>V3 sketch</b> (most differentiated). Все три внутри locked Clinical Apothecary palette + AAFP/Mayo aesthetic. Полный файл с tips → <a href="hero-prompts.md" style="color:#264653; font-weight:800;"><code>jabwell/hero-prompts.md</code></a>.
-    </p>
-    <div class="hp-cards">
-
-      <!-- V1 -->
-      <div class="hp-card">
-        <span class="hp-num">V1</span>
-        <div class="hp-name">Watercolor Botanical</div>
-        <div class="hp-tag"><b>Best for:</b> S1 funnel-entry primary launch · max warmth · CrySnap-adjacent.<br><b>Risk:</b> face-forward → персонажи должны быть очевидно illustrated, иначе «real-person endorsement» flag.</div>
-        <details>
-          <summary>📋 Show prompt</summary>
-          <textarea readonly id="hp-v1-prompt">Soft watercolor and ink illustration, three round-cropped portrait avatars side by side at equal size on a warm linen background (#F4F1DE). Each avatar inside its own soft circle with delicate sage and eucalyptus botanical leaves curling around the edge.
-
-Three diverse abstractly-stylized characters (clearly illustrated, NOT photorealistic), each holding the tool of their role:
-
-1) AI Nurse — calm, attentive figure in ocean-teal scrubs (#264653), holding a stethoscope. Soft confident posture.
-2) AI Dietitian — warm figure in terracotta apron (#E76F51), holding a wooden bowl with fresh produce and a small notebook. Gentle smile.
-3) AI Side-Effect Coach — composed figure in olive cardigan (#606C38), holding a small clock and a checklist. Steady gaze.
-
-Style: AAFP / Mayo Clinic patient-handout aesthetic — warm, trustworthy, medical-adjacent but never clinical-cold. Soft ink lines, gentle watercolor washes, delicate botanical accents (sage, eucalyptus, small leaves). Hand-drawn feel.
-
-Output: 1500×500 horizontal band, three equal circles centered.</textarea>
-          <div class="hp-neg"><b>Negative:</b> photorealistic faces, real-person likeness, named celebrity, pharmaceutical branding, Ozempic, Wegovy, Mounjaro, syringe, injection pen, before/after weight comparison, scale, weight numbers, body fixation, cold clinical lab, sterile hospital, blue-white pharma palette</div>
-          <button class="hp-copy-btn" onclick="hpCopy('hp-v1-prompt', this)">Copy V1 prompt</button>
-        </details>
-      </div>
-
-      <!-- V2 -->
-      <div class="hp-card">
-        <span class="hp-num">V2</span>
-        <div class="hp-name">Flat Geometric Symbols</div>
-        <div class="hp-tag"><b>Best for:</b> compliance fallback if Apple flags V1 · zero face-likeness risk · modern tech-forward.<br><b>Trade-off:</b> меньше эмоциональной теплоты, проигрывает V1 на S1 reassurance.</div>
-        <details>
-          <summary>📋 Show prompt</summary>
-          <textarea readonly id="hp-v2-prompt">Three iconic objects in flat vector geometric illustration style, side-by-side circular compositions on a warm linen background (#F4F1DE). Each circle 500×500. Soft long shadows, palette-strict to Clinical Apothecary tokens.
-
-NO human figures. NO faces. Iconography only.
-
-1) Circle 1 — a stethoscope curved into a soft heart shape, ocean-teal (#264653) primary, with a small sleeping crescent-moon backdrop. Reads as "AI Nurse · 24/7 triage."
-2) Circle 2 — a wooden bowl with a single fresh leaf rising from it, beside a small balanced-scale graphic; terracotta accent (#E76F51). Reads as "AI Dietitian · protein + plateau."
-3) Circle 3 — a minimalist hourglass merged with a small calm caution-triangle into one balanced form; olive accent (#606C38). Reads as "AI Side-Effect Coach."
-
-Modern soft 3D feel, clean medium line-weight, generous negative space, subtle gradient shading. Botanical leaves as small decorative accents around circle borders.
-
-Output: 1500×500 horizontal band, three circles equally spaced.</textarea>
-          <div class="hp-neg"><b>Negative:</b> human figures, faces, hands, body, photorealistic, pharmaceutical branding, syringe, injection pen, real product imagery, before/after weight, scale numbers, sterile hospital, neon, harsh contrast, blue-white pharma palette</div>
-          <button class="hp-copy-btn" onclick="hpCopy('hp-v2-prompt', this)">Copy V2 prompt</button>
-        </details>
-      </div>
-
-      <!-- V3 -->
-      <div class="hp-card">
-        <span class="hp-num">V3</span>
-        <div class="hp-name">Editorial Sketch · back-view</div>
-        <div class="hp-tag"><b>Best for:</b> A/B-вариант на week 6+ post-launch · максимально differentiated от utility-led competitors · unique brand voice.<br><b>Risk:</b> less proven pattern, требует confident execution.</div>
-        <details>
-          <summary>📋 Show prompt</summary>
-          <textarea readonly id="hp-v3-prompt">Editorial hand-drawn ink sketch with light watercolor wash, three circular vignettes side-by-side on warm linen background (#F4F1DE). Notebook / journal / Mayo Clinic patient-handout aesthetic — meets New York Times health-column illustration. Each circle 500×500.
-
-Sketchy ink contour, intentionally imperfect line-weight, gentle hand-drawn feel — never slick or vector-clean. Light watercolor washes inside the line work. Faces NEVER visible.
-
-1) Back-view silhouette of a healthcare worker (no face shown), shoulders and back of head visible, holding a stethoscope to one side. Ocean-teal wash (#264653). Small sage-leaf doodles floating around the edge.
-2) Back-view silhouette of a dietitian seated at a small table, sketching a meal plan in an open notebook — only hands and notebook visible, head turned away. Terracotta wash (#E76F51). Small fork-and-leaf doodles.
-3) Back-view silhouette of a calm coach figure looking out toward a small clock on a windowsill, hands resting on a clipboard. Olive wash (#606C38). Tiny hourglass doodle in the corner.
-
-Style: warm, human, hand-drawn — vulnerability over polish. Like a thoughtful health journal illustration.
-
-Output: 1500×500 horizontal band, three circles equally spaced with botanical accents.</textarea>
-          <div class="hp-neg"><b>Negative:</b> faces visible, frontal portraits, photorealism, slick vector finish, pharmaceutical branding, syringe, injection pen, real-person likeness, before/after weight comparison, scale, sterile hospital, blue-white pharma, harsh contrast</div>
-          <button class="hp-copy-btn" onclick="hpCopy('hp-v3-prompt', this)">Copy V3 prompt</button>
-        </details>
-      </div>
-
-    </div>
-  </div>
-
   <!-- Gallery: 6 variant cards with mini iPhone mockups (all share hero band) -->
   <h3 style="margin-top:18px; font-size:18px; color:#1A1A1F;">Галерея · 6 вариантов <span style="font-size:12px; color:#5A5A60; font-weight:400;">общий hero · variability через надписи / таймлайн / выделяшки</span></h3>
   <div class="pwb-gallery cols-6" id="pwb-gallery">
@@ -3201,24 +3098,6 @@ function pwbSelect(idx) {
 renderPickbarChips();
 renderGallery();
 renderDeepDive();
-
-// Hero prompt copy helper
-function hpCopy(textareaId, btn) {
-  const ta = document.getElementById(textareaId);
-  if (!ta) return;
-  navigator.clipboard.writeText(ta.value).then(() => {
-    const original = btn.textContent;
-    btn.textContent = '✓ Copied — paste into Sora / DALL-E / MJ';
-    btn.classList.add('done');
-    setTimeout(() => { btn.textContent = original; btn.classList.remove('done'); }, 2200);
-  }).catch(() => {
-    ta.select();
-    document.execCommand('copy');
-    btn.textContent = '✓ Copied';
-    btn.classList.add('done');
-    setTimeout(() => { btn.textContent = 'Copy prompt'; btn.classList.remove('done'); }, 2200);
-  });
-}
 </script>
 
 </body>
