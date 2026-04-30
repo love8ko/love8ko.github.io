@@ -1000,46 +1000,46 @@
   .mini-pw .mp-spacer { flex: 1; }
   .mini-pw .mp-compliance { font-size: 3px; color: #8A959A; text-align: center; padding: 0 2px; line-height: 1.4; }
 
-  /* Full iPhone preview */
-  .pwb-deep { display: grid; grid-template-columns: 384px 1fr; gap: 24px; align-items: start; margin-top: 14px; }
-  .pwb-iphone-frame { width: 384px; padding: 10px; background: #0E1A2B; border-radius: 48px; box-shadow: 0 14px 44px rgba(0,0,0,.30), inset 0 0 0 2px #1a1a22; }
-  .pwb-iphone-screen { background: #F4F1DE; border-radius: 38px; overflow: hidden; min-height: 820px; display: flex; flex-direction: column; position: relative; }
-  .pwb-iphone-notch { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 116px; height: 30px; background: #1a1a1f; border-radius: 999px; z-index: 5; }
-  .pwb-iphone-status { display: flex; justify-content: space-between; padding: 16px 28px 0; font-size: 15px; font-weight: 800; color: #1A1A1F; height: 44px; align-items: center; }
-  .pwb-iphone-content { padding: 6px 18px 16px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
-  .pwb-iphone-content .iph-close { align-self: flex-end; background: rgba(0,0,0,.06); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #5A5A60; }
-  .iph-experts-band { display: flex; justify-content: space-around; padding: 8px 0 4px; gap: 8px; }
-  .iph-expert { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; position: relative; }
-  .iph-expert-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #DDA15E 0%, #C18A4A 100%); display: flex; align-items: center; justify-content: center; font-size: 26px; box-shadow: 0 2px 6px rgba(0,0,0,.10); }
-  .iph-expert-tag { position: absolute; top: -4px; right: 12%; background: #FBE9E5; color: #9B2226; font-size: 10px; padding: 2px 6px; border-radius: 4px; text-decoration: line-through; font-weight: 800; box-shadow: 0 1px 3px rgba(0,0,0,.10); }
-  .iph-expert-name { font-size: 11px; font-weight: 800; color: #1A1A1F; }
-  .iph-expert-role { font-size: 9px; color: #5A5A60; font-style: italic; }
-  .iph-headline { font-size: 22px; font-weight: 800; color: #1A1A1F; line-height: 1.2; text-align: center; font-family: -apple-system, "SF Pro Rounded", sans-serif; padding: 0 6px; }
-  .iph-subline { font-size: 13px; color: #4B5A60; text-align: center; padding: 0 6px; line-height: 1.4; margin-top: -6px; }
-  .iph-trust-line { font-size: 11px; color: #606C38; font-weight: 700; text-align: center; padding: 0 6px; }
-  .iph-anchor-line { font-size: 11px; color: #5A5A60; text-align: center; padding: 0 6px; line-height: 1.4; }
+  /* Compact iPhone preview — ~280px (было 384) для удобного scan + sticky */
+  .pwb-deep { display: grid; grid-template-columns: 280px 1fr; gap: 20px; align-items: start; margin-top: 14px; }
+  .pwb-iphone-frame { width: 280px; padding: 7px; background: #0E1A2B; border-radius: 36px; box-shadow: 0 10px 32px rgba(0,0,0,.28), inset 0 0 0 1.5px #1a1a22; position: sticky; top: 14px; }
+  .pwb-iphone-screen { background: #F4F1DE; border-radius: 28px; overflow: hidden; min-height: 600px; display: flex; flex-direction: column; position: relative; }
+  .pwb-iphone-notch { position: absolute; top: 7px; left: 50%; transform: translateX(-50%); width: 80px; height: 22px; background: #1a1a1f; border-radius: 999px; z-index: 5; }
+  .pwb-iphone-status { display: flex; justify-content: space-between; padding: 11px 18px 0; font-size: 11px; font-weight: 800; color: #1A1A1F; height: 32px; align-items: center; }
+  .pwb-iphone-content { padding: 4px 12px 12px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+  .pwb-iphone-content .iph-close { align-self: flex-end; background: rgba(0,0,0,.06); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #5A5A60; }
+  .iph-experts-band { display: flex; justify-content: space-around; padding: 4px 0 2px; gap: 6px; }
+  .iph-expert { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: 1; position: relative; }
+  .iph-expert-avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, #DDA15E 0%, #C18A4A 100%); display: flex; align-items: center; justify-content: center; font-size: 19px; box-shadow: 0 2px 5px rgba(0,0,0,.10); }
+  .iph-expert-tag { position: absolute; top: -3px; right: 6%; background: #FBE9E5; color: #9B2226; font-size: 8px; padding: 1px 5px; border-radius: 3px; text-decoration: line-through; font-weight: 800; box-shadow: 0 1px 2px rgba(0,0,0,.10); }
+  .iph-expert-name { font-size: 9px; font-weight: 800; color: #1A1A1F; margin-top: 2px; }
+  .iph-expert-role { font-size: 7.5px; color: #5A5A60; font-style: italic; }
+  .iph-headline { font-size: 15px; font-weight: 800; color: #1A1A1F; line-height: 1.2; text-align: center; font-family: -apple-system, "SF Pro Rounded", sans-serif; padding: 0 4px; }
+  .iph-subline { font-size: 10px; color: #4B5A60; text-align: center; padding: 0 4px; line-height: 1.4; margin-top: -4px; }
+  .iph-trust-line { font-size: 9px; color: #606C38; font-weight: 700; text-align: center; padding: 0 4px; }
+  .iph-anchor-line { font-size: 9px; color: #5A5A60; text-align: center; padding: 0 4px; line-height: 1.4; }
   .iph-anchor-line b { color: #606C38; font-weight: 800; }
-  .iph-features { background: white; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
-  .iph-feat-row { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: #1A1A1F; line-height: 1.35; }
-  .iph-feat-icon { width: 24px; height: 24px; background: #E8EFF1; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
-  .iph-feat-row b { display: block; font-weight: 800; }
-  .iph-feat-row .feat-sub { font-size: 11px; color: #4B5A60; }
-  .iph-pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .iph-tier { background: white; border: 1.5px solid #D0CFB8; border-radius: 10px; padding: 10px 12px; position: relative; }
-  .iph-tier.sel-week { border: 2px solid #E76F51; background: #FCE3DB; }
-  .iph-tier.sel-year { border: 2px solid #606C38; background: #E0E5D2; }
-  .iph-tier-pill { position: absolute; top: -8px; left: 12px; background: #E76F51; color: white; font-size: 9px; padding: 2px 7px; border-radius: 4px; font-weight: 800; letter-spacing: 0.04em; }
+  .iph-features { background: white; border-radius: 9px; padding: 8px 10px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .iph-feat-row { display: flex; gap: 7px; align-items: flex-start; font-size: 10px; color: #1A1A1F; line-height: 1.3; }
+  .iph-feat-icon { width: 18px; height: 18px; background: #E8EFF1; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; }
+  .iph-feat-row b { display: block; font-weight: 800; font-size: 10px; }
+  .iph-feat-row .feat-sub { font-size: 9px; color: #4B5A60; line-height: 1.3; }
+  .iph-pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 2px; }
+  .iph-tier { background: white; border: 1.5px solid #D0CFB8; border-radius: 8px; padding: 7px 9px; position: relative; }
+  .iph-tier.sel-week { border: 1.5px solid #E76F51; background: #FCE3DB; }
+  .iph-tier.sel-year { border: 1.5px solid #606C38; background: #E0E5D2; }
+  .iph-tier-pill { position: absolute; top: -7px; left: 8px; background: #E76F51; color: white; font-size: 7.5px; padding: 1.5px 5px; border-radius: 3px; font-weight: 800; letter-spacing: 0.04em; }
   .iph-tier-pill.green { background: #606C38; }
-  .iph-tier-name { font-size: 13px; font-weight: 800; color: #1A1A1F; margin-top: 2px; }
-  .iph-tier-price { font-size: 18px; font-weight: 800; color: #1A1A1F; margin-top: 2px; }
-  .iph-tier-price small { font-size: 12px; font-weight: 700; color: #5A5A60; }
-  .iph-tier-sub { font-size: 10px; color: #5A5A60; margin-top: 2px; }
-  .iph-timeline { background: white; border-radius: 10px; padding: 10px 14px; display: flex; flex-direction: column; gap: 6px; }
-  .iph-tl-row { display: flex; gap: 10px; align-items: center; font-size: 12px; color: #1A1A1F; }
-  .iph-tl-icon { width: 20px; height: 20px; border-radius: 50%; background: #E8EFF1; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; }
-  .iph-tl-row b { font-weight: 800; min-width: 38px; }
-  .iph-cta { background: #E76F51; color: white; text-align: center; padding: 14px; border-radius: 999px; font-weight: 800; font-size: 14px; box-shadow: 0 4px 12px rgba(231,111,81,.30); animation: pulse-cta-orange 2.2s ease-in-out infinite; will-change: transform, box-shadow; }
-  .iph-cta-teal { background: #264653; color: white; text-align: center; padding: 14px; border-radius: 999px; font-weight: 800; font-size: 14px; box-shadow: 0 4px 12px rgba(38,70,83,.30); animation: pulse-cta-teal 2.2s ease-in-out infinite; will-change: transform, box-shadow; }
+  .iph-tier-name { font-size: 10px; font-weight: 800; color: #1A1A1F; margin-top: 1px; }
+  .iph-tier-price { font-size: 14px; font-weight: 800; color: #1A1A1F; margin-top: 1px; }
+  .iph-tier-price small { font-size: 9px; font-weight: 700; color: #5A5A60; }
+  .iph-tier-sub { font-size: 8.5px; color: #5A5A60; margin-top: 1px; }
+  .iph-timeline { background: white; border-radius: 8px; padding: 7px 10px; display: flex; flex-direction: column; gap: 4px; }
+  .iph-tl-row { display: flex; gap: 7px; align-items: center; font-size: 10px; color: #1A1A1F; }
+  .iph-tl-icon { width: 16px; height: 16px; border-radius: 50%; background: #E8EFF1; display: flex; align-items: center; justify-content: center; font-size: 9px; flex-shrink: 0; }
+  .iph-tl-row b { font-weight: 800; min-width: 30px; font-size: 10px; }
+  .iph-cta { background: #E76F51; color: white; text-align: center; padding: 10px; border-radius: 999px; font-weight: 800; font-size: 11.5px; box-shadow: 0 4px 12px rgba(231,111,81,.30); animation: pulse-cta-orange 2.2s ease-in-out infinite; will-change: transform, box-shadow; }
+  .iph-cta-teal { background: #264653; color: white; text-align: center; padding: 10px; border-radius: 999px; font-weight: 800; font-size: 11.5px; box-shadow: 0 4px 12px rgba(38,70,83,.30); animation: pulse-cta-teal 2.2s ease-in-out infinite; will-change: transform, box-shadow; }
 
   /* CTA pulse — призывает тыкнуть */
   @keyframes pulse-cta-orange {
@@ -1083,10 +1083,10 @@
   .pwb-gallery.cols-6 { grid-template-columns: repeat(6, 1fr); }
   @media (max-width: 1100px) { .pwb-gallery.cols-6 { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 720px)  { .pwb-gallery.cols-6 { grid-template-columns: repeat(2, 1fr); } }
-  .iph-cta-sub { font-size: 11px; color: #5A5A60; text-align: center; line-height: 1.4; }
-  .iph-foot { display: flex; justify-content: center; gap: 16px; font-size: 11px; color: #8A959A; padding-top: 4px; }
-  .iph-compliance { font-size: 10px; color: #8A959A; text-align: center; line-height: 1.4; padding: 0 4px; }
-  .iph-hero-image { background: #F4F1DE; border-radius: 10px; aspect-ratio: 1/1; background-size: cover; background-position: center; }
+  .iph-cta-sub { font-size: 9px; color: #5A5A60; text-align: center; line-height: 1.4; }
+  .iph-foot { display: flex; justify-content: center; gap: 12px; font-size: 9px; color: #8A959A; padding-top: 2px; }
+  .iph-compliance { font-size: 8.5px; color: #8A959A; text-align: center; line-height: 1.4; padding: 0 4px; }
+  .iph-hero-image { background: #F4F1DE; border-radius: 8px; aspect-ratio: 1/1; background-size: cover; background-position: center; }
 
   /* Block breakdown panel */
   .pwb-blocks-list { display: flex; flex-direction: column; gap: 8px; }
@@ -1123,7 +1123,7 @@
     .pwb-gallery { grid-template-columns: repeat(2, 1fr); }
     .pwb-gallery.cols-7 { grid-template-columns: repeat(2, 1fr); }
     .pwb-deep { grid-template-columns: 1fr; }
-    .pwb-iphone-frame { margin: 0 auto; }
+    .pwb-iphone-frame { margin: 0 auto; position: static; }
   }
   @media (max-width: 600px) {
     .palette-grid { grid-template-columns: 1fr; }
