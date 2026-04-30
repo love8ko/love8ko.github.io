@@ -2537,9 +2537,9 @@
 <!-- SECTION 5: PAYWALL WORKBENCH (skeleton) -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="paywall-workbench" style="background: #FAF7F2;">
-  <h2>5. Paywall Workbench <span class="pill" style="background:#264653;color:white;">✅ Consilium R3 · 6 layouts · shared hero · CTA pulse</span></h2>
+  <h2>5. Paywall Workbench <span class="pill" style="background:#264653;color:white;">✅ R4 · 6 layouts · shared hero + Weekly preselected · vary by copy only</span></h2>
   <p class="section-intro">
-    Default S1 onboarding hard paywall · 2-tier $4.99/wk + 7-day trial preselected / $39.99/yr SAVE 85%. <b>Все 6 вариантов делят общий hero-band</b> (3 AI-эксперта + strikethrough price tags) — variability ТОЛЬКО через headline copy, timeline rows и выделяющийся блок (anchor / trust / pricing / features). CTA пульсирует чтобы призвать тап. <b>Полный консилиум →</b> <code>пейволл референсы/paywall-layouts-consilium-2026-04-30.md</code>.
+    Default S1 onboarding hard paywall · 2-tier $4.99/wk + 7-day trial <b>preselected ВЕЗДЕ</b> · $39.99/yr SAVE 85% secondary. <b>Все 6 вариантов делят общий 3-experts hero band</b> (consilium R4 · 8.07/10 win vs phone-photo / JTBD-scene / trust-badges / dose-calendar / calm-abstract) и Weekly-preselected pricing — <b>variability ТОЛЬКО через копи</b> (headline / subline / anchor / timeline rows / CTA verb). CTA пульсирует чтобы призвать тап. <b>Полный R4 →</b> <code>пейволл референсы/paywall-layouts-consilium-2026-04-30.md</code> · A/B candidate post-launch — JTBD-scene (S1 9.5/10 single-lens win).
   </p>
 
   <!-- Sticky variant pickbar -->
@@ -2620,8 +2620,11 @@
     </div>
     <div class="br-consilium">
       <b>Consilium R3 votes (avg / 10):</b>
-      Audience S1 hero <b>9.4</b> · Pain «3am nausea» <b>9.2</b> · Killer «3 cited AI personas» <b>8.8</b> · Anchor «$750+/visit» <b>9.0</b> · Trust «FDA + 8,400+» <b>8.6</b>.
-      <b style="color:#E76F51;">Compliance flag:</b> AI personas labeled «AI Nurse / AI Dietitian / AI Coach» (NOT named humans à la CrySnap «Sarah Chen»). Никаких «cure», «medical-grade», «replace doctor».
+      Audience S1 hero <b>9.4</b> · Pain «3am nausea» <b>9.2</b> · Killer «3 cited AI personas» <b>8.8</b> · Anchor «$750+/visit» <b>9.0</b> · Trust «FDA + 8,400+» <b>8.6</b>.<br>
+      <b style="color:#DDA15E;">Consilium R4 — Hero block (7 voters × 6 options):</b>
+      <b>A · 3-experts illustrated band 8.07 🥇</b> · C · JTBD-scene 7.57 · E · Dose calendar 7.29 · D · RAG trust-badges 7.14 · F · Calm abstract 6.79 · B · Phone-First photo 6.57.
+      <b>Lock A.</b> S1-persona dissent (C wins single-lens 9.5) → C = top A/B candidate post-launch. D (compliance 10) = fallback if Apple flags A.
+      <b style="color:#E76F51;">Compliance flag:</b> AI personas labeled «AI Nurse / AI Dietitian / AI Coach» (NOT named humans à la CrySnap «Sarah Chen»). Avatars — illustrated abstract, не photoreal. Никаких «cure», «medical-grade», «replace doctor».
     </div>
   </div>
 
@@ -2667,8 +2670,8 @@
   <div style="margin-top:18px; padding:14px 18px; background:linear-gradient(135deg, #264653 0%, #2A5560 100%); color:white; border-radius:12px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
     <div>
       <div style="font-size:11px; opacity:.85; font-weight:800; letter-spacing:0.08em;">SHIP TO SWIFT</div>
-      <div style="font-size:14px; font-weight:700; margin-top:4px;">Recommended: <b>V1 default</b> + <b>V3 secondary</b> (трэк-paywall для S2/S3)</div>
-      <div style="font-size:11px; opacity:.78; margin-top:3px;">PaywallView.swift · enum <code style="background:rgba(255,255,255,.14);padding:1px 5px;border-radius:3px;">Variant { .threeExperts, .rationalAnchor }</code> · ColorCheck pattern</div>
+      <div style="font-size:14px; font-weight:700; margin-top:4px;">Recommended: <b>V1 default</b> (rational «team») + <b>V2 A/B</b> (S1 pain-mirror) · <b>V3 trigger</b> (S3 cost-driven)</div>
+      <div style="font-size:11px; opacity:.78; margin-top:3px;">PaywallView.swift · enum <code style="background:rgba(255,255,255,.14);padding:1px 5px;border-radius:3px;">Variant { .teamRational, .painMirror, .anchorHeadline }</code> · ColorCheck pattern · все 3 share hero + Weekly-preselected</div>
     </div>
     <div style="display:flex; gap:8px; flex-wrap:wrap;">
       <a href="https://github.com/love8ko/13-jabwell/blob/main/JabWell/JabWell/Views/Paywall/PaywallView.swift" style="background:#E76F51; color:white; padding:8px 16px; border-radius:999px; font-size:12px; font-weight:800; text-decoration:none;">→ PaywallView.swift</a>
@@ -2725,15 +2728,15 @@ const PWB_VARIANTS = [
   },
   {
     id: 'V2',
-    name: 'Annual preselected',
-    hook: 'Headline «for less than one endo visit» · 2-row timeline · Annual highlight (olive) · long-term framing',
-    score: 7.4,
-    tier: 'annual',
-    audience: 's2',
-    headline: 'Your AI GLP-1 team — for less than one endo visit.',
-    subline: 'AI Nurse · AI Dietitian · AI Side-Effect Coach. Annual access.',
+    name: 'Pain mirror · Weekly trial',
+    hook: 'Headline = exact S1 moment («3am, week 4, nausea — answered.») · emotional verb-CTA («Calm This Down») · same hero · same Weekly preselected',
+    score: 8.3,
+    tier: 'weekly',
+    audience: 's1',
+    headline: '3am, week 4, nausea —<br/><span style="color:#E76F51;">answered.</span>',
+    subline: 'AI Nurse · Dietitian · Side-Effect Coach. 24/7. Cited from FDA, AAFP, Mayo.',
     trustLine: '✓ FDA-grounded · 8,400+ early-access patients',
-    anchorLine: '$400 endo + $200 dietitian + $150 coach = <b>$750+/visit · JabWell $39.99/year</b>',
+    anchorLine: '$400 endo + $200 dietitian + $150 coach · <b>Worth $750+/visit separately</b>',
     features: [
       { icon: '💬', title: 'AI Nurse 24/7', sub: 'Triage with FDA + AAFP citations.' },
       { icon: '📊', title: 'Plateau detector', sub: 'Auto-built doctor visit PDF.' },
@@ -2741,23 +2744,24 @@ const PWB_VARIANTS = [
     ],
     weekly: { name: 'Weekly', price: '$4.99', sub: 'Cancel anytime', pill: '7-DAY TRIAL', pillColor: 'orange' },
     annual: { name: 'Annual', price: '$39.99', sub: '~$0.77/wk', pill: 'SAVE 85%', pillColor: 'green' },
-    selected: 'annual',
+    selected: 'weekly',
     timeline: [
-      { day: 'Today', label: 'Full year access — all 3 AI personas', icon: '✓' },
-      { day: '1 yr', label: '$39.99/year renews — cancel anytime', icon: '💳' }
+      { day: 'Today', label: 'Full access · start asking AI Nurse', icon: '✓' },
+      { day: 'Day 5', label: "We'll remind you trial is ending", icon: '🔔' },
+      { day: 'Day 7', label: '$4.99/week starts — cancel anytime', icon: '💳' }
     ],
-    cta: 'Get Full Year — $39.99',
-    ctaSub: '$39.99 billed today · Cancel anytime in Settings',
+    cta: 'Calm This Down — Start Free',
+    ctaSub: '7 days free · Then $4.99/wk · Cancel anytime',
     compliance: 'JabWell is an educational companion — not a medical device. Full disclaimer next.',
     blocks: [
-      { num: 'BLOCK 1', name: '3-experts hero band', copy: 'Same band as V1. Annual framing.', status: 'ok' },
-      { num: 'BLOCK 2', name: 'Headline', copy: '«For less than one endo visit» — anchor inline в headline.', status: 'ok' },
-      { num: 'BLOCK 5', name: 'Pricing tiles', copy: 'Annual $39.99 preselected (olive border). Weekly secondary.', status: 'ok' },
-      { num: 'BLOCK 7', name: 'Trial timeline', copy: 'No trial — Today / 1 year flow.', status: 'ok' },
-      { num: 'BLOCK 8', name: 'CTA', copy: '«Get Full Year — $39.99» — explicit price on CTA, Apple 3.1.2 dominant.', status: 'ok' }
+      { num: 'BLOCK 2', name: 'Headline (S1 pain mirror)', copy: '«3am, week 4, nausea — answered.» — точный S1 момент, headline IS the JTBD. Emotional A/B vs V1 «team» rational.', status: 'ok' },
+      { num: 'BLOCK 3', name: 'Subline', copy: '«AI Nurse · Dietitian · Side-Effect Coach. 24/7.» — closes pain через team identity + sources.', status: 'ok' },
+      { num: 'BLOCK 5', name: 'Pricing tiles', copy: 'Weekly $4.99 + 7-DAY TRIAL preselected (terracotta) — same as V1.', status: 'ok' },
+      { num: 'BLOCK 7', name: 'Trial timeline', copy: 'Today / Day 5 / Day 7 — Apple ROSCA 3.1.2.', status: 'ok' },
+      { num: 'BLOCK 8', name: 'CTA (verb-first)', copy: '«Calm This Down — Start Free» — verb mirrors emotion, не «Continue».', status: 'ok' }
     ],
-    scoreText: '<b>S2: 8.5</b> (long-term commitment fit) · S3: 8.0 · Designer: 7.5.<br><b>Best for:</b> S2 plateau-trigger paywall (P3) where user уже опытен и готов на год. SOSA 2026 показывает что Annual T2P ниже но LTV выше.',
-    complianceNote: ''
+    scoreText: '<b>S1: 9.0</b> · S2: 7.0 · Copywriter: 8.5 · Compliance: 7.<br><b>Best for:</b> S1 emotional A/B vs V1 rational. Pain-mirror = strongest first-90-days hook.',
+    complianceNote: '«answered» = factual (AI Q&A actually answers), не medical-relief claim («cure», «stop», «fix»). Compliance OK. Avoid wording «we make nausea go away» — это relief claim.'
   },
   {
     id: 'V3',
