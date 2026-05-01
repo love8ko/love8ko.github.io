@@ -295,63 +295,6 @@
   table.matrix .voice-name { font-weight: 700; }
   table.matrix .voice-name small { display: block; font-weight: 400; color: var(--ink-3); font-size: 10.5px; margin-top: 1px; }
 
-  /* ── Rejected variants (audit trail) ── */
-  .rejected-toggle {
-    background: #FAF7F0; border: 1px dashed var(--divider); border-radius: 12px;
-    padding: 12px 18px; margin-top: 22px; cursor: pointer;
-    font-size: 13px; color: var(--ink-2); user-select: none;
-    display: flex; align-items: center; gap: 8px;
-    font-weight: 700; letter-spacing: 0.02em;
-  }
-  .rejected-toggle::before { content: "▶"; font-size: 10px; color: var(--ink-3); transition: transform 0.2s ease; }
-  details[open] > .rejected-toggle::before { transform: rotate(90deg); }
-  .rejected-toggle::-webkit-details-marker { display: none; }
-  .rejected-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 14px;
-    margin-top: 14px;
-  }
-  .rejected-card {
-    background: #FAF7F0;
-    border: 1px solid var(--divider);
-    border-radius: 14px;
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
-  }
-  .rejected-card:hover { opacity: 1; }
-  .rejected-card .rj-h {
-    display: flex; justify-content: space-between; align-items: center; gap: 8px;
-  }
-  .rejected-card .rj-name { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-size: 15px; font-weight: 800; }
-  .rejected-card .rj-score {
-    background: var(--divider); color: var(--ink-2);
-    border-radius: 999px; padding: 3px 9px;
-    font-size: 11px; font-weight: 800;
-    font-family: ui-monospace, "SF Mono", monospace;
-  }
-  .rejected-card .rj-vibe { font-size: 12px; color: var(--ink-2); font-style: italic; }
-  .rejected-card .rj-risk { font-size: 11.5px; color: var(--alert); line-height: 1.4; }
-  .rejected-card .rj-quote {
-    font-size: 11.5px; line-height: 1.45; color: var(--ink);
-    font-style: italic;
-    background: white; border-left: 2px solid var(--bronze);
-    padding: 8px 10px; border-radius: 0 8px 8px 0;
-  }
-  .rejected-card .rj-quote cite {
-    display: block; font-style: normal; font-weight: 700; color: var(--bronze-deep);
-    margin-top: 4px; font-size: 10.5px;
-  }
-  .swatch-strip { display: flex; height: 26px; border-radius: 6px; overflow: hidden; }
-  .swatch-strip > div {
-    flex: 1; display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 8px; font-family: ui-monospace, monospace;
-    font-weight: 700; text-shadow: 0 1px 1px rgba(0,0,0,0.4);
-  }
 
   /* ── Voice quote callouts ── */
   .voice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin-top: 12px; }
@@ -620,6 +563,67 @@
     border-radius: 8px; font-size: 11.5px; line-height: 1.4;
     border-left: 3px solid var(--alert);
   }
+  /* Copy variants list — 2-3 alternatives per screen, recommended one starred */
+  .ss-spec .copy-row .v ul.variants {
+    margin: 0; padding: 0; list-style: none;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .ss-spec .copy-row .v ul.variants li {
+    font-weight: 600; font-size: 13px; line-height: 1.4;
+    padding: 4px 8px; border-radius: 6px;
+    background: var(--bg); border: 1px solid var(--divider);
+    color: var(--ink-2);
+  }
+  .ss-spec .copy-row .v ul.variants li.pick {
+    background: var(--bronze-soft); border-color: var(--bronze);
+    color: var(--ink); font-weight: 700;
+    position: relative; padding-left: 26px;
+  }
+  .ss-spec .copy-row .v ul.variants li.pick::before {
+    content: "⭐"; position: absolute; left: 7px; top: 4px; font-size: 11px;
+  }
+  /* JTBD callout — bronze-bordered explainer */
+  .ss-spec .jtbd-callout {
+    margin-top: 10px; padding: 10px 12px;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bronze-soft) 110%);
+    border-left: 3px solid var(--bronze);
+    border-radius: 0 8px 8px 0; font-size: 12px; line-height: 1.5;
+  }
+  .ss-spec .jtbd-callout .jtbd-h {
+    font-weight: 800; color: var(--bronze-deep); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;
+  }
+  .ss-spec .jtbd-callout .jtbd-row { display: grid; grid-template-columns: 88px 1fr; gap: 6px; margin-top: 3px; }
+  .ss-spec .jtbd-callout .jtbd-row b { font-weight: 700; color: var(--ink-2); font-size: 11px; }
+  .ss-spec .jtbd-callout .jtbd-row span { font-weight: 600; color: var(--ink); }
+
+  /* Answers panel — opening callout in designer brief */
+  .answers-panel {
+    margin-top: 16px;
+    background: var(--ink); color: var(--bg);
+    border-radius: 18px; padding: 20px 24px;
+  }
+  .answers-panel h3 {
+    color: var(--bronze-soft); margin-top: 14px; margin-bottom: 6px;
+    font-size: 14px; letter-spacing: 0.04em;
+  }
+  .answers-panel h3:first-child { margin-top: 0; }
+  .answers-panel p { font-size: 13.5px; line-height: 1.55; color: rgba(245,242,237,0.92); }
+  .answers-panel .killer-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px; margin-top: 10px;
+  }
+  .answers-panel .killer {
+    background: rgba(245,242,237,0.06); border: 1px solid rgba(245,242,237,0.12);
+    border-radius: 10px; padding: 10px 12px;
+    font-size: 12px; line-height: 1.45;
+  }
+  .answers-panel .killer b { color: var(--bronze); font-size: 12.5px; }
+  .answers-panel .killer small { color: rgba(245,242,237,0.6); font-size: 10.5px; display: block; margin-top: 2px; }
+  .answers-panel mark.e2 {
+    background: var(--bronze); color: var(--ink);
+    padding: 1px 6px; border-radius: 4px; font-weight: 800;
+  }
 
   /* ── Compliance section ── */
   .compliance-grid {
@@ -879,9 +883,9 @@
 <!-- SECTION 1 · PALETTE -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="palette">
-  <h2>1. Палитра <span class="pill lock">🔒 LOCKED 2026-05-01</span> <span class="pill bronze">avg 8.71</span></h2>
+  <h2>1. Палитра <span class="pill lock">🔒 LOCKED 2026-05-01</span></h2>
   <p class="section-intro">
-    🔒 <b>LOCKED 2026-05-01 round 1 — Variant A «Stratus + Bronze» · avg 8.71.</b> 7-voice consilium · 5 variants · 4 rejected. Direct read of Strategic Plan §16: charcoal/navy primary + bronze CTA + sage / bronze-amber / muted-rust verdict triad + warm linen day bg + deep navy night chat. Built to flank both Hone (cyan-clinical) and the bodybuilder cluster (red/black) without colliding with JabWell sibling (warm teal + terracotta).
+    🔒 <b>«Stratus + Bronze» — locked.</b> Direct read of Strategic Plan §16: charcoal/navy primary + bronze CTA + sage / bronze-amber / muted-rust verdict triad + warm linen day bg + deep navy night chat. Built to flank both Hone (cyan-clinical) and the bodybuilder cluster (red/black) without colliding with JabWell sibling (warm teal + terracotta). Audit trail of consilium voting → <a href="../../../14-calibrum/docs/CONSILIUM_DESIGN_SYSTEM_2026-05-01_iter1.md" style="color:var(--bronze-deep);font-weight:700;">CONSILIUM_DESIGN_SYSTEM_2026-05-01_iter1.md</a>.
   </p>
 
   <!-- Locked winner card -->
@@ -1035,12 +1039,12 @@
       "Clean, warm, doesn't shout TRT at me. The bronze CTA on the calculator screen says <em>'compute my Free T'</em> and I trust it. Linen background is friendly without being cute."
     </div>
     <div class="voice-quote">
-      <div class="voice-name">🛡 Brand Strategist <small>· verdict on D Hone Mirror · 4.0 hard veto</small></div>
-      "We are not Hone. If we look like Hone, every Mark who failed at Hone projects that failure onto us. Every Mark currently paying Hone says <em>'why is this $49 if it looks like the $1,884 thing?'</em> Hard veto."
+      <div class="voice-name">🛡 Brand Strategist <small>· consumer health DTC · 9.0</small></div>
+      "Hone owns cyan-clinical-light. JabWell owns warm-teal-on-linen. Hims owns pastel-blue-coral-orange. OptiPin owns generic-tracker-grey. <em>None own dark-navy + bronze on warm linen + sage triad.</em> A occupies an unowned brand square."
     </div>
     <div class="voice-quote">
-      <div class="voice-name">⚖ Compliance counsel <small>· verdict on E Whoop Calibrum · 6.5</small></div>
-      "When user sees a rust-coral pill and a coral CTA on the same screen, the alert weight bleeds into the CTA. Every screen has a faint <em>'something's slightly off'</em> energy. Needs redesign before lock."
+      <div class="voice-name">⚖ Compliance counsel <small>· medical-adjacent · 9.0</small></div>
+      "Sage is desaturated enough to not over-reassure. Bronze amber explicitly NOT yellow/orange — does not mimic the ER triage system patients are conditioned to react to. Muted rust is calmly serious — <em>'discuss with doctor' energy, not 'call 911' energy.</em>"
     </div>
     <div class="voice-quote">
       <div class="voice-name">🎨 Visual Designer <small>· Whoop / Apple Health school · 8.5</small></div>
@@ -1052,173 +1056,7 @@
     </div>
   </div>
 
-  <!-- 7×5 voting matrix -->
-  <h3 style="margin-top: 24px;">Voting matrix · 7 voices × 5 variants (round 1)</h3>
-  <table class="matrix">
-    <thead>
-      <tr>
-        <th>Voice</th>
-        <th class="center">A · Stratus + Bronze 🥇</th>
-        <th class="center">B · Apothecary Steel</th>
-        <th class="center">C · Function Lab</th>
-        <th class="center">D · Hone Mirror</th>
-        <th class="center">E · Whoop Calibrum 🥈</th>
-        <th>1-line takeaway</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="voice-name">Mark <small>47, TRT 14mo</small></td>
-        <td class="center winner-cell">9.0</td><td class="center">7.0</td><td class="center">6.0</td><td class="center">6.5</td><td class="center">8.5</td>
-        <td>Bronze on dark navy = competent-friend-at-2am. D reads Hone-clone, distrust on sight.</td>
-      </tr>
-      <tr>
-        <td class="voice-name">Curious Carl <small>42, pre-TRT</small></td>
-        <td class="center winner-cell">8.0</td><td class="center">7.5</td><td class="center">5.0</td><td class="center">8.0</td><td class="center">6.5</td>
-        <td>A: clean, warm, doesn't shout TRT. C: club I'm not in. E: coral feels loud at Costco scroll.</td>
-      </tr>
-      <tr>
-        <td class="voice-name">Visual Designer <small>Whoop / Apple Health</small></td>
-        <td class="center winner-cell">8.5</td><td class="center">8.0</td><td class="center">8.0</td><td class="center">6.0</td><td class="center">9.0</td>
-        <td>E hits portfolio composition; D has 3.2:1 cyan AA fail + two-accent ambiguity.</td>
-      </tr>
-      <tr>
-        <td class="voice-name">Brand Strategist <small>consumer health DTC</small></td>
-        <td class="center winner-cell">9.0</td><td class="center">5.5</td><td class="center">8.0</td><td class="center">4.0</td><td class="center">8.5</td>
-        <td>A occupies unowned brand square. <b>D hard veto on Hone-clone.</b> B sibling-clone discount.</td>
-      </tr>
-      <tr>
-        <td class="voice-name">Apple HIG <small>specialist</small></td>
-        <td class="center winner-cell">9.0</td><td class="center">8.5</td><td class="center">7.0</td><td class="center">7.5</td><td class="center">7.5</td>
-        <td>A is most HIG-honest — per-surface mode strategy is established consilium pattern.</td>
-      </tr>
-      <tr>
-        <td class="voice-name">Compliance counsel <small>medical-adjacent</small></td>
-        <td class="center winner-cell">9.0</td><td class="center">8.5</td><td class="center">6.5</td><td class="center">7.0</td><td class="center">6.5</td>
-        <td>A triad cleanest. C/D have brand-vs-watch hue conflicts. <b>E rust-coral bleeds into coral CTA.</b></td>
-      </tr>
-      <tr>
-        <td class="voice-name">Conversion specialist <small>paywall + onboarding</small></td>
-        <td class="center winner-cell">8.5</td><td class="center">7.0</td><td class="center">8.5</td><td class="center">7.5</td><td class="center">8.0</td>
-        <td>A bronze CTA pulls +8-12% vs cold blue. C luxury/$49 mismatch. E coral CTA dependent on Compliance fix.</td>
-      </tr>
-      <tr style="background: var(--ink); color: var(--bronze-soft); font-weight: 800;">
-        <td>Average</td>
-        <td class="center" style="background: var(--bronze); color: white;">8.71 🥇</td>
-        <td class="center">7.43</td>
-        <td class="center">7.00</td>
-        <td class="center">6.64</td>
-        <td class="center">7.79 🥈</td>
-        <td>A wins decisively. E is the round-2 hold-out test candidate.</td>
-      </tr>
-    </tbody>
-  </table>
 
-  <!-- Audit trail · 4 rejected variants -->
-  <details style="margin-top: 22px;">
-    <summary class="rejected-toggle">Audit trail · 4 отвергнутых варианта (E / B / C / D) — full risk + voice-quote per variant</summary>
-
-    <div class="rejected-grid">
-
-      <!-- E · Whoop Calibrum -->
-      <div class="rejected-card">
-        <div class="rj-h">
-          <span class="rj-name">🥈 E — Whoop Calibrum</span>
-          <span class="rj-score">7.79</span>
-        </div>
-        <div class="swatch-strip">
-          <div style="background:#0F1B2D">#0F1B2D</div>
-          <div style="background:#1A2A40">#1A2A40</div>
-          <div style="background:#F1EEE7;color:#0F1B2D;text-shadow:none;">linen</div>
-          <div style="background:#D87560">#D87560</div>
-          <div style="background:#7E9D70">#7E9D70</div>
-          <div style="background:#D89A4A">#D89A4A</div>
-          <div style="background:#B04F3D">#B04F3D</div>
-          <div style="background:#0A1422">#0A1422</div>
-        </div>
-        <p class="rj-vibe">Whoop deep-navy slab + muted living-coral CTA. Boldest brand swing in the set.</p>
-        <p class="rj-risk">⚠ Rust-coral verdict + coral CTA share vocabulary — Compliance flagged alert-bleed. Tight hue execution dependence (`#D87560` not `#F08D7B` or it drifts to Hims-pastel).</p>
-        <div class="rj-quote">
-          "Coral risks pastel-Hims drift but if the hue is held tight it stays out of fertility-app territory. Anti-bodybuilder credentials hold."
-          <cite>— Brand Strategist · 8.5</cite>
-        </div>
-        <p style="font-size: 11px; color: var(--ink-3); font-style: italic;">→ <b>Round-2 hold-out test candidate</b> — coral icon A/B once Day-90 review moat established.</p>
-      </div>
-
-      <!-- B · Apothecary Steel -->
-      <div class="rejected-card">
-        <div class="rj-h">
-          <span class="rj-name">🥉 B — Apothecary Steel</span>
-          <span class="rj-score">7.43</span>
-        </div>
-        <div class="swatch-strip">
-          <div style="background:#2C4A57">#2C4A57</div>
-          <div style="background:#3A5C6B">#3A5C6B</div>
-          <div style="background:#F2EFE6;color:#2C4A57;text-shadow:none;">linen</div>
-          <div style="background:#C2724E">#C2724E</div>
-          <div style="background:#5E7A4F">#5E7A4F</div>
-          <div style="background:#C49356">#C49356</div>
-          <div style="background:#8E2E2E">#8E2E2E</div>
-          <div style="background:#0F1F2E">#0F1F2E</div>
-        </div>
-        <p class="rj-vibe">Cooler steel teal — sibling of JabWell, lab-precision register.</p>
-        <p class="rj-risk">⚠ Sibling-clone discount: Mark/Carl install JabWell first → install Calibrum → "wait, this looks like JabWell." Brand confusion in user mind = -EV for both apps.</p>
-        <div class="rj-quote">
-          "I literally use JabWell for my GLP-1. If both apps look the same I'm going to mix them up at 2am — I'll open JabWell, ask about my E2, get confused."
-          <cite>— Mark · 7.0</cite>
-        </div>
-      </div>
-
-      <!-- C · Function Lab -->
-      <div class="rejected-card">
-        <div class="rj-h">
-          <span class="rj-name">4 · C — Function Lab</span>
-          <span class="rj-score">7.00</span>
-        </div>
-        <div class="swatch-strip">
-          <div style="background:#0B0E12">#0B0E12</div>
-          <div style="background:#171B22">#171B22</div>
-          <div style="background:#F8F6F1;color:#0B0E12;text-shadow:none;">ivory</div>
-          <div style="background:#C9A961">#C9A961</div>
-          <div style="background:#6E8C76">#6E8C76</div>
-          <div style="background:#C99A52">#C99A52</div>
-          <div style="background:#9B4A3F">#9B4A3F</div>
-          <div style="background:#070A0F">#070A0F</div>
-        </div>
-        <p class="rj-vibe">Onyx + pale champagne gold. "$1,884/yr feel for $49/yr." Boldest premium read.</p>
-        <p class="rj-risk">⚠ Gatekept-elite read. Pale gold on ivory = 2.1:1 — fails AA below 36pt. Mark wants brain-trust-at-2am, not Soho House membership card. Carl bounces immediately.</p>
-        <div class="rj-quote">
-          "Pale gold says 'you should be impressed by this app' — and at 2am I don't want to be impressed. I want to be reassured."
-          <cite>— Mark · 6.0</cite>
-        </div>
-      </div>
-
-      <!-- D · Hone Mirror -->
-      <div class="rejected-card">
-        <div class="rj-h">
-          <span class="rj-name">5 · D — Hone Mirror</span>
-          <span class="rj-score">6.64</span>
-        </div>
-        <div class="swatch-strip">
-          <div style="background:#0F2740">#0F2740</div>
-          <div style="background:#1A3A5C">#1A3A5C</div>
-          <div style="background:#FFFFFF;color:#0F2740;text-shadow:none;">white</div>
-          <div style="background:#3DA5B5">#3DA5B5</div>
-          <div style="background:#B8865B">#B8865B</div>
-          <div style="background:#D89858">#D89858</div>
-          <div style="background:#B85544">#B85544</div>
-          <div style="background:#091929">#091929</div>
-        </div>
-        <p class="rj-vibe">Hone-adjacent cyan + bronze CTA — familiarity bet (Robinhood-vs-Mint pattern).</p>
-        <p class="rj-risk">⚠ <b>Brand Strategist hard veto (4.0).</b> Hone-clone read confuses value prop — Mark projects $1,884/yr expectations onto $49 product. Cyan #3DA5B5 on white = 3.2:1, AA fail for body.</p>
-        <div class="rj-quote">
-          "We are not Hone. We don't have telehealth, don't prescribe, don't have $39M Series A. Visual mimicry confuses the value prop."
-          <cite>— Brand Strategist · 4.0</cite>
-        </div>
-      </div>
-
-    </div>
-  </details>
 
   <p style="margin-top: 18px; font-size: 12px; color: var(--ink-3); line-height: 1.55;">
     <b>Sources:</b>
@@ -1704,8 +1542,40 @@
     </div>
   </div>
 
+  <!-- ✦ Answers panel: E2 visibility + killer features summary -->
+  <div class="answers-panel">
+    <h3>✦ E2 visibility — yes, юзеры хотят видеть E2 везде</h3>
+    <p>
+      <mark class="e2">E2 management</mark> — <b>#1 ranked anxiety</b> per Strategic Plan §2 (60-70% of MARK personae). VOC цитаты:
+      <em>"My libido tanked this week, is my E2 high?"</em> ·
+      <em>"Could I have crashed it with adex?"</em> ·
+      <em>"Is my mood crash from E2 or am I imagining it?"</em>
+      <br>→ E2 marker присутствует на screens <b>1 (dashboard) + 2 (chat) + 3 (lab decode) + 5 (symptom triage) + 7 (doctor PDF)</b> = 5 of 8.
+      Hims/Hone не упоминают E2 в hero copy — это наш <b>open visual slot</b>.
+    </p>
+
+    <h3>✦ Killer features (P0 ship Week 4 — Strategic Plan §8)</h3>
+    <div class="killer-grid">
+      <div class="killer"><b>1 · Daily Mood-Hormone Mirror</b><small>6-metric morning check-in → AI E2 triage from pattern</small></div>
+      <div class="killer"><b>2 · Lab Snap & Decode</b><small>Vision OCR LabCorp/Quest PDF → personal optimal range + RAG explainer</small></div>
+      <div class="killer"><b>3 · Pre-Doctor Visit Brief</b><small>Auto 2-page PDF · 90-day data + 3-5 AI-generated questions</small></div>
+      <div class="killer"><b>4 · Free T Calculator (free)</b><small>Vermeulen formula · upstream Carl-funnel · → WOW reveal → hard paywall</small></div>
+      <div class="killer"><b>5 · AI Hormone Coach Chat</b><small>DeepSeek + on-device RAG (Endocrine Society / AUA / AAFP / Bhasin / TRAVERSE)</small></div>
+      <div class="killer"><b>6 · Multi-Protocol Tracker</b><small>T + AI + hCG + ancillaries · site rotation visualizer · Apple Health sync</small></div>
+      <div class="killer"><b>7 · Smart Bloodwork Timing</b><small>Half-life math · "8 weeks for E2 to stabilize" reminders</small></div>
+      <div class="killer"><b>8 · Subscription Paywall</b><small>$4.99/wk + 7-day trial preselected + $49.99/yr "SAVE 81%"</small></div>
+    </div>
+
+    <h3>✦ First-3 = 85% CR — what each must do</h3>
+    <p>
+      <b>Screen 1 (HERO):</b> "this app sees ALL my hormones, not just T" — Mark's first half-second judgment.<br>
+      <b>Screen 2 (DIFFERENTIATOR):</b> "this is the AI Coach for E2" — burns the differentiator before scroll.<br>
+      <b>Screen 3 (KILLER):</b> "I can stop manually entering my labs" — the dopamine hit that closes install.
+    </p>
+  </div>
+
   <!-- 8 screenshot blocks -->
-  <h3 style="margin-top: 22px;">8 App Store screenshots · in order</h3>
+  <h3 style="margin-top: 22px;">8 App Store screenshots · in order · with copy variants + JTBD mapping</h3>
 
   <!-- Screen 1 -->
   <div class="ss-block">
@@ -1729,22 +1599,41 @@
     </div>
     <div class="ss-spec">
       <h3><span class="ss-num">1</span>HERO · Hormone Balance Dashboard <span class="ss-priority">🥇 85% CR</span></h3>
+      <div class="jtbd-callout">
+        <div class="jtbd-h">JTBD served · #1 + #4 + #6 (multi-anchor)</div>
+        <div class="jtbd-row"><b>User wants:</b><span>"Show me where I stand right now — all 4 numbers in one glance, not one app per marker."</span></div>
+        <div class="jtbd-row"><b>What clicks:</b><span>"This sees ALL my hormones (T + Free T + E2 + HCT), not just dose tracking. Bigger than OptiPin."</span></div>
+        <div class="jtbd-row"><b>Killer feature:</b><span>§8 Feature 6 (Multi-Protocol Tracker) + Feature 1 (Mood-Hormone Mirror) preview</span></div>
+      </div>
       <div class="copy-row">
         <div class="lbl">Top copy</div>
-        <div class="v">"Every hormone. Every shot. One dashboard."</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"Every hormone. Every shot. One dashboard."</li>
+            <li>"T. Free T. E2. HCT. One screen."</li>
+            <li>"The hormone view your urologist doesn't have."</li>
+          </ul>
+        </div>
       </div>
       <div class="copy-row">
         <div class="lbl">Bottom copy</div>
-        <div class="v">"AI Coach included."</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"AI Coach included."</li>
+            <li>"Built for the 90% you're not at the doctor."</li>
+            <li>"Calibrum sees what your labs hide."</li>
+          </ul>
+        </div>
       </div>
       <div class="copy-row">
         <div class="lbl">UI elements</div>
-        <div class="v" style="font-size: 12.5px;">Multi-medication chip strip (T cypionate · anastrozole · hCG) · key markers row (Total T / Free T / E2 / HCT with verdict pills) · AI Coach online badge top-right · next-injection countdown</div>
+        <div class="v" style="font-size: 12.5px;">Multi-medication chip strip (T cypionate · anastrozole · hCG) · key markers row (Total T / Free T / <b>E2</b> / HCT with verdict pills) · AI Coach online badge top-right · next-injection countdown</div>
       </div>
       <div class="ss-tags">
         <span class="ss-tag">HYBRID</span>
         <span class="ss-tag bronze">S1 MARK</span>
         <span class="ss-tag good">LIGHT</span>
+        <span class="ss-tag">E2 visible</span>
       </div>
     </div>
   </div>
@@ -1770,16 +1659,41 @@
     </div>
     <div class="ss-spec">
       <h3><span class="ss-num">2</span>DIFFERENTIATOR · AI Hormone Coach Chat <span class="ss-priority">🥇 85% CR</span></h3>
-      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Confused about E2? Just ask."</div></div>
-      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"AI Hormone Coach, 24/7."</div></div>
+      <div class="jtbd-callout">
+        <div class="jtbd-h">JTBD served · #1 — "E2 panic — am I crashing or surging?" (2:47am)</div>
+        <div class="jtbd-row"><b>User wants:</b><span>"Talk me through this — Reddit takes 4 hours, ChatGPT doesn't know my last lab. I need now-help."</span></div>
+        <div class="jtbd-row"><b>What clicks:</b><span>"This is the only TRT app with grounded AI chat. Not Hims's marketing chatbot. Sources I recognize."</span></div>
+        <div class="jtbd-row"><b>Killer feature:</b><span>§8 Feature 5 (AI Hormone Coach Chat) — DeepSeek + on-device RAG</span></div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Top copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"Confused about E2? Just ask."</li>
+            <li>"Your 2 AM E2 question, answered."</li>
+            <li>"Like having a TRT specialist on call."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Bottom copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"AI Hormone Coach, 24/7."</li>
+            <li>"Endocrine Society. AUA. AAFP. Cited every time."</li>
+            <li>"Educational companion. Not medical advice."</li>
+          </ul>
+        </div>
+      </div>
       <div class="copy-row">
         <div class="lbl">UI elements</div>
-        <div class="v" style="font-size: 12.5px;">User question · 3-tier AI structured response (empathy / RAG-grounded / boundary) · source badges (Endocrine Society + AUA + Bhasin 2018) · disclaimer banner</div>
+        <div class="v" style="font-size: 12.5px;">User question ("My libido tanked — is my E2 high?") · 3-tier AI response (empathy → RAG-grounded → boundary) · source badges (Endocrine Society + AUA + Bhasin 2018) · disclaimer banner</div>
       </div>
       <div class="ss-tags">
         <span class="ss-tag">E2-WEDGE</span>
         <span class="ss-tag bronze">S1 MARK</span>
         <span class="ss-tag" style="background:var(--night-bg);color:var(--bronze);">DARK · SLOT 1</span>
+        <span class="ss-tag">2AM REGISTER</span>
       </div>
       <div class="ss-compliance-note">⚖ Compliance: disclaimer banner mandatory · AI never gives specific dose recs · sources cited inline</div>
     </div>
@@ -1805,11 +1719,35 @@
     </div>
     <div class="ss-spec">
       <h3><span class="ss-num">3</span>KILLER FEATURE · Lab Snap &amp; Decode <span class="ss-priority">🥇 85% CR</span></h3>
-      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Take a photo of your labs."</div></div>
-      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"Get plain-English interpretation."</div></div>
+      <div class="jtbd-callout">
+        <div class="jtbd-h">JTBD served · #2 + #7 — "Lab dropped" + "Doctor said normal but I feel like shit"</div>
+        <div class="jtbd-row"><b>User wants:</b><span>"Skip the manual entry. Tell me which numbers actually matter for ME, not the LabCorp population range."</span></div>
+        <div class="jtbd-row"><b>What clicks:</b><span>"Personal optimal range overlay — finally someone explains why my 'normal' E2 still makes me feel terrible."</span></div>
+        <div class="jtbd-row"><b>Killer feature:</b><span>§8 Feature 2 (Lab Snap &amp; Decode) — OpenAI Vision + RAG interpretation. <b>My TRT App ships Gemini OCR, but stalled at 2 reviews — execution gap is open.</b></span></div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Top copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"Take a photo of your labs."</li>
+            <li>"Stop manually entering bloodwork."</li>
+            <li>"From LabCorp PDF to insight in 4 seconds."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Bottom copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"Get plain-English interpretation."</li>
+            <li>"Personal optimal range — not the population range."</li>
+            <li>"Decoded for your protocol, your age, your dose."</li>
+          </ul>
+        </div>
+      </div>
       <div class="copy-row">
         <div class="lbl">UI elements</div>
-        <div class="v" style="font-size: 12.5px;">LabCorp PDF photo in frame, scanning animation · marker extraction stream · personal optimal range chart (population range vs personal target) · plain-English summary card</div>
+        <div class="v" style="font-size: 12.5px;">LabCorp PDF photo in frame, scanning animation · marker extraction stream · personal optimal range chart (population range vs personal target) · plain-English summary card with E2 + HCT verdict pills</div>
       </div>
       <div class="ss-tags">
         <span class="ss-tag">HYBRID</span>
@@ -1845,16 +1783,41 @@
     </div>
     <div class="ss-spec">
       <h3><span class="ss-num">4</span>Free Testosterone Calculator</h3>
-      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Free T Calculator. Free."</div></div>
-      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"See what your numbers really mean."</div></div>
+      <div class="jtbd-callout">
+        <div class="jtbd-h">JTBD served · #5 — "I want to start TRT — am I a candidate?"</div>
+        <div class="jtbd-row"><b>User wants:</b><span>"Tell me if my labs even justify TRT — my doctor says 350 is normal but I feel terrible."</span></div>
+        <div class="jtbd-row"><b>What clicks:</b><span>"Free without account. Vermeulen — same formula my urologist would use. No Hone-paywall."</span></div>
+        <div class="jtbd-row"><b>Killer feature:</b><span>§8 Feature 4 (Free T Calc) — TBD-2 locked: lives INSIDE onboarding · result → WOW reveal → hard paywall.</span></div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Top copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"Free T Calculator. Free."</li>
+            <li>"Calculate your real Free T."</li>
+            <li>"Don't trust 'normal'. Calculate."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Bottom copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"See what your numbers really mean."</li>
+            <li>"Vermeulen formula. Personal optimal range."</li>
+            <li>"3 next-step paths. Insurance · telehealth · PCP."</li>
+          </ul>
+        </div>
+      </div>
       <div class="copy-row">
         <div class="lbl">UI elements</div>
-        <div class="v" style="font-size: 12.5px;">4-input form (Total T / SHBG / Albumin / Age) · Vermeulen formula label · output card (Free T + Bioavailable T) · "Below optimal for your age" insight · 3-path next-step CTA</div>
+        <div class="v" style="font-size: 12.5px;">4-input form (Total T / SHBG / Albumin / Age) · Vermeulen formula label · output card (Free T + Bioavailable T) · "Below optimal for your age" insight · 3-path next-step CTA (insurance / telehealth Hone / PCP advocacy)</div>
       </div>
       <div class="ss-tags">
         <span class="ss-tag">CALC-FUNNEL</span>
         <span class="ss-tag bronze">S2 CARL</span>
         <span class="ss-tag good">LIGHT</span>
+        <span class="ss-tag">UPSTREAM</span>
       </div>
     </div>
   </div>
@@ -1884,16 +1847,41 @@
     </div>
     <div class="ss-spec">
       <h3><span class="ss-num">5</span>E2 Symptom Triage</h3>
-      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Mood off? Libido down?"</div></div>
-      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"AI checks if it's E2."</div></div>
+      <div class="jtbd-callout">
+        <div class="jtbd-h">JTBD served · #1 (echo) — "E2 panic — am I crashing or surging?"</div>
+        <div class="jtbd-row"><b>User wants:</b><span>"My mood + libido feel off. Is it E2 imbalance or am I imagining it?"</span></div>
+        <div class="jtbd-row"><b>What clicks:</b><span>"7-day pattern recognition — finally something looks at the whole week, not just one day."</span></div>
+        <div class="jtbd-row"><b>Killer feature:</b><span>§8 Feature 1 (Mood-Hormone Mirror) — 6-metric daily check-in → AI E2 triage</span></div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Top copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"Mood off? Libido down?"</li>
+            <li>"Spot E2 patterns before your next lab."</li>
+            <li>"6 metrics. 7 days. One verdict."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Bottom copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"AI checks if it's E2."</li>
+            <li>"Pattern, not panic."</li>
+            <li>"Pre-empt the AI dose conversation."</li>
+          </ul>
+        </div>
+      </div>
       <div class="copy-row">
         <div class="lbl">UI elements</div>
-        <div class="v" style="font-size: 12.5px;">7-day Mirror grid (sleep / mood / libido / energy / anxiety / erection) · pattern detected card · single-sentence AI triage</div>
+        <div class="v" style="font-size: 12.5px;">7-day Mirror grid (sleep / mood / libido / energy / anxiety / erection) · pattern detected card · single-sentence AI triage referencing last lab E2</div>
       </div>
       <div class="ss-tags">
         <span class="ss-tag">SYMPTOM-TRIAGE</span>
         <span class="ss-tag bronze">S1 MARK</span>
         <span class="ss-tag good">LIGHT</span>
+        <span class="ss-tag">E2 visible</span>
       </div>
     </div>
   </div>
@@ -1924,8 +1912,31 @@
     </div>
     <div class="ss-spec">
       <h3><span class="ss-num">6</span>Smart Bloodwork Reminders</h3>
-      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Know exactly when to test."</div></div>
-      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"Based on your protocol changes."</div></div>
+      <div class="jtbd-callout">
+        <div class="jtbd-h">JTBD served · #4 + #8 — "When is next bloodwork due?" + "Changed protocol — when retest?"</div>
+        <div class="jtbd-row"><b>User wants:</b><span>"Stop me from retesting too early or too late. Tell me exactly when E2 stabilizes."</span></div>
+        <div class="jtbd-row"><b>What clicks:</b><span>"Half-life math built-in. No more 'I think it's been 6 weeks?' guesswork."</span></div>
+        <div class="jtbd-row"><b>Killer feature:</b><span>§8 Feature 7 (Smart Bloodwork Timing) — 6/8/12-week reminders by analyte half-life</span></div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Top copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"Know exactly when to test."</li>
+            <li>"Stop guessing your retest window."</li>
+            <li>"E2 stabilizes 8 weeks. We do the math."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Bottom copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"Based on your protocol changes."</li>
+            <li>"Order at-home labs in 1 tap."</li>
+          </ul>
+        </div>
+      </div>
       <div class="copy-row">
         <div class="lbl">UI elements</div>
         <div class="v" style="font-size: 12.5px;">Timeline view: dose-change marker → 6-week countdown → "Schedule lab in 2 weeks" reminder · half-life math callout · direct LabCorp at-home draw order link</div>
@@ -1959,8 +1970,31 @@
     </div>
     <div class="ss-spec">
       <h3><span class="ss-num">7</span>Doctor Visit Prep PDF</h3>
-      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Walk into urology ready."</div></div>
-      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"AI summary + question template."</div></div>
+      <div class="jtbd-callout">
+        <div class="jtbd-h">JTBD served · #3 + #7 — "Prep for urology visit" + "Doctor said normal but I feel like shit"</div>
+        <div class="jtbd-row"><b>User wants:</b><span>"Walk in with data. 'My HCT trended 48→51. Should we switch to SubQ?' — sound like I know."</span></div>
+        <div class="jtbd-row"><b>What clicks:</b><span>"Auto-generated questions tied to MY data. No more 'I forgot what I wanted to ask'."</span></div>
+        <div class="jtbd-row"><b>Killer feature:</b><span>§8 Feature 3 (Pre-Doctor Visit Brief) — unique to Calibrum, no competitor ships this</span></div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Top copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"Walk into urology ready."</li>
+            <li>"Stop being dismissed by your doctor."</li>
+            <li>"5 questions, generated from YOUR data."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Bottom copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"AI summary + question template."</li>
+            <li>"90-day data → 2-page PDF in 4 seconds."</li>
+          </ul>
+        </div>
+      </div>
       <div class="copy-row">
         <div class="lbl">UI elements</div>
         <div class="v" style="font-size: 12.5px;">PDF preview with sections: 90-day dose log · symptom trends · last 2 labs comparison · 5 personalized AI questions · "Generate PDF" CTA</div>
@@ -1969,6 +2003,7 @@
         <span class="ss-tag">DOCTOR-PDF</span>
         <span class="ss-tag bronze">S1 MARK</span>
         <span class="ss-tag good">LIGHT</span>
+        <span class="ss-tag">UNIQUE-TO-US</span>
       </div>
       <div class="ss-compliance-note">⚖ Compliance: PDF must include disclaimer footer "Generated by Calibrum AI Hormone Coach. Educational summary, not medical advice. Discuss with prescribing physician." · pure B&amp;W (designed for printing)</div>
     </div>
@@ -1996,8 +2031,31 @@
     </div>
     <div class="ss-spec">
       <h3><span class="ss-num">8</span>Pricing / Value</h3>
-      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Skip the $200/mo telehealth fee."</div></div>
-      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"$49.99/yr — your TRT brain trust."</div></div>
+      <div class="jtbd-callout">
+        <div class="jtbd-h">JTBD served · cross-cutting — closes the install hesitation</div>
+        <div class="jtbd-row"><b>User wants:</b><span>"Justify the $4.99 to myself. What does this replace? What am I currently paying?"</span></div>
+        <div class="jtbd-row"><b>What clicks:</b><span>"36× cheaper than Hone for the AI-coaching layer. No telehealth Rx but I have a doctor for that."</span></div>
+        <div class="jtbd-row"><b>Killer feature:</b><span>§8 Feature 8 (Subscription Paywall) — $4.99/wk + 7-day trial · $49.99/yr 'SAVE 81%'</span></div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Top copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"Skip the $200/mo telehealth fee."</li>
+            <li>"36× cheaper than Hone Health."</li>
+            <li>"What your urologist visit costs in a year."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Bottom copy</div>
+        <div class="v">
+          <ul class="variants">
+            <li class="pick">"$49.99/yr — your TRT brain trust."</li>
+            <li>"7-day free trial. Cancel anytime."</li>
+          </ul>
+        </div>
+      </div>
       <div class="copy-row">
         <div class="lbl">UI elements</div>
         <div class="v" style="font-size: 12.5px;">Cost comparison ladder (endo $300–500 / Function $499 / Hone $1,884 / Calibrum $49.99) · "7-day free trial" badge</div>
@@ -2683,15 +2741,14 @@
   <a href="https://love8ko.github.io/jabwell/design.html">JabWell design workbench</a> (sibling — GLP-1 Tracker &amp; AI Coach) ·
   <a href="../">love8ko.github.io portfolio index</a>
 
-  <h3>⏳ Round-2 follow-ups (deferred)</h3>
+  <h3>🔧 Refinement hold-outs (post-launch — never reopen palette)</h3>
   <span style="color: rgba(245,242,237,0.85);">
     Bronze hue precision A/B (`#B8865B` vs warmer `#C9925E` vs cooler `#A47A52`) ·
-    Variant E coral CTA hold-out test (icon A/B once Day-90 review moat established) ·
     Chat surface light variant (Settings toggle vs dark-only V1) ·
     Onboarding visual treatment (illustrated character vs phone-mockup hero on Screen 1) ·
     Doctor Visit Prep PDF wordmark (B&amp;W lockup variant) ·
     Verdict alert color test (`#A85842` vs darker `#7E3829`) ·
-    Re-test Variant A against JTBD Section D handoff brief
+    Hero number type weight (Rounded Bold vs SemiBold)
   </span>
 
   <div class="tm-disclaim">
