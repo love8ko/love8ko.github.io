@@ -113,8 +113,12 @@
     <p>If you turn on <strong>Safe Mode</strong> in Settings, the profile context sent to DeepSeek omits weight numbers and replaces directional weight references with non-numeric phrasing.</p>
 
     <h2>5. Photos</h2>
-    <p>Photos you capture in the Hair / Skin photo journal are stored on your device. If you opt in to AI photo analysis (V1.1+), photos are sent to OpenAI Vision in an ephemeral session with retention disabled, analysed, and the photo bytes are not retained by OpenAI per their API terms. The analysis result text is stored on your device alongside your photo.</p>
-    <p>You can delete any photo from the journal at any time. Photos never go to advertising networks.</p>
+    <p>JabWell uses your camera in two ways:</p>
+    <ul>
+        <li><strong>Pen / syringe / injection-site scans (v1.0)</strong> — when you tap the scan button to identify a medication pen, log a pre-filled syringe dose, or photograph your post-injection site, the photo is sent through our Cloudflare Workers proxy to OpenAI Vision (GPT-4o) for one-shot identification. The request is sent with <code>store: false</code> — OpenAI does not retain the photo per their API terms. Our Cloudflare Worker does not log the photo payload either. The structured result text (medication name, dose, site notes) is stored on your device alongside the photo. The photo itself is also stored on your device unless you choose to delete it.</li>
+        <li><strong>Hair / skin photo journal (v1.0)</strong> — photos you capture for the weekly hair or skin tracker are stored <strong>only on your device</strong> in v1.0. AI analysis of hair or skin photos is opt-in and arrives in v1.1+; you will see a clear consent prompt before any hair/skin photo leaves the device.</li>
+    </ul>
+    <p>You can delete any photo from JabWell at any time. Photos are never sent to advertising networks, never linked to your name or account (you don't have an account), and never used for ad targeting.</p>
 
     <h2>6. Subscriptions and payments</h2>
     <p>JabWell is a paid app. Subscriptions are managed by Apple's App Store. We use <strong>RevenueCat</strong> to verify subscription receipts and manage entitlement state. RevenueCat receives only an anonymous user identifier and the subscription receipt — no health data, no name, no email. See RevenueCat's privacy policy at <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</p>
