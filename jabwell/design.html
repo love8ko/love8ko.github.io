@@ -2738,8 +2738,58 @@
     .onb-cta-secondary { width: 100%; background: transparent; color: #264653; border: 1px solid #264653; border-radius: 14px; padding: 11px; font-size: 13px; font-weight: 700; font-family: inherit; cursor: pointer; margin-top: 8px; }
     .onb-disclaimer { font-size: 10px; line-height: 1.45; color: #6a6a70; margin-top: 12px; padding: 8px 10px; background: rgba(38,70,83,0.04); border-radius: 8px; }
 
-    /* Pain hero */
-    .onb-pain-img { width: calc(100% + 36px); margin: -6px -18px 0; height: 220px; object-fit: cover; display: block; }
+    /* Pain hero — 9:16 full-bleed (round 2 reorient 2026-05-01) */
+    .onb-phone.onb-phone-fullbleed { padding: 0; overflow: hidden; }
+    .onb-phone.onb-phone-fullbleed .onb-phone-screen { padding: 0; height: 100%; overflow: hidden; position: relative; }
+    .onb-pain-fullbleed { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .onb-phone-status-overlay { position: absolute; top: 0; left: 0; right: 0; padding: 14px 22px 0; z-index: 3; color: #ffffff; mix-blend-mode: difference; opacity: 0.65; }
+    .onb-pain-scrim {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 96px 22px 28px;
+      background: linear-gradient(to bottom, rgba(244,241,222,0) 0%, rgba(244,241,222,0.92) 35%, rgba(244,241,222,1) 70%);
+      z-index: 2;
+    }
+    .onb-pain-scrim .onb-eyebrow { color: #E76F51; margin-top: 0; margin-bottom: 8px; }
+    .onb-pain-scrim .onb-h { color: #264653; }
+    .onb-pain-scrim .onb-sub { color: #4a4a55; }
+
+    /* Sample patient header for slot 5 walkthrough */
+    .onb-sample-header { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: white; border: 1px solid #e6e2d2; border-radius: 14px; margin-bottom: 12px; }
+    .onb-sample-avatar { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; background-size: cover; background-position: center; border: 1px solid #e6e2d2; }
+    .onb-sample-info { flex: 1; line-height: 1.3; }
+    .onb-sample-info .nm { font-size: 11px; font-weight: 800; color: #264653; }
+    .onb-sample-info .ds { font-size: 10px; color: #6a6a70; margin-top: 1px; }
+    .onb-sample-edit { font-size: 10px; font-weight: 700; color: #E76F51; padding: 4px 8px; border: 1px solid #E76F51; border-radius: 999px; cursor: pointer; flex-shrink: 0; }
+
+    /* Walkthrough frame cards (5 frames) */
+    .onb-frame-card { background: white; border: 1px solid #e6e2d2; border-radius: 14px; padding: 0; margin-bottom: 10px; overflow: hidden; position: relative; }
+    .onb-frame-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+    .onb-frame-body { padding: 10px 12px; }
+    .onb-frame-eyebrow { font-size: 9.5px; font-weight: 800; color: #E76F51; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .onb-frame-title { font-size: 13px; font-weight: 800; color: #264653; line-height: 1.25; margin-bottom: 4px; }
+    .onb-frame-meta { font-size: 11px; color: #4a4a55; line-height: 1.4; margin-bottom: 6px; }
+    .onb-frame-card .onb-source-inline { margin-top: 4px; }
+
+    /* Skip pill for slot 5 */
+    .onb-skip-pill { position: absolute; top: 14px; right: 18px; font-size: 10px; font-weight: 700; color: #6a6a70; padding: 6px 10px; background: rgba(255,255,255,0.7); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid #e6e2d2; border-radius: 999px; cursor: pointer; z-index: 5; }
+
+    /* Walkthrough mini cost-stack chart (frame 5) */
+    .onb-cost-stack { display: flex; flex-direction: column; gap: 4px; margin: 8px 0; }
+    .onb-cost-row { display: flex; align-items: center; gap: 8px; font-size: 10.5px; }
+    .onb-cost-row .lbl { width: 100px; color: #4a4a55; flex-shrink: 0; }
+    .onb-cost-row .bar { flex: 1; height: 10px; background: rgba(38,70,83,0.08); border-radius: 4px; position: relative; overflow: hidden; }
+    .onb-cost-row .bar > span { display: block; height: 100%; border-radius: 4px; }
+    .onb-cost-row .amt { width: 60px; text-align: right; font-weight: 800; color: #264653; font-size: 10.5px; flex-shrink: 0; }
+    .onb-cost-row.us .bar > span { background: #9B2226; opacity: 0.55; }
+    .onb-cost-row.them .bar > span { background: #DDA15E; opacity: 0.7; }
+    .onb-cost-row.you .bar > span { background: #606C38; opacity: 0.85; }
+
+    /* Walkthrough mini hair density (frame 4) */
+    .onb-hair-thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: 6px 0; }
+    .onb-hair-thumb { aspect-ratio: 1/1; border-radius: 6px; background: rgba(38,70,83,0.08); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: #264653; }
+
+    /* Walkthrough mini sparkline (frame 2) */
+    .onb-spark { height: 28px; margin: 6px 0 4px; }
 
     /* JTBD grid */
     .onb-jtbd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
@@ -2844,13 +2894,13 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════ -->
-  <!-- SLOT 1 — PAIN -->
+  <!-- SLOT 1 — PAIN (9:16 full-bleed, reoriented 2026-05-01) -->
   <!-- ═══════════════════════════════════════════════════════════════════ -->
   <div class="onb-slot">
-    <div class="onb-phone">
-      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
-      <div class="onb-phone-screen">
-        <img class="onb-pain-img" src="img/onboarding/01-pain-hero.png" alt="Pain hero" />
+    <div class="onb-phone onb-phone-fullbleed">
+      <img class="onb-pain-fullbleed" src="img/onboarding/01-pain-hero.png" alt="Pain hero" />
+      <div class="onb-phone-status onb-phone-status-overlay"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-pain-scrim">
         <div class="onb-eyebrow">JabWell · Step 1 of 6</div>
         <div class="onb-h">3 a.m. and you don't know if this is normal.</div>
         <div class="onb-sub">Side effects, dose questions, plateaus, hair changes — most apps just track your shots. We coach you through them.</div>
@@ -2858,7 +2908,7 @@
       </div>
     </div>
     <div class="onb-rationale">
-      <h4><span class="num">1</span>Pain · PAS Problem-Agitate <span class="role-pill">S1 anchor</span></h4>
+      <h4><span class="num">1</span>Pain · PAS Problem-Agitate <span class="role-pill">S1 anchor · 9:16 full-bleed</span></h4>
       <dl>
         <dt>Persona target</dt>
         <dd>S1 Maya 34yo, just escalated to 7.5mg Zepbound®, opens app at 3am because she's nauseous and scared.</dd>
@@ -2866,12 +2916,16 @@
       </dl>
       <div class="onb-quote">«I literally gasped — that's me at 3am.» <cite>— Maya, S1 round 1</cite></div>
       <dl>
+        <dt>Format change 2026-05-01</dt>
+        <dd>Reoriented from 4:3 banner + text-below → <strong>9:16 portrait full-bleed</strong> with gradient scrim text overlay. User feedback: «забирать место — это не дизайн, это пустота». Hero illustration теперь занимает весь экран edge-to-edge, headline + sub + CTA читаются через cream-linen scrim снизу. Calm/Headspace gold-standard pattern.</dd>
         <dt>Inclusion safety</dt>
         <dd>Linda S2 said «infantile to month-12 user» — but slot 2 5-card grid immediately redeems. Without slot 2, slot 1 falls.</dd>
         <dt>Visual contrast</dt>
         <dd>ASO call: contrast App Store Screenshot 1 retention dashboard (problem→outcome arc).</dd>
       </dl>
       <ul class="onb-locks-list">
+        <li>9:16 portrait full-bleed (1290×2293+) edge-to-edge</li>
+        <li>Subject upper 55-60%, lower 35-40% gradient scrim safe-zone</li>
         <li>Stat-free copy (Behavioral: stats trigger defensive backlash in 3am opens)</li>
         <li>Subject reads «alert at unusual hour», not panicked</li>
         <li>No medical objects in foreground (compliance hard-gate)</li>
@@ -3051,17 +3105,28 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════ -->
-  <!-- SLOT 5 — WOW MULTI-PAYLOAD -->
+  <!-- SLOT 5 — WOW (round-2 final: D-framework × C-content × A-visual) -->
   <!-- ═══════════════════════════════════════════════════════════════════ -->
   <div class="onb-slot">
     <div class="onb-phone">
       <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-skip-pill">Skip →</div>
       <div class="onb-phone-screen">
         <div class="onb-eyebrow">JabWell · Step 5 of 6</div>
-        <div class="onb-h">Try it — ask anything.</div>
-        <div class="onb-sub" style="margin-bottom: 10px;">Tap a question. AI Nurse answers in 2 seconds, backed by FDA + Mayo.</div>
+        <div class="onb-h">90 days with JabWell —<br>what your AI team prepares.</div>
+        <div class="onb-sub" style="margin-bottom: 10px;">Try the AI Nurse, then scroll a sample patient's first 90 days.</div>
 
-        <!-- Chat -->
+        <!-- Sample patient header -->
+        <div class="onb-sample-header">
+          <div class="onb-sample-avatar" style="background-image:url('img/onboarding/wow-avatar-sample-A.png');"></div>
+          <div class="onb-sample-info">
+            <div class="nm">Sample patient A</div>
+            <div class="ds">35-year-old · Wegovy® · 1.7 mg · week 5</div>
+          </div>
+          <div class="onb-sample-edit">Change</div>
+        </div>
+
+        <!-- Chat (consultation moment) -->
         <div class="onb-chat-area">
           <div class="onb-chat-q">I've had nausea 3 days — should I worry?</div>
           <div class="onb-chat-a">
@@ -3074,57 +3139,112 @@
         </div>
         <div class="onb-disclaimer" style="margin-bottom: 14px;">Educational, not medical advice. Consult your prescriber.</div>
 
-        <!-- Today mock (multi-mode) -->
-        <div class="onb-mock-card">
+        <!-- Frame 1: Day 1 / Relief -->
+        <div class="onb-frame-card">
+          <img class="onb-frame-img" src="img/onboarding/wow-frame-1-day1.png" alt="Day 1" />
           <div class="onb-sample-ribbon">SAMPLE</div>
-          <div class="label">Today · sample patient</div>
-          <div class="big">Day 35 · Zepbound® · 7.5 mg</div>
-          <div class="meta">Next dose: Friday at 3:00 PM · in 2 days</div>
-          <div class="meta">Estimated level: rising → steady-state ~Day 40</div>
-          <div class="caveat">Multi-mode by your weeks bucket. Just-starting / 1-3 mo / 3+ mo / Compounded — copy adapts. <strong>Sample data — not your forecast.</strong></div>
-        </div>
-
-        <!-- 3-month range -->
-        <div class="onb-mock-card">
-          <div class="onb-sample-ribbon">SAMPLE</div>
-          <div class="label">Typical first 3 months · per Wegovy® FDA label</div>
-          <div class="onb-range">
-            <div class="onb-range-bar">
-              <div class="fill"></div>
-              <div class="marker" style="left: 30%;"></div>
-              <div class="marker" style="left: 88%;"></div>
-            </div>
-            <div class="onb-range-axis"><span>0%</span><span>−5%</span><span>−12%</span><span>−15%</span></div>
+          <div class="onb-frame-body">
+            <div class="onb-frame-eyebrow">Day 1 · Relief</div>
+            <div class="onb-frame-title">AI Nurse opens first conversation</div>
+            <div class="onb-frame-meta">«I won't be alone tonight.» Chat thread initialized · 3-tier triage on standby for the first nausea wave.</div>
+            <span class="onb-source-inline">📚 DailyMed Wegovy® label</span>
           </div>
-          <div class="meta" style="font-size:11px;">Most users in clinical trials saw <strong>5-12% body-weight change</strong> in the first 3 months on 2.4 mg dose.</div>
-          <span class="onb-source-inline">📚 STEP-1 NCT03548935 · DailyMed</span>
-          <div class="caveat" style="margin-top:8px;"><strong>Sample data — not your forecast.</strong> Educational, not medical advice. Range varies by dose, individual factors.</div>
         </div>
 
-        <button class="onb-cta">See how this works for you →</button>
+        <!-- Frame 2: Week 4 / Validation -->
+        <div class="onb-frame-card">
+          <img class="onb-frame-img" src="img/onboarding/wow-frame-2-week4.png" alt="Week 4" />
+          <div class="onb-sample-ribbon">SAMPLE</div>
+          <div class="onb-frame-body">
+            <div class="onb-frame-eyebrow">Week 4 · Validation</div>
+            <div class="onb-frame-title">Side-effect coach guided through nausea wave</div>
+            <div class="onb-frame-meta">12 questions answered · AI Nurse referenced FDA frequency timeline for nausea fade. Educational reference, not personal prediction.</div>
+            <svg class="onb-spark" viewBox="0 0 300 28" preserveAspectRatio="none">
+              <path d="M0,4 Q40,2 70,8 T140,18 Q180,22 220,24 T300,26" fill="none" stroke="#264653" stroke-width="2" stroke-linecap="round"/>
+              <text x="0" y="27" font-size="8" fill="#6a6a70">wk 4</text>
+              <text x="280" y="27" font-size="8" fill="#6a6a70">wk 12</text>
+            </svg>
+            <div class="onb-frame-meta" style="font-size:9.5px; color:#6a6a70;">FDA Phase III median — not your forecast.</div>
+            <span class="onb-source-inline">📚 STEP-1 NCT03548935</span>
+          </div>
+        </div>
+
+        <!-- Frame 3: Week 9 / Agency -->
+        <div class="onb-frame-card">
+          <img class="onb-frame-img" src="img/onboarding/wow-frame-3-week9.png" alt="Week 9" />
+          <div class="onb-sample-ribbon">SAMPLE</div>
+          <div class="onb-frame-body">
+            <div class="onb-frame-eyebrow">Week 9 · Agency</div>
+            <div class="onb-frame-title">Plateau reminder + Doctor PDF auto-prep</div>
+            <div class="onb-frame-meta">~50% of patients hit a ≥4-week stall by month 6 (FDA Phase III). Doctor PDF auto-prepared with 9 weeks of logs + 6 question templates.</div>
+            <span class="onb-source-inline">📚 STEP-1 + AAFP plateau guidance</span>
+          </div>
+        </div>
+
+        <!-- Frame 4: Month 3 / Pride -->
+        <div class="onb-frame-card">
+          <img class="onb-frame-img" src="img/onboarding/wow-frame-4-month3.png" alt="Month 3" />
+          <div class="onb-sample-ribbon">SAMPLE</div>
+          <div class="onb-frame-body">
+            <div class="onb-frame-eyebrow">Month 3 · Pride</div>
+            <div class="onb-frame-title">Hair Journal weekly · AI density readout</div>
+            <div class="onb-hair-thumbs">
+              <div class="onb-hair-thumb">m1</div>
+              <div class="onb-hair-thumb">m2</div>
+              <div class="onb-hair-thumb">m3</div>
+              <div class="onb-hair-thumb">m4</div>
+              <div class="onb-hair-thumb">m5</div>
+            </div>
+            <div class="onb-frame-meta">Weekly photos + AI density % readout. Telogen effluvium typical 3-6 months after rapid weight loss; recovery ~6 months.</div>
+            <span class="onb-source-inline">📚 AAFP telogen effluvium · Mayo</span>
+          </div>
+        </div>
+
+        <!-- Frame 5: Annual / Savings -->
+        <div class="onb-frame-card">
+          <img class="onb-frame-img" src="img/onboarding/wow-frame-5-cost.png" alt="Annual cost" />
+          <div class="onb-sample-ribbon">SAMPLE</div>
+          <div class="onb-frame-body">
+            <div class="onb-frame-eyebrow">Annual · Savings</div>
+            <div class="onb-frame-title">Annual cost stack: app vs medical visits</div>
+            <div class="onb-cost-stack">
+              <div class="onb-cost-row us"><div class="lbl">Endo visits</div><div class="bar"><span style="width:90%"></span></div><div class="amt">$400+</div></div>
+              <div class="onb-cost-row us"><div class="lbl">Dietitian</div><div class="bar"><span style="width:50%"></span></div><div class="amt">$200+</div></div>
+              <div class="onb-cost-row us"><div class="lbl">Coach</div><div class="bar"><span style="width:35%"></span></div><div class="amt">$150+</div></div>
+              <div class="onb-cost-row you"><div class="lbl"><strong>JabWell</strong></div><div class="bar"><span style="width:9%"></span></div><div class="amt">$39.99</div></div>
+            </div>
+            <div class="onb-frame-meta">Public consultation pricing (per-visit averages). JabWell annual = $39.99/yr. Compounded comparison surfaces post-purchase.</div>
+            <span class="onb-source-inline">📚 Public AMA / endo / RD pricing data</span>
+          </div>
+        </div>
+
+        <button class="onb-cta">See your full team →</button>
       </div>
     </div>
     <div class="onb-rationale">
-      <h4><span class="num">5</span>WOW · Multi-payload chat-then-flip <span class="role-pill">Primary moment</span></h4>
+      <h4><span class="num">5</span>WOW · 5-frame walkthrough (round-2 D × C × A) <span class="role-pill">Primary moment</span></h4>
       <dl>
-        <dt>Mechanic locked</dt>
-        <dd>Chat-then-flip (Cara Care +31% T2P vs tab-switcher -9%). Chat first → after response, flip card reveals Today mock + Typical 3-month range vertically.</dd>
-        <dt>Why 3 payloads addresses user's «consultation / weight drops / metrics tracked»</dt>
-        <dd><strong>Chat</strong> = consultation (3-tier with ER triggers). <strong>Today mock</strong> = metrics (Day X · brand · countdown · estimated level). <strong>3-month range</strong> = «what results might look like» — FDA-label-grounded, not personalized prediction.</dd>
-        <dt>Round-1 quote (Behavioral)</dt>
+        <dt>Synthesis (round-2 8/8 voices)</dt>
+        <dd><strong>D-framework × C-content × A-visual.</strong> «90 days in 30 seconds» scrollable preview (D, 6/8 voices). Each frame shows JabWell <em>feature delivered</em>, NOT body change (C, Compliance veto on raw D — avoids Apple Medical category review trigger). Hand-painted gouache milestone vignettes (A, Visual designer).</dd>
+        <dt>Chat above the walkthrough = consultation moment</dt>
+        <dd>Maya literal: «I've had nausea 3 days — should I worry?» (present-tense suffering, not curious). 3-tier with ER trigger (Apple 1.4.1). Tappable FDA citation pill. Dead-end input «Unlock to ask your own →» (Conversion: Cara Care 11% rage-quit without lock).</dd>
+        <dt>5 frames map to emotional outcomes</dt>
+        <dd>Day 1 <strong>Relief</strong> · Week 4 <strong>Validation</strong> · Week 9 <strong>Agency</strong> · Month 3 <strong>Pride</strong> · Annual <strong>Savings</strong>. Each frame = one feature + one moment + one wow signal.</dd>
+        <dt>Round-2 quote (Conversion)</dt>
       </dl>
-      <div class="onb-quote">«Multi-WOW shifts anchoring class from ChatGPT-free to endo-dietitian-nurse $750. Single chat keeps you compared to free.» <cite>— Behavioral psychologist</cite></div>
+      <div class="onb-quote">«Personalization (sample patient pre-filled from slot 2-3) is the +37% multiplier. Static cards leave 30%+ T2P on the table.» <cite>— Conversion expert</cite></div>
       <dl>
-        <dt>Compliance edge — 3-month range</dt>
-        <dd>Per-brand FDA-label range bar (Wegovy 5-12% / Zepbound 6-15% / Compounded mirrors with FDA-flag caveat). NOT JabWell efficacy claim. NOT personalized prediction («reach X by date» rejected upstream). User asked «прогноз за 3 месяца» — this is the compliance-safe answer.</dd>
-        <dt>Dead-end input lock</dt>
-        <dd>«Unlock to ask your own →» visible from second 1 (Conversion expert: Cara Care 11% rage-quit on dead-end chat without lock label).</dd>
+        <dt>Behavior locks (anti-Noom)</dt>
+        <dd>Manual swipe (NO auto-advance). Skippable in 1 tap from second 1 (Skip pill top-right). Profile pre-fill always editable («Change» pill on header). Persistent disclaimer never collapse.</dd>
+        <dt>Compliance hard-gates passed</dt>
+        <dd>Sample patient avatar = geometric, no face/gender/age/ethnicity. Profile labeled «Sample patient A» (no first name). Every reference labeled «FDA Phase III median — not your forecast». «Plateau <strong>reminder</strong>» (NEVER «detector» — diagnostic verb). All brand mentions ®. No predictive curves.</dd>
       </dl>
       <ul class="onb-locks-list">
-        <li>SAMPLE diagonal ribbon 30% opacity on EVERY mock card (DTC CMO + Compliance)</li>
-        <li>ER pivot inside canned chat answer (Apple 1.4.1 — vomiting &gt;24h, pancreatitis signs)</li>
-        <li>AI-prefixed persona names («AI Nurse», not «Nurse») in any caption</li>
-        <li>Disclaimer 11pt grey-700 inline persistent · NEVER collapse</li>
+        <li>5 vignettes (Sora-generated gouache) match iter1 JTBD icon style</li>
+        <li>Native SwiftUI Charts (sparkline / cost stack / hair density grid) — left-to-right draw ONCE on appear, no loop, no shimmer (Visual designer lock)</li>
+        <li>SAMPLE diagonal ribbon 30% opacity on EVERY frame card</li>
+        <li>Banned cliches: countdown timer · confetti burst · before-after silhouette · slot-machine roll-down · gamification checkmarks · stock measuring-tape woman</li>
+        <li>Projected metrics revised: Slot 5 engagement 75%+ · T2P 46-52% (up from round-1 42-48%)</li>
       </ul>
     </div>
   </div>
