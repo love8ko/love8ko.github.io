@@ -1,0 +1,2708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calibrum — Design Workbench</title>
+<meta property="og:title" content="Calibrum — Design Workbench">
+<meta property="og:description" content="AI Hormone Anxiety Coach for men on TRT — design system + JTBD + onboarding flow">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:#1A2332; --ink-2:#5A6470; --ink-3:#8C95A1;
+    --bg:#F5F2ED; --card:#FFFFFF; --divider:#E1DCD2;
+    --bronze:#B8865B; --bronze-deep:#9A6E45; --bronze-soft:#E8D9C2;
+    --good:#7A9270; --good-bg:#E5EBE0;
+    --watch:#C9924A; --watch-bg:#F4E8D5;
+    --alert:#A85842; --alert-bg:#F1DAD0;
+    --night-bg:#0E1626; --night-surface:#1A2332;
+    --night-bubble-user:#28354A; --night-text:#F0E8D9;
+    --night-accent:#D4A06B; --night-divider:#2A3548;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 30px; margin-bottom: 4px; font-family: -apple-system, "SF Pro Rounded", sans-serif; letter-spacing: -0.01em; }
+  h2 { font-size: 22px; margin-bottom: 8px; margin-top: 8px; font-family: -apple-system, "SF Pro Rounded", sans-serif; letter-spacing: -0.01em; }
+  h3 { font-size: 16px; margin-bottom: 4px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .lede { color: var(--ink-2); margin-bottom: 24px; max-width: 760px; line-height: 1.55; }
+  .meta-info { font-size: 12px; color: var(--ink-3); margin-bottom: 24px; }
+
+  section {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 12px rgba(26,35,50,0.05);
+  }
+  .section-intro { color: var(--ink-2); font-size: 14px; line-height: 1.55; margin-bottom: 12px; max-width: 820px; }
+  code { font-family: ui-monospace, "SF Mono", monospace; background: #F2EEE6; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+
+  /* ── Top navigation ── */
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    background: rgba(255,255,255,0.94); backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--divider); border-radius: 999px;
+    padding: 8px 14px; margin: -8px 0 18px; width: fit-content;
+    box-shadow: 0 4px 14px rgba(26,35,50,0.05);
+  }
+  .top-nav a {
+    text-decoration: none; color: #4a4a55;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 700;
+    transition: all 0.15s ease;
+  }
+  .top-nav a:hover { background: var(--bronze-soft); color: var(--bronze-deep); }
+  .top-nav a.featured {
+    background: linear-gradient(135deg, #1A2332 0%, #2C3E5A 100%);
+    color: white; box-shadow: 0 2px 8px rgba(26, 35, 50, 0.35);
+  }
+  .top-nav a.featured:hover { color: white; transform: translateY(-1px); background: linear-gradient(135deg, #1A2332 0%, var(--bronze) 100%); }
+  .top-nav .sep { color: #d0d0d8; font-size: 10px; margin: 0 2px; }
+
+  /* ── Hero card ── */
+  .hero-card {
+    background: linear-gradient(135deg, #1A2332 0%, #243044 50%, var(--bronze) 180%);
+    color: white; padding: 22px 26px; border-radius: 16px; margin-bottom: 24px;
+    box-shadow: 0 6px 22px rgba(26, 35, 50, 0.32);
+  }
+  .hero-card .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; opacity: 0.92; color: var(--bronze-soft); }
+  .hero-card .one-liner { font-size: 22px; font-weight: 800; margin-top: 6px; font-family: -apple-system, "SF Pro Rounded", sans-serif; line-height: 1.25; }
+  .hero-card .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; font-size: 12px; }
+  .hero-card .meta-row span {
+    background: rgba(255,255,255,0.14); padding: 4px 10px; border-radius: 999px;
+    font-weight: 700; letter-spacing: 0.02em;
+  }
+  .hero-card .meta-row span.race { background: rgba(168,88,66,0.55); }
+
+  /* ── Generic pill ── */
+  .pill {
+    display: inline-block;
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 999px; padding: 4px 10px; font-size: 11px;
+    color: var(--ink-2); font-weight: 700; vertical-align: middle;
+  }
+  .pill.lock { background: var(--good-bg); color: #2D5A2A; border-color: #C8D9C0; }
+  .pill.bronze { background: var(--bronze-soft); color: var(--bronze-deep); border-color: var(--bronze-soft); }
+  .pill.alert { background: var(--alert-bg); color: #6E2E20; border-color: var(--alert-bg); }
+  .pill.night { background: var(--ink); color: var(--bronze-soft); border-color: var(--ink); }
+
+  /* ── Locked-winner card (palette) ── */
+  .winner-callout {
+    background: linear-gradient(135deg, #1A2332 0%, #243044 100%);
+    color: var(--bg);
+    border-radius: 20px;
+    padding: 24px 26px;
+    margin: 18px 0 18px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    box-shadow: 0 8px 26px rgba(26,35,50,0.22);
+  }
+  .winner-callout h3 { color: var(--bg); margin: 0; font-size: 22px; }
+  .winner-callout .vibe { color: var(--bronze-soft); font-style: italic; max-width: 720px; margin-top: 8px; line-height: 1.55; font-size: 13.5px; }
+  .winner-callout .score-badge {
+    background: var(--bronze);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 800;
+    font-size: 17px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    box-shadow: 0 2px 10px rgba(184,134,91,0.4);
+  }
+  .winner-callout .lock-eyebrow {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+    color: var(--bronze); margin-bottom: 6px;
+  }
+
+  /* ── Mode mockup pair (day + night surfaces) ── */
+  .modes-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 16px;
+  }
+  @media (max-width: 820px) { .modes-row { grid-template-columns: 1fr; } }
+  .mode-block {
+    border-radius: 22px;
+    padding: 22px 18px;
+    min-height: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .mode-block.day { background: var(--bg); border: 1px solid var(--divider); }
+  .mode-block.night { background: var(--night-bg); color: var(--night-text); }
+  .mode-label {
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6;
+  }
+  .mock-card {
+    background: var(--card); border-radius: 16px; padding: 14px;
+    box-shadow: 0 1px 3px rgba(26,35,50,0.06);
+  }
+  .mock-card.dark { background: var(--night-surface); }
+
+  .hero-metric {
+    background: var(--ink); color: var(--bg);
+    border-radius: 16px; padding: 18px 20px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .hero-metric .num {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 700; font-size: 42px; line-height: 1;
+  }
+  .hero-metric .num small { font-size: 16px; color: var(--bronze-soft); font-weight: 600; }
+  .hero-metric .label {
+    font-size: 10.5px; color: var(--bronze-soft); letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .hero-metric .delta {
+    font-size: 12px; font-weight: 600; color: var(--bronze-soft);
+  }
+  .spark {
+    height: 24px; margin-top: 4px;
+    background: linear-gradient(90deg, transparent, rgba(184,134,91,0.6) 90%);
+    border-radius: 4px;
+    position: relative;
+  }
+  .spark::after {
+    content: ''; position: absolute; right: 0; top: 50%; transform: translate(50%, -50%);
+    width: 8px; height: 8px; background: var(--bronze); border-radius: 50%;
+  }
+
+  .lab-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+  .lab-row:last-child { border-bottom: none; }
+  .lab-name { font-weight: 600; font-size: 13.5px; }
+  .lab-value { font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; font-size: 13px; }
+  .lab-value small { color: var(--ink-3); font-weight: 500; }
+  .verdict-pill {
+    border-radius: 999px; padding: 3px 9px;
+    font-size: 10.5px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .verdict-pill::before { content: '●'; font-size: 9px; }
+  .verdict-pill.good  { background: var(--good-bg);  color: #2D5A2A; }
+  .verdict-pill.watch { background: var(--watch-bg); color: #7A5A2A; }
+  .verdict-pill.alert { background: var(--alert-bg); color: #6E2E20; }
+
+  .chat .bubble {
+    border-radius: 16px; padding: 11px 13px;
+    margin-bottom: 7px; max-width: 80%;
+    font-size: 12.5px; line-height: 1.45;
+  }
+  .chat .bubble.assistant {
+    background: var(--night-surface); color: var(--night-text);
+    border-top-left-radius: 5px;
+  }
+  .chat .bubble.user {
+    background: var(--night-bubble-user); color: var(--night-text);
+    margin-left: auto; border-top-right-radius: 5px;
+  }
+  .chat .citation {
+    color: var(--night-accent); font-size: 11px; margin-top: 5px; display: inline-block;
+    border-bottom: 1px dotted var(--night-accent);
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 46px; padding: 0 18px; border-radius: 12px;
+    font-weight: 700; font-size: 14px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    border: none; cursor: pointer;
+  }
+  .btn.primary { background: var(--bronze); color: #fff; }
+  .btn.primary:hover { background: var(--bronze-deep); }
+  .btn.ghost-night { background: transparent; color: var(--night-accent); border: 1px solid var(--night-divider); }
+
+  /* ── Token grid ── */
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .token {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 10px; padding: 8px 10px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px;
+  }
+  .token .chip {
+    width: 28px; height: 28px; border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0;
+  }
+  .token .label { color: var(--ink-2); display: block; font-size: 10px; line-height: 1.2; }
+  .token .hex { color: var(--ink); font-weight: 700; line-height: 1.2; }
+
+  /* ── Type spec ── */
+  .type-list { display: grid; gap: 0; margin-top: 10px; }
+  .type-list .row {
+    display: grid; grid-template-columns: 220px 1fr;
+    align-items: baseline; padding: 8px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+  .type-list .role {
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); font-weight: 700;
+  }
+  .type-list .demo {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+
+  /* ── Mode strategy table ── */
+  table.modes, table.matrix, table.alt-table, table.triggers {
+    width: 100%; border-collapse: collapse; margin-top: 10px;
+    background: var(--card); border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--divider);
+    font-size: 13px;
+  }
+  table.modes th, table.modes td,
+  table.matrix th, table.matrix td,
+  table.alt-table th, table.alt-table td,
+  table.triggers th, table.triggers td {
+    padding: 9px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--divider);
+    vertical-align: top;
+  }
+  table.modes th, table.matrix th, table.alt-table th, table.triggers th {
+    background: var(--bronze-soft); color: var(--bronze-deep);
+    font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800;
+  }
+  table.modes tr:last-child td, table.matrix tr:last-child td,
+  table.alt-table tr:last-child td, table.triggers tr:last-child td { border-bottom: none; }
+  table.modes td.mode { font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; }
+
+  /* ── Matrix table (palette voting) ── */
+  table.matrix .winner-cell { background: var(--good-bg); color: #2D5A2A; font-weight: 800; }
+  table.matrix td.center, table.matrix th.center { text-align: center; }
+  table.matrix .voice-name { font-weight: 700; }
+  table.matrix .voice-name small { display: block; font-weight: 400; color: var(--ink-3); font-size: 10.5px; margin-top: 1px; }
+
+  /* ── Rejected variants (audit trail) ── */
+  .rejected-toggle {
+    background: #FAF7F0; border: 1px dashed var(--divider); border-radius: 12px;
+    padding: 12px 18px; margin-top: 22px; cursor: pointer;
+    font-size: 13px; color: var(--ink-2); user-select: none;
+    display: flex; align-items: center; gap: 8px;
+    font-weight: 700; letter-spacing: 0.02em;
+  }
+  .rejected-toggle::before { content: "▶"; font-size: 10px; color: var(--ink-3); transition: transform 0.2s ease; }
+  details[open] > .rejected-toggle::before { transform: rotate(90deg); }
+  .rejected-toggle::-webkit-details-marker { display: none; }
+  .rejected-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .rejected-card {
+    background: #FAF7F0;
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+  }
+  .rejected-card:hover { opacity: 1; }
+  .rejected-card .rj-h {
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  }
+  .rejected-card .rj-name { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-size: 15px; font-weight: 800; }
+  .rejected-card .rj-score {
+    background: var(--divider); color: var(--ink-2);
+    border-radius: 999px; padding: 3px 9px;
+    font-size: 11px; font-weight: 800;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .rejected-card .rj-vibe { font-size: 12px; color: var(--ink-2); font-style: italic; }
+  .rejected-card .rj-risk { font-size: 11.5px; color: var(--alert); line-height: 1.4; }
+  .rejected-card .rj-quote {
+    font-size: 11.5px; line-height: 1.45; color: var(--ink);
+    font-style: italic;
+    background: white; border-left: 2px solid var(--bronze);
+    padding: 8px 10px; border-radius: 0 8px 8px 0;
+  }
+  .rejected-card .rj-quote cite {
+    display: block; font-style: normal; font-weight: 700; color: var(--bronze-deep);
+    margin-top: 4px; font-size: 10.5px;
+  }
+  .swatch-strip { display: flex; height: 26px; border-radius: 6px; overflow: hidden; }
+  .swatch-strip > div {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 8px; font-family: ui-monospace, monospace;
+    font-weight: 700; text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  }
+
+  /* ── Voice quote callouts ── */
+  .voice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin-top: 12px; }
+  .voice-quote {
+    background: #FAF7F0;
+    border-left: 3px solid var(--bronze);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .voice-quote .voice-name { font-weight: 800; color: var(--ink); margin-bottom: 4px; font-size: 11px; letter-spacing: 0.02em; }
+  .voice-quote .voice-name small { font-weight: 500; color: var(--ink-3); }
+
+  /* ── Audience persona row ── */
+  .audience-row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 0;
+    margin-top: 14px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid;
+    background: white;
+  }
+  @media (max-width: 820px) { .audience-row { grid-template-columns: 1fr; } }
+  .audience-row.rank-1 { border-color: var(--ink); }
+  .audience-row.rank-2 { border-color: var(--bronze); }
+  .audience-row.rank-3 { border-color: var(--good); }
+  .audience-header {
+    padding: 18px;
+    color: white;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .audience-row.rank-1 .audience-header { background: linear-gradient(160deg, #1A2332 0%, #243044 100%); }
+  .audience-row.rank-2 .audience-header { background: linear-gradient(160deg, var(--bronze-deep) 0%, var(--bronze) 100%); }
+  .audience-row.rank-3 .audience-header { background: linear-gradient(160deg, #5A7050 0%, var(--good) 100%); }
+  .audience-rank-badge {
+    display: inline-block; font-size: 10px; font-weight: 800;
+    background: rgba(255,255,255,0.22); padding: 3px 9px; border-radius: 999px;
+    letter-spacing: 0.05em; align-self: flex-start;
+  }
+  .audience-emoji { font-size: 28px; margin-bottom: 2px; }
+  .audience-name { font-size: 17px; font-weight: 800; font-family: -apple-system, "SF Pro Rounded", sans-serif; line-height: 1.2; }
+  .audience-stats { font-size: 11.5px; opacity: 0.95; line-height: 1.45; }
+  .audience-stats b { display: inline-block; margin-right: 4px; }
+  .audience-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  @media (max-width: 980px) { .audience-content { grid-template-columns: 1fr 1fr; } }
+  .audience-block {
+    padding: 14px 16px;
+    border-right: 1px solid var(--divider);
+    border-bottom: 1px solid var(--divider);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .audience-block:last-child { border-right: none; }
+  .block-label {
+    font-size: 9.5px; font-weight: 800; color: var(--ink-3);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .pain-quote {
+    font-size: 12px; line-height: 1.45; color: var(--ink);
+    font-style: italic;
+    border-left: 2px solid var(--divider); padding-left: 8px;
+  }
+
+  /* ── JTBD scenario block ── */
+  .jtbd-scenario {
+    border: 1px solid var(--divider);
+    border-radius: 16px;
+    padding: 22px 24px;
+    margin-top: 22px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FBF8F2 100%);
+  }
+  .jtbd-scenario.peak { border-left: 4px solid var(--bronze); }
+  .jtbd-scenario h3 {
+    font-size: 18px; font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .jtbd-scenario .jtbd-num {
+    display: inline-block;
+    background: var(--ink); color: var(--bronze-soft);
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 11px; font-weight: 800;
+    letter-spacing: 0.04em;
+    margin-right: 8px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    vertical-align: middle;
+  }
+  .jtbd-trigger {
+    font-size: 13px; line-height: 1.55; color: var(--ink-2);
+    margin: 8px 0 10px;
+  }
+  .jtbd-trigger strong { color: var(--ink); }
+  .jtbd-pullquote {
+    font-size: 14.5px; line-height: 1.5;
+    color: var(--ink);
+    font-style: italic;
+    border-left: 3px solid var(--bronze);
+    padding: 10px 14px;
+    background: var(--bronze-soft);
+    border-radius: 0 10px 10px 0;
+    margin: 12px 0;
+    position: relative;
+  }
+  .jtbd-pullquote::before {
+    content: '"'; font-size: 36px; color: var(--bronze);
+    position: absolute; left: 6px; top: -4px; opacity: 0.5;
+    font-family: Georgia, serif;
+  }
+  .jtbd-pullquote-attr {
+    display: block; font-style: normal; font-weight: 700;
+    color: var(--bronze-deep); font-size: 11px; margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+  .jtbd-job {
+    font-size: 13.5px; line-height: 1.5;
+    color: var(--ink); font-weight: 600;
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 10px 14px;
+    border-radius: 0 10px 10px 0;
+    margin: 12px 0;
+  }
+  .jtbd-job::before { content: '✓ JOB · '; font-size: 10px; font-weight: 800; color: #2D5A2A; letter-spacing: 0.08em; }
+  .jtbd-section-label {
+    font-size: 10.5px; font-weight: 800; color: var(--ink-3);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin: 14px 0 6px;
+  }
+  .jtbd-bullets { padding-left: 20px; line-height: 1.55; }
+  .jtbd-bullets li { font-size: 13px; margin-bottom: 4px; color: var(--ink); }
+  .jtbd-implication {
+    font-size: 13px; line-height: 1.55;
+    color: var(--ink);
+    border: 1.5px solid var(--bronze);
+    background: #FFF;
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin: 12px 0;
+  }
+  .jtbd-implication::before {
+    content: 'DESIGN IMPLICATION'; display: block;
+    font-size: 10px; font-weight: 800; color: var(--bronze-deep);
+    letter-spacing: 0.1em; margin-bottom: 4px;
+  }
+  .jtbd-wedge {
+    font-size: 13.5px;
+    color: var(--ink);
+    background: var(--ink); color: var(--bronze-soft);
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-top: 10px;
+    line-height: 1.5;
+    font-weight: 600;
+    font-style: italic;
+  }
+  .jtbd-wedge::before {
+    content: '🎯 WEDGE  '; font-style: normal; color: var(--bronze);
+    font-weight: 800; letter-spacing: 0.06em; font-size: 10.5px;
+  }
+  table.alt-table { font-size: 12px; margin-top: 6px; }
+  table.alt-table td { font-size: 12px; }
+  table.alt-table .verdict { font-weight: 700; white-space: nowrap; text-align: center; }
+  table.alt-table .verdict.solves { color: #2D5A2A; }
+  table.alt-table .verdict.partial { color: #7A5A2A; }
+  table.alt-table .verdict.fails { color: var(--alert); }
+  table.alt-table .verdict.inaccessible { color: var(--ink-3); }
+
+  /* ── Cross-cutting panel ── */
+  .cross-panel {
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--bronze-soft) 200%);
+    border: 1px solid var(--divider);
+    border-radius: 16px;
+    padding: 22px 24px;
+    margin-top: 22px;
+  }
+  .cross-panel h3 { font-size: 16px; margin: 16px 0 8px; color: var(--ink); }
+  .cross-panel h3:first-child { margin-top: 0; }
+  .cross-panel ul { padding-left: 20px; line-height: 1.6; }
+  .cross-panel ul li { font-size: 13px; margin-bottom: 4px; }
+  .cross-panel ol { padding-left: 22px; line-height: 1.65; }
+  .cross-panel ol li { font-size: 13px; margin-bottom: 6px; }
+  .cross-panel ol li b { color: var(--alert); }
+
+  /* ── Screenshot blocks ── */
+  .ss-block {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 22px;
+    align-items: start;
+    margin-top: 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--divider);
+  }
+  @media (max-width: 820px) { .ss-block { grid-template-columns: 1fr; } }
+  .ss-block:last-child { border-bottom: none; }
+  .ss-mock-phone {
+    width: 240px; max-width: 100%; aspect-ratio: 9/19.5;
+    background: var(--bg); border: 6px solid var(--ink);
+    border-radius: 30px; padding: 12px 10px;
+    display: flex; flex-direction: column; gap: 8px;
+    overflow: hidden; position: relative;
+    color: var(--ink);
+  }
+  .ss-mock-phone.dark { background: var(--night-bg); color: var(--night-text); }
+  .ss-mock-phone .stat { display: flex; justify-content: space-between; font-size: 8px; opacity: 0.6; }
+  .ss-mock-phone .top-copy {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 14px; font-weight: 800; line-height: 1.2;
+    color: var(--ink);
+  }
+  .ss-mock-phone.dark .top-copy { color: var(--night-text); }
+  .ss-mock-phone .bot-copy {
+    font-size: 11px; color: var(--ink-2);
+    text-align: center; margin-top: auto;
+    padding-bottom: 4px;
+  }
+  .ss-mock-phone.dark .bot-copy { color: var(--bronze-soft); }
+  .ss-mini-card {
+    background: white; border-radius: 8px; padding: 7px 9px;
+    font-size: 9px; line-height: 1.3; color: var(--ink);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+  .ss-mock-phone.dark .ss-mini-card { background: var(--night-surface); color: var(--night-text); }
+  .ss-mini-card .row { display: flex; justify-content: space-between; align-items: center; gap: 4px; }
+  .ss-mini-card .vp { padding: 1px 6px; border-radius: 999px; font-size: 7.5px; font-weight: 800; }
+  .ss-mini-card .vp.good { background: var(--good-bg); color: #2D5A2A; }
+  .ss-mini-card .vp.watch { background: var(--watch-bg); color: #7A5A2A; }
+  .ss-spec h3 { font-size: 17px; margin-bottom: 6px; }
+  .ss-spec .ss-num {
+    display: inline-block; background: var(--ink); color: var(--bronze-soft);
+    border-radius: 6px; width: 22px; height: 22px; line-height: 22px;
+    text-align: center; font-size: 11px; font-weight: 800;
+    margin-right: 6px; vertical-align: middle;
+  }
+  .ss-spec .ss-priority {
+    display: inline-block; background: var(--bronze); color: white;
+    border-radius: 999px; padding: 2px 8px; font-size: 10px;
+    font-weight: 800; margin-left: 6px; vertical-align: middle;
+  }
+  .ss-spec .copy-row {
+    display: grid; grid-template-columns: 90px 1fr;
+    gap: 8px; margin-top: 8px; font-size: 13px;
+  }
+  .ss-spec .copy-row .lbl { font-size: 10.5px; font-weight: 800; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; align-self: center; }
+  .ss-spec .copy-row .v { font-weight: 600; }
+  .ss-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+  .ss-tag {
+    font-size: 9.5px; font-weight: 800;
+    padding: 2px 8px; border-radius: 999px;
+    background: var(--ink); color: var(--bronze-soft);
+    letter-spacing: 0.06em;
+  }
+  .ss-tag.bronze { background: var(--bronze); color: white; }
+  .ss-tag.good { background: var(--good); color: white; }
+  .ss-tag.alert { background: var(--alert); color: white; }
+  .ss-compliance-note {
+    margin-top: 10px; padding: 8px 12px;
+    background: var(--alert-bg); color: #6E2E20;
+    border-radius: 8px; font-size: 11.5px; line-height: 1.4;
+    border-left: 3px solid var(--alert);
+  }
+
+  /* ── Compliance section ── */
+  .compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .compliance-block {
+    border-radius: 12px; padding: 14px 16px;
+    background: white; border: 1px solid var(--divider);
+  }
+  .compliance-block.banned { border-left: 4px solid var(--alert); background: #FDF6F2; }
+  .compliance-block.required { border-left: 4px solid var(--good); background: #F5FAF1; }
+  .compliance-block.tm { border-left: 4px solid var(--bronze); background: #FBF7F0; }
+  .compliance-block.er { border-left: 4px solid var(--alert); background: #FDF6F2; }
+  .compliance-block .block-h {
+    font-size: 11px; font-weight: 800; color: var(--ink);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+  .compliance-block ul { padding-left: 18px; line-height: 1.55; }
+  .compliance-block ul li { font-size: 12px; margin-bottom: 3px; }
+  .compliance-disclaimer {
+    margin-top: 14px; padding: 12px 14px;
+    background: #FBF7F0; border-radius: 10px;
+    font-size: 11.5px; line-height: 1.5; color: var(--ink-2);
+    border: 1px solid var(--divider);
+  }
+
+  /* ── Paywall section ── */
+  .pricing-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  @media (max-width: 720px) { .pricing-table { grid-template-columns: 1fr; } }
+  .pricing-tile {
+    border-radius: 14px;
+    padding: 16px 18px;
+    border: 2px solid var(--divider);
+    background: white;
+  }
+  .pricing-tile.weekly { border-color: var(--bronze); background: linear-gradient(180deg, #FFF 0%, var(--bronze-soft) 200%); }
+  .pricing-tile.annual { border-color: var(--good); }
+  .pricing-tile .tier-name { font-size: 13px; font-weight: 800; color: var(--ink); }
+  .pricing-tile .tier-price {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 28px; font-weight: 800; color: var(--ink); margin: 4px 0;
+  }
+  .pricing-tile .tier-price small { font-size: 14px; color: var(--ink-2); font-weight: 600; }
+  .pricing-tile .tier-meta { font-size: 11.5px; color: var(--ink-2); }
+  .pricing-tile .tier-pill {
+    display: inline-block; background: var(--bronze); color: white;
+    border-radius: 999px; padding: 2px 10px; font-size: 10px;
+    font-weight: 800; letter-spacing: 0.04em; margin-left: 6px;
+  }
+  .pricing-tile.annual .tier-pill { background: var(--good); }
+
+  .tbd-resolved {
+    margin-top: 14px;
+    background: linear-gradient(135deg, var(--good-bg) 0%, #F4FAEF 100%);
+    border-left: 4px solid var(--good);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .tbd-resolved .h {
+    font-size: 11px; font-weight: 800; color: #2D5A2A;
+    letter-spacing: 0.08em; margin-bottom: 4px;
+  }
+  .tbd-resolved .b { font-size: 13px; line-height: 1.55; color: var(--ink); }
+
+  .hero-band-sketch {
+    margin-top: 14px;
+    aspect-ratio: 5/2;
+    background: linear-gradient(135deg, #1A2332 0%, #243044 60%, var(--bronze) 200%);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bronze-soft);
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 24px;
+    line-height: 1.5;
+    border: 1px dashed var(--bronze);
+  }
+
+  /* ── Onboarding section ── */
+  .onb-slot {
+    display: grid; grid-template-columns: 320px 1fr;
+    gap: 24px; align-items: start; margin-top: 26px;
+    padding-bottom: 22px; border-bottom: 1px solid var(--divider);
+  }
+  @media (max-width: 820px) { .onb-slot { grid-template-columns: 1fr; } }
+  .onb-slot:last-of-type { border-bottom: none; }
+  .onb-phone {
+    width: 320px; max-width: 100%; height: 660px;
+    background: var(--bg); border-radius: 34px;
+    border: 7px solid var(--ink); box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    overflow: hidden; position: relative;
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+  }
+  .onb-phone.dark { background: var(--night-bg); color: var(--night-text); }
+  .onb-phone-status { display: flex; justify-content: space-between; align-items: center; padding: 8px 18px 4px; font-size: 10px; font-weight: 700; color: var(--ink); }
+  .onb-phone.dark .onb-phone-status { color: var(--night-text); }
+  .onb-phone-screen { padding: 6px 18px 24px; height: calc(100% - 32px); overflow-y: auto; }
+  .onb-phone-screen::-webkit-scrollbar { width: 4px; }
+  .onb-phone-screen::-webkit-scrollbar-thumb { background: rgba(26,35,50,0.2); border-radius: 2px; }
+  .onb-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 0.12em; color: var(--bronze-deep); text-transform: uppercase; margin: 12px 0 6px; }
+  .onb-phone.dark .onb-eyebrow { color: var(--night-accent); }
+  .onb-h { font-size: 20px; font-weight: 800; line-height: 1.2; color: var(--ink); font-family: -apple-system, "SF Pro Rounded", sans-serif; margin-bottom: 8px; }
+  .onb-phone.dark .onb-h { color: var(--night-text); }
+  .onb-sub { font-size: 12.5px; line-height: 1.5; color: var(--ink-2); margin-bottom: 12px; }
+  .onb-phone.dark .onb-sub { color: var(--bronze-soft); }
+  .onb-cta {
+    width: 100%; background: var(--bronze); color: white; border: none;
+    border-radius: 12px; padding: 12px; font-size: 14px; font-weight: 800;
+    font-family: inherit; cursor: pointer; box-shadow: 0 2px 8px rgba(184,134,91,0.32);
+  }
+  .onb-cta-secondary {
+    width: 100%; background: transparent; color: var(--ink); border: 1px solid var(--ink);
+    border-radius: 12px; padding: 10px; font-size: 12.5px; font-weight: 700;
+    font-family: inherit; cursor: pointer; margin-top: 8px;
+  }
+  .onb-disclaimer {
+    font-size: 9.5px; line-height: 1.45; color: var(--ink-3);
+    margin-top: 12px; padding: 7px 9px; background: rgba(26,35,50,0.04);
+    border-radius: 8px;
+  }
+  .onb-rationale h4 { font-size: 14px; font-weight: 800; color: var(--ink); font-family: -apple-system, "SF Pro Rounded", sans-serif; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .onb-rationale h4 .num { background: var(--ink); color: var(--bronze-soft); font-size: 11px; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; }
+  .onb-rationale h4 .role-pill { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 999px; background: var(--bronze-soft); color: var(--bronze-deep); font-weight: 700; margin-left: auto; }
+  .onb-rationale dl { margin-top: 8px; }
+  .onb-rationale dt { font-size: 10px; font-weight: 800; color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 10px; }
+  .onb-rationale dd { font-size: 12px; line-height: 1.5; color: var(--ink-2); margin-top: 3px; }
+  .onb-quote { font-size: 12px; font-style: italic; color: var(--ink-2); padding-left: 10px; border-left: 2px solid var(--bronze); margin: 8px 0; line-height: 1.5; }
+  .onb-quote cite { font-style: normal; font-weight: 700; color: var(--bronze-deep); font-size: 11px; }
+  .onb-locks-list { list-style: none; padding-left: 0; margin-top: 8px; }
+  .onb-locks-list li { font-size: 11.5px; line-height: 1.5; color: var(--ink-2); margin-bottom: 4px; padding-left: 16px; position: relative; }
+  .onb-locks-list li::before { content: "✓"; position: absolute; left: 0; color: var(--good); font-weight: 800; }
+
+  /* JTBD chip grid in onboarding */
+  .onb-jtbd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+  .onb-jtbd-chip { background: white; border: 1px solid var(--divider); border-radius: 10px; padding: 8px 10px; font-size: 11px; line-height: 1.3; }
+  .onb-jtbd-chip .t { font-weight: 800; color: var(--ink); margin-bottom: 2px; }
+  .onb-jtbd-chip .s { font-size: 10px; color: var(--ink-3); }
+
+  /* Source pills */
+  .onb-source-row { display: flex; flex-wrap: wrap; gap: 5px; margin: 6px 0 10px; }
+  .onb-source-pill { font-size: 10px; font-weight: 800; padding: 5px 10px; background: white; border: 1px solid var(--ink); border-radius: 999px; color: var(--ink); }
+
+  /* Chat demo (proof) */
+  .onb-chat-q { background: var(--bronze); color: white; padding: 8px 11px; border-radius: 12px 12px 4px 12px; font-size: 11px; max-width: 80%; margin-left: auto; margin-bottom: 8px; line-height: 1.35; font-weight: 600; }
+  .onb-chat-a { background: rgba(26,35,50,0.06); padding: 9px 11px; border-radius: 12px 12px 12px 4px; font-size: 11px; line-height: 1.45; color: var(--ink); max-width: 90%; margin-bottom: 6px; }
+  .onb-source-inline { font-size: 9.5px; color: var(--bronze-deep); padding: 3px 8px; background: var(--bronze-soft); border-radius: 999px; display: inline-block; margin-top: 4px; }
+
+  /* Form (Personalization screen 5) */
+  .onb-form-label { font-size: 10.5px; font-weight: 800; color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; margin: 10px 0 5px; }
+  .onb-chips-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+  .onb-chip-mini { font-size: 10.5px; font-weight: 700; padding: 5px 9px; background: white; border: 1px solid var(--divider); border-radius: 999px; color: var(--ink-2); cursor: pointer; }
+  .onb-chip-mini.sel { background: var(--ink); color: white; border-color: var(--ink); }
+  .onb-chip-mini.carl { border-color: var(--bronze); color: var(--bronze-deep); font-style: italic; }
+  .onb-slider-mock { height: 5px; background: var(--divider); border-radius: 3px; margin: 10px 0 6px; position: relative; }
+  .onb-slider-mock::after { content: ""; position: absolute; left: 32%; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; background: var(--bronze); border-radius: 50%; box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
+  .onb-slider-label { font-size: 10px; color: var(--ink-3); }
+
+  /* Calculator output */
+  .onb-calc-out {
+    background: var(--ink); color: var(--bronze-soft);
+    border-radius: 14px; padding: 14px 16px;
+    text-align: center; margin: 10px 0;
+  }
+  .onb-calc-out .num { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-size: 32px; font-weight: 800; color: white; }
+  .onb-calc-out .num small { font-size: 14px; color: var(--bronze-soft); }
+  .onb-calc-out .label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bronze); margin-bottom: 4px; }
+  .onb-calc-out .verdict-line { font-size: 12px; color: var(--bronze-soft); margin-top: 6px; line-height: 1.4; }
+
+  /* Path cards (WOW Carl branch) */
+  .onb-paths { display: flex; flex-direction: column; gap: 6px; margin: 10px 0; }
+  .onb-path { background: white; border: 1px solid var(--divider); border-radius: 10px; padding: 8px 10px; font-size: 11px; line-height: 1.4; }
+  .onb-path b { color: var(--ink); font-weight: 800; display: block; margin-bottom: 2px; }
+
+  /* Paywall mock specifics */
+  .onb-pw-tile {
+    border-radius: 12px; padding: 10px 12px; border: 2px solid var(--divider);
+    background: white; display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 6px; font-size: 11.5px;
+  }
+  .onb-pw-tile.sel { border-color: var(--bronze); background: var(--bronze-soft); }
+  .onb-pw-tile .nm { font-weight: 800; color: var(--ink); }
+  .onb-pw-tile .pr { font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; color: var(--ink); }
+  .onb-pw-affiliate {
+    margin-top: 10px; padding: 8px 10px;
+    background: rgba(26,35,50,0.04); border-radius: 8px;
+    font-size: 10.5px; color: var(--ink-2); line-height: 1.45;
+  }
+
+  /* ── Footer ── */
+  .footer-refs {
+    margin-top: 28px; padding: 22px 24px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1A2332 0%, #243044 100%);
+    color: var(--bronze-soft);
+    font-size: 13px; line-height: 1.7;
+  }
+  .footer-refs a { color: var(--bronze); text-decoration: none; font-weight: 700; }
+  .footer-refs a:hover { color: var(--night-accent); text-decoration: underline; }
+  .footer-refs h3 { color: white; font-size: 14px; margin-top: 14px; margin-bottom: 4px; }
+  .footer-refs h3:first-child { margin-top: 0; }
+  .footer-refs .tm-disclaim {
+    margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 11px; line-height: 1.55; color: rgba(245,242,237,0.7);
+  }
+  .footer-refs .live-link {
+    display: inline-block; margin-top: 8px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    color: var(--bronze); font-weight: 700;
+  }
+
+  ul.list { padding-left: 22px; line-height: 1.6; margin-top: 8px; }
+  ul.list li { margin-bottom: 4px; font-size: 13px; }
+  ul.list li::marker { color: var(--bronze); }
+</style>
+</head>
+<body>
+
+<!-- ─────────────────────── TOP NAV ─────────────────────── -->
+<nav class="top-nav">
+  <a href="#palette">1 · Палитра</a>
+  <span class="sep">/</span>
+  <a href="#jtbd">2 · JTBD</a>
+  <span class="sep">/</span>
+  <a href="#designer-brief">3 · Designer Brief</a>
+  <span class="sep">/</span>
+  <a href="#compliance">4 · Compliance</a>
+  <span class="sep">/</span>
+  <a href="#paywall-workbench">5 · Paywall</a>
+  <span class="sep">/</span>
+  <a href="#onboarding" class="featured">📲 6 · Onboarding</a>
+</nav>
+
+<!-- ─────────────────────── HERO ─────────────────────── -->
+<header class="hero-card">
+  <div class="eyebrow">🔒 LOCKED 2026-05-01 · ROUND 1 CONSILIUM · AVG 8.71</div>
+  <div class="one-liner">Calibrum — AI Hormone Anxiety Coach for men on TRT — design system + JTBD + onboarding flow</div>
+  <div class="meta-row">
+    <span>🔒 Variant A · Stratus + Bronze</span>
+    <span>Health &amp; Fitness · iOS 17+</span>
+    <span>Bundle: com.love8ko.calibrum</span>
+    <span>ASC Apple ID: 6765701652</span>
+    <span class="race">🔥 Hims TRT 2026 — race timer</span>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 1 · PALETTE -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="palette">
+  <h2>1. Палитра <span class="pill lock">🔒 LOCKED 2026-05-01</span> <span class="pill bronze">avg 8.71</span></h2>
+  <p class="section-intro">
+    🔒 <b>LOCKED 2026-05-01 round 1 — Variant A «Stratus + Bronze» · avg 8.71.</b> 7-voice consilium · 5 variants · 4 rejected. Direct read of Strategic Plan §16: charcoal/navy primary + bronze CTA + sage / bronze-amber / muted-rust verdict triad + warm linen day bg + deep navy night chat. Built to flank both Hone (cyan-clinical) and the bodybuilder cluster (red/black) without colliding with JabWell sibling (warm teal + terracotta).
+  </p>
+
+  <!-- Locked winner card -->
+  <div class="winner-callout">
+    <div>
+      <div class="lock-eyebrow">🥇 #1 IN 5 OF 7 VOICES · ONLY VARIANT WITH ZERO COMPLIANCE FLAG</div>
+      <h3>Variant A — «Stratus + Bronze»</h3>
+      <p class="vibe">Whoop × Apple Health × Function Health intersection. Premium tech, mature-masculine, warm enough to feel like a brain trust at 2am — not a hospital. Charcoal/navy primary, bronze CTA, sage / bronze-amber / muted-rust verdict triad. Day surface = warm linen; chat surface = midnight navy with warmer bronze accent.</p>
+    </div>
+    <span class="score-badge">8.71 / 10</span>
+  </div>
+
+  <!-- Component preview · day + night surfaces -->
+  <h3 style="margin-top: 22px;">Component preview · light + dark surface</h3>
+  <div class="modes-row">
+
+    <!-- DAY mockup -->
+    <div class="mode-block day">
+      <span class="mode-label">Day · Dashboard surface</span>
+      <div class="hero-metric">
+        <span class="label">Total Testosterone · 30d trend</span>
+        <span class="num">782 <small>ng/dL</small></span>
+        <span class="delta">↑ +84 vs last reading · sage zone</span>
+        <div class="spark"></div>
+      </div>
+
+      <div class="mock-card">
+        <div style="font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;font-weight:700">Latest lab · LabCorp 2026-04-22</div>
+        <div class="lab-row">
+          <span class="lab-name">Free T</span>
+          <span class="lab-value">192 <small>pg/mL</small></span>
+          <span class="verdict-pill good">In optimal range</span>
+        </div>
+        <div class="lab-row">
+          <span class="lab-name">Estradiol (E2)</span>
+          <span class="lab-value">38 <small>pg/mL</small></span>
+          <span class="verdict-pill good">In range</span>
+        </div>
+        <div class="lab-row">
+          <span class="lab-name">Hematocrit (HCT)</span>
+          <span class="lab-value">51 <small>%</small></span>
+          <span class="verdict-pill watch">Approaching watch zone</span>
+        </div>
+        <div class="lab-row">
+          <span class="lab-name">PSA</span>
+          <span class="lab-value">2.4 <small>ng/mL</small></span>
+          <span class="verdict-pill good">In range</span>
+        </div>
+      </div>
+
+      <button class="btn primary" style="margin-top: auto;">Decode my latest lab →</button>
+    </div>
+
+    <!-- NIGHT mockup -->
+    <div class="mode-block night">
+      <span class="mode-label" style="color:var(--bronze-soft);">Night · AI Hormone Coach (2:47am)</span>
+
+      <div class="mock-card dark" style="border:1px solid var(--night-divider);">
+        <div style="display:flex;gap:10px;align-items:center;">
+          <div style="width:34px;height:34px;border-radius:50%;background:var(--night-accent);display:flex;align-items:center;justify-content:center;color:var(--ink);font-weight:800;">C</div>
+          <div>
+            <div style="font-weight:700;color:var(--night-text);">AI Hormone Coach</div>
+            <div style="font-size:10.5px;color:var(--bronze-soft);opacity:0.7;">🛡 Educational companion · not medical advice</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat" style="flex:1; display:flex; flex-direction:column;">
+        <div class="bubble user">My HCT is 51. Should I worry?</div>
+        <div class="bubble assistant">HCT 51 is above the typical TRT range (40–50) but below the watch threshold (&gt;52). Common factors: <strong>dehydration falsely elevates HCT</strong>, once-weekly IM dosing causes peaks. Phlebotomy is considered when HCT crosses 54%. <br><br><strong>Action:</strong> hydrate, recheck in 4 weeks, discuss before considering phlebotomy.<br><a class="citation">Endocrine Society 2018 + TRAVERSE 2023 →</a></div>
+        <div class="bubble user">Thanks. Anything I should ask my doctor next visit?</div>
+        <div class="bubble assistant">I'll add to your Doctor Visit Brief: <em>"HCT trended 48 → 51 in 6 months. Should we consider switching from IM weekly to SubQ split-dose to reduce peaks?"</em><br><a class="citation">Generated from your 90-day log →</a></div>
+      </div>
+
+      <button class="btn ghost-night">Save to Doctor Visit Brief</button>
+    </div>
+  </div>
+
+  <!-- Token grid -->
+  <h3 style="margin-top: 24px;">Token spec · day surfaces</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#1A2332"></div><div><span class="label">surface.primary</span><span class="hex">#1A2332</span></div></div>
+    <div class="token"><div class="chip" style="background:#243044"></div><div><span class="label">surface.secondary</span><span class="hex">#243044</span></div></div>
+    <div class="token"><div class="chip" style="background:#F5F2ED"></div><div><span class="label">surface.bg (warm linen)</span><span class="hex">#F5F2ED</span></div></div>
+    <div class="token"><div class="chip" style="background:#FFFFFF;border:1px solid #ccc"></div><div><span class="label">surface.card</span><span class="hex">#FFFFFF</span></div></div>
+    <div class="token"><div class="chip" style="background:#E1DCD2"></div><div><span class="label">surface.divider</span><span class="hex">#E1DCD2</span></div></div>
+    <div class="token"><div class="chip" style="background:#1A2332"></div><div><span class="label">text.primary</span><span class="hex">#1A2332</span></div></div>
+    <div class="token"><div class="chip" style="background:#5A6470"></div><div><span class="label">text.secondary</span><span class="hex">#5A6470</span></div></div>
+    <div class="token"><div class="chip" style="background:#8C95A1"></div><div><span class="label">text.muted</span><span class="hex">#8C95A1</span></div></div>
+  </div>
+
+  <h3 style="margin-top: 18px;">Accent (bronze) + verdict triad</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#B8865B"></div><div><span class="label">accent.bronze (PRIMARY CTA)</span><span class="hex">#B8865B</span></div></div>
+    <div class="token"><div class="chip" style="background:#9A6E45"></div><div><span class="label">accent.bronze.deep</span><span class="hex">#9A6E45</span></div></div>
+    <div class="token"><div class="chip" style="background:#E8D9C2"></div><div><span class="label">accent.bronze.soft</span><span class="hex">#E8D9C2</span></div></div>
+    <div class="token"><div class="chip" style="background:#7A9270"></div><div><span class="label">verdict.good (sage)</span><span class="hex">#7A9270</span></div></div>
+    <div class="token"><div class="chip" style="background:#C9924A"></div><div><span class="label">verdict.watch (bronze amber, NOT yellow)</span><span class="hex">#C9924A</span></div></div>
+    <div class="token"><div class="chip" style="background:#A85842"></div><div><span class="label">verdict.alert (muted rust, NOT red)</span><span class="hex">#A85842</span></div></div>
+  </div>
+
+  <h3 style="margin-top: 18px;">Night / chat surface (2-3am register)</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#0E1626"></div><div><span class="label">night.bg</span><span class="hex">#0E1626</span></div></div>
+    <div class="token"><div class="chip" style="background:#1A2332"></div><div><span class="label">night.surface (assistant bubble)</span><span class="hex">#1A2332</span></div></div>
+    <div class="token"><div class="chip" style="background:#28354A"></div><div><span class="label">night.bubble.user</span><span class="hex">#28354A</span></div></div>
+    <div class="token"><div class="chip" style="background:#F0E8D9"></div><div><span class="label">night.text</span><span class="hex">#F0E8D9</span></div></div>
+    <div class="token"><div class="chip" style="background:#D4A06B"></div><div><span class="label">night.accent (warmer bronze for dark)</span><span class="hex">#D4A06B</span></div></div>
+    <div class="token"><div class="chip" style="background:#2A3548"></div><div><span class="label">night.divider</span><span class="hex">#2A3548</span></div></div>
+  </div>
+
+  <!-- Typography -->
+  <h3 style="margin-top: 24px;">Typography · native iOS</h3>
+  <p class="section-intro" style="font-size: 12.5px;">SF Pro Rounded for hero numbers + section/card titles (warm offset to dark navy). SF Pro Text for body legibility on long lab descriptions. SF Mono for biomarker codes / dose values. <b>Dynamic Type required to AccessibilityXXXLarge</b> — Mark is 38–55, reading glasses likely.</p>
+  <div class="type-list">
+    <div class="row"><span class="role">Hero number · 56 Bold (-0.5)</span><span class="demo" style="font-weight:700;font-size:34px;">782 <span style="color:var(--ink-3);font-size:18px;font-weight:600">ng/dL</span></span></div>
+    <div class="row"><span class="role">Section title · 28 SemiB</span><span class="demo" style="font-weight:600;font-size:22px;">Latest bloodwork</span></div>
+    <div class="row"><span class="role">Card title · 20 SemiB</span><span class="demo" style="font-weight:600;font-size:18px;">Free Testosterone</span></div>
+    <div class="row"><span class="role">Body · 16 Reg</span><span class="demo" style="font-family:-apple-system,'SF Pro Text',sans-serif;font-weight:400;font-size:15px;">HCT 51 is approaching the watch zone. Hydration first, recheck in 4 weeks.</span></div>
+    <div class="row"><span class="role">Caption · 13 Reg</span><span class="demo" style="font-family:-apple-system,'SF Pro Text',sans-serif;font-weight:400;font-size:12.5px;color:var(--ink-2);">LabCorp · drawn 2026-04-22 · synced 2026-04-25</span></div>
+    <div class="row"><span class="role">Mono · 14 Reg</span><span class="demo" style="font-family:ui-monospace,'SF Mono',monospace;font-size:13px;">SHBG: 28 nmol/L · Albumin: 4.4 g/dL</span></div>
+  </div>
+
+  <!-- Mode strategy table -->
+  <h3 style="margin-top: 24px;">Per-surface mode strategy</h3>
+  <table class="modes">
+    <thead>
+      <tr><th>Surface</th><th>Mode</th><th>Reason</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>App icon</td><td class="mode">DARK navy + bronze glow</td><td>Premium tech read on iOS 17 home row · mirrors Whoop / Function Health</td></tr>
+      <tr><td>Onboarding</td><td class="mode">SYSTEM</td><td>HIG-honest — don't fight user setting on first impression</td></tr>
+      <tr><td>Paywall</td><td class="mode">SYSTEM (bronze CTA)</td><td>Bronze CTA pulls warm-action conversion lift in either mode</td></tr>
+      <tr><td>Dashboard / log / calculator</td><td class="mode">SYSTEM</td><td>Standard daily-use surfaces follow iOS</td></tr>
+      <tr><td>Lab Snap result</td><td class="mode">SYSTEM</td><td>Reading-heavy surface — respect system mode</td></tr>
+      <tr><td><b>AI Hormone Coach chat</b></td><td class="mode">DARK by default</td><td>2-3am usage register — bronze on midnight reads "calm friend at 2am" not "hospital ER"</td></tr>
+      <tr><td>App Store screenshots</td><td class="mode">7 LIGHT + 1 DARK</td><td>Dark slot = chat screenshot · CrySnap finding: 0/7 competitors went dark on screenshots</td></tr>
+      <tr><td>Doctor Visit Prep PDF</td><td class="mode">Pure B&amp;W</td><td>Designed для печати in urology office. No bronze (won't print)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Voice quote highlights -->
+  <h3 style="margin-top: 24px;">Voice quote highlights · why A won</h3>
+  <div class="voice-grid">
+    <div class="voice-quote">
+      <div class="voice-name">🧔 Mark, 47, on TRT 14mo <small>· audience proxy · 9.0</small></div>
+      "I open these apps at 2am because my E2 feels off and I can't sleep. Bronze on dark navy is not gym-red. It's not Hone-cyan-cold. It's the closest thing to <em>'competent friend who happens to be awake'</em> I've seen."
+    </div>
+    <div class="voice-quote">
+      <div class="voice-name">🤔 Curious Carl, 42, pre-TRT <small>· audience proxy · 8.0</small></div>
+      "Clean, warm, doesn't shout TRT at me. The bronze CTA on the calculator screen says <em>'compute my Free T'</em> and I trust it. Linen background is friendly without being cute."
+    </div>
+    <div class="voice-quote">
+      <div class="voice-name">🛡 Brand Strategist <small>· verdict on D Hone Mirror · 4.0 hard veto</small></div>
+      "We are not Hone. If we look like Hone, every Mark who failed at Hone projects that failure onto us. Every Mark currently paying Hone says <em>'why is this $49 if it looks like the $1,884 thing?'</em> Hard veto."
+    </div>
+    <div class="voice-quote">
+      <div class="voice-name">⚖ Compliance counsel <small>· verdict on E Whoop Calibrum · 6.5</small></div>
+      "When user sees a rust-coral pill and a coral CTA on the same screen, the alert weight bleeds into the CTA. Every screen has a faint <em>'something's slightly off'</em> energy. Needs redesign before lock."
+    </div>
+    <div class="voice-quote">
+      <div class="voice-name">🎨 Visual Designer <small>· Whoop / Apple Health school · 8.5</small></div>
+      "<code>#B8865B</code> bronze on <code>#1A2332</code> navy hits 4.6:1 contrast — passes WCAG AA for large text. Sage on linen brings up to readable with bg tint. Type spec is reasonable — Rounded headers, Text body, Mono for codes."
+    </div>
+    <div class="voice-quote">
+      <div class="voice-name">📈 Conversion specialist <small>· paywall + onboarding · 8.5</small></div>
+      "Bronze CTA on light linen converts better than cold-blue 'Start Trial' buttons in DTC paywall A/B-tests — warm CTAs pull <b>+8-12% trial start vs cold</b>. Sage 'in range' verdict on demo screen is reassuring without being saccharine."
+    </div>
+  </div>
+
+  <!-- 7×5 voting matrix -->
+  <h3 style="margin-top: 24px;">Voting matrix · 7 voices × 5 variants (round 1)</h3>
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th>Voice</th>
+        <th class="center">A · Stratus + Bronze 🥇</th>
+        <th class="center">B · Apothecary Steel</th>
+        <th class="center">C · Function Lab</th>
+        <th class="center">D · Hone Mirror</th>
+        <th class="center">E · Whoop Calibrum 🥈</th>
+        <th>1-line takeaway</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="voice-name">Mark <small>47, TRT 14mo</small></td>
+        <td class="center winner-cell">9.0</td><td class="center">7.0</td><td class="center">6.0</td><td class="center">6.5</td><td class="center">8.5</td>
+        <td>Bronze on dark navy = competent-friend-at-2am. D reads Hone-clone, distrust on sight.</td>
+      </tr>
+      <tr>
+        <td class="voice-name">Curious Carl <small>42, pre-TRT</small></td>
+        <td class="center winner-cell">8.0</td><td class="center">7.5</td><td class="center">5.0</td><td class="center">8.0</td><td class="center">6.5</td>
+        <td>A: clean, warm, doesn't shout TRT. C: club I'm not in. E: coral feels loud at Costco scroll.</td>
+      </tr>
+      <tr>
+        <td class="voice-name">Visual Designer <small>Whoop / Apple Health</small></td>
+        <td class="center winner-cell">8.5</td><td class="center">8.0</td><td class="center">8.0</td><td class="center">6.0</td><td class="center">9.0</td>
+        <td>E hits portfolio composition; D has 3.2:1 cyan AA fail + two-accent ambiguity.</td>
+      </tr>
+      <tr>
+        <td class="voice-name">Brand Strategist <small>consumer health DTC</small></td>
+        <td class="center winner-cell">9.0</td><td class="center">5.5</td><td class="center">8.0</td><td class="center">4.0</td><td class="center">8.5</td>
+        <td>A occupies unowned brand square. <b>D hard veto on Hone-clone.</b> B sibling-clone discount.</td>
+      </tr>
+      <tr>
+        <td class="voice-name">Apple HIG <small>specialist</small></td>
+        <td class="center winner-cell">9.0</td><td class="center">8.5</td><td class="center">7.0</td><td class="center">7.5</td><td class="center">7.5</td>
+        <td>A is most HIG-honest — per-surface mode strategy is established consilium pattern.</td>
+      </tr>
+      <tr>
+        <td class="voice-name">Compliance counsel <small>medical-adjacent</small></td>
+        <td class="center winner-cell">9.0</td><td class="center">8.5</td><td class="center">6.5</td><td class="center">7.0</td><td class="center">6.5</td>
+        <td>A triad cleanest. C/D have brand-vs-watch hue conflicts. <b>E rust-coral bleeds into coral CTA.</b></td>
+      </tr>
+      <tr>
+        <td class="voice-name">Conversion specialist <small>paywall + onboarding</small></td>
+        <td class="center winner-cell">8.5</td><td class="center">7.0</td><td class="center">8.5</td><td class="center">7.5</td><td class="center">8.0</td>
+        <td>A bronze CTA pulls +8-12% vs cold blue. C luxury/$49 mismatch. E coral CTA dependent on Compliance fix.</td>
+      </tr>
+      <tr style="background: var(--ink); color: var(--bronze-soft); font-weight: 800;">
+        <td>Average</td>
+        <td class="center" style="background: var(--bronze); color: white;">8.71 🥇</td>
+        <td class="center">7.43</td>
+        <td class="center">7.00</td>
+        <td class="center">6.64</td>
+        <td class="center">7.79 🥈</td>
+        <td>A wins decisively. E is the round-2 hold-out test candidate.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Audit trail · 4 rejected variants -->
+  <details style="margin-top: 22px;">
+    <summary class="rejected-toggle">Audit trail · 4 отвергнутых варианта (E / B / C / D) — full risk + voice-quote per variant</summary>
+
+    <div class="rejected-grid">
+
+      <!-- E · Whoop Calibrum -->
+      <div class="rejected-card">
+        <div class="rj-h">
+          <span class="rj-name">🥈 E — Whoop Calibrum</span>
+          <span class="rj-score">7.79</span>
+        </div>
+        <div class="swatch-strip">
+          <div style="background:#0F1B2D">#0F1B2D</div>
+          <div style="background:#1A2A40">#1A2A40</div>
+          <div style="background:#F1EEE7;color:#0F1B2D;text-shadow:none;">linen</div>
+          <div style="background:#D87560">#D87560</div>
+          <div style="background:#7E9D70">#7E9D70</div>
+          <div style="background:#D89A4A">#D89A4A</div>
+          <div style="background:#B04F3D">#B04F3D</div>
+          <div style="background:#0A1422">#0A1422</div>
+        </div>
+        <p class="rj-vibe">Whoop deep-navy slab + muted living-coral CTA. Boldest brand swing in the set.</p>
+        <p class="rj-risk">⚠ Rust-coral verdict + coral CTA share vocabulary — Compliance flagged alert-bleed. Tight hue execution dependence (`#D87560` not `#F08D7B` or it drifts to Hims-pastel).</p>
+        <div class="rj-quote">
+          "Coral risks pastel-Hims drift but if the hue is held tight it stays out of fertility-app territory. Anti-bodybuilder credentials hold."
+          <cite>— Brand Strategist · 8.5</cite>
+        </div>
+        <p style="font-size: 11px; color: var(--ink-3); font-style: italic;">→ <b>Round-2 hold-out test candidate</b> — coral icon A/B once Day-90 review moat established.</p>
+      </div>
+
+      <!-- B · Apothecary Steel -->
+      <div class="rejected-card">
+        <div class="rj-h">
+          <span class="rj-name">🥉 B — Apothecary Steel</span>
+          <span class="rj-score">7.43</span>
+        </div>
+        <div class="swatch-strip">
+          <div style="background:#2C4A57">#2C4A57</div>
+          <div style="background:#3A5C6B">#3A5C6B</div>
+          <div style="background:#F2EFE6;color:#2C4A57;text-shadow:none;">linen</div>
+          <div style="background:#C2724E">#C2724E</div>
+          <div style="background:#5E7A4F">#5E7A4F</div>
+          <div style="background:#C49356">#C49356</div>
+          <div style="background:#8E2E2E">#8E2E2E</div>
+          <div style="background:#0F1F2E">#0F1F2E</div>
+        </div>
+        <p class="rj-vibe">Cooler steel teal — sibling of JabWell, lab-precision register.</p>
+        <p class="rj-risk">⚠ Sibling-clone discount: Mark/Carl install JabWell first → install Calibrum → "wait, this looks like JabWell." Brand confusion in user mind = -EV for both apps.</p>
+        <div class="rj-quote">
+          "I literally use JabWell for my GLP-1. If both apps look the same I'm going to mix them up at 2am — I'll open JabWell, ask about my E2, get confused."
+          <cite>— Mark · 7.0</cite>
+        </div>
+      </div>
+
+      <!-- C · Function Lab -->
+      <div class="rejected-card">
+        <div class="rj-h">
+          <span class="rj-name">4 · C — Function Lab</span>
+          <span class="rj-score">7.00</span>
+        </div>
+        <div class="swatch-strip">
+          <div style="background:#0B0E12">#0B0E12</div>
+          <div style="background:#171B22">#171B22</div>
+          <div style="background:#F8F6F1;color:#0B0E12;text-shadow:none;">ivory</div>
+          <div style="background:#C9A961">#C9A961</div>
+          <div style="background:#6E8C76">#6E8C76</div>
+          <div style="background:#C99A52">#C99A52</div>
+          <div style="background:#9B4A3F">#9B4A3F</div>
+          <div style="background:#070A0F">#070A0F</div>
+        </div>
+        <p class="rj-vibe">Onyx + pale champagne gold. "$1,884/yr feel for $49/yr." Boldest premium read.</p>
+        <p class="rj-risk">⚠ Gatekept-elite read. Pale gold on ivory = 2.1:1 — fails AA below 36pt. Mark wants brain-trust-at-2am, not Soho House membership card. Carl bounces immediately.</p>
+        <div class="rj-quote">
+          "Pale gold says 'you should be impressed by this app' — and at 2am I don't want to be impressed. I want to be reassured."
+          <cite>— Mark · 6.0</cite>
+        </div>
+      </div>
+
+      <!-- D · Hone Mirror -->
+      <div class="rejected-card">
+        <div class="rj-h">
+          <span class="rj-name">5 · D — Hone Mirror</span>
+          <span class="rj-score">6.64</span>
+        </div>
+        <div class="swatch-strip">
+          <div style="background:#0F2740">#0F2740</div>
+          <div style="background:#1A3A5C">#1A3A5C</div>
+          <div style="background:#FFFFFF;color:#0F2740;text-shadow:none;">white</div>
+          <div style="background:#3DA5B5">#3DA5B5</div>
+          <div style="background:#B8865B">#B8865B</div>
+          <div style="background:#D89858">#D89858</div>
+          <div style="background:#B85544">#B85544</div>
+          <div style="background:#091929">#091929</div>
+        </div>
+        <p class="rj-vibe">Hone-adjacent cyan + bronze CTA — familiarity bet (Robinhood-vs-Mint pattern).</p>
+        <p class="rj-risk">⚠ <b>Brand Strategist hard veto (4.0).</b> Hone-clone read confuses value prop — Mark projects $1,884/yr expectations onto $49 product. Cyan #3DA5B5 on white = 3.2:1, AA fail for body.</p>
+        <div class="rj-quote">
+          "We are not Hone. We don't have telehealth, don't prescribe, don't have $39M Series A. Visual mimicry confuses the value prop."
+          <cite>— Brand Strategist · 4.0</cite>
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <p style="margin-top: 18px; font-size: 12px; color: var(--ink-3); line-height: 1.55;">
+    <b>Sources:</b>
+    → <a href="../../../14-calibrum/DESIGN_SYSTEM.md" style="color:var(--bronze-deep);font-weight:700;">DESIGN_SYSTEM.md</a>
+    · → <a href="../../../14-calibrum/docs/CONSILIUM_DESIGN_SYSTEM_2026-05-01_iter1.md" style="color:var(--bronze-deep);font-weight:700;">CONSILIUM_DESIGN_SYSTEM_2026-05-01_iter1.md</a>
+    · → <a href="../../../14-calibrum/competitors/meta.yaml" style="color:var(--bronze-deep);font-weight:700;">competitors/meta.yaml ranks 1–3 (Hone / Maximus / Hims)</a>
+    · → <a href="../../../14-calibrum/Calibrum_Strategic_Plan_v2_FINAL.md" style="color:var(--bronze-deep);font-weight:700;">Strategic Plan §16</a>
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 2 · JTBD -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="jtbd">
+  <h2>2. JTBD <span class="pill lock">🔒 LOCKED 2026-05-01</span> <span class="pill bronze">8 scenarios · 5 of 8 converge on AI Coach Chat</span></h2>
+  <p class="section-intro">
+    JTBD analysis · 8 desperate-user scenarios · how each leader serves them · what Calibrum does that none do. Every scenario is anchored to a real VOC quote from ExcelMale / Reddit r/Testosterone / Quora / Hone customer story / AlphaMD / VIP Aesthetics / VidaVital MD. <b>5 of 8 JTBDs converge on AI Coach Chat at the emotional peak</b> — single most-important surface to nail.
+  </p>
+
+  <!-- Persona summary row · 3 cards -->
+  <h3 style="margin-top: 18px;">Persona summary · who pays, who funnels</h3>
+
+  <!-- MARK -->
+  <div class="audience-row rank-1">
+    <div class="audience-header">
+      <span class="audience-rank-badge">PRIMARY · 75% paying</span>
+      <span class="audience-emoji">🧔</span>
+      <span class="audience-name">MARK</span>
+      <div class="audience-stats">
+        <b>38–55</b> · IT director / lawyer / engineer<br>
+        <b>$75–200K</b> · 65% married · US South+West<br>
+        <b>6–24mo on TRT</b> — past honeymoon
+      </div>
+    </div>
+    <div class="audience-content">
+      <div class="audience-block">
+        <div class="block-label">Top anxiety</div>
+        <div class="pain-quote">E2 management 60–70% · lab interpretation 50–60% · HCT creep 35–45%</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Canonical opening moment</div>
+        <div class="pain-quote">"2 AM, sleepless, libido-anxious. Dose changed 4 weeks ago. Next lab is 5 weeks out."</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">WTP signal</div>
+        <div class="pain-quote">Already pays Hone $1,884/yr OR Marek $300–500/yr OR $50–150/lab. Calibrum $49/yr = fraction of existing spend.</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Cross-promo</div>
+        <div class="pain-quote">From JabWell GLP-1 (insulin resistance ↔ low T) · to StackSnap (DHEA / boron / zinc / vit D)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARL -->
+  <div class="audience-row rank-2">
+    <div class="audience-header">
+      <span class="audience-rank-badge">SECONDARY · 15% pre-TRT funnel</span>
+      <span class="audience-emoji">🤔</span>
+      <span class="audience-name">CURIOUS CARL</span>
+      <div class="audience-stats">
+        <b>35–50</b> · low-T-suspecting<br>
+        Tested OR told "your labs are normal"<br>
+        ~50% convert to TRT in 6mo
+      </div>
+    </div>
+    <div class="audience-content">
+      <div class="audience-block">
+        <div class="block-label">Top anxiety</div>
+        <div class="pain-quote">"Normal range trap" — 250–1070 ng/dL standard vs 600–900 middle-tertile target. Doctor said normal, patient feels terrible.</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Canonical opening moment</div>
+        <div class="pain-quote">"11 PM Thursday. Just finished a podcast. Searches `testosterone calculator` in App Store. Three Reddit threads in the last hour."</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">WTP signal</div>
+        <div class="pain-quote">🟡 Low pre-Rx, 🔴 high once medicated. Free Calculator hooks him; affiliate fallback monetizes today (Hone/Maximus $200–500/lead).</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Cross-promo</div>
+        <div class="pain-quote">Affiliate funnel → Hone telehealth · Maximus · Marek · TRT Nation · urology directory.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEN -->
+  <div class="audience-row rank-3">
+    <div class="audience-header">
+      <span class="audience-rank-badge">TERTIARY · 10% careful</span>
+      <span class="audience-emoji">💪</span>
+      <span class="audience-name">BIOHACKER BEN</span>
+      <div class="audience-stats">
+        <b>25–40</b> · heavy lifter<br>
+        Peptides + low-dose TRT (grey market)<br>
+        High engagement / voice multiplier
+      </div>
+    </div>
+    <div class="audience-content">
+      <div class="audience-block">
+        <div class="block-label">Top anxiety</div>
+        <div class="pain-quote">Stack timing optimization across testosterone + BPC-157 / retatrutide + hCG.</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Strict positioning rule</div>
+        <div class="pain-quote">Serve him with same toolset (lab decode / E2 triage / HCT) but AI <b>refuses</b> grey-market peptides + AAS cycles + dose-recommend prompts.</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">WTP signal</div>
+        <div class="pain-quote">🟢 Medium — used to paying for biomarker testing + telehealth. Reads More Plates More Dates.</div>
+      </div>
+      <div class="audience-block">
+        <div class="block-label">Brand poison risk</div>
+        <div class="pain-quote">We must NOT become bodybuilder-coded — that loses MARK. No "ALPHA / CRUSHING IT / STAY ANABOLIC" copy ever.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 28px;">8 JTBD scenarios · trigger → mental state → job → alternatives → wedge</h3>
+  <p class="section-intro" style="font-size: 12px;">Every scenario carries a real VOC quote (italicized pull-quote) and a Christensen-format job. Alternatives table maps competitors against the job: <b style="color:#2D5A2A;">✅</b> solves · <b style="color:#7A5A2A;">🟡</b> partial · <b style="color:var(--alert);">❌</b> fails · <b style="color:var(--ink-3);">⚫</b> inaccessible at this moment.</p>
+
+  <!-- JTBD #1 — E2 PANIC -->
+  <div class="jtbd-scenario peak">
+    <h3><span class="jtbd-num">JTBD #1</span>"E2 panic — am I crashing or surging?"</h3>
+    <p class="jtbd-trigger"><strong>Trigger.</strong> It is <strong>2:47 AM.</strong> Mark woke at 2:14 with that hollow, joint-stiff feeling. Libido has been off for 3 days. He is 4 weeks into an anastrozole titration (0.25 → 0.50mg) his telehealth doc told him to do "just to be safe." The bedroom is dark; his palm is sweating on the phone. His next lab is 5 weeks away.</p>
+    <div class="jtbd-pullquote">
+      I'm scared to lower or go off entirely in my current mental state. I generally have felt not as good on doses &lt;150 but seeing my free test so high is kind of scary. Not sure about my E2 either — could I have 'crashed' it with adex?
+      <span class="jtbd-pullquote-attr">— ExcelMale 5-year veteran (VOC, verbatim)</span>
+    </div>
+    <div class="jtbd-job">I need to know whether my symptoms point to E2-high or E2-crashed so I can stop staring at the ceiling and either hold the AI or wait until morning.</div>
+
+    <div class="jtbd-section-label">Current alternatives</div>
+    <table class="alt-table">
+      <thead><tr><th>Alternative</th><th class="verdict">Verdict</th><th>Why it fails this job</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hone Health</b> ($1,884/yr)</td><td class="verdict inaccessible">⚫ inaccessible at 2am</td><td>Async portal — physician replies in 24–48h; no triage UI</td></tr>
+        <tr><td><b>Maximus</b> ($99–199/mo)</td><td class="verdict inaccessible">⚫ inaccessible at 2am</td><td>Their AI chat is a "dumpster fire of misinformation" (per InnerBody)</td></tr>
+        <tr><td><b>Reddit r/Testosterone</b></td><td class="verdict partial">🟡 partial</td><td>Free, available, but 30-min wait for a stranger's hot take; signal-to-noise low</td></tr>
+        <tr><td><b>ChatGPT generic</b></td><td class="verdict fails">❌ fails</td><td>Ungrounded; gives generic "see your doctor" or hallucinated specifics</td></tr>
+        <tr><td><b>OptiPin</b></td><td class="verdict fails">❌ fails</td><td>Pure tracker — no chat, no triage logic</td></tr>
+        <tr><td><b>My TRT App</b></td><td class="verdict partial">🟡 partial</td><td>Has Gemini OCR labs + correlation timeline but <b>no conversational AI</b></td></tr>
+        <tr><td><b>TRT Plus</b></td><td class="verdict partial">🟡 partial</td><td>A:E ratio + E2 modal exist but buried in modals — no 2am chat surface</td></tr>
+        <tr><td><b>His urologist</b></td><td class="verdict inaccessible">⚫ inaccessible at 2am</td><td>Office opens at 9 AM; visit booked 5 weeks out</td></tr>
+      </tbody>
+    </table>
+
+    <div class="jtbd-section-label">What Calibrum does that none of these do</div>
+    <ul class="jtbd-bullets">
+      <li><b>Mood-Hormone Mirror</b> has 7 days of his sleep/mood/libido/anxiety/erection data already. AI says: <em>"Last 5 days = low mood + dry skin + joint pain + low libido. Pattern is consistent with low E2. Last lab E2 was 38; you're 4 weeks post AI increase. Suggested action: discuss reducing AI 25% with your doctor."</em></li>
+      <li><b>AI Hormone Coach Chat</b> is RAG-grounded in Endocrine Society + Bhasin guidelines — empathy line + citation + clear "discuss with doctor" boundary, not a dismissive "consult a professional."</li>
+      <li>Surface is <b>always on</b>, no login wall, no human in the loop at 2:47 AM.</li>
+    </ul>
+
+    <div class="jtbd-implication">Surface must feel calm at 2:47 AM — dark mode default, no red alerts, conversational tone, source-grounded. Hot exclamation-mark badges = emotional escalation = wrong. Bronze/warm accents over cyan/clinical-cold (Hone's palette would feel like an ER at 2am).</div>
+    <div class="jtbd-wedge">"At 2am, when you can't sleep and your E2 is a question mark — Calibrum reads your symptoms, your last lab, and your protocol, and tells you what the pattern looks like."</div>
+  </div>
+
+  <!-- JTBD #2 — LAB DROPPED -->
+  <div class="jtbd-scenario peak">
+    <h3><span class="jtbd-num">JTBD #2</span>"Lab dropped — what do these numbers mean?"</h3>
+    <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Tuesday 4:12 PM.</strong> Tom (48) gets the LabCorp PDF email at his desk. Federal rule sends labs to patients before doctors review. PDF has 14 markers, asterisks, reference ranges that disagree with what the forum says is "optimal." His doc won't see this for another 3–5 days.</p>
+    <div class="jtbd-pullquote">
+      The confusion surrounding testosterone lab results stems from a fundamental lack of standardization across laboratories... one doctor declaring their levels 'normal' while another recommends immediate treatment.
+      <span class="jtbd-pullquote-attr">— VIP Aesthetics VOC (paraphrase)</span>
+    </div>
+    <div class="jtbd-job">I need to translate this LabCorp PDF into plain English, against MY age, MY dose, MY protocol — so I know whether to relax until my next appointment or escalate.</div>
+
+    <div class="jtbd-section-label">Current alternatives</div>
+    <table class="alt-table">
+      <thead><tr><th>Alternative</th><th class="verdict">Verdict</th><th>Why it fails this job</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hone Health</b></td><td class="verdict partial">🟡 partial</td><td>Interprets labs only if you bought their $1,884/yr membership and ordered through them</td></tr>
+        <tr><td><b>Function Health</b></td><td class="verdict partial">🟡 partial</td><td>$499/yr for 100+ biomarker dashboard — generalist, not TRT-tuned, no protocol context</td></tr>
+        <tr><td><b>Reddit r/Testosterone</b></td><td class="verdict partial">🟡 partial</td><td>Will pseudo-interpret your lab in 2 hours; quality variable, no confidentiality</td></tr>
+        <tr><td><b>ChatGPT generic</b></td><td class="verdict fails">❌ fails</td><td>Reads PDF but ungrounded, no personal optimal range, no trend</td></tr>
+        <tr><td><b>OptiPin</b></td><td class="verdict fails">❌ fails</td><td>Manual marker entry only, no Vision OCR, no interpretation</td></tr>
+        <tr><td><b>My TRT App</b></td><td class="verdict partial">🟡 partial</td><td><b>Already ships Gemini OCR + 55+ marker extraction</b> — closest competitor. No RAG-grounded interpretation, no anastrozole/E2 wedge</td></tr>
+        <tr><td><b>TRT Plus</b> (Android)</td><td class="verdict partial">🟡 partial</td><td>Personalized reference ranges + red/amber/green scoring across 80+ markers, but no Vision PDF + bodybuilder framing</td></tr>
+      </tbody>
+    </table>
+
+    <div class="jtbd-section-label">What Calibrum does that none of these do</div>
+    <ul class="jtbd-bullets">
+      <li><b>Lab Snap &amp; Decode</b> — OpenAI Vision extracts every marker from the photo of the LabCorp PDF in one shot, runs each against population range + <b>personal optimal range</b> (age, dose, protocol) + trend vs prior labs.</li>
+      <li>Plain-English summary: <em>"Your protocol is working well. E2 trending up — discuss possible 5–10% T dose reduction or small AI dose. HCT 51 — approaching watch zone (>52 = phlebotomy consideration)."</em></li>
+      <li><b>RAG-grounded</b> in Endocrine Society + AUA + AAFP + TRAVERSE — not a generic LLM hallucinating reference ranges.</li>
+    </ul>
+
+    <div class="jtbd-implication">The lab-decode surface needs to feel <b>trustworthy and slow</b> — not flashy. Numbers as the hero (Hone's biomarker-as-product treatment is the right reference). Out-of-range markers must be surfaced <b>without weaponizing anxiety</b> — amber > red, single accent color, never multiple colors competing.</div>
+    <div class="jtbd-wedge">"Snap your LabCorp PDF. Get a plain-English read against YOUR protocol — not the lab's generic 250–1070 'normal range'."</div>
+  </div>
+
+  <!-- JTBD #3 — DOCTOR PREP -->
+  <div class="jtbd-scenario">
+    <h3><span class="jtbd-num">JTBD #3</span>"Help me prepare for my urology appointment"</h3>
+    <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Sunday evening, 8 PM.</strong> The kids are in bed. Mark has a urology appointment <strong>Tuesday at 10 AM</strong> — quarterly check. He has felt off-protocol for weeks but won't remember any of it in the chair. He opens the Notes app; he's been making lists since he started TRT.</p>
+    <div class="jtbd-pullquote">
+      Every time I had a doctor's appointment I was taking a list I'd made of symptoms. I could never remember them when I was there so I'd keep a list updated when I was at home then take it with me.
+      <span class="jtbd-pullquote-attr">— Quora user (VOC, verbatim)</span>
+    </div>
+    <div class="jtbd-job">I need a printable brief with my last 90 days of dose, symptoms, and labs — plus the right questions to ask — so I don't waste my 12-minute appointment forgetting things or being dismissed.</div>
+
+    <div class="jtbd-section-label">Current alternatives</div>
+    <table class="alt-table">
+      <thead><tr><th>Alternative</th><th class="verdict">Verdict</th><th>Why it fails this job</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hone / Maximus</b></td><td class="verdict partial">🟡 partial</td><td>They ARE the doctor — solves by replacing the urologist, not preparing for him. Doesn't help the 60% on PCP/urology</td></tr>
+        <tr><td><b>Apple Notes manual list</b></td><td class="verdict partial">🟡 partial</td><td>What he does today; works but takes 30–45 min and feels amateur in the chair</td></tr>
+        <tr><td><b>OptiPin</b></td><td class="verdict fails">❌ fails</td><td>Tracks injections; no PDF export, no synthesized brief</td></tr>
+        <tr><td><b>My TRT App</b></td><td class="verdict fails">❌ fails</td><td>Has correlation timeline but <b>no doctor visit prep PDF generator</b></td></tr>
+        <tr><td><b>TRT Plus</b></td><td class="verdict fails">❌ fails</td><td>Has data depth but no advocacy PDF</td></tr>
+        <tr><td><b>ChatGPT</b></td><td class="verdict partial">🟡 partial</td><td>Can generate questions if you paste in your data, but you have to assemble the data first — which is the actual hard part</td></tr>
+        <tr><td><b>AlphaMD blog templates</b></td><td class="verdict partial">🟡 partial</td><td>Static "5 questions to ask your doctor" — generic, not personalized to his protocol</td></tr>
+      </tbody>
+    </table>
+
+    <div class="jtbd-section-label">What Calibrum does that none of these do</div>
+    <ul class="jtbd-bullets">
+      <li><b>Pre-Doctor Visit Brief</b> — auto-generates a 2-page PDF: Page 1 = 90-day dose log + symptom trends + last 2 labs side-by-side; Page 2 = 3–5 personalized questions the AI synthesized from his data (<em>"E2 was 18 at last lab. Should we hold AI dose for 4 weeks and recheck?"</em>).</li>
+      <li><b>PDF is printable + emailable</b> — physical artifact for the chair.</li>
+      <li><b>Advocacy positioning</b> — questions are designed to be raised by an informed patient, not adversarial. This is the AlphaMD VOC made concrete.</li>
+    </ul>
+
+    <div class="jtbd-implication">The PDF surface is the only place Calibrum needs to feel <b>paper-document serious</b> — minimal color, generous margins, doctor's-office acceptable. Inside the app the prep flow should feel <b>like assembly, not anxiety</b> — a tidy checklist, calm neutrals, "ready to print" affordance.</div>
+    <div class="jtbd-wedge">"Walk into your appointment with a 2-page brief your doctor will respect. We assembled the last 90 days for you."</div>
+  </div>
+
+  <!-- JTBD #4 — BLOODWORK TIMING -->
+  <div class="jtbd-scenario">
+    <h3><span class="jtbd-num">JTBD #4</span>"When is next bloodwork due?"</h3>
+    <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Saturday morning, 9:30 AM, coffee.</strong> Mark — engineer, optimization-minded, 18 months on TRT — is reviewing his calendar. He changed dose 6 weeks ago. He vaguely knows E2 takes "a while" to stabilize. He doesn't want to test too early (waste $150) or too late (waste 6 weeks of ambiguity).</p>
+    <div class="jtbd-pullquote">
+      I don't want to keep guessing. Just tell me when to draw blood so the result actually means something.
+      <span class="jtbd-pullquote-attr">— Mark composite, anchored in §2 anxiety #5</span>
+    </div>
+    <div class="jtbd-job">I need the right test date based on MY half-life and MY most recent change — and a one-tap path to order the draw — so I stop guessing.</div>
+
+    <div class="jtbd-section-label">Current alternatives</div>
+    <table class="alt-table">
+      <thead><tr><th>Alternative</th><th class="verdict">Verdict</th><th>Why it fails this job</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hone / Maximus</b></td><td class="verdict solves">✅ solves (if subscribed)</td><td>Schedule retests inside their ecosystem — but only for their patients</td></tr>
+        <tr><td><b>OptiPin</b></td><td class="verdict partial">🟡 partial</td><td>Bloodwork tracking + reminders but <b>generic, not protocol-aware</b> (doesn't know cypionate vs enanthate half-life)</td></tr>
+        <tr><td><b>My TRT App</b></td><td class="verdict partial">🟡 partial</td><td>Pharmacokinetic predicted T-curve with adjustable half-life — closest, but no smart reminder logic</td></tr>
+        <tr><td><b>Calendar + Reddit advice</b></td><td class="verdict partial">🟡 partial</td><td>What he does now — search "how long until E2 stabilizes," set manual reminder</td></tr>
+        <tr><td><b>Generic medication reminders</b></td><td class="verdict fails">❌ fails</td><td>Daily/weekly reminders; no concept of "stabilization at 8 weeks post dose change"</td></tr>
+        <tr><td><b>LabCorp/Quest direct</b></td><td class="verdict partial">🟡 partial</td><td>Solves the ordering, fails the timing — orders any time, doesn't know when YOU should</td></tr>
+      </tbody>
+    </table>
+
+    <div class="jtbd-section-label">What Calibrum does that none of these do</div>
+    <ul class="jtbd-bullets">
+      <li><b>Smart Bloodwork Timing</b> — built on top of injection log + half-life math. <em>"You changed dose 6 weeks ago. E2 will stabilize at 8 weeks. Schedule lab in 2 weeks."</em></li>
+      <li>Direct order links for at-home labs (LabCorp / Quest / Marek) — closes the loop instead of dumping him into Google.</li>
+      <li>Protocol-aware: knows if his last change was T-dose, AI-dose, or hCG addition; recommends the right panel.</li>
+    </ul>
+
+    <div class="jtbd-implication">The reminder/timing surface should feel <b>pragmatic and quiet</b> — a scheduling tool, not a hospital alarm. Maximus's "no membership fee" pragmatic-male tone is the right register; Hone's "longevity engineered" is too aspirational for a Saturday-morning calendar question.</div>
+    <div class="jtbd-wedge">"Stop guessing when to retest. We do the half-life math; you draw blood at the right week."</div>
+  </div>
+
+  <!-- JTBD #5 — CARL CANDIDATE -->
+  <div class="jtbd-scenario">
+    <h3><span class="jtbd-num">JTBD #5</span>"I want to start TRT — am I a candidate?"</h3>
+    <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Late Thursday night, 11 PM.</strong> Carl (42) has just finished a podcast. Fatigue all week, libido gone for months. He's read three Reddit threads in the last hour. He types <code>testosterone calculator</code> into the App Store. He has NOT yet been tested — or he has, and his PCP told him "your T is 350, that's normal."</p>
+    <div class="jtbd-pullquote">
+      I'm tired all the time. My libido is gone. My doctor said my T is 350 — 'normal range'. But my friend started TRT and feels great. Am I crazy?
+      <span class="jtbd-pullquote-attr">— Curious Carl composite (PERSONAS.md)</span>
+    </div>
+    <div class="jtbd-job">I need to find out if my numbers are actually optimal for ME — and if not, the three realistic next steps (PCP advocacy / urologist / telehealth) — so I stop spiraling on Reddit.</div>
+
+    <div class="jtbd-section-label">Current alternatives</div>
+    <table class="alt-table">
+      <thead><tr><th>Alternative</th><th class="verdict">Verdict</th><th>Why it fails this job</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hone Health</b></td><td class="verdict partial">🟡 partial</td><td>$65 home test → telehealth funnel. Excellent if he's ready to spend; intimidating if he just wants a calculator</td></tr>
+        <tr><td><b>Maximus</b></td><td class="verdict partial">🟡 partial</td><td>$99 test, similar funnel. Mainstream-mid-tier — better entry price</td></tr>
+        <tr><td><b>Hims TRT (2026)</b></td><td class="verdict inaccessible">⚫ not yet</td><td>Q2–Q3 2026 launch — biggest existential threat to this exact JTBD</td></tr>
+        <tr><td><b>Reddit r/Testosterone</b></td><td class="verdict partial">🟡 partial</td><td>Validates his anxiety in 2 hours; won't run his Vermeulen Free T calc</td></tr>
+        <tr><td><b>ChatGPT</b></td><td class="verdict partial">🟡 partial</td><td>Computes Free T if he pastes inputs; ungrounded on next-step paths</td></tr>
+        <tr><td><b>OptiPin / My TRT App / TRT Plus</b></td><td class="verdict fails">❌ fails</td><td>All assume he's already on TRT — no pre-TRT funnel, no calculator-as-hook</td></tr>
+        <tr><td><b>TRT Calculator (Dzeveckij)</b> #1 on `testosterone`</td><td class="verdict fails">❌ fails</td><td>Half-life calc only — no Vermeulen, no SHBG/Albumin inputs, no advocacy path</td></tr>
+        <tr><td><b>His PCP</b></td><td class="verdict fails">❌ fails</td><td>The reason he's here at 11 PM in the first place</td></tr>
+      </tbody>
+    </table>
+
+    <div class="jtbd-section-label">What Calibrum does that none of these do</div>
+    <ul class="jtbd-bullets">
+      <li><b>Free Vermeulen Free T Calculator</b> — no paywall. Total T + SHBG + Albumin + Age → Free T + Bioavailable T. <em>"Your calculated Free T is 6.2 ng/dL — below optimal for your age (40–50 target: 9–15)."</em></li>
+      <li><b>Three-path next step CTA</b> — insurance route / telehealth (Hone $200–500/lead, Maximus alternate) / direct PCP advocacy script.</li>
+      <li><b>Same-app upgrade path</b> — if he eventually starts TRT, he's already inside Calibrum and the Coach + Lab Decode + Visit PDF unlock is one tap.</li>
+    </ul>
+
+    <div class="jtbd-implication">The Calculator/onboarding surface is the <b>first surface 30–40% of users will ever see</b> (pre-TRT funnel). Must feel approachable, not medical. Hims's "stupid easy" register is the right idea (lowercase, normalizing) without the millennial pastels. Calculator output must feel <b>like a verdict, not a sales page</b> — even though three affiliate CTAs follow.</div>
+    <div class="jtbd-wedge">"Your doctor said 'normal'. Run the math yourself — free, in 60 seconds — and decide your next step."</div>
+  </div>
+
+  <!-- JTBD #6 — HCT 51 -->
+  <div class="jtbd-scenario peak">
+    <h3><span class="jtbd-num">JTBD #6</span>"My HCT is 51 — am I going to have a stroke?"</h3>
+    <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Q2 lab results email arrives, 7:14 AM during the morning routine.</strong> Mark scans the PDF on his phone walking to the kitchen. HCT 48 → 51 in six months. His brain skips immediately to "stroke." His coffee gets cold.</p>
+    <div class="jtbd-pullquote">
+      You start seeing elevated [HCT] numbers and immediately lower your dose, stop therapy, or begin donating blood constantly. But overcorrecting this issue can actually lead to anemia, leaving you exhausted and defeating the entire purpose...
+      <span class="jtbd-pullquote-attr">— VidaVital MD (VOC, verbatim)</span>
+    </div>
+    <div class="jtbd-job">I need to know if HCT 51 is genuinely dangerous, what's actionable today, and what's actionable only with my doctor — so I don't panic-stop my dose or panic-donate blood.</div>
+
+    <div class="jtbd-section-label">Current alternatives</div>
+    <table class="alt-table">
+      <thead><tr><th>Alternative</th><th class="verdict">Verdict</th><th>Why it fails this job</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hone Health</b></td><td class="verdict partial">🟡 partial</td><td>Will respond — async, 24–48h. By then he's already donated blood twice</td></tr>
+        <tr><td><b>Reddit r/Testosterone</b></td><td class="verdict partial">🟡 partial</td><td>Will give him 8 contradictory answers in 90 minutes</td></tr>
+        <tr><td><b>ChatGPT</b></td><td class="verdict partial">🟡 partial</td><td>Textbook HCT explainer; won't reference his trend or his protocol</td></tr>
+        <tr><td><b>OptiPin</b></td><td class="verdict fails">❌ fails</td><td>Tracks the marker; no risk education, no triage</td></tr>
+        <tr><td><b>My TRT App</b></td><td class="verdict fails">❌ fails</td><td>55-marker dashboard but no HCT-specific risk wedge</td></tr>
+        <tr><td><b>TRT Plus</b></td><td class="verdict partial">🟡 partial</td><td>Hematocrit Scoring Engine with dynamic thresholds — closest competitor; bodybuilder-framed</td></tr>
+        <tr><td><b>His urologist</b></td><td class="verdict inaccessible">⚫ inaccessible</td><td>Visit in 4 weeks</td></tr>
+      </tbody>
+    </table>
+
+    <div class="jtbd-section-label">What Calibrum does that none of these do</div>
+    <ul class="jtbd-bullets">
+      <li><b>AI Coach Chat</b> answers the literal question: <em>"HCT 51 is above the typical TRT range (40–50) but below the watch threshold (>52). Common factors: dehydration falsely elevates HCT — drink 2L water, recheck in 1 week. Once-weekly IM dosing causes peaks; SubQ split-dose often lowers HCT. Phlebotomy considered when HCT >54%."</em></li>
+      <li><b>Boundary line</b> — "Discuss with doctor before considering phlebotomy. We have research on this — want a summary PDF for your appointment?" — pivots him from panic to advocacy.</li>
+      <li><b>HCT Risk Tracker (P1)</b> — ongoing trend, hydration check, doesn't auto-alert into red until clinically warranted.</li>
+    </ul>
+
+    <div class="jtbd-implication">This is the JTBD where bad UX <b>kills the user's day</b>. A bright red "HIGH" badge weaponizes anxiety and triggers the over-correction loop the VOC describes. Use <b>graduated amber, not red</b>, for everything below 54%. The chat reply must lead with empathy ("HCT 51 is in the watch zone, not the danger zone"), not with the number.</div>
+    <div class="jtbd-wedge">"HCT crept up? Don't panic-stop. Calibrum tells you what's actionable today vs what's a doctor conversation."</div>
+  </div>
+
+  <!-- JTBD #7 — DOCTOR DISMISSAL -->
+  <div class="jtbd-scenario peak">
+    <h3><span class="jtbd-num">JTBD #7</span>"Doctor said my labs are 'normal' — but I feel like shit"</h3>
+    <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Friday afternoon, parking lot of his PCP's office.</strong> Pre-TRT Carl just got brushed off. T was 350 ng/dL, "in range." He sits in his car with the engine off.</p>
+    <div class="jtbd-pullquote">
+      Let's be real — there's nothing more frustrating than finally getting the courage to talk to your doctor about low testosterone symptoms… only to get brushed off with a half-smile and a 'Your labs look fine.'
+      <span class="jtbd-pullquote-attr">— AlphaMD blog (VOC, verbatim)</span>
+    </div>
+    <div class="jtbd-pullquote">
+      Total testosterone was just 230 ng/dL... I was only 42! I was surprised and upset. I felt like my concerns had been dismissed [by my doctor].
+      <span class="jtbd-pullquote-attr">— Hone customer story (VOC)</span>
+    </div>
+    <div class="jtbd-job">I need ammunition — research, a calculator, citations, a printable case — so I can either push back on this PCP, switch to a urologist, or go telehealth without feeling crazy.</div>
+
+    <div class="jtbd-section-label">Current alternatives</div>
+    <table class="alt-table">
+      <thead><tr><th>Alternative</th><th class="verdict">Verdict</th><th>Why it fails this job</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hone Health</b></td><td class="verdict solves">✅ replaces doctor</td><td>But $1,884/yr; doesn't help him push back on a PCP he wants to keep</td></tr>
+        <tr><td><b>Maximus</b></td><td class="verdict solves">✅ alt path</td><td>Same: replace the doctor. No advocacy tooling for staying with his current one</td></tr>
+        <tr><td><b>Hims TRT 2026</b></td><td class="verdict inaccessible">⚫ not yet</td><td>And won't help him push back either</td></tr>
+        <tr><td><b>Reddit r/Testosterone</b></td><td class="verdict partial">🟡 partial</td><td>Validates his anger ("DROP YOUR PCP"). Doesn't give him a printable case</td></tr>
+        <tr><td><b>ChatGPT</b></td><td class="verdict partial">🟡 partial</td><td>Summarizes the "normal range trap." Ungrounded on citations; no PDF</td></tr>
+        <tr><td><b>AlphaMD / ExcelMale articles</b></td><td class="verdict partial">🟡 partial</td><td>Educate him on the trap; don't personalize to HIS 350 ng/dL number</td></tr>
+        <tr><td><b>All iOS competitors</b></td><td class="verdict fails">❌ fails</td><td>Assume he's already prescribed</td></tr>
+      </tbody>
+    </table>
+
+    <div class="jtbd-section-label">What Calibrum does that none of these do</div>
+    <ul class="jtbd-bullets">
+      <li><b>Free Calculator + Symptom Log</b> establishes baseline data.</li>
+      <li><b>AI Coach explains the "normal range trap"</b> — 250–1070 standard range vs middle-tertile target 600–900, with citations from Endocrine Society + Bhasin guidelines.</li>
+      <li><b>Patient Advocacy PDF</b> — research citations + direct links to specialist clinics + a script for the next visit. The literal AlphaMD VOC made concrete: <em>"tools to push back."</em></li>
+    </ul>
+
+    <div class="jtbd-implication">Tone here cannot be defeatist or victim-coded. Must read <b>competent ally, not therapy app</b>. Avoid "we hear you" register. Hone's "engineered around your biology" personalization framing is the right model — clinical-optimistic without being clinical-cold. NEVER quippy; this user's anger is real.</div>
+    <div class="jtbd-wedge">"Your labs were called 'normal.' We help you find out if they were optimal — and give you the case to push back."</div>
+  </div>
+
+  <!-- JTBD #8 — PROTOCOL CHANGE -->
+  <div class="jtbd-scenario">
+    <h3><span class="jtbd-num">JTBD #8</span>"I changed my protocol — when do I retest?"</h3>
+    <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Three weeks ago, Mark switched from 200mg/wk IM cypionate to 50mg twice-weekly SubQ.</strong> It's now Tuesday morning. He's been feeling better but isn't sure if it's real or placebo. He's not sure when his blood actually means something again.</p>
+    <div class="jtbd-pullquote">
+      Cypionate has a 5–7 day half-life. I think? When does the new protocol stabilize — is it 4 weeks, 6 weeks, 8?
+      <span class="jtbd-pullquote-attr">— Mark composite (paraphrase)</span>
+    </div>
+    <div class="jtbd-job">I need to know exactly when post-protocol-change my labs will reflect my new steady state — so I time the draw right and the result is interpretable.</div>
+
+    <div class="jtbd-section-label">Current alternatives</div>
+    <table class="alt-table">
+      <thead><tr><th>Alternative</th><th class="verdict">Verdict</th><th>Why it fails this job</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hone Health</b></td><td class="verdict solves">✅ solves (if subscribed)</td><td>Their protocol owns the schedule; doesn't help DIY/non-Hone users</td></tr>
+        <tr><td><b>Reddit r/Testosterone</b></td><td class="verdict partial">🟡 partial</td><td>"How long for cypionate to stabilize?" appears in their April-2026 top-15. Inconsistent answers</td></tr>
+        <tr><td><b>ChatGPT</b></td><td class="verdict partial">🟡 partial</td><td>Quotes 5–7 day half-life and "5 half-lives = 25–35 days." Not protocol-aware</td></tr>
+        <tr><td><b>OptiPin</b></td><td class="verdict partial">🟡 partial</td><td>Tracks injections + reminders but timing logic is generic, not half-life-driven</td></tr>
+        <tr><td><b>My TRT App</b></td><td class="verdict solves">✅ partial</td><td>Pharmacokinetic predicted T-curve with adjustable half-life — closest current solution</td></tr>
+        <tr><td><b>TRT Plus</b></td><td class="verdict partial">🟡 partial</td><td>Steady-state predictor — but bodybuilder-framed, no smart reminder</td></tr>
+        <tr><td><b>TRT Calculator (Dzeveckij)</b></td><td class="verdict partial">🟡 partial</td><td>Half-life calc + steady-state predictor — pure calc, no integration with his actual injection log</td></tr>
+      </tbody>
+    </table>
+
+    <div class="jtbd-section-label">What Calibrum does that none of these do</div>
+    <ul class="jtbd-bullets">
+      <li><b>Smart Bloodwork Timing</b> with half-life math integrated with his own injection log. <em>"Switched 50mg SubQ twice-weekly 3 weeks ago. Full T panel + E2 + HCT in 5 weeks (week 8 post-change)."</em></li>
+      <li><b>One-tap order link</b> to LabCorp/Quest at-home draw at the right week.</li>
+      <li>Adapts when he changes again — most competitors are static calculators; Calibrum is <b>stateful, protocol-aware</b>.</li>
+    </ul>
+
+    <div class="jtbd-implication">Same as JTBD #4 — the timing surface is a calm, pragmatic scheduler. Calendar-shaped affordance, not a clinical alert. <b>No countdown urgency</b> — this isn't a missile launch, it's "your blood will be informative starting Week 8."</div>
+    <div class="jtbd-wedge">"Changed your protocol? Calibrum knows your half-life, your timing, and exactly which week your next draw will mean something."</div>
+  </div>
+
+  <!-- Cross-cutting design implications panel -->
+  <div class="cross-panel">
+    <h3 style="font-size: 18px; margin-bottom: 6px;">Cross-cutting design implications · what 8 JTBDs together demand</h3>
+
+    <h3>1. Surfaces — priority order (5 of 8 converge on AI Coach Chat)</h3>
+    <table class="modes" style="margin-top: 10px;">
+      <thead><tr><th>Rank</th><th>Surface</th><th>JTBDs converging</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td><b>1</b></td><td><b>AI Coach Chat</b></td><td>#1, #6, #7 (anxiety peaks) + supports #2, #5</td><td>The single most-used surface at the emotional peak. Always available, RAG-grounded, conversational.</td></tr>
+        <tr><td><b>2</b></td><td><b>Lab Snap &amp; Decode</b></td><td>#2 (primary), supports #6, #7</td><td>The "aha" moment that converts trial → paid. Trigger paywall here.</td></tr>
+        <tr><td><b>3</b></td><td><b>Daily Mood-Hormone Mirror</b></td><td>#1 (provides 7-day context), #8 (validates protocol change)</td><td>Quiet daily ritual; data substrate for every triage.</td></tr>
+        <tr><td><b>4</b></td><td><b>Free T Calculator</b></td><td>#5, #7 (pre-TRT funnel)</td><td>Top-of-funnel hook for 30–40% of installs.</td></tr>
+        <tr><td><b>5</b></td><td><b>Pre-Doctor Visit Brief PDF</b></td><td>#3 (primary), supports #6, #7</td><td>Advocacy artifact; no competitor has this.</td></tr>
+        <tr><td><b>6</b></td><td><b>Smart Bloodwork Timing</b></td><td>#4, #8</td><td>Quiet utility; high retention.</td></tr>
+        <tr><td><b>7</b></td><td><b>Injection Tracker</b></td><td>All JTBDs (substrate)</td><td>Table stakes; OptiPin/Regimen-equivalent.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>2. Mode strategy — system-following, chat dark-first</h3>
+    <p style="font-size: 13px; line-height: 1.55;">JTBD opening times span 2 AM (#1, #5) to Saturday morning (#4) to Friday afternoon (#7). <b>Chat surface defaults DARK</b> — that's where 2am moments live. Lab Decode and PDF preview can be light-dominant (paper/document aesthetic). Onboarding + paywall + dashboard follow iOS system. Don't force a single mode app-wide.</p>
+
+    <h3>3. Tone anchor — calm competent friend who has read every endocrinology guideline</h3>
+    <p style="font-size: 13px; line-height: 1.55;">Not a doctor (not prescribing). Not a coach (no "let's crush it"). Not a wellness app (no "honor your journey"). Anchor to <b>MARK at 2 AM</b>: a 47-year-old father, sleepless, holding his phone, scared he's crashed his E2. Lowercase chat bubbles. Empathy line first → fact → citation → action option. Borrow Maximus's pragmatic-direct register; add the warmth Hims has and Hone lacks.</p>
+
+    <h3>4. Anti-patterns (the never-list)</h3>
+    <ol>
+      <li><b>Never use bright red as a primary alert color.</b> JTBDs #1, #6, #7 are anxiety-already-elevated states; red weaponizes anxiety and triggers the over-correction loop the VidaVital VOC described.</li>
+      <li><b>Never use exclamation marks in AI responses.</b> They escalate emotional state at the exact moment we need to lower it.</li>
+      <li><b>Never use "ALPHA / CRUSHING IT / OPTIMIZE / STAY ANABOLIC" copy.</b> This loses MARK to TRT Plus.</li>
+      <li><b>Never use Hims-style quippy humor about low T.</b> MARK at 2 AM is not laughing.</li>
+      <li><b>Never default to "consult your doctor" as a complete answer.</b> The user already knew that — it's why he's here at 2 AM. Always pair "discuss with doctor" with a substantive RAG-grounded answer.</li>
+      <li><b>Never weaponize the paywall on the panic surfaces (#1, #6).</b> Paywall on the lab decode (#2) and the doctor PDF (#3) — these are the satisfaction peaks.</li>
+      <li><b>Never auto-alert HCT/E2 into a notification badge until clinically warranted</b> (HCT >54%, E2 outside protocol range for 2+ labs). Notifications must earn the user's trust.</li>
+    </ol>
+
+    <h3>5. What leader brands do badly that Calibrum can fix</h3>
+    <table class="modes" style="margin-top: 10px;">
+      <thead><tr><th>Brand</th><th>What they do badly</th><th>Calibrum's fix</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hone Health</b></td><td>Too clinical-cold (cyan/teal — feels like an ER at 2am)</td><td>Warm bronze accents on dark; clinical-optimistic without clinical-sterile</td></tr>
+        <tr><td><b>Maximus</b></td><td>No distinctive visual brand; AI chat "a dumpster fire of misinformation" (InnerBody)</td><td>Be the well-executed AI in the space, with a distinctive identity</td></tr>
+        <tr><td><b>Hims</b></td><td>Pastel blue/coral/orange + quippy register reads juvenile to a 47yo father</td><td>Mature, bronze, calm — premium without playful</td></tr>
+        <tr><td><b>OptiPin</b></td><td>Pure tracker, no chat, no AI — leaves user alone at 2 AM</td><td>AI Coach as anchor, tracker as substrate</td></tr>
+        <tr><td><b>My TRT App</b></td><td>Has the AI lab OCR but no UX love — only 2 reviews despite feature richness</td><td>Same depth + chat + advocacy PDF + persona love</td></tr>
+        <tr><td><b>TRT Plus</b></td><td>Bodybuilder framing excludes MARK; 3.9★ UX pain</td><td>Clinical TRT-patient framing; calm UX</td></tr>
+        <tr><td><b>Function Health</b></td><td>Generalist 100-biomarker dashboard, not protocol-aware</td><td>TRT-laser-focused; protocol-aware timing and triage</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top: 18px; font-size: 12px; color: var(--ink-3); line-height: 1.55;">
+    <b>Sources:</b>
+    → <a href="../../../14-calibrum/docs/JTBD_ANALYSIS_2026-05-01.md" style="color:var(--bronze-deep);font-weight:700;">JTBD_ANALYSIS_2026-05-01.md</a>
+    · → <a href="../../../14-calibrum/PERSONAS.md" style="color:var(--bronze-deep);font-weight:700;">PERSONAS.md</a>
+    · → <a href="../../../14-calibrum/Calibrum_Strategic_Plan_v2_FINAL.md" style="color:var(--bronze-deep);font-weight:700;">Strategic Plan §12</a>
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3 · DESIGNER BRIEF (App Store screenshots) -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="designer-brief">
+  <h2>3. Designer Brief · App Store Screenshots <span class="pill bronze">📐 first 3 = 85% CR</span></h2>
+  <p class="section-intro">
+    8 App Store screenshots · first 3 carry 85% of CR decision · §16 strategic plan + screenshot brief locked 2026-05-01. <b>Aesthetic anchor:</b> Whoop / Apple Watch fitness / Function Health. <b>NOT:</b> Bodybuilding.com / T-Nation / Crazy Bulk / clinical hospital blue.
+  </p>
+
+  <!-- Aesthetic guardrails band -->
+  <div style="margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <div style="background: var(--good-bg); border-left: 3px solid var(--good); border-radius: 0 10px 10px 0; padding: 12px 16px;">
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #2D5A2A;">✓ DO</div>
+      <div style="font-size: 12.5px; line-height: 1.55; color: var(--ink); margin-top: 6px;">Real UI dominant 60–70% · charcoal/dark navy + bronze/copper accents + sage + muted rust · clinical-authority badges (Endocrine Society / AUA / AAFP) prominent · source citations in AI Coach screenshot · diverse 38–55 age skew · SF Pro Rounded headers · ® on first brand mention</div>
+    </div>
+    <div style="background: var(--alert-bg); border-left: 3px solid var(--alert); border-radius: 0 10px 10px 0; padding: 12px 16px;">
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--alert);">✗ DON'T</div>
+      <div style="font-size: 12.5px; line-height: 1.55; color: var(--ink); margin-top: 6px;">Bodybuilder / aggressive imagery (no muscles, alpha iconography, gym red/black) · bright primary blue / neon red · clinical hospital blue / sterile lab · brand-pharma-mimicking colors (AndroGel pump, amber injectable vials) · specific T numbers as hero copy · before/after physique (compliance + tone fail) · photographic injection imagery · "Stay anabolic" / "Crush it" / "Alpha mode"</div>
+    </div>
+  </div>
+
+  <!-- 8 screenshot blocks -->
+  <h3 style="margin-top: 22px;">8 App Store screenshots · in order</h3>
+
+  <!-- Screen 1 -->
+  <div class="ss-block">
+    <div class="ss-mock-phone">
+      <div class="stat"><span>9:41</span><span>•••</span></div>
+      <div class="top-copy">Every hormone.<br>Every shot.<br>One dashboard.</div>
+      <div class="ss-mini-card">
+        <div class="row"><b>Testosterone Cypionate</b><span style="font-size:7px;color:var(--ink-3);">100mg/wk</span></div>
+        <div class="row" style="font-size:7px;color:var(--ink-3);">Next · Tue · 2 days</div>
+      </div>
+      <div class="ss-mini-card">
+        <div class="row"><b>Total T</b><span style="color:var(--bronze);font-weight:800;">782 ng/dL</span></div>
+        <div class="row" style="margin-top:2px;"><b>Free T</b><span class="vp good">In range</span></div>
+        <div class="row" style="margin-top:2px;"><b>E2 38</b><span class="vp good">In range</span></div>
+        <div class="row" style="margin-top:2px;"><b>HCT 51</b><span class="vp watch">Watch</span></div>
+      </div>
+      <div class="ss-mini-card" style="background:var(--ink); color:var(--bronze-soft);">
+        <div class="row"><span>🤖 AI Coach online</span><span>→</span></div>
+      </div>
+      <div class="bot-copy">AI Coach included.</div>
+    </div>
+    <div class="ss-spec">
+      <h3><span class="ss-num">1</span>HERO · Hormone Balance Dashboard <span class="ss-priority">🥇 85% CR</span></h3>
+      <div class="copy-row">
+        <div class="lbl">Top copy</div>
+        <div class="v">"Every hormone. Every shot. One dashboard."</div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">Bottom copy</div>
+        <div class="v">"AI Coach included."</div>
+      </div>
+      <div class="copy-row">
+        <div class="lbl">UI elements</div>
+        <div class="v" style="font-size: 12.5px;">Multi-medication chip strip (T cypionate · anastrozole · hCG) · key markers row (Total T / Free T / E2 / HCT with verdict pills) · AI Coach online badge top-right · next-injection countdown</div>
+      </div>
+      <div class="ss-tags">
+        <span class="ss-tag">HYBRID</span>
+        <span class="ss-tag bronze">S1 MARK</span>
+        <span class="ss-tag good">LIGHT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 2 -->
+  <div class="ss-block">
+    <div class="ss-mock-phone dark">
+      <div class="stat"><span>9:41</span><span>•••</span></div>
+      <div class="top-copy" style="color:var(--night-text);">Confused about E2?<br>Just ask.</div>
+      <div class="ss-mini-card" style="font-size: 8px;">"My libido tanked this week, is my E2 high?"</div>
+      <div class="ss-mini-card" style="font-size: 8px; line-height: 1.4;">
+        <b style="color:var(--night-accent);">Pattern:</b> mood-libido pattern often = E2 imbalance.<br>
+        <b style="color:var(--night-accent);">Common factors:</b> AI dose timing, recent T dose change.<br>
+        <b style="color:var(--night-accent);">Boundary:</b> discuss with prescriber before adjusting AI.
+      </div>
+      <div style="display:flex;gap:3px;flex-wrap:wrap;">
+        <span style="font-size:7px;background:var(--bronze-soft);color:var(--bronze-deep);padding:2px 5px;border-radius:999px;font-weight:800;">Endocrine Society</span>
+        <span style="font-size:7px;background:var(--bronze-soft);color:var(--bronze-deep);padding:2px 5px;border-radius:999px;font-weight:800;">AUA</span>
+        <span style="font-size:7px;background:var(--bronze-soft);color:var(--bronze-deep);padding:2px 5px;border-radius:999px;font-weight:800;">Bhasin 2018</span>
+      </div>
+      <div style="font-size:7.5px;color:var(--bronze-soft);opacity:0.7;text-align:center;margin-top:auto;">🛡 Educational companion · not medical advice</div>
+      <div class="bot-copy">AI Hormone Coach, 24/7.</div>
+    </div>
+    <div class="ss-spec">
+      <h3><span class="ss-num">2</span>DIFFERENTIATOR · AI Hormone Coach Chat <span class="ss-priority">🥇 85% CR</span></h3>
+      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Confused about E2? Just ask."</div></div>
+      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"AI Hormone Coach, 24/7."</div></div>
+      <div class="copy-row">
+        <div class="lbl">UI elements</div>
+        <div class="v" style="font-size: 12.5px;">User question · 3-tier AI structured response (empathy / RAG-grounded / boundary) · source badges (Endocrine Society + AUA + Bhasin 2018) · disclaimer banner</div>
+      </div>
+      <div class="ss-tags">
+        <span class="ss-tag">E2-WEDGE</span>
+        <span class="ss-tag bronze">S1 MARK</span>
+        <span class="ss-tag" style="background:var(--night-bg);color:var(--bronze);">DARK · SLOT 1</span>
+      </div>
+      <div class="ss-compliance-note">⚖ Compliance: disclaimer banner mandatory · AI never gives specific dose recs · sources cited inline</div>
+    </div>
+  </div>
+
+  <!-- Screen 3 -->
+  <div class="ss-block">
+    <div class="ss-mock-phone">
+      <div class="stat"><span>9:41</span><span>•••</span></div>
+      <div class="top-copy">Take a photo of<br>your labs.</div>
+      <div class="ss-mini-card" style="border:1px dashed var(--bronze);text-align:center;font-size:8px;color:var(--ink-2);padding:14px 6px;">
+        📄 LabCorp · scanning...<br>14 markers extracted
+      </div>
+      <div class="ss-mini-card">
+        <div class="row"><b>E2</b><span class="vp watch">Trending up</span></div>
+        <div class="row" style="margin-top:3px;"><b>HCT 51</b><span class="vp watch">Approaching watch</span></div>
+        <div class="row" style="margin-top:3px;font-size:7.5px;color:var(--ink-2);">Personal optimal range overlay vs LabCorp population range</div>
+      </div>
+      <div class="ss-mini-card" style="background:var(--bronze-soft);">
+        <span style="font-size:7.5px;color:var(--bronze-deep);font-weight:600;">"E2 trending up — discuss possible AI adjustment with doctor."</span>
+      </div>
+      <div class="bot-copy">Get plain-English interpretation.</div>
+    </div>
+    <div class="ss-spec">
+      <h3><span class="ss-num">3</span>KILLER FEATURE · Lab Snap &amp; Decode <span class="ss-priority">🥇 85% CR</span></h3>
+      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Take a photo of your labs."</div></div>
+      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"Get plain-English interpretation."</div></div>
+      <div class="copy-row">
+        <div class="lbl">UI elements</div>
+        <div class="v" style="font-size: 12.5px;">LabCorp PDF photo in frame, scanning animation · marker extraction stream · personal optimal range chart (population range vs personal target) · plain-English summary card</div>
+      </div>
+      <div class="ss-tags">
+        <span class="ss-tag">HYBRID</span>
+        <span class="ss-tag bronze">S1 MARK</span>
+        <span class="ss-tag good">LIGHT</span>
+      </div>
+      <div class="ss-compliance-note">⚖ Compliance: disclaimer mandatory · "discuss with doctor" framing on summary · OpenAI Vision retention OFF</div>
+    </div>
+  </div>
+
+  <!-- Screen 4 -->
+  <div class="ss-block">
+    <div class="ss-mock-phone">
+      <div class="stat"><span>9:41</span><span>•••</span></div>
+      <div class="top-copy">Free T Calculator.<br>Free.</div>
+      <div class="ss-mini-card">
+        <div class="row" style="font-size: 8px;"><span>Total T</span><span style="font-family: monospace; font-weight: 800;">350 ng/dL</span></div>
+        <div class="row" style="font-size: 8px;"><span>SHBG</span><span style="font-family: monospace;">42 nmol/L</span></div>
+        <div class="row" style="font-size: 8px;"><span>Albumin</span><span style="font-family: monospace;">4.2 g/dL</span></div>
+        <div class="row" style="font-size: 8px;"><span>Age</span><span style="font-family: monospace;">42</span></div>
+      </div>
+      <div class="ss-mini-card" style="background:var(--ink); color:var(--bronze-soft); text-align:center;">
+        <div style="font-size: 8px; letter-spacing: 0.08em; text-transform:uppercase; color: var(--bronze);">Calculated Free T (Vermeulen)</div>
+        <div style="font-family: -apple-system, 'SF Pro Rounded', sans-serif; font-size: 22px; font-weight: 800; color: white;">6.2 <span style="font-size: 11px;">ng/dL</span></div>
+        <div style="font-size: 7px; color: var(--bronze-soft); margin-top: 2px;">Below optimal for age 40–50 (target 9–15)</div>
+      </div>
+      <div style="display:flex;gap:3px;">
+        <div style="flex:1;background:white;border-radius:6px;padding:5px;font-size:7px;text-align:center;color:var(--ink);">Insurance</div>
+        <div style="flex:1;background:var(--bronze);border-radius:6px;padding:5px;font-size:7px;text-align:center;color:white;font-weight:800;">Telehealth</div>
+        <div style="flex:1;background:white;border-radius:6px;padding:5px;font-size:7px;text-align:center;color:var(--ink);">PCP advocacy</div>
+      </div>
+      <div class="bot-copy">See what your numbers really mean.</div>
+    </div>
+    <div class="ss-spec">
+      <h3><span class="ss-num">4</span>Free Testosterone Calculator</h3>
+      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Free T Calculator. Free."</div></div>
+      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"See what your numbers really mean."</div></div>
+      <div class="copy-row">
+        <div class="lbl">UI elements</div>
+        <div class="v" style="font-size: 12.5px;">4-input form (Total T / SHBG / Albumin / Age) · Vermeulen formula label · output card (Free T + Bioavailable T) · "Below optimal for your age" insight · 3-path next-step CTA</div>
+      </div>
+      <div class="ss-tags">
+        <span class="ss-tag">CALC-FUNNEL</span>
+        <span class="ss-tag bronze">S2 CARL</span>
+        <span class="ss-tag good">LIGHT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 5 -->
+  <div class="ss-block">
+    <div class="ss-mock-phone">
+      <div class="stat"><span>9:41</span><span>•••</span></div>
+      <div class="top-copy">Mood off?<br>Libido down?</div>
+      <div class="ss-mini-card">
+        <div style="font-size: 8px; color: var(--ink-3); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800;">7-day Mood-Hormone Mirror</div>
+        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-top: 4px;">
+          <div style="aspect-ratio: 1; background: var(--watch); border-radius: 2px;"></div>
+          <div style="aspect-ratio: 1; background: var(--watch); border-radius: 2px;"></div>
+          <div style="aspect-ratio: 1; background: var(--alert); border-radius: 2px;"></div>
+          <div style="aspect-ratio: 1; background: var(--alert); border-radius: 2px;"></div>
+          <div style="aspect-ratio: 1; background: var(--alert); border-radius: 2px;"></div>
+          <div style="aspect-ratio: 1; background: var(--alert); border-radius: 2px;"></div>
+          <div style="aspect-ratio: 1; background: var(--alert); border-radius: 2px;"></div>
+        </div>
+      </div>
+      <div class="ss-mini-card" style="background: var(--watch-bg);">
+        <span style="font-size: 8px; color: #7A5A2A; font-weight: 800;">📊 E2 pattern flagged</span>
+      </div>
+      <div class="ss-mini-card" style="font-size: 8px; line-height: 1.4;">"5-day pattern consistent with low E2 — discuss reducing AI with your doctor."</div>
+      <div class="bot-copy">AI checks if it's E2.</div>
+    </div>
+    <div class="ss-spec">
+      <h3><span class="ss-num">5</span>E2 Symptom Triage</h3>
+      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Mood off? Libido down?"</div></div>
+      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"AI checks if it's E2."</div></div>
+      <div class="copy-row">
+        <div class="lbl">UI elements</div>
+        <div class="v" style="font-size: 12.5px;">7-day Mirror grid (sleep / mood / libido / energy / anxiety / erection) · pattern detected card · single-sentence AI triage</div>
+      </div>
+      <div class="ss-tags">
+        <span class="ss-tag">SYMPTOM-TRIAGE</span>
+        <span class="ss-tag bronze">S1 MARK</span>
+        <span class="ss-tag good">LIGHT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 6 -->
+  <div class="ss-block">
+    <div class="ss-mock-phone">
+      <div class="stat"><span>9:41</span><span>•••</span></div>
+      <div class="top-copy">Know exactly<br>when to test.</div>
+      <div class="ss-mini-card">
+        <div style="font-size: 8px; color: var(--ink-3); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800;">Protocol timeline</div>
+        <div style="display: flex; gap: 2px; margin-top: 4px; height: 14px; align-items: center;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--bronze);"></div>
+          <div style="flex: 1; height: 2px; background: var(--bronze-soft);"></div>
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--watch);"></div>
+          <div style="flex: 1; height: 2px; background: var(--watch-bg);"></div>
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--good);"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 6.5px; color: var(--ink-3); margin-top: 2px;">
+          <span>Dose change</span><span>Wk 4</span><span>Wk 8 retest</span>
+        </div>
+      </div>
+      <div class="ss-mini-card" style="background: var(--bronze-soft);">
+        <span style="font-size: 8px; color: var(--bronze-deep); font-weight: 600;">"E2 stabilizes 8 weeks post AI dose change. Schedule lab in 2 weeks."</span>
+      </div>
+      <div class="ss-mini-card" style="background: var(--ink); color: var(--bronze-soft); text-align: center; font-size: 8px;">📋 Order LabCorp at-home draw →</div>
+      <div class="bot-copy">Based on your protocol changes.</div>
+    </div>
+    <div class="ss-spec">
+      <h3><span class="ss-num">6</span>Smart Bloodwork Reminders</h3>
+      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Know exactly when to test."</div></div>
+      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"Based on your protocol changes."</div></div>
+      <div class="copy-row">
+        <div class="lbl">UI elements</div>
+        <div class="v" style="font-size: 12.5px;">Timeline view: dose-change marker → 6-week countdown → "Schedule lab in 2 weeks" reminder · half-life math callout · direct LabCorp at-home draw order link</div>
+      </div>
+      <div class="ss-tags">
+        <span class="ss-tag">HALF-LIFE</span>
+        <span class="ss-tag bronze">S1 MARK</span>
+        <span class="ss-tag good">LIGHT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 7 -->
+  <div class="ss-block">
+    <div class="ss-mock-phone">
+      <div class="stat"><span>9:41</span><span>•••</span></div>
+      <div class="top-copy">Walk into<br>urology ready.</div>
+      <div class="ss-mini-card">
+        <div style="font-size: 8px; font-weight: 800; color: var(--ink); border-bottom: 1px solid var(--divider); padding-bottom: 3px;">CALIBRUM · Pre-Doctor Visit Brief</div>
+        <div style="font-size: 7px; color: var(--ink-2); margin-top: 4px; line-height: 1.4;">
+          <b>P1.</b> 90-day dose log<br>
+          <b>P1.</b> Symptom trends · last 2 labs<br>
+          <b>P2.</b> 5 personalized questions
+        </div>
+      </div>
+      <div class="ss-mini-card" style="font-size: 7.5px; line-height: 1.4; font-style: italic;">
+        Q3: "E2 was 18 at last lab. Should we hold AI dose 4 weeks and recheck?"
+      </div>
+      <div class="ss-mini-card" style="background: var(--bronze); color: white; text-align: center; font-size: 9px; font-weight: 800;">📄 Generate PDF</div>
+      <div class="bot-copy">AI summary + question template.</div>
+    </div>
+    <div class="ss-spec">
+      <h3><span class="ss-num">7</span>Doctor Visit Prep PDF</h3>
+      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Walk into urology ready."</div></div>
+      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"AI summary + question template."</div></div>
+      <div class="copy-row">
+        <div class="lbl">UI elements</div>
+        <div class="v" style="font-size: 12.5px;">PDF preview with sections: 90-day dose log · symptom trends · last 2 labs comparison · 5 personalized AI questions · "Generate PDF" CTA</div>
+      </div>
+      <div class="ss-tags">
+        <span class="ss-tag">DOCTOR-PDF</span>
+        <span class="ss-tag bronze">S1 MARK</span>
+        <span class="ss-tag good">LIGHT</span>
+      </div>
+      <div class="ss-compliance-note">⚖ Compliance: PDF must include disclaimer footer "Generated by Calibrum AI Hormone Coach. Educational summary, not medical advice. Discuss with prescribing physician." · pure B&amp;W (designed for printing)</div>
+    </div>
+  </div>
+
+  <!-- Screen 8 -->
+  <div class="ss-block">
+    <div class="ss-mock-phone">
+      <div class="stat"><span>9:41</span><span>•••</span></div>
+      <div class="top-copy">Skip the $200/mo<br>telehealth fee.</div>
+      <div class="ss-mini-card">
+        <div class="row" style="font-size: 8px;"><span>Endocrinologist visit</span><span style="font-family: monospace;">$300–500</span></div>
+      </div>
+      <div class="ss-mini-card">
+        <div class="row" style="font-size: 8px;"><span>Function Health</span><span style="font-family: monospace;">$499/yr</span></div>
+      </div>
+      <div class="ss-mini-card">
+        <div class="row" style="font-size: 8px;"><span>Hone Health</span><span style="font-family: monospace;">$1,884/yr</span></div>
+      </div>
+      <div class="ss-mini-card" style="background: var(--ink); color: var(--bronze-soft); border: 2px solid var(--bronze);">
+        <div class="row" style="font-size: 9px;"><span style="color: white; font-weight: 800;">Calibrum</span><span style="font-family: -apple-system, 'SF Pro Rounded', sans-serif; font-weight: 800; color: var(--bronze); font-size: 11px;">$49.99/yr</span></div>
+        <div style="font-size: 7px; color: var(--bronze); margin-top: 2px;">7-day free trial</div>
+      </div>
+      <div class="bot-copy">$49.99/yr — your TRT brain trust.</div>
+    </div>
+    <div class="ss-spec">
+      <h3><span class="ss-num">8</span>Pricing / Value</h3>
+      <div class="copy-row"><div class="lbl">Top copy</div><div class="v">"Skip the $200/mo telehealth fee."</div></div>
+      <div class="copy-row"><div class="lbl">Bottom copy</div><div class="v">"$49.99/yr — your TRT brain trust."</div></div>
+      <div class="copy-row">
+        <div class="lbl">UI elements</div>
+        <div class="v" style="font-size: 12.5px;">Cost comparison ladder (endo $300–500 / Function $499 / Hone $1,884 / Calibrum $49.99) · "7-day free trial" badge</div>
+      </div>
+      <div class="ss-tags">
+        <span class="ss-tag">VALUE-LADDER</span>
+        <span class="ss-tag bronze">ALL PERSONAS</span>
+        <span class="ss-tag good">LIGHT</span>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top: 18px; font-size: 12px; color: var(--ink-3); line-height: 1.55;">
+    <b>Sources:</b>
+    → <a href="../../../14-calibrum/SCREENSHOTS.md" style="color:var(--bronze-deep);font-weight:700;">SCREENSHOTS.md</a>
+    · → <a href="../../../14-calibrum/Calibrum_Strategic_Plan_v2_FINAL.md" style="color:var(--bronze-deep);font-weight:700;">Strategic Plan §16</a>
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4 · COMPLIANCE -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="compliance">
+  <h2>4. Compliance Guardrails <span class="pill alert">🔴 HIGH RISK</span></h2>
+  <p class="section-intro">
+    🔴 <b>HIGH RISK — adult medication adjacency + brand trademarks · Health &amp; Fitness category (NOT Medical).</b> Categorizing as Medical triggers HCP-validated content review + MDR/SaMD scrutiny — Calibrum is positioned as <b>educational companion</b>. Visible card for any agent generating copy. Source: <code>COMPLIANCE.md</code> LOCKED 2026-05-01.
+  </p>
+
+  <!-- Trademark hygiene -->
+  <h3 style="margin-top: 18px;">Trademark hygiene · ® on first mention per screen</h3>
+  <table class="modes" style="margin-top: 10px;">
+    <thead>
+      <tr><th>Brand (require ®)</th><th>Owner</th><th>Generic INN (no ®)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>Anastrozole®</b> (brand variants)</td><td>AstraZeneca / generics</td><td>anastrozole (INN, no ®)</td></tr>
+      <tr><td><b>Arimidex®</b></td><td>AstraZeneca</td><td>"for users prescribed Arimidex®"</td></tr>
+      <tr><td><b>Aromasin®</b> (exemestane brand)</td><td>Pfizer</td><td>exemestane (INN, no ®)</td></tr>
+      <tr><td><b>AndroGel®</b></td><td>AbbVie</td><td>testosterone gel</td></tr>
+      <tr><td><b>Testopel®</b> (testosterone pellet)</td><td>Endo Pharmaceuticals</td><td>testosterone pellet</td></tr>
+      <tr><td><b>Testim®</b></td><td>Endo Pharmaceuticals</td><td>testosterone gel</td></tr>
+      <tr><td><b>Fortesta®</b></td><td>Endo Pharmaceuticals</td><td>testosterone gel</td></tr>
+      <tr><td><b>Depo-Testosterone®</b></td><td>Pfizer</td><td>testosterone cypionate</td></tr>
+      <tr><td><b>Aveed®</b> (testosterone undecanoate)</td><td>Endo Pharmaceuticals</td><td>testosterone undecanoate</td></tr>
+      <tr><td><b>Jatenzo® / Kyzatrex®</b> (oral T)</td><td>Clarus / Marius</td><td>oral testosterone</td></tr>
+      <tr><td colspan="2"><b>Generic compounds</b> (INN, no ®):</td><td>testosterone (cypionate / enanthate / propionate / undecanoate) · estradiol (E2) · hCG (human chorionic gonadotropin) · SHBG · LH · FSH · PSA · HCT</td></tr>
+    </tbody>
+  </table>
+
+  <div class="compliance-grid">
+    <!-- Banned -->
+    <div class="compliance-block banned">
+      <div class="block-h">✗ Banned phrases · НИКОГДА</div>
+      <ul>
+        <li>"diagnose" / "I diagnose..." / "You have..." (diagnostic language)</li>
+        <li>"cure" / "Permanent fix" / "Reverses..."</li>
+        <li>"medical-grade" / "medical-grade tracking"</li>
+        <li>"FDA-approved app" (we're NOT — only meds are)</li>
+        <li>"Doctor-approved" / "Endocrinologist-approved"</li>
+        <li>Specific dose recommendations: "Increase to 200mg/wk", "Take 0.5mg anastrozole", "Skip your next shot"</li>
+        <li>"Replace your doctor" / "Better than endo"</li>
+        <li>"This is definitely..." (false certainty)</li>
+        <li>"Crushing it" / "Stay anabolic" / "Alpha" / "Bro" (bodybuilder-coded language)</li>
+        <li>Brand logos / brand color mimicry (AndroGel pump, amber injectable vials)</li>
+      </ul>
+    </div>
+    <!-- Required -->
+    <div class="compliance-block required">
+      <div class="block-h">✓ Required phrases · ВСЕГДА</div>
+      <ul>
+        <li>"AI Coach educational companion not medical device"</li>
+        <li>"Always consult your prescribing physician"</li>
+        <li>"Talk to your prescriber" / "Discuss with your doctor"</li>
+        <li>Empathy line first ("That mood crash sounds frustrating...")</li>
+        <li>RAG source citation visible ("Per Endocrine Society Clinical Practice Guidelines...")</li>
+        <li>For any dose/timing question: "Your prescriber set your dose based on your individual response. Don't change without their input."</li>
+        <li>Standard disclaimer line at end of every AI response</li>
+        <li>® on first brand mention per screen</li>
+        <li>"for users on [Brand]®" pattern (NOT "[Brand] users")</li>
+      </ul>
+    </div>
+    <!-- ER triggers -->
+    <div class="compliance-block er">
+      <div class="block-h">⚠ ER trigger language — HARD LOCK in UI</div>
+      <ul>
+        <li><b>HCT &gt;55%</b> — "Your reported hematocrit is ≥55% — exceeds safety threshold for TRT continuation. Contact your prescriber today."</li>
+        <li><b>Signs of DVT</b> (unilateral leg swelling, calf pain) — "Call your prescriber or go to ER today."</li>
+        <li><b>Signs of PE</b> (sudden shortness of breath + chest pain) — "Call 911 or go to ER NOW."</li>
+        <li><b>Severe E2 crash</b> (debilitating joint pain + dry skin + ED + mood collapse) — "Hold any AI dose and contact prescriber today."</li>
+        <li><b>Priapism &gt;4h</b> — "Urological emergency. Go to ER immediately."</li>
+        <li><b>Suicidal ideation</b> — "Call 988 (Suicide &amp; Crisis Lifeline) or text HOME to 741741."</li>
+        <li><b>Severe abdominal pain / jaundice</b> (oral T) — "Stop oral testosterone (Jatenzo®/Kyzatrex®) if applicable. Call prescriber immediately."</li>
+        <li><b>Allergic reaction</b> (breathing difficulty) — "Call 911 if breathing difficulty."</li>
+      </ul>
+    </div>
+    <!-- Apple guardrails -->
+    <div class="compliance-block tm">
+      <div class="block-h">🍎 Apple Review guardrails</div>
+      <ul>
+        <li><b>Category:</b> Health &amp; Fitness primary · Lifestyle secondary fallback · NEVER Medical</li>
+        <li><b>1.4.1 Safety / Physical Harm:</b> no specific dose advice · no "cure" claims · ER triggers must surface in UI</li>
+        <li><b>5.1.1 Privacy / Data:</b> on-device storage of PHI · OpenAI Vision retention OFF · DeepSeek API ephemeral · no PHI in Amplitude events</li>
+        <li><b>3.1.2 Subscription:</b> per-period price + auto-renewal language + 7-day trial framing + cancel link</li>
+        <li><b>5.2.1 Trademarks:</b> ® on first brand mention · footer attribution · nominative fair use only</li>
+        <li><b>2.5.1 Software Requirements:</b> on-device RAG SQLite (not external SDK) · DeepSeek + OpenAI Vision allowed under data-processor agreements</li>
+        <li><b>Age rating:</b> 17+ (covers prescription medication content)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="compliance-disclaimer">
+    <b>App Store footer disclaimer (mandatory):</b><br>
+    Anastrozole, Arimidex®, Aromasin®, AndroGel®, Testim®, Fortesta®, Testopel®, Depo-Testosterone®, Aveed®, Jatenzo®, Kyzatrex® are registered trademarks of their respective manufacturers (AstraZeneca, Pfizer, AbbVie, Endo Pharmaceuticals, Clarus Therapeutics, Marius Pharmaceuticals). Calibrum is not affiliated with, endorsed by, or sponsored by any pharmaceutical manufacturer.
+  </div>
+
+  <p style="margin-top: 18px; font-size: 12px; color: var(--ink-3); line-height: 1.55;">
+    <b>Source:</b>
+    → <a href="../../../14-calibrum/COMPLIANCE.md" style="color:var(--bronze-deep);font-weight:700;">COMPLIANCE.md</a>
+    · → <a href="../../../14-calibrum/PRODUCT_DESIGN.md" style="color:var(--bronze-deep);font-weight:700;">PRODUCT_DESIGN.md (system prompt §11)</a>
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 5 · PAYWALL WORKBENCH -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="paywall-workbench">
+  <h2>5. Paywall Workbench <span class="pill bronze">target T2P 50–60%</span></h2>
+  <p class="section-intro">
+    Hard paywall after WOW · trigger-based copy · 2-tier <b>$4.99/wk + 7-day trial preselected</b> + <b>$49.99/yr SAVE 81%</b> · target T2P 50–60% (vs Health &amp; Fitness baseline 35–45% — TRT users research-first, willing to pay if value clear). Inherits ColorCheck PaywallView pattern (7-slot template). Free Calculator now lives <b>inside onboarding</b> (Curious Carl branch) — TBD-2 resolution below.
+  </p>
+
+  <!-- TBD-2 RESOLVED callout -->
+  <div class="tbd-resolved">
+    <div class="h">✓ TBD-2 RESOLVED · 2026-05-01</div>
+    <div class="b">
+      Calculator now lives <b>INSIDE onboarding</b> (Curious Carl branch — Screen 5a) → AI interpretation = WOW reveal (free) → hard paywall immediately. <b>No standalone free Calc tab post-onboarding.</b> Pre-TRT users who want to recalc must re-enter onboarding (Settings → "Recalculate Free T"). Forces calc-user to pass through WOW → hard paywall in one cohesive funnel rather than living in a permanent free tier.
+    </div>
+  </div>
+
+  <!-- Pricing tier specs -->
+  <h3 style="margin-top: 22px;">Pricing tier specs</h3>
+  <div class="pricing-table">
+    <div class="pricing-tile weekly">
+      <div class="tier-name">Weekly + 7-day trial <span class="tier-pill">PRESELECTED</span></div>
+      <div class="tier-price">$4.99 <small>/wk</small></div>
+      <div class="tier-meta">7-day free trial · auto-renews unless cancelled 24h before period ends · covers anxiety spike window + first lab decode</div>
+    </div>
+    <div class="pricing-tile annual">
+      <div class="tier-name">Annual <span class="tier-pill">SAVE 81%</span></div>
+      <div class="tier-price">$49.99 <small>/yr</small></div>
+      <div class="tier-meta">~$0.96/wk · loss-aversion target on Day 6 trial · 96.9% gross margin (cost ~$0.13/user/mo)</div>
+    </div>
+  </div>
+
+  <!-- Trigger-based paywall copy table -->
+  <h3 style="margin-top: 22px;">Dynamic trigger-based paywall copy</h3>
+  <table class="triggers">
+    <thead>
+      <tr><th>Trigger</th><th>Persona</th><th>Copy direction</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Free Calculator result &lt; optimal</b> (post-onboarding WOW Carl branch)</td>
+        <td>Curious Carl</td>
+        <td><em>"Your calculated Free T is below optimal. Track your TRT journey + get AI Coach for E2 management."</em></td>
+      </tr>
+      <tr>
+        <td><b>Active TRT WOW</b> (Mark branch — E2/HCT framework demo)</td>
+        <td>Mark</td>
+        <td><em>"Already worried about E2? AI Coach 24/7."</em></td>
+      </tr>
+      <tr>
+        <td><b>3+ symptom logs flagging "low libido" / "mood off"</b></td>
+        <td>Mark</td>
+        <td><em>"Symptom pattern suggests E2 imbalance. Unlock AI Triage to figure out next step."</em></td>
+      </tr>
+      <tr>
+        <td><b>Lab PDF upload attempted</b></td>
+        <td>Mark / Carl</td>
+        <td><em>"Want AI to interpret this lab and generate a personalized report? Unlock Premium."</em></td>
+      </tr>
+      <tr>
+        <td><b>4+ weeks since last bloodwork</b></td>
+        <td>Mark</td>
+        <td><em>"Your bloodwork is overdue. Premium users get smart timing reminders + lab order links."</em></td>
+      </tr>
+      <tr>
+        <td><b>Doctor visit upcoming</b> (calendar opt-in)</td>
+        <td>Mark</td>
+        <td><em>"Visit next week? Auto-generate Pre-Doctor Visit Brief PDF."</em></td>
+      </tr>
+      <tr>
+        <td><b>Day 6 trial</b> (last day, loss-aversion)</td>
+        <td>All</td>
+        <td><em>"Tomorrow your trial ends. Lock in $49.99/yr — 81% off weekly."</em></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Affiliate fallback row -->
+  <h3 style="margin-top: 22px;">Affiliate fallback row · monetize bouncing users</h3>
+  <table class="triggers">
+    <thead><tr><th>Affiliate</th><th>Lead value</th><th>Persona path</th><th>Placement</th></tr></thead>
+    <tbody>
+      <tr><td><b>Hone Health</b></td><td>$200–500/lead</td><td>Carl with sub-optimal Free T → telehealth Rx</td><td>Below paywall dismiss CTA · "Not ready? Skip to: Hone Health"</td></tr>
+      <tr><td><b>Maximus Tribe</b></td><td>$200–500/lead</td><td>Carl price-conscious alternative ($99 entry vs Hone $65 + $149/mo)</td><td>Same row · "or Maximus"</td></tr>
+      <tr><td><b>Marek Health</b></td><td>$200–500/lead</td><td>Mark wanting consultations ($300–500/yr)</td><td>Settings → "Find a TRT clinician"</td></tr>
+      <tr><td><b>Defy Medical / TRT Nation</b></td><td>$200–500/lead</td><td>Geography-based fallback</td><td>State-routed in 3-path CTA</td></tr>
+      <tr><td><b>Urology directory</b></td><td>$0 (PCP advocacy)</td><td>Carl wanting to keep his existing doctor</td><td>"book a urologist" — non-affiliate, builds trust</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Hero band sketch placeholder -->
+  <h3 style="margin-top: 22px;">Hero band sketch · V1 reference</h3>
+  <div class="hero-band-sketch">
+    <div>
+      <b style="display:block;color:var(--bronze);font-size:11px;letter-spacing:0.12em;margin-bottom:8px;">⚙ V1 SKETCH · TBD CONSILIUM ROUND 2</b>
+      Hero band: dark navy gradient + bronze accents · 3 expert tiles<br>
+      <b>AI Hormone Coach</b> · <b>Lab Decoder</b> · <b>Doctor Prep PDF</b><br>
+      anchored against $300–500 endo + $499 Function + $1,884 Hone cost ladder
+    </div>
+  </div>
+
+  <p style="margin-top: 18px; font-size: 12px; color: var(--ink-3); line-height: 1.55;">
+    <b>Sources:</b>
+    → <a href="../../../14-calibrum/PRODUCT_DESIGN.md" style="color:var(--bronze-deep);font-weight:700;">PRODUCT_DESIGN.md (Dynamic paywall triggers)</a>
+    · → <a href="../../../14-calibrum/V1_SCOPE.md" style="color:var(--bronze-deep);font-weight:700;">V1_SCOPE.md (Feature 8 paywall)</a>
+    · → <a href="../../../разное/PAYWALL_PLAYBOOK.md" style="color:var(--bronze-deep);font-weight:700;">PAYWALL_PLAYBOOK.md</a>
+    · → <a href="../../../разное/PAYWALL_TEMPLATE.md" style="color:var(--bronze-deep);font-weight:700;">PAYWALL_TEMPLATE.md (7 slots)</a>
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 6 · ONBOARDING -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="onboarding">
+  <h2>6. Onboarding · 5 screens + 5a calc + WOW + paywall <span class="pill lock">🔒 funnel structure LOCKED</span> <span class="pill">⚙ visual TBD R2</span></h2>
+  <p class="section-intro">
+    5-screen onboarding · branches at Screen 5 (Mark active vs Carl pre-TRT) · Calculator inside Carl branch · WOW free reveal · hard paywall. <b>🔒 LOCKED 2026-05-01 — funnel structure (TBD-2 resolution).</b> Visual treatment ⚙ TBD round-2 consilium (illustrated character à la Nanni vs phone-mockup à la Huckleberry). Inherits JabWell 6-slot pattern with TRT-specific pain copy + RAG sources + Vermeulen calc + dual WOW branches.
+  </p>
+
+  <!-- ─── SCREEN 1 — PAIN ─── -->
+  <div class="onb-slot">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">Calibrum · Step 1 of 5</div>
+        <div class="onb-h">On TRT? You're not at the doctor 90% of the time.</div>
+        <div class="onb-sub">E2 swings, lab confusion, plateau, libido off — most apps just track injections. Calibrum coaches.</div>
+        <div style="background: var(--ink); border-radius: 14px; padding: 24px 14px; text-align: center; color: var(--bronze-soft); margin: 14px 0;">
+          <div style="font-size: 11px; letter-spacing: 0.1em; color: var(--bronze); text-transform: uppercase; margin-bottom: 8px;">2:47 AM · Wednesday</div>
+          <div style="font-family: -apple-system, 'SF Pro Rounded', sans-serif; font-size: 30px; font-weight: 800; color: white; line-height: 1;">📱 📄</div>
+          <div style="font-size: 11px; color: var(--bronze-soft); margin-top: 8px; line-height: 1.45; font-style: italic;">"My libido feels off. Is my E2 too high? My next lab is 5 weeks away."</div>
+        </div>
+        <button class="onb-cta">I've been there →</button>
+        <div class="onb-disclaimer">Educational companion · not medical advice · consult your prescriber.</div>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">1</span>Pain · 2 AM man + lab PDF illustration <span class="role-pill">S1 Mark anchor</span></h4>
+      <dl>
+        <dt>Persona target</dt>
+        <dd>S1 Mark, 47, on TRT 14mo, opens app at 2:47 AM because his E2 feels off and he can't sleep (canonical PERSONAS.md moment).</dd>
+        <dt>Round-1 quote (Mark)</dt>
+      </dl>
+      <div class="onb-quote">"At 2am I don't want to be impressed. I want to be reassured." <cite>— Mark, audience proxy round 1</cite></div>
+      <dl>
+        <dt>Behavioral rationale</dt>
+        <dd>PAS Problem-Agitate. Calm dark visual + lowercase italicized inner monologue mirror anxiety without amplifying. Pattern matches JabWell slot 1 lock (9:16 portrait full-bleed gold standard).</dd>
+        <dt>Accessibility</dt>
+        <dd>Bronze CTA on dark navy = 4.6:1 contrast (WCAG AA large). Body 13pt SF Pro Text scales to AccessibilityXXXLarge for Mark's reading-glasses range.</dd>
+      </dl>
+      <ul class="onb-locks-list">
+        <li>2 AM emotional register · NOT panicked</li>
+        <li>NO bright red anywhere · subdued bronze accent</li>
+        <li>NO body objects in foreground (compliance hard-gate)</li>
+        <li>Stat-free copy — stats trigger defensive backlash at 2 AM</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── SCREEN 2 — TRUST · 5 JTBD chips ─── -->
+  <div class="onb-slot">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">Calibrum · Step 2 of 5</div>
+        <div class="onb-h">Built for every TRT moment.</div>
+        <div class="onb-sub">2 AM E2 panic. Lab PDF you can't read. HCT creep. Doctor visit prep. Pre-TRT investigation. Tap the one that's you.</div>
+        <div class="onb-jtbd-grid">
+          <div class="onb-jtbd-chip"><div class="t">E2 panic 🌙</div><div class="s">2 AM crash or surge?</div></div>
+          <div class="onb-jtbd-chip"><div class="t">Lab dropped 📄</div><div class="s">14 markers, no clue</div></div>
+          <div class="onb-jtbd-chip"><div class="t">HCT creep 🩸</div><div class="s">48 → 51 in 6 months</div></div>
+          <div class="onb-jtbd-chip"><div class="t">Doctor prep 🏥</div><div class="s">12-min appointment</div></div>
+          <div class="onb-jtbd-chip" style="grid-column: span 2;"><div class="t">Pre-TRT investigation 🤔</div><div class="s">"Doctor said normal" — Free T calculator + advocacy PDF</div></div>
+        </div>
+        <button class="onb-cta">Continue →</button>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">2</span>Trust · JTBD-recognition <span class="role-pill">All 3 personas</span></h4>
+      <dl>
+        <dt>Why this slot is non-negotiable</dt>
+        <dd>Redeems slot 1 for Carl (pre-TRT) and Ben (biohacker) without diluting Mark anchor. 5 chips = the 5 emotional hooks from PRODUCT_DESIGN.md UTP. Tap → bottom-sheet with concrete feature snippet sets <code>primaryConcern</code> for downstream personalization.</dd>
+        <dt>Round-1 quote (Carl proxy)</dt>
+      </dl>
+      <div class="onb-quote">"I'm not on TRT yet. Half these apps assume I am. The pre-TRT chip is what tells me this app is FOR me too." <cite>— Curious Carl, audience proxy</cite></div>
+      <ul class="onb-locks-list">
+        <li>Pre-TRT chip span-2 = equal visual weight (Carl funnel anchor)</li>
+        <li>NO ranking / leaderboard / streak (compliance + audience anxiety)</li>
+        <li>Tap any chip → bottom-sheet with feature snippet</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── SCREEN 3 — METHOD / RAG ─── -->
+  <div class="onb-slot">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">Calibrum · Step 3 of 5</div>
+        <div class="onb-h">Answers grounded in clinical guidelines.</div>
+        <div class="onb-sub">Every AI response cites Endocrine Society, AUA, AAFP, Bhasin meta-analysis, TRAVERSE trial, and peer-reviewed studies. Educational companion, not medical advice.</div>
+        <div class="onb-source-row">
+          <span class="onb-source-pill">Endocrine Society</span>
+          <span class="onb-source-pill">AUA</span>
+          <span class="onb-source-pill">AAFP</span>
+          <span class="onb-source-pill">Bhasin 2018</span>
+          <span class="onb-source-pill">TRAVERSE</span>
+          <span class="onb-source-pill">PubMed</span>
+        </div>
+        <div style="background: white; border-radius: 12px; padding: 12px; border: 1px solid var(--divider); margin-bottom: 12px;">
+          <div style="font-size: 10px; font-weight: 800; color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Sample citation · TRAVERSE badge tap</div>
+          <div style="font-size: 11px; line-height: 1.4; color: var(--ink-2);">"In the TRAVERSE trial (5,246 men, mean age 63), testosterone replacement was non-inferior to placebo for major adverse cardiovascular events." <span class="onb-source-inline">N Engl J Med 2023</span></div>
+        </div>
+        <div class="onb-disclaimer">Educational, not medical advice. Consult your prescriber.</div>
+        <button class="onb-cta" style="margin-top: 12px;">Continue →</button>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">3</span>Method · Authority proof <span class="role-pill">Compliance non-negotiable</span></h4>
+      <dl>
+        <dt>Why this slot is locked at 5 (not compressed to 4)</dt>
+        <dd>FTC §255 substantiation requirement + Carl's "switch from PCP" trust earner BEFORE data collection. Compliance + Carl proxy unanimous: cannot merge into WOW caption.</dd>
+        <dt>Round-1 quote (Carl)</dt>
+      </dl>
+      <div class="onb-quote">"Trust earner is showing me Endocrine Society + AUA + Bhasin before you ask for a single tap." <cite>— Carl audience proxy</cite></div>
+      <ul class="onb-locks-list">
+        <li>All 6 badges tappable → 1-tap to PMID + DailyMed example (compliance §255)</li>
+        <li>Persistent disclaimer ≥10pt at 4.5:1 contrast</li>
+        <li>NEVER tap-to-expand / collapse-disclosure pattern (Cerebral 2024 FTC ref)</li>
+        <li>RAG corpus ≥400 pp · ~8MB on-device SQLite · sqlite-vec</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── SCREEN 4 — PROOF · AI Coach demo ─── -->
+  <div class="onb-slot">
+    <div class="onb-phone dark">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">Calibrum · Step 4 of 5</div>
+        <div class="onb-h">Like having a TRT specialist on call.</div>
+        <div class="onb-sub" style="color: var(--bronze-soft);">Live AI Coach demo — try the question Mark asked at 7:14 AM.</div>
+        <div class="onb-chat-q">My HCT is 51 — should I worry?</div>
+        <div class="onb-chat-a" style="background: rgba(245,242,237,0.08); color: var(--night-text);">
+          <b>HCT 51</b> is above the typical TRT range (40–50) but below the watch threshold (&gt;52). Common factors: dehydration falsely elevates HCT, once-weekly IM dosing causes peaks. Phlebotomy considered when HCT &gt;54%.
+          <br><br>
+          <b style="color: var(--night-accent);">Discuss with doctor</b> before considering phlebotomy.
+        </div>
+        <div style="display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px;">
+          <span class="onb-source-inline" style="background: var(--bronze); color: white;">Endocrine Society 2018</span>
+          <span class="onb-source-inline" style="background: var(--bronze); color: white;">TRAVERSE 2023</span>
+        </div>
+        <div style="background: rgba(245,242,237,0.08); padding: 8px 11px; border-radius: 999px; font-size: 11px; color: var(--bronze-soft); display: flex; justify-content: space-between; align-items: center;">
+          <span>Ask another question…</span>
+          <span>🔒</span>
+        </div>
+        <button class="onb-cta" style="margin-top: 14px;">Continue →</button>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">4</span>Proof · live AI Coach demo <span class="role-pill">DARK by default</span></h4>
+      <dl>
+        <dt>Why dark on this screen specifically</dt>
+        <dd>Even in onboarding (which is system mode), the chat preview surface itself uses the dark register — primes Mark for the canonical 2 AM use case. JTBD #1 + #6 register match.</dd>
+        <dt>Round-1 quote (Mark)</dt>
+      </dl>
+      <div class="onb-quote">"That HCT 51 answer is the answer I wanted from Reddit at 7am — not 8 contradictory takes." <cite>— Mark, audience proxy</cite></div>
+      <ul class="onb-locks-list">
+        <li>Demo question = JTBD #6 (HCT panic) — highest-anxiety JTBD that's still demo-safe</li>
+        <li>Source citations VISIBLE in demo (RAG-grounded proof)</li>
+        <li>Empathy → fact → boundary 3-tier structure visible</li>
+        <li>Locked input = "ask another question" gated until paywall</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── SCREEN 5 — PERSONALIZATION ─── -->
+  <div class="onb-slot">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">Calibrum · Step 5 of 5</div>
+        <div class="onb-h">Tell us your protocol.</div>
+        <div class="onb-sub">We'll personalize your AI Coach + lab interpretations. Skip if you're considering TRT — we'll help you figure out if you're a candidate.</div>
+
+        <div class="onb-form-label">Protocol</div>
+        <div class="onb-chips-row">
+          <span class="onb-chip-mini sel">Cypionate IM</span>
+          <span class="onb-chip-mini">Enanthate</span>
+          <span class="onb-chip-mini">Undecanoate</span>
+          <span class="onb-chip-mini">Gel / pellet</span>
+          <span class="onb-chip-mini carl">Considering</span>
+          <span class="onb-chip-mini carl">Off but curious</span>
+        </div>
+
+        <div class="onb-form-label">Weekly dose</div>
+        <div class="onb-slider-mock"></div>
+        <div class="onb-slider-label">100mg/wk · range 50–300mg</div>
+
+        <div class="onb-form-label">Weeks on TRT</div>
+        <div class="onb-slider-mock"></div>
+        <div class="onb-slider-label">14 weeks · range 0–60+</div>
+
+        <div class="onb-form-label">On AI?</div>
+        <div class="onb-chips-row">
+          <span class="onb-chip-mini">None</span>
+          <span class="onb-chip-mini sel">Anastrozole 0.25mg</span>
+          <span class="onb-chip-mini">Aromasin®</span>
+        </div>
+
+        <div class="onb-form-label">On hCG?</div>
+        <div class="onb-chips-row">
+          <span class="onb-chip-mini">No</span>
+          <span class="onb-chip-mini sel">Yes · 250 IU 2×/wk</span>
+        </div>
+
+        <button class="onb-cta" style="margin-top: 14px;">Continue →</button>
+        <button class="onb-cta-secondary">Skip for now</button>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">5</span>Personalization · branching gate <span class="role-pill">Carl ↔ Mark fork</span></h4>
+      <dl>
+        <dt>Branching logic</dt>
+        <dd>If user picks <b>"Considering"</b> or <b>"Off but curious"</b> chip → Screen 5a Free T Calculator inserts here, output piped into <b>WOW Variant A (Carl branch)</b>. If user picks active protocol (cypionate / enanthate / undecanoate / gel / pellet) → skip 5a, jump to <b>WOW Variant B (Mark branch)</b> = E2/HCT-focused AI Coach demo.</dd>
+        <dt>Why optional skip</dt>
+      </dl>
+      <div class="onb-quote">"I just want to see what the app does. I'll set up later." <cite>— common drop-off pattern at form-heavy onboarding</cite></div>
+      <ul class="onb-locks-list">
+        <li>"Considering" / "Off but curious" chips italicized + bronze-bordered = Carl funnel signal</li>
+        <li>"Anastrozole" no ® (generic INN) · "Aromasin®" with ® (brand)</li>
+        <li>Skip allowed but degrades AI personalization quality (downstream nudge to complete)</li>
+        <li>Sliders show defaults (100mg/wk · 14 weeks) to lower form friction</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── SCREEN 5a — CALCULATOR (CONDITIONAL) ─── -->
+  <div class="onb-slot" style="background: linear-gradient(180deg, transparent 0%, var(--bronze-soft) 200%); border-radius: 14px; padding: 14px; border: 1px dashed var(--bronze);">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow">Calibrum · Step 5a (Carl branch only)</div>
+        <div class="onb-h">Run the math yourself.</div>
+        <div class="onb-sub">Vermeulen formula → Free T + Bioavailable T. Free, in 60 seconds.</div>
+
+        <div class="onb-form-label">Total Testosterone</div>
+        <div style="background: white; border: 1px solid var(--divider); border-radius: 10px; padding: 10px 12px; font-family: ui-monospace, 'SF Mono', monospace; font-size: 14px; color: var(--ink); font-weight: 700;">350 ng/dL</div>
+
+        <div class="onb-form-label">SHBG</div>
+        <div style="background: white; border: 1px solid var(--divider); border-radius: 10px; padding: 10px 12px; font-family: ui-monospace, 'SF Mono', monospace; font-size: 14px; color: var(--ink); font-weight: 700;">42 nmol/L</div>
+
+        <div class="onb-form-label">Albumin</div>
+        <div style="background: white; border: 1px solid var(--divider); border-radius: 10px; padding: 10px 12px; font-family: ui-monospace, 'SF Mono', monospace; font-size: 14px; color: var(--ink); font-weight: 700;">4.2 g/dL</div>
+
+        <div class="onb-form-label">Age</div>
+        <div style="background: white; border: 1px solid var(--divider); border-radius: 10px; padding: 10px 12px; font-family: ui-monospace, 'SF Mono', monospace; font-size: 14px; color: var(--ink); font-weight: 700;">42</div>
+
+        <button class="onb-cta" style="margin-top: 14px;">Calculate Free T →</button>
+        <div class="onb-disclaimer">Vermeulen formula reference: J Clin Endocrinol Metab 1999. Educational, not medical advice.</div>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">5a</span>Free T Calculator · CONDITIONAL <span class="role-pill">Carl branch only · NEW PER TBD-2</span></h4>
+      <dl>
+        <dt>TBD-2 resolution</dt>
+        <dd>Calculator was originally a standalone free tab. <b>Now lives INSIDE onboarding only</b> (this screen) — output pipes directly into WOW (free reveal) → hard paywall. No standalone free tab post-onboarding. Forces the calc-user through the funnel rather than living in a permanent free tier.</dd>
+        <dt>Round-1 quote (Carl)</dt>
+      </dl>
+      <div class="onb-quote">"Bronze CTA on the calculator screen says 'compute my Free T' — and I trust it. Linen background is friendly without being cute." <cite>— Carl, audience proxy round 1 (Variant A win driver)</cite></div>
+      <ul class="onb-locks-list">
+        <li>4 inputs only (Total T / SHBG / Albumin / Age) — Vermeulen requires nothing else</li>
+        <li>Inputs validated; mono-spaced numerics (SF Mono) signal precision</li>
+        <li>Output piped DIRECTLY into WOW screen (no intermediate sales page)</li>
+        <li>No paywall on this screen ever — but no escape hatch back to standalone "free calc" post-onboarding</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── WOW VARIANT A — CARL BRANCH ─── -->
+  <div class="onb-slot" style="background: linear-gradient(180deg, transparent 0%, rgba(122,146,112,0.08) 200%); border-radius: 14px; padding: 14px;">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow" style="color: var(--good);">Calibrum · WOW · Variant A · Carl branch</div>
+        <div class="onb-h">Your Free T is below optimal.</div>
+
+        <div class="onb-calc-out">
+          <div class="label">Calculated Free T (Vermeulen)</div>
+          <div class="num">6.2 <small>ng/dL</small></div>
+          <div class="verdict-line">Below optimal for age 40–50 (target 9–15 ng/dL). Consistent with hypogonadal symptoms.</div>
+        </div>
+
+        <div class="onb-form-label">Three realistic next steps</div>
+        <div class="onb-paths">
+          <div class="onb-path">
+            <b>1 · Insurance route → urologist</b>
+            Get a referral from your PCP. Covered by most insurance. 4–8 week wait typical.
+          </div>
+          <div class="onb-path">
+            <b>2 · Telehealth → Hone or Maximus</b>
+            Hone Health $1,884/yr (premium) or Maximus $99–199/mo (mid-tier, no membership). Same-week start.
+          </div>
+          <div class="onb-path">
+            <b>3 · PCP advocacy → 3-question script</b>
+            Stay with your existing doctor. Calibrum gives you the script + research citations.
+          </div>
+        </div>
+
+        <button class="onb-cta">Continue →</button>
+        <div class="onb-disclaimer">Educational companion · we may earn commission on Hone / Maximus referrals (FTC §255).</div>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">W·A</span>WOW · Carl branch <span class="role-pill">Free reveal · pipes into paywall</span></h4>
+      <dl>
+        <dt>The single moment of clarity</dt>
+        <dd>Carl entered with "doctor said normal." He now has a number (6.2 Free T) + a verdict (below optimal) + a contextualized action map (3 paths) — none of which Reddit or ChatGPT or his PCP gave him. This is the Curious Carl wedge made literal.</dd>
+        <dt>Round-1 quote (Carl)</dt>
+      </dl>
+      <div class="onb-quote">"My doctor said 350 was normal. This calc + the 3 paths is the first time anyone actually told me what to DO." <cite>— Carl, JTBD #5 + #7</cite></div>
+      <ul class="onb-locks-list">
+        <li>Verdict-as-hero — number + sub-line + verdict triad colour-coded</li>
+        <li>3-path CTA = insurance + telehealth (affiliate) + PCP advocacy (non-affiliate, trust)</li>
+        <li>Affiliate disclosure visible BEFORE first affiliate tap (FTC §255)</li>
+        <li>NO sales pressure — verdict-page register, not pitch-page</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── WOW VARIANT B — MARK BRANCH ─── -->
+  <div class="onb-slot" style="background: linear-gradient(180deg, transparent 0%, rgba(184,134,91,0.08) 200%); border-radius: 14px; padding: 14px;">
+    <div class="onb-phone dark">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow" style="color: var(--bronze);">Calibrum · WOW · Variant B · Mark branch</div>
+        <div class="onb-h">Built around your protocol.</div>
+        <div class="onb-sub" style="color: var(--bronze-soft);">Cypionate 100mg/wk · anastrozole 0.25mg · hCG 250 IU. Here's the framework I'll use to triage.</div>
+
+        <div class="onb-chat-q">My libido feels off this week. Could it be E2?</div>
+        <div class="onb-chat-a" style="background: rgba(245,242,237,0.08); color: var(--night-text);">
+          Common pattern at your protocol. <b>Low libido</b> can come from E2 too high OR too low + SHBG + prolactin. At 100mg/wk + 0.25mg anastrozole, E2 may run low if you're sensitive to AI.
+          <br><br>
+          <b style="color: var(--night-accent);">Triage framework:</b>
+          <br>1. Last lab E2 + days since AI dose
+          <br>2. Mood + dry skin + joint stiffness pattern
+          <br>3. Hold AI for 2 weeks → recheck if pattern persists
+          <br><br>
+          <b style="color: var(--night-accent);">Discuss with prescriber</b> before changing AI dose.
+        </div>
+        <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+          <span class="onb-source-inline" style="background: var(--bronze); color: white;">Endocrine Society 2018</span>
+          <span class="onb-source-inline" style="background: var(--bronze); color: white;">Bhasin 2018 §8.4</span>
+        </div>
+        <button class="onb-cta" style="margin-top: 14px;">Continue →</button>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">W·B</span>WOW · Mark branch <span class="role-pill">DARK · canonical 2am register</span></h4>
+      <dl>
+        <dt>Personalization</dt>
+        <dd>Demo question + AI response are personalized to the Screen 5 protocol (cypionate 100mg/wk + anastrozole 0.25mg + hCG). Feels custom-built — even though the response template is canned at this stage.</dd>
+        <dt>Round-1 quote (Mark)</dt>
+      </dl>
+      <div class="onb-quote">"That E2 framework is the answer I wanted from Reddit. Empathy → fact → boundary, with citations. That's the brain trust register." <cite>— Mark, JTBD #1 wedge</cite></div>
+      <ul class="onb-locks-list">
+        <li>DARK register matches canonical 2 AM use case (JTBD #1)</li>
+        <li>3-tier response structure (empathy / framework / boundary) — same as system prompt §11</li>
+        <li>Source citations VISIBLE — RAG proof on first impression</li>
+        <li>NO specific dose advice ("hold AI for 2 weeks" is a framework, not "take 0mg AI")</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── PAYWALL ─── -->
+  <div class="onb-slot" style="background: linear-gradient(180deg, transparent 0%, var(--bronze-soft) 200%); border-radius: 14px; padding: 14px; border: 1px solid var(--bronze);">
+    <div class="onb-phone">
+      <div class="onb-phone-status"><span>9:41</span><span>●●● ↑ 100%</span></div>
+      <div class="onb-phone-screen">
+        <div class="onb-eyebrow" style="color: var(--bronze-deep);">Calibrum · Hard paywall · post-WOW</div>
+        <div class="onb-h" style="font-size: 18px;">Your Free T is below optimal. AI Coach + Lab AI help you choose the right path.</div>
+        <div class="onb-sub" style="font-size: 11px;">7-day free trial · cancel anytime · auto-renews $4.99/wk unless cancelled 24h before period ends.</div>
+
+        <div class="onb-pw-tile sel">
+          <div>
+            <div class="nm">Weekly + 7-day trial</div>
+            <div style="font-size: 9.5px; color: var(--ink-3);">Then $4.99/wk · cancel anytime</div>
+          </div>
+          <div class="pr">$4.99 <small>/wk</small></div>
+        </div>
+        <div class="onb-pw-tile">
+          <div>
+            <div class="nm">Annual <span style="color: var(--good); font-size: 9.5px; margin-left: 4px;">SAVE 81%</span></div>
+            <div style="font-size: 9.5px; color: var(--ink-3);">~$0.96/wk · best value</div>
+          </div>
+          <div class="pr">$49.99 <small>/yr</small></div>
+        </div>
+
+        <button class="onb-cta">Start 7-day trial</button>
+
+        <div class="onb-pw-affiliate">
+          <b style="font-size: 10.5px; color: var(--ink); display: block; margin-bottom: 4px;">Not ready? Skip to:</b>
+          <a style="color: var(--bronze-deep); text-decoration: none; font-weight: 700;">Hone Health</a> ·
+          <a style="color: var(--bronze-deep); text-decoration: none; font-weight: 700;">Maximus</a> ·
+          <a style="color: var(--bronze-deep); text-decoration: none; font-weight: 700;">book a urologist</a>
+          <div style="font-size: 9px; color: var(--ink-3); margin-top: 4px;">We may earn commission · FTC §255 disclosure</div>
+        </div>
+
+        <div class="onb-disclaimer" style="margin-top: 8px;">Calibrum is an educational companion, not a medical device. Always consult your prescribing physician.</div>
+      </div>
+    </div>
+    <div class="onb-rationale">
+      <h4><span class="num">PW</span>Hard paywall · trigger-aware <span class="role-pill">target T2P 50–60%</span></h4>
+      <dl>
+        <dt>Why hard paywall here (and not after Day 1 retention)</dt>
+        <dd>WOW already delivered the value (Carl: Free T verdict + 3 paths · Mark: personalized E2 framework). User has seen the moat. Hard paywall now = peak willingness-to-pay window. 7-day trial covers first lab decode (the second satisfaction peak) — Day 6 trial-end re-engagement closes T2P.</dd>
+        <dt>Trigger-aware copy</dt>
+        <dd>Headline mirrors the WOW the user just saw. Carl branch: "Your Free T is below optimal..." · Mark branch: "Already worried about E2? AI Coach 24/7." This is the §17 dynamic paywall trigger principle made concrete.</dd>
+        <dt>Affiliate fallback row</dt>
+        <dd>Below dismiss CTA · monetizes bouncing users via Hone / Maximus / urology referrals ($200–500/lead). Visible BEFORE first affiliate tap per FTC §255.</dd>
+      </dl>
+      <ul class="onb-locks-list">
+        <li>Weekly + 7-day trial PRESELECTED (SOSA 2026 T2P 37.4% vs 25.5% for no-trial)</li>
+        <li>Annual SAVE 81% loss-aversion frame for Day 6 trial-end</li>
+        <li>NO dark patterns (RC handles correctly out-of-box)</li>
+        <li>Affiliate disclosure visible before first affiliate tap</li>
+        <li>Disclaimer "educational companion not medical device" persistent</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top: 18px; font-size: 12px; color: var(--ink-3); line-height: 1.55;">
+    <b>Sources:</b>
+    → <a href="../../../14-calibrum/PRODUCT_DESIGN.md" style="color:var(--bronze-deep);font-weight:700;">PRODUCT_DESIGN.md (Onboarding flow §F + WOW dual variants)</a>
+    · → <a href="../../../14-calibrum/V1_SCOPE.md" style="color:var(--bronze-deep);font-weight:700;">V1_SCOPE.md</a>
+    · → <a href="../../../14-calibrum/DECISIONS.md" style="color:var(--bronze-deep);font-weight:700;">DECISIONS.md (TBD-2 resolution)</a>
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<footer class="footer-refs">
+  <h3>📂 Inputs to this workbench</h3>
+  <a href="../../../14-calibrum/CLAUDE.md">CLAUDE.md</a> ·
+  <a href="../../../14-calibrum/Calibrum_Strategic_Plan_v2_FINAL.md">Calibrum Strategic Plan v2 FINAL</a> ·
+  <a href="../../../14-calibrum/PERSONAS.md">PERSONAS.md</a> ·
+  <a href="../../../14-calibrum/PRODUCT_DESIGN.md">PRODUCT_DESIGN.md</a> ·
+  <a href="../../../14-calibrum/V1_SCOPE.md">V1_SCOPE.md</a> ·
+  <a href="../../../14-calibrum/DESIGN_SYSTEM.md">DESIGN_SYSTEM.md</a> ·
+  <a href="../../../14-calibrum/COMPLIANCE.md">COMPLIANCE.md</a> ·
+  <a href="../../../14-calibrum/SCREENSHOTS.md">SCREENSHOTS.md</a> ·
+  <a href="../../../14-calibrum/competitors/meta.yaml">competitors/meta.yaml</a>
+
+  <h3>📂 Round-1 outputs</h3>
+  <a href="../../../14-calibrum/docs/CONSILIUM_DESIGN_SYSTEM_2026-05-01_iter1.md">CONSILIUM_DESIGN_SYSTEM_2026-05-01_iter1.md</a> ·
+  <a href="../../../14-calibrum/docs/JTBD_ANALYSIS_2026-05-01.md">JTBD_ANALYSIS_2026-05-01.md</a> ·
+  <a href="../../../14-calibrum/assets/design.html">assets/design.html (component workbench)</a>
+
+  <h3>🔗 Sister apps · portfolio</h3>
+  <a href="https://love8ko.github.io/jabwell/design.html">JabWell design workbench</a> (sibling — GLP-1 Tracker &amp; AI Coach) ·
+  <a href="../">love8ko.github.io portfolio index</a>
+
+  <h3>⏳ Round-2 follow-ups (deferred)</h3>
+  <span style="color: rgba(245,242,237,0.85);">
+    Bronze hue precision A/B (`#B8865B` vs warmer `#C9925E` vs cooler `#A47A52`) ·
+    Variant E coral CTA hold-out test (icon A/B once Day-90 review moat established) ·
+    Chat surface light variant (Settings toggle vs dark-only V1) ·
+    Onboarding visual treatment (illustrated character vs phone-mockup hero on Screen 1) ·
+    Doctor Visit Prep PDF wordmark (B&amp;W lockup variant) ·
+    Verdict alert color test (`#A85842` vs darker `#7E3829`) ·
+    Re-test Variant A against JTBD Section D handoff brief
+  </span>
+
+  <div class="tm-disclaim">
+    <b>Trademark disclaimer.</b> Anastrozole, Arimidex®, Aromasin®, AndroGel®, Testim®, Fortesta®, Testopel®, Depo-Testosterone®, Aveed®, Jatenzo®, Kyzatrex® are registered trademarks of their respective manufacturers (AstraZeneca, Pfizer, AbbVie, Endo Pharmaceuticals, Clarus Therapeutics, Marius Pharmaceuticals). Calibrum is not affiliated with, endorsed by, or sponsored by any pharmaceutical manufacturer. Educational companion only — not a medical device. Always consult your prescribing physician.
+  </div>
+
+  <div style="margin-top: 14px; font-size: 12px; color: rgba(245,242,237,0.7);">
+    <b>Live link:</b> <span class="live-link">love8ko.github.io/calibrum/design.html</span><br>
+    <b>Source repo:</b> <a href="https://github.com/love8ko/Calibrum" style="font-family: ui-monospace, 'SF Mono', monospace;">github.com/love8ko/Calibrum</a> · Bundle <code style="background: rgba(255,255,255,0.12); padding: 1px 5px; border-radius: 3px; color: var(--bronze);">com.love8ko.calibrum</code> · ASC Apple ID <code style="background: rgba(255,255,255,0.12); padding: 1px 5px; border-radius: 3px; color: var(--bronze);">6765701652</code>
+  </div>
+</footer>
+
+</body>
+</html>
