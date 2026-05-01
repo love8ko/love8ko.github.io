@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — JabWell</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 720px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #1a1a1f;
+            background: #FBF7F2;
+        }
+        h1 { font-size: 28px; margin-bottom: 5px; letter-spacing: -0.01em; color: #264653; }
+        h2 { font-size: 20px; margin-top: 32px; letter-spacing: -0.005em; color: #264653; }
+        .app-name { color: #E76F51; font-weight: 600; }
+        .faq-q { font-weight: 600; margin-top: 18px; color: #1a1a1a; }
+        a { color: #264653; }
+        .warning {
+            background: #fdebe3;
+            padding: 14px 18px;
+            border-left: 3px solid #9B2226;
+            border-radius: 4px;
+            margin: 18px 0;
+        }
+        .trust {
+            background: #eef1e3;
+            padding: 14px 18px;
+            border-left: 3px solid #606C38;
+            border-radius: 4px;
+            margin: 18px 0;
+        }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        code { background: #f1ede4; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <h1>Support</h1>
+    <p class="app-name"><strong>JabWell: GLP-1 Tracker &amp; AI Coach</strong></p>
+    <p>Version 1.0</p>
+
+    <h2>Contact Us</h2>
+    <p>For questions, bug reports, feature requests, or App Review inquiries:<br>
+    <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></p>
+    <p>We respond within 24 hours.</p>
+
+    <h2>Emergency</h2>
+    <div class="warning">
+        <p><strong>JabWell is not a medical service.</strong> Stop using the app and seek emergency care if you experience: <strong>vomiting that lasts more than 24 hours · severe or persistent abdominal pain · signs of pancreatitis or a gallbladder attack · allergic reaction (swelling, trouble breathing).</strong> In the US call <strong>911</strong> or Poison Control at <strong>1-800-222-1222</strong>; outside the US use your local emergency number. Always call your prescriber for any concerning side effect.</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <p class="faq-q">What does JabWell do?</p>
+    <p>JabWell is an educational companion for adults using a GLP-1 medication prescribed by a licensed healthcare provider — Ozempic®, Wegovy®, Mounjaro®, Zepbound®, Rybelsus®, Saxenda®, Victoza®, Trulicity®, or compounded semaglutide / tirzepatide. The app helps you log injections, rotate sites, track weight and side effects, hit a daily protein target, monitor hair and skin changes, detect plateaus, and prepare a doctor-visit summary. The AI Nurse ("Nora") answers general questions about GLP-1 medication 24/7 and cites the source for every claim.</p>
+
+    <p class="faq-q">Is JabWell medical advice?</p>
+    <p><strong>No.</strong> JabWell is an educational companion — not a medical device. It does not prescribe medication, does not recommend dose changes, does not diagnose pancreatitis, gallbladder disease, gastroparesis, hypoglycaemia, or any other condition. Nora explains what the FDA prescribing information, AAFP, Mayo Clinic, Cleveland Clinic, and peer-reviewed studies say about GLP-1 medication, and explicitly redirects any personalised question to your prescriber.</p>
+
+    <p class="faq-q">Which medications does JabWell support?</p>
+    <p>All major GLP-1 receptor agonists and dual GIP/GLP-1 agonists used in adults:</p>
+    <ul>
+        <li>Ozempic®, Wegovy®, Rybelsus® (semaglutide — Novo Nordisk)</li>
+        <li>Mounjaro®, Zepbound® (tirzepatide — Eli Lilly)</li>
+        <li>Saxenda®, Victoza® (liraglutide — Novo Nordisk)</li>
+        <li>Trulicity® (dulaglutide — Eli Lilly)</li>
+        <li>Compounded semaglutide and compounded tirzepatide from authorised telehealth pharmacies (Hims, Ro, Mochi, Henry Meds, Eden, etc.)</li>
+    </ul>
+
+    <p class="faq-q">How does the AI Nurse work?</p>
+    <p>Type or speak a question in the Coach tab. JabWell first runs a retrieval step <strong>on your device</strong> against a bundled corpus of medical literature (FDA prescribing information for each medication, AAFP guidelines, Mayo Clinic and Cleveland Clinic patient education, ~30–50 peer-reviewed PubMed studies). The retrieved passages are sent with your message to DeepSeek to compose Nora's reply, with citations. Every reply ends with <em>"Educational, not medical advice. Consult your prescriber."</em></p>
+
+    <p class="faq-q">Will the AI Nurse change my dose?</p>
+    <p><strong>No.</strong> Nora is forbidden from recommending a specific dose, telling you when to escalate or de-escalate, or comparing your situation to "what other people do". Dose decisions belong to you and your prescriber. Nora can explain what the FDA prescribing information says about typical titration, what side-effect patterns are commonly described, and what questions to ask your prescriber at your next visit.</p>
+
+    <p class="faq-q">What is Side Effect Triage?</p>
+    <p>When you log a side effect (nausea, vomiting, diarrhoea, fatigue, headache, sulfur burps, etc.) JabWell shows a three-tier verdict:</p>
+    <ul>
+        <li><strong>🟢 Common — usually settles</strong> with practical tips from clinical guidelines</li>
+        <li><strong>🟡 Worth flagging at your next visit</strong> with suggested questions</li>
+        <li><strong>🔴 Stop and call your prescriber / seek emergency care</strong> with the red-flag list above</li>
+    </ul>
+    <p>The triage is based on FDA prescribing information and AAFP guidance, and is intentionally conservative.</p>
+
+    <p class="faq-q">What is the Plateau Detector?</p>
+    <p>If your weight has been flat for 4+ weeks despite consistent injections, JabWell summarises the trend and gives you specific questions to discuss with your prescriber about titration timing, plateau physiology, and protein/strength training adjustments. It does <strong>not</strong> tell you to change your dose.</p>
+
+    <p class="faq-q">What is the Protein Coach?</p>
+    <p>GLP-1s suppress appetite, which makes losing muscle a real risk. Protein Coach calculates a daily protein target around 1g per kilogram of body weight and helps you log meals against it with quick suggestions tuned for the GLP-1 appetite curve (small, dense, easy to keep down). The 1g/kg target follows AAFP and dietetics literature for adults on weight-loss medication.</p>
+
+    <p class="faq-q">What is the Hair / Skin Photo Journal?</p>
+    <p>Roughly 25–35% of GLP-1 users report hair shedding or skin laxity (sometimes called "Ozempic face"). JabWell lets you take a weekly photo and (V1.1+) run an opt-in AI analysis to flag changes early so you can act with a dermatologist or your prescriber before it accelerates. Photos are stored on your device only.</p>
+
+    <p class="faq-q">What does the Doctor Visit PDF contain?</p>
+    <p>An auto-generated, single-page summary of your last 12 weeks: every dose with its date and site, weight trend, side-effect log with severity, daily-feel slider, and 3–5 prescriber-friendly questions tailored to your trajectory. Tap "Share" to AirDrop or email it to your prescriber's office.</p>
+
+    <p class="faq-q">How is my data stored?</p>
+    <div class="trust">
+        Injection logs, weight, side-effect entries, photos, custom symptom labels, and all chat messages live <strong>on your device only</strong>, in iOS storage protected by your device passcode and Apple's Data Protection. They are never uploaded to our servers. The retrieval index used by the AI Nurse runs on-device too. See our <a href="privacy-policy.html">Privacy Policy</a> for full details.
+    </div>
+
+    <p class="faq-q">Can I use JabWell offline?</p>
+    <p>Logging injections, weight, side effects, photos, and the protein coach all work fully offline. The AI Nurse chat and Voice Mode require an internet connection because they call our Cloudflare Worker proxy to reach DeepSeek and Whisper. The on-device retrieval step still runs without internet — Nora simply waits for connectivity to compose the reply.</p>
+
+    <p class="faq-q">How much does JabWell cost?</p>
+    <p>JabWell offers two subscription tiers:</p>
+    <ul>
+        <li><strong>Weekly</strong> — $4.99 per week with a 7-day free trial</li>
+        <li><strong>Annual</strong> — $39.99 per year (saves ~85% versus weekly)</li>
+    </ul>
+    <p>Prices may vary by region. All subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period.</p>
+
+    <p class="faq-q">How do I cancel my subscription?</p>
+    <p>On your iPhone, go to <strong>Settings → Apple ID → Subscriptions → JabWell</strong> and tap <strong>Cancel Subscription</strong>. You can also reach this from inside JabWell via <strong>Settings → Manage Subscription</strong>. Cancellation must be at least 24 hours before the end of the current billing period to avoid the next charge.</p>
+
+    <p class="faq-q">How do I restore my subscription on a new device?</p>
+    <p>Open JabWell, go to <strong>Settings → Restore Purchases</strong> while signed in to the same Apple ID that made the original purchase. The subscription will be restored within a few seconds.</p>
+
+    <p class="faq-q">Does JabWell sell or share my data?</p>
+    <p>No. We do not sell your data, share it with advertising networks, or use HealthKit data outside the JabWell app (per Apple HealthKit guidelines § 5.1.3). The only things that leave your device are anonymous app analytics events, anonymous crash reports, and your subscription receipt for entitlement verification via RevenueCat. Full details in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+    <p class="faq-q">Is JabWell affiliated with Novo Nordisk, Eli Lilly, or any pharmacy?</p>
+    <p>No. JabWell is an independent educational companion app. It is not affiliated with, endorsed by, or sponsored by Novo Nordisk, Eli Lilly, Hims, Ro, Mochi, Henry Meds, Eden, the FDA, the AAFP, Mayo Clinic, Cleveland Clinic, or any other organisation referenced in the app. We do show optional affiliate links to compounded telehealth pharmacies — clearly disclosed when shown — and may receive a commission if you sign up via the link.</p>
+
+    <p class="faq-q">What iOS version is required?</p>
+    <p>JabWell requires iOS 17.0 or later and runs on iPhone only (portrait orientation). HealthKit access is optional but recommended for automatic weight sync; you can grant or revoke this at any time via iOS Settings → Privacy &amp; Security → Health → JabWell.</p>
+
+    <p class="faq-q">Does JabWell work outside the US?</p>
+    <p>Yes — the app works in any country where the same medications are prescribed. Logging, site rotation, weight tracking, plateau detection, hair/skin journal, protein coach, and the doctor-visit PDF are global. Chat and Voice Mode work in any country where the Cloudflare Worker proxy is reachable. Emergency contact numbers shown in the app and on this support page are US numbers (911 / 1-800-222-1222) — please use your local emergency services for any urgent situation, and rely on your own prescriber and pharmacist for region-specific medical guidance.</p>
+
+    <p class="faq-q">Report a bug or request a feature</p>
+    <p>Please email <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a> with:</p>
+    <ul>
+        <li>iPhone model and iOS version</li>
+        <li>JabWell version (Settings → About)</li>
+        <li>A short description of what happened and what you expected</li>
+        <li>Screenshots or a screen recording, if possible</li>
+    </ul>
+</body>
+</html>
