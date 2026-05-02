@@ -448,11 +448,10 @@
   }
   .jtbd-wedge {
     font-size: 13.5px;
-    color: var(--ink);
     background: var(--ink); color: var(--bronze-soft);
     padding: 12px 16px;
     border-radius: 10px;
-    margin-top: 10px;
+    margin: 12px 0;
     line-height: 1.5;
     font-weight: 600;
     font-style: italic;
@@ -468,6 +467,88 @@
   table.alt-table .verdict.partial { color: #7A5A2A; }
   table.alt-table .verdict.fails { color: var(--alert); }
   table.alt-table .verdict.inaccessible { color: var(--ink-3); }
+
+  /* ── JTBD weight badge (Russian — вес в общем приложении) ── */
+  .jtbd-weight {
+    display: inline-block; vertical-align: middle;
+    margin-left: 10px; font-size: 11px; font-weight: 800;
+    padding: 4px 10px; border-radius: 999px;
+    letter-spacing: 0.02em;
+    background: var(--bronze-soft); color: var(--bronze-deep);
+    border: 1px solid var(--bronze);
+  }
+  .jtbd-weight.w1 { background: var(--bronze); color: white; border-color: var(--bronze-deep); }
+  .jtbd-weight.w2 { background: var(--bronze-soft); color: var(--bronze-deep); }
+  .jtbd-weight.w3 { background: var(--bg); color: var(--ink-2); border-color: var(--divider); }
+  .jtbd-weight small { font-weight: 600; opacity: 0.85; margin-left: 4px; }
+
+  /* ── JTBD headlines block · 2-3 copy alternatives ── */
+  .jtbd-headlines {
+    margin: 12px 0;
+    padding: 12px 14px;
+    background: var(--bg);
+    border-radius: 10px;
+    border: 1px solid var(--divider);
+  }
+  .jtbd-headlines .hd-h {
+    font-size: 10.5px; font-weight: 800; color: var(--ink-3);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;
+  }
+  .jtbd-headlines ul {
+    margin: 0; padding: 0; list-style: none;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .jtbd-headlines li {
+    font-weight: 600; font-size: 13.5px; line-height: 1.4;
+    padding: 6px 10px; border-radius: 6px;
+    background: white; border: 1px solid var(--divider);
+    color: var(--ink-2);
+  }
+  .jtbd-headlines li.pick {
+    background: var(--bronze-soft); border-color: var(--bronze);
+    color: var(--ink); font-weight: 700;
+    position: relative; padding-left: 28px;
+  }
+  .jtbd-headlines li.pick::before {
+    content: "⭐"; position: absolute; left: 8px; top: 6px; font-size: 11px;
+  }
+
+  /* ── JTBD illustration concepts · 2-3 visual ideas ── */
+  .jtbd-illustrations {
+    margin: 12px 0;
+  }
+  .jtbd-illustrations .il-h {
+    font-size: 10.5px; font-weight: 800; color: var(--ink-3);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;
+  }
+  .jtbd-illustrations .il-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px;
+  }
+  .jtbd-illustrations .il-card {
+    background: white;
+    border: 1px solid var(--divider);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .jtbd-illustrations .il-card .il-num {
+    display: inline-block; font-size: 10px; font-weight: 800;
+    color: var(--bronze-deep); background: var(--bronze-soft);
+    border-radius: 6px; padding: 2px 7px; margin-bottom: 6px;
+    letter-spacing: 0.04em;
+  }
+  .jtbd-illustrations .il-card .il-name {
+    font-weight: 800; font-size: 12.5px; color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .jtbd-illustrations .il-card .il-desc {
+    font-size: 12px; line-height: 1.45; color: var(--ink-2);
+  }
+  .jtbd-illustrations .il-card .il-reads {
+    font-size: 11px; color: var(--bronze-deep); font-style: italic;
+    margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--divider);
+  }
 
   /* ── Cross-cutting panel ── */
   .cross-panel {
@@ -1180,7 +1261,42 @@
 
   <!-- JTBD #1 — E2 PANIC -->
   <div class="jtbd-scenario peak">
-    <h3><span class="jtbd-num">JTBD #1</span>"E2 panic — am I crashing or surging?"</h3>
+    <h3>
+      <span class="jtbd-num">JTBD #1</span>"E2 panic — am I crashing or surging?"
+      <span class="jtbd-weight w1">🥇 Главный JTBD <small>· ~25% time-in-app · top-1 retention driver</small></span>
+    </h3>
+    <div class="jtbd-wedge">"At 2am, when you can't sleep and your E2 is a question mark — Calibrum reads your symptoms, your last lab, and your protocol, and tells you what the pattern looks like."</div>
+    <div class="jtbd-headlines">
+      <div class="hd-h">Headline · 3 варианта (App Store / onboarding / paywall)</div>
+      <ul>
+        <li class="pick">"Wake up at 2am. Get answers, not Reddit."</li>
+        <li>"Your E2 question, answered without the forum scroll."</li>
+        <li>"Like having a TRT specialist on call."</li>
+      </ul>
+    </div>
+    <div class="jtbd-illustrations">
+      <div class="il-h">Иллюстрация · 3 концепции что юзер увидит сразу</div>
+      <div class="il-grid">
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 1</div>
+          <div class="il-name">Phone glow at 2am</div>
+          <div class="il-desc">Затемнённая спальня. Edge-lit smartphone в руке мужчины 47 лет, на экране — chat с bronze accent на midnight bg. Single source of light = phone screen. Лицо узнаваемо но не stock-идеал.</div>
+          <div class="il-reads">Reads: «это для меня, в этот именно момент».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 2</div>
+          <div class="il-name">Bedside table cinematics</div>
+          <div class="il-desc">Wide angle сверху на тумбочку — phone, очки для чтения, стакан воды, угол лабораторного PDF из ящика. Лица нет. Объекты сами рассказывают сцену.</div>
+          <div class="il-reads">Reads: «это про мужика которому не спится с лабораторией под рукой».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 3</div>
+          <div class="il-name">Internal-monologue split-screen</div>
+          <div class="il-desc">Слева: тёмный профиль мужчины смотрящего в потолок (только силуэт). Справа: phone screen с нашим chat-ответом в bronze. Между — VOC pull-quote типа «Could I have crashed it with adex?»</div>
+          <div class="il-reads">Reads: «Calibrum это голос ответа в этой темноте».</div>
+        </div>
+      </div>
+    </div>
     <p class="jtbd-trigger"><strong>Trigger.</strong> It is <strong>2:47 AM.</strong> Mark woke at 2:14 with that hollow, joint-stiff feeling. Libido has been off for 3 days. He is 4 weeks into an anastrozole titration (0.25 → 0.50mg) his telehealth doc told him to do "just to be safe." The bedroom is dark; his palm is sweating on the phone. His next lab is 5 weeks away.</p>
     <div class="jtbd-pullquote">
       I'm scared to lower or go off entirely in my current mental state. I generally have felt not as good on doses &lt;150 but seeing my free test so high is kind of scary. Not sure about my E2 either — could I have 'crashed' it with adex?
@@ -1211,12 +1327,46 @@
     </ul>
 
     <div class="jtbd-implication">Surface must feel calm at 2:47 AM — dark mode default, no red alerts, conversational tone, source-grounded. Hot exclamation-mark badges = emotional escalation = wrong. Bronze/warm accents over cyan/clinical-cold (Hone's palette would feel like an ER at 2am).</div>
-    <div class="jtbd-wedge">"At 2am, when you can't sleep and your E2 is a question mark — Calibrum reads your symptoms, your last lab, and your protocol, and tells you what the pattern looks like."</div>
   </div>
 
   <!-- JTBD #2 — LAB DROPPED -->
   <div class="jtbd-scenario peak">
-    <h3><span class="jtbd-num">JTBD #2</span>"Lab dropped — what do these numbers mean?"</h3>
+    <h3>
+      <span class="jtbd-num">JTBD #2</span>"Lab dropped — what do these numbers mean?"
+      <span class="jtbd-weight w1">🥇 Главный JTBD <small>· ~20% time-in-app · killer-feature anchor (Lab Snap &amp; Decode)</small></span>
+    </h3>
+    <div class="jtbd-wedge">"Snap your LabCorp PDF. Get a plain-English read against YOUR protocol — not the lab's generic 250–1070 'normal range'."</div>
+    <div class="jtbd-headlines">
+      <div class="hd-h">Headline · 3 варианта</div>
+      <ul>
+        <li class="pick">"LabCorp PDF → plain English in 4 seconds."</li>
+        <li>"Stop manually entering 14 markers."</li>
+        <li>"Your protocol's optimal range — not LabCorp's."</li>
+      </ul>
+    </div>
+    <div class="jtbd-illustrations">
+      <div class="il-h">Иллюстрация · 3 концепции</div>
+      <div class="il-grid">
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 1</div>
+          <div class="il-name">Inbox cinematic</div>
+          <div class="il-desc">Кадр с углом — laptop screen с открытым LabCorp email и PDF attachment. Рука тянется к телефону. Типичный момент между «labs пришли» и «начну гуглить».</div>
+          <div class="il-reads">Reads: «момент паники до Calibrum».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 2</div>
+          <div class="il-name">Photo-to-result split</div>
+          <div class="il-desc">Сверху: phone camera frame с LabCorp printout (real-feel). Снизу: тот же phone с decoded markers + personal optimal range overlay. Top-bottom split.</div>
+          <div class="il-reads">Reads: «вот вход — вот выход. 4 секунды».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 3</div>
+          <div class="il-name">Lab-room aftermath</div>
+          <div class="il-desc">Пустой стол: LabCorp printout сложен, телефон сверху показывает «scan complete». Чашка кофе рядом. Тихая композиция облегчения.</div>
+          <div class="il-reads">Reads: «после Calibrum — спокойствие, не Reddit».</div>
+        </div>
+      </div>
+    </div>
     <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Tuesday 4:12 PM.</strong> Tom (48) gets the LabCorp PDF email at his desk. Federal rule sends labs to patients before doctors review. PDF has 14 markers, asterisks, reference ranges that disagree with what the forum says is "optimal." His doc won't see this for another 3–5 days.</p>
     <div class="jtbd-pullquote">
       The confusion surrounding testosterone lab results stems from a fundamental lack of standardization across laboratories... one doctor declaring their levels 'normal' while another recommends immediate treatment.
@@ -1246,12 +1396,46 @@
     </ul>
 
     <div class="jtbd-implication">The lab-decode surface needs to feel <b>trustworthy and slow</b> — not flashy. Numbers as the hero (Hone's biomarker-as-product treatment is the right reference). Out-of-range markers must be surfaced <b>without weaponizing anxiety</b> — amber > red, single accent color, never multiple colors competing.</div>
-    <div class="jtbd-wedge">"Snap your LabCorp PDF. Get a plain-English read against YOUR protocol — not the lab's generic 250–1070 'normal range'."</div>
   </div>
 
   <!-- JTBD #3 — DOCTOR PREP -->
-  <div class="jtbd-scenario">
-    <h3><span class="jtbd-num">JTBD #3</span>"Help me prepare for my urology appointment"</h3>
+  <div class="jtbd-scenario peak">
+    <h3>
+      <span class="jtbd-num">JTBD #3</span>"Help me prepare for my urology appointment"
+      <span class="jtbd-weight w2">🥈 Высокий <small>· ~12% time · quarterly peak · UNIQUE-TO-CALIBRUM (no competitor ships this)</small></span>
+    </h3>
+    <div class="jtbd-wedge">"Walk into your appointment with a 2-page brief your doctor will respect. We assembled the last 90 days for you."</div>
+    <div class="jtbd-headlines">
+      <div class="hd-h">Headline · 3 варианта</div>
+      <ul>
+        <li class="pick">"Walk into urology with a 2-page brief."</li>
+        <li>"Stop forgetting what to ask."</li>
+        <li>"Your last 90 days, assembled."</li>
+      </ul>
+    </div>
+    <div class="jtbd-illustrations">
+      <div class="il-h">Иллюстрация · 3 концепции</div>
+      <div class="il-grid">
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 1</div>
+          <div class="il-name">Clinic-corridor moment</div>
+          <div class="il-desc">Мужчина 45 в waiting area клиники, держит распечатанный PDF brief на коленях. Уверенная посадка, читает. Спокойный неон клиники на заднем плане.</div>
+          <div class="il-reads">Reads: «ready, not anxious».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 2</div>
+          <div class="il-name">Print-and-go (Sunday evening)</div>
+          <div class="il-desc">Рука вытаскивает свежеотпечатанный PDF из домашнего принтера. Чашка кофе. Воскресный вечер, calm. Reads: «подготовка как ритуал, не стресс».</div>
+          <div class="il-reads">Reads: «контроль над приёмом, не суета».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 3</div>
+          <div class="il-name">PDF-on-tablet handoff</div>
+          <div class="il-desc">Чистый mockup 2-page PDF на iPad — page 1 с 90-day chart + symptom heatmap, page 2 с 5 numbered AI-generated questions. Calibrum wordmark в шапке. Pure light surface.</div>
+          <div class="il-reads">Reads: «продукт, который выглядит профессионально».</div>
+        </div>
+      </div>
+    </div>
     <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Sunday evening, 8 PM.</strong> The kids are in bed. Mark has a urology appointment <strong>Tuesday at 10 AM</strong> — quarterly check. He has felt off-protocol for weeks but won't remember any of it in the chair. He opens the Notes app; he's been making lists since he started TRT.</p>
     <div class="jtbd-pullquote">
       Every time I had a doctor's appointment I was taking a list I'd made of symptoms. I could never remember them when I was there so I'd keep a list updated when I was at home then take it with me.
@@ -1281,12 +1465,46 @@
     </ul>
 
     <div class="jtbd-implication">The PDF surface is the only place Calibrum needs to feel <b>paper-document serious</b> — minimal color, generous margins, doctor's-office acceptable. Inside the app the prep flow should feel <b>like assembly, not anxiety</b> — a tidy checklist, calm neutrals, "ready to print" affordance.</div>
-    <div class="jtbd-wedge">"Walk into your appointment with a 2-page brief your doctor will respect. We assembled the last 90 days for you."</div>
   </div>
 
   <!-- JTBD #4 — BLOODWORK TIMING -->
   <div class="jtbd-scenario">
-    <h3><span class="jtbd-num">JTBD #4</span>"When is next bloodwork due?"</h3>
+    <h3>
+      <span class="jtbd-num">JTBD #4</span>"When is next bloodwork due?"
+      <span class="jtbd-weight w2">🥉 Средний <small>· ~8% time · quality-of-life feature · half-life math моat</small></span>
+    </h3>
+    <div class="jtbd-wedge">"Stop guessing when to retest. We do the half-life math; you draw blood at the right week."</div>
+    <div class="jtbd-headlines">
+      <div class="hd-h">Headline · 3 варианта</div>
+      <ul>
+        <li class="pick">"Stop guessing your retest week."</li>
+        <li>"E2 stabilizes 8 weeks. We do the math."</li>
+        <li>"Half-life timing, one tap to order."</li>
+      </ul>
+    </div>
+    <div class="jtbd-illustrations">
+      <div class="il-h">Иллюстрация · 3 концепции</div>
+      <div class="il-grid">
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 1</div>
+          <div class="il-name">Calendar overlay</div>
+          <div class="il-desc">Phone screen с протокольным timeline: dose-change marker → 6-week countdown → «Schedule lab in 2 weeks» reminder. Спокойный график с bronze accent. Без человека, чистый продукт.</div>
+          <div class="il-reads">Reads: «продукт делает математику за меня».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 2</div>
+          <div class="il-name">Saturday-coffee scene</div>
+          <div class="il-desc">Мужчина 45 за кухонным столом с кофе, смотрит в телефон (timeline view). Свет утра. Domestic, pragmatic. Без напряжения.</div>
+          <div class="il-reads">Reads: «это рутинное планирование, не паника».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 3</div>
+          <div class="il-name">At-home draw kit</div>
+          <div class="il-desc">Tasso microsample kit (как у Maximus) на kitchen counter. Phone рядом показывает «Order LabCorp draw». Реальные предметы, без модели.</div>
+          <div class="il-reads">Reads: «не нужно ехать в clinic».</div>
+        </div>
+      </div>
+    </div>
     <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Saturday morning, 9:30 AM, coffee.</strong> Mark — engineer, optimization-minded, 18 months on TRT — is reviewing his calendar. He changed dose 6 weeks ago. He vaguely knows E2 takes "a while" to stabilize. He doesn't want to test too early (waste $150) or too late (waste 6 weeks of ambiguity).</p>
     <div class="jtbd-pullquote">
       I don't want to keep guessing. Just tell me when to draw blood so the result actually means something.
@@ -1315,12 +1533,46 @@
     </ul>
 
     <div class="jtbd-implication">The reminder/timing surface should feel <b>pragmatic and quiet</b> — a scheduling tool, not a hospital alarm. Maximus's "no membership fee" pragmatic-male tone is the right register; Hone's "longevity engineered" is too aspirational for a Saturday-morning calendar question.</div>
-    <div class="jtbd-wedge">"Stop guessing when to retest. We do the half-life math; you draw blood at the right week."</div>
   </div>
 
   <!-- JTBD #5 — CARL CANDIDATE -->
   <div class="jtbd-scenario">
-    <h3><span class="jtbd-num">JTBD #5</span>"I want to start TRT — am I a candidate?"</h3>
+    <h3>
+      <span class="jtbd-num">JTBD #5</span>"I want to start TRT — am I a candidate?"
+      <span class="jtbd-weight w2">🥈 Высокий <small>· 100% time для Carl-сегмента (15% audience) · funnel-критичный · WOW reveal в онбординге</small></span>
+    </h3>
+    <div class="jtbd-wedge">"Your doctor said 'normal'. Run the math yourself — free, in 60 seconds — and decide your next step."</div>
+    <div class="jtbd-headlines">
+      <div class="hd-h">Headline · 3 варианта</div>
+      <ul>
+        <li class="pick">"Suspect low T? Calculate first."</li>
+        <li>"Don't trust 'normal'. Calculate."</li>
+        <li>"Free T in 60 seconds. No account."</li>
+      </ul>
+    </div>
+    <div class="jtbd-illustrations">
+      <div class="il-h">Иллюстрация · 3 концепции</div>
+      <div class="il-grid">
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 1</div>
+          <div class="il-name">Screen recording cinematic</div>
+          <div class="il-desc">Phone в руке: 4-input form (Total T / SHBG / Albumin / Age) автозаполняется → Vermeulen output card раскрывается «6.2 ng/dL — below optimal» → 3-path next-step CTA.</div>
+          <div class="il-reads">Reads: «demo продукта до install».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 2</div>
+          <div class="il-name">Discovery moment</div>
+          <div class="il-desc">Мужчина 42 за столом смотрит в телефон с выражением relief/«ага». Phone показывает результат calc. Естественное освещение office.</div>
+          <div class="il-reads">Reads: «момент открытия — да, я не сходил с ума».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 3</div>
+          <div class="il-name">3-path crossroads infographic</div>
+          <div class="il-desc">Стилизованная иллюстрация: 3 пути от calc result → insurance / telehealth (Hone) / PCP advocacy. Infographic-style, NOT photorealistic. Bronze accent.</div>
+          <div class="il-reads">Reads: «ты не застрял — вот 3 пути вперёд».</div>
+        </div>
+      </div>
+    </div>
     <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Late Thursday night, 11 PM.</strong> Carl (42) has just finished a podcast. Fatigue all week, libido gone for months. He's read three Reddit threads in the last hour. He types <code>testosterone calculator</code> into the App Store. He has NOT yet been tested — or he has, and his PCP told him "your T is 350, that's normal."</p>
     <div class="jtbd-pullquote">
       I'm tired all the time. My libido is gone. My doctor said my T is 350 — 'normal range'. But my friend started TRT and feels great. Am I crazy?
@@ -1351,12 +1603,46 @@
     </ul>
 
     <div class="jtbd-implication">The Calculator/onboarding surface is the <b>first surface 30–40% of users will ever see</b> (pre-TRT funnel). Must feel approachable, not medical. Hims's "stupid easy" register is the right idea (lowercase, normalizing) without the millennial pastels. Calculator output must feel <b>like a verdict, not a sales page</b> — even though three affiliate CTAs follow.</div>
-    <div class="jtbd-wedge">"Your doctor said 'normal'. Run the math yourself — free, in 60 seconds — and decide your next step."</div>
   </div>
 
   <!-- JTBD #6 — HCT 51 -->
   <div class="jtbd-scenario peak">
-    <h3><span class="jtbd-num">JTBD #6</span>"My HCT is 51 — am I going to have a stroke?"</h3>
+    <h3>
+      <span class="jtbd-num">JTBD #6</span>"My HCT is 51 — am I going to have a stroke?"
+      <span class="jtbd-weight w2">🥈 Высокий <small>· ~10% time · 35-45% users hit this · episodic crisis (lab-driven panic)</small></span>
+    </h3>
+    <div class="jtbd-wedge">"HCT crept up? Don't panic-stop. Calibrum tells you what's actionable today vs what's a doctor conversation."</div>
+    <div class="jtbd-headlines">
+      <div class="hd-h">Headline · 3 варианта</div>
+      <ul>
+        <li class="pick">"HCT 51? Hydrate first, panic last."</li>
+        <li>"What's actionable today vs doctor talk."</li>
+        <li>"Know when HCT is real and when it's water."</li>
+      </ul>
+    </div>
+    <div class="jtbd-illustrations">
+      <div class="il-h">Иллюстрация · 3 концепции</div>
+      <div class="il-grid">
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 1</div>
+          <div class="il-name">Lab number pull-quote</div>
+          <div class="il-desc">Большой bronze «HCT: 51%» с тонким verdict pill «Approaching watch zone» снизу. Calm typography. На заднем плане — blurred lab printout.</div>
+          <div class="il-reads">Reads: «data, calm framing, no ER».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 2</div>
+          <div class="il-name">Question-to-answer flow</div>
+          <div class="il-desc">User question bubble: «HCT crept to 51, should I worry?» → AI response card объясняет hydration first, watch zone math, phlebotomy threshold (54%). Cited sources visible.</div>
+          <div class="il-reads">Reads: «process, not alarm».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 3</div>
+          <div class="il-name">Bedroom 2:47 redux (consistent series)</div>
+          <div class="il-desc">Тот же тёмный register что JTBD #1, но с HCT числами видимыми на экране. Можно разделить иллюстрацию с #1 для серийной consistency: «эти моменты — где Calibrum живёт».</div>
+          <div class="il-reads">Reads: «series cohesion · same character · different crisis».</div>
+        </div>
+      </div>
+    </div>
     <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Q2 lab results email arrives, 7:14 AM during the morning routine.</strong> Mark scans the PDF on his phone walking to the kitchen. HCT 48 → 51 in six months. His brain skips immediately to "stroke." His coffee gets cold.</p>
     <div class="jtbd-pullquote">
       You start seeing elevated [HCT] numbers and immediately lower your dose, stop therapy, or begin donating blood constantly. But overcorrecting this issue can actually lead to anemia, leaving you exhausted and defeating the entire purpose...
@@ -1386,12 +1672,46 @@
     </ul>
 
     <div class="jtbd-implication">This is the JTBD where bad UX <b>kills the user's day</b>. A bright red "HIGH" badge weaponizes anxiety and triggers the over-correction loop the VOC describes. Use <b>graduated amber, not red</b>, for everything below 54%. The chat reply must lead with empathy ("HCT 51 is in the watch zone, not the danger zone"), not with the number.</div>
-    <div class="jtbd-wedge">"HCT crept up? Don't panic-stop. Calibrum tells you what's actionable today vs what's a doctor conversation."</div>
   </div>
 
   <!-- JTBD #7 — DOCTOR DISMISSAL -->
   <div class="jtbd-scenario peak">
-    <h3><span class="jtbd-num">JTBD #7</span>"Doctor said my labs are 'normal' — but I feel like shit"</h3>
+    <h3>
+      <span class="jtbd-num">JTBD #7</span>"Doctor said my labs are 'normal' — but I feel like shit"
+      <span class="jtbd-weight w1">🥇 Главный JTBD <small>· ~12% time · хронический anchor — chat retention driver, blends into #1</small></span>
+    </h3>
+    <div class="jtbd-wedge">"Your labs were called 'normal.' We help you find out if they were optimal — and give you the case to push back."</div>
+    <div class="jtbd-headlines">
+      <div class="hd-h">Headline · 3 варианта</div>
+      <ul>
+        <li class="pick">"'Normal' doesn't mean optimal."</li>
+        <li>"Push back with the case."</li>
+        <li>"Your labs were called normal. We say…"</li>
+      </ul>
+    </div>
+    <div class="jtbd-illustrations">
+      <div class="il-h">Иллюстрация · 3 концепции</div>
+      <div class="il-grid">
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 1</div>
+          <div class="il-name">Frustrated patient + LabCorp</div>
+          <div class="il-desc">Мужчина 47 за столом держит LabCorp printout, смотрит в окно. Слегка ссутуленная посадка передаёт «told nothing's wrong but I know something's wrong». Day light. Honest, not stock.</div>
+          <div class="il-reads">Reads: «frustrated mid-protocol — это узнаваемо».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 2</div>
+          <div class="il-name">Personal-vs-population range chart</div>
+          <div class="il-desc">Visualization: LabCorp population range bar (250-1070) сверху vs Personal Optimal Range bar (age 40-50: 600-900) снизу. Маркер «you are here at 350» — в красной зоне personal, в зелёной population.</div>
+          <div class="il-reads">Reads: «the math your doctor doesn't show you».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 3</div>
+          <div class="il-name">Doctor-vs-Calibrum split</div>
+          <div class="il-desc">Split-screen: слева — иллюстрация doctor говорящего «labs are normal»; справа — phone Calibrum с PDF brief в pocket + 5 questions готовы. «Я не один».</div>
+          <div class="il-reads">Reads: «теперь у меня есть вторая ткань данных».</div>
+        </div>
+      </div>
+    </div>
     <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Friday afternoon, parking lot of his PCP's office.</strong> Pre-TRT Carl just got brushed off. T was 350 ng/dL, "in range." He sits in his car with the engine off.</p>
     <div class="jtbd-pullquote">
       Let's be real — there's nothing more frustrating than finally getting the courage to talk to your doctor about low testosterone symptoms… only to get brushed off with a half-smile and a 'Your labs look fine.'
@@ -1425,12 +1745,46 @@
     </ul>
 
     <div class="jtbd-implication">Tone here cannot be defeatist or victim-coded. Must read <b>competent ally, not therapy app</b>. Avoid "we hear you" register. Hone's "engineered around your biology" personalization framing is the right model — clinical-optimistic without being clinical-cold. NEVER quippy; this user's anger is real.</div>
-    <div class="jtbd-wedge">"Your labs were called 'normal.' We help you find out if they were optimal — and give you the case to push back."</div>
   </div>
 
   <!-- JTBD #8 — PROTOCOL CHANGE -->
   <div class="jtbd-scenario">
-    <h3><span class="jtbd-num">JTBD #8</span>"I changed my protocol — when do I retest?"</h3>
+    <h3>
+      <span class="jtbd-num">JTBD #8</span>"I changed my protocol — when do I retest?"
+      <span class="jtbd-weight w3">◯ Малый <small>· ~5% time · подмножество #4 (bloodwork timing) · ~2-3×/yr per user</small></span>
+    </h3>
+    <div class="jtbd-wedge">"Changed your protocol? Calibrum knows your half-life, your timing, and exactly which week your next draw will mean something."</div>
+    <div class="jtbd-headlines">
+      <div class="hd-h">Headline · 3 варианта</div>
+      <ul>
+        <li class="pick">"New dose? We know your retest week."</li>
+        <li>"Half-life math, automatic."</li>
+        <li>"Wait the right amount, not too long."</li>
+      </ul>
+    </div>
+    <div class="jtbd-illustrations">
+      <div class="il-h">Иллюстрация · 3 концепции</div>
+      <div class="il-grid">
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 1</div>
+          <div class="il-name">Protocol-change timeline</div>
+          <div class="il-desc">Phone timeline view с акцентом на «dose change marker» как точкой отсчёта. 6/8/12-недельные milestone маркеры. Без человека — продукт говорит сам.</div>
+          <div class="il-reads">Reads: «set it and forget it».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 2</div>
+          <div class="il-name">Calendar drop-in</div>
+          <div class="il-desc">Phone Calendar app с автодобавленным bronze событием «Lab draw — Wk 8». Естественная iOS UI fidelity, узнаваемый паттерн.</div>
+          <div class="il-reads">Reads: «работает с моим календарём, не отдельная вселенная».</div>
+        </div>
+        <div class="il-card">
+          <div class="il-num">КОНЦЕПЦИЯ 3</div>
+          <div class="il-name">Doctor-and-patient agreement</div>
+          <div class="il-desc">Doctor handing patient прескрипшн «switching to 100mg twice weekly», patient смотрит на phone где Calibrum уже посчитал retest week. Subtle handoff — продукт работает между appointments.</div>
+          <div class="il-reads">Reads: «я опережаю свой следующий visit».</div>
+        </div>
+      </div>
+    </div>
     <p class="jtbd-trigger"><strong>Trigger.</strong> <strong>Three weeks ago, Mark switched from 200mg/wk IM cypionate to 50mg twice-weekly SubQ.</strong> It's now Tuesday morning. He's been feeling better but isn't sure if it's real or placebo. He's not sure when his blood actually means something again.</p>
     <div class="jtbd-pullquote">
       Cypionate has a 5–7 day half-life. I think? When does the new protocol stabilize — is it 4 weeks, 6 weeks, 8?
@@ -1460,7 +1814,6 @@
     </ul>
 
     <div class="jtbd-implication">Same as JTBD #4 — the timing surface is a calm, pragmatic scheduler. Calendar-shaped affordance, not a clinical alert. <b>No countdown urgency</b> — this isn't a missile launch, it's "your blood will be informative starting Week 8."</div>
-    <div class="jtbd-wedge">"Changed your protocol? Calibrum knows your half-life, your timing, and exactly which week your next draw will mean something."</div>
   </div>
 
   <!-- Cross-cutting design implications panel -->
