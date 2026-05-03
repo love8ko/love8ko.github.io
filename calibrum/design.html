@@ -996,6 +996,371 @@
   ul.list { padding-left: 22px; line-height: 1.6; margin-top: 8px; }
   ul.list li { margin-bottom: 4px; font-size: 13px; }
   ul.list li::marker { color: var(--bronze); }
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     PAYWALL WORKBENCH ROUND 2 — 7 dark-theme variants (2026-05-03)
+     Reuses .onb-phone.dark base + adds hero/plan/CTA component classes
+     ═══════════════════════════════════════════════════════════════════════ */
+  .pw2-intro {
+    margin-top: 22px;
+    background: linear-gradient(135deg, var(--night-bg) 0%, var(--night-surface) 100%);
+    color: var(--night-text);
+    border-radius: 14px;
+    padding: 18px 22px;
+    border-left: 4px solid var(--night-accent);
+  }
+  .pw2-intro .h {
+    font-size: 11px; font-weight: 800; color: var(--night-accent);
+    letter-spacing: 0.08em; margin-bottom: 6px;
+  }
+  .pw2-intro .b { font-size: 13.5px; line-height: 1.6; color: var(--bronze-soft); max-width: 880px; }
+
+  .pw2-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 22px;
+    margin-top: 18px;
+  }
+  .pw2-card {
+    background: var(--card);
+    border: 1px solid var(--divider);
+    border-radius: 18px;
+    padding: 16px 16px 14px;
+    display: flex; flex-direction: column;
+  }
+  .pw2-card.winner { border-color: var(--bronze); box-shadow: 0 6px 24px rgba(184,134,91,0.22); }
+  .pw2-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+  .pw2-name { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 15px; color: var(--ink); }
+  .pw2-score { font-family: ui-monospace, "SF Mono", monospace; background: var(--divider); color: var(--ink-2); border-radius: 999px; padding: 3px 9px; font-size: 11px; font-weight: 700; }
+  .pw2-card.winner .pw2-score { background: var(--bronze); color: white; }
+  .pw2-vibe { font-size: 12px; color: var(--ink-2); font-style: italic; min-height: 32px; margin-bottom: 10px; }
+
+  /* Phone mockup — narrow paywall variant */
+  .pw2-phone {
+    width: 100%; max-width: 280px;
+    aspect-ratio: 9 / 19.5;
+    margin: 0 auto;
+    background: var(--night-bg);
+    border-radius: 32px;
+    border: 6px solid #0A0F1A;
+    box-shadow: 0 10px 28px rgba(14,22,38,0.4), inset 0 0 0 1px rgba(255,255,255,0.04);
+    overflow: hidden;
+    position: relative;
+    color: var(--night-text);
+    display: flex; flex-direction: column;
+  }
+  .pw2-phone::before {
+    content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 14px; background: #000; border-radius: 10px; z-index: 5;
+  }
+  .pw2-status {
+    height: 18px; display: flex; justify-content: space-between; align-items: center;
+    padding: 0 12px; font-size: 8px; color: var(--bronze-soft); font-weight: 600;
+  }
+  .pw2-screen { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+
+  /* Hero treatments */
+  .pw2-hero-bg { background: url('paywall-hero-a-2am.png') center/cover no-repeat; }
+  .pw2-hero-full { height: 42%; position: relative; }
+  .pw2-hero-full::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(14,22,38,0) 30%, rgba(14,22,38,0.9) 80%, var(--night-bg) 100%);
+  }
+  .pw2-hero-tall { height: 55%; position: relative; }
+  .pw2-hero-tall::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(14,22,38,0) 40%, rgba(14,22,38,0.9) 85%, var(--night-bg) 100%);
+  }
+  .pw2-hero-vignette { height: 30%; position: relative; }
+  .pw2-hero-vignette::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 70%, transparent 0%, rgba(14,22,38,0.55) 70%),
+                linear-gradient(180deg, rgba(14,22,38,0) 60%, var(--night-bg) 100%);
+  }
+  .pw2-hero-card { margin: 8px 10px 0; height: 90px; border-radius: 12px; overflow: hidden; position: relative; box-shadow: inset 0 0 0 1px rgba(212,160,107,0.18); }
+  .pw2-hero-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(14,22,38,0.7) 100%); }
+  .pw2-hero-strip { margin: 8px 10px 0; height: 56px; border-radius: 8px; overflow: hidden; position: relative; box-shadow: inset 0 0 0 1px rgba(212,160,107,0.18); }
+  .pw2-hero-strip::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(14,22,38,0.7) 100%); }
+
+  .pw2-h1 {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 16px; line-height: 1.15; color: #F5EFE0;
+    letter-spacing: -0.01em; margin: 8px 14px 4px;
+  }
+  .pw2-h1.serif { font-family: "Charter", Georgia, ui-serif, serif; font-weight: 700; letter-spacing: -0.02em; }
+  .pw2-h1.tight { font-size: 14px; }
+  .pw2-h1.over { margin-top: -22px; position: relative; z-index: 2; }
+  .pw2-sub { font-size: 9.5px; color: var(--bronze-soft); line-height: 1.4; margin: 0 14px 8px; }
+  .pw2-sources { font-size: 8.5px; color: var(--night-accent); font-weight: 700; letter-spacing: 0.05em; margin: 0 14px 6px; text-transform: uppercase; }
+
+  .pw2-bullets { margin: 4px 14px 6px; padding: 0; list-style: none; }
+  .pw2-bullets li { font-size: 9px; color: var(--bronze-soft); padding: 2px 0 2px 14px; position: relative; line-height: 1.35; }
+  .pw2-bullets li::before { content: '✓'; position: absolute; left: 0; top: 2px; color: var(--night-accent); font-weight: 800; }
+
+  .pw2-plans { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 8px 10px; }
+  .pw2-plans.single { grid-template-columns: 1fr; }
+  .pw2-plan {
+    background: rgba(245,242,237,0.04);
+    border: 1px solid rgba(245,242,237,0.08);
+    border-radius: 10px; padding: 8px 8px 7px; position: relative;
+  }
+  .pw2-plan.selected {
+    border-color: var(--night-accent);
+    background: rgba(212,160,107,0.10);
+    box-shadow: 0 0 0 1px var(--night-accent);
+  }
+  .pw2-plan .badge {
+    position: absolute; top: -7px; left: 7px;
+    background: var(--night-accent); color: var(--ink);
+    font-size: 7px; font-weight: 800; padding: 2px 6px; border-radius: 999px; letter-spacing: 0.04em;
+  }
+  .pw2-plan .badge.dark { background: #2D5A2A; color: #DDF0CE; }
+  .pw2-plan .name { font-size: 9px; font-weight: 700; color: #F0E8D9; margin-bottom: 2px; }
+  .pw2-plan .price { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 13px; color: #F5EFE0; }
+  .pw2-plan .unit { font-size: 8px; color: var(--bronze-soft); font-weight: 600; }
+  .pw2-plan .meta { font-size: 7.5px; color: rgba(232,217,194,0.65); margin-top: 2px; }
+
+  .pw2-cta {
+    margin: 8px 10px 4px; background: var(--night-accent); color: var(--ink);
+    text-align: center; border-radius: 11px; padding: 9px 0;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 11px;
+  }
+  .pw2-then { text-align: center; font-size: 7.5px; color: rgba(232,217,194,0.55); margin: 2px 14px 4px; }
+  .pw2-disclaimer { font-size: 7px; color: rgba(232,217,194,0.45); line-height: 1.35; margin: 0 14px 4px; text-align: center; }
+  .pw2-foot { text-align: center; font-size: 7px; color: rgba(232,217,194,0.4); margin: 4px 14px 8px; display: flex; justify-content: center; gap: 10px; }
+
+  .pw2-trustline { display: flex; gap: 5px; margin: 4px 14px 6px; flex-wrap: wrap; }
+  .pw2-trustline .src {
+    font-size: 7.5px; font-weight: 700; color: var(--night-accent);
+    background: rgba(212,160,107,0.12);
+    border: 1px solid rgba(212,160,107,0.25);
+    padding: 2px 5px; border-radius: 4px; letter-spacing: 0.03em;
+  }
+
+  .pw2-compare { margin: 6px 14px 4px; border: 1px solid rgba(245,242,237,0.08); border-radius: 8px; overflow: hidden; }
+  .pw2-compare .row { display: grid; grid-template-columns: 1fr auto auto; padding: 4px 8px; font-size: 8px; color: var(--bronze-soft); gap: 6px; align-items: center; }
+  .pw2-compare .row.head { background: rgba(245,242,237,0.04); color: var(--night-accent); font-weight: 700; }
+  .pw2-compare .row + .row { border-top: 1px solid rgba(245,242,237,0.05); }
+  .pw2-compare .v-good { color: #9DBE8E; font-weight: 700; }
+  .pw2-compare .v-bad { color: #C97E6A; font-weight: 700; }
+
+  .pw2-jtbd { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 6px 14px; }
+  .pw2-jtbd .chip { background: rgba(245,242,237,0.04); border: 1px solid rgba(245,242,237,0.07); border-radius: 6px; padding: 4px 6px; font-size: 8px; color: #E8DEC9; line-height: 1.25; }
+  .pw2-jtbd .chip strong { color: var(--night-accent); font-weight: 700; display: block; font-size: 7.5px; letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 1px; }
+
+  .pw2-quote { margin: 6px 14px; border-left: 2px solid var(--night-accent); padding: 4px 8px; font-style: italic; font-size: 9.5px; color: #E8DEC9; line-height: 1.45; }
+  .pw2-quote .src { display: block; margin-top: 4px; font-style: normal; font-size: 7.5px; color: rgba(232,217,194,0.55); }
+
+  .pw2-pain {
+    height: 32%;
+    background: radial-gradient(ellipse at 30% 30%, rgba(212,160,107,0.15), transparent 60%), var(--night-bg);
+    display: flex; align-items: center; justify-content: center; padding: 18px; text-align: center;
+  }
+  .pw2-pain .lbl { font-size: 8px; color: var(--night-accent); letter-spacing: 0.08em; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+  .pw2-pain .num { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-size: 38px; font-weight: 800; color: #F5EFE0; line-height: 1; }
+  .pw2-pain .num small { font-size: 14px; color: var(--bronze-soft); }
+  .pw2-pain .verdict { font-size: 9px; color: #C97E6A; font-weight: 700; margin-top: 4px; }
+
+  .pw2-voice {
+    margin-top: 12px; padding: 8px 10px;
+    background: var(--bg); border-left: 3px solid var(--bronze);
+    border-radius: 0 8px 8px 0; font-size: 11.5px; color: var(--ink-2); line-height: 1.45;
+  }
+  .pw2-voice strong { color: var(--ink); }
+  .pw2-meta { margin-top: 8px; display: grid; gap: 3px; font-size: 11px; color: var(--ink-2); }
+  .pw2-meta b { color: var(--ink); font-weight: 700; }
+  .pw2-meta .risk { color: var(--alert); }
+
+  .pw2-verdict-table {
+    width: 100%; border-collapse: collapse; margin-top: 14px;
+    border: 1px solid var(--divider); border-radius: 12px; overflow: hidden;
+  }
+  .pw2-verdict-table th, .pw2-verdict-table td {
+    padding: 8px 12px; font-size: 12.5px; text-align: left;
+    border-bottom: 1px solid var(--divider);
+  }
+  .pw2-verdict-table th { background: var(--bronze-soft); color: var(--bronze-deep); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 700; }
+  .pw2-verdict-table tr:last-child td { border-bottom: none; }
+  .pw2-verdict-table .yes { color: #2D5A2A; font-weight: 700; }
+  .pw2-verdict-table .no { color: #6E2E20; font-weight: 700; }
+  .pw2-verdict-table .meh { color: #7A5A2A; font-weight: 700; }
+
+  /* ═══ V1 deep-dive · iPhone preview + block breakdown (Jabwell pattern) ═══ */
+  .cal-deep { display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start; margin-top: 16px; }
+  @media (max-width: 980px) { .cal-deep { grid-template-columns: 1fr; } .cal-iphone-frame { margin: 0 auto; position: static !important; } }
+  .cal-iphone-frame {
+    width: 320px;
+    background: #0A0F1A;
+    border-radius: 38px;
+    padding: 8px;
+    box-shadow: 0 14px 36px rgba(14,22,38,0.45), inset 0 0 0 1.5px rgba(255,255,255,0.05);
+    position: sticky; top: 16px;
+  }
+  .cal-iphone-screen {
+    background: var(--night-bg);
+    border-radius: 30px;
+    overflow: hidden;
+    min-height: 660px;
+    display: flex; flex-direction: column;
+    position: relative;
+    color: var(--night-text);
+  }
+  .cal-iphone-notch { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 90px; height: 22px; background: #000; border-radius: 999px; z-index: 5; }
+  .cal-iphone-status { display: flex; justify-content: space-between; align-items: center; padding: 12px 22px 0; font-size: 11px; font-weight: 800; color: var(--bronze-soft); height: 36px; }
+
+  /* Inner content scaled larger than mini phone */
+  .cal-screen-content { display: flex; flex-direction: column; padding-top: 4px; }
+  .cal-screen-content .cal-hero { height: 240px; background: url('paywall-hero-a-2am.png') center/cover no-repeat; position: relative; }
+  .cal-screen-content .cal-hero::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(14,22,38,0) 35%, rgba(14,22,38,0.92) 82%, var(--night-bg) 100%);
+  }
+  .cal-h1 {
+    font-family: "Charter", Georgia, ui-serif, serif;
+    font-weight: 700; font-size: 22px; line-height: 1.15; letter-spacing: -0.02em;
+    color: #F5EFE0;
+    margin: -32px 18px 6px; position: relative; z-index: 2;
+  }
+  .cal-sources { font-size: 10px; color: var(--night-accent); font-weight: 700; letter-spacing: 0.06em; margin: 0 18px 8px; text-transform: uppercase; }
+  .cal-sub { font-size: 12px; color: var(--bronze-soft); line-height: 1.45; margin: 0 18px 12px; }
+  .cal-anchor {
+    margin: 0 14px 12px;
+    padding: 10px 12px;
+    background: rgba(212,160,107,0.10);
+    border: 1px solid rgba(212,160,107,0.25);
+    border-radius: 10px;
+    color: var(--bronze-soft);
+    font-size: 11px; line-height: 1.45;
+  }
+  .cal-anchor .equals {
+    display: block; margin-top: 6px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    color: var(--night-accent); font-weight: 800; font-size: 12.5px;
+  }
+  .cal-anchor .strike { text-decoration: line-through; color: rgba(232,217,194,0.55); }
+  .cal-trust {
+    margin: 0 14px 10px;
+    padding: 8px 12px;
+    background: rgba(122,146,112,0.12);
+    border: 1px solid rgba(122,146,112,0.30);
+    border-radius: 10px;
+    color: #C7D6BC;
+    font-size: 11px; line-height: 1.45;
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .cal-trust .ck { color: #9DBE8E; font-weight: 800; flex-shrink: 0; }
+  .cal-bullets { margin: 4px 18px 12px; padding: 0; list-style: none; }
+  .cal-bullets li { font-size: 12.5px; color: var(--bronze-soft); padding: 4px 0 4px 22px; position: relative; line-height: 1.4; }
+  .cal-bullets li::before {
+    content: '✓'; position: absolute; left: 0; top: 4px;
+    color: var(--night-accent); font-weight: 800; font-size: 13px;
+  }
+
+  .cal-pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 14px 12px; }
+  .cal-tile { background: rgba(245,242,237,0.04); border: 1px solid rgba(245,242,237,0.08); border-radius: 12px; padding: 10px 10px 9px; position: relative; }
+  .cal-tile.selected { border-color: var(--night-accent); background: rgba(212,160,107,0.10); box-shadow: 0 0 0 1px var(--night-accent); }
+  .cal-tile .tag {
+    position: absolute; top: -8px; left: 8px;
+    background: var(--night-accent); color: var(--ink);
+    font-size: 8.5px; font-weight: 800; padding: 2px 7px; border-radius: 999px; letter-spacing: 0.04em;
+  }
+  .cal-tile .tag.dark { background: #2D5A2A; color: #DDF0CE; }
+  .cal-tile .nm { font-size: 11px; font-weight: 700; color: #F0E8D9; margin-bottom: 2px; }
+  .cal-tile .pr { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 17px; color: #F5EFE0; }
+  .cal-tile .pr small { font-size: 10px; color: var(--bronze-soft); font-weight: 600; }
+  .cal-tile .mt { font-size: 9.5px; color: rgba(232,217,194,0.7); margin-top: 3px; }
+
+  .cal-timeline { margin: 4px 14px 12px; padding: 10px 12px; background: rgba(245,242,237,0.03); border: 1px solid rgba(245,242,237,0.07); border-radius: 12px; }
+  .cal-timeline .step { display: grid; grid-template-columns: 22px 60px 1fr; gap: 8px; align-items: center; padding: 5px 0; }
+  .cal-timeline .step + .step { border-top: 1px solid rgba(245,242,237,0.05); }
+  .cal-timeline .icn {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(212,160,107,0.15);
+    color: var(--night-accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800;
+  }
+  .cal-timeline .day { font-size: 10.5px; color: var(--night-accent); font-weight: 800; letter-spacing: 0.04em; }
+  .cal-timeline .desc { font-size: 10.5px; color: var(--bronze-soft); line-height: 1.35; }
+
+  .cal-disclaim { font-size: 9px; color: rgba(232,217,194,0.55); line-height: 1.4; margin: 0 18px 8px; text-align: center; }
+  .cal-cta {
+    margin: 0 14px 4px;
+    background: var(--night-accent); color: var(--ink);
+    text-align: center; border-radius: 13px; padding: 12px 0;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 14px;
+    box-shadow: 0 4px 14px rgba(212,160,107,0.28);
+  }
+  .cal-then { text-align: center; font-size: 9px; color: rgba(232,217,194,0.55); margin: 4px 18px 6px; }
+  .cal-foot { text-align: center; font-size: 9px; color: rgba(232,217,194,0.45); margin: 4px 18px 14px; display: flex; justify-content: center; gap: 14px; }
+
+  /* Right column · block breakdown */
+  .cal-blocks { display: flex; flex-direction: column; gap: 8px; }
+  .cal-blk { background: white; border: 1px solid var(--divider); border-radius: 10px; padding: 12px 14px; }
+  .cal-blk .h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .cal-blk .num { font-size: 10px; font-weight: 800; color: var(--bronze-deep); letter-spacing: 0.06em; }
+  .cal-blk .st { font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 700; }
+  .cal-blk .st.ok { background: var(--good-bg); color: #2D5A2A; }
+  .cal-blk .st.warn { background: var(--watch-bg); color: #7A5A2A; }
+  .cal-blk .nm { font-size: 13px; font-weight: 800; color: var(--ink); }
+  .cal-blk .cp { font-size: 12px; color: var(--ink-2); line-height: 1.5; margin-top: 4px; }
+  .cal-blk .cp code { background: var(--bronze-soft); padding: 1px 5px; border-radius: 3px; font-size: 11px; color: var(--bronze-deep); }
+
+  /* 2-variant copy comparison */
+  .cal-cands { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+  @media (max-width: 820px) { .cal-cands { grid-template-columns: 1fr; } }
+  .cal-cand {
+    background: white; border: 1px solid var(--divider);
+    border-radius: 16px; padding: 18px 20px;
+  }
+  .cal-cand.A { border-top: 4px solid var(--bronze); }
+  .cal-cand.B { border-top: 4px solid var(--good); }
+  .cal-cand h4 {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 17px; font-weight: 800; color: var(--ink); margin-bottom: 4px;
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .cal-cand .tag { font-size: 10px; padding: 2px 8px; border-radius: 999px; font-weight: 800; letter-spacing: 0.04em; }
+  .cal-cand.A .tag { background: var(--bronze-soft); color: var(--bronze-deep); }
+  .cal-cand.B .tag { background: var(--good-bg); color: #2D5A2A; }
+  .cal-cand .vibe { font-size: 12.5px; color: var(--ink-2); font-style: italic; margin-bottom: 12px; line-height: 1.5; }
+  .cal-cand dl { margin: 0; }
+  .cal-cand dt { font-size: 10px; font-weight: 800; color: var(--bronze-deep); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 12px; padding-bottom: 4px; border-bottom: 1px solid var(--divider); }
+  .cal-cand dd { font-size: 13px; line-height: 1.55; color: var(--ink); margin: 6px 0 0; }
+  .cal-cand dd em { color: var(--ink-2); font-style: italic; }
+  .cal-cand .copy-line { background: var(--bg); border-left: 3px solid var(--bronze); padding: 8px 12px; border-radius: 0 6px 6px 0; font-family: "Charter", Georgia, ui-serif, serif; font-size: 14.5px; color: var(--ink); margin-top: 6px; }
+  .cal-cand.B .copy-line { border-left-color: var(--good); }
+  .cal-cand .anchor-math {
+    background: linear-gradient(135deg, var(--night-bg) 0%, var(--night-surface) 100%);
+    color: var(--bronze-soft);
+    padding: 10px 12px; border-radius: 10px;
+    font-size: 12.5px; line-height: 1.5; margin-top: 6px;
+  }
+  .cal-cand .anchor-math .eq { display: block; margin-top: 4px; color: var(--night-accent); font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 13.5px; }
+  .cal-cand .anchor-math .strike { text-decoration: line-through; color: rgba(232,217,194,0.55); }
+  .cal-cand ul.proofs { margin: 6px 0 0 0; padding-left: 18px; }
+  .cal-cand ul.proofs li { font-size: 12.5px; color: var(--ink); line-height: 1.5; margin-bottom: 4px; }
+  .cal-cand ul.proofs li::marker { color: var(--bronze); }
+  .cal-cand .risk { margin-top: 10px; font-size: 11.5px; color: var(--alert); padding: 6px 10px; background: var(--alert-bg); border-radius: 6px; }
+
+  .cal-debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .cal-debate {
+    background: var(--bg); border-left: 3px solid var(--bronze);
+    border-radius: 0 10px 10px 0; padding: 10px 14px;
+  }
+  .cal-debate .who { font-size: 11px; font-weight: 800; color: var(--ink); display: block; margin-bottom: 4px; }
+  .cal-debate .who .role { color: var(--bronze-deep); font-weight: 700; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; margin-left: 6px; }
+  .cal-debate .axis { display: inline-block; font-size: 9.5px; padding: 1px 6px; border-radius: 4px; background: var(--bronze-soft); color: var(--bronze-deep); font-weight: 800; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .cal-debate .axis.proof { background: var(--good-bg); color: #2D5A2A; }
+  .cal-debate .axis.savings { background: var(--watch-bg); color: #7A5A2A; }
+  .cal-debate .what { font-size: 12px; color: var(--ink-2); line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -2315,21 +2680,680 @@
     </tbody>
   </table>
 
-  <!-- Hero band sketch placeholder -->
-  <h3 style="margin-top: 22px;">Hero band sketch · V1 reference</h3>
-  <div class="hero-band-sketch">
-    <div>
-      <b style="display:block;color:var(--bronze);font-size:11px;letter-spacing:0.12em;margin-bottom:8px;">⚙ V1 SKETCH · TBD CONSILIUM ROUND 2</b>
-      Hero band: dark navy gradient + bronze accents · 3 expert tiles<br>
-      <b>AI Hormone Coach</b> · <b>Lab Decoder</b> · <b>Doctor Prep PDF</b><br>
-      anchored against $300–500 endo + $499 Function + $1,884 Hone cost ladder
+  <!-- ════════════════════════════════════════════════════════════════════
+       ROUND 2 CONSILIUM · 2026-05-03 · 7 dark-theme variants
+       Supersedes the V1 hero-band sketch placeholder
+       ════════════════════════════════════════════════════════════════════ -->
+  <h3 style="margin-top: 28px;">Round 2 consilium · 7 dark-theme variants <span class="pill bronze">⚙ ITER 1</span></h3>
+
+  <div class="pw2-intro">
+    <div class="h">⚙ WHY DARK · WHY THESE SEVEN</div>
+    <div class="b">
+      Three of every four paid signups come from <b>MARK</b> at his peak emotional moment — between 1am and 4am after a shaky lab, a libido scare, an HCT creep alert, or a 6-week post-dose-change plateau. The default paywall must read <em>«this app gets me»</em> in 0.4s on a dim screen. Light surfaces fight that moment; bronze on midnight matches it. We test 7 hypotheses against MARK's WTP, with CARL (Free-T calc path) and BEN (biohacker stack) as side-checks. Hero asset locked → <code>paywall-hero-a-2am.png</code> (single warm bronze lamp + leather journal + brass pen + wooden desk). Pricing locked → <b>$4.99/wk + $49.99/yr · 7-day trial</b>. Each variant maps to a trigger context (decision matrix below).
     </div>
   </div>
+
+  <div class="pw2-grid">
+
+    <!-- ============= V1 — Midnight Desk (winner) ============= -->
+    <div class="pw2-card winner">
+      <div class="pw2-head"><span class="pw2-name">V1 · Midnight Desk</span><span class="pw2-score">8.85</span></div>
+      <div class="pw2-vibe">JabWell pattern, retuned for TRT. Hero photo full-bleed top, sources line, value bullets, 2-card pricing. Default ship.</div>
+      <div class="pw2-phone">
+        <div class="pw2-status"><span>2:47</span><span>●●●● ▮</span></div>
+        <div class="pw2-screen">
+          <div class="pw2-hero-bg pw2-hero-full"></div>
+          <div class="pw2-h1 serif over">Calibrum, on the nights TRT goes quiet on you.</div>
+          <div class="pw2-sources">EndoSoc · AUA · AAFP · Mayo · Cleveland</div>
+          <ul class="pw2-bullets">
+            <li>AI Hormone Coach — cited answers, 24/7</li>
+            <li>Lab Snap → personal optimal range</li>
+            <li>Doctor Visit Brief PDF</li>
+            <li>E2 / HCT / Free-T trend tracking</li>
+          </ul>
+          <div class="pw2-plans">
+            <div class="pw2-plan selected">
+              <span class="badge">7-DAY TRIAL</span>
+              <div class="name">Weekly</div>
+              <div class="price">$4.99<span class="unit">/wk</span></div>
+              <div class="meta">Cancel anytime</div>
+            </div>
+            <div class="pw2-plan">
+              <span class="badge dark">SAVE 81%</span>
+              <div class="name">Annual</div>
+              <div class="price">$49.99<span class="unit">/yr</span></div>
+              <div class="meta">~$0.96/wk</div>
+            </div>
+          </div>
+          <div class="pw2-disclaimer">Educational companion · not a medical device. Always consult your prescribing physician.</div>
+          <div class="pw2-cta">Continue — Free for 7 Days</div>
+          <div class="pw2-then">Then $4.99/wk · cancel anytime</div>
+          <div class="pw2-foot"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+        </div>
+      </div>
+      <div class="pw2-voice"><strong>MARK:</strong> «Это первый paywall за год, где мне не противно. Hero == моя комната. Я в.»</div>
+      <div class="pw2-meta">
+        <div><b>Trigger:</b> Coach default fallback (5 of 8 JTBDs)</div>
+        <div><b>Hypothesis:</b> Conversion lift via emotional time-of-day match</div>
+        <div class="risk"><b>Risk:</b> "feels too dark for first-time" — CARL exit path</div>
+      </div>
+    </div>
+
+    <!-- ============= V2 — Pain Echo ============= -->
+    <div class="pw2-card">
+      <div class="pw2-head"><span class="pw2-name">V2 · Pain Echo</span><span class="pw2-score">8.40</span></div>
+      <div class="pw2-vibe">No hero. Opens with USER's last lab value or symptom echoed back. Personalized. Most aggressive emotional hook.</div>
+      <div class="pw2-phone">
+        <div class="pw2-status"><span>2:51</span><span>●●●● ▮</span></div>
+        <div class="pw2-screen">
+          <div class="pw2-pain">
+            <div>
+              <div class="lbl">YOUR LAST READING · APR 22</div>
+              <div class="num">51<small>%</small></div>
+              <div class="verdict">HCT · approaching watch zone</div>
+            </div>
+          </div>
+          <div class="pw2-h1 serif">You don't have to wait 6 weeks alone for the next draw.</div>
+          <div class="pw2-sub">Hydration · dose timing · phlebotomy thresholds — Coach explains tonight in your language, with sources.</div>
+          <div class="pw2-plans">
+            <div class="pw2-plan selected">
+              <span class="badge">START FREE</span>
+              <div class="name">7-day trial</div>
+              <div class="price">$4.99<span class="unit">/wk after</span></div>
+              <div class="meta">Cancel before day 7</div>
+            </div>
+            <div class="pw2-plan">
+              <span class="badge dark">SAVE 81%</span>
+              <div class="name">Annual</div>
+              <div class="price">$49.99<span class="unit">/yr</span></div>
+              <div class="meta">~$0.96/wk</div>
+            </div>
+          </div>
+          <div class="pw2-cta">Talk to Coach — Free for 7 Days</div>
+          <div class="pw2-then">Then $4.99/wk or $49.99/yr</div>
+          <div class="pw2-foot"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+        </div>
+      </div>
+      <div class="pw2-voice"><strong>MARK:</strong> «Это hot. Они уже видели мой HCT. Закрыть страшно.» <strong>CARL:</strong> «Я ещё не залил labs — пейволл меня не достанет в этой форме.»</div>
+      <div class="pw2-meta">
+        <div><b>Trigger:</b> Any surface where user has ≥1 reading entered</div>
+        <div><b>Hypothesis:</b> Personalization &gt; pretty hero. +15-20% on returning users</div>
+        <div class="risk"><b>Risk:</b> Cold-start CARL gets generic fallback (route to V5)</div>
+      </div>
+    </div>
+
+    <!-- ============= V3 — Hone Anchor ============= -->
+    <div class="pw2-card">
+      <div class="pw2-head"><span class="pw2-name">V3 · Hone Anchor</span><span class="pw2-score">8.15</span></div>
+      <div class="pw2-vibe">Hero as small card. Comparison row Hone $1,884/yr vs Calibrum $49.99/yr. Single annual default. Price-anchor play.</div>
+      <div class="pw2-phone">
+        <div class="pw2-status"><span>2:54</span><span>●●●● ▮</span></div>
+        <div class="pw2-screen">
+          <div class="pw2-hero-card pw2-hero-bg"></div>
+          <div class="pw2-h1 serif" style="margin-top:10px;">Same hormone clarity. 2.6% of the price.</div>
+          <div class="pw2-sub">Hone's telehealth is great — if you don't already have a prescribing doctor. You do. We're the daily companion in between.</div>
+          <div class="pw2-compare">
+            <div class="row head"><span></span><span>HONE</span><span>CALIBRUM</span></div>
+            <div class="row"><span>AI Coach 24/7</span><span class="v-bad">—</span><span class="v-good">✓</span></div>
+            <div class="row"><span>Lab Snap → range</span><span class="v-bad">—</span><span class="v-good">✓</span></div>
+            <div class="row"><span>Doctor Visit PDF</span><span class="v-bad">—</span><span class="v-good">✓</span></div>
+            <div class="row" style="background:rgba(212,160,107,0.06);"><span style="color:#F5EFE0; font-weight:700;">Year 1</span><span class="v-bad">$1,884</span><span class="v-good">$49.99</span></div>
+          </div>
+          <div class="pw2-plans single">
+            <div class="pw2-plan selected">
+              <span class="badge">7-DAY TRIAL · SAVE 81%</span>
+              <div class="name">Annual · best value</div>
+              <div class="price">$49.99<span class="unit">/yr</span></div>
+              <div class="meta">~$0.96/wk · cancel anytime</div>
+            </div>
+          </div>
+          <div class="pw2-cta">Start Trial — Free for 7 Days</div>
+          <div class="pw2-then">$4.99/wk weekly option available</div>
+          <div class="pw2-foot"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+        </div>
+      </div>
+      <div class="pw2-voice"><strong>BEN:</strong> «Anchor работает. Я уже плачу Marek $400/yr — $49 = no-brainer.» <strong>Compliance:</strong> «осторожно: brand-name comparison требует legal review.»</div>
+      <div class="pw2-meta">
+        <div><b>Trigger:</b> User uploaded ≥1 lab OR profile = "currently on TRT 12mo+"</div>
+        <div><b>Hypothesis:</b> Annual-only ↑ upgrade rate by removing weekly leak</div>
+        <div class="risk"><b>Risk:</b> Brand-name comparison legal review needed; weekly trial-conv -10%</div>
+      </div>
+    </div>
+
+    <!-- ============= V4 — Sources Wall ============= -->
+    <div class="pw2-card">
+      <div class="pw2-head"><span class="pw2-name">V4 · Sources Wall</span><span class="pw2-score">8.55</span></div>
+      <div class="pw2-vibe">Hero strip top. Big trust block — Endocrine Society / AUA / AAFP / Mayo / Cleveland / 30+ PubMed. RAG depth = differentiator. For BEN + research-first MARK.</div>
+      <div class="pw2-phone">
+        <div class="pw2-status"><span>2:48</span><span>●●●● ▮</span></div>
+        <div class="pw2-screen">
+          <div class="pw2-hero-strip pw2-hero-bg"></div>
+          <div class="pw2-h1" style="margin-top:8px;">Cited answers, not vibes.</div>
+          <div class="pw2-sub">Every Coach reply links the guideline it draws from. No bro-science, no Reddit roulette.</div>
+          <div class="pw2-trustline">
+            <span class="src">ENDO·SOC</span>
+            <span class="src">AUA</span>
+            <span class="src">AAFP</span>
+            <span class="src">MAYO</span>
+            <span class="src">CLEVELAND</span>
+            <span class="src">+34 PubMed</span>
+          </div>
+          <ul class="pw2-bullets">
+            <li>Coach cites § + year on every answer</li>
+            <li>Lab Snap maps to YOUR optimal, not a chart</li>
+            <li>Doctor Brief PDF prints clean for the visit</li>
+          </ul>
+          <div class="pw2-plans">
+            <div class="pw2-plan selected">
+              <span class="badge">7-DAY TRIAL</span>
+              <div class="name">Weekly</div>
+              <div class="price">$4.99<span class="unit">/wk</span></div>
+              <div class="meta">Cancel anytime</div>
+            </div>
+            <div class="pw2-plan">
+              <span class="badge dark">SAVE 81%</span>
+              <div class="name">Annual</div>
+              <div class="price">$49.99<span class="unit">/yr</span></div>
+              <div class="meta">~$0.96/wk</div>
+            </div>
+          </div>
+          <div class="pw2-cta">Continue — Free for 7 Days</div>
+          <div class="pw2-then">Then $4.99/wk · cancel anytime</div>
+          <div class="pw2-foot"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+        </div>
+      </div>
+      <div class="pw2-voice"><strong>BEN:</strong> «Source wall — мой trigger. Это NOT another bro-app.» <strong>MARK:</strong> «"Cited answers" — exactly то, чего нет на ExcelMale в 2 ночи.»</div>
+      <div class="pw2-meta">
+        <div><b>Trigger:</b> Profile = research-heavy (5+ Coach turns OR 1+ source-tap)</div>
+        <div><b>Hypothesis:</b> RAG-depth proof beats hero-photo for skeptical S3</div>
+        <div class="risk"><b>Risk:</b> "boring" for emotional-trigger MARK; reads as B2B pitch</div>
+      </div>
+    </div>
+
+    <!-- ============= V5 — JTBD Matrix ============= -->
+    <div class="pw2-card">
+      <div class="pw2-head"><span class="pw2-name">V5 · JTBD Matrix</span><span class="pw2-score">7.95</span></div>
+      <div class="pw2-vibe">Hero strip + 8-chip matrix of TRT anxieties Calibrum handles. Self-recognition play («which one is me right now?»). Includes pre-TRT chip — covers CARL.</div>
+      <div class="pw2-phone">
+        <div class="pw2-status"><span>2:53</span><span>●●●● ▮</span></div>
+        <div class="pw2-screen">
+          <div class="pw2-hero-strip pw2-hero-bg"></div>
+          <div class="pw2-h1" style="margin-top:8px;">Eight things TRT throws at you.<br>One app handles all of them.</div>
+          <div class="pw2-jtbd">
+            <div class="chip"><strong>2 AM</strong>E2 panic mid-protocol</div>
+            <div class="chip"><strong>LAB DAY</strong>"normal" but feels off</div>
+            <div class="chip"><strong>HCT</strong>creep stroke worry</div>
+            <div class="chip"><strong>VISIT</strong>get the doctor to listen</div>
+            <div class="chip"><strong>LIBIDO</strong>E2 vs SHBG vs psych</div>
+            <div class="chip"><strong>DOSE</strong>6-week limbo</div>
+            <div class="chip"><strong>PRE-TRT</strong>am I low or not</div>
+            <div class="chip"><strong>STACK</strong>peptide timing</div>
+          </div>
+          <div class="pw2-plans">
+            <div class="pw2-plan selected">
+              <span class="badge">7-DAY TRIAL</span>
+              <div class="name">Weekly</div>
+              <div class="price">$4.99<span class="unit">/wk</span></div>
+            </div>
+            <div class="pw2-plan">
+              <span class="badge dark">SAVE 81%</span>
+              <div class="name">Annual</div>
+              <div class="price">$49.99<span class="unit">/yr</span></div>
+            </div>
+          </div>
+          <div class="pw2-cta">Continue — Free for 7 Days</div>
+          <div class="pw2-then">Then $4.99/wk · cancel anytime</div>
+          <div class="pw2-foot"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+        </div>
+      </div>
+      <div class="pw2-voice"><strong>MARK:</strong> «Я вижу свой сценарий в первой ячейке. Куплю.» <strong>CARL:</strong> «"Pre-TRT" — это про меня! Хорошо что не вытолкнули.»</div>
+      <div class="pw2-meta">
+        <div><b>Trigger:</b> Onboarding-end (cold) + CARL <code>.considering</code> profile</div>
+        <div><b>Hypothesis:</b> 8-chip self-ID &gt; generic feature list. CARL inclusion ↑ Carl-conv</div>
+        <div class="risk"><b>Risk:</b> Density — 8 chips vs Dynamic Type AccessibilityXXL</div>
+      </div>
+    </div>
+
+    <!-- ============= V6 — Quote Wall ============= -->
+    <div class="pw2-card">
+      <div class="pw2-head"><span class="pw2-name">V6 · Quote Wall</span><span class="pw2-score">8.20</span></div>
+      <div class="pw2-vibe">Hero vignette + layered ExcelMale-style quote pull. Social proof from the actual community MARK lurks in.</div>
+      <div class="pw2-phone">
+        <div class="pw2-status"><span>2:46</span><span>●●●● ▮</span></div>
+        <div class="pw2-screen">
+          <div class="pw2-hero-bg pw2-hero-vignette"></div>
+          <div class="pw2-h1 serif over">"I just wanted someone to talk to at 2am."</div>
+          <div class="pw2-quote">
+            A year ago I crashed my E2 with anastrozole because the forum guy said 0.5mg twice a week. Calibrum would have told me to ask my doc first — and showed me the Endocrine Society reason why.
+            <span class="src">— TRT-user, age 49 · paraphrased ExcelMale-style quote, illustrative not testimonial</span>
+          </div>
+          <div class="pw2-sub" style="text-align:center;">Endocrine Society · AUA · AAFP grounded · 24/7 · cancel anytime</div>
+          <div class="pw2-plans">
+            <div class="pw2-plan selected">
+              <span class="badge">7-DAY TRIAL</span>
+              <div class="name">Weekly</div>
+              <div class="price">$4.99<span class="unit">/wk</span></div>
+            </div>
+            <div class="pw2-plan">
+              <span class="badge dark">SAVE 81%</span>
+              <div class="name">Annual</div>
+              <div class="price">$49.99<span class="unit">/yr</span></div>
+            </div>
+          </div>
+          <div class="pw2-cta">Continue — Free for 7 Days</div>
+          <div class="pw2-then">Then $4.99/wk · cancel anytime</div>
+          <div class="pw2-foot"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+        </div>
+      </div>
+      <div class="pw2-voice"><strong>MARK:</strong> «Цитата звучит как мой друг с форума. +1 trust.» <strong>Compliance:</strong> «paraphrased, не real handle, не testimonial — ok. Real testimonials = legal review.»</div>
+      <div class="pw2-meta">
+        <div><b>Trigger:</b> Coach 1st interaction, hesitation signal (&gt;30s on bubble)</div>
+        <div><b>Hypothesis:</b> Voice-of-tribe &gt; feature list. Cohort-mirror conversion</div>
+        <div class="risk"><b>Risk:</b> Real testimonials banned; paraphrase must read authentic</div>
+      </div>
+    </div>
+
+    <!-- ============= V7 — Single Annual Hard ============= -->
+    <div class="pw2-card">
+      <div class="pw2-head"><span class="pw2-name">V7 · Single Annual Hard</span><span class="pw2-score">7.60</span></div>
+      <div class="pw2-vibe">Hero full-bleed 55%. ONE offer. Trial defaults annual. Weekly hidden behind text link. Maximum simplicity, maximum risk.</div>
+      <div class="pw2-phone">
+        <div class="pw2-status"><span>2:49</span><span>●●●● ▮</span></div>
+        <div class="pw2-screen">
+          <div class="pw2-hero-bg pw2-hero-tall"></div>
+          <div class="pw2-h1 serif over">Calibrum, $49.99 a year.<br>One late night pays it back.</div>
+          <div class="pw2-sources" style="text-align:center;">Endocrine Society · AUA · AAFP · Mayo</div>
+          <div class="pw2-plans single">
+            <div class="pw2-plan selected">
+              <span class="badge">7-DAY TRIAL · SAVE 81%</span>
+              <div class="name">Annual</div>
+              <div class="price">$49.99<span class="unit">/yr</span></div>
+              <div class="meta">~$0.96/wk · cancel anytime</div>
+            </div>
+          </div>
+          <div class="pw2-cta">Continue — Free for 7 Days</div>
+          <div class="pw2-then" style="text-decoration:underline; cursor:pointer;">Prefer weekly? $4.99/wk</div>
+          <div class="pw2-foot"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+        </div>
+      </div>
+      <div class="pw2-voice"><strong>MARK:</strong> «Чисто. Одна цена, я понимаю.» <strong>BEN:</strong> «Annual без выбора — pushy. Я хочу increment trial.»</div>
+      <div class="pw2-meta">
+        <div><b>Trigger:</b> Hi-intent path (Lab Snap upload, Brief generated)</div>
+        <div><b>Hypothesis:</b> Decision-fatigue removal ↑ tap-rate. Annual share ↑↑</div>
+        <div class="risk"><b>Risk:</b> Apple "clearly disclosed" check on hidden weekly; refund spike</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       V1 LOCKED · Deep dive (Jabwell pattern) — iPhone preview + 9 blocks
+       ════════════════════════════════════════════════════════════════════ -->
+  <h3 style="margin-top: 36px; font-size:18px;">📱 Deep dive · V1 «Midnight Desk» · iPhone 16 Pro Max preview <span class="pill bronze">✅ LOCKED 2026-05-03</span></h3>
+  <p class="section-intro">
+    Полный layout V1 — экран целиком, плюс block-by-block breakdown справа (mirrors Jabwell paywall workbench). 7-day trial timeline (Today / Day 5 / Day 7) baked в макет — Apple ROSCA 3.1.2 transparency. Headline / proofs / savings math — placeholders из Variant A; финальная версия выбирается в консилиуме ниже.
+  </p>
+
+  <div class="cal-deep">
+    <!-- Left: full iPhone preview -->
+    <div class="cal-iphone-frame">
+      <div class="cal-iphone-screen">
+        <div class="cal-iphone-notch"></div>
+        <div class="cal-iphone-status"><span>2:47</span><span>•••• 􀙇 ◧</span></div>
+        <div class="cal-screen-content">
+          <div class="cal-hero"></div>
+          <div class="cal-h1">Your TRT, decoded.</div>
+          <div class="cal-sources">E2 · HCT · FREE T · LIBIDO · DOCTOR VISITS</div>
+          <div class="cal-trust">
+            <span class="ck">✓</span>
+            <span>Every Coach reply cites <b>§ + year</b> — Endocrine Society · AUA · AAFP · Mayo</span>
+          </div>
+          <ul class="cal-bullets">
+            <li>AI Hormone Coach — cited answers, 24/7</li>
+            <li>Lab Snap → personal optimal range</li>
+            <li>Doctor Visit Brief PDF</li>
+            <li>Replaces $1,199+/yr in separate visits</li>
+          </ul>
+          <div class="cal-pricing">
+            <div class="cal-tile selected">
+              <span class="tag">7-DAY TRIAL</span>
+              <div class="nm">Weekly</div>
+              <div class="pr">$4.99<small>/wk</small></div>
+              <div class="mt">Cancel anytime</div>
+            </div>
+            <div class="cal-tile">
+              <span class="tag dark">SAVE 81%</span>
+              <div class="nm">Annual</div>
+              <div class="pr">$49.99<small>/yr</small></div>
+              <div class="mt">~$0.96/wk</div>
+            </div>
+          </div>
+          <div class="cal-timeline">
+            <div class="step">
+              <div class="icn">✓</div>
+              <div class="day">Today</div>
+              <div class="desc">Full access · Coach + Lab Snap + Brief PDF</div>
+            </div>
+            <div class="step">
+              <div class="icn">🔔</div>
+              <div class="day">Day 5</div>
+              <div class="desc">Reminder — your trial ends in 2 days</div>
+            </div>
+            <div class="step">
+              <div class="icn">💳</div>
+              <div class="day">Day 7</div>
+              <div class="desc">$4.99/wk starts · cancel anytime</div>
+            </div>
+          </div>
+          <div class="cal-disclaim">Educational companion · not a medical device. Always consult your prescribing physician.</div>
+          <div class="cal-cta">Continue — Free for 7 Days</div>
+          <div class="cal-then">Then $4.99/wk · cancel anytime in Settings</div>
+          <div class="cal-foot"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: 9-block breakdown -->
+    <div class="cal-blocks">
+      <div class="cal-blk">
+        <div class="h"><span class="num">BLOCK 1</span><span class="st ok">✓ pass</span></div>
+        <div class="nm">Hero band (image · full-bleed top 36%)</div>
+        <div class="cp">Asset <code>paywall-hero-a-2am.png</code> — single warm bronze lamp + leather journal + brass pen + wooden desk + bedroom backdrop. Single light source rule (Van Schneider). Negative space upper-left = headline overlay area. 9 of 9 voices ✅ SHIP без правок.</div>
+      </div>
+      <div class="cal-blk">
+        <div class="h"><span class="num">BLOCK 2</span><span class="st ok">✓ ITER 2</span></div>
+        <div class="nm">Headline (serif, overlaid on hero · 3 words)</div>
+        <div class="cp">Default: <b>«Your TRT, decoded.»</b> — 3 слова, possessive ownership + outcome verb. WCAG passes за 0.4s. Альтернативы (RC swap): <code>«TRT, decoded — E2, HCT, Free T.»</code> (5 слов, scope-explicit), <code>«E2, HCT, Free T — clarified.»</code> (5 слов, acronym-led, BEN-friendly). Iter 1 «on the nights TRT goes quiet on you» убран — 7 слов, wraps в 4 строки на iPhone SE.</div>
+      </div>
+      <div class="cal-blk">
+        <div class="h"><span class="num">BLOCK 3</span><span class="st ok">✓ ITER 2</span></div>
+        <div class="nm">Scope line (uppercase bronze caps)</div>
+        <div class="cp">Сменили из «sources line» на <b>scope line</b>: <code>E2 · HCT · FREE T · LIBIDO · DOCTOR VISITS</code> — пять MARK-trigger зон вместо 5 source-имён. Sources перенесены в trust badge (BLOCK 4) — там они работают сильнее в составе anti-hallucination signal. Scope line сразу говорит «эта app говорит на твоём языке».</div>
+      </div>
+      <div class="cal-blk">
+        <div class="h"><span class="num">BLOCK 4</span><span class="st ok">✓ NEW · trust badge</span></div>
+        <div class="nm">Universal trust badge (sage-green ✓)</div>
+        <div class="cp">«✓ Every Coach reply cites <b>§ + year</b> — Endocrine Society · AUA · AAFP · Mayo». Универсальный trust signal — единственный, на котором сошлись все 8 голосов: MARK loves «cited», BEN loves «§ + year» (research-grade), Compliance OK (no false endorsement, no «doctor-approved», no «FDA approved»), Brand Strategist OK (visible RAG depth, не testimonials). Sage-green pill = compliance-positive read.</div>
+      </div>
+      <div class="cal-blk">
+        <div class="h"><span class="num">BLOCK 5</span><span class="st ok">✓ ITER 2 · bullets</span></div>
+        <div class="nm">Feature bullets (4 lines, ✓ bronze)</div>
+        <div class="cp">Iter 1 anchor block убран (overlap c trust badge + headline, перегружал screen). Bullets: AI Coach 24/7 · Lab Snap → range · Doctor Brief PDF · Replaces $1,199+/yr. Последний bullet — savings, baked в feature list, <b>не требует separate anchor block</b>. Math: $300 endo + $499 lab + $400 advocacy = $1,199 (без агрессивного Hone $1,884 — MARK voiced concern про sticker shock).</div>
+      </div>
+      <div class="cal-blk">
+        <div class="h"><span class="num">BLOCK 6</span><span class="st ok">✓ pass</span></div>
+        <div class="nm">Pricing tiles (Weekly preselected · Annual SAVE 81%)</div>
+        <div class="cp">Weekly $4.99/wk + 7-DAY TRIAL preselected (bronze accent border). Annual $49.99/yr SAVE 81% secondary tile. Both visible — Apple 3.1.2 dominant-price compliance bulletproof. SOSA 2026 T2P 37.4% baseline (vs 25.5% no-trial → +47%).</div>
+      </div>
+      <div class="cal-blk">
+        <div class="h"><span class="num">BLOCK 7</span><span class="st ok">✓ pass</span></div>
+        <div class="nm">Trial timeline (Today / Day 5 / Day 7)</div>
+        <div class="cp">3-step icon row · Today=full access · Day 5=trial-end reminder · Day 7=$4.99/wk starts. Apple ROSCA 3.1.2 transparency. Trial-anxiety reduction = trial→paid lift. Identical pattern к JabWell V1 timeline.</div>
+      </div>
+      <div class="cal-blk">
+        <div class="h"><span class="num">BLOCK 8</span><span class="st ok">✓ pass</span></div>
+        <div class="nm">Compliance disclaimer</div>
+        <div class="cp">«Educational companion · not a medical device. Always consult your prescribing physician.» — обязательно над CTA per <code>COMPLIANCE.md</code> Health &amp; Fitness positioning. Trademark line (Anastrozole®/Aromasin®/AndroGel®) живёт в footer Settings, не на пейволле.</div>
+      </div>
+      <div class="cal-blk">
+        <div class="h"><span class="num">BLOCK 9</span><span class="st ok">✓ pass</span></div>
+        <div class="nm">CTA + then-pricing + footer</div>
+        <div class="cp">«Continue — Free for 7 Days» bronze CTA (matches preselected Weekly+Trial). «Then $4.99/wk · cancel anytime in Settings» — clear-disclosure compliant. Restore · Terms · Privacy footer обязателен per Apple 3.1.1.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       CONSILIUM · headline + proofs + savings math · 2 candidate copies
+       ════════════════════════════════════════════════════════════════════ -->
+  <h3 style="margin-top: 36px; font-size:18px;">🗣 Consilium · headline + proofs + savings math</h3>
+  <p class="section-intro">
+    Layout V1 заперт — debate теперь только на 3 текстовых осях: <b style="color:var(--bronze-deep);">HEADLINE</b> (что говорит экран в первые 0.4s), <b style="color:#2D5A2A;">PROOFS</b> (чем доказываем), <b style="color:#7A5A2A;">SAVINGS</b> (как формулируем экономию). 6 голосов спорят ниже, потом — 2 финальные copy-кандидата (A/B), из которых выберем один.
+  </p>
+
+  <div class="cal-debate-grid">
+    <div class="cal-debate">
+      <span class="who">MARK <span class="role">S1 · 75% paying</span></span>
+      <span class="axis">HEADLINE</span>
+      <div class="what">«В 2:47 ночи я не хочу читать "AI hormone team". Мне надо услышать, что ты понимаешь, ПОЧЕМУ я открыл это сейчас. Эмоциональный headline = я в. Rational stack звучит как Hone-pitch.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">BEN <span class="role">S3 · biohacker</span></span>
+      <span class="axis">HEADLINE</span>
+      <div class="what">«Поэтика для меня — slop. Дай мне 3 specialists в кармане, тогда я вижу скоп. "On the nights TRT goes quiet" — звучит как women's wellness app, а не tool.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">Beirut <span class="role">Pentagram</span></span>
+      <span class="axis">HEADLINE</span>
+      <div class="what">«One-sentence test. Variant A («quiet on you») = 7 слов, проходит. Variant B («team in your pocket») = 10 слов с тремя ролями, на грани. Если B — обязательно serif + tighter line-height, иначе не читается за 0.4s.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">MARK <span class="role">S1</span></span>
+      <span class="axis proof">PROOFS</span>
+      <div class="what">«Endocrine Society + AUA + AAFP — это <b>пропуск</b>. Без них я не верю никакому AI на TRT-теме. Reddit/r/Testosterone size signal — нет, мы знаем что там creatine-bro консенсус. Лучше "Cited § + year on every reply".»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">Compliance</span>
+      <span class="axis proof">PROOFS</span>
+      <div class="what">«Можно: source-list (EndoSoc · AUA · AAFP · Mayo · Cleveland), "8 of 8 anxieties handled" (наш JTBD claim), "every reply cites source". <b>Нельзя:</b> "thousands of users" без real number в RC, "doctor-approved" (false endorsement), "FDA approved" (мы не device).»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">Brand Strategist</span>
+      <span class="axis proof">PROOFS</span>
+      <div class="what">«Лучший proof — visible RAG depth, не testimonials. У нас 30+ PubMed studies, 5 guideline corpora — это <em>differentiation</em>, не "trust badge". Покажи source-stack как BLOCK, не як inline-line.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">BEN <span class="role">S3</span></span>
+      <span class="axis savings">SAVINGS</span>
+      <div class="what">«Я знаю что endo $300/visit, Function $499 panel, Hone $1,884/yr. <b>Use that anchor.</b> $2,683 separately → $49.99 = 1.9% of stack. Я считаю в долях секунды и улыбаюсь.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">MARK <span class="role">S1</span></span>
+      <span class="axis savings">SAVINGS</span>
+      <div class="what">«$1,884/yr Hone — это слишком дорого для anchor, я начну сомневаться "что они там не делают". Лучше менее агрессивный: "$300 endo · $499 Function · $400 advocacy = $1,199 in-between" — реалистично для меня.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">CARL <span class="role">S2 · pre-TRT</span></span>
+      <span class="axis savings">SAVINGS</span>
+      <div class="what">«$1,884 Hone у меня вызывает sticker shock — и я думаю "если я когда-нибудь дойду, надо будет столько". Это лучше работает на лояльности к Calibrum, потому что моя версия Hone — $0 пока я pre-TRT.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">Compliance</span>
+      <span class="axis savings">SAVINGS</span>
+      <div class="what">«Hone & Function как brand-name comparison — нужен legal pass, но это <em>price</em> comparison не <em>medical-claim</em>. Безопасно если: (a) "for-illustration" disclaimer мелким, (b) их prices verifiable публично, (c) не сравниваем medical outcome.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">Beirut</span>
+      <span class="axis savings">SAVINGS</span>
+      <div class="what">«Math reads in 0.5s — это правило JabWell. Если 3 числа складываем + получаем сумму + делим на наш price = 4 операции, mind-burden слишком high. Лучше 2 числа: Hone $1,884/yr → Calibrum $49.99/yr (×38 cheaper).»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">A11y</span>
+      <span class="axis">HEADLINE</span>
+      <div class="what">«Serif overlay на hero gradient — Charter / Georgia 22pt = WCAG AA passes. Длинный headline (>9 слов) на iPhone SE wraps в 4 строки → пропадает hero. <b>Limit 8 слов max.</b>»</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 28px; font-size:18px;">🎯 Two finalist copy candidates</h3>
+
+  <div class="cal-cands">
+
+    <!-- ============= CANDIDATE A — TRT Decoded (ITER 2 — locked default) ============= -->
+    <div class="cal-cand A">
+      <h4>Candidate A <span class="tag">TRT DECODED · ✅ DEFAULT</span></h4>
+      <div class="vibe">Iter 2 (2026-05-03). 3-word headline + scope line + universal trust badge + 4 bullets с baked savings. Iter 1 «on the nights TRT goes quiet on you» отброшен — слишком длинно, wraps на iPhone SE. Без агрессивного Hone $1,884 anchor (MARK voiced sticker-shock concern).</div>
+
+      <dl>
+        <dt>BLOCK 2 · Headline (serif overlay, 3 слова)</dt>
+        <dd>
+          <div class="copy-line"><b>Your TRT, decoded.</b></div>
+          <em style="display:block; margin-top:6px; font-size:11.5px;">Alternates (RC swap): «TRT, decoded — E2, HCT, Free T.» (5 слов, scope-explicit) · «E2, HCT, Free T — clarified.» (5 слов, BEN-friendly acronym-led) · «Your TRT, clarified.» (3 слова, softer verb).</em>
+        </dd>
+
+        <dt>BLOCK 3 · Scope line (uppercase bronze)</dt>
+        <dd><div class="copy-line" style="font-family:-apple-system,'SF Pro Rounded',sans-serif; font-weight:800; font-size:12px; letter-spacing:0.06em; color:var(--bronze-deep);">E2 · HCT · FREE T · LIBIDO · DOCTOR VISITS</div></dd>
+
+        <dt>BLOCK 4 · Trust badge (universal · sage ✓)</dt>
+        <dd>
+          <div class="copy-line" style="background:var(--good-bg); border-left-color:var(--good); color:#2D5A2A;"><b>✓ Every Coach reply cites § + year</b> — Endocrine Society · AUA · AAFP · Mayo</div>
+          <em style="display:block; margin-top:6px; font-size:11.5px;">Универсальный trust signal — единственный, на котором сошлись MARK + BEN + Compliance + Brand Strategist + A11y. Anti-hallucination wedge (vs ChatGPT / Reddit / ExcelMale).</em>
+        </dd>
+
+        <dt>BLOCK 5 · Feature bullets (4 lines + baked savings)</dt>
+        <dd>
+          <ul class="proofs">
+            <li><b>AI Hormone Coach</b> — cited answers, 24/7</li>
+            <li><b>Lab Snap → personal optimal range</b></li>
+            <li><b>Doctor Visit Brief PDF</b></li>
+            <li><b>Replaces $1,199+/yr</b> in separate visits</li>
+          </ul>
+          <div class="anchor-math" style="margin-top:8px;">
+            Savings math (in last bullet, не отдельный anchor): <span class="strike">$300 endo Q&amp;A</span> + <span class="strike">$499 lab review</span> + <span class="strike">$400 advocacy session</span>
+            <span class="eq">$1,199+/yr separately → Calibrum <b>$49.99/yr</b> (4.2% of stack)</span>
+          </div>
+        </dd>
+
+        <dt>Voice support (8/8 unanimous on trust + scope)</dt>
+        <dd><em>MARK +1 (3 слова punch · scope = «эта app meня знает») · BEN +1 (cited § + year + acronym scope = research-grade) · Beirut +1 (one-sentence test passes за 0.4s) · Brand Strategist +1 (no Hone bleed) · Compliance +1 (no brand-name in anchor, no false endorsement) · A11y +1 (3 слова не wraps на iPhone SE)</em></dd>
+
+        <div class="risk" style="background:var(--good-bg); color:#2D5A2A;"><b>Risk-free vs Iter 1:</b> Hone $1,884 anchor убран → no legal review needed. Headline 7→3 слов → wraps fixed. CARL не отвергает (TRT lexicon ОК для onboarding-end V5 trigger; этот пейволл всё равно не его entry).</div>
+      </dl>
+    </div>
+
+    <!-- ============= CANDIDATE B — Three Specialists Pocket ============= -->
+    <div class="cal-cand B">
+      <h4>Candidate B <span class="tag">3 SPECIALISTS POCKET</span></h4>
+      <div class="vibe">Rational · stack metaphor (mirrors JabWell winning V1). BEN-friendly. CARL-tolerant. Wins on scope-clarity, loses on emotional-warmth.</div>
+
+      <dl>
+        <dt>BLOCK 2 · Headline (serif overlay, 8 слов)</dt>
+        <dd><div class="copy-line">Your hormone team — Coach, Lab Decoder, Doctor Brief.</div></dd>
+
+        <dt>BLOCK 4 · Proof bullets (3 lines, ✓ icons)</dt>
+        <dd>
+          <ul class="proofs">
+            <li><b>AI Hormone Coach</b> — cited answers, 24/7 (replaces $300 endo Q&amp;A)</li>
+            <li><b>Lab Snap → personal range</b> — Vision GPT-4o (replaces $499 Function review)</li>
+            <li><b>Doctor Visit Brief PDF</b> — 90-day log, ready to print (replaces $400 advocacy session)</li>
+          </ul>
+        </dd>
+
+        <dt>BLOCK 3 · Trust line</dt>
+        <dd><em>Cited from <b>Endocrine Society · AUA · AAFP · Mayo · Cleveland Clinic</b> + 30+ PubMed studies. Every reply links its source.</em></dd>
+
+        <dt>BLOCK 5 · Value Anchor (savings)</dt>
+        <dd>
+          <div class="anchor-math">
+            <span class="strike">$300 endo Q&amp;A</span> + <span class="strike">$499 lab review</span> + <span class="strike">$400 advocacy session</span>
+            <span class="eq">Worth $1,199+/yr separately → Calibrum <b>$49.99/yr</b> (4.2% of stack)</span>
+          </div>
+        </dd>
+
+        <dt>Voice support</dt>
+        <dd><em>BEN +1 (3 specialists scope wins him) · MARK +0.5 (clear but cold for 2am) · Beirut +0.5 (8 слов, на грани) · Compliance +1 (no brand-name in anchor — safer than Hone)</em></dd>
+
+        <div class="risk"><b>Risk:</b> «hormone team» reads slightly product-pitchy vs craftsman moment. Lower emotional warmth at 2am — depends on timeline + hero photo to recover affect. JabWell-pattern fidelity = also "we look like JabWell" → brand differentiation weaker.</div>
+      </dl>
+    </div>
+
+  </div>
+
+  <!-- Score / pick row -->
+  <div class="tbd-resolved" style="margin-top:18px;">
+    <div class="h">⚙ DECISION POINT · pick A or B before Week 4 build</div>
+    <div class="b">
+      <b>Recommendation:</b> ship <b>Candidate A («Quiet Companion»)</b> as default + bake <b>Candidate B</b> headline behind a CARL/BEN trigger flag (RC remote-config swap when profile = <code>.biohacker</code> OR <code>.considering</code>). Reasoning: A wins on MARK conversion-warmth (75% of revenue) and matches the locked hero asset's emotional register; B wins on rational scope coverage and serves the 25% who don't respond to A. Pick A unless legal blocks Hone-anchor disclosure — then fall back to B as primary.
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       Consilium · what users want to see in order to pay
+       ════════════════════════════════════════════════════════════════════ -->
+  <h3 style="margin-top: 32px;">Voices · «what makes the user pay» + verdict on hero</h3>
+
+  <div class="voice-grid">
+    <div class="voice-quote">
+      <b style="color:var(--ink);font-size:13.5px;display:block;margin-bottom:4px;">MARK · S1 (75% paying)</b>
+      «Покажите, что вы знаете в каком моменте я нахожусь. Hero как midnight desk = моя комната. Не нужно объяснять — я уже внутри сцены. Headline должен подтвердить, что вы не очередной бро-app: <em>cited answers</em>, <em>Endocrine Society</em>, <em>doctor visit prep</em> — три якоря, остальное шум. $49.99 — не математика, это <b>ритуал доверия</b>.»
+    </div>
+    <div class="voice-quote">
+      <b style="color:var(--ink);font-size:13.5px;display:block;margin-bottom:4px;">CARL · S2 (15% pre-TRT)</b>
+      «Если вижу midnight + lab — подумаю "это не для меня, я ещё не там". Меня переключает не paywall — меня переключает <em>FREE</em> Free-T calculator. V1/V2 для меня нерелевантны. <b>V5 (matrix с pre-TRT chip) — единственный где я не отвалюсь.</b>»
+    </div>
+    <div class="voice-quote">
+      <b style="color:var(--ink);font-size:13.5px;display:block;margin-bottom:4px;">BEN · S3 (10% biohacker)</b>
+      «<b>Source wall (V4) и Hone-anchor (V3)</b> — мои триггеры. Я плачу за data depth. Hero photo — приятный bonus, но второстепенный. Annual без выбора (V7) — pushy, я хочу видеть weekly trial опцию.»
+    </div>
+    <div class="voice-quote">
+      <b style="color:var(--ink);font-size:13.5px;display:block;margin-bottom:4px;">Tobias van Schneider · Art Direction</b>
+      «Hero — single warm light source on midnight. Это <b>правильное</b> композиционное решение для 2am-paywall: одно тёплое окно в тёмном коридоре. Никогда не ставьте две лампы. Вертикальная композиция идеальна для phone-frame full-bleed.»
+    </div>
+    <div class="voice-quote">
+      <b style="color:var(--ink);font-size:13.5px;display:block;margin-bottom:4px;">Michael Beirut · Pentagram</b>
+      «One-sentence test: "single warm lamp on a midnight desk with a journal" — проходит за 0.4 секунды. Hero сам по себе не продаёт — продаёт <b>сцепка</b> hero + headline. V1 «on the nights TRT goes quiet on you» + этот hero = одно высказывание. Beat that combo.»
+    </div>
+    <div class="voice-quote">
+      <b style="color:var(--ink);font-size:13.5px;display:block;margin-bottom:4px;">Brand Strategist (internal)</b>
+      «Hero читается craftsman-grade, не luxury — leather + brass + worn wood. Это именно тот регистр, который отличает Calibrum от Hone (где было бы glass-and-steel). $49.99 matches регистр. Glossier hero = price-tag mismatch.»
+    </div>
+    <div class="voice-quote">
+      <b style="color:var(--ink);font-size:13.5px;display:block;margin-bottom:4px;">Compliance (internal)</b>
+      «Hero ✓ — нет vials, syringes, brand-labels, лиц, real lab numbers. Ноль trademark-risk, ноль HIPAA-adjacency. <b>Шипим без правок.</b> V3 (Hone brand-name) и V6 (paraphrased quote) требуют extra legal pass. V7 — Apple "clearly disclosed" check.»
+    </div>
+    <div class="voice-quote">
+      <b style="color:var(--ink);font-size:13.5px;display:block;margin-bottom:4px;">A11y Reviewer (internal)</b>
+      «Copy warm-linen <code>#F5EFE0</code> поверх hero gradient → 7.5:1 в copy-area, 4.8:1 в gradient-edge. WCAG AA passes. CTA bronze <code>#D4A06B</code> на 5% screen brightness читается. Беспокоит V5 — 8 чипов на AccessibilityXXL fail Dynamic Type; нужен respect mode.»
+    </div>
+  </div>
+
+  <h3 style="margin-top: 28px;">Verdict on hero · <code>paywall-hero-a-2am.png</code></h3>
+  <table class="pw2-verdict-table">
+    <thead><tr><th>Voice</th><th>Verdict</th><th>One-line reasoning</th></tr></thead>
+    <tbody>
+      <tr><td><b>MARK</b></td><td class="yes">SHIP</td><td>Это его комната в 2:47am. Конверсионный якорь без слов.</td></tr>
+      <tr><td><b>CARL</b></td><td class="meh">SKIP</td><td>Не его trigger — он не доходит до этого paywall. Route to V5.</td></tr>
+      <tr><td><b>BEN</b></td><td class="yes">SHIP</td><td>Craftsman-grade artifact = "tool for serious guys". OK but secondary to source wall.</td></tr>
+      <tr><td><b>Van Schneider</b></td><td class="yes">SHIP</td><td>Single warm light source. Composition is correct.</td></tr>
+      <tr><td><b>Beirut</b></td><td class="yes">SHIP</td><td>Passes one-sentence describability test.</td></tr>
+      <tr><td><b>Brand Strategist</b></td><td class="yes">SHIP</td><td>Craftsman-grade matches $49.99 price tier perfectly.</td></tr>
+      <tr><td><b>Compliance</b></td><td class="yes">SHIP</td><td>Zero trademark / HIPAA / Apple 1.4.1 risk.</td></tr>
+      <tr><td><b>A11y</b></td><td class="yes">SHIP</td><td>Contrast over gradient passes WCAG AA in copy area.</td></tr>
+      <tr><td><b>Balnova (photo editor)</b></td><td class="yes">SHIP</td><td>Negative space upper-left, subject lower-right — perfect for top-anchored copy stack.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top: 28px;">Decision matrix · which variant ships when</h3>
+  <table class="triggers">
+    <thead><tr><th>Trigger context</th><th>Default variant</th><th>Backup</th></tr></thead>
+    <tbody>
+      <tr><td>Coach 2am path · cold (no labs yet)</td><td><b>V1 Midnight Desk</b></td><td>V6 Quote Wall</td></tr>
+      <tr><td>Coach 2am path · returning (≥1 lab or symptom log)</td><td><b>V2 Pain Echo</b></td><td>V1</td></tr>
+      <tr><td>Lab Snap upload trigger</td><td><b>V4 Sources Wall</b></td><td>V7 Single Annual Hard</td></tr>
+      <tr><td>Doctor Visit Brief generated</td><td><b>V7 Single Annual Hard</b></td><td>V3 Hone Anchor</td></tr>
+      <tr><td>Onboarding end · cold</td><td><b>V5 JTBD Matrix</b></td><td>V1</td></tr>
+      <tr><td>Existing-TRT-user upgrade attempt</td><td><b>V3 Hone Anchor</b></td><td>V4</td></tr>
+      <tr><td>BEN biohacker signal (peptide stack tap, 5+ source-taps)</td><td><b>V4 Sources Wall</b></td><td>V3</td></tr>
+      <tr><td>CARL <code>.considering</code> profile</td><td><b>V5 JTBD Matrix</b></td><td>V1 (Carl-aware copy v1.1)</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top: 28px;">Round-2 winner &amp; ship plan</h3>
+  <ul class="list">
+    <li><b>Default ship: V1 «Midnight Desk»</b> at Week 4 TestFlight. RC remote-config slot exposed for variant swap.</li>
+    <li><b>Week 4 secondary live:</b> V4 «Sources Wall» on Lab Snap trigger (highest trial→paid conversion JTBD per asset consilium).</li>
+    <li><b>Week 5 add:</b> V5 «JTBD Matrix» on onboarding-end + Carl path.</li>
+    <li><b>V1.1 (post-launch):</b> V2 «Pain Echo» (needs personalization plumbing) + V6 «Quote Wall».</li>
+    <li><b>Hold pending review:</b> V3 «Hone Anchor» (legal brand-comparison), V7 «Single Annual Hard» (Apple disclosure).</li>
+    <li>Open: bronze CTA <code>#D4A06B</code> readable on 5% screen brightness — needs round-3 device test before lock.</li>
+    <li>Open: do we need a CARL-specific variant (Free-T calc → low-result paywall) or does V5 suffice? Decide after first 100 Carl-funnel sessions.</li>
+  </ul>
 
   <p style="margin-top: 18px; font-size: 12px; color: var(--ink-3); line-height: 1.55;">
     <b>Sources:</b>
     → <a href="../../../14-calibrum/PRODUCT_DESIGN.md" style="color:var(--bronze-deep);font-weight:700;">PRODUCT_DESIGN.md (Dynamic paywall triggers)</a>
     · → <a href="../../../14-calibrum/V1_SCOPE.md" style="color:var(--bronze-deep);font-weight:700;">V1_SCOPE.md (Feature 8 paywall)</a>
+    · → <a href="../../../14-calibrum/docs/PAYWALL_CONSILIUM_2026-05-03_dark_round1.md" style="color:var(--bronze-deep);font-weight:700;">PAYWALL_CONSILIUM_2026-05-03_dark_round1.md (full consilium archive)</a>
+    · → <a href="../../../14-calibrum/docs/USERS_UX_CONSILIUM_2026-05-03_assets.md" style="color:var(--bronze-deep);font-weight:700;">USERS_UX_CONSILIUM (asset placement)</a>
     · → <a href="../../../разное/PAYWALL_PLAYBOOK.md" style="color:var(--bronze-deep);font-weight:700;">PAYWALL_PLAYBOOK.md</a>
     · → <a href="../../../разное/PAYWALL_TEMPLATE.md" style="color:var(--bronze-deep);font-weight:700;">PAYWALL_TEMPLATE.md (7 slots)</a>
   </p>
