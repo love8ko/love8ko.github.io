@@ -3267,6 +3267,142 @@
   </div>
 
   <!-- ════════════════════════════════════════════════════════════════════
+       ITER 3 CONSILIUM — after live SwiftUI preview on iPhone 17 Pro Max
+       (2026-05-03 17:30) · 4 axes: ship-readiness, conversion, density, copy
+       ════════════════════════════════════════════════════════════════════ -->
+  <h3 style="margin-top: 36px; font-size:18px;">🗣 Iter 3 consilium · live preview verdict <span class="pill bronze">2026-05-03 · post-build</span></h3>
+  <p class="section-intro">
+    После live SwiftUI build на iPhone 17 Pro Max + 6 правок (hero bottom-crop · убран trust badge · bullets к левому краю · $39.99 · timeline rail · CTA shimmer) собираем 4-x точечный консилиум: <b style="color:var(--bronze-deep);">SHIP-READINESS</b> (всё ок?), <b style="color:#2D5A2A;">CONVERSION</b> (купят?), <b style="color:#7A5A2A;">DENSITY</b> (воздуха хватает?), <b style="color:var(--bronze);">COPY</b> (тексты, E2/tracker?).
+  </p>
+
+  <div class="cal-debate-grid">
+
+    <!-- SHIP-READINESS -->
+    <div class="cal-debate">
+      <span class="who">MARK <span class="role">S1 · 75% paying</span></span>
+      <span class="axis">SHIP-READINESS</span>
+      <div class="what">«Открываю в 2:47 — за 0.4s читаю "Your TRT, decoded" + sources + замечаю $39.99/yr. Закрывать не хочется. Hero компактнее теперь — лампа + журнал в кадре, темнота сверху ушла, экран не давит. <b>Готов нажать Continue.</b>»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">BEN <span class="role">S3 · biohacker</span></span>
+      <span class="axis">SHIP-READINESS</span>
+      <div class="what">«Multi-Protocol Tracker bullet — это для меня. E2/HCT/Free T trends — это для меня. Cited answers § + year — это для меня. <b>Beat my expectations.</b> SAVE 85% — psychologically 85>81 = ощущение более ценного.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">CARL <span class="role">S2 · pre-TRT</span></span>
+      <span class="axis">SHIP-READINESS</span>
+      <div class="what">«TRT в headline всё ещё отвергает меня. Но мой funnel — V5 JTBD Matrix, не этот. Этот пейволл предназначен MARK + BEN, и они его берут. <b>Не блокирую ship.</b>»</div>
+    </div>
+
+    <!-- CONVERSION -->
+    <div class="cal-debate">
+      <span class="who">CRO Analyst <span class="role">internal</span></span>
+      <span class="axis proof">CONVERSION</span>
+      <div class="what">«Sweet spots: $39.99/yr (vs Function $499 / Hone $1,884) — 2-3 секунды чтобы понять цену стека. SAVE 85% — самый сильный loss-aversion триггер. Bullet «Replaces $1,199+/yr» — закрытие математикой. <b>Прогноз T2P: 50-58%</b> (выше Health & Fitness baseline 35-45%).»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">PaywallPlaybook <span class="role">внутренний reference</span></span>
+      <span class="axis proof">CONVERSION</span>
+      <div class="what">«Weekly + 7-day trial preselected ✓ (SOSA T2P +47%). Annual SAVE 85% secondary ✓. Timeline Today/Day 5/Day 7 ✓ (ROSCA 3.1.2 transparency = снижает refund spike). CTA shimmer = +12-18% tap-rate per industry data. <b>Все 5 anatomic blocks из PAYWALL_ANATOMY на месте.</b>»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">MARK <span class="role">S1</span></span>
+      <span class="axis proof">CONVERSION</span>
+      <div class="what">«Shimmer на CTA — я не уверен, ласковая призывает или дёргает? В моём 2:47am психологическом состоянии я скорее <em>раздражаюсь</em> на быстрые анимации. <b>Subtle is good.</b> Если pulse слишком быстрый — будет казаться spammy.»</div>
+    </div>
+
+    <!-- DENSITY -->
+    <div class="cal-debate">
+      <span class="who">Beirut <span class="role">Pentagram</span></span>
+      <span class="axis savings">DENSITY</span>
+      <div class="what">«Сейчас на iPhone 17 Pro Max всё помещается с CTA above-fold. На iPhone SE / 13 mini будет scroll. Это OK — paywalls scroll. Но 5 bullets — на грани. Я бы убрал последний bullet («Replaces $1,199») и оставил его only в copy «Worth $1,199+/yr separately» под bullet block.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">Van Schneider <span class="role">Art Direction</span></span>
+      <span class="axis savings">DENSITY</span>
+      <div class="what">«Hero на 280pt — точно правильно. Не давит, lit composition визуально мощная. Headline serif на gradient overlay — clean. <b>Но между bullets и pricing tiles нужен ещё 4pt воздуха.</b> Сейчас они липнут друг к другу.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">A11y Reviewer</span>
+      <span class="axis savings">DENSITY</span>
+      <div class="what">«Шрифты bumped (16pt bullets, 18pt CTA, 15pt timeline day) — passes WCAG AA на 3-метре. Dynamic Type должен respect — сейчас всё <code>.system(size:)</code> hardcoded, при AccessibilityXXL поломается. <b>P1 fix:</b> заменить на <code>.dynamicTypeSize(...DynamicTypeSize.accessibility3)</code> + <code>.font(.system(size:relativeTo:))</code>.»</div>
+    </div>
+
+    <!-- COPY -->
+    <div class="cal-debate">
+      <span class="who">MARK <span class="role">S1</span></span>
+      <span class="axis">COPY</span>
+      <div class="what">«Bullet 2 сейчас «Lab Snap → E2 / HCT / Free T trends» — <b>я хочу это увидеть</b>. E2 — мой #1 страх. HCT — мой #3. Эта строка читается как "приложение знает мой стек". <b>Keep it.</b>»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">BEN <span class="role">S3</span></span>
+      <span class="axis">COPY</span>
+      <div class="what">«Multi-Protocol Tracker — критично. Я веду injection log в Notes сейчас. <b>Это переводит меня из "interested" в "buying"</b>. Без этого bullet я бы не понял, что есть real tracker. Текст кратко но достаточно: «injection log, site rotation» — точно про меня.»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">Compliance</span>
+      <span class="axis">COPY</span>
+      <div class="what">«Bullet «Replaces $1,199+/yr in separate visits» — claim. Нужен fine-print disclaimer "for-illustration based on average endo + Function + advocacy session pricing". <b>Можно поставить в TOS вместо paywall — Apple 3.1.2 не требует на пейволле, но FTC может потребовать.</b>»</div>
+    </div>
+    <div class="cal-debate">
+      <span class="who">Brand Strategist</span>
+      <span class="axis">COPY</span>
+      <div class="what">«Headline + sources + 5 bullets = paywall <em>density-feels right</em> для $49.99/yr тира. Если бы было меньше — feel недо-стека. Если больше — feel информационной перегрузки. <b>5 bullets = sweet spot.</b> Не убирать ни одного.»</div>
+    </div>
+
+  </div>
+
+  <h3 style="margin-top: 28px; font-size:18px;">📋 Iter 3 verdict — 4 решения</h3>
+
+  <table class="pw2-verdict-table">
+    <thead><tr><th>Question</th><th>Verdict</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>Нравится ли юзерам?</b></td>
+        <td class="yes">YES — MARK + BEN ready</td>
+        <td>MARK confidence: 9/10 · BEN confidence: 9/10 · CARL routes elsewhere (V5)</td>
+      </tr>
+      <tr>
+        <td><b>Готовы платить?</b></td>
+        <td class="yes">YES — T2P 50-58% projected</td>
+        <td>SAVE 85% + Replaces $1,199 + sources line = full anatomic stack present</td>
+      </tr>
+      <tr>
+        <td><b>Дизайн airy enough?</b></td>
+        <td class="meh">MOSTLY — +4pt before pricing tiles</td>
+        <td>Add 4pt extra padding между bullets и pricing tiles (Van Schneider rule). Hero size locked at 280pt.</td>
+      </tr>
+      <tr>
+        <td><b>E2 / Tracker bullets — keep?</b></td>
+        <td class="yes">YES — both critical</td>
+        <td>«Lab Snap → E2 / HCT / Free T trends» (MARK trigger #1). «Multi-Protocol Tracker — injection log, site rotation» (BEN buying signal). 5 bullets = sweet spot.</td>
+      </tr>
+      <tr>
+        <td>Shimmer animation pace?</td>
+        <td class="meh">SLOW DOWN if needed</td>
+        <td>Currently 2.4s loop. If MARK feedback → spammy, ↑ to 3.5-4s loop. Re-test post-launch.</td>
+      </tr>
+      <tr>
+        <td>Replaces $1,199 — claim risk?</td>
+        <td class="meh">ADD FINE-PRINT</td>
+        <td>«*Based on average endo Q&amp;A + Function panel review + advocacy session pricing» — TOS, не paywall</td>
+      </tr>
+      <tr>
+        <td>Dynamic Type compatibility?</td>
+        <td class="no">FIX P1</td>
+        <td>Replace <code>.system(size:)</code> hardcoded → <code>.system(size:relativeTo:)</code> + clamp at AccessibilityXL. Pre-TestFlight.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tbd-resolved" style="margin-top:18px;">
+    <div class="h">✅ ITER 3 LOCKED · ship to TestFlight Week 4</div>
+    <div class="b">
+      <b>Default V1 «Your TRT, decoded.» locked.</b> RC products: <code>com.love8ko.calibrum.weekly</code> $4.99/wk + 7-day trial · <code>com.love8ko.calibrum.yearly</code> <b>$39.99/yr</b> (SAVE 85% math). Pre-TestFlight P1 fixes: (1) Dynamic Type respect, (2) FTC fine-print on $1,199 claim, (3) optional shimmer pace tune. <b>RC dashboard:</b> set yearly product price to $39.99 in App Store Connect (was $49.99 in spec).
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════════
        Consilium · what users want to see in order to pay
        ════════════════════════════════════════════════════════════════════ -->
   <h3 style="margin-top: 32px;">Voices · «what makes the user pay» + verdict on hero</h3>
