@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Calibrum</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 720px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #1A2332;
+            background: #F5F2ED;
+        }
+        h1 { font-size: 28px; margin-bottom: 5px; letter-spacing: -0.01em; color: #1A2332; }
+        h2 { font-size: 19px; margin-top: 32px; letter-spacing: -0.005em; color: #1A2332; }
+        .date { color: #6b6b70; font-size: 14px; margin-bottom: 24px; }
+        .app-name { color: #B8865B; font-weight: 600; letter-spacing: 0.01em; }
+        .highlight {
+            background: #F0E6D6;
+            padding: 14px 18px;
+            border-left: 3px solid #B8865B;
+            border-radius: 4px;
+            margin: 18px 0;
+        }
+        .warning {
+            background: #F5E1DA;
+            padding: 14px 18px;
+            border-left: 3px solid #A85842;
+            border-radius: 4px;
+            margin: 18px 0;
+        }
+        .trust {
+            background: #E6EDE2;
+            padding: 14px 18px;
+            border-left: 3px solid #7A9270;
+            border-radius: 4px;
+            margin: 18px 0;
+        }
+        a { color: #1A2332; }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        code { background: #EBE3D2; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+        .disclaimer {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #E5DCC8;
+            font-size: 13px;
+            color: #6b6b70;
+        }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy</h1>
+    <p class="app-name">Calibrum · TRT Tracker &amp; Coach</p>
+    <p class="date">Effective date: May 5, 2026</p>
+
+    <h2>Summary</h2>
+    <div class="highlight">
+        <p>Calibrum is an educational companion for adult men on testosterone replacement therapy. We follow a strict on-device architecture:</p>
+        <ul>
+            <li><strong>Your health data stays on your device.</strong> Injection logs, lab values, symptom entries, photos, and chat history live in iOS storage protected by your device passcode and Apple's Data Protection.</li>
+            <li><strong>We never sell your data.</strong></li>
+            <li><strong>We never share your data with advertising networks or marketing partners.</strong></li>
+            <li><strong>AI Coach (Atlas) chat queries do leave your device</strong> (sent to DeepSeek — see §4) but contain only the message text and a brief profile context (current protocol, last lab summary, weeks on TRT). They never include your name, your raw lab PDF, or your HealthKit data.</li>
+            <li><strong>Lab PDF photos are processed by OpenAI Vision (GPT-4o)</strong> for one-shot extraction (see §5) under <code>store: false</code> — OpenAI does not retain the image per their API terms.</li>
+        </ul>
+    </div>
+
+    <h2>1. What we collect locally on your device</h2>
+    <p>The following are stored <strong>only on your device</strong> in encrypted iOS storage. They never reach our servers.</p>
+    <ul>
+        <li>Injection log entries (medication name, dose, site, timestamp, optional notes — testosterone cypionate / enanthate, anastrozole, hCG, ancillaries)</li>
+        <li>Lab values extracted from your LabCorp / Quest / hospital PDFs (Total T, Free T, SHBG, Estradiol, Hematocrit, Hemoglobin, PSA, etc.) and the lab PDF images themselves</li>
+        <li>Symptom entries (libido, mood, energy, joint pain, water retention, etc., severity ratings, optional free-text notes)</li>
+        <li>Free Testosterone Calculator inputs (Total T, SHBG, Albumin, age) and Vermeulen-formula outputs</li>
+        <li>AI Coach (Atlas) chat history (your messages and Atlas's responses, including cited sources)</li>
+        <li>Doctor Visit Prep PDFs (auto-generated locally before each appointment)</li>
+        <li>App preferences (theme, push notification opt-ins, bloodwork timing reminders)</li>
+    </ul>
+    <p>You can export all of this via <strong>Settings → Data export</strong>, or delete it via <strong>Settings → Delete all data</strong>, at any time.</p>
+
+    <h2>2. Apple HealthKit</h2>
+    <p>Calibrum reads selected categories from Apple HealthKit, only with your explicit permission, requested when you tap "Connect Apple Health" in Settings.</p>
+    <ul>
+        <li><strong>What we read:</strong> body-mass (weight) samples, blood-pressure samples, and any lab results you have already imported into HealthKit (Total Testosterone, Estradiol, Hematocrit, Hemoglobin, PSA — categories Apple exposes).</li>
+        <li><strong>What we do NOT read:</strong> other HealthKit categories. We do not request workout, heart rate, sleep, nutrition, mindfulness, or reproductive-health data.</li>
+        <li><strong>What we do NOT write:</strong> Calibrum does not write any data back to HealthKit in v1.</li>
+        <li><strong>Storage:</strong> HealthKit reads are stored only on your device, alongside your other Calibrum data. Never uploaded, never shared, never used for advertising.</li>
+        <li><strong>Revoking access:</strong> at any time in iOS Settings → Privacy &amp; Security → Health → Calibrum. Previously imported readings remain in Calibrum's local database until you delete them.</li>
+    </ul>
+
+    <h2>3. What we collect on our servers</h2>
+    <p>The only data that leaves your device is:</p>
+    <ul>
+        <li><strong>Anonymous app analytics events</strong> (e.g. "log injection saved", "lab decoded shown") with no personally identifying or lab-specific values. Used only to understand which features work — never to profile individual users.</li>
+        <li><strong>Crash reports</strong> via Apple's standard crash reporting (anonymized, opt-in via iOS Settings).</li>
+        <li><strong>Subscription receipts</strong> verified by Apple via RevenueCat for entitlement management. These contain only the subscription identifier and an anonymous user ID — no health data.</li>
+    </ul>
+    <p>We do not collect IP addresses for tracking. We do not use cookies. We do not run advertising SDKs.</p>
+
+    <h2>4. AI Coach (Atlas) chat</h2>
+    <p>When you send a message to Atlas in the Coach tab, the message text and a brief profile context — your current TRT protocol (medication and dose-per-week), the most recent lab summary (T / E2 / HCT only, no demographics), and weeks since last dose change — are sent to <strong>DeepSeek</strong>, our AI inference provider, via a Cloudflare Worker proxy.</p>
+    <div class="trust">
+        <ul>
+            <li>DeepSeek receives only what you type plus the brief context above. <strong>It never receives your name, your full lab history, your symptom log, your injection log, or your HealthKit data.</strong></li>
+            <li>DeepSeek does not retain Calibrum user messages for model training (per their API terms in effect at app launch).</li>
+            <li>Atlas's responses are generated against a medical-literature corpus bundled inside the app — Endocrine Society Clinical Practice Guidelines on testosterone therapy, AUA TRT clinical guidelines (2024), AAFP TRT monograph, Bhasin et al. 2018 (Endocrine Society meta-analysis), TRAVERSE trial, FDA prescribing information for testosterone products and anastrozole, and 30+ peer-reviewed PubMed studies. The retrieval over this corpus runs entirely on your device.</li>
+            <li>Every Atlas response is checked for compliance phrases before display, and includes an <em>"Educational, not medical advice. Consult your prescribing physician."</em> footer with the source citations used.</li>
+            <li>Atlas is forbidden by system prompt from recommending a specific dose, telling you to escalate or de-escalate, suggesting starting or stopping anastrozole, or comparing your situation to "what other people do".</li>
+        </ul>
+    </div>
+
+    <h2>5. Lab PDF photos and Lab Snap &amp; Decode</h2>
+    <p>When you photograph or import a LabCorp, Quest, hospital, or telehealth-clinic lab PDF, the image is sent through our Cloudflare Workers proxy to <strong>OpenAI Vision (GPT-4o)</strong> for one-shot extraction of biomarker names, values, units, and reference ranges.</p>
+    <ul>
+        <li>The request is sent with <code>store: false</code> — OpenAI does not retain the image per their API terms.</li>
+        <li>Our Cloudflare Worker does not log the image payload.</li>
+        <li>The structured result (e.g. "Total Testosterone 412 ng/dL") is stored on your device alongside the original photo.</li>
+        <li>The original photo is also stored on your device unless you choose to delete it.</li>
+        <li>Photos are never sent to advertising networks, never linked to your name (you don't have an account), and never used for ad targeting.</li>
+    </ul>
+
+    <h2>6. Subscriptions and payments</h2>
+    <p>Calibrum is a subscription app. Subscriptions are managed by Apple's App Store. We use <strong>RevenueCat</strong> to verify subscription receipts and manage entitlement state. RevenueCat receives only an anonymous user identifier and the subscription receipt — no health data, no name, no email. See RevenueCat's privacy policy at <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</p>
+
+    <h2>7. What we do NOT do</h2>
+    <ul>
+        <li>We do not sell your data.</li>
+        <li>We do not share your data with advertising networks.</li>
+        <li>We do not use HealthKit data outside the Calibrum app (per Apple HealthKit guidelines § 5.1.3).</li>
+        <li>We do not derive insights for clinical decision-making, diagnosis, or prescription. Calibrum is an educational companion. It does not replace your prescribing physician or endocrinologist.</li>
+        <li>We do not provide Calibrum to anyone under 18.</li>
+        <li>We do not market Calibrum to anabolic steroid cyclers, bodybuilders running off-label testosterone, or anyone outside a physician-supervised TRT protocol.</li>
+    </ul>
+
+    <h2>8. Children's privacy</h2>
+    <p>Calibrum is for adult men on a physician-supervised TRT protocol. We do not knowingly collect data from anyone under 18. If you believe we have, contact us at the email below and we will delete the data.</p>
+
+    <h2>9. Data retention and deletion</h2>
+    <p>All on-device data persists until you delete it (<strong>Settings → Delete all data</strong>, or by uninstalling the app). Server-side analytics events are retained for up to 24 months and then aggregated. Crash reports are retained per Apple's standard policy.</p>
+
+    <h2>10. Your rights</h2>
+    <p>Depending on where you live (EU/UK GDPR, California CCPA, etc.), you may have rights to access, correct, or delete your data. Because we hold no personally identifying data on our servers, most rights apply only to your local app data — which you can fully control via Settings → Data export and Settings → Delete all data.</p>
+    <p>For requests about server-side analytics that may be associated with your anonymous device identifier, contact us:</p>
+    <ul>
+        <li>Email: <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></li>
+        <li>We will respond within 30 days.</li>
+    </ul>
+
+    <h2>11. Changes to this policy</h2>
+    <p>If we materially change how data is handled, we will update this page and bump the date at the top. For significant changes (e.g. adding a new third-party provider), we will surface an in-app notice before the change takes effect.</p>
+
+    <h2>12. Contact</h2>
+    <ul>
+        <li>Email: <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></li>
+        <li>App: Calibrum, by Loveiko Labs</li>
+    </ul>
+
+    <p class="disclaimer">
+        Calibrum is an independent educational companion app. It is not affiliated with, endorsed by, or sponsored by AbbVie, AstraZeneca, Pfizer, Endo Pharmaceuticals, Clarus Therapeutics, Marius Pharmaceuticals, Hone Health, Hims, Maximus Tribe, Marek Health, TRT Nation, Defy Medical, the FDA, the Endocrine Society, the American Urological Association (AUA), the American Academy of Family Physicians (AAFP), Mayo Clinic, Cleveland Clinic, or any other organisation referenced in the app.
+    </p>
+</body>
+</html>
