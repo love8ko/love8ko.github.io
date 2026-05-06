@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Folik — Design System Workbench (round 1)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1C1C1E;
+    --ink-2: #6B7280;
+    --ink-3: #A1A8B3;
+    --bg: #F7F5F2;
+    --card: #FFFFFF;
+    --divider: #E4E1DB;
+
+    --brand: #1A3A4A;
+    --brand-mid: #2A5470;
+    --brand-soft: #D6E6EE;
+
+    --growth: #5B9B6B;
+    --growth-soft: #D9EEE0;
+
+    --cta: #E8622A;
+    --cta-deep: #C94E1C;
+    --cta-soft: #FAE0D3;
+
+    --ai-bg: #E8F4F0;
+    --ai-border: #C2DFD7;
+
+    --good: #5B9B6B;
+    --good-bg: #D9EEE0;
+    --watch: #D4943A;
+    --watch-bg: #F5E8D0;
+    --alert: #B04040;
+    --alert-bg: #F5DADA;
+
+    --night-bg: #0F1F2A;
+    --night-surface: #182F3E;
+    --night-bubble-user: #1E3D52;
+    --night-text: #F7F5F2;
+    --night-divider: #243D4E;
+    --night-accent: #5B9B6B;
+  }
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  h1, h2, h3 {
+    font-family: -apple-system, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+  h2 { font-size: 22px; font-weight: 700; margin: 48px 0 16px; }
+  h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+  .lede { color: var(--ink-2); max-width: 780px; line-height: 1.55; margin-bottom: 8px; }
+  .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 8px; }
+  .pill {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 999px; padding: 5px 12px; font-size: 12px;
+    color: var(--ink-2); font-weight: 600;
+  }
+  .pill.lock { background: var(--good-bg); color: #1F5A2E; border-color: #B8DAC2; }
+  .pill.brand { background: var(--brand-soft); color: var(--brand); border-color: var(--brand-soft); }
+
+  /* Winner callout */
+  .winner-callout {
+    background: var(--brand);
+    color: #F7F5F2;
+    border-radius: 24px;
+    padding: 28px 28px 24px;
+    margin: 24px 0 8px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+  }
+  .winner-callout h2 { color: #F7F5F2; margin: 0; font-size: 26px; }
+  .winner-callout .vibe { color: #A8C4D0; font-style: italic; max-width: 620px; margin-top: 6px; line-height: 1.5; }
+  .winner-callout .score-badge {
+    background: var(--cta);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 800;
+    font-size: 18px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    white-space: nowrap;
+  }
+
+  /* Token grid */
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .token {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 10px; padding: 8px 10px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11.5px;
+  }
+  .token .chip {
+    width: 28px; height: 28px; border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0;
+  }
+  .token .label { color: var(--ink-2); display: block; font-size: 10.5px; line-height: 1.2; }
+  .token .hex { color: var(--ink); font-weight: 600; line-height: 1.2; }
+
+  /* Variants grid */
+  .variants {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .variant {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 18px;
+    border: 1px solid var(--divider);
+  }
+  .variant.winner { border-color: var(--cta); box-shadow: 0 4px 22px rgba(232,98,42,0.14); }
+  .variant-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .variant-head .name { font-size: 17px; font-weight: 700; }
+  .variant-head .score {
+    background: var(--divider); color: var(--ink-2);
+    border-radius: 999px; padding: 4px 10px;
+    font-size: 12px; font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .variant.winner .score { background: var(--cta); color: #fff; }
+  .variant .vibe { font-size: 12.5px; color: var(--ink-2); font-style: italic; min-height: 36px; }
+  .swatches { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin-top: 12px; }
+  .sw { aspect-ratio: 1; border-radius: 6px; border: 1px solid rgba(0,0,0,0.08); }
+
+  /* Vote table */
+  table.vote {
+    width: 100%; border-collapse: collapse; margin-top: 16px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider);
+  }
+  table.vote th, table.vote td {
+    padding: 10px 14px; text-align: left; font-size: 13.5px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.vote th {
+    background: var(--brand-soft); color: var(--brand);
+    font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700;
+  }
+  table.vote tr:last-child td { border-bottom: none; }
+  table.vote td.num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 700; text-align: center;
+  }
+  table.vote td.num.hi { color: var(--cta); }
+
+  /* Component mockups */
+  .modes-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 16px;
+  }
+  @media (max-width: 700px) { .modes-row { grid-template-columns: 1fr; } }
+  .mode-block {
+    border-radius: 24px;
+    padding: 22px 18px;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .mode-block.day { background: var(--bg); }
+  .mode-block.night { background: var(--night-bg); color: var(--night-text); }
+  .mode-label {
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55;
+  }
+
+  /* Norwood hero card */
+  .norwood-hero {
+    background: var(--brand);
+    color: #F7F5F2;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .norwood-hero .stage {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 52px; line-height: 1;
+  }
+  .norwood-hero .label {
+    font-size: 11px; color: #A8C4D0; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .norwood-hero .delta {
+    font-size: 13px; font-weight: 600; color: #7FC99E;
+  }
+  .progress-bar {
+    height: 6px; background: rgba(255,255,255,0.15); border-radius: 999px; margin-top: 8px; overflow: hidden;
+  }
+  .progress-bar .fill {
+    height: 100%; border-radius: 999px;
+    background: linear-gradient(90deg, var(--growth), #7FC99E);
+  }
+
+  /* Tracker card */
+  .mock-card {
+    background: var(--card); border-radius: 16px; padding: 14px;
+    box-shadow: 0 1px 3px rgba(26,35,50,0.06);
+  }
+  .mock-card.dark { background: var(--night-surface); border: 1px solid var(--night-divider); }
+  .tracker-row {
+    display: grid; grid-template-columns: 1fr auto auto;
+    align-items: center; gap: 10px;
+    padding: 9px 0; border-bottom: 1px solid var(--divider);
+  }
+  .tracker-row:last-child { border-bottom: none; }
+  .tracker-name { font-weight: 600; font-size: 14px; }
+  .tracker-dose { font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; font-size: 13px; }
+  .verdict-pill {
+    border-radius: 999px; padding: 4px 10px;
+    font-size: 11px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .verdict-pill::before { content: '●'; font-size: 9px; }
+  .verdict-pill.good  { background: var(--good-bg);  color: #1F5A2E; }
+  .verdict-pill.watch { background: var(--watch-bg); color: #7A4E12; }
+  .verdict-pill.alert { background: var(--alert-bg); color: #7A1A1A; }
+
+  /* AI chat */
+  .chat .bubble {
+    border-radius: 18px; padding: 12px 14px;
+    margin-bottom: 8px; max-width: 82%;
+    font-size: 13px; line-height: 1.48;
+  }
+  .chat .bubble.user {
+    background: var(--cta-soft); color: var(--ink);
+    margin-left: auto; border-top-right-radius: 5px;
+  }
+  .chat .bubble.user.dark {
+    background: var(--night-bubble-user); color: var(--night-text);
+  }
+  .chat .bubble.assistant {
+    background: var(--ai-bg); color: var(--ink);
+    border: 1px solid var(--ai-border); border-top-left-radius: 5px;
+  }
+  .chat .bubble.assistant.dark {
+    background: var(--night-surface); color: var(--night-text);
+    border-color: var(--night-divider);
+  }
+  .citation { font-size: 11.5px; margin-top: 6px; display: inline-block; }
+  .citation.day { color: var(--brand); border-bottom: 1px dotted var(--brand); }
+  .citation.dark { color: var(--night-accent); border-bottom: 1px dotted var(--night-accent); }
+
+  /* CTA buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 50px; padding: 0 22px; border-radius: 14px;
+    font-weight: 700; font-size: 16px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    border: none; cursor: pointer; width: 100%; margin-top: auto;
+  }
+  .btn.primary { background: var(--cta); color: #fff; }
+  .btn.primary:hover { background: var(--cta-deep); }
+  .btn.ghost-night { background: transparent; color: var(--night-accent); border: 1.5px solid var(--night-divider); }
+
+  /* Typography spec */
+  .type-list { display: grid; gap: 4px; margin-top: 8px; }
+  .type-list .row {
+    display: grid; grid-template-columns: 200px 1fr;
+    align-items: baseline; padding: 8px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+  .type-list .role { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+
+  /* Mode strategy table */
+  table.modes {
+    width: 100%; border-collapse: collapse; margin-top: 8px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider);
+  }
+  table.modes th, table.modes td {
+    padding: 10px 14px; text-align: left; font-size: 13.5px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.modes th {
+    background: var(--brand-soft); color: var(--brand);
+    font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700;
+  }
+  table.modes tr:last-child td { border-bottom: none; }
+  table.modes td.mode { font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; }
+
+  /* Whitespace table */
+  table.ws {
+    width: 100%; border-collapse: collapse; margin-top: 8px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider);
+  }
+  table.ws th, table.ws td {
+    padding: 9px 14px; text-align: left; font-size: 13px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.ws th {
+    background: var(--brand-soft); color: var(--brand);
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700;
+  }
+  table.ws tr:last-child td { border-bottom: none; }
+  .ok { color: var(--good); font-weight: 700; }
+  .warn { color: var(--watch); font-weight: 700; }
+
+  ul.list { margin-top: 8px; padding-left: 20px; line-height: 1.6; }
+  ul.list li { margin-bottom: 5px; font-size: 14px; }
+  ul.dontlist li::marker { color: var(--alert); }
+
+  .footer-refs {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--divider);
+    font-size: 12.5px; color: var(--ink-3);
+    line-height: 1.7;
+  }
+  .footer-refs a { color: var(--brand); text-decoration: none; }
+  .footer-refs a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Folik — Design System Workbench</h1>
+  <p class="lede">Round 1 consilium · 6 voices × 3 variants. Locked palette. Component library + typography spec — next round. Hair Loss AI Coach · Health &amp; Fitness · iOS 17+</p>
+  <div class="meta-bar">
+    <span class="pill lock">🔒 LOCKED 2026-05-06 round 1</span>
+    <span class="pill">avg 7.8 (hybrid A→B)</span>
+    <span class="pill brand">Quiet Authority (Refined)</span>
+    <span class="pill">Health &amp; Fitness · iOS 17+</span>
+  </div>
+</header>
+
+<section class="winner-callout">
+  <div>
+    <h2>Hybrid A→B — «Quiet Authority (Refined)»</h2>
+    <p class="vibe">Тёплый клинический авторитет — не тёмный sci-fi сканер (Hair Snap), не холодная больница (HairWise). Полночный индиго сообщает "я понимаю тревогу Denis в 2am", еловый зелёный говорит "твои волосы могут расти снова", терракота-оранжевый CTA — единственный верный импульс. Незанятый whitespace: ни один из 6 конкурентов не стоит здесь.</p>
+  </div>
+  <span class="score-badge">7.8 / 10</span>
+</section>
+
+<!-- ===== Consilium variants ===== -->
+<h2>Варианты консилиума</h2>
+<div class="variants">
+  <!-- A -->
+  <div class="variant winner">
+    <div class="variant-head">
+      <span class="name">A — Quiet Authority</span>
+      <span class="score">7.8 avg</span>
+    </div>
+    <p class="vibe">Индиго + шалфей + терракота. Лучший Product + ASO + Conversion.</p>
+    <div class="swatches">
+      <div class="sw" style="background:#F7F5F2" title="bg"></div>
+      <div class="sw" style="background:#FFFFFF;border:1px solid #ccc" title="card"></div>
+      <div class="sw" style="background:#1A3A4A" title="brand"></div>
+      <div class="sw" style="background:#3D8B7A" title="accent sage"></div>
+      <div class="sw" style="background:#E8622A" title="cta"></div>
+      <div class="sw" style="background:#1C1C1E" title="text"></div>
+      <div class="sw" style="background:#6B7280" title="text-2"></div>
+      <div class="sw" style="background:#E8F4F0" title="ai-bg"></div>
+    </div>
+  </div>
+  <!-- B -->
+  <div class="variant">
+    <div class="variant-head">
+      <span class="name">B — Morning Meridian</span>
+      <span class="score">7.8 avg</span>
+    </div>
+    <p class="vibe">Атлантический синий + еловый зелёный + янтарь. Лучший Medical Credibility + Portfolio.</p>
+    <div class="swatches">
+      <div class="sw" style="background:#FAFAF8" title="bg"></div>
+      <div class="sw" style="background:#FFFFFF;border:1px solid #ccc" title="card"></div>
+      <div class="sw" style="background:#2C5F7A" title="brand"></div>
+      <div class="sw" style="background:#5B9B6B" title="growth"></div>
+      <div class="sw" style="background:#F2994A" title="cta amber"></div>
+      <div class="sw" style="background:#1A1A2E" title="text"></div>
+      <div class="sw" style="background:#718096" title="text-2"></div>
+      <div class="sw" style="background:#E8F4F0" title="ai-bg"></div>
+    </div>
+  </div>
+  <!-- C -->
+  <div class="variant">
+    <div class="variant-head">
+      <span class="name">C — Slate &amp; Ember</span>
+      <span class="score">6.5 avg</span>
+    </div>
+    <p class="vibe">Сланец + полынь + медь. Гендерно-нейтральный, но недостаточно дифференцированный.</p>
+    <div class="swatches">
+      <div class="sw" style="background:#F5F4F3" title="bg"></div>
+      <div class="sw" style="background:#FFFFFF;border:1px solid #ccc" title="card"></div>
+      <div class="sw" style="background:#374151" title="brand"></div>
+      <div class="sw" style="background:#7CB9A0" title="accent"></div>
+      <div class="sw" style="background:#DC6B35" title="cta"></div>
+      <div class="sw" style="background:#111827" title="text"></div>
+      <div class="sw" style="background:#6B7280" title="text-2"></div>
+      <div class="sw" style="background:#FDF0E6" title="warm-bg"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Vote table ===== -->
+<h2>Таблица голосования</h2>
+<table class="vote">
+  <thead>
+    <tr><th>Голос</th><th style="text-align:center">A</th><th style="text-align:center">B</th><th style="text-align:center">C</th><th>Аргумент победителя</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Product</strong></td>
+      <td class="num hi">8</td><td class="num">7</td><td class="num">6</td>
+      <td>Индиго точно поймает Denis в 2am: "я понимаю твою тревогу" без алармизма</td>
+    </tr>
+    <tr>
+      <td><strong>2. Design / ASO</strong></td>
+      <td class="num hi">9</td><td class="num">7</td><td class="num">6</td>
+      <td>Индиго + зелёный + терракота = комбинации нет ни у одного из 6 конкурентов</td>
+    </tr>
+    <tr>
+      <td><strong>3. Medical Credibility</strong></td>
+      <td class="num">7</td><td class="num hi">9</td><td class="num">7</td>
+      <td>B: атлантический синий → Mayo / WebMD / NHS visual language</td>
+    </tr>
+    <tr>
+      <td><strong>4. Conversion</strong></td>
+      <td class="num hi">9</td><td class="num">7</td><td class="num">6</td>
+      <td>#E8622A на тёплом фоне: высококонтрастный eye-catch → tap</td>
+    </tr>
+    <tr>
+      <td><strong>5. Portfolio</strong></td>
+      <td class="num">8</td><td class="num hi">9</td><td class="num">7</td>
+      <td>B: достаточно далёко от Jabwell (тил+терракота+лён)</td>
+    </tr>
+    <tr>
+      <td><strong>6. Devil's Advocate</strong></td>
+      <td class="num">6</td><td class="num hi">8</td><td class="num">7</td>
+      <td>A риск: Linda может считать индиго "мужским клубом". Hybrid закрывает через зелёный</td>
+    </tr>
+    <tr style="background:var(--brand-soft)">
+      <td><strong>Среднее</strong></td>
+      <td class="num hi">7.8</td><td class="num hi">7.8</td><td class="num">6.5</td>
+      <td><strong>Hybrid A→B: структура A + еловый зелёный B + мятный туман B для AI Coach</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== Full token spec ===== -->
+<h2>Locked token spec — «Quiet Authority (Refined)»</h2>
+
+<h3>Light system (primary)</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#F7F5F2"></div><div><span class="label">--bg-primary</span><span class="hex">#F7F5F2</span></div></div>
+  <div class="token"><div class="chip" style="background:#FFFFFF;border:1px solid #ccc"></div><div><span class="label">--bg-surface (cards)</span><span class="hex">#FFFFFF</span></div></div>
+  <div class="token"><div class="chip" style="background:#E8F4F0"></div><div><span class="label">--bg-ai-highlight</span><span class="hex">#E8F4F0</span></div></div>
+  <div class="token"><div class="chip" style="background:#1A3A4A"></div><div><span class="label">--brand-primary</span><span class="hex">#1A3A4A</span></div></div>
+  <div class="token"><div class="chip" style="background:#5B9B6B"></div><div><span class="label">--brand-growth</span><span class="hex">#5B9B6B</span></div></div>
+  <div class="token"><div class="chip" style="background:#E8622A"></div><div><span class="label">--cta-primary (ONLY CTA)</span><span class="hex">#E8622A</span></div></div>
+  <div class="token"><div class="chip" style="background:#1C1C1E"></div><div><span class="label">--text-primary</span><span class="hex">#1C1C1E</span></div></div>
+  <div class="token"><div class="chip" style="background:#6B7280"></div><div><span class="label">--text-secondary</span><span class="hex">#6B7280</span></div></div>
+</div>
+
+<h3>Verdict triad (semantic)</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#5B9B6B"></div><div><span class="label">verdict.good — "normal shedding"</span><span class="hex">#5B9B6B</span></div></div>
+  <div class="token"><div class="chip" style="background:#D4943A"></div><div><span class="label">verdict.watch — "monitor closely"</span><span class="hex">#D4943A</span></div></div>
+  <div class="token"><div class="chip" style="background:#B04040"></div><div><span class="label">verdict.alert — "see dermatologist"</span><span class="hex">#B04040</span></div></div>
+  <div class="token"><div class="chip" style="background:#D9EEE0"></div><div><span class="label">verdict.good.bg</span><span class="hex">#D9EEE0</span></div></div>
+  <div class="token"><div class="chip" style="background:#F5E8D0"></div><div><span class="label">verdict.watch.bg</span><span class="hex">#F5E8D0</span></div></div>
+  <div class="token"><div class="chip" style="background:#F5DADA"></div><div><span class="label">verdict.alert.bg</span><span class="hex">#F5DADA</span></div></div>
+</div>
+
+<h3>Night / AI Coach chat surface</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#0F1F2A"></div><div><span class="label">night.bg</span><span class="hex">#0F1F2A</span></div></div>
+  <div class="token"><div class="chip" style="background:#182F3E"></div><div><span class="label">night.surface</span><span class="hex">#182F3E</span></div></div>
+  <div class="token"><div class="chip" style="background:#1E3D52"></div><div><span class="label">night.bubble.user</span><span class="hex">#1E3D52</span></div></div>
+  <div class="token"><div class="chip" style="background:#F7F5F2"></div><div><span class="label">night.text</span><span class="hex">#F7F5F2</span></div></div>
+  <div class="token"><div class="chip" style="background:#5B9B6B"></div><div><span class="label">night.accent (growth reuse)</span><span class="hex">#5B9B6B</span></div></div>
+  <div class="token"><div class="chip" style="background:#243D4E"></div><div><span class="label">night.divider</span><span class="hex">#243D4E</span></div></div>
+</div>
+
+<!-- ===== Component preview ===== -->
+<h2>Component preview · day + night AI Coach</h2>
+<div class="modes-row">
+
+  <!-- DAY -->
+  <div class="mode-block day">
+    <span class="mode-label">Day · Dashboard</span>
+
+    <div class="norwood-hero">
+      <span class="label">Norwood Stage · 90-day tracking</span>
+      <span class="stage">IIa <span style="font-size:22px;color:#A8C4D0;font-weight:600">/ VII</span></span>
+      <span class="delta">→ Stable — no progression in 90 days</span>
+      <div class="progress-bar"><div class="fill" style="width:28%"></div></div>
+    </div>
+
+    <div class="mock-card">
+      <div style="font-size:11.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;font-weight:700">Treatment log · this week</div>
+      <div class="tracker-row">
+        <span class="tracker-name">Minoxidil 5%</span>
+        <span class="tracker-dose">1ml × 2</span>
+        <span class="verdict-pill good">On track</span>
+      </div>
+      <div class="tracker-row">
+        <span class="tracker-name">Finasteride 1mg</span>
+        <span class="tracker-dose">daily</span>
+        <span class="verdict-pill good">On track</span>
+      </div>
+      <div class="tracker-row">
+        <span class="tracker-name">Microneedling 0.5mm</span>
+        <span class="tracker-dose">weekly</span>
+        <span class="verdict-pill watch">Missed 2 sessions</span>
+      </div>
+      <div class="tracker-row">
+        <span class="tracker-name">Dutasteride 0.5mg</span>
+        <span class="tracker-dose">3×/wk</span>
+        <span class="verdict-pill good">On track</span>
+      </div>
+    </div>
+
+    <div class="chat">
+      <span class="mode-label" style="display:block;margin-bottom:8px">AI Coach · day preview</span>
+      <div class="bubble user">Is my shedding at week 8 of minoxidil normal?</div>
+      <div class="bubble assistant">Yes — the <strong>minoxidil shed phase</strong> peaks at weeks 6–12. Hair follicles are transitioning from telogen → anagen, forcing resting hairs out early. Density typically recovers by month 4–6.<br><a class="citation day">AAD Clinical Guidelines 2023 · PubMed 38122641 →</a></div>
+    </div>
+
+    <button class="btn primary">Start 7-day free trial →</button>
+  </div>
+
+  <!-- NIGHT -->
+  <div class="mode-block night">
+    <span class="mode-label" style="color:#6A8FA0">Night · AI Hair Coach (2:14am)</span>
+
+    <div class="mock-card dark">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:4px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:var(--growth);display:flex;align-items:center;justify-content:center;color:#0F1F2A;font-weight:800;font-size:16px;">F</div>
+        <div>
+          <div style="font-weight:700;color:var(--night-text);">Folik AI Coach</div>
+          <div style="font-size:11.5px;color:#6A8FA0;">Educational · not medical advice</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat" style="flex:1;display:flex;flex-direction:column;">
+      <div class="bubble user dark">I've been on fin for 3 months. My hair looks worse. Should I stop?</div>
+      <div class="bubble assistant dark"><strong>Don't stop yet.</strong> Finasteride works by blocking DHT — it doesn't accelerate regrowth, it halts progression. Months 3–6 are often when patients feel "nothing is happening" before density visibly stabilises.<br><br>What you may be seeing: <strong>continued shed from pre-fin follicles</strong> that were already in telogen. Reassess at month 6 with a photo comparison.<br><a class="citation dark">PubMed 32229515 · ISHRS 2022 guidelines →</a></div>
+      <div class="bubble user dark">What if my crown is totally gone at month 6?</div>
+      <div class="bubble assistant dark">At month 6 with no response, your dermatologist may consider adding <strong>minoxidil topical + microneedling protocol</strong> (0.5–1mm, weekly). That combination shows additive effect in 3 RCTs. I'll add this to your Doctor Visit Brief.<br><a class="citation dark">Fertig et al. 2022 · Dhurat et al. 2013 →</a></div>
+    </div>
+
+    <button class="btn ghost-night">Add to Doctor Visit Brief</button>
+  </div>
+</div>
+
+<!-- ===== Typography ===== -->
+<h2>Typography</h2>
+<p class="lede">Native iOS — SF Pro Rounded для hero numbers + section titles (теплее SF Pro Display, соответствует портфолио). SF Pro Text для body. SF Mono для dose/product IDs. Dynamic Type required to XXXLarge — Denis 28-35 (нет проблем), Linda 40-55 + James 30-40 (крупные буквы как accessibility win).</p>
+<div class="type-list">
+  <div class="row"><span class="role">Norwood stage · 56pt Bold</span><span style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:38px;">IIa <span style="font-size:18px;color:var(--ink-3);font-weight:600">/ VII</span></span></div>
+  <div class="row"><span class="role">Section title · 28 SemiBold</span><span style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:600;font-size:22px;">90-day hair analysis</span></div>
+  <div class="row"><span class="role">Card title · 20 SemiBold</span><span style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:600;font-size:17px;">Treatment tracker</span></div>
+  <div class="row"><span class="role">Body · 16 Regular</span><span style="font-size:15px;line-height:1.5;">Minoxidil shed typically peaks weeks 6–12. Hair follicles transition from telogen → anagen.</span></div>
+  <div class="row"><span class="role">Caption · 13 Regular</span><span style="font-size:12.5px;color:var(--ink-2);">PubMed 38122641 · AAD Clinical Guidelines 2023 · logged 2026-05-06</span></div>
+  <div class="row"><span class="role">Mono · 14 Regular</span><span style="font-family:ui-monospace,'SF Mono',monospace;font-size:13px;">com.love8ko.folik.weekly · $4.99/wk</span></div>
+</div>
+
+<!-- ===== Mode strategy ===== -->
+<h2>Per-surface mode strategy</h2>
+<table class="modes">
+  <thead><tr><th>Surface</th><th>Mode</th><th>Reason</th></tr></thead>
+  <tbody>
+    <tr><td>App icon</td><td class="mode">LIGHT (brand-primary bg)</td><td>Тёплый офф-вайт фон с индиго — читается медицински авторитетно на домашнем экране</td></tr>
+    <tr><td>Onboarding</td><td class="mode">SYSTEM</td><td>Не борись с предпочтением юзера на первом впечатлении</td></tr>
+    <tr><td>Paywall</td><td class="mode">SYSTEM</td><td>Denis и Linda попадают на paywall в разное время суток</td></tr>
+    <tr><td>Dashboard / Tracker / Journal</td><td class="mode">SYSTEM</td><td>Daily-use surfaces следуют iOS</td></tr>
+    <tr><td>Norwood Calculator</td><td class="mode">SYSTEM</td><td>Top-of-funnel hook — не оттолкни первым экраном</td></tr>
+    <tr><td><strong>AI Hair Coach chat</strong></td><td class="mode">DARK by default</td><td>Denis в 2am у зеркала — тёмный фон + зелёный акцент = "всё под контролем, я помогаю"</td></tr>
+    <tr><td>App Store screenshots</td><td class="mode">6 LIGHT + 1 DARK</td><td>Dark слот = AI Coach chat — дифференциатор в gallery</td></tr>
+    <tr><td>Doctor Visit Prep PDF</td><td class="mode">Pure B&amp;W</td><td>Для печати в кабинете дерматолога. Без цвета.</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== Competitive whitespace ===== -->
+<h2>Whitespace-позиция в категории</h2>
+<table class="ws">
+  <thead><tr><th>Конкурент</th><th>Их визуальный язык</th><th>Дистанция Folik</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Hair Snap</strong> (лидер $1.3M ARR)</td><td>Black + Violet/Purple scanner</td><td><span class="ok">✓ Нет пересечения</span></td></tr>
+    <tr><td><strong>Hair Scan</strong> (Hangzhou)</td><td>Bright Yellow + Black</td><td><span class="ok">✓ Нет пересечения</span></td></tr>
+    <tr><td><strong>Hair Loss AI Snap</strong> (AMR)</td><td>Black + White minimal</td><td><span class="ok">✓ Нет пересечения</span></td></tr>
+    <tr><td><strong>Recede.io</strong></td><td>Black + Coral-pink pixel R</td><td><span class="warn">⚠ CTA схожей температуры, но наш фон светлый</span></td></tr>
+    <tr><td><strong>HairWise</strong></td><td>Teal light + White</td><td><span class="ok">✓ Наш primary темнее, индиго vs тил</span></td></tr>
+    <tr><td><strong>Follicle</strong></td><td>Dark charcoal + Mint follicle icon</td><td><span class="ok">✓ Нет пересечения — мы светлые</span></td></tr>
+    <tr><td><strong>Jabwell</strong> (наш портфолио)</td><td>Ocean teal #264653 + Terracotta + Linen</td><td><span class="ok">✓ Достаточно далеко — индиго vs тил, зелёный vs терракота-primary</span></td></tr>
+  </tbody>
+</table>
+
+<!-- ===== Anti-patterns ===== -->
+<h2>Anti-patterns (consilium-locked don'ts)</h2>
+<ul class="list dontlist">
+  <li><strong>Bright #FF0000 red</strong> на alert — алармизм для Denis в тревоге. Используй muted #B04040.</li>
+  <li><strong>Purple / violet</strong> — Hair Snap владеет этим пространством. Никогда.</li>
+  <li><strong>Yellow</strong> — Hair Scan. Читается дёшево, не медицински.</li>
+  <li><strong>Gamification</strong> (streaks, XP, confetti) — health context, не игра.</li>
+  <li><strong>Before/after с лицами</strong> — App Review 1.4.1 риск + тревожность для Denis.</li>
+  <li><strong>Медицинские диагнозы</strong> — AI Coach даёт educational guidance, не "у вас AGA II стадии". Всегда "discuss with your dermatologist".</li>
+  <li><strong>Тёмный фон на всём приложении</strong> — AI Coach chat only. Остальные поверхности системные.</li>
+  <li><strong>Клинический холодный синий</strong> (#007AFF, #0A84FF) — generic iOS health vibe, нет дифференциации.</li>
+</ul>
+
+<footer class="footer-refs">
+  <strong>Inputs to consilium round 1:</strong>
+  <a href="https://github.com/love8ko/15-folik/blob/main/Folik_HairLoss_Strategic_Plan_v2_FINAL.md">Strategic Plan v2</a> ·
+  <a href="https://github.com/love8ko/15-folik/blob/main/competitors/meta.yaml">competitors/meta.yaml</a> ·
+  <a href="https://love8ko.github.io/jabwell/design.html">JabWell design workbench (sibling)</a> ·
+  <a href="https://love8ko.github.io/calibrum/design.html">Calibrum design workbench (sibling)</a><br>
+  <strong>Output:</strong>
+  <a href="https://github.com/love8ko/15-folik/blob/main/DESIGN_SYSTEM.md">DESIGN_SYSTEM.md (locked spec)</a>
+</footer>
+
+</body>
+</html>
