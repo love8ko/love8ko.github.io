@@ -623,6 +623,141 @@
   }
   .tab-spec.scan .pchip { background: #fff; color: var(--cta); }
 
+  /* ── Module 5 · Interactive tab switcher ── */
+  .tabswitch {
+    max-width: 880px; margin: 16px 0 0;
+    background: var(--card); border-radius: 22px;
+    border: 1px solid var(--divider);
+    overflow: hidden;
+  }
+  .tabswitch .ts-tabs {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    background: var(--bg); border-bottom: 1px solid var(--divider);
+  }
+  .tabswitch .ts-tab {
+    appearance: none; background: transparent; border: none;
+    padding: 14px 8px 12px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    font-family: inherit; color: var(--ink-3);
+    font-size: 11.5px; font-weight: 700;
+    border-bottom: 3px solid transparent;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .tabswitch .ts-tab:hover { background: var(--card); color: var(--brand); }
+  .tabswitch .ts-tab.active {
+    color: var(--brand); background: var(--card);
+    border-bottom-color: var(--cta);
+  }
+  .tabswitch .ts-tab .glyph {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: var(--divider); color: var(--ink-2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 800;
+    transition: background 0.15s, color 0.15s;
+  }
+  .tabswitch .ts-tab.active .glyph { background: var(--brand); color: #F7F5F2; }
+  .tabswitch .ts-tab.scan-tab .glyph { background: var(--cta-soft); color: var(--cta); }
+  .tabswitch .ts-tab.scan-tab.active .glyph { background: var(--cta); color: #fff; }
+  .tabswitch .ts-tab .label { line-height: 1; }
+  .tabswitch .ts-tab .badge {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 9px; font-weight: 800; letter-spacing: 0.04em;
+    color: var(--ink-3); margin-top: 1px;
+  }
+  .tabswitch .ts-tab.active .badge { color: var(--cta); }
+
+  .ts-panels { padding: 22px 24px 26px; }
+  .ts-panel { display: none; }
+  .ts-panel.active { display: block; }
+  .ts-panel h4 {
+    font-size: 18px; font-weight: 800; color: var(--brand);
+    margin: 0 0 4px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+  .ts-panel .ts-purpose-line {
+    font-size: 13.5px; color: var(--ink-2); line-height: 1.55;
+    margin: 0 0 16px; font-style: italic;
+  }
+  .ts-panel .ts-section {
+    margin-top: 16px;
+  }
+  .ts-panel .ts-section h5 {
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-3);
+    margin: 0 0 6px;
+  }
+  .ts-panel .ts-blocks {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px; margin-top: 6px;
+  }
+  .ts-panel .ts-block {
+    background: var(--bg); border-radius: 10px;
+    padding: 10px 12px; border: 1px solid var(--divider);
+    font-size: 12.5px; line-height: 1.5;
+  }
+  .ts-panel .ts-block b {
+    display: block; color: var(--brand); margin-bottom: 3px;
+    font-size: 12px;
+  }
+  .ts-panel .ts-block .src {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; color: var(--ink-3); margin-top: 4px;
+    display: block;
+  }
+  .ts-panel ul.ts-list { padding-left: 18px; margin: 6px 0 0; line-height: 1.6; }
+  .ts-panel ul.ts-list li { font-size: 13px; color: var(--ink); margin-bottom: 4px; }
+  .ts-panel ul.ts-list li b { color: var(--brand); }
+
+  .ts-meta-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px; margin-top: 14px;
+    padding: 12px 14px; background: var(--bg);
+    border-radius: 12px; border: 1px solid var(--divider);
+  }
+  .ts-meta-row .ts-meta {
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .ts-meta .lab {
+    font-size: 9.5px; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-3);
+  }
+  .ts-meta .val { font-size: 12.5px; font-weight: 700; color: var(--ink); line-height: 1.4; }
+  .ts-meta .val.cta { color: var(--cta); }
+  .ts-meta .val.growth { color: var(--good); }
+
+  .ts-personas-row {
+    display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px;
+  }
+  .ts-personas-row .pchip {
+    background: var(--brand-soft); color: var(--brand);
+    border-radius: 999px; padding: 3px 9px;
+    font-size: 10.5px; font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .ts-personas-row .pchip.peak { background: var(--cta); color: #fff; }
+
+  .ts-anti {
+    margin-top: 14px; padding: 12px 14px;
+    background: #FBEFEC; border-radius: 12px;
+    border: 1px solid #F2C7B6;
+  }
+  .ts-anti h5 { color: #9A3010; }
+  .ts-anti ul { padding-left: 18px; margin: 4px 0 0; }
+  .ts-anti ul li { font-size: 12px; color: #5C2010; margin-bottom: 3px; }
+  .ts-anti ul li b { color: #9A3010; }
+
+  /* Wireframe blocks */
+  .wf {
+    background: #fff; border: 1px dashed var(--brand);
+    border-radius: 8px; padding: 8px 10px;
+    font-size: 11px; line-height: 1.4;
+    color: var(--brand); margin-bottom: 6px;
+  }
+  .wf b { font-weight: 800; }
+  .wf.cta { border-color: var(--cta); color: var(--cta); background: var(--cta-soft); }
+  .wf.ai { border-color: var(--ai-border); background: var(--ai-bg); color: var(--brand); }
+  .wf.growth { border-color: var(--growth); background: var(--growth-soft); color: #1F5A2E; }
+
   /* ── JTBD × Tab matrix ── */
   table.jtm {
     width: 100%; border-collapse: collapse; margin-top: 14px;
@@ -682,6 +817,9 @@
   <a href="#tabbar">Tab bar</a>
   <a href="#tab-spec">Per-tab</a>
   <a href="#jtm">JTBD × Tab</a>
+  <span class="sep"></span>
+  <a href="#module-5" class="is-module"><span class="nav-num">M5</span> Screens</a>
+  <a href="#screen-deep">Deep-dive</a>
 </nav>
 
 <header id="top">
@@ -1266,6 +1404,381 @@
   <li><strong>Tab badges с count</strong> — не уведомления о шеде ("12 новых волос выпало!") — это алармизм для Denis.</li>
   <li><strong>Гейминг Plan-таба</strong> (XP, levels, achievements) — adherence streak ОК (Headspace-style), но без confetti и rewards. Health, не игра.</li>
 </ul>
+
+<!-- ===== MODULE 5 — SCREEN DEEP-DIVE ===== -->
+<div class="module-banner" id="module-5">
+  <span class="num">МОДУЛЬ 5</span>
+  <h2>Screen deep-dive · интерактивно</h2>
+  <p class="desc">Каждый таб разобран в деталь — что внутри, какие блоки, источники данных, free vs paid поведение, anti-patterns. Кликни на таб ниже — переключатся панели. Контент по консилиуму голосов M3 + JTBD якорям M2.</p>
+</div>
+
+<div id="screen-deep" class="tabswitch">
+  <div class="ts-tabs" role="tablist">
+    <button class="ts-tab active" data-panel="t-today" role="tab">
+      <span class="glyph">⌂</span><span class="label">Today</span><span class="badge">TAB 1</span>
+    </button>
+    <button class="ts-tab" data-panel="t-coach" role="tab">
+      <span class="glyph">💬</span><span class="label">Coach</span><span class="badge">TAB 2 · FLAGSHIP</span>
+    </button>
+    <button class="ts-tab scan-tab" data-panel="t-scan" role="tab">
+      <span class="glyph">+</span><span class="label">Scan</span><span class="badge">CENTER FAB</span>
+    </button>
+    <button class="ts-tab" data-panel="t-progress" role="tab">
+      <span class="glyph">📈</span><span class="label">Progress</span><span class="badge">TAB 3</span>
+    </button>
+    <button class="ts-tab" data-panel="t-plan" role="tab">
+      <span class="glyph">⚙</span><span class="label">Plan</span><span class="badge">TAB 4</span>
+    </button>
+  </div>
+
+  <div class="ts-panels">
+
+    <!-- ===== TODAY ===== -->
+    <div class="ts-panel active" id="t-today" role="tabpanel">
+      <h4>Today · daily anchor</h4>
+      <p class="ts-purpose-line">"Где я сейчас + что делать сегодня" — за 3 секунды без скроллинга. Default screen при открытии приложения.</p>
+
+      <div class="ts-meta-row">
+        <div class="ts-meta"><span class="lab">JTBD-якорь</span><span class="val">Denis #1 · Sarah #4 · David #5</span></div>
+        <div class="ts-meta"><span class="lab">Голоса консилиума</span><span class="val cta">7/7 (через persona widgets)</span></div>
+        <div class="ts-meta"><span class="lab">Free / Paid</span><span class="val">Status hero — free · widgets — paid</span></div>
+        <div class="ts-meta"><span class="lab">Mode</span><span class="val">SYSTEM (light/dark по iOS)</span></div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Layout · сверху вниз</h5>
+        <div class="wf"><b>Header</b> · логотип "Folik" слева · ⚙ gear (settings) справа · streak counter (5 дней)</div>
+        <div class="wf"><b>Norwood Stage hero</b> · brand-primary card · stage IIa / VII · 90-day delta "→ Stable"</div>
+        <div class="wf"><b>Today's Protocol</b> · checklist карточка — Minoxidil AM ✓ · PM в 14:00 · Finasteride ✓</div>
+        <div class="wf ai"><b>AI Coach nudge</b> · контекстный — "Week 8 minoxidil — мы в shed window. Tap для контекста →"</div>
+        <div class="wf growth"><b>Persona widget (conditional)</b> · TE Timeline (Sarah) / GLP-1 chart (David) / ISHRS milestone (Mike)</div>
+        <div class="wf cta"><b>Last scan card</b> · "3 дня назад · Tap +Scan чтобы обновить"</div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Что внутри · по консилиуму</h5>
+        <div class="ts-blocks">
+          <div class="ts-block"><b>Norwood Stage hero</b>Из последнего scan + 90-day сравнение. Tap → Progress tab.<span class="src">Голос Denis #1, James #2, Mike #6</span></div>
+          <div class="ts-block"><b>Treatment checklist</b>Today's доза с чек-боксом. Tap ✓ → reminder dismissed.<span class="src">James #2 (streak якорь) · Mike #6</span></div>
+          <div class="ts-block"><b>AI Coach nudge</b>1 предложение + tap → Coach. Контекст по lane.<span class="src">7/7 персон</span></div>
+          <div class="ts-block"><b>TE Timeline widget (Sarah)</b>"You're at month 4 — peak shed expected"<span class="src">F · Sarah #4 P1 фича</span></div>
+          <div class="ts-block"><b>GLP-1 widget (David)</b>Mini-chart weight × shed correlation<span class="src">E · David #5 P1 фича</span></div>
+          <div class="ts-block"><b>Transplant milestone (Mike)</b>"Month 3 / 12 — on ISHRS curve ✓"<span class="src">G · Mike #6 P1 фича</span></div>
+        </div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Поведение · states</h5>
+        <ul class="ts-list">
+          <li><b>Empty (Day 0)</b> — "Add your first treatment" CTA + onboarding tooltip к +Scan FAB</li>
+          <li><b>Streak ≥7 дней</b> — subtle growth-color highlight на header (НЕ confetti)</li>
+          <li><b>Missed dose</b> — gentle muted-rust badge, "Log it now" inline (НЕ shame messaging)</li>
+          <li><b>30 дней назад скана не было</b> — pulsing CTA на +Scan FAB</li>
+        </ul>
+      </div>
+
+      <div class="ts-personas-row">
+        <span class="pchip peak">#1 Denis · daily</span>
+        <span class="pchip peak">#2 James · daily streak</span>
+        <span class="pchip">#3 Linda · medium</span>
+        <span class="pchip peak">#4 Sarah · TE timeline</span>
+        <span class="pchip peak">#5 David · GLP-1 chart</span>
+        <span class="pchip">#6 Mike · medium</span>
+        <span class="pchip">#7 Alex · low (он живёт в Coach)</span>
+      </div>
+
+      <div class="ts-anti">
+        <h5>Anti-patterns Today</h5>
+        <ul>
+          <li><b>Daily quote / motivational</b> — это health tracker, не Calm app</li>
+          <li><b>Социальный feed / друзья</b> — никогда. Hair loss = приватная зона</li>
+          <li><b>Confetti / celebration</b> когда streak растёт — Headspace-tone, не Duolingo</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== COACH ===== -->
+    <div class="ts-panel" id="t-coach" role="tabpanel">
+      <h4>Coach · AI Hair Coach (flagship)</h4>
+      <p class="ts-purpose-line">RAG-conversation с PubMed citations. 7/7 персон голосуют — это причина существования Folik. Никто из 6 конкурентов этого не имеет.</p>
+
+      <div class="ts-meta-row">
+        <div class="ts-meta"><span class="lab">JTBD-якорь</span><span class="val cta">Все 7 персон (peak surface)</span></div>
+        <div class="ts-meta"><span class="lab">Голоса консилиума</span><span class="val cta">7/7 единогласно</span></div>
+        <div class="ts-meta"><span class="lab">Free / Paid</span><span class="val">1 free Q на онбординге → paywall</span></div>
+        <div class="ts-meta"><span class="lab">Mode</span><span class="val growth">DARK by default (Denis 2am)</span></div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Layout</h5>
+        <div class="wf"><b>Header dark</b> · "Folik AI Coach" + "Educational · not medical advice" disclaimer</div>
+        <div class="wf"><b>Quick prompts row</b> · 3-4 пилюли по persona-lane (Denis: "Is this normal?" · Alex: "Latest evidence on...")</div>
+        <div class="wf"><b>Chat thread (history)</b> · user-bubble (синий) + assistant-bubble (night-surface)</div>
+        <div class="wf ai"><b>Citation footnote</b> · "AAD Clinical Guidelines 2023 · PubMed 38122641 →" — tap → source detail sheet</div>
+        <div class="wf cta"><b>Input bar bottom</b> · text field + voice mic icon · disabled state если 1 free Q использован</div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Что внутри · по консилиуму</h5>
+        <div class="ts-blocks">
+          <div class="ts-block"><b>RAG corpus ~11MB on-device</b>AAD · ISHRS · FDA · DailyMed · PubMed 40-60 · Mayo · Cleveland · Endocrine Society<span class="src">sqlite-vec @ 512d · OpenAI text-embedding-3-small build-time</span></div>
+          <div class="ts-block"><b>Persona-aware intro</b>Denis получает reassurance-tone. Alex — sourced answers. Linda — dermatology depth. Lane выбран в онбординге.<span class="src">7 lanes из M2 onboarding</span></div>
+          <div class="ts-block"><b>PubMed citations</b>Каждый claim с tag. Tap → bottom sheet с abstract + год + journal.<span class="src">Alex #7 absolute requirement</span></div>
+          <div class="ts-block"><b>Refusal guard</b>Out-of-scope → "Это вне моей компетенции, обратитесь к dermatologist". Никогда halluc.<span class="src">COMPLIANCE.md · medical-grade</span></div>
+          <div class="ts-block"><b>Quick prompts по lane</b>Денис: "Is my hair shed normal?" · Sarah: "When does postpartum shed peak?"<span class="src">7 контекстных prompt sets</span></div>
+          <div class="ts-block"><b>Voice input</b>Whisper / native iOS dictation для 2am когда печатать неудобно<span class="src">Denis #1 night use case</span></div>
+        </div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Refusal scope · что Coach НЕ отвечает</h5>
+        <ul class="ts-list">
+          <li>Specific dose ("should I increase to 2ml?") → "discuss with dermatologist"</li>
+          <li>Grey-market peptides (BPC-157, TB-500) → отказ, нет sourcing</li>
+          <li>AAS / steroid hair loss management → out of scope</li>
+          <li>Genetic testing interpretation (23andMe DHT) → нет peer-reviewed basis</li>
+          <li>Scarring alopecia / alopecia areata → "see dermatologist promptly"</li>
+        </ul>
+      </div>
+
+      <div class="ts-personas-row">
+        <span class="pchip peak">#1 Denis · 2am якорь</span>
+        <span class="pchip">#2 James · shed reassurance</span>
+        <span class="pchip peak">#3 Linda · sourced explanations</span>
+        <span class="pchip">#4 Sarah · timeline questions</span>
+        <span class="pchip">#5 David · GLP-1 causality</span>
+        <span class="pchip">#6 Mike · graft growth Q</span>
+        <span class="pchip peak">#7 Alex · PubMed якорь</span>
+      </div>
+
+      <div class="ts-anti">
+        <h5>Anti-patterns Coach</h5>
+        <ul>
+          <li><b>Halluc медицинских claim</b> — RAG-only mode. Если контекста нет — refuse, не выдумывай.</li>
+          <li><b>"You have AGA stage II"</b> — никогда диагнозов. "Discuss with your dermatologist".</li>
+          <li><b>Personalized dose</b> — "увеличьте до 2ml" → запрещено. Educational guidelines only.</li>
+          <li><b>Эмодзи в ответах AI</b> — медицинский тон, не chatbot vibe</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== SCAN ===== -->
+    <div class="ts-panel" id="t-scan" role="tabpanel">
+      <h4>+ Scan · 5-angle capture (center FAB)</h4>
+      <p class="ts-purpose-line">Не таб — primary CTA весь день. Один тап → guided 5-angle wizard за 90 секунд → автоматический density + ghost overlay → запись в Progress.</p>
+
+      <div class="ts-meta-row">
+        <div class="ts-meta"><span class="lab">JTBD-якорь</span><span class="val cta">Все 7 (data foundation)</span></div>
+        <div class="ts-meta"><span class="lab">Голоса консилиума</span><span class="val cta">5/7 (B блок) · Denis/James/Mike daily</span></div>
+        <div class="ts-meta"><span class="lab">Free / Paid</span><span class="val cta">1 free scan на онбординге → paywall</span></div>
+        <div class="ts-meta"><span class="lab">Mode</span><span class="val">SYSTEM</span></div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Capture flow · 5 углов за 90 секунд</h5>
+        <div class="wf"><b>Step 1 · Front</b> · линия волос · ghost overlay предыдущего фото для align · haptic feedback при alignment</div>
+        <div class="wf"><b>Step 2 · Top</b> · вид сверху · телефон над головой · voiceover guidance</div>
+        <div class="wf"><b>Step 3 · Crown</b> · затылок (Denis #1 ключевая зона) · ассистированно через mirror screen</div>
+        <div class="wf"><b>Step 4 · Left temple</b> · профиль слева</div>
+        <div class="wf"><b>Step 5 · Right temple</b> · профиль справа</div>
+        <div class="wf cta"><b>Result screen</b> · density score · "+2.3% vs 30 дней назад" · ghost overlay slider · Save → Progress</div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Что внутри · по консилиуму</h5>
+        <div class="ts-blocks">
+          <div class="ts-block"><b>5-angle calibrated capture</b>AVFoundation · фиксированное расстояние через ARKit depth · одинаковый light meter каждый раз<span class="src">Denis · James · Mike · Alex весь голос B</span></div>
+          <div class="ts-block"><b>Vision GPT-4o analysis</b>Density estimation на crown shot · staging Norwood/Ludwig · vellus-to-terminal ratio<span class="src">JewelSnap prompt pattern</span></div>
+          <div class="ts-block"><b>Ghost overlay</b>Полупрозрачный последний кадр поверх viewfinder для точного align — HairWise-killer feature<span class="src">Mike #6 absolute requirement</span></div>
+          <div class="ts-block"><b>Privacy by default</b>Face blur автоматически (только волосы видны) · on-device only · Apple Photos не туда<span class="src">Linda #3 · Sarah #4</span></div>
+          <div class="ts-block"><b>Auto-insert в Progress</b>После сохранения — toast "+ Tracked!" + jump to Progress tab<span class="src">L блок 7/7 голосов</span></div>
+          <div class="ts-block"><b>Free 1-shot onboarding</b>Без логина · один полный 5-angle capture как WOW момент → paywall<span class="src">Anti-Hair-Snap "use ChatGPT" review</span></div>
+        </div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Edge cases</h5>
+        <ul class="ts-list">
+          <li><b>Плохое освещение</b> — auto-detect, predict "low confidence", советует переснять</li>
+          <li><b>Wig / hat detected</b> — refuse capture с inline tip "remove headwear для accurate scan"</li>
+          <li><b>Один-два угла отсняты</b> — partial save с warning "5/5 рекомендуется для density"</li>
+          <li><b>Network offline</b> — capture работает on-device, Vision API queue → upload позже</li>
+        </ul>
+      </div>
+
+      <div class="ts-personas-row">
+        <span class="pchip peak">#1 Denis · weekly</span>
+        <span class="pchip peak">#2 James · weekly density</span>
+        <span class="pchip">#3 Linda · monthly</span>
+        <span class="pchip">#4 Sarah · weekly progress</span>
+        <span class="pchip">#5 David · biweekly</span>
+        <span class="pchip peak">#6 Mike · monthly milestone</span>
+        <span class="pchip peak">#7 Alex · weekly density</span>
+      </div>
+
+      <div class="ts-anti">
+        <h5>Anti-patterns Scan</h5>
+        <ul>
+          <li><b>Single-angle scan</b> — ниже точность чем 5-angle, не дифференцирует от Hair Snap</li>
+          <li><b>Face-visible сохранение</b> — App Review 1.4.1 риск + Denis privacy paranoia</li>
+          <li><b>Before/after public share</b> — UX-trap, юзеры не хотят постить</li>
+          <li><b>"Your hair is 73% bad"</b> — алармизм. Используем delta-language: "+2.3% vs last month"</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== PROGRESS ===== -->
+    <div class="ts-panel" id="t-progress" role="tabpanel">
+      <h4>Progress · journal + visual proof</h4>
+      <p class="ts-purpose-line">Куда юзер смотрит чтобы УВИДЕТЬ что лечение работает. 6/7 персон используют ежедневно или еженедельно. Photo journal + ghost overlay = причина оставаться в подписке.</p>
+
+      <div class="ts-meta-row">
+        <div class="ts-meta"><span class="lab">JTBD-якорь</span><span class="val">James #2 · Mike #6 · Sarah #4 · David #5</span></div>
+        <div class="ts-meta"><span class="lab">Голоса консилиума</span><span class="val cta">L 7/7 · B 5/7</span></div>
+        <div class="ts-meta"><span class="lab">Free / Paid</span><span class="val">Все scans paid · доступ к journal — paid</span></div>
+        <div class="ts-meta"><span class="lab">Mode</span><span class="val">SYSTEM</span></div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Layout</h5>
+        <div class="wf"><b>Header</b> · "Progress" title + filter (30/90/365 days) + persona widget toggle</div>
+        <div class="wf"><b>Density chart</b> · line graph · 5-angle averaged · trend line</div>
+        <div class="wf"><b>Ghost overlay slider</b> · pre vs current · drag handle · Mike #6 killer</div>
+        <div class="wf"><b>Photo journal grid</b> · 5-angle thumbs · timeline · tap → full-screen viewer</div>
+        <div class="wf growth"><b>Persona widget</b> · TE Timeline (Sarah) · ISHRS curve (Mike) · Weight × shed (David)</div>
+        <div class="wf cta"><b>Doctor Brief CTA</b> · "Generate 90-day PDF for your dermatologist →" (Linda #3)</div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Что внутри · по консилиуму</h5>
+        <div class="ts-blocks">
+          <div class="ts-block"><b>Photo journal grid</b>Timeline 5-angle thumbs · tap → full screen с side-by-side comparison<span class="src">L · 7/7 голосов</span></div>
+          <div class="ts-block"><b>Ghost overlay slider</b>Полупрозрачное наложение pre vs current · drag для compare<span class="src">Mike #6 · HairWise-killer</span></div>
+          <div class="ts-block"><b>Density chart 90-day</b>5-angle averaged density % с trend · click point → photo<span class="src">James #2 · Alex #7</span></div>
+          <div class="ts-block"><b>Postpartum TE Timeline (Sarah)</b>Birth → peak month 3-4 → recovery 9-12 · текущая позиция highlighted<span class="src">F · P1 фича · ACOG cited</span></div>
+          <div class="ts-block"><b>ISHRS Transplant Curve (Mike)</b>Expected vs actual milestone overlay · "ahead/on-track/behind"<span class="src">G · P1 · ISHRS 2022</span></div>
+          <div class="ts-block"><b>GLP-1 chart (David)</b>Weight (HealthKit) × shed count correlation timeline<span class="src">E · P1 · NEJM SURMOUNT-1</span></div>
+          <div class="ts-block"><b>Doctor Visit Brief PDF generator</b>Auto-export 90-day data + 5 personalized Q · B&amp;W print-friendly<span class="src">D · Linda #3 killer · P1</span></div>
+          <div class="ts-block"><b>Side-effect timeline (James/Mike)</b>Mood / libido / sleep entries plotted<span class="src">в Plan, но визуализация здесь</span></div>
+        </div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Empty / loading states</h5>
+        <ul class="ts-list">
+          <li><b>0 scans</b> — pulsing CTA "Take your first 5-angle scan" с tap → +Scan FAB</li>
+          <li><b>1 scan</b> — "Take 1 more in 7 days to see your first comparison"</li>
+          <li><b>Persona widget пустой</b> — onboarding tooltip с примером (Sarah: birth date entry)</li>
+        </ul>
+      </div>
+
+      <div class="ts-personas-row">
+        <span class="pchip">#1 Denis · medium</span>
+        <span class="pchip peak">#2 James · daily density</span>
+        <span class="pchip">#3 Linda · pre-derm visit</span>
+        <span class="pchip peak">#4 Sarah · weekly TE</span>
+        <span class="pchip peak">#5 David · GLP-1 chart</span>
+        <span class="pchip peak">#6 Mike · ISHRS milestone</span>
+        <span class="pchip peak">#7 Alex · weekly density</span>
+      </div>
+
+      <div class="ts-anti">
+        <h5>Anti-patterns Progress</h5>
+        <ul>
+          <li><b>Numerical "hair score"</b> (типа 73/100) — Denis встанет в панику. Только delta vs prior</li>
+          <li><b>Public sharing photos</b> — App Review 1.4.1 риск + privacy</li>
+          <li><b>Confetti при positive trend</b> — health context, не fitness app</li>
+          <li><b>"You're losing" alarm copy</b> — neutral language: "Stage stable · +0.4% density"</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== PLAN ===== -->
+    <div class="ts-panel" id="t-plan" role="tabpanel">
+      <h4>Plan · treatment + reminders + side-effects</h4>
+      <p class="ts-purpose-line">Где живёт Treatment Tracker (4/7 голосов · P0). Adherence streak Headspace-style — без XP/confetti. Doctor Visit Brief PDF (Linda). Stack Optimizer (Alex Premium).</p>
+
+      <div class="ts-meta-row">
+        <div class="ts-meta"><span class="lab">JTBD-якорь</span><span class="val">James #2 · Linda #3 · Mike #6 · Alex #7</span></div>
+        <div class="ts-meta"><span class="lab">Голоса консилиума</span><span class="val cta">C 4/7 · K 2/7 (поддержка) · D 1/7 (Linda)</span></div>
+        <div class="ts-meta"><span class="lab">Free / Paid</span><span class="val">Tracker — paid · Stack Optimizer — Premium</span></div>
+        <div class="ts-meta"><span class="lab">Mode</span><span class="val">SYSTEM</span></div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Layout · сверху вниз</h5>
+        <div class="wf"><b>Active treatments list</b> · карточки: Minoxidil 5% · Finasteride 1mg · Microneedling 0.5mm · Dutasteride · PRP</div>
+        <div class="wf"><b>Reminder schedule</b> · timeline дня (AM/PM) с временами доз</div>
+        <div class="wf"><b>Adherence streak</b> · "5-day streak" calm badge · НЕ Duolingo confetti</div>
+        <div class="wf"><b>Side-effect log entry</b> · libido / sleep / mood scale 1-5 · weekly reminder</div>
+        <div class="wf cta"><b>Doctor Visit Brief PDF</b> · button — generate 90-day brief (Linda)</div>
+        <div class="wf growth"><b>Stack Optimizer (Premium)</b> · interaction matrix protocols (Alex)</div>
+        <div class="wf"><b>Add new treatment</b> · primary CTA bottom · pre-set templates по common protocols</div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Что внутри · по консилиуму</h5>
+        <div class="ts-blocks">
+          <div class="ts-block"><b>Multi-treatment log</b>Minox / fin / dut / micro / PRP · dose · frequency · start date<span class="src">C · 4/7 голосов</span></div>
+          <div class="ts-block"><b>Adherence streak</b>Daily check-mark из Today экрана · streak calculation · НЕ XP gamification<span class="src">James #2 retention якорь · Headspace-style</span></div>
+          <div class="ts-block"><b>Side-effect log</b>Weekly check-in: libido / sleep / mood / brain fog · slider 1-5<span class="src">James #2 fin compliance · Mike #6</span></div>
+          <div class="ts-block"><b>Reminder schedule</b>UNUserNotificationCenter · time-of-day per treatment · snooze 30min<span class="src">K · 2/7 поддержка C</span></div>
+          <div class="ts-block"><b>Doctor Visit Brief PDF</b>Auto-generate из 90 дней: density timeline + treatments + side-effects + 5 personalized Q<span class="src">D · Linda #3 P1 killer</span></div>
+          <div class="ts-block"><b>Stack Optimizer (Premium)</b>Visual matrix · Dhurat 2013 (microneedle+minox) · Eun 2010 (dut+fin) · evidence grade A/B/C<span class="src">H · Alex #7 P2 Premium</span></div>
+          <div class="ts-block"><b>Treatment templates</b>"Standard MPB protocol" · "Postpartum-safe" · "Post-transplant adjuvant" · 1-tap setup<span class="src">P0 onboarding accelerator</span></div>
+        </div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Compliance guard · что НЕ предлагаем</h5>
+        <ul class="ts-list">
+          <li>Specific dose ("increase to 2ml") — нет recommendations, только log того что назначил врач</li>
+          <li>Off-label combinations без evidence — Stack Optimizer показывает только sourced protocols</li>
+          <li>Pregnancy-unsafe (fin/dut) — для F юзеров warning + AAD pregnancy Cat X disclosure</li>
+          <li>Grey-market препараты (BPC-157, PT-141) — list refuses, не появляются в templates</li>
+        </ul>
+      </div>
+
+      <div class="ts-personas-row">
+        <span class="pchip">#1 Denis · low (он не на лечении)</span>
+        <span class="pchip peak">#2 James · daily streak</span>
+        <span class="pchip peak">#3 Linda · Doctor Brief PDF</span>
+        <span class="pchip">#4 Sarah · low (postpartum-safe template)</span>
+        <span class="pchip">#5 David · medium (mitigation log)</span>
+        <span class="pchip">#6 Mike · medium (adjuvant)</span>
+        <span class="pchip peak">#7 Alex · daily Stack Optimizer</span>
+      </div>
+
+      <div class="ts-anti">
+        <h5>Anti-patterns Plan</h5>
+        <ul>
+          <li><b>XP / levels / achievements</b> — adherence ОК, gamification — нет</li>
+          <li><b>Public protocol sharing</b> — никаких "share my stack" в community</li>
+          <li><b>Predictive timeline</b> ("you'll be Norwood IV by 35") — алармизм + нет evidence</li>
+          <li><b>Auto-pause без согласия</b> — никогда. Юзер сам ставит pause, AI Coach подсказывает но не действует</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  var tabs = document.querySelectorAll('.tabswitch .ts-tab');
+  var panels = document.querySelectorAll('.tabswitch .ts-panel');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.getAttribute('data-panel');
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      var panel = document.getElementById(target);
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+</script>
 
 <footer class="footer-refs">
   <strong>Inputs to consilium round 1:</strong>
