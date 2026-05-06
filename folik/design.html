@@ -442,6 +442,210 @@
   table.jtbd-scan tr:last-child td { border-bottom: none; }
   table.jtbd-scan td.persona { font-weight: 700; white-space: nowrap; }
 
+  /* ── Roadmap / whitespace matrix ── */
+  table.roadmap {
+    width: 100%; border-collapse: collapse; margin-top: 12px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider); font-size: 12px;
+  }
+  table.roadmap th, table.roadmap td {
+    padding: 8px 10px; border-bottom: 1px solid var(--divider);
+    text-align: center;
+  }
+  table.roadmap th {
+    background: var(--brand-soft); color: var(--brand);
+    font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 700;
+  }
+  table.roadmap th.feat, table.roadmap td.feat { text-align: left; min-width: 220px; }
+  table.roadmap td.feat b { color: var(--ink); font-weight: 700; }
+  table.roadmap td.feat .ftag { display: inline-block; font-family: ui-monospace, "SF Mono", monospace; font-size: 10px; font-weight: 800; color: var(--brand); padding-right: 6px; }
+  table.roadmap td.cell { font-size: 14px; line-height: 1; }
+  table.roadmap td.cell.no { color: #C8B0B0; }
+  table.roadmap td.cell.yes { color: var(--good); font-weight: 800; }
+  table.roadmap td.cell.partial { color: var(--watch); }
+  table.roadmap td.folik { background: var(--brand-soft); font-weight: 800; color: var(--cta); }
+  table.roadmap tr:last-child td { border-bottom: none; }
+
+  /* ── P-tier cards ── */
+  .ptier-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px; margin-top: 12px;
+  }
+  .ptier {
+    background: var(--card); border-radius: 16px; padding: 16px 18px;
+    border: 1px solid var(--divider);
+  }
+  .ptier.p0 { border-left: 4px solid var(--cta); }
+  .ptier.p1 { border-left: 4px solid var(--growth); }
+  .ptier.p2 { border-left: 4px solid var(--ink-3); }
+  .ptier .ph {
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px;
+  }
+  .ptier .ph .tag {
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; font-weight: 800;
+    padding: 2px 8px; border-radius: 6px; color: #fff;
+  }
+  .ptier.p0 .ph .tag { background: var(--cta); }
+  .ptier.p1 .ph .tag { background: var(--growth); }
+  .ptier.p2 .ph .tag { background: var(--ink-3); }
+  .ptier .ph b { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .ptier .ph .when { font-size: 11px; color: var(--ink-3); margin-left: auto; font-weight: 600; }
+  .ptier ul { padding-left: 18px; margin: 0; line-height: 1.55; }
+  .ptier ul li { font-size: 12.5px; margin-bottom: 4px; color: var(--ink); }
+  .ptier ul li b { color: var(--brand); }
+  .ptier .stack { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--divider); font-size: 11.5px; color: var(--ink-2); line-height: 1.5; }
+  .ptier .stack b { color: var(--ink); }
+
+  /* ── Vote tally bar ── */
+  .vote-bar {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800;
+  }
+  .vote-bar .pips { display: inline-flex; gap: 2px; }
+  .vote-bar .pip {
+    width: 9px; height: 9px; border-radius: 2px;
+    background: var(--divider);
+  }
+  .vote-bar .pip.on { background: var(--cta); }
+
+  /* ── Tab architecture mockup ── */
+  .phone-frame {
+    max-width: 320px; margin: 8px auto 18px;
+    background: var(--bg); border-radius: 32px;
+    border: 8px solid #1A1A1A;
+    padding: 20px 14px 8px; position: relative;
+    box-shadow: 0 20px 50px rgba(26, 58, 74, 0.18);
+  }
+  .phone-frame::before {
+    content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+    width: 100px; height: 22px; border-radius: 0 0 18px 18px; background: #1A1A1A;
+  }
+  .phone-screen {
+    background: var(--card); border-radius: 22px;
+    min-height: 360px; padding: 14px 12px 86px;
+    color: var(--ink); display: flex; flex-direction: column; gap: 10px;
+    position: relative;
+  }
+  .phone-screen .screen-title {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 700; font-size: 17px; color: var(--brand);
+  }
+  .phone-screen .screen-card {
+    background: var(--bg); border-radius: 12px; padding: 10px 12px;
+    font-size: 11.5px; line-height: 1.45; color: var(--ink);
+    border: 1px solid var(--divider);
+  }
+  .phone-screen .screen-card b { color: var(--brand); }
+  .phone-tabbar {
+    position: absolute; left: 0; right: 0; bottom: 6px;
+    background: var(--card); border-top: 1px solid var(--divider);
+    border-radius: 0 0 22px 22px;
+    padding: 10px 6px 14px;
+    display: grid; grid-template-columns: 1fr 1fr 72px 1fr 1fr;
+    gap: 4px; align-items: center;
+  }
+  .phone-tabbar .tab {
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    font-size: 10px; font-weight: 700; color: var(--ink-3);
+    text-decoration: none;
+  }
+  .phone-tabbar .tab.active { color: var(--brand); }
+  .phone-tabbar .tab .icon {
+    width: 22px; height: 22px; border-radius: 6px;
+    background: var(--divider); display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800; color: var(--ink-2);
+  }
+  .phone-tabbar .tab.active .icon { background: var(--brand); color: #F7F5F2; }
+  .phone-tabbar .scan-fab {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--cta); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 800;
+    box-shadow: 0 8px 18px rgba(232, 98, 42, 0.36);
+    margin: -22px auto 0;
+  }
+  .phone-tabbar .scan-fab + .tab-label {
+    text-align: center; font-size: 9.5px; font-weight: 800;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--cta); margin-top: 2px;
+  }
+
+  /* ── Tab spec cards ── */
+  .tab-spec-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px; margin-top: 16px;
+  }
+  .tab-spec {
+    background: var(--card); border-radius: 16px; padding: 16px 18px;
+    border: 1px solid var(--divider);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .tab-spec.scan { border-color: var(--cta); background: linear-gradient(180deg, var(--cta-soft) 0%, var(--card) 60%); }
+  .tab-spec .ts-h { display: flex; align-items: center; gap: 10px; }
+  .tab-spec .ts-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--brand); color: #F7F5F2;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 16px;
+  }
+  .tab-spec.scan .ts-icon { background: var(--cta); }
+  .tab-spec .ts-name {
+    font-size: 16px; font-weight: 700; color: var(--ink);
+  }
+  .tab-spec .ts-sub {
+    font-size: 11px; color: var(--ink-3); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-top: 1px;
+  }
+  .tab-spec .ts-purpose {
+    font-size: 12.5px; line-height: 1.5; color: var(--ink); font-style: italic;
+    border-left: 3px solid var(--brand-soft); padding-left: 10px;
+  }
+  .tab-spec.scan .ts-purpose { border-left-color: var(--cta); }
+  .tab-spec .ts-row {
+    display: flex; gap: 8px; font-size: 12px; align-items: flex-start;
+  }
+  .tab-spec .ts-l {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-3);
+    width: 64px; flex-shrink: 0; padding-top: 2px;
+  }
+  .tab-spec .ts-row ul { padding-left: 14px; margin: 0; }
+  .tab-spec .ts-row li { font-size: 11.5px; color: var(--ink); margin-bottom: 2px; }
+  .tab-spec .ts-personas {
+    display: flex; gap: 4px; flex-wrap: wrap;
+  }
+  .tab-spec .pchip {
+    background: var(--brand-soft); color: var(--brand);
+    border-radius: 999px; padding: 2px 8px;
+    font-size: 10.5px; font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .tab-spec.scan .pchip { background: #fff; color: var(--cta); }
+
+  /* ── JTBD × Tab matrix ── */
+  table.jtm {
+    width: 100%; border-collapse: collapse; margin-top: 14px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider); font-size: 12.5px;
+  }
+  table.jtm th, table.jtm td {
+    padding: 8px 11px; border-bottom: 1px solid var(--divider);
+    text-align: center;
+  }
+  table.jtm th {
+    background: var(--brand-soft); color: var(--brand);
+    font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 700;
+  }
+  table.jtm td.persona { text-align: left; font-weight: 700; white-space: nowrap; }
+  table.jtm td.use {
+    font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; font-size: 12px;
+  }
+  table.jtm td.use.h { color: var(--cta); background: var(--cta-soft); }
+  table.jtm td.use.m { color: var(--good); background: var(--good-bg); }
+  table.jtm td.use.l { color: var(--ink-3); }
+  table.jtm tr:last-child td { border-bottom: none; }
+
   .footer-refs {
     margin-top: 56px; padding-top: 24px;
     border-top: 1px solid var(--divider);
@@ -468,6 +672,16 @@
   <a href="#module-2" class="is-module"><span class="nav-num">M2</span> JTBD</a>
   <a href="#jtbd-cards">7 personas</a>
   <a href="#jtbd-scan">Scan-table</a>
+  <span class="sep"></span>
+  <a href="#module-3" class="is-module"><span class="nav-num">M3</span> Roadmap</a>
+  <a href="#whitespace-matrix">Whitespace</a>
+  <a href="#vote-tally">Votes</a>
+  <a href="#ptiers">P-tiers</a>
+  <span class="sep"></span>
+  <a href="#module-4" class="is-module"><span class="nav-num">M4</span> Tabs</a>
+  <a href="#tabbar">Tab bar</a>
+  <a href="#tab-spec">Per-tab</a>
+  <a href="#jtm">JTBD × Tab</a>
 </nav>
 
 <header id="top">
@@ -789,6 +1003,269 @@
     <tr><td><span class="jtbd-num">#7</span></td><td class="persona">Alex</td><td>M 25-40 · biohacker</td><td>PubMed citations + stack optim</td><td>Stack Optimizer + density</td><td>Standard Annual → evangelist</td></tr>
   </tbody>
 </table>
+
+<!-- ===== MODULE 3 — PRODUCT ROADMAP ===== -->
+<div class="module-banner" id="module-3">
+  <span class="num">МОДУЛЬ 3</span>
+  <h2>Product Roadmap · персона-консилиум</h2>
+  <p class="desc">12 продуктов на стол. Голоса 7 персон → P0/P1/P2 tier. 9 из 12 — blue ocean (никто из 7 конкурентов не имеет). Free tier (Norwood Calc + 1 AI Coach Q + 1 Photo scan) решает Hair Snap'овскую жалобу <em>"I'd suggest to just use ChatGPT for free"</em> — мы доказываем ценность ДО paywall.</p>
+</div>
+
+<h2 id="whitespace-matrix">3.1 Whitespace matrix · 12 продуктов × 7 конкурентов</h2>
+<p class="lede">✅ = есть полностью · ◐ = частично/слабо · ❌ = нет. Folik колонка — что мы строим.</p>
+<table class="roadmap">
+  <thead>
+    <tr>
+      <th class="feat">Продукт</th>
+      <th>Hair Snap</th><th>Hair Scan</th><th>AMR</th><th>Recede</th><th>HairWise</th><th>Follicle</th>
+      <th>Folik</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="feat"><span class="ftag">A</span><b>AI Coach + RAG + PubMed</b><br><span style="font-size:11px;color:var(--ink-2)">DeepSeek V3 + sqlite-vec ~11MB on-device</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ flagship</td></tr>
+    <tr><td class="feat"><span class="ftag">B</span><b>5-angle photo + ghost overlay + density</b><br><span style="font-size:11px;color:var(--ink-2)">OpenAI Vision GPT-4o + AVFoundation калибровка</span></td>
+      <td class="cell partial">◐</td><td class="cell partial">◐</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell partial">◐ ghost</td><td class="cell no">❌</td>
+      <td class="cell folik">✅</td></tr>
+    <tr><td class="feat"><span class="ftag">C</span><b>Treatment Tracker + adherence + side-effect log</b></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell partial">◐</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅</td></tr>
+    <tr><td class="feat"><span class="ftag">D</span><b>Doctor Visit Brief PDF</b><br><span style="font-size:11px;color:var(--ink-2)">Авто-генерация из 90-day данных + 5 personalized Q</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ Linda killer</td></tr>
+    <tr><td class="feat"><span class="ftag">E</span><b>GLP-1 Mode</b><br><span style="font-size:11px;color:var(--ink-2)">HealthKit weight × hair shed correlation</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ blue ocean</td></tr>
+    <tr><td class="feat"><span class="ftag">F</span><b>Postpartum TE Timeline</b><br><span style="font-size:11px;color:var(--ink-2)">Birth → peak shed → recovery curve</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ blue ocean</td></tr>
+    <tr><td class="feat"><span class="ftag">G</span><b>Transplant Milestone Tracker</b><br><span style="font-size:11px;color:var(--ink-2)">ISHRS curve overlay vs user photo timeline</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell partial">◐ sim only</td>
+      <td class="cell folik">✅ blue ocean</td></tr>
+    <tr><td class="feat"><span class="ftag">H</span><b>Stack Optimizer</b><br><span style="font-size:11px;color:var(--ink-2)">minox + fin + microneedling + PRP — interaction matrix</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ Alex</td></tr>
+    <tr><td class="feat"><span class="ftag">I</span><b>Lab Interpreter Premium</b><br><span style="font-size:11px;color:var(--ink-2)">LabCorp/Quest PDF → OCR → AI explainer</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ Linda Premium</td></tr>
+    <tr><td class="feat"><span class="ftag">J</span><b>Shed Counter / Trichogram-light</b><br><span style="font-size:11px;color:var(--ink-2)">Daily photo → AI count + vellus-to-terminal ratio</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ Alex</td></tr>
+    <tr><td class="feat"><span class="ftag">K</span><b>Smart Reminders</b><br><span style="font-size:11px;color:var(--ink-2)">Time-of-day per treatment (minox 2× daily)</span></td>
+      <td class="cell partial">◐ basic</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅</td></tr>
+    <tr><td class="feat"><span class="ftag">L</span><b>Photo Journal 90-day side-by-side</b><br><span style="font-size:11px;color:var(--ink-2)">Table stakes — но мы делаем лучше</span></td>
+      <td class="cell yes">✅</td><td class="cell yes">✅</td><td class="cell yes">✅</td><td class="cell partial">◐</td><td class="cell yes">✅</td><td class="cell no">❌</td>
+      <td class="cell folik">✅</td></tr>
+  </tbody>
+</table>
+<p class="lede" style="margin-top: 8px; font-size: 13px;"><strong>Итог:</strong> 9 из 12 продуктов — blue ocean. Только Photo Journal (L) полностью у конкурентов; ghost overlay (B) частично у HairWise; treatment tracker (C) слабо у AMR; basic reminders (K) у Hair Snap. <strong>Всё остальное — мы первые.</strong></p>
+
+<h2 id="vote-tally">3.2 Голоса 7 персон · что каждый хочет в первую очередь</h2>
+<p class="lede">Каждая персона голосует за свой top-5 продуктов. Балл = частота попадания в персональные top-5 (макс 7). AI Coach + Photo Journal — единогласные.</p>
+
+<table class="jtbd-scan">
+  <thead><tr><th>Персона</th><th>Top-5 продуктов</th></tr></thead>
+  <tbody>
+    <tr><td class="persona"><span class="jtbd-num" style="background:var(--cta)">#1</span> Denis</td><td>A · B · L · K · <em>(Norwood Calc как entry hook)</em></td></tr>
+    <tr><td class="persona"><span class="jtbd-num" style="background:var(--cta)">#2</span> James</td><td>C · B · A (shed reassurance) · L · side-effect log <em>(в C)</em></td></tr>
+    <tr><td class="persona"><span class="jtbd-num">#3</span> Linda</td><td>I · D · A · L · Ludwig scale <em>(female Norwood)</em></td></tr>
+    <tr><td class="persona"><span class="jtbd-num">#4</span> Sarah</td><td>F · L · A · K · Lifeline pricing</td></tr>
+    <tr><td class="persona"><span class="jtbd-num">#5</span> David</td><td>E · A · L · C (mitigation) · Jabwell cross-promote</td></tr>
+    <tr><td class="persona"><span class="jtbd-num">#6</span> Mike</td><td>G · B (ghost) · A · adjuvant guidance <em>(в G)</em> · L</td></tr>
+    <tr><td class="persona"><span class="jtbd-num">#7</span> Alex</td><td>A · H · B (weekly density) · J · C</td></tr>
+  </tbody>
+</table>
+
+<h3 style="margin-top: 24px;">Сводка голосов · сортировка по поддержке</h3>
+<table class="jtbd-scan">
+  <thead><tr><th>Продукт</th><th>Голоса</th><th>Tally</th><th>P-tier</th></tr></thead>
+  <tbody>
+    <tr><td><b>A</b> AI Coach + RAG + PubMed</td><td>7 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span></span></span></td><td><span class="jtbd-weight w1">P0 flagship</span></td></tr>
+    <tr><td><b>L</b> Photo Journal 90-day</td><td>7 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span></span></span></td><td><span class="jtbd-weight w1">P0</span></td></tr>
+    <tr><td><b>B</b> 5-angle + ghost + density</td><td>5 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span></span></span></td><td><span class="jtbd-weight w1">P0</span></td></tr>
+    <tr><td><b>C</b> Treatment Tracker</td><td>4 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></span></td><td><span class="jtbd-weight w1">P0</span></td></tr>
+    <tr><td><b>K</b> Smart Reminders</td><td>2 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></span></td><td><span class="jtbd-weight w1">P0 (поддержка C)</span></td></tr>
+    <tr><td><b>D</b> Doctor Visit Brief PDF</td><td>1 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></span></td><td><span class="jtbd-weight w2">P1 · Linda LTV $99-200</span></td></tr>
+    <tr><td><b>F</b> Postpartum TE Timeline</td><td>1 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></span></td><td><span class="jtbd-weight w2">P1 · BumpCheck cross</span></td></tr>
+    <tr><td><b>E</b> GLP-1 Mode</td><td>1 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></span></td><td><span class="jtbd-weight w2">P1 · Jabwell cross</span></td></tr>
+    <tr><td><b>G</b> Transplant Milestone Tracker</td><td>1 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></span></td><td><span class="jtbd-weight w2">P1 · Mike Premium</span></td></tr>
+    <tr><td><b>I</b> Lab Interpreter Premium</td><td>1 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></span></td><td><span class="jtbd-weight w3">P2 · Linda Premium upsell</span></td></tr>
+    <tr><td><b>H</b> Stack Optimizer</td><td>1 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></span></td><td><span class="jtbd-weight w3">P2 · Alex evangelist</span></td></tr>
+    <tr><td><b>J</b> Shed Counter / Trichogram</td><td>1 / 7</td><td><span class="vote-bar"><span class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></span></td><td><span class="jtbd-weight w3">P2 · Alex</span></td></tr>
+  </tbody>
+</table>
+
+<h2 id="ptiers">3.3 P-tier roadmap · 8-week ship + post-V1</h2>
+<div class="ptier-grid">
+
+  <div class="ptier p0">
+    <div class="ph"><span class="tag">P0</span><b>Ship-V1 · 8 недель</b><span class="when">Aug 2026</span></div>
+    <ul>
+      <li><b>A · AI Coach + RAG</b> — DeepSeek V3 + sqlite-vec, PubMed citations, 7 persona-aware intro prompts, refusal guard</li>
+      <li><b>B · 5-angle photo + ghost + density</b> — calibrated capture (front/top/crown/L/R), Vision GPT-4o density, ghost overlay для week-over-week</li>
+      <li><b>L · Photo Journal 90-day</b> — side-by-side comparison, on-device Core Data, face blur</li>
+      <li><b>C · Treatment Tracker</b> — multi-treatment log, adherence streak (NOT gamified), side-effect log</li>
+      <li><b>K · Smart Reminders</b> — UNUserNotificationCenter, time-of-day per treatment</li>
+      <li><b>Norwood Calculator</b> (free hook) — standalone, no signup, viral вход в воронку</li>
+    </ul>
+    <div class="stack"><b>Tech reuse:</b> 100% Jabwell <code>AIService.swift</code> · RAG mirror Calibrum · 90% Jabwell tracker · Cloudflare Worker proxy · OpenAI Vision prompt by JewelSnap pattern</div>
+  </div>
+
+  <div class="ptier p1">
+    <div class="ph"><span class="tag">P1</span><b>Persona expansions · weeks 9-16</b><span class="when">Sep-Oct 2026</span></div>
+    <ul>
+      <li><b>D · Doctor Visit Brief PDF</b> — auto-generate из 90-day, B&amp;W print-friendly, 5 personalized Q (Linda)</li>
+      <li><b>F · Postpartum TE Timeline</b> — birth date → peak month 3-4 → recovery month 9-12 (Sarah, BumpCheck cross)</li>
+      <li><b>E · GLP-1 Mode</b> — HealthKit weight import, weight-velocity × shed correlation chart (David, Jabwell cross)</li>
+      <li><b>G · Transplant Milestone Tracker</b> — ISHRS curve overlay vs user, adjuvant minox protocol (Mike Premium)</li>
+    </ul>
+    <div class="stack"><b>Бизнес-цель:</b> разлочить premium tier ($99/yr) для Linda + Mike, активировать BumpCheck + Jabwell cross-promote (free CAC)</div>
+  </div>
+
+  <div class="ptier p2">
+    <div class="ph"><span class="tag">P2</span><b>Premium &amp; evangelist · weeks 17+</b><span class="when">Nov+ 2026</span></div>
+    <ul>
+      <li><b>I · Lab Interpreter Premium</b> — LabCorp/Quest PDF → OCR → ferritin/TSH/andro/D explainer (Linda Premium upsell)</li>
+      <li><b>H · Stack Optimizer</b> — interaction matrix protocols, evidence grade per combination (Alex)</li>
+      <li><b>J · Shed Counter / Trichogram-light</b> — daily photo → AI count, vellus-to-terminal ratio (Alex)</li>
+    </ul>
+    <div class="stack"><b>Бизнес-цель:</b> evangelist segment Reddit r/tressless reviews, Premium LTV $99-200/yr ceiling</div>
+  </div>
+
+</div>
+
+<!-- ===== MODULE 4 — TAB ARCHITECTURE ===== -->
+<div class="module-banner" id="module-4">
+  <span class="num">МОДУЛЬ 4</span>
+  <h2>Tab Architecture · 4 tabs + center Scan FAB</h2>
+  <p class="desc">Конкуренты используют 3-5 табов с похожими ярлыками (Home / Scan / Progress / Settings) — мы строим вокруг JTBD: <strong>Today</strong> (anchor), <strong>Coach</strong> (flagship), <strong>+Scan</strong> (primary action FAB), <strong>Progress</strong>, <strong>Plan</strong>. Settings живёт в Today header, а не отдельным табом — экономит место для core surfaces.</p>
+</div>
+
+<h2 id="tabbar">4.1 Tab bar · визуал</h2>
+
+<div class="phone-frame">
+  <div class="phone-screen">
+    <div class="screen-title">Today</div>
+    <div class="screen-card"><b>Norwood IIa</b> · 90-day стабильно<br>Last scan · 3 days ago</div>
+    <div class="screen-card"><b>Today's protocol</b><br>Minoxidil 5% AM ✓ · PM in 2h<br>Finasteride 1mg ✓</div>
+    <div class="screen-card" style="background: var(--ai-bg);"><b>Coach nudge</b><br>"Week 8 minoxidil — мы в shed window. <em>Tap для контекста →</em>"</div>
+    <div class="phone-tabbar">
+      <a class="tab active"><span class="icon">⌂</span>Today</a>
+      <a class="tab"><span class="icon">💬</span>Coach</a>
+      <div>
+        <div class="scan-fab">+</div>
+        <div class="tab-label">Scan</div>
+      </div>
+      <a class="tab"><span class="icon">📈</span>Progress</a>
+      <a class="tab"><span class="icon">⚙</span>Plan</a>
+    </div>
+  </div>
+</div>
+
+<p class="lede" style="font-size: 13px;">Center FAB <strong>+Scan</strong> — primary CTA весь день. 5-angle capture запускается одним тапом. Photo journal заполняется автоматически.</p>
+
+<h2 id="tab-spec">4.2 Per-tab spec</h2>
+
+<div class="tab-spec-grid">
+
+  <div class="tab-spec">
+    <div class="ts-h">
+      <div class="ts-icon">⌂</div>
+      <div>
+        <div class="ts-name">Today</div>
+        <div class="ts-sub">Tab 1 · home · daily anchor</div>
+      </div>
+    </div>
+    <p class="ts-purpose">Status snapshot за 3 секунды. Юзер открывает app → видит "где я сейчас" + "что делать сегодня". Без скроллинга — 3 карточки на экран.</p>
+    <div class="ts-row"><div class="ts-l">Контент</div><ul><li>Norwood Stage hero (90-day delta)</li><li>Today's protocol (с чек-боксами)</li><li>AI Coach nudge (контекстный)</li><li>GLP-1 / Postpartum / Transplant — special widget по lane</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Триггер</div><ul><li>Push-уведомление от reminder</li><li>App icon tap — default screen</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Персоны</div><div class="ts-personas"><span class="pchip">#1 Denis</span><span class="pchip">#2 James</span><span class="pchip">#4 Sarah</span><span class="pchip">#5 David</span></div></div>
+  </div>
+
+  <div class="tab-spec">
+    <div class="ts-h">
+      <div class="ts-icon">💬</div>
+      <div>
+        <div class="ts-name">Coach</div>
+        <div class="ts-sub">Tab 2 · AI chat · flagship</div>
+      </div>
+    </div>
+    <p class="ts-purpose">RAG-conversation с PubMed citations. Persona-aware intro: Denis получает reassurance-tone, Alex — sourced answers. Dark mode by default — Denis в 2am чувствует "тут безопасно".</p>
+    <div class="ts-row"><div class="ts-l">Контент</div><ul><li>Chat thread (history saved)</li><li>Quick prompts по lane (Denis: "Is this normal?" / Alex: "Latest evidence on...")</li><li>Citation footnote tap → source detail</li><li>Educational disclaimer footer (constant)</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Триггер</div><ul><li>2am paranoia (Denis)</li><li>Shed phase question (James)</li><li>Doctor prep (Linda)</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Персоны</div><div class="ts-personas"><span class="pchip">All 7/7 use</span></div></div>
+  </div>
+
+  <div class="tab-spec scan">
+    <div class="ts-h">
+      <div class="ts-icon">+</div>
+      <div>
+        <div class="ts-name">Scan</div>
+        <div class="ts-sub">Center FAB · primary action</div>
+      </div>
+    </div>
+    <p class="ts-purpose">Не таб — а <strong>центральная primary CTA</strong>. Один тап → 5-angle calibrated capture (front/top/crown/L/R temple). Vision API analysis. Результат идёт в Progress + AI Coach context. Это "сделай шаг сегодня" каждый день.</p>
+    <div class="ts-row"><div class="ts-l">Поток</div><ul><li>Tap FAB → guided capture wizard (haptic + voiceover)</li><li>5 angles за 90 секунд</li><li>Auto-density + ghost overlay результат</li><li>Insert в Progress → "tracked!" toast</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Free tier</div><ul><li>1 free scan на онбординге без логина (WOW момент)</li><li>После — paywall</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Персоны</div><div class="ts-personas"><span class="pchip">All 7/7</span></div></div>
+  </div>
+
+  <div class="tab-spec">
+    <div class="ts-h">
+      <div class="ts-icon">📈</div>
+      <div>
+        <div class="ts-name">Progress</div>
+        <div class="ts-sub">Tab 3 · journal + visual proof</div>
+      </div>
+    </div>
+    <p class="ts-purpose">Photo Journal 90-day side-by-side + density timeline. Юзер смотрит сюда чтобы УВИДЕТЬ что лечение работает. Ghost overlay — фишка. Special widgets на JTBD: Postpartum TE Timeline (Sarah), ISHRS curve (Mike), Weight × shed correlation (David).</p>
+    <div class="ts-row"><div class="ts-l">Контент</div><ul><li>Photo journal grid (timeline)</li><li>Ghost overlay slider — pre vs current</li><li>Density chart (5-angle averaged)</li><li>Persona widget: TE Timeline / ISHRS curve / GLP-1 chart</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Триггер</div><ul><li>"Did treatment work?" doubt moment</li><li>Перед визитом к дерматологу</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Персоны</div><div class="ts-personas"><span class="pchip">#2 James</span><span class="pchip">#4 Sarah</span><span class="pchip">#5 David</span><span class="pchip">#6 Mike</span><span class="pchip">#7 Alex</span></div></div>
+  </div>
+
+  <div class="tab-spec">
+    <div class="ts-h">
+      <div class="ts-icon">⚙</div>
+      <div>
+        <div class="ts-name">Plan</div>
+        <div class="ts-sub">Tab 4 · treatment + reminders</div>
+      </div>
+    </div>
+    <p class="ts-purpose">Treatment Tracker setup, edit, side-effect log. Adherence streak (Headspace-style — НЕ XP). Doctor Visit Brief PDF (Linda). Stack Optimizer (Alex Premium).</p>
+    <div class="ts-row"><div class="ts-l">Контент</div><ul><li>Active treatments list (minox, fin, micro, PRP)</li><li>Reminder schedule edit</li><li>Side-effect log (libido, sleep, mood)</li><li>Doctor Brief PDF generator</li><li>Stack Optimizer (Premium / Alex)</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Триггер</div><ul><li>Старт нового лечения</li><li>Изменение дозы</li><li>Pre-doctor visit</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Персоны</div><div class="ts-personas"><span class="pchip">#2 James</span><span class="pchip">#3 Linda</span><span class="pchip">#6 Mike</span><span class="pchip">#7 Alex</span></div></div>
+  </div>
+
+</div>
+
+<h2 id="jtm">4.3 JTBD × Tab usage matrix</h2>
+<p class="lede"><strong>H</strong> = high (daily) · <strong>M</strong> = medium (weekly) · <strong>L</strong> = low (rare). Подтверждает: каждая персона использует минимум 3 таба ежедневно — нет "мёртвых" табов.</p>
+<table class="jtm">
+  <thead><tr><th style="text-align:left">Persona</th><th>Today</th><th>Coach</th><th>+ Scan</th><th>Progress</th><th>Plan</th><th style="text-align:left">Якорь</th></tr></thead>
+  <tbody>
+    <tr><td class="persona">#1 Denis</td><td class="use h">H</td><td class="use h">H</td><td class="use m">M</td><td class="use m">M</td><td class="use l">L</td><td>Coach 2am</td></tr>
+    <tr><td class="persona">#2 James</td><td class="use h">H</td><td class="use m">M</td><td class="use m">M</td><td class="use h">H</td><td class="use h">H</td><td>Plan streak</td></tr>
+    <tr><td class="persona">#3 Linda</td><td class="use m">M</td><td class="use h">H</td><td class="use l">L</td><td class="use m">M</td><td class="use h">H</td><td>Plan + Coach</td></tr>
+    <tr><td class="persona">#4 Sarah</td><td class="use h">H</td><td class="use m">M</td><td class="use m">M</td><td class="use h">H</td><td class="use l">L</td><td>Today TE Timeline</td></tr>
+    <tr><td class="persona">#5 David</td><td class="use h">H</td><td class="use m">M</td><td class="use l">L</td><td class="use h">H</td><td class="use m">M</td><td>Progress GLP-1 chart</td></tr>
+    <tr><td class="persona">#6 Mike</td><td class="use m">M</td><td class="use m">M</td><td class="use m">M</td><td class="use h">H</td><td class="use m">M</td><td>Progress milestone</td></tr>
+    <tr><td class="persona">#7 Alex</td><td class="use l">L</td><td class="use h">H</td><td class="use m">M</td><td class="use h">H</td><td class="use h">H</td><td>Coach + Plan stack</td></tr>
+  </tbody>
+</table>
+
+<h3 style="margin-top: 24px;">4.4 Tab anti-patterns · что мы НЕ делаем</h3>
+<ul class="list dontlist">
+  <li><strong>Settings отдельным табом</strong> — settings живёт в Today header (gear icon). Tab — это поверхность активного use, не housekeeping.</li>
+  <li><strong>Profile / Account таб</strong> — paywall и subscription управление в Today → Settings. Profile-tab крадёт место у core surface.</li>
+  <li><strong>Discover / Feed таб</strong> — никаких "social hair loss tips". Folik — личный медицинский tracker, не lifestyle лента.</li>
+  <li><strong>5+ табов</strong> — iOS HIG требует ≤ 5 видимых табов. Center FAB не считается табом, но визуально доминирует.</li>
+  <li><strong>Tab badges с count</strong> — не уведомления о шеде ("12 новых волос выпало!") — это алармизм для Denis.</li>
+  <li><strong>Гейминг Plan-таба</strong> (XP, levels, achievements) — adherence streak ОК (Headspace-style), но без confetti и rewards. Health, не игра.</li>
+</ul>
 
 <footer class="footer-refs">
   <strong>Inputs to consilium round 1:</strong>
