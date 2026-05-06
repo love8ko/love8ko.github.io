@@ -319,6 +319,40 @@
   ul.list li { margin-bottom: 5px; font-size: 14px; }
   ul.dontlist li::marker { color: var(--alert); }
 
+  /* ── Top nav ── */
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(247, 245, 242, 0.92);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--divider);
+    margin: 0 -24px 18px;
+    padding: 10px 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--ink-2);
+    font-size: 12.5px; font-weight: 600;
+    padding: 6px 11px; border-radius: 999px;
+    border: 1px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover { background: var(--card); color: var(--brand); border-color: var(--divider); }
+  .top-nav a.is-module { background: var(--brand); color: #F7F5F2; }
+  .top-nav a.is-module:hover { background: var(--brand-mid); color: #F7F5F2; }
+  .top-nav .nav-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em;
+    background: var(--cta); color: #fff;
+    padding: 2px 6px; border-radius: 5px;
+  }
+  .top-nav .sep {
+    width: 1px; height: 16px; background: var(--divider);
+    margin: 0 4px;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
   /* ── Module banner ── */
   .module-banner {
     margin: 64px 0 18px;
@@ -420,7 +454,23 @@
 </head>
 <body>
 
-<header>
+<nav class="top-nav">
+  <a href="#top" class="brand"><strong>Folik</strong> · workbench</a>
+  <span class="sep"></span>
+  <a href="#module-1" class="is-module"><span class="nav-num">M1</span> Дизайн</a>
+  <a href="#tokens">Tokens</a>
+  <a href="#components">Components</a>
+  <a href="#typography">Typography</a>
+  <a href="#modes">Mode strategy</a>
+  <a href="#whitespace">Whitespace</a>
+  <a href="#anti-patterns">Anti-patterns</a>
+  <span class="sep"></span>
+  <a href="#module-2" class="is-module"><span class="nav-num">M2</span> JTBD</a>
+  <a href="#jtbd-cards">7 personas</a>
+  <a href="#jtbd-scan">Scan-table</a>
+</nav>
+
+<header id="top">
   <h1>Folik — Design System Workbench</h1>
   <p class="lede">Palette locked · «Quiet Authority (Refined)». Component library + typography spec — next round. Hair Loss AI Coach · Health &amp; Fitness · iOS 17+</p>
   <div class="meta-bar">
@@ -440,14 +490,14 @@
 </section>
 
 <!-- ===== MODULE 1 — DESIGN ===== -->
-<div class="module-banner" style="margin-top: 32px;">
+<div class="module-banner" id="module-1" style="margin-top: 32px;">
   <span class="num">МОДУЛЬ 1</span>
   <h2>Дизайн-система</h2>
   <p class="desc">Locked palette · component preview · typography · per-surface mode strategy · whitespace в категории · anti-patterns. Всё что нужно для сборки UI на iOS.</p>
 </div>
 
 <!-- ===== Full token spec ===== -->
-<h2>Locked token spec — «Quiet Authority (Refined)»</h2>
+<h2 id="tokens">Locked token spec — «Quiet Authority (Refined)»</h2>
 
 <h3>Light system (primary)</h3>
 <div class="token-grid">
@@ -482,7 +532,7 @@
 </div>
 
 <!-- ===== Component preview ===== -->
-<h2>Component preview · day + night AI Coach</h2>
+<h2 id="components">Component preview · day + night AI Coach</h2>
 <div class="modes-row">
 
   <!-- DAY -->
@@ -555,7 +605,7 @@
 </div>
 
 <!-- ===== Typography ===== -->
-<h2>Typography</h2>
+<h2 id="typography">Typography</h2>
 <p class="lede">Native iOS — SF Pro Rounded для hero numbers + section titles (теплее SF Pro Display, соответствует портфолио). SF Pro Text для body. SF Mono для dose/product IDs. Dynamic Type required to XXXLarge — Denis 28-35 (нет проблем), Linda 40-55 + James 30-40 (крупные буквы как accessibility win).</p>
 <div class="type-list">
   <div class="row"><span class="role">Norwood stage · 56pt Bold</span><span style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:38px;">IIa <span style="font-size:18px;color:var(--ink-3);font-weight:600">/ VII</span></span></div>
@@ -567,7 +617,7 @@
 </div>
 
 <!-- ===== Mode strategy ===== -->
-<h2>Per-surface mode strategy</h2>
+<h2 id="modes">Per-surface mode strategy</h2>
 <table class="modes">
   <thead><tr><th>Surface</th><th>Mode</th><th>Reason</th></tr></thead>
   <tbody>
@@ -583,7 +633,7 @@
 </table>
 
 <!-- ===== Competitive whitespace ===== -->
-<h2>Whitespace-позиция в категории</h2>
+<h2 id="whitespace">Whitespace-позиция в категории</h2>
 <table class="ws">
   <thead><tr><th>Конкурент</th><th>Их визуальный язык</th><th>Дистанция Folik</th></tr></thead>
   <tbody>
@@ -598,7 +648,7 @@
 </table>
 
 <!-- ===== Anti-patterns ===== -->
-<h2>Anti-patterns (consilium-locked don'ts)</h2>
+<h2 id="anti-patterns">Anti-patterns (consilium-locked don'ts)</h2>
 <ul class="list dontlist">
   <li><strong>Bright #FF0000 red</strong> на alert — алармизм для Denis в тревоге. Используй muted #B04040.</li>
   <li><strong>Purple / violet</strong> — Hair Snap владеет этим пространством. Никогда.</li>
@@ -611,13 +661,13 @@
 </ul>
 
 <!-- ===== MODULE 2 — JTBD ===== -->
-<div class="module-banner">
+<div class="module-banner" id="module-2">
   <span class="num">МОДУЛЬ 2</span>
   <h2>Personas &amp; JTBD</h2>
   <p class="desc">7 onboarding lanes — каждый отдельный emotional trigger, paywall message и intro-контекст AI Coach. Все 7 сходятся в AI Coach Chat как пиковой поверхности. Denis = anchor persona для ASO + screenshots (40-50%). Linda + Mike = premium WTP. Alex = evangelist через r/tressless. Sarah + David — cross-promote с BumpCheck и Jabwell (free CAC).</p>
 </div>
 
-<div class="jtbd-compact-grid">
+<div class="jtbd-compact-grid" id="jtbd-cards">
 
   <!-- #1 Denis -->
   <div class="jtbd-card peak">
@@ -726,7 +776,7 @@
 
 </div>
 
-<h3 style="margin-top: 28px;">7 JTBD · scan-table</h3>
+<h3 id="jtbd-scan" style="margin-top: 28px;">7 JTBD · scan-table</h3>
 <table class="jtbd-scan">
   <thead><tr><th>№</th><th>Persona</th><th>Сегмент</th><th>Что хочет</th><th>Продукт-fit</th><th>Монетизация</th></tr></thead>
   <tbody>
