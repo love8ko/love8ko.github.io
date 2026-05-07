@@ -781,6 +781,115 @@
   table.jtm td.use.l { color: var(--ink-3); }
   table.jtm tr:last-child td { border-bottom: none; }
 
+  /* ── Module 6.0 · Designer handoff (clean) ── */
+  .ds-grid-3 {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px; margin-top: 18px;
+  }
+  .ds-grid-8 {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px; margin-top: 16px;
+  }
+  .ds-card {
+    background: var(--card); border-radius: 18px;
+    border: 1px solid var(--divider); padding: 14px 14px 16px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .ds-card.killer { border: 2px solid var(--cta); box-shadow: 0 4px 22px rgba(232,98,42,0.10); }
+  .ds-card .ds-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em;
+    color: var(--ink-3);
+  }
+  .ds-card.killer .ds-num { color: var(--cta); }
+
+  .ds-phone {
+    background: #1A1A1A;
+    border-radius: 24px;
+    padding: 14px 8px 8px;
+    position: relative;
+    box-shadow: 0 6px 18px rgba(26,58,74,0.14);
+    margin: 0 auto;
+  }
+  .ds-phone::before {
+    content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+    width: 70px; height: 16px; border-radius: 0 0 14px 14px; background: #1A1A1A;
+  }
+  .ds-screen {
+    background: var(--card); border-radius: 14px;
+    min-height: 240px; padding: 14px 12px;
+    display: flex; flex-direction: column; gap: 8px;
+    color: var(--ink); font-size: 11.5px;
+  }
+  .ds-screen.dark { background: #0F1F2A; color: #F7F5F2; }
+  .ds-screen.brand { background: #1A3A4A; color: #F7F5F2; }
+  .ds-card.killer .ds-screen { min-height: 280px; }
+
+  .ds-headline {
+    font-family: -apple-system, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    font-weight: 800; font-size: 16px; line-height: 1.22;
+    color: var(--ink); margin: 0; letter-spacing: -0.01em;
+  }
+  .ds-card.killer .ds-headline { font-size: 19px; }
+  .ds-sub {
+    font-size: 12.5px; color: var(--ink-2); line-height: 1.4; margin: 0;
+    font-weight: 600;
+  }
+  .ds-brief {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 12px; line-height: 1.5;
+    padding-top: 8px;
+    border-top: 1px dashed var(--divider);
+  }
+  .ds-brief:first-of-type { border-top: 1px solid var(--divider); padding-top: 9px; }
+  .ds-l {
+    font-size: 9.5px; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: 60px; flex-shrink: 0; padding-top: 2px;
+  }
+  .ds-l.show { color: var(--brand); }
+  .ds-l.move { color: var(--cta); }
+  .ds-brief-text { color: var(--ink); }
+
+  /* Animation principles (clean grid) */
+  .anim-p-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px; margin-top: 14px;
+  }
+  .anim-p {
+    background: var(--bg); border: 1px solid var(--divider);
+    border-radius: 14px; padding: 14px 16px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .anim-p .ap-glyph {
+    font-size: 22px; line-height: 1; margin-bottom: 4px;
+  }
+  .anim-p b {
+    color: var(--ink); font-size: 13.5px;
+    font-weight: 800; line-height: 1.3;
+  }
+  .anim-p .ap-mech {
+    font-size: 11px; color: var(--cta); font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace;
+    margin-top: 2px;
+  }
+  .anim-p .ap-why {
+    font-size: 12px; color: var(--ink-2); line-height: 1.45;
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  /* Section toggle hint */
+  .v2-callout {
+    background: linear-gradient(135deg, var(--cta-soft) 0%, #fff 80%);
+    border: 1px solid #F2C7B6;
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-top: 14px;
+    font-size: 12.5px; color: var(--ink); line-height: 1.55;
+  }
+  .v2-callout b { color: var(--cta); }
+
   /* ── Module 6 · Screenshot mockups ── */
   .ss-killer-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1957,8 +2066,288 @@
 <!-- ===== MODULE 6 — APP STORE SCREENSHOTS ===== -->
 <div class="module-banner" id="module-6">
   <span class="num">МОДУЛЬ 6</span>
-  <h2>App Store Screenshots · scroll-stop консилиум</h2>
-  <p class="desc">Galleria из 8 слотов решает покупку до того как юзер тапнет «Get». Конкуренты (Hair Snap $1.3M ARR / Hair Scan / 4 indie) показывают «scan results» — никто не показывает <strong>AI Coach + PubMed citation</strong>. Это и есть наша scroll-stop weapon. Ниже: что хочет аудитория по lane → что мы ОБЯЗАНЫ показать → 3 killer слота по голосам 7 персон → 8-слот план → анимации → анализ конкурентов.</p>
+  <h2>App Store Screenshots</h2>
+  <p class="desc">Galleria из 8 слотов решает покупку до тапа «Get». Ниже две версии: <strong>6.0 Designer brief</strong> — clean handoff с phone-mockup'ами и conversion копи (бери в работу с дизайнером). <strong>6.1+ deep analysis</strong> — консилиум, per-cohort предложения, анализ конкурентов (контекст для решений).</p>
+</div>
+
+<!-- ===== 6.0 DESIGNER BRIEF — clean handoff ===== -->
+<h2 id="ss-brief">6.0 Designer brief · 8 слотов = 8 solid-state экранов</h2>
+<p class="lede">Каждая карточка ниже = один скриншот. Структура одинаковая: <strong>phone mockup</strong> (что нарисовать) + <strong>headline / sub-headline</strong> (conversion copy для overlay) + <strong>SHOW</strong> (что обязательно в кадре) + <strong>ANIMATE</strong> (что должно двигаться). Killer-3 (первые) идут жирнее — они решают покупку.</p>
+
+<!-- ── 3 KILLER · large mockups ── -->
+<h3 style="margin-top: 22px;">First 3 — killer scroll-stop</h3>
+<div class="ds-grid-3">
+
+  <!-- KILLER 1: AI Coach -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 1 · KILLER · DARK</span>
+    <div class="ds-phone">
+      <div class="ds-screen dark">
+        <div style="font-size:9.5px;color:#6A8FA0;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Folik AI Coach</div>
+        <div style="background:#1E3D52;border-radius:12px;padding:8px 10px;align-self:flex-end;max-width:78%;font-size:11px">Should I add finasteride?</div>
+        <div style="background:#182F3E;border:1px solid #243D4E;border-radius:12px;padding:9px 11px;line-height:1.45;font-size:10.5px">Yes — combination shows additive density gain. Peak benefit at month 6-12.<div style="border-top:1px dashed rgba(232,98,42,0.45);margin-top:6px;padding-top:5px;font-size:9px;color:#E8622A;font-family:ui-monospace,'SF Mono',monospace">Olsen 2002 · PubMed 12120467 →</div></div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Get specific answers.</h4>
+    <p class="ds-sub">AI Coach with PubMed citations</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">Dark chat surface · user bubble + AI response · <b>orange citation chip</b> с PubMed ID видим (важно — это wedge)</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">AI bubble печатается word-by-word (3s) → citation chip <b>pulse-glow</b> 1× в конце</span></div>
+  </div>
+
+  <!-- KILLER 2: Density + Ghost -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 2 · KILLER · LIGHT</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="background:#1A3A4A;color:#F7F5F2;border-radius:12px;padding:14px 12px;display:flex;flex-direction:column;gap:5px">
+          <div style="font-size:9px;color:#A8C4D0;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Crown density · 90 days</div>
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:36px;line-height:1;color:#7FC99E">+8.4%</div>
+          <div style="font-size:10.5px;color:#7FC99E;font-weight:600">→ Stable improvement</div>
+          <div style="height:5px;background:rgba(255,255,255,0.15);border-radius:999px;margin-top:8px;overflow:hidden"><div style="height:100%;width:62%;background:linear-gradient(90deg,#5B9B6B,#7FC99E)"></div></div>
+        </div>
+        <div style="background:#F7F5F2;border:1px solid #E4E1DB;border-radius:10px;padding:10px;margin-top:6px;display:grid;grid-template-columns:1fr 1fr;gap:6px">
+          <div style="background:#E4E1DB;border-radius:6px;height:46px;display:flex;align-items:center;justify-content:center;font-size:8.5px;color:#6B7280;font-weight:700">DAY 1</div>
+          <div style="background:#1A3A4A;border-radius:6px;height:46px;display:flex;align-items:center;justify-content:center;font-size:8.5px;color:#F7F5F2;font-weight:700">DAY 90</div>
+        </div>
+        <div style="font-size:9.5px;color:#A1A8B3;text-align:center;margin-top:4px">← drag · ghost overlay · drag →</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">See progress your eyes can't.</h4>
+    <p class="ds-sub">+8.4% density · 90-day comparison</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">Big sage-green <b>"+8.4%"</b> number · ghost overlay slider preview · 90-day badge · brand-indigo card</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">Counter <b>rolls</b> 0% → +8.4% (2.5s, ease-out) · slider auto-drags pre↔current 1× и останавливается</span></div>
+  </div>
+
+  <!-- KILLER 3: Free Norwood -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 3 · KILLER · BRAND</span>
+    <div class="ds-phone">
+      <div class="ds-screen brand">
+        <div style="font-size:9px;color:#A8C4D0;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Your Norwood stage</div>
+        <div style="background:#F7F5F2;color:#1A3A4A;border-radius:12px;padding:14px 12px;display:flex;flex-direction:column;gap:4px;margin-top:4px">
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:30px;line-height:1">III Vertex</div>
+          <div style="font-size:10.5px;color:#6B7280">Common at age 28-35 · trackable</div>
+          <div style="background:#D9EEE0;color:#1F5A2E;border-radius:7px;padding:5px 9px;font-size:10px;font-weight:700;align-self:flex-start;margin-top:6px">✓ Free · No signup required</div>
+        </div>
+        <div style="font-size:10.5px;color:#A8C4D0;line-height:1.45;margin-top:6px">Track 90 days · see your direction.<br>Trial · cancel anytime.</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Know your stage in 30 seconds.</h4>
+    <p class="ds-sub">Free · No signup required</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">Stage III Vertex result card · sage <b>"✓ Free · No signup"</b> badge · soft upgrade tone (не aggressive)</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">Stage card <b>stamp pop-in</b> (overshoot bounce, spring) → sage badge fade-up снизу</span></div>
+  </div>
+
+</div>
+
+<div class="v2-callout">
+  <b>Logic for the killer-3:</b> Slot 1 говорит «у нас есть AI Coach c citations — НИ ОДИН конкурент это не показывает». Slot 2 показывает <b>число density delta</b> (никто не показывает). Slot 3 убирает страх «придётся регистрироваться» (Hair Snap reviews жалуются на это). Эти 3 — наш scroll-stop weapon.
+</div>
+
+<!-- ── ALL 8 SLOTS · compact grid ── -->
+<h3 style="margin-top: 32px;">All 8 slots — compact grid</h3>
+<div class="ds-grid-8">
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 1 · KILLER</span>
+    <div class="ds-phone">
+      <div class="ds-screen dark">
+        <div style="font-size:9px;color:#6A8FA0;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">AI Coach</div>
+        <div style="background:#1E3D52;border-radius:10px;padding:6px 8px;align-self:flex-end;max-width:78%;font-size:9.5px">Should I add finasteride?</div>
+        <div style="background:#182F3E;border:1px solid #243D4E;border-radius:10px;padding:7px 9px;line-height:1.4;font-size:9px">Yes — additive density gain.<div style="margin-top:4px;font-size:8px;color:#E8622A;font-family:ui-monospace,'SF Mono',monospace">PubMed 12120467 →</div></div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Get specific answers.</h4>
+    <p class="ds-sub">AI Coach · PubMed cites</p>
+  </div>
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 2 · KILLER</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="background:#1A3A4A;color:#F7F5F2;border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:3px">
+          <div style="font-size:8px;color:#A8C4D0;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Density · 90d</div>
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:30px;line-height:1;color:#7FC99E">+8.4%</div>
+          <div style="height:4px;background:rgba(255,255,255,0.15);border-radius:999px;margin-top:6px;overflow:hidden"><div style="height:100%;width:62%;background:#7FC99E"></div></div>
+        </div>
+        <div style="font-size:8.5px;color:#A1A8B3;text-align:center;margin-top:6px">← Day 1 · drag · Day 90 →</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">See progress your eyes can't.</h4>
+    <p class="ds-sub">+8.4% density · 90 days</p>
+  </div>
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 3 · KILLER</span>
+    <div class="ds-phone">
+      <div class="ds-screen brand">
+        <div style="font-size:8px;color:#A8C4D0;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Your stage</div>
+        <div style="background:#F7F5F2;color:#1A3A4A;border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:3px;margin-top:3px">
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:24px;line-height:1">III Vertex</div>
+          <div style="background:#D9EEE0;color:#1F5A2E;border-radius:6px;padding:3px 6px;font-size:8.5px;font-weight:700;align-self:flex-start;margin-top:4px">✓ Free · No signup</div>
+        </div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Know your stage in 30 sec.</h4>
+    <p class="ds-sub">Free · No signup</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 4</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="font-size:9.5px;color:#1A3A4A;font-weight:700">Norwood scale</div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-top:6px">
+          <div style="background:#E4E1DB;border-radius:3px;height:28px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#A1A8B3;font-weight:700;padding-bottom:2px">I</div>
+          <div style="background:#E4E1DB;border-radius:3px;height:30px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#A1A8B3;font-weight:700;padding-bottom:2px">II</div>
+          <div style="background:#E8622A;border-radius:3px;height:34px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#fff;font-weight:800;padding-bottom:2px">III</div>
+          <div style="background:#E4E1DB;border-radius:3px;height:38px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#A1A8B3;font-weight:700;padding-bottom:2px">IV</div>
+          <div style="background:#E4E1DB;border-radius:3px;height:44px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#A1A8B3;font-weight:700;padding-bottom:2px">V</div>
+          <div style="background:#E4E1DB;border-radius:3px;height:50px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#A1A8B3;font-weight:700;padding-bottom:2px">VI</div>
+          <div style="background:#E4E1DB;border-radius:3px;height:56px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#A1A8B3;font-weight:700;padding-bottom:2px">VII</div>
+        </div>
+        <div style="font-size:9.5px;color:#6B7280;margin-top:8px;line-height:1.4">III Vertex · early crown thinning. Reversible in ~65% with treatment.</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Find your stage on the scale.</h4>
+    <p class="ds-sub">Norwood (M) · Ludwig (F)</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 5</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="font-size:9.5px;color:#1A3A4A;font-weight:700">Today's protocol</div>
+        <div style="background:#fff;border:1px solid #E4E1DB;border-radius:8px;padding:7px 9px;display:flex;justify-content:space-between;align-items:center;font-size:10px;margin-top:4px">
+          <span style="font-weight:600">Minoxidil 5%</span>
+          <span style="background:#D9EEE0;color:#1F5A2E;padding:2px 6px;border-radius:999px;font-size:8.5px;font-weight:700">47 days ✓</span>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E1DB;border-radius:8px;padding:7px 9px;display:flex;justify-content:space-between;align-items:center;font-size:10px">
+          <span style="font-weight:600">Finasteride 1mg</span>
+          <span style="font-family:ui-monospace,'SF Mono',monospace;font-size:9px;color:#6B7280">daily ✓</span>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E1DB;border-radius:8px;padding:7px 9px;display:flex;justify-content:space-between;align-items:center;font-size:10px">
+          <span style="font-weight:600">Microneedling</span>
+          <span style="font-family:ui-monospace,'SF Mono',monospace;font-size:9px;color:#D4943A">2/wk</span>
+        </div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Stay on your protocol.</h4>
+    <p class="ds-sub">Daily dose tracking</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 6</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="font-size:8.5px;color:#A1A8B3;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Days since side effect</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:42px;line-height:1;color:#1A3A4A;margin-top:2px">14</div>
+        <div style="font-size:10px;color:#5B9B6B;font-weight:600;margin-top:2px">↑ from 0 last month</div>
+        <div style="background:#fff;border:1px solid #E4E1DB;border-radius:8px;padding:8px;margin-top:10px">
+          <div style="font-size:8.5px;color:#6B7280;font-weight:700;margin-bottom:5px">Mood / sleep / libido</div>
+          <svg viewBox="0 0 100 24" style="width:100%;height:30px"><path d="M0,18 Q20,15 40,12 T80,8 L100,6" stroke="#5B9B6B" stroke-width="1.5" fill="none"/></svg>
+        </div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Track what doctors don't ask.</h4>
+    <p class="ds-sub">Sexual · Mood · Sleep</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 7</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="font-size:9.5px;color:#1A3A4A;font-weight:700">Postpartum recovery</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:18px;line-height:1.1;color:#1A3A4A;margin-top:6px">Week 16 of 39</div>
+        <div style="height:6px;background:#E4E1DB;border-radius:999px;margin-top:8px;overflow:hidden;position:relative">
+          <div style="position:absolute;left:65%;right:0;top:0;bottom:0;background:#D9EEE0"></div>
+          <div style="position:absolute;left:0;width:41%;top:0;bottom:0;background:#D4943A;border-radius:999px"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:8px;color:#6B7280;margin-top:3px">
+          <span>Peak m3-4</span>
+          <span style="color:#1F5A2E;font-weight:700">Recovery 26-39</span>
+        </div>
+        <div style="font-size:9px;color:#A1A8B3;margin-top:14px;font-family:ui-monospace,'SF Mono',monospace">ACOG Practice Bulletin</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Postpartum shedding has an end.</h4>
+    <p class="ds-sub">Recovery · week 26-39</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 8</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="font-size:9.5px;color:#1A3A4A;font-weight:700">GLP-1 Mode</div>
+          <div style="background:#FAE0D3;color:#8A3010;font-size:8.5px;font-weight:700;border-radius:999px;padding:2px 6px">Mounjaro · m7</div>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E1DB;border-radius:8px;padding:9px;margin-top:6px">
+          <div style="font-size:8.5px;color:#6B7280;font-weight:700;margin-bottom:4px">Weight × shed</div>
+          <svg viewBox="0 0 100 30" style="width:100%;height:32px"><path d="M0,4 Q25,4 50,16 T100,26" stroke="#1A3A4A" stroke-width="1.2" fill="none"/><path d="M0,28 Q25,28 50,14 T100,4" stroke="#E8622A" stroke-width="1.2" fill="none"/></svg>
+        </div>
+        <div style="font-size:10px;color:#1A3A4A;font-weight:600;margin-top:8px">5.7% TE · expected</div>
+        <div style="font-size:9px;color:#A1A8B3;margin-top:3px;font-family:ui-monospace,'SF Mono',monospace">NEJM SURMOUNT-1 §6</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Mounjaro shedding, explained.</h4>
+    <p class="ds-sub">5.7% TE · cited</p>
+  </div>
+
+</div>
+
+<!-- ── ANIMATION PRINCIPLES — что юзеры хотят видеть в движении ── -->
+<h3 style="margin-top: 36px;">Animation principles · что юзеры хотят видеть в движении</h3>
+<p class="lede">Анимация работает не как украшение, а как <strong>cognitive cue</strong>. Каждый motion-приём решает конкретную психологическую задачу. Дизайнеру: используй эти 6 принципов как brief для аниматора, не больше.</p>
+
+<div class="anim-p-grid">
+
+  <div class="anim-p">
+    <div class="ap-glyph">📈</div>
+    <b>Counter rolling 0 → +8.4%</b>
+    <span class="ap-mech">2.5s · ease-out</span>
+    <div class="ap-why">«Реальное измерение происходит сейчас, на моих глазах» — это <em>trust signal</em>. Apple Health rings делают то же. Используй на Slot 2 + 6.</div>
+  </div>
+
+  <div class="anim-p">
+    <div class="ap-glyph">⌨️</div>
+    <b>Typewriter AI bubble</b>
+    <span class="ap-mech">300-400 wpm · 3-3.5s</span>
+    <div class="ap-why">«AI думает, не выдаёт pre-canned ответ» — authenticity cue. ChatGPT использует тот же приём. Используй на Slot 1.</div>
+  </div>
+
+  <div class="anim-p">
+    <div class="ap-glyph">⊙</div>
+    <b>Citation chip pulse-glow</b>
+    <span class="ap-mech">1× после ответа · 0.8s</span>
+    <div class="ap-why">«Источник реальный, можно тапнуть проверить» — credibility hook. Это наш wedge — не перепутать с украшательством. Slot 1.</div>
+  </div>
+
+  <div class="anim-p">
+    <div class="ap-glyph">⇆</div>
+    <b>Ghost overlay slider auto-drag</b>
+    <span class="ap-mech">1× · 2s · slow easing</span>
+    <div class="ap-why">«У меня будет контроль над сравнением» — agency. Зритель мысленно повторит жест в живом app. Slot 2.</div>
+  </div>
+
+  <div class="anim-p">
+    <div class="ap-glyph">✓</div>
+    <b>Stage stamp pop-in (spring bounce)</b>
+    <span class="ap-mech">spring(stiffness=200) · 1.5s</span>
+    <div class="ap-why">«Решение принято, диагноз получен» — closure satisfaction (psych studies on form completion). Slot 3 + 4.</div>
+  </div>
+
+  <div class="anim-p">
+    <div class="ap-glyph">🌱</div>
+    <b>Recovery zone reveal (sage glow)</b>
+    <span class="ap-mech">3s · ease-in-out · breathing</span>
+    <div class="ap-why">«У боли есть конец» — hope cue (особенно Sarah postpartum + David GLP-1). Используй на Slot 7 + 8.</div>
+  </div>
+
+</div>
+
+<div class="v2-callout">
+  <b>Анти-паттерны анимаций:</b> никаких confetti при streak (health, не Duolingo) · никаких alarm-style красных пульсаций (Denis в панике, не помогаем) · никакого parallax на фотографиях скана (privacy + 1.4.1 риск) · max 1 анимация в кадре одновременно (внимание не дробится).
 </div>
 
 <!-- ===== 6.1 Persona wedge — что хочет каждый и что МЫ обязаны показать ===== -->
