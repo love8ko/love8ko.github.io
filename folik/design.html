@@ -781,6 +781,198 @@
   table.jtm td.use.l { color: var(--ink-3); }
   table.jtm tr:last-child td { border-bottom: none; }
 
+  /* ── Module 6 · Screenshot mockups ── */
+  .ss-killer-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px; margin-top: 16px;
+  }
+  .ss-killer {
+    background: var(--card); border-radius: 18px;
+    border: 1px solid var(--divider); padding: 16px 16px 18px;
+    display: flex; flex-direction: column; gap: 10px;
+    position: relative;
+  }
+  .ss-killer.rank1 { border: 2px solid var(--cta); box-shadow: 0 4px 22px rgba(232,98,42,0.14); }
+  .ss-killer.rank2 { border-color: var(--brand); }
+  .ss-killer.rank3 { border-color: var(--growth); }
+  .ss-rank-badge {
+    position: absolute; top: -10px; left: 14px;
+    background: var(--brand); color: #F7F5F2;
+    border-radius: 999px; padding: 3px 10px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.06em;
+  }
+  .ss-killer.rank1 .ss-rank-badge { background: var(--cta); }
+  .ss-killer.rank3 .ss-rank-badge { background: var(--growth); }
+  .ss-killer h4 {
+    font-size: 15px; font-weight: 800; margin: 4px 0 0;
+    color: var(--ink); font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+  .ss-killer .ss-tag {
+    font-size: 10.5px; color: var(--ink-3); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .ss-killer .ss-mockup {
+    background: var(--brand); color: #F7F5F2;
+    border-radius: 14px; padding: 12px 13px;
+    min-height: 180px; display: flex; flex-direction: column; gap: 8px;
+    font-size: 12px;
+  }
+  .ss-killer.rank1 .ss-mockup { background: #0F1F2A; }
+  .ss-killer .ss-overlay-text {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 16px; line-height: 1.2;
+    color: #F7F5F2;
+  }
+  .ss-killer .ss-overlay-text em { color: var(--cta); font-style: normal; }
+  .ss-killer .ss-mockup .ss-bubble {
+    background: var(--ai-bg); color: var(--ink);
+    border-radius: 10px; padding: 8px 10px;
+    font-size: 11px; line-height: 1.4;
+  }
+  .ss-killer .ss-mockup .ss-cite {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 9.5px; color: var(--cta);
+    border-top: 1px dashed rgba(232,98,42,0.5); padding-top: 4px; margin-top: 4px;
+  }
+  .ss-killer .ss-mockup .ss-density {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 32px; line-height: 1; color: #7FC99E;
+  }
+  .ss-killer .ss-mockup .ss-density-label {
+    font-size: 10px; color: #A8C4D0; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .ss-killer .ss-mockup .ss-stage {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 36px; color: #F7F5F2;
+  }
+  .ss-killer .ss-why {
+    font-size: 12px; color: var(--ink); line-height: 1.5;
+    border-left: 3px solid var(--cta); padding-left: 10px;
+  }
+  .ss-killer .ss-why b { color: var(--brand); }
+  .ss-killer .ss-meta-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+    font-size: 10.5px; color: var(--ink-2);
+    padding-top: 6px; border-top: 1px solid var(--divider);
+  }
+  .ss-killer .ss-meta-row b { color: var(--ink); display: block; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }
+
+  /* Slot grid (8 slots) */
+  .ss-slot-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px; margin-top: 14px;
+  }
+  .ss-slot {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 14px; padding: 14px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .ss-slot.killer { border-left: 4px solid var(--cta); }
+  .ss-slot .ss-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.04em;
+    color: var(--cta);
+  }
+  .ss-slot h5 { font-size: 14px; font-weight: 700; color: var(--ink); margin: 0; }
+  .ss-slot .ss-overlay {
+    font-style: italic; font-size: 12px; color: var(--brand);
+    border-left: 3px solid var(--brand-soft); padding-left: 8px;
+  }
+  .ss-slot .ss-must {
+    font-size: 11.5px; color: var(--ink); line-height: 1.45;
+  }
+  .ss-slot .ss-must b { color: var(--brand); }
+  .ss-slot .ss-personas { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+  .ss-slot .pchip {
+    background: var(--brand-soft); color: var(--brand);
+    border-radius: 999px; padding: 2px 7px;
+    font-size: 10px; font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .ss-slot.killer .pchip { background: var(--cta-soft); color: #8A3010; }
+
+  /* Animation cards */
+  .ss-anim-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px; margin-top: 14px;
+  }
+  .ss-anim {
+    background: var(--bg); border: 1px solid var(--divider);
+    border-radius: 12px; padding: 12px 14px;
+    font-size: 12.5px; line-height: 1.5;
+  }
+  .ss-anim .ss-anim-h {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
+  }
+  .ss-anim .ss-anim-tag {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10px; font-weight: 800;
+    background: var(--cta); color: #fff;
+    border-radius: 5px; padding: 2px 6px; letter-spacing: 0.04em;
+  }
+  .ss-anim .ss-anim-tag.preview { background: var(--brand); }
+  .ss-anim b { color: var(--ink); display: block; font-size: 13px; margin-bottom: 2px; }
+  .ss-anim .timing {
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px;
+    color: var(--ink-3); margin-top: 4px; display: block;
+  }
+
+  /* Storyboard timeline */
+  .storyboard {
+    margin-top: 14px;
+    background: var(--card); border-radius: 14px;
+    border: 1px solid var(--divider); overflow: hidden;
+  }
+  .storyboard table {
+    width: 100%; border-collapse: collapse;
+  }
+  .storyboard th, .storyboard td {
+    padding: 9px 12px; font-size: 12.5px; text-align: left;
+    border-bottom: 1px solid var(--divider);
+  }
+  .storyboard th {
+    background: var(--brand-soft); color: var(--brand);
+    font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700;
+  }
+  .storyboard tr:last-child td { border-bottom: none; }
+  .storyboard td.t {
+    font-family: ui-monospace, "SF Mono", monospace; font-weight: 800;
+    color: var(--cta); white-space: nowrap; width: 70px;
+  }
+  .storyboard td.beat b { color: var(--brand); }
+
+  /* Persona wedge boxes (M6 first section) */
+  .wedge-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px; margin-top: 14px;
+  }
+  .wedge {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 14px; padding: 14px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .wedge .wh {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .wedge .wh b { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .wedge .ww-want {
+    font-size: 12.5px; color: var(--ink); font-style: italic;
+    border-left: 3px solid var(--cta); padding-left: 10px;
+  }
+  .wedge .ww-show {
+    font-size: 12px; color: var(--ink); line-height: 1.5;
+  }
+  .wedge .ww-show b { color: var(--brand); }
+  .wedge .ww-row {
+    display: flex; gap: 8px; align-items: flex-start; font-size: 11.5px;
+  }
+  .wedge .ww-l {
+    font-size: 9.5px; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-3);
+    width: 60px; flex-shrink: 0; padding-top: 2px;
+  }
+
   .footer-refs {
     margin-top: 56px; padding-top: 24px;
     border-top: 1px solid var(--divider);
@@ -797,29 +989,11 @@
   <a href="#top" class="brand"><strong>Folik</strong> · workbench</a>
   <span class="sep"></span>
   <a href="#module-1" class="is-module"><span class="nav-num">M1</span> Дизайн</a>
-  <a href="#tokens">Tokens</a>
-  <a href="#components">Components</a>
-  <a href="#typography">Typography</a>
-  <a href="#modes">Mode strategy</a>
-  <a href="#whitespace">Whitespace</a>
-  <a href="#anti-patterns">Anti-patterns</a>
-  <span class="sep"></span>
   <a href="#module-2" class="is-module"><span class="nav-num">M2</span> JTBD</a>
-  <a href="#jtbd-cards">7 personas</a>
-  <a href="#jtbd-scan">Scan-table</a>
-  <span class="sep"></span>
   <a href="#module-3" class="is-module"><span class="nav-num">M3</span> Roadmap</a>
-  <a href="#whitespace-matrix">Whitespace</a>
-  <a href="#vote-tally">Votes</a>
-  <a href="#ptiers">P-tiers</a>
-  <span class="sep"></span>
   <a href="#module-4" class="is-module"><span class="nav-num">M4</span> Tabs</a>
-  <a href="#tabbar">Tab bar</a>
-  <a href="#tab-spec">Per-tab</a>
-  <a href="#jtm">JTBD × Tab</a>
-  <span class="sep"></span>
   <a href="#module-5" class="is-module"><span class="nav-num">M5</span> Screens</a>
-  <a href="#screen-deep">Deep-dive</a>
+  <a href="#module-6" class="is-module"><span class="nav-num">M6</span> Screenshots</a>
 </nav>
 
 <header id="top">
@@ -1779,6 +1953,436 @@
   });
 })();
 </script>
+
+<!-- ===== MODULE 6 — APP STORE SCREENSHOTS ===== -->
+<div class="module-banner" id="module-6">
+  <span class="num">МОДУЛЬ 6</span>
+  <h2>App Store Screenshots · scroll-stop консилиум</h2>
+  <p class="desc">Galleria из 8 слотов решает покупку до того как юзер тапнет «Get». Конкуренты (Hair Snap $1.3M ARR / Hair Scan / 4 indie) показывают «scan results» — никто не показывает <strong>AI Coach + PubMed citation</strong>. Это и есть наша scroll-stop weapon. Ниже: что хочет аудитория по lane → что мы ОБЯЗАНЫ показать → 3 killer слота по голосам 7 персон → 8-слот план → анимации → анализ конкурентов.</p>
+</div>
+
+<!-- ===== 6.1 Persona wedge — что хочет каждый и что МЫ обязаны показать ===== -->
+<h2 id="ss-wedge">6.1 Что хочет аудитория · per JTBD lane</h2>
+<p class="lede">Каждая lane имеет один эмоциональный триггер у gallery: что юзер «должен увидеть» чтобы тапнуть Get. Колонка «MUST show» — наши обязательные элементы на скриншоте для этой персоны.</p>
+
+<div class="wedge-grid">
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--cta)">#1</span><b>Denis · паника 2am</b><span class="jtbd-weight w1">40-50%</span></div>
+    <div class="ww-want">"Дайте мне calm + объективную правду. Не лечится ли мне поздно?"</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Reassuring AI ответ <b>без алармизма</b> · Norwood stage labelled · "Free. No signup" badge</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 1 AI Coach</b> · <b>Slot 3 Norwood staging</b> · <b>Slot 8 Free Calculator</b></div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"Get specific answers, not basic tips" · "Free Norwood test. No signup."</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--cta)">#2</span><b>James · на лечении</b><span class="jtbd-weight w2">High</span></div>
+    <div class="ww-want">"Я мажу minoxidil 8 недель и shed страшный. Это работает?"</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Visual proof улучшений · density % delta · adherence streak</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 2 ghost overlay + density %</b> · <b>Slot 4 treatment dashboard streak</b> · <b>Slot 5 side-effect log</b></div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"See progress your eyes can't" · "+8.4% crown density"</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#3</span><b>Linda · doctor-dismissed</b><span class="jtbd-weight w2">Premium $99-200</span></div>
+    <div class="ww-want">"Дерматолог отмахнулся. Покажите мне что я могу принести на следующий визит."</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Sourced female-pattern explanation · Doctor Brief PDF preview · Lab Interpreter тизер</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 1 AI Coach с Endocrine Society citation</b> · <b>Slot 9 Doctor Visit Brief PDF</b> · Ludwig scale (не Norwood)</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"Bring this to your dermatologist" · "Sourced. Female-pattern aware."</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#4</span><b>Sarah · postpartum</b><span class="jtbd-weight w2">BumpCheck cross</span></div>
+    <div class="ww-want">"Когда это закончится? Безопасно ли это во время грудного вскармливания?"</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Timeline с recovery zone · sage green progress bar · safe-on-breastfeeding badge</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 6 Postpartum TE Timeline</b> · "Week 16 of 39 — recovery week 26-39"</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"Postpartum hair loss explained" · "Recovery typically begins…"</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#5</span><b>David · GLP-1 shedder</b><span class="jtbd-weight w3">Jabwell cross</span></div>
+    <div class="ww-want">"Это от Mounjaro или от резкой потери веса? Не хочу бросать препарат."</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Weight × shed correlation chart · NEJM citation · "expected" reassurance</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 7 GLP-1 Mode</b> · "Mounjaro month 7" · "5.7% TE incidence" citation</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"GLP-1 hair shedding: explained" · NEJM SURMOUNT-1 §6 source</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#6</span><b>Mike · post-transplant</b><span class="jtbd-weight w3">Premium $100-300</span></div>
+    <div class="ww-want">"Мои $15K окупаются? На графике я ahead или behind ISHRS curve?"</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Ghost overlay slider · ISHRS milestone curve overlay · month 3 / 12 markers</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 2 ghost overlay</b> · <b>Slot 3 transplant milestone curve</b> (вариант)</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"Track every graft. ISHRS-curve verified."</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#7</span><b>Alex · биохакер</b><span class="jtbd-weight w3">Evangelist · Reddit</span></div>
+    <div class="ww-want">"Покажите PubMed ID. Без citations я не доверяю."</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">PubMed ID на скриншоте · interaction matrix · weekly density numbers</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 1 AI Coach с PubMed ID видим</b> · density % weekly · stack matrix</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"Every claim cited. Every protocol sourced."</div></div>
+  </div>
+
+</div>
+
+<!-- ===== 6.2 Consilium vote ===== -->
+<h2 id="ss-vote">6.2 Консилиум · 7 персон голосуют top-3 scroll-stop слота</h2>
+<p class="lede">Каждая персона выбирает 3 скриншота на которых она бы остановила скролл в App Store. 10 кандидатов на столе (8 базовых из <code>SCREENSHOTS.md</code> + Doctor Brief + Stack Optimizer). Победитель = единогласный AI Coach. Топ-3 = wedge-доказательства которые НИКТО из 6 конкурентов не показывает.</p>
+
+<table class="jtm">
+  <thead>
+    <tr>
+      <th style="text-align:left">Персона</th>
+      <th>S1<br>AI Coach</th>
+      <th>S2<br>Density+Ghost</th>
+      <th>S3<br>Norwood</th>
+      <th>S4<br>Treatment</th>
+      <th>S5<br>Side-effect</th>
+      <th>S6<br>Postpartum</th>
+      <th>S7<br>GLP-1</th>
+      <th>S8<br>Free Calc</th>
+      <th>S9<br>Doctor Brief</th>
+      <th>S10<br>Stack/Density</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="persona">#1 Denis</td>     <td class="use h">★</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona">#2 James</td>     <td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona">#3 Linda</td>     <td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td></tr>
+    <tr><td class="persona">#4 Sarah</td>     <td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona">#5 David</td>     <td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona">#6 Mike</td>      <td class="use h">★</td><td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona">#7 Alex</td>      <td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td></tr>
+    <tr style="background: var(--brand-soft);"><td class="persona" style="color:var(--cta);font-weight:800">TALLY</td>
+      <td class="use" style="color:var(--cta);font-weight:800">7/7</td>
+      <td class="use" style="color:var(--cta);font-weight:800">5/7</td>
+      <td class="use" style="color:var(--good);font-weight:800">2/7</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/7</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/7</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/7</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/7</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/7</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/7</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/7</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== 6.3 Top-3 KILLER ===== -->
+<h2 id="ss-killer">6.3 Top-3 KILLER · первые 3 слота — выигрывают покупку</h2>
+<p class="lede">App Store thumb превью показывает первые 3 скриншота. Это и есть scroll-stop weapon. Каждый killer — wedge которое никто из 6 конкурентов не делает. <strong>Slot 1 = AI Coach</strong>, <strong>Slot 2 = ghost overlay + density delta</strong>, <strong>Slot 3 = Free Norwood Calculator</strong> (анти-Hair-Snap "use ChatGPT" review).</p>
+
+<div class="ss-killer-grid">
+
+  <!-- Killer 1: AI Coach -->
+  <div class="ss-killer rank1">
+    <span class="ss-rank-badge">★ KILLER #1</span>
+    <span class="ss-tag">Slot 1 · 7/7 единогласно · DARK</span>
+    <h4>AI Coach с PubMed citation</h4>
+    <div class="ss-mockup">
+      <div class="ss-overlay-text">Get specific answers,<br><em>not basic tips.</em></div>
+      <div class="ss-bubble" style="background:#1E3D52;color:#F7F5F2;align-self:flex-end;max-width:80%">Should I add finasteride to minoxidil?</div>
+      <div class="ss-bubble" style="background:#182F3E;color:#F7F5F2;border:1px solid #243D4E">Combination therapy shows additive effect for crown density vs minoxidil alone — peak benefit at month 6-12.<div class="ss-cite">Olsen 2002 · PubMed 12120467 →</div></div>
+    </div>
+    <div class="ss-why">"Use ChatGPT instead" — это #1 review Hair Snap. <b>Этот слот — наш прямой ответ.</b> AI Coach + RAG + PubMed ID видим — 0 из 6 конкурентов это показывает.</div>
+    <div class="ss-meta-row">
+      <div><b>Personas</b>All 7/7</div>
+      <div><b>Wedge</b>Anti-Hair-Snap review</div>
+      <div><b>Mode</b>Dark (Denis 2am)</div>
+      <div><b>Animation</b>Typewriter + cite-pop</div>
+    </div>
+  </div>
+
+  <!-- Killer 2: Density + Ghost -->
+  <div class="ss-killer rank2">
+    <span class="ss-rank-badge">★ KILLER #2</span>
+    <span class="ss-tag">Slot 2 · 5/7 голосов · LIGHT</span>
+    <h4>90-day ghost overlay + density %</h4>
+    <div class="ss-mockup">
+      <div class="ss-overlay-text">See progress<br><em>your eyes can't.</em></div>
+      <div style="background:rgba(255,255,255,0.1);border-radius:10px;padding:8px 10px">
+        <div class="ss-density-label">Crown density · 90 days</div>
+        <div class="ss-density">+8.4%</div>
+        <div style="height:5px;background:rgba(255,255,255,0.15);border-radius:999px;margin-top:6px"><div style="height:100%;width:62%;border-radius:999px;background:linear-gradient(90deg,#5B9B6B,#7FC99E)"></div></div>
+        <div style="font-size:9.5px;color:#A8C4D0;margin-top:6px">Ghost overlay · drag → · Day 1 ↔ Day 90</div>
+      </div>
+    </div>
+    <div class="ss-why"><b>Density % — никто не показывает.</b> Только HairWise имеет ghost overlay (0 reviews, 17+). Hair Snap, Hair Scan, AMR, Recede, Follicle — все показывают только before/after без числа. Числа = доказательство, что paywall стоит того.</div>
+    <div class="ss-meta-row">
+      <div><b>Personas</b>James · Mike · Sarah · David · Alex</div>
+      <div><b>Wedge</b>Density % + ghost</div>
+      <div><b>Mode</b>Light</div>
+      <div><b>Animation</b>Counter-roll +8.4%</div>
+    </div>
+  </div>
+
+  <!-- Killer 3: Free Norwood Calculator -->
+  <div class="ss-killer rank3">
+    <span class="ss-rank-badge">★ KILLER #3</span>
+    <span class="ss-tag">Slot 8→3 · Denis ASA acquisition · LIGHT</span>
+    <h4>Free Norwood Calculator · "No signup"</h4>
+    <div class="ss-mockup" style="background:#1A3A4A">
+      <div class="ss-overlay-text">Free Norwood test.<br><em>No signup.</em></div>
+      <div style="background:#F7F5F2;color:#1A3A4A;border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:4px">
+        <div style="font-size:9.5px;letter-spacing:0.06em;text-transform:uppercase;color:#6B7280;font-weight:700">Your stage</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:30px;line-height:1">III Vertex <span style="font-size:14px;color:#A1A8B3;font-weight:600">/ VII</span></div>
+        <div style="background:#D9EEE0;color:#1F5A2E;border-radius:6px;padding:4px 8px;font-size:10.5px;font-weight:700;align-self:flex-start;margin-top:4px">✓ Free · No signup required</div>
+      </div>
+    </div>
+    <div class="ss-why"><b>Top-of-funnel hook против Hair Snap "use ChatGPT" review.</b> "Free, без логина" = я могу попробовать БЕЗ риска. 0 из 6 конкурентов даёт free no-login Norwood. Denis — 40-50% сегмента, ASA "balding" / "norwood scale" → этот слот закрывает acquisition.</div>
+    <div class="ss-meta-row">
+      <div><b>Personas</b>Denis (ASA peak)</div>
+      <div><b>Wedge</b>Free + no signup</div>
+      <div><b>Mode</b>Light brand</div>
+      <div><b>Animation</b>Stage stamp pop-in</div>
+    </div>
+  </div>
+
+</div>
+
+<p class="lede" style="margin-top: 14px;"><strong>Решение по порядку:</strong> S1 AI Coach (dark, hook) → S2 Density+Ghost (proof) → S3 Free Norwood (acquisition badge). Эта тройка покрывает все 7 personas (AI Coach 7/7) + закрывает 3 разных gap'а конкурентов (chat / density % / free hook).</p>
+
+<!-- ===== 6.4 Full 8-slot plan ===== -->
+<h2 id="ss-slots">6.4 8-slot план · scroll-stop первые 3, persona слои 4-8</h2>
+<p class="lede">Слоты 1-3 — universal killers (3/3 wedges никто не имеет). Слоты 4-8 — persona depth: каждый адресует одного из 7 lane'ов с уникальной фичей. Mode — 7 LIGHT + 1 DARK (Slot 1). Локализация: DE Slot 1, 3, 6 в немецкой (formal "Sie") версии (DGFE-aware).</p>
+
+<div class="ss-slot-grid">
+
+  <div class="ss-slot killer">
+    <span class="ss-num">SLOT 1 · KILLER</span>
+    <h5>AI Coach · PubMed cite</h5>
+    <div class="ss-overlay">"Get specific answers, not basic tips."</div>
+    <div class="ss-must"><b>Must show:</b> dark chat surface, user Q + AI bubble с цитатой, PubMed ID видим, "Educational · not medical advice" подпись</div>
+    <div class="ss-personas"><span class="pchip">All 7/7</span></div>
+  </div>
+
+  <div class="ss-slot killer">
+    <span class="ss-num">SLOT 2 · KILLER</span>
+    <h5>90-day density + ghost overlay</h5>
+    <div class="ss-overlay">"See progress your eyes can't."</div>
+    <div class="ss-must"><b>Must show:</b> "+8.4% crown density" big number, ghost overlay slider, 90-day badge, sage growth color</div>
+    <div class="ss-personas"><span class="pchip">James</span><span class="pchip">Mike</span><span class="pchip">Sarah</span><span class="pchip">David</span><span class="pchip">Alex</span></div>
+  </div>
+
+  <div class="ss-slot killer">
+    <span class="ss-num">SLOT 3 · KILLER</span>
+    <h5>Free Norwood Calculator</h5>
+    <div class="ss-overlay">"Free Norwood test. No signup."</div>
+    <div class="ss-must"><b>Must show:</b> Stage III Vertex result, "✓ No signup required" sage badge, soft upgrade CTA, anti-paywall tone</div>
+    <div class="ss-personas"><span class="pchip">Denis (ASA acq)</span></div>
+  </div>
+
+  <div class="ss-slot">
+    <span class="ss-num">SLOT 4</span>
+    <h5>Norwood / Ludwig staging</h5>
+    <div class="ss-overlay">"Know your stage objectively."</div>
+    <div class="ss-must"><b>Must show:</b> 7-stage scale, current stage highlighted, AI summary line, Ludwig variant для F юзеров</div>
+    <div class="ss-personas"><span class="pchip">Denis</span><span class="pchip">Mike</span><span class="pchip">Linda</span></div>
+  </div>
+
+  <div class="ss-slot">
+    <span class="ss-num">SLOT 5</span>
+    <h5>Treatment dashboard · streak</h5>
+    <div class="ss-overlay">"Never miss a dose."</div>
+    <div class="ss-must"><b>Must show:</b> minoxidil 47-day streak ring (Headspace-style, NOT XP), fin log row, microneedling calendar</div>
+    <div class="ss-personas"><span class="pchip">James</span><span class="pchip">Alex</span></div>
+  </div>
+
+  <div class="ss-slot">
+    <span class="ss-num">SLOT 6</span>
+    <h5>Side-effect log</h5>
+    <div class="ss-overlay">"Track what doctors don't ask."</div>
+    <div class="ss-must"><b>Must show:</b> "Days since sexual side effect: 14" big number, mood/sleep chart, treatment correlation timeline</div>
+    <div class="ss-personas"><span class="pchip">James</span><span class="pchip">Alex</span><span class="pchip">Linda</span></div>
+  </div>
+
+  <div class="ss-slot">
+    <span class="ss-num">SLOT 7</span>
+    <h5>Postpartum TE Timeline</h5>
+    <div class="ss-overlay">"Postpartum hair loss explained."</div>
+    <div class="ss-must"><b>Must show:</b> "Week 16 of 39" progress bar, "Recovery typically begins week 26-39", sage green recovery zone, ACOG citation</div>
+    <div class="ss-personas"><span class="pchip">Sarah (BumpCheck cross)</span></div>
+  </div>
+
+  <div class="ss-slot">
+    <span class="ss-num">SLOT 8</span>
+    <h5>GLP-1 Mode</h5>
+    <div class="ss-overlay">"GLP-1 hair shedding: explained."</div>
+    <div class="ss-must"><b>Must show:</b> "Mounjaro month 7" badge, weight × shed correlation chart, NEJM SURMOUNT-1 §6 citation, "5.7% TE incidence" stat</div>
+    <div class="ss-personas"><span class="pchip">David (Jabwell cross)</span></div>
+  </div>
+
+</div>
+
+<p class="lede" style="margin-top: 12px; font-size: 13px;"><strong>Slot ordering rationale:</strong> Slots 1-3 = killer scroll-stop (universal). Slots 4-5 = treatment-tracker peak (James/Alex 30% LTV). Slots 6-8 = persona depth (Linda WTP / Sarah cross / David cross). Doctor Brief PDF — отложен на v1.5 (P1 фича, не v1).</p>
+
+<!-- ===== 6.5 Animation proposals ===== -->
+<h2 id="ss-anim">6.5 Анимации · App Preview video + per-slot motion</h2>
+<p class="lede">App Store разрешает 3 App Preview (15-30s видео) + статика. Анимации работают на 2 уровнях: (а) live App Preview video — Denis story arc, (б) лёгкая GIF/loop motion на статичных слотах через Framer / After Effects экспорт.</p>
+
+<h3 id="ss-perslot">Per-slot анимации</h3>
+<div class="ss-anim-grid">
+
+  <div class="ss-anim">
+    <div class="ss-anim-h"><span class="ss-anim-tag">A1</span><b>AI Coach typewriter + citation pop</b></div>
+    Слот 1: вопрос юзера появляется, потом AI ответ печатается word-by-word (300-400 wpm), citation chip <b>pulse-glow</b> в конце. <span class="timing">3.2s loop · ease-out</span>
+  </div>
+
+  <div class="ss-anim">
+    <div class="ss-anim-h"><span class="ss-anim-tag">A2</span><b>Density % counter-roll</b></div>
+    Слот 2: число "+8.4%" роллит от 0% → +8.4% (как Apple Health rings). Ghost slider auto-drags pre↔current 1×, останавливается посередине.<span class="timing">2.8s · cubic-bezier(0.4,0,0.2,1)</span>
+  </div>
+
+  <div class="ss-anim">
+    <div class="ss-anim-h"><span class="ss-anim-tag">A3</span><b>Stage stamp pop-in</b></div>
+    Слот 3 (Free Calc): результат "Stage III Vertex" появляется как печать с лёгким overshoot bounce. Sage "No signup" badge снизу — fade-up.<span class="timing">1.5s · spring(stiffness=200)</span>
+  </div>
+
+  <div class="ss-anim">
+    <div class="ss-anim-h"><span class="ss-anim-tag">A4</span><b>Norwood scale slide</b></div>
+    Слот 4: индикатор стадии скользит по 7-point scale справа налево, останавливается на III Vertex. AI summary fades in.<span class="timing">2.0s · ease-in-out</span>
+  </div>
+
+  <div class="ss-anim">
+    <div class="ss-anim-h"><span class="ss-anim-tag">A5</span><b>Streak ring fill</b></div>
+    Слот 5: ring заполняется от 0 до 47 days (Headspace tone, не Duolingo confetti). Subtle haptic-style pulse в конце.<span class="timing">2.5s · ease-out</span>
+  </div>
+
+  <div class="ss-anim">
+    <div class="ss-anim-h"><span class="ss-anim-tag">A6</span><b>Side-effect counter tick</b></div>
+    Слот 6: "Days since" число пощёлкивает в стиле digital odometer. Chart line draws left-to-right.<span class="timing">2.2s</span>
+  </div>
+
+  <div class="ss-anim">
+    <div class="ss-anim-h"><span class="ss-anim-tag">A7</span><b>Recovery zone reveal</b></div>
+    Слот 7: progress bar Week 16 наливается → sage recovery zone fades в позицию 26-39, светится. ACOG citation appear под.<span class="timing">3.0s</span>
+  </div>
+
+  <div class="ss-anim">
+    <div class="ss-anim-h"><span class="ss-anim-tag">A8</span><b>Weight × shed correlation draw</b></div>
+    Слот 8: 2 линии (вес/shed) рисуются параллельно слева направо, NEJM citation pulse в момент пиковой корреляции.<span class="timing">3.2s</span>
+  </div>
+
+</div>
+
+<h3 id="ss-preview">App Preview video · 15s storyboard (Denis arc)</h3>
+<p class="lede">Один canonical video — Denis 2am history, 4 beats. Reused для US/DE/CA/AU/GB. DE версия = тот же visual + немецкие subtitles.</p>
+
+<div class="storyboard">
+  <table>
+    <thead><tr><th>Time</th><th>Beat</th><th>Voiceover / overlay</th><th>Animation</th></tr></thead>
+    <tbody>
+      <tr><td class="t">0:00–0:02</td><td class="beat"><b>Hook · pain</b><br>Dark mirror selfie, hand to crown</td><td>"3am. Again."</td><td>Vignette + iPhone unlock haptic</td></tr>
+      <tr><td class="t">0:02–0:05</td><td class="beat"><b>App opens</b><br>Today screen → Norwood IIa hero</td><td>"Stage IIa. 90-day stable."</td><td>Hero card slides up · stage stamp pop</td></tr>
+      <tr><td class="t">0:05–0:09</td><td class="beat"><b>AI Coach reassurance</b><br>Question → typewriter response w/ PubMed</td><td>"Is my week-8 shed normal? Yes — peak weeks 6-12."</td><td>Bubble in + citation chip pulse</td></tr>
+      <tr><td class="t">0:09–0:12</td><td class="beat"><b>Visual proof</b><br>Ghost overlay slider drag → +8.4%</td><td>"See what your eyes miss."</td><td>Slider auto-drag · counter roll</td></tr>
+      <tr><td class="t">0:12–0:15</td><td class="beat"><b>Free hook + CTA</b><br>Free Norwood Calc result + 7d trial</td><td>"Free Norwood test. No signup."</td><td>Badge stamp + CTA fade-in</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="lede" style="margin-top: 10px; font-size: 12.5px;"><strong>Tech stack:</strong> Framer Motion / Lottie для GIF слотов · Final Cut + Motion 5 для App Preview (.mov 1080×1920 @ 30fps · max 30s · max 500MB). Captions ON по умолчанию для accessibility + sound-off scroll.</p>
+
+<!-- ===== 6.6 Competitor screenshot analysis ===== -->
+<h2 id="ss-competitors">6.6 Анализ конкурентов · что они показывают и где наш wedge</h2>
+<p class="lede">Все 6 конкурентов делают одинаковую ошибку: показывают <em>scan results</em> и <em>before/after</em>. Никто не показывает chat surface с PubMed ID. Никто не показывает <strong>число density delta</strong>. Никто не делает Free no-login Calc. Это и есть наш scroll-stop wedge.</p>
+
+<table class="roadmap">
+  <thead>
+    <tr>
+      <th class="feat">Что показывают конкуренты</th>
+      <th>Hair Snap<br><span style="font-size:10px;font-weight:600">$1.3M ARR</span></th>
+      <th>Hair Scan<br><span style="font-size:10px;font-weight:600">DE-loc</span></th>
+      <th>AMR<br><span style="font-size:10px;font-weight:600">17+</span></th>
+      <th>Recede<br><span style="font-size:10px;font-weight:600">3.99★</span></th>
+      <th>HairWise<br><span style="font-size:10px;font-weight:600">solo dev</span></th>
+      <th>Follicle<br><span style="font-size:10px;font-weight:600">$24 lifetime</span></th>
+      <th>Folik</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="feat"><b>AI Coach chat with citation</b><br><span style="font-size:11px;color:var(--ink-2)">PubMed ID видим в скриншоте</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ Slot 1</td></tr>
+    <tr><td class="feat"><b>Density % delta number</b><br><span style="font-size:11px;color:var(--ink-2)">"+8.4% crown density" big metric</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell partial">◐ ghost only</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ Slot 2</td></tr>
+    <tr><td class="feat"><b>Free no-login hook</b><br><span style="font-size:11px;color:var(--ink-2)">Anti-Hair-Snap "use ChatGPT" review</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ Slot 3</td></tr>
+    <tr><td class="feat"><b>Norwood scale visualizer</b><br><span style="font-size:11px;color:var(--ink-2)">Все 7 stages + current highlighted</span></td>
+      <td class="cell partial">◐ scan result</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell partial">◐</td><td class="cell no">❌</td><td class="cell yes">✅</td>
+      <td class="cell folik">✅ Slot 4</td></tr>
+    <tr><td class="feat"><b>Treatment tracker streak</b><br><span style="font-size:11px;color:var(--ink-2)">minox/fin/dut/MN dashboard</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell partial">◐ supplements only</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ Slot 5</td></tr>
+    <tr><td class="feat"><b>Side-effect log</b><br><span style="font-size:11px;color:var(--ink-2)">Sexual / mood / sleep tracking</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ Slot 6</td></tr>
+    <tr><td class="feat"><b>Postpartum / GLP-1 mode</b><br><span style="font-size:11px;color:var(--ink-2)">Female + cross-promote сегменты</span></td>
+      <td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td><td class="cell no">❌</td>
+      <td class="cell folik">✅ Slot 7+8</td></tr>
+    <tr><td class="feat"><b>Before/after photo</b><br><span style="font-size:11px;color:var(--ink-2)">Table-stakes — но без числа</span></td>
+      <td class="cell yes">✅</td><td class="cell yes">✅</td><td class="cell yes">✅</td><td class="cell partial">◐</td><td class="cell yes">✅</td><td class="cell yes">✅</td>
+      <td class="cell folik">встроено в Slot 2</td></tr>
+    <tr><td class="feat"><b>Scan/analyze результат</b><br><span style="font-size:11px;color:var(--ink-2)">Их основной слот #1</span></td>
+      <td class="cell yes">✅ peak</td><td class="cell yes">✅ peak</td><td class="cell yes">✅</td><td class="cell yes">✅</td><td class="cell yes">✅</td><td class="cell yes">✅</td>
+      <td class="cell folik">пропускаем (commodity)</td></tr>
+  </tbody>
+</table>
+
+<h3 style="margin-top: 24px;">Per-competitor screenshot teardown</h3>
+<table class="ws">
+  <thead><tr><th>Competitor</th><th>Что они показывают на S1-3</th><th>Где наш wedge</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Hair Snap</strong> $1.3M ARR · 8791 reviews</td>
+      <td>Black/violet scanner result · "AI Hair Health" copy · before/after montage</td>
+      <td><span class="ok">✓</span> Их #1 review = "use ChatGPT". Мы ставим AI Coach Slot 1 как direct counter</td></tr>
+    <tr><td><strong>Hair Scan</strong> Hangzhou · DE Haarscan</td>
+      <td>Yellow/black hairline analyzer · multi-language overlay · "Haar gesund" badge</td>
+      <td><span class="ok">✓</span> Они sciencey-cheap. Наш indigo + sage + warm off-white = medical authority. DE Slot 1 на formal "Sie"</td></tr>
+    <tr><td><strong>Hair Loss AI Snap</strong> AMR · 17+</td>
+      <td>Black/white minimal · "Snap a few selfies" · male-only photo cast</td>
+      <td><span class="ok">✓</span> 17+ filters out user volume. Мы 12+ + female lane (Linda/Sarah) — broader reach</td></tr>
+    <tr><td><strong>Recede.io</strong> 3.99★ · React Native</td>
+      <td>Coral pink pixel-R logo · family history form · genetic prediction copy</td>
+      <td><span class="ok">✓</span> Их 3.99★ = в screenshot перевешивается нашим 4.5★+ target. Мы НЕ копируем coral — у нас terracotta CTA с brand-indigo</td></tr>
+    <tr><td><strong>HairWise</strong> 0 reviews · solo dev</td>
+      <td>Teal/white tracker · ghost overlay (наша parity!) · supplement log</td>
+      <td><span class="warn">⚠</span> Closest match. Они показывают ghost но БЕЗ density %. Мы добавляем "+8.4%" big metric + AI Coach citation = 2 wedges</td></tr>
+    <tr><td><strong>Follicle</strong> $24 lifetime · 0 reviews</td>
+      <td>Charcoal/mint follicle icon · transplant simulator · graft count visualization</td>
+      <td><span class="ok">✓</span> $24 one-time = no AI updates funding. Наша subscription = ongoing AI improvements messaged через PubMed dates на Slot 1</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== 6.7 Anti-patterns ===== -->
+<h2 id="ss-anti">6.7 Anti-patterns · что мы НЕ показываем на App Store</h2>
+<ul class="list dontlist">
+  <li><strong>Реальные лица "до/после"</strong> — App Review 1.4.1 риск + Denis privacy paranoia. Только обведённые/blurred образцы.</li>
+  <li><strong>"Your hair is 73% bad"</strong> numerical health score — алармизм. Только delta-language: "+0.4%" / "stable / 90 days".</li>
+  <li><strong>Confetti / celebration overlays</strong> — health context, не fitness app. Streak ring — calm Headspace tone.</li>
+  <li><strong>Predictive timeline</strong> — "You'll be Norwood IV by 35" — никогда. Алармизм + medical claim.</li>
+  <li><strong>Generic "Tap to scan!" hook</strong> — все 6 конкурентов делают это. Мы не повторяем commodity.</li>
+  <li><strong>Эмодзи + ярко-красный alert color</strong> — bright #FF0000 → muted rust #B04040 (см M1 anti-patterns).</li>
+  <li><strong>"Cure" / "diagnose" / "treat"</strong> — COMPLIANCE.md violation. Только "track / explain / educational".</li>
+  <li><strong>Purple / violet</strong> overlay text — Hair Snap territory. Yellow — Hair Scan. Никогда.</li>
+  <li><strong>Doctor name-drop</strong> ("Dr. X recommends") — нет endorsement → liability. Только sourced PubMed ID.</li>
+  <li><strong>Перегруженный текст overlay</strong> — макс 5-7 слов в hook. Apple HIG App Store gallery best practice.</li>
+</ul>
+
+<!-- ===== 6.8 Production checklist ===== -->
+<h2 id="ss-checklist">6.8 Production checklist</h2>
+<table class="ws">
+  <thead><tr><th>Asset</th><th>Spec</th><th>Где используется</th></tr></thead>
+  <tbody>
+    <tr><td>Static screenshots × 8</td><td>1290×2796 PNG · iPhone 6.7" · status bar 9:41</td><td>App Store gallery US/DE/CA/AU/GB</td></tr>
+    <tr><td>App Preview video × 1</td><td>1080×1920 .mov · 30fps · 15s · ≤500MB · captions ON</td><td>App Store gallery primary slot</td></tr>
+    <tr><td>Per-slot animation GIF</td><td>1290×2796 · 30fps · ≤4MB · loopable · Lottie/Framer экспорт</td><td>Marketing site love8ko.github.io/folik · Reddit r/tressless preview</td></tr>
+    <tr><td>DE localized variants</td><td>Slot 1 · 3 · 7 в немецкой версии · formal "Sie" · DGFE-aware copy</td><td>App Store Germany</td></tr>
+    <tr><td>Compliance review pass</td><td>COMPLIANCE.md anti-pattern checklist · no "cure/diagnose/treat"</td><td>Pre-submission (App Review 1.4.1)</td></tr>
+  </tbody>
+</table>
 
 <footer class="footer-refs">
   <strong>Inputs to consilium round 1:</strong>
