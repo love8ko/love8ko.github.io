@@ -1188,7 +1188,15 @@
     font-weight: 700; font-size: 18px; line-height: 1.18; letter-spacing: -0.01em;
     color: #F2F4F6; margin: -28px 16px 6px; position: relative; z-index: 2;
   }
+  .pw7-h1.big { font-size: 24px; line-height: 1.12; }
   .pw7-sources { font-size: 8.5px; color: var(--growth); font-weight: 800; letter-spacing: 0.06em; margin: 0 16px 6px; text-transform: uppercase; }
+  /* scope caps line — Calibrum cal-sources pattern, bigger letter-spacing, terracotta accent */
+  .pw7-scope {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 11px; color: var(--cta); font-weight: 800;
+    letter-spacing: 0.10em; text-transform: uppercase;
+    margin: 0 16px 12px; line-height: 1.35;
+  }
   .pw7-sub { font-size: 11px; color: #B7C3CD; line-height: 1.45; margin: 0 16px 10px; }
   .pw7-bullets { margin: 4px 16px 8px; padding: 0; list-style: none; }
   .pw7-bullets li { font-size: 11px; color: #C9D2D9; padding: 3px 0 3px 16px; position: relative; line-height: 1.4; }
@@ -3252,10 +3260,10 @@
   <p class="lede">Все 3 варианта используют локед прайсинг (Weekly $4.99 PRESELECTED · Annual $39.99 SAVE 85%) и Calibrum-pattern timeline с дашами. Различаются hero, copy direction, anchor framing, trust-block приёмом.</p>
 
   <div class="pw7-grid">
-    <!-- ============ VARIANT A · MIRROR AT 2 AM ============ -->
-    <div class="pw7-card winner">
-      <div class="head"><span class="nm">A · Mirror at 2 AM</span><span class="sc">8.6</span></div>
-      <div class="vibe">Hero photo full-bleed. Pain-echo headline. Sage trust strip + warm CTA. Default ship for Denis (largest segment).</div>
+    <!-- ============ VARIANT A · MIRROR AT 2 AM (DEPRECATED · round 2) ============ -->
+    <div class="pw7-card">
+      <div class="head"><span class="nm">A · Mirror at 2 AM <span style="color:var(--alert);font-size:9px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;margin-left:6px;">RETIRED</span></span><span class="sc">7.0</span></div>
+      <div class="vibe">⚠ Round 2 retired: pain-trigger re-injection at point of payment кладёт конверсию (юзер уже видел pain-mirror в onboarding 1.4 — двойная доза = closes app, не платит). Pain belongs в onboarding · NOT в paywall. Held для reference.</div>
       <div class="pw7-phone">
         <div class="pw7-screen">
           <div class="pw7-status"><span>2:47</span><span>●●●● ▮</span></div>
@@ -3304,29 +3312,20 @@
       </div>
     </div>
 
-    <!-- ============ VARIANT B · CITED PAGES ============ -->
-    <div class="pw7-card">
-      <div class="head"><span class="nm">B · Cited Pages</span><span class="sc">8.2</span></div>
-      <div class="vibe">Hero strip + big trust-pill wall. RAG depth = differentiator. For Linda (doctor-dismissed) + Alex (research-first biohacker). Single-day annual upsell variant.</div>
+    <!-- ============ VARIANT B · CITED PAGES (LOCKED · round 2) ============ -->
+    <div class="pw7-card winner">
+      <div class="head"><span class="nm">B · Cited Pages</span><span class="sc">8.7</span></div>
+      <div class="vibe">Calibrum-pattern locked: hero band ~35% screen (vibe only) → big serif H1 → scope caps → 2 bullets (trust + anchor) → pricing → timeline → CTA. Universal default для всех 7 lanes — no pain re-injection at point of payment.</div>
       <div class="pw7-phone">
         <div class="pw7-screen">
           <div class="pw7-status"><span>9:41</span><span>●●●● ▮</span></div>
           <div class="pw7-hero v2" style="height:200px;"></div>
-          <div class="pw7-h1" style="margin-top:-32px;">Hair loss, decoded.</div>
-          <div class="pw7-sub">Every Coach reply links the AAD or ISHRS guideline it draws from. No bro-science, no «my friend said».</div>
-          <div class="pw7-trust">
-            <span class="src">AAD</span><span class="src">ISHRS</span><span class="src">FDA</span><span class="src">MAYO</span><span class="src">CLEVELAND</span><span class="src">ENDO·SOC</span><span class="src">+50 PubMed</span>
-          </div>
+          <div class="pw7-h1 big" style="margin-top:-36px;">Hair loss, decoded.</div>
+          <div class="pw7-scope">DENSITY · NORWOOD · TREATMENTS · TRANSPLANT · DERM VISITS</div>
           <ul class="pw7-bullets">
-            <li>Coach cites § + year on every answer</li>
-            <li>Hormonal context — ferritin, thyroid, estrogen</li>
-            <li>Treatment compound comparison</li>
-            <li>Doctor visit brief — print-clean PDF</li>
+            <li>AI Coach cites AAD, ISHRS &amp; 50+ PubMed — 24/7 · 5-angle scan included</li>
+            <li>$39.99/yr — less than one dermatology consult ($150–300)</li>
           </ul>
-          <div class="pw7-anchor">
-            <span class="strike">Hair Snap $99/yr — same answers, no citations</span>
-            <span class="equals">Folik · sourced answers · $39.99/yr</span>
-          </div>
           <div class="pw7-plans">
             <div class="pw7-plan selected">
               <span class="badge">7-DAY TRIAL</span>
