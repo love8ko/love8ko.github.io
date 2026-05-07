@@ -1233,23 +1233,22 @@
   .pw7-plan .pr { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 15.5px; color: #F2F4F6; }
   .pw7-plan .pr small { font-size: 9.5px; color: #B7C3CD; font-weight: 600; }
   .pw7-plan .mt { font-size: 8.5px; color: rgba(232,238,241,0.65); margin-top: 3px; }
-  /* timeline (Calibrum-style, with dashes) */
+  /* timeline (Calibrum 1:1 — Today/Day5/Day7 · emoji icons · solid subtle divider) */
   .pw7-tl {
-    margin: 4px 12px 10px; padding: 9px 10px;
+    margin: 4px 12px 10px; padding: 10px 12px;
     background: rgba(245,242,237,0.03); border: 1px solid rgba(245,242,237,0.07);
-    border-radius: 11px;
+    border-radius: 12px;
   }
-  .pw7-tl .step { display: grid; grid-template-columns: 18px 56px 1fr; gap: 7px; align-items: center; padding: 4px 0; }
-  .pw7-tl .step + .step { border-top: 1px dashed rgba(245,242,237,0.10); }
+  .pw7-tl .step { display: grid; grid-template-columns: 22px 60px 1fr; gap: 8px; align-items: center; padding: 5px 0; }
+  .pw7-tl .step + .step { border-top: 1px solid rgba(245,242,237,0.05); }
   .pw7-tl .icn {
-    width: 18px; height: 18px; border-radius: 50%;
-    background: rgba(91,155,107,0.18); color: var(--growth);
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(91,155,107,0.15); color: var(--growth);
     display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 800;
+    font-size: 11px; font-weight: 800;
   }
-  .pw7-tl .step.ending .icn { background: rgba(232,98,42,0.18); color: var(--cta); }
-  .pw7-tl .day { font-size: 9.5px; color: #C9D2D9; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
-  .pw7-tl .desc { font-size: 9.5px; color: #B7C3CD; line-height: 1.35; }
+  .pw7-tl .day { font-size: 10.5px; color: var(--growth); font-weight: 800; letter-spacing: 0.04em; }
+  .pw7-tl .desc { font-size: 10.5px; color: #C9D2D9; line-height: 1.35; }
   .pw7-disclaim { font-size: 8px; color: rgba(232,238,241,0.50); line-height: 1.4; margin: 0 16px 6px; text-align: center; }
   .pw7-cta {
     margin: 0 12px 4px;
@@ -3287,10 +3286,9 @@
             </div>
           </div>
           <div class="pw7-tl">
-            <div class="step"><div class="icn">●</div><div class="day">Today</div><div class="desc">Norwood result + 1st Coach answer unlocked</div></div>
-            <div class="step"><div class="icn">●</div><div class="day">Day 3</div><div class="desc">Baseline 5-angle photo set saved</div></div>
-            <div class="step ending"><div class="icn">!</div><div class="day">Day 6</div><div class="desc">We'll remind you · lock annual at $39.99</div></div>
-            <div class="step"><div class="icn">●</div><div class="day">Day 7</div><div class="desc">Trial converts unless cancelled · $4.99/wk</div></div>
+            <div class="step"><div class="icn">✓</div><div class="day">Today</div><div class="desc">Full access · Coach + 5-angle scan + Norwood staging</div></div>
+            <div class="step"><div class="icn">🔔</div><div class="day">Day 5</div><div class="desc">Reminder — your trial ends in 2 days</div></div>
+            <div class="step"><div class="icn">💳</div><div class="day">Day 7</div><div class="desc">$4.99/wk starts · cancel anytime</div></div>
           </div>
           <div class="pw7-disclaim">Educational companion · not medical advice. Always consult a dermatologist.</div>
           <div class="pw7-cta">Continue — Free for 7 Days</div>
@@ -3343,10 +3341,9 @@
             </div>
           </div>
           <div class="pw7-tl">
-            <div class="step"><div class="icn">●</div><div class="day">Today</div><div class="desc">First sourced Coach reply with citations</div></div>
-            <div class="step"><div class="icn">●</div><div class="day">Day 4</div><div class="desc">Doctor-visit brief PDF auto-generated</div></div>
-            <div class="step ending"><div class="icn">!</div><div class="day">Day 6</div><div class="desc">Lock annual $39.99 before trial ends</div></div>
-            <div class="step"><div class="icn">●</div><div class="day">Day 7</div><div class="desc">Auto-renew unless cancelled</div></div>
+            <div class="step"><div class="icn">✓</div><div class="day">Today</div><div class="desc">Full access · sourced Coach + visit-brief PDF</div></div>
+            <div class="step"><div class="icn">🔔</div><div class="day">Day 5</div><div class="desc">Reminder — your trial ends in 2 days</div></div>
+            <div class="step"><div class="icn">💳</div><div class="day">Day 7</div><div class="desc">$4.99/wk starts · cancel anytime</div></div>
           </div>
           <div class="pw7-disclaim">Educational companion · not medical advice. Always consult a dermatologist.</div>
           <div class="pw7-cta">Continue — Free for 7 Days</div>
@@ -3396,10 +3393,9 @@
             </div>
           </div>
           <div class="pw7-tl">
-            <div class="step"><div class="icn">●</div><div class="day">Today</div><div class="desc">Day-0 baseline 5-angle set captured</div></div>
-            <div class="step"><div class="icn">●</div><div class="day">Day 3</div><div class="desc">Treatment-compliance streak begins</div></div>
-            <div class="step ending"><div class="icn">!</div><div class="day">Day 6</div><div class="desc">Lock annual $39.99 before trial ends</div></div>
-            <div class="step"><div class="icn">●</div><div class="day">Day 90</div><div class="desc">Density delta vs baseline · Coach interpret</div></div>
+            <div class="step"><div class="icn">✓</div><div class="day">Today</div><div class="desc">Day-0 baseline 5-angle set + density math</div></div>
+            <div class="step"><div class="icn">🔔</div><div class="day">Day 5</div><div class="desc">Reminder — your trial ends in 2 days</div></div>
+            <div class="step"><div class="icn">💳</div><div class="day">Day 7</div><div class="desc">$4.99/wk starts · cancel anytime</div></div>
           </div>
           <div class="pw7-disclaim">Educational companion · not medical advice. Always consult a dermatologist.</div>
           <div class="pw7-cta">Start Tracking — Free for 7 Days</div>
