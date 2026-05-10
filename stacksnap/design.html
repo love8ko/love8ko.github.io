@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>StackSnap — Design System Workbench</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1C1C1E;
+    --ink-2: #6B7280;
+    --ink-3: #A1A8B3;
+    --bg: #F0FDF9;
+    --card: #FFFFFF;
+    --divider: #D1FAE5;
+
+    --brand: #064E3B;
+    --brand-mid: #065F46;
+    --brand-soft: #D1FAE5;
+
+    --growth: #10B981;
+    --growth-mid: #059669;
+    --growth-soft: #ECFDF5;
+
+    --cta: #10B981;
+    --cta-deep: #059669;
+    --cta-soft: #D1FAE5;
+
+    --danger: #EF4444;
+    --danger-soft: #FEF2F2;
+    --danger-border: #FCA5A5;
+
+    --warn: #F59E0B;
+    --warn-soft: #FFFBEB;
+
+    --good: #10B981;
+    --good-bg: #D1FAE5;
+    --watch: #F59E0B;
+    --watch-bg: #FEF3C7;
+    --alert: #EF4444;
+    --alert-bg: #FEF2F2;
+
+    --night-bg: #052e16;
+    --night-surface: #064E3B;
+    --night-bubble-user: #065F46;
+    --night-text: #F0FDF4;
+    --night-divider: #166534;
+    --night-accent: #10B981;
+  }
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  h1, h2, h3 {
+    font-family: -apple-system, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+  h2 { font-size: 22px; font-weight: 700; margin: 48px 0 16px; }
+  h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+  .lede { color: var(--ink-2); max-width: 780px; line-height: 1.55; margin-bottom: 8px; }
+  .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 8px; }
+  .pill {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 999px; padding: 5px 12px; font-size: 12px;
+    color: var(--ink-2); font-weight: 600;
+  }
+  .pill.lock { background: var(--good-bg); color: #065F46; border-color: #6EE7B7; }
+  .pill.brand { background: var(--brand-soft); color: var(--brand); border-color: var(--brand-soft); }
+
+  /* Winner callout */
+  .winner-callout {
+    background: var(--brand);
+    color: #F0FDF4;
+    border-radius: 24px;
+    padding: 28px 28px 24px;
+    margin: 24px 0 8px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+  }
+  .winner-callout h2 { color: #F0FDF4; margin: 0; font-size: 26px; }
+  .winner-callout .vibe { color: #6EE7B7; font-style: italic; max-width: 620px; margin-top: 6px; line-height: 1.5; }
+  .winner-callout .score-badge {
+    background: var(--growth);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 800;
+    font-size: 18px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    white-space: nowrap;
+  }
+
+  /* Token grid */
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .token {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 10px; padding: 8px 10px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11.5px;
+  }
+  .token .chip {
+    width: 28px; height: 28px; border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0;
+  }
+  .token .label { color: var(--ink-2); display: block; font-size: 10.5px; line-height: 1.2; }
+  .token .hex { color: var(--ink); font-weight: 600; line-height: 1.2; }
+
+  /* Top nav */
+  .top-nav {
+    position: sticky; top: 0; z-index: 99;
+    background: rgba(240,253,249,0.88);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    border-bottom: 1px solid var(--divider);
+    display: flex; gap: 4px; padding: 8px 0;
+    flex-wrap: wrap; margin: 0 -24px 0; padding: 8px 24px;
+  }
+  .top-nav a {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 999px; padding: 5px 14px; font-size: 12.5px;
+    color: var(--ink-2); font-weight: 600; text-decoration: none;
+    white-space: nowrap; transition: background 0.15s;
+  }
+  .top-nav a:hover { background: var(--growth-soft); color: var(--brand); }
+  .top-nav a.is-module { background: var(--brand); color: #F0FDF4; }
+  .top-nav a.is-module:hover { background: var(--brand-mid); color: #F0FDF4; }
+
+  /* Module banner */
+  .module-banner {
+    background: var(--brand);
+    color: #F0FDF4;
+    border-radius: 20px;
+    padding: 22px 24px 18px;
+    margin: 40px 0 18px;
+  }
+  .module-banner .num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    opacity: 0.65; display: block; margin-bottom: 4px;
+  }
+  .module-banner h2 { margin: 0; color: #F0FDF4; font-size: 22px; }
+  .module-banner .desc {
+    color: #6EE7B7; font-size: 13.5px;
+    line-height: 1.55; margin-top: 8px;
+  }
+
+  /* JTBD compact grid */
+  .jtbd-compact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .jtbd-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px; padding: 16px;
+  }
+  .jtbd-card .jc-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .jtbd-card .jc-name { font-size: 15px; font-weight: 700; }
+  .jtbd-card .jc-budget {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 12px; font-weight: 700;
+    background: var(--growth-soft); color: var(--brand);
+    border-radius: 999px; padding: 3px 8px;
+  }
+  .jtbd-card .jc-quote {
+    font-size: 12.5px; color: var(--ink-2); font-style: italic;
+    border-left: 3px solid var(--growth); padding-left: 8px;
+    line-height: 1.5; margin-bottom: 10px;
+  }
+  .jtbd-card .jc-pain {
+    font-size: 12px; color: var(--ink); font-weight: 600;
+    background: var(--bg); border-radius: 8px; padding: 6px 10px;
+  }
+  .jc-rev { font-size: 11px; color: var(--ink-2); margin-top: 6px; }
+  .rev-bar { height: 4px; border-radius: 999px; background: var(--divider); margin-top: 3px; overflow: hidden; }
+  .rev-fill { height: 100%; border-radius: 999px; background: var(--growth); }
+
+  /* Persona vote table */
+  table.vote {
+    width: 100%; border-collapse: collapse; margin-top: 16px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider);
+  }
+  table.vote th, table.vote td {
+    padding: 10px 14px; text-align: left; font-size: 13.5px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.vote th {
+    background: var(--brand-soft); color: var(--brand);
+    font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700;
+  }
+  table.vote tr:last-child td { border-bottom: none; }
+  table.vote td.num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 700; text-align: center;
+  }
+  table.vote td.num.hi { color: var(--growth); }
+
+  /* Cheat sheet */
+  .cheat-banner {
+    background: #052e16;
+    color: #F0FDF4;
+    border-radius: 20px;
+    padding: 24px 24px 20px;
+    margin-bottom: 16px;
+  }
+  .cheat-banner .ch-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--growth); margin-bottom: 8px;
+  }
+  .cheat-banner h3 { color: #F0FDF4; font-size: 17px; line-height: 1.4; }
+  .cheat-banner p { color: #6EE7B7; font-size: 13px; line-height: 1.55; margin-top: 10px; }
+  .cheat-steps {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px;
+  }
+  .cheat-step {
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px; padding: 10px 12px;
+    font-size: 12.5px; color: #A7F3D0; line-height: 1.45;
+  }
+  .cheat-step b { color: #F0FDF4; display: block; font-size: 11px; margin-bottom: 3px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .cheat-step.s1 { border-left: 3px solid var(--growth); }
+  .cheat-step.s2 { border-left: 3px solid #A7F3D0; }
+  .cheat-step.s3 { border-left: 3px solid var(--warn); }
+
+  .cheat-table-wrap {
+    background: #052e16;
+    border-radius: 20px;
+    padding: 4px;
+    overflow-x: auto;
+    margin-bottom: 16px;
+  }
+  table.cheat {
+    width: 100%; border-collapse: collapse;
+    min-width: 760px;
+  }
+  table.cheat thead th {
+    padding: 10px 12px; text-align: left;
+    font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 700; color: #6EE7B7;
+    border-bottom: 1px solid #166534;
+  }
+  table.cheat tbody td {
+    padding: 10px 12px; vertical-align: top;
+    border-bottom: 1px solid #166534;
+    font-size: 13px; color: #D1FAE5;
+  }
+  table.cheat tbody tr:last-child td { border-bottom: none; }
+  table.cheat tbody tr.killer-row td { background: rgba(16,185,129,0.07); }
+  table.cheat td.cell-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 800; font-size: 14px; color: #6EE7B7;
+    text-align: center; width: 36px;
+  }
+  table.cheat td.cell-mode { width: 72px; }
+  .cheat-mode {
+    display: inline-block;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 9.5px; font-weight: 700;
+    border-radius: 6px; padding: 3px 7px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .cheat-mode.dark { background: #0d1117; color: var(--growth); border: 1px solid #166534; }
+  .cheat-mode.light { background: #F0FDF9; color: #064E3B; border: 1px solid #A7F3D0; }
+  .cheat-mode.danger { background: #450a0a; color: #FCA5A5; border: 1px solid #7f1d1d; }
+  .cheat-str {
+    display: block;
+    font-size: 12.5px; line-height: 1.4;
+    border-radius: 6px; padding: 4px 7px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    border: 1px solid transparent; margin-bottom: 2px;
+  }
+  .cheat-str.title { font-weight: 800; letter-spacing: 0.02em; color: #ECFDF5; }
+  .cheat-str.sub { color: #6EE7B7; font-weight: 500; }
+  .cheat-str.hero { background: rgba(16,185,129,0.10); border-color: rgba(16,185,129,0.30); color: #A7F3D0; }
+  .cheat-persona { color: #6EE7B7; font-size: 12px; white-space: nowrap; }
+
+  .cheat-donts {
+    background: #450a0a;
+    border-radius: 20px;
+    padding: 22px 24px;
+    margin-top: 16px;
+  }
+  .dt-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #FCA5A5; margin-bottom: 8px;
+  }
+  .cheat-donts h4 { color: #FEF2F2; font-size: 15px; margin-bottom: 12px; }
+  .cheat-donts ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .cheat-donts li {
+    color: #FECACA; font-size: 13px; line-height: 1.5;
+    padding-left: 20px; position: relative;
+  }
+  .cheat-donts li::before { content: "✕"; position: absolute; left: 0; color: #EF4444; font-weight: 700; }
+  .cheat-donts li b { color: #FFE4E4; }
+
+  .cheat-checklist {
+    background: var(--good-bg);
+    border-radius: 20px;
+    padding: 22px 24px;
+    margin-top: 16px;
+  }
+  .ck-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #065F46; margin-bottom: 8px;
+  }
+  .cheat-checklist h4 { color: #064E3B; font-size: 15px; margin-bottom: 12px; }
+  .cheat-checklist ol { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; counter-reset: ck; }
+  .cheat-checklist li {
+    color: #064E3B; font-size: 13px; line-height: 1.5;
+    padding-left: 28px; position: relative; counter-increment: ck;
+  }
+  .cheat-checklist li::before {
+    content: counter(ck);
+    position: absolute; left: 0;
+    background: var(--growth); color: #fff;
+    width: 18px; height: 18px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 800; top: 1px;
+  }
+  .cheat-checklist li b { color: #052e16; }
+
+  /* DS cards (visual mockup cards) */
+  .ds-grid-3 {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px;
+  }
+  .ds-grid-8 {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px;
+  }
+  @media (max-width: 900px) {
+    .ds-grid-3 { grid-template-columns: 1fr 1fr; }
+    .ds-grid-8 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .ds-grid-3, .ds-grid-8 { grid-template-columns: 1fr; }
+    .cheat-steps { grid-template-columns: 1fr; }
+    table.cheat { font-size: 12px; }
+  }
+  .ds-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 18px; padding: 14px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .ds-card.killer { border-color: var(--growth); box-shadow: 0 4px 22px rgba(16,185,129,0.14); }
+  .ds-card.danger-card { border-color: var(--danger); box-shadow: 0 4px 22px rgba(239,68,68,0.12); }
+  .ds-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .ds-card.killer .ds-num { color: var(--growth); }
+  .ds-card.danger-card .ds-num { color: var(--danger); }
+  .ds-phone {
+    background: #1C1C1E; border-radius: 12px;
+    padding: 10px 10px 12px; min-height: 180px;
+    overflow: hidden;
+  }
+  .ds-card.killer .ds-phone { min-height: 240px; }
+  .ds-screen {
+    background: #F0FDF9; border-radius: 8px;
+    padding: 10px; display: flex; flex-direction: column; gap: 6px;
+    min-height: 140px; font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+  }
+  .ds-screen.dark { background: #052e16; color: #F0FDF4; }
+  .ds-screen.danger { background: #1C0A0A; color: #FEF2F2; }
+  .ds-headline {
+    font-size: 15px; font-weight: 800; line-height: 1.25; color: var(--ink);
+  }
+  .ds-card.killer .ds-headline { font-size: 16px; }
+  .ds-sub { font-size: 12px; color: var(--ink-2); line-height: 1.4; }
+  .ds-brief {
+    display: flex; gap: 8px; align-items: flex-start;
+    font-size: 12px; line-height: 1.5; color: var(--ink-2);
+  }
+  .ds-l {
+    font-size: 9.5px; font-weight: 700; border-radius: 4px; padding: 2px 5px;
+    white-space: nowrap; flex-shrink: 0; margin-top: 1px;
+    font-family: ui-monospace, "SF Mono", monospace; letter-spacing: 0.05em;
+  }
+  .ds-l.show { background: var(--brand-soft); color: var(--brand); }
+  .ds-l.move { background: var(--warn-soft); color: #92400E; }
+
+  /* Callout */
+  .v2-callout {
+    background: var(--brand); color: #A7F3D0;
+    border-radius: 14px; padding: 14px 18px;
+    font-size: 13px; line-height: 1.55; margin-top: 16px;
+  }
+  .v2-callout b { color: #F0FDF4; }
+
+  /* Wedge grid */
+  .wedge-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 12px; margin-top: 16px;
+  }
+  .wedge {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px; padding: 14px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .wh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .wh b { font-size: 14px; flex: 1; }
+  .jtbd-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10px; font-weight: 800;
+    background: var(--ink-2); color: #fff;
+    border-radius: 999px; padding: 2px 8px;
+  }
+  .jtbd-weight { font-size: 11px; color: var(--ink-2); font-weight: 600; }
+  .w1 { color: var(--growth); }
+  .w2 { color: var(--watch); }
+  .w3 { color: var(--ink-2); }
+  .ww-want {
+    font-size: 12.5px; color: var(--ink); font-style: italic;
+    border-left: 3px solid var(--growth); padding-left: 8px;
+    line-height: 1.5;
+  }
+  .ww-row { display: flex; gap: 8px; font-size: 12px; line-height: 1.45; }
+  .ww-l { font-weight: 700; color: var(--ink-2); min-width: 72px; flex-shrink: 0; }
+  .ww-show { color: var(--ink); }
+  .ww-show b { color: var(--growth-mid); }
+
+  /* Consilium vote table */
+  table.jtm {
+    width: 100%; border-collapse: collapse; margin-top: 16px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider); font-size: 13px;
+  }
+  table.jtm th, table.jtm td {
+    padding: 8px 10px; text-align: center;
+    border-bottom: 1px solid var(--divider); border-right: 1px solid var(--divider);
+    line-height: 1.3;
+  }
+  table.jtm th {
+    background: var(--brand-soft); color: var(--brand);
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em;
+  }
+  table.jtm tr:last-child td { border-bottom: none; }
+  table.jtm td:last-child, table.jtm th:last-child { border-right: none; }
+  table.jtm td.persona { text-align: left; font-weight: 700; white-space: nowrap; color: var(--ink); }
+  table.jtm td.use { font-size: 14px; }
+  table.jtm td.use.h { color: var(--growth); font-weight: 800; }
+  table.jtm td.use.d { color: var(--danger); font-weight: 800; }
+  table.jtm td.use.l { color: var(--ink-3); }
+  table.jtm .total { background: var(--brand-soft); font-weight: 800; color: var(--brand); }
+
+  /* Per-cohort proposal */
+  .cohort-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px; margin-top: 16px;
+  }
+  .cohort {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px; padding: 14px;
+  }
+  .cohort-head {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+  }
+  .cohort-avatar {
+    width: 32px; height: 32px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; color: #fff; flex-shrink: 0;
+  }
+  .cohort-head b { font-size: 14px; }
+  .cohort-head small { font-size: 11px; color: var(--ink-2); display: block; }
+  .cohort-says {
+    font-size: 12.5px; font-style: italic; color: var(--ink);
+    border-left: 3px solid var(--growth); padding-left: 8px;
+    line-height: 1.5; margin-bottom: 10px;
+  }
+  .cohort-wants { display: flex; flex-direction: column; gap: 5px; }
+  .cohort-want {
+    font-size: 12px; color: var(--ink-2);
+    background: var(--bg); border-radius: 7px; padding: 5px 9px;
+  }
+  .cohort-want b { color: var(--growth-mid); }
+  .vote-picks {
+    display: flex; gap: 5px; flex-wrap: wrap; margin-top: 8px;
+  }
+  .vote-pick {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10px; font-weight: 700;
+    background: var(--growth-soft); color: var(--brand);
+    border-radius: 6px; padding: 3px 7px;
+  }
+  .vote-pick.top { background: var(--growth); color: #fff; }
+
+  /* Scroll-padding for anchors */
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="#top">↑ Top</a>
+  <a href="#module-1">M1 · Design</a>
+  <a href="#module-2">M2 · JTBD</a>
+  <a href="#module-3" class="is-module">M3 · Screenshots ★</a>
+  <a href="#ss-cheat">6.0 Cheat Sheet</a>
+  <a href="#ss-brief">6.0a Mockups</a>
+  <a href="#ss-wedge">6.1 Wedge</a>
+  <a href="#ss-vote">6.2 Консилиум</a>
+  <a href="#ss-cohorts">6.3 Per-cohort</a>
+  <a href="#ss-anti">6.4 Anti-patterns</a>
+  <a href="#ss-checklist">6.5 Checklist</a>
+</nav>
+
+<header id="top" style="margin-top: 24px;">
+  <h1>StackSnap — Design System Workbench</h1>
+  <p class="lede">Screenshots council · JTBD copy · conversion optimization. Supplement Tracker · Health &amp; Fitness · iOS 17+</p>
+  <div class="meta-bar">
+    <span class="pill lock">🔒 LOCKED 2026-05-10 round 1</span>
+    <span class="pill">✓ confirmed by owner</span>
+    <span class="pill brand">Dark Emerald Authority</span>
+    <span class="pill">Health &amp; Fitness · iOS 17+</span>
+  </div>
+</header>
+
+<section class="winner-callout">
+  <div>
+    <h2>«Dark Emerald Authority»</h2>
+    <p class="vibe">Тёмная научная уверенность — не холодная аптека (MySymptoms), не перегруженная таблица (Cronometer). Тёмный изумруд говорит «твои добавки под контролем», монофонный $103 говорит «деньги реальные», красный WARNING говорит «это важно». Wedge: единственное приложение которое показывает сколько ты теряешь И почему это опасно одновременно.</p>
+  </div>
+  <span class="score-badge">ICP · 35-65yo</span>
+</section>
+
+<!-- ===== MODULE 1 — DESIGN ===== -->
+<div class="module-banner" id="module-1" style="margin-top: 32px;">
+  <span class="num">МОДУЛЬ 1</span>
+  <h2>Дизайн-система</h2>
+  <p class="desc">Color tokens · Dark Emerald Authority. Emerald = рост и сбережения; Red = опасность и взаимодействия; тёмный surface = «клинически серьёзный».</p>
+</div>
+
+<h2 id="tokens">Locked token spec — «Dark Emerald Authority»</h2>
+
+<h3>Primary palette</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#052e16"></div><div><span class="label">--night-bg (screens)</span><span class="hex">#052e16</span></div></div>
+  <div class="token"><div class="chip" style="background:#064E3B"></div><div><span class="label">--brand-primary</span><span class="hex">#064E3B</span></div></div>
+  <div class="token"><div class="chip" style="background:#10B981"></div><div><span class="label">--growth (savings/good)</span><span class="hex">#10B981</span></div></div>
+  <div class="token"><div class="chip" style="background:#D1FAE5"></div><div><span class="label">--growth-soft (bg)</span><span class="hex">#D1FAE5</span></div></div>
+  <div class="token"><div class="chip" style="background:#F0FDF9"></div><div><span class="label">--bg-primary (light)</span><span class="hex">#F0FDF9</span></div></div>
+  <div class="token"><div class="chip" style="background:#FFFFFF;border:1px solid #ccc"></div><div><span class="label">--bg-surface (cards)</span><span class="hex">#FFFFFF</span></div></div>
+  <div class="token"><div class="chip" style="background:#1C1C1E"></div><div><span class="label">--text-primary</span><span class="hex">#1C1C1E</span></div></div>
+  <div class="token"><div class="chip" style="background:#6B7280"></div><div><span class="label">--text-secondary</span><span class="hex">#6B7280</span></div></div>
+</div>
+
+<h3>Semantic triad (verdict)</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#10B981"></div><div><span class="label">verdict.good — "no issues"</span><span class="hex">#10B981</span></div></div>
+  <div class="token"><div class="chip" style="background:#F59E0B"></div><div><span class="label">verdict.watch — "potential overlap"</span><span class="hex">#F59E0B</span></div></div>
+  <div class="token"><div class="chip" style="background:#EF4444"></div><div><span class="label">verdict.alert — "interaction / overdose"</span><span class="hex">#EF4444</span></div></div>
+  <div class="token"><div class="chip" style="background:#D1FAE5"></div><div><span class="label">verdict.good.bg</span><span class="hex">#D1FAE5</span></div></div>
+  <div class="token"><div class="chip" style="background:#FEF3C7"></div><div><span class="label">verdict.watch.bg</span><span class="hex">#FEF3C7</span></div></div>
+  <div class="token"><div class="chip" style="background:#FEF2F2"></div><div><span class="label">verdict.alert.bg</span><span class="hex">#FEF2F2</span></div></div>
+</div>
+
+<!-- ===== MODULE 2 — JTBD ===== -->
+<div class="module-banner" id="module-2" style="margin-top: 40px;">
+  <span class="num">МОДУЛЬ 2</span>
+  <h2>JTBD · Платящие когорты</h2>
+  <p class="desc">5 реальных персон из 490+ отзывов. Каждая имеет свой триггер скачать + боль + revenue weight. Консилиум скриншотов опирается на эти веса.</p>
+</div>
+
+<div class="jtbd-compact-grid">
+
+  <div class="jtbd-card">
+    <div class="jc-head">
+      <span class="jc-name">Mark · T2D Newly Diagnosed</span>
+      <span class="jc-budget">$200+/mo</span>
+    </div>
+    <div class="jc-quote">«I'm aggressively addressing my metabolic dysfunctions. Berberine, magnesium, CoQ10 — 12 bottles. Can they hurt me?»</div>
+    <div class="jc-pain">Боль #1: взаимодействие berberine + metformin · overdose vitamin D</div>
+    <div class="jc-rev">Revenue weight: <b style="color:var(--growth)">HIGH</b> (desperate buyer)</div>
+    <div class="rev-bar"><div class="rev-fill" style="width:85%"></div></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-head">
+      <span class="jc-name">Carol · Functional Medicine</span>
+      <span class="jc-budget">$250-400/mo</span>
+    </div>
+    <div class="jc-quote">«My functional doctor prescribed 14 supplements. Morning/evening/with food — I can't keep track. Paying $350/mo and missing doses.»</div>
+    <div class="jc-pain">Боль #1: scheduling confusion · "утром / натощак / с едой" 14 бутылок</div>
+    <div class="jc-rev">Revenue weight: <b style="color:var(--growth)">VERY HIGH</b> (cash buyer)</div>
+    <div class="rev-bar"><div class="rev-fill" style="width:95%"></div></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-head">
+      <span class="jc-name">Charlie · Spreadsheet Guy</span>
+      <span class="jc-budget">$150-300/mo</span>
+    </div>
+    <div class="jc-quote">«I've been totaling the mg from my supplements on a spreadsheet for years. It's great to have this done automatically.»</div>
+    <div class="jc-pain">Боль #1: Excel боль + ingredient overlap not detected + brand quality unknown</div>
+    <div class="jc-rev">Revenue weight: <b style="color:var(--watch)">MEDIUM</b> (loyal long-term)</div>
+    <div class="rev-bar"><div class="rev-fill" style="width:60%"></div></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-head">
+      <span class="jc-name">Alex · Wellness Junkie</span>
+      <span class="jc-budget">$300-500/mo</span>
+    </div>
+    <div class="jc-quote">«Ok I love supplements. After making adjustments I cut my monthly costs in half. I would have spent $600 this year on garbage.»</div>
+    <div class="jc-pain">Боль #1: ROI неясен · дубли everywhere · Attia/Huberman FOMO → покупает все</div>
+    <div class="jc-rev">Revenue weight: <b style="color:var(--growth)">HIGH</b> (viral + LTV)</div>
+    <div class="rev-bar"><div class="rev-fill" style="width:80%"></div></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-head">
+      <span class="jc-name">Mary · Lifelong 65+</span>
+      <span class="jc-budget">$100-200/mo</span>
+    </div>
+    <div class="jc-quote">«Where have you been all my life. Been taking supplements almost 50 years. Perfect for showing what I need AND saving money.»</div>
+    <div class="jc-pain">Боль #1: statin + добавки — не навредят ли? · забывает приняла ли магний</div>
+    <div class="jc-rev">Revenue weight: <b style="color:var(--watch)">MEDIUM</b> (stable, fixed income)</div>
+    <div class="rev-bar"><div class="rev-fill" style="width:55%"></div></div>
+  </div>
+
+</div>
+
+<!-- ===== MODULE 3 — SCREENSHOTS ===== -->
+<div class="module-banner" id="module-3" style="margin-top: 40px;">
+  <span class="num">МОДУЛЬ 3 · App Store Screenshots</span>
+  <h2>App Store Screenshots — Консилиум</h2>
+  <p class="desc"><strong style="color:#A7F3D0">⇣ Дизайнеру: читай только §6.0 CHEAT SHEET.</strong> Этого хватит для всех 8 фреймов. Остальное (6.0a visual mockups, 6.1 wedge, 6.2 консилиум-голоса, 6.3 per-cohort, 6.4 anti-patterns) — <em>контекст</em> если нужно обосновать выбор копи.</p>
+</div>
+
+<!-- ===== 6.0 CHEAT SHEET ===== -->
+<h2 id="ss-cheat" style="margin-top: 18px;">6.0 · CHEAT SHEET — copy strings, draw heroes, ship</h2>
+
+<div class="cheat-banner">
+  <div class="ch-eyebrow">⚡ START HERE · этого хватит для отгрузки</div>
+  <h3>8 фреймов. 8 строк TITLE + 8 строк SUB + 8 hero-элементов. Возьми буквально.</h3>
+  <p>App Store thumb-превью показывает только <strong>3 первые скриншота</strong> — они решают покупку. Frames 1-2-3 = killer (изумрудная подсветка ниже), 4-8 = persona-depth. <strong>Не переписывай TITLE/SUB в свободной форме</strong> — копи прошла консилиум 5 персон и locked. Если хочется отклониться — загляни в §6.2 (голоса консилиума).</p>
+  <div class="cheat-steps">
+    <div class="cheat-step s1"><b>1 · Read row</b>Берёшь одну строку из таблицы ниже = один скриншот. Все 8 строк = вся галерея.</div>
+    <div class="cheat-step s2"><b>2 · Copy strings</b>TITLE и SUB — буквально copy-paste в Figma. Шрифт SF Pro Display Black + Regular. Не редактируй формулировки.</div>
+    <div class="cheat-step s3"><b>3 · Draw HERO</b>Hero — обязательный элемент внутри phone-mockup'а (число/warning/badge). Без него фрейм не пройдёт ревью.</div>
+  </div>
+</div>
+
+<div class="cheat-table-wrap">
+  <table class="cheat">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Mode</th>
+        <th>TITLE (top, all-caps)</th>
+        <th>SUB (one line)</th>
+        <th>HERO inside phone</th>
+        <th>Persona</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="killer-row">
+        <td class="cell-num">1</td>
+        <td class="cell-mode"><span class="cheat-mode dark">DARK</span></td>
+        <td><span class="cheat-str title">YOUR STACK IS WASTING $103.</span></td>
+        <td><span class="cheat-str sub">AI found it — updated daily</span></td>
+        <td><span class="cheat-str hero">SavingsCard LIVE: «$103/month» in mono 48pt<br>+ «6 issues detected» emerald badge<br>+ 5 supplements listed with ⚠ icons</span></td>
+        <td class="cheat-persona">All · top funnel</td>
+      </tr>
+      <tr class="killer-row">
+        <td class="cell-num">2</td>
+        <td class="cell-mode"><span class="cheat-mode dark">DARK</span></td>
+        <td><span class="cheat-str title">SCAN ANY BOTTLE. AI READS THE LABEL.</span></td>
+        <td><span class="cheat-str sub">160,000+ products · NIH DSLD verified</span></td>
+        <td><span class="cheat-str hero">Scan result card: «Centrum Multivitamin»<br>4 ingredients listed + «TRACKED» emerald badge<br>«NIH DSLD ✓» source chip at bottom</span></td>
+        <td class="cheat-persona">Alex · Charlie</td>
+      </tr>
+      <tr class="killer-row">
+        <td class="cell-num">3</td>
+        <td class="cell-mode"><span class="cheat-mode danger">DANGER</span></td>
+        <td><span class="cheat-str title">DRUG INTERACTION WARNING.</span></td>
+        <td><span class="cheat-str sub">NIH RxNav · Berberine + Metformin</span></td>
+        <td><span class="cheat-str hero">RED card: «HIGH severity» capsule badge<br>«Berberine ↔ Metformin — enhanced hypoglycemia»<br>«NIH RxNav» mono source chip</span></td>
+        <td class="cheat-persona">Mark · Mary</td>
+      </tr>
+      <tr>
+        <td class="cell-num">4</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">NEVER MISS YOUR DOSE.</span></td>
+        <td><span class="cheat-str sub">Morning · Berberine · Magnesium · Vitamin D</span></td>
+        <td><span class="cheat-str hero">Today's schedule: 3 morning pills ticked ✓<br>Streak chip «47 days» emerald<br>Timing notes «with food» · «before bed»</span></td>
+        <td class="cheat-persona">Carol · Mary</td>
+      </tr>
+      <tr>
+        <td class="cell-num">5</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">SHOW YOUR DOCTOR EVERYTHING.</span></td>
+        <td><span class="cheat-str sub">1-tap PDF · full stack + interactions</span></td>
+        <td><span class="cheat-str hero">PDF preview: «My Supplement Stack» header<br>5 supplements listed + drug interaction section<br>«NIH RxNav» footer citation</span></td>
+        <td class="cheat-persona">Mark · Carol · Mary</td>
+      </tr>
+      <tr>
+        <td class="cell-num">6</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">SAME INGREDIENT. HALF THE PRICE.</span></td>
+        <td><span class="cheat-str sub">3 bottles · 1 ingredient · $42 overcharge</span></td>
+        <td><span class="cheat-str hero">Duplicate alert card: «Vitamin D3»<br>→ NOW Foods $0.06/serving vs Thorne $0.22<br>«Save $41.95/mo» emerald chip · EXAMPLE watermark</span></td>
+        <td class="cheat-persona">Alex · Charlie</td>
+      </tr>
+      <tr>
+        <td class="cell-num">7</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">YOU'RE OVERDOSING VITAMIN D.</span></td>
+        <td><span class="cheat-str sub">3,125% Daily Value · NIH upper limit exceeded</span></td>
+        <td><span class="cheat-str hero">Overdose alert: «Vitamin D» bar at 3,125% DV<br>Red bar overflow + «NIH UL: 4,000 IU» cite<br>«From 3 products combined» annotation</span></td>
+        <td class="cheat-persona">Mark · Charlie</td>
+      </tr>
+      <tr>
+        <td class="cell-num">8</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">YOUR WHOLE STACK. VERIFIED.</span></td>
+        <td><span class="cheat-str sub">130,000+ products · NIH DSLD database</span></td>
+        <td><span class="cheat-str hero">Stack list: 5 supplements with emerald ✓ each<br>«NIH DSLD Verified» badge top-right<br>«StackSnap Pro» subtitle chip</span></td>
+        <td class="cheat-persona">All · close</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="cheat-donts">
+  <div class="dt-eyebrow">⛔ DO NOT — banned forever (compliance + Apple review safety)</div>
+  <h4>Если увидишь это в макете — переделывай. Без исключений.</h4>
+  <ul>
+    <li><b>Outcome promises</b> на TITLE: «Cure interactions / Guaranteed savings / Fix your health» — мы Health &amp; Fitness, не Medical.</li>
+    <li><b>Fake savings числа без EXAMPLE watermark</b> на slots 1 / 6 / 7 — implied personal claim = Apple rejection.</li>
+    <li><b>Wrong app name</b>: правильное «<code>StackSnap: Supplement Tracker</code>» — не «StackSnap Pro» или «StackSnap AI».</li>
+    <li><b>Fake review count badges</b>: «★★★★★ 10,000 users» — у нас реальные 4 отзыва, не масштабируй пока нет 50+.</li>
+    <li><b>Pill/creatine/protein keywords</b> в заголовке — anti-persona bodybuilder territory, off-limits per ASO strategy.</li>
+    <li><b>«Diagnose» language</b>: «AI diagnosed your vitamin D deficiency» — HIPAA-adjacent, Apple rejects medical diagnosis claims.</li>
+    <li><b>Competitor brand names</b>: «Better than SuppCo / Cronometer» — trademark + Apple guideline violation.</li>
+    <li><b>EXAMPLE watermark пропущен</b> на slots 1 / 6 / 7 (мocked dollar amounts).</li>
+  </ul>
+</div>
+
+<div class="cheat-checklist">
+  <div class="ck-eyebrow">✓ PRE-EXPORT CHECKLIST — пройди 8 пунктов перед PNG export</div>
+  <h4>Готов отдать макет? Прогони через эти 8 шагов.</h4>
+  <ol>
+    <li>Размер <b>1320×2868 PNG</b> (iPhone 6.9" Pro Max), 3 locale файла на slot</li>
+    <li>Status bar <b>9:41</b>, full battery, full signal, no carrier name</li>
+    <li>TITLE и SUB — точные строки из §6.0 (или локализованный эквивалент)</li>
+    <li>Hero element виден без скролла — первые 40% экрана содержат hero число/badge</li>
+    <li>App-Store name = <b>StackSnap: Supplement Tracker</b></li>
+    <li>Compliance: ноль outcome promises, ноль fake user counts, ноль diagnosis claims</li>
+    <li>EXAMPLE watermark (9pt, lower-right corner) на slots <b>1 / 6 / 7</b> (mocked $numbers)</li>
+    <li>Slot 3 (DANGER) использует <b>реальный RxNav interaction</b> — berberine+metformin = documented (PubMed confirmed)</li>
+  </ol>
+</div>
+
+<!-- ===== 6.0a VISUAL REFERENCE MOCKUPS ===== -->
+<h2 id="ss-brief" style="margin-top: 36px;">6.0a · Visual reference cards (mockups + animation briefs)</h2>
+<p class="lede"><strong>Дополнение к §6.0, не замена.</strong> Cheat sheet даёт <em>что писать</em>; этот раздел показывает <em>как должно выглядеть</em>. Каждая карточка = один скриншот: phone mockup preview + SHOW (обязательные элементы) + ANIMATE (для App Preview видео).</p>
+
+<h3 style="margin-top: 22px;">First 3 — killer scroll-stop</h3>
+<div class="ds-grid-3">
+
+  <!-- KILLER 1: Savings -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 1 · KILLER · DARK</span>
+    <div class="ds-phone">
+      <div class="ds-screen dark">
+        <div style="font-size:9px;color:#6EE7B7;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Your Stack · Savings</div>
+        <div style="background:#064E3B;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:4px;margin-top:4px">
+          <div style="font-size:8px;color:#6EE7B7;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Saved this month · LIVE</div>
+          <div style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:38px;line-height:1;color:#10B981;font-variant-numeric:tabular-nums">$103</div>
+          <div style="font-size:9px;color:#A7F3D0">$1,236/year at this rate</div>
+        </div>
+        <div style="margin-top:6px;display:flex;flex-direction:column;gap:3px">
+          <div style="background:rgba(255,255,255,0.06);border-radius:7px;padding:5px 8px;display:flex;justify-content:space-between;align-items:center;font-size:9px">
+            <span style="color:#D1FAE5;font-weight:600">Nordic Naturals Omega</span>
+            <span style="color:#10B981;font-family:ui-monospace,'SF Mono',monospace">$55/mo ⚠</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.06);border-radius:7px;padding:5px 8px;display:flex;justify-content:space-between;align-items:center;font-size:9px">
+            <span style="color:#D1FAE5;font-weight:600">Doctor's Best Magnesium</span>
+            <span style="color:#10B981;font-family:ui-monospace,'SF Mono',monospace">$10/mo ⚠</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.06);border-radius:7px;padding:5px 8px;display:flex;justify-content:space-between;align-items:center;font-size:9px">
+            <span style="color:#D1FAE5;font-weight:600">Thorne Berberine 500mg</span>
+            <span style="color:#10B981;font-family:ui-monospace,'SF Mono',monospace">$52/mo ⚠</span>
+          </div>
+        </div>
+        <div style="background:#10B981;border-radius:7px;padding:4px 8px;font-size:9px;font-weight:700;color:#052e16;margin-top:6px;align-self:flex-start">6 issues detected →</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Stop wasting money.</h4>
+    <p class="ds-sub">AI shows exactly what's costing you</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">Big emerald <b>$103</b> in monospace · 3 supplement rows with ⚠ · «6 issues detected» badge · LIVE label</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">Counter <b>rolls up</b> $0 → $103 (2.5s ease-out) · rows slide in staggered (150ms each)</span></div>
+  </div>
+
+  <!-- KILLER 2: Scan -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 2 · KILLER · DARK</span>
+    <div class="ds-phone">
+      <div class="ds-screen dark">
+        <div style="font-size:9px;color:#6EE7B7;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Scan Result</div>
+        <div style="background:#064E3B;border-radius:10px;padding:10px;margin-top:4px">
+          <div style="font-size:9.5px;font-weight:800;color:#F0FDF4">Centrum Multivitamin Adult</div>
+          <div style="font-size:8.5px;color:#6EE7B7">1 tablet · 65 servings</div>
+          <div style="background:#10B981;border-radius:5px;padding:2px 7px;font-size:8px;font-weight:700;color:#052e16;align-self:flex-start;margin-top:4px;display:inline-block">TRACKED ✓</div>
+        </div>
+        <div style="margin-top:6px;font-size:8.5px;color:#6EE7B7;font-weight:700">INGREDIENTS — 4</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-top:3px">
+          <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:4px 7px;font-size:8.5px;color:#D1FAE5;display:flex;justify-content:space-between"><span>Vitamin D3</span><span style="color:#10B981">1000 IU · 125% DV</span></div>
+          <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:4px 7px;font-size:8.5px;color:#D1FAE5;display:flex;justify-content:space-between"><span>Vitamin C</span><span style="color:#10B981">90 mg · 100% DV</span></div>
+          <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:4px 7px;font-size:8.5px;color:#D1FAE5;display:flex;justify-content:space-between"><span>Vitamin B12</span><span style="color:#F59E0B">6 mcg · 250% DV ⚠</span></div>
+          <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:4px 7px;font-size:8.5px;color:#D1FAE5;display:flex;justify-content:space-between"><span>Zinc</span><span style="color:#10B981">11 mg · 100% DV</span></div>
+        </div>
+        <div style="font-size:8px;color:#6EE7B7;font-family:ui-monospace,'SF Mono',monospace;margin-top:6px">NIH DSLD #1234567 ✓</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Every ingredient. Verified.</h4>
+    <p class="ds-sub">160,000+ NIH DSLD products</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">«TRACKED» emerald badge · 4 ingredient rows with DV% · <b>NIH DSLD</b> source chip visible at bottom</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">Scan line <b>sweeps</b> across barcode (1s) → ingredient rows <b>appear</b> staggered (200ms each)</span></div>
+  </div>
+
+  <!-- KILLER 3: Drug Warning -->
+  <div class="ds-card danger-card">
+    <span class="ds-num">SLOT 3 · KILLER · DANGER</span>
+    <div class="ds-phone">
+      <div class="ds-screen danger">
+        <div style="font-size:9px;color:#FCA5A5;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Interaction Detected</div>
+        <div style="background:#7f1d1d;border:1px solid #EF4444;border-radius:10px;padding:12px;margin-top:4px">
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="background:#EF4444;color:#fff;border-radius:5px;padding:2px 7px;font-size:8px;font-weight:700;font-family:ui-monospace,'SF Mono',monospace">HIGH</span>
+            <span style="font-size:8.5px;color:#FEF2F2;font-weight:700">SEVERITY</span>
+          </div>
+          <div style="font-size:11px;font-weight:800;color:#FEF2F2;margin-top:6px;line-height:1.3">Berberine ↔ Metformin</div>
+          <div style="font-size:8.5px;color:#FECACA;margin-top:4px;line-height:1.4">Enhanced hypoglycemia risk. Monitor blood glucose closely.</div>
+        </div>
+        <div style="background:rgba(239,68,68,0.12);border-radius:7px;padding:8px;margin-top:6px">
+          <div style="font-size:8px;color:#FCA5A5;font-weight:700">SOURCE</div>
+          <div style="font-family:ui-monospace,'SF Mono',monospace;font-size:9px;color:#FECACA;margin-top:2px">NIH RxNav API · PMID 28756014</div>
+        </div>
+        <div style="font-size:8.5px;color:#FCA5A5;margin-top:6px">→ Consult your pharmacist or prescriber</div>
+      </div>
+    </div>
+    <h4 class="ds-headline" style="color:#EF4444">Drug interaction. Caught.</h4>
+    <p class="ds-sub">NIH RxNav · Berberine + Metformin</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">RED <b>HIGH severity</b> capsule badge · interaction description · «NIH RxNav» mono cite visible · dark red surface (único slot sans emerald)</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">Warning card <b>slides up</b> (spring) → HIGH badge <b>pulse-glow</b> 1× red (0.8s) · intentional alarm</span></div>
+  </div>
+
+</div>
+
+<div class="v2-callout">
+  <b>Logic for killer-3:</b> Slot 1 говорит «мы находим деньги которые ты теряешь прямо сейчас» (no competitor shows live savings). Slot 2 показывает «NIH DSLD database» — credential anchor, не просто barcode scanner. Slot 3 ломает паттерн red-on-dark — это visual stop-signal: ни SuppCo, ни Cronometer, ни Pill Reminder показывают drug interactions с NIH citation.
+</div>
+
+<h3 style="margin-top: 32px;">All 8 slots — compact grid</h3>
+<div class="ds-grid-8">
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 1 · KILLER</span>
+    <div class="ds-phone" style="min-height:auto">
+      <div class="ds-screen dark" style="min-height:120px">
+        <div style="font-size:8px;color:#6EE7B7;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Savings · LIVE</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:30px;line-height:1;color:#10B981">$103</div>
+        <div style="font-size:8px;color:#A7F3D0">6 issues found</div>
+        <div style="background:#10B981;border-radius:5px;padding:2px 6px;font-size:8px;font-weight:700;color:#052e16;margin-top:4px;display:inline-block">Fix now →</div>
+      </div>
+    </div>
+    <h4 class="ds-headline" style="font-size:13px">Stop wasting $103.</h4>
+    <p class="ds-sub">Savings · live</p>
+  </div>
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 2 · KILLER</span>
+    <div class="ds-phone" style="min-height:auto">
+      <div class="ds-screen dark" style="min-height:120px">
+        <div style="font-size:8px;color:#6EE7B7;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Scan Result</div>
+        <div style="background:#064E3B;border-radius:8px;padding:7px;margin-top:3px">
+          <div style="font-size:9px;font-weight:700;color:#F0FDF4">Centrum Multivitamin</div>
+          <div style="background:#10B981;border-radius:4px;padding:2px 5px;font-size:7.5px;font-weight:700;color:#052e16;display:inline-block;margin-top:3px">TRACKED ✓</div>
+        </div>
+        <div style="font-size:7.5px;color:#6EE7B7;font-family:ui-monospace,'SF Mono',monospace;margin-top:5px">NIH DSLD ✓</div>
+      </div>
+    </div>
+    <h4 class="ds-headline" style="font-size:13px">AI reads the label.</h4>
+    <p class="ds-sub">NIH DSLD · 160K+</p>
+  </div>
+
+  <div class="ds-card danger-card">
+    <span class="ds-num">SLOT 3 · KILLER</span>
+    <div class="ds-phone" style="min-height:auto">
+      <div class="ds-screen danger" style="min-height:120px">
+        <div style="font-size:8px;color:#FCA5A5;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Interaction</div>
+        <div style="background:#7f1d1d;border:1px solid #EF4444;border-radius:8px;padding:8px;margin-top:3px">
+          <span style="background:#EF4444;color:#fff;border-radius:4px;padding:1px 5px;font-size:7.5px;font-weight:700">HIGH</span>
+          <div style="font-size:9.5px;font-weight:800;color:#FEF2F2;margin-top:4px">Berberine ↔ Metformin</div>
+        </div>
+        <div style="font-size:7.5px;color:#FCA5A5;font-family:ui-monospace,'SF Mono',monospace;margin-top:5px">NIH RxNav</div>
+      </div>
+    </div>
+    <h4 class="ds-headline" style="font-size:13px;color:#EF4444">Warning detected.</h4>
+    <p class="ds-sub">NIH RxNav · HIGH</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 4</span>
+    <div class="ds-phone" style="min-height:auto">
+      <div class="ds-screen" style="min-height:120px">
+        <div style="font-size:9px;color:#064E3B;font-weight:700">Today's doses</div>
+        <div style="background:#fff;border:1px solid #D1FAE5;border-radius:7px;padding:5px 8px;display:flex;justify-content:space-between;font-size:8.5px;margin-top:4px"><span style="font-weight:600">Berberine</span><span style="color:#10B981;font-weight:700">✓ with food</span></div>
+        <div style="background:#fff;border:1px solid #D1FAE5;border-radius:7px;padding:5px 8px;display:flex;justify-content:space-between;font-size:8.5px;margin-top:2px"><span style="font-weight:600">Magnesium</span><span style="color:#10B981;font-weight:700">✓ before bed</span></div>
+        <div style="background:#D1FAE5;border-radius:6px;padding:3px 7px;font-size:8px;font-weight:700;color:#064E3B;display:inline-block;margin-top:5px">47 days ✓</div>
+      </div>
+    </div>
+    <h4 class="ds-headline" style="font-size:13px">Never miss a dose.</h4>
+    <p class="ds-sub">Streak · schedule</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 5</span>
+    <div class="ds-phone" style="min-height:auto">
+      <div class="ds-screen" style="min-height:120px">
+        <div style="font-size:9px;color:#064E3B;font-weight:700">My Supplement Stack</div>
+        <div style="background:#F0FDF9;border:1px solid #D1FAE5;border-radius:7px;padding:7px;margin-top:4px">
+          <div style="font-size:8px;color:#6B7280;font-weight:700">FOR YOUR DOCTOR</div>
+          <div style="font-size:8.5px;color:#064E3B;margin-top:3px;line-height:1.4">• Berberine 500mg · 2x daily<br>• Magnesium Glycinate 400mg<br>• Vitamin D3 5000 IU · ⚠ Interaction</div>
+        </div>
+        <div style="background:#10B981;border-radius:5px;padding:3px 7px;font-size:8px;font-weight:700;color:#fff;display:inline-block;margin-top:5px">Export PDF ↗</div>
+      </div>
+    </div>
+    <h4 class="ds-headline" style="font-size:13px">Show your doctor.</h4>
+    <p class="ds-sub">1-tap PDF export</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 6</span>
+    <div class="ds-phone" style="min-height:auto">
+      <div class="ds-screen" style="min-height:120px">
+        <div style="font-size:9px;color:#064E3B;font-weight:700">Duplicate Alert</div>
+        <div style="background:#FEF3C7;border:1px solid #F59E0B;border-radius:7px;padding:7px;margin-top:4px">
+          <div style="font-size:8px;font-weight:700;color:#92400E">Vitamin D3 · 3 bottles</div>
+          <div style="font-size:8.5px;color:#78350F;margin-top:3px">Thorne $0.22 → NOW $0.06/serving<br><b style="color:#064E3B">Save $41.95/mo</b></div>
+        </div>
+        <div style="font-size:7.5px;color:#6B7280;margin-top:4px">EXAMPLE · actual savings vary</div>
+      </div>
+    </div>
+    <h4 class="ds-headline" style="font-size:13px">Half the price. Same thing.</h4>
+    <p class="ds-sub">Duplicates · savings</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 7</span>
+    <div class="ds-phone" style="min-height:auto">
+      <div class="ds-screen" style="min-height:120px">
+        <div style="font-size:9px;color:#064E3B;font-weight:700">Overdose Alert</div>
+        <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:7px;padding:7px;margin-top:4px">
+          <div style="font-size:8px;font-weight:700;color:#7f1d1d">Vitamin D · 3,125% DV</div>
+          <div style="height:5px;background:#FCA5A5;border-radius:999px;margin-top:4px;overflow:hidden;position:relative"><div style="position:absolute;left:0;width:100%;height:100%;background:#EF4444"></div></div>
+          <div style="font-size:8px;color:#991b1b;margin-top:3px;font-family:ui-monospace,'SF Mono',monospace">NIH UL: 4,000 IU / day</div>
+        </div>
+        <div style="font-size:7.5px;color:#6B7280;margin-top:4px">EXAMPLE · consult your doctor</div>
+      </div>
+    </div>
+    <h4 class="ds-headline" style="font-size:13px">Overdose warning.</h4>
+    <p class="ds-sub">Vitamin D · NIH limit</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 8</span>
+    <div class="ds-phone" style="min-height:auto">
+      <div class="ds-screen" style="min-height:120px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:9px;color:#064E3B;font-weight:700">Your Stack</span>
+          <span style="background:#D1FAE5;color:#064E3B;font-size:7.5px;font-weight:700;border-radius:4px;padding:2px 5px">NIH DSLD ✓</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-top:5px">
+          <div style="background:#D1FAE5;border-radius:5px;padding:3px 7px;font-size:8.5px;color:#064E3B;font-weight:600">✓ Nordic Naturals Omega</div>
+          <div style="background:#D1FAE5;border-radius:5px;padding:3px 7px;font-size:8.5px;color:#064E3B;font-weight:600">✓ Magnesium Glycinate</div>
+          <div style="background:#D1FAE5;border-radius:5px;padding:3px 7px;font-size:8.5px;color:#064E3B;font-weight:600">✓ Berberine 500mg</div>
+          <div style="background:#D1FAE5;border-radius:5px;padding:3px 7px;font-size:8.5px;color:#064E3B;font-weight:600">✓ Vitamin D3 5000 IU</div>
+          <div style="background:#D1FAE5;border-radius:5px;padding:3px 7px;font-size:8.5px;color:#064E3B;font-weight:600">✓ Centrum Multivitamin</div>
+        </div>
+      </div>
+    </div>
+    <h4 class="ds-headline" style="font-size:13px">Whole stack. Verified.</h4>
+    <p class="ds-sub">130K+ NIH products</p>
+  </div>
+
+</div>
+
+<!-- ===== 6.1 WEDGE — что хочет каждая персона ===== -->
+<h2 id="ss-wedge" style="margin-top: 48px;">6.1 Что хочет каждая персона · must-show per JTBD lane</h2>
+<p class="lede">Каждая персона имеет один эмоциональный триггер в App Store gallery. Колонка «Must show» — элементы обязательные для конверсии этой когорты.</p>
+
+<div class="wedge-grid">
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--growth)">#1</span><b>Mark · T2D / newly diagnosed</b><span class="jtbd-weight w1">HIGH revenue</span></div>
+    <div class="ww-want">«Берберин + метформин прописали одновременно. Это безопасно? Врач не спросил.»</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Drug interaction warning с реальным source · drug-specific PDF for doctor · overdose bar</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 3 Drug Warning</b> · <b>Slot 5 Doctor PDF</b> · <b>Slot 7 Overdose Alert</b></div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">«Drug Interaction Warning» · «NIH RxNav» · «Show Your Doctor»</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--growth)">#2</span><b>Carol · Functional Medicine</b><span class="jtbd-weight w1">VERY HIGH revenue</span></div>
+    <div class="ww-want">«14 supplements прописал доктор. Я путаю timing и не знаю приняла ли вечернюю дозу.»</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Smart schedule with timing · streak gamification · doctor PDF (для follow-up визита)</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 4 Never Miss Dose</b> (with food/evening timing) · <b>Slot 5 Doctor PDF</b></div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">«Never Miss Your Dose» · «Morning · Berberine · with food» · «Show Your Doctor»</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#3</span><b>Charlie · Spreadsheet Engineer</b><span class="jtbd-weight w2">MEDIUM, loyal</span></div>
+    <div class="ww-want">«Я в Excel суммирую миллиграммы по 5 годам. Хочу «smarter spreadsheet» — auto math.»</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Ingredient totals with DV% · duplicate detection · accurate math (он перепроверит)</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 2 Scan / NIH ingredients</b> · <b>Slot 6 Same Ingredient / Half Price</b> · <b>Slot 7 Overdose %DV</b></div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">«NIH DSLD» · «3,125% Daily Value» · «Same ingredient, 3 bottles»</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#4</span><b>Alex · Wellness Junkie</b><span class="jtbd-weight w1">HIGH, viral</span></div>
+    <div class="ww-want">«$400/мес на supplements. Attia stack + Huberman stack + свой. Дубли повсюду, ROI неясен.»</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Savings counter LIVE · duplicate alert с конкретными цифрами · brand quality data</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 1 Savings LIVE $103</b> · <b>Slot 6 Duplicate / Half Price</b> · <b>Slot 2 NIH scan</b></div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">«Your Stack Is Wasting $103» · «Same Ingredient. Half the Price.» · «AI reads the label»</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#5</span><b>Mary · Lifelong 65+</b><span class="jtbd-weight w2">MEDIUM, stable</span></div>
+    <div class="ww-want">«Полвека принимаю витамины. Теперь ещё статины. Точно не навредят? Помогите не забыть.»</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Drug interaction (Rx + supplements) · simple reminder UI · big-font stack list</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 3 Drug Warning</b> · <b>Slot 4 Dose Reminder</b> · <b>Slot 5 Doctor PDF</b></div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">«Drug Interaction Warning» · «Never Miss Your Dose» · «Show Your Doctor»</div></div>
+  </div>
+
+</div>
+
+<!-- ===== 6.2 CONSILIUM VOTE ===== -->
+<h2 id="ss-vote" style="margin-top: 48px;">6.2 Консилиум · 5 персон голосуют top-3 scroll-stop слота</h2>
+<p class="lede">Каждая персона выбирает 3 слота на которых она бы остановила скролл в App Store. ★ = top pick (остановит, скачает) · · = второстепенный · ✕ = не для неё.</p>
+
+<table class="jtm">
+  <thead>
+    <tr>
+      <th style="text-align:left">Персона</th>
+      <th>S1<br>$103<br>Wasting</th>
+      <th>S2<br>Scan<br>NIH</th>
+      <th>S3<br>Drug<br>Warning</th>
+      <th>S4<br>Never<br>Miss</th>
+      <th>S5<br>Doctor<br>PDF</th>
+      <th>S6<br>Half<br>Price</th>
+      <th>S7<br>Overdose<br>Alert</th>
+      <th>S8<br>Stack<br>Verified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="persona">#1 Mark · T2D</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+    </tr>
+    <tr>
+      <td class="persona">#2 Carol · Fxn Med</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+      <td class="use h">★</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+    </tr>
+    <tr>
+      <td class="persona">#3 Charlie · Excel</td>
+      <td class="use h">★</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+      <td class="use h">★</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+    </tr>
+    <tr>
+      <td class="persona">#4 Alex · Junkie</td>
+      <td class="use h">★</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+    </tr>
+    <tr>
+      <td class="persona">#5 Mary · 65+</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+      <td class="use h">★</td>
+      <td class="use h">★</td>
+      <td class="use h">★</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+      <td class="use l">·</td>
+    </tr>
+    <tr style="font-weight:700">
+      <td class="persona total">TOTAL ★ votes</td>
+      <td class="use total h" style="color:var(--growth);font-family:ui-monospace,'SF Mono',monospace">5/5</td>
+      <td class="use total" style="font-family:ui-monospace,'SF Mono',monospace;color:var(--watch)">2/5</td>
+      <td class="use total" style="font-family:ui-monospace,'SF Mono',monospace;color:var(--watch)">2/5</td>
+      <td class="use total" style="font-family:ui-monospace,'SF Mono',monospace;color:var(--watch)">2/5</td>
+      <td class="use total" style="font-family:ui-monospace,'SF Mono',monospace;color:var(--watch)">3/5</td>
+      <td class="use total" style="font-family:ui-monospace,'SF Mono',monospace;color:var(--watch)">2/5</td>
+      <td class="use total" style="font-family:ui-monospace,'SF Mono',monospace;color:var(--ink-2)">2/5</td>
+      <td class="use total" style="font-family:ui-monospace,'SF Mono',monospace;color:var(--ink-2)">0/5</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="v2-callout" style="margin-top:16px">
+  <b>Консилиум-вердикт:</b> Slot 1 ($103 Wasting) — единственный с 5/5 голосами: все 5 когорт останавливаются на деньгах. Slot 5 (Doctor PDF) неожиданно сильный — 3/5, потому что Mark, Carol и Mary все хотят принести данные врачу. Slot 8 (Stack Verified) — 0/5: «verified» — это hygiene, не hook. Swap Slot 8 → «Cheaper. Same Ingredients.» если нужен сильный закрывающий слот.
+</div>
+
+<!-- ===== 6.3 PER-COHORT PROPOSALS ===== -->
+<h2 id="ss-cohorts" style="margin-top: 48px;">6.3 Per-cohort предложения · что каждая персона говорит про killer-3</h2>
+<p class="lede">Цитаты-симуляции — как каждая персона отреагировала бы на первые 3 скриншота. Основаны на реальных отзывах из PERSONAS.md (490 SuppCo/ProveIt reviews).</p>
+
+<div class="cohort-grid">
+
+  <div class="cohort">
+    <div class="cohort-head">
+      <div class="cohort-avatar" style="background:#064E3B">M</div>
+      <div><b>Mark · T2D, 48</b><small>$200+/mo · 12 supplements + starting Metformin</small></div>
+    </div>
+    <div class="cohort-says">«DRUG INTERACTION WARNING. Берберин + Метформин. Это то ЧТО Я ИСКАЛ три месяца. Мой эндокринолог не сказал мне об этом. NIH RxNav — это реальная база, не маркетинг.»</div>
+    <div class="cohort-wants">
+      <div class="cohort-want">Slot 3 (Drug Warning) → <b>immediate download</b></div>
+      <div class="cohort-want">Slot 1 ($103) хорош, но safety hook сильнее для него</div>
+      <div class="cohort-want">Slot 5 (Doctor PDF) — «покажу эндокринологу на следующем визите»</div>
+    </div>
+    <div class="vote-picks">
+      <span class="vote-pick top">S3 ★ First</span>
+      <span class="vote-pick">S5 Doctor PDF</span>
+      <span class="vote-pick">S7 Overdose</span>
+    </div>
+  </div>
+
+  <div class="cohort">
+    <div class="cohort-head">
+      <div class="cohort-avatar" style="background:#065F46">C</div>
+      <div><b>Carol · Functional Med, 42</b><small>$350/mo · 14 supplements prescribed · missing doses</small></div>
+    </div>
+    <div class="cohort-says">«NEVER MISS YOUR DOSE — Morning · Berberine · with food. ЭТО МОЯ ЖИЗНЬ. Я плачу $350 консультанту и забываю принять то что он прописал. 47-day streak — это мотивирует больше чем что-либо.»</div>
+    <div class="cohort-wants">
+      <div class="cohort-want">Slot 4 (Dose/Streak) → <b>strongest hook for her</b></div>
+      <div class="cohort-want">Slot 1 ($103) ок — она тоже тратит много</div>
+      <div class="cohort-want">Slot 5 (Doctor PDF) — «для следующего визита»</div>
+    </div>
+    <div class="vote-picks">
+      <span class="vote-pick top">S4 ★ First</span>
+      <span class="vote-pick">S1 Savings</span>
+      <span class="vote-pick">S5 PDF</span>
+    </div>
+  </div>
+
+  <div class="cohort">
+    <div class="cohort-head">
+      <div class="cohort-avatar" style="background:#0F766E">Ch</div>
+      <div><b>Charlie · Engineer, 47</b><small>$220/mo · spreadsheet power user · 10+ supplements</small></div>
+    </div>
+    <div class="cohort-says">«Scan Any Bottle — AI Reads the Label. 160,000+ NIH DSLD products. Ingredient breakdown. DV%. Наконец-то что-то что заменит мой Excel. И если они показывают 3,125% DV — значит математика правильная. Скачаю.»</div>
+    <div class="cohort-wants">
+      <div class="cohort-want">Slot 2 (Scan / NIH) → <b>math credibility hook</b></div>
+      <div class="cohort-want">Slot 6 (Same Ingredient / Half Price) → duplicate detection</div>
+      <div class="cohort-want">Slot 7 (Overdose 3,125% DV) → confirms the math is real</div>
+    </div>
+    <div class="vote-picks">
+      <span class="vote-pick top">S2 ★ First</span>
+      <span class="vote-pick">S6 Duplicates</span>
+      <span class="vote-pick">S7 Overdose</span>
+    </div>
+  </div>
+
+  <div class="cohort">
+    <div class="cohort-head">
+      <div class="cohort-avatar" style="background:#047857">A</div>
+      <div><b>Alex · Wellness Junkie, 34</b><small>$400/mo · Attia stack + Huberman stack · FOMO buyer</small></div>
+    </div>
+    <div class="cohort-says">«YOUR STACK IS WASTING $103. AI found it — updated daily. SOLD. Это $1,236 в год. Я трачу $400/мес и не знаю что работает. А если ещё и «Same ingredient. Half the price» — я переключусь на более дешёвые бренды сегодня же.»</div>
+    <div class="cohort-wants">
+      <div class="cohort-want">Slot 1 ($103) → <b>immediate emotional hook</b></div>
+      <div class="cohort-want">Slot 6 (Half Price) → financial proof</div>
+      <div class="cohort-want">Slot 2 (NIH Scan) → authority credibility</div>
+    </div>
+    <div class="vote-picks">
+      <span class="vote-pick top">S1 ★ First</span>
+      <span class="vote-pick">S6 Half Price</span>
+      <span class="vote-pick">S2 NIH Scan</span>
+    </div>
+  </div>
+
+  <div class="cohort">
+    <div class="cohort-head">
+      <div class="cohort-avatar" style="background:#1e3a5f">Ma</div>
+      <div><b>Mary · 68</b><small>$150/mo · 12 supplements · statins + blood pressure Rx</small></div>
+    </div>
+    <div class="cohort-says">«DRUG INTERACTION WARNING. Это. Моя дочь заставила меня скачать это. Мой статин с рыбьим жиром — всё ли в порядке? А NEVER MISS YOUR DOSE — я уже три раза сегодня думала: «Приняла ли я магний?». И врачу покажу этот PDF.»</div>
+    <div class="cohort-wants">
+      <div class="cohort-want">Slot 3 (Drug Warning) → safety is #1 for her</div>
+      <div class="cohort-want">Slot 4 (Never Miss Dose) → her daily anxiety resolved</div>
+      <div class="cohort-want">Slot 5 (Doctor PDF) → «возьму на следующий визит»</div>
+    </div>
+    <div class="vote-picks">
+      <span class="vote-pick top">S3 ★ First</span>
+      <span class="vote-pick">S4 Never Miss</span>
+      <span class="vote-pick">S5 PDF</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="v2-callout" style="margin-top:16px">
+  <b>Вывод консилиума:</b> Slot 1 ($103) — универсальный opener для всех когорт (5/5). Slot 3 (Drug Warning) — самый emotional для Mark + Mary (safety buyers). Slot 4 (Never Miss) — strongest для Carol. Порядок 1→2→3 оптимален: <em>Fear (деньги) → Proof (NIH scan) → Safety (drug warning)</em>. Альтернативный порядок для Mary-heavy traffic: 3→4→1 (Safety first).
+</div>
+
+<!-- ===== 6.4 ANTI-PATTERNS ===== -->
+<h2 id="ss-anti" style="margin-top: 48px;">6.4 Anti-patterns · что мы НЕ показываем на App Store</h2>
+
+<table class="vote" style="margin-top:12px">
+  <thead>
+    <tr>
+      <th>Паттерн</th>
+      <th>Почему нельзя</th>
+      <th>Риск</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>«AI doctor» framing</strong><br><small>«Your AI doctor» / «Diagnose your stack»</small></td>
+      <td>HIPAA-adjacent + Apple Medical Device policy. Мы tracking app, не medical advice.</td>
+      <td style="color:var(--danger);font-weight:700">REJECTION</td>
+    </tr>
+    <tr>
+      <td><strong>Fake dollar savings без EXAMPLE</strong><br><small>«$103 saved» как personal claim</small></td>
+      <td>FTC endorsement guidelines. $103 — это example calculation, не гарантия. Нужен watermark.</td>
+      <td style="color:var(--danger);font-weight:700">LEGAL</td>
+    </tr>
+    <tr>
+      <td><strong>Pill reminder as primary hook</strong><br><small>First screenshot = reminder/streak</small></td>
+      <td>Anti-persona territory (bodybuilder reminder apps). ICP ищет savings/safety, не habit tracker.</td>
+      <td style="color:var(--watch);font-weight:700">CONVERSION</td>
+    </tr>
+    <tr>
+      <td><strong>«Creatine / protein» keywords visible</strong><br><small>Any supplement name from anti-persona list</small></td>
+      <td>Triggers bodybuilder / gym audience — wrong ICP. Per ASO strategy: OFF-LIMITS.</td>
+      <td style="color:var(--watch);font-weight:700">ASO DILUTION</td>
+    </tr>
+    <tr>
+      <td><strong>Rating badge до 50+ отзывов</strong><br><small>«★★★★★ 4.8» badge на скриншоте</small></td>
+      <td>У нас 4 отзыва. Badge вводит в заблуждение + Apple review bait flag.</td>
+      <td style="color:var(--danger);font-weight:700">REJECTION</td>
+    </tr>
+    <tr>
+      <td><strong>Generic lifestyle photo background</strong><br><small>Stock «woman smiling at vitamins»</small></td>
+      <td>SuppCo, Cronometer уже используют это. Наш wedge — dark authority surface, не lifestyle.</td>
+      <td style="color:var(--ink-2);font-weight:700">VISUAL DILUTION</td>
+    </tr>
+    <tr>
+      <td><strong>Price comparison с named competitors</strong><br><small>«Better than SuppCo» / «SuppCo costs $X»</small></td>
+      <td>Trademark violation + Apple guideline. Сравнивай supplement brands (Thorne vs NOW), не apps.</td>
+      <td style="color:var(--danger);font-weight:700">REJECTION</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== 6.5 CHECKLIST ===== -->
+<h2 id="ss-checklist" style="margin-top: 48px;">6.5 Production checklist · 10 шагов перед App Store upload</h2>
+
+<div class="cheat-checklist">
+  <div class="ck-eyebrow">✓ PRE-UPLOAD CHECKLIST — пройди все 10 перед отправкой</div>
+  <h4>App Store Connect → select screenshots → upload. Пройди список первым.</h4>
+  <ol>
+    <li>Размер <b>1320×2868 PNG</b> (iPhone 6.9" Pro Max, required for 2025+)</li>
+    <li>Status bar: <b>9:41 · full battery · full signal · no carrier</b></li>
+    <li>TITLE — точно из §6.0 таблицы (или approve от owner)</li>
+    <li>SUB — точно из §6.0 таблицы, не перефразировать</li>
+    <li>Hero element в верхних <b>40%</b> экрана (виден в grid превью)</li>
+    <li>App name = <b>StackSnap: Supplement Tracker</b> (нигде не StackSnap Pro или другое)</li>
+    <li>EXAMPLE watermark (8-9pt SF Mono, нижний правый, opacity 0.6) на slots <b>1 / 6 / 7</b></li>
+    <li>Slot 3 (Drug Warning): interaction = <b>berberine+metformin</b> (documented NIH RxNav) — не выдуманное</li>
+    <li>Slot 7 (Overdose): числа = <b>математически корректные</b> (NIH UL для vitamin D = 4,000 IU/day)</li>
+    <li>Ноль compliance violations: ноль «diagnose» / «doctor» / «cure» / «treat» language в visible text</li>
+  </ol>
+</div>
+
+<div style="margin-top: 48px; padding: 24px; background: var(--brand); border-radius: 20px; color: #A7F3D0; font-size: 13px; line-height: 1.7;">
+  <strong style="color:#F0FDF4;display:block;font-size:16px;margin-bottom:8px">Техпроцесс производства</strong>
+  1. <b style="color:#F0FDF4">Debug Panel</b> → tap <code style="background:rgba(255,255,255,0.1);border-radius:4px;padding:1px 5px">scr1</code>…<code style="background:rgba(255,255,255,0.1);border-radius:4px;padding:1px 5px">scr8</code> → каждый seeds exact app state<br>
+  2. <b style="color:#F0FDF4">Simulator</b> → navigate to seeded screen → <kbd style="background:rgba(255,255,255,0.1);border-radius:4px;padding:1px 5px">Cmd+S</kbd> → <code style="background:rgba(255,255,255,0.1);border-radius:4px;padding:1px 5px">screenshots/app-screenshots/</code><br>
+  3. <b style="color:#F0FDF4">NanoBanana</b> → upload scr + prompt из <code style="background:rgba(255,255,255,0.1);border-radius:4px;padding:1px 5px">assets/NANOBANANA_PROMPTS.md</code> → save raw<br>
+  4. <b style="color:#F0FDF4">Crop</b> → <code style="background:rgba(255,255,255,0.1);border-radius:4px;padding:1px 5px">python3 screenshots/crop_to_appstore.py</code> → output 1320×2868<br>
+  5. <b style="color:#F0FDF4">Localization</b> → Puppeteer pipeline → per-language versions<br>
+  6. <b style="color:#F0FDF4">Upload</b> → App Store Connect → StackSnap: Supplement Tracker → Screenshots
+</div>
+
+<footer style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--divider); color: var(--ink-2); font-size: 12px; display: flex; gap: 16px; flex-wrap: wrap;">
+  <span>StackSnap Design Workbench · Round 1 · 2026-05-10</span>
+  <span>Консилиум: Mark · Carol · Charlie · Alex · Mary</span>
+  <span>490 reviews sourced · SuppCo + Prove It</span>
+  <span>ASO: emerald #10B981 · danger #EF4444 · NIH authority</span>
+</footer>
+
+</body>
+</html>
