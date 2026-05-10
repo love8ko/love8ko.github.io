@@ -851,6 +851,175 @@
   .ds-l.move { color: var(--cta); }
   .ds-brief-text { color: var(--ink); }
 
+  /* ── 6.0 CHEAT SHEET — designer-facing single answer ── */
+  .cheat-banner {
+    background: linear-gradient(180deg, #1A3A4A 0%, #0F2330 100%);
+    color: #F7F5F2;
+    border-radius: 18px;
+    padding: 18px 22px 14px;
+    margin: 14px 0 18px;
+    border: 1px solid rgba(232,98,42,0.35);
+    box-shadow: 0 6px 24px rgba(15,35,48,0.18);
+  }
+  .cheat-banner .ch-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; letter-spacing: 0.12em; font-weight: 800;
+    color: #E8622A; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .cheat-banner h3 {
+    margin: 0 0 8px; color: #F7F5F2;
+    font-size: 22px; font-weight: 800; letter-spacing: -0.01em;
+  }
+  .cheat-banner p {
+    margin: 0; color: #C2DFD7; font-size: 13.5px; line-height: 1.55;
+  }
+  .cheat-steps {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 8px; margin-top: 12px;
+  }
+  .cheat-step {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px; padding: 10px 12px;
+    font-size: 12.5px; color: #DDEFE9; line-height: 1.45;
+  }
+  .cheat-step b { color: #F7F5F2; display: block; font-size: 12px; margin-bottom: 3px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .cheat-step.s1 { border-left: 3px solid #E8622A; }
+  .cheat-step.s2 { border-left: 3px solid #7FC99E; }
+  .cheat-step.s3 { border-left: 3px solid #B87333; }
+
+  .cheat-table-wrap {
+    margin-top: 16px;
+    background: #0F1F2A; color: #F2F0EB;
+    border-radius: 14px; padding: 0;
+    overflow-x: auto;
+    border: 1px solid #1F3947;
+  }
+  table.cheat {
+    width: 100%; border-collapse: collapse;
+    font-size: 13px;
+    font-family: ui-monospace, "SF Mono", "Menlo", monospace;
+  }
+  table.cheat thead th {
+    background: #182F3E; color: #A8C4D0;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 12px; text-align: left;
+    border-bottom: 1px solid #243D4E;
+    white-space: nowrap;
+  }
+  table.cheat tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #1A2F3D;
+    vertical-align: top;
+    line-height: 1.4;
+  }
+  table.cheat tbody tr:last-child td { border-bottom: none; }
+  table.cheat tbody tr.killer-row td { background: rgba(232,98,42,0.06); }
+  table.cheat td.cell-num {
+    font-weight: 800; color: #E8622A;
+    width: 28px;
+  }
+  table.cheat td.cell-mode {
+    width: 70px;
+  }
+  .cheat-mode {
+    display: inline-block; padding: 2px 7px;
+    border-radius: 5px; font-size: 10.5px; font-weight: 800;
+    letter-spacing: 0.06em;
+  }
+  .cheat-mode.dark { background: #0F1319; color: #E8622A; border: 1px solid #2A1810; }
+  .cheat-mode.light { background: #F2F0EB; color: #1A3A4A; }
+  .cheat-mode.brand { background: #1A3A4A; color: #A8C4D0; border: 1px solid #2A4A5C; }
+  .cheat-str {
+    display: inline-block; background: #182F3E;
+    color: #F2F0EB; border: 1px solid #243D4E;
+    border-radius: 5px; padding: 3px 8px;
+    font-size: 12.5px;
+    word-break: break-word;
+  }
+  .cheat-str.title { font-weight: 800; letter-spacing: 0.02em; color: #FFE9D6; }
+  .cheat-str.sub { color: #C2DFD7; font-weight: 500; }
+  .cheat-str.hero { background: rgba(127,201,158,0.10); border-color: rgba(127,201,158,0.30); color: #C9F0D6; }
+  .cheat-persona {
+    color: #6A8FA0; font-size: 11px; letter-spacing: 0.04em;
+  }
+
+  .cheat-donts {
+    margin-top: 14px;
+    background: linear-gradient(180deg, #2A1212 0%, #1F0E0E 100%);
+    border: 1px solid #5C2424;
+    border-radius: 14px;
+    padding: 14px 18px;
+  }
+  .cheat-donts .dt-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    color: #E89090; font-size: 11px; letter-spacing: 0.10em;
+    font-weight: 800; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .cheat-donts h4 {
+    margin: 0 0 8px; color: #FFE0E0; font-size: 16px; font-weight: 800;
+  }
+  .cheat-donts ul {
+    margin: 0; padding: 0; list-style: none;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 6px 16px;
+  }
+  .cheat-donts li {
+    color: #F2D4D4; font-size: 12.5px; line-height: 1.5;
+    padding-left: 18px; position: relative;
+  }
+  .cheat-donts li::before {
+    content: "✗"; position: absolute; left: 0;
+    color: #E07070; font-weight: 800;
+  }
+  .cheat-donts li b { color: #FFE0E0; }
+
+  .cheat-checklist {
+    margin-top: 14px;
+    background: #F4F8F5;
+    border: 1px solid #C8DBC8;
+    border-radius: 14px;
+    padding: 14px 18px;
+  }
+  .cheat-checklist .ck-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    color: #1F5A2E; font-size: 11px; letter-spacing: 0.10em;
+    font-weight: 800; text-transform: uppercase; margin-bottom: 4px;
+  }
+  .cheat-checklist h4 {
+    margin: 0 0 10px; color: #173B1E; font-size: 16px; font-weight: 800;
+  }
+  .cheat-checklist ol {
+    margin: 0; padding: 0; list-style: none;
+    counter-reset: ck;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 6px 16px;
+  }
+  .cheat-checklist li {
+    color: #1F3D24; font-size: 12.5px; line-height: 1.5;
+    padding-left: 26px; position: relative;
+    counter-increment: ck;
+  }
+  .cheat-checklist li::before {
+    content: counter(ck);
+    position: absolute; left: 0; top: 1px;
+    width: 18px; height: 18px;
+    background: #1F5A2E; color: #fff;
+    border-radius: 5px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cheat-checklist li b { color: #173B1E; }
+
+  @media (max-width: 700px) {
+    .cheat-steps { grid-template-columns: 1fr; }
+    table.cheat { font-size: 12px; }
+    table.cheat thead th, table.cheat tbody td { padding: 8px 9px; }
+  }
+
   /* Animation principles (clean grid) */
   .anim-p-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -2302,12 +2471,137 @@
 <div class="module-banner" id="module-6">
   <span class="num">МОДУЛЬ 6</span>
   <h2>App Store Screenshots</h2>
-  <p class="desc">Galleria из 8 слотов решает покупку до тапа «Get». Ниже две версии: <strong>6.0 Designer brief</strong> — clean handoff с phone-mockup'ами и conversion копи (бери в работу с дизайнером). <strong>6.1+ deep analysis</strong> — консилиум, per-cohort предложения, анализ конкурентов (контекст для решений).</p>
+  <p class="desc"><strong style="color:#FFE9D6">⇣ Открыл первый раз? Прочитай только §6.0 CHEAT SHEET ниже.</strong> Этого хватит чтобы отрисовать все 8 фреймов. Всё остальное (6.1 визуал-референсы, 6.2 wedge per-persona, 6.3 консилиум-голоса, 6.3a per-cohort варианты, 6.4 8-slot план, 6.5 анимации, 6.6 анализ конкурентов) — <em>контекст</em>: открывай, если нужно отклониться от locked-копи.</p>
 </div>
 
-<!-- ===== 6.0 DESIGNER BRIEF — clean handoff ===== -->
-<h2 id="ss-brief">6.0 Designer brief · 8 слотов = 8 solid-state экранов</h2>
-<p class="lede">Каждая карточка ниже = один скриншот. Структура одинаковая: <strong>phone mockup</strong> (что нарисовать) + <strong>headline / sub-headline</strong> (conversion copy для overlay) + <strong>SHOW</strong> (что обязательно в кадре) + <strong>ANIMATE</strong> (что должно двигаться). Killer-3 (первые) идут жирнее — они решают покупку.</p>
+<!-- ===== 6.0 CHEAT SHEET — single answer for designer ===== -->
+<h2 id="ss-cheat" style="margin-top: 18px;">6.0 · CHEAT SHEET — copy strings, draw heroes, ship</h2>
+
+<div class="cheat-banner">
+  <div class="ch-eyebrow">⚡ START HERE · этого хватит для отгрузки</div>
+  <h3>8 фреймов. 8 строк TITLE + 8 строк SUB + 8 hero-элементов. Возьми буквально.</h3>
+  <p>App Store thumb-превью показывает только <strong>3 первые скриншота</strong> — это и решает покупку. Frames 1-2-3 = killer (sage-подсвеченные ниже), 4-8 = persona-depth. <strong>Не переписывай TITLE/SUB в свободной форме</strong> — копи прошла консилиум и locked. Если хочется отклониться — сначала загляни в §6.3 (консилиум-голоса) увидишь почему текущая версия победила.</p>
+  <div class="cheat-steps">
+    <div class="cheat-step s1"><b>1 · Read row</b>Берёшь одну строку из таблицы ниже = один скриншот. Все 8 строк = вся галерея.</div>
+    <div class="cheat-step s2"><b>2 · Copy strings</b>TITLE и SUB — буквально copy-paste в Figma. Шрифт SF Pro Display Black + Medium. Не редактируй формулировки.</div>
+    <div class="cheat-step s3"><b>3 · Draw HERO</b>Hero — обязательный элемент внутри phone-mockup'а (число, citation chip, badge). Без него фрейм не пройдёт ревью.</div>
+  </div>
+</div>
+
+<div class="cheat-table-wrap">
+  <table class="cheat">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Mode</th>
+        <th>TITLE (top, all-caps)</th>
+        <th>SUB (one line)</th>
+        <th>HERO inside phone</th>
+        <th>Persona</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="killer-row">
+        <td class="cell-num">1</td>
+        <td class="cell-mode"><span class="cheat-mode dark">DARK</span></td>
+        <td><span class="cheat-str title">STOP GUESSING.</span></td>
+        <td><span class="cheat-str sub">AI Coach with PubMed citations</span></td>
+        <td><span class="cheat-str hero">chat bubble + orange chip<br>«Olsen 2002 · PubMed 12120467 →»</span></td>
+        <td class="cheat-persona">Denis · Alex · Linda</td>
+      </tr>
+      <tr class="killer-row">
+        <td class="cell-num">2</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">+8.4% DENSITY.</span></td>
+        <td><span class="cheat-str sub">90-day calibrated photo proof</span></td>
+        <td><span class="cheat-str hero">sage hero «+8.4%» + Day 1 ↔ Day 90<br>ghost-overlay slider · EXAMPLE watermark</span></td>
+        <td class="cheat-persona">James · Mike · Alex</td>
+      </tr>
+      <tr class="killer-row">
+        <td class="cell-num">3</td>
+        <td class="cell-mode"><span class="cheat-mode brand">BRAND</span></td>
+        <td><span class="cheat-str title">FREE NORWOOD TEST.</span></td>
+        <td><span class="cheat-str sub">30 seconds · No signup</span></td>
+        <td><span class="cheat-str hero">stage card «III Vertex» + sage badge<br>«✓ Free · No signup required»</span></td>
+        <td class="cheat-persona">Denis (top-of-funnel)</td>
+      </tr>
+      <tr>
+        <td class="cell-num">4</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">KNOW YOUR STAGE.</span></td>
+        <td><span class="cheat-str sub">Norwood (M) · Ludwig (F)</span></td>
+        <td><span class="cheat-str hero">7-stage scale, current stage III in copper</span></td>
+        <td class="cheat-persona">Denis · Mike · Linda</td>
+      </tr>
+      <tr>
+        <td class="cell-num">5</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">NEVER MISS A DOSE.</span></td>
+        <td><span class="cheat-str sub">Minoxidil · Finasteride · Microneedling</span></td>
+        <td><span class="cheat-str hero">today's protocol list + sage chip «47 days ✓»</span></td>
+        <td class="cheat-persona">James · Alex</td>
+      </tr>
+      <tr>
+        <td class="cell-num">6</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">TRACK WHAT DOCTORS DON'T ASK.</span></td>
+        <td><span class="cheat-str sub">Sexual · Mood · Sleep</span></td>
+        <td><span class="cheat-str hero">hero number «14» days-since-side-effect<br>+ sparkline · EXAMPLE watermark</span></td>
+        <td class="cheat-persona">James · Linda · Alex</td>
+      </tr>
+      <tr>
+        <td class="cell-num">7</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">POSTPARTUM SHEDDING ENDS.</span></td>
+        <td><span class="cheat-str sub">Recovery week 26-39 · ACOG-sourced</span></td>
+        <td><span class="cheat-str hero">«Week 16 of 39» bar + sage recovery zone<br>«ACOG Practice Bulletin» mono cite</span></td>
+        <td class="cheat-persona">Sarah</td>
+      </tr>
+      <tr>
+        <td class="cell-num">8</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">GLP-1 SHEDDING, EXPLAINED.</span></td>
+        <td><span class="cheat-str sub">Mounjaro · 5.7% TE incidence</span></td>
+        <td><span class="cheat-str hero">«Mounjaro · m7» rust badge + weight×shed chart<br>«NEJM SURMOUNT-1 §6» cite</span></td>
+        <td class="cheat-persona">David</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="cheat-donts">
+  <div class="dt-eyebrow">⛔ DO NOT — banned forever (compliance + Apple review safety)</div>
+  <h4>Если увидишь это в макете — переделывай. Без исключений.</h4>
+  <ul>
+    <li><b>Outcome promises</b> на TITLE: «Transform yourself / Regrow your hair / Cure baldness / Plan your recovery» — мы Health & Fitness, не Medical.</li>
+    <li><b>Bald → hair before/after</b> как hero photo — implied treatment efficacy claim.</li>
+    <li><b>Wrong app name</b>: «Folik: Hair Loss Snap Health» — правильное «<code>Folik: Hair Loss Coach AI</code>» (см. APP_STORE_LISTING.md).</li>
+    <li><b>Fake user count badges</b>: «1 MILLION users / ★★★★★» когда у нас 0 рейтингов — Apple review-bait. Бейджа нет до 25+ реальных отзывов.</li>
+    <li><b>Vague emotional headlines без proof</b>: «Going bald? / Plan your recovery» — провалили предыдущую итерацию, не возвращай.</li>
+    <li><b>Vendor names</b> на marketing surface которые мы не цитируем (PubMed/NEJM/ACOG/ISHRS — ok, остальное — no).</li>
+    <li><b>Drop shadows / outline / gradient text</b> — solid weight = trust. Health-категория не Duolingo.</li>
+    <li><b>EXAMPLE watermark пропущен</b> на slots 2 / 6 / 7 / 8 (там mocked metrics).</li>
+  </ul>
+</div>
+
+<div class="cheat-checklist">
+  <div class="ck-eyebrow">✓ PRE-EXPORT CHECKLIST — пройди 8 пунктов перед PNG export</div>
+  <h4>Готов отдать макет? Прогони его через эти 8 шагов.</h4>
+  <ol>
+    <li>Размер <b>1290×2796 PNG</b> (iPhone 6.7"), 3 файла на slot</li>
+    <li>Status bar <b>9:41</b>, full battery, full signal, no carrier</li>
+    <li>TITLE и SUB — точные строки из §6.0 (или §6.0-DE для немецкого)</li>
+    <li>Hero element виден без скролла (см. колонку HERO)</li>
+    <li>App-Store name = <b>Folik: Hair Loss Coach AI</b></li>
+    <li>Compliance: ноль outcome promises, ноль fake badges</li>
+    <li>EXAMPLE watermark на slots <b>2 / 6 / 7 / 8</b> (8-10 pt, нижний правый)</li>
+    <li>Slot 1 несёт «Educational, not medical advice» внутри phone-mockup</li>
+  </ol>
+</div>
+
+<!-- ===== 6.0a VISUAL REFERENCE — clean handoff (mockups) ===== -->
+<h2 id="ss-brief" style="margin-top: 36px;">6.0a · Visual reference cards (mockups + animation briefs)</h2>
+<p class="lede"><strong>Не альтернатива §6.0 cheat sheet — дополнение к нему.</strong> Cheat sheet даёт <em>что писать</em>; этот раздел показывает <em>как должно выглядеть</em>. Каждая карточка ниже = один скриншот: <strong>phone mockup preview</strong> + <strong>SHOW</strong> (обязательные элементы) + <strong>ANIMATE</strong> (motion для App Preview видео). TITLE/SUB здесь — копии из §6.0 для удобства, не редактируй их в свободной форме.</p>
 
 <!-- ── 3 KILLER · large mockups ── -->
 <h3 style="margin-top: 22px;">First 3 — killer scroll-stop</h3>
