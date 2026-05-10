@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folik — Hair Loss Coach AI</title>
+    <meta name="description" content="Folik is an educational AI hair-loss coach for adults. Calibrated 5-angle scans, Norwood/Ludwig staging, treatment tracker for minoxidil, finasteride, dutasteride, microneedling — answers cited from AAD, ISHRS, FDA and 50+ PubMed studies.">
+    <meta property="og:title" content="Folik — Hair Loss Coach AI">
+    <meta property="og:description" content="The first hair-loss app with a real AI dermatology coach. Educational, not medical advice.">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+            line-height: 1.6;
+            color: #1C1C1E;
+            background: #F7F5F2;
+        }
+        header { text-align: center; padding: 60px 0 30px; }
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+            color: #1A3A4A;
+        }
+        .tagline {
+            font-size: 20px;
+            color: #E8622A;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-top: 40px;
+            letter-spacing: -0.005em;
+            color: #1A3A4A;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .feature-card {
+            background: #FFFFFF;
+            padding: 18px 20px;
+            border-radius: 10px;
+            border-left: 3px solid #E8622A;
+        }
+        .feature-card.sage {
+            background: #FFFFFF;
+            border-left-color: #6B7F5C;
+        }
+        .feature-icon { font-size: 28px; margin-bottom: 6px; }
+        .feature-title { font-weight: 600; margin-bottom: 4px; }
+        .feature-desc { font-size: 14px; color: #555; }
+        .pricing {
+            background: linear-gradient(135deg, #1A3A4A 0%, #0F2733 100%);
+            color: #fff;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .pricing h3 { color: #fff; font-size: 18px; margin-bottom: 12px; }
+        .pricing .price { font-size: 24px; font-weight: 700; color: #E8622A; }
+        .pricing .meta { font-size: 13px; opacity: 0.85; margin-top: 6px; }
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #E5DCC8;
+            font-size: 14px;
+            color: #6B7280;
+            text-align: center;
+        }
+        .footer a {
+            color: #1A3A4A;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover { text-decoration: underline; }
+        .disclaimer {
+            background: #FFF;
+            border-left: 4px solid #E8622A;
+            padding: 14px 18px;
+            margin: 20px 0;
+            font-size: 14px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Folik</h1>
+    <p class="tagline">Hair Loss Coach AI</p>
+    <p>Educational AI companion for adults experiencing hair loss — pattern hair loss, postpartum shedding, GLP-1 telogen effluvium, post-transplant tracking.</p>
+</header>
+
+<h2>What Folik does</h2>
+<div class="feature-grid">
+    <div class="feature-card">
+        <div class="feature-icon">📷</div>
+        <div class="feature-title">Calibrated 5-Angle Scan</div>
+        <div class="feature-desc">Guided front, top, crown, left, right capture with ghost-overlay alignment. Pixel-density measurement over time.</div>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <div class="feature-title">AI Coach with Citations</div>
+        <div class="feature-desc">Every answer cites a real source: AAD guidelines, ISHRS, FDA prescribing labels, 50+ PubMed studies, Mayo, Cleveland, NHS.</div>
+    </div>
+    <div class="feature-card sage">
+        <div class="feature-icon">📈</div>
+        <div class="feature-title">Norwood / Ludwig Staging</div>
+        <div class="feature-desc">AI visual analysis returns your stage with a confidence score. Track week-over-week changes for 90+ days.</div>
+    </div>
+    <div class="feature-card sage">
+        <div class="feature-icon">💊</div>
+        <div class="feature-title">Treatment Tracker</div>
+        <div class="feature-desc">Log minoxidil, finasteride, dutasteride, microneedling. Reminders, side-effect check-ins, Doctor Visit Brief PDF.</div>
+    </div>
+</div>
+
+<h2>What Folik is not</h2>
+<div class="disclaimer">
+    <strong>Folik is educational, not medical advice.</strong> Folik is not a medical device, does not diagnose, and does not prescribe. AI Coach is forbidden from recommending specific drug doses or telling users to start, stop, or switch a prescription. Always consult a board-certified dermatologist before starting or changing any treatment, including over-the-counter products like minoxidil. Read the full <a href="medical-disclaimer.html">Medical Disclaimer</a>.
+</div>
+
+<h2>Privacy</h2>
+<p>Folik does not require an account. Scan photos, treatment logs, and Coach chat history are stored on your device. AI scan analysis goes through OpenAI Vision (GPT-4o) with zero retention; AI Coach text goes through DeepSeek V3 with zero retention. Both are routed through our Cloudflare Workers proxy. Read the full <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+<h2>Subscription</h2>
+<div class="pricing">
+    <h3>Pro Access</h3>
+    <p class="price">$4.99/wk · 7-day free trial</p>
+    <p class="meta">or $39.99/yr (save 84%)</p>
+</div>
+
+<div class="footer">
+    <a href="privacy-policy.html">Privacy</a>
+    ·
+    <a href="terms-of-use.html">Terms</a>
+    ·
+    <a href="medical-disclaimer.html">Medical Disclaimer</a>
+    ·
+    <a href="support.html">Support</a>
+    <p style="margin-top: 18px;">© 2026 Valerii Loveiko · Folik is operated by an independent developer.</p>
+</div>
+
+</body>
+</html>
