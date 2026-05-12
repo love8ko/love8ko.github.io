@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Salvora — Design System Workbench (round 1)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #2C2419;
+    --ink-2: #5C5042;
+    --ink-3: #9A8E7E;
+    --bg: #F5EBD7;
+    --bg-soft: #FAF4E5;
+    --card: #FFFFFF;
+    --divider: #E6D9BE;
+
+    --brand: #6F8567;
+    --brand-mid: #587053;
+    --brand-deep: #3F5A3B;
+    --brand-soft: #DCE5D6;
+
+    --growth: #6F8567;
+    --growth-soft: #DCE5D6;
+
+    --cta: #C97D60;
+    --cta-deep: #A85F45;
+    --cta-soft: #F4DDD0;
+
+    --ai-bg: #ECF0E5;
+    --ai-border: #C8D5BE;
+
+    --good:  #6F8567;
+    --good-bg: #DCE5D6;
+    --watch: #C97D60;
+    --watch-bg: #F4DDD0;
+    --alert: #A85F45;
+    --alert-bg: #ECD0C2;
+
+    --night-bg: #1E1A14;
+    --night-surface: #2A241B;
+    --night-bubble-user: #3E3325;
+    --night-text: #F5EBD7;
+    --night-divider: #3A3024;
+    --night-accent: #B0C4A4;
+  }
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  h1, h2, h3 {
+    font-family: -apple-system, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+  h2 { font-size: 22px; font-weight: 700; margin: 48px 0 16px; }
+  h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+  .lede { color: var(--ink-2); max-width: 780px; line-height: 1.55; margin-bottom: 8px; }
+  .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 8px; }
+  .pill {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 999px; padding: 5px 12px; font-size: 12px;
+    color: var(--ink-2); font-weight: 600;
+  }
+  .pill.lock { background: var(--good-bg); color: #2F4A2A; border-color: #BCCDB2; }
+  .pill.brand { background: var(--brand-soft); color: var(--brand-deep); border-color: var(--brand-soft); }
+  .pill.sib { background: var(--cta-soft); color: var(--cta-deep); border-color: #ECC4B0; }
+
+  .winner-callout {
+    background: var(--brand);
+    color: #F5EBD7;
+    border-radius: 24px;
+    padding: 28px 28px 24px;
+    margin: 24px 0 8px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+  }
+  .winner-callout h2 { color: #F5EBD7; margin: 0; font-size: 26px; }
+  .winner-callout .vibe { color: #DCE5D6; font-style: italic; max-width: 620px; margin-top: 6px; line-height: 1.5; }
+  .winner-callout .score-badge {
+    background: var(--cta);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 800;
+    font-size: 18px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    white-space: nowrap;
+  }
+
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .token {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 10px; padding: 8px 10px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11.5px;
+  }
+  .token .chip {
+    width: 28px; height: 28px; border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0;
+  }
+  .token .label { color: var(--ink-2); display: block; font-size: 10.5px; line-height: 1.2; }
+  .token .hex { color: var(--ink); font-weight: 600; line-height: 1.2; }
+
+  .variants {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .variant {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 18px;
+    border: 1px solid var(--divider);
+  }
+  .variant.winner { border-color: var(--cta); box-shadow: 0 4px 22px rgba(201,125,96,0.18); }
+  .variant-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .variant-head .name { font-size: 17px; font-weight: 700; }
+  .variant-head .score {
+    background: var(--divider); color: var(--ink-2);
+    border-radius: 999px; padding: 4px 10px;
+    font-size: 12px; font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .variant.winner .score { background: var(--cta); color: #fff; }
+  .variant .vibe { font-size: 12.5px; color: var(--ink-2); font-style: italic; min-height: 36px; }
+  .swatches { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin-top: 12px; }
+  .sw { aspect-ratio: 1; border-radius: 6px; border: 1px solid rgba(0,0,0,0.08); }
+
+  table.vote, table.modes, table.ws, table.jtbd-scan, table.roadmap, table.jtm {
+    width: 100%; border-collapse: collapse; margin-top: 16px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider);
+  }
+  table.vote th, table.vote td,
+  table.modes th, table.modes td,
+  table.ws th, table.ws td,
+  table.jtbd-scan th, table.jtbd-scan td,
+  table.roadmap th, table.roadmap td,
+  table.jtm th, table.jtm td {
+    padding: 10px 14px; text-align: left; font-size: 13.5px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.vote th, table.modes th, table.ws th, table.jtbd-scan th, table.roadmap th, table.jtm th {
+    background: var(--brand-soft); color: var(--brand-deep);
+    font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table.vote td.num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 700; text-align: center;
+  }
+  table.vote td.num.hi { color: var(--cta-deep); }
+  table.modes td.mode { font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; }
+  .ok { color: var(--good); font-weight: 700; }
+  .warn { color: var(--watch); font-weight: 700; }
+
+  .modes-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 16px;
+  }
+  @media (max-width: 700px) { .modes-row { grid-template-columns: 1fr; } }
+  .mode-block {
+    border-radius: 24px;
+    padding: 22px 18px;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .mode-block.day { background: var(--bg); }
+  .mode-block.night { background: var(--night-bg); color: var(--night-text); }
+  .mode-label {
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55;
+  }
+
+  .poem-hero {
+    background: var(--brand);
+    color: #F5EBD7;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .poem-hero .stage {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 52px; line-height: 1;
+  }
+  .poem-hero .label {
+    font-size: 11px; color: #DCE5D6; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .poem-hero .delta {
+    font-size: 13px; font-weight: 600; color: #BCDFA8;
+  }
+  .progress-bar {
+    height: 6px; background: rgba(255,255,255,0.15); border-radius: 999px; margin-top: 8px; overflow: hidden;
+  }
+  .progress-bar .fill {
+    height: 100%; border-radius: 999px;
+    background: linear-gradient(90deg, var(--growth), #B0C4A4);
+  }
+
+  .mock-card {
+    background: var(--card); border-radius: 16px; padding: 14px;
+    box-shadow: 0 1px 3px rgba(44, 36, 25, 0.07);
+  }
+  .mock-card.dark { background: var(--night-surface); border: 1px solid var(--night-divider); }
+  .tracker-row {
+    display: grid; grid-template-columns: 1fr auto auto;
+    align-items: center; gap: 10px;
+    padding: 9px 0; border-bottom: 1px solid var(--divider);
+  }
+  .tracker-row:last-child { border-bottom: none; }
+  .tracker-name { font-weight: 600; font-size: 14px; }
+  .tracker-dose { font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; font-size: 13px; }
+  .verdict-pill {
+    border-radius: 999px; padding: 4px 10px;
+    font-size: 11px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .verdict-pill::before { content: '●'; font-size: 9px; }
+  .verdict-pill.good  { background: var(--good-bg);  color: #2F4A2A; }
+  .verdict-pill.watch { background: var(--watch-bg); color: #7A4012; }
+  .verdict-pill.alert { background: var(--alert-bg); color: #6B2412; }
+
+  .chat .bubble {
+    border-radius: 18px; padding: 12px 14px;
+    margin-bottom: 8px; max-width: 82%;
+    font-size: 13px; line-height: 1.48;
+  }
+  .chat .bubble.user {
+    background: var(--cta-soft); color: var(--ink);
+    margin-left: auto; border-top-right-radius: 5px;
+  }
+  .chat .bubble.user.dark {
+    background: var(--night-bubble-user); color: var(--night-text);
+  }
+  .chat .bubble.assistant {
+    background: var(--ai-bg); color: var(--ink);
+    border: 1px solid var(--ai-border); border-top-left-radius: 5px;
+  }
+  .chat .bubble.assistant.dark {
+    background: var(--night-surface); color: var(--night-text);
+    border-color: var(--night-divider);
+  }
+  .citation { font-size: 11.5px; margin-top: 6px; display: inline-block; }
+  .citation.day { color: var(--brand-deep); border-bottom: 1px dotted var(--brand-deep); }
+  .citation.dark { color: var(--night-accent); border-bottom: 1px dotted var(--night-accent); }
+  .safety-strip {
+    background: var(--watch-bg); color: #7A4012; font-size: 11px;
+    padding: 8px 12px; border-radius: 10px; margin-top: 6px;
+    border: 1px solid #ECC4B0; line-height: 1.45;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 50px; padding: 0 22px; border-radius: 14px;
+    font-weight: 700; font-size: 16px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    border: none; cursor: pointer; width: 100%; margin-top: auto;
+  }
+  .btn.primary { background: var(--cta); color: #fff; }
+  .btn.primary:hover { background: var(--cta-deep); }
+  .btn.ghost-night { background: transparent; color: var(--night-accent); border: 1.5px solid var(--night-divider); }
+
+  .type-list { display: grid; gap: 4px; margin-top: 8px; }
+  .type-list .row {
+    display: grid; grid-template-columns: 200px 1fr;
+    align-items: baseline; padding: 8px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+  .type-list .role { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+
+  ul.list { margin-top: 8px; padding-left: 20px; line-height: 1.6; }
+  ul.list li { margin-bottom: 5px; font-size: 14px; }
+  ul.dontlist li::marker { color: var(--alert); }
+
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(245, 235, 215, 0.94);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--divider);
+    margin: 0 -24px 18px;
+    padding: 10px 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--ink-2);
+    font-size: 12.5px; font-weight: 600;
+    padding: 6px 11px; border-radius: 999px;
+    border: 1px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover { background: var(--card); color: var(--brand-deep); border-color: var(--divider); }
+  .top-nav a.is-module { background: var(--brand); color: #F5EBD7; }
+  .top-nav a.is-module:hover { background: var(--brand-mid); color: #F5EBD7; }
+  .top-nav .nav-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em;
+    background: var(--cta); color: #fff;
+    padding: 2px 6px; border-radius: 5px;
+  }
+  .top-nav .sep { width: 1px; height: 16px; background: var(--divider); margin: 0 4px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+  .module-banner {
+    margin: 64px 0 18px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%);
+    color: #F5EBD7;
+    border-radius: 18px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .module-banner .num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 13px; font-weight: 800; letter-spacing: 0.08em;
+    background: var(--cta); color: #fff;
+    padding: 5px 11px; border-radius: 8px;
+  }
+  .module-banner h2 { margin: 0; color: #F5EBD7; font-size: 22px; }
+  .module-banner .desc {
+    color: #DCE5D6; font-size: 13px; line-height: 1.5;
+    flex-basis: 100%; margin-top: 4px;
+  }
+
+  /* Persona JTBD cards */
+  .jtbd-compact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px; margin-top: 16px;
+  }
+  .jtbd-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px; padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .jtbd-card.peak { border-left: 4px solid var(--cta); }
+  .jtbd-card .jc-h { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .jtbd-num {
+    background: var(--brand); color: #F5EBD7;
+    border-radius: 999px; padding: 2px 9px;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.04em;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .jtbd-card .jc-h b { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .jtbd-weight {
+    margin-left: auto; font-size: 11px; font-weight: 700;
+    background: var(--divider); border-radius: 999px; padding: 2px 9px;
+    color: var(--ink-2); white-space: nowrap;
+  }
+  .jtbd-weight.w1 { background: var(--cta-soft); color: #7A4012; }
+  .jtbd-weight.w2 { background: var(--growth-soft); color: #2F4A2A; }
+  .jtbd-weight.w3 { background: var(--brand-soft); color: var(--brand-deep); }
+  .jtbd-wedge {
+    font-size: 12.5px; color: var(--ink); line-height: 1.5;
+    font-style: italic; border-left: 3px solid var(--growth-soft);
+    padding-left: 10px; margin: 0;
+  }
+  .jtbd-card .jc-copy { display: flex; flex-direction: column; gap: 6px; }
+  .jtbd-card .jc-row { display: flex; gap: 8px; font-size: 12.5px; align-items: flex-start; }
+  .jtbd-card .jc-l {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-3);
+    width: 64px; flex-shrink: 0; padding-top: 2px;
+  }
+  .jtbd-card .jc-row ul { padding-left: 14px; margin: 0; list-style: disc; }
+  .jtbd-card .jc-row ul li { font-size: 12px; color: var(--ink); margin-bottom: 2px; }
+
+  table.jtbd-scan td.persona { font-weight: 700; white-space: nowrap; }
+
+  /* Roadmap matrix cells */
+  table.roadmap td.feat { text-align: left; min-width: 220px; }
+  table.roadmap th, table.roadmap td { text-align: center; padding: 8px 10px; font-size: 12px; }
+  table.roadmap th.feat { text-align: left; }
+  table.roadmap td.feat b { color: var(--ink); font-weight: 700; }
+  table.roadmap td.feat .ftag { display: inline-block; font-family: ui-monospace, "SF Mono", monospace; font-size: 10px; font-weight: 800; color: var(--brand-deep); padding-right: 6px; }
+  table.roadmap td.cell { font-size: 14px; line-height: 1; }
+  table.roadmap td.cell.no { color: #C8B0A0; }
+  table.roadmap td.cell.yes { color: var(--good); font-weight: 800; }
+  table.roadmap td.cell.partial { color: var(--watch); }
+  table.roadmap td.salvora { background: var(--brand-soft); font-weight: 800; color: var(--cta-deep); }
+
+  /* P-tier cards */
+  .ptier-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px; margin-top: 12px;
+  }
+  .ptier {
+    background: var(--card); border-radius: 16px; padding: 16px 18px;
+    border: 1px solid var(--divider);
+  }
+  .ptier.p0 { border-left: 4px solid var(--cta); }
+  .ptier.p1 { border-left: 4px solid var(--growth); }
+  .ptier.p2 { border-left: 4px solid var(--ink-3); }
+  .ptier .ph { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+  .ptier .ph .tag {
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; font-weight: 800;
+    padding: 2px 8px; border-radius: 6px; color: #fff;
+  }
+  .ptier.p0 .ph .tag { background: var(--cta); }
+  .ptier.p1 .ph .tag { background: var(--growth); }
+  .ptier.p2 .ph .tag { background: var(--ink-3); }
+  .ptier .ph b { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .ptier .ph .when { font-size: 11px; color: var(--ink-3); margin-left: auto; font-weight: 600; }
+  .ptier ul { padding-left: 18px; margin: 0; line-height: 1.55; }
+  .ptier ul li { font-size: 12.5px; margin-bottom: 4px; color: var(--ink); }
+  .ptier ul li b { color: var(--brand-deep); }
+  .ptier .stack { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--divider); font-size: 11.5px; color: var(--ink-2); line-height: 1.5; }
+  .ptier .stack b { color: var(--ink); }
+
+  /* Vote tally */
+  .vote-bar {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800;
+  }
+  .vote-bar .pips { display: inline-flex; gap: 2px; }
+  .vote-bar .pip { width: 9px; height: 9px; border-radius: 2px; background: var(--divider); }
+  .vote-bar .pip.on { background: var(--cta); }
+
+  /* Tab phone mockup */
+  .phone-frame {
+    max-width: 320px; margin: 8px auto 18px;
+    background: var(--bg); border-radius: 32px;
+    border: 8px solid #1A1A1A;
+    padding: 20px 14px 8px; position: relative;
+    box-shadow: 0 20px 50px rgba(111, 133, 103, 0.20);
+  }
+  .phone-frame::before {
+    content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+    width: 100px; height: 22px; border-radius: 0 0 18px 18px; background: #1A1A1A;
+  }
+  .phone-screen {
+    background: var(--card); border-radius: 22px;
+    min-height: 360px; padding: 14px 12px 86px;
+    color: var(--ink); display: flex; flex-direction: column; gap: 10px;
+    position: relative;
+  }
+  .phone-screen .screen-title {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 700; font-size: 17px; color: var(--brand-deep);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .phone-screen .screen-title .profile {
+    font-size: 11px; color: var(--ink-2); font-weight: 600;
+    background: var(--bg); border: 1px solid var(--divider);
+    padding: 3px 8px; border-radius: 999px;
+  }
+  .phone-screen .screen-card {
+    background: var(--bg); border-radius: 12px; padding: 10px 12px;
+    font-size: 11.5px; line-height: 1.45; color: var(--ink);
+    border: 1px solid var(--divider);
+  }
+  .phone-screen .screen-card b { color: var(--brand-deep); }
+  .phone-tabbar {
+    position: absolute; left: 0; right: 0; bottom: 6px;
+    background: var(--card); border-top: 1px solid var(--divider);
+    border-radius: 0 0 22px 22px;
+    padding: 10px 6px 14px;
+    display: grid; grid-template-columns: 1fr 1fr 72px 1fr 1fr;
+    gap: 4px; align-items: center;
+  }
+  .phone-tabbar .tab {
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    font-size: 10px; font-weight: 700; color: var(--ink-3);
+    text-decoration: none;
+  }
+  .phone-tabbar .tab.active { color: var(--brand-deep); }
+  .phone-tabbar .tab .icon {
+    width: 22px; height: 22px; border-radius: 6px;
+    background: var(--divider); display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800; color: var(--ink-2);
+  }
+  .phone-tabbar .tab.active .icon { background: var(--brand); color: #F5EBD7; }
+  .phone-tabbar .scan-fab {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--cta); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: 800;
+    box-shadow: 0 8px 18px rgba(201, 125, 96, 0.38);
+    margin: -22px auto 0;
+  }
+  .phone-tabbar .scan-fab + .tab-label {
+    text-align: center; font-size: 9.5px; font-weight: 800;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--cta); margin-top: 2px;
+  }
+
+  /* Tab spec */
+  .tab-spec-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px; margin-top: 16px;
+  }
+  .tab-spec {
+    background: var(--card); border-radius: 16px; padding: 16px 18px;
+    border: 1px solid var(--divider);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .tab-spec.scan { border-color: var(--cta); background: linear-gradient(180deg, var(--cta-soft) 0%, var(--card) 60%); }
+  .tab-spec .ts-h { display: flex; align-items: center; gap: 10px; }
+  .tab-spec .ts-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--brand); color: #F5EBD7;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 16px;
+  }
+  .tab-spec.scan .ts-icon { background: var(--cta); }
+  .tab-spec .ts-name { font-size: 16px; font-weight: 700; color: var(--ink); }
+  .tab-spec .ts-sub {
+    font-size: 11px; color: var(--ink-3); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-top: 1px;
+  }
+  .tab-spec .ts-purpose {
+    font-size: 12.5px; line-height: 1.5; color: var(--ink); font-style: italic;
+    border-left: 3px solid var(--brand-soft); padding-left: 10px;
+  }
+  .tab-spec.scan .ts-purpose { border-left-color: var(--cta); }
+  .tab-spec .ts-row { display: flex; gap: 8px; font-size: 12px; align-items: flex-start; }
+  .tab-spec .ts-l {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-3);
+    width: 64px; flex-shrink: 0; padding-top: 2px;
+  }
+  .tab-spec .ts-row ul { padding-left: 14px; margin: 0; }
+  .tab-spec .ts-row li { font-size: 11.5px; color: var(--ink); margin-bottom: 2px; }
+  .tab-spec .ts-personas { display: flex; gap: 4px; flex-wrap: wrap; }
+  .tab-spec .pchip {
+    background: var(--brand-soft); color: var(--brand-deep);
+    border-radius: 999px; padding: 2px 8px;
+    font-size: 10.5px; font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .tab-spec.scan .pchip { background: #fff; color: var(--cta-deep); }
+
+  /* Tab switcher */
+  .tabswitch {
+    max-width: 880px; margin: 16px 0 0;
+    background: var(--card); border-radius: 22px;
+    border: 1px solid var(--divider);
+    overflow: hidden;
+  }
+  .tabswitch .ts-tabs {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    background: var(--bg); border-bottom: 1px solid var(--divider);
+  }
+  .tabswitch .ts-tab {
+    appearance: none; background: transparent; border: none;
+    padding: 14px 8px 12px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    font-family: inherit; color: var(--ink-3);
+    font-size: 11.5px; font-weight: 700;
+    border-bottom: 3px solid transparent;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .tabswitch .ts-tab:hover { background: var(--card); color: var(--brand-deep); }
+  .tabswitch .ts-tab.active {
+    color: var(--brand-deep); background: var(--card);
+    border-bottom-color: var(--cta);
+  }
+  .tabswitch .ts-tab .glyph {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: var(--divider); color: var(--ink-2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 800;
+    transition: background 0.15s, color 0.15s;
+  }
+  .tabswitch .ts-tab.active .glyph { background: var(--brand); color: #F5EBD7; }
+  .tabswitch .ts-tab.scan-tab .glyph { background: var(--cta-soft); color: var(--cta-deep); }
+  .tabswitch .ts-tab.scan-tab.active .glyph { background: var(--cta); color: #fff; }
+  .tabswitch .ts-tab .badge {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 9px; font-weight: 800; letter-spacing: 0.04em;
+    color: var(--ink-3); margin-top: 1px;
+  }
+  .tabswitch .ts-tab.active .badge { color: var(--cta-deep); }
+  .ts-panels { padding: 22px 24px 26px; }
+  .ts-panel { display: none; }
+  .ts-panel.active { display: block; }
+  .ts-panel h4 {
+    font-size: 18px; font-weight: 800; color: var(--brand-deep);
+    margin: 0 0 4px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+  }
+  .ts-panel .ts-purpose-line {
+    font-size: 13.5px; color: var(--ink-2); line-height: 1.55;
+    margin: 0 0 16px; font-style: italic;
+  }
+  .ts-panel .ts-section { margin-top: 16px; }
+  .ts-panel .ts-section h5 {
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-3);
+    margin: 0 0 6px;
+  }
+  .ts-panel .ts-blocks {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px; margin-top: 6px;
+  }
+  .ts-panel .ts-block {
+    background: var(--bg); border-radius: 10px;
+    padding: 10px 12px; border: 1px solid var(--divider);
+    font-size: 12.5px; line-height: 1.5;
+  }
+  .ts-panel .ts-block b {
+    display: block; color: var(--brand-deep); margin-bottom: 3px;
+    font-size: 12px;
+  }
+  .ts-panel .ts-block .src {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; color: var(--ink-3); margin-top: 4px;
+    display: block;
+  }
+  .ts-panel ul.ts-list { padding-left: 18px; margin: 6px 0 0; line-height: 1.6; }
+  .ts-panel ul.ts-list li { font-size: 13px; color: var(--ink); margin-bottom: 4px; }
+  .ts-panel ul.ts-list li b { color: var(--brand-deep); }
+  .ts-meta-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px; margin-top: 14px;
+    padding: 12px 14px; background: var(--bg);
+    border-radius: 12px; border: 1px solid var(--divider);
+  }
+  .ts-meta-row .ts-meta { display: flex; flex-direction: column; gap: 3px; }
+  .ts-meta .lab {
+    font-size: 9.5px; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-3);
+  }
+  .ts-meta .val { font-size: 12.5px; font-weight: 700; color: var(--ink); line-height: 1.4; }
+  .ts-meta .val.cta { color: var(--cta-deep); }
+  .ts-meta .val.growth { color: var(--good); }
+  .ts-personas-row { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+  .ts-personas-row .pchip {
+    background: var(--brand-soft); color: var(--brand-deep);
+    border-radius: 999px; padding: 3px 9px;
+    font-size: 10.5px; font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .ts-personas-row .pchip.peak { background: var(--cta); color: #fff; }
+  .ts-anti {
+    margin-top: 14px; padding: 12px 14px;
+    background: #FBEDE6; border-radius: 12px;
+    border: 1px solid #ECC4B0;
+  }
+  .ts-anti h5 { color: #7A4012; }
+  .ts-anti ul { padding-left: 18px; margin: 4px 0 0; }
+  .ts-anti ul li { font-size: 12px; color: #5C2410; margin-bottom: 3px; }
+  .ts-anti ul li b { color: #7A4012; }
+
+  .wf {
+    background: #fff; border: 1px dashed var(--brand);
+    border-radius: 8px; padding: 8px 10px;
+    font-size: 11px; line-height: 1.4;
+    color: var(--brand-deep); margin-bottom: 6px;
+  }
+  .wf b { font-weight: 800; }
+  .wf.cta { border-color: var(--cta); color: var(--cta-deep); background: var(--cta-soft); }
+  .wf.ai { border-color: var(--ai-border); background: var(--ai-bg); color: var(--brand-deep); }
+  .wf.growth { border-color: var(--growth); background: var(--growth-soft); color: #2F4A2A; }
+
+  /* JTBD × Tab matrix */
+  table.jtm td.use {
+    font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; font-size: 12px;
+    text-align: center;
+  }
+  table.jtm td.use.h { color: var(--cta-deep); background: var(--cta-soft); }
+  table.jtm td.use.m { color: var(--good); background: var(--good-bg); }
+  table.jtm td.use.l { color: var(--ink-3); text-align: center; }
+  table.jtm td.persona { text-align: left; font-weight: 700; white-space: nowrap; }
+
+  /* Sibling comparison */
+  .sib-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px; margin-top: 12px;
+  }
+  .sib-card {
+    background: var(--card); border-radius: 16px; padding: 16px 18px;
+    border: 1px solid var(--divider);
+  }
+  .sib-card.gold { border: 2px solid var(--cta); box-shadow: 0 4px 22px rgba(201,125,96,0.14); }
+  .sib-card.silver { border-color: var(--brand); }
+  .sib-card.bronze { border-color: var(--growth); }
+  .sib-card .sh { display: flex; align-items: baseline; gap: 8px; }
+  .sib-card .sh .rank {
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 11px;
+    font-weight: 800; letter-spacing: 0.06em;
+    color: var(--cta-deep);
+  }
+  .sib-card .sh b { font-size: 16px; font-weight: 800; color: var(--ink); }
+  .sib-card .sh .score {
+    margin-left: auto;
+    font-family: ui-monospace, "SF Mono", monospace; font-weight: 800;
+    font-size: 12px; color: var(--brand-deep);
+    background: var(--brand-soft); border-radius: 999px;
+    padding: 3px 9px;
+  }
+  .sib-card .reason { font-size: 12.5px; color: var(--ink); line-height: 1.5; margin: 8px 0 0; }
+  .sib-card .diff { font-size: 11.5px; color: var(--ink-2); line-height: 1.45; margin-top: 6px; }
+  .sib-card .diff b { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP NAV ===== -->
+<nav class="top-nav">
+  <a href="#top">↑ Top</a>
+  <span class="sep"></span>
+  <a href="#module-1" class="is-module"><span class="nav-num">M1</span>Design</a>
+  <a href="#module-2" class="is-module"><span class="nav-num">M2</span>Personas</a>
+  <a href="#module-3" class="is-module"><span class="nav-num">M3</span>Roadmap</a>
+  <a href="#module-4" class="is-module"><span class="nav-num">M4</span>Tabs</a>
+  <a href="#module-5" class="is-module"><span class="nav-num">M5</span>Screens</a>
+  <span class="sep"></span>
+  <a href="#sibling">↪ Sibling</a>
+  <a href="#tokens">tokens</a>
+  <a href="#jtbd-scan">JTBD</a>
+  <a href="#ptiers">P-tiers</a>
+  <a href="#tabbar">tab bar</a>
+</nav>
+
+<header id="top">
+  <h1>Salvora — Design System Workbench</h1>
+  <p class="lede">AI Eczema Flare Tracker. Photo journal + AI Coach (DeepSeek V3 + RAG: AAD/NEA/Mayo/AAFP/PubMed) + trigger correlation + POEM severity + doctor PDF. 31M Americans + 200M globally. NEA EczemaWise sunsets 2026-12-18 — orphan capture window opens Sept-Dec.</p>
+  <div class="meta-bar">
+    <span class="pill lock">✅ Palette locked 2026-05-11</span>
+    <span class="pill lock">✅ Tab arch locked round 3</span>
+    <span class="pill brand">5 personas · 7 JTBD</span>
+    <span class="pill sib">Sibling: 15-Folik (92%)</span>
+    <span class="pill">v1 ship Jul-Aug 2026</span>
+  </div>
+</header>
+
+<!-- ===== WINNER CALLOUT ===== -->
+<section class="winner-callout">
+  <div>
+    <h2>Apothecary Sage — «Caring Herbalist»</h2>
+    <p class="vibe">Sage (#6F8567) — natural-medicine authority without anti-pharma extremism · terracotta (#C97D60) — warm CTA, severity warmth · cream (#F5EBD7) — folk apothecary background. Aesop-meets-Headspace. Visual whitespace where every other eczema app is either NHS-clinical-white or anti-pharma-radical-green.</p>
+  </div>
+  <div class="score-badge">A · 8.0/10</div>
+</section>
+
+<!-- ===== MODULE 1 — DESIGN SYSTEM ===== -->
+<div class="module-banner" id="module-1" style="margin-top: 32px;">
+  <span class="num">МОДУЛЬ 1</span>
+  <h2>Дизайн-система</h2>
+  <p class="desc">Round 1 голосование 7 голосами (Product · Design/ASO · Medical · Conversion · Portfolio · Devil's Advocate · Persona-Empathy) — палитра «Apothecary Sage» (Variant A) выбрана 8.0/10. Терракота-CTA дифференцирует от EczemaWise/EczemaLess (free, generic-blue) и от Folik (полночный индиго). Sage-зелёный достаточно далёк от Folik growth-green (#5B9B6B → #6F8567 — drift к olive).</p>
+</div>
+
+<h2 id="palette-vote">1.0 Palette consilium — round 1</h2>
+<p class="lede">Three palette variants. 7-voice round 1 vote. Winner: Apothecary Sage (А = 8.0).</p>
+
+<div class="variants">
+  <div class="variant winner">
+    <div class="variant-head"><span class="name">A · Apothecary Sage</span><span class="score">8.0</span></div>
+    <div class="vibe">Sage + terracotta + cream. Aesop meets Headspace. Natural-medicine authority without anti-pharma extremism.</div>
+    <div class="swatches">
+      <div class="sw" style="background:#F5EBD7"></div>
+      <div class="sw" style="background:#FAF4E5"></div>
+      <div class="sw" style="background:#6F8567"></div>
+      <div class="sw" style="background:#587053"></div>
+      <div class="sw" style="background:#C97D60"></div>
+      <div class="sw" style="background:#A85F45"></div>
+      <div class="sw" style="background:#ECF0E5"></div>
+      <div class="sw" style="background:#2C2419"></div>
+    </div>
+  </div>
+  <div class="variant">
+    <div class="variant-head"><span class="name">B · Clinical Olive</span><span class="score">7.9</span></div>
+    <div class="vibe">Deeper olive primary + warm coral CTA + ivory bg. Higher medical credibility, more pharma-clinical-warm.</div>
+    <div class="swatches">
+      <div class="sw" style="background:#FAF6EE"></div>
+      <div class="sw" style="background:#FFFFFF"></div>
+      <div class="sw" style="background:#5C7256"></div>
+      <div class="sw" style="background:#3E5239"></div>
+      <div class="sw" style="background:#E8826A"></div>
+      <div class="sw" style="background:#C56550"></div>
+      <div class="sw" style="background:#E5ECDD"></div>
+      <div class="sw" style="background:#1F1B14"></div>
+    </div>
+  </div>
+  <div class="variant">
+    <div class="variant-head"><span class="name">C · Skin Truth</span><span class="score">7.1</span></div>
+    <div class="vibe">Neutral stone + healing peach + soft linen. Maximum portfolio-distance from Folik. Lowest brand distinctiveness.</div>
+    <div class="swatches">
+      <div class="sw" style="background:#F7F4ED"></div>
+      <div class="sw" style="background:#FFFFFF"></div>
+      <div class="sw" style="background:#6B6A65"></div>
+      <div class="sw" style="background:#4A4944"></div>
+      <div class="sw" style="background:#E89579"></div>
+      <div class="sw" style="background:#C97056"></div>
+      <div class="sw" style="background:#EBE7DC"></div>
+      <div class="sw" style="background:#2B2924"></div>
+    </div>
+  </div>
+</div>
+
+<table class="vote">
+  <thead><tr><th>Voice</th><th style="text-align:center">A</th><th style="text-align:center">B</th><th style="text-align:center">C</th><th>Pick & argument</th></tr></thead>
+  <tbody>
+    <tr><td>1. Product</td><td class="num hi">9</td><td class="num">8</td><td class="num">6</td><td><b>A</b> — apothecary signals «natural medicine for chronic skin»; eczema audience leans anti-corporate-pharma</td></tr>
+    <tr><td>2. Design/ASO</td><td class="num hi">9</td><td class="num">7</td><td class="num">6</td><td><b>A</b> — sage+terracotta = unique slot in eczema category. EczemaWise = blue-white, EczemaLess = generic, Bearable = purple</td></tr>
+    <tr><td>3. Medical Credibility</td><td class="num">7</td><td class="num hi">9</td><td class="num">8</td><td><b>B</b> — deeper olive reads «evidence-based dermatology»; A risks looking «alternative-medicine»</td></tr>
+    <tr><td>4. Conversion</td><td class="num">8</td><td class="num">8</td><td class="num">7</td><td><b>tie A/B</b> — both terracotta tones high-contrast on cream; A wins by herbal-healing association</td></tr>
+    <tr><td>5. Portfolio</td><td class="num">7</td><td class="num">8</td><td class="num hi">9</td><td><b>C</b> — most distinct from Folik terracotta CTA; mitigates Salvora-Folik screenshot cannibalization</td></tr>
+    <tr><td>6. Devil's Advocate</td><td class="num">7</td><td class="num">7</td><td class="num hi">8</td><td><b>C</b> — TSW community could read «herbal» framing as anti-pharma. C's neutrality safest</td></tr>
+    <tr><td>7. Persona-Empathy</td><td class="num hi">9</td><td class="num">8</td><td class="num">6</td><td><b>A</b> — Rachel's aesthetic millennial appetite + Linda's apothecary-mom-blog warmth in one palette</td></tr>
+    <tr><td><b>Average</b></td><td class="num hi"><b>8.0</b></td><td class="num"><b>7.86</b></td><td class="num"><b>7.14</b></td><td><b>Winner: A · Apothecary Sage</b></td></tr>
+  </tbody>
+</table>
+
+<h3>Verdict</h3>
+<p class="lede">A wins (8.0) with Product, Design/ASO and Persona-Empathy strongly behind it. Portfolio risk mitigated: sage drifts to olive (<code>#7A9171</code> → <code>#6F8567</code>) to avoid Folik's growth-green (<code>#5B9B6B</code>); terracotta CTA (<code>#C97D60</code>) softer than Folik's burnt orange (<code>#E8622A</code>). Medical-credibility concern addressed in voice/copy guidelines (no anti-pharma framing, all citations from AAD/NEA/Mayo).</p>
+
+<!-- ===== TOKENS ===== -->
+<h2 id="tokens">1.1 Locked token spec — «Apothecary Sage»</h2>
+
+<h3>Light system (primary)</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#F5EBD7"></div><div><span class="label">--bg</span><span class="hex">#F5EBD7</span></div></div>
+  <div class="token"><div class="chip" style="background:#FAF4E5"></div><div><span class="label">--bg-soft</span><span class="hex">#FAF4E5</span></div></div>
+  <div class="token"><div class="chip" style="background:#FFFFFF"></div><div><span class="label">--card</span><span class="hex">#FFFFFF</span></div></div>
+  <div class="token"><div class="chip" style="background:#E6D9BE"></div><div><span class="label">--divider</span><span class="hex">#E6D9BE</span></div></div>
+  <div class="token"><div class="chip" style="background:#6F8567"></div><div><span class="label">--brand</span><span class="hex">#6F8567</span></div></div>
+  <div class="token"><div class="chip" style="background:#587053"></div><div><span class="label">--brand-mid</span><span class="hex">#587053</span></div></div>
+  <div class="token"><div class="chip" style="background:#3F5A3B"></div><div><span class="label">--brand-deep</span><span class="hex">#3F5A3B</span></div></div>
+  <div class="token"><div class="chip" style="background:#DCE5D6"></div><div><span class="label">--brand-soft</span><span class="hex">#DCE5D6</span></div></div>
+  <div class="token"><div class="chip" style="background:#C97D60"></div><div><span class="label">--cta</span><span class="hex">#C97D60</span></div></div>
+  <div class="token"><div class="chip" style="background:#A85F45"></div><div><span class="label">--cta-deep</span><span class="hex">#A85F45</span></div></div>
+  <div class="token"><div class="chip" style="background:#F4DDD0"></div><div><span class="label">--cta-soft</span><span class="hex">#F4DDD0</span></div></div>
+  <div class="token"><div class="chip" style="background:#ECF0E5"></div><div><span class="label">--ai-bg</span><span class="hex">#ECF0E5</span></div></div>
+  <div class="token"><div class="chip" style="background:#C8D5BE"></div><div><span class="label">--ai-border</span><span class="hex">#C8D5BE</span></div></div>
+  <div class="token"><div class="chip" style="background:#2C2419"></div><div><span class="label">--ink</span><span class="hex">#2C2419</span></div></div>
+  <div class="token"><div class="chip" style="background:#5C5042"></div><div><span class="label">--ink-2</span><span class="hex">#5C5042</span></div></div>
+  <div class="token"><div class="chip" style="background:#9A8E7E"></div><div><span class="label">--ink-3</span><span class="hex">#9A8E7E</span></div></div>
+</div>
+
+<h3>Verdict triad (semantic — POEM severity)</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#6F8567"></div><div><span class="label">--good (Mild)</span><span class="hex">#6F8567</span></div></div>
+  <div class="token"><div class="chip" style="background:#DCE5D6"></div><div><span class="label">--good-bg</span><span class="hex">#DCE5D6</span></div></div>
+  <div class="token"><div class="chip" style="background:#C97D60"></div><div><span class="label">--watch (Moderate)</span><span class="hex">#C97D60</span></div></div>
+  <div class="token"><div class="chip" style="background:#F4DDD0"></div><div><span class="label">--watch-bg</span><span class="hex">#F4DDD0</span></div></div>
+  <div class="token"><div class="chip" style="background:#A85F45"></div><div><span class="label">--alert (Severe)</span><span class="hex">#A85F45</span></div></div>
+  <div class="token"><div class="chip" style="background:#ECD0C2"></div><div><span class="label">--alert-bg</span><span class="hex">#ECD0C2</span></div></div>
+</div>
+<p class="lede" style="font-size: 13px; margin-top: 8px;">POEM 5-point bucket → 3-color verdict (Mild = Mild-Mild·Mild / Moderate = Mild-Mod·Mod / Severe = Mod-Severe·Severe). Verdict-triad reused on flare-card, history-row, share-card, doctor-PDF.</p>
+
+<h3>Night / AI Coach surface (Mike 3am + Jessica TSW)</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#1E1A14"></div><div><span class="label">--night-bg</span><span class="hex">#1E1A14</span></div></div>
+  <div class="token"><div class="chip" style="background:#2A241B"></div><div><span class="label">--night-surface</span><span class="hex">#2A241B</span></div></div>
+  <div class="token"><div class="chip" style="background:#3E3325"></div><div><span class="label">--night-bubble-user</span><span class="hex">#3E3325</span></div></div>
+  <div class="token"><div class="chip" style="background:#3A3024"></div><div><span class="label">--night-divider</span><span class="hex">#3A3024</span></div></div>
+  <div class="token"><div class="chip" style="background:#B0C4A4"></div><div><span class="label">--night-accent</span><span class="hex">#B0C4A4</span></div></div>
+  <div class="token"><div class="chip" style="background:#F5EBD7"></div><div><span class="label">--night-text</span><span class="hex">#F5EBD7</span></div></div>
+</div>
+
+<!-- ===== COMPONENT PREVIEW ===== -->
+<h2 id="components">1.2 Component preview · day + night AI Coach</h2>
+<p class="lede">Same 4 components rendered in day (cream apothecary) and night (deep ink + sage accent). Night mode activates on Coach surface when <code>systemDark</code> or <code>22:00–06:00</code>. Mike at 3am sees night-Coach; daytime Coach respects system mode.</p>
+
+<div class="modes-row">
+
+  <div class="mode-block day">
+    <span class="mode-label">DAY · default</span>
+
+    <div class="poem-hero">
+      <span class="label">Today's POEM</span>
+      <span class="stage">9 / 28</span>
+      <span class="delta">–3 vs last week · trending mild ↓</span>
+      <div class="progress-bar"><div class="fill" style="width: 32%"></div></div>
+    </div>
+
+    <div class="mock-card">
+      <div class="tracker-row">
+        <div>
+          <div class="tracker-name">Inner elbows</div>
+          <div style="font-size: 11.5px; color: var(--ink-2);">photo · 2h ago · itch 4/10</div>
+        </div>
+        <span class="verdict-pill good">Mild</span>
+      </div>
+      <div class="tracker-row">
+        <div>
+          <div class="tracker-name">Behind knees</div>
+          <div style="font-size: 11.5px; color: var(--ink-2);">photo · yesterday · sleep impact 6/10</div>
+        </div>
+        <span class="verdict-pill watch">Moderate</span>
+      </div>
+      <div class="tracker-row">
+        <div>
+          <div class="tracker-name">Neck rash</div>
+          <div style="font-size: 11.5px; color: var(--ink-2);">photo · 3d ago · spreading</div>
+        </div>
+        <span class="verdict-pill alert">Severe</span>
+      </div>
+    </div>
+
+    <div class="chat">
+      <div class="bubble user">Is dairy really triggering Emma's flares?</div>
+      <div class="bubble assistant">
+        Salvora noticed: in the last 14 days, Emma's POEM went up by +1.4 on dairy days vs non-dairy days (12 entries, n=14). That's a meaningful but not certain pattern.
+        <span class="citation day">AAD · food trigger guidance</span>
+        <div class="safety-strip">⚠️ Salvora is for tracking & education, not a diagnosis. Discuss elimination diets with a pediatric dermatologist or allergist.</div>
+      </div>
+    </div>
+
+    <button class="btn primary">+ Log flare</button>
+  </div>
+
+  <div class="mode-block night">
+    <span class="mode-label">NIGHT · Coach @ 3am</span>
+
+    <div class="mock-card dark">
+      <div style="color: var(--night-accent); font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">Coach · awake with you</div>
+      <div style="font-size: 14px; line-height: 1.5; margin-top: 6px; color: var(--night-text);">
+        It's 3:14. Is the itch worse than yesterday?
+      </div>
+    </div>
+
+    <div class="chat">
+      <div class="bubble user dark">Baby won't stop scratching. Skin is red and warm. Should I go to ER?</div>
+      <div class="bubble assistant dark">
+        Two flags I look for: <b>fever</b> + <b>spreading redness with oozing</b> = call urgent care now. Warm + scratching alone, without fever, is usually a strong flare you can soothe overnight (cool compress · plain emollient · loose cotton) and call your ped in the morning.
+        <span class="citation dark">NEA · flare flare-up overnight care</span>
+        <div class="safety-strip" style="background: #3A2419; color: #F5C4A0; border-color: #5C3520;">⚠️ Salvora doesn't diagnose. If you see fever, oozing, or rapidly spreading redness — go to urgent care or ER.</div>
+      </div>
+    </div>
+
+    <button class="btn ghost-night">Call dermatologist (saved contact)</button>
+  </div>
+
+</div>
+
+<!-- ===== TYPOGRAPHY ===== -->
+<h2 id="typography">1.3 Typography</h2>
+<div class="type-list">
+  <div class="row"><span class="role">Display · Hero</span><span style="font-family: -apple-system, 'SF Pro Rounded', sans-serif; font-weight: 800; font-size: 32px; letter-spacing: -0.01em;">Salvora — track flares, find triggers.</span></div>
+  <div class="row"><span class="role">Title 1 · Tab name</span><span style="font-family: -apple-system, 'SF Pro Rounded', sans-serif; font-weight: 700; font-size: 22px;">Today's flare</span></div>
+  <div class="row"><span class="role">Title 2 · Card head</span><span style="font-family: -apple-system, 'SF Pro Rounded', sans-serif; font-weight: 700; font-size: 17px;">Trigger pattern · last 14 days</span></div>
+  <div class="row"><span class="role">Body</span><span style="font-size: 15px; line-height: 1.45;">Photos stay on your device. Coach answers cite AAD, NEA, Mayo.</span></div>
+  <div class="row"><span class="role">Caption</span><span style="font-size: 13px; color: var(--ink-2);">Logged 2 hours ago · itch 4/10 · slept 6h 12m</span></div>
+  <div class="row"><span class="role">Mono · POEM</span><span style="font-family: ui-monospace, 'SF Mono', monospace; font-weight: 700; font-size: 15px; color: var(--cta-deep);">9 / 28</span></div>
+  <div class="row"><span class="role">Eyebrow · Section</span><span style="font-size: 11px; font-weight: 800; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-3);">SAFETY · ALWAYS VISIBLE</span></div>
+</div>
+
+<!-- ===== MODES STRATEGY ===== -->
+<h2 id="modes">1.4 Per-surface mode strategy</h2>
+<table class="modes">
+  <thead><tr><th>Surface</th><th>Mode</th><th>Reasoning</th></tr></thead>
+  <tbody>
+    <tr><td>Onboarding (5-screen + WOW)</td><td class="mode">Light forced</td><td>Cream warmth — Linda + Rachel scroll-stop. No real eczema photos (aversive). Illustrations only.</td></tr>
+    <tr><td>Today / Journal / Insights</td><td class="mode">System</td><td>Respect user OS preference. Photo journal renders without filter mod in either mode.</td></tr>
+    <tr><td>Coach</td><td class="mode">Night auto 22:00–06:00</td><td>Mike at 3am + Jessica's TSW insomnia → deep ink + sage accent. Coach knows it's night, mirrors mood. CTA stays terracotta.</td></tr>
+    <tr><td>+Log (FAB capture)</td><td class="mode">Light forced</td><td>Photo capture needs warm-toned UI for skin color rendering; dark UI desaturates skin previews.</td></tr>
+    <tr><td>Paywall</td><td class="mode">Light forced</td><td>Cream + terracotta-CTA urgency. Same-mode-as-onboarding momentum.</td></tr>
+    <tr><td>Doctor PDF Export</td><td class="mode">Light forced</td><td>Print-friendly. Sage + cream on white prints clean. No dark mode bleed.</td></tr>
+    <tr><td>App Icon</td><td class="mode">Single</td><td>Sage-dark jar + cream + leaf accent. Same in light/dark home screen.</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== WHITESPACE ===== -->
+<h2 id="whitespace">1.5 Whitespace-позиция в категории</h2>
+<table class="ws">
+  <thead><tr><th>Competitor / Sibling</th><th>Their palette</th><th>Salvora distance</th></tr></thead>
+  <tbody>
+    <tr><td>EczemaWise (NEA, sunsetting)</td><td>NHS-blue + white</td><td><span class="ok">✅ Full distance</span> — cream + sage vs sterile blue</td></tr>
+    <tr><td>EczemaLess (Polyfins, stale)</td><td>Generic blue + grey</td><td><span class="ok">✅ Full distance</span></td></tr>
+    <tr><td>Atopic App (Iqutis)</td><td>Mint + white</td><td><span class="ok">✅</span> — our sage is olive-warm, not mint-cool</td></tr>
+    <tr><td>ATOPIYO LLC</td><td>Light pink + grey</td><td><span class="ok">✅</span></td></tr>
+    <tr><td>Bearable</td><td>Purple + black</td><td><span class="ok">✅</span></td></tr>
+    <tr><td>Folik (sibling, hair loss)</td><td>Indigo + burnt orange + warm off-white</td><td><span class="warn">⚠️</span> — terracotta-CTAs both warm; mitigated by sage-bg vs indigo-bg, and softer Salvora CTA hue (#C97D60 vs Folik #E8622A)</td></tr>
+    <tr><td>Jabwell (sibling, GLP-1)</td><td>Teal + terracotta + linen</td><td><span class="warn">⚠️</span> — terracotta proximity; mitigated by sage-primary (Jabwell uses teal-primary)</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== ANTI-PATTERNS ===== -->
+<h2 id="anti-patterns">1.6 Anti-patterns (consilium-locked don'ts)</h2>
+<ul class="list dontlist">
+  <li><strong>Real eczema close-up in onboarding</strong> — aversive scroll-kill. Use illustrations; real photos only after disclaimer accept.</li>
+  <li><strong>Red/yellow severity stoplight</strong> — clinical-cold, kills warmth. We use sage/terracotta/terracotta-deep verdict triad.</li>
+  <li><strong>Anti-pharma framing in copy</strong> — even though Jessica's TSW audience is anti-pharma, Salvora stays neutral ("your TSW journey, your way"). Banned: "stop using steroids", "steroids ruin your skin".</li>
+  <li><strong>Pure white background</strong> — too clinical. Cream <code>#F5EBD7</code> warms the apothecary frame.</li>
+  <li><strong>Identifiable minor faces</strong> in marketing or share-cards (compliance).</li>
+  <li><strong>Diagnosis-language anywhere</strong>: never "you have eczema", "this is atopic dermatitis". Always "track / log / share / explore".</li>
+  <li><strong>Cloud-by-default photo sync</strong> — local storage; iCloud opt-in only.</li>
+  <li><strong>Generic "tip of the day" content</strong> — Salvora speaks only when data justifies it (≥3× trigger correlation, ≥7d streak, etc.).</li>
+  <li><strong>Game mechanics</strong>: XP, levels, confetti, badges — banned. Health, not game. Adherence streak (Headspace-gentle) is the one exception.</li>
+</ul>
+
+<!-- ===== MODULE 2 — PERSONAS & JTBD ===== -->
+<div class="module-banner" id="module-2">
+  <span class="num">МОДУЛЬ 2</span>
+  <h2>Personas &amp; JTBD</h2>
+  <p class="desc">5 personas → 5 Custom Product Pages в ASA. 7 JTBDs anchored по jobs-to-be-done (When · I want · So I can · Wedge). Каждая JTBD имеет weight (paying-base contribution) + scan-table mapping persona × JTBD intensity (H/M/L).</p>
+</div>
+
+<h2 id="personas">2.1 5 personas</h2>
+
+<div class="jtbd-compact-grid">
+
+  <div class="jtbd-card peak">
+    <div class="jc-h">
+      <span class="jtbd-num">#1</span>
+      <b>🔴 Linda</b>
+      <span style="font-size: 11.5px; color: var(--ink-2);">Mother of eczema child</span>
+      <span class="jtbd-weight w1">30% paying</span>
+    </div>
+    <p class="jtbd-wedge">"My 4-year-old scratches until she bleeds. The pediatrician says 'come back in 6 weeks' — I need data <em>before</em> that visit."</p>
+    <div class="jc-row"><div class="jc-l">Pain</div><ul><li>Sleep deprivation from child scratching</li><li>Fear of steroid side-effects</li><li>$200/visit dermatology</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Wants</div><ul><li>Track child's flares longitudinally</li><li>Identify food/environment triggers</li><li>Prep evidence for ped/derm visit</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Trust</div><ul><li>"Built with dermatologists"</li><li>AAD/NEA citations</li><li>Family-oriented voice</li></ul></div>
+    <div class="jc-row"><div class="jc-l">CPP</div><ul><li><b>A · Family Tracker</b> — calm child sleeping + "Track Emma's eczema in seconds"</li></ul></div>
+  </div>
+
+  <div class="jtbd-card peak">
+    <div class="jc-h">
+      <span class="jtbd-num">#2</span>
+      <b>🟡 Jessica</b>
+      <span style="font-size: 11.5px; color: var(--ink-2);">TSW veteran</span>
+      <span class="jtbd-weight w1">25% paying</span>
+    </div>
+    <p class="jtbd-wedge">"I was steered into 6 years of topical steroids. Now I'm 9 months into withdrawal. I want to document my healing — without any app pushing me back toward pharma."</p>
+    <div class="jc-row"><div class="jc-l">Pain</div><ul><li>Pharma distrust from past prescribing</li><li>Slow non-linear healing</li><li>r/TSW community is hostile to commercial apps</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Wants</div><ul><li>Photo journal as healing diary</li><li>Trigger reflection without judgment</li><li>Citations from PubMed (not pharma marketing)</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Trust</div><ul><li>No anti-pharma extremism; no pro-pharma push</li><li>Neutral framing</li><li>Anonymized share-cards for r/TSW</li></ul></div>
+    <div class="jc-row"><div class="jc-l">CPP</div><ul><li><b>B · TSW Journey</b> — "Track your healing your way" · journal-first hero</li></ul></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h">
+      <span class="jtbd-num">#3</span>
+      <b>🟢 Mike</b>
+      <span style="font-size: 11.5px; color: var(--ink-2);">Anxious dad, first-time</span>
+      <span class="jtbd-weight w2">15% paying</span>
+    </div>
+    <p class="jtbd-wedge">"It's 3am. The baby is screaming. Her face is red. I don't know if I should drive to urgent care or wait until morning. Just tell me."</p>
+    <div class="jc-row"><div class="jc-l">Pain</div><ul><li>3am panic, no medical knowledge</li><li>Doesn't know triage flags</li><li>Doesn't want to over-react and feel foolish</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Wants</div><ul><li>Quick triage: "is this serious?"</li><li>2-tap decision support</li><li>Clear escalation flags (fever, oozing, spreading)</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Trust</div><ul><li>Speed; no fluff</li><li>Traffic-light verdict</li><li>"Answer in 2 taps"</li></ul></div>
+    <div class="jc-row"><div class="jc-l">CPP</div><ul><li><b>C · 3 AM Triage</b> — Coach screenshot + "Answer in 2 taps"</li></ul></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h">
+      <span class="jtbd-num">#4</span>
+      <b>🔵 Sarah</b>
+      <span style="font-size: 11.5px; color: var(--ink-2);">Dupixent user</span>
+      <span class="jtbd-weight w2">15% paying</span>
+    </div>
+    <p class="jtbd-wedge">"I'm injecting Dupixent every 2 weeks at $3,500/month. I need to know it's actually working — and I need a clean printout for my insurance appeal."</p>
+    <div class="jc-row"><div class="jc-l">Pain</div><ul><li>$$$ biologic, insurance prior-auth fights</li><li>Hard to quantify "is it working"</li><li>Injection schedule fatigue</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Wants</div><ul><li>Severity timeline vs injection dates</li><li>Premium aesthetic — feels worthy of the price tag</li><li>Doctor-shareable PDF</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Trust</div><ul><li>Clinical-sophisticated UI</li><li>"Pair with your biologic"</li><li>Photo journal grid</li></ul></div>
+    <div class="jc-row"><div class="jc-l">CPP</div><ul><li><b>D · Biologic Companion</b> — injection log + timeline · "Pair with your Dupixent"</li></ul></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h">
+      <span class="jtbd-num">#5</span>
+      <b>🟣 Rachel</b>
+      <span style="font-size: 11.5px; color: var(--ink-2);">Millennial aesthete</span>
+      <span class="jtbd-weight w2">15% paying</span>
+    </div>
+    <p class="jtbd-wedge">"Every eczema app looks like a hospital intake form. I want something that feels like Aesop — quiet, hand-poured-candle, indie."</p>
+    <div class="jc-row"><div class="jc-l">Pain</div><ul><li>Adult-onset eczema in mid-20s</li><li>Aesthetic-cold medical apps</li><li>Wants a journal-tool, not a clinic-tool</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Wants</div><ul><li>Photo journal as creative practice</li><li>Aesthetic UI · share-card for stories</li><li>Indie vibe; no corporate framing</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Trust</div><ul><li>Aesop / hand-poured-candle aesthetic</li><li>"Indie eczema app, no BS"</li><li>TikTok-shareable</li></ul></div>
+    <div class="jc-row"><div class="jc-l">CPP</div><ul><li><b>E · Skin Journal</b> — journal grid + "Your skin, the way you talk about it"</li></ul></div>
+  </div>
+
+</div>
+
+<!-- ===== 7 JTBDS ===== -->
+<h2 id="jtbds">2.2 7 JTBDs</h2>
+<p class="lede">When · I want · So I can — proven 7-job framework. Each JTBD weight = % share of paying base it justifies. Wedge = how Salvora answers it uniquely.</p>
+
+<div class="jtbd-compact-grid">
+
+  <div class="jtbd-card peak">
+    <div class="jc-h">
+      <span class="jtbd-num">J1</span>
+      <b>Triage a flare in 2 taps</b>
+      <span class="jtbd-weight w1">26%</span>
+    </div>
+    <p class="jtbd-wedge">When a flare hits, I want to know if it's "wait til morning" or "see someone today" — so I can stop panic-spiraling.</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><ul><li>+Log → severity verdict → Coach escalation flag check, all in &lt;30s</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Anchors</div><ul><li>Mike (3am dad) + Linda (mom)</li></ul></div>
+  </div>
+
+  <div class="jtbd-card peak">
+    <div class="jc-h">
+      <span class="jtbd-num">J2</span>
+      <b>Find what's actually triggering me</b>
+      <span class="jtbd-weight w1">22%</span>
+    </div>
+    <p class="jtbd-wedge">When I log daily, I want patterns surfaced automatically — so I can stop guessing about dairy / pollen / stress.</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><ul><li>Trigger correlation engine — surfaces ≥3× correlations weekly</li><li>Apple Health pulls sleep/stress automatically</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Anchors</div><ul><li>Linda · Jessica · Sarah</li></ul></div>
+  </div>
+
+  <div class="jtbd-card peak">
+    <div class="jc-h">
+      <span class="jtbd-num">J3</span>
+      <b>Show my doctor what's been happening</b>
+      <span class="jtbd-weight w2">18%</span>
+    </div>
+    <p class="jtbd-wedge">When I prep for a derm visit, I want a clean printable summary — so I can stop scrolling through my camera roll mid-appointment.</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><ul><li>Doctor PDF: POEM timeline, last-10 photo grid, trigger summary, treatments log</li><li>One-tap AirDrop / Mail / Print</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Anchors</div><ul><li>Linda · Sarah</li></ul></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h">
+      <span class="jtbd-num">J4</span>
+      <b>Get evidence-based answers at 3am</b>
+      <span class="jtbd-weight w2">12%</span>
+    </div>
+    <p class="jtbd-wedge">When I'm awake with itching/panic, I want a calm voice with citations — so I don't doom-scroll Reddit.</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><ul><li>Coach night-mode (sage on deep ink)</li><li>AAD/NEA/Mayo/AAFP/PubMed RAG with inline citations</li><li>Refusal pivots for diagnosis/medication questions</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Anchors</div><ul><li>Mike · Jessica · Sarah</li></ul></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h">
+      <span class="jtbd-num">J5</span>
+      <b>Document my healing on my own terms</b>
+      <span class="jtbd-weight w2">10%</span>
+    </div>
+    <p class="jtbd-wedge">When I'm in long recovery (TSW or adult-onset), I want a photo journal that respects my pace — so I can see what 6 months looks like.</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><ul><li>Ghost-overlay before/after slider</li><li>Anonymized share-card for r/TSW</li><li>Neutral copy (no pro-pharma push, no anti-pharma push)</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Anchors</div><ul><li>Jessica · Rachel</li></ul></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h">
+      <span class="jtbd-num">J6</span>
+      <b>Verify the expensive biologic is working</b>
+      <span class="jtbd-weight w3">7%</span>
+    </div>
+    <p class="jtbd-wedge">When I'm on Dupixent/Rinvoq, I want severity vs injection-date overlay — so I can fight the insurance prior-auth with data.</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><ul><li>Injection / dose log timeline</li><li>POEM × injection scatter chart in Doctor PDF</li><li>Insurance-appeal-friendly format</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Anchors</div><ul><li>Sarah</li></ul></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h">
+      <span class="jtbd-num">J7</span>
+      <b>Track my family without juggling apps</b>
+      <span class="jtbd-weight w3">5%</span>
+    </div>
+    <p class="jtbd-wedge">When my child + I both flare, I want one app, two profiles — so I'm not maintaining parallel logs.</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><ul><li>Family tier $79.99: 1-5 profiles</li><li>Profile switcher in Today header</li><li>Separate trigger libraries per profile</li></ul></div>
+    <div class="jc-row"><div class="jc-l">Anchors</div><ul><li>Linda · Family-tier converts</li></ul></div>
+  </div>
+
+</div>
+
+<!-- ===== JTBD SCAN-TABLE ===== -->
+<h3 id="jtbd-scan" style="margin-top: 28px;">2.3 7 JTBD · scan-table (persona × JTBD intensity)</h3>
+<table class="jtbd-scan">
+  <thead><tr>
+    <th>Persona</th>
+    <th>J1 Triage</th>
+    <th>J2 Triggers</th>
+    <th>J3 Doctor PDF</th>
+    <th>J4 Coach 3am</th>
+    <th>J5 Journal</th>
+    <th>J6 Biologic</th>
+    <th>J7 Family</th>
+  </tr></thead>
+  <tbody>
+    <tr><td class="persona">🔴 Linda</td><td>H</td><td>H</td><td>H</td><td>M</td><td>M</td><td>L</td><td>H</td></tr>
+    <tr><td class="persona">🟡 Jessica</td><td>M</td><td>H</td><td>M</td><td>H</td><td>H</td><td>L</td><td>L</td></tr>
+    <tr><td class="persona">🟢 Mike</td><td>H</td><td>L</td><td>L</td><td>H</td><td>L</td><td>L</td><td>M</td></tr>
+    <tr><td class="persona">🔵 Sarah</td><td>M</td><td>H</td><td>H</td><td>M</td><td>H</td><td>H</td><td>L</td></tr>
+    <tr><td class="persona">🟣 Rachel</td><td>L</td><td>M</td><td>L</td><td>L</td><td>H</td><td>L</td><td>L</td></tr>
+  </tbody>
+</table>
+<p class="lede" style="font-size: 12.5px;">H = high (the JTBD is a primary buying reason) · M = medium (uses regularly) · L = low (rare/none). Each persona has ≥3 H/M jobs — no orphan persona. No JTBD is only L-anchored — every job has at least one H-persona champion.</p>
+
+<!-- ===== MODULE 3 — ROADMAP ===== -->
+<div class="module-banner" id="module-3">
+  <span class="num">МОДУЛЬ 3</span>
+  <h2>Product Roadmap · персона-консилиум</h2>
+  <p class="desc">12 features × 7 competitors whitespace matrix → 5-persona vote on "what I'd pay for first" → P0/P1/P2 roadmap sequenced for July-August 2026 ship (US first), DACH (Sept), GB/CA/AU (Oct), DE-native (Nov).</p>
+</div>
+
+<h2 id="whitespace-matrix">3.1 Whitespace matrix · 12 features × 7 competitors</h2>
+<p class="lede"><span class="ok">✅</span> = ships it · <span class="warn">~</span> = partial · ⬜ = absent. Salvora column highlights where we shipped what competitors haven't.</p>
+
+<table class="roadmap">
+  <thead><tr>
+    <th class="feat">Feature</th>
+    <th>EczemaWise<br>(NEA, sunset)</th>
+    <th>EczemaLess<br>(stale)</th>
+    <th>Atopic App<br>(Iqutis)</th>
+    <th>ATOPIYO</th>
+    <th>Bearable<br>(horizontal)</th>
+    <th>Folik<br>(sibling)</th>
+    <th>Salvora<br>(us)</th>
+  </tr></thead>
+  <tbody>
+    <tr><td class="feat"><span class="ftag">F1</span><b>Photo flare journal</b></td>
+      <td class="cell yes">✅</td><td class="cell yes">✅</td><td class="cell yes">✅</td><td class="cell yes">✅</td><td class="cell no">⬜</td><td class="cell yes">✅</td><td class="cell salvora">✅</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F2</span><b>AI severity scoring (POEM)</b></td>
+      <td class="cell partial">~</td><td class="cell yes">✅</td><td class="cell yes">✅</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell partial">~ (Norwood)</td><td class="cell salvora">✅</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F3</span><b>AI Coach chat (RAG)</b></td>
+      <td class="cell no">⬜</td><td class="cell partial">~</td><td class="cell partial">~ chatbot</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell yes">✅</td><td class="cell salvora">✅</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F4</span><b>Trigger correlation engine</b></td>
+      <td class="cell partial">~</td><td class="cell partial">~</td><td class="cell partial">~</td><td class="cell no">⬜</td><td class="cell yes">✅</td><td class="cell no">⬜</td><td class="cell salvora">✅</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F5</span><b>Doctor PDF export</b></td>
+      <td class="cell yes">✅</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell partial">~</td><td class="cell yes">✅</td><td class="cell salvora">✅</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F6</span><b>Apple Health (sleep/stress)</b></td>
+      <td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell yes">✅</td><td class="cell partial">~</td><td class="cell salvora">✅</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F7</span><b>Family / multi-profile</b></td>
+      <td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell salvora">✅</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F8</span><b>Biologic / injection log</b></td>
+      <td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell salvora">✅ P1</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F9</span><b>Ghost overlay before/after</b></td>
+      <td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell yes">✅</td><td class="cell salvora">✅</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F10</span><b>TSW-neutral framing</b></td>
+      <td class="cell partial">~</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell salvora">✅</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F11</span><b>Anonymized share-card</b></td>
+      <td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell salvora">✅</td>
+    </tr>
+    <tr><td class="feat"><span class="ftag">F12</span><b>DE-native ("Neurodermitis")</b></td>
+      <td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell no">⬜</td><td class="cell salvora">✅ P1 Nov</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="lede" style="margin-top: 14px;"><b>Wedges Salvora owns at launch:</b> F4 trigger correlation engine (vs all competitors partial/absent), F7 family tier, F10 TSW-neutral framing, F11 anonymized share-card, F12 DE-native rollout. <b>Parity with Folik:</b> F1/F2/F3/F5/F9. <b>Differentiator beyond Folik:</b> F4 (Folik doesn't ship trigger correlation — it's progressive hair-loss, not reactive flare-trigger work).</p>
+
+<!-- ===== PERSONA VOTE ===== -->
+<h2 id="vote-tally">3.2 Голоса 5 персон · что каждая хочет в первую очередь</h2>
+<p class="lede">Каждая персона распределяет 12 голосов по 12 features (то, за что готова заплатить $39.99/y в первый месяц). Сводка → roadmap priority.</p>
+
+<table class="vote">
+  <thead><tr>
+    <th>Feature</th>
+    <th style="text-align:center">🔴 Linda</th>
+    <th style="text-align:center">🟡 Jessica</th>
+    <th style="text-align:center">🟢 Mike</th>
+    <th style="text-align:center">🔵 Sarah</th>
+    <th style="text-align:center">🟣 Rachel</th>
+    <th style="text-align:center">Total</th>
+  </tr></thead>
+  <tbody>
+    <tr><td><b>F1 · Photo journal</b></td><td class="num">2</td><td class="num hi">3</td><td class="num">1</td><td class="num">2</td><td class="num hi">4</td><td class="num hi">12</td></tr>
+    <tr><td><b>F4 · Trigger correlation</b></td><td class="num hi">3</td><td class="num hi">3</td><td class="num">0</td><td class="num hi">3</td><td class="num">2</td><td class="num hi">11</td></tr>
+    <tr><td><b>F3 · AI Coach</b></td><td class="num">2</td><td class="num">1</td><td class="num hi">5</td><td class="num">1</td><td class="num">0</td><td class="num">9</td></tr>
+    <tr><td><b>F5 · Doctor PDF</b></td><td class="num hi">3</td><td class="num">1</td><td class="num">0</td><td class="num hi">3</td><td class="num">0</td><td class="num">7</td></tr>
+    <tr><td><b>F2 · POEM severity</b></td><td class="num">1</td><td class="num">2</td><td class="num">3</td><td class="num">1</td><td class="num">0</td><td class="num">7</td></tr>
+    <tr><td><b>F9 · Ghost overlay</b></td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td class="num hi">3</td><td class="num">6</td></tr>
+    <tr><td><b>F6 · Apple Health</b></td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">1</td><td class="num">1</td><td class="num">4</td></tr>
+    <tr><td><b>F7 · Family tier</b></td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">2</td></tr>
+    <tr><td><b>F11 · Share-card</b></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">2</td></tr>
+    <tr><td><b>F10 · TSW framing</b></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+    <tr><td><b>F8 · Biologic log</b></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+    <tr><td><b>F12 · DE-native</b></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+  </tbody>
+</table>
+
+<p class="lede" style="margin-top: 12px;"><b>Reading the vote:</b> Top-5 = F1 Journal · F4 Triggers · F3 Coach · F5 PDF · F2 POEM. These are P0 (must ship V1). F9/F6 = P0 but lower priority. F10/F8/F12 score 0 votes <em>not because nobody wants them</em>, but because they're not on the consideration screen — they're <b>onboarding screen / market expansion</b> features that unlock cohorts <em>after</em> install (Jessica's TSW comfort, Sarah's biologic timeline, Germany expansion). They are <b>retention/conversion multipliers</b>, not consideration features.</p>
+
+<!-- ===== P-TIER ROADMAP ===== -->
+<h2 id="ptiers">3.3 P-tier roadmap · 8-week ship + post-V1</h2>
+<div class="ptier-grid">
+
+  <div class="ptier p0">
+    <div class="ph"><span class="tag">P0</span><b>V1.0 — Ship US</b><span class="when">Jul-Aug 2026</span></div>
+    <ul>
+      <li><b>F1</b> Photo flare journal · local storage</li>
+      <li><b>F2</b> POEM 5-point severity slider</li>
+      <li><b>F3</b> AI Coach chat (DeepSeek + RAG)</li>
+      <li><b>F4</b> Trigger correlation engine (food/env/products/stress/sleep/weather)</li>
+      <li><b>F5</b> Doctor PDF export</li>
+      <li><b>F9</b> Ghost overlay before/after</li>
+      <li><b>F10</b> TSW-neutral framing (Jessica CPP)</li>
+      <li><b>F11</b> Anonymized share-card</li>
+    </ul>
+    <div class="stack"><b>Business goal:</b> Capture EczemaWise sunset orphans Sept-Dec. M3 MRR $4.5K-$15K. 31M US TAM.</div>
+  </div>
+
+  <div class="ptier p1">
+    <div class="ph"><span class="tag">P1</span><b>V1.1-1.3</b><span class="when">Oct-Dec 2026</span></div>
+    <ul>
+      <li><b>F6</b> Apple Health integration (sleep + stress correlation)</li>
+      <li><b>F7</b> Family tier (1-5 profiles, $79.99/y)</li>
+      <li><b>F8</b> Biologic / injection log (Dupixent / Rinvoq / Cibinqo / JAK)</li>
+      <li><b>F12</b> DE-native localization ("Neurodermitis")</li>
+      <li>Apple Watch complication (quick itch-log)</li>
+      <li>iCloud sync (opt-in)</li>
+    </ul>
+    <div class="stack"><b>Business goal:</b> Expand persona LTV (Sarah Dupixent + Linda Family), unlock DACH market. M6 MRR $15K-$30K.</div>
+  </div>
+
+  <div class="ptier p2">
+    <div class="ph"><span class="tag">P2</span><b>V2.x — Skin Health AI</b><span class="when">2027+</span></div>
+    <ul>
+      <li>Psoriasis module (second RAG corpus)</li>
+      <li>Rosacea + acne modules → "Salvora: Skin Health AI"</li>
+      <li>Dermatologist partner / refer-in program</li>
+      <li>AR severity overlay (skin condition mapping in camera)</li>
+      <li>ES/FR/IT/PT localizations</li>
+    </ul>
+    <div class="stack"><b>Business goal:</b> $3M ARR ceiling year 12. Cross-condition leverage on existing RAG infra.</div>
+  </div>
+
+</div>
+
+<!-- ===== MODULE 4 — TAB ARCHITECTURE ===== -->
+<div class="module-banner" id="module-4">
+  <span class="num">МОДУЛЬ 4</span>
+  <h2>Tab Architecture · 4 tabs + center +Log FAB</h2>
+  <p class="desc">3-round consilium · 7 voices · Round 3 vote LOCKED 2026-05-11. Variant A wins (Folik-mirror with Tab 5 renamed Plan → Insights). Closest sibling: <strong>15-Folik (92% structural)</strong>, then 13-Jabwell (88% functional).</p>
+</div>
+
+<!-- ===== 4.0 SIBLING ===== -->
+<h2 id="sibling">4.0 Closest sibling · which Loveiko app does Salvora resemble?</h2>
+<p class="lede">Consilium-locked verdict: Salvora is Folik's twin. Same chronic-condition photo-tracker DNA, same AI-Coach RAG flagship, same FAB-as-primary-capture, same Doctor-PDF retention. Diverges on (a) Insights tab framing (reactive trigger work vs proactive treatment stacking) and (b) Family tier multi-profile.</p>
+
+<div class="sib-grid">
+  <div class="sib-card gold">
+    <div class="sh"><span class="rank">🥇 1st</span><b>15-Folik</b><span class="score">92%</span></div>
+    <p class="reason">Direct twin. 4 tabs + center FAB · Today/Coach/+FAB/photo-journal-tab/plan-tab. DeepSeek + RAG Coach. Vision-AI on-device severity. Doctor PDF retention. Persona × CPP funnel.</p>
+    <p class="diff"><b>Engineering reuse:</b> TabView scaffold · RAG sqlite-vec pipeline · Cloudflare Worker → DeepSeek · RevenueCat 3-tier · ghost-overlay shader · PDF pipeline. <b>Salvora diverges on:</b> Plan → Insights (reactive vs proactive); profile switcher (Family tier); POEM 5-point vs Norwood 7-stage; body-map for flare location.</p>
+  </div>
+  <div class="sib-card silver">
+    <div class="sh"><span class="rank">🥈 2nd</span><b>13-Jabwell</b><span class="score">88%</span></div>
+    <p class="reason">Same Today/Coach/Plan triad. AI-Nurse-as-Coach pattern. Persona-aware refusal pivots. Chronic-condition tracker.</p>
+    <p class="diff"><b>Diverges:</b> FAB is inject-button (medication event), not photo-capture (visual event). Body tab tracks weight/side-effects, not flare photos. Salvora's Journal/Insights split absorbs Jabwell's Body+Plan.</p>
+  </div>
+  <div class="sib-card bronze">
+    <div class="sh"><span class="rank">🥉 3rd</span><b>12-CrySnap</b><span class="score">62%</span></div>
+    <p class="reason">Shares AI-chat-as-flagship + 3-persona refusal-pivot pattern. Voice-first parent-anxiety surface (close to Mike at 3am).</p>
+    <p class="diff"><b>Diverges:</b> Audio capture, not photo. Single-event triage, not chronic longitudinal tracking. Coach is the entire app, not one tab.</p>
+  </div>
+</div>
+
+<h2 id="tabbar">4.1 Tab bar · визуал</h2>
+<div class="phone-frame">
+  <div class="phone-screen">
+    <div class="screen-title">
+      <span>Today</span>
+      <span class="profile">Emma · 3y ▾</span>
+    </div>
+    <div class="screen-card"><b>POEM 9 / 28</b> · trending mild ↓<br>Last log · 2h ago · inner elbows</div>
+    <div class="screen-card"><b>Today's check-ins</b><br>☑ Morning emollient · ☐ Avoid dairy<br>Itch · 4/10 · Sleep · 6h 12m</div>
+    <div class="screen-card" style="background: var(--ai-bg);"><b>Coach noticed</b><br>"Last 14 days: dairy days = +1.4 POEM. <em>Open trigger insight →</em>"</div>
+    <div class="phone-tabbar">
+      <a class="tab active"><span class="icon">⌂</span>Today</a>
+      <a class="tab"><span class="icon">💬</span>Coach</a>
+      <div>
+        <div class="scan-fab">+</div>
+        <div class="tab-label">Log</div>
+      </div>
+      <a class="tab"><span class="icon">📷</span>Journal</a>
+      <a class="tab"><span class="icon">🌿</span>Insights</a>
+    </div>
+  </div>
+</div>
+<p class="lede" style="font-size: 13px;">Center FAB <strong>+Log</strong> — primary daily ritual. One tap → photo flare → AI severity → optional itch slider + trigger chips → save (3 taps total). Header dropdown <strong>Emma · 3y ▾</strong> = Family tier profile switcher. Free/Annual = single profile only (greyed dropdown).</p>
+
+<!-- ===== 4.2 PER-TAB ===== -->
+<h2 id="tab-spec">4.2 Per-tab spec</h2>
+<div class="tab-spec-grid">
+
+  <div class="tab-spec">
+    <div class="ts-h">
+      <div class="ts-icon">⌂</div>
+      <div>
+        <div class="ts-name">Today</div>
+        <div class="ts-sub">Tab 1 · home · daily anchor</div>
+      </div>
+    </div>
+    <p class="ts-purpose">Status snapshot за 3 секунды. Profile switcher (Family tier). POEM hero with delta. Today's check-ins (emollient, avoidance). Coach proactive nudge when trigger correlation ≥3× detected. Settings gear top-right.</p>
+    <div class="ts-row"><div class="ts-l">Контент</div><ul><li>Profile switcher dropdown (Family tier)</li><li>POEM today vs 7-day average</li><li>Active flare locations (body-map mini)</li><li>Today's quick-log (✓ emollient · ✓ trigger avoidance · itch slider · sleep)</li><li>Coach proactive nudge card</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Триггер</div><ul><li>App icon tap — default screen</li><li>Push from daily-log reminder</li><li>Coach push notification</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Персоны</div><div class="ts-personas"><span class="pchip">Linda</span><span class="pchip">Mike</span><span class="pchip">Sarah</span></div></div>
+  </div>
+
+  <div class="tab-spec">
+    <div class="ts-h">
+      <div class="ts-icon">💬</div>
+      <div>
+        <div class="ts-name">Coach</div>
+        <div class="ts-sub">Tab 2 · AI chat · flagship</div>
+      </div>
+    </div>
+    <p class="ts-purpose">DeepSeek V3 + RAG (AAD/NEA/Mayo/AAFP/PubMed). Persona-aware tone (Mike = triage-flag-first, Jessica = TSW-neutral, Sarah = biologic-aware). Refusal pivots for diagnosis/medication asks. Safety strip permanent. Night mode 22:00–06:00.</p>
+    <div class="ts-row"><div class="ts-l">Контент</div><ul><li>Chat thread (saved history)</li><li>Quick prompts per persona ("Is this serious?" / "What's my pattern?" / "Help me prep for derm")</li><li>Inline citations (tap → source detail)</li><li>Safety strip footer (constant)</li><li>Voice input option</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Триггер</div><ul><li>3am panic (Mike)</li><li>TSW reflection moment (Jessica)</li><li>Pre-derm visit (Linda/Sarah)</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Персоны</div><div class="ts-personas"><span class="pchip">All 5/5 use</span></div></div>
+  </div>
+
+  <div class="tab-spec scan">
+    <div class="ts-h">
+      <div class="ts-icon">+</div>
+      <div>
+        <div class="ts-name">+Log</div>
+        <div class="ts-sub">Center FAB · primary action</div>
+      </div>
+    </div>
+    <p class="ts-purpose">Не таб — а центральная primary CTA. One tap → photo flare → on-device Vision API severity (POEM-aligned) → optional itch slider + trigger chips → save. 3 taps total. Voice note optional. Inserts into Journal + Today + Coach context.</p>
+    <div class="ts-row"><div class="ts-l">Поток</div><ul><li>Tap FAB → camera with calibration overlay (good light, neutral background hint)</li><li>Auto-crop affected area; manual override</li><li>Vision API severity infer (Mild/Mod/Severe)</li><li>Slider confirm + itch level 0-10</li><li>Trigger chips (last 24h: dairy, stress, new product)</li><li>Save → "Logged. Salvora's tracking your flare." toast</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Free tier</div><ul><li>3 free logs in onboarding (WOW · severity preview · trigger inference)</li><li>After: paywall hard block</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Персоны</div><div class="ts-personas"><span class="pchip">All 5/5</span></div></div>
+  </div>
+
+  <div class="tab-spec">
+    <div class="ts-h">
+      <div class="ts-icon">📷</div>
+      <div>
+        <div class="ts-name">Journal</div>
+        <div class="ts-sub">Tab 3 · photo timeline + visual proof</div>
+      </div>
+    </div>
+    <p class="ts-purpose">Photo timeline grid (chronological) + POEM trend chart + ghost-overlay before/after slider + anonymized share-card export. Rachel's creative practice. Jessica's healing diary. Sarah's biologic proof. No public feed — local + manual share only.</p>
+    <div class="ts-row"><div class="ts-l">Контент</div><ul><li>Photo grid timeline (month/week/day toggles)</li><li>POEM line chart (7d/30d/90d)</li><li>Ghost-overlay slider (drag to compare any two dates)</li><li>Body-map heatmap (last 30 days)</li><li>Share-card export (anonymized, severity + trend, no face)</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Триггер</div><ul><li>"Is it actually getting better?" doubt moment</li><li>Pre-derm visit visual prep</li><li>Aesthetic-practice / weekly check-in</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Персоны</div><div class="ts-personas"><span class="pchip">Rachel</span><span class="pchip">Sarah</span><span class="pchip">Jessica</span></div></div>
+  </div>
+
+  <div class="tab-spec">
+    <div class="ts-h">
+      <div class="ts-icon">🌿</div>
+      <div>
+        <div class="ts-name">Insights</div>
+        <div class="ts-sub">Tab 4 · triggers + treatments + account</div>
+      </div>
+    </div>
+    <p class="ts-purpose">Trigger correlation pattern card (top hero). Trigger library (custom + canonical). Treatments log (emollients, prescriptions, biologic injections). Doctor PDF export. Apple Health pull-in. Family/profile management. Settings.</p>
+    <div class="ts-row"><div class="ts-l">Контент</div><ul><li>Trigger correlation hero ("Worst flares × dairy 3.2× · low sleep 2.7×")</li><li>Trigger library (food/env/product/stress/weather)</li><li>Treatments list (active + history)</li><li>Doctor PDF generator</li><li>Apple Health integration (opt-in)</li><li>Family member management (Family tier)</li><li>Subscription + privacy + export/delete</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Триггер</div><ul><li>Weekly trigger reflection (Jessica)</li><li>Pre-ped/derm visit prep (Linda · Sarah)</li><li>Family member add (Linda)</li><li>Privacy/export concern</li></ul></div>
+    <div class="ts-row"><div class="ts-l">Персоны</div><div class="ts-personas"><span class="pchip">Linda</span><span class="pchip">Jessica</span><span class="pchip">Sarah</span></div></div>
+  </div>
+
+</div>
+
+<!-- ===== 4.3 JTM ===== -->
+<h2 id="jtm">4.3 JTBD × Tab usage matrix</h2>
+<p class="lede"><strong>H</strong> = high (daily) · <strong>M</strong> = medium (weekly) · <strong>L</strong> = low (rare). Каждая персона использует ≥3 таба на H/M cadence. Нет мёртвых табов.</p>
+<table class="jtm">
+  <thead><tr><th style="text-align:left">Persona</th><th>Today</th><th>Coach</th><th>+Log</th><th>Journal</th><th>Insights</th><th style="text-align:left">Anchor</th></tr></thead>
+  <tbody>
+    <tr><td class="persona">🔴 Linda (mom 30%)</td><td class="use h">H</td><td class="use h">H</td><td class="use m">M</td><td class="use m">M</td><td class="use h">H</td><td>Coach + Insights · ped prep</td></tr>
+    <tr><td class="persona">🟡 Jessica (TSW 25%)</td><td class="use m">M</td><td class="use m">M</td><td class="use h">H</td><td class="use h">H</td><td class="use h">H</td><td>Journal + Insights · healing narrative</td></tr>
+    <tr><td class="persona">🟢 Mike (anxious dad 15%)</td><td class="use h">H</td><td class="use h">H</td><td class="use h">H</td><td class="use l">L</td><td class="use l">L</td><td>Today + Coach · 3am triage</td></tr>
+    <tr><td class="persona">🔵 Sarah (Dupixent 15%)</td><td class="use h">H</td><td class="use h">H</td><td class="use m">M</td><td class="use h">H</td><td class="use m">M</td><td>Today + Journal · biologic verify</td></tr>
+    <tr><td class="persona">🟣 Rachel (millennial 15%)</td><td class="use m">M</td><td class="use l">L</td><td class="use h">H</td><td class="use h">H</td><td class="use l">L</td><td>+Log + Journal · aesthetic practice</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== 4.4 ANTI ===== -->
+<h3 style="margin-top: 24px;">4.4 Tab anti-patterns · что мы НЕ делаем</h3>
+<ul class="list dontlist">
+  <li><strong>Settings отдельным табом</strong> — settings живёт в Insights footer + Today header gear. Tab — поверхность активного use, не housekeeping.</li>
+  <li><strong>Profile / Account таб</strong> — subscription + family management в Insights → Account. Profile-tab крадёт место у core surface.</li>
+  <li><strong>Community / Feed таб</strong> — Salvora личный медицинский tracker, не lifestyle feed. r/eczema community discovery вне scope.</li>
+  <li><strong>Tab badges с red dot / count</strong> — eczema audience anxiety-sensitive. Никаких "3 новых триггера!" badges. Coach unread может иметь subtle sage-dot без числа.</li>
+  <li><strong>Insights-таб геймификация</strong> (XP, levels, confetti, badges) — banned. Adherence streak (Headspace-style) — единственное исключение.</li>
+  <li><strong>Generic "tip of the day"</strong> — Insights surface only когда data justifies (≥3× correlation, ≥7d streak). No AI-generated daily inspirational quotes.</li>
+  <li><strong>Real eczema close-up в screenshots tab-preview</strong> — illustrations only, по compliance.</li>
+</ul>
+
+<!-- ===== MODULE 5 — SCREEN DEEP-DIVE ===== -->
+<div class="module-banner" id="module-5">
+  <span class="num">МОДУЛЬ 5</span>
+  <h2>Screen deep-dive · интерактивно</h2>
+  <p class="desc">Каждый таб разобран в деталь — что внутри, какие блоки, источники данных, free vs paid поведение, anti-patterns. Кликни на таб ниже — переключатся панели.</p>
+</div>
+
+<div class="tabswitch">
+  <div class="ts-tabs">
+    <button class="ts-tab active" data-panel="t1"><div class="glyph">⌂</div><div class="label">Today</div><div class="badge">TAB 1</div></button>
+    <button class="ts-tab" data-panel="t2"><div class="glyph">💬</div><div class="label">Coach</div><div class="badge">TAB 2</div></button>
+    <button class="ts-tab scan-tab" data-panel="t3"><div class="glyph">+</div><div class="label">+Log</div><div class="badge">FAB</div></button>
+    <button class="ts-tab" data-panel="t4"><div class="glyph">📷</div><div class="label">Journal</div><div class="badge">TAB 3</div></button>
+    <button class="ts-tab" data-panel="t5"><div class="glyph">🌿</div><div class="label">Insights</div><div class="badge">TAB 4</div></button>
+  </div>
+  <div class="ts-panels">
+
+    <!-- TODAY -->
+    <div class="ts-panel active" id="t1">
+      <h4>Today · daily anchor</h4>
+      <p class="ts-purpose-line">Status snapshot за 3 секунды. Profile switcher для Family tier. POEM hero с 7d delta. Today's check-ins. Coach proactive nudge когда trigger correlation surfaces. Settings gear top-right.</p>
+
+      <div class="ts-section">
+        <h5>Layout blocks (top → bottom)</h5>
+        <div class="wf"><b>Header:</b> Profile switcher dropdown (Family · greyed if solo) · Settings gear · Streak dot</div>
+        <div class="wf">POEM Today Hero — number 9/28 · trend arrow · body-map mini (3 active locations)</div>
+        <div class="wf">Today's check-ins — ☑ emollient · ☐ avoid dairy · itch slider · sleep hours (Apple Health auto)</div>
+        <div class="wf ai">Coach proactive nudge — "Coach noticed: dairy days +1.4 POEM (n=14). Open insight →"</div>
+        <div class="wf growth">Adherence streak — "4 days logging in a row. Quiet & consistent."</div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Data sources</h5>
+        <div class="ts-blocks">
+          <div class="ts-block"><b>POEM hero</b>SwiftData query · last log severity bucket → 5-point POEM mapping<span class="src">FlareLog.severity</span></div>
+          <div class="ts-block"><b>Body-map</b>active locations from last 7 days of logs<span class="src">FlareLog.location[]</span></div>
+          <div class="ts-block"><b>Apple Health</b>sleep duration + HRV (stress proxy) — read-only, opt-in<span class="src">HKSampleType.sleepAnalysis</span></div>
+          <div class="ts-block"><b>Coach nudge</b>trigger correlation engine output ≥3×<span class="src">TriggerCorrelation.detect()</span></div>
+        </div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Free vs Paid</h5>
+        <ul class="ts-list">
+          <li><b>Free:</b> Today visible, POEM hero readable, but Coach nudge replaced with paywall card after 3 logs</li>
+          <li><b>Trial (7d):</b> Full Today behavior</li>
+          <li><b>Family tier:</b> Profile switcher unlocked (1-5 profiles)</li>
+        </ul>
+      </div>
+
+      <div class="ts-meta-row">
+        <div class="ts-meta"><span class="lab">Primary action</span><span class="val cta">+Log FAB</span></div>
+        <div class="ts-meta"><span class="lab">Secondary action</span><span class="val">Tap Coach nudge → Insights</span></div>
+        <div class="ts-meta"><span class="lab">Mode</span><span class="val">System</span></div>
+        <div class="ts-meta"><span class="lab">Refresh cadence</span><span class="val growth">On app open + on log save</span></div>
+      </div>
+
+      <div class="ts-personas-row">
+        <span class="pchip peak">Linda</span><span class="pchip peak">Mike</span><span class="pchip">Sarah</span><span class="pchip">Jessica</span><span class="pchip">Rachel</span>
+      </div>
+
+      <div class="ts-anti">
+        <h5>Anti-patterns</h5>
+        <ul>
+          <li><b>"Today's tip" of the day</b> — never AI-generated motivational. Only data-justified nudges.</li>
+          <li><b>Streak gamification</b> — confetti, fireworks, level-up. Streak is mentioned, not celebrated.</li>
+          <li><b>Severity badge in red</b> — use terracotta verdict triad, not stoplight red/yellow/green.</li>
+          <li><b>Forced check-in interruptions</b> — modal "Did you log today?" pops. Use gentle inline prompt, never modal.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COACH -->
+    <div class="ts-panel" id="t2">
+      <h4>Coach · AI chat flagship</h4>
+      <p class="ts-purpose-line">DeepSeek V3 + on-device sqlite-vec RAG retrieves from AAD/NEA/Mayo/AAFP/PubMed corpus. Persona-aware tone via system prompt. Refusal pivots for diagnosis/medication. Safety strip permanent. Night mode 22:00–06:00 auto.</p>
+
+      <div class="ts-section">
+        <h5>Layout blocks</h5>
+        <div class="wf">Header: Coach name + persona indicator ("Speaking with Salvora · TSW-aware") + History list</div>
+        <div class="wf ai">Quick prompts row: "Is this serious?" / "What's my pattern?" / "Help me prep for derm" / "What does POEM mean?"</div>
+        <div class="wf">Chat thread — user bubbles right (cta-soft) · assistant bubbles left (ai-bg) · citations inline</div>
+        <div class="wf cta">Composer: text + voice mic · "Send"</div>
+        <div class="wf"><b>Footer:</b> Safety strip — "⚠️ Salvora is for tracking & education, not a diagnosis."</div>
+      </div>
+
+      <div class="ts-section">
+        <h5>RAG corpus (P0)</h5>
+        <div class="ts-blocks">
+          <div class="ts-block"><b>AAD</b>American Academy of Dermatology · public eczema guidelines<span class="src">aad.org/public/diseases/eczema</span></div>
+          <div class="ts-block"><b>NEA</b>National Eczema Association · patient education<span class="src">nationaleczema.org</span></div>
+          <div class="ts-block"><b>Mayo</b>Mayo Clinic atopic dermatitis overview<span class="src">mayoclinic.org</span></div>
+          <div class="ts-block"><b>AAFP</b>AAFP family medicine guidelines<span class="src">aafp.org/afp</span></div>
+          <div class="ts-block"><b>PubMed</b>peer-reviewed eczema/TSW research abstracts (curated subset)<span class="src">pubmed.ncbi.nlm.nih.gov</span></div>
+        </div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Persona-aware tone (system prompt)</h5>
+        <ul class="ts-list">
+          <li><b>Mike (anxious dad):</b> lead with triage flags · short sentences · fever/oozing/spreading callouts · "wait til morning" vs "call now"</li>
+          <li><b>Jessica (TSW):</b> TSW-neutral framing · cite ITSAN + PubMed · no steroid push, no anti-steroid extremism</li>
+          <li><b>Linda (mom):</b> pediatric-specific guidance · pediatric dose terminology · derm prep checklists</li>
+          <li><b>Sarah (Dupixent):</b> biologic-aware · injection schedule · insurance appeal language</li>
+          <li><b>Rachel (millennial):</b> conversational · minimal jargon · skincare-vocabulary-aware</li>
+        </ul>
+      </div>
+
+      <div class="ts-section">
+        <h5>Refusal pivots (compliance-locked)</h5>
+        <ul class="ts-list">
+          <li><b>"Do I have eczema?"</b> → "I can't diagnose. Track your symptoms here, then share the report with a dermatologist for diagnosis."</li>
+          <li><b>"What medication should I take?"</b> → "Medication decisions need a doctor. Here's how to prep for the appointment: [POEM summary, trigger list, photo timeline]."</li>
+          <li><b>"Is this cancer?"</b> → "Concerning skin changes (sudden, asymmetric, bleeding, changing) need urgent dermatology eval. Please see a doctor today."</li>
+          <li><b>"Can I stop my Dupixent?"</b> → "Stopping prescribed meds needs your prescriber. Salvora helps you log symptoms to share with them — not advise on med changes."</li>
+        </ul>
+      </div>
+
+      <div class="ts-meta-row">
+        <div class="ts-meta"><span class="lab">Model</span><span class="val">DeepSeek V3 (via Cloudflare Worker)</span></div>
+        <div class="ts-meta"><span class="lab">Retrieval</span><span class="val growth">sqlite-vec on-device · top-5 chunks</span></div>
+        <div class="ts-meta"><span class="lab">Privacy</span><span class="val">redacted text only · no photos · no PII</span></div>
+        <div class="ts-meta"><span class="lab">Mode</span><span class="val cta">Night auto 22:00–06:00</span></div>
+      </div>
+
+      <div class="ts-personas-row">
+        <span class="pchip peak">Mike</span><span class="pchip peak">Sarah</span><span class="pchip peak">Jessica</span><span class="pchip">Linda</span><span class="pchip">Rachel</span>
+      </div>
+
+      <div class="ts-anti">
+        <h5>Anti-patterns</h5>
+        <ul>
+          <li><b>Diagnosis language</b> — never "you have eczema", "this is atopic dermatitis"</li>
+          <li><b>Medication advice</b> — never "try X cream", "increase your dose"</li>
+          <li><b>Anti-pharma extremism</b> — never "steroids ruin your skin"</li>
+          <li><b>Pro-pharma push</b> — never "consider Dupixent"</li>
+          <li><b>Hallucinated citations</b> — every claim must trace to a real RAG chunk; fall back to "I don't have a confident source for that"</li>
+          <li><b>Missing safety strip</b> — strip persists on every chat screen, no exceptions</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- +LOG -->
+    <div class="ts-panel" id="t3">
+      <h4>+Log · center FAB · primary daily ritual</h4>
+      <p class="ts-purpose-line">Не таб — центральная primary CTA, 3-tap photo flare capture. Vision API on-device severity inference (POEM-aligned). Inserts into Journal + Today hero + Coach context.</p>
+
+      <div class="ts-section">
+        <h5>Flow (3 taps total)</h5>
+        <div class="wf cta"><b>Tap 1:</b> FAB → camera with calibration overlay (good light hint, neutral background, body-area selector)</div>
+        <div class="wf">Auto-crop affected area · manual override · 1 photo OR up to 3 angles (Premium)</div>
+        <div class="wf ai">Vision API severity infer → "Looks Moderate (POEM ~14). Adjust?"</div>
+        <div class="wf cta"><b>Tap 2:</b> User confirms slider OR adjusts</div>
+        <div class="wf">Optional: itch slider 0-10 · sleep impact 0-10 · trigger chips (dairy · stress · new product · pollen · low sleep)</div>
+        <div class="wf">Optional: voice note 30s (transcribed for Coach)</div>
+        <div class="wf cta"><b>Tap 3:</b> Save → "Logged. Salvora's tracking your flare." toast → return to Today</div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Insertion targets (saving updates 4 surfaces)</h5>
+        <div class="ts-blocks">
+          <div class="ts-block"><b>Today hero</b>POEM today number re-computes<span class="src">FlareLog.last → POEM</span></div>
+          <div class="ts-block"><b>Journal timeline</b>new entry appears in grid<span class="src">FlareLog INSERT</span></div>
+          <div class="ts-block"><b>Coach context</b>system prompt updates with "last flare: Moderate, inner elbow"<span class="src">CoachContext.refresh()</span></div>
+          <div class="ts-block"><b>Trigger correlation</b>engine re-runs with new data point<span class="src">TriggerCorrelation.recompute()</span></div>
+        </div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Free vs Paid</h5>
+        <ul class="ts-list">
+          <li><b>Onboarding free:</b> 3 free logs (severity inference + trigger preview) — WOW moment before paywall</li>
+          <li><b>After free quota:</b> hard paywall on FAB tap · "Track unlimited flares with 7-day trial"</li>
+          <li><b>Premium:</b> unlimited logs · multi-angle capture · voice notes</li>
+          <li><b>Family tier:</b> profile selector inside +Log flow (which family member?)</li>
+        </ul>
+      </div>
+
+      <div class="ts-meta-row">
+        <div class="ts-meta"><span class="lab">Capture</span><span class="val">AVFoundation · on-device</span></div>
+        <div class="ts-meta"><span class="lab">Severity infer</span><span class="val growth">Vision API · CoreML POEM model</span></div>
+        <div class="ts-meta"><span class="lab">Storage</span><span class="val">Local sandbox · no iCloud default</span></div>
+        <div class="ts-meta"><span class="lab">Time-to-save</span><span class="val cta">&lt;30 seconds</span></div>
+      </div>
+
+      <div class="ts-personas-row">
+        <span class="pchip peak">Rachel</span><span class="pchip peak">Jessica</span><span class="pchip">Linda</span><span class="pchip">Mike</span><span class="pchip">Sarah</span>
+      </div>
+
+      <div class="ts-anti">
+        <h5>Anti-patterns</h5>
+        <ul>
+          <li><b>Required text descriptions</b> — photo alone is sufficient; everything else optional</li>
+          <li><b>Mandatory body-part picker</b> — auto-detect if possible; user override only</li>
+          <li><b>Severity confirmation modal</b> — slider with default = inferred value, swipe to dismiss</li>
+          <li><b>Multi-step wizards</b> — collapse to single screen with progressive disclosure</li>
+          <li><b>Forcing voice note</b> — optional only, never default</li>
+          <li><b>Cloud upload at save</b> — local first; iCloud opt-in via Insights</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- JOURNAL -->
+    <div class="ts-panel" id="t4">
+      <h4>Journal · photo timeline + visual proof</h4>
+      <p class="ts-purpose-line">Chronological photo grid + POEM trend chart + ghost-overlay before/after slider + body-map heatmap + anonymized share-card export. Rachel's creative practice. Jessica's healing diary. Sarah's biologic proof.</p>
+
+      <div class="ts-section">
+        <h5>Layout blocks</h5>
+        <div class="wf">Header: time range toggle (week / month / 90d / all) · view toggle (grid / timeline / map)</div>
+        <div class="wf">POEM line chart — 7d/30d/90d trend with severity-band shading</div>
+        <div class="wf">Photo grid — thumbnails with severity verdict-pill overlay (Mild/Mod/Severe)</div>
+        <div class="wf growth">Ghost-overlay slider — drag to compare any two dates (Folik reuse)</div>
+        <div class="wf">Body-map heatmap — last 30 days, areas hot/cold by flare frequency</div>
+        <div class="wf cta">Share-card export — anonymized, sage/cream design, no face, POEM trend + severity</div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Persona widgets (conditional per-cohort)</h5>
+        <div class="ts-blocks">
+          <div class="ts-block"><b>Jessica · TSW Timeline</b>milestone markers (3mo · 6mo · 9mo · 1y) overlaid on POEM<span class="src">FlareLog × TSWMilestone</span></div>
+          <div class="ts-block"><b>Sarah · Biologic Overlay</b>injection dates × POEM scatter (does Dupixent correlate with POEM drop?)<span class="src">TreatmentLog.biologic × FlareLog</span></div>
+          <div class="ts-block"><b>Linda · Family compare</b>switch between profiles · side-by-side POEM<span class="src">Profile × FlareLog</span></div>
+          <div class="ts-block"><b>Rachel · Aesthetic mode</b>oversized grid, no overlay UI chrome — pure photo wall<span class="src">UI Mode toggle</span></div>
+        </div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Free vs Paid</h5>
+        <ul class="ts-list">
+          <li><b>Free:</b> Last 7 days visible, grid only, no ghost overlay</li>
+          <li><b>Premium:</b> Unlimited history · ghost overlay · share-card export · persona widgets</li>
+        </ul>
+      </div>
+
+      <div class="ts-meta-row">
+        <div class="ts-meta"><span class="lab">Privacy</span><span class="val growth">Local-first · no cloud default</span></div>
+        <div class="ts-meta"><span class="lab">Share-card</span><span class="val">Anonymized · no face · severity + trend only</span></div>
+        <div class="ts-meta"><span class="lab">Ghost-overlay</span><span class="val">Folik shader reuse</span></div>
+        <div class="ts-meta"><span class="lab">Body-map</span><span class="val cta">Salvora-only feature</span></div>
+      </div>
+
+      <div class="ts-personas-row">
+        <span class="pchip peak">Rachel</span><span class="pchip peak">Sarah</span><span class="pchip peak">Jessica</span><span class="pchip">Linda</span><span class="pchip">Mike</span>
+      </div>
+
+      <div class="ts-anti">
+        <h5>Anti-patterns</h5>
+        <ul>
+          <li><b>Public feed</b> — no community gallery, no "see other users' progress"</li>
+          <li><b>Face-recognizable previews</b> — auto-crop to body area only; share-card never includes face</li>
+          <li><b>Auto-cloud sync by default</b> — iCloud opt-in via Insights only</li>
+          <li><b>Severity color-coding as red/yellow/green</b> — use verdict triad (sage/terracotta/terracotta-deep)</li>
+          <li><b>"Worst photo" badges</b> — no shame mechanics; verdict-pill only</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- INSIGHTS -->
+    <div class="ts-panel" id="t5">
+      <h4>Insights · triggers + treatments + account</h4>
+      <p class="ts-purpose-line">Trigger correlation card (hero · top). Trigger library. Treatments log (emollients · prescriptions · biologic injections). Doctor PDF generator. Apple Health pull-in. Family/profile management. Subscription, privacy, export, delete.</p>
+
+      <div class="ts-section">
+        <h5>Layout (sections, scrollable)</h5>
+        <div class="wf growth"><b>Hero · Trigger Correlation</b> — "Worst flares correlate with: dairy 3.2× · low sleep 2.7× · pollen days 1.8×" + "Open detail →"</div>
+        <div class="wf">Trigger Library — food / environment / products / stress / sleep / weather · canonical + user-custom</div>
+        <div class="wf">Treatments — active list (emollient · TCS · biologic) + history + reminder schedule</div>
+        <div class="wf cta">Doctor PDF — preview + "Generate &amp; share"</div>
+        <div class="wf">Apple Health — opt-in toggles (sleep · HRV · environment)</div>
+        <div class="wf">Family — profile management (Family tier)</div>
+        <div class="wf">Account — subscription · restore · privacy · export · delete · contact</div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Trigger correlation engine output (Module 4.0 wedge)</h5>
+        <div class="ts-blocks">
+          <div class="ts-block"><b>Correlation card</b>Min n=10 logs · top-3 correlations ≥1.5×<span class="src">TriggerCorrelation.detect()</span></div>
+          <div class="ts-block"><b>Confidence band</b>n=10 → "early signal" · n=30 → "confirmed pattern" · n=60+ → "strong correlation"<span class="src">stat power proxy</span></div>
+          <div class="ts-block"><b>Coach integration</b>nudge in Today if new ≥3× correlation surfaces<span class="src">TriggerCorrelation.new_findings</span></div>
+          <div class="ts-block"><b>Doctor PDF</b>top-5 correlations rendered in printable card<span class="src">PDFExport.triggers</span></div>
+        </div>
+      </div>
+
+      <div class="ts-section">
+        <h5>Doctor PDF contents</h5>
+        <ul class="ts-list">
+          <li><b>Page 1:</b> POEM 90-day timeline chart · severity trend · % time in each severity band</li>
+          <li><b>Page 2:</b> Top trigger correlations · sleep × POEM scatter · adherence summary</li>
+          <li><b>Page 3:</b> Last 10 photos grid (anonymized: body area, no face) · timestamps</li>
+          <li><b>Page 4:</b> Active treatments + side-effects log · injection dates (Sarah)</li>
+          <li><b>Page 5:</b> User notes / questions for derm · prep checklist</li>
+        </ul>
+      </div>
+
+      <div class="ts-meta-row">
+        <div class="ts-meta"><span class="lab">Tier gates</span><span class="val">PDF + correlations = Premium</span></div>
+        <div class="ts-meta"><span class="lab">Family management</span><span class="val cta">Family tier $79.99</span></div>
+        <div class="ts-meta"><span class="lab">Apple Health</span><span class="val growth">Opt-in · on-device only</span></div>
+        <div class="ts-meta"><span class="lab">Data export</span><span class="val">JSON + photos zip · always free</span></div>
+      </div>
+
+      <div class="ts-personas-row">
+        <span class="pchip peak">Linda</span><span class="pchip peak">Jessica</span><span class="pchip peak">Sarah</span><span class="pchip">Mike</span><span class="pchip">Rachel</span>
+      </div>
+
+      <div class="ts-anti">
+        <h5>Anti-patterns</h5>
+        <ul>
+          <li><b>Trigger correlation with n &lt; 10</b> — never surface unstable patterns; show "keep logging to see patterns"</li>
+          <li><b>Diet/nutrition advice generation</b> — Salvora reports user-logged trigger correlation; doesn't prescribe diets</li>
+          <li><b>Active medication suggestions</b> — Treatments tab is a log, not a recommender</li>
+          <li><b>Family profile data sharing</b> — each profile fully isolated; no cross-profile leakage</li>
+          <li><b>Doctor PDF with identifying photos</b> — body area only, never face</li>
+          <li><b>"Plan your week" gamification</b> — Insights is a reflective surface, not a goal-setter</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Tab switcher
+  document.querySelectorAll('.ts-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.getAttribute('data-panel');
+      document.querySelectorAll('.ts-tab').forEach(t => t.classList.toggle('active', t === btn));
+      document.querySelectorAll('.ts-panel').forEach(p => p.classList.toggle('active', p.id === panel));
+    });
+  });
+</script>
+
+<footer style="margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--divider); color: var(--ink-3); font-size: 12px;">
+  <p>Salvora — Design System Workbench · Round 1 · 2026-05-11 · Modules 1–5 (Screenshots and Paywall = separate documents).</p>
+  <p style="margin-top: 6px;">Locked palette · Locked tab architecture · Closest sibling: <b style="color: var(--cta-deep);">15-Folik (92% structural match)</b>.</p>
+</footer>
+
+</body>
+</html>
