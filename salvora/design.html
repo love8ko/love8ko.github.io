@@ -712,6 +712,195 @@
   .sib-card .reason { font-size: 12.5px; color: var(--ink); line-height: 1.5; margin: 8px 0 0; }
   .sib-card .diff { font-size: 11.5px; color: var(--ink-2); line-height: 1.45; margin-top: 6px; }
   .sib-card .diff b { color: var(--ink); }
+
+  /* ── Module 6 · Screenshots ── */
+  .cheat-banner {
+    background: linear-gradient(180deg, #3F5A3B 0%, #2E4429 100%);
+    color: #F5EBD7;
+    border-radius: 18px;
+    padding: 18px 22px 14px;
+    margin: 14px 0 18px;
+    border: 1px solid rgba(201,125,96,0.40);
+    box-shadow: 0 6px 24px rgba(63,90,59,0.18);
+  }
+  .cheat-banner .ch-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; letter-spacing: 0.12em; font-weight: 800;
+    color: #E8B89E; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .cheat-banner h3 { margin: 0 0 8px; color: #F5EBD7; font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
+  .cheat-banner p { margin: 0; color: #DCE5D6; font-size: 13.5px; line-height: 1.55; }
+  .cheat-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+  @media (max-width: 700px) { .cheat-steps { grid-template-columns: 1fr; } }
+  .cheat-step {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px; padding: 10px 12px;
+    font-size: 12.5px; color: #E8E2D0; line-height: 1.45;
+  }
+  .cheat-step b { color: #F5EBD7; display: block; font-size: 12px; margin-bottom: 3px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .cheat-step.s1 { border-left: 3px solid #C97D60; }
+  .cheat-step.s2 { border-left: 3px solid #B0C4A4; }
+  .cheat-step.s3 { border-left: 3px solid #D4A88E; }
+
+  .cheat-table-wrap {
+    margin-top: 16px;
+    background: #1E1A14; color: #F0EBDC;
+    border-radius: 14px; padding: 0;
+    overflow-x: auto;
+    border: 1px solid #3A3024;
+  }
+  table.cheat { width: 100%; border-collapse: collapse; font-size: 13px; font-family: ui-monospace, "SF Mono", "Menlo", monospace; }
+  table.cheat thead th {
+    background: #2A241B; color: #C8D5BE;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 700; padding: 10px 12px; text-align: left;
+    border-bottom: 1px solid #3A3024; white-space: nowrap;
+  }
+  table.cheat tbody td { padding: 10px 12px; border-bottom: 1px solid #2A241B; vertical-align: top; line-height: 1.4; }
+  table.cheat tbody tr:last-child td { border-bottom: none; }
+  table.cheat tbody tr.killer-row td { background: rgba(201,125,96,0.07); }
+  table.cheat td.cell-num { font-weight: 800; color: #C97D60; width: 28px; }
+  table.cheat td.cell-mode { width: 70px; }
+  .cheat-mode { display: inline-block; padding: 2px 7px; border-radius: 5px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; }
+  .cheat-mode.dark { background: #0F0D08; color: #C97D60; border: 1px solid #2A1810; }
+  .cheat-mode.light { background: #F0EBDC; color: #3F5A3B; }
+  .cheat-mode.brand { background: #3F5A3B; color: #DCE5D6; border: 1px solid #587053; }
+  .cheat-str { display: inline-block; background: #2A241B; color: #F0EBDC; border: 1px solid #3A3024; border-radius: 5px; padding: 3px 8px; font-size: 12.5px; word-break: break-word; }
+  .cheat-str.title { font-weight: 800; letter-spacing: 0.02em; color: #FFE9D6; }
+  .cheat-str.sub { color: #DCE5D6; font-weight: 500; }
+  .cheat-str.hero { background: rgba(176,196,164,0.10); border-color: rgba(176,196,164,0.30); color: #DDEEC9; }
+  .cheat-persona { color: #9AAA8E; font-size: 11px; letter-spacing: 0.04em; }
+
+  .cheat-donts {
+    margin-top: 14px;
+    background: linear-gradient(180deg, #2A1212 0%, #1F0E0E 100%);
+    border: 1px solid #5C2424; border-radius: 14px; padding: 14px 18px;
+  }
+  .cheat-donts .dt-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    color: #E89090; font-size: 11px; letter-spacing: 0.10em;
+    font-weight: 800; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .cheat-donts h4 { margin: 0 0 8px; color: #FFE0E0; font-size: 16px; font-weight: 800; }
+  .cheat-donts ul {
+    margin: 0; padding: 0; list-style: none;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 6px 16px;
+  }
+  .cheat-donts li { color: #F2D4D4; font-size: 12.5px; line-height: 1.5; padding-left: 18px; position: relative; }
+  .cheat-donts li::before { content: "✗"; position: absolute; left: 0; color: #E07070; font-weight: 800; }
+  .cheat-donts li b { color: #FFE0E0; }
+
+  .cheat-checklist {
+    margin-top: 14px;
+    background: #F0F5EC;
+    border: 1px solid #BCD0B0; border-radius: 14px; padding: 14px 18px;
+  }
+  .cheat-checklist .ck-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    color: #2F4A2A; font-size: 11px; letter-spacing: 0.10em;
+    font-weight: 800; text-transform: uppercase; margin-bottom: 4px;
+  }
+  .cheat-checklist h4 { margin: 0 0 10px; color: #1F3D24; font-size: 16px; font-weight: 800; }
+  .cheat-checklist ol {
+    margin: 0; padding: 0; list-style: none; counter-reset: ck;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 6px 16px;
+  }
+  .cheat-checklist li { color: #1F3D24; font-size: 12.5px; line-height: 1.5; padding-left: 26px; position: relative; counter-increment: ck; }
+  .cheat-checklist li::before {
+    content: counter(ck); position: absolute; left: 0; top: 1px;
+    width: 18px; height: 18px;
+    background: #3F5A3B; color: #fff; border-radius: 5px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cheat-checklist li b { color: #1F3D24; }
+
+  /* Visual reference cards (designer mockups) */
+  .ds-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 18px; }
+  .ds-grid-8 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+  .ds-card {
+    background: var(--card); border-radius: 18px;
+    border: 1px solid var(--divider); padding: 14px 14px 16px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .ds-card.killer { border: 2px solid var(--cta); box-shadow: 0 4px 22px rgba(201,125,96,0.12); }
+  .ds-card .ds-num { font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; color: var(--ink-3); }
+  .ds-card.killer .ds-num { color: var(--cta-deep); }
+  .ds-phone {
+    background: #1A1A1A; border-radius: 24px;
+    padding: 14px 8px 8px; position: relative;
+    box-shadow: 0 6px 18px rgba(63,90,59,0.14);
+    margin: 0 auto;
+  }
+  .ds-phone::before {
+    content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+    width: 70px; height: 16px; border-radius: 0 0 14px 14px; background: #1A1A1A;
+  }
+  .ds-screen {
+    background: var(--card); border-radius: 14px;
+    min-height: 240px; padding: 14px 12px;
+    display: flex; flex-direction: column; gap: 8px;
+    color: var(--ink); font-size: 11.5px;
+  }
+  .ds-screen.dark { background: #1E1A14; color: #F5EBD7; }
+  .ds-screen.brand { background: #3F5A3B; color: #F5EBD7; }
+  .ds-card.killer .ds-screen { min-height: 280px; }
+  .ds-headline { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 16px; line-height: 1.22; color: var(--ink); margin: 0; letter-spacing: -0.01em; }
+  .ds-card.killer .ds-headline { font-size: 19px; }
+  .ds-sub { font-size: 12.5px; color: var(--ink-2); line-height: 1.4; margin: 0; font-weight: 600; }
+  .ds-brief { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; line-height: 1.5; padding-top: 8px; border-top: 1px dashed var(--divider); }
+  .ds-brief:first-of-type { border-top: 1px solid var(--divider); padding-top: 9px; }
+  .ds-l { font-size: 9.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; width: 60px; flex-shrink: 0; padding-top: 2px; }
+  .ds-l.show { color: var(--brand-deep); }
+  .ds-l.move { color: var(--cta-deep); }
+  .ds-brief-text { color: var(--ink); }
+
+  /* Wedge cards */
+  .wedge-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; margin-top: 16px; }
+  .wedge {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px; padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .wedge .wh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .wedge .wh b { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .wedge .ww-want { font-size: 12.5px; color: var(--ink); line-height: 1.5; font-style: italic; border-left: 3px solid var(--cta-soft); padding-left: 10px; }
+  .wedge .ww-row { display: flex; gap: 8px; font-size: 12.5px; align-items: flex-start; }
+  .wedge .ww-l { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); width: 78px; flex-shrink: 0; padding-top: 2px; }
+  .wedge .ww-show { color: var(--ink); line-height: 1.45; }
+  .wedge .ww-show b { color: var(--brand-deep); }
+
+  /* Top-3 killer cards */
+  .ss-killer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
+  .ss-killer { background: var(--card); border-radius: 18px; border: 1px solid var(--divider); padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 10px; position: relative; }
+  .ss-killer.rank1 { border: 2px solid var(--cta); box-shadow: 0 4px 22px rgba(201,125,96,0.14); }
+  .ss-killer.rank2 { border-color: var(--brand); }
+  .ss-killer.rank3 { border-color: var(--growth); }
+  .ss-rank-badge { position: absolute; top: -10px; left: 14px; background: var(--brand); color: #F5EBD7; border-radius: 999px; padding: 3px 10px; font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; }
+  .ss-killer.rank1 .ss-rank-badge { background: var(--cta); }
+  .ss-killer.rank3 .ss-rank-badge { background: var(--growth); }
+  .ss-killer h4 { font-size: 15px; font-weight: 800; margin: 4px 0 0; color: var(--ink); font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .ss-killer .ss-tag { font-size: 10.5px; color: var(--ink-3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  .ss-killer .ss-mockup { background: var(--brand-deep); color: #F5EBD7; border-radius: 14px; padding: 12px 13px; min-height: 180px; display: flex; flex-direction: column; gap: 8px; font-size: 12px; }
+  .ss-killer.rank1 .ss-mockup { background: #1E1A14; }
+  .ss-killer .ss-overlay-text { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 16px; line-height: 1.2; color: #F5EBD7; }
+  .ss-killer .ss-overlay-text em { color: var(--cta); font-style: normal; }
+  .ss-killer .ss-bubble { background: var(--ai-bg); color: var(--ink); border-radius: 10px; padding: 8px 10px; font-size: 11px; line-height: 1.4; }
+  .ss-killer .ss-cite { font-family: ui-monospace, "SF Mono", monospace; font-size: 9.5px; color: var(--cta); border-top: 1px dashed rgba(201,125,96,0.5); padding-top: 4px; margin-top: 4px; }
+  .ss-killer .ss-bignum { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 36px; line-height: 1; color: #B0C4A4; }
+  .ss-killer .ss-density-label { font-size: 10px; color: #DCE5D6; letter-spacing: 0.06em; text-transform: uppercase; }
+  .ss-killer .ss-why { font-size: 12px; color: var(--ink); line-height: 1.5; border-left: 3px solid var(--cta); padding-left: 10px; }
+  .ss-killer .ss-why b { color: var(--brand-deep); }
+  .ss-killer .ss-meta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 10.5px; color: var(--ink-2); padding-top: 6px; border-top: 1px solid var(--divider); }
+  .ss-killer .ss-meta-row b { color: var(--ink); display: block; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }
+
+  .v2-callout { background: linear-gradient(135deg, var(--cta-soft) 0%, #fff 80%); border: 1px solid #ECC4B0; border-radius: 14px; padding: 14px 18px; margin-top: 14px; font-size: 12.5px; color: var(--ink); line-height: 1.55; }
+  .v2-callout b { color: var(--cta-deep); }
 </style>
 </head>
 <body>
@@ -725,6 +914,7 @@
   <a href="#module-3" class="is-module"><span class="nav-num">M3</span>Roadmap</a>
   <a href="#module-4" class="is-module"><span class="nav-num">M4</span>Tabs</a>
   <a href="#module-5" class="is-module"><span class="nav-num">M5</span>Screens</a>
+  <a href="#module-6" class="is-module"><span class="nav-num">M6</span>Screenshots</a>
   <span class="sep"></span>
   <a href="#sibling">↪ Sibling</a>
   <a href="#tokens">tokens</a>
@@ -1757,9 +1947,529 @@
   });
 </script>
 
+<!-- ===== MODULE 6 — APP STORE SCREENSHOTS ===== -->
+<div class="module-banner" id="module-6">
+  <span class="num">МОДУЛЬ 6</span>
+  <h2>App Store Screenshots</h2>
+  <p class="desc"><strong style="color:#FFE9D6">⇣ Дизайнер открыл первый раз? Читай только §6.0 CHEAT SHEET.</strong> Этого хватит чтобы отрисовать все 8 фреймов. Остальное (6.0a визуал-референсы, 6.1 что хотят юзеры, 6.2 консилиум-голоса, 6.3 killer-3, 6.7 anti-patterns, 6.8 checklist) — контекст для отклонений.</p>
+</div>
+
+<h2 id="ss-cheat" style="margin-top: 18px;">6.0 · CHEAT SHEET — copy strings, draw heroes, ship</h2>
+
+<div class="cheat-banner">
+  <div class="ch-eyebrow">⚡ START HERE · этого хватит для отгрузки</div>
+  <h3>8 фреймов. 8 строк TITLE + 8 SUB + 8 hero-элементов. Возьми буквально.</h3>
+  <p>App Store thumb-превью показывает только <strong>3 первые скриншота</strong> — они решают покупку. Frames 1-2-3 = killer (terracotta-подсвечены ниже), 4-8 = persona-depth. <strong>Не переписывай TITLE/SUB в свободной форме</strong> — копи прошла консилиум и locked. Все скриншоты — на иллюстрациях, без реальных фото eczema (compliance — aversive scroll-kill).</p>
+  <div class="cheat-steps">
+    <div class="cheat-step s1"><b>1 · Read row</b>Одна строка таблицы = один скриншот. 8 строк = вся галерея.</div>
+    <div class="cheat-step s2"><b>2 · Copy strings</b>TITLE и SUB — буквально copy-paste в Figma. SF Pro Display Black + Medium. Не редактируй копи.</div>
+    <div class="cheat-step s3"><b>3 · Draw HERO</b>Hero — обязательный элемент внутри phone-mockup (число, citation chip, badge). Без него фрейм не пройдёт ревью.</div>
+  </div>
+</div>
+
+<div class="cheat-table-wrap">
+  <table class="cheat">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>MODE</th>
+        <th>TITLE (top, all-caps)</th>
+        <th>SUB (one line)</th>
+        <th>HERO INSIDE PHONE</th>
+        <th>PERSONA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="killer-row">
+        <td class="cell-num">1</td>
+        <td class="cell-mode"><span class="cheat-mode dark">DARK</span></td>
+        <td><span class="cheat-str title">STOP DOOM-SCROLLING.</span></td>
+        <td><span class="cheat-str sub">AI Coach with AAD + NEA citations</span></td>
+        <td><span class="cheat-str hero">chat bubble + terracotta cite chip<br>«AAD · atopic dermatitis · 2023 →»</span></td>
+        <td class="cheat-persona">Mike · Jessica · Linda</td>
+      </tr>
+      <tr class="killer-row">
+        <td class="cell-num">2</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">DAIRY: 3.2× WORSE.</span></td>
+        <td><span class="cheat-str sub">Trigger correlation, auto-detected</span></td>
+        <td><span class="cheat-str hero">trigger card «×3.2» in terracotta + 14-day chart<br>EXAMPLE watermark</span></td>
+        <td class="cheat-persona">Linda · Jessica · Sarah</td>
+      </tr>
+      <tr class="killer-row">
+        <td class="cell-num">3</td>
+        <td class="cell-mode"><span class="cheat-mode brand">BRAND</span></td>
+        <td><span class="cheat-str title">FREE FLARE CHECK.</span></td>
+        <td><span class="cheat-str sub">30 seconds · No signup</span></td>
+        <td><span class="cheat-str hero">POEM result card «Moderate · 14/28»<br>+ sage badge «✓ Free · No signup required»</span></td>
+        <td class="cheat-persona">Linda · Mike (top-of-funnel)</td>
+      </tr>
+      <tr>
+        <td class="cell-num">4</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">KNOW YOUR POEM.</span></td>
+        <td><span class="cheat-str sub">5-point severity, validated</span></td>
+        <td><span class="cheat-str hero">5-step severity scale, current «Mod-Severe» in terracotta-deep</span></td>
+        <td class="cheat-persona">All 5/5</td>
+      </tr>
+      <tr>
+        <td class="cell-num">5</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">SEE WHAT'S HEALING.</span></td>
+        <td><span class="cheat-str sub">90-day ghost-overlay photo journal</span></td>
+        <td><span class="cheat-str hero">sage hero «–7 POEM» + Day 1 ↔ Day 90 slider<br>EXAMPLE watermark · body-area only (no face)</span></td>
+        <td class="cheat-persona">Jessica · Sarah · Rachel</td>
+      </tr>
+      <tr>
+        <td class="cell-num">6</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">DOCTOR-READY IN ONE TAP.</span></td>
+        <td><span class="cheat-str sub">POEM timeline + triggers + photo grid</span></td>
+        <td><span class="cheat-str hero">PDF preview card «5 pages» + AirDrop icon<br>«AAD · NEA · Mayo» source chips</span></td>
+        <td class="cheat-persona">Linda · Sarah</td>
+      </tr>
+      <tr>
+        <td class="cell-num">7</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">TRACK YOUR CHILD TOO.</span></td>
+        <td><span class="cheat-str sub">Family tier · up to 5 profiles</span></td>
+        <td><span class="cheat-str hero">profile switcher header «Emma · 3y ▾» + dual POEM hero<br>NO identifiable child face — illustration only</span></td>
+        <td class="cheat-persona">Linda</td>
+      </tr>
+      <tr>
+        <td class="cell-num">8</td>
+        <td class="cell-mode"><span class="cheat-mode light">LIGHT</span></td>
+        <td><span class="cheat-str title">YOUR BIOLOGIC IS WORKING.</span></td>
+        <td><span class="cheat-str sub">Dupixent × POEM injection overlay</span></td>
+        <td><span class="cheat-str hero">scatter chart with injection markers<br>+ sage trend line «–9 POEM since m3»<br>EXAMPLE watermark</span></td>
+        <td class="cheat-persona">Sarah</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="cheat-donts">
+  <div class="dt-eyebrow">⛔ DO NOT — banned forever (compliance + Apple review safety)</div>
+  <h4>Если увидишь это в макете — переделывай. Без исключений.</h4>
+  <ul>
+    <li><b>Real eczema close-up photos</b> на screenshot — aversive scroll-kill + compliance (no identifiable skin/face). Illustrations or anonymized body-area only.</li>
+    <li><b>Identifiable child faces</b> — Slot 7 family. Use back-of-head, hands, or illustration. Never frontal child face.</li>
+    <li><b>Diagnosis language</b> на TITLE: «Cure your eczema / Heal your skin / Eliminate flares» — banned. Allowed: «Track / Find / Show / See».</li>
+    <li><b>Stoplight red severity</b> (красный/жёлтый/зелёный) — use verdict triad (sage/terracotta/terracotta-deep). Red triggers panic — Mike at 3am опасно.</li>
+    <li><b>Anti-pharma extremism</b> в TITLE / SUB: «Stop using steroids / Pharma lies». Salvora neutral — Jessica TSW аудитория поддерживается через tone, не через манифесты.</li>
+    <li><b>Fake user count badges</b>: «10K downloads / ★★★★★ 4.9» когда у нас 0 рейтингов. Apple review-bait. Badge только после 25+ реальных отзывов.</li>
+    <li><b>Vendor names</b> we don't cite: можно AAD/NEA/Mayo/AAFP/PubMed. Нельзя Dupixent/Pfizer/Sanofi на marketing.</li>
+    <li><b>EXAMPLE watermark пропущен</b> на slots <strong>2 / 5 / 8</strong> (mocked metrics — нужно дисклеймить).</li>
+    <li><b>Drop shadows / outline / gradient text</b> — solid weight = trust. Health-категория не lifestyle.</li>
+  </ul>
+</div>
+
+<div class="cheat-checklist">
+  <div class="ck-eyebrow">✓ PRE-EXPORT CHECKLIST — 8 пунктов перед PNG export</div>
+  <h4>Готов отдать макет? Прогони через эти 8 шагов.</h4>
+  <ol>
+    <li>Размер <b>1290×2796 PNG</b> (iPhone 6.7"), 3 файла на slot (US-EN, DE, plain)</li>
+    <li>Status bar <b>9:41</b>, full battery, full signal, no carrier name</li>
+    <li>TITLE и SUB — точные строки из §6.0 (или DE-локализация для «Neurodermitis»)</li>
+    <li>Hero element виден без скролла (см. колонку HERO)</li>
+    <li>App-Store name = <b>Salvora: Eczema Coach AI</b> (см. APP_STORE_LISTING.md)</li>
+    <li>Compliance: 0 diagnosis claims, 0 fake badges, 0 identifiable faces (особенно Slot 7)</li>
+    <li>EXAMPLE watermark на slots <b>2 / 5 / 8</b> (8-10pt, нижний правый, opacity 60%)</li>
+    <li>Slot 1 несёт «Educational, not medical advice» safety strip внутри phone-mockup</li>
+  </ol>
+</div>
+
+<!-- ===== 6.0a VISUAL REFERENCE — designer help ===== -->
+<h2 id="ss-brief" style="margin-top: 36px;">6.0a · Visual reference cards — что нарисовать</h2>
+<p class="lede"><strong>Дополнение к §6.0, не замена.</strong> Cheat sheet даёт <em>что писать</em>; ниже — <em>как должно выглядеть</em>. Каждая карточка = один скриншот: phone mockup preview · <strong>SHOW</strong> (что обязательно внутри) · <strong>ANIMATE</strong> (motion для App Preview видео). TITLE/SUB здесь — копии из §6.0 для удобства.</p>
+
+<h3 style="margin-top: 22px;">First 3 — killer scroll-stop</h3>
+<div class="ds-grid-3">
+
+  <!-- KILLER 1: AI Coach -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 1 · KILLER · DARK</span>
+    <div class="ds-phone">
+      <div class="ds-screen dark">
+        <div style="font-size:9.5px;color:#9AAA8E;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Salvora Coach · 3:14 AM</div>
+        <div style="background:#3E3325;border-radius:12px;padding:8px 10px;align-self:flex-end;max-width:78%;font-size:11px">Baby won't stop scratching. Red &amp; warm. ER?</div>
+        <div style="background:#2A241B;border:1px solid #3A3024;border-radius:12px;padding:9px 11px;line-height:1.45;font-size:10.5px">Two flags I look for: <b>fever</b> + <b>spreading redness/oozing</b> = urgent care. Warm + scratching alone, without fever, is usually a strong flare — soothe overnight, call ped in AM.<div style="border-top:1px dashed rgba(201,125,96,0.5);margin-top:6px;padding-top:5px;font-size:9px;color:#C97D60;font-family:ui-monospace,'SF Mono',monospace">AAD · atopic dermatitis · 2023 →</div></div>
+        <div style="background:rgba(201,125,96,0.10);border:1px solid rgba(201,125,96,0.30);color:#E89579;border-radius:8px;padding:5px 8px;font-size:8.5px;line-height:1.35;margin-top:auto">⚠️ Educational, not medical advice. Spreading redness or fever → call urgent care.</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Stop doom-scrolling.</h4>
+    <p class="ds-sub">AI Coach with AAD + NEA citations</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">Dark Coach surface · user bubble + AI response · <b>terracotta citation chip</b> с AAD/NEA источником · safety strip внизу (compliance)</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">AI bubble печатается word-by-word (3s) → citation chip <b>pulse-glow</b> 1× в конце · safety strip fade-in последним</span></div>
+  </div>
+
+  <!-- KILLER 2: Trigger Correlation -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 2 · KILLER · LIGHT</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="background:#3F5A3B;color:#F5EBD7;border-radius:12px;padding:14px 12px;display:flex;flex-direction:column;gap:5px">
+          <div style="font-size:9px;color:#DCE5D6;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Trigger pattern · last 14 days</div>
+          <div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:36px;line-height:1;color:#C97D60">×3.2</span><span style="font-size:11px;color:#DCE5D6">DAIRY · worst flares</span></div>
+          <div style="font-size:10px;color:#B0C4A4;font-weight:600">→ confirmed · 12 of 14 days correlate</div>
+          <div style="height:5px;background:rgba(255,255,255,0.15);border-radius:999px;margin-top:8px;overflow:hidden"><div style="height:100%;width:78%;background:#C97D60"></div></div>
+        </div>
+        <div style="background:#F5EBD7;border:1px solid #E6D9BE;border-radius:10px;padding:9px;margin-top:6px;font-size:10px;line-height:1.4;color:#5C5042">Low sleep <b style="color:#C97D60">×2.7</b> · Pollen days <b>×1.8</b> · Stress <b>×1.6</b></div>
+        <div style="font-size:8px;color:#9A8E7E;text-align:right;letter-spacing:0.08em;margin-top:auto">EXAMPLE</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Stop guessing. Find your triggers.</h4>
+    <p class="ds-sub">Dairy 3.2× · auto-detected</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text"><b>«×3.2» в terracotta — это wedge</b>. 0 конкурентов показывает auto-correlation. + secondary triggers list · EXAMPLE watermark внизу справа</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">Counter rolls 0× → 3.2× (2.5s ease-out) · bar grows последним · secondary list fade-in step-by-step</span></div>
+  </div>
+
+  <!-- KILLER 3: Free Flare Check -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 3 · KILLER · BRAND</span>
+    <div class="ds-phone">
+      <div class="ds-screen brand">
+        <div style="font-size:9px;color:#DCE5D6;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Your POEM score</div>
+        <div style="background:#F5EBD7;color:#3F5A3B;border-radius:12px;padding:14px 12px;display:flex;flex-direction:column;gap:4px;margin-top:4px">
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:30px;line-height:1;color:#C97D60">Moderate · 14<span style="font-size:14px;color:#9A8E7E"> / 28</span></div>
+          <div style="font-size:10.5px;color:#5C5042">Common pattern · trackable</div>
+          <div style="background:#DCE5D6;color:#3F5A3B;border-radius:7px;padding:5px 9px;font-size:10px;font-weight:700;align-self:flex-start;margin-top:6px">✓ Free · No signup required</div>
+        </div>
+        <div style="font-size:10.5px;color:#DCE5D6;line-height:1.45;margin-top:6px">Log a flare · see your direction.<br>Trial · cancel anytime.</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Free flare check in 30 seconds.</h4>
+    <p class="ds-sub">No signup required</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">POEM result card «Moderate 14/28» · sage <b>«✓ Free · No signup»</b> badge · мягкий upgrade tone (не aggressive)</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">POEM number <b>stamp pop-in</b> (overshoot bounce) → sage badge fade-up · subline appears 0.5s later</span></div>
+  </div>
+
+</div>
+
+<div class="v2-callout">
+  <b>Logic для killer-3:</b> Slot 1 — «у нас AI Coach с AAD/NEA citations и safety strip — НИ EczemaWise, НИ EczemaLess, НИ Atopic App этого не показывает». Slot 2 — <b>trigger correlation engine — наш уникальный wedge</b>, 0 конкурентов ships это. Slot 3 убирает страх «придётся регистрироваться» (анти-EczemaWise sunset, capture orphan-аудиторию). Эти 3 — наш scroll-stop weapon Sept-Dec 2026.
+</div>
+
+<!-- ===== 6.0b ALL 8 SLOTS · compact grid ===== -->
+<h3 style="margin-top: 32px;">All 8 slots — compact grid</h3>
+<div class="ds-grid-8">
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 1 · KILLER</span>
+    <div class="ds-phone">
+      <div class="ds-screen dark">
+        <div style="font-size:9px;color:#9AAA8E;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Coach · 3am</div>
+        <div style="background:#3E3325;border-radius:10px;padding:6px 8px;align-self:flex-end;max-width:78%;font-size:9.5px">Should I go to ER?</div>
+        <div style="background:#2A241B;border:1px solid #3A3024;border-radius:10px;padding:7px 9px;line-height:1.4;font-size:9px">Fever + spreading = ER. Without — call AM.<div style="margin-top:4px;font-size:8px;color:#C97D60;font-family:ui-monospace,'SF Mono',monospace">AAD · 2023 →</div></div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Stop doom-scrolling.</h4>
+    <p class="ds-sub">AI Coach · AAD cites</p>
+  </div>
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 2 · KILLER</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="background:#3F5A3B;color:#F5EBD7;border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:3px">
+          <div style="font-size:8px;color:#DCE5D6;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Triggers · 14d</div>
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:30px;line-height:1;color:#C97D60">×3.2</div>
+          <div style="font-size:9px;color:#DCE5D6">DAIRY</div>
+        </div>
+        <div style="font-size:8.5px;color:#5C5042;margin-top:4px">+ sleep ×2.7 · pollen ×1.8</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Find your triggers.</h4>
+    <p class="ds-sub">Dairy 3.2× · auto-detected</p>
+  </div>
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 3 · KILLER</span>
+    <div class="ds-phone">
+      <div class="ds-screen brand">
+        <div style="font-size:8px;color:#DCE5D6;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Your POEM</div>
+        <div style="background:#F5EBD7;color:#3F5A3B;border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:3px;margin-top:3px">
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:22px;line-height:1;color:#C97D60">Moderate · 14<span style="font-size:11px;color:#9A8E7E">/28</span></div>
+          <div style="background:#DCE5D6;color:#3F5A3B;border-radius:6px;padding:3px 6px;font-size:8.5px;font-weight:700;align-self:flex-start;margin-top:4px">✓ Free · No signup</div>
+        </div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Free flare check in 30 sec.</h4>
+    <p class="ds-sub">No signup required</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 4</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="font-size:9.5px;color:#3F5A3B;font-weight:700">POEM severity</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3px;margin-top:6px">
+          <div style="background:#E6D9BE;border-radius:3px;height:28px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#9A8E7E;font-weight:700;padding-bottom:2px">Mild</div>
+          <div style="background:#E6D9BE;border-radius:3px;height:34px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#9A8E7E;font-weight:700;padding-bottom:2px">M-Md</div>
+          <div style="background:#E6D9BE;border-radius:3px;height:40px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#9A8E7E;font-weight:700;padding-bottom:2px">Mod</div>
+          <div style="background:#A85F45;border-radius:3px;height:48px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#fff;font-weight:800;padding-bottom:2px">M-Sv</div>
+          <div style="background:#E6D9BE;border-radius:3px;height:56px;display:flex;align-items:flex-end;justify-content:center;font-size:7.5px;color:#9A8E7E;font-weight:700;padding-bottom:2px">Sev</div>
+        </div>
+        <div style="font-size:9.5px;color:#5C5042;margin-top:8px;line-height:1.4">Mod-Severe · POEM 18/28. Trackable. Patterns surface in 10 logs.</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Know your POEM.</h4>
+    <p class="ds-sub">5-point validated severity</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 5</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="font-size:9.5px;color:#3F5A3B;font-weight:700">90-day journal</div>
+        <div style="background:#3F5A3B;color:#F5EBD7;border-radius:8px;padding:8px;margin-top:4px">
+          <div style="font-size:8px;color:#DCE5D6;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">POEM delta</div>
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:24px;line-height:1;color:#B0C4A4">–7 pts</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:4px">
+          <div style="background:#E6D9BE;border-radius:6px;height:44px;display:flex;align-items:center;justify-content:center;font-size:8px;color:#5C5042;font-weight:700">DAY 1</div>
+          <div style="background:#3F5A3B;border-radius:6px;height:44px;display:flex;align-items:center;justify-content:center;font-size:8px;color:#F5EBD7;font-weight:700">DAY 90</div>
+        </div>
+        <div style="font-size:8.5px;color:#9A8E7E;text-align:center;margin-top:2px">← drag ghost-overlay →</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">See what's healing.</h4>
+    <p class="ds-sub">Ghost-overlay · 90 days</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 6</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="font-size:9.5px;color:#3F5A3B;font-weight:700">Doctor report</div>
+        <div style="background:#fff;border:1px solid #E6D9BE;border-radius:8px;padding:8px;margin-top:4px;display:flex;flex-direction:column;gap:4px">
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:14px;color:#3F5A3B">Salvora Report</div>
+          <div style="font-size:8.5px;color:#9A8E7E">5 pages · POEM × triggers × photos</div>
+          <div style="display:flex;gap:3px;margin-top:4px;flex-wrap:wrap">
+            <span style="background:#DCE5D6;color:#3F5A3B;font-size:7.5px;padding:2px 5px;border-radius:4px;font-weight:700">AAD</span>
+            <span style="background:#DCE5D6;color:#3F5A3B;font-size:7.5px;padding:2px 5px;border-radius:4px;font-weight:700">NEA</span>
+            <span style="background:#DCE5D6;color:#3F5A3B;font-size:7.5px;padding:2px 5px;border-radius:4px;font-weight:700">Mayo</span>
+          </div>
+        </div>
+        <div style="background:#C97D60;color:#fff;border-radius:6px;padding:5px;font-size:8.5px;font-weight:700;text-align:center;margin-top:auto">⇪ AirDrop · Mail · Print</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Doctor-ready in one tap.</h4>
+    <p class="ds-sub">POEM + triggers + photos</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 7</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:9.5px;color:#3F5A3B;font-weight:700">Family</span><span style="font-size:8.5px;background:#F5EBD7;border:1px solid #E6D9BE;color:#5C5042;padding:2px 6px;border-radius:999px;font-weight:600">Emma · 3y ▾</span></div>
+        <div style="background:#fff;border:1px solid #E6D9BE;border-radius:8px;padding:7px 9px;display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-size:10px"><span style="font-weight:700">Emma · 3y</span><span style="background:#F4DDD0;color:#7A4012;padding:2px 6px;border-radius:999px;font-size:8.5px;font-weight:700">Moderate</span></div>
+        <div style="background:#fff;border:1px solid #E6D9BE;border-radius:8px;padding:7px 9px;display:flex;justify-content:space-between;align-items:center;font-size:10px"><span style="font-weight:700">Mom</span><span style="background:#DCE5D6;color:#2F4A2A;padding:2px 6px;border-radius:999px;font-size:8.5px;font-weight:700">Mild</span></div>
+        <div style="font-size:8.5px;color:#9A8E7E;line-height:1.4;margin-top:auto">Each profile · separate trigger library · separate PDFs</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Track your child too.</h4>
+    <p class="ds-sub">Family · up to 5 profiles</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 8</span>
+    <div class="ds-phone">
+      <div class="ds-screen">
+        <div style="font-size:9.5px;color:#3F5A3B;font-weight:700">Biologic × POEM</div>
+        <div style="background:#fff;border:1px solid #E6D9BE;border-radius:8px;padding:8px;margin-top:4px;position:relative;height:80px">
+          <svg viewBox="0 0 100 60" style="width:100%;height:100%"><polyline points="5,15 25,22 45,30 65,38 85,46" fill="none" stroke="#6F8567" stroke-width="2"/><circle cx="5" cy="15" r="2.5" fill="#C97D60"/><circle cx="25" cy="22" r="2.5" fill="#C97D60"/><circle cx="45" cy="30" r="2.5" fill="#C97D60"/><circle cx="65" cy="38" r="2.5" fill="#C97D60"/><circle cx="85" cy="46" r="2.5" fill="#C97D60"/></svg>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:8.5px;color:#9A8E7E;margin-top:4px"><span>m1</span><span style="color:#6F8567;font-weight:700">–9 POEM</span><span>m3</span></div>
+        <div style="font-size:8px;color:#9A8E7E;text-align:right;margin-top:auto">EXAMPLE</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Your biologic is working.</h4>
+    <p class="ds-sub">Dupixent × POEM overlay</p>
+  </div>
+
+</div>
+
+<!-- ===== 6.1 What users want · per persona ===== -->
+<h2 id="ss-wedge" style="margin-top: 36px;">6.1 Что хотят увидеть юзеры · per persona</h2>
+<p class="lede">Каждая персона имеет один эмоциональный триггер в gallery: что юзер «должен увидеть» чтобы тапнуть Get. <strong>«Хочет видеть»</strong> = эмоциональное содержание. <strong>«Must show»</strong> = слот номер + обязательный элемент на иллюстрации.</p>
+
+<div class="wedge-grid">
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--cta)">#1</span><b>🔴 Linda · ped-prep mom</b><span class="jtbd-weight w1">30%</span></div>
+    <div class="ww-want">"Эмма чешется до крови. Дерматолог говорит «возвращайтесь через 6 недель» — мне нужны данные, чтобы он меня услышал."</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Calm family-friendly UI · trigger correlation (dairy/dust) · Doctor PDF preview · profile switcher для ребёнка</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 2</b> trigger ×3.2 · <b>Slot 6</b> Doctor PDF · <b>Slot 7</b> Family switcher</div></div>
+    <div class="ww-row"><div class="ww-l">Illustration</div><div class="ww-show">Apothecary jar mom-friendly. Если ребёнок — back-of-head или ручки в кадре. Никаких real eczema close-up. Cream background warm.</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"Find your child's triggers" · "Doctor-ready in one tap"</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--cta)">#2</span><b>🟡 Jessica · TSW veteran</b><span class="jtbd-weight w1">25%</span></div>
+    <div class="ww-want">"9 месяцев после steroids withdrawal. Я не хочу видеть никаких pharma-marketing. Просто покажите мою скорость восстановления."</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Photo journal as healing diary · ghost-overlay 90d · neutral citations (PubMed/NEA, не Sanofi/Pfizer) · «your journey, your way»</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 5</b> ghost-overlay –7 POEM · <b>Slot 1</b> Coach citing PubMed/NEA · <b>Slot 2</b> trigger reflection</div></div>
+    <div class="ww-row"><div class="ww-l">Illustration</div><div class="ww-show">Quiet, indie-aesthetic, не "медицинский тренажёр". Photo journal grid mockup без real face/skin. r/TSW vibes — sage + cream, anti-clinical.</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"Your healing, your way" · "See what's healing"</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#3</span><b>🟢 Mike · 3am anxious dad</b><span class="jtbd-weight w2">15%</span></div>
+    <div class="ww-want">"3 часа ночи. Ребёнок орёт. Я не знаю — ехать в скорую или ждать утра. Просто СКАЖИ."</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Dark UI Coach surface (3am mood) · clear escalation flags · 2-tap decision · «answer in 30s»</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 1</b> DARK Coach · «fever + spreading = ER» triage · <b>Slot 3</b> Free Flare Check no-signup</div></div>
+    <div class="ww-row"><div class="ww-l">Illustration</div><div class="ww-show">Dark mode hero. Никаких красных алармов — terracotta-warning безопаснее. Coach звучит как «awake with you», не как 911-dispatch.</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"Stop doom-scrolling" · "Answer in 30 seconds"</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#4</span><b>🔵 Sarah · Dupixent user</b><span class="jtbd-weight w2">15%</span></div>
+    <div class="ww-want">"$3,500/мес на биологик. Мне надо знать что он работает — и красивый PDF для insurance appeal."</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Premium aesthetic · POEM × injection timeline · clinical sophistication · insurance-appeal-friendly PDF</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 8</b> Dupixent × POEM scatter · <b>Slot 6</b> Doctor PDF · <b>Slot 5</b> 90d ghost-overlay</div></div>
+    <div class="ww-row"><div class="ww-l">Illustration</div><div class="ww-show">Clinical-warm — sophisticated charts, monospaced numbers, mature palette. Чуть более «medical-grade» чем у других персон.</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"Your biologic is working" · "Doctor-ready in one tap"</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num">#5</span><b>🟣 Rachel · millennial aesthete</b><span class="jtbd-weight w2">15%</span></div>
+    <div class="ww-want">"Все eczema apps выглядят как hospital intake form. Я хочу что-то типа Aesop — quiet, hand-poured-candle."</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Indie aesthetic UI · photo journal as creative practice · TikTok-shareable cards · zero corporate vibe</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 5</b> photo journal grid · share-card preview · <b>Slot 3</b> free, no-signup hook</div></div>
+    <div class="ww-row"><div class="ww-l">Illustration</div><div class="ww-show">Apothecary aesthetic — старинная аптечная баночка, leaf accent, cream warm bg. Сама "выглядит как indie brand". Минимум UI chrome.</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">"Your skin, the way you talk about it" · indie tone</div></div>
+  </div>
+
+</div>
+
+<!-- ===== 6.2 5-persona vote ===== -->
+<h2 id="ss-vote" style="margin-top: 36px;">6.2 Консилиум · 5 персон голосуют top-3 scroll-stop слота</h2>
+<p class="lede">Каждая персона выбирает 3 скриншота, на которых она бы остановила скролл в App Store. 8 кандидатов на столе. Победитель = <strong>почти единогласный Trigger Correlation</strong> (Slot 2 · 4/5) — наш уникальный wedge. Топ-3 = wedge-доказательства, которые НИКТО из 5 конкурентов не показывает.</p>
+
+<table class="jtm">
+  <thead>
+    <tr>
+      <th style="text-align:left">Persona</th>
+      <th>S1<br>Coach DARK</th>
+      <th>S2<br>Trigger ×3.2</th>
+      <th>S3<br>Free POEM</th>
+      <th>S4<br>POEM scale</th>
+      <th>S5<br>Ghost 90d</th>
+      <th>S6<br>Doctor PDF</th>
+      <th>S7<br>Family</th>
+      <th>S8<br>Biologic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="persona">🔴 Linda</td><td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona">🟡 Jessica</td><td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona">🟢 Mike</td><td class="use h">★</td><td class="use l">·</td><td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona">🔵 Sarah</td><td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td></tr>
+    <tr><td class="persona">🟣 Rachel</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td></tr>
+    <tr style="background: var(--brand-soft);">
+      <td class="persona" style="color:var(--cta-deep);font-weight:800">TALLY</td>
+      <td class="use" style="color:var(--cta-deep);font-weight:800">4/5</td>
+      <td class="use" style="color:var(--cta-deep);font-weight:800">4/5</td>
+      <td class="use" style="color:var(--cta-deep);font-weight:800">2/5</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/5</td>
+      <td class="use" style="color:var(--good);font-weight:800">2/5</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/5</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">0/5</td>
+      <td class="use" style="color:var(--good);font-weight:800">2/5</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="lede" style="margin-top: 12px;"><b>Reading the vote:</b> Slot 1 (Coach DARK) и Slot 2 (Trigger ×3.2) — каждая по 4/5. <strong>Slot 3 Free POEM (2/5) выигрывает 3-е место</strong> по другой причине: это <em>top-of-funnel acquisition</em> hook против EczemaWise sunset (Linda + Mike + новички в категории). Slot 7 Family (0/5 на scroll-stop) всё равно остаётся в галерее — он работает на CPP «Family Tracker», не на main thumb-превью.</p>
+
+<!-- ===== 6.3 Top-3 KILLER ===== -->
+<h2 id="ss-killer" style="margin-top: 36px;">6.3 Top-3 KILLER · первые 3 слота выигрывают покупку</h2>
+<p class="lede">App Store thumb-превью показывает первые 3 скриншота. Это и есть scroll-stop weapon. Каждый killer — wedge, которого нет ни у одного из 5 конкурентов (EczemaWise · EczemaLess · Atopic · ATOPIYO · Bearable).</p>
+
+<div class="ss-killer-grid">
+
+  <div class="ss-killer rank1">
+    <span class="ss-rank-badge">★ KILLER #1</span>
+    <span class="ss-tag">Slot 1 · 4/5 голосов · DARK</span>
+    <h4>AI Coach с AAD/NEA citations + safety strip</h4>
+    <div class="ss-mockup">
+      <div class="ss-overlay-text">Stop doom-scrolling.<br><em>Get sourced answers.</em></div>
+      <div class="ss-bubble" style="background:#3E3325;color:#F5EBD7;align-self:flex-end;max-width:80%">Baby won't stop scratching. ER?</div>
+      <div class="ss-bubble" style="background:#2A241B;color:#F5EBD7;border:1px solid #3A3024">Two flags: <b>fever</b> + <b>spreading/oozing</b> = urgent care. Without — soothe overnight, call ped AM.<div class="ss-cite">AAD · atopic dermatitis · 2023 →</div></div>
+    </div>
+    <div class="ss-why"><b>0 конкурентов это показывает.</b> EczemaWise — статичный tracker, без чата. EczemaLess/Atopic — generic chatbot без RAG-citations. Salvora — единственный AAD/NEA-grounded Coach с safety strip. Mike (3am) + Jessica (TSW) + Linda (ped prep) — 70% paying base.</div>
+    <div class="ss-meta-row">
+      <div><b>Personas</b>Mike · Jessica · Linda</div>
+      <div><b>Wedge</b>RAG + safety strip</div>
+      <div><b>Mode</b>Dark (3am mood)</div>
+      <div><b>Animation</b>Typewriter + cite-pulse</div>
+    </div>
+  </div>
+
+  <div class="ss-killer rank2">
+    <span class="ss-rank-badge">★ KILLER #2</span>
+    <span class="ss-tag">Slot 2 · 4/5 голосов · LIGHT</span>
+    <h4>Trigger Correlation Engine · «×3.2 DAIRY»</h4>
+    <div class="ss-mockup">
+      <div class="ss-overlay-text">Stop guessing.<br><em>Find your triggers.</em></div>
+      <div style="background:rgba(255,255,255,0.1);border-radius:10px;padding:8px 10px">
+        <div class="ss-density-label">Trigger pattern · 14 days</div>
+        <div style="display:flex;align-items:baseline;gap:6px"><span class="ss-bignum" style="color:#C97D60">×3.2</span><span style="font-size:11px;color:#DCE5D6">DAIRY</span></div>
+        <div style="height:5px;background:rgba(255,255,255,0.15);border-radius:999px;margin-top:6px"><div style="height:100%;width:78%;border-radius:999px;background:#C97D60"></div></div>
+        <div style="font-size:9.5px;color:#B0C4A4;margin-top:6px">Confirmed · 12 of 14 days correlate</div>
+      </div>
+    </div>
+    <div class="ss-why"><b>САМЫЙ важный wedge Salvora — 0 конкурентов ships auto-correlation.</b> EczemaWise — manual trigger log без pattern detection. EczemaLess/Atopic — partial. Bearable — generic horizontal (food/mood, без eczema-specific). Salvora обещает: "ты логируешь — мы находим pattern".</div>
+    <div class="ss-meta-row">
+      <div><b>Personas</b>Linda · Jessica · Sarah</div>
+      <div><b>Wedge</b>Auto-correlation engine</div>
+      <div><b>Mode</b>Light</div>
+      <div><b>Animation</b>Counter-roll 0× → 3.2×</div>
+    </div>
+  </div>
+
+  <div class="ss-killer rank3">
+    <span class="ss-rank-badge">★ KILLER #3</span>
+    <span class="ss-tag">Slot 3 · Top-of-funnel · BRAND</span>
+    <h4>Free Flare Check · «No signup required»</h4>
+    <div class="ss-mockup" style="background:#3F5A3B">
+      <div class="ss-overlay-text">Free flare check.<br><em>30 seconds. No signup.</em></div>
+      <div style="background:#F5EBD7;color:#3F5A3B;border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:4px">
+        <div style="font-size:9.5px;letter-spacing:0.06em;text-transform:uppercase;color:#5C5042;font-weight:700">Your POEM score</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:26px;line-height:1;color:#C97D60">Moderate · 14<span style="font-size:14px;color:#9A8E7E"> / 28</span></div>
+        <div style="background:#DCE5D6;color:#3F5A3B;border-radius:6px;padding:4px 8px;font-size:10.5px;font-weight:700;align-self:flex-start;margin-top:4px">✓ Free · No signup required</div>
+      </div>
+    </div>
+    <div class="ss-why"><b>Top-of-funnel hook против EczemaWise sunset (Dec 18 2026).</b> 31M американцев теряют free NEA-флагман — этот слот говорит "ты можешь попробовать БЕЗ логина и оплаты". Sept-Dec orphan capture window. Linda + Mike + новички через ASA "eczema tracker".</div>
+    <div class="ss-meta-row">
+      <div><b>Personas</b>Linda · Mike (ASA peak)</div>
+      <div><b>Wedge</b>Free · No signup</div>
+      <div><b>Mode</b>Light brand</div>
+      <div><b>Animation</b>POEM stamp pop-in</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== 6.7 ANTI-PATTERNS ===== -->
+<h2 id="ss-anti" style="margin-top: 36px;">6.7 Anti-patterns · что мы НЕ показываем на App Store</h2>
+<ul class="list dontlist">
+  <li><strong>Real close-up of inflamed skin / eczema flares</strong> — aversive scroll-kill. Compliance: no identifiable skin/face. Use illustrations or anonymized body-area only (тыльная сторона руки, без татуировок, без родинок).</li>
+  <li><strong>Identifiable child face</strong> (Slot 7 Family) — Apple rejects, compliance bans. Use back-of-head, hands, cartoon child, or copy-text-only mockup.</li>
+  <li><strong>Diagnosis language в TITLE</strong>: "Cure your eczema / Heal your skin / Eliminate flares". Allowed verbs only: track · find · show · see · know.</li>
+  <li><strong>Anti-pharma framing</strong>: "Stop using steroids / Pharma lies about your skin". Salvora neutral — Jessica TSW аудиторию мы поддерживаем тоном, не радикальными манифестами.</li>
+  <li><strong>Stoplight red severity</strong> (красный/жёлтый/зелёный stoplight) — triggers panic. Используем sage/terracotta/terracotta-deep verdict triad. Red — только для emergency safety strip ("call urgent care").</li>
+  <li><strong>Fake user count / ratings</strong>: "10K downloads · ★★★★★ 4.9" когда у нас 0 рейтингов. Apple review-bait. Badge только после 25+ реальных отзывов.</li>
+  <li><strong>Brand-name pharma references</strong>: Dupixent visible OK (это user-logged data, Slot 8 — Sarah's biologic). Pfizer/Sanofi logos — NO. AAD/NEA/Mayo/AAFP/PubMed — YES.</li>
+  <li><strong>EXAMPLE watermark missing</strong> на slots <strong>2 / 5 / 8</strong> — mocked metrics требуют дисклеймера (8-10pt, нижний правый, opacity 60%).</li>
+  <li><strong>Drop shadows / outline / gradient text</strong> — health-категория, solid weight = trust. Не Duolingo, не lifestyle.</li>
+  <li><strong>Confetti / fireworks при streak</strong> — health, not game. Adherence streak (Headspace-gentle) — OK; XP/level-up/badges — banned.</li>
+</ul>
+
 <footer style="margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--divider); color: var(--ink-3); font-size: 12px;">
-  <p>Salvora — Design System Workbench · Round 1 · 2026-05-11 · Modules 1–5 (Screenshots and Paywall = separate documents).</p>
-  <p style="margin-top: 6px;">Locked palette · Locked tab architecture · Closest sibling: <b style="color: var(--cta-deep);">15-Folik (92% structural match)</b>.</p>
+  <p>Salvora — Design System Workbench · Round 1 · 2026-05-12 · Modules 1–6 (Paywall = separate document).</p>
+  <p style="margin-top: 6px;">Locked palette · Locked tab architecture · Locked 8-slot screenshot plan · Closest sibling: <b style="color: var(--cta-deep);">15-Folik (92% structural match)</b>.</p>
 </footer>
 
 </body>
