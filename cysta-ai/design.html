@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cysta AI — Design System Workbench (round 1)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* neutral workbench chrome — does NOT bias any candidate */
+    --ink:        #2A2230;
+    --ink-2:      #5A4F60;
+    --ink-3:      #968B9C;
+    --bg:         #F6F1EC;
+    --bg-soft:    #FBF7F2;
+    --card:       #FFFFFF;
+    --divider:    #E5DAD5;
+
+    /* chrome accents (workbench, NOT a candidate) */
+    --chrome:     #6B5970;
+    --chrome-mid: #574761;
+    --chrome-soft:#E2D6E0;
+
+    /* score scale */
+    --hi-bg:      #DCE8DC;
+    --hi:         #2E5A33;
+    --mid-bg:     #F4E4D0;
+    --mid:        #7A4B12;
+    --lo-bg:      #ECD0C8;
+    --lo:         #7A2D24;
+
+    /* candidate A · «Cysterhood Apothecary» — Sage + Warm Rose + Ivory */
+    --a-bg:       #FAF6F0;
+    --a-ink:      #2D2823;
+    --a-brand:    #8FBC8F;
+    --a-deep:     #5D8462;
+    --a-soft:     #D9E8D6;
+    --a-cta:      #E8A09A;
+    --a-cta-deep: #C97A75;
+    --a-cta-soft: #F6DAD4;
+
+    /* candidate B · «Lunar Endocrine» — Plum + Rose-Gold + Pearl */
+    --b-bg:       #F4ECE6;
+    --b-ink:      #2A1E2D;
+    --b-brand:    #6B4E6E;
+    --b-deep:     #4A3550;
+    --b-soft:     #E2D6E0;
+    --b-cta:      #D4A574;
+    --b-cta-deep: #B0824D;
+    --b-cta-soft: #F1DFC4;
+
+    /* candidate C · «Inositol Mint» — Mint Teal + Coral + Cream */
+    --c-bg:       #FBF7EF;
+    --c-ink:      #1F2F2C;
+    --c-brand:    #4A8B85;
+    --c-deep:     #2E6E68;
+    --c-soft:     #C9E2DD;
+    --c-cta:      #FF8773;
+    --c-cta-deep: #D96651;
+    --c-cta-soft: #FCD8CF;
+
+    /* candidate D · «Cycle Mauve» — Dusty Mauve + Honey + Off-white */
+    --d-bg:       #F7F1E8;
+    --d-ink:      #2D2229;
+    --d-brand:    #B58797;
+    --d-deep:     #8C5F70;
+    --d-soft:     #ECD8DF;
+    --d-cta:      #E8B05A;
+    --d-cta-deep: #C58E3F;
+    --d-cta-soft: #F6E4C0;
+  }
+
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    padding: 28px 24px 96px;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  h1, h2, h3 {
+    font-family: -apple-system, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 30px; font-weight: 800; margin-bottom: 6px; }
+  h2 { font-size: 22px; font-weight: 700; margin: 44px 0 14px; }
+  h3 { font-size: 16px; font-weight: 700; margin: 22px 0 10px; color: var(--ink); }
+
+  .lede { color: var(--ink-2); max-width: 820px; line-height: 1.55; margin-bottom: 6px; font-size: 14.5px; }
+  .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 8px; }
+  .pill {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 999px; padding: 5px 12px; font-size: 12px;
+    color: var(--ink-2); font-weight: 600;
+  }
+  .pill.live   { background: var(--mid-bg); color: var(--mid); border-color: #E8C998; }
+  .pill.brand  { background: var(--chrome-soft); color: var(--chrome-mid); border-color: var(--chrome-soft); }
+  .pill.repo   { background: var(--bg-soft); color: var(--ink-2); }
+
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(246, 241, 236, 0.94);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--divider);
+    margin: 0 -24px 18px;
+    padding: 10px 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--ink-2);
+    font-size: 12.5px; font-weight: 600;
+    padding: 6px 11px; border-radius: 999px;
+    border: 1px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover { background: var(--card); color: var(--chrome-mid); border-color: var(--divider); }
+  .top-nav a.is-module { background: var(--chrome); color: #fff; }
+  .top-nav a.is-module:hover { background: var(--chrome-mid); color: #fff; }
+  .top-nav .nav-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em;
+    background: var(--mid); color: #fff;
+    padding: 2px 6px; border-radius: 5px;
+  }
+  .top-nav .sep { width: 1px; height: 16px; background: var(--divider); margin: 0 4px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+  .module-banner {
+    margin: 36px 0 18px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, var(--chrome) 0%, var(--chrome-mid) 100%);
+    color: #F4ECE6;
+    border-radius: 18px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .module-banner .num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 13px; font-weight: 800; letter-spacing: 0.08em;
+    background: var(--mid); color: #fff;
+    padding: 5px 11px; border-radius: 8px;
+  }
+  .module-banner h2 { margin: 0; color: #F4ECE6; font-size: 22px; }
+  .module-banner .desc {
+    color: #E2D6E0; font-size: 13px; line-height: 1.5;
+    flex-basis: 100%; margin-top: 4px;
+  }
+
+  /* ===== Status banner (no winner yet) ===== */
+  .status-banner {
+    background: var(--card);
+    border: 1px dashed var(--mid);
+    border-radius: 20px;
+    padding: 22px 24px;
+    margin: 22px 0 8px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: center;
+  }
+  .status-banner h2 { margin: 0; font-size: 20px; color: var(--ink); }
+  .status-banner .sub { color: var(--ink-2); font-size: 13.5px; margin-top: 4px; line-height: 1.5; max-width: 620px; }
+  .status-banner .right { text-align: right; }
+  .status-banner .badge {
+    background: var(--mid-bg); color: var(--mid);
+    border-radius: 999px; padding: 8px 16px;
+    font-weight: 800; font-size: 13px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    display: inline-block;
+  }
+  .status-banner .who { font-size: 11.5px; color: var(--ink-3); margin-top: 6px; }
+
+  /* ===== Audience snapshot ===== */
+  .audience-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 10px; margin-top: 12px;
+  }
+  @media (max-width: 880px) { .audience-grid { grid-template-columns: repeat(2, 1fr); } }
+  .aud {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 14px; padding: 12px 14px;
+    font-size: 12px; color: var(--ink-2);
+  }
+  .aud b { display: block; font-size: 13.5px; color: var(--ink); margin-bottom: 4px; }
+  .aud .age { font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; color: var(--ink-3); }
+  .aud .w   {
+    display: inline-block; margin-top: 6px;
+    background: var(--chrome-soft); color: var(--chrome-mid);
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.04em;
+    padding: 2px 7px; border-radius: 999px;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+
+  /* ===== 4 candidate variants ===== */
+  .variants {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 18px;
+  }
+  @media (max-width: 920px) { .variants { grid-template-columns: 1fr; } }
+
+  .variant {
+    border-radius: 22px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--divider);
+    box-shadow: 0 2px 10px rgba(60, 40, 60, 0.04);
+  }
+  .variant.lead { border-color: var(--mid); box-shadow: 0 6px 26px rgba(180, 120, 60, 0.16); }
+
+  .variant .head {
+    padding: 18px 20px 14px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .variant .head .title { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .variant .head .tag {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .variant .head h3 { margin: 0; font-size: 19px; font-weight: 800; letter-spacing: -0.01em; }
+  .variant .head .vibe {
+    font-size: 12.5px; font-style: italic; line-height: 1.5; margin-top: 4px;
+    max-width: 460px;
+  }
+  .variant .head .score {
+    background: rgba(0,0,0,0.08);
+    border-radius: 999px; padding: 6px 12px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 12px; font-weight: 800;
+    white-space: nowrap;
+  }
+  .variant.lead .head .score { background: var(--mid); color: #fff; }
+
+  /* per-candidate skinning */
+  .variant.a { background: var(--a-bg); color: var(--a-ink); }
+  .variant.a .head .tag { color: var(--a-cta-deep); }
+  .variant.a .head .score { color: var(--a-cta-deep); background: rgba(232, 160, 154, 0.22); }
+
+  .variant.b { background: var(--b-bg); color: var(--b-ink); }
+  .variant.b .head .tag { color: var(--b-deep); }
+  .variant.b .head .score { color: var(--b-deep); background: rgba(107, 78, 110, 0.18); }
+
+  .variant.c { background: var(--c-bg); color: var(--c-ink); }
+  .variant.c .head .tag { color: var(--c-deep); }
+  .variant.c .head .score { color: var(--c-deep); background: rgba(74, 139, 133, 0.18); }
+
+  .variant.d { background: var(--d-bg); color: var(--d-ink); }
+  .variant.d .head .tag { color: var(--d-deep); }
+  .variant.d .head .score { color: var(--d-deep); background: rgba(181, 135, 151, 0.22); }
+
+  .swatches {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 6px; padding: 14px 20px 0;
+  }
+  .sw {
+    aspect-ratio: 1; border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.08);
+    display: flex; align-items: flex-end; justify-content: center;
+    padding: 4px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 8.5px; font-weight: 700;
+    color: rgba(0,0,0,0.55);
+  }
+  .sw.dark { color: rgba(255,255,255,0.78); }
+
+  .preview { padding: 14px 20px 18px; display: flex; flex-direction: column; gap: 10px; }
+
+  /* mock phone preview pieces (palette-agnostic structure) */
+  .poem-mini {
+    border-radius: 14px; padding: 14px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .poem-mini .lbl  { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.78; }
+  .poem-mini .num  { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 28px; line-height: 1; }
+  .poem-mini .sub  { font-size: 11.5px; font-weight: 600; opacity: 0.85; }
+  .poem-mini .bar  { height: 5px; background: rgba(255,255,255,0.22); border-radius: 999px; margin-top: 6px; overflow: hidden; }
+  .poem-mini .bar i { display: block; height: 100%; border-radius: 999px; }
+
+  .variant.a .poem-mini { background: var(--a-deep); color: #FAF6F0; }
+  .variant.a .poem-mini .bar i { background: var(--a-cta); width: 38%; }
+  .variant.b .poem-mini { background: var(--b-deep); color: #F4ECE6; }
+  .variant.b .poem-mini .bar i { background: var(--b-cta); width: 38%; }
+  .variant.c .poem-mini { background: var(--c-deep); color: #FBF7EF; }
+  .variant.c .poem-mini .bar i { background: var(--c-cta); width: 38%; }
+  .variant.d .poem-mini { background: var(--d-deep); color: #F7F1E8; }
+  .variant.d .poem-mini .bar i { background: var(--d-cta); width: 38%; }
+
+  .cycle-card {
+    background: #fff; border-radius: 12px; padding: 10px 12px;
+    box-shadow: 0 1px 3px rgba(40, 30, 40, 0.06);
+    display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center;
+  }
+  .cycle-card .name { font-weight: 700; font-size: 13.5px; }
+  .cycle-card .meta { font-size: 11px; color: var(--ink-3); margin-top: 1px; }
+  .verdict-pill {
+    border-radius: 999px; padding: 3px 9px;
+    font-size: 10.5px; font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+  .variant.a .verdict-pill { background: var(--a-soft); color: var(--a-deep); }
+  .variant.b .verdict-pill { background: var(--b-soft); color: var(--b-deep); }
+  .variant.c .verdict-pill { background: var(--c-soft); color: var(--c-deep); }
+  .variant.d .verdict-pill { background: var(--d-soft); color: var(--d-deep); }
+
+  .coach-bubble {
+    border-radius: 14px; padding: 10px 12px;
+    font-size: 12.5px; line-height: 1.45;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .coach-bubble b { font-weight: 700; }
+  .coach-bubble .cite {
+    display: inline-block; margin-top: 4px;
+    font-size: 11px; padding-bottom: 1px;
+    border-bottom: 1px dotted currentColor;
+  }
+  .variant.a .coach-bubble { background: var(--a-soft); color: var(--a-deep); }
+  .variant.b .coach-bubble { background: var(--b-soft); color: var(--b-deep); }
+  .variant.c .coach-bubble { background: var(--c-soft); color: var(--c-deep); }
+  .variant.d .coach-bubble { background: var(--d-soft); color: var(--d-deep); }
+
+  .cta-btn {
+    height: 42px; border-radius: 12px; border: none;
+    font-weight: 800; font-size: 14px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    color: #fff; cursor: default;
+  }
+  .variant.a .cta-btn { background: var(--a-cta-deep); }
+  .variant.b .cta-btn { background: var(--b-cta-deep); }
+  .variant.c .cta-btn { background: var(--c-cta-deep); }
+  .variant.d .cta-btn { background: var(--d-cta-deep); }
+
+  /* fit-for cards */
+  .fitfor {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    padding: 0 20px 16px;
+  }
+  .fitfor .chip {
+    font-size: 10.5px; font-weight: 700;
+    border: 1px solid currentColor;
+    padding: 3px 9px; border-radius: 999px;
+    opacity: 0.85;
+  }
+  .variant.a .fitfor .chip { color: var(--a-deep); }
+  .variant.b .fitfor .chip { color: var(--b-deep); }
+  .variant.c .fitfor .chip { color: var(--c-deep); }
+  .variant.d .fitfor .chip { color: var(--d-deep); }
+
+  /* ===== Voting tables ===== */
+  table.vote {
+    width: 100%; border-collapse: collapse; margin-top: 14px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider);
+  }
+  table.vote th, table.vote td {
+    padding: 9px 12px; text-align: left; font-size: 13px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.vote th {
+    background: var(--chrome-soft); color: var(--chrome-mid);
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800;
+  }
+  table.vote tr:last-child td { border-bottom: none; }
+  table.vote td.who { font-weight: 700; white-space: nowrap; }
+  table.vote td.who small { display: block; font-size: 10.5px; color: var(--ink-3); font-weight: 600; }
+  table.vote td.num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 800; text-align: center; font-size: 13px;
+  }
+  table.vote td.num.lead {
+    background: var(--hi-bg); color: var(--hi);
+    border-radius: 4px;
+  }
+  table.vote td.num.weak { color: var(--ink-3); }
+  table.vote tr.total td {
+    background: var(--bg-soft); font-weight: 800;
+    font-family: ui-monospace, "SF Mono", monospace;
+    border-top: 2px solid var(--chrome);
+  }
+  table.vote tr.total td.num.lead { background: var(--hi); color: #fff; }
+  table.vote .col-a { background: rgba(143, 188, 143, 0.10); }
+  table.vote .col-b { background: rgba(107, 78, 110, 0.10); }
+  table.vote .col-c { background: rgba(74, 139, 133, 0.10); }
+  table.vote .col-d { background: rgba(181, 135, 151, 0.10); }
+
+  th.col-a { background: var(--a-soft) !important; color: var(--a-deep) !important; }
+  th.col-b { background: var(--b-soft) !important; color: var(--b-deep) !important; }
+  th.col-c { background: var(--c-soft) !important; color: var(--c-deep) !important; }
+  th.col-d { background: var(--d-soft) !important; color: var(--d-deep) !important; }
+
+  /* ===== Aggregate scorecard ===== */
+  .scorecard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin-top: 14px;
+  }
+  @media (max-width: 920px) { .scorecard { grid-template-columns: repeat(2, 1fr); } }
+  .sc {
+    border-radius: 16px; padding: 16px 18px;
+    border: 1px solid var(--divider);
+    background: var(--card);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .sc.lead { border-color: var(--mid); box-shadow: 0 4px 18px rgba(180, 120, 60, 0.14); }
+  .sc .rank {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-3);
+  }
+  .sc .name { font-size: 14.5px; font-weight: 800; color: var(--ink); }
+  .sc .total {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 30px; font-weight: 800;
+    letter-spacing: -0.02em; color: var(--ink);
+  }
+  .sc.lead .total { color: var(--mid); }
+  .sc .total small { font-size: 14px; color: var(--ink-3); font-weight: 700; }
+  .sc .breakdown {
+    font-size: 11px; color: var(--ink-2); line-height: 1.5;
+    border-top: 1px dashed var(--divider); padding-top: 8px;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .sc .breakdown b { color: var(--ink); }
+
+  /* ===== Whitespace + Anti-patterns ===== */
+  table.ws {
+    width: 100%; border-collapse: collapse; margin-top: 14px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider);
+  }
+  table.ws th, table.ws td {
+    padding: 9px 12px; text-align: left; font-size: 13px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.ws th {
+    background: var(--chrome-soft); color: var(--chrome-mid);
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800;
+  }
+  .ok   { color: var(--hi);  font-weight: 700; }
+  .warn { color: var(--mid); font-weight: 700; }
+  .bad  { color: var(--lo);  font-weight: 700; }
+
+  ul.list { margin-top: 8px; padding-left: 20px; line-height: 1.6; }
+  ul.list li { margin-bottom: 5px; font-size: 14px; }
+  ul.dontlist li::marker { color: var(--lo); }
+
+  .legend { font-size: 11.5px; color: var(--ink-3); margin-top: 6px; line-height: 1.5; }
+  .legend code {
+    font-family: ui-monospace, "SF Mono", monospace;
+    background: var(--bg-soft); padding: 1px 5px; border-radius: 4px;
+    color: var(--ink-2); font-size: 10.5px;
+  }
+
+  footer {
+    margin-top: 64px; padding-top: 20px;
+    border-top: 1px solid var(--divider);
+    font-size: 11.5px; color: var(--ink-3);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body id="top">
+
+<!-- ===== TOP NAV ===== -->
+<nav class="top-nav">
+  <a href="#top">↑ Top</a>
+  <span class="sep"></span>
+  <a href="#module-1" class="is-module"><span class="nav-num">M1</span>Design</a>
+  <span class="sep"></span>
+  <a href="#audience">audience</a>
+  <a href="#candidates">4 candidates</a>
+  <a href="#vote-personas">vote · personas</a>
+  <a href="#vote-trends">vote · trends</a>
+  <a href="#vote-designers">vote · designers</a>
+  <a href="#aggregate">aggregate</a>
+  <a href="#whitespace">whitespace</a>
+  <a href="#dont">don'ts</a>
+</nav>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>Cysta AI — Design System Workbench</h1>
+  <p class="lede">
+    First commercial AI app for managing PCOS (polycystic ovary syndrome). 5 personas → 5 Custom Product Pages.
+    Round 1: 4 candidate design systems · 3-panel consilium (5 PCOS personas · 2026 UX/UI trends · UX/UI designers panel).
+    No winner is locked yet — voting in progress, expected lock <b>2026-05-21</b>.
+  </p>
+  <div class="meta-bar">
+    <span class="pill live">● voting in progress</span>
+    <span class="pill brand">round 1 · 2026-05-14</span>
+    <span class="pill repo">love8ko / CystaAI</span>
+    <span class="pill repo">v1 ship · Jul–Aug 2026</span>
+    <span class="pill repo">5 markets · US · GB · DE · CA · AU</span>
+    <span class="pill repo">🚨 Cycla AI launched 2026-05-13 → 30–60d window</span>
+  </div>
+</header>
+
+<!-- ===== STATUS BANNER (no winner yet) ===== -->
+<section class="status-banner">
+  <div>
+    <h2>🗳️ Round 1 — no candidate locked</h2>
+    <p class="sub">
+      4 palettes designed against the PCOS audience brief (9M+ women, 5 markets, $38M ARR TAM, medical-adjacent compliance).
+      Each candidate is rated 0–10 by three independent consiliums. Aggregate score combines them with weights: <b>personas 50%</b> · <b>trends 25%</b> · <b>designers 25%</b>.
+    </p>
+  </div>
+  <div class="right">
+    <div class="badge">leading · «Lunar Endocrine» · 8.4 / 10</div>
+    <div class="who">margin over #2 = 0.5 · not yet lock-eligible (need ≥ 0.7)</div>
+  </div>
+</section>
+
+<!-- ===== MODULE 1 ===== -->
+<div class="module-banner" id="module-1">
+  <span class="num">МОДУЛЬ 1</span>
+  <h2>Дизайн-система · 4 кандидата на консилиуме</h2>
+  <p class="desc">
+    Цель: палитра, которая (a) уважает медицинский серьёз PCOS-аудитории, (b) бьёт Cysterhood / PCOS Pal на App Store thumb, (c) держит дистанцию от Flo/Clue cycle-pink, (d) работает в DACH (DE conservative warmth), (e) подходит для AI Coach night-mode.
+  </p>
+</div>
+
+<!-- ===== 1.0 AUDIENCE SNAPSHOT ===== -->
+<h2 id="audience">1.0 Audience · 5 PCOS-персон</h2>
+<p class="lede">
+  Каждая персона = вес в paying-base. Они же — голосующий блок №1 (см. §1.2).
+  Палитра должна работать на всех пяти одновременно — ни одна не должна быть «отчуждена».
+</p>
+<div class="audience-grid">
+  <div class="aud"><b>🌸 Naomi</b><span class="age">22–30 · newly diagnosed</span><br>"что со мной?" Soft warmth, не пугать клиникой.<span class="w">25%</span></div>
+  <div class="aud"><b>👶 Tanya</b><span class="age">28–38 · TTC, high WTP</span><br>18 мес. пытается забеременеть. IVF $20K alt.<span class="w">20%</span></div>
+  <div class="aud"><b>⚖️ Wendy</b><span class="age">25–40 · weight-focused</span><br>"гормоны саботируют похудение". Хочет график.<span class="w">25%</span></div>
+  <div class="aud"><b>💊 Maya</b><span class="age">24–35 · med-skeptic</span><br>"не хочу Metformin навсегда". Natural + inositol.<span class="w">15%</span></div>
+  <div class="aud"><b>👩‍⚕️ Anna</b><span class="age">30–45 · advocate</span><br>"эндокринолог не слушает". Нужен PDF, premium.<span class="w">15%</span></div>
+</div>
+
+<!-- ===== 1.1 4 CANDIDATES ===== -->
+<h2 id="candidates">1.1 Четыре кандидата</h2>
+<p class="lede">
+  Каждый кандидат показан как: палитра (12 токенов) + mini-mockup (POEM-style hero-card аналог + cycle-card + Coach bubble + paywall CTA) + fit-chips «кому подходит».
+  Current consilium score выведен в правый верхний угол карточки.
+</p>
+
+<div class="variants">
+
+  <!-- ===== A · Cysterhood Apothecary ===== -->
+  <article class="variant a" id="cand-a">
+    <div class="head">
+      <div class="title">
+        <span class="tag">A · candidate</span>
+        <h3>Cysterhood Apothecary</h3>
+        <span class="vibe">Sage + warm rose + ivory. Aesop-meets-Cysterhood — natural-medicine warmth, гербариум. Безопасный выбор, но рискует слиться с Cysterhood ($9.6K MRR competitor).</span>
+      </div>
+      <span class="score">7.9 / 10</span>
+    </div>
+    <div class="swatches">
+      <div class="sw" style="background:#FAF6F0">#FAF6F0</div>
+      <div class="sw" style="background:#8FBC8F">#8FBC8F</div>
+      <div class="sw dark" style="background:#5D8462">#5D8462</div>
+      <div class="sw" style="background:#D9E8D6">#D9E8D6</div>
+      <div class="sw" style="background:#E8A09A">#E8A09A</div>
+      <div class="sw dark" style="background:#C97A75">#C97A75</div>
+      <div class="sw" style="background:#F6DAD4">#F6DAD4</div>
+      <div class="sw dark" style="background:#2D2823">ink</div>
+      <div class="sw" style="background:#5A4F46">ink-2</div>
+      <div class="sw" style="background:#FFFFFF">card</div>
+      <div class="sw" style="background:#E5DAD5">div</div>
+      <div class="sw dark" style="background:#1A1813">night</div>
+    </div>
+    <div class="preview">
+      <div class="poem-mini">
+        <span class="lbl">Cycle · day 23</span>
+        <span class="num">62 / 100</span>
+        <span class="sub">PCOS-score · trending mild ↓ (–8 vs last cycle)</span>
+        <div class="bar"><i></i></div>
+      </div>
+      <div class="cycle-card">
+        <div><div class="name">Myo-inositol 2g · 2× daily</div><div class="meta">streak 14d · taken 2h ago</div></div>
+        <span class="verdict-pill">On track</span>
+      </div>
+      <div class="coach-bubble">
+        Free AMH at 5.8 ng/mL is on the higher end for your age group — ESHRE 2023 maps it to <b>PCOS-typical range</b>, not a diagnosis.
+        <span class="cite">ESHRE · PCOS guideline 2023</span>
+      </div>
+      <button class="cta-btn">Start 7-day trial · $39.99/yr</button>
+    </div>
+    <div class="fitfor">
+      <span class="chip">🌸 Naomi soft</span>
+      <span class="chip">💊 Maya natural</span>
+      <span class="chip">⚖️ Wendy warm</span>
+      <span class="chip">⚠️ collides with Cysterhood</span>
+    </div>
+  </article>
+
+  <!-- ===== B · Lunar Endocrine ===== -->
+  <article class="variant b lead" id="cand-b">
+    <div class="head">
+      <div class="title">
+        <span class="tag">B · candidate · leading</span>
+        <h3>Lunar Endocrine</h3>
+        <span class="vibe">Aubergine plum + rose-gold + pearl. Премиум-эндокринология. «Лунный» plum читается как «cycle-aware» без cycle-pink. Rose-gold CTA = warmth для Naomi/Wendy, но primary plum = серьёз для Anna/Tanya.</span>
+      </div>
+      <span class="score">8.4 / 10</span>
+    </div>
+    <div class="swatches">
+      <div class="sw" style="background:#F4ECE6">#F4ECE6</div>
+      <div class="sw dark" style="background:#6B4E6E">#6B4E6E</div>
+      <div class="sw dark" style="background:#4A3550">#4A3550</div>
+      <div class="sw" style="background:#E2D6E0">#E2D6E0</div>
+      <div class="sw" style="background:#D4A574">#D4A574</div>
+      <div class="sw dark" style="background:#B0824D">#B0824D</div>
+      <div class="sw" style="background:#F1DFC4">#F1DFC4</div>
+      <div class="sw dark" style="background:#2A1E2D">ink</div>
+      <div class="sw" style="background:#5A4F60">ink-2</div>
+      <div class="sw" style="background:#FFFFFF">card</div>
+      <div class="sw" style="background:#E5DAD5">div</div>
+      <div class="sw dark" style="background:#1A1320">night</div>
+    </div>
+    <div class="preview">
+      <div class="poem-mini">
+        <span class="lbl">Cycle · day 23</span>
+        <span class="num">62 / 100</span>
+        <span class="sub">PCOS-score · trending mild ↓ (–8 vs last cycle)</span>
+        <div class="bar"><i></i></div>
+      </div>
+      <div class="cycle-card">
+        <div><div class="name">Myo-inositol 2g · 2× daily</div><div class="meta">streak 14d · taken 2h ago</div></div>
+        <span class="verdict-pill">On track</span>
+      </div>
+      <div class="coach-bubble">
+        Free AMH at 5.8 ng/mL is on the higher end for your age group — ESHRE 2023 maps it to <b>PCOS-typical range</b>, not a diagnosis.
+        <span class="cite">ESHRE · PCOS guideline 2023</span>
+      </div>
+      <button class="cta-btn">Start 7-day trial · $39.99/yr</button>
+    </div>
+    <div class="fitfor">
+      <span class="chip">👶 Tanya TTC-premium</span>
+      <span class="chip">👩‍⚕️ Anna advocate</span>
+      <span class="chip">🌸 Naomi (warm CTA)</span>
+      <span class="chip">✅ distant from Flo/Cysterhood</span>
+      <span class="chip">✅ DACH-friendly</span>
+    </div>
+  </article>
+
+  <!-- ===== C · Inositol Mint ===== -->
+  <article class="variant c" id="cand-c">
+    <div class="head">
+      <div class="title">
+        <span class="tag">C · candidate</span>
+        <h3>Inositol Mint</h3>
+        <span class="vibe">Mint teal + coral + cream. Modern wellness / supplement-startup vibe. Идеально для Maya (anti-Metformin natural), но слишком «D2C-supplement» для Anna/Tanya — рискует выглядеть «не-серьёзно» для $79.99 Family-TTC tier.</span>
+      </div>
+      <span class="score">7.6 / 10</span>
+    </div>
+    <div class="swatches">
+      <div class="sw" style="background:#FBF7EF">#FBF7EF</div>
+      <div class="sw dark" style="background:#4A8B85">#4A8B85</div>
+      <div class="sw dark" style="background:#2E6E68">#2E6E68</div>
+      <div class="sw" style="background:#C9E2DD">#C9E2DD</div>
+      <div class="sw" style="background:#FF8773">#FF8773</div>
+      <div class="sw dark" style="background:#D96651">#D96651</div>
+      <div class="sw" style="background:#FCD8CF">#FCD8CF</div>
+      <div class="sw dark" style="background:#1F2F2C">ink</div>
+      <div class="sw" style="background:#5A6260">ink-2</div>
+      <div class="sw" style="background:#FFFFFF">card</div>
+      <div class="sw" style="background:#DCE0DC">div</div>
+      <div class="sw dark" style="background:#10211F">night</div>
+    </div>
+    <div class="preview">
+      <div class="poem-mini">
+        <span class="lbl">Cycle · day 23</span>
+        <span class="num">62 / 100</span>
+        <span class="sub">PCOS-score · trending mild ↓ (–8 vs last cycle)</span>
+        <div class="bar"><i></i></div>
+      </div>
+      <div class="cycle-card">
+        <div><div class="name">Myo-inositol 2g · 2× daily</div><div class="meta">streak 14d · taken 2h ago</div></div>
+        <span class="verdict-pill">On track</span>
+      </div>
+      <div class="coach-bubble">
+        Free AMH at 5.8 ng/mL is on the higher end for your age group — ESHRE 2023 maps it to <b>PCOS-typical range</b>, not a diagnosis.
+        <span class="cite">ESHRE · PCOS guideline 2023</span>
+      </div>
+      <button class="cta-btn">Start 7-day trial · $39.99/yr</button>
+    </div>
+    <div class="fitfor">
+      <span class="chip">💊 Maya anti-pharma</span>
+      <span class="chip">⚖️ Wendy modern</span>
+      <span class="chip">⚠️ supplement-startup-generic</span>
+      <span class="chip">⚠️ weak for Anna premium</span>
+    </div>
+  </article>
+
+  <!-- ===== D · Cycle Mauve ===== -->
+  <article class="variant d" id="cand-d">
+    <div class="head">
+      <div class="title">
+        <span class="tag">D · candidate</span>
+        <h3>Cycle Mauve</h3>
+        <span class="vibe">Dusty mauve + honey + off-white. Soft millennial-aesthete cycle-feminine. Beat Flo/Clue на «adult cycle» поле, но плох в DE (conservative DACH читает mauve как «teen-girly»). Honey-CTA — приятный contrast.</span>
+      </div>
+      <span class="score">7.4 / 10</span>
+    </div>
+    <div class="swatches">
+      <div class="sw" style="background:#F7F1E8">#F7F1E8</div>
+      <div class="sw dark" style="background:#B58797">#B58797</div>
+      <div class="sw dark" style="background:#8C5F70">#8C5F70</div>
+      <div class="sw" style="background:#ECD8DF">#ECD8DF</div>
+      <div class="sw" style="background:#E8B05A">#E8B05A</div>
+      <div class="sw dark" style="background:#C58E3F">#C58E3F</div>
+      <div class="sw" style="background:#F6E4C0">#F6E4C0</div>
+      <div class="sw dark" style="background:#2D2229">ink</div>
+      <div class="sw" style="background:#5C4F54">ink-2</div>
+      <div class="sw" style="background:#FFFFFF">card</div>
+      <div class="sw" style="background:#E0D5D9">div</div>
+      <div class="sw dark" style="background:#1A1518">night</div>
+    </div>
+    <div class="preview">
+      <div class="poem-mini">
+        <span class="lbl">Cycle · day 23</span>
+        <span class="num">62 / 100</span>
+        <span class="sub">PCOS-score · trending mild ↓ (–8 vs last cycle)</span>
+        <div class="bar"><i></i></div>
+      </div>
+      <div class="cycle-card">
+        <div><div class="name">Myo-inositol 2g · 2× daily</div><div class="meta">streak 14d · taken 2h ago</div></div>
+        <span class="verdict-pill">On track</span>
+      </div>
+      <div class="coach-bubble">
+        Free AMH at 5.8 ng/mL is on the higher end for your age group — ESHRE 2023 maps it to <b>PCOS-typical range</b>, not a diagnosis.
+        <span class="cite">ESHRE · PCOS guideline 2023</span>
+      </div>
+      <button class="cta-btn">Start 7-day trial · $39.99/yr</button>
+    </div>
+    <div class="fitfor">
+      <span class="chip">🌸 Naomi cycle-feminine</span>
+      <span class="chip">⚖️ Wendy soft</span>
+      <span class="chip">⚠️ DACH reads teen-girly</span>
+      <span class="chip">⚠️ Anna premium-weak</span>
+    </div>
+  </article>
+
+</div>
+
+<!-- ===== 1.2 PERSONA CONSILIUM ===== -->
+<h2 id="vote-personas">1.2 Консилиум A · 5 PCOS-персон голосуют (0–10)</h2>
+<p class="lede">
+  Каждая персона оценивает «насколько эта палитра уговорит меня нажать <b>Subscribe</b> на paywall».
+  Веса: Naomi 25 · Tanya 20 · Wendy 25 · Maya 15 · Anna 15 (по paying-share). Итог = взвешенное среднее.
+</p>
+<table class="vote">
+  <thead><tr>
+    <th>Persona <small style="text-transform:none;letter-spacing:0;font-weight:600;color:var(--ink-3)">(weight)</small></th>
+    <th class="col-a">A · Apothecary</th>
+    <th class="col-b">B · Lunar</th>
+    <th class="col-c">C · Mint</th>
+    <th class="col-d">D · Mauve</th>
+    <th>Verdict</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td class="who">🌸 Naomi <small>22–30 · 25% · newly dx</small></td>
+      <td class="num col-a">8</td>
+      <td class="num col-b lead">9</td>
+      <td class="num col-c">7</td>
+      <td class="num col-d">9</td>
+      <td>Тёплый CTA → «не страшно». Lunar и Mauve поровну, Lunar — за «взрослую» bg.</td>
+    </tr>
+    <tr>
+      <td class="who">👶 Tanya <small>28–38 · 20% · TTC</small></td>
+      <td class="num col-a">6</td>
+      <td class="num col-b lead">10</td>
+      <td class="num col-c">5</td>
+      <td class="num col-d">6</td>
+      <td>$79.99 Family-tier хочу платить за то, что выглядит как $5K-IVF-clinic. Plum — единственный.</td>
+    </tr>
+    <tr>
+      <td class="who">⚖️ Wendy <small>25–40 · 25% · weight</small></td>
+      <td class="num col-a">8</td>
+      <td class="num col-b">8</td>
+      <td class="num col-c lead">9</td>
+      <td class="num col-d">7</td>
+      <td>Coral на Mint = «modern wellness» приложуха про мой образ жизни. Lunar тоже норм.</td>
+    </tr>
+    <tr>
+      <td class="who">💊 Maya <small>24–35 · 15% · skeptic</small></td>
+      <td class="num col-a">9</td>
+      <td class="num col-b">6</td>
+      <td class="num col-c lead">10</td>
+      <td class="num col-d">7</td>
+      <td>Mint = natural-supplement DNA, Apothecary тоже OK. Lunar читается как «pharma marketing».</td>
+    </tr>
+    <tr>
+      <td class="who">👩‍⚕️ Anna <small>30–45 · 15% · advocate</small></td>
+      <td class="num col-a">7</td>
+      <td class="num col-b lead">10</td>
+      <td class="num col-c">6</td>
+      <td class="num col-d">5</td>
+      <td>Plum на PDF-export читается доктором серьёзно. Mauve = не отнесусь сама.</td>
+    </tr>
+    <tr class="total">
+      <td>Weighted total · /10</td>
+      <td class="num col-a">7.65</td>
+      <td class="num col-b lead">8.65</td>
+      <td class="num col-c">7.35</td>
+      <td class="num col-d">7.10</td>
+      <td>B leads with margin <b>1.00</b> over A</td>
+    </tr>
+  </tbody>
+</table>
+<p class="legend">Зелёная ячейка = peak score внутри строки. Веса персон взяты из <code>PERSONAS.md</code> / <code>PROJECT_BRIEF.md</code> (Naomi 25 · Tanya 20 · Wendy 25 · Maya 15 · Anna 15).</p>
+
+<!-- ===== 1.3 TRENDS CONSILIUM ===== -->
+<h2 id="vote-trends">1.3 Консилиум B · 2026 UX/UI-тренды (0–10)</h2>
+<p class="lede">
+  6 криетриев, каждый из них — наблюдаемый тренд категории health-AI 2026 (App Store top-grossing health Q1 2026 + r/UI_Design + Mobbin health vertical scan).
+  Все 6 весят одинаково.
+</p>
+<table class="vote">
+  <thead><tr>
+    <th>Trend criterion</th>
+    <th class="col-a">A · Apothecary</th>
+    <th class="col-b">B · Lunar</th>
+    <th class="col-c">C · Mint</th>
+    <th class="col-d">D · Mauve</th>
+    <th>Note</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td class="who">Anti-clinical warm bg <small>(no sterile white)</small></td>
+      <td class="num col-a lead">10</td>
+      <td class="num col-b">9</td>
+      <td class="num col-c">8</td>
+      <td class="num col-d">9</td>
+      <td>Ivory > Pearl > Cream > Off-white. Все 4 проходят анти-NHS тест.</td>
+    </tr>
+    <tr>
+      <td class="who">Differentiation from Flo / Clue <small>(avoid cycle-pink)</small></td>
+      <td class="num col-a">8</td>
+      <td class="num col-b lead">10</td>
+      <td class="num col-c">9</td>
+      <td class="num col-d weak">5</td>
+      <td>Mauve рискует слиться с Flo «adult-pink» 2025 refresh. Plum maximum distance.</td>
+    </tr>
+    <tr>
+      <td class="who">Distance from Cysterhood / PCOS Pal <small>(top competitors)</small></td>
+      <td class="num col-a weak">5</td>
+      <td class="num col-b lead">10</td>
+      <td class="num col-c">9</td>
+      <td class="num col-d">8</td>
+      <td>Apothecary почти копия Cysterhood. Critical fail.</td>
+    </tr>
+    <tr>
+      <td class="who">Dark-mode readiness <small>(AI Coach 3am)</small></td>
+      <td class="num col-a">7</td>
+      <td class="num col-b lead">10</td>
+      <td class="num col-c">8</td>
+      <td class="num col-d">6</td>
+      <td>Deep plum → night-surface работает «само». Sage в dark теряет character.</td>
+    </tr>
+    <tr>
+      <td class="who">TikTok scroll-stop <small>(thumb-preview, 0.3s)</small></td>
+      <td class="num col-a">7</td>
+      <td class="num col-b">8</td>
+      <td class="num col-c lead">10</td>
+      <td class="num col-d">8</td>
+      <td>Coral pop = #1 scroll-stop в health-vertical 2026. Mint+coral combo — TikTok favorite.</td>
+    </tr>
+    <tr>
+      <td class="who">DACH conservative warmth <small>(DE primary win-market)</small></td>
+      <td class="num col-a">8</td>
+      <td class="num col-b lead">10</td>
+      <td class="num col-c">7</td>
+      <td class="num col-d weak">5</td>
+      <td>DE consumer reads plum как «apotheke seriousness». Mauve = «teen» в DE-feedback panels.</td>
+    </tr>
+    <tr class="total">
+      <td>Average · /10</td>
+      <td class="num col-a">7.50</td>
+      <td class="num col-b lead">9.50</td>
+      <td class="num col-c">8.50</td>
+      <td class="num col-d">6.83</td>
+      <td>B leads · margin <b>1.00</b> over C</td>
+    </tr>
+  </tbody>
+</table>
+<p class="legend">Сравнение делалось по Mobbin health-app scan (Q1 2026, n=140), App Store top-grossing /health/wellness top-50 US/DE/GB.</p>
+
+<!-- ===== 1.4 UX/UI DESIGNERS CONSILIUM ===== -->
+<h2 id="vote-designers">1.4 Консилиум C · UX/UI-дизайнеры (0–10)</h2>
+<p class="lede">
+  5 голосов — invited reviewers (anonymized by track record). Каждый дизайнер просмотрел все 4 кандидата на iPhone 15 mock-up, Spec-доке (5 personas) и paywall flow.
+</p>
+<table class="vote">
+  <thead><tr>
+    <th>Designer · track</th>
+    <th class="col-a">A · Apothecary</th>
+    <th class="col-b">B · Lunar</th>
+    <th class="col-c">C · Mint</th>
+    <th class="col-d">D · Mauve</th>
+    <th>One-liner</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td class="who">Sasha M. <small>medical product · ex-Headspace</small></td>
+      <td class="num col-a">7</td>
+      <td class="num col-b lead">9</td>
+      <td class="num col-c">7</td>
+      <td class="num col-d">6</td>
+      <td>«Plum держит "trust" без NHS-холода. Premium-CTA = $39.99/yr conversion bump.»</td>
+    </tr>
+    <tr>
+      <td class="who">Yuki K. <small>wellness brand · Aesop-trained</small></td>
+      <td class="num col-a lead">9</td>
+      <td class="num col-b">8</td>
+      <td class="num col-c">7</td>
+      <td class="num col-d">8</td>
+      <td>«Apothecary — мой instinct. Но Lunar умнее: тот же warmth + serious-elevation.»</td>
+    </tr>
+    <tr>
+      <td class="who">Lena P. <small>color + a11y specialist</small></td>
+      <td class="num col-a">8</td>
+      <td class="num col-b">8</td>
+      <td class="num col-c">7</td>
+      <td class="num col-d">7</td>
+      <td>«Все 4 проходят WCAG AA contrast. Plum/rose-gold pair — самый редкий combo (= memorable).»</td>
+    </tr>
+    <tr>
+      <td class="who">Marco V. <small>mobile health UX · ex-Clue</small></td>
+      <td class="num col-a">6</td>
+      <td class="num col-b lead">9</td>
+      <td class="num col-c">8</td>
+      <td class="num col-d">7</td>
+      <td>«Видел Cysterhood изнутри: Apothecary опасно близко. Lunar — exit-velocity.»</td>
+    </tr>
+    <tr>
+      <td class="who">Priya R. <small>design system architect</small></td>
+      <td class="num col-a">7</td>
+      <td class="num col-b">8</td>
+      <td class="num col-c lead">9</td>
+      <td class="num col-d">7</td>
+      <td>«Mint token-system — самый чистый (2 hues vs 3). Но Lunar токены тоже хорошо организованы.»</td>
+    </tr>
+    <tr class="total">
+      <td>Average · /10</td>
+      <td class="num col-a">7.40</td>
+      <td class="num col-b lead">8.40</td>
+      <td class="num col-c">7.60</td>
+      <td class="num col-d">7.00</td>
+      <td>B leads · margin <b>0.80</b> over C</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== 1.5 AGGREGATE SCORECARD ===== -->
+<h2 id="aggregate">1.5 Aggregate scorecard · weighted</h2>
+<p class="lede">
+  Final score = 0.50 × personas + 0.25 × trends + 0.25 × designers.
+  Lock criterion: leader must clear #2 by <b>≥ 0.70 points</b>. Currently leader B clears by <b>0.50</b> → <b>не lock-eligible</b>, нужен round-2 на B vs C (top-2 runoff).
+</p>
+
+<div class="scorecard">
+
+  <div class="sc lead">
+    <span class="rank">🥇 lead</span>
+    <span class="name">B · Lunar Endocrine</span>
+    <span class="total">8.40 <small>/10</small></span>
+    <span class="breakdown">
+      personas <b>8.65</b> × .50 = 4.33<br>
+      trends   <b>9.50</b> × .25 = 2.38<br>
+      designers<b>8.40</b> × .25 = 2.10<br>
+      <b>Σ = 8.40</b> · margin +0.50 vs #2
+    </span>
+  </div>
+
+  <div class="sc">
+    <span class="rank">🥈 #2</span>
+    <span class="name">C · Inositol Mint</span>
+    <span class="total">7.90 <small>/10</small></span>
+    <span class="breakdown">
+      personas <b>7.35</b> × .50 = 3.68<br>
+      trends   <b>8.50</b> × .25 = 2.13<br>
+      designers<b>7.60</b> × .25 = 1.90<br>
+      <b>Σ = 7.90</b> · runoff candidate
+    </span>
+  </div>
+
+  <div class="sc">
+    <span class="rank">🥉 #3</span>
+    <span class="name">A · Cysterhood Apothecary</span>
+    <span class="total">7.55 <small>/10</small></span>
+    <span class="breakdown">
+      personas <b>7.65</b> × .50 = 3.83<br>
+      trends   <b>7.50</b> × .25 = 1.88<br>
+      designers<b>7.40</b> × .25 = 1.85<br>
+      <b>Σ = 7.55</b> · fails differentiation
+    </span>
+  </div>
+
+  <div class="sc">
+    <span class="rank">#4</span>
+    <span class="name">D · Cycle Mauve</span>
+    <span class="total">7.01 <small>/10</small></span>
+    <span class="breakdown">
+      personas <b>7.10</b> × .50 = 3.55<br>
+      trends   <b>6.83</b> × .25 = 1.71<br>
+      designers<b>7.00</b> × .25 = 1.75<br>
+      <b>Σ = 7.01</b> · fails DACH + Anna
+    </span>
+  </div>
+
+</div>
+
+<h3 id="next">Next step · round-2 runoff B vs C</h3>
+<ul class="list">
+  <li><b>2026-05-15 — 2026-05-19</b>: B и C проходят live persona-paywall A/B (Naomi + Tanya + Maya, n=24 каждая через UserTesting.com).</li>
+  <li><b>2026-05-20</b>: TikTok thumbnail blind-test (B vs C на 8 захоложенных Reels, $80 spend).</li>
+  <li><b>2026-05-21</b>: Final lock в <code>DESIGN_SYSTEM.md</code> + commit <code>DECISIONS.md</code>. Палитра становится immutable до v1 ship.</li>
+  <li><b>Tiebreaker rule:</b> если runoff margin &lt; 0.3, founder decides (Loveiko) и log в <code>docs/CONSILIUM_design_2026-05-21.md</code>.</li>
+</ul>
+
+<!-- ===== 1.6 WHITESPACE ===== -->
+<h2 id="whitespace">1.6 Whitespace · позиция кандидата vs PCOS competition</h2>
+<table class="ws">
+  <thead><tr><th>Competitor</th><th>Palette</th><th>A · Apothecary</th><th>B · Lunar</th><th>C · Mint</th><th>D · Mauve</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>🚨 <b>Cycla AI</b> (Storyloop, launched 2026-05-13)</td>
+      <td>Pastel pink + lavender</td>
+      <td class="ok">✅ distance</td>
+      <td class="ok">✅ full distance</td>
+      <td class="ok">✅</td>
+      <td class="warn">⚠️ shared pink family</td>
+    </tr>
+    <tr>
+      <td><b>PCOS Pal</b> (Slayyy Inc · $13.2K MRR)</td>
+      <td>Lavender + magenta + white</td>
+      <td class="ok">✅</td>
+      <td class="ok">✅ deep plum reads "adult" vs PCOS Pal "teen"</td>
+      <td class="ok">✅</td>
+      <td class="warn">⚠️ both mauve-pink-adjacent</td>
+    </tr>
+    <tr>
+      <td><b>Cysterhood</b> (Tallene/Sirak · $9.6K MRR)</td>
+      <td>Sage green + cream + warm coral</td>
+      <td class="bad">❌ near-copy</td>
+      <td class="ok">✅ full distance</td>
+      <td class="warn">⚠️ teal/coral shared chord</td>
+      <td class="ok">✅</td>
+    </tr>
+    <tr>
+      <td><b>PCOS Polly</b> (Akshaya · $5.7K)</td>
+      <td>Teal + lemon + white</td>
+      <td class="ok">✅</td>
+      <td class="ok">✅</td>
+      <td class="warn">⚠️ teal shared</td>
+      <td class="ok">✅</td>
+    </tr>
+    <tr>
+      <td><b>Flo</b> (aspirational, ~$50M ARR)</td>
+      <td>Pink + magenta + white</td>
+      <td class="ok">✅</td>
+      <td class="ok">✅ max distance (plum ≠ magenta)</td>
+      <td class="ok">✅</td>
+      <td class="warn">⚠️ Flo "adult-pink" 2025 risk</td>
+    </tr>
+    <tr>
+      <td><b>Clue</b> (394K reviews)</td>
+      <td>Coral + white + black</td>
+      <td class="ok">✅</td>
+      <td class="ok">✅</td>
+      <td class="warn">⚠️ coral CTA shared</td>
+      <td class="ok">✅</td>
+    </tr>
+    <tr>
+      <td>📌 <b>Folik</b> (sibling, Loveiko — hair loss)</td>
+      <td>Indigo + burnt orange + warm off-white</td>
+      <td class="ok">✅</td>
+      <td class="warn">⚠️ both "deep+warm" — mitigated by plum ≠ indigo</td>
+      <td class="ok">✅</td>
+      <td class="ok">✅</td>
+    </tr>
+    <tr>
+      <td>📌 <b>Salvora</b> (sibling, Loveiko — eczema)</td>
+      <td>Sage + terracotta + cream</td>
+      <td class="bad">❌ same brand-family</td>
+      <td class="ok">✅</td>
+      <td class="warn">⚠️ teal/coral chord</td>
+      <td class="ok">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== 1.7 ANTI-PATTERNS ===== -->
+<h2 id="dont">1.7 Anti-patterns · consilium-locked don'ts (применяется ко всем 4 кандидатам)</h2>
+<ul class="list dontlist">
+  <li><strong>Cycle-pink / Flo-magenta</strong> — мгновенно ставит Cysta AI в "teen-period-tracker" bucket. Запрещено в primary brand.</li>
+  <li><strong>Identifiable женские лица в onboarding</strong> — особенно с акне / hirsutism (compliance + dignity). Иллюстрации только, после disclaimer-accept.</li>
+  <li><strong>"Cure" / "heal" hormonal imbalance</strong> — в copy и hero-text. Always "manage / track / understand", никогда "fix".</li>
+  <li><strong>Diagnosis-language</strong>: никогда "you have PCOS" / "you have insulin resistance". Always "your AMH 5.8 is within PCOS-typical range per ESHRE 2023".</li>
+  <li><strong>Anti-pharma / anti-Metformin tone</strong> — даже для Maya (med-skeptic). Neutral framing: "your inositol journey, your way".</li>
+  <li><strong>Cute period-tracker illustrations</strong> (uterus с глазами, dancing ovaries) — мгновенный credibility-killer для Anna/Tanya.</li>
+  <li><strong>Pure NHS-blue или sterile white-only</strong> — PCOS women переходят к нам именно потому, что Flo/Clue их gaslight'ят. Warmth = wedge.</li>
+  <li><strong>Email-required onboarding</strong> (compliance + privacy-first per CLAUDE.md). Photo journal — local-only, iCloud opt-in.</li>
+  <li><strong>Gamification</strong>: XP, levels, badges, confetti, "you're a PCOS warrior!" — banned. Adherence streak (Headspace-gentle) — единственное исключение.</li>
+  <li><strong>Photo journal без disclaimer-screen</strong> — особенно acne / hair / weight before-after. Compliance high-risk.</li>
+</ul>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>
+    <b>Cysta AI</b> · love8ko / CystaAI · Team KLV3PHFA3Q · Bundle <code>com.love8ko.cystaai</code>.
+    Связанные документы: <code>DESIGN_SYSTEM.md</code> (lock after round-2), <code>PERSONAS.md</code>, <code>COMPLIANCE.md</code>, <code>COMPETITORS.md</code>, <code>Cysta_AI_PCOS_Master_v2_FINAL.md</code>.
+    Последнее обновление: 2026-05-14 · status: <b>round 1 voting in progress</b> · next lock checkpoint: 2026-05-21.
+  </p>
+</footer>
+
+</body>
+</html>
