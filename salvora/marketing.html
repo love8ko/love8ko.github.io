@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvora — AI Eczema Tracker</title>
+    <meta name="description" content="AI-powered eczema flare tracker. Photo POEM severity, trigger pattern detection, doctor-shareable PDF. Built on AAD + NEA + Mayo Clinic guidelines. 7-day free trial.">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+            line-height: 1.6;
+            color: #2C2419;
+            background: #FAF4E5;
+        }
+        header {
+            text-align: center;
+            padding: 60px 0 30px;
+        }
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+            color: #2C2419;
+        }
+        .tagline {
+            font-size: 20px;
+            color: #C97D60;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-top: 40px;
+            letter-spacing: -0.005em;
+            color: #2C2419;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .feature-card {
+            background: #FFFFFF;
+            padding: 18px 20px;
+            border-radius: 10px;
+            border-left: 3px solid #C97D60;
+        }
+        .feature-card.sage {
+            background: #DCE5D6;
+            border-left-color: #6F8567;
+        }
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .feature-desc {
+            font-size: 14px;
+            color: #5C5042;
+        }
+        .severity-row {
+            display: flex;
+            gap: 14px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        .severity-chip {
+            flex: 1 1 200px;
+            background: #FFFFFF;
+            padding: 14px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        .chip-clear { border-left: 3px solid #6F8567; }
+        .chip-mild { border-left: 3px solid #D4A640; }
+        .chip-moderate { border-left: 3px solid #C97D60; }
+        .chip-severe { border-left: 3px solid #A85F45; }
+        .persona-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 24px 0;
+        }
+        .persona-card {
+            background: #DCE5D6;
+            padding: 16px;
+            border-radius: 10px;
+            border-left: 3px solid #6F8567;
+            font-size: 14px;
+        }
+        .persona-name {
+            font-weight: 600;
+            margin: 6px 0 4px;
+            color: #2C2419;
+        }
+        .persona-icon {
+            font-size: 24px;
+        }
+        .price-card {
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 16px 0;
+            border: 1px solid #E6D9BE;
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #F0E5C8;
+        }
+        .price-row:last-child { border-bottom: none; }
+        .price-row strong { color: #2C2419; }
+        a { color: #A85F45; }
+        .footer-disclaimer {
+            margin-top: 60px;
+            padding: 20px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #5C5042;
+            line-height: 1.5;
+            border-left: 3px solid #C97D60;
+        }
+        .footer-links {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #5C5042;
+        }
+        .footer-links a { margin: 0 10px; }
+        @media (max-width: 600px) {
+            .persona-row { grid-template-columns: 1fr; }
+            .feature-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Salvora</h1>
+        <p class="tagline">Eczema isn't random. Find the pattern.</p>
+        <p>AI-powered flare tracker for atopic dermatitis, eczema, and sensitive skin. Photo severity scoring, trigger pattern detection, and a doctor-shareable PDF — built on AAD, NEA, AAFP, and Mayo Clinic guidelines.</p>
+    </header>
+
+    <h2>Four reasons people with eczema are switching</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">📷</div>
+            <div class="feature-title">10-Second Photo Severity</div>
+            <div class="feature-desc">Snap a photo of your flare. Get an instant POEM-style severity score, auto-tagged by body region. Photos never leave your iPhone.</div>
+        </div>
+        <div class="feature-card sage">
+            <div class="feature-icon">🧠</div>
+            <div class="feature-title">AI Skin Coach — 24/7</div>
+            <div class="feature-desc">Ask anything: "why does my eczema flare after gym?" Grounded in AAD, NEA, AAFP, and Mayo Clinic. No steroid pushing, no anti-pharma agenda.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <div class="feature-title">Automatic Trigger Detection</div>
+            <div class="feature-desc">Log meals, weather, stress, sleep, and products. After 14 days, Salvora surfaces the 3 triggers most correlated with your flares.</div>
+        </div>
+        <div class="feature-card sage">
+            <div class="feature-icon">📄</div>
+            <div class="feature-title">Doctor-Ready PDF</div>
+            <div class="feature-desc">30-day POEM trend graph, top triggers, annotated photo timeline, medication log. Generated in one tap for your next dermatology visit.</div>
+        </div>
+    </div>
+
+    <h2>POEM severity scoring — the standard dermatologists use</h2>
+    <p>Salvora uses POEM (Patient-Oriented Eczema Measure) — the methodology used by dermatologists worldwide. Each scan returns a clear severity band so you always know where you stand:</p>
+    <div class="severity-row">
+        <div class="severity-chip chip-clear"><strong>Clear (0–2)</strong> — minimal symptoms, no intervention needed</div>
+        <div class="severity-chip chip-mild"><strong>Mild (3–7)</strong> — track triggers, maintain moisturizer routine</div>
+        <div class="severity-chip chip-moderate"><strong>Moderate (8–16)</strong> — consider treatment plan review with your dermatologist</div>
+        <div class="severity-chip chip-severe"><strong>Severe (17–28)</strong> — urgent dermatology consultation recommended</div>
+    </div>
+    <p>Every screen has a safety strip flagging signs that need urgent care — infection, anaphylaxis, or sudden changes you can't explain.</p>
+
+    <h2>Built for five kinds of people with eczema</h2>
+    <div class="persona-row">
+        <div class="persona-card">
+            <div class="persona-icon">👨‍👩‍👧</div>
+            <div class="persona-name">Parents of eczema kids</div>
+            Track your child's flares without medical jargon. Identify food and environmental triggers. Share clean reports with the pediatrician.
+        </div>
+        <div class="persona-card">
+            <div class="persona-icon">🌿</div>
+            <div class="persona-name">TSW (Topical Steroid Withdrawal) Community</div>
+            Document your healing journey objectively. No steroid pressure. Your data, your timeline, your way.
+        </div>
+        <div class="persona-card">
+            <div class="persona-icon">💊</div>
+            <div class="persona-name">Biologic Users</div>
+            Dupixent, JAK inhibitors, Rinvoq — pair Salvora with your biologic to show your dermatologist whether the treatment is working.
+        </div>
+        <div class="persona-card">
+            <div class="persona-icon">📸</div>
+            <div class="persona-name">Anyone tired of vague advice</div>
+            "Moisturize more" isn't enough. See real patterns in your data and bring objective evidence to your next appointment.
+        </div>
+    </div>
+
+    <h2>The math vs. the alternatives</h2>
+    <ul>
+        <li><strong>Dermatology consult (private, US):</strong> $200–500 per visit</li>
+        <li><strong>Allergy testing panel:</strong> $300–1,000 (often inconclusive)</li>
+        <li><strong>NEA EczemaWise:</strong> Closing December 18, 2026 — 31M Americans need a replacement</li>
+        <li><strong>Salvora Premium:</strong> $39.99 / year &nbsp;·&nbsp; 7-day free trial</li>
+    </ul>
+
+    <h2>Pricing</h2>
+    <div class="price-card">
+        <div class="price-row">
+            <div><strong>Weekly</strong><br><span style="font-size: 13px; color: #5C5042;">Habit-lock for short-term tracking</span></div>
+            <div>$4.99 / week</div>
+        </div>
+        <div class="price-row">
+            <div><strong>Annual Standard</strong><br><span style="font-size: 13px; color: #5C5042;">7-day free trial · save ~85% vs weekly</span></div>
+            <div>$39.99 / year</div>
+        </div>
+        <div class="price-row">
+            <div><strong>Annual Family</strong><br><span style="font-size: 13px; color: #5C5042;">Up to 5 household members · 7-day free trial</span></div>
+            <div>$79.99 / year</div>
+        </div>
+    </div>
+    <p style="font-size: 13px; color: #5C5042;">Subscriptions auto-renew unless cancelled 24 hours before the period end. Manage or cancel in Settings → Apple ID → Subscriptions. Prices may vary by region.</p>
+
+    <h2>Privacy by design</h2>
+    <ul>
+        <li><strong>Photos of your skin never leave your iPhone.</strong> Severity scoring runs entirely on-device.</li>
+        <li>All flare logs, journal entries, and chat threads stored locally via SwiftData.</li>
+        <li>No account required. No email. No sign-in. No analytics. No ad trackers.</li>
+        <li>HealthKit sync (sleep/stress correlations) is opt-in only.</li>
+        <li>AI Coach uses our own Cloudflare Workers proxy — no third-party AI provider has your data.</li>
+    </ul>
+    <p>Full details in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+    <div class="footer-disclaimer">
+        <strong>Important.</strong> Salvora is a dermatology companion app. It is <strong>not</strong> a medical device, <strong>not</strong> a diagnostic tool, and <strong>not</strong> a substitute for professional medical advice, examination, diagnosis, or treatment. POEM severity scoring is an established methodology but the app does not diagnose any condition. The AI Coach provides general guidance grounded in published dermatology guidelines (AAD, NEA, AAFP, Mayo Clinic) and explicitly redirects any diagnostic question to your dermatologist. For signs of infection (spreading redness, oozing pus, fever), severe TSW symptoms, anaphylactic reactions, or any sudden change you can't explain — contact your dermatologist or primary care immediately. In an emergency, call <strong>911</strong>. Always trust your clinical instinct and your dermatologist's plan.
+    </div>
+
+    <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a> ·
+        <a href="support.html">Support</a> ·
+        <a href="terms-of-use.html">Terms</a> ·
+        <a href="medical-disclaimer.html">Medical Disclaimer</a> ·
+        <a href="mailto:loveykovl@gmail.com">Contact</a>
+    </div>
+</body>
+</html>
