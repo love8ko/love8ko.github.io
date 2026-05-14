@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Salvora: AI Eczema Flare Tracker</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px; line-height: 1.7; color: #1C1C1E; background: #F5EBD7; }
+        h1 { font-size: 1.9em; margin-bottom: 0.2em; color: #2A4A35; }
+        h2 { font-size: 1.25em; margin-top: 1.8em; color: #2A4A35; }
+        h3 { font-size: 1.05em; margin-top: 1.2em; color: #4A6A55; }
+        .date { color: #6B7280; font-size: 0.9em; margin-bottom: 2em; }
+        ul { padding-left: 1.2em; }
+        li { margin-bottom: 0.4em; }
+        a { color: #C97D60; }
+        .highlight { background: #FFFFFF; padding: 14px 18px; border-left: 3px solid #7A9171; margin: 16px 0; border-radius: 6px; }
+        .warn { background: #FFFFFF; padding: 14px 18px; border-left: 3px solid #C97D60; margin: 16px 0; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="date">Effective date: May 14, 2026</p>
+
+<p>Salvora: AI Eczema Flare Tracker ("the App") is developed and published by Valeriy Loveiko. We take your privacy seriously and are committed to protecting your personal information. This privacy policy explains how the App collects, uses, stores, and protects your data.</p>
+
+<div class="highlight">
+    <strong>Summary:</strong> The App can process skin photos and AI Coach questions using secure third-party services described below. Photos and chat messages are sent for analysis only after you give per-feature consent and are not retained by the providers after processing. All results, photos, trigger logs, treatment logs, and chat history are stored locally on your device. We do not sell, share, or monetize your personal data.
+</div>
+
+<div class="warn">
+    <strong>Educational only:</strong> Salvora is a wellness companion, not a medical device. The App does not diagnose, treat, cure, or prevent any condition. Always consult a dermatologist before starting, changing, or stopping any treatment.
+</div>
+
+<h2>1. Information We Collect</h2>
+
+<h3>1.1 Skin Photos and Camera Data</h3>
+<p>When you log a photo in Salvora's Photo Journal, the App accesses your device's camera or photo library at your explicit request. These photos are:</p>
+<ul>
+    <li>Used solely for tracking the appearance of your eczema-affected skin over time</li>
+    <li>Stored locally on your device as part of your photo journal</li>
+    <li>Optionally sent — only after explicit per-feature consent — to our AI vision provider (see §3.1) for a text description that becomes part of the entry</li>
+    <li>Never shared with other users, advertisers, or any third party beyond the AI provider listed in §3 and only when you opt in</li>
+</ul>
+<p>The App does not scan your photo library and does not collect EXIF metadata (location, date, camera model) from your photos.</p>
+
+<h3>1.2 Face Data</h3>
+<p>Eczema flares often affect visible areas including the face. Photos you choose to log may incidentally contain your face. We refer to such photos collectively as "face data." This section explains exactly how this data is handled, in compliance with Apple App Store guideline 5.1.1.</p>
+<ul>
+    <li><strong>What is collected:</strong> Photos of skin areas that you choose to capture or import. Front-facing or close-up views may incidentally include the user's face. Photos are captured only at the user's explicit request.</li>
+    <li><strong>Purpose — eczema tracking only:</strong> Photos are used exclusively to track skin appearance over time and, optionally, to generate a text description for your journal entry. The App does <strong>not</strong> perform face recognition, face identification, biometric template extraction, biometric enrollment, emotion detection, age/gender estimation, or any other biometric analysis. Photos are never used to identify, authenticate, or distinguish between individual users.</li>
+    <li><strong>On-device processing:</strong> No facial landmarks, face embeddings, or biometric templates are computed, stored, or transmitted.</li>
+    <li><strong>Transmission:</strong> When you tap the AI description button, the photo is transmitted via encrypted HTTPS to OpenAI's GPT-4o Vision API, routed through a Cloudflare Worker proxy that forwards the request without logging or storing image content. No personal identifiers are sent alongside the photo.</li>
+    <li><strong>Third-party sharing:</strong> Photos are shared only with OpenAI (via the Cloudflare proxy) for the sole purpose of generating a text description of the visible skin. They are not shared with any other third party, advertiser, analytics service, or data broker. OpenAI processes API inputs under a zero-retention policy and does not use them to train models. See <a href="https://openai.com/policies/api-data-usage-policies">OpenAI's API Data Usage Policy</a>.</li>
+    <li><strong>Retention:</strong> Photos are retained on the user's device only as part of the local photo journal. They are not retained on OpenAI's or our own servers. The user can delete any photo at any time within the App or by uninstalling the App.</li>
+    <li><strong>User control:</strong> Photo logging and AI description are entirely optional. The user can revoke camera or photo-library access at any time via iOS Settings → Salvora. Deleting the App removes all locally stored photos.</li>
+</ul>
+
+<h3>1.3 Self-Reported Severity (POEM)</h3>
+<p>When you log a photo or trigger entry, you may rate your symptoms using a Patient-Oriented Eczema Measure (POEM) inspired 0–28 scale. This is a self-report, not a clinical diagnosis. The score:</p>
+<ul>
+    <li>Is generated by you on a slider — Salvora does not assign severity scores from photos</li>
+    <li>Is stored exclusively on your device and used for trend visualization, doctor-shareable reports, and insight calculations</li>
+    <li>Is never transmitted to any external server</li>
+</ul>
+
+<h3>1.4 AI Coach Chat Data</h3>
+<p>When you use the AI Coach, your messages and the AI's responses are processed and stored as follows:</p>
+<ul>
+    <li>Messages are sent — only after explicit per-feature consent — via encrypted HTTPS to DeepSeek's API (proxied through our Cloudflare Worker) for response generation</li>
+    <li>Chat history is stored locally on your device</li>
+    <li>Every Coach response is grounded in our on-device eczema knowledge base — citations link to the source guideline (American Academy of Dermatology, National Eczema Association, Mayo Clinic, American Academy of Family Physicians, PubMed extracts)</li>
+    <li>The on-device knowledge base never leaves your device</li>
+    <li>No photos, identifiers, or HealthKit data are ever sent to the chat provider — only the message text and a brief on-device context summary (selected persona type, age band if you provided one, recent severity range)</li>
+</ul>
+
+<h3>1.5 Trigger and Treatment Log</h3>
+<p>If you log triggers (food, environment, sleep, stress, products) or treatments (topical corticosteroids, TCI, biologics, moisturizers, wet-wrap, or any custom entry), this information is:</p>
+<ul>
+    <li>Stored exclusively on your device</li>
+    <li>Used to generate timeline visualizations, trigger correlations, and the doctor-shareable PDF inside the App</li>
+    <li>Never transmitted to any external server</li>
+</ul>
+<p>Salvora does not recommend, prescribe, or modify treatment dosages. The treatment log is solely a personal journal of what the user is already doing. All treatment names visible in the App are for educational logging only and are not endorsed or supplied by the developer.</p>
+
+<h3>1.6 Subscription Information</h3>
+<p>Salvora offers optional weekly and annual subscriptions managed entirely through Apple's App Store and StoreKit framework. All payment processing, billing, and subscription management are handled by Apple. We do not collect, process, or store any payment information. We use RevenueCat, a third-party subscription management service, to track subscription status. RevenueCat receives an anonymous app user ID — no personal information is shared. For details, see <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a> and <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+
+<h3>1.7 Information We Do NOT Collect</h3>
+<p>Salvora does <strong>not</strong> collect:</p>
+<ul>
+    <li>Your name, email address, phone number, or any contact information</li>
+    <li>Your physical location or GPS coordinates</li>
+    <li>Device identifiers (IDFA, IDFV) for advertising or tracking purposes</li>
+    <li>Browsing history or activity outside the App</li>
+    <li>Contacts, calendar, or any other personal data from your device</li>
+    <li>Biometric identifiers, face recognition templates, face embeddings, or any biometric data used to identify or authenticate individuals (the photos described in §1.2 are used solely for skin tracking and are never converted into biometric templates)</li>
+    <li>Social media accounts or login credentials</li>
+</ul>
+
+<h2>2. How We Use Your Information</h2>
+<p>The information processed by the App is used exclusively for:</p>
+<ul>
+    <li><strong>Photo Journal:</strong> Local storage of your skin photos for visual progress tracking</li>
+    <li><strong>Optional Photo Description:</strong> A text description of visible skin features, generated only when you tap the AI button per photo and after you accept the per-feature consent</li>
+    <li><strong>AI Coach:</strong> Messages are processed to generate sourced, citation-backed educational responses about eczema</li>
+    <li><strong>Trigger Tracker &amp; Insights:</strong> Local pattern detection from the food/environment/lifestyle entries you tap</li>
+    <li><strong>Doctor-Shareable PDF:</strong> Optional export of your trend data, generated on-device for you to share with your dermatologist</li>
+    <li><strong>Persona-Aware Personalization:</strong> Adapting in-app copy and Coach prompts to the persona type you selected during onboarding</li>
+</ul>
+<p>We do not use your data for advertising, profiling, marketing, or any purpose unrelated to the core functionality of the App.</p>
+
+<h2>3. Third-Party Services</h2>
+
+<h3>3.1 OpenAI (Vision Analysis — Optional)</h3>
+<p>When you tap the AI description button on a photo, Salvora uses OpenAI's GPT-4o Vision API to generate a short text description of the visible skin features. This call only happens when you explicitly request it and after you accept the per-feature consent prompt.</p>
+<ul>
+    <li>Your photo is transmitted via encrypted HTTPS to OpenAI's API (proxied via Cloudflare Worker)</li>
+    <li>OpenAI returns a short text description (color, texture, distribution, presence of oozing or cracks)</li>
+    <li>API inputs and outputs are <strong>not used to train OpenAI's models</strong> and are <strong>not retained</strong> after processing</li>
+    <li>No personal identifiers are sent alongside your data — only the image and analysis instructions</li>
+    <li>For details, see <a href="https://openai.com/policies/api-data-usage-policies">OpenAI's API Data Usage Policy</a></li>
+</ul>
+
+<h3>3.2 DeepSeek (AI Coach Text)</h3>
+<p>Salvora uses DeepSeek's API to generate AI Coach responses, grounded by our on-device eczema knowledge base. When you send a message:</p>
+<ul>
+    <li>The message text is transmitted via encrypted HTTPS to DeepSeek's API (proxied via Cloudflare Worker)</li>
+    <li>DeepSeek returns a generated response that the App grounds against the on-device citation corpus before presenting it</li>
+    <li>No photos, identifiers, or HealthKit data are ever sent to DeepSeek</li>
+    <li>A brief context summary (persona type, age band, recent severity range) is included so the response is tailored to your case</li>
+    <li>API inputs are not retained after processing</li>
+</ul>
+
+<h3>3.3 Cloudflare (API Gateway)</h3>
+<p>All AI requests are routed through a Cloudflare Worker proxy that forwards traffic to OpenAI/DeepSeek without logging or storing request bodies. The Worker exists solely to keep API keys server-side and to apply rate limiting.</p>
+
+<h3>3.4 RevenueCat (Subscription Management)</h3>
+<p>Salvora uses RevenueCat to manage subscription status. RevenueCat receives:</p>
+<ul>
+    <li>An anonymous, system-generated user identifier</li>
+    <li>Subscription status (active, expired, trial)</li>
+    <li>Product identifiers (which plan was purchased)</li>
+</ul>
+<p>RevenueCat does not receive your name, email, photos, trigger log, treatment log, or any personal information. For details, see <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a>.</p>
+
+<h3>3.5 Apple Services</h3>
+<ul>
+    <li><strong>StoreKit 2:</strong> For subscription management and payment processing. All financial data is handled by Apple.</li>
+    <li><strong>iCloud Backup:</strong> If enabled on your device, local App data may be included in your device backup. This is controlled by your device settings.</li>
+</ul>
+
+<h3>3.6 No Analytics or Advertising SDKs</h3>
+<p>Salvora does not integrate any analytics platforms (Google Analytics, Firebase, Mixpanel, Amplitude), advertising networks, crash reporting services beyond Apple's built-in diagnostics, or any other third-party tracking tools. The App contains no advertisements.</p>
+
+<h2>4. Data Storage and Security</h2>
+
+<h3>4.1 Local Storage</h3>
+<p>All photos, journal entries, trigger logs, treatment logs, chat history, and personalization settings are stored locally on your device using Apple's standard storage frameworks (UserDefaults for structured logs, the Documents directory for photo files). This data:</p>
+<ul>
+    <li>Resides only on your device's local storage</li>
+    <li>Is protected by your device's built-in security features (passcode, Face ID, Touch ID, encryption)</li>
+    <li>Is not accessible to the developer or any third party</li>
+    <li>Can be deleted at any time by removing items within the App or by deleting the App</li>
+</ul>
+
+<h3>4.2 On-Device Knowledge Base</h3>
+<p>The eczema citation corpus (sqlite-vec format) ships embedded in the App and is queried entirely on-device. The corpus contains AAD / NEA / Mayo / AAFP / selected PubMed extracts focused on eczema, atopic dermatitis, TSW, and trigger-management literature. It never leaves your device and is not personalized.</p>
+
+<h3>4.3 Network Security</h3>
+<p>All network communications are encrypted using industry-standard TLS 1.2+/HTTPS protocols. No data is transmitted in plain text. The App enforces App Transport Security (ATS) as required by Apple.</p>
+
+<h3>4.4 API Key Security</h3>
+<p>Third-party API credentials are kept server-side on the Cloudflare Worker and are not stored in plain text within the application source code.</p>
+
+<h2>5. Data Retention</h2>
+<ul>
+    <li><strong>Photos and journal entries:</strong> Retained on your device until you delete individual items or uninstall the App</li>
+    <li><strong>Chat history, trigger log, treatment log:</strong> Retained on your device until you delete individual items or uninstall the App</li>
+    <li><strong>OpenAI / DeepSeek requests:</strong> Not retained after processing — zero-retention policy for API usage</li>
+    <li><strong>Cloudflare Worker:</strong> No request bodies logged or retained</li>
+    <li><strong>RevenueCat:</strong> Anonymous subscription records retained per their data retention policy</li>
+    <li><strong>Subscription data (Apple):</strong> Managed entirely by Apple</li>
+</ul>
+
+<h2>6. Your Rights and Choices</h2>
+
+<h3>6.1 Camera and Photo Library Access</h3>
+<p>You can revoke the App's camera or photo library access at any time through iOS Settings → Salvora. Without camera access, you can view your existing data but cannot capture new photos.</p>
+
+<h3>6.2 AI Consent</h3>
+<p>The first AI Coach message and the first AI photo description each prompt you for explicit, separate consent. You can decline either and continue using Salvora as a manual tracker. You can also re-show these prompts from Settings → AI consent.</p>
+
+<h3>6.3 Deleting Your Data</h3>
+<p>Since all data is stored locally on your device:</p>
+<ul>
+    <li>Delete individual photos, chat threads, trigger entries, or treatment entries within the App</li>
+    <li>Use Settings → Delete all my data to wipe all logs at once</li>
+    <li>Delete all data by uninstalling the App</li>
+    <li>No request to the developer is necessary — we do not hold any of your data on external servers</li>
+</ul>
+
+<h3>6.4 Subscription Management</h3>
+<p>Manage, cancel, or modify your subscription through iOS Settings → Apple ID → Subscriptions, or through the App Store. Cancellation takes effect at the end of the current billing period. Refunds are handled by Apple.</p>
+
+<h2>7. Children's Privacy</h2>
+<p>Salvora is not directed at children under 12. The App is rated 12+ on the App Store. We do not knowingly collect personal information from children. Caregiver lanes (parents tracking a child's eczema) are operated by the consenting adult — the parent enters and reviews all data on the child's behalf, and no separate account or personal data is collected from the child.</p>
+
+<h2>8. International Users and Compliance</h2>
+<p>Salvora is available worldwide. We comply with applicable data protection regulations:</p>
+<ul>
+    <li><strong>GDPR (EU/EEA):</strong> Minimal data collection, no profiling, no cross-border data storage. Legal basis: user consent (camera permission, per-feature AI consent) and legitimate interest (core service). Right to erasure: delete the App.</li>
+    <li><strong>UK GDPR:</strong> Same rights and protections as EU GDPR apply.</li>
+    <li><strong>CCPA/CPRA (California):</strong> We do not sell or share personal information. We do not use personal information for behavioral advertising.</li>
+    <li><strong>PIPEDA (Canada):</strong> Compliant — minimal collection, consent-based, secure.</li>
+    <li><strong>LGPD (Brazil):</strong> Processing based on user consent, limited to core service.</li>
+    <li><strong>Other jurisdictions:</strong> Our privacy-by-design approach — minimal collection, local storage, no tracking, no advertising — is designed for global compliance.</li>
+</ul>
+
+<h2>9. Medical Disclaimer</h2>
+<p>Salvora is an <strong>educational wellness companion</strong>, not a medical device. The App does not diagnose, treat, cure, or prevent any condition. AI Coach responses are sourced from published guidelines (AAD, NEA, Mayo, AAFP, PubMed extracts) and are intended for educational use only. Always consult a dermatologist or qualified healthcare provider before starting, changing, or stopping any treatment. AI photo descriptions are descriptive only and never constitute a clinical assessment or severity grade — the POEM score in the App is a self-report by the user.</p>
+
+<h2>10. Changes to This Policy</h2>
+<p>We may update this policy to reflect changes in functionality or regulations. Material changes will be indicated by updating the effective date. Continued use after changes constitutes acceptance of the updated policy.</p>
+
+<h2>11. Contact Us</h2>
+<p>For questions about this privacy policy or your data:</p>
+<ul>
+    <li>Developer: Valeriy Loveiko</li>
+    <li>Email: <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></li>
+    <li>Support: <a href="https://love8ko.github.io/salvora/support.html">love8ko.github.io/salvora/support.html</a></li>
+</ul>
+
+<p style="margin-top: 2em; color: #6B7280; font-size: 0.85em;">
+    <a href="medical-disclaimer.html">Medical Disclaimer</a> &middot;
+    <a href="terms-of-use.html">Terms of Use</a> &middot;
+    <a href="support.html">Support</a>
+</p>
+
+</body>
+</html>
