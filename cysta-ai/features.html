@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cysta AI — Feature Decision Workbench (round 0)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* neutral workbench chrome — does NOT bias any feature */
+    --ink:        #2A2230;
+    --ink-2:      #5A4F60;
+    --ink-3:      #968B9C;
+    --bg:         #F6F1EC;
+    --bg-soft:    #FBF7F2;
+    --card:       #FFFFFF;
+    --divider:    #E5DAD5;
+
+    /* chrome accents (workbench, NOT a feature) */
+    --chrome:     #6B5970;
+    --chrome-mid: #574761;
+    --chrome-soft:#E2D6E0;
+
+    /* score scale */
+    --hi-bg:      #DCE8DC;
+    --hi:         #2E5A33;
+    --mid-bg:     #F4E4D0;
+    --mid:        #7A4B12;
+    --lo-bg:      #ECD0C8;
+    --lo:         #7A2D24;
+
+    /* Lunar Endocrine accents (locked palette — used sparingly) */
+    --plum:       #6B4E6E;
+    --plum-deep:  #4A3550;
+    --plum-soft:  #E2D6E0;
+    --rose-gold:  #D4A574;
+    --rose-deep:  #B0824D;
+    --rose-soft:  #F1DFC4;
+    --pearl:      #F4ECE6;
+    --sage-warm:  #6B8770;
+    --sage-soft:  #D8E4DA;
+
+    /* tier chips */
+    --t1-bg:      #E2D6E0;
+    --t1-fg:      #4A3550;
+    --t2-bg:      #F1DFC4;
+    --t2-fg:      #B0824D;
+    --t3-bg:      #E5DAD5;
+    --t3-fg:      #5A4F60;
+  }
+
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    padding: 28px 24px 96px;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  h1, h2, h3 {
+    font-family: -apple-system, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 30px; font-weight: 800; margin-bottom: 6px; }
+  h2 { font-size: 22px; font-weight: 700; margin: 44px 0 14px; }
+  h3 { font-size: 16px; font-weight: 700; margin: 22px 0 10px; color: var(--ink); }
+
+  .lede { color: var(--ink-2); max-width: 880px; line-height: 1.55; margin-bottom: 6px; font-size: 14.5px; }
+  .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 8px; }
+  .pill {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 999px; padding: 5px 12px; font-size: 12px;
+    color: var(--ink-2); font-weight: 600;
+  }
+  .pill.live   { background: var(--mid-bg); color: var(--mid); border-color: #E8C998; }
+  .pill.brand  { background: var(--chrome-soft); color: var(--chrome-mid); border-color: var(--chrome-soft); }
+  .pill.repo   { background: var(--bg-soft); color: var(--ink-2); }
+  .pill.alert  { background: var(--lo-bg); color: var(--lo); border-color: #E2B1A8; }
+
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(246, 241, 236, 0.94);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--divider);
+    margin: 0 -24px 18px;
+    padding: 10px 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--ink-2);
+    font-size: 12.5px; font-weight: 600;
+    padding: 6px 11px; border-radius: 999px;
+    border: 1px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover { background: var(--card); color: var(--chrome-mid); border-color: var(--divider); }
+  .top-nav a.is-module { background: var(--chrome); color: #fff; }
+  .top-nav a.is-module:hover { background: var(--chrome-mid); color: #fff; }
+  .top-nav .nav-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em;
+    background: var(--mid); color: #fff;
+    padding: 2px 6px; border-radius: 5px;
+  }
+  .top-nav .sep { width: 1px; height: 16px; background: var(--divider); margin: 0 4px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+  /* ===== Status banner ===== */
+  .status-banner {
+    background: var(--card);
+    border: 1px dashed var(--mid);
+    border-radius: 20px;
+    padding: 22px 24px;
+    margin: 22px 0 8px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: center;
+  }
+  @media (max-width: 920px) { .status-banner { grid-template-columns: 1fr; } }
+  .status-banner h2 { margin: 0; font-size: 20px; color: var(--ink); }
+  .status-banner .sub { color: var(--ink-2); font-size: 13.5px; margin-top: 6px; line-height: 1.55; max-width: 720px; }
+  .status-banner .right { text-align: right; }
+  @media (max-width: 920px) { .status-banner .right { text-align: left; } }
+  .status-banner .badge {
+    background: var(--mid-bg); color: var(--mid);
+    border-radius: 999px; padding: 8px 16px;
+    font-weight: 800; font-size: 13px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    display: inline-block;
+  }
+  .status-banner .who { font-size: 11.5px; color: var(--ink-3); margin-top: 6px; }
+
+  /* ===== Audience snapshot ===== */
+  .audience-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 10px; margin-top: 12px;
+  }
+  @media (max-width: 1100px) { .audience-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px)  { .audience-grid { grid-template-columns: 1fr; } }
+  .aud {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 14px; padding: 14px 14px 12px;
+    font-size: 12px; color: var(--ink-2);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .aud .head-row { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .aud b { font-size: 14px; color: var(--ink); }
+  .aud .age { font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; color: var(--ink-3); }
+  .aud .pain { font-style: italic; color: var(--ink-2); font-size: 12px; line-height: 1.45; }
+  .aud .row { font-size: 11.5px; line-height: 1.45; }
+  .aud .row b.lbl { font-weight: 800; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); display: block; margin-top: 2px; }
+  .aud .w {
+    display: inline-block; align-self: flex-start;
+    background: var(--chrome-soft); color: var(--chrome-mid);
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.04em;
+    padding: 2px 7px; border-radius: 999px;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .aud .jtbd-bar { font-size: 11px; color: var(--rose-deep); letter-spacing: 0.04em; margin-top: 2px; }
+  .aud .wtp { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 6px; }
+  .aud .wtp.high  { background: var(--sage-soft); color: var(--sage-warm); }
+  .aud .wtp.med   { background: var(--mid-bg);    color: var(--mid); }
+  .aud .wtp.alert { background: var(--lo-bg);     color: var(--lo); }
+
+  /* ===== Whitespace table ===== */
+  .ws-wrap { overflow-x: auto; margin-top: 14px; border-radius: 14px; }
+  table.ws {
+    width: 100%; min-width: 880px;
+    border-collapse: collapse;
+    background: var(--card);
+    border: 1px solid var(--divider);
+  }
+  table.ws th, table.ws td {
+    padding: 9px 10px; text-align: left; font-size: 12.5px;
+    border-bottom: 1px solid var(--divider);
+    vertical-align: middle;
+  }
+  table.ws th {
+    background: var(--chrome-soft); color: var(--chrome-mid);
+    font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 800;
+    position: sticky; top: 0;
+  }
+  table.ws th.feat { min-width: 220px; }
+  table.ws td.feat { font-weight: 700; color: var(--ink); }
+  table.ws td.ctr { text-align: center; font-family: ui-monospace, "SF Mono", monospace; font-size: 13px; }
+  table.ws td.ws-yes  { background: var(--sage-soft); color: var(--sage-warm); font-weight: 800; }
+  table.ws td.ws-part { background: var(--mid-bg); color: var(--mid); font-weight: 800; }
+  table.ws td.ws-no   { color: var(--ink-3); font-weight: 600; }
+  table.ws tr.white-row td.feat { border-left: 3px solid var(--rose-gold); }
+
+  .mrr-row {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px;
+  }
+  .mrr-row .mrr {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 10px; padding: 8px 12px; font-size: 12px;
+    color: var(--ink-2);
+  }
+  .mrr-row .mrr b { color: var(--ink); }
+  .mrr-row .mrr .num { font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; color: var(--plum); }
+
+  /* ===== Feature long-list grid ===== */
+  .feat-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px; margin-top: 14px;
+  }
+  @media (max-width: 1100px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 660px)  { .feat-grid { grid-template-columns: 1fr; } }
+  .feat {
+    background: var(--card);
+    border: 1px solid var(--divider);
+    border-radius: 16px;
+    padding: 14px 16px 13px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .feat .head { display: flex; align-items: flex-start; gap: 10px; justify-content: space-between; }
+  .feat .head .left { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .feat .num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800; color: var(--ink-3);
+  }
+  .feat h3 { margin: 0; font-size: 15px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }
+  .feat .tag {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10px; font-weight: 800; letter-spacing: 0.06em;
+    padding: 3px 8px; border-radius: 999px;
+    white-space: nowrap;
+  }
+  .feat .tag.t1 { background: var(--t1-bg); color: var(--t1-fg); }
+  .feat .tag.t2 { background: var(--t2-bg); color: var(--t2-fg); }
+  .feat .tag.t3 { background: var(--t3-bg); color: var(--t3-fg); }
+  .feat .desc { font-size: 12.5px; color: var(--ink-2); line-height: 1.5; }
+  .feat .rows { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; padding-top: 8px; border-top: 1px dashed var(--divider); }
+  .feat .row { display: flex; gap: 6px; font-size: 11.5px; line-height: 1.45; color: var(--ink-2); }
+  .feat .row b { color: var(--ink); font-weight: 700; }
+  .feat .row .lbl { min-width: 92px; color: var(--ink-3); font-weight: 700; font-size: 10.5px; letter-spacing: 0.03em; text-transform: uppercase; }
+  .feat .risk { display: inline-block; padding: 1px 7px; border-radius: 6px; font-size: 10.5px; font-weight: 800; }
+  .feat .risk.low  { background: var(--sage-soft); color: var(--sage-warm); }
+  .feat .risk.med  { background: var(--mid-bg);    color: var(--mid); }
+  .feat .risk.high { background: var(--lo-bg);     color: var(--lo); }
+
+  /* ===== Voting tables ===== */
+  .vote-wrap { overflow-x: auto; margin-top: 14px; border-radius: 14px; }
+  table.vote {
+    width: 100%; min-width: 760px;
+    border-collapse: collapse;
+    background: var(--card);
+    border: 1px solid var(--divider);
+  }
+  table.vote th, table.vote td {
+    padding: 9px 12px; text-align: left; font-size: 13px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.vote th {
+    background: var(--chrome-soft); color: var(--chrome-mid);
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800;
+  }
+  table.vote tr:last-child td { border-bottom: none; }
+  table.vote td.who { font-weight: 700; white-space: nowrap; }
+  table.vote td.who small {
+    display: block; font-size: 10.5px;
+    color: var(--ink-3); font-weight: 600;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  table.vote td.num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 800; text-align: center; font-size: 13px;
+  }
+  table.vote td.num.lead {
+    background: var(--hi-bg); color: var(--hi);
+  }
+  table.vote td.num.sum {
+    background: var(--bg-soft); color: var(--ink);
+    border-left: 2px solid var(--chrome);
+  }
+  table.vote tr.row-top td {
+    background: rgba(143, 188, 143, 0.10);
+  }
+  table.vote tr.row-top td.num.sum {
+    background: var(--sage-soft); color: var(--sage-warm);
+  }
+  table.vote th.sum {
+    background: var(--chrome); color: #fff;
+  }
+  table.vote tr.weight-row td {
+    background: var(--bg-soft);
+    font-size: 10.5px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    color: var(--ink-3);
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  table.vote tr.weight-row td:first-child { text-align: right; color: var(--chrome-mid); font-weight: 800; }
+
+  .takeaway {
+    background: var(--card); border: 1px solid var(--divider);
+    border-left: 3px solid var(--plum);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 13px; line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .takeaway b { color: var(--ink); }
+
+  /* ===== Aggregate table ===== */
+  .agg-wrap { overflow-x: auto; margin-top: 14px; border-radius: 14px; }
+  table.agg {
+    width: 100%; min-width: 820px;
+    border-collapse: collapse;
+    background: var(--card);
+    border: 1px solid var(--divider);
+  }
+  table.agg th, table.agg td {
+    padding: 10px 12px; text-align: left; font-size: 13px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.agg th {
+    background: var(--chrome-soft); color: var(--chrome-mid);
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800;
+  }
+  table.agg td.rank {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 800; color: var(--ink-3); text-align: center; width: 50px;
+  }
+  table.agg td.feat-name { font-weight: 700; color: var(--ink); }
+  table.agg td.num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    text-align: center; font-weight: 700;
+  }
+  table.agg td.sigma {
+    font-family: ui-monospace, "SF Mono", monospace;
+    text-align: center; font-weight: 800; font-size: 14px;
+    background: var(--bg-soft); border-left: 2px solid var(--chrome);
+  }
+  table.agg td.cluster {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 800; font-size: 11px; letter-spacing: 0.05em;
+    text-align: center;
+  }
+  table.agg tr.p0 td { background: var(--sage-soft); }
+  table.agg tr.p0 td.sigma { background: var(--sage-warm); color: #fff; }
+  table.agg tr.p0 td.cluster { color: var(--sage-warm); }
+  table.agg tr.p1 td { background: var(--rose-soft); }
+  table.agg tr.p1 td.sigma { background: var(--rose-deep); color: #fff; }
+  table.agg tr.p1 td.cluster { color: var(--rose-deep); }
+  table.agg tr.p2 td { background: var(--pearl); }
+  table.agg tr.p2 td.cluster { color: var(--ink-2); }
+  table.agg tr.cut td { background: var(--bg-soft); color: var(--ink-3); }
+  table.agg tr.cut td.cluster { color: var(--lo); }
+  table.agg tr.cut td.feat-name { color: var(--ink-3); }
+
+  .runoff {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 14px; padding: 14px 18px;
+    margin-top: 16px;
+  }
+  .runoff h3 { margin-top: 4px; }
+  .runoff ul { padding-left: 22px; line-height: 1.55; font-size: 13.5px; color: var(--ink-2); }
+  .runoff ul li { margin-bottom: 6px; }
+  .runoff ul li b { color: var(--ink); }
+
+  /* ===== Roadmap columns ===== */
+  .roadmap-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px; margin-top: 14px;
+  }
+  @media (max-width: 920px) { .roadmap-grid { grid-template-columns: 1fr; } }
+  .ptier {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px;
+    padding: 16px 18px 14px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .ptier.p0 { border-top: 4px solid var(--sage-warm); }
+  .ptier.p1 { border-top: 4px solid var(--rose-deep); }
+  .ptier.p2 { border-top: 4px solid var(--ink-3); }
+  .ptier h3 { margin: 0 0 4px; font-size: 17px; font-weight: 800; }
+  .ptier.p0 h3 { color: var(--sage-warm); }
+  .ptier.p1 h3 { color: var(--rose-deep); }
+  .ptier.p2 h3 { color: var(--ink-2); }
+  .ptier .weeks {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800;
+    color: var(--ink-3); letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .ptier ul { padding-left: 0; list-style: none; margin-top: 6px; display: flex; flex-direction: column; gap: 8px; }
+  .ptier ul li {
+    font-size: 12.5px; line-height: 1.5; color: var(--ink-2);
+    padding: 8px 10px;
+    background: var(--bg-soft);
+    border-radius: 9px;
+  }
+  .ptier ul li b { display: block; font-size: 13px; color: var(--ink); margin-bottom: 1px; }
+  .ptier .total {
+    margin-top: 10px; padding-top: 8px;
+    border-top: 1px dashed var(--divider);
+    font-size: 11.5px; color: var(--ink-3);
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 700;
+  }
+  .ptier .cut-note {
+    margin-top: 6px;
+    background: var(--lo-bg); color: var(--lo);
+    padding: 8px 10px; border-radius: 9px;
+    font-size: 12px; line-height: 1.5;
+  }
+
+  .seq-strip {
+    margin-top: 22px;
+    background: var(--card);
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 14px 16px;
+    overflow-x: auto;
+  }
+  .seq-strip h3 { margin-top: 2px; margin-bottom: 8px; }
+  .seq-row {
+    display: flex; gap: 8px; min-width: 1100px; align-items: stretch;
+  }
+  .seq {
+    flex: 1;
+    background: var(--bg-soft);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 11.5px; line-height: 1.4;
+    color: var(--ink-2);
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .seq b {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px;
+    color: var(--plum); letter-spacing: 0.06em;
+    font-weight: 800;
+  }
+  .seq.launch { background: var(--plum); color: #fff; }
+  .seq.launch b { color: var(--rose-gold); }
+
+  /* ===== Anti-patterns ===== */
+  .anti-list {
+    margin-top: 12px;
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 6px 0;
+  }
+  .anti-list li {
+    list-style: none;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--divider);
+    font-size: 13px; line-height: 1.55;
+    color: var(--ink-2);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .anti-list li:last-child { border-bottom: none; }
+  .anti-list li .x { color: var(--lo); font-weight: 800; font-size: 14px; flex-shrink: 0; }
+  .anti-list li .wb-chip {
+    flex-shrink: 0;
+    background: var(--sage-soft); color: var(--sage-warm);
+    font-size: 10px; font-weight: 800; letter-spacing: 0.05em;
+    padding: 3px 8px; border-radius: 999px;
+    white-space: nowrap;
+    font-family: ui-monospace, "SF Mono", monospace;
+    text-transform: uppercase;
+  }
+  .anti-list li .copy b { color: var(--ink); font-weight: 700; }
+
+  .legend { font-size: 11.5px; color: var(--ink-3); margin-top: 6px; line-height: 1.5; }
+  .legend code {
+    font-family: ui-monospace, "SF Mono", monospace;
+    background: var(--bg-soft); padding: 1px 5px; border-radius: 4px;
+    color: var(--ink-2); font-size: 10.5px;
+  }
+
+  footer {
+    margin-top: 64px; padding-top: 20px;
+    border-top: 1px solid var(--divider);
+    font-size: 11.5px; color: var(--ink-3);
+    line-height: 1.6;
+  }
+  footer code {
+    font-family: ui-monospace, "SF Mono", monospace;
+    background: var(--bg-soft); padding: 1px 5px; border-radius: 4px;
+    color: var(--ink-2); font-size: 10.5px;
+  }
+</style>
+</head>
+<body id="top">
+
+<!-- ===== TOP NAV ===== -->
+<nav class="top-nav">
+  <a href="#top">↑ Top</a>
+  <span class="sep"></span>
+  <a href="#personas" class="is-module"><span class="nav-num">M1</span>Personas</a>
+  <a href="#whitespace" class="is-module"><span class="nav-num">M2</span>Whitespace</a>
+  <a href="#longlist" class="is-module"><span class="nav-num">M3</span>Long-list</a>
+  <span class="sep"></span>
+  <a href="#round1-conversion">R1 · conversion</a>
+  <a href="#round2-revenue">R2 · revenue</a>
+  <a href="#round3-moat">R3 · moat</a>
+  <a href="#aggregate">aggregate</a>
+  <a href="#roadmap">roadmap</a>
+  <a href="#anti-patterns">don'ts</a>
+</nav>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>Cysta AI — Feature Decision Workbench</h1>
+  <p class="lede">
+    First commercial AI PCOS companion. 9.05M women across 5 markets, $38M SAM.
+    Cycla AI launched 2026-05-13 → 30–60d displacement window.
+    13 candidate features × 3 consilium rounds → lock P0/P1/P2 ship list.
+  </p>
+  <div class="meta-bar">
+    <span class="pill brand">● 3 rounds planned</span>
+    <span class="pill repo">round 0 · 2026-05-14</span>
+    <span class="pill live">lock target · 2026-05-21</span>
+    <span class="pill repo">love8ko / CystaAI</span>
+    <span class="pill repo">v1 ship · Jul–Aug 2026</span>
+    <span class="pill alert">🚨 Cycla AI launched 2026-05-13</span>
+  </div>
+</header>
+
+<!-- ===== STATUS BANNER ===== -->
+<section class="status-banner">
+  <div>
+    <h2>🗳️ Round 0 — research complete, voting begins</h2>
+    <p class="sub">
+      13 candidate features stress-tested against 5 personas (Naomi / Tanya / Wendy / Maya / Anna) × 4 sub-panels.
+      Aggregate score = <b>0.40 × conversion + 0.35 × revenue + 0.25 × moat</b>.
+      Lock criterion: top-N features whose cumulative ship time ≤ 8 weeks and which collectively serve ≥4 of 5 personas.
+      Founder may waive runoff if Cycla pressure forces speed.
+    </p>
+  </div>
+  <div class="right">
+    <div class="badge">voting starts · 2026-05-14</div>
+    <div class="who">lock target 2026-05-21 · 4 rounds max</div>
+  </div>
+</section>
+
+<!-- =========================================================== -->
+<!-- ===== MODULE 1 · AUDIENCE SNAPSHOT ===== -->
+<!-- =========================================================== -->
+<h2 id="personas">1 · Audience snapshot · 5 PCOS personas</h2>
+<p class="lede">
+  Each persona = paying-base weight (Naomi 25 · Tanya 20 · Wendy 25 · Maya 15 · Anna 15) and JTBD-intensity per <code>PERSONAS.md</code>.
+  Feature votes in Rounds 1–3 are weighted against these shares.
+</p>
+
+<div class="audience-grid">
+
+  <div class="aud">
+    <div class="head-row"><b>🌸 Newly Diagnosed Naomi</b></div>
+    <div class="age">22–30 · newly diagnosed</div>
+    <div class="pain">"What's happening to my body? What does diagnosis mean?"</div>
+    <div class="row"><span class="lbl">JTBD</span> understand why this is happening</div>
+    <div class="row"><span class="lbl">Tier</span> Standard <b>$39.99/yr</b></div>
+    <div class="row"><span class="lbl">WTP</span> <span class="wtp med">medium · will trial, needs hook</span></div>
+    <div class="jtbd-bar">⭐⭐⭐⭐⭐</div>
+    <span class="w">25% of paying</span>
+  </div>
+
+  <div class="aud">
+    <div class="head-row"><b>👶 TTC Tanya</b></div>
+    <div class="age">28–38 · trying-to-conceive</div>
+    <div class="pain">"I've been trying to conceive for 18 months."</div>
+    <div class="row"><span class="lbl">JTBD</span> get pregnant despite irregular cycle</div>
+    <div class="row"><span class="lbl">Tier</span> Family <b>$79.99/yr</b></div>
+    <div class="row"><span class="lbl">WTP</span> <span class="wtp high">highest · IVF $20K+ alt</span></div>
+    <div class="jtbd-bar">⭐⭐⭐⭐⭐</div>
+    <span class="w">20% of paying</span>
+  </div>
+
+  <div class="aud">
+    <div class="head-row"><b>⚖️ Weight-Focused Wendy</b></div>
+    <div class="age">25–40 · weight loss</div>
+    <div class="pain">"I can't lose weight — hormones sabotage me."</div>
+    <div class="row"><span class="lbl">JTBD</span> lose weight despite hormonal sabotage</div>
+    <div class="row"><span class="lbl">Tier</span> Standard <b>$39.99/yr</b></div>
+    <div class="row"><span class="lbl">WTP</span> <span class="wtp med">medium-high · switches apps</span></div>
+    <div class="jtbd-bar">⭐⭐⭐⭐⭐</div>
+    <span class="w">25% of paying</span>
+  </div>
+
+  <div class="aud">
+    <div class="head-row"><b>💊 Med-Skeptic Maya</b></div>
+    <div class="age">24–35 · anti-pharma</div>
+    <div class="pain">"Don't want to be on Metformin forever — natural way?"</div>
+    <div class="row"><span class="lbl">JTBD</span> manage PCOS naturally without pharma</div>
+    <div class="row"><span class="lbl">Tier</span> Standard or Lifetime <b>$99</b></div>
+    <div class="row"><span class="lbl">WTP</span> <span class="wtp med">medium · one-time prefers</span></div>
+    <div class="jtbd-bar">⭐⭐⭐⭐</div>
+    <span class="w">15% of paying</span>
+  </div>
+
+  <div class="aud">
+    <div class="head-row"><b>👩‍⚕️ Advocate Anna</b></div>
+    <div class="age">30–45 · doctor advocate</div>
+    <div class="pain">"Endo doesn't listen — I need data trends."</div>
+    <div class="row"><span class="lbl">JTBD</span> sound credible at doctor's office</div>
+    <div class="row"><span class="lbl">Tier</span> Family <b>$79.99/yr</b></div>
+    <div class="row"><span class="lbl">WTP</span> <span class="wtp high">high · data pro, ROI literate</span></div>
+    <div class="jtbd-bar">⭐⭐⭐⭐⭐</div>
+    <span class="w">15% of paying</span>
+  </div>
+
+</div>
+
+<!-- =========================================================== -->
+<!-- ===== MODULE 2 · WHITESPACE MATRIX ===== -->
+<!-- =========================================================== -->
+<h2 id="whitespace">2 · Competitor whitespace matrix · 13 features × 7 competitors</h2>
+<p class="lede">
+  ✅ = competitor ships this feature meaningfully · △ = partial / broken / generic · — = absent.
+  Last column flags <b>whitespace</b> where no competitor occupies the lane. Whitespace rows highlighted with rose-gold left-border.
+</p>
+
+<div class="ws-wrap">
+<table class="ws">
+  <thead>
+    <tr>
+      <th class="feat">Feature</th>
+      <th>Cycla AI</th>
+      <th>PCOS Pal</th>
+      <th>Cysterhood</th>
+      <th>PCOS Polly</th>
+      <th>PCOS Tracker</th>
+      <th>HER EndoPCOS</th>
+      <th>Allura</th>
+      <th>Whitespace?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="white-row">
+      <td class="feat">1 · PCOS Type Quiz onboarding</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">2 · AI Coach (DeepSeek + RAG citations)</td>
+      <td class="ctr ws-no">△ generic, no citations</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">△ template, no RAG</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ RAG-cited whitespace</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">3 · Photo Journal (acne / hair / body)</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace</td>
+    </tr>
+    <tr>
+      <td class="feat">4 · PCOS-aware cycle tracker (21–90d)</td>
+      <td class="ctr ws-no">✅</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">△ broken R3.3</td>
+      <td class="ctr ws-no">△</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-part">competitive</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">5 · Lab Interpreter (OCR AMH / LH:FSH / etc)</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace</td>
+    </tr>
+    <tr>
+      <td class="feat">6 · Symptom-Cause Analytics (correlations)</td>
+      <td class="ctr ws-no">△ balance score only</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">△ broken</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-part">△ partial whitespace</td>
+    </tr>
+    <tr>
+      <td class="feat">7 · Smart Meal Recs (low-glycemic PCOS)</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">✅</td>
+      <td class="ctr ws-no">✅</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">crowded</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">8 · Supplement Tracker (inositol focus)</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace (inositol R&lt;2 globally!)</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">9 · Medication Tracker (Metformin / spiro / BC)</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">10 · TTC Mode (Family tier)</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace (Tanya $20K IVF alt)</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">11 · Doctor PDF Export</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace (Anna trust)</td>
+    </tr>
+    <tr>
+      <td class="feat">12 · Educational Lessons (20–30 micro)</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">✅</td>
+      <td class="ctr ws-no">△ video only</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">crowded</td>
+    </tr>
+    <tr>
+      <td class="feat">13 · Progress Dashboard / Wins</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">✅</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-part">△ partial</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="mrr-row">
+  <div class="mrr"><b>PCOS Pal</b> · <span class="num">$13.2K</span> MRR</div>
+  <div class="mrr"><b>Cysterhood</b> · <span class="num">$9.6K</span> MRR</div>
+  <div class="mrr"><b>PCOS Tracker</b> · <span class="num">$6.9K</span> MRR (R3.3 ⚠️)</div>
+  <div class="mrr"><b>PCOS Polly</b> · <span class="num">$5.7K</span> MRR</div>
+  <div class="mrr"><b>Cycla AI</b> · <span class="num">$0</span> · new (2026-05-13)</div>
+  <div class="mrr"><b>HER EndoPCOS</b> · <span class="num">$189</span> MRR</div>
+  <div class="mrr"><b>Allura</b> · <span class="num">$48</span> MRR</div>
+</div>
+<p class="legend">Source: <code>competitors/meta.yaml</code> · <code>COMPETITORS.md</code>. Total PCOS-vertical MRR ≈ $35.6K monthly, fragmented across 7 apps with zero feature overlap on rows 1/3/5/8/9/10/11.</p>
+
+<!-- =========================================================== -->
+<!-- ===== MODULE 3 · LONG-LIST ===== -->
+<!-- =========================================================== -->
+<h2 id="longlist">3 · 13 candidate features · long-list</h2>
+<p class="lede">
+  Source: <code>V1_SCOPE.md</code> per <code>Cysta_AI_PCOS_Master_v2_FINAL.md</code> PART 5.
+  Each card: tier · primary persona · ship effort · ASO hook · compliance risk.
+</p>
+
+<div class="feat-grid">
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#1</span><h3>🧬 PCOS Type Quiz</h3></div>
+      <span class="tag t1">T1</span>
+    </div>
+    <p class="desc">Onboarding 5 min, determines insulin-resistant / adrenal / post-pill / inflammatory subtype, personalizes everything downstream.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>🌸 Naomi</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Small · 1wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>pcos coach</code> DE R2.43</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk med">Medium</span> &nbsp; educational not diagnostic — needs disclaimer</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#2</span><h3>🤖 AI Coach (DeepSeek + RAG)</h3></div>
+      <span class="tag t1">T1</span>
+    </div>
+    <p class="desc">Chat answers cited to ACOG / ESHRE / AAP / Endocrine Society / PubMed corpus.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>ALL</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Large · 4–6wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>pcos ai</code> GB R2.8 + <code>pcos coach</code> DE R2.43</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk high">High</span> &nbsp; refusal pivots, citation required every answer</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#3</span><h3>📸 Photo Journal</h3></div>
+      <span class="tag t1">T1</span>
+    </div>
+    <p class="desc">Acne / hair / hirsutism / body progression with side-by-side compare. Folik DNA reuse 95%.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>🌸 Naomi + ⚖️ Wendy</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 2wk (reuse)</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak · visual differentiator, not keyword</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk med">Medium</span> &nbsp; local storage, no minor faces in marketing</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#4</span><h3>📊 PCOS-aware Cycle Tracker</h3></div>
+      <span class="tag t1">T1</span>
+    </div>
+    <p class="desc">21–90+ day cycles without gaslighting, LH surge, anovulatory detection.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>👶 Tanya + 🌸 Naomi</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 3wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>pcos cycle tracker</code> long-tail (avoid Flo head-on)</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk low">Low</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#5</span><h3>🩸 Lab Interpreter</h3></div>
+      <span class="tag t1">T1</span>
+    </div>
+    <p class="desc">OCR blood test → AI explains AMH, LH:FSH, testosterone, SHBG, fasting insulin, HbA1c, vit D.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>👩‍⚕️ Anna + 👶 Tanya</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Large · 4–5wk</b> (Vision + OCR + RAG)</div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak direct, strong differentiator</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk high">High</span> &nbsp; education only, "ESHRE 2023 range" framing</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#6</span><h3>🔗 Symptom-Cause Analytics</h3></div>
+      <span class="tag t2">T2</span>
+    </div>
+    <p class="desc">Correlates mood + sleep + diet + cycle + weight → insights ("weight gain correlates with high-carb meals last week").</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>⚖️ Wendy + 💊 Maya</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 3wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk low">Low</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#7</span><h3>🥗 Smart Meal Recs</h3></div>
+      <span class="tag t2">T2</span>
+    </div>
+    <p class="desc">Low-glycemic, anti-inflammatory, PCOS-type-specific, filters gluten / dairy / veg. 50+ recipes Y1.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>⚖️ Wendy</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 3wk</b> content + filtering</div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>pcos diet</code> DE R1.05 (catastrophic gem!) + GB R2.85</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk low">Low</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#8</span><h3>💊 Supplement Tracker (inositol)</h3></div>
+      <span class="tag t2">T2</span>
+    </div>
+    <p class="desc">Myo + d-chiro 40:1, vit D, NAC, omega-3, berberine.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>💊 Maya + ⚖️ Wendy</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Small · 1–2wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>myo inositol</code> R0 (1 app DE!) + <code>inositol</code> DE R1.33 / US R2.67 / GB R2.0 — <b>UNCONTESTED</b></div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk med">Medium</span> &nbsp; supplement claims need source citations</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#9</span><h3>🩺 Medication Tracker</h3></div>
+      <span class="tag t2">T2</span>
+    </div>
+    <p class="desc">Metformin, spironolactone, BC adherence + side-effect log + basic drug interaction warnings.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>👩‍⚕️ Anna + 💊 Maya</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Small · 1–2wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk high">High</span> &nbsp; never anti-Metformin / anti-BC, neutral framing</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#10</span><h3>👶 TTC Mode</h3></div>
+      <span class="tag t3">T3</span>
+    </div>
+    <p class="desc">Family tier toggle. Ovulation prediction for irregular cycles, fertile window despite anovulation.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>👶 Tanya</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 2–3wk</b> delta on cycle tracker</div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>ttc pcos</code> + <code>fertility tracker pcos</code> long-tails</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk high">High</span> &nbsp; window not certainty, no "you'll conceive on X" claims</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#11</span><h3>📄 Doctor PDF Export</h3></div>
+      <span class="tag t3">T3</span>
+    </div>
+    <p class="desc">3-month symptom + lab trends, endocrinologist-readable format.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>👩‍⚕️ Anna</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Small · 1–2wk</b> PDFKit</div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk low">Low</span> &nbsp; data export, no claims</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#12</span><h3>📚 Educational Lessons</h3></div>
+      <span class="tag t3">T3</span>
+    </div>
+    <p class="desc">20–30 micro-lessons: "What is PCOS", "Insulin resistance explained", "Why BC treats not cures".</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>🌸 Naomi + 👩‍⚕️ Anna</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 3wk</b> content</div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk med">Medium</span> &nbsp; factual, sourced</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#13</span><h3>🏆 Progress Dashboard / Wins</h3></div>
+      <span class="tag t3">T3</span>
+    </div>
+    <p class="desc">Streak + wins celebration (smaller waist, clearer skin, predictable cycle).</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>⚖️ Wendy + 🌸 Naomi</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Small · 1wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk low">Low</span></div>
+    </div>
+  </article>
+
+</div>
+
+<!-- =========================================================== -->
+<!-- ===== MODULE 4 · ROUND 1 · CONVERSION ===== -->
+<!-- =========================================================== -->
+<h2 id="round1-conversion">4 · Round 1 · CONVERSION panel</h2>
+<p class="lede">
+  "Would this feature get me to install + start trial?" 5 personas vote 0–10.
+  Persona weights: Naomi 25% · Tanya 20% · Wendy 25% · Maya 15% · Anna 15%.
+  Σ conversion = weighted average.
+</p>
+
+<div class="vote-wrap">
+<table class="vote">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Feature</th>
+      <th>🌸 Naomi</th>
+      <th>👶 Tanya</th>
+      <th>⚖️ Wendy</th>
+      <th>💊 Maya</th>
+      <th>👩‍⚕️ Anna</th>
+      <th class="sum">Σ conversion</th>
+    </tr>
+    <tr class="weight-row">
+      <td>weight →</td>
+      <td>(0–10 per persona)</td>
+      <td>× 0.25</td>
+      <td>× 0.20</td>
+      <td>× 0.25</td>
+      <td>× 0.15</td>
+      <td>× 0.15</td>
+      <td>weighted avg</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-top">
+      <td class="num">1</td>
+      <td class="who">🧬 PCOS Type Quiz</td>
+      <td class="num lead">10</td><td class="num">8</td><td class="num">9</td><td class="num">9</td><td class="num">7</td>
+      <td class="num sum">8.85</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">2</td>
+      <td class="who">🤖 AI Coach RAG</td>
+      <td class="num lead">10</td><td class="num lead">9</td><td class="num">8</td><td class="num">8</td><td class="num lead">9</td>
+      <td class="num sum">8.85</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">3</td>
+      <td class="who">📸 Photo Journal</td>
+      <td class="num">9</td><td class="num">6</td><td class="num lead">10</td><td class="num">7</td><td class="num">6</td>
+      <td class="num sum">7.95</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">4</td>
+      <td class="who">📊 Cycle Tracker</td>
+      <td class="num">9</td><td class="num lead">10</td><td class="num">6</td><td class="num">6</td><td class="num">7</td>
+      <td class="num sum">7.65</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">5</td>
+      <td class="who">🩸 Lab Interpreter</td>
+      <td class="num">8</td><td class="num">9</td><td class="num">5</td><td class="num">7</td><td class="num lead">10</td>
+      <td class="num sum">7.55</td>
+    </tr>
+    <tr>
+      <td class="num">6</td>
+      <td class="who">🔗 Symptom-Cause Analytics</td>
+      <td class="num">6</td><td class="num">7</td><td class="num">9</td><td class="num">8</td><td class="num">8</td>
+      <td class="num sum">7.65</td>
+    </tr>
+    <tr>
+      <td class="num">7</td>
+      <td class="who">🥗 Smart Meal Recs</td>
+      <td class="num">6</td><td class="num">5</td><td class="num lead">10</td><td class="num">7</td><td class="num">4</td>
+      <td class="num sum">6.85</td>
+    </tr>
+    <tr>
+      <td class="num">8</td>
+      <td class="who">💊 Supplement Tracker</td>
+      <td class="num">5</td><td class="num">7</td><td class="num">7</td><td class="num lead">10</td><td class="num">5</td>
+      <td class="num sum">6.80</td>
+    </tr>
+    <tr>
+      <td class="num">9</td>
+      <td class="who">🩺 Med Tracker</td>
+      <td class="num">4</td><td class="num">6</td><td class="num">5</td><td class="num">7</td><td class="num">8</td>
+      <td class="num sum">5.80</td>
+    </tr>
+    <tr>
+      <td class="num">10</td>
+      <td class="who">👶 TTC Mode</td>
+      <td class="num">3</td><td class="num lead">10</td><td class="num">4</td><td class="num">4</td><td class="num">5</td>
+      <td class="num sum">5.10</td>
+    </tr>
+    <tr>
+      <td class="num">11</td>
+      <td class="who">📄 Doctor PDF</td>
+      <td class="num">4</td><td class="num">6</td><td class="num">4</td><td class="num">5</td><td class="num lead">10</td>
+      <td class="num sum">5.45</td>
+    </tr>
+    <tr>
+      <td class="num">12</td>
+      <td class="who">📚 Educational Lessons</td>
+      <td class="num">7</td><td class="num">5</td><td class="num">5</td><td class="num">7</td><td class="num">7</td>
+      <td class="num sum">6.20</td>
+    </tr>
+    <tr>
+      <td class="num">13</td>
+      <td class="who">🏆 Progress Dashboard</td>
+      <td class="num">6</td><td class="num">5</td><td class="num">8</td><td class="num">5</td><td class="num">5</td>
+      <td class="num sum">5.95</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="takeaway">
+  <b>Takeaway:</b> Top conversion drivers — <b>PCOS Type Quiz</b> + <b>AI Coach RAG</b> (8.85 tie) — both essential for first-screen scroll-stop on Naomi (newly-diagnosed, largest segment 25%). Top-5 highlighted in sage.
+</p>
+
+<!-- =========================================================== -->
+<!-- ===== MODULE 5 · ROUND 2 · REVENUE ===== -->
+<!-- =========================================================== -->
+<h2 id="round2-revenue">5 · Round 2 · REVENUE panel</h2>
+<p class="lede">
+  "Does this feature drive paid conversion + retention + Family upsell?" 4 sub-panels rate 0–10.
+  Sub-panel weights: Annual WTP 35% · Retention 30d 25% · Retention 90d 25% · Family upsell 15%.
+</p>
+
+<div class="vote-wrap">
+<table class="vote">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Feature</th>
+      <th>Annual WTP</th>
+      <th>Ret 30d</th>
+      <th>Ret 90d</th>
+      <th>Family upsell</th>
+      <th class="sum">Σ revenue</th>
+    </tr>
+    <tr class="weight-row">
+      <td>weight →</td>
+      <td>(0–10 per panel)</td>
+      <td>× 0.35</td>
+      <td>× 0.25</td>
+      <td>× 0.25</td>
+      <td>× 0.15</td>
+      <td>weighted avg</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-top">
+      <td class="num">1</td>
+      <td class="who">🧬 PCOS Type Quiz</td>
+      <td class="num">8</td><td class="num lead">9</td><td class="num">7</td><td class="num">6</td>
+      <td class="num sum">7.80</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">2</td>
+      <td class="who">🤖 AI Coach RAG</td>
+      <td class="num lead">10</td><td class="num lead">9</td><td class="num lead">9</td><td class="num">7</td>
+      <td class="num sum">9.05</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">3</td>
+      <td class="who">📸 Photo Journal</td>
+      <td class="num">7</td><td class="num lead">9</td><td class="num lead">9</td><td class="num">5</td>
+      <td class="num sum">7.85</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">4</td>
+      <td class="who">📊 Cycle Tracker</td>
+      <td class="num">8</td><td class="num">8</td><td class="num">8</td><td class="num">7</td>
+      <td class="num sum">7.85</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">5</td>
+      <td class="who">🩸 Lab Interpreter</td>
+      <td class="num">9</td><td class="num">6</td><td class="num">7</td><td class="num">8</td>
+      <td class="num sum">7.60</td>
+    </tr>
+    <tr>
+      <td class="num">6</td>
+      <td class="who">🔗 Symptom-Cause Analytics</td>
+      <td class="num">7</td><td class="num">7</td><td class="num lead">9</td><td class="num">5</td>
+      <td class="num sum">7.20</td>
+    </tr>
+    <tr>
+      <td class="num">7</td>
+      <td class="who">🥗 Smart Meal Recs</td>
+      <td class="num">7</td><td class="num">8</td><td class="num">7</td><td class="num">4</td>
+      <td class="num sum">6.80</td>
+    </tr>
+    <tr>
+      <td class="num">8</td>
+      <td class="who">💊 Supplement Tracker</td>
+      <td class="num">7</td><td class="num">8</td><td class="num">8</td><td class="num">4</td>
+      <td class="num sum">7.05</td>
+    </tr>
+    <tr>
+      <td class="num">9</td>
+      <td class="who">🩺 Med Tracker</td>
+      <td class="num">5</td><td class="num">7</td><td class="num">7</td><td class="num">5</td>
+      <td class="num sum">6.00</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">10</td>
+      <td class="who">👶 TTC Mode</td>
+      <td class="num lead">10</td><td class="num">7</td><td class="num">7</td><td class="num lead">10</td>
+      <td class="num sum">8.50</td>
+    </tr>
+    <tr>
+      <td class="num">11</td>
+      <td class="who">📄 Doctor PDF</td>
+      <td class="num">7</td><td class="num">5</td><td class="num">7</td><td class="num lead">9</td>
+      <td class="num sum">6.80</td>
+    </tr>
+    <tr>
+      <td class="num">12</td>
+      <td class="who">📚 Educational Lessons</td>
+      <td class="num">5</td><td class="num">7</td><td class="num">6</td><td class="num">4</td>
+      <td class="num sum">5.60</td>
+    </tr>
+    <tr>
+      <td class="num">13</td>
+      <td class="who">🏆 Progress Dashboard</td>
+      <td class="num">5</td><td class="num lead">9</td><td class="num lead">9</td><td class="num">4</td>
+      <td class="num sum">6.85</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="takeaway">
+  <b>Takeaway:</b> <b>AI Coach RAG (9.05)</b> is the revenue king — drives both WTP and retention.
+  <b>TTC Mode (8.50)</b> is the Family-upsell singularity (10/10 Family) — Tanya's $20K IVF alternative justifies $79.99/yr Family tier by itself.
+</p>
+
+<!-- =========================================================== -->
+<!-- ===== MODULE 6 · ROUND 3 · MOAT ===== -->
+<!-- =========================================================== -->
+<h2 id="round3-moat">6 · Round 3 · MOAT panel</h2>
+<p class="lede">
+  "Does this feature defend against Cycla AI + win ASO + ship fast + clear compliance?" 4 sub-panels.
+  Weights: Cycla displacement 35% · ASO synergy 25% · Ship speed 20% · Compliance clearance 20%.
+</p>
+<p class="legend">
+  Scoring rubric — <b>Cycla displacement:</b> 10 = Cycla doesn't have it AND audience demands it ·
+  <b>ASO synergy:</b> 10 = directly hooks apocalyptic R&lt;2 keyword ·
+  <b>Ship speed:</b> 10 = ≤2 weeks; 5 = 3–4 weeks; 2 = 5–6 weeks ·
+  <b>Compliance clearance:</b> 10 = Low risk; 5 = Medium; 2 = High risk needs legal pass.
+</p>
+
+<div class="vote-wrap">
+<table class="vote">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Feature</th>
+      <th>Cycla displ.</th>
+      <th>ASO synergy</th>
+      <th>Ship speed</th>
+      <th>Compliance</th>
+      <th class="sum">Σ moat</th>
+    </tr>
+    <tr class="weight-row">
+      <td>weight →</td>
+      <td>(0–10 per panel)</td>
+      <td>× 0.35</td>
+      <td>× 0.25</td>
+      <td>× 0.20</td>
+      <td>× 0.20</td>
+      <td>weighted avg</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-top">
+      <td class="num">1</td>
+      <td class="who">🧬 PCOS Type Quiz</td>
+      <td class="num lead">10</td><td class="num">9</td><td class="num lead">10</td><td class="num">5</td>
+      <td class="num sum">8.65</td>
+    </tr>
+    <tr>
+      <td class="num">2</td>
+      <td class="who">🤖 AI Coach RAG</td>
+      <td class="num">7</td><td class="num lead">10</td><td class="num">2</td><td class="num">2</td>
+      <td class="num sum">5.85</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">3</td>
+      <td class="who">📸 Photo Journal</td>
+      <td class="num lead">10</td><td class="num">4</td><td class="num">7</td><td class="num">5</td>
+      <td class="num sum">6.90</td>
+    </tr>
+    <tr>
+      <td class="num">4</td>
+      <td class="who">📊 Cycle Tracker</td>
+      <td class="num">4</td><td class="num">5</td><td class="num">5</td><td class="num lead">10</td>
+      <td class="num sum">5.65</td>
+    </tr>
+    <tr>
+      <td class="num">5</td>
+      <td class="who">🩸 Lab Interpreter</td>
+      <td class="num lead">10</td><td class="num">4</td><td class="num">2</td><td class="num">2</td>
+      <td class="num sum">5.30</td>
+    </tr>
+    <tr>
+      <td class="num">6</td>
+      <td class="who">🔗 Symptom-Cause Analytics</td>
+      <td class="num">7</td><td class="num">3</td><td class="num">5</td><td class="num lead">10</td>
+      <td class="num sum">6.20</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">7</td>
+      <td class="who">🥗 Smart Meal Recs</td>
+      <td class="num">6</td><td class="num lead">10</td><td class="num">5</td><td class="num lead">10</td>
+      <td class="num sum">7.60</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">8</td>
+      <td class="who">💊 Supplement Tracker</td>
+      <td class="num lead">10</td><td class="num lead">10</td><td class="num lead">10</td><td class="num">5</td>
+      <td class="num sum">9.00</td>
+    </tr>
+    <tr>
+      <td class="num">9</td>
+      <td class="who">🩺 Med Tracker</td>
+      <td class="num">9</td><td class="num">3</td><td class="num lead">10</td><td class="num">2</td>
+      <td class="num sum">6.45</td>
+    </tr>
+    <tr>
+      <td class="num">10</td>
+      <td class="who">👶 TTC Mode</td>
+      <td class="num lead">10</td><td class="num">5</td><td class="num">5</td><td class="num">2</td>
+      <td class="num sum">6.15</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">11</td>
+      <td class="who">📄 Doctor PDF</td>
+      <td class="num lead">10</td><td class="num">2</td><td class="num lead">10</td><td class="num lead">10</td>
+      <td class="num sum">8.00</td>
+    </tr>
+    <tr>
+      <td class="num">12</td>
+      <td class="who">📚 Educational Lessons</td>
+      <td class="num">4</td><td class="num">3</td><td class="num">5</td><td class="num">5</td>
+      <td class="num sum">4.20</td>
+    </tr>
+    <tr>
+      <td class="num">13</td>
+      <td class="who">🏆 Progress Dashboard</td>
+      <td class="num">6</td><td class="num">2</td><td class="num lead">10</td><td class="num lead">10</td>
+      <td class="num sum">6.60</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="takeaway">
+  <b>Takeaway:</b> <b>Supplement Tracker (9.00)</b> is the moat singularity — 10/10 ASO (<code>myo inositol</code> R0 globally, 1 app in DE!) + 10/10 ship (small effort) + 10/10 vs Cycla (Cycla has zero supplement layer).
+  <b>PCOS Type Quiz (8.65)</b> and <b>Doctor PDF (8.00)</b> close behind: fast ship + unique vs Cycla.
+</p>
+
+<!-- =========================================================== -->
+<!-- ===== MODULE 7 · AGGREGATE + RUNOFF ===== -->
+<!-- =========================================================== -->
+<h2 id="aggregate">7 · Aggregate score · Σ = 0.40·conversion + 0.35·revenue + 0.25·moat</h2>
+<p class="lede">
+  Ranked best-to-worst with cluster assignment (P0 · P1 · P2 · CUT-or-defer).
+  P0 = sage (ship weeks 1–4) · P1 = rose-gold (weeks 5–8) · P2 = pearl (V1.1) · CUT = muted.
+</p>
+
+<div class="agg-wrap">
+<table class="agg">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Feature</th>
+      <th>Σ conv (×.40)</th>
+      <th>Σ rev (×.35)</th>
+      <th>Σ moat (×.25)</th>
+      <th>Σ aggregate</th>
+      <th>Tier</th>
+      <th>Ship</th>
+      <th>Cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="p0">
+      <td class="rank">1</td>
+      <td class="feat-name">🧬 PCOS Type Quiz</td>
+      <td class="num">8.85</td><td class="num">7.80</td><td class="num">8.65</td>
+      <td class="sigma">8.43</td>
+      <td class="num">T1</td>
+      <td class="num">1wk</td>
+      <td class="cluster">P0</td>
+    </tr>
+    <tr class="p0">
+      <td class="rank">2</td>
+      <td class="feat-name">🤖 AI Coach RAG</td>
+      <td class="num">8.85</td><td class="num">9.05</td><td class="num">5.85</td>
+      <td class="sigma">8.17</td>
+      <td class="num">T1</td>
+      <td class="num">4–6wk</td>
+      <td class="cluster">P0</td>
+    </tr>
+    <tr class="p0">
+      <td class="rank">3</td>
+      <td class="feat-name">📸 Photo Journal</td>
+      <td class="num">7.95</td><td class="num">7.85</td><td class="num">6.90</td>
+      <td class="sigma">7.65</td>
+      <td class="num">T1</td>
+      <td class="num">2wk</td>
+      <td class="cluster">P0</td>
+    </tr>
+    <tr class="p0">
+      <td class="rank">4</td>
+      <td class="feat-name">💊 Supplement Tracker</td>
+      <td class="num">6.80</td><td class="num">7.05</td><td class="num">9.00</td>
+      <td class="sigma">7.44</td>
+      <td class="num">T2</td>
+      <td class="num">1–2wk</td>
+      <td class="cluster">P0</td>
+    </tr>
+    <tr class="p0">
+      <td class="rank">5</td>
+      <td class="feat-name">📊 Cycle Tracker</td>
+      <td class="num">7.65</td><td class="num">7.85</td><td class="num">5.65</td>
+      <td class="sigma">7.21</td>
+      <td class="num">T1</td>
+      <td class="num">3wk</td>
+      <td class="cluster">P0</td>
+    </tr>
+    <tr class="p1">
+      <td class="rank">6</td>
+      <td class="feat-name">🔗 Symptom-Cause Analytics</td>
+      <td class="num">7.65</td><td class="num">7.20</td><td class="num">6.20</td>
+      <td class="sigma">7.13</td>
+      <td class="num">T2</td>
+      <td class="num">3wk</td>
+      <td class="cluster">P1</td>
+    </tr>
+    <tr class="p1">
+      <td class="rank">7</td>
+      <td class="feat-name">🥗 Smart Meal Recs</td>
+      <td class="num">6.85</td><td class="num">6.80</td><td class="num">7.60</td>
+      <td class="sigma">7.02</td>
+      <td class="num">T2</td>
+      <td class="num">3wk</td>
+      <td class="cluster">P1</td>
+    </tr>
+    <tr class="p1">
+      <td class="rank">8</td>
+      <td class="feat-name">🩸 Lab Interpreter</td>
+      <td class="num">7.55</td><td class="num">7.60</td><td class="num">5.30</td>
+      <td class="sigma">7.01</td>
+      <td class="num">T1</td>
+      <td class="num">4–5wk</td>
+      <td class="cluster">P1</td>
+    </tr>
+    <tr class="p1">
+      <td class="rank">9</td>
+      <td class="feat-name">👶 TTC Mode</td>
+      <td class="num">5.10</td><td class="num">8.50</td><td class="num">6.15</td>
+      <td class="sigma">6.55</td>
+      <td class="num">T3</td>
+      <td class="num">2–3wk</td>
+      <td class="cluster">P1</td>
+    </tr>
+    <tr class="p1">
+      <td class="rank">10</td>
+      <td class="feat-name">📄 Doctor PDF</td>
+      <td class="num">5.45</td><td class="num">6.80</td><td class="num">8.00</td>
+      <td class="sigma">6.55</td>
+      <td class="num">T3</td>
+      <td class="num">1–2wk</td>
+      <td class="cluster">P1</td>
+    </tr>
+    <tr class="p2">
+      <td class="rank">11</td>
+      <td class="feat-name">🏆 Progress Dashboard</td>
+      <td class="num">5.95</td><td class="num">6.85</td><td class="num">6.60</td>
+      <td class="sigma">6.42</td>
+      <td class="num">T3</td>
+      <td class="num">1wk</td>
+      <td class="cluster">P2</td>
+    </tr>
+    <tr class="p2">
+      <td class="rank">12</td>
+      <td class="feat-name">🩺 Med Tracker</td>
+      <td class="num">5.80</td><td class="num">6.00</td><td class="num">6.45</td>
+      <td class="sigma">6.04</td>
+      <td class="num">T2</td>
+      <td class="num">1–2wk</td>
+      <td class="cluster">P2</td>
+    </tr>
+    <tr class="cut">
+      <td class="rank">13</td>
+      <td class="feat-name">📚 Educational Lessons</td>
+      <td class="num">6.20</td><td class="num">5.60</td><td class="num">4.20</td>
+      <td class="sigma">5.49</td>
+      <td class="num">T3</td>
+      <td class="num">3wk</td>
+      <td class="cluster">CUT-or-defer</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="runoff">
+  <h3>Round 4 · RUNOFF (close calls within ±0.5 aggregate)</h3>
+  <ul>
+    <li><b>TTC Mode vs Doctor PDF</b> — both 6.55. Tiebreak: TTC wins (Family-tier upsell singularity, Tanya $20K IVF alt). Doctor PDF stays P1 (Anna trust anchor + ships in 1wk → free filler).</li>
+    <li><b>Smart Meal Recs vs Symptom Analytics vs Lab Interpreter</b> — cluster 7.02 / 7.13 / 7.01. Tiebreak: keep all 3 in P1, sequence by ship-speed (Symptom Analytics 3wk → Meal Recs 3wk → Lab Interpreter 4–5wk last).</li>
+    <li><b>Educational Lessons</b> runoff: <b>cut from V1, defer to V1.1</b> (4 weeks post-launch). Reason: lowest aggregate, moat 4.20 (PCOS Pal already owns this lane), conversion only 6.20.</li>
+  </ul>
+</div>
+
+<!-- =========================================================== -->
+<!-- ===== MODULE 8 · ROADMAP ===== -->
+<!-- =========================================================== -->
+<h2 id="roadmap">8 · 🔒 Locked P-tier roadmap · 8-week ship plan + V1.1</h2>
+<p class="lede">
+  Three clusters by ship-week. Cumulative engineering accounts for parallel tracks (AI Coach RAG starts W4 and runs through W6 alongside other work).
+</p>
+
+<div class="roadmap-grid">
+
+  <div class="ptier p0">
+    <span class="weeks">P0 · weeks 1–4</span>
+    <h3>Foundation · must-ship-for-launch</h3>
+    <ul>
+      <li><b>🧬 PCOS Type Quiz (1wk)</b> Onboarding personalization, Naomi scroll-stop.</li>
+      <li><b>🤖 AI Coach RAG (4–6wk parallel)</b> Cycla-killer, revenue king.</li>
+      <li><b>📊 PCOS Cycle Tracker (3wk)</b> Tanya / Naomi base, no-gaslight differentiation.</li>
+      <li><b>📸 Photo Journal (2wk, Folik reuse)</b> Wendy / Naomi visual moat, Cycla blind spot.</li>
+      <li><b>💊 Supplement Tracker — inositol (1–2wk)</b> ASO singularity (<code>myo inositol</code> R0 DE!).</li>
+    </ul>
+    <div class="total">Σ cumulative: 5 features · weeks 1–4 (parallel tracks)</div>
+  </div>
+
+  <div class="ptier p1">
+    <span class="weeks">P1 · weeks 5–8</span>
+    <h3>Differentiators · ship before US launch</h3>
+    <ul>
+      <li><b>🔗 Symptom-Cause Analytics (3wk)</b> Wendy / Maya insight engine.</li>
+      <li><b>🥗 Smart Meal Recs (3wk)</b> <code>pcos diet</code> DE R1.05 catastrophic gem capture.</li>
+      <li><b>🩸 Lab Interpreter (4–5wk)</b> Anna trust + Family upsell.</li>
+      <li><b>👶 TTC Mode (2–3wk on top of cycle tracker)</b> Tanya Family $79.99 singularity.</li>
+      <li><b>📄 Doctor PDF (1–2wk)</b> Anna deliverable, cheap filler.</li>
+    </ul>
+    <div class="total">Σ cumulative: 5 features · weeks 5–8 (parallel tracks)</div>
+  </div>
+
+  <div class="ptier p2">
+    <span class="weeks">P2 · post-launch V1.1 (wk 9–12)</span>
+    <h3>Retention boosters · post-launch</h3>
+    <ul>
+      <li><b>🩺 Medication Tracker (1–2wk)</b> Anna / Maya retention.</li>
+      <li><b>🏆 Progress Dashboard / Wins (1wk)</b> Wendy retention engine.</li>
+    </ul>
+    <div class="cut-note">
+      <b>CUT-or-defer · 📚 Educational Lessons</b> — defer V1.2. PCOS Pal owns this lane; build only if Naomi-onboarding shows lesson-demand telemetry.
+    </div>
+    <div class="total">Σ cumulative: 2 ship + 1 deferred</div>
+  </div>
+
+</div>
+
+<div class="seq-strip">
+  <h3>Horizontal sequencing strip · weeks 1–9</h3>
+  <div class="seq-row">
+    <div class="seq"><b>W1</b>Type Quiz</div>
+    <div class="seq"><b>W2</b>Photo Journal (Folik reuse)</div>
+    <div class="seq"><b>W3</b>Supplement Tracker + Cycle Tracker start</div>
+    <div class="seq"><b>W4</b>Cycle Tracker finish + AI Coach RAG start</div>
+    <div class="seq"><b>W5</b>AI Coach continues + Symptom Analytics start</div>
+    <div class="seq"><b>W6</b>AI Coach finish + Meal Recs start</div>
+    <div class="seq"><b>W7</b>Lab Interpreter start + Meal Recs finish + Doctor PDF</div>
+    <div class="seq"><b>W8</b>Lab Interpreter finish + TTC Mode toggle + final QA</div>
+    <div class="seq launch"><b>W9</b>🇺🇸 US LAUNCH</div>
+  </div>
+</div>
+
+<!-- =========================================================== -->
+<!-- ===== MODULE 9 · ANTI-PATTERNS ===== -->
+<!-- =========================================================== -->
+<h2 id="anti-patterns">9 · Anti-patterns · what we explicitly do NOT build in V1</h2>
+<p class="lede">
+  Locked from <code>COMPLIANCE.md</code> + <code>Cysta_AI_PCOS_Master_v2_FINAL.md</code> PART 6.
+  Each "won't build" item is consilium-locked unless founder explicitly overrides in <code>DECISIONS.md</code>.
+</p>
+
+<ul class="anti-list">
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Generic period tracker</b> — Flo / Clue own it; PCOS women are gaslit by them.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Calorie counter</b> — MyFitnessPal wins; PCOS needs glycemic, not calorie.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Generic fitness</b> — Apple Fitness+ is cheaper; PCOS needs HIIT + resistance specifics, not yoga playlists.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Cute period illustrations</b> (uterus-with-eyes, dancing ovaries) — credibility-killer for Anna / Tanya.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Email-required onboarding</b> — privacy-first; Sign-in-with-Apple optional.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Cloud-by-default photo sync</b> — local storage, iCloud opt-in.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Identifiable minor faces in marketing</b> — compliance hard-line.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Gamification</b> (XP, levels, confetti, "PCOS warrior!") — except a single adherence streak.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Community feed Y1</b> — Cysterhood owns this; we focus AI authority instead.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Definitive fertility predictions</b> ("you'll conceive on X day") — TTC gives window, not certainty.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Anti-Metformin / anti-BC rhetoric</b> — Maya tempts this; refuse, neutral framing per <code>COMPLIANCE.md</code>.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>"Cure PCOS" copy anywhere</b> — compliance hard-line. Always "manage / track / understand".</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Diagnosis claims</b> ("you have PCOS") — Type Quiz is self-assessment educational, never diagnostic.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>AI Coach answers without RAG citations</b> — every answer cites ACOG / ESHRE / AAP / Endocrine Society / PubMed or refuses.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Symptom checker</b> — WebMD is free; PCOS needs chronic management, not acute triage.</span>
+  </li>
+</ul>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>
+    Source-of-truth: <code>Cysta_AI_PCOS_Master_v2_FINAL.md</code> · <code>PERSONAS.md</code> · <code>COMPETITORS.md</code> · <code>V1_SCOPE.md</code> · <code>COMPLIANCE.md</code>.
+    Decision log: <code>DECISIONS.md</code> (entry to be added on lock 2026-05-21).
+    <br>
+    <b>Cysta AI</b> · love8ko / CystaAI · Team KLV3PHFA3Q · Bundle <code>com.love8ko.cystaai</code> ·
+    last updated 2026-05-14 · status: <b>round 0 voting in progress</b>.
+  </p>
+</footer>
+
+</body>
+</html>
