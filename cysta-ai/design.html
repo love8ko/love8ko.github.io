@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Cysta AI — Design System Workbench (round 1)</title>
+<title>Cysta AI — Project Workbench (design + features)</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    /* neutral workbench chrome — does NOT bias any candidate */
+    /* neutral workbench chrome */
     --ink:        #2A2230;
     --ink-2:      #5A4F60;
     --ink-3:      #968B9C;
@@ -18,7 +18,7 @@
     --card:       #FFFFFF;
     --divider:    #E5DAD5;
 
-    /* chrome accents (workbench, NOT a candidate) */
+    /* chrome accents (workbench, not brand) */
     --chrome:     #6B5970;
     --chrome-mid: #574761;
     --chrome-soft:#E2D6E0;
@@ -31,45 +31,33 @@
     --lo-bg:      #ECD0C8;
     --lo:         #7A2D24;
 
-    /* candidate A · «Cysterhood Apothecary» — Sage + Warm Rose + Ivory */
-    --a-bg:       #FAF6F0;
-    --a-ink:      #2D2823;
-    --a-brand:    #8FBC8F;
-    --a-deep:     #5D8462;
-    --a-soft:     #D9E8D6;
-    --a-cta:      #E8A09A;
-    --a-cta-deep: #C97A75;
-    --a-cta-soft: #F6DAD4;
+    /* Lunar Endocrine — LOCKED palette tokens (also used as accents) */
+    --b-bg:        #F4ECE6;
+    --b-ink:       #2A1E2D;
+    --b-brand:     #6B4E6E;
+    --b-deep:      #4A3550;
+    --b-soft:      #E2D6E0;
+    --b-cta:       #D4A574;
+    --b-cta-deep:  #B0824D;
+    --b-cta-soft:  #F1DFC4;
 
-    /* candidate B · «Lunar Endocrine» — Plum + Rose-Gold + Pearl */
-    --b-bg:       #F4ECE6;
-    --b-ink:      #2A1E2D;
-    --b-brand:    #6B4E6E;
-    --b-deep:     #4A3550;
-    --b-soft:     #E2D6E0;
-    --b-cta:      #D4A574;
-    --b-cta-deep: #B0824D;
-    --b-cta-soft: #F1DFC4;
+    --plum:       #6B4E6E;
+    --plum-deep:  #4A3550;
+    --plum-soft:  #E2D6E0;
+    --rose-gold:  #D4A574;
+    --rose-deep:  #B0824D;
+    --rose-soft:  #F1DFC4;
+    --pearl:      #F4ECE6;
+    --sage-warm:  #6B8770;
+    --sage-soft:  #D8E4DA;
 
-    /* candidate C · «Inositol Mint» — Mint Teal + Coral + Cream */
-    --c-bg:       #FBF7EF;
-    --c-ink:      #1F2F2C;
-    --c-brand:    #4A8B85;
-    --c-deep:     #2E6E68;
-    --c-soft:     #C9E2DD;
-    --c-cta:      #FF8773;
-    --c-cta-deep: #D96651;
-    --c-cta-soft: #FCD8CF;
-
-    /* candidate D · «Cycle Mauve» — Dusty Mauve + Honey + Off-white */
-    --d-bg:       #F7F1E8;
-    --d-ink:      #2D2229;
-    --d-brand:    #B58797;
-    --d-deep:     #8C5F70;
-    --d-soft:     #ECD8DF;
-    --d-cta:      #E8B05A;
-    --d-cta-deep: #C58E3F;
-    --d-cta-soft: #F6E4C0;
+    /* tier chips */
+    --t1-bg:      #E2D6E0;
+    --t1-fg:      #4A3550;
+    --t2-bg:      #F1DFC4;
+    --t2-fg:      #B0824D;
+    --t3-bg:      #E5DAD5;
+    --t3-fg:      #5A4F60;
   }
 
   html, body { background: var(--bg); color: var(--ink); }
@@ -89,7 +77,7 @@
   h2 { font-size: 22px; font-weight: 700; margin: 44px 0 14px; }
   h3 { font-size: 16px; font-weight: 700; margin: 22px 0 10px; color: var(--ink); }
 
-  .lede { color: var(--ink-2); max-width: 820px; line-height: 1.55; margin-bottom: 6px; font-size: 14.5px; }
+  .lede { color: var(--ink-2); max-width: 880px; line-height: 1.55; margin-bottom: 6px; font-size: 14.5px; }
   .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 8px; }
   .pill {
     background: var(--card); border: 1px solid var(--divider);
@@ -97,9 +85,12 @@
     color: var(--ink-2); font-weight: 600;
   }
   .pill.live   { background: var(--mid-bg); color: var(--mid); border-color: #E8C998; }
+  .pill.locked { background: var(--sage-soft); color: var(--sage-warm); border-color: #BCD3BD; }
   .pill.brand  { background: var(--chrome-soft); color: var(--chrome-mid); border-color: var(--chrome-soft); }
   .pill.repo   { background: var(--bg-soft); color: var(--ink-2); }
+  .pill.alert  { background: var(--lo-bg); color: var(--lo); border-color: #E2B1A8; }
 
+  /* ==================== NAV ==================== */
   .top-nav {
     position: sticky; top: 0; z-index: 50;
     background: rgba(246, 241, 236, 0.94);
@@ -119,8 +110,10 @@
     transition: background 0.15s, color 0.15s, border-color 0.15s;
   }
   .top-nav a:hover { background: var(--card); color: var(--chrome-mid); border-color: var(--divider); }
-  .top-nav a.is-module { background: var(--chrome); color: #fff; }
-  .top-nav a.is-module:hover { background: var(--chrome-mid); color: #fff; }
+  .top-nav a.is-cluster { background: var(--chrome); color: #fff; }
+  .top-nav a.is-cluster:hover { background: var(--chrome-mid); color: #fff; }
+  .top-nav a.cluster-locked { background: var(--sage-warm); color: #fff; }
+  .top-nav a.cluster-locked:hover { background: #557260; color: #fff; }
   .top-nav .nav-num {
     font-family: ui-monospace, "SF Mono", monospace;
     font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em;
@@ -128,235 +121,379 @@
     padding: 2px 6px; border-radius: 5px;
   }
   .top-nav .sep { width: 1px; height: 16px; background: var(--divider); margin: 0 4px; }
+  .top-nav .cluster-divider {
+    color: var(--ink-3); font-weight: 800; font-size: 14px;
+    padding: 0 6px;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
   html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 
-  .module-banner {
-    margin: 36px 0 18px;
-    padding: 18px 22px;
-    background: linear-gradient(135deg, var(--chrome) 0%, var(--chrome-mid) 100%);
+  /* ==================== PART BANNERS ==================== */
+  .part-banner {
+    margin: 44px 0 18px;
+    padding: 20px 24px;
+    border-radius: 20px;
     color: #F4ECE6;
-    border-radius: 18px;
-    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
   }
-  .module-banner .num {
+  .part-banner.a { background: linear-gradient(135deg, var(--plum) 0%, var(--plum-deep) 100%); }
+  .part-banner.b { background: linear-gradient(135deg, var(--chrome) 0%, var(--chrome-mid) 100%); }
+  .part-banner .tag {
     font-family: ui-monospace, "SF Mono", monospace;
-    font-size: 13px; font-weight: 800; letter-spacing: 0.08em;
-    background: var(--mid); color: #fff;
-    padding: 5px 11px; border-radius: 8px;
+    font-size: 12px; font-weight: 800; letter-spacing: 0.08em;
+    background: rgba(0,0,0,0.22); color: #fff;
+    padding: 6px 12px; border-radius: 8px;
   }
-  .module-banner h2 { margin: 0; color: #F4ECE6; font-size: 22px; }
-  .module-banner .desc {
-    color: #E2D6E0; font-size: 13px; line-height: 1.5;
-    flex-basis: 100%; margin-top: 4px;
+  .part-banner.a .tag { background: var(--rose-gold); color: var(--plum-deep); }
+  .part-banner h2 { margin: 0; color: #F4ECE6; font-size: 24px; }
+  .part-banner .desc {
+    color: rgba(244, 236, 230, 0.86); font-size: 13.5px; line-height: 1.55;
+    flex-basis: 100%; margin-top: 2px; max-width: 860px;
   }
 
-  /* ===== Status banner (no winner yet) ===== */
-  .status-banner {
-    background: var(--card);
-    border: 1px dashed var(--mid);
-    border-radius: 20px;
-    padding: 22px 24px;
-    margin: 22px 0 8px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 18px;
-    align-items: center;
+  /* ==================== PART A · LOCKED PALETTE CARD ==================== */
+  .locked-card {
+    margin-top: 18px;
+    background: var(--b-bg);
+    color: var(--b-ink);
+    border: 1px solid var(--b-soft);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 6px 26px rgba(74, 53, 80, 0.16);
   }
-  .status-banner h2 { margin: 0; font-size: 20px; color: var(--ink); }
-  .status-banner .sub { color: var(--ink-2); font-size: 13.5px; margin-top: 4px; line-height: 1.5; max-width: 620px; }
-  .status-banner .right { text-align: right; }
-  .status-banner .badge {
-    background: var(--mid-bg); color: var(--mid);
-    border-radius: 999px; padding: 8px 16px;
-    font-weight: 800; font-size: 13px;
+  .locked-card .head {
+    padding: 22px 26px 18px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 16px;
+    border-bottom: 1px solid rgba(74, 53, 80, 0.12);
+    background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
+  }
+  .locked-card .head .left { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 240px; }
+  .locked-card .head .tag {
     font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--b-deep);
+  }
+  .locked-card .head h3 { margin: 0; font-size: 24px; font-weight: 800; color: var(--b-ink); }
+  .locked-card .head .vibe {
+    font-size: 13.5px; line-height: 1.55; color: var(--b-deep); max-width: 540px;
+  }
+  .locked-card .head .score {
+    background: var(--b-deep); color: var(--b-cta);
+    border-radius: 999px; padding: 8px 16px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 14px; font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .swatches {
+    display: grid; grid-template-columns: repeat(8, 1fr);
+    gap: 6px; padding: 16px 26px 8px;
+  }
+  @media (max-width: 720px) { .swatches { grid-template-columns: repeat(4, 1fr); } }
+  .sw {
+    aspect-ratio: 1; border-radius: 10px;
+    border: 1px solid rgba(74, 53, 80, 0.10);
+    display: flex; align-items: flex-end; justify-content: center;
+    padding: 4px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 8.5px; font-weight: 700;
+    color: rgba(42, 30, 45, 0.65);
+  }
+  .sw.dark { color: rgba(244, 236, 230, 0.85); }
+
+  .locked-card .body { padding: 6px 26px 22px; display: flex; flex-direction: column; gap: 18px; }
+
+  /* spec tables inside locked card */
+  table.spec {
+    width: 100%; border-collapse: collapse;
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(74, 53, 80, 0.10);
+  }
+  table.spec th, table.spec td {
+    padding: 8px 12px; text-align: left; font-size: 12.5px;
+    border-bottom: 1px solid rgba(74, 53, 80, 0.08);
+    color: var(--b-ink);
+  }
+  table.spec th {
+    background: var(--b-soft); color: var(--b-deep);
+    font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800;
+  }
+  table.spec tr:last-child td { border-bottom: none; }
+  table.spec td.tok {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 800; color: var(--b-deep);
+    white-space: nowrap;
+  }
+  table.spec td.hex {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11.5px; color: var(--b-cta-deep);
+  }
+  table.spec td.swatch-cell { width: 32px; padding: 4px 8px; }
+  table.spec td.swatch-cell .chip {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 1px solid rgba(74, 53, 80, 0.18);
     display: inline-block;
   }
-  .status-banner .who { font-size: 11.5px; color: var(--ink-3); margin-top: 6px; }
 
-  /* ===== Audience snapshot ===== */
+  .spec-section h4 {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    margin: 4px 0 8px; font-size: 15px; font-weight: 800;
+    color: var(--b-deep); letter-spacing: -0.01em;
+  }
+  .spec-section .note {
+    font-size: 12px; color: var(--b-deep); opacity: 0.78;
+    line-height: 1.5; margin-top: 6px; max-width: 720px;
+  }
+
+  /* verdict triad chips */
+  .triad { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+  .triad .chip {
+    padding: 10px 14px; border-radius: 14px;
+    font-size: 12.5px; font-weight: 700; line-height: 1.4;
+    display: flex; flex-direction: column; gap: 2px;
+    min-width: 180px;
+  }
+  .triad .chip .lbl {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 800;
+  }
+  .triad .chip .range {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; opacity: 0.78;
+  }
+  .triad .good { background: var(--sage-soft); color: var(--sage-warm); }
+  .triad .watch { background: var(--b-cta-soft); color: var(--b-cta-deep); }
+  .triad .alert { background: #ECD6BE; color: var(--b-cta-deep); }
+
+  /* rationale list */
+  ul.rationale { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+  ul.rationale li {
+    font-size: 13px; line-height: 1.55; color: var(--b-ink);
+    padding-left: 22px; position: relative;
+  }
+  ul.rationale li::before {
+    content: "◆";
+    position: absolute; left: 4px; top: 0;
+    color: var(--b-cta); font-size: 11px;
+  }
+  ul.rationale li b { color: var(--b-deep); font-weight: 800; }
+
+  /* score recap pill row */
+  .score-recap {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(74, 53, 80, 0.10);
+  }
+  .score-recap .item {
+    display: flex; flex-direction: column;
+    background: var(--b-bg);
+    border-radius: 10px;
+    padding: 8px 12px;
+    min-width: 120px;
+  }
+  .score-recap .item .k {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10px; font-weight: 800; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--b-deep); opacity: 0.7;
+  }
+  .score-recap .item .v {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 17px; font-weight: 800; color: var(--b-deep);
+  }
+  .score-recap .item.sigma { background: var(--b-deep); }
+  .score-recap .item.sigma .k { color: var(--b-cta); opacity: 0.9; }
+  .score-recap .item.sigma .v { color: var(--b-cta); }
+  .score-recap .lock-pill {
+    margin-left: auto; align-self: center;
+    background: var(--sage-soft); color: var(--sage-warm);
+    border-radius: 999px; padding: 8px 14px;
+    font-size: 12px; font-weight: 800;
+  }
+
+  /* ==================== MODE STRATEGY TABLE ==================== */
+  table.modes {
+    width: 100%; border-collapse: collapse; margin-top: 14px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider);
+  }
+  table.modes th, table.modes td {
+    padding: 9px 12px; text-align: left; font-size: 13px;
+    border-bottom: 1px solid var(--divider);
+    vertical-align: top;
+  }
+  table.modes th {
+    background: var(--chrome-soft); color: var(--chrome-mid);
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800;
+  }
+  table.modes tr:last-child td { border-bottom: none; }
+  table.modes td.surface { font-weight: 700; color: var(--ink); white-space: nowrap; }
+  table.modes td.mode {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 12px; font-weight: 800;
+  }
+  table.modes td.mode.light  { color: var(--b-cta-deep); }
+  table.modes td.mode.night  { color: var(--b-deep); }
+  table.modes td.mode.system { color: var(--chrome-mid); }
+  table.modes td.mode.single { color: var(--sage-warm); }
+
+  /* ==================== WHITESPACE / DON'TS (palette) ==================== */
+  table.ws-palette {
+    width: 100%; border-collapse: collapse; margin-top: 14px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider);
+  }
+  table.ws-palette th, table.ws-palette td {
+    padding: 9px 12px; text-align: left; font-size: 13px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.ws-palette th {
+    background: var(--chrome-soft); color: var(--chrome-mid);
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800;
+  }
+  table.ws-palette tr:last-child td { border-bottom: none; }
+  .ok   { color: var(--hi);  font-weight: 700; }
+  .warn { color: var(--mid); font-weight: 700; }
+  .bad  { color: var(--lo);  font-weight: 700; }
+
+  ul.list { margin-top: 8px; padding-left: 20px; line-height: 1.6; }
+  ul.list li { margin-bottom: 5px; font-size: 14px; }
+  ul.dontlist li::marker { color: var(--lo); }
+
+  /* "jump to part B" affordance */
+  .jump-next {
+    margin-top: 22px;
+    display: flex; justify-content: flex-end;
+  }
+  .jump-next a {
+    text-decoration: none;
+    background: var(--chrome); color: #fff;
+    padding: 10px 18px; border-radius: 999px;
+    font-weight: 800; font-size: 13px;
+    display: inline-flex; gap: 6px; align-items: center;
+    transition: background 0.15s;
+  }
+  .jump-next a:hover { background: var(--chrome-mid); }
+
+  /* ==================== PART B (features) ==================== */
+  /* Audience snapshot */
   .audience-grid {
     display: grid; grid-template-columns: repeat(5, 1fr);
     gap: 10px; margin-top: 12px;
   }
-  @media (max-width: 880px) { .audience-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 1100px) { .audience-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px)  { .audience-grid { grid-template-columns: 1fr; } }
   .aud {
     background: var(--card); border: 1px solid var(--divider);
-    border-radius: 14px; padding: 12px 14px;
+    border-radius: 14px; padding: 14px 14px 12px;
     font-size: 12px; color: var(--ink-2);
+    display: flex; flex-direction: column; gap: 6px;
   }
-  .aud b { display: block; font-size: 13.5px; color: var(--ink); margin-bottom: 4px; }
+  .aud .head-row { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .aud b { font-size: 14px; color: var(--ink); }
   .aud .age { font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; color: var(--ink-3); }
-  .aud .w   {
-    display: inline-block; margin-top: 6px;
+  .aud .pain { font-style: italic; color: var(--ink-2); font-size: 12px; line-height: 1.45; }
+  .aud .row { font-size: 11.5px; line-height: 1.45; }
+  .aud .row b.lbl { font-weight: 800; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); display: block; margin-top: 2px; }
+  .aud .w {
+    display: inline-block; align-self: flex-start;
     background: var(--chrome-soft); color: var(--chrome-mid);
     font-size: 10.5px; font-weight: 800; letter-spacing: 0.04em;
     padding: 2px 7px; border-radius: 999px;
     font-family: ui-monospace, "SF Mono", monospace;
   }
+  .aud .jtbd-bar { font-size: 11px; color: var(--rose-deep); letter-spacing: 0.04em; margin-top: 2px; }
+  .aud .wtp { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 6px; }
+  .aud .wtp.high  { background: var(--sage-soft); color: var(--sage-warm); }
+  .aud .wtp.med   { background: var(--mid-bg);    color: var(--mid); }
+  .aud .wtp.alert { background: var(--lo-bg);     color: var(--lo); }
 
-  /* ===== 4 candidate variants ===== */
-  .variants {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-top: 18px;
-  }
-  @media (max-width: 920px) { .variants { grid-template-columns: 1fr; } }
-
-  .variant {
-    border-radius: 22px;
-    padding: 0;
-    overflow: hidden;
+  /* Whitespace matrix (features) */
+  .ws-wrap { overflow-x: auto; margin-top: 14px; border-radius: 14px; }
+  table.ws {
+    width: 100%; min-width: 880px;
+    border-collapse: collapse;
+    background: var(--card);
     border: 1px solid var(--divider);
-    box-shadow: 0 2px 10px rgba(60, 40, 60, 0.04);
   }
-  .variant.lead { border-color: var(--mid); box-shadow: 0 6px 26px rgba(180, 120, 60, 0.16); }
+  table.ws th, table.ws td {
+    padding: 9px 10px; text-align: left; font-size: 12.5px;
+    border-bottom: 1px solid var(--divider);
+    vertical-align: middle;
+  }
+  table.ws th {
+    background: var(--chrome-soft); color: var(--chrome-mid);
+    font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 800;
+    position: sticky; top: 0;
+  }
+  table.ws th.feat { min-width: 220px; }
+  table.ws td.feat { font-weight: 700; color: var(--ink); }
+  table.ws td.ctr { text-align: center; font-family: ui-monospace, "SF Mono", monospace; font-size: 13px; }
+  table.ws td.ws-yes  { background: var(--sage-soft); color: var(--sage-warm); font-weight: 800; }
+  table.ws td.ws-part { background: var(--mid-bg); color: var(--mid); font-weight: 800; }
+  table.ws td.ws-no   { color: var(--ink-3); font-weight: 600; }
+  table.ws tr.white-row td.feat { border-left: 3px solid var(--rose-gold); }
 
-  .variant .head {
-    padding: 18px 20px 14px;
-    display: flex; justify-content: space-between; align-items: flex-start;
-    gap: 14px;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+  .mrr-row {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px;
   }
-  .variant .head .title { display: flex; flex-direction: column; gap: 4px; flex: 1; }
-  .variant .head .tag {
+  .mrr-row .mrr {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 10px; padding: 8px 12px; font-size: 12px;
+    color: var(--ink-2);
+  }
+  .mrr-row .mrr b { color: var(--ink); }
+  .mrr-row .mrr .num { font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; color: var(--plum); }
+
+  /* Feature long-list grid */
+  .feat-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px; margin-top: 14px;
+  }
+  @media (max-width: 1100px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 660px)  { .feat-grid { grid-template-columns: 1fr; } }
+  .feat {
+    background: var(--card);
+    border: 1px solid var(--divider);
+    border-radius: 16px;
+    padding: 14px 16px 13px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .feat .head { display: flex; align-items: flex-start; gap: 10px; justify-content: space-between; }
+  .feat .head .left { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .feat .num {
     font-family: ui-monospace, "SF Mono", monospace;
-    font-size: 11px; font-weight: 800; letter-spacing: 0.10em;
-    text-transform: uppercase;
+    font-size: 11px; font-weight: 800; color: var(--ink-3);
   }
-  .variant .head h3 { margin: 0; font-size: 19px; font-weight: 800; letter-spacing: -0.01em; }
-  .variant .head .vibe {
-    font-size: 12.5px; font-style: italic; line-height: 1.5; margin-top: 4px;
-    max-width: 460px;
-  }
-  .variant .head .score {
-    background: rgba(0,0,0,0.08);
-    border-radius: 999px; padding: 6px 12px;
+  .feat h3 { margin: 0; font-size: 15px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }
+  .feat .tag {
     font-family: ui-monospace, "SF Mono", monospace;
-    font-size: 12px; font-weight: 800;
+    font-size: 10px; font-weight: 800; letter-spacing: 0.06em;
+    padding: 3px 8px; border-radius: 999px;
     white-space: nowrap;
   }
-  .variant.lead .head .score { background: var(--mid); color: #fff; }
+  .feat .tag.t1 { background: var(--t1-bg); color: var(--t1-fg); }
+  .feat .tag.t2 { background: var(--t2-bg); color: var(--t2-fg); }
+  .feat .tag.t3 { background: var(--t3-bg); color: var(--t3-fg); }
+  .feat .desc { font-size: 12.5px; color: var(--ink-2); line-height: 1.5; }
+  .feat .rows { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; padding-top: 8px; border-top: 1px dashed var(--divider); }
+  .feat .row { display: flex; gap: 6px; font-size: 11.5px; line-height: 1.45; color: var(--ink-2); }
+  .feat .row b { color: var(--ink); font-weight: 700; }
+  .feat .row .lbl { min-width: 92px; color: var(--ink-3); font-weight: 700; font-size: 10.5px; letter-spacing: 0.03em; text-transform: uppercase; }
+  .feat .risk { display: inline-block; padding: 1px 7px; border-radius: 6px; font-size: 10.5px; font-weight: 800; }
+  .feat .risk.low  { background: var(--sage-soft); color: var(--sage-warm); }
+  .feat .risk.med  { background: var(--mid-bg);    color: var(--mid); }
+  .feat .risk.high { background: var(--lo-bg);     color: var(--lo); }
 
-  /* per-candidate skinning */
-  .variant.a { background: var(--a-bg); color: var(--a-ink); }
-  .variant.a .head .tag { color: var(--a-cta-deep); }
-  .variant.a .head .score { color: var(--a-cta-deep); background: rgba(232, 160, 154, 0.22); }
-
-  .variant.b { background: var(--b-bg); color: var(--b-ink); }
-  .variant.b .head .tag { color: var(--b-deep); }
-  .variant.b .head .score { color: var(--b-deep); background: rgba(107, 78, 110, 0.18); }
-
-  .variant.c { background: var(--c-bg); color: var(--c-ink); }
-  .variant.c .head .tag { color: var(--c-deep); }
-  .variant.c .head .score { color: var(--c-deep); background: rgba(74, 139, 133, 0.18); }
-
-  .variant.d { background: var(--d-bg); color: var(--d-ink); }
-  .variant.d .head .tag { color: var(--d-deep); }
-  .variant.d .head .score { color: var(--d-deep); background: rgba(181, 135, 151, 0.22); }
-
-  .swatches {
-    display: grid; grid-template-columns: repeat(6, 1fr);
-    gap: 6px; padding: 14px 20px 0;
-  }
-  .sw {
-    aspect-ratio: 1; border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.08);
-    display: flex; align-items: flex-end; justify-content: center;
-    padding: 4px;
-    font-family: ui-monospace, "SF Mono", monospace;
-    font-size: 8.5px; font-weight: 700;
-    color: rgba(0,0,0,0.55);
-  }
-  .sw.dark { color: rgba(255,255,255,0.78); }
-
-  .preview { padding: 14px 20px 18px; display: flex; flex-direction: column; gap: 10px; }
-
-  /* mock phone preview pieces (palette-agnostic structure) */
-  .poem-mini {
-    border-radius: 14px; padding: 14px;
-    display: flex; flex-direction: column; gap: 4px;
-  }
-  .poem-mini .lbl  { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.78; }
-  .poem-mini .num  { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 28px; line-height: 1; }
-  .poem-mini .sub  { font-size: 11.5px; font-weight: 600; opacity: 0.85; }
-  .poem-mini .bar  { height: 5px; background: rgba(255,255,255,0.22); border-radius: 999px; margin-top: 6px; overflow: hidden; }
-  .poem-mini .bar i { display: block; height: 100%; border-radius: 999px; }
-
-  .variant.a .poem-mini { background: var(--a-deep); color: #FAF6F0; }
-  .variant.a .poem-mini .bar i { background: var(--a-cta); width: 38%; }
-  .variant.b .poem-mini { background: var(--b-deep); color: #F4ECE6; }
-  .variant.b .poem-mini .bar i { background: var(--b-cta); width: 38%; }
-  .variant.c .poem-mini { background: var(--c-deep); color: #FBF7EF; }
-  .variant.c .poem-mini .bar i { background: var(--c-cta); width: 38%; }
-  .variant.d .poem-mini { background: var(--d-deep); color: #F7F1E8; }
-  .variant.d .poem-mini .bar i { background: var(--d-cta); width: 38%; }
-
-  .cycle-card {
-    background: #fff; border-radius: 12px; padding: 10px 12px;
-    box-shadow: 0 1px 3px rgba(40, 30, 40, 0.06);
-    display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center;
-  }
-  .cycle-card .name { font-weight: 700; font-size: 13.5px; }
-  .cycle-card .meta { font-size: 11px; color: var(--ink-3); margin-top: 1px; }
-  .verdict-pill {
-    border-radius: 999px; padding: 3px 9px;
-    font-size: 10.5px; font-weight: 800;
-    letter-spacing: 0.02em;
-  }
-  .variant.a .verdict-pill { background: var(--a-soft); color: var(--a-deep); }
-  .variant.b .verdict-pill { background: var(--b-soft); color: var(--b-deep); }
-  .variant.c .verdict-pill { background: var(--c-soft); color: var(--c-deep); }
-  .variant.d .verdict-pill { background: var(--d-soft); color: var(--d-deep); }
-
-  .coach-bubble {
-    border-radius: 14px; padding: 10px 12px;
-    font-size: 12.5px; line-height: 1.45;
-    border: 1px solid rgba(0,0,0,0.06);
-  }
-  .coach-bubble b { font-weight: 700; }
-  .coach-bubble .cite {
-    display: inline-block; margin-top: 4px;
-    font-size: 11px; padding-bottom: 1px;
-    border-bottom: 1px dotted currentColor;
-  }
-  .variant.a .coach-bubble { background: var(--a-soft); color: var(--a-deep); }
-  .variant.b .coach-bubble { background: var(--b-soft); color: var(--b-deep); }
-  .variant.c .coach-bubble { background: var(--c-soft); color: var(--c-deep); }
-  .variant.d .coach-bubble { background: var(--d-soft); color: var(--d-deep); }
-
-  .cta-btn {
-    height: 42px; border-radius: 12px; border: none;
-    font-weight: 800; font-size: 14px;
-    font-family: -apple-system, "SF Pro Rounded", sans-serif;
-    color: #fff; cursor: default;
-  }
-  .variant.a .cta-btn { background: var(--a-cta-deep); }
-  .variant.b .cta-btn { background: var(--b-cta-deep); }
-  .variant.c .cta-btn { background: var(--c-cta-deep); }
-  .variant.d .cta-btn { background: var(--d-cta-deep); }
-
-  /* fit-for cards */
-  .fitfor {
-    display: flex; flex-wrap: wrap; gap: 4px;
-    padding: 0 20px 16px;
-  }
-  .fitfor .chip {
-    font-size: 10.5px; font-weight: 700;
-    border: 1px solid currentColor;
-    padding: 3px 9px; border-radius: 999px;
-    opacity: 0.85;
-  }
-  .variant.a .fitfor .chip { color: var(--a-deep); }
-  .variant.b .fitfor .chip { color: var(--b-deep); }
-  .variant.c .fitfor .chip { color: var(--c-deep); }
-  .variant.d .fitfor .chip { color: var(--d-deep); }
-
-  /* ===== Voting tables ===== */
+  /* Voting tables (features) */
+  .vote-wrap { overflow-x: auto; margin-top: 14px; border-radius: 14px; }
   table.vote {
-    width: 100%; border-collapse: collapse; margin-top: 14px;
-    background: var(--card); border-radius: 14px; overflow: hidden;
+    width: 100%; min-width: 760px;
+    border-collapse: collapse;
+    background: var(--card);
     border: 1px solid var(--divider);
   }
   table.vote th, table.vote td {
@@ -369,87 +506,214 @@
   }
   table.vote tr:last-child td { border-bottom: none; }
   table.vote td.who { font-weight: 700; white-space: nowrap; }
-  table.vote td.who small { display: block; font-size: 10.5px; color: var(--ink-3); font-weight: 600; }
+  table.vote td.who small {
+    display: block; font-size: 10.5px;
+    color: var(--ink-3); font-weight: 600;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
   table.vote td.num {
     font-family: ui-monospace, "SF Mono", monospace;
     font-weight: 800; text-align: center; font-size: 13px;
   }
   table.vote td.num.lead {
     background: var(--hi-bg); color: var(--hi);
-    border-radius: 4px;
   }
-  table.vote td.num.weak { color: var(--ink-3); }
-  table.vote tr.total td {
-    background: var(--bg-soft); font-weight: 800;
+  table.vote td.num.sum {
+    background: var(--bg-soft); color: var(--ink);
+    border-left: 2px solid var(--chrome);
+  }
+  table.vote tr.row-top td {
+    background: rgba(143, 188, 143, 0.10);
+  }
+  table.vote tr.row-top td.num.sum {
+    background: var(--sage-soft); color: var(--sage-warm);
+  }
+  table.vote th.sum {
+    background: var(--chrome); color: #fff;
+  }
+  table.vote tr.weight-row td {
+    background: var(--bg-soft);
+    font-size: 10.5px;
     font-family: ui-monospace, "SF Mono", monospace;
-    border-top: 2px solid var(--chrome);
+    color: var(--ink-3);
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.04em;
   }
-  table.vote tr.total td.num.lead { background: var(--hi); color: #fff; }
-  table.vote .col-a { background: rgba(143, 188, 143, 0.10); }
-  table.vote .col-b { background: rgba(107, 78, 110, 0.10); }
-  table.vote .col-c { background: rgba(74, 139, 133, 0.10); }
-  table.vote .col-d { background: rgba(181, 135, 151, 0.10); }
+  table.vote tr.weight-row td:first-child { text-align: right; color: var(--chrome-mid); font-weight: 800; }
 
-  th.col-a { background: var(--a-soft) !important; color: var(--a-deep) !important; }
-  th.col-b { background: var(--b-soft) !important; color: var(--b-deep) !important; }
-  th.col-c { background: var(--c-soft) !important; color: var(--c-deep) !important; }
-  th.col-d { background: var(--d-soft) !important; color: var(--d-deep) !important; }
-
-  /* ===== Aggregate scorecard ===== */
-  .scorecard {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px; margin-top: 14px;
+  .takeaway {
+    background: var(--card); border: 1px solid var(--divider);
+    border-left: 3px solid var(--plum);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 13px; line-height: 1.55;
+    color: var(--ink-2);
   }
-  @media (max-width: 920px) { .scorecard { grid-template-columns: repeat(2, 1fr); } }
-  .sc {
-    border-radius: 16px; padding: 16px 18px;
-    border: 1px solid var(--divider);
+  .takeaway b { color: var(--ink); }
+
+  /* Aggregate table */
+  .agg-wrap { overflow-x: auto; margin-top: 14px; border-radius: 14px; }
+  table.agg {
+    width: 100%; min-width: 820px;
+    border-collapse: collapse;
     background: var(--card);
-    display: flex; flex-direction: column; gap: 8px;
-  }
-  .sc.lead { border-color: var(--mid); box-shadow: 0 4px 18px rgba(180, 120, 60, 0.14); }
-  .sc .rank {
-    font-family: ui-monospace, "SF Mono", monospace;
-    font-size: 11px; font-weight: 800; letter-spacing: 0.06em;
-    text-transform: uppercase; color: var(--ink-3);
-  }
-  .sc .name { font-size: 14.5px; font-weight: 800; color: var(--ink); }
-  .sc .total {
-    font-family: ui-monospace, "SF Mono", monospace;
-    font-size: 30px; font-weight: 800;
-    letter-spacing: -0.02em; color: var(--ink);
-  }
-  .sc.lead .total { color: var(--mid); }
-  .sc .total small { font-size: 14px; color: var(--ink-3); font-weight: 700; }
-  .sc .breakdown {
-    font-size: 11px; color: var(--ink-2); line-height: 1.5;
-    border-top: 1px dashed var(--divider); padding-top: 8px;
-    font-family: ui-monospace, "SF Mono", monospace;
-  }
-  .sc .breakdown b { color: var(--ink); }
-
-  /* ===== Whitespace + Anti-patterns ===== */
-  table.ws {
-    width: 100%; border-collapse: collapse; margin-top: 14px;
-    background: var(--card); border-radius: 14px; overflow: hidden;
     border: 1px solid var(--divider);
   }
-  table.ws th, table.ws td {
-    padding: 9px 12px; text-align: left; font-size: 13px;
+  table.agg th, table.agg td {
+    padding: 10px 12px; text-align: left; font-size: 13px;
     border-bottom: 1px solid var(--divider);
   }
-  table.ws th {
+  table.agg th {
     background: var(--chrome-soft); color: var(--chrome-mid);
     font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800;
   }
-  .ok   { color: var(--hi);  font-weight: 700; }
-  .warn { color: var(--mid); font-weight: 700; }
-  .bad  { color: var(--lo);  font-weight: 700; }
+  table.agg td.rank {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 800; color: var(--ink-3); text-align: center; width: 50px;
+  }
+  table.agg td.feat-name { font-weight: 700; color: var(--ink); }
+  table.agg td.num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    text-align: center; font-weight: 700;
+  }
+  table.agg td.sigma {
+    font-family: ui-monospace, "SF Mono", monospace;
+    text-align: center; font-weight: 800; font-size: 14px;
+    background: var(--bg-soft); border-left: 2px solid var(--chrome);
+  }
+  table.agg td.cluster {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 800; font-size: 11px; letter-spacing: 0.05em;
+    text-align: center;
+  }
+  table.agg tr.p0 td { background: var(--sage-soft); }
+  table.agg tr.p0 td.sigma { background: var(--sage-warm); color: #fff; }
+  table.agg tr.p0 td.cluster { color: var(--sage-warm); }
+  table.agg tr.p1 td { background: var(--rose-soft); }
+  table.agg tr.p1 td.sigma { background: var(--rose-deep); color: #fff; }
+  table.agg tr.p1 td.cluster { color: var(--rose-deep); }
+  table.agg tr.p2 td { background: var(--pearl); }
+  table.agg tr.p2 td.cluster { color: var(--ink-2); }
+  table.agg tr.cut td { background: var(--bg-soft); color: var(--ink-3); }
+  table.agg tr.cut td.cluster { color: var(--lo); }
+  table.agg tr.cut td.feat-name { color: var(--ink-3); }
 
-  ul.list { margin-top: 8px; padding-left: 20px; line-height: 1.6; }
-  ul.list li { margin-bottom: 5px; font-size: 14px; }
-  ul.dontlist li::marker { color: var(--lo); }
+  .runoff {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 14px; padding: 14px 18px;
+    margin-top: 16px;
+  }
+  .runoff h3 { margin-top: 4px; }
+  .runoff ul { padding-left: 22px; line-height: 1.55; font-size: 13.5px; color: var(--ink-2); }
+  .runoff ul li { margin-bottom: 6px; }
+  .runoff ul li b { color: var(--ink); }
+
+  /* Roadmap columns */
+  .roadmap-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px; margin-top: 14px;
+  }
+  @media (max-width: 920px) { .roadmap-grid { grid-template-columns: 1fr; } }
+  .ptier {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px;
+    padding: 16px 18px 14px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .ptier.p0 { border-top: 4px solid var(--sage-warm); }
+  .ptier.p1 { border-top: 4px solid var(--rose-deep); }
+  .ptier.p2 { border-top: 4px solid var(--ink-3); }
+  .ptier h3 { margin: 0 0 4px; font-size: 17px; font-weight: 800; }
+  .ptier.p0 h3 { color: var(--sage-warm); }
+  .ptier.p1 h3 { color: var(--rose-deep); }
+  .ptier.p2 h3 { color: var(--ink-2); }
+  .ptier .weeks {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800;
+    color: var(--ink-3); letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .ptier ul { padding-left: 0; list-style: none; margin-top: 6px; display: flex; flex-direction: column; gap: 8px; }
+  .ptier ul li {
+    font-size: 12.5px; line-height: 1.5; color: var(--ink-2);
+    padding: 8px 10px;
+    background: var(--bg-soft);
+    border-radius: 9px;
+  }
+  .ptier ul li b { display: block; font-size: 13px; color: var(--ink); margin-bottom: 1px; }
+  .ptier .total {
+    margin-top: 10px; padding-top: 8px;
+    border-top: 1px dashed var(--divider);
+    font-size: 11.5px; color: var(--ink-3);
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-weight: 700;
+  }
+  .ptier .cut-note {
+    margin-top: 6px;
+    background: var(--lo-bg); color: var(--lo);
+    padding: 8px 10px; border-radius: 9px;
+    font-size: 12px; line-height: 1.5;
+  }
+
+  .seq-strip {
+    margin-top: 22px;
+    background: var(--card);
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 14px 16px;
+    overflow-x: auto;
+  }
+  .seq-strip h3 { margin-top: 2px; margin-bottom: 8px; }
+  .seq-row {
+    display: flex; gap: 8px; min-width: 1100px; align-items: stretch;
+  }
+  .seq {
+    flex: 1;
+    background: var(--bg-soft);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 11.5px; line-height: 1.4;
+    color: var(--ink-2);
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .seq b {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px;
+    color: var(--plum); letter-spacing: 0.06em;
+    font-weight: 800;
+  }
+  .seq.launch { background: var(--plum); color: #fff; }
+  .seq.launch b { color: var(--rose-gold); }
+
+  /* Anti-patterns (features) */
+  .anti-list {
+    margin-top: 12px;
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 6px 0;
+  }
+  .anti-list li {
+    list-style: none;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--divider);
+    font-size: 13px; line-height: 1.55;
+    color: var(--ink-2);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .anti-list li:last-child { border-bottom: none; }
+  .anti-list li .x { color: var(--lo); font-weight: 800; font-size: 14px; flex-shrink: 0; }
+  .anti-list li .wb-chip {
+    flex-shrink: 0;
+    background: var(--sage-soft); color: var(--sage-warm);
+    font-size: 10px; font-weight: 800; letter-spacing: 0.05em;
+    padding: 3px 8px; border-radius: 999px;
+    white-space: nowrap;
+    font-family: ui-monospace, "SF Mono", monospace;
+    text-transform: uppercase;
+  }
+  .anti-list li .copy b { color: var(--ink); font-weight: 700; }
 
   .legend { font-size: 11.5px; color: var(--ink-3); margin-top: 6px; line-height: 1.5; }
   .legend code {
@@ -464,661 +728,1361 @@
     font-size: 11.5px; color: var(--ink-3);
     line-height: 1.6;
   }
+  footer code {
+    font-family: ui-monospace, "SF Mono", monospace;
+    background: var(--bg-soft); padding: 1px 5px; border-radius: 4px;
+    color: var(--ink-2); font-size: 10.5px;
+  }
 </style>
 </head>
 <body id="top">
 
-<!-- ===== TOP NAV ===== -->
+<!-- ============================================================ -->
+<!-- ===== UNIFIED TOP NAV ===== -->
+<!-- ============================================================ -->
 <nav class="top-nav">
   <a href="#top">↑ Top</a>
   <span class="sep"></span>
-  <a href="#module-1" class="is-module"><span class="nav-num">M1</span>Design</a>
-  <span class="sep"></span>
-  <a href="#audience">audience</a>
-  <a href="#candidates">4 candidates</a>
-  <a href="#vote-personas">vote · personas</a>
-  <a href="#vote-trends">vote · trends</a>
-  <a href="#vote-designers">vote · designers</a>
+  <a href="#part-a" class="cluster-locked"><span class="nav-num">A</span>Design system 🔒</a>
+  <a href="#palette">palette</a>
+  <a href="#modes">modes</a>
+  <a href="#whitespace-palette">whitespace</a>
+  <a href="#anti-patterns-palette">don'ts</a>
+  <span class="cluster-divider">·</span>
+  <a href="#part-b" class="is-cluster"><span class="nav-num">B</span>Features 🗳️</a>
+  <a href="#personas">audience</a>
+  <a href="#matrix-features">matrix</a>
+  <a href="#longlist">long-list</a>
+  <a href="#round1-conversion">R1 conv.</a>
+  <a href="#round2-revenue">R2 rev.</a>
+  <a href="#round3-moat">R3 moat</a>
   <a href="#aggregate">aggregate</a>
-  <a href="#whitespace">whitespace</a>
-  <a href="#dont">don'ts</a>
+  <a href="#roadmap">roadmap</a>
+  <a href="#anti-patterns-features">don'ts</a>
 </nav>
 
+<!-- ============================================================ -->
 <!-- ===== HEADER ===== -->
+<!-- ============================================================ -->
 <header>
-  <h1>Cysta AI — Design System Workbench</h1>
+  <h1>Cysta AI — Project Workbench</h1>
   <p class="lede">
-    First commercial AI app for managing PCOS (polycystic ovary syndrome). 5 personas → 5 Custom Product Pages.
-    Round 1: 4 candidate design systems · 3-panel consilium (5 PCOS personas · 2026 UX/UI trends · UX/UI designers panel).
-    <b>✓ Locked 2026-05-14 — candidate B «Lunar Endocrine»</b> (plum #6B4E6E · rose-gold #D4A574 · pearl #F4ECE6). Founder-confirmed without round-2 runoff (speed-to-market vs Cycla AI 30–60d window).
+    Single-page workbench for the Cysta AI launch (PCOS · 5 markets · $38M SAM).
+    Combines the locked design system (Lunar Endocrine) and the in-progress feature decision (3-round consilium across 13 candidates).
+    Source of truth alongside <code>DECISIONS.md</code>.
   </p>
   <div class="meta-bar">
-    <span class="pill live">✓ locked · Lunar Endocrine</span>
-    <span class="pill brand">round 1 · 2026-05-14</span>
+    <span class="pill locked">🔒 design locked · 2026-05-14</span>
+    <span class="pill brand">🗳️ features · 3 rounds</span>
     <span class="pill repo">love8ko / CystaAI</span>
     <span class="pill repo">v1 ship · Jul–Aug 2026</span>
     <span class="pill repo">5 markets · US · GB · DE · CA · AU</span>
-    <span class="pill repo">🚨 Cycla AI launched 2026-05-13 → 30–60d window</span>
+    <span class="pill alert">🚨 Cycla AI launched 2026-05-13</span>
   </div>
 </header>
 
-<!-- ===== STATUS BANNER (no winner yet) ===== -->
-<section class="status-banner">
-  <div>
-    <h2>🔒 Round 1 — candidate B «Lunar Endocrine» locked</h2>
-    <p class="sub">
-      4 palettes rated against the PCOS audience brief (9M+ women, 5 markets, $38M ARR TAM, medical-adjacent compliance).
-      Three independent consiliums (personas 50% · trends 25% · designers 25%) ranked Lunar Endocrine first at 8.40 / 10.
-      Founder waived the ≥0.70 runoff margin (actual 0.50) to lock now — Cycla AI launched 2026-05-13, displacement window is 30–60 days.
-    </p>
-  </div>
-  <div class="right">
-    <div class="badge">🔒 locked · «Lunar Endocrine» · 8.40 / 10</div>
-    <div class="who">2026-05-14 · founder-confirmed · immutable до v1 ship (Jul–Aug 2026)</div>
-  </div>
+<!-- ============================================================ -->
+<!-- ===== PART A · DESIGN SYSTEM (LOCKED) ===== -->
+<!-- ============================================================ -->
+<section class="part-banner a" id="part-a">
+  <span class="tag">PART A</span>
+  <h2>Design system · 🔒 locked 2026-05-14</h2>
+  <p class="desc">
+    Lunar Endocrine (candidate B) chosen Round 1, 8.40 / 10 aggregate, founder-confirmed without runoff (speed vs Cycla 30–60d window).
+    Round-1 voting tables collapsed — full breakdown in <code style="background:rgba(0,0,0,0.18);color:#F1DFC4;padding:1px 5px;border-radius:4px">DECISIONS.md</code> entry 2026-05-14.
+  </p>
 </section>
 
-<!-- ===== MODULE 1 ===== -->
-<div class="module-banner" id="module-1">
-  <span class="num">МОДУЛЬ 1</span>
-  <h2>Дизайн-система · 4 кандидата на консилиуме</h2>
-  <p class="desc">
-    Цель: палитра, которая (a) уважает медицинский серьёз PCOS-аудитории, (b) бьёт Cysterhood / PCOS Pal на App Store thumb, (c) держит дистанцию от Flo/Clue cycle-pink, (d) работает в DACH (DE conservative warmth), (e) подходит для AI Coach night-mode.
-  </p>
-</div>
-
-<!-- ===== 1.0 AUDIENCE SNAPSHOT ===== -->
-<h2 id="audience">1.0 Audience · 5 PCOS-персон</h2>
+<!-- ===== A.1 LOCKED PALETTE CARD ===== -->
+<h2 id="palette">A.1 Locked palette · «Lunar Endocrine» · candidate B</h2>
 <p class="lede">
-  Каждая персона = вес в paying-base. Они же — голосующий блок №1 (см. §1.2).
-  Палитра должна работать на всех пяти одновременно — ни одна не должна быть «отчуждена».
-</p>
-<div class="audience-grid">
-  <div class="aud"><b>🌸 Naomi</b><span class="age">22–30 · newly diagnosed</span><br>"что со мной?" Soft warmth, не пугать клиникой.<span class="w">25%</span></div>
-  <div class="aud"><b>👶 Tanya</b><span class="age">28–38 · TTC, high WTP</span><br>18 мес. пытается забеременеть. IVF $20K alt.<span class="w">20%</span></div>
-  <div class="aud"><b>⚖️ Wendy</b><span class="age">25–40 · weight-focused</span><br>"гормоны саботируют похудение". Хочет график.<span class="w">25%</span></div>
-  <div class="aud"><b>💊 Maya</b><span class="age">24–35 · med-skeptic</span><br>"не хочу Metformin навсегда". Natural + inositol.<span class="w">15%</span></div>
-  <div class="aud"><b>👩‍⚕️ Anna</b><span class="age">30–45 · advocate</span><br>"эндокринолог не слушает". Нужен PDF, premium.<span class="w">15%</span></div>
-</div>
-
-<!-- ===== 1.1 4 CANDIDATES ===== -->
-<h2 id="candidates">1.1 Четыре кандидата</h2>
-<p class="lede">
-  Каждый кандидат показан как: палитра (12 токенов) + mini-mockup (POEM-style hero-card аналог + cycle-card + Coach bubble + paywall CTA) + fit-chips «кому подходит».
-  Current consilium score выведен в правый верхний угол карточки.
+  Aubergine plum + rose-gold + pearl. «Lunar» plum reads cycle-aware without cycle-pink.
+  Rose-gold CTA = warmth for Naomi / Wendy, plum primary = serious-elegance for Anna / Tanya.
+  Pearl bg anti-NHS-clinical, DACH-friendly.
 </p>
 
-<div class="variants">
+<article class="locked-card">
+  <div class="head">
+    <div class="left">
+      <span class="tag">B · 🔒 locked 2026-05-14 · immutable до v1 ship</span>
+      <h3>Lunar Endocrine</h3>
+      <span class="vibe">Plum #6B4E6E + rose-gold #D4A574 + pearl #F4ECE6 — endocrinology premium, не cycle-pink. Full distance from Cysterhood (sage), PCOS Pal (lavender), Flo/Clue (magenta), Cycla AI (pastel pink).</span>
+    </div>
+    <span class="score">8.40 / 10</span>
+  </div>
 
-  <!-- ===== A · Cysterhood Apothecary ===== -->
-  <article class="variant a" id="cand-a">
-    <div class="head">
-      <div class="title">
-        <span class="tag">A · candidate</span>
-        <h3>Cysterhood Apothecary</h3>
-        <span class="vibe">Sage + warm rose + ivory. Aesop-meets-Cysterhood — natural-medicine warmth, гербариум. Безопасный выбор, но рискует слиться с Cysterhood ($9.6K MRR competitor).</span>
-      </div>
-      <span class="score">7.9 / 10</span>
-    </div>
-    <div class="swatches">
-      <div class="sw" style="background:#FAF6F0">#FAF6F0</div>
-      <div class="sw" style="background:#8FBC8F">#8FBC8F</div>
-      <div class="sw dark" style="background:#5D8462">#5D8462</div>
-      <div class="sw" style="background:#D9E8D6">#D9E8D6</div>
-      <div class="sw" style="background:#E8A09A">#E8A09A</div>
-      <div class="sw dark" style="background:#C97A75">#C97A75</div>
-      <div class="sw" style="background:#F6DAD4">#F6DAD4</div>
-      <div class="sw dark" style="background:#2D2823">ink</div>
-      <div class="sw" style="background:#5A4F46">ink-2</div>
-      <div class="sw" style="background:#FFFFFF">card</div>
-      <div class="sw" style="background:#E5DAD5">div</div>
-      <div class="sw dark" style="background:#1A1813">night</div>
-    </div>
-    <div class="preview">
-      <div class="poem-mini">
-        <span class="lbl">Cycle · day 23</span>
-        <span class="num">62 / 100</span>
-        <span class="sub">PCOS-score · trending mild ↓ (–8 vs last cycle)</span>
-        <div class="bar"><i></i></div>
-      </div>
-      <div class="cycle-card">
-        <div><div class="name">Myo-inositol 2g · 2× daily</div><div class="meta">streak 14d · taken 2h ago</div></div>
-        <span class="verdict-pill">On track</span>
-      </div>
-      <div class="coach-bubble">
-        Free AMH at 5.8 ng/mL is on the higher end for your age group — ESHRE 2023 maps it to <b>PCOS-typical range</b>, not a diagnosis.
-        <span class="cite">ESHRE · PCOS guideline 2023</span>
-      </div>
-      <button class="cta-btn">Start 7-day trial · $39.99/yr</button>
-    </div>
-    <div class="fitfor">
-      <span class="chip">🌸 Naomi soft</span>
-      <span class="chip">💊 Maya natural</span>
-      <span class="chip">⚖️ Wendy warm</span>
-      <span class="chip">⚠️ collides with Cysterhood</span>
-    </div>
-  </article>
+  <div class="swatches">
+    <div class="sw" style="background:#F4ECE6">pearl<br>#F4ECE6</div>
+    <div class="sw dark" style="background:#6B4E6E">plum<br>#6B4E6E</div>
+    <div class="sw dark" style="background:#4A3550">deep<br>#4A3550</div>
+    <div class="sw" style="background:#E2D6E0">soft<br>#E2D6E0</div>
+    <div class="sw" style="background:#D4A574">rose-gold<br>#D4A574</div>
+    <div class="sw dark" style="background:#B0824D">deep<br>#B0824D</div>
+    <div class="sw" style="background:#6B8770;color:#fff">sage<br>#6B8770</div>
+    <div class="sw dark" style="background:#1A1320">night<br>#1A1320</div>
+  </div>
 
-  <!-- ===== B · Lunar Endocrine ===== -->
-  <article class="variant b lead" id="cand-b">
-    <div class="head">
-      <div class="title">
-        <span class="tag">B · 🔒 locked 2026-05-14</span>
-        <h3>Lunar Endocrine</h3>
-        <span class="vibe">Aubergine plum + rose-gold + pearl. Премиум-эндокринология. «Лунный» plum читается как «cycle-aware» без cycle-pink. Rose-gold CTA = warmth для Naomi/Wendy, но primary plum = серьёз для Anna/Tanya.</span>
-      </div>
-      <span class="score">8.4 / 10</span>
-    </div>
-    <div class="swatches">
-      <div class="sw" style="background:#F4ECE6">#F4ECE6</div>
-      <div class="sw dark" style="background:#6B4E6E">#6B4E6E</div>
-      <div class="sw dark" style="background:#4A3550">#4A3550</div>
-      <div class="sw" style="background:#E2D6E0">#E2D6E0</div>
-      <div class="sw" style="background:#D4A574">#D4A574</div>
-      <div class="sw dark" style="background:#B0824D">#B0824D</div>
-      <div class="sw" style="background:#F1DFC4">#F1DFC4</div>
-      <div class="sw dark" style="background:#2A1E2D">ink</div>
-      <div class="sw" style="background:#5A4F60">ink-2</div>
-      <div class="sw" style="background:#FFFFFF">card</div>
-      <div class="sw" style="background:#E5DAD5">div</div>
-      <div class="sw dark" style="background:#1A1320">night</div>
-    </div>
-    <div class="preview">
-      <div class="poem-mini">
-        <span class="lbl">Cycle · day 23</span>
-        <span class="num">62 / 100</span>
-        <span class="sub">PCOS-score · trending mild ↓ (–8 vs last cycle)</span>
-        <div class="bar"><i></i></div>
-      </div>
-      <div class="cycle-card">
-        <div><div class="name">Myo-inositol 2g · 2× daily</div><div class="meta">streak 14d · taken 2h ago</div></div>
-        <span class="verdict-pill">On track</span>
-      </div>
-      <div class="coach-bubble">
-        Free AMH at 5.8 ng/mL is on the higher end for your age group — ESHRE 2023 maps it to <b>PCOS-typical range</b>, not a diagnosis.
-        <span class="cite">ESHRE · PCOS guideline 2023</span>
-      </div>
-      <button class="cta-btn">Start 7-day trial · $39.99/yr</button>
-    </div>
-    <div class="fitfor">
-      <span class="chip">👶 Tanya TTC-premium</span>
-      <span class="chip">👩‍⚕️ Anna advocate</span>
-      <span class="chip">🌸 Naomi (warm CTA)</span>
-      <span class="chip">✅ distant from Flo/Cysterhood</span>
-      <span class="chip">✅ DACH-friendly</span>
-    </div>
-  </article>
+  <div class="body">
 
-  <!-- ===== C · Inositol Mint ===== -->
-  <article class="variant c" id="cand-c">
-    <div class="head">
-      <div class="title">
-        <span class="tag">C · candidate</span>
-        <h3>Inositol Mint</h3>
-        <span class="vibe">Mint teal + coral + cream. Modern wellness / supplement-startup vibe. Идеально для Maya (anti-Metformin natural), но слишком «D2C-supplement» для Anna/Tanya — рискует выглядеть «не-серьёзно» для $79.99 Family-TTC tier.</span>
-      </div>
-      <span class="score">7.6 / 10</span>
+    <!-- score recap pill row -->
+    <div class="score-recap">
+      <div class="item"><span class="k">Personas ×0.50</span><span class="v">8.65</span></div>
+      <div class="item"><span class="k">Trends ×0.25</span><span class="v">9.50</span></div>
+      <div class="item"><span class="k">Designers ×0.25</span><span class="v">8.40</span></div>
+      <div class="item sigma"><span class="k">Σ aggregate</span><span class="v">8.40</span></div>
+      <span class="lock-pill">🔒 immutable до v1 ship (Jul–Aug 2026)</span>
     </div>
-    <div class="swatches">
-      <div class="sw" style="background:#FBF7EF">#FBF7EF</div>
-      <div class="sw dark" style="background:#4A8B85">#4A8B85</div>
-      <div class="sw dark" style="background:#2E6E68">#2E6E68</div>
-      <div class="sw" style="background:#C9E2DD">#C9E2DD</div>
-      <div class="sw" style="background:#FF8773">#FF8773</div>
-      <div class="sw dark" style="background:#D96651">#D96651</div>
-      <div class="sw" style="background:#FCD8CF">#FCD8CF</div>
-      <div class="sw dark" style="background:#1F2F2C">ink</div>
-      <div class="sw" style="background:#5A6260">ink-2</div>
-      <div class="sw" style="background:#FFFFFF">card</div>
-      <div class="sw" style="background:#DCE0DC">div</div>
-      <div class="sw dark" style="background:#10211F">night</div>
-    </div>
-    <div class="preview">
-      <div class="poem-mini">
-        <span class="lbl">Cycle · day 23</span>
-        <span class="num">62 / 100</span>
-        <span class="sub">PCOS-score · trending mild ↓ (–8 vs last cycle)</span>
-        <div class="bar"><i></i></div>
-      </div>
-      <div class="cycle-card">
-        <div><div class="name">Myo-inositol 2g · 2× daily</div><div class="meta">streak 14d · taken 2h ago</div></div>
-        <span class="verdict-pill">On track</span>
-      </div>
-      <div class="coach-bubble">
-        Free AMH at 5.8 ng/mL is on the higher end for your age group — ESHRE 2023 maps it to <b>PCOS-typical range</b>, not a diagnosis.
-        <span class="cite">ESHRE · PCOS guideline 2023</span>
-      </div>
-      <button class="cta-btn">Start 7-day trial · $39.99/yr</button>
-    </div>
-    <div class="fitfor">
-      <span class="chip">💊 Maya anti-pharma</span>
-      <span class="chip">⚖️ Wendy modern</span>
-      <span class="chip">⚠️ supplement-startup-generic</span>
-      <span class="chip">⚠️ weak for Anna premium</span>
-    </div>
-  </article>
 
-  <!-- ===== D · Cycle Mauve ===== -->
-  <article class="variant d" id="cand-d">
-    <div class="head">
-      <div class="title">
-        <span class="tag">D · candidate</span>
-        <h3>Cycle Mauve</h3>
-        <span class="vibe">Dusty mauve + honey + off-white. Soft millennial-aesthete cycle-feminine. Beat Flo/Clue на «adult cycle» поле, но плох в DE (conservative DACH читает mauve как «teen-girly»). Honey-CTA — приятный contrast.</span>
-      </div>
-      <span class="score">7.4 / 10</span>
+    <!-- rationale -->
+    <div class="spec-section">
+      <h4>Why Lunar Endocrine</h4>
+      <ul class="rationale">
+        <li><b>Plum primary</b> (#6B4E6E) — «лунный» / cycle-aware без cycle-pink. Reads adult endocrinology, not teen period-tracker.</li>
+        <li><b>Rose-gold CTA</b> (#D4A574) — warmth for Naomi / Wendy, premium-conversion на $39.99/yr и $79.99 Family paywall. Anti-Flo-magenta.</li>
+        <li><b>Pearl background</b> (#F4ECE6) — anti-NHS-clinical, soft apothecary warmth. DACH-friendly (DE consumer reads plum как «apotheke seriousness»).</li>
+        <li><b>Full distance</b> от Cysterhood (sage), PCOS Pal (lavender), Flo / Clue (cycle-pink), Cycla AI (pastel pink).</li>
+        <li><b>Dark-mode native</b> — deep plum-ink + rose-gold accent работают «само» для AI Coach 3am (Tanya-TTC insomnia, Naomi-late-period anxiety).</li>
+      </ul>
     </div>
-    <div class="swatches">
-      <div class="sw" style="background:#F7F1E8">#F7F1E8</div>
-      <div class="sw dark" style="background:#B58797">#B58797</div>
-      <div class="sw dark" style="background:#8C5F70">#8C5F70</div>
-      <div class="sw" style="background:#ECD8DF">#ECD8DF</div>
-      <div class="sw" style="background:#E8B05A">#E8B05A</div>
-      <div class="sw dark" style="background:#C58E3F">#C58E3F</div>
-      <div class="sw" style="background:#F6E4C0">#F6E4C0</div>
-      <div class="sw dark" style="background:#2D2229">ink</div>
-      <div class="sw" style="background:#5C4F54">ink-2</div>
-      <div class="sw" style="background:#FFFFFF">card</div>
-      <div class="sw" style="background:#E0D5D9">div</div>
-      <div class="sw dark" style="background:#1A1518">night</div>
-    </div>
-    <div class="preview">
-      <div class="poem-mini">
-        <span class="lbl">Cycle · day 23</span>
-        <span class="num">62 / 100</span>
-        <span class="sub">PCOS-score · trending mild ↓ (–8 vs last cycle)</span>
-        <div class="bar"><i></i></div>
-      </div>
-      <div class="cycle-card">
-        <div><div class="name">Myo-inositol 2g · 2× daily</div><div class="meta">streak 14d · taken 2h ago</div></div>
-        <span class="verdict-pill">On track</span>
-      </div>
-      <div class="coach-bubble">
-        Free AMH at 5.8 ng/mL is on the higher end for your age group — ESHRE 2023 maps it to <b>PCOS-typical range</b>, not a diagnosis.
-        <span class="cite">ESHRE · PCOS guideline 2023</span>
-      </div>
-      <button class="cta-btn">Start 7-day trial · $39.99/yr</button>
-    </div>
-    <div class="fitfor">
-      <span class="chip">🌸 Naomi cycle-feminine</span>
-      <span class="chip">⚖️ Wendy soft</span>
-      <span class="chip">⚠️ DACH reads teen-girly</span>
-      <span class="chip">⚠️ Anna premium-weak</span>
-    </div>
-  </article>
 
-</div>
+    <!-- light token spec -->
+    <div class="spec-section">
+      <h4>Token spec · Light system (primary)</h4>
+      <table class="spec">
+        <thead><tr><th></th><th>Token</th><th>Hex</th><th>Usage</th></tr></thead>
+        <tbody>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#F4ECE6"></span></td><td class="tok">--bg</td><td class="hex">#F4ECE6</td><td>App background (pearl)</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#FAF4EE"></span></td><td class="tok">--bg-soft</td><td class="hex">#FAF4EE</td><td>Secondary surface, sheet bg</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#FFFFFF"></span></td><td class="tok">--card</td><td class="hex">#FFFFFF</td><td>Card / list rows</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#E5D6D9"></span></td><td class="tok">--divider</td><td class="hex">#E5D6D9</td><td>Hairlines, table rows</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#6B4E6E"></span></td><td class="tok">--brand</td><td class="hex">#6B4E6E</td><td>Plum · primary brand, hero, tab-active, nav</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#574060"></span></td><td class="tok">--brand-mid</td><td class="hex">#574060</td><td>Hover, pressed brand state</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#4A3550"></span></td><td class="tok">--brand-deep</td><td class="hex">#4A3550</td><td>Header type, citation underline</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#E2D6E0"></span></td><td class="tok">--brand-soft</td><td class="hex">#E2D6E0</td><td>Brand-bg pills, tab-inactive bg</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#D4A574"></span></td><td class="tok">--cta</td><td class="hex">#D4A574</td><td>Rose-gold · CTA fill, paywall button</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#B0824D"></span></td><td class="tok">--cta-deep</td><td class="hex">#B0824D</td><td>CTA pressed, PDF accent</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#F1DFC4"></span></td><td class="tok">--cta-soft</td><td class="hex">#F1DFC4</td><td>Selected chip, user-bubble (light)</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#ECE5EC"></span></td><td class="tok">--ai-bg</td><td class="hex">#ECE5EC</td><td>AI Coach assistant bubble (day)</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#D4C2D4"></span></td><td class="tok">--ai-border</td><td class="hex">#D4C2D4</td><td>AI bubble border</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#2A1E2D"></span></td><td class="tok">--ink</td><td class="hex">#2A1E2D</td><td>Body text</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#5A4F60"></span></td><td class="tok">--ink-2</td><td class="hex">#5A4F60</td><td>Secondary text, captions</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-<!-- ===== 1.2 PERSONA CONSILIUM ===== -->
-<h2 id="vote-personas">1.2 Консилиум A · 5 PCOS-персон голосуют (0–10)</h2>
+    <!-- verdict triad -->
+    <div class="spec-section">
+      <h4>Verdict triad (PCOS-score 0–100 · warm severity, no clinical red)</h4>
+      <div class="triad">
+        <div class="chip good">
+          <span class="lbl">On track</span>
+          <span class="range">range 70–100</span>
+          <span>--good · #6B8770 (warm sage)</span>
+        </div>
+        <div class="chip watch">
+          <span class="lbl">Watch</span>
+          <span class="range">range 40–69</span>
+          <span>--watch · #D4A574 (rose-gold)</span>
+        </div>
+        <div class="chip alert">
+          <span class="lbl">Action</span>
+          <span class="range">range 0–39</span>
+          <span>--alert · #B0824D (deep rose-gold)</span>
+        </div>
+      </div>
+      <p class="note"><b>Why no red:</b> PCOS women already get clinical-red alarmism from Flo «irregular cycle!» pop-ups. Cysta uses warm severity — sage-warm → rose-gold → deep rose-gold. Reused on cycle-card, lab-row (AMH / LH:FSH / testosterone / SHBG / fasting insulin / HbA1c), share-card, doctor-PDF.</p>
+    </div>
+
+    <!-- night surface -->
+    <div class="spec-section">
+      <h4>Night / AI Coach surface (22:00–06:00 + Anna PDF dark export)</h4>
+      <table class="spec">
+        <thead><tr><th></th><th>Token</th><th>Hex</th><th>Usage</th></tr></thead>
+        <tbody>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#1A1320"></span></td><td class="tok">--night-bg</td><td class="hex">#1A1320</td><td>Coach surface bg</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#241B2C"></span></td><td class="tok">--night-surface</td><td class="hex">#241B2C</td><td>Card on night surface</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#3A2C42"></span></td><td class="tok">--night-bubble-user</td><td class="hex">#3A2C42</td><td>User-bubble (night)</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#3A2D3D"></span></td><td class="tok">--night-divider</td><td class="hex">#3A2D3D</td><td>Hairlines</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#D4A574"></span></td><td class="tok">--night-accent</td><td class="hex">#D4A574</td><td>Rose-gold pops on plum-ink</td></tr>
+          <tr><td class="swatch-cell"><span class="chip" style="background:#F4ECE6"></span></td><td class="tok">--night-text</td><td class="hex">#F4ECE6</td><td>Body text (pearl)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- typography -->
+    <div class="spec-section">
+      <h4>Typography</h4>
+      <table class="spec">
+        <thead><tr><th>Role</th><th>Font</th><th>Size</th><th>Weight / treatment</th></tr></thead>
+        <tbody>
+          <tr><td><b>Display · Hero</b></td><td>SF Pro Rounded</td><td>30</td><td>800</td></tr>
+          <tr><td><b>Title 1 · Tab name</b></td><td>SF Pro Rounded</td><td>22</td><td>700</td></tr>
+          <tr><td><b>Title 2 · Card head</b></td><td>SF Pro Rounded</td><td>17</td><td>700</td></tr>
+          <tr><td><b>Body</b></td><td>SF Pro Text</td><td>15</td><td>400</td></tr>
+          <tr><td><b>Caption</b></td><td>SF Pro Text</td><td>13</td><td>400 (ink-2)</td></tr>
+          <tr><td><b>Mono · score</b></td><td>SF Mono</td><td>16</td><td>800 (cta-deep)</td></tr>
+          <tr><td><b>Mono · lab value</b></td><td>SF Mono</td><td>14</td><td>700 (brand-deep)</td></tr>
+          <tr><td><b>Eyebrow · Section</b></td><td>SF Pro Text</td><td>11</td><td>800, uppercase, +0.10 tracking (ink-3)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</article>
+
+<!-- ===== A.2 PER-SURFACE MODE STRATEGY ===== -->
+<h2 id="modes">A.2 Per-surface mode strategy</h2>
 <p class="lede">
-  Каждая персона оценивает «насколько эта палитра уговорит меня нажать <b>Subscribe</b> на paywall».
-  Веса: Naomi 25 · Tanya 20 · Wendy 25 · Maya 15 · Anna 15 (по paying-share). Итог = взвешенное среднее.
+  Light vs night vs system per surface. Onboarding / paywall / lab interpreter forced light (warmth + cognitive load).
+  AI Coach auto-flips to night 22:00–06:00 (3am insomnia surface). Photo capture forced light (skin tone fidelity).
 </p>
-<table class="vote">
-  <thead><tr>
-    <th>Persona <small style="text-transform:none;letter-spacing:0;font-weight:600;color:var(--ink-3)">(weight)</small></th>
-    <th class="col-a">A · Apothecary</th>
-    <th class="col-b">B · Lunar</th>
-    <th class="col-c">C · Mint</th>
-    <th class="col-d">D · Mauve</th>
-    <th>Verdict</th>
-  </tr></thead>
+<table class="modes">
+  <thead><tr><th>Surface</th><th>Mode</th><th>Reasoning</th></tr></thead>
   <tbody>
-    <tr>
-      <td class="who">🌸 Naomi <small>22–30 · 25% · newly dx</small></td>
-      <td class="num col-a">8</td>
-      <td class="num col-b lead">9</td>
-      <td class="num col-c">7</td>
-      <td class="num col-d">9</td>
-      <td>Тёплый CTA → «не страшно». Lunar и Mauve поровну, Lunar — за «взрослую» bg.</td>
-    </tr>
-    <tr>
-      <td class="who">👶 Tanya <small>28–38 · 20% · TTC</small></td>
-      <td class="num col-a">6</td>
-      <td class="num col-b lead">10</td>
-      <td class="num col-c">5</td>
-      <td class="num col-d">6</td>
-      <td>$79.99 Family-tier хочу платить за то, что выглядит как $5K-IVF-clinic. Plum — единственный.</td>
-    </tr>
-    <tr>
-      <td class="who">⚖️ Wendy <small>25–40 · 25% · weight</small></td>
-      <td class="num col-a">8</td>
-      <td class="num col-b">8</td>
-      <td class="num col-c lead">9</td>
-      <td class="num col-d">7</td>
-      <td>Coral на Mint = «modern wellness» приложуха про мой образ жизни. Lunar тоже норм.</td>
-    </tr>
-    <tr>
-      <td class="who">💊 Maya <small>24–35 · 15% · skeptic</small></td>
-      <td class="num col-a">9</td>
-      <td class="num col-b">6</td>
-      <td class="num col-c lead">10</td>
-      <td class="num col-d">7</td>
-      <td>Mint = natural-supplement DNA, Apothecary тоже OK. Lunar читается как «pharma marketing».</td>
-    </tr>
-    <tr>
-      <td class="who">👩‍⚕️ Anna <small>30–45 · 15% · advocate</small></td>
-      <td class="num col-a">7</td>
-      <td class="num col-b lead">10</td>
-      <td class="num col-c">6</td>
-      <td class="num col-d">5</td>
-      <td>Plum на PDF-export читается доктором серьёзно. Mauve = не отнесусь сама.</td>
-    </tr>
-    <tr class="total">
-      <td>Weighted total · /10</td>
-      <td class="num col-a">7.65</td>
-      <td class="num col-b lead">8.65</td>
-      <td class="num col-c">7.35</td>
-      <td class="num col-d">7.10</td>
-      <td>B leads with margin <b>1.00</b> over A</td>
-    </tr>
-  </tbody>
-</table>
-<p class="legend">Зелёная ячейка = peak score внутри строки. Веса персон взяты из <code>PERSONAS.md</code> / <code>PROJECT_BRIEF.md</code> (Naomi 25 · Tanya 20 · Wendy 25 · Maya 15 · Anna 15).</p>
-
-<!-- ===== 1.3 TRENDS CONSILIUM ===== -->
-<h2 id="vote-trends">1.3 Консилиум B · 2026 UX/UI-тренды (0–10)</h2>
-<p class="lede">
-  6 криетриев, каждый из них — наблюдаемый тренд категории health-AI 2026 (App Store top-grossing health Q1 2026 + r/UI_Design + Mobbin health vertical scan).
-  Все 6 весят одинаково.
-</p>
-<table class="vote">
-  <thead><tr>
-    <th>Trend criterion</th>
-    <th class="col-a">A · Apothecary</th>
-    <th class="col-b">B · Lunar</th>
-    <th class="col-c">C · Mint</th>
-    <th class="col-d">D · Mauve</th>
-    <th>Note</th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td class="who">Anti-clinical warm bg <small>(no sterile white)</small></td>
-      <td class="num col-a lead">10</td>
-      <td class="num col-b">9</td>
-      <td class="num col-c">8</td>
-      <td class="num col-d">9</td>
-      <td>Ivory > Pearl > Cream > Off-white. Все 4 проходят анти-NHS тест.</td>
-    </tr>
-    <tr>
-      <td class="who">Differentiation from Flo / Clue <small>(avoid cycle-pink)</small></td>
-      <td class="num col-a">8</td>
-      <td class="num col-b lead">10</td>
-      <td class="num col-c">9</td>
-      <td class="num col-d weak">5</td>
-      <td>Mauve рискует слиться с Flo «adult-pink» 2025 refresh. Plum maximum distance.</td>
-    </tr>
-    <tr>
-      <td class="who">Distance from Cysterhood / PCOS Pal <small>(top competitors)</small></td>
-      <td class="num col-a weak">5</td>
-      <td class="num col-b lead">10</td>
-      <td class="num col-c">9</td>
-      <td class="num col-d">8</td>
-      <td>Apothecary почти копия Cysterhood. Critical fail.</td>
-    </tr>
-    <tr>
-      <td class="who">Dark-mode readiness <small>(AI Coach 3am)</small></td>
-      <td class="num col-a">7</td>
-      <td class="num col-b lead">10</td>
-      <td class="num col-c">8</td>
-      <td class="num col-d">6</td>
-      <td>Deep plum → night-surface работает «само». Sage в dark теряет character.</td>
-    </tr>
-    <tr>
-      <td class="who">TikTok scroll-stop <small>(thumb-preview, 0.3s)</small></td>
-      <td class="num col-a">7</td>
-      <td class="num col-b">8</td>
-      <td class="num col-c lead">10</td>
-      <td class="num col-d">8</td>
-      <td>Coral pop = #1 scroll-stop в health-vertical 2026. Mint+coral combo — TikTok favorite.</td>
-    </tr>
-    <tr>
-      <td class="who">DACH conservative warmth <small>(DE primary win-market)</small></td>
-      <td class="num col-a">8</td>
-      <td class="num col-b lead">10</td>
-      <td class="num col-c">7</td>
-      <td class="num col-d weak">5</td>
-      <td>DE consumer reads plum как «apotheke seriousness». Mauve = «teen» в DE-feedback panels.</td>
-    </tr>
-    <tr class="total">
-      <td>Average · /10</td>
-      <td class="num col-a">7.50</td>
-      <td class="num col-b lead">9.50</td>
-      <td class="num col-c">8.50</td>
-      <td class="num col-d">6.83</td>
-      <td>B leads · margin <b>1.00</b> over C</td>
-    </tr>
-  </tbody>
-</table>
-<p class="legend">Сравнение делалось по Mobbin health-app scan (Q1 2026, n=140), App Store top-grossing /health/wellness top-50 US/DE/GB.</p>
-
-<!-- ===== 1.4 UX/UI DESIGNERS CONSILIUM ===== -->
-<h2 id="vote-designers">1.4 Консилиум C · UX/UI-дизайнеры (0–10)</h2>
-<p class="lede">
-  5 голосов — invited reviewers (anonymized by track record). Каждый дизайнер просмотрел все 4 кандидата на iPhone 15 mock-up, Spec-доке (5 personas) и paywall flow.
-</p>
-<table class="vote">
-  <thead><tr>
-    <th>Designer · track</th>
-    <th class="col-a">A · Apothecary</th>
-    <th class="col-b">B · Lunar</th>
-    <th class="col-c">C · Mint</th>
-    <th class="col-d">D · Mauve</th>
-    <th>One-liner</th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td class="who">Sasha M. <small>medical product · ex-Headspace</small></td>
-      <td class="num col-a">7</td>
-      <td class="num col-b lead">9</td>
-      <td class="num col-c">7</td>
-      <td class="num col-d">6</td>
-      <td>«Plum держит "trust" без NHS-холода. Premium-CTA = $39.99/yr conversion bump.»</td>
-    </tr>
-    <tr>
-      <td class="who">Yuki K. <small>wellness brand · Aesop-trained</small></td>
-      <td class="num col-a lead">9</td>
-      <td class="num col-b">8</td>
-      <td class="num col-c">7</td>
-      <td class="num col-d">8</td>
-      <td>«Apothecary — мой instinct. Но Lunar умнее: тот же warmth + serious-elevation.»</td>
-    </tr>
-    <tr>
-      <td class="who">Lena P. <small>color + a11y specialist</small></td>
-      <td class="num col-a">8</td>
-      <td class="num col-b">8</td>
-      <td class="num col-c">7</td>
-      <td class="num col-d">7</td>
-      <td>«Все 4 проходят WCAG AA contrast. Plum/rose-gold pair — самый редкий combo (= memorable).»</td>
-    </tr>
-    <tr>
-      <td class="who">Marco V. <small>mobile health UX · ex-Clue</small></td>
-      <td class="num col-a">6</td>
-      <td class="num col-b lead">9</td>
-      <td class="num col-c">8</td>
-      <td class="num col-d">7</td>
-      <td>«Видел Cysterhood изнутри: Apothecary опасно близко. Lunar — exit-velocity.»</td>
-    </tr>
-    <tr>
-      <td class="who">Priya R. <small>design system architect</small></td>
-      <td class="num col-a">7</td>
-      <td class="num col-b">8</td>
-      <td class="num col-c lead">9</td>
-      <td class="num col-d">7</td>
-      <td>«Mint token-system — самый чистый (2 hues vs 3). Но Lunar токены тоже хорошо организованы.»</td>
-    </tr>
-    <tr class="total">
-      <td>Average · /10</td>
-      <td class="num col-a">7.40</td>
-      <td class="num col-b lead">8.40</td>
-      <td class="num col-c">7.60</td>
-      <td class="num col-d">7.00</td>
-      <td>B leads · margin <b>0.80</b> over C</td>
-    </tr>
+    <tr><td class="surface">Onboarding (PCOS Type Quiz 5 screens + WOW)</td><td class="mode light">Light forced</td><td>Pearl warmth — Naomi scroll-stop. No real acne / hirsutism photos (aversive + compliance).</td></tr>
+    <tr><td class="surface">Today / Cycle / Photo / Insights</td><td class="mode system">System</td><td>Respect user OS. Photo journal без filter mod в обоих режимах (skin tone fidelity).</td></tr>
+    <tr><td class="surface">Coach (AI chat)</td><td class="mode night">Night auto 22:00–06:00</td><td>Tanya-TTC 3am insomnia + Naomi-late-period anxiety. CTA сохраняет rose-gold-deep.</td></tr>
+    <tr><td class="surface">+Log photo (acne / hair / weight)</td><td class="mode light">Light forced</td><td>Warm UI правильно рендерит skin tones; dark UI desaturates.</td></tr>
+    <tr><td class="surface">Lab interpreter (AMH / LH:FSH / etc)</td><td class="mode light">Light forced</td><td>High cognitive load → warm light. Verdict triad reads clearly.</td></tr>
+    <tr><td class="surface">Paywall (4-tier)</td><td class="mode light">Light forced</td><td>Pearl + rose-gold CTA-urgency. Same-mode-as-onboarding momentum.</td></tr>
+    <tr><td class="surface">Doctor PDF Export</td><td class="mode light">Light forced</td><td>Print-friendly. Anna shows endo — serious-elegance, plum + pearl prints clean.</td></tr>
+    <tr><td class="surface">App Icon</td><td class="mode single">Single</td><td>Deep-plum «moon» + rose-gold crescent + pearl. Identifiable in light / dark home.</td></tr>
   </tbody>
 </table>
 
-<!-- ===== 1.5 AGGREGATE SCORECARD ===== -->
-<h2 id="aggregate">1.5 Aggregate scorecard · weighted</h2>
+<!-- ===== A.3 PALETTE WHITESPACE ===== -->
+<h2 id="whitespace-palette">A.3 Palette whitespace · position vs competition</h2>
 <p class="lede">
-  Final score = 0.50 × personas + 0.25 × trends + 0.25 × designers.
-  Lock criterion: leader must clear #2 by <b>≥ 0.70 points</b>. Currently leader B clears by <b>0.50</b> → <b>не lock-eligible</b>, нужен round-2 на B vs C (top-2 runoff).
+  Distance verdict for Lunar Endocrine vs every PCOS competitor + 2 cycle-aspirationals + 2 Loveiko siblings.
+  Plum + rose-gold pair is the rarest combo in the PCOS / cycle vertical — max memorability.
 </p>
-
-<div class="scorecard">
-
-  <div class="sc lead">
-    <span class="rank">🥇 lead</span>
-    <span class="name">B · Lunar Endocrine</span>
-    <span class="total">8.40 <small>/10</small></span>
-    <span class="breakdown">
-      personas <b>8.65</b> × .50 = 4.33<br>
-      trends   <b>9.50</b> × .25 = 2.38<br>
-      designers<b>8.40</b> × .25 = 2.10<br>
-      <b>Σ = 8.40</b> · margin +0.50 vs #2
-    </span>
-  </div>
-
-  <div class="sc">
-    <span class="rank">🥈 #2</span>
-    <span class="name">C · Inositol Mint</span>
-    <span class="total">7.90 <small>/10</small></span>
-    <span class="breakdown">
-      personas <b>7.35</b> × .50 = 3.68<br>
-      trends   <b>8.50</b> × .25 = 2.13<br>
-      designers<b>7.60</b> × .25 = 1.90<br>
-      <b>Σ = 7.90</b> · runoff candidate
-    </span>
-  </div>
-
-  <div class="sc">
-    <span class="rank">🥉 #3</span>
-    <span class="name">A · Cysterhood Apothecary</span>
-    <span class="total">7.55 <small>/10</small></span>
-    <span class="breakdown">
-      personas <b>7.65</b> × .50 = 3.83<br>
-      trends   <b>7.50</b> × .25 = 1.88<br>
-      designers<b>7.40</b> × .25 = 1.85<br>
-      <b>Σ = 7.55</b> · fails differentiation
-    </span>
-  </div>
-
-  <div class="sc">
-    <span class="rank">#4</span>
-    <span class="name">D · Cycle Mauve</span>
-    <span class="total">7.01 <small>/10</small></span>
-    <span class="breakdown">
-      personas <b>7.10</b> × .50 = 3.55<br>
-      trends   <b>6.83</b> × .25 = 1.71<br>
-      designers<b>7.00</b> × .25 = 1.75<br>
-      <b>Σ = 7.01</b> · fails DACH + Anna
-    </span>
-  </div>
-
-</div>
-
-<h3 id="next">Next step · round-2 runoff B vs C</h3>
-<ul class="list">
-  <li><b>2026-05-15 — 2026-05-19</b>: B и C проходят live persona-paywall A/B (Naomi + Tanya + Maya, n=24 каждая через UserTesting.com).</li>
-  <li><b>2026-05-20</b>: TikTok thumbnail blind-test (B vs C на 8 захоложенных Reels, $80 spend).</li>
-  <li><b>2026-05-21</b>: Final lock в <code>DESIGN_SYSTEM.md</code> + commit <code>DECISIONS.md</code>. Палитра становится immutable до v1 ship.</li>
-  <li><b>Tiebreaker rule:</b> если runoff margin &lt; 0.3, founder decides (Loveiko) и log в <code>docs/CONSILIUM_design_2026-05-21.md</code>.</li>
-</ul>
-
-<!-- ===== 1.6 WHITESPACE ===== -->
-<h2 id="whitespace">1.6 Whitespace · позиция кандидата vs PCOS competition</h2>
-<table class="ws">
-  <thead><tr><th>Competitor</th><th>Palette</th><th>A · Apothecary</th><th>B · Lunar</th><th>C · Mint</th><th>D · Mauve</th></tr></thead>
+<table class="ws-palette">
+  <thead><tr><th>Competitor</th><th>Their palette</th><th>Cysta AI distance</th></tr></thead>
   <tbody>
-    <tr>
-      <td>🚨 <b>Cycla AI</b> (Storyloop, launched 2026-05-13)</td>
-      <td>Pastel pink + lavender</td>
-      <td class="ok">✅ distance</td>
-      <td class="ok">✅ full distance</td>
-      <td class="ok">✅</td>
-      <td class="warn">⚠️ shared pink family</td>
-    </tr>
-    <tr>
-      <td><b>PCOS Pal</b> (Slayyy Inc · $13.2K MRR)</td>
-      <td>Lavender + magenta + white</td>
-      <td class="ok">✅</td>
-      <td class="ok">✅ deep plum reads "adult" vs PCOS Pal "teen"</td>
-      <td class="ok">✅</td>
-      <td class="warn">⚠️ both mauve-pink-adjacent</td>
-    </tr>
-    <tr>
-      <td><b>Cysterhood</b> (Tallene/Sirak · $9.6K MRR)</td>
-      <td>Sage green + cream + warm coral</td>
-      <td class="bad">❌ near-copy</td>
-      <td class="ok">✅ full distance</td>
-      <td class="warn">⚠️ teal/coral shared chord</td>
-      <td class="ok">✅</td>
-    </tr>
-    <tr>
-      <td><b>PCOS Polly</b> (Akshaya · $5.7K)</td>
-      <td>Teal + lemon + white</td>
-      <td class="ok">✅</td>
-      <td class="ok">✅</td>
-      <td class="warn">⚠️ teal shared</td>
-      <td class="ok">✅</td>
-    </tr>
-    <tr>
-      <td><b>Flo</b> (aspirational, ~$50M ARR)</td>
-      <td>Pink + magenta + white</td>
-      <td class="ok">✅</td>
-      <td class="ok">✅ max distance (plum ≠ magenta)</td>
-      <td class="ok">✅</td>
-      <td class="warn">⚠️ Flo "adult-pink" 2025 risk</td>
-    </tr>
-    <tr>
-      <td><b>Clue</b> (394K reviews)</td>
-      <td>Coral + white + black</td>
-      <td class="ok">✅</td>
-      <td class="ok">✅</td>
-      <td class="warn">⚠️ coral CTA shared</td>
-      <td class="ok">✅</td>
-    </tr>
-    <tr>
-      <td>📌 <b>Folik</b> (sibling, Loveiko — hair loss)</td>
-      <td>Indigo + burnt orange + warm off-white</td>
-      <td class="ok">✅</td>
-      <td class="warn">⚠️ both "deep+warm" — mitigated by plum ≠ indigo</td>
-      <td class="ok">✅</td>
-      <td class="ok">✅</td>
-    </tr>
-    <tr>
-      <td>📌 <b>Salvora</b> (sibling, Loveiko — eczema)</td>
-      <td>Sage + terracotta + cream</td>
-      <td class="bad">❌ same brand-family</td>
-      <td class="ok">✅</td>
-      <td class="warn">⚠️ teal/coral chord</td>
-      <td class="ok">✅</td>
-    </tr>
+    <tr><td>🚨 <b>Cycla AI</b> (Storyloop · launched 2026-05-13)</td><td>Pastel pink + lavender</td><td class="ok">✅ Full distance</td></tr>
+    <tr><td><b>PCOS Pal</b> (Slayyy Inc · $13.2K MRR)</td><td>Lavender + magenta + white</td><td class="ok">✅ Full distance — plum reads "adult" vs PCOS Pal "teen"</td></tr>
+    <tr><td><b>Cysterhood</b> (Tallene / Sirak · $9.6K MRR)</td><td>Sage green + cream + warm coral</td><td class="ok">✅ Full distance</td></tr>
+    <tr><td><b>PCOS Polly</b> (Akshaya · $5.7K MRR)</td><td>Teal + lemon + white</td><td class="ok">✅</td></tr>
+    <tr><td><b>PCOS Tracker</b> (Healthium · $6.9K MRR, R3.3 ⚠️)</td><td>Pink + grey</td><td class="ok">✅</td></tr>
+    <tr><td><b>Flo</b> (aspirational, ~$50M ARR)</td><td>Pink + magenta + white</td><td class="ok">✅ Max distance (plum ≠ magenta)</td></tr>
+    <tr><td><b>Clue</b> (394K reviews)</td><td>Coral + white + black</td><td class="ok">✅</td></tr>
+    <tr><td>📌 <b>Folik</b> (sibling, Loveiko — hair loss)</td><td>Indigo + burnt orange + warm off-white</td><td class="warn">⚠️ Mitigated — plum ≠ indigo, rose-gold ≠ burnt orange</td></tr>
+    <tr><td>📌 <b>Salvora</b> (sibling, Loveiko — eczema)</td><td>Sage + terracotta + cream</td><td class="ok">✅ Full distance</td></tr>
+    <tr><td>📌 <b>Jabwell</b> (sibling, Loveiko)</td><td>Teal + terracotta</td><td class="ok">✅</td></tr>
   </tbody>
 </table>
 
-<!-- ===== 1.7 ANTI-PATTERNS ===== -->
-<h2 id="dont">1.7 Anti-patterns · consilium-locked don'ts (применяется ко всем 4 кандидатам)</h2>
+<!-- ===== A.4 PALETTE ANTI-PATTERNS ===== -->
+<h2 id="anti-patterns-palette">A.4 Palette anti-patterns · don'ts</h2>
 <ul class="list dontlist">
-  <li><strong>Cycle-pink / Flo-magenta</strong> — мгновенно ставит Cysta AI в "teen-period-tracker" bucket. Запрещено в primary brand.</li>
-  <li><strong>Identifiable женские лица в onboarding</strong> — особенно с акне / hirsutism (compliance + dignity). Иллюстрации только, после disclaimer-accept.</li>
-  <li><strong>"Cure" / "heal" hormonal imbalance</strong> — в copy и hero-text. Always "manage / track / understand", никогда "fix".</li>
-  <li><strong>Diagnosis-language</strong>: никогда "you have PCOS" / "you have insulin resistance". Always "your AMH 5.8 is within PCOS-typical range per ESHRE 2023".</li>
-  <li><strong>Anti-pharma / anti-Metformin tone</strong> — даже для Maya (med-skeptic). Neutral framing: "your inositol journey, your way".</li>
-  <li><strong>Cute period-tracker illustrations</strong> (uterus с глазами, dancing ovaries) — мгновенный credibility-killer для Anna/Tanya.</li>
-  <li><strong>Pure NHS-blue или sterile white-only</strong> — PCOS women переходят к нам именно потому, что Flo/Clue их gaslight'ят. Warmth = wedge.</li>
-  <li><strong>Email-required onboarding</strong> (compliance + privacy-first per CLAUDE.md). Photo journal — local-only, iCloud opt-in.</li>
-  <li><strong>Gamification</strong>: XP, levels, badges, confetti, "you're a PCOS warrior!" — banned. Adherence streak (Headspace-gentle) — единственное исключение.</li>
-  <li><strong>Photo journal без disclaimer-screen</strong> — особенно acne / hair / weight before-after. Compliance high-risk.</li>
+  <li><strong>Cycle-pink / Flo-magenta</strong> в primary brand — мгновенный «teen-period-tracker» bucket. Запрещено.</li>
+  <li><strong>Real acne / hirsutism close-ups в onboarding</strong> — aversive + compliance dignity. Illustrations only до disclaimer-accept.</li>
+  <li><strong>Red / yellow severity stoplight</strong> — clinical-cold, kills warmth. Use sage-warm → rose-gold → deep rose-gold вместо.</li>
+  <li><strong>Anti-Metformin / anti-BC</strong> rhetoric, даже для Maya. Neutral framing only.</li>
+  <li><strong>Diagnosis-language</strong> — никогда «you have PCOS». Always «your AMH 5.8 maps to PCOS-typical range per ESHRE 2023».</li>
+  <li><strong>«Cure» / «heal» hormonal imbalance</strong> в copy. Always «manage / track / understand».</li>
+  <li><strong>Definitive fertility predictions</strong> — TTC mode даёт window, не certainty.</li>
+  <li><strong>Pure white / NHS-blue</strong> — pearl warmth = wedge against Flo / Clue gaslighting.</li>
+  <li><strong>Cute period-tracker иллюстрации</strong> (uterus с глазами, dancing ovaries) — credibility-killer для Anna / Tanya.</li>
+  <li><strong>Email-required onboarding</strong> — privacy-first. Sign-in with Apple optional, не required.</li>
+  <li><strong>Cloud-by-default photo sync</strong> — local storage; iCloud opt-in only.</li>
+  <li><strong>Identifiable minor faces</strong> на marketing / share-cards.</li>
+  <li><strong>Gamification</strong> (XP, levels, confetti, «PCOS warrior!»). Adherence streak — единственное исключение.</li>
+  <li><strong>AI Coach answers без RAG citation</strong> — каждый ответ цитирует ACOG / ESHRE / AAP / Endocrine Society / PubMed. No-citation = refusal pivot.</li>
 </ul>
 
-<!-- ===== FOOTER ===== -->
+<div class="jump-next">
+  <a href="#part-b">↓ Part B · feature decision workbench</a>
+</div>
+
+<!-- ============================================================ -->
+<!-- ===== PART B · FEATURES (3-ROUND CONSILIUM) ===== -->
+<!-- ============================================================ -->
+<section class="part-banner b" id="part-b">
+  <span class="tag">PART B</span>
+  <h2>Features · 🗳️ 3 voting rounds + runoff</h2>
+  <p class="desc">
+    13 candidate features stress-tested against 5 personas × 4 sub-panels.
+    Aggregate Σ = 0.40·conversion + 0.35·revenue + 0.25·moat.
+    Lock target 2026-05-21. P0 / P1 / P2 ship list below stands until founder signs off and a <code style="background:rgba(0,0,0,0.18);color:#F1DFC4;padding:1px 5px;border-radius:4px">DECISIONS.md</code> entry is added.
+  </p>
+</section>
+
+<!-- ===== B.1 AUDIENCE SNAPSHOT ===== -->
+<h2 id="personas">B.1 Audience snapshot · 5 PCOS personas</h2>
+<p class="lede">
+  Each persona = paying-base weight (Naomi 25 · Tanya 20 · Wendy 25 · Maya 15 · Anna 15) and JTBD-intensity per <code>PERSONAS.md</code>.
+  Feature votes in Rounds 1–3 are weighted against these shares.
+</p>
+
+<div class="audience-grid">
+
+  <div class="aud">
+    <div class="head-row"><b>🌸 Newly Diagnosed Naomi</b></div>
+    <div class="age">22–30 · newly diagnosed</div>
+    <div class="pain">"What's happening to my body? What does diagnosis mean?"</div>
+    <div class="row"><span class="lbl">JTBD</span> understand why this is happening</div>
+    <div class="row"><span class="lbl">Tier</span> Standard <b>$39.99/yr</b></div>
+    <div class="row"><span class="lbl">WTP</span> <span class="wtp med">medium · will trial, needs hook</span></div>
+    <div class="jtbd-bar">⭐⭐⭐⭐⭐</div>
+    <span class="w">25% of paying</span>
+  </div>
+
+  <div class="aud">
+    <div class="head-row"><b>👶 TTC Tanya</b></div>
+    <div class="age">28–38 · trying-to-conceive</div>
+    <div class="pain">"I've been trying to conceive for 18 months."</div>
+    <div class="row"><span class="lbl">JTBD</span> get pregnant despite irregular cycle</div>
+    <div class="row"><span class="lbl">Tier</span> Family <b>$79.99/yr</b></div>
+    <div class="row"><span class="lbl">WTP</span> <span class="wtp high">highest · IVF $20K+ alt</span></div>
+    <div class="jtbd-bar">⭐⭐⭐⭐⭐</div>
+    <span class="w">20% of paying</span>
+  </div>
+
+  <div class="aud">
+    <div class="head-row"><b>⚖️ Weight-Focused Wendy</b></div>
+    <div class="age">25–40 · weight loss</div>
+    <div class="pain">"I can't lose weight — hormones sabotage me."</div>
+    <div class="row"><span class="lbl">JTBD</span> lose weight despite hormonal sabotage</div>
+    <div class="row"><span class="lbl">Tier</span> Standard <b>$39.99/yr</b></div>
+    <div class="row"><span class="lbl">WTP</span> <span class="wtp med">medium-high · switches apps</span></div>
+    <div class="jtbd-bar">⭐⭐⭐⭐⭐</div>
+    <span class="w">25% of paying</span>
+  </div>
+
+  <div class="aud">
+    <div class="head-row"><b>💊 Med-Skeptic Maya</b></div>
+    <div class="age">24–35 · anti-pharma</div>
+    <div class="pain">"Don't want to be on Metformin forever — natural way?"</div>
+    <div class="row"><span class="lbl">JTBD</span> manage PCOS naturally without pharma</div>
+    <div class="row"><span class="lbl">Tier</span> Standard or Lifetime <b>$99</b></div>
+    <div class="row"><span class="lbl">WTP</span> <span class="wtp med">medium · one-time prefers</span></div>
+    <div class="jtbd-bar">⭐⭐⭐⭐</div>
+    <span class="w">15% of paying</span>
+  </div>
+
+  <div class="aud">
+    <div class="head-row"><b>👩‍⚕️ Advocate Anna</b></div>
+    <div class="age">30–45 · doctor advocate</div>
+    <div class="pain">"Endo doesn't listen — I need data trends."</div>
+    <div class="row"><span class="lbl">JTBD</span> sound credible at doctor's office</div>
+    <div class="row"><span class="lbl">Tier</span> Family <b>$79.99/yr</b></div>
+    <div class="row"><span class="lbl">WTP</span> <span class="wtp high">high · data pro, ROI literate</span></div>
+    <div class="jtbd-bar">⭐⭐⭐⭐⭐</div>
+    <span class="w">15% of paying</span>
+  </div>
+
+</div>
+
+<!-- ===== B.2 WHITESPACE MATRIX (FEATURES) ===== -->
+<h2 id="matrix-features">B.2 Competitor whitespace matrix · 13 features × 7 competitors</h2>
+<p class="lede">
+  ✅ = competitor ships this feature meaningfully · △ = partial / broken / generic · — = absent.
+  Last column flags <b>whitespace</b> where no competitor occupies the lane. Whitespace rows highlighted with rose-gold left-border.
+</p>
+
+<div class="ws-wrap">
+<table class="ws">
+  <thead>
+    <tr>
+      <th class="feat">Feature</th>
+      <th>Cycla AI</th>
+      <th>PCOS Pal</th>
+      <th>Cysterhood</th>
+      <th>PCOS Polly</th>
+      <th>PCOS Tracker</th>
+      <th>HER EndoPCOS</th>
+      <th>Allura</th>
+      <th>Whitespace?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="white-row">
+      <td class="feat">1 · PCOS Type Quiz onboarding</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">2 · AI Coach (DeepSeek + RAG citations)</td>
+      <td class="ctr ws-no">△ generic, no citations</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">△ template, no RAG</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ RAG-cited whitespace</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">3 · Photo Journal (acne / hair / body)</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace</td>
+    </tr>
+    <tr>
+      <td class="feat">4 · PCOS-aware cycle tracker (21–90d)</td>
+      <td class="ctr ws-no">✅</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">△ broken R3.3</td>
+      <td class="ctr ws-no">△</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-part">competitive</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">5 · Lab Interpreter (OCR AMH / LH:FSH / etc)</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace</td>
+    </tr>
+    <tr>
+      <td class="feat">6 · Symptom-Cause Analytics (correlations)</td>
+      <td class="ctr ws-no">△ balance score only</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">△ broken</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-part">△ partial whitespace</td>
+    </tr>
+    <tr>
+      <td class="feat">7 · Smart Meal Recs (low-glycemic PCOS)</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">✅</td>
+      <td class="ctr ws-no">✅</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">crowded</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">8 · Supplement Tracker (inositol focus)</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace (inositol R&lt;2 globally!)</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">9 · Medication Tracker (Metformin / spiro / BC)</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">10 · TTC Mode (Family tier)</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace (Tanya $20K IVF alt)</td>
+    </tr>
+    <tr class="white-row">
+      <td class="feat">11 · Doctor PDF Export</td>
+      <td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td><td class="ctr ws-no">—</td>
+      <td class="ctr ws-yes">✅ ALL whitespace (Anna trust)</td>
+    </tr>
+    <tr>
+      <td class="feat">12 · Educational Lessons (20–30 micro)</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">✅</td>
+      <td class="ctr ws-no">△ video only</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">crowded</td>
+    </tr>
+    <tr>
+      <td class="feat">13 · Progress Dashboard / Wins</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">✅</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-no">—</td>
+      <td class="ctr ws-part">△ partial</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="mrr-row">
+  <div class="mrr"><b>PCOS Pal</b> · <span class="num">$13.2K</span> MRR</div>
+  <div class="mrr"><b>Cysterhood</b> · <span class="num">$9.6K</span> MRR</div>
+  <div class="mrr"><b>PCOS Tracker</b> · <span class="num">$6.9K</span> MRR (R3.3 ⚠️)</div>
+  <div class="mrr"><b>PCOS Polly</b> · <span class="num">$5.7K</span> MRR</div>
+  <div class="mrr"><b>Cycla AI</b> · <span class="num">$0</span> · new (2026-05-13)</div>
+  <div class="mrr"><b>HER EndoPCOS</b> · <span class="num">$189</span> MRR</div>
+  <div class="mrr"><b>Allura</b> · <span class="num">$48</span> MRR</div>
+</div>
+<p class="legend">Source: <code>competitors/meta.yaml</code> · <code>COMPETITORS.md</code>. Total PCOS-vertical MRR ≈ $35.6K monthly, fragmented across 7 apps with zero feature overlap on rows 1/3/5/8/9/10/11.</p>
+
+<!-- ===== B.3 LONG-LIST ===== -->
+<h2 id="longlist">B.3 · 13 candidate features · long-list</h2>
+<p class="lede">
+  Source: <code>V1_SCOPE.md</code> per <code>Cysta_AI_PCOS_Master_v2_FINAL.md</code> PART 5.
+  Each card: tier · primary persona · ship effort · ASO hook · compliance risk.
+</p>
+
+<div class="feat-grid">
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#1</span><h3>🧬 PCOS Type Quiz</h3></div>
+      <span class="tag t1">T1</span>
+    </div>
+    <p class="desc">Onboarding 5 min, determines insulin-resistant / adrenal / post-pill / inflammatory subtype, personalizes everything downstream.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>🌸 Naomi</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Small · 1wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>pcos coach</code> DE R2.43</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk med">Medium</span> &nbsp; educational not diagnostic — needs disclaimer</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#2</span><h3>🤖 AI Coach (DeepSeek + RAG)</h3></div>
+      <span class="tag t1">T1</span>
+    </div>
+    <p class="desc">Chat answers cited to ACOG / ESHRE / AAP / Endocrine Society / PubMed corpus.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>ALL</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Large · 4–6wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>pcos ai</code> GB R2.8 + <code>pcos coach</code> DE R2.43</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk high">High</span> &nbsp; refusal pivots, citation required every answer</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#3</span><h3>📸 Photo Journal</h3></div>
+      <span class="tag t1">T1</span>
+    </div>
+    <p class="desc">Acne / hair / hirsutism / body progression with side-by-side compare. Folik DNA reuse 95%.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>🌸 Naomi + ⚖️ Wendy</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 2wk (reuse)</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak · visual differentiator, not keyword</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk med">Medium</span> &nbsp; local storage, no minor faces in marketing</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#4</span><h3>📊 PCOS-aware Cycle Tracker</h3></div>
+      <span class="tag t1">T1</span>
+    </div>
+    <p class="desc">21–90+ day cycles without gaslighting, LH surge, anovulatory detection.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>👶 Tanya + 🌸 Naomi</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 3wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>pcos cycle tracker</code> long-tail (avoid Flo head-on)</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk low">Low</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#5</span><h3>🩸 Lab Interpreter</h3></div>
+      <span class="tag t1">T1</span>
+    </div>
+    <p class="desc">OCR blood test → AI explains AMH, LH:FSH, testosterone, SHBG, fasting insulin, HbA1c, vit D.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>👩‍⚕️ Anna + 👶 Tanya</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Large · 4–5wk</b> (Vision + OCR + RAG)</div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak direct, strong differentiator</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk high">High</span> &nbsp; education only, "ESHRE 2023 range" framing</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#6</span><h3>🔗 Symptom-Cause Analytics</h3></div>
+      <span class="tag t2">T2</span>
+    </div>
+    <p class="desc">Correlates mood + sleep + diet + cycle + weight → insights ("weight gain correlates with high-carb meals last week").</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>⚖️ Wendy + 💊 Maya</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 3wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk low">Low</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#7</span><h3>🥗 Smart Meal Recs</h3></div>
+      <span class="tag t2">T2</span>
+    </div>
+    <p class="desc">Low-glycemic, anti-inflammatory, PCOS-type-specific, filters gluten / dairy / veg. 50+ recipes Y1.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>⚖️ Wendy</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 3wk</b> content + filtering</div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>pcos diet</code> DE R1.05 (catastrophic gem!) + GB R2.85</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk low">Low</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#8</span><h3>💊 Supplement Tracker (inositol)</h3></div>
+      <span class="tag t2">T2</span>
+    </div>
+    <p class="desc">Myo + d-chiro 40:1, vit D, NAC, omega-3, berberine.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>💊 Maya + ⚖️ Wendy</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Small · 1–2wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>myo inositol</code> R0 (1 app DE!) + <code>inositol</code> DE R1.33 / US R2.67 / GB R2.0 — <b>UNCONTESTED</b></div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk med">Medium</span> &nbsp; supplement claims need source citations</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#9</span><h3>🩺 Medication Tracker</h3></div>
+      <span class="tag t2">T2</span>
+    </div>
+    <p class="desc">Metformin, spironolactone, BC adherence + side-effect log + basic drug interaction warnings.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>👩‍⚕️ Anna + 💊 Maya</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Small · 1–2wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk high">High</span> &nbsp; never anti-Metformin / anti-BC, neutral framing</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#10</span><h3>👶 TTC Mode</h3></div>
+      <span class="tag t3">T3</span>
+    </div>
+    <p class="desc">Family tier toggle. Ovulation prediction for irregular cycles, fertile window despite anovulation.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>👶 Tanya</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 2–3wk</b> delta on cycle tracker</div>
+      <div class="row"><span class="lbl">🔍 ASO</span><code>ttc pcos</code> + <code>fertility tracker pcos</code> long-tails</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk high">High</span> &nbsp; window not certainty, no "you'll conceive on X" claims</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#11</span><h3>📄 Doctor PDF Export</h3></div>
+      <span class="tag t3">T3</span>
+    </div>
+    <p class="desc">3-month symptom + lab trends, endocrinologist-readable format.</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>👩‍⚕️ Anna</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Small · 1–2wk</b> PDFKit</div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk low">Low</span> &nbsp; data export, no claims</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#12</span><h3>📚 Educational Lessons</h3></div>
+      <span class="tag t3">T3</span>
+    </div>
+    <p class="desc">20–30 micro-lessons: "What is PCOS", "Insulin resistance explained", "Why BC treats not cures".</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>🌸 Naomi + 👩‍⚕️ Anna</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Medium · 3wk</b> content</div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk med">Medium</span> &nbsp; factual, sourced</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head">
+      <div class="left"><span class="num">#13</span><h3>🏆 Progress Dashboard / Wins</h3></div>
+      <span class="tag t3">T3</span>
+    </div>
+    <p class="desc">Streak + wins celebration (smaller waist, clearer skin, predictable cycle).</p>
+    <div class="rows">
+      <div class="row"><span class="lbl">🎯 Persona</span><b>⚖️ Wendy + 🌸 Naomi</b></div>
+      <div class="row"><span class="lbl">⚙️ Ship</span><b>Small · 1wk</b></div>
+      <div class="row"><span class="lbl">🔍 ASO</span>weak</div>
+      <div class="row"><span class="lbl">⚖️ Compliance</span><span class="risk low">Low</span></div>
+    </div>
+  </article>
+
+</div>
+
+<!-- ===== B.4 ROUND 1 · CONVERSION ===== -->
+<h2 id="round1-conversion">B.4 · Round 1 · CONVERSION panel</h2>
+<p class="lede">
+  "Would this feature get me to install + start trial?" 5 personas vote 0–10.
+  Persona weights: Naomi 25% · Tanya 20% · Wendy 25% · Maya 15% · Anna 15%.
+  Σ conversion = weighted average.
+</p>
+
+<div class="vote-wrap">
+<table class="vote">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Feature</th>
+      <th>🌸 Naomi</th>
+      <th>👶 Tanya</th>
+      <th>⚖️ Wendy</th>
+      <th>💊 Maya</th>
+      <th>👩‍⚕️ Anna</th>
+      <th class="sum">Σ conversion</th>
+    </tr>
+    <tr class="weight-row">
+      <td>weight →</td>
+      <td>(0–10 per persona)</td>
+      <td>× 0.25</td>
+      <td>× 0.20</td>
+      <td>× 0.25</td>
+      <td>× 0.15</td>
+      <td>× 0.15</td>
+      <td>weighted avg</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-top">
+      <td class="num">1</td>
+      <td class="who">🧬 PCOS Type Quiz</td>
+      <td class="num lead">10</td><td class="num">8</td><td class="num">9</td><td class="num">9</td><td class="num">7</td>
+      <td class="num sum">8.85</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">2</td>
+      <td class="who">🤖 AI Coach RAG</td>
+      <td class="num lead">10</td><td class="num lead">9</td><td class="num">8</td><td class="num">8</td><td class="num lead">9</td>
+      <td class="num sum">8.85</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">3</td>
+      <td class="who">📸 Photo Journal</td>
+      <td class="num">9</td><td class="num">6</td><td class="num lead">10</td><td class="num">7</td><td class="num">6</td>
+      <td class="num sum">7.95</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">4</td>
+      <td class="who">📊 Cycle Tracker</td>
+      <td class="num">9</td><td class="num lead">10</td><td class="num">6</td><td class="num">6</td><td class="num">7</td>
+      <td class="num sum">7.65</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">5</td>
+      <td class="who">🩸 Lab Interpreter</td>
+      <td class="num">8</td><td class="num">9</td><td class="num">5</td><td class="num">7</td><td class="num lead">10</td>
+      <td class="num sum">7.55</td>
+    </tr>
+    <tr>
+      <td class="num">6</td>
+      <td class="who">🔗 Symptom-Cause Analytics</td>
+      <td class="num">6</td><td class="num">7</td><td class="num">9</td><td class="num">8</td><td class="num">8</td>
+      <td class="num sum">7.65</td>
+    </tr>
+    <tr>
+      <td class="num">7</td>
+      <td class="who">🥗 Smart Meal Recs</td>
+      <td class="num">6</td><td class="num">5</td><td class="num lead">10</td><td class="num">7</td><td class="num">4</td>
+      <td class="num sum">6.85</td>
+    </tr>
+    <tr>
+      <td class="num">8</td>
+      <td class="who">💊 Supplement Tracker</td>
+      <td class="num">5</td><td class="num">7</td><td class="num">7</td><td class="num lead">10</td><td class="num">5</td>
+      <td class="num sum">6.80</td>
+    </tr>
+    <tr>
+      <td class="num">9</td>
+      <td class="who">🩺 Med Tracker</td>
+      <td class="num">4</td><td class="num">6</td><td class="num">5</td><td class="num">7</td><td class="num">8</td>
+      <td class="num sum">5.80</td>
+    </tr>
+    <tr>
+      <td class="num">10</td>
+      <td class="who">👶 TTC Mode</td>
+      <td class="num">3</td><td class="num lead">10</td><td class="num">4</td><td class="num">4</td><td class="num">5</td>
+      <td class="num sum">5.10</td>
+    </tr>
+    <tr>
+      <td class="num">11</td>
+      <td class="who">📄 Doctor PDF</td>
+      <td class="num">4</td><td class="num">6</td><td class="num">4</td><td class="num">5</td><td class="num lead">10</td>
+      <td class="num sum">5.45</td>
+    </tr>
+    <tr>
+      <td class="num">12</td>
+      <td class="who">📚 Educational Lessons</td>
+      <td class="num">7</td><td class="num">5</td><td class="num">5</td><td class="num">7</td><td class="num">7</td>
+      <td class="num sum">6.20</td>
+    </tr>
+    <tr>
+      <td class="num">13</td>
+      <td class="who">🏆 Progress Dashboard</td>
+      <td class="num">6</td><td class="num">5</td><td class="num">8</td><td class="num">5</td><td class="num">5</td>
+      <td class="num sum">5.95</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="takeaway">
+  <b>Takeaway:</b> Top conversion drivers — <b>PCOS Type Quiz</b> + <b>AI Coach RAG</b> (8.85 tie) — both essential for first-screen scroll-stop on Naomi (newly-diagnosed, largest segment 25%). Top-5 highlighted in sage.
+</p>
+
+<!-- ===== B.5 ROUND 2 · REVENUE ===== -->
+<h2 id="round2-revenue">B.5 · Round 2 · REVENUE panel</h2>
+<p class="lede">
+  "Does this feature drive paid conversion + retention + Family upsell?" 4 sub-panels rate 0–10.
+  Sub-panel weights: Annual WTP 35% · Retention 30d 25% · Retention 90d 25% · Family upsell 15%.
+</p>
+
+<div class="vote-wrap">
+<table class="vote">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Feature</th>
+      <th>Annual WTP</th>
+      <th>Ret 30d</th>
+      <th>Ret 90d</th>
+      <th>Family upsell</th>
+      <th class="sum">Σ revenue</th>
+    </tr>
+    <tr class="weight-row">
+      <td>weight →</td>
+      <td>(0–10 per panel)</td>
+      <td>× 0.35</td>
+      <td>× 0.25</td>
+      <td>× 0.25</td>
+      <td>× 0.15</td>
+      <td>weighted avg</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-top">
+      <td class="num">1</td>
+      <td class="who">🧬 PCOS Type Quiz</td>
+      <td class="num">8</td><td class="num lead">9</td><td class="num">7</td><td class="num">6</td>
+      <td class="num sum">7.80</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">2</td>
+      <td class="who">🤖 AI Coach RAG</td>
+      <td class="num lead">10</td><td class="num lead">9</td><td class="num lead">9</td><td class="num">7</td>
+      <td class="num sum">9.05</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">3</td>
+      <td class="who">📸 Photo Journal</td>
+      <td class="num">7</td><td class="num lead">9</td><td class="num lead">9</td><td class="num">5</td>
+      <td class="num sum">7.85</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">4</td>
+      <td class="who">📊 Cycle Tracker</td>
+      <td class="num">8</td><td class="num">8</td><td class="num">8</td><td class="num">7</td>
+      <td class="num sum">7.85</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">5</td>
+      <td class="who">🩸 Lab Interpreter</td>
+      <td class="num">9</td><td class="num">6</td><td class="num">7</td><td class="num">8</td>
+      <td class="num sum">7.60</td>
+    </tr>
+    <tr>
+      <td class="num">6</td>
+      <td class="who">🔗 Symptom-Cause Analytics</td>
+      <td class="num">7</td><td class="num">7</td><td class="num lead">9</td><td class="num">5</td>
+      <td class="num sum">7.20</td>
+    </tr>
+    <tr>
+      <td class="num">7</td>
+      <td class="who">🥗 Smart Meal Recs</td>
+      <td class="num">7</td><td class="num">8</td><td class="num">7</td><td class="num">4</td>
+      <td class="num sum">6.80</td>
+    </tr>
+    <tr>
+      <td class="num">8</td>
+      <td class="who">💊 Supplement Tracker</td>
+      <td class="num">7</td><td class="num">8</td><td class="num">8</td><td class="num">4</td>
+      <td class="num sum">7.05</td>
+    </tr>
+    <tr>
+      <td class="num">9</td>
+      <td class="who">🩺 Med Tracker</td>
+      <td class="num">5</td><td class="num">7</td><td class="num">7</td><td class="num">5</td>
+      <td class="num sum">6.00</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">10</td>
+      <td class="who">👶 TTC Mode</td>
+      <td class="num lead">10</td><td class="num">7</td><td class="num">7</td><td class="num lead">10</td>
+      <td class="num sum">8.50</td>
+    </tr>
+    <tr>
+      <td class="num">11</td>
+      <td class="who">📄 Doctor PDF</td>
+      <td class="num">7</td><td class="num">5</td><td class="num">7</td><td class="num lead">9</td>
+      <td class="num sum">6.80</td>
+    </tr>
+    <tr>
+      <td class="num">12</td>
+      <td class="who">📚 Educational Lessons</td>
+      <td class="num">5</td><td class="num">7</td><td class="num">6</td><td class="num">4</td>
+      <td class="num sum">5.60</td>
+    </tr>
+    <tr>
+      <td class="num">13</td>
+      <td class="who">🏆 Progress Dashboard</td>
+      <td class="num">5</td><td class="num lead">9</td><td class="num lead">9</td><td class="num">4</td>
+      <td class="num sum">6.85</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="takeaway">
+  <b>Takeaway:</b> <b>AI Coach RAG (9.05)</b> is the revenue king — drives both WTP and retention.
+  <b>TTC Mode (8.50)</b> is the Family-upsell singularity (10/10 Family) — Tanya's $20K IVF alternative justifies $79.99/yr Family tier by itself.
+</p>
+
+<!-- ===== B.6 ROUND 3 · MOAT ===== -->
+<h2 id="round3-moat">B.6 · Round 3 · MOAT panel</h2>
+<p class="lede">
+  "Does this feature defend against Cycla AI + win ASO + ship fast + clear compliance?" 4 sub-panels.
+  Weights: Cycla displacement 35% · ASO synergy 25% · Ship speed 20% · Compliance clearance 20%.
+</p>
+<p class="legend">
+  Scoring rubric — <b>Cycla displacement:</b> 10 = Cycla doesn't have it AND audience demands it ·
+  <b>ASO synergy:</b> 10 = directly hooks apocalyptic R&lt;2 keyword ·
+  <b>Ship speed:</b> 10 = ≤2 weeks; 5 = 3–4 weeks; 2 = 5–6 weeks ·
+  <b>Compliance clearance:</b> 10 = Low risk; 5 = Medium; 2 = High risk needs legal pass.
+</p>
+
+<div class="vote-wrap">
+<table class="vote">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Feature</th>
+      <th>Cycla displ.</th>
+      <th>ASO synergy</th>
+      <th>Ship speed</th>
+      <th>Compliance</th>
+      <th class="sum">Σ moat</th>
+    </tr>
+    <tr class="weight-row">
+      <td>weight →</td>
+      <td>(0–10 per panel)</td>
+      <td>× 0.35</td>
+      <td>× 0.25</td>
+      <td>× 0.20</td>
+      <td>× 0.20</td>
+      <td>weighted avg</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-top">
+      <td class="num">1</td>
+      <td class="who">🧬 PCOS Type Quiz</td>
+      <td class="num lead">10</td><td class="num">9</td><td class="num lead">10</td><td class="num">5</td>
+      <td class="num sum">8.65</td>
+    </tr>
+    <tr>
+      <td class="num">2</td>
+      <td class="who">🤖 AI Coach RAG</td>
+      <td class="num">7</td><td class="num lead">10</td><td class="num">2</td><td class="num">2</td>
+      <td class="num sum">5.85</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">3</td>
+      <td class="who">📸 Photo Journal</td>
+      <td class="num lead">10</td><td class="num">4</td><td class="num">7</td><td class="num">5</td>
+      <td class="num sum">6.90</td>
+    </tr>
+    <tr>
+      <td class="num">4</td>
+      <td class="who">📊 Cycle Tracker</td>
+      <td class="num">4</td><td class="num">5</td><td class="num">5</td><td class="num lead">10</td>
+      <td class="num sum">5.65</td>
+    </tr>
+    <tr>
+      <td class="num">5</td>
+      <td class="who">🩸 Lab Interpreter</td>
+      <td class="num lead">10</td><td class="num">4</td><td class="num">2</td><td class="num">2</td>
+      <td class="num sum">5.30</td>
+    </tr>
+    <tr>
+      <td class="num">6</td>
+      <td class="who">🔗 Symptom-Cause Analytics</td>
+      <td class="num">7</td><td class="num">3</td><td class="num">5</td><td class="num lead">10</td>
+      <td class="num sum">6.20</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">7</td>
+      <td class="who">🥗 Smart Meal Recs</td>
+      <td class="num">6</td><td class="num lead">10</td><td class="num">5</td><td class="num lead">10</td>
+      <td class="num sum">7.60</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">8</td>
+      <td class="who">💊 Supplement Tracker</td>
+      <td class="num lead">10</td><td class="num lead">10</td><td class="num lead">10</td><td class="num">5</td>
+      <td class="num sum">9.00</td>
+    </tr>
+    <tr>
+      <td class="num">9</td>
+      <td class="who">🩺 Med Tracker</td>
+      <td class="num">9</td><td class="num">3</td><td class="num lead">10</td><td class="num">2</td>
+      <td class="num sum">6.45</td>
+    </tr>
+    <tr>
+      <td class="num">10</td>
+      <td class="who">👶 TTC Mode</td>
+      <td class="num lead">10</td><td class="num">5</td><td class="num">5</td><td class="num">2</td>
+      <td class="num sum">6.15</td>
+    </tr>
+    <tr class="row-top">
+      <td class="num">11</td>
+      <td class="who">📄 Doctor PDF</td>
+      <td class="num lead">10</td><td class="num">2</td><td class="num lead">10</td><td class="num lead">10</td>
+      <td class="num sum">8.00</td>
+    </tr>
+    <tr>
+      <td class="num">12</td>
+      <td class="who">📚 Educational Lessons</td>
+      <td class="num">4</td><td class="num">3</td><td class="num">5</td><td class="num">5</td>
+      <td class="num sum">4.20</td>
+    </tr>
+    <tr>
+      <td class="num">13</td>
+      <td class="who">🏆 Progress Dashboard</td>
+      <td class="num">6</td><td class="num">2</td><td class="num lead">10</td><td class="num lead">10</td>
+      <td class="num sum">6.60</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="takeaway">
+  <b>Takeaway:</b> <b>Supplement Tracker (9.00)</b> is the moat singularity — 10/10 ASO (<code>myo inositol</code> R0 globally, 1 app in DE!) + 10/10 ship (small effort) + 10/10 vs Cycla (Cycla has zero supplement layer).
+  <b>PCOS Type Quiz (8.65)</b> and <b>Doctor PDF (8.00)</b> close behind: fast ship + unique vs Cycla.
+</p>
+
+<!-- ===== B.7 AGGREGATE + RUNOFF ===== -->
+<h2 id="aggregate">B.7 · Aggregate score · Σ = 0.40·conversion + 0.35·revenue + 0.25·moat</h2>
+<p class="lede">
+  Ranked best-to-worst with cluster assignment (P0 · P1 · P2 · CUT-or-defer).
+  P0 = sage (ship weeks 1–4) · P1 = rose-gold (weeks 5–8) · P2 = pearl (V1.1) · CUT = muted.
+</p>
+
+<div class="agg-wrap">
+<table class="agg">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Feature</th>
+      <th>Σ conv (×.40)</th>
+      <th>Σ rev (×.35)</th>
+      <th>Σ moat (×.25)</th>
+      <th>Σ aggregate</th>
+      <th>Tier</th>
+      <th>Ship</th>
+      <th>Cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="p0">
+      <td class="rank">1</td>
+      <td class="feat-name">🧬 PCOS Type Quiz</td>
+      <td class="num">8.85</td><td class="num">7.80</td><td class="num">8.65</td>
+      <td class="sigma">8.43</td>
+      <td class="num">T1</td>
+      <td class="num">1wk</td>
+      <td class="cluster">P0</td>
+    </tr>
+    <tr class="p0">
+      <td class="rank">2</td>
+      <td class="feat-name">🤖 AI Coach RAG</td>
+      <td class="num">8.85</td><td class="num">9.05</td><td class="num">5.85</td>
+      <td class="sigma">8.17</td>
+      <td class="num">T1</td>
+      <td class="num">4–6wk</td>
+      <td class="cluster">P0</td>
+    </tr>
+    <tr class="p0">
+      <td class="rank">3</td>
+      <td class="feat-name">📸 Photo Journal</td>
+      <td class="num">7.95</td><td class="num">7.85</td><td class="num">6.90</td>
+      <td class="sigma">7.65</td>
+      <td class="num">T1</td>
+      <td class="num">2wk</td>
+      <td class="cluster">P0</td>
+    </tr>
+    <tr class="p0">
+      <td class="rank">4</td>
+      <td class="feat-name">💊 Supplement Tracker</td>
+      <td class="num">6.80</td><td class="num">7.05</td><td class="num">9.00</td>
+      <td class="sigma">7.44</td>
+      <td class="num">T2</td>
+      <td class="num">1–2wk</td>
+      <td class="cluster">P0</td>
+    </tr>
+    <tr class="p0">
+      <td class="rank">5</td>
+      <td class="feat-name">📊 Cycle Tracker</td>
+      <td class="num">7.65</td><td class="num">7.85</td><td class="num">5.65</td>
+      <td class="sigma">7.21</td>
+      <td class="num">T1</td>
+      <td class="num">3wk</td>
+      <td class="cluster">P0</td>
+    </tr>
+    <tr class="p1">
+      <td class="rank">6</td>
+      <td class="feat-name">🔗 Symptom-Cause Analytics</td>
+      <td class="num">7.65</td><td class="num">7.20</td><td class="num">6.20</td>
+      <td class="sigma">7.13</td>
+      <td class="num">T2</td>
+      <td class="num">3wk</td>
+      <td class="cluster">P1</td>
+    </tr>
+    <tr class="p1">
+      <td class="rank">7</td>
+      <td class="feat-name">🥗 Smart Meal Recs</td>
+      <td class="num">6.85</td><td class="num">6.80</td><td class="num">7.60</td>
+      <td class="sigma">7.02</td>
+      <td class="num">T2</td>
+      <td class="num">3wk</td>
+      <td class="cluster">P1</td>
+    </tr>
+    <tr class="p1">
+      <td class="rank">8</td>
+      <td class="feat-name">🩸 Lab Interpreter</td>
+      <td class="num">7.55</td><td class="num">7.60</td><td class="num">5.30</td>
+      <td class="sigma">7.01</td>
+      <td class="num">T1</td>
+      <td class="num">4–5wk</td>
+      <td class="cluster">P1</td>
+    </tr>
+    <tr class="p1">
+      <td class="rank">9</td>
+      <td class="feat-name">👶 TTC Mode</td>
+      <td class="num">5.10</td><td class="num">8.50</td><td class="num">6.15</td>
+      <td class="sigma">6.55</td>
+      <td class="num">T3</td>
+      <td class="num">2–3wk</td>
+      <td class="cluster">P1</td>
+    </tr>
+    <tr class="p1">
+      <td class="rank">10</td>
+      <td class="feat-name">📄 Doctor PDF</td>
+      <td class="num">5.45</td><td class="num">6.80</td><td class="num">8.00</td>
+      <td class="sigma">6.55</td>
+      <td class="num">T3</td>
+      <td class="num">1–2wk</td>
+      <td class="cluster">P1</td>
+    </tr>
+    <tr class="p2">
+      <td class="rank">11</td>
+      <td class="feat-name">🏆 Progress Dashboard</td>
+      <td class="num">5.95</td><td class="num">6.85</td><td class="num">6.60</td>
+      <td class="sigma">6.42</td>
+      <td class="num">T3</td>
+      <td class="num">1wk</td>
+      <td class="cluster">P2</td>
+    </tr>
+    <tr class="p2">
+      <td class="rank">12</td>
+      <td class="feat-name">🩺 Med Tracker</td>
+      <td class="num">5.80</td><td class="num">6.00</td><td class="num">6.45</td>
+      <td class="sigma">6.04</td>
+      <td class="num">T2</td>
+      <td class="num">1–2wk</td>
+      <td class="cluster">P2</td>
+    </tr>
+    <tr class="cut">
+      <td class="rank">13</td>
+      <td class="feat-name">📚 Educational Lessons</td>
+      <td class="num">6.20</td><td class="num">5.60</td><td class="num">4.20</td>
+      <td class="sigma">5.49</td>
+      <td class="num">T3</td>
+      <td class="num">3wk</td>
+      <td class="cluster">CUT-or-defer</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="runoff">
+  <h3>Round 4 · RUNOFF (close calls within ±0.5 aggregate)</h3>
+  <ul>
+    <li><b>TTC Mode vs Doctor PDF</b> — both 6.55. Tiebreak: TTC wins (Family-tier upsell singularity, Tanya $20K IVF alt). Doctor PDF stays P1 (Anna trust anchor + ships in 1wk → free filler).</li>
+    <li><b>Smart Meal Recs vs Symptom Analytics vs Lab Interpreter</b> — cluster 7.02 / 7.13 / 7.01. Tiebreak: keep all 3 in P1, sequence by ship-speed (Symptom Analytics 3wk → Meal Recs 3wk → Lab Interpreter 4–5wk last).</li>
+    <li><b>Educational Lessons</b> runoff: <b>cut from V1, defer to V1.1</b> (4 weeks post-launch). Reason: lowest aggregate, moat 4.20 (PCOS Pal already owns this lane), conversion only 6.20.</li>
+  </ul>
+</div>
+
+<!-- ===== B.8 ROADMAP ===== -->
+<h2 id="roadmap">B.8 · P-tier roadmap · 8-week ship plan + V1.1</h2>
+<p class="lede">
+  Three clusters by ship-week. Cumulative engineering accounts for parallel tracks (AI Coach RAG starts W4 and runs through W6 alongside other work).
+</p>
+
+<div class="roadmap-grid">
+
+  <div class="ptier p0">
+    <span class="weeks">P0 · weeks 1–4</span>
+    <h3>Foundation · must-ship-for-launch</h3>
+    <ul>
+      <li><b>🧬 PCOS Type Quiz (1wk)</b> Onboarding personalization, Naomi scroll-stop.</li>
+      <li><b>🤖 AI Coach RAG (4–6wk parallel)</b> Cycla-killer, revenue king.</li>
+      <li><b>📊 PCOS Cycle Tracker (3wk)</b> Tanya / Naomi base, no-gaslight differentiation.</li>
+      <li><b>📸 Photo Journal (2wk, Folik reuse)</b> Wendy / Naomi visual moat, Cycla blind spot.</li>
+      <li><b>💊 Supplement Tracker — inositol (1–2wk)</b> ASO singularity (<code>myo inositol</code> R0 DE!).</li>
+    </ul>
+    <div class="total">Σ cumulative: 5 features · weeks 1–4 (parallel tracks)</div>
+  </div>
+
+  <div class="ptier p1">
+    <span class="weeks">P1 · weeks 5–8</span>
+    <h3>Differentiators · ship before US launch</h3>
+    <ul>
+      <li><b>🔗 Symptom-Cause Analytics (3wk)</b> Wendy / Maya insight engine.</li>
+      <li><b>🥗 Smart Meal Recs (3wk)</b> <code>pcos diet</code> DE R1.05 catastrophic gem capture.</li>
+      <li><b>🩸 Lab Interpreter (4–5wk)</b> Anna trust + Family upsell.</li>
+      <li><b>👶 TTC Mode (2–3wk on top of cycle tracker)</b> Tanya Family $79.99 singularity.</li>
+      <li><b>📄 Doctor PDF (1–2wk)</b> Anna deliverable, cheap filler.</li>
+    </ul>
+    <div class="total">Σ cumulative: 5 features · weeks 5–8 (parallel tracks)</div>
+  </div>
+
+  <div class="ptier p2">
+    <span class="weeks">P2 · post-launch V1.1 (wk 9–12)</span>
+    <h3>Retention boosters · post-launch</h3>
+    <ul>
+      <li><b>🩺 Medication Tracker (1–2wk)</b> Anna / Maya retention.</li>
+      <li><b>🏆 Progress Dashboard / Wins (1wk)</b> Wendy retention engine.</li>
+    </ul>
+    <div class="cut-note">
+      <b>CUT-or-defer · 📚 Educational Lessons</b> — defer V1.2. PCOS Pal owns this lane; build only if Naomi-onboarding shows lesson-demand telemetry.
+    </div>
+    <div class="total">Σ cumulative: 2 ship + 1 deferred</div>
+  </div>
+
+</div>
+
+<div class="seq-strip">
+  <h3>Horizontal sequencing strip · weeks 1–9</h3>
+  <div class="seq-row">
+    <div class="seq"><b>W1</b>Type Quiz</div>
+    <div class="seq"><b>W2</b>Photo Journal (Folik reuse)</div>
+    <div class="seq"><b>W3</b>Supplement Tracker + Cycle Tracker start</div>
+    <div class="seq"><b>W4</b>Cycle Tracker finish + AI Coach RAG start</div>
+    <div class="seq"><b>W5</b>AI Coach continues + Symptom Analytics start</div>
+    <div class="seq"><b>W6</b>AI Coach finish + Meal Recs start</div>
+    <div class="seq"><b>W7</b>Lab Interpreter start + Meal Recs finish + Doctor PDF</div>
+    <div class="seq"><b>W8</b>Lab Interpreter finish + TTC Mode toggle + final QA</div>
+    <div class="seq launch"><b>W9</b>🇺🇸 US LAUNCH</div>
+  </div>
+</div>
+
+<!-- ===== B.9 ANTI-PATTERNS (FEATURES) ===== -->
+<h2 id="anti-patterns-features">B.9 · Anti-patterns · what we explicitly do NOT build in V1</h2>
+<p class="lede">
+  Locked from <code>COMPLIANCE.md</code> + <code>Cysta_AI_PCOS_Master_v2_FINAL.md</code> PART 6.
+  Each "won't build" item is consilium-locked unless founder explicitly overrides in <code>DECISIONS.md</code>.
+</p>
+
+<ul class="anti-list">
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Generic period tracker</b> — Flo / Clue own it; PCOS women are gaslit by them.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Calorie counter</b> — MyFitnessPal wins; PCOS needs glycemic, not calorie.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Generic fitness</b> — Apple Fitness+ is cheaper; PCOS needs HIIT + resistance specifics, not yoga playlists.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Cute period illustrations</b> (uterus-with-eyes, dancing ovaries) — credibility-killer for Anna / Tanya.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Email-required onboarding</b> — privacy-first; Sign-in-with-Apple optional.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Cloud-by-default photo sync</b> — local storage, iCloud opt-in.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Identifiable minor faces in marketing</b> — compliance hard-line.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Gamification</b> (XP, levels, confetti, "PCOS warrior!") — except a single adherence streak.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Community feed Y1</b> — Cysterhood owns this; we focus AI authority instead.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Definitive fertility predictions</b> ("you'll conceive on X day") — TTC gives window, not certainty.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Anti-Metformin / anti-BC rhetoric</b> — Maya tempts this; refuse, neutral framing per <code>COMPLIANCE.md</code>.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>"Cure PCOS" copy anywhere</b> — compliance hard-line. Always "manage / track / understand".</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Diagnosis claims</b> ("you have PCOS") — Type Quiz is self-assessment educational, never diagnostic.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>AI Coach answers without RAG citations</b> — every answer cites ACOG / ESHRE / AAP / Endocrine Society / PubMed or refuses.</span>
+  </li>
+  <li>
+    <span class="x">❌</span>
+    <span class="wb-chip">won't build</span>
+    <span class="copy"><b>Symptom checker</b> — WebMD is free; PCOS needs chronic management, not acute triage.</span>
+  </li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- ===== UNIFIED FOOTER ===== -->
+<!-- ============================================================ -->
 <footer>
   <p>
-    <b>Cysta AI</b> · love8ko / CystaAI · Team KLV3PHFA3Q · Bundle <code>com.love8ko.cystaai</code>.
-    Связанные документы: <code>DESIGN_SYSTEM.md</code> (lock after round-2), <code>PERSONAS.md</code>, <code>COMPLIANCE.md</code>, <code>COMPETITORS.md</code>, <code>Cysta_AI_PCOS_Master_v2_FINAL.md</code>.
-    Последнее обновление: 2026-05-14 · status: <b>round 1 voting in progress</b> · next lock checkpoint: 2026-05-21.
+    <b>Source-of-truth:</b>
+    <code>Cysta_AI_PCOS_Master_v2_FINAL.md</code> ·
+    <code>DESIGN_SYSTEM.md</code> ·
+    <code>PERSONAS.md</code> ·
+    <code>COMPETITORS.md</code> ·
+    <code>V1_SCOPE.md</code> ·
+    <code>COMPLIANCE.md</code>.
+    <br>
+    <b>Decision log:</b> <code>DECISIONS.md</code> (palette lock entry 2026-05-14; feature-lock entry pending 2026-05-21).
+    <br>
+    <b>Cysta AI</b> · love8ko / CystaAI · Team KLV3PHFA3Q · Bundle <code>com.love8ko.cystaai</code> · Built 2026-05-14.
   </p>
 </footer>
 
