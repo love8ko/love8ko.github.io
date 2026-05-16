@@ -611,7 +611,8 @@
     <span class="pill lock">✅ Palette locked 2026-05-14</span>
     <span class="pill vote">🗳️ Features · 3 rounds done</span>
     <span class="pill lock">🔒 Tabs locked · A re-confirmed 2026-05-16</span>
-    <span class="pill vote">🗳️ Cohorts · awaiting lock</span>
+    <span class="pill lock">🔒 Cohorts locked · B · 5 personas</span>
+    <span class="pill lock">🔒 Paywall variants × 5 locked</span>
     <span class="pill vote">🗳️ Screenshots · 1 round done</span>
     <span class="pill vote">🗳️ Paywall · 1 round done</span>
     <span class="pill sib">Sibling: 15-Folik (95%) · 16-Salvora pattern</span>
@@ -883,7 +884,7 @@
 </div>
 
 <!-- ===== 2.1.5 ONBOARDING COHORT CONSILIUM ===== -->
-<h2 id="onboarding-cohorts" style="margin-top: 32px;">2.1.5 · Onboarding cohort design · 🗳️ consilium · awaiting lock</h2>
+<h2 id="onboarding-cohorts" style="margin-top: 32px;">2.1.5 · Onboarding cohort design · 🔒 Locked B · 5 personas · 2026-05-16</h2>
 <p class="lede">Founder directive 2026-05-16: «Онбординги по аудитории и разные пейволлы под них». Vote: <b>как сегментируем юзера в onboarding</b> и что меняется per-cohort (paywall H1 · default tier · Coach seed prompt · content emphasis · ASA CPP). 4 candidate cohort schemes. Σ_overall = 0.60·persona + 0.40·moat.</p>
 
 <table class="tab-spec">
@@ -2316,8 +2317,93 @@
   </ul>
 </div>
 
+<!-- ===== 7.5 PER-COHORT PAYWALL VARIANTS ===== -->
+<h2 id="paywall-cohorts" style="margin-top: 32px;">7.5 · Per-cohort paywall variants · 🔒 Locked 2026-05-16</h2>
+<p class="lede">Founder directive: «разные пейволлы под разные когорты». Each of 5 persona-lanes (locked at §2.1.5) carries its own paywall config: <b>H1 copy · default selected tier · feature-bullets emphasis (top-3) · trust strip authority order</b>. Cohort routed by <code>userPersona</code> (set during onboarding 7-step funnel). v1 production lock; A/B alternatives deferred to ASA Month 1 budget review.</p>
+
+<div class="ws-wrap">
+<table class="persona-vote">
+  <thead>
+    <tr>
+      <th>CPP · Cohort</th>
+      <th>H1 (≤8 words)</th>
+      <th>Default tier</th>
+      <th>Top-3 feature bullets</th>
+      <th>Trust strip authority order</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>A · 🌸 Naomi</b><br><span style="font-size:11px;color:var(--ink-2);">newly diagnosed · 25%</span></td>
+      <td>"PCOS demystified in 5 minutes"</td>
+      <td><b>Standard Weekly</b> $4.99<br><span style="font-size:10px;color:var(--ink-3);">low-friction entry</span></td>
+      <td>① PCOS Type Quiz<br>② AI Coach RAG<br>③ Photo Journal</td>
+      <td>ACOG → Endocrine Society → AAP → ESHRE → PubMed</td>
+    </tr>
+    <tr class="row-top">
+      <td><b>B · 👶 Tanya</b> ✓ v1<br><span style="font-size:11px;color:var(--ink-2);">TTC · 20% · highest WTP</span></td>
+      <td>"Predict ovulation. Even with irregular cycles."</td>
+      <td><b>Family Yearly</b> $79.99<br><span style="font-size:10px;color:var(--ink-3);">2× ARPU · 2nd profile</span></td>
+      <td>① TTC Mode<br>② Cycle no-gaslight<br>③ Coach citations</td>
+      <td>ESHRE → ACOG → PubMed TTC → Endocrine → AAP</td>
+    </tr>
+    <tr>
+      <td><b>C · ⚖️ Wendy</b><br><span style="font-size:11px;color:var(--ink-2);">weight · 25%</span></td>
+      <td>"PCOS-friendly meals, no calorie counting."</td>
+      <td><b>Standard Yearly</b> $39.99<br><span style="font-size:10px;color:var(--ink-3);">committed, not Family</span></td>
+      <td>① Smart Meal Recs<br>② Symptom-Cause Analytics<br>③ Photo Journal</td>
+      <td>Endocrine Society → AAP → ACOG → ESHRE → PubMed</td>
+    </tr>
+    <tr>
+      <td><b>D · 💊 Maya</b><br><span style="font-size:11px;color:var(--ink-2);">med-skeptic · 15%</span></td>
+      <td>"Natural PCOS management, no pharma push."</td>
+      <td><b>Lifetime</b> $99<br><span style="font-size:10px;color:var(--ink-3);">one-time, no recurring</span></td>
+      <td>① Supplement Tracker (inositol)<br>② AI Coach RAG<br>③ Type Quiz</td>
+      <td>PubMed → Endocrine Society → ACOG → ESHRE → AAP</td>
+    </tr>
+    <tr>
+      <td><b>E · 👩‍⚕️ Anna</b><br><span style="font-size:11px;color:var(--ink-2);">advocate · 15%</span></td>
+      <td>"Doctor-ready PDF reports from day one."</td>
+      <td><b>Family Yearly</b> $79.99<br><span style="font-size:10px;color:var(--ink-3);">2nd-profile credibility</span></td>
+      <td>① Lab Interpreter<br>② Doctor PDF<br>③ Symptom-Cause Analytics</td>
+      <td>ACOG → ESHRE → Endocrine Society → AAP → PubMed</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 style="margin-top: 18px;">Lock-criterion vote · 0–10 per row (≥7.0 required)</h3>
+<div class="ws-wrap">
+<table class="persona-vote">
+  <thead>
+    <tr><th>Cohort</th><th>Self-resonance (persona)</th><th>ASO / CPP conversion</th><th>Compliance (legal)</th><th class="sum">Σ avg</th><th>Lock?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><b>A · Naomi</b></td><td class="num">9</td><td class="num">8</td><td class="num">9</td><td class="num sum">8.67</td><td>✅</td></tr>
+    <tr class="row-top"><td><b>B · Tanya ✓</b></td><td class="num lead">10</td><td class="num lead">9</td><td class="num">7</td><td class="num sum">8.67</td><td>✅</td></tr>
+    <tr><td><b>C · Wendy</b></td><td class="num">9</td><td class="num lead">9</td><td class="num">8</td><td class="num sum">8.67</td><td>✅</td></tr>
+    <tr><td><b>D · Maya</b></td><td class="num">8</td><td class="num">7</td><td class="num">8</td><td class="num sum">7.67</td><td>✅</td></tr>
+    <tr><td><b>E · Anna</b></td><td class="num">9</td><td class="num">8</td><td class="num lead">10</td><td class="num sum">9.00</td><td>✅</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="runoff">
+  <h3>Rationale per cohort</h3>
+  <ul>
+    <li><b>A · Naomi · Standard Weekly</b> — newly-diagnosed exploring; $4.99/wk = «попробую как страховку», лотерейный билет на понимание PCOS. Анти-friction tier defaults. Trust strip generic-medical (ACOG first) — она ещё не знает specifics.</li>
+    <li><b>B · Tanya · Family Yearly ✓</b> — IVF $20K alternative. Family = 2nd profile для partner, она готова платить максимум сразу. TTC trust order (ESHRE first → fertility-specific authority). Compliance 7 — TTC «window not certainty» framing критичен.</li>
+    <li><b>C · Wendy · Standard Yearly</b> — committed по weight-loss journey, $39.99/yr ≈ 3 weeks competitor app cost. Не Family (no partner-share need). Endocrine Society first = metabolic authority.</li>
+    <li><b>D · Maya · Lifetime $99</b> — anti-recurring философия matches anti-pharma identity. One-time payment = no monthly reminder pharma-style. PubMed first = research-driven trust order. Inositol bullet #1 (R0 ASO gem).</li>
+    <li><b>E · Anna · Family Yearly</b> — data-professional, $79.99 ROI просчитывает как deductible. Family для 2nd-profile (potential future TTC OR daughter PCOS). Lab Interpreter #1 = endo-credibility anchor. ACOG first = medical-society authority chain.</li>
+  </ul>
+  <p style="margin-top:10px;font-size:13px;color:var(--ink-2);">
+  All 5 rows ≥ 7.0 lock criterion (avg 8.54). <b>Locked.</b> A/B testing alternatives (different H1 / tier defaults) → ASA Month 1 budget review at M2.
+  </p>
+</div>
+
 <!-- ===== 7.4 HANDOFF SPEC ===== -->
-<h2 id="paywall-handoff">7.4 · Port to SwiftUI · handoff spec</h2>
+<h2 id="paywall-handoff" style="margin-top: 28px;">7.4 · Port to SwiftUI · handoff spec</h2>
 <p class="lede">When v1 mock locked → port to <code>CystaPaywallView.swift</code>. Uses RevenueCat (entitlement <code>cystaai.premium</code>) · StoreKit 2 · Apple Health optional.</p>
 
 <table class="handoff">
