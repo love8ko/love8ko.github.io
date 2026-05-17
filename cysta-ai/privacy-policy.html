@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Cysta AI: PCOS Coach</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px; line-height: 1.7; color: #2A1E2D; background: #F4ECE6; }
+        h1 { font-size: 1.9em; margin-bottom: 0.2em; color: #4A3550; }
+        h2 { font-size: 1.25em; margin-top: 1.8em; color: #4A3550; }
+        h3 { font-size: 1.05em; margin-top: 1.2em; color: #6B4E6E; }
+        .date { color: #968B9C; font-size: 0.9em; margin-bottom: 2em; }
+        ul { padding-left: 1.2em; }
+        li { margin-bottom: 0.4em; }
+        a { color: #B0824D; }
+        .highlight { background: #FFFFFF; padding: 14px 18px; border-left: 3px solid #6B8770; margin: 16px 0; border-radius: 6px; }
+        .warn { background: #FFFFFF; padding: 14px 18px; border-left: 3px solid #D4A574; margin: 16px 0; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="date">Effective date: May 17, 2026</p>
+
+<p>Cysta AI: PCOS Coach ("the App") is developed and published by Valeriy Loveiko. We take your privacy seriously and are committed to protecting your personal information. This Privacy Policy explains how the App collects, uses, stores, and protects your data.</p>
+
+<div class="highlight">
+    <strong>Summary:</strong> The App processes lab photos / PDFs, optional progress photos, and AI Coach questions using secure third-party services. Photos and lab images are sent for analysis and are not retained after processing. All results, photos, cycle / symptom / supplement logs, and chat history are stored locally on your device. We do not sell, share, or monetize your personal data.
+</div>
+
+<div class="warn">
+    <strong>Educational only:</strong> Cysta AI is an educational companion, not a medical device. The App does not diagnose, treat, cure, or prevent any condition. Always consult an endocrinologist, OB-GYN, or other qualified healthcare provider before starting, changing, or stopping any treatment.
+</div>
+
+<h2>1. Information We Collect</h2>
+
+<h3>1.1 Lab Photos and PDF Uploads</h3>
+<p>When you use Cysta to scan a lab report (camera, photo library, or PDF), the App accesses your device's camera or photo library at your explicit request. These images are:</p>
+<ul>
+    <li>Used solely to extract numeric lab values (AMH, LH, FSH, testosterone, SHBG, fasting insulin, HbA1c, vitamin D, thyroid panel, lipid panel, etc.) for your personal trend tracking</li>
+    <li>Sent securely (via encrypted HTTPS) to our AI analysis provider for image-based OCR + structured extraction</li>
+    <li>Stored locally on your device as part of your panel history</li>
+    <li>Never shared with other users, advertisers, or any third party beyond the AI analysis provider listed in §3</li>
+</ul>
+<p>The App does not access photos beyond what you explicitly capture or select. We do not scan your photo library and we do not collect EXIF metadata (location, date, camera model) from your photos.</p>
+
+<h3>1.2 Optional Progress Photos and Face Data</h3>
+<p>Cysta's optional Photo Journal lets you log acne, hirsutism, or body-composition photos for personal symptom tracking. Some of these photos may incidentally contain the user's face. We refer to these collectively as "face data." This section explains exactly how this data is handled, in compliance with Apple App Store guideline 5.1.1.</p>
+<ul>
+    <li><strong>What is collected:</strong> Photos of skin, scalp / hair-line, or body areas captured at the user's explicit request inside the optional Photo Journal flow. Some photos may incidentally contain the user's face (e.g. jawline acne tracking). Captured only at the user's explicit tap.</li>
+    <li><strong>Purpose — symptom tracking only:</strong> Photos are used exclusively to track visible PCOS-associated symptoms over time and to generate one neutral comparison sentence (≤22 words) between two user-selected photos. The App does <strong>not</strong> perform face recognition, face identification, biometric template extraction, biometric enrollment, emotion detection, age / gender estimation, or any other biometric analysis. Photos are never used to identify, authenticate, or distinguish between individual users.</li>
+    <li><strong>On-device anonymization option:</strong> For acne photos, the user can enable optional automatic face blur before any photo leaves the device. No facial landmarks, face embeddings, or biometric templates are computed, stored, or transmitted in either case.</li>
+    <li><strong>Transmission (Compare action only):</strong> Photos are transmitted via encrypted HTTPS to our AI partner only when the user explicitly taps "Generate insight" inside the Photo Compare flow. They are routed through a Cloudflare Worker proxy that forwards the request without logging or storing image content. No personal identifiers are sent alongside the photos. Per-feature consent is required before the first such send.</li>
+    <li><strong>Third-party sharing:</strong> Photos are shared only with the AI partner (via the Cloudflare proxy) for the sole purpose of generating a single neutral comparison sentence. They are not shared with any other third party, advertiser, analytics service, or data broker. The AI partner processes API inputs under a zero-retention policy and does not use them to train models. See <a href="https://openai.com/policies/api-data-usage-policies">our partner's API Data Usage Policy</a>.</li>
+    <li><strong>Retention:</strong> Photos are retained on the user's device only as part of the local Photo Journal. They are not retained on the AI partner's or our own servers. The user can delete any photo at any time within the App or by uninstalling the App.</li>
+    <li><strong>User control:</strong> Photo Journal (and the associated capture of face data) is entirely optional. The user can revoke camera access at any time via iOS Settings → Cysta AI. Deleting the App removes all locally stored photos.</li>
+</ul>
+
+<h3>1.3 Cycle, Symptom, and Supplement Logs</h3>
+<p>When you log cycle days, symptoms, or supplement adherence, this information is:</p>
+<ul>
+    <li>Stored exclusively on your device</li>
+    <li>Used to generate timeline visualizations, AI Coach context, and your doctor-shareable PDF</li>
+    <li>Never transmitted to any external server</li>
+</ul>
+<p>Cysta does not recommend, prescribe, or modify supplement dosages. The supplement log is solely a personal journal of what the user is already taking. All supplement names visible in the App are for educational logging only and are not endorsed or supplied by the developer.</p>
+
+<h3>1.4 Extracted Lab Values</h3>
+<p>When you save a lab panel, the App stores:</p>
+<ul>
+    <li>Each numeric lab value with its unit and reference range (as printed on your report)</li>
+    <li>The panel date, label, and source (PDF / camera / photo / manual entry)</li>
+    <li>An extraction confidence score per row (when returned by the AI partner)</li>
+</ul>
+<p>This data is stored exclusively on your device and is never transmitted to any external server after initial extraction.</p>
+
+<h3>1.5 AI Coach Chat Data</h3>
+<p>When you use the AI Coach, your messages and the AI's responses are processed and stored as follows:</p>
+<ul>
+    <li>Messages are sent via encrypted HTTPS to our text-AI partner (proxied through our Cloudflare Worker) for response generation</li>
+    <li>Chat history is stored locally on your device</li>
+    <li>Every Coach response is grounded in our on-device PCOS knowledge base (≈7 MB, ACOG / ESHRE / Endocrine Society / AAP / PubMed PCOS guidelines) — citations link to the source guideline</li>
+    <li>The on-device knowledge base never leaves your device</li>
+    <li>No personal identifiers, lab images, or full chat history is sent alongside chat messages — only the current message + a brief on-device context summary (cohort, week-in-app, recent lab snapshot)</li>
+</ul>
+
+<h3>1.6 Subscription Information</h3>
+<p>Cysta offers optional weekly, annual, and family subscriptions managed entirely through Apple's App Store and StoreKit framework. All payment processing, billing, and subscription management are handled by Apple. We do not collect, process, or store any payment information. We use RevenueCat, a third-party subscription management service, to track subscription status. RevenueCat receives an anonymous app user ID — no personal information is shared. For details, see <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a> and <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+
+<h3>1.7 Information We Do NOT Collect</h3>
+<p>Cysta does <strong>not</strong> collect:</p>
+<ul>
+    <li>Your real name, email address, or phone number</li>
+    <li>Your home address or precise location</li>
+    <li>Your government ID, SSN, or insurance numbers</li>
+    <li>Your clinical record or any data from your healthcare provider's portal beyond what you explicitly export and import</li>
+    <li>Your contacts, calendar, or other apps' data</li>
+    <li>Any biometric template, face print, or fingerprint</li>
+    <li>Any HealthKit data (HealthKit integration is deferred to V1.2+ and will require explicit per-permission opt-in when added)</li>
+</ul>
+
+<h2>2. How We Use Your Information</h2>
+<p>We use the collected information only to:</p>
+<ul>
+    <li>Extract lab values from your uploaded lab reports</li>
+    <li>Generate AI Coach answers grounded in PCOS guidelines</li>
+    <li>Generate one neutral comparison sentence for selected progress photos</li>
+    <li>Render your personal trends, panels, and doctor-shareable summary inside the App</li>
+    <li>Provide subscription functionality through Apple and RevenueCat</li>
+</ul>
+<p>We never use your data to advertise, profile, or target you, and we never sell it.</p>
+
+<h2>3. Third-Party Services</h2>
+<p>Cysta uses the following third-party services. Only the data described below is shared, and only for the purpose stated. No personal identifiers are sent alongside.</p>
+
+<h3>3.1 AI Vision Partner (OpenAI, via Cloudflare Worker)</h3>
+<p>Lab photos / PDFs and (optionally) progress photos are sent for image analysis. The provider processes the request under a zero-retention policy and does not use the data to train models. The Cloudflare Worker proxy forwards the request without logging or storing content. <a href="https://openai.com/policies/api-data-usage-policies">OpenAI API Data Usage Policy</a>.</p>
+
+<h3>3.2 AI Text Partner (DeepSeek, via Cloudflare Worker)</h3>
+<p>AI Coach messages are sent for response generation. Only the current message text + a brief on-device context summary (cohort, week-in-app, recent lab snapshot) is sent. No photos, identifiers, or chat history. The Cloudflare Worker proxy forwards the request without logging or storing content.</p>
+
+<h3>3.3 Cloudflare Worker Proxy</h3>
+<p>Both AI partners are reached through a Cloudflare Worker proxy that holds the API keys server-side. The proxy never logs request bodies; it forwards them as opaque payloads. This protects the API keys from being extracted from the iOS binary and centralizes the zero-retention promise.</p>
+
+<h3>3.4 RevenueCat</h3>
+<p>Used solely to track subscription entitlement. Receives an anonymous app user ID — no personal information is shared. <a href="https://www.revenuecat.com/privacy/">RevenueCat Privacy Policy</a>.</p>
+
+<h3>3.5 Apple</h3>
+<p>StoreKit handles all subscription payments and renewals. App Store Connect receives anonymous crash logs (if you opted in at iOS setup). <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</p>
+
+<h2>4. Data Storage & Security</h2>
+<ul>
+    <li><strong>Local-first.</strong> All your data — photos, lab panels, cycle days, symptom logs, supplement adherence, chat history — is stored in the App's sandbox on your device. Nothing leaves the device except the explicit AI calls described in §3.</li>
+    <li><strong>Encryption in transit.</strong> All network traffic is over TLS 1.2+ HTTPS.</li>
+    <li><strong>API key security.</strong> Our AI partners' API keys are held only by the Cloudflare Worker server-side, never embedded in the iOS binary.</li>
+    <li><strong>iOS-grade encryption at rest.</strong> Photo files inherit iOS file protection (NSFileProtectionComplete). UserDefaults JSON is encrypted by iOS along with the device passcode.</li>
+</ul>
+
+<h2>5. Data Retention</h2>
+<ul>
+    <li>Your local data persists until you delete it inside the App or uninstall the App.</li>
+    <li>AI partners do not retain your data per their zero-retention policies (linked in §3.1 and §3.2).</li>
+    <li>Apple and RevenueCat retain only the subscription metadata required to manage your billing relationship.</li>
+</ul>
+
+<h2>6. Your Rights & Choices</h2>
+<ul>
+    <li><strong>Access.</strong> All your data is visible inside the App.</li>
+    <li><strong>Deletion.</strong> Delete individual photos, panels, or logs inside the App, or uninstall the App to wipe everything.</li>
+    <li><strong>Revoke consent.</strong> Settings → AI consent → tap "Reset" on any feature to require a fresh consent prompt on next use.</li>
+    <li><strong>Camera / photos.</strong> iOS Settings → Cysta AI → toggle Camera / Photos.</li>
+    <li><strong>GDPR / UK GDPR rights:</strong> erasure, rectification, portability, restriction. Email <a href="mailto:sergejkar@gmail.com">sergejkar@gmail.com</a> to exercise these.</li>
+</ul>
+
+<h2>7. Children's Privacy</h2>
+<p>Cysta is intended for users 18 years of age or older. We do not knowingly collect data from anyone under 18. PCOS is most often diagnosed and managed in adults; pediatric PCOS care should be conducted under a pediatric endocrinologist, not through this App. If you become aware that a minor has used the App, email us at <a href="mailto:sergejkar@gmail.com">sergejkar@gmail.com</a> and we will delete the associated data.</p>
+
+<h2>8. International Users & Compliance</h2>
+<ul>
+    <li><strong>EU (GDPR):</strong> Cysta is a wellness / educational tool, not a medical device per EU MDR 2017/745. Lawful basis for processing is your consent and the performance of the App contract. You may withdraw consent at any time via Settings → AI consent. Right to lodge a complaint with your national supervisory authority is preserved.</li>
+    <li><strong>UK (UK GDPR):</strong> Same rights as EU GDPR. Cysta is not registered with the MHRA as a medical device.</li>
+    <li><strong>Germany:</strong> Cysta is not a DiGA (Digital Health Application) and is not reimbursable through statutory health insurance.</li>
+    <li><strong>California (CCPA / CPRA):</strong> We do not sell or share personal information. You may request access or deletion via the email above.</li>
+    <li><strong>Canada (PIPEDA), Brazil (LGPD), Australia:</strong> Same posture as EU — local-first, consent-based, no selling.</li>
+    <li><strong>United States (FDA):</strong> Cysta has not been evaluated by the FDA. The App is not intended to diagnose, treat, cure, or prevent any disease.</li>
+</ul>
+
+<h2>9. Medical Disclaimer</h2>
+<p>For the full medical disclaimer including emergency-signs guidance, see <a href="medical-disclaimer.html">our Medical Disclaimer</a>. In brief: Cysta is educational, not diagnostic. The PCOS Type Quiz is a self-assessment, not a diagnosis. AI Coach answers may contain errors and are not a substitute for professional medical advice. Always consult your endocrinologist or OB-GYN.</p>
+
+<h2>10. Changes to This Policy</h2>
+<p>If we materially change this policy, we will surface the change inside the App on next launch and ask you to re-acknowledge before continuing. The "Effective date" at the top of this document indicates the current revision.</p>
+
+<h2>11. Contact</h2>
+<p>For privacy questions, data-deletion requests, or any other concerns, email <a href="mailto:sergejkar@gmail.com">sergejkar@gmail.com</a>.</p>
+
+<hr style="margin: 3em 0 1em; border: 0; border-top: 1px solid #E5D6D9;">
+<p style="color: #968B9C; font-size: 0.85em; text-align: center;">
+    See also: <a href="medical-disclaimer.html">Medical Disclaimer</a> · <a href="terms-of-use.html">Terms of Use</a> · <a href="support.html">Support</a> · <a href="marketing.html">Marketing Policy</a>
+</p>
+
+</body>
+</html>

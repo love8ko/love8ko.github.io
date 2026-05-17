@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — Cysta AI: PCOS Coach</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px; line-height: 1.7; color: #2A1E2D; background: #F4ECE6; }
+        h1 { font-size: 1.9em; margin-bottom: 0.2em; color: #4A3550; }
+        h2 { font-size: 1.25em; margin-top: 1.8em; color: #4A3550; }
+        h3 { font-size: 1.05em; margin-top: 1.2em; color: #6B4E6E; }
+        .date { color: #968B9C; font-size: 0.9em; margin-bottom: 2em; }
+        a { color: #B0824D; }
+        .contact { background: #FFFFFF; padding: 16px 18px; border-left: 3px solid #6B4E6E; margin: 16px 0; border-radius: 6px; }
+        .faq-q { font-weight: 600; color: #4A3550; margin-top: 1.4em; margin-bottom: 0.3em; }
+    </style>
+</head>
+<body>
+
+<h1>Support</h1>
+<p class="date">Effective date: May 17, 2026</p>
+
+<div class="contact">
+    <strong>Contact:</strong> <a href="mailto:sergejkar@gmail.com?subject=Cysta%20AI%20Support">sergejkar@gmail.com</a><br>
+    We aim to respond within 3 business days. For privacy / data-deletion requests, please reference your App Store transaction ID if available.
+</div>
+
+<h2>Frequently Asked Questions</h2>
+
+<p class="faq-q">How do I cancel my subscription?</p>
+<p>Cysta has no in-app cancel button by design — Apple owns subscription management. Cancel via iOS <strong>Settings → [your name] → Subscriptions → Cysta AI → Cancel Subscription</strong>, or use the direct link <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a>. Cancellation takes effect at the end of your current paid period; you keep full access until then.</p>
+
+<p class="faq-q">How do I request a refund?</p>
+<p>Refunds are handled entirely by Apple. Visit <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>, sign in with your Apple ID, find the Cysta AI transaction, and tap "Report a Problem." Apple's standard refund policy applies. The developer cannot issue refunds directly but can sometimes facilitate by emailing the address above.</p>
+
+<p class="faq-q">Can I export my data?</p>
+<p>Yes — your data lives on your device. Use the in-app Doctor PDF export (Labs tab → ⋯ → Doctor PDF) to generate a printable 2-page summary of your latest panel + trends + cohort-tuned prescriber questions. For raw export of all logs, email us and we'll send you the JSON dump template.</p>
+
+<p class="faq-q">How do I delete a photo / lab panel?</p>
+<ul>
+    <li><strong>Photo:</strong> Photo Journal → tap photo → trash icon</li>
+    <li><strong>Lab panel:</strong> Labs tab → swipe-to-delete on any panel row</li>
+    <li><strong>Everything:</strong> uninstall the App from iOS — wipes the entire local store</li>
+</ul>
+
+<p class="faq-q">What if my Coach gives bad info?</p>
+<p>AI Coach answers can contain errors despite the citation system. Always defer to your endocrinologist or OB-GYN, especially for treatment decisions. If you spot a clearly wrong answer, email it to us — we use this signal to improve the prompt + knowledge base.</p>
+
+<p class="faq-q">Why does Cysta need my photos?</p>
+<p>Photo Journal is entirely optional. You can use Cysta without ever taking a photo. When you do tap "Generate insight" on the Compare flow, the two selected photos are sent (via encrypted HTTPS, through a Cloudflare proxy) to our AI partner for one-time analysis that returns a single neutral sentence. The AI partner does not retain photos. Full detail in <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+<p class="faq-q">Why does my lab scan need consent again after the disclaimer?</p>
+<p>The Phase-3 Disclaimer is the umbrella "I understand Cysta sends data to AI partners" acknowledgment. Per Apple guideline 5.1.1(i) and our portfolio compliance practice, each AI feature (Coach · Lab Scan · Photo Compare) asks for an additional one-time per-feature consent on first use. This way you opt in only to the AI calls you actually want to use. You can reset any of these consents via <strong>Settings → AI consent</strong>.</p>
+
+<p class="faq-q">Do you offer student / hardship pricing?</p>
+<p>Apple sets all pricing through StoreKit. We don't have a direct discount mechanism. If cost is a serious barrier, email us and we can sometimes issue an App Store promo code on a case-by-case basis.</p>
+
+<p class="faq-q">I have PCOS-related medical questions — can your AI Coach help?</p>
+<p>The AI Coach surfaces information from peer-reviewed PCOS guidelines (ACOG, ESHRE, Endocrine Society, AAP, PubMed). It's a strong starting point for understanding a topic before your next appointment, but it does NOT replace consultation with a qualified endocrinologist or OB-GYN. See <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+
+<p class="faq-q">I'm having a medical emergency.</p>
+<p><strong>Cysta is not built for crisis triage.</strong> Contact emergency services in your country (911 / 112 / your local number) or your physician immediately. Mental-health crisis lines are listed in the <a href="medical-disclaimer.html">Medical Disclaimer §10</a>.</p>
+
+<p class="faq-q">I want my data deleted from your servers.</p>
+<p>We don't have user data on our servers — Cysta is local-first by design. The only thing that touches our infrastructure is anonymous subscription metadata via RevenueCat. To delete that, email us with your Apple ID transaction reference. To wipe all device data, uninstall the App.</p>
+
+<p class="faq-q">When will HealthKit / DE localization / Family TTC mode ship?</p>
+<p>HealthKit lab auto-import is deferred to V1.2+. DE / GB / CA / AU localization rolls out post-launch starting V1.1. Family TTC subscription tier ships in V1 (look for it on the paywall for Tanya / Anna cohorts).</p>
+
+<hr style="margin: 3em 0 1em; border: 0; border-top: 1px solid #E5D6D9;">
+<p style="color: #968B9C; font-size: 0.85em; text-align: center;">
+    See also: <a href="privacy-policy.html">Privacy Policy</a> · <a href="medical-disclaimer.html">Medical Disclaimer</a> · <a href="terms-of-use.html">Terms of Use</a> · <a href="marketing.html">Marketing Policy</a>
+</p>
+
+</body>
+</html>
