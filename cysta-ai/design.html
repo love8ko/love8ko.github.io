@@ -591,6 +591,7 @@
   <a href="#module-5" class="is-module"><span class="nav-num">M5</span>Screens</a>
   <a href="#module-6" class="is-module"><span class="nav-num">M6</span>Screenshots</a>
   <a href="#module-7" class="is-module"><span class="nav-num">M7</span>Paywall</a>
+  <a href="#module-8" class="is-module"><span class="nav-num">M8</span>Assets</a>
   <span class="sep"></span>
   <a href="#sibling">↪ Sibling</a>
   <a href="#tokens">tokens</a>
@@ -613,6 +614,7 @@
     <span class="pill lock">🔒 Tabs locked · A re-confirmed 2026-05-16</span>
     <span class="pill lock">🔒 Cohorts locked · B · 5 personas</span>
     <span class="pill lock">🔒 Paywall variants × 5 locked</span>
+    <span class="pill vote">🗳️ Asset style · awaiting lock</span>
     <span class="pill vote">🗳️ Screenshots · 1 round done</span>
     <span class="pill vote">🗳️ Paywall · 1 round done</span>
     <span class="pill sib">Sibling: 15-Folik (95%) · 16-Salvora pattern</span>
@@ -2430,6 +2432,108 @@
     <li><code>Components/TierTile.swift</code> — Standard / Family / Lifetime tile with badge + selected ring</li>
     <li><code>Data/RAGSources.swift</code> — 5-source registry (ACOG, ESHRE, AAP, Endocrine Society, PubMed PCOS) with edition strings</li>
   </ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- ===== MODULE 8 · ASSET SYSTEM (consilium F.1) ===== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-8" style="margin-top: 32px;">
+  <span class="num">МОДУЛЬ 8</span>
+  <h2>Asset system · visual style for 25 hero illustrations · 🗳️ awaiting founder lock</h2>
+  <p class="desc">Sprint to produce ~25 imagesets mirroring Salvora pattern (24 imagesets, ~10MB total). Style decision affects all onboarding heroes (×10) · paywall heroes per cohort (×5) · setup walkthrough cards (×5) · empty states (×3-5). Founder generates externally (Midjourney/DALL-E), I write prompt template after lock. <b>Σ_overall = 0.50·persona + 0.30·brand_fit + 0.20·production_cost.</b></p>
+</div>
+
+<h2 id="asset-style" style="margin-top: 16px;">8.1 · 4-candidate consilium · visual style direction</h2>
+
+<table class="tab-spec">
+  <thead><tr><th>#</th><th>Style</th><th>Reference</th><th>Production method</th></tr></thead>
+  <tbody>
+    <tr class="row-top"><td class="num">A</td><td><b>3D render</b> ✦</td><td>Match locked AppIcon: pearl orbs + plum bg + rose-gold rim + volumetric lighting. Sample already shipped: Phase E paywall Tanya hero (plum block + rose-gold crescent + stars).</td><td>Midjourney v6 / DALL-E 3, 15-30 min per asset</td></tr>
+    <tr><td class="num">B</td><td><b>Flat editorial</b></td><td>Folik/Salvora hero pattern. Headspace/Aesop-coded flat vector with limited palette.</td><td>Midjourney "flat illustration" mode, 5-15 min per asset</td></tr>
+    <tr><td class="num">C</td><td><b>Abstract symbolic</b></td><td>Geometric lunar motifs, no figures, pure shape compositions. Maximum reuse + compliance-safe.</td><td>Figma + Illustrator hand-drawn, fast</td></tr>
+    <tr><td class="num">D</td><td><b>Photographic</b> ❌</td><td>Stock lifestyle photography of PCOS women.</td><td colspan="1"><b>REJECTED by compliance</b> — no minor faces · dignified depiction risks · stock photos read generic</td></tr>
+  </tbody>
+</table>
+
+<h3 style="margin-top: 18px;">Persona vote · weighted 0–10 («would this style make me feel this app sees me?»)</h3>
+<div class="ws-wrap">
+<table class="persona-vote">
+  <thead>
+    <tr><th>Candidate</th><th>🌸 Naomi</th><th>👶 Tanya</th><th>⚖️ Wendy</th><th>💊 Maya</th><th>👩‍⚕️ Anna</th><th class="sum">Σ persona</th></tr>
+    <tr class="weight-row"><td>weight →</td><td>× 0.25</td><td>× 0.20</td><td>× 0.25</td><td>× 0.15</td><td>× 0.15</td><td>weighted avg</td></tr>
+  </thead>
+  <tbody>
+    <tr class="row-top"><td><b>A · 3D render ✦</b></td><td class="num lead">9</td><td class="num lead">9</td><td class="num lead">8</td><td class="num lead">8</td><td class="num lead">9</td><td class="num sum">8.60</td></tr>
+    <tr><td><b>B · Flat editorial</b></td><td class="num">7</td><td class="num">6</td><td class="num">7</td><td class="num">7</td><td class="num">6</td><td class="num sum">6.65</td></tr>
+    <tr><td><b>C · Abstract symbolic</b></td><td class="num">6</td><td class="num">6</td><td class="num">6</td><td class="num">7</td><td class="num">7</td><td class="num sum">6.30</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3 style="margin-top: 18px;">Brand-fit + production-cost sub-panel · 0–10</h3>
+<div class="ws-wrap">
+<table class="persona-vote">
+  <thead>
+    <tr><th>Candidate</th><th>Brand fit (icon consistency)</th><th>Production cost (10 = fastest)</th><th class="sum">Σ moat</th></tr>
+  </thead>
+  <tbody>
+    <tr class="row-top"><td><b>A · 3D render ✦</b></td><td class="num lead">10</td><td class="num">5</td><td class="num sum">7.50</td></tr>
+    <tr><td><b>B · Flat editorial</b></td><td class="num">6</td><td class="num">8</td><td class="num sum">7.00</td></tr>
+    <tr><td><b>C · Abstract symbolic</b></td><td class="num">8</td><td class="num lead">10</td><td class="num sum">9.00</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3 style="margin-top: 18px;">Aggregate · Σ_overall = 0.50 · persona + 0.30 · brand_fit + 0.20 · production_cost</h3>
+<div class="ws-wrap">
+<table class="persona-vote">
+  <thead>
+    <tr><th>Rank</th><th>Candidate</th><th>Σ persona × 0.50</th><th>Σ brand × 0.30</th><th>Σ prod × 0.20</th><th class="sum">Σ overall</th></tr>
+  </thead>
+  <tbody>
+    <tr class="row-top"><td class="num">🥇 1</td><td><b>A · 3D render ✦</b></td><td class="num">4.30</td><td class="num">3.00</td><td class="num">1.00</td><td class="num sum">8.30</td></tr>
+    <tr><td class="num">🥈 2</td><td><b>C · Abstract symbolic</b></td><td class="num">3.15</td><td class="num">2.40</td><td class="num">2.00</td><td class="num sum">7.55</td></tr>
+    <tr><td class="num">🥉 3</td><td><b>B · Flat editorial</b></td><td class="num">3.33</td><td class="num">1.80</td><td class="num">1.60</td><td class="num sum">6.73</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="runoff">
+  <h3>Why A wins (margin +0.75 over runner-up · meets ≥0.70 lock criterion)</h3>
+  <ul>
+    <li><b>Icon precedent dominates.</b> Locked AppIcon (2026-05-14) is itself a 3D render — pearl ring + plum bg + rose-gold metal + center star. Onboarding heroes in another style break the brand chain on Day 1.</li>
+    <li><b>Phase E proof-of-concept.</b> Paywall Tanya hero (`hero-paywall-tanya` placeholder rendered in Sim Checkpoint 1) used plum bg + rose-gold crescent + stars — the user-visible mood validated A's resonance with no friction.</li>
+    <li><b>5/5 personas vote 8 or higher.</b> Naomi 9 (newly-diagnosed seeks premium signal = trust), Tanya 9 (apothecary-mood matches her need for medical credibility · TTC is high-WTP, can't look like a free period tracker), Anna 9 (data-pro evaluates polish as professionalism proxy).</li>
+    <li><b>C (Abstract) wins on cost (10/10) and brand fit (8/10)</b> but loses persona resonance (6.30) — emotionally cold for Naomi/Tanya. Reasonable fallback IF iteration cost of A blows up.</li>
+    <li><b>B (Flat editorial)</b> reads "generic period tracker" to Tanya (6/10) and "less serious" to Anna (6/10). Lowest brand fit (departs from icon style).</li>
+    <li><b>D (Photographic)</b> hard-rejected — compliance bans identifiable faces, stock photos read generic, dignified PCOS depiction is a tightrope walk.</li>
+  </ul>
+  <p style="margin-top:10px;font-size:13px;color:var(--ink-2);"><b>Recommendation: lock A · 3D render.</b> After lock I write <code>docs/ASSET_PROMPTS.md</code> with 25 ready-to-paste Midjourney/DALL-E prompts using locked Lunar Endocrine template (plum #6B4E6E + rose-gold #D4A574 + pearl #F4ECE6 · soft volumetric lighting · centered symbolic object · no text · no faces · 1024×1024). Founder votes: <code>lock A</code> · <code>lock C (fallback)</code> · <code>lock B</code> · <code>round 2 with revised prompts</code>.</p>
+</div>
+
+<h2 id="asset-inventory" style="margin-top: 28px;">8.2 · Asset inventory · 25 imagesets across 6 sprints</h2>
+<p class="lede">Mirror Salvora's 24-imageset pattern. Naming convention: hyphenated-lowercase with purpose prefix (<code>hero-</code> · <code>badge-</code> · <code>empty-</code> · <code>setup-</code>).</p>
+
+<table class="tab-spec">
+  <thead><tr><th>Sprint</th><th>Count</th><th>Asset names</th><th>Phase consumes</th></tr></thead>
+  <tbody>
+    <tr><td><b>B · Onboarding heroes</b></td><td>10</td><td>hero-pain-universal · hero-quiz-prompt · hero-mirror-{naomi/tanya/wendy/maya/anna} · hero-trust-method · hero-coach-demo · hero-commitment</td><td>Phase F</td></tr>
+    <tr><td><b>C · Paywall + setup</b></td><td>10</td><td>hero-paywall-{naomi/tanya/wendy/maya/anna} · setup-{welcome/focus/baseline/plan/ready}</td><td>Phase G</td></tr>
+    <tr><td><b>D · Authority badges</b></td><td>5</td><td>badge-{acog/eshre/aap/endocrine/pubmed}</td><td>Phase G</td></tr>
+    <tr><td><b>E · Empty states + misc</b></td><td>5</td><td>empty-{coach/journal/labs} · anovulatory-icon · pdf-cover</td><td>Phase H/I/J</td></tr>
+    <tr><td><b>F · App Store screenshots</b></td><td>40</td><td>screenshot-{slot1-8} × {naomi/tanya/wendy/maya/anna} CPPs</td><td>Post-J</td></tr>
+  </tbody>
+</table>
+
+<h2 id="asset-prompt-template" style="margin-top: 28px;">8.3 · Prompt template for Midjourney/DALL-E</h2>
+<p class="lede">After lock A · 3D render, all 25 prompts follow this skeleton. Each prompt drops a different <code>{subject}</code> + <code>{mood}</code> into the template.</p>
+
+<div class="handoff-card">
+  <b>Locked Lunar Endocrine prompt skeleton (master template):</b>
+  <pre style="font-family:ui-monospace,'SF Mono',monospace;font-size:12px;background:var(--bg-soft);padding:12px;border-radius:8px;line-height:1.5;color:var(--ink);white-space:pre-wrap;margin-top:8px;">{Subject}, 3D render, soft volumetric lighting, pearl iridescent surface, rose-gold metallic accents, deep plum background (#6B4E6E), warm pearl highlights (#F4ECE6), centered composition, single symbolic object, no text, no human figures, no faces, photorealistic, premium apothecary aesthetic, square 1:1, 1024×1024, {mood} mood --v 6 --style raw --ar 1:1</pre>
+  <b style="display:block;margin-top:14px;">Sample fill (hero-pain-universal):</b>
+  <pre style="font-family:ui-monospace,'SF Mono',monospace;font-size:12px;background:var(--bg-soft);padding:12px;border-radius:8px;line-height:1.5;color:var(--ink);white-space:pre-wrap;margin-top:8px;">A delicate cracked porcelain egg with rose-gold veins of kintsugi repair, 3D render, soft volumetric lighting, pearl iridescent surface, rose-gold metallic accents, deep plum background (#6B4E6E), warm pearl highlights (#F4ECE6), centered composition, single symbolic object, no text, no human figures, no faces, photorealistic, premium apothecary aesthetic, square 1:1, 1024×1024, intimate fragile yet resilient mood --v 6 --style raw --ar 1:1</pre>
+  <p style="margin-top:14px;font-size:13px;color:var(--ink-2);">Full prompt batch (×25 fills) ships in <code>docs/ASSET_PROMPTS.md</code> after lock.</p>
 </div>
 
 <!-- ===== FOOTER ===== -->
