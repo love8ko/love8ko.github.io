@@ -41,7 +41,7 @@
     --night-accent: #D4A574; --night-text: #EAF2F1;
   }
 
-  /* ============ CANDIDATE A · BOTANICAL — sage-green + warm gold (not selected) ====== */
+  /* ============ CANDIDATE A · BOTANICAL — sage-green + warm gold (archived) ====== */
   .cand-a {
     --brand: #5E7E68; --brand-mid: #4C6957; --brand-deep: #3B5446; --brand-soft: #DDE6DC;
     --cta: #D4A574; --cta-deep: #B0824D; --cta-soft: #F1DFC4;
@@ -69,7 +69,7 @@
     --night-bg: #0F1F20; --night-surface: #18302F; --night-bubble-user: #244241;
     --night-divider: #2C4544; --night-accent: #D4A574; --night-text: #EAF2F1;
   }
-  /* ============ CANDIDATE C · EDITORIAL — warm charcoal + amber (not selected) ======= */
+  /* ============ CANDIDATE C · EDITORIAL — warm charcoal + amber (archived) ======= */
   .cand-c {
     --brand: #3A3A36; --brand-mid: #2C2C29; --brand-deep: #1F1F1D; --brand-soft: #E0DCD2;
     --cta: #C98A3C; --cta-deep: #9E6A28; --cta-soft: #EFDEC2;
@@ -157,7 +157,7 @@
   .module-banner h2 { margin: 0; color: var(--pearl); font-size: 22px; }
   .module-banner .desc { color: rgba(234,242,241,0.86); font-size: 13px; line-height: 1.55; flex-basis: 100%; margin-top: 4px; max-width: 1000px; }
 
-  /* ==================== CANDIDATE BLOCK ==================== */
+  /* ==================== CANDIDATE / SYSTEM BLOCK ==================== */
   .cand {
     background: var(--card); border: 1px solid var(--divider);
     border-left: 6px solid var(--brand);
@@ -278,6 +278,19 @@
   .runoff .pick-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
   .runoff .pick { font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; font-weight: 700; background: var(--bg-soft); border: 1px solid var(--divider); border-radius: 8px; padding: 6px 11px; color: var(--ink-2); }
   .runoff .pick.lead { background: var(--good-bg); border-color: #AFCFCE; color: #194A4C; }
+
+  /* ==================== M1 · DECISION ARCHIVE (collapsible) ==================== */
+  details.archive { margin-top: 30px; background: var(--bg-soft); border: 1px solid var(--divider); border-radius: 16px; padding: 2px 20px 10px; }
+  details.archive > summary { cursor: pointer; padding: 16px 2px; font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 15px; color: var(--ink-2); list-style: none; display: flex; align-items: center; gap: 9px; }
+  details.archive > summary::-webkit-details-marker { display: none; }
+  details.archive > summary::before { content: '\25B8'; color: var(--cta-deep); font-size: 12px; }
+  details.archive[open] > summary::before { content: '\25BE'; }
+  details.archive > summary:hover { color: var(--brand-deep); }
+  details.archive[open] > summary { border-bottom: 1px solid var(--divider); }
+  details.archive > summary .arch-pill { margin-left: auto; font-family: ui-monospace, "SF Mono", monospace; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; color: var(--ink-3); background: var(--card); border: 1px solid var(--divider); border-radius: 999px; padding: 3px 9px; }
+  details.archive .arch-note { font-size: 12.5px; color: var(--ink-3); line-height: 1.55; margin: 12px 0 0; }
+  details.archive h2 { font-size: 18px; margin: 30px 0 8px; }
+  details.archive > h2:first-of-type { margin-top: 18px; }
 
   /* ==================== PERSONA GRID ==================== */
   .persona-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; margin-top: 14px; }
@@ -438,12 +451,12 @@
   <a href="#module-4" class="is-module"><span class="nav-num">M4</span>Tabs</a>
   <a href="#module-5" class="is-module"><span class="nav-num">M5</span>Stack</a>
   <span class="sep"></span>
-  <a href="#consilium">design vote</a>
+  <a href="#tokens">tokens</a>
+  <a href="#archive">📦 archive</a>
   <a href="#cohorts">cohorts</a>
   <a href="#feature-consilium">feature vote</a>
   <a href="#ptiers">P-tiers</a>
   <a href="#tabbar">tab bar</a>
-  <a href="#components">components</a>
 </nav>
 
 <!-- ===== HEADER ===== -->
@@ -467,7 +480,7 @@
 <section class="decision-callout">
   <div>
     <h2>Hepatica · «Clinical» — design system locked</h2>
-    <p class="vibe">Candidate B. Teal (#2D7B7E) reads lab-grade and trustworthy — the liver organ as a teal→gold gradient; warm gold (#D4A574) carries premium-conversion CTAs; cool off-white (#EEF3F2) keeps it clinically confident without going cold. Founder lock: the two largest cohorts (Nick 25% + Pete 20%) and premium-WTP Rachel buy on medical authority. The workbench chrome renders in the locked palette.</p>
+    <p class="vibe">Teal (#2D7B7E) reads lab-grade and trustworthy — the liver organ as a teal→gold gradient; warm gold (#D4A574) carries premium-conversion CTAs; cool off-white (#EEF3F2) keeps it clinically confident without going cold. The two alternatives and the 6-cohort consilium that led here are kept in the collapsed Decision archive inside Module 1.</p>
   </div>
   <div class="score-badge">✓ Locked 2026-05-20</div>
 </section>
@@ -477,136 +490,19 @@
 <!-- ============================================================ -->
 <div class="module-banner" id="module-1">
   <span class="num">МОДУЛЬ 1</span>
-  <h2>Дизайн-система · 🔒 Locked · B «Clinical»</h2>
-  <p class="desc">Locked 2026-05-20 on Candidate B «Clinical» — teal + gold, medical authority. All three candidates kept below as the decision record. Verdict triad stays warm-severity (no clinical red — NAFLD / MASH users are fear-prone); day / night modes retained (night = AI Coach surface for the 2am-anxious user).</p>
+  <h2>Дизайн-система · 🔒 Locked «Clinical»</h2>
+  <p class="desc">🔒 Locked on Candidate B «Clinical» — teal + gold, medical authority. Verdict triad stays warm-severity (no clinical red — NAFLD / MASH users are fear-prone); day / night modes retained (night = AI Coach surface for the 2am-anxious user). The alternatives (A·Botanical, C·Editorial) and the 6-cohort consilium are kept in the collapsed Decision archive at the foot of this module.</p>
 </div>
 
-<!-- ===== 1.1 CANDIDATE MATRIX ===== -->
-<h2 id="candidates">1.1 · Candidate matrix</h2>
-<p class="lede">Two directions came straight from Master v2 §1.5 (Hepatica botanical · Hepatik clinical); the third was a premium-neutral editorial pole. Name is fixed — <b>Hepatica</b> — these were visual directions only.</p>
-<table class="matrix">
-  <thead><tr><th>Candidate</th><th>Concept</th><th>Brand trio</th><th>Aesthetic reference</th><th>Anchor cohorts</th></tr></thead>
-  <tbody>
-    <tr>
-      <td><b>A · Botanical</b> <span class="dim-tag">NOT SELECTED</span></td>
-      <td>Premium natural medicine — the liverwort flower, restored vitality, zero judgment.</td>
-      <td><span class="hex-chip" style="background:#5E7E68"></span>sage <span class="hex-chip" style="background:#D4A574"></span>gold <span class="hex-chip" style="background:#F3EEE3"></span>cream</td>
-      <td>Aesop × Cleveland Clinic</td>
-      <td>🍺 Robert · 💉 Greta · 🧬 Patricia</td>
-    </tr>
-    <tr class="locked-row">
-      <td><b>B · Clinical</b> <span class="lock-tag">🔒 LOCKED</span></td>
-      <td>Premium medical authority — lab-grade trust, the liver organ in teal→gold.</td>
-      <td><span class="hex-chip" style="background:#2D7B7E"></span>teal <span class="hex-chip" style="background:#D4A574"></span>gold <span class="hex-chip" style="background:#EEF3F2"></span>off-white</td>
-      <td>Mayo Clinic × Headspace</td>
-      <td>💊 Rachel · 🍔 Pete · 🍷 Nick</td>
-    </tr>
-    <tr>
-      <td><b>C · Editorial</b> <span class="dim-tag">NOT SELECTED</span></td>
-      <td>Premium apothecary — warm charcoal, serif headlines, calm authority that reads across every cohort.</td>
-      <td><span class="hex-chip" style="background:#3A3A36"></span>charcoal <span class="hex-chip" style="background:#C98A3C"></span>amber <span class="hex-chip" style="background:#F1EDE6"></span>paper</td>
-      <td>Kinfolk × Function Health</td>
-      <td>All-cohort consensus pick</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- ===== 1.2 CANDIDATE A · BOTANICAL ===== -->
-<h2 id="cand-a">1.2 · Candidate A — «Botanical»</h2>
-<section class="cand cand-a">
-  <div class="cand-head">
-    <div><span class="cand-tag">CANDIDATE A</span> <span class="dim-tag">NOT SELECTED</span></div>
-    <div class="cand-name">Hepatica · Botanical</div>
-    <p class="cand-concept">Premium natural medicine. Sage-green carries the liverwort flower (Hepatica is literally the plant); warm gold signals premium without going clinical. The least judgmental of the three — critical for Robert, whose liver disease carries alcohol stigma.</p>
-    <div class="cand-row"><span class="cand-l">Vibe</span><span class="cand-v">Aesop × Cleveland Clinic — apothecary calm, restorative</span></div>
-    <div class="cand-row"><span class="cand-l">Type</span><span class="cand-v">SF Pro Rounded headlines · SF Pro Text body</span></div>
-    <div class="cand-row"><span class="cand-l">Anchors</span><span class="cand-v cand-chips"><span class="cohort-chip">🍺 Robert</span><span class="cohort-chip">💉 Greta</span><span class="cohort-chip">🧬 Patricia</span></span></div>
-  </div>
-
-  <h3>Light system · 15 tokens</h3>
-  <div class="token-grid">
-    <div class="token"><div class="chip" style="background:#F3EEE3"></div><div><span class="label">--bg (cream)</span><span class="hex">#F3EEE3</span></div></div>
-    <div class="token"><div class="chip" style="background:#FBF7EF"></div><div><span class="label">--bg-soft</span><span class="hex">#FBF7EF</span></div></div>
-    <div class="token"><div class="chip" style="background:#FFFFFF"></div><div><span class="label">--card</span><span class="hex">#FFFFFF</span></div></div>
-    <div class="token"><div class="chip" style="background:#E4DCCB"></div><div><span class="label">--divider</span><span class="hex">#E4DCCB</span></div></div>
-    <div class="token"><div class="chip" style="background:#5E7E68"></div><div><span class="label">--brand (sage)</span><span class="hex">#5E7E68</span></div></div>
-    <div class="token"><div class="chip" style="background:#4C6957"></div><div><span class="label">--brand-mid</span><span class="hex">#4C6957</span></div></div>
-    <div class="token"><div class="chip" style="background:#3B5446"></div><div><span class="label">--brand-deep</span><span class="hex">#3B5446</span></div></div>
-    <div class="token"><div class="chip" style="background:#DDE6DC"></div><div><span class="label">--brand-soft</span><span class="hex">#DDE6DC</span></div></div>
-    <div class="token"><div class="chip" style="background:#D4A574"></div><div><span class="label">--cta (gold)</span><span class="hex">#D4A574</span></div></div>
-    <div class="token"><div class="chip" style="background:#B0824D"></div><div><span class="label">--cta-deep</span><span class="hex">#B0824D</span></div></div>
-    <div class="token"><div class="chip" style="background:#F1DFC4"></div><div><span class="label">--cta-soft</span><span class="hex">#F1DFC4</span></div></div>
-    <div class="token"><div class="chip" style="background:#E7EDE5"></div><div><span class="label">--ai-bg</span><span class="hex">#E7EDE5</span></div></div>
-    <div class="token"><div class="chip" style="background:#CFDDCC"></div><div><span class="label">--ai-border</span><span class="hex">#CFDDCC</span></div></div>
-    <div class="token"><div class="chip" style="background:#29302A"></div><div><span class="label">--ink</span><span class="hex">#29302A</span></div></div>
-    <div class="token"><div class="chip" style="background:#5C6359"></div><div><span class="label">--ink-2</span><span class="hex">#5C6359</span></div></div>
-  </div>
-
-  <h3>Verdict triad · warm severity, no clinical red</h3>
-  <div class="token-grid">
-    <div class="token"><div class="chip" style="background:#5E7E68"></div><div><span class="label">--good (sage)</span><span class="hex">#5E7E68</span></div></div>
-    <div class="token"><div class="chip" style="background:#D8E4DA"></div><div><span class="label">--good-bg</span><span class="hex">#D8E4DA</span></div></div>
-    <div class="token"><div class="chip" style="background:#C68A3E"></div><div><span class="label">--watch (amber)</span><span class="hex">#C68A3E</span></div></div>
-    <div class="token"><div class="chip" style="background:#F1DFC4"></div><div><span class="label">--watch-bg</span><span class="hex">#F1DFC4</span></div></div>
-    <div class="token"><div class="chip" style="background:#C0703F"></div><div><span class="label">--alert (terracotta)</span><span class="hex">#C0703F</span></div></div>
-    <div class="token"><div class="chip" style="background:#EFD8C6"></div><div><span class="label">--alert-bg</span><span class="hex">#EFD8C6</span></div></div>
-  </div>
-
-  <h3>Night / AI Coach surface · 6 tokens</h3>
-  <div class="token-grid">
-    <div class="token"><div class="chip" style="background:#14201A"></div><div><span class="label">--night-bg</span><span class="hex">#14201A</span></div></div>
-    <div class="token"><div class="chip" style="background:#1E2C24"></div><div><span class="label">--night-surface</span><span class="hex">#1E2C24</span></div></div>
-    <div class="token"><div class="chip" style="background:#2C3F32"></div><div><span class="label">--night-bubble-user</span><span class="hex">#2C3F32</span></div></div>
-    <div class="token"><div class="chip" style="background:#30453A"></div><div><span class="label">--night-divider</span><span class="hex">#30453A</span></div></div>
-    <div class="token"><div class="chip" style="background:#D4A574"></div><div><span class="label">--night-accent</span><span class="hex">#D4A574</span></div></div>
-    <div class="token"><div class="chip" style="background:#F3EEE3"></div><div><span class="label">--night-text</span><span class="hex">#F3EEE3</span></div></div>
-  </div>
-
-  <h3>Component preview · day + night</h3>
-  <div class="modes-row">
-    <div class="mode-block day">
-      <span class="mode-label">DAY · default</span>
-      <div class="type-sample">Reverse fatty liver.<br>Reclaim your vitality.</div>
-      <div class="score-hero">
-        <span class="label">Today's Liver Score</span>
-        <span class="stage">58<small> / 100</small></span>
-        <span class="delta">+12 vs last lab · trending up ↑</span>
-      </div>
-      <div class="mock-card">
-        <div class="tracker-row"><div><div class="tracker-name">ALT</div><div class="tracker-sub">84 U/L · still elevated</div></div><span class="verdict-pill alert">Elevated</span></div>
-        <div class="tracker-row"><div><div class="tracker-name">AST</div><div class="tracker-sub">47 U/L · –11 this quarter</div></div><span class="verdict-pill watch">Watch</span></div>
-        <div class="tracker-row"><div><div class="tracker-name">GGT</div><div class="tracker-sub">31 U/L · back in range ✓</div></div><span class="verdict-pill good">In range</span></div>
-      </div>
-      <div class="chat">
-        <div class="bubble user">Doctor said I have fatty liver. What can I actually eat?</div>
-        <div class="bubble assistant">Start by swapping refined carbs and sugary drinks for whole grains, vegetables and unsaturated fats — a Mediterranean-style pattern has the strongest evidence for reducing liver fat. Coffee (2–3 cups) is also protective. Snap a photo of any meal and I'll rate its liver risk.<span class="citation day">AASLD 2023 · MASLD lifestyle management</span></div>
-      </div>
-      <div class="safety-strip">⚠️ Hepatica is for tracking &amp; education, not a diagnosis. Discuss treatment with your hepatologist or GP.</div>
-    </div>
-    <div class="mode-block night">
-      <span class="mode-label">NIGHT · Coach @ 2am · Nick anxious</span>
-      <div class="mock-card dark">
-        <div class="eyebrow">Coach · awake with you</div>
-        <div style="font-size:15px; line-height:1.5; margin-top:6px; font-weight:600;">It's 2:51 · Still worried about today's labs?</div>
-      </div>
-      <div class="chat">
-        <div class="bubble user dark">ALT 85, AST 62. Is fatty liver going to kill me?</div>
-        <div class="bubble assistant dark">That's an understandable fear — but for most people the answer is no. Around 75% of fatty liver never progresses to serious scarring, and at your stage it's often reversible with weight loss and diet. Elevated ALT is a signal to act, not a verdict. Let's track the 6-month trend together.<span class="citation dark">AASLD 2023 · NAFLD natural history &amp; prognosis</span></div>
-      </div>
-      <div class="safety-strip dark">⚠️ The Coach gives context, not certainty. A FibroScan or fibrosis score from your doctor confirms your actual risk stage.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 1.3 CANDIDATE B · CLINICAL ===== -->
-<h2 id="cand-b">1.3 · Candidate B — «Clinical»</h2>
+<!-- ===== 1.1 LOCKED DESIGN SYSTEM ===== -->
+<h2 id="tokens">1.1 · Design system — «Clinical» · 🔒 locked</h2>
 <section class="cand cand-b">
   <div class="cand-head">
-    <div><span class="cand-tag">CANDIDATE B</span> <span class="lock-tag">🔒 LOCKED 2026-05-20</span></div>
+    <div><span class="cand-tag">🔒 LOCKED DESIGN SYSTEM · 2026-05-20</span></div>
     <div class="cand-name">Hepatica · Clinical</div>
     <p class="cand-concept">Premium medical authority. Teal reads lab-grade and trustworthy — the liver organ rendered as a teal→gold gradient. Built for the cohorts that buy on credibility: Rachel on a $40K/yr drug, Pete who wants an authority signal, Nick who wants clarity from a source he trusts.</p>
     <div class="cand-row"><span class="cand-l">Vibe</span><span class="cand-v">Mayo Clinic × Headspace — confident, calm, precise</span></div>
-    <div class="cand-row"><span class="cand-l">Type</span><span class="cand-v">SF Pro Rounded headlines · SF Pro Text body</span></div>
+    <div class="cand-row"><span class="cand-l">Type</span><span class="cand-v">SF Pro Rounded headlines · SF Pro Text body · SF Mono lab values</span></div>
     <div class="cand-row"><span class="cand-l">Anchors</span><span class="cand-v cand-chips"><span class="cohort-chip">💊 Rachel</span><span class="cohort-chip">🍔 Pete</span><span class="cohort-chip">🍷 Nick</span></span></div>
   </div>
 
@@ -685,123 +581,8 @@
   </div>
 </section>
 
-<!-- ===== 1.4 CANDIDATE C · EDITORIAL ===== -->
-<h2 id="cand-c">1.4 · Candidate C — «Editorial»</h2>
-<section class="cand cand-c">
-  <div class="cand-head">
-    <div><span class="cand-tag">CANDIDATE C</span> <span class="dim-tag">NOT SELECTED</span></div>
-    <div class="cand-name">Hepatica · Editorial</div>
-    <p class="cand-concept">Premium apothecary. Warm charcoal led, a single confident amber accent, and serif headlines (Charter / Newsreader). Reads neither clinical nor crunchy — calm authority that lands across every cohort. The low-risk consensus.</p>
-    <div class="cand-row"><span class="cand-l">Vibe</span><span class="cand-v">Kinfolk × Function Health — editorial, considered, timeless</span></div>
-    <div class="cand-row"><span class="cand-l">Type</span><span class="cand-v">Charter / Newsreader serif headlines · Inter / SF body</span></div>
-    <div class="cand-row"><span class="cand-l">Anchors</span><span class="cand-v cand-chips"><span class="cohort-chip">All-cohort consensus</span></span></div>
-  </div>
-
-  <h3>Light system · 15 tokens</h3>
-  <div class="token-grid">
-    <div class="token"><div class="chip" style="background:#F1EDE6"></div><div><span class="label">--bg (paper)</span><span class="hex">#F1EDE6</span></div></div>
-    <div class="token"><div class="chip" style="background:#F8F5EF"></div><div><span class="label">--bg-soft</span><span class="hex">#F8F5EF</span></div></div>
-    <div class="token"><div class="chip" style="background:#FFFFFF"></div><div><span class="label">--card</span><span class="hex">#FFFFFF</span></div></div>
-    <div class="token"><div class="chip" style="background:#E2DBCF"></div><div><span class="label">--divider</span><span class="hex">#E2DBCF</span></div></div>
-    <div class="token"><div class="chip" style="background:#3A3A36"></div><div><span class="label">--brand (charcoal)</span><span class="hex">#3A3A36</span></div></div>
-    <div class="token"><div class="chip" style="background:#2C2C29"></div><div><span class="label">--brand-mid</span><span class="hex">#2C2C29</span></div></div>
-    <div class="token"><div class="chip" style="background:#1F1F1D"></div><div><span class="label">--brand-deep</span><span class="hex">#1F1F1D</span></div></div>
-    <div class="token"><div class="chip" style="background:#E0DCD2"></div><div><span class="label">--brand-soft</span><span class="hex">#E0DCD2</span></div></div>
-    <div class="token"><div class="chip" style="background:#C98A3C"></div><div><span class="label">--cta (amber)</span><span class="hex">#C98A3C</span></div></div>
-    <div class="token"><div class="chip" style="background:#9E6A28"></div><div><span class="label">--cta-deep</span><span class="hex">#9E6A28</span></div></div>
-    <div class="token"><div class="chip" style="background:#EFDEC2"></div><div><span class="label">--cta-soft</span><span class="hex">#EFDEC2</span></div></div>
-    <div class="token"><div class="chip" style="background:#ECE8DF"></div><div><span class="label">--ai-bg</span><span class="hex">#ECE8DF</span></div></div>
-    <div class="token"><div class="chip" style="background:#D6CFBF"></div><div><span class="label">--ai-border</span><span class="hex">#D6CFBF</span></div></div>
-    <div class="token"><div class="chip" style="background:#26241F"></div><div><span class="label">--ink</span><span class="hex">#26241F</span></div></div>
-    <div class="token"><div class="chip" style="background:#5A574E"></div><div><span class="label">--ink-2</span><span class="hex">#5A574E</span></div></div>
-  </div>
-
-  <h3>Verdict triad · warm severity, no clinical red</h3>
-  <div class="token-grid">
-    <div class="token"><div class="chip" style="background:#6E7F5A"></div><div><span class="label">--good (olive)</span><span class="hex">#6E7F5A</span></div></div>
-    <div class="token"><div class="chip" style="background:#DEE3D2"></div><div><span class="label">--good-bg</span><span class="hex">#DEE3D2</span></div></div>
-    <div class="token"><div class="chip" style="background:#C98A3C"></div><div><span class="label">--watch (amber)</span><span class="hex">#C98A3C</span></div></div>
-    <div class="token"><div class="chip" style="background:#EFDEC2"></div><div><span class="label">--watch-bg</span><span class="hex">#EFDEC2</span></div></div>
-    <div class="token"><div class="chip" style="background:#B25638"></div><div><span class="label">--alert (sienna)</span><span class="hex">#B25638</span></div></div>
-    <div class="token"><div class="chip" style="background:#ECD3C7"></div><div><span class="label">--alert-bg</span><span class="hex">#ECD3C7</span></div></div>
-  </div>
-
-  <h3>Night / AI Coach surface · 6 tokens</h3>
-  <div class="token-grid">
-    <div class="token"><div class="chip" style="background:#1B1A17"></div><div><span class="label">--night-bg</span><span class="hex">#1B1A17</span></div></div>
-    <div class="token"><div class="chip" style="background:#262420"></div><div><span class="label">--night-surface</span><span class="hex">#262420</span></div></div>
-    <div class="token"><div class="chip" style="background:#34322B"></div><div><span class="label">--night-bubble-user</span><span class="hex">#34322B</span></div></div>
-    <div class="token"><div class="chip" style="background:#38362F"></div><div><span class="label">--night-divider</span><span class="hex">#38362F</span></div></div>
-    <div class="token"><div class="chip" style="background:#C98A3C"></div><div><span class="label">--night-accent</span><span class="hex">#C98A3C</span></div></div>
-    <div class="token"><div class="chip" style="background:#F1EDE6"></div><div><span class="label">--night-text</span><span class="hex">#F1EDE6</span></div></div>
-  </div>
-
-  <h3>Component preview · day + night</h3>
-  <div class="modes-row">
-    <div class="mode-block day">
-      <span class="mode-label">DAY · default · serif headlines</span>
-      <div class="type-sample">Reverse fatty liver.<br>Reclaim your vitality.</div>
-      <div class="score-hero">
-        <span class="label">Today's Liver Score</span>
-        <span class="stage">58<small> / 100</small></span>
-        <span class="delta">+12 vs last lab · trending up ↑</span>
-      </div>
-      <div class="mock-card">
-        <div class="tracker-row"><div><div class="tracker-name">ALT</div><div class="tracker-sub">84 U/L · still elevated</div></div><span class="verdict-pill alert">Elevated</span></div>
-        <div class="tracker-row"><div><div class="tracker-name">AST</div><div class="tracker-sub">47 U/L · –11 this quarter</div></div><span class="verdict-pill watch">Watch</span></div>
-        <div class="tracker-row"><div><div class="tracker-name">GGT</div><div class="tracker-sub">31 U/L · back in range ✓</div></div><span class="verdict-pill good">In range</span></div>
-      </div>
-      <div class="chat">
-        <div class="bubble user">Doctor said I have fatty liver. What can I actually eat?</div>
-        <div class="bubble assistant">Start by swapping refined carbs and sugary drinks for whole grains, vegetables and unsaturated fats — a Mediterranean-style pattern has the strongest evidence for reducing liver fat. Coffee (2–3 cups) is also protective. Snap a photo of any meal and I'll rate its liver risk.<span class="citation day">AASLD 2023 · MASLD lifestyle management</span></div>
-      </div>
-      <div class="safety-strip">⚠️ Hepatica is for tracking &amp; education, not a diagnosis. Discuss treatment with your hepatologist or GP.</div>
-    </div>
-    <div class="mode-block night">
-      <span class="mode-label">NIGHT · Coach @ 2am · Nick anxious</span>
-      <div class="mock-card dark">
-        <div class="eyebrow">Coach · awake with you</div>
-        <div style="font-size:15px; line-height:1.5; margin-top:6px; font-weight:600;">It's 2:51 · Still worried about today's labs?</div>
-      </div>
-      <div class="chat">
-        <div class="bubble user dark">ALT 85, AST 62. Is fatty liver going to kill me?</div>
-        <div class="bubble assistant dark">That's an understandable fear — but for most people the answer is no. Around 75% of fatty liver never progresses to serious scarring, and at your stage it's often reversible with weight loss and diet. Elevated ALT is a signal to act, not a verdict. Let's track the 6-month trend together.<span class="citation dark">AASLD 2023 · NAFLD natural history &amp; prognosis</span></div>
-      </div>
-      <div class="safety-strip dark">⚠️ The Coach gives context, not certainty. A FibroScan or fibrosis score from your doctor confirms your actual risk stage.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 1.5 DESIGN CONSILIUM ===== -->
-<h2 id="consilium">1.5 · Design consilium — 6 cohorts vote · 🔒 locked B</h2>
-<p class="lede">Each cohort scored the three candidates 0–5 on «would this design make me trust Hepatica and convert?», plus an ASO / brand-defensibility vote. Σ / 35. A · Botanical led the vote 30 / 35 — but the founder lock landed on <b>B · Clinical</b>; rationale below.</p>
-<table class="vote">
-  <thead><tr><th>Voter / cohort</th><th>Audience</th><th>A · Botanical</th><th>B · Clinical 🔒</th><th>C · Editorial</th></tr></thead>
-  <tbody>
-    <tr><td class="voter">🍷 Newly Diagnosed Nick</td><td class="aud">25%</td><td class="score">4</td><td class="score hi">5</td><td class="score">4</td></tr>
-    <tr><td class="voter">💉 GLP-1 Greta</td><td class="aud">15%</td><td class="score hi">5</td><td class="score">3</td><td class="score">4</td></tr>
-    <tr><td class="voter">🍔 Pre-Diabetic Pete</td><td class="aud">20%</td><td class="score">3</td><td class="score hi">5</td><td class="score">4</td></tr>
-    <tr><td class="voter">💊 Rezdiffra Rachel</td><td class="aud">8%</td><td class="score">3</td><td class="score hi">5</td><td class="score hi">5</td></tr>
-    <tr><td class="voter">🧬 PCOS-NAFLD Patricia</td><td class="aud">15%</td><td class="score hi">5</td><td class="score">3</td><td class="score">4</td></tr>
-    <tr><td class="voter">🍺 Recovering Robert</td><td class="aud">17%</td><td class="score hi">5</td><td class="score">3</td><td class="score">3</td></tr>
-    <tr><td class="voter">🎯 ASO / brand defensibility</td><td class="aud">—</td><td class="score hi">5</td><td class="score">4</td><td class="score">4</td></tr>
-    <tr class="totals"><td class="voter">Σ / 35</td><td class="aud">—</td><td class="score lead">30</td><td class="score locked">28 🔒</td><td class="score">28</td></tr>
-  </tbody>
-</table>
-
-<div class="runoff">
-  <h3>Decision — 🔒 locked B · Clinical (2026-05-20)</h3>
-  <p><b>The consilium recommended A · Botanical (30 / 35).</b> The founder lock went to <b>B · Clinical</b> — a deliberate override, and a defensible one. The two largest single cohorts, Nick (25%) and Pete (20%), both scored B highest: they buy on medical authority and lab-grade trust. Rachel — the premium-WTP cohort on a $40K/yr drug — ties B at the top. Together that is 53% of audience leaning clinical, and it covers the highest-revenue cohort.</p>
-  <p><b>Trade-off accepted:</b> Botanical's non-judgmental warmth was the safer call for Robert (alcohol stigma) and the wellness cohorts. Mitigation — B keeps the warm-severity verdict triad (no clinical red) and a calm dark night-Coach, so the clinical palette never tips into cold or alarmist; Recovery Mode copy for Robert stays hopeful regardless of palette.</p>
-  <div class="pick-row">
-    <span class="pick lead">🔒 LOCKED · B · Clinical — teal #2D7B7E + gold #D4A574, medical authority</span>
-    <span class="pick">A · Botanical — not selected</span>
-    <span class="pick">C · Editorial — not selected</span>
-  </div>
-</div>
-
-<!-- ===== 1.6 DESIGN PRINCIPLES ===== -->
-<h2 id="principles">1.6 · Design principles — locked, apply across the app</h2>
+<!-- ===== 1.2 DESIGN PRINCIPLES ===== -->
+<h2 id="principles">1.2 · Design principles — apply across the app</h2>
 <ul class="list">
   <li><b>Warm-severity verdict triad — never clinical red.</b> NAFLD / MASH users catastrophize («fatty liver → cirrhosis → cancer»). Severity reads teal → amber → clay, never a stoplight red.</li>
   <li><b>Night mode = the AI Coach surface.</b> The 2am-anxious user — Nick after a scary lab, Robert checking his recovery — gets a calm dark Coach automatically 22:00–06:00.</li>
@@ -812,6 +593,211 @@
   <li><b>Liver Score is a trend, not a verdict.</b> Always show the 6-month direction — ALT lags weight loss by months, so a single absolute number demotivates.</li>
   <li><b>Privacy-first.</b> Labs and food photos stay on-device by default; iCloud sync is opt-in. RAG runs on-device (sqlite-vec).</li>
 </ul>
+
+<!-- ===== DECISION ARCHIVE (collapsed) ===== -->
+<details class="archive" id="archive">
+  <summary>📦 Decision archive — candidates A &amp; C + design consilium<span class="arch-pill">collapsed</span></summary>
+  <p class="arch-note">How «Clinical» was chosen. The full 3-candidate comparison and the 6-cohort design consilium — kept for the record, collapsed by default. The locked system is in §1.1 above.</p>
+
+  <h2 id="candidates">Candidate matrix · 3 directions considered</h2>
+  <p class="lede">Two directions came from Master v2 §1.5 (Hepatica botanical · Hepatik clinical); the third was a premium-neutral editorial pole. Name was fixed — <b>Hepatica</b> — these were visual directions only.</p>
+  <table class="matrix">
+    <thead><tr><th>Candidate</th><th>Concept</th><th>Brand trio</th><th>Aesthetic reference</th><th>Anchor cohorts</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>A · Botanical</b> <span class="dim-tag">NOT SELECTED</span></td>
+        <td>Premium natural medicine — the liverwort flower, restored vitality, zero judgment.</td>
+        <td><span class="hex-chip" style="background:#5E7E68"></span>sage <span class="hex-chip" style="background:#D4A574"></span>gold <span class="hex-chip" style="background:#F3EEE3"></span>cream</td>
+        <td>Aesop × Cleveland Clinic</td>
+        <td>🍺 Robert · 💉 Greta · 🧬 Patricia</td>
+      </tr>
+      <tr class="locked-row">
+        <td><b>B · Clinical</b> <span class="lock-tag">🔒 LOCKED</span></td>
+        <td>Premium medical authority — lab-grade trust, the liver organ in teal→gold.</td>
+        <td><span class="hex-chip" style="background:#2D7B7E"></span>teal <span class="hex-chip" style="background:#D4A574"></span>gold <span class="hex-chip" style="background:#EEF3F2"></span>off-white</td>
+        <td>Mayo Clinic × Headspace</td>
+        <td>💊 Rachel · 🍔 Pete · 🍷 Nick</td>
+      </tr>
+      <tr>
+        <td><b>C · Editorial</b> <span class="dim-tag">NOT SELECTED</span></td>
+        <td>Premium apothecary — warm charcoal, serif headlines, calm authority that reads across every cohort.</td>
+        <td><span class="hex-chip" style="background:#3A3A36"></span>charcoal <span class="hex-chip" style="background:#C98A3C"></span>amber <span class="hex-chip" style="background:#F1EDE6"></span>paper</td>
+        <td>Kinfolk × Function Health</td>
+        <td>All-cohort consensus pick</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="cand-a">Candidate A — «Botanical» · not selected</h2>
+  <section class="cand cand-a">
+    <div class="cand-head">
+      <div><span class="cand-tag">CANDIDATE A</span> <span class="dim-tag">NOT SELECTED</span></div>
+      <div class="cand-name">Hepatica · Botanical</div>
+      <p class="cand-concept">Premium natural medicine. Sage-green carries the liverwort flower (Hepatica is literally the plant); warm gold signals premium without going clinical. The least judgmental of the three — critical for Robert, whose liver disease carries alcohol stigma.</p>
+      <div class="cand-row"><span class="cand-l">Vibe</span><span class="cand-v">Aesop × Cleveland Clinic — apothecary calm, restorative</span></div>
+      <div class="cand-row"><span class="cand-l">Anchors</span><span class="cand-v cand-chips"><span class="cohort-chip">🍺 Robert</span><span class="cohort-chip">💉 Greta</span><span class="cohort-chip">🧬 Patricia</span></span></div>
+    </div>
+    <h3>Light system · 15 tokens</h3>
+    <div class="token-grid">
+      <div class="token"><div class="chip" style="background:#F3EEE3"></div><div><span class="label">--bg (cream)</span><span class="hex">#F3EEE3</span></div></div>
+      <div class="token"><div class="chip" style="background:#FBF7EF"></div><div><span class="label">--bg-soft</span><span class="hex">#FBF7EF</span></div></div>
+      <div class="token"><div class="chip" style="background:#FFFFFF"></div><div><span class="label">--card</span><span class="hex">#FFFFFF</span></div></div>
+      <div class="token"><div class="chip" style="background:#E4DCCB"></div><div><span class="label">--divider</span><span class="hex">#E4DCCB</span></div></div>
+      <div class="token"><div class="chip" style="background:#5E7E68"></div><div><span class="label">--brand (sage)</span><span class="hex">#5E7E68</span></div></div>
+      <div class="token"><div class="chip" style="background:#4C6957"></div><div><span class="label">--brand-mid</span><span class="hex">#4C6957</span></div></div>
+      <div class="token"><div class="chip" style="background:#3B5446"></div><div><span class="label">--brand-deep</span><span class="hex">#3B5446</span></div></div>
+      <div class="token"><div class="chip" style="background:#DDE6DC"></div><div><span class="label">--brand-soft</span><span class="hex">#DDE6DC</span></div></div>
+      <div class="token"><div class="chip" style="background:#D4A574"></div><div><span class="label">--cta (gold)</span><span class="hex">#D4A574</span></div></div>
+      <div class="token"><div class="chip" style="background:#B0824D"></div><div><span class="label">--cta-deep</span><span class="hex">#B0824D</span></div></div>
+      <div class="token"><div class="chip" style="background:#F1DFC4"></div><div><span class="label">--cta-soft</span><span class="hex">#F1DFC4</span></div></div>
+      <div class="token"><div class="chip" style="background:#E7EDE5"></div><div><span class="label">--ai-bg</span><span class="hex">#E7EDE5</span></div></div>
+      <div class="token"><div class="chip" style="background:#CFDDCC"></div><div><span class="label">--ai-border</span><span class="hex">#CFDDCC</span></div></div>
+      <div class="token"><div class="chip" style="background:#29302A"></div><div><span class="label">--ink</span><span class="hex">#29302A</span></div></div>
+      <div class="token"><div class="chip" style="background:#5C6359"></div><div><span class="label">--ink-2</span><span class="hex">#5C6359</span></div></div>
+    </div>
+    <h3>Verdict triad &amp; night — sage / amber / terracotta</h3>
+    <div class="token-grid">
+      <div class="token"><div class="chip" style="background:#5E7E68"></div><div><span class="label">--good (sage)</span><span class="hex">#5E7E68</span></div></div>
+      <div class="token"><div class="chip" style="background:#C68A3E"></div><div><span class="label">--watch (amber)</span><span class="hex">#C68A3E</span></div></div>
+      <div class="token"><div class="chip" style="background:#C0703F"></div><div><span class="label">--alert (terracotta)</span><span class="hex">#C0703F</span></div></div>
+      <div class="token"><div class="chip" style="background:#14201A"></div><div><span class="label">--night-bg</span><span class="hex">#14201A</span></div></div>
+      <div class="token"><div class="chip" style="background:#1E2C24"></div><div><span class="label">--night-surface</span><span class="hex">#1E2C24</span></div></div>
+      <div class="token"><div class="chip" style="background:#D4A574"></div><div><span class="label">--night-accent</span><span class="hex">#D4A574</span></div></div>
+    </div>
+    <h3>Component preview · day + night</h3>
+    <div class="modes-row">
+      <div class="mode-block day">
+        <span class="mode-label">DAY · default</span>
+        <div class="type-sample">Reverse fatty liver.<br>Reclaim your vitality.</div>
+        <div class="score-hero">
+          <span class="label">Today's Liver Score</span>
+          <span class="stage">58<small> / 100</small></span>
+          <span class="delta">+12 vs last lab · trending up ↑</span>
+        </div>
+        <div class="mock-card">
+          <div class="tracker-row"><div><div class="tracker-name">ALT</div><div class="tracker-sub">84 U/L · still elevated</div></div><span class="verdict-pill alert">Elevated</span></div>
+          <div class="tracker-row"><div><div class="tracker-name">AST</div><div class="tracker-sub">47 U/L · –11 this quarter</div></div><span class="verdict-pill watch">Watch</span></div>
+          <div class="tracker-row"><div><div class="tracker-name">GGT</div><div class="tracker-sub">31 U/L · back in range ✓</div></div><span class="verdict-pill good">In range</span></div>
+        </div>
+        <div class="chat">
+          <div class="bubble user">Doctor said I have fatty liver. What can I actually eat?</div>
+          <div class="bubble assistant">Start by swapping refined carbs and sugary drinks for whole grains, vegetables and unsaturated fats — a Mediterranean-style pattern has the strongest evidence for reducing liver fat.<span class="citation day">AASLD 2023 · MASLD lifestyle management</span></div>
+        </div>
+        <div class="safety-strip">⚠️ Hepatica is for tracking &amp; education, not a diagnosis.</div>
+      </div>
+      <div class="mode-block night">
+        <span class="mode-label">NIGHT · Coach @ 2am</span>
+        <div class="mock-card dark">
+          <div class="eyebrow">Coach · awake with you</div>
+          <div style="font-size:15px; line-height:1.5; margin-top:6px; font-weight:600;">It's 2:51 · Still worried about today's labs?</div>
+        </div>
+        <div class="chat">
+          <div class="bubble user dark">ALT 85, AST 62. Is fatty liver going to kill me?</div>
+          <div class="bubble assistant dark">That's an understandable fear — but for most people the answer is no. Around 75% of fatty liver never progresses to serious scarring. Elevated ALT is a signal to act, not a verdict.<span class="citation dark">AASLD 2023 · NAFLD natural history</span></div>
+        </div>
+        <div class="safety-strip dark">⚠️ The Coach gives context, not certainty.</div>
+      </div>
+    </div>
+  </section>
+
+  <h2 id="cand-c">Candidate C — «Editorial» · not selected</h2>
+  <section class="cand cand-c">
+    <div class="cand-head">
+      <div><span class="cand-tag">CANDIDATE C</span> <span class="dim-tag">NOT SELECTED</span></div>
+      <div class="cand-name">Hepatica · Editorial</div>
+      <p class="cand-concept">Premium apothecary. Warm charcoal led, a single confident amber accent, and serif headlines (Charter / Newsreader). Reads neither clinical nor crunchy — calm authority that lands across every cohort. The low-risk consensus.</p>
+      <div class="cand-row"><span class="cand-l">Vibe</span><span class="cand-v">Kinfolk × Function Health — editorial, considered, timeless</span></div>
+      <div class="cand-row"><span class="cand-l">Anchors</span><span class="cand-v cand-chips"><span class="cohort-chip">All-cohort consensus</span></span></div>
+    </div>
+    <h3>Light system · 15 tokens</h3>
+    <div class="token-grid">
+      <div class="token"><div class="chip" style="background:#F1EDE6"></div><div><span class="label">--bg (paper)</span><span class="hex">#F1EDE6</span></div></div>
+      <div class="token"><div class="chip" style="background:#F8F5EF"></div><div><span class="label">--bg-soft</span><span class="hex">#F8F5EF</span></div></div>
+      <div class="token"><div class="chip" style="background:#FFFFFF"></div><div><span class="label">--card</span><span class="hex">#FFFFFF</span></div></div>
+      <div class="token"><div class="chip" style="background:#E2DBCF"></div><div><span class="label">--divider</span><span class="hex">#E2DBCF</span></div></div>
+      <div class="token"><div class="chip" style="background:#3A3A36"></div><div><span class="label">--brand (charcoal)</span><span class="hex">#3A3A36</span></div></div>
+      <div class="token"><div class="chip" style="background:#2C2C29"></div><div><span class="label">--brand-mid</span><span class="hex">#2C2C29</span></div></div>
+      <div class="token"><div class="chip" style="background:#1F1F1D"></div><div><span class="label">--brand-deep</span><span class="hex">#1F1F1D</span></div></div>
+      <div class="token"><div class="chip" style="background:#E0DCD2"></div><div><span class="label">--brand-soft</span><span class="hex">#E0DCD2</span></div></div>
+      <div class="token"><div class="chip" style="background:#C98A3C"></div><div><span class="label">--cta (amber)</span><span class="hex">#C98A3C</span></div></div>
+      <div class="token"><div class="chip" style="background:#9E6A28"></div><div><span class="label">--cta-deep</span><span class="hex">#9E6A28</span></div></div>
+      <div class="token"><div class="chip" style="background:#EFDEC2"></div><div><span class="label">--cta-soft</span><span class="hex">#EFDEC2</span></div></div>
+      <div class="token"><div class="chip" style="background:#ECE8DF"></div><div><span class="label">--ai-bg</span><span class="hex">#ECE8DF</span></div></div>
+      <div class="token"><div class="chip" style="background:#D6CFBF"></div><div><span class="label">--ai-border</span><span class="hex">#D6CFBF</span></div></div>
+      <div class="token"><div class="chip" style="background:#26241F"></div><div><span class="label">--ink</span><span class="hex">#26241F</span></div></div>
+      <div class="token"><div class="chip" style="background:#5A574E"></div><div><span class="label">--ink-2</span><span class="hex">#5A574E</span></div></div>
+    </div>
+    <h3>Verdict triad &amp; night — olive / amber / sienna</h3>
+    <div class="token-grid">
+      <div class="token"><div class="chip" style="background:#6E7F5A"></div><div><span class="label">--good (olive)</span><span class="hex">#6E7F5A</span></div></div>
+      <div class="token"><div class="chip" style="background:#C98A3C"></div><div><span class="label">--watch (amber)</span><span class="hex">#C98A3C</span></div></div>
+      <div class="token"><div class="chip" style="background:#B25638"></div><div><span class="label">--alert (sienna)</span><span class="hex">#B25638</span></div></div>
+      <div class="token"><div class="chip" style="background:#1B1A17"></div><div><span class="label">--night-bg</span><span class="hex">#1B1A17</span></div></div>
+      <div class="token"><div class="chip" style="background:#262420"></div><div><span class="label">--night-surface</span><span class="hex">#262420</span></div></div>
+      <div class="token"><div class="chip" style="background:#C98A3C"></div><div><span class="label">--night-accent</span><span class="hex">#C98A3C</span></div></div>
+    </div>
+    <h3>Component preview · day + night · serif headlines</h3>
+    <div class="modes-row">
+      <div class="mode-block day">
+        <span class="mode-label">DAY · default · serif headlines</span>
+        <div class="type-sample">Reverse fatty liver.<br>Reclaim your vitality.</div>
+        <div class="score-hero">
+          <span class="label">Today's Liver Score</span>
+          <span class="stage">58<small> / 100</small></span>
+          <span class="delta">+12 vs last lab · trending up ↑</span>
+        </div>
+        <div class="mock-card">
+          <div class="tracker-row"><div><div class="tracker-name">ALT</div><div class="tracker-sub">84 U/L · still elevated</div></div><span class="verdict-pill alert">Elevated</span></div>
+          <div class="tracker-row"><div><div class="tracker-name">AST</div><div class="tracker-sub">47 U/L · –11 this quarter</div></div><span class="verdict-pill watch">Watch</span></div>
+          <div class="tracker-row"><div><div class="tracker-name">GGT</div><div class="tracker-sub">31 U/L · back in range ✓</div></div><span class="verdict-pill good">In range</span></div>
+        </div>
+        <div class="chat">
+          <div class="bubble user">Doctor said I have fatty liver. What can I actually eat?</div>
+          <div class="bubble assistant">Start by swapping refined carbs and sugary drinks for whole grains, vegetables and unsaturated fats — a Mediterranean-style pattern has the strongest evidence.<span class="citation day">AASLD 2023 · MASLD lifestyle management</span></div>
+        </div>
+        <div class="safety-strip">⚠️ Hepatica is for tracking &amp; education, not a diagnosis.</div>
+      </div>
+      <div class="mode-block night">
+        <span class="mode-label">NIGHT · Coach @ 2am</span>
+        <div class="mock-card dark">
+          <div class="eyebrow">Coach · awake with you</div>
+          <div style="font-size:15px; line-height:1.5; margin-top:6px; font-weight:600;">It's 2:51 · Still worried about today's labs?</div>
+        </div>
+        <div class="chat">
+          <div class="bubble user dark">ALT 85, AST 62. Is fatty liver going to kill me?</div>
+          <div class="bubble assistant dark">That's an understandable fear — but for most people the answer is no. Around 75% of fatty liver never progresses to serious scarring.<span class="citation dark">AASLD 2023 · NAFLD natural history</span></div>
+        </div>
+        <div class="safety-strip dark">⚠️ The Coach gives context, not certainty.</div>
+      </div>
+    </div>
+  </section>
+
+  <h2 id="consilium">Design consilium — 6 cohorts vote</h2>
+  <p class="lede">Each cohort scored the three candidates 0–5 on «would this design make me trust Hepatica and convert?», plus an ASO / brand-defensibility vote. Σ / 35. A · Botanical led the vote 30 / 35 — the founder lock landed on <b>B · Clinical</b>; rationale below.</p>
+  <table class="vote">
+    <thead><tr><th>Voter / cohort</th><th>Audience</th><th>A · Botanical</th><th>B · Clinical 🔒</th><th>C · Editorial</th></tr></thead>
+    <tbody>
+      <tr><td class="voter">🍷 Newly Diagnosed Nick</td><td class="aud">25%</td><td class="score">4</td><td class="score hi">5</td><td class="score">4</td></tr>
+      <tr><td class="voter">💉 GLP-1 Greta</td><td class="aud">15%</td><td class="score hi">5</td><td class="score">3</td><td class="score">4</td></tr>
+      <tr><td class="voter">🍔 Pre-Diabetic Pete</td><td class="aud">20%</td><td class="score">3</td><td class="score hi">5</td><td class="score">4</td></tr>
+      <tr><td class="voter">💊 Rezdiffra Rachel</td><td class="aud">8%</td><td class="score">3</td><td class="score hi">5</td><td class="score hi">5</td></tr>
+      <tr><td class="voter">🧬 PCOS-NAFLD Patricia</td><td class="aud">15%</td><td class="score hi">5</td><td class="score">3</td><td class="score">4</td></tr>
+      <tr><td class="voter">🍺 Recovering Robert</td><td class="aud">17%</td><td class="score hi">5</td><td class="score">3</td><td class="score">3</td></tr>
+      <tr><td class="voter">🎯 ASO / brand defensibility</td><td class="aud">—</td><td class="score hi">5</td><td class="score">4</td><td class="score">4</td></tr>
+      <tr class="totals"><td class="voter">Σ / 35</td><td class="aud">—</td><td class="score lead">30</td><td class="score locked">28 🔒</td><td class="score">28</td></tr>
+    </tbody>
+  </table>
+  <div class="runoff">
+    <h3>Decision — 🔒 locked B · Clinical (2026-05-20)</h3>
+    <p><b>The consilium recommended A · Botanical (30 / 35).</b> The founder lock went to <b>B · Clinical</b> — a deliberate override. The two largest single cohorts, Nick (25%) and Pete (20%), both scored B highest: they buy on medical authority and lab-grade trust. Rachel — the premium-WTP cohort on a $40K/yr drug — ties B at the top. Together that is 53% of audience leaning clinical, and it covers the highest-revenue cohort.</p>
+    <p><b>Trade-off accepted:</b> Botanical's non-judgmental warmth was the safer call for Robert (alcohol stigma) and the wellness cohorts. Mitigation — B keeps the warm-severity verdict triad (no clinical red) and a calm dark night-Coach, so the clinical palette never tips into cold or alarmist; Recovery Mode copy for Robert stays hopeful regardless of palette.</p>
+    <div class="pick-row">
+      <span class="pick lead">🔒 LOCKED · B · Clinical — teal #2D7B7E + gold #D4A574, medical authority</span>
+      <span class="pick">A · Botanical — not selected</span>
+      <span class="pick">C · Editorial — not selected</span>
+    </div>
+  </div>
+</details>
 
 <!-- ============================================================ -->
 <!-- ===== MODULE 2 · JTBD ===== -->
@@ -1316,7 +1302,7 @@
 <div class="runoff">
   <h3>Why B wins — and revises the draft</h3>
   <p><b>B · 4-tab + «+Log» FAB locked (4.40 / 5).</b> The centre +Log FAB is the Loveiko logging-DNA — Cysta AI, JabWell and Salvora all converged on it. Hepatica's logging is the highest-frequency in the family: a meal photo at every meal, a daily drink log for Robert, lab scans, med doses. A one-tap capture beats a buried tab.</p>
-  <p>Candidate A burns a whole tab on Food when food-scan <b>is</b> the primary +Log action; Nick still gets food-first via the cohort-aware Today dashboard. C's vague "Track" tab tested worst across every cohort. <b>⚠️ This revises PRODUCT_DESIGN.md's 5-tab draft → 4-tab + FAB</b> (logged in DECISIONS.md).</p>
+  <p>Candidate A burns a whole tab on Food when food-scan <b>is</b> the primary +Log action; Nick still gets food-first via the cohort-aware Today dashboard. C's vague "Track" tab tested worst across every cohort. <b>⚠️ This revises PRODUCT_DESIGN.md's 5-tab draft → 4-tab + FAB</b> (logged in DECISIONS.md D10).</p>
 </div>
 
 <!-- ===== 4.3 TAB BAR MOCK ===== -->
@@ -1438,7 +1424,7 @@
     <tr><td class="tabname">Embeddings</td><td>OpenAI <code>text-embedding-3-small</code></td><td>512 dimensions — compact corpus</td></tr>
     <tr><td class="tabname">Vision / OCR</td><td>OpenAI <code>gpt-4o-mini</code> + VisionKit</td><td>Lab OCR (ALT/AST/GGT/FIB-4) + meal photo scoring</td></tr>
     <tr><td class="tabname">RAG</td><td>sqlite-vec on-device</td><td>~50 MB · ~7,000 chunks · AASLD / AGA / EASL / PubMed</td></tr>
-    <tr><td class="tabname">Backend proxy</td><td>Cloudflare Worker <code>hepatica-api</code></td><td>Holds all 3rd-party keys; iOS never does</td></tr>
+    <tr><td class="tabname">Backend proxy</td><td>Cloudflare Worker <code>hepatica-api</code></td><td>Holds all 3rd-party keys; iOS never does. Smart Placement</td></tr>
     <tr><td class="tabname">Backend / analytics</td><td>Supabase</td><td>RevenueCat webhooks, anonymous events — no PII</td></tr>
     <tr><td class="tabname">Subscriptions</td><td>StoreKit 2 + RevenueCat</td><td>4 tiers + 3 add-ons · entitlement <code>premium</code></td></tr>
     <tr><td class="tabname">Capture</td><td>AVFoundation · VisionKit · PDFKit</td><td>Meal photos · lab doc scan · PDF import</td></tr>
@@ -1456,12 +1442,12 @@
     <li><b>RAG corpus</b> — liver / hepatology (AASLD · AGA · EASL · Rezdiffra label) vs Cysta AI's PCOS corpus (ACOG · ESHRE · Endocrine Society).</li>
     <li><b>Vision OCR fields</b> — ALT / AST / GGT / FIB-4 / FibroScan kPa vs Cysta AI's AMH / LH:FSH / SHBG hormone panel.</li>
   </ul>
-  Everything else — proxy auth, rate-limit posture, secrets handling, paywall scaffold — is the shared Loveiko pattern.
+  Everything else — proxy auth, rate-limit posture, secrets handling, paywall scaffold — is the shared Loveiko pattern. The <code>hepatica-api</code> Cloudflare Worker is a near-verbatim clone of <code>cystaai-api</code>.
 </div>
 
 <footer>
   <b>Hepatica — Design System Workbench</b> · updated 2026-05-20 · source: <b>Hepatica_Master_v2_FINAL.md</b> · sibling pattern: Cysta AI.<br>
-  🔒 Locked: design system <b>B · Clinical</b> (teal #2D7B7E + gold #D4A574) · roadmap <b>15 features → 6 P0 / 5 P1 / 4 P2</b> · tabs <b>4-tab + «+Log» FAB</b>.<br>
+  🔒 Locked: design system <b>B · Clinical</b> (teal #2D7B7E + gold #D4A574) · roadmap <b>15 features → 6 P0 / 5 P1 / 4 P2</b> · tabs <b>4-tab + «+Log» FAB</b>. Candidates A &amp; C archived in Module 1.<br>
   Next: Modules 6–8 — Critical screens · App Store screenshots · Paywall variants.
 </footer>
 
