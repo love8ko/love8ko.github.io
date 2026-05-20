@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hepatica — Design System Workbench</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ====== LOCKED DESIGN SYSTEM — Hepatica · Candidate B «Clinical» · 2026-05-20 ====== */
+  :root {
+    --ink:        #1E2A2B;
+    --ink-2:      #4C5B5C;
+    --ink-3:      #8B9B9B;
+    --bg:         #EEF3F2;
+    --bg-soft:    #F7FAF9;
+    --card:       #FFFFFF;
+    --divider:    #D6E2E0;
+
+    --brand:      #2D7B7E;          /* teal — locked */
+    --brand-mid:  #226163;
+    --brand-deep: #194A4C;
+    --brand-soft: #CFE3E2;
+
+    --cta:        #D4A574;          /* gold — locked */
+    --cta-deep:   #B0824D;
+    --cta-soft:   #F1DFC4;
+
+    --pearl:      #EEF3F2;
+    --pearl-soft: #F7FAF9;
+
+    --good:       #2D7B7E;  --good-bg:  #CFE3E2;
+    --watch:      #C68A3E;  --watch-bg: #F0DFC2;
+    --alert:      #B5503C;  --alert-bg: #EBD0C8;
+
+    --ai-bg:      #E2ECEB;  --ai-border: #C4D8D6;
+
+    --night-bg:   #0F1F20;  --night-surface: #18302F;
+    --night-bubble-user: #244241; --night-divider: #2C4544;
+    --night-accent: #D4A574; --night-text: #EAF2F1;
+  }
+
+  /* ============ CANDIDATE A · BOTANICAL — sage-green + warm gold (not selected) ====== */
+  .cand-a {
+    --brand: #5E7E68; --brand-mid: #4C6957; --brand-deep: #3B5446; --brand-soft: #DDE6DC;
+    --cta: #D4A574; --cta-deep: #B0824D; --cta-soft: #F1DFC4;
+    --pearl: #F3EEE3; --pearl-soft: #FBF7EF;
+    --ink: #29302A; --ink-2: #5C6359; --ink-3: #97A091;
+    --card: #FFFFFF; --divider: #E4DCCB;
+    --good: #5E7E68; --good-bg: #D8E4DA;
+    --watch: #C68A3E; --watch-bg: #F1DFC4;
+    --alert: #C0703F; --alert-bg: #EFD8C6;
+    --ai-bg: #E7EDE5; --ai-border: #CFDDCC;
+    --night-bg: #14201A; --night-surface: #1E2C24; --night-bubble-user: #2C3F32;
+    --night-divider: #30453A; --night-accent: #D4A574; --night-text: #F3EEE3;
+  }
+  /* ============ CANDIDATE B · CLINICAL — teal + gold (LOCKED) ============ */
+  .cand-b {
+    --brand: #2D7B7E; --brand-mid: #226163; --brand-deep: #194A4C; --brand-soft: #CFE3E2;
+    --cta: #D4A574; --cta-deep: #B0824D; --cta-soft: #F1DFC4;
+    --pearl: #EEF3F2; --pearl-soft: #F7FAF9;
+    --ink: #1E2A2B; --ink-2: #4C5B5C; --ink-3: #8B9B9B;
+    --card: #FFFFFF; --divider: #D6E2E0;
+    --good: #2D7B7E; --good-bg: #CFE3E2;
+    --watch: #C68A3E; --watch-bg: #F0DFC2;
+    --alert: #B5503C; --alert-bg: #EBD0C8;
+    --ai-bg: #E2ECEB; --ai-border: #C4D8D6;
+    --night-bg: #0F1F20; --night-surface: #18302F; --night-bubble-user: #244241;
+    --night-divider: #2C4544; --night-accent: #D4A574; --night-text: #EAF2F1;
+  }
+  /* ============ CANDIDATE C · EDITORIAL — warm charcoal + amber (not selected) ======= */
+  .cand-c {
+    --brand: #3A3A36; --brand-mid: #2C2C29; --brand-deep: #1F1F1D; --brand-soft: #E0DCD2;
+    --cta: #C98A3C; --cta-deep: #9E6A28; --cta-soft: #EFDEC2;
+    --pearl: #F1EDE6; --pearl-soft: #F8F5EF;
+    --ink: #26241F; --ink-2: #5A574E; --ink-3: #968F81;
+    --card: #FFFFFF; --divider: #E2DBCF;
+    --good: #6E7F5A; --good-bg: #DEE3D2;
+    --watch: #C98A3C; --watch-bg: #EFDEC2;
+    --alert: #B25638; --alert-bg: #ECD3C7;
+    --ai-bg: #ECE8DF; --ai-border: #D6CFBF;
+    --night-bg: #1B1A17; --night-surface: #262420; --night-bubble-user: #34322B;
+    --night-divider: #38362F; --night-accent: #C98A3C; --night-text: #F1EDE6;
+  }
+
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    padding: 28px 24px 96px;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  h1, h2, h3, h4 { font-family: -apple-system, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif; letter-spacing: -0.01em; }
+  h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+  h2 { font-size: 22px; font-weight: 700; margin: 44px 0 14px; }
+  h3 { font-size: 16px; font-weight: 700; margin: 22px 0 10px; color: var(--ink); }
+  code { font-family: ui-monospace, "SF Mono", monospace; font-size: 11.5px; background: var(--bg-soft); padding: 1px 5px; border-radius: 4px; color: var(--cta-deep); }
+
+  .lede { color: var(--ink-2); max-width: 940px; line-height: 1.55; margin-bottom: 6px; font-size: 14px; }
+  .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 8px; }
+  .pill { background: var(--card); border: 1px solid var(--divider); border-radius: 999px; padding: 5px 12px; font-size: 12px; color: var(--ink-2); font-weight: 600; }
+  .pill.lock  { background: var(--good-bg); color: #194A4C; border-color: #AFCFCE; }
+  .pill.vote  { background: var(--cta-soft); color: var(--cta-deep); border-color: #E7CFA3; }
+  .pill.brand { background: var(--brand-soft); color: var(--brand-deep); border-color: var(--brand-soft); }
+  .pill.sib   { background: var(--cta-soft); color: var(--cta-deep); border-color: #E7CFA3; }
+
+  /* ==================== TOP NAV ==================== */
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(238, 243, 242, 0.94);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--divider);
+    margin: 0 -24px 18px; padding: 10px 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--ink-2);
+    font-size: 12.5px; font-weight: 600;
+    padding: 6px 11px; border-radius: 999px; border: 1px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover { background: var(--card); color: var(--brand-deep); border-color: var(--divider); }
+  .top-nav a.is-module { background: var(--brand); color: var(--pearl); }
+  .top-nav a.is-module:hover { background: var(--brand-mid); color: var(--pearl); }
+  .top-nav .nav-num { font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; background: var(--cta); color: #fff; padding: 2px 6px; border-radius: 5px; }
+  .top-nav .sep { width: 1px; height: 16px; background: var(--divider); margin: 0 4px; }
+
+  /* ==================== DECISION CALLOUT ==================== */
+  .decision-callout {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+    color: var(--pearl); border-radius: 24px;
+    padding: 26px 28px 22px; margin: 22px 0 8px;
+    display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: end;
+  }
+  @media (max-width: 720px) { .decision-callout { grid-template-columns: 1fr; } }
+  .decision-callout h2 { color: var(--pearl); margin: 0; font-size: 26px; }
+  .decision-callout .vibe { color: rgba(234,242,241,0.86); max-width: 760px; margin-top: 8px; line-height: 1.55; font-size: 13.5px; }
+  .decision-callout .score-badge {
+    background: var(--cta); color: var(--brand-deep);
+    border-radius: 999px; padding: 10px 18px; font-weight: 800; font-size: 15px;
+    font-family: ui-monospace, "SF Mono", monospace; white-space: nowrap;
+  }
+
+  /* ==================== MODULE BANNERS ==================== */
+  .module-banner {
+    margin: 60px 0 18px; padding: 18px 22px;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%);
+    color: var(--pearl); border-radius: 18px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .module-banner .num { font-family: ui-monospace, "SF Mono", monospace; font-size: 12.5px; font-weight: 800; letter-spacing: 0.08em; background: var(--cta); color: var(--brand-deep); padding: 5px 11px; border-radius: 8px; }
+  .module-banner h2 { margin: 0; color: var(--pearl); font-size: 22px; }
+  .module-banner .desc { color: rgba(234,242,241,0.86); font-size: 13px; line-height: 1.55; flex-basis: 100%; margin-top: 4px; max-width: 1000px; }
+
+  /* ==================== CANDIDATE BLOCK ==================== */
+  .cand {
+    background: var(--card); border: 1px solid var(--divider);
+    border-left: 6px solid var(--brand);
+    border-radius: 16px; padding: 18px 22px 24px; margin-top: 14px;
+  }
+  .cand-head { display: flex; flex-direction: column; gap: 6px; padding-bottom: 14px; border-bottom: 1px dashed var(--divider); margin-bottom: 6px; }
+  .cand-tag { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; letter-spacing: 0.10em; color: var(--cta-deep); }
+  .cand-name { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-size: 26px; font-weight: 800; color: var(--brand-deep); }
+  .cand-c .cand-name { font-family: "Charter", "Newsreader", Georgia, "Times New Roman", ui-serif, serif; font-weight: 700; }
+  .cand-concept { font-size: 13.5px; color: var(--ink); line-height: 1.5; max-width: 760px; }
+  .cand-row { display: flex; gap: 10px; align-items: baseline; font-size: 12.5px; margin-top: 2px; }
+  .cand-row .cand-l { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); width: 64px; flex-shrink: 0; }
+  .cand-row .cand-v { color: var(--ink-2); line-height: 1.5; }
+  .cand-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .cohort-chip { font-size: 11px; font-weight: 700; background: var(--brand-soft); color: var(--brand-deep); border-radius: 999px; padding: 2px 9px; }
+
+  /* ==================== TOKEN GRID ==================== */
+  .token-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin-top: 10px; }
+  .token { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1px solid var(--divider); border-radius: 10px; padding: 8px 10px; font-family: ui-monospace, "SF Mono", monospace; font-size: 11.5px; }
+  .token .chip { width: 28px; height: 28px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.10); flex-shrink: 0; }
+  .token .label { color: var(--ink-2); display: block; font-size: 10.5px; line-height: 1.2; }
+  .token .hex { color: var(--ink); font-weight: 700; line-height: 1.2; }
+
+  /* ==================== DAY / NIGHT MODES ==================== */
+  .modes-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; }
+  @media (max-width: 820px) { .modes-row { grid-template-columns: 1fr; } }
+  .mode-block { border-radius: 22px; padding: 22px 18px; min-height: 560px; display: flex; flex-direction: column; gap: 12px; }
+  .mode-block.day   { background: var(--pearl); }
+  .mode-block.night { background: var(--night-bg); color: var(--night-text); }
+  .mode-label { font-size: 10.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; }
+  .mode-block.night .mode-label { color: var(--night-accent); opacity: 0.85; }
+
+  .type-sample { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.015em; color: var(--brand-deep); line-height: 1.15; }
+  .cand-c .type-sample { font-family: "Charter", "Newsreader", Georgia, ui-serif, serif; font-weight: 700; }
+
+  .score-hero { background: var(--brand); color: var(--pearl); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 4px; }
+  .score-hero .label { font-size: 11px; color: rgba(255,255,255,0.66); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+  .score-hero .stage { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 48px; line-height: 1; color: var(--cta); }
+  .cand-c .score-hero .stage { font-family: "Charter", "Newsreader", Georgia, ui-serif, serif; }
+  .score-hero .stage small { font-size: 18px; color: rgba(255,255,255,0.55); font-weight: 700; }
+  .score-hero .delta { font-size: 12.5px; font-weight: 600; color: #C8DAB4; margin-top: 4px; }
+
+  .mock-card { background: var(--card); border-radius: 16px; padding: 14px; box-shadow: 0 1px 3px rgba(20,40,40,0.07); }
+  .mock-card.dark { background: var(--night-surface); border: 1px solid var(--night-divider); color: var(--night-text); }
+  .tracker-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--divider); }
+  .mock-card.dark .tracker-row { border-color: var(--night-divider); }
+  .tracker-row:last-child { border-bottom: none; }
+  .tracker-name { font-weight: 600; font-size: 14px; }
+  .tracker-sub { font-size: 11.5px; color: var(--ink-2); }
+  .mock-card.dark .tracker-sub { color: rgba(234,242,241,0.6); }
+
+  .verdict-pill { border-radius: 999px; padding: 4px 10px; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+  .verdict-pill::before { content: '\25CF'; font-size: 9px; }
+  .verdict-pill.good  { background: var(--good-bg);  color: #194A4C; }
+  .verdict-pill.watch { background: var(--watch-bg); color: #7A4012; }
+  .verdict-pill.alert { background: var(--alert-bg); color: #6B3A12; }
+
+  .chat .bubble { border-radius: 18px; padding: 12px 14px; margin-bottom: 8px; max-width: 88%; font-size: 13px; line-height: 1.5; }
+  .chat .bubble.user { background: var(--cta-soft); color: var(--ink); margin-left: auto; border-top-right-radius: 5px; }
+  .chat .bubble.user.dark { background: var(--night-bubble-user); color: var(--night-text); }
+  .chat .bubble.assistant { background: var(--ai-bg); color: var(--ink); border: 1px solid var(--ai-border); border-top-left-radius: 5px; }
+  .chat .bubble.assistant.dark { background: var(--night-surface); color: var(--night-text); border-color: var(--night-divider); }
+  .citation { font-size: 11.5px; margin-top: 6px; display: inline-block; }
+  .citation.day  { color: var(--brand-deep); border-bottom: 1px dotted var(--brand-deep); }
+  .citation.dark { color: var(--night-accent); border-bottom: 1px dotted var(--night-accent); }
+  .safety-strip { background: var(--watch-bg); color: #7A4012; font-size: 11px; padding: 8px 12px; border-radius: 10px; margin-top: 6px; border: 1px solid #E7CFA3; line-height: 1.45; }
+  .safety-strip.dark { background: #3A2419; color: #F1C8A0; border-color: #5C3520; }
+  .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 0.10em; text-transform: uppercase; color: var(--night-accent); opacity: 0.85; }
+
+  /* ==================== GENERIC TABLES ==================== */
+  table.matrix, table.vote, table.jtbd-scan, table.agg, table.tab-spec {
+    width: 100%; border-collapse: collapse;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider); margin-top: 12px;
+  }
+  table th, table td { padding: 9px 12px; text-align: left; font-size: 12.5px; border-bottom: 1px solid var(--divider); vertical-align: top; }
+  table th { background: var(--brand-soft); color: var(--brand-deep); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 800; }
+  table tr:last-child td { border-bottom: none; }
+  .hex-chip { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: middle; margin-right: 2px; border: 1px solid rgba(0,0,0,0.12); }
+  .lock-tag { font-size: 9.5px; font-weight: 800; letter-spacing: 0.06em; background: var(--good-bg); color: #194A4C; border-radius: 5px; padding: 2px 7px; }
+  .dim-tag  { font-size: 9.5px; font-weight: 800; letter-spacing: 0.06em; background: var(--bg-soft); color: var(--ink-3); border-radius: 5px; padding: 2px 7px; border: 1px solid var(--divider); }
+  table.matrix tr.locked-row td { background: rgba(45,123,126,0.07); }
+
+  table.vote td.voter { font-weight: 700; color: var(--ink); white-space: nowrap; }
+  table.vote td.aud { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; color: var(--ink-3); text-align: center; }
+  table.vote td.score { text-align: center; font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; font-size: 13px; }
+  table.vote td.score.hi { background: rgba(45,123,126,0.14); color: #194A4C; font-weight: 800; }
+  table.vote tr.totals td { background: var(--bg-soft); font-weight: 800; border-top: 2px solid var(--brand); font-size: 13px; }
+  table.vote tr.totals td.score { font-size: 15px; }
+  table.vote tr.totals td.lead   { background: rgba(45,123,126,0.10); color: #194A4C; }
+  table.vote tr.totals td.locked { background: var(--brand); color: #fff; }
+
+  table.jtbd-scan td.cohort-cell { font-weight: 800; white-space: nowrap; }
+  table.jtbd-scan td.star { text-align: center; font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; font-size: 13px; }
+  table.jtbd-scan td.star.s5 { background: var(--good-bg); color: var(--good); }
+  table.jtbd-scan td.star.s4 { color: var(--cta-deep); }
+  table.jtbd-scan td.star.s3 { color: var(--ink-2); }
+  table.jtbd-scan td.star.s2 { color: var(--ink-3); }
+  table.jtbd-scan td.star.s1 { color: var(--ink-3); opacity: 0.55; }
+  .scan-wrap { overflow-x: auto; margin-top: 12px; border-radius: 14px; }
+  table.jtbd-scan { min-width: 860px; }
+
+  .ok { color: #194A4C; font-weight: 700; } .warn { color: #7A4012; font-weight: 700; }
+
+  /* ==================== LISTS ==================== */
+  ul.list { margin-top: 10px; line-height: 1.65; background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 14px 18px 14px 36px; }
+  ul.list li { margin-bottom: 7px; font-size: 13.5px; }
+  ul.list li b { color: var(--brand-deep); }
+
+  /* ==================== RUNOFF / RECOMMENDATION ==================== */
+  .runoff { background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 14px 18px; margin-top: 16px; }
+  .runoff h3 { margin-top: 4px; }
+  .runoff p { font-size: 13px; color: var(--ink-2); line-height: 1.6; margin-bottom: 8px; }
+  .runoff p b { color: var(--ink); }
+  .runoff ul { padding-left: 22px; line-height: 1.55; font-size: 12.5px; color: var(--ink-2); margin-top: 6px; }
+  .runoff ul li { margin-bottom: 6px; }
+  .runoff ul li b { color: var(--ink); }
+  .runoff .pick-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .runoff .pick { font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; font-weight: 700; background: var(--bg-soft); border: 1px solid var(--divider); border-radius: 8px; padding: 6px 11px; color: var(--ink-2); }
+  .runoff .pick.lead { background: var(--good-bg); border-color: #AFCFCE; color: #194A4C; }
+
+  /* ==================== PERSONA GRID ==================== */
+  .persona-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; margin-top: 14px; }
+  .persona { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .persona.anchor { border-left: 4px solid var(--cta); }
+  .persona .ph { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .persona .ph b { font-size: 15px; font-weight: 800; color: var(--ink); }
+  .persona .age { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; color: var(--ink-3); }
+  .persona .share { margin-left: auto; background: var(--brand-soft); color: var(--brand-deep); font-size: 11px; font-weight: 800; font-family: ui-monospace, "SF Mono", monospace; border-radius: 999px; padding: 2px 8px; }
+  .persona .pain { font-size: 12.5px; color: var(--ink); font-style: italic; line-height: 1.5; border-left: 3px solid var(--brand-soft); padding-left: 10px; }
+  .persona .row { display: flex; gap: 8px; font-size: 12px; align-items: flex-start; }
+  .persona .l { font-size: 10px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); width: 78px; flex-shrink: 0; padding-top: 2px; }
+  .persona .v { color: var(--ink); line-height: 1.5; }
+  .persona .v b { color: var(--brand-deep); }
+  .persona .v .wtp-high { color: #194A4C; font-weight: 800; }
+  .persona .v .wtp-med  { color: #7A4012; font-weight: 800; }
+  .anchor-tag { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--cta-soft); color: var(--cta-deep); border-radius: 5px; padding: 2px 6px; }
+
+  /* ==================== JTBD GRID ==================== */
+  .jtbd-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; margin-top: 14px; }
+  .jtbd-card { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .jtbd-card.peak { border-left: 4px solid var(--cta); }
+  .jtbd-card .jh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .jtbd-num { background: var(--brand); color: var(--pearl); border-radius: 999px; padding: 2px 9px; font-size: 11px; font-weight: 800; font-family: ui-monospace, "SF Mono", monospace; }
+  .jtbd-card .jh b { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .stars { margin-left: auto; font-size: 10.5px; letter-spacing: 0.02em; }
+  .jtbd-card .stmt { font-size: 12.5px; color: var(--ink); font-style: italic; border-left: 3px solid var(--good-bg); padding-left: 10px; line-height: 1.5; }
+  .jtbd-card .row { display: flex; gap: 8px; font-size: 12px; align-items: flex-start; }
+  .jtbd-card .l { font-size: 10px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); width: 56px; flex-shrink: 0; padding-top: 2px; }
+  .jtbd-card .v { color: var(--ink); line-height: 1.5; }
+  .jtbd-card .v b { color: var(--brand-deep); }
+
+  /* ==================== M3 · FEATURE LONG-LIST ==================== */
+  .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+  @media (max-width: 1100px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 660px)  { .feat-grid { grid-template-columns: 1fr; } }
+  .feat { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .feat .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .feat .left { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .feat .num { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; color: var(--ink-3); }
+  .feat h3 { margin: 0; font-size: 14px; font-weight: 800; }
+  .feat .tag { font-family: ui-monospace, "SF Mono", monospace; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+  .feat .tag.t1 { background: var(--good-bg); color: #194A4C; }
+  .feat .tag.t2 { background: var(--cta-soft); color: var(--cta-deep); }
+  .feat .tag.t3 { background: var(--divider); color: var(--ink-2); }
+  .feat .desc { font-size: 12px; color: var(--ink-2); line-height: 1.5; }
+  .feat .rows { display: flex; flex-direction: column; gap: 4px; margin-top: 2px; padding-top: 8px; border-top: 1px dashed var(--divider); }
+  .feat .frow { display: flex; gap: 6px; font-size: 11.5px; line-height: 1.45; color: var(--ink-2); }
+  .feat .frow b { color: var(--ink); font-weight: 700; }
+  .feat .frow .lbl { min-width: 76px; color: var(--ink-3); font-weight: 800; font-size: 10.5px; letter-spacing: 0.03em; text-transform: uppercase; }
+  .feat .risk { display: inline-block; padding: 1px 7px; border-radius: 6px; font-size: 10.5px; font-weight: 800; }
+  .feat .risk.low { background: var(--good-bg); color: #194A4C; }
+  .feat .risk.med { background: var(--watch-bg); color: #7A4012; }
+  .feat .risk.high { background: #ECD0C8; color: #7A2D24; }
+
+  /* ==================== M3 · AGGREGATE TABLE ==================== */
+  .agg-wrap { overflow-x: auto; margin-top: 14px; border-radius: 14px; }
+  table.agg { min-width: 880px; }
+  table.agg td.rank { font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; color: var(--ink-3); text-align: center; width: 46px; }
+  table.agg td.fname { font-weight: 700; color: var(--ink); }
+  table.agg td.n { font-family: ui-monospace, "SF Mono", monospace; text-align: center; font-weight: 700; }
+  table.agg td.sigma { font-family: ui-monospace, "SF Mono", monospace; text-align: center; font-weight: 800; font-size: 14px; background: var(--bg-soft); border-left: 2px solid var(--brand); }
+  table.agg td.cluster { font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; font-size: 11px; text-align: center; }
+  table.agg tr.p0 td { background: var(--good-bg); }
+  table.agg tr.p0 td.sigma { background: var(--good); color: #fff; }
+  table.agg tr.p0 td.cluster { color: #194A4C; }
+  table.agg tr.p1 td { background: var(--cta-soft); }
+  table.agg tr.p1 td.sigma { background: var(--cta-deep); color: #fff; }
+  table.agg tr.p1 td.cluster { color: var(--cta-deep); }
+  table.agg tr.p2 td { background: var(--bg-soft); }
+  table.agg tr.p2 td.cluster { color: var(--ink-2); }
+
+  /* ==================== M3 · P-TIER ROADMAP ==================== */
+  .roadmap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+  @media (max-width: 920px) { .roadmap-grid { grid-template-columns: 1fr; } }
+  .ptier { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+  .ptier.p0 { border-top: 4px solid var(--good); }
+  .ptier.p1 { border-top: 4px solid var(--cta-deep); }
+  .ptier.p2 { border-top: 4px solid var(--ink-3); }
+  .ptier h3 { margin: 0 0 4px; font-size: 15.5px; font-weight: 800; }
+  .ptier.p0 h3 { color: var(--good); }
+  .ptier.p1 h3 { color: var(--cta-deep); }
+  .ptier.p2 h3 { color: var(--ink-2); }
+  .ptier .weeks { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; color: var(--ink-3); letter-spacing: 0.04em; text-transform: uppercase; }
+  .ptier ul { padding-left: 0; list-style: none; margin-top: 6px; display: flex; flex-direction: column; gap: 8px; }
+  .ptier ul li { font-size: 12px; line-height: 1.5; color: var(--ink-2); padding: 8px 10px; background: var(--bg-soft); border-radius: 9px; }
+  .ptier ul li b { display: block; font-size: 12.5px; color: var(--ink); margin-bottom: 1px; }
+  .ptier .total { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--divider); font-size: 11px; color: var(--ink-3); font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; }
+  .seq-strip { margin-top: 22px; background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 14px 16px; overflow-x: auto; }
+  .seq-strip h3 { margin-top: 2px; margin-bottom: 8px; }
+  .seq-row { display: flex; gap: 8px; min-width: 1080px; align-items: stretch; }
+  .seq { flex: 1; background: var(--bg-soft); border-radius: 10px; padding: 8px 10px; font-size: 11px; line-height: 1.4; color: var(--ink-2); display: flex; flex-direction: column; gap: 3px; }
+  .seq b { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; color: var(--brand); letter-spacing: 0.06em; font-weight: 800; }
+  .seq.launch { background: var(--brand); color: var(--pearl); }
+  .seq.launch b { color: var(--cta); }
+
+  /* ==================== M3 · ROUND BLOCKS ==================== */
+  .round { background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 14px 18px; margin-top: 14px; }
+  .round.r2 { border-left: 4px solid var(--cta); }
+  .round .r-tag { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: var(--cta-deep); text-transform: uppercase; }
+  .round h3 { margin: 4px 0 8px; font-size: 15px; }
+  .round p { font-size: 12.5px; color: var(--ink-2); line-height: 1.6; margin-bottom: 6px; }
+  .round p b { color: var(--ink); }
+  .round ul { padding-left: 20px; font-size: 12.5px; line-height: 1.55; color: var(--ink-2); margin-top: 4px; }
+  .round ul li { margin-bottom: 5px; }
+  .round ul li b { color: var(--ink); }
+
+  /* ==================== M4 · SIBLING CARDS ==================== */
+  .sib-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 12px; }
+  .sib-card { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 16px 18px; }
+  .sib-card.gold { border: 2px solid var(--cta); box-shadow: 0 4px 18px rgba(45,123,126,0.10); }
+  .sib-card .sh { display: flex; align-items: baseline; gap: 8px; }
+  .sib-card .sh .rank { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; color: var(--cta-deep); }
+  .sib-card .sh b { font-size: 15.5px; font-weight: 800; color: var(--ink); }
+  .sib-card .sh .score { margin-left: auto; font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; font-size: 11.5px; color: var(--brand-deep); background: var(--brand-soft); border-radius: 999px; padding: 3px 9px; }
+  .sib-card .reason { font-size: 12px; color: var(--ink); line-height: 1.5; margin: 8px 0 0; }
+  .sib-card .diff { font-size: 11.5px; color: var(--ink-2); line-height: 1.45; margin-top: 6px; }
+  .sib-card .diff b { color: var(--ink); }
+
+  /* ==================== M4 · iPHONE TAB-BAR FRAME ==================== */
+  .phone-frame { max-width: 320px; margin: 14px auto 18px; background: var(--bg); border-radius: 32px; border: 8px solid #0F1F20; padding: 22px 12px 8px; position: relative; box-shadow: 0 18px 44px rgba(20,40,40,0.22); }
+  .phone-frame::before { content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); width: 100px; height: 22px; border-radius: 0 0 18px 18px; background: #0F1F20; }
+  .phone-screen { background: var(--card); border-radius: 22px; min-height: 380px; padding: 14px 12px 92px; color: var(--ink); display: flex; flex-direction: column; gap: 10px; position: relative; }
+  .phone-screen .scr-title { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 17px; color: var(--brand-deep); display: flex; justify-content: space-between; align-items: center; }
+  .phone-screen .scr-card { background: var(--pearl); border-radius: 12px; padding: 10px 12px; font-size: 11.5px; line-height: 1.45; color: var(--ink); border: 1px solid var(--divider); }
+  .phone-screen .scr-card b { color: var(--brand-deep); }
+  .phone-screen .scr-card.ai { background: var(--ai-bg); border-color: var(--ai-border); }
+  .phone-tabbar { position: absolute; left: 0; right: 0; bottom: 6px; background: var(--card); border-top: 1px solid var(--divider); border-radius: 0 0 22px 22px; padding: 10px 6px 14px; display: grid; grid-template-columns: 1fr 1fr 72px 1fr 1fr; gap: 4px; align-items: center; }
+  .phone-tabbar .tab { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10px; font-weight: 700; color: var(--ink-3); text-decoration: none; }
+  .phone-tabbar .tab.active { color: var(--brand-deep); }
+  .phone-tabbar .tab .icn { width: 22px; height: 22px; border-radius: 6px; background: var(--divider); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: var(--ink-2); }
+  .phone-tabbar .tab.active .icn { background: var(--brand); color: var(--pearl); }
+  .phone-tabbar .fab-wrap { display: flex; flex-direction: column; align-items: center; }
+  .phone-tabbar .fab { width: 56px; height: 56px; border-radius: 50%; background: var(--cta); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; box-shadow: 0 8px 18px rgba(176,130,77,0.40); margin: -22px 0 0; }
+  .phone-tabbar .fab-label { font-size: 9.5px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cta-deep); margin-top: 2px; }
+
+  /* ==================== M5 · HANDOFF CARD ==================== */
+  .handoff-card { background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 16px 20px; font-size: 12.5px; line-height: 1.6; color: var(--ink); margin-top: 14px; }
+  .handoff-card b { color: var(--cta-deep); }
+  .handoff-card ul { margin: 6px 0 4px; padding-left: 22px; }
+  .handoff-card ul li { margin-bottom: 4px; }
+  table.tab-spec td.tabname { font-weight: 800; color: var(--brand-deep); white-space: nowrap; }
+  table.tab-spec td code { white-space: nowrap; }
+
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--divider); font-size: 11.5px; color: var(--ink-3); line-height: 1.6; }
+  footer b { color: var(--ink-2); }
+</style>
+</head>
+<body id="top">
+
+<!-- ===== TOP NAV ===== -->
+<nav class="top-nav">
+  <a href="#top">↑ Top</a>
+  <span class="sep"></span>
+  <a href="#module-1" class="is-module"><span class="nav-num">M1</span>Design</a>
+  <a href="#module-2" class="is-module"><span class="nav-num">M2</span>JTBD</a>
+  <a href="#module-3" class="is-module"><span class="nav-num">M3</span>Roadmap</a>
+  <a href="#module-4" class="is-module"><span class="nav-num">M4</span>Tabs</a>
+  <a href="#module-5" class="is-module"><span class="nav-num">M5</span>Stack</a>
+  <span class="sep"></span>
+  <a href="#consilium">design vote</a>
+  <a href="#cohorts">cohorts</a>
+  <a href="#feature-consilium">feature vote</a>
+  <a href="#ptiers">P-tiers</a>
+  <a href="#tabbar">tab bar</a>
+  <a href="#components">components</a>
+</nav>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>Hepatica — Design System Workbench</h1>
+  <p class="lede">
+    AI companion for fatty liver disease (NAFLD / MASH). Photo food scanner (per-meal liver-risk rating) + lab interpreter (ALT / AST / GGT / FIB-4 OCR) + AI Coach (DeepSeek V3 + RAG on AASLD / AGA / EASL) + multi-lab trend dashboard + Recovery Mode for the sober community + doctor PDF. 6 cohorts, ~135M adults across 5 markets, $162M SAM. Sibling of Cysta AI — this workbench reuses its module pattern. <b>Five modules below</b> — Design System · JTBD · Roadmap · Tab architecture · Components &amp; stack. Modules 6–8 (Screens · App Store screenshots · Paywall) follow.
+  </p>
+  <div class="meta-bar">
+    <span class="pill lock">🔒 Name · Hepatica</span>
+    <span class="pill lock">🔒 Design system · B · Clinical</span>
+    <span class="pill lock">🔒 Roadmap · 15 features → P0/P1/P2</span>
+    <span class="pill lock">🔒 Tabs · 4-tab + Log FAB</span>
+    <span class="pill brand">📋 JTBD · 6 cohorts</span>
+    <span class="pill brand">5 markets · US · GB · DE · CA · AU</span>
+    <span class="pill sib">Source: Hepatica_Master_v2_FINAL.md · 2026-05-20</span>
+  </div>
+</header>
+
+<!-- ===== DECISION CALLOUT ===== -->
+<section class="decision-callout">
+  <div>
+    <h2>Hepatica · «Clinical» — design system locked</h2>
+    <p class="vibe">Candidate B. Teal (#2D7B7E) reads lab-grade and trustworthy — the liver organ as a teal→gold gradient; warm gold (#D4A574) carries premium-conversion CTAs; cool off-white (#EEF3F2) keeps it clinically confident without going cold. Founder lock: the two largest cohorts (Nick 25% + Pete 20%) and premium-WTP Rachel buy on medical authority. The workbench chrome renders in the locked palette.</p>
+  </div>
+  <div class="score-badge">✓ Locked 2026-05-20</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ===== MODULE 1 · DESIGN SYSTEM ===== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-1">
+  <span class="num">МОДУЛЬ 1</span>
+  <h2>Дизайн-система · 🔒 Locked · B «Clinical»</h2>
+  <p class="desc">Locked 2026-05-20 on Candidate B «Clinical» — teal + gold, medical authority. All three candidates kept below as the decision record. Verdict triad stays warm-severity (no clinical red — NAFLD / MASH users are fear-prone); day / night modes retained (night = AI Coach surface for the 2am-anxious user).</p>
+</div>
+
+<!-- ===== 1.1 CANDIDATE MATRIX ===== -->
+<h2 id="candidates">1.1 · Candidate matrix</h2>
+<p class="lede">Two directions came straight from Master v2 §1.5 (Hepatica botanical · Hepatik clinical); the third was a premium-neutral editorial pole. Name is fixed — <b>Hepatica</b> — these were visual directions only.</p>
+<table class="matrix">
+  <thead><tr><th>Candidate</th><th>Concept</th><th>Brand trio</th><th>Aesthetic reference</th><th>Anchor cohorts</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>A · Botanical</b> <span class="dim-tag">NOT SELECTED</span></td>
+      <td>Premium natural medicine — the liverwort flower, restored vitality, zero judgment.</td>
+      <td><span class="hex-chip" style="background:#5E7E68"></span>sage <span class="hex-chip" style="background:#D4A574"></span>gold <span class="hex-chip" style="background:#F3EEE3"></span>cream</td>
+      <td>Aesop × Cleveland Clinic</td>
+      <td>🍺 Robert · 💉 Greta · 🧬 Patricia</td>
+    </tr>
+    <tr class="locked-row">
+      <td><b>B · Clinical</b> <span class="lock-tag">🔒 LOCKED</span></td>
+      <td>Premium medical authority — lab-grade trust, the liver organ in teal→gold.</td>
+      <td><span class="hex-chip" style="background:#2D7B7E"></span>teal <span class="hex-chip" style="background:#D4A574"></span>gold <span class="hex-chip" style="background:#EEF3F2"></span>off-white</td>
+      <td>Mayo Clinic × Headspace</td>
+      <td>💊 Rachel · 🍔 Pete · 🍷 Nick</td>
+    </tr>
+    <tr>
+      <td><b>C · Editorial</b> <span class="dim-tag">NOT SELECTED</span></td>
+      <td>Premium apothecary — warm charcoal, serif headlines, calm authority that reads across every cohort.</td>
+      <td><span class="hex-chip" style="background:#3A3A36"></span>charcoal <span class="hex-chip" style="background:#C98A3C"></span>amber <span class="hex-chip" style="background:#F1EDE6"></span>paper</td>
+      <td>Kinfolk × Function Health</td>
+      <td>All-cohort consensus pick</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== 1.2 CANDIDATE A · BOTANICAL ===== -->
+<h2 id="cand-a">1.2 · Candidate A — «Botanical»</h2>
+<section class="cand cand-a">
+  <div class="cand-head">
+    <div><span class="cand-tag">CANDIDATE A</span> <span class="dim-tag">NOT SELECTED</span></div>
+    <div class="cand-name">Hepatica · Botanical</div>
+    <p class="cand-concept">Premium natural medicine. Sage-green carries the liverwort flower (Hepatica is literally the plant); warm gold signals premium without going clinical. The least judgmental of the three — critical for Robert, whose liver disease carries alcohol stigma.</p>
+    <div class="cand-row"><span class="cand-l">Vibe</span><span class="cand-v">Aesop × Cleveland Clinic — apothecary calm, restorative</span></div>
+    <div class="cand-row"><span class="cand-l">Type</span><span class="cand-v">SF Pro Rounded headlines · SF Pro Text body</span></div>
+    <div class="cand-row"><span class="cand-l">Anchors</span><span class="cand-v cand-chips"><span class="cohort-chip">🍺 Robert</span><span class="cohort-chip">💉 Greta</span><span class="cohort-chip">🧬 Patricia</span></span></div>
+  </div>
+
+  <h3>Light system · 15 tokens</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#F3EEE3"></div><div><span class="label">--bg (cream)</span><span class="hex">#F3EEE3</span></div></div>
+    <div class="token"><div class="chip" style="background:#FBF7EF"></div><div><span class="label">--bg-soft</span><span class="hex">#FBF7EF</span></div></div>
+    <div class="token"><div class="chip" style="background:#FFFFFF"></div><div><span class="label">--card</span><span class="hex">#FFFFFF</span></div></div>
+    <div class="token"><div class="chip" style="background:#E4DCCB"></div><div><span class="label">--divider</span><span class="hex">#E4DCCB</span></div></div>
+    <div class="token"><div class="chip" style="background:#5E7E68"></div><div><span class="label">--brand (sage)</span><span class="hex">#5E7E68</span></div></div>
+    <div class="token"><div class="chip" style="background:#4C6957"></div><div><span class="label">--brand-mid</span><span class="hex">#4C6957</span></div></div>
+    <div class="token"><div class="chip" style="background:#3B5446"></div><div><span class="label">--brand-deep</span><span class="hex">#3B5446</span></div></div>
+    <div class="token"><div class="chip" style="background:#DDE6DC"></div><div><span class="label">--brand-soft</span><span class="hex">#DDE6DC</span></div></div>
+    <div class="token"><div class="chip" style="background:#D4A574"></div><div><span class="label">--cta (gold)</span><span class="hex">#D4A574</span></div></div>
+    <div class="token"><div class="chip" style="background:#B0824D"></div><div><span class="label">--cta-deep</span><span class="hex">#B0824D</span></div></div>
+    <div class="token"><div class="chip" style="background:#F1DFC4"></div><div><span class="label">--cta-soft</span><span class="hex">#F1DFC4</span></div></div>
+    <div class="token"><div class="chip" style="background:#E7EDE5"></div><div><span class="label">--ai-bg</span><span class="hex">#E7EDE5</span></div></div>
+    <div class="token"><div class="chip" style="background:#CFDDCC"></div><div><span class="label">--ai-border</span><span class="hex">#CFDDCC</span></div></div>
+    <div class="token"><div class="chip" style="background:#29302A"></div><div><span class="label">--ink</span><span class="hex">#29302A</span></div></div>
+    <div class="token"><div class="chip" style="background:#5C6359"></div><div><span class="label">--ink-2</span><span class="hex">#5C6359</span></div></div>
+  </div>
+
+  <h3>Verdict triad · warm severity, no clinical red</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#5E7E68"></div><div><span class="label">--good (sage)</span><span class="hex">#5E7E68</span></div></div>
+    <div class="token"><div class="chip" style="background:#D8E4DA"></div><div><span class="label">--good-bg</span><span class="hex">#D8E4DA</span></div></div>
+    <div class="token"><div class="chip" style="background:#C68A3E"></div><div><span class="label">--watch (amber)</span><span class="hex">#C68A3E</span></div></div>
+    <div class="token"><div class="chip" style="background:#F1DFC4"></div><div><span class="label">--watch-bg</span><span class="hex">#F1DFC4</span></div></div>
+    <div class="token"><div class="chip" style="background:#C0703F"></div><div><span class="label">--alert (terracotta)</span><span class="hex">#C0703F</span></div></div>
+    <div class="token"><div class="chip" style="background:#EFD8C6"></div><div><span class="label">--alert-bg</span><span class="hex">#EFD8C6</span></div></div>
+  </div>
+
+  <h3>Night / AI Coach surface · 6 tokens</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#14201A"></div><div><span class="label">--night-bg</span><span class="hex">#14201A</span></div></div>
+    <div class="token"><div class="chip" style="background:#1E2C24"></div><div><span class="label">--night-surface</span><span class="hex">#1E2C24</span></div></div>
+    <div class="token"><div class="chip" style="background:#2C3F32"></div><div><span class="label">--night-bubble-user</span><span class="hex">#2C3F32</span></div></div>
+    <div class="token"><div class="chip" style="background:#30453A"></div><div><span class="label">--night-divider</span><span class="hex">#30453A</span></div></div>
+    <div class="token"><div class="chip" style="background:#D4A574"></div><div><span class="label">--night-accent</span><span class="hex">#D4A574</span></div></div>
+    <div class="token"><div class="chip" style="background:#F3EEE3"></div><div><span class="label">--night-text</span><span class="hex">#F3EEE3</span></div></div>
+  </div>
+
+  <h3>Component preview · day + night</h3>
+  <div class="modes-row">
+    <div class="mode-block day">
+      <span class="mode-label">DAY · default</span>
+      <div class="type-sample">Reverse fatty liver.<br>Reclaim your vitality.</div>
+      <div class="score-hero">
+        <span class="label">Today's Liver Score</span>
+        <span class="stage">58<small> / 100</small></span>
+        <span class="delta">+12 vs last lab · trending up ↑</span>
+      </div>
+      <div class="mock-card">
+        <div class="tracker-row"><div><div class="tracker-name">ALT</div><div class="tracker-sub">84 U/L · still elevated</div></div><span class="verdict-pill alert">Elevated</span></div>
+        <div class="tracker-row"><div><div class="tracker-name">AST</div><div class="tracker-sub">47 U/L · –11 this quarter</div></div><span class="verdict-pill watch">Watch</span></div>
+        <div class="tracker-row"><div><div class="tracker-name">GGT</div><div class="tracker-sub">31 U/L · back in range ✓</div></div><span class="verdict-pill good">In range</span></div>
+      </div>
+      <div class="chat">
+        <div class="bubble user">Doctor said I have fatty liver. What can I actually eat?</div>
+        <div class="bubble assistant">Start by swapping refined carbs and sugary drinks for whole grains, vegetables and unsaturated fats — a Mediterranean-style pattern has the strongest evidence for reducing liver fat. Coffee (2–3 cups) is also protective. Snap a photo of any meal and I'll rate its liver risk.<span class="citation day">AASLD 2023 · MASLD lifestyle management</span></div>
+      </div>
+      <div class="safety-strip">⚠️ Hepatica is for tracking &amp; education, not a diagnosis. Discuss treatment with your hepatologist or GP.</div>
+    </div>
+    <div class="mode-block night">
+      <span class="mode-label">NIGHT · Coach @ 2am · Nick anxious</span>
+      <div class="mock-card dark">
+        <div class="eyebrow">Coach · awake with you</div>
+        <div style="font-size:15px; line-height:1.5; margin-top:6px; font-weight:600;">It's 2:51 · Still worried about today's labs?</div>
+      </div>
+      <div class="chat">
+        <div class="bubble user dark">ALT 85, AST 62. Is fatty liver going to kill me?</div>
+        <div class="bubble assistant dark">That's an understandable fear — but for most people the answer is no. Around 75% of fatty liver never progresses to serious scarring, and at your stage it's often reversible with weight loss and diet. Elevated ALT is a signal to act, not a verdict. Let's track the 6-month trend together.<span class="citation dark">AASLD 2023 · NAFLD natural history &amp; prognosis</span></div>
+      </div>
+      <div class="safety-strip dark">⚠️ The Coach gives context, not certainty. A FibroScan or fibrosis score from your doctor confirms your actual risk stage.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 1.3 CANDIDATE B · CLINICAL ===== -->
+<h2 id="cand-b">1.3 · Candidate B — «Clinical»</h2>
+<section class="cand cand-b">
+  <div class="cand-head">
+    <div><span class="cand-tag">CANDIDATE B</span> <span class="lock-tag">🔒 LOCKED 2026-05-20</span></div>
+    <div class="cand-name">Hepatica · Clinical</div>
+    <p class="cand-concept">Premium medical authority. Teal reads lab-grade and trustworthy — the liver organ rendered as a teal→gold gradient. Built for the cohorts that buy on credibility: Rachel on a $40K/yr drug, Pete who wants an authority signal, Nick who wants clarity from a source he trusts.</p>
+    <div class="cand-row"><span class="cand-l">Vibe</span><span class="cand-v">Mayo Clinic × Headspace — confident, calm, precise</span></div>
+    <div class="cand-row"><span class="cand-l">Type</span><span class="cand-v">SF Pro Rounded headlines · SF Pro Text body</span></div>
+    <div class="cand-row"><span class="cand-l">Anchors</span><span class="cand-v cand-chips"><span class="cohort-chip">💊 Rachel</span><span class="cohort-chip">🍔 Pete</span><span class="cohort-chip">🍷 Nick</span></span></div>
+  </div>
+
+  <h3>Light system · 15 tokens</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#EEF3F2"></div><div><span class="label">--bg (off-white)</span><span class="hex">#EEF3F2</span></div></div>
+    <div class="token"><div class="chip" style="background:#F7FAF9"></div><div><span class="label">--bg-soft</span><span class="hex">#F7FAF9</span></div></div>
+    <div class="token"><div class="chip" style="background:#FFFFFF"></div><div><span class="label">--card</span><span class="hex">#FFFFFF</span></div></div>
+    <div class="token"><div class="chip" style="background:#D6E2E0"></div><div><span class="label">--divider</span><span class="hex">#D6E2E0</span></div></div>
+    <div class="token"><div class="chip" style="background:#2D7B7E"></div><div><span class="label">--brand (teal)</span><span class="hex">#2D7B7E</span></div></div>
+    <div class="token"><div class="chip" style="background:#226163"></div><div><span class="label">--brand-mid</span><span class="hex">#226163</span></div></div>
+    <div class="token"><div class="chip" style="background:#194A4C"></div><div><span class="label">--brand-deep</span><span class="hex">#194A4C</span></div></div>
+    <div class="token"><div class="chip" style="background:#CFE3E2"></div><div><span class="label">--brand-soft</span><span class="hex">#CFE3E2</span></div></div>
+    <div class="token"><div class="chip" style="background:#D4A574"></div><div><span class="label">--cta (gold)</span><span class="hex">#D4A574</span></div></div>
+    <div class="token"><div class="chip" style="background:#B0824D"></div><div><span class="label">--cta-deep</span><span class="hex">#B0824D</span></div></div>
+    <div class="token"><div class="chip" style="background:#F1DFC4"></div><div><span class="label">--cta-soft</span><span class="hex">#F1DFC4</span></div></div>
+    <div class="token"><div class="chip" style="background:#E2ECEB"></div><div><span class="label">--ai-bg</span><span class="hex">#E2ECEB</span></div></div>
+    <div class="token"><div class="chip" style="background:#C4D8D6"></div><div><span class="label">--ai-border</span><span class="hex">#C4D8D6</span></div></div>
+    <div class="token"><div class="chip" style="background:#1E2A2B"></div><div><span class="label">--ink</span><span class="hex">#1E2A2B</span></div></div>
+    <div class="token"><div class="chip" style="background:#4C5B5C"></div><div><span class="label">--ink-2</span><span class="hex">#4C5B5C</span></div></div>
+  </div>
+
+  <h3>Verdict triad · warm severity, no clinical red</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#2D7B7E"></div><div><span class="label">--good (teal)</span><span class="hex">#2D7B7E</span></div></div>
+    <div class="token"><div class="chip" style="background:#CFE3E2"></div><div><span class="label">--good-bg</span><span class="hex">#CFE3E2</span></div></div>
+    <div class="token"><div class="chip" style="background:#C68A3E"></div><div><span class="label">--watch (amber)</span><span class="hex">#C68A3E</span></div></div>
+    <div class="token"><div class="chip" style="background:#F0DFC2"></div><div><span class="label">--watch-bg</span><span class="hex">#F0DFC2</span></div></div>
+    <div class="token"><div class="chip" style="background:#B5503C"></div><div><span class="label">--alert (clay)</span><span class="hex">#B5503C</span></div></div>
+    <div class="token"><div class="chip" style="background:#EBD0C8"></div><div><span class="label">--alert-bg</span><span class="hex">#EBD0C8</span></div></div>
+  </div>
+
+  <h3>Night / AI Coach surface · 6 tokens</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#0F1F20"></div><div><span class="label">--night-bg</span><span class="hex">#0F1F20</span></div></div>
+    <div class="token"><div class="chip" style="background:#18302F"></div><div><span class="label">--night-surface</span><span class="hex">#18302F</span></div></div>
+    <div class="token"><div class="chip" style="background:#244241"></div><div><span class="label">--night-bubble-user</span><span class="hex">#244241</span></div></div>
+    <div class="token"><div class="chip" style="background:#2C4544"></div><div><span class="label">--night-divider</span><span class="hex">#2C4544</span></div></div>
+    <div class="token"><div class="chip" style="background:#D4A574"></div><div><span class="label">--night-accent</span><span class="hex">#D4A574</span></div></div>
+    <div class="token"><div class="chip" style="background:#EAF2F1"></div><div><span class="label">--night-text</span><span class="hex">#EAF2F1</span></div></div>
+  </div>
+
+  <h3>Component preview · day + night</h3>
+  <div class="modes-row">
+    <div class="mode-block day">
+      <span class="mode-label">DAY · default</span>
+      <div class="type-sample">Reverse fatty liver.<br>Take charge.</div>
+      <div class="score-hero">
+        <span class="label">Today's Liver Score</span>
+        <span class="stage">58<small> / 100</small></span>
+        <span class="delta">+12 vs last lab · trending up ↑</span>
+      </div>
+      <div class="mock-card">
+        <div class="tracker-row"><div><div class="tracker-name">ALT</div><div class="tracker-sub">84 U/L · still elevated</div></div><span class="verdict-pill alert">Elevated</span></div>
+        <div class="tracker-row"><div><div class="tracker-name">AST</div><div class="tracker-sub">47 U/L · –11 this quarter</div></div><span class="verdict-pill watch">Watch</span></div>
+        <div class="tracker-row"><div><div class="tracker-name">GGT</div><div class="tracker-sub">31 U/L · back in range ✓</div></div><span class="verdict-pill good">In range</span></div>
+      </div>
+      <div class="chat">
+        <div class="bubble user">Doctor said I have fatty liver. What can I actually eat?</div>
+        <div class="bubble assistant">Start by swapping refined carbs and sugary drinks for whole grains, vegetables and unsaturated fats — a Mediterranean-style pattern has the strongest evidence for reducing liver fat. Coffee (2–3 cups) is also protective. Snap a photo of any meal and I'll rate its liver risk.<span class="citation day">AASLD 2023 · MASLD lifestyle management</span></div>
+      </div>
+      <div class="safety-strip">⚠️ Hepatica is for tracking &amp; education, not a diagnosis. Discuss treatment with your hepatologist or GP.</div>
+    </div>
+    <div class="mode-block night">
+      <span class="mode-label">NIGHT · Coach @ 2am · Nick anxious</span>
+      <div class="mock-card dark">
+        <div class="eyebrow">Coach · awake with you</div>
+        <div style="font-size:15px; line-height:1.5; margin-top:6px; font-weight:600;">It's 2:51 · Still worried about today's labs?</div>
+      </div>
+      <div class="chat">
+        <div class="bubble user dark">ALT 85, AST 62. Is fatty liver going to kill me?</div>
+        <div class="bubble assistant dark">That's an understandable fear — but for most people the answer is no. Around 75% of fatty liver never progresses to serious scarring, and at your stage it's often reversible with weight loss and diet. Elevated ALT is a signal to act, not a verdict. Let's track the 6-month trend together.<span class="citation dark">AASLD 2023 · NAFLD natural history &amp; prognosis</span></div>
+      </div>
+      <div class="safety-strip dark">⚠️ The Coach gives context, not certainty. A FibroScan or fibrosis score from your doctor confirms your actual risk stage.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 1.4 CANDIDATE C · EDITORIAL ===== -->
+<h2 id="cand-c">1.4 · Candidate C — «Editorial»</h2>
+<section class="cand cand-c">
+  <div class="cand-head">
+    <div><span class="cand-tag">CANDIDATE C</span> <span class="dim-tag">NOT SELECTED</span></div>
+    <div class="cand-name">Hepatica · Editorial</div>
+    <p class="cand-concept">Premium apothecary. Warm charcoal led, a single confident amber accent, and serif headlines (Charter / Newsreader). Reads neither clinical nor crunchy — calm authority that lands across every cohort. The low-risk consensus.</p>
+    <div class="cand-row"><span class="cand-l">Vibe</span><span class="cand-v">Kinfolk × Function Health — editorial, considered, timeless</span></div>
+    <div class="cand-row"><span class="cand-l">Type</span><span class="cand-v">Charter / Newsreader serif headlines · Inter / SF body</span></div>
+    <div class="cand-row"><span class="cand-l">Anchors</span><span class="cand-v cand-chips"><span class="cohort-chip">All-cohort consensus</span></span></div>
+  </div>
+
+  <h3>Light system · 15 tokens</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#F1EDE6"></div><div><span class="label">--bg (paper)</span><span class="hex">#F1EDE6</span></div></div>
+    <div class="token"><div class="chip" style="background:#F8F5EF"></div><div><span class="label">--bg-soft</span><span class="hex">#F8F5EF</span></div></div>
+    <div class="token"><div class="chip" style="background:#FFFFFF"></div><div><span class="label">--card</span><span class="hex">#FFFFFF</span></div></div>
+    <div class="token"><div class="chip" style="background:#E2DBCF"></div><div><span class="label">--divider</span><span class="hex">#E2DBCF</span></div></div>
+    <div class="token"><div class="chip" style="background:#3A3A36"></div><div><span class="label">--brand (charcoal)</span><span class="hex">#3A3A36</span></div></div>
+    <div class="token"><div class="chip" style="background:#2C2C29"></div><div><span class="label">--brand-mid</span><span class="hex">#2C2C29</span></div></div>
+    <div class="token"><div class="chip" style="background:#1F1F1D"></div><div><span class="label">--brand-deep</span><span class="hex">#1F1F1D</span></div></div>
+    <div class="token"><div class="chip" style="background:#E0DCD2"></div><div><span class="label">--brand-soft</span><span class="hex">#E0DCD2</span></div></div>
+    <div class="token"><div class="chip" style="background:#C98A3C"></div><div><span class="label">--cta (amber)</span><span class="hex">#C98A3C</span></div></div>
+    <div class="token"><div class="chip" style="background:#9E6A28"></div><div><span class="label">--cta-deep</span><span class="hex">#9E6A28</span></div></div>
+    <div class="token"><div class="chip" style="background:#EFDEC2"></div><div><span class="label">--cta-soft</span><span class="hex">#EFDEC2</span></div></div>
+    <div class="token"><div class="chip" style="background:#ECE8DF"></div><div><span class="label">--ai-bg</span><span class="hex">#ECE8DF</span></div></div>
+    <div class="token"><div class="chip" style="background:#D6CFBF"></div><div><span class="label">--ai-border</span><span class="hex">#D6CFBF</span></div></div>
+    <div class="token"><div class="chip" style="background:#26241F"></div><div><span class="label">--ink</span><span class="hex">#26241F</span></div></div>
+    <div class="token"><div class="chip" style="background:#5A574E"></div><div><span class="label">--ink-2</span><span class="hex">#5A574E</span></div></div>
+  </div>
+
+  <h3>Verdict triad · warm severity, no clinical red</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#6E7F5A"></div><div><span class="label">--good (olive)</span><span class="hex">#6E7F5A</span></div></div>
+    <div class="token"><div class="chip" style="background:#DEE3D2"></div><div><span class="label">--good-bg</span><span class="hex">#DEE3D2</span></div></div>
+    <div class="token"><div class="chip" style="background:#C98A3C"></div><div><span class="label">--watch (amber)</span><span class="hex">#C98A3C</span></div></div>
+    <div class="token"><div class="chip" style="background:#EFDEC2"></div><div><span class="label">--watch-bg</span><span class="hex">#EFDEC2</span></div></div>
+    <div class="token"><div class="chip" style="background:#B25638"></div><div><span class="label">--alert (sienna)</span><span class="hex">#B25638</span></div></div>
+    <div class="token"><div class="chip" style="background:#ECD3C7"></div><div><span class="label">--alert-bg</span><span class="hex">#ECD3C7</span></div></div>
+  </div>
+
+  <h3>Night / AI Coach surface · 6 tokens</h3>
+  <div class="token-grid">
+    <div class="token"><div class="chip" style="background:#1B1A17"></div><div><span class="label">--night-bg</span><span class="hex">#1B1A17</span></div></div>
+    <div class="token"><div class="chip" style="background:#262420"></div><div><span class="label">--night-surface</span><span class="hex">#262420</span></div></div>
+    <div class="token"><div class="chip" style="background:#34322B"></div><div><span class="label">--night-bubble-user</span><span class="hex">#34322B</span></div></div>
+    <div class="token"><div class="chip" style="background:#38362F"></div><div><span class="label">--night-divider</span><span class="hex">#38362F</span></div></div>
+    <div class="token"><div class="chip" style="background:#C98A3C"></div><div><span class="label">--night-accent</span><span class="hex">#C98A3C</span></div></div>
+    <div class="token"><div class="chip" style="background:#F1EDE6"></div><div><span class="label">--night-text</span><span class="hex">#F1EDE6</span></div></div>
+  </div>
+
+  <h3>Component preview · day + night</h3>
+  <div class="modes-row">
+    <div class="mode-block day">
+      <span class="mode-label">DAY · default · serif headlines</span>
+      <div class="type-sample">Reverse fatty liver.<br>Reclaim your vitality.</div>
+      <div class="score-hero">
+        <span class="label">Today's Liver Score</span>
+        <span class="stage">58<small> / 100</small></span>
+        <span class="delta">+12 vs last lab · trending up ↑</span>
+      </div>
+      <div class="mock-card">
+        <div class="tracker-row"><div><div class="tracker-name">ALT</div><div class="tracker-sub">84 U/L · still elevated</div></div><span class="verdict-pill alert">Elevated</span></div>
+        <div class="tracker-row"><div><div class="tracker-name">AST</div><div class="tracker-sub">47 U/L · –11 this quarter</div></div><span class="verdict-pill watch">Watch</span></div>
+        <div class="tracker-row"><div><div class="tracker-name">GGT</div><div class="tracker-sub">31 U/L · back in range ✓</div></div><span class="verdict-pill good">In range</span></div>
+      </div>
+      <div class="chat">
+        <div class="bubble user">Doctor said I have fatty liver. What can I actually eat?</div>
+        <div class="bubble assistant">Start by swapping refined carbs and sugary drinks for whole grains, vegetables and unsaturated fats — a Mediterranean-style pattern has the strongest evidence for reducing liver fat. Coffee (2–3 cups) is also protective. Snap a photo of any meal and I'll rate its liver risk.<span class="citation day">AASLD 2023 · MASLD lifestyle management</span></div>
+      </div>
+      <div class="safety-strip">⚠️ Hepatica is for tracking &amp; education, not a diagnosis. Discuss treatment with your hepatologist or GP.</div>
+    </div>
+    <div class="mode-block night">
+      <span class="mode-label">NIGHT · Coach @ 2am · Nick anxious</span>
+      <div class="mock-card dark">
+        <div class="eyebrow">Coach · awake with you</div>
+        <div style="font-size:15px; line-height:1.5; margin-top:6px; font-weight:600;">It's 2:51 · Still worried about today's labs?</div>
+      </div>
+      <div class="chat">
+        <div class="bubble user dark">ALT 85, AST 62. Is fatty liver going to kill me?</div>
+        <div class="bubble assistant dark">That's an understandable fear — but for most people the answer is no. Around 75% of fatty liver never progresses to serious scarring, and at your stage it's often reversible with weight loss and diet. Elevated ALT is a signal to act, not a verdict. Let's track the 6-month trend together.<span class="citation dark">AASLD 2023 · NAFLD natural history &amp; prognosis</span></div>
+      </div>
+      <div class="safety-strip dark">⚠️ The Coach gives context, not certainty. A FibroScan or fibrosis score from your doctor confirms your actual risk stage.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 1.5 DESIGN CONSILIUM ===== -->
+<h2 id="consilium">1.5 · Design consilium — 6 cohorts vote · 🔒 locked B</h2>
+<p class="lede">Each cohort scored the three candidates 0–5 on «would this design make me trust Hepatica and convert?», plus an ASO / brand-defensibility vote. Σ / 35. A · Botanical led the vote 30 / 35 — but the founder lock landed on <b>B · Clinical</b>; rationale below.</p>
+<table class="vote">
+  <thead><tr><th>Voter / cohort</th><th>Audience</th><th>A · Botanical</th><th>B · Clinical 🔒</th><th>C · Editorial</th></tr></thead>
+  <tbody>
+    <tr><td class="voter">🍷 Newly Diagnosed Nick</td><td class="aud">25%</td><td class="score">4</td><td class="score hi">5</td><td class="score">4</td></tr>
+    <tr><td class="voter">💉 GLP-1 Greta</td><td class="aud">15%</td><td class="score hi">5</td><td class="score">3</td><td class="score">4</td></tr>
+    <tr><td class="voter">🍔 Pre-Diabetic Pete</td><td class="aud">20%</td><td class="score">3</td><td class="score hi">5</td><td class="score">4</td></tr>
+    <tr><td class="voter">💊 Rezdiffra Rachel</td><td class="aud">8%</td><td class="score">3</td><td class="score hi">5</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">🧬 PCOS-NAFLD Patricia</td><td class="aud">15%</td><td class="score hi">5</td><td class="score">3</td><td class="score">4</td></tr>
+    <tr><td class="voter">🍺 Recovering Robert</td><td class="aud">17%</td><td class="score hi">5</td><td class="score">3</td><td class="score">3</td></tr>
+    <tr><td class="voter">🎯 ASO / brand defensibility</td><td class="aud">—</td><td class="score hi">5</td><td class="score">4</td><td class="score">4</td></tr>
+    <tr class="totals"><td class="voter">Σ / 35</td><td class="aud">—</td><td class="score lead">30</td><td class="score locked">28 🔒</td><td class="score">28</td></tr>
+  </tbody>
+</table>
+
+<div class="runoff">
+  <h3>Decision — 🔒 locked B · Clinical (2026-05-20)</h3>
+  <p><b>The consilium recommended A · Botanical (30 / 35).</b> The founder lock went to <b>B · Clinical</b> — a deliberate override, and a defensible one. The two largest single cohorts, Nick (25%) and Pete (20%), both scored B highest: they buy on medical authority and lab-grade trust. Rachel — the premium-WTP cohort on a $40K/yr drug — ties B at the top. Together that is 53% of audience leaning clinical, and it covers the highest-revenue cohort.</p>
+  <p><b>Trade-off accepted:</b> Botanical's non-judgmental warmth was the safer call for Robert (alcohol stigma) and the wellness cohorts. Mitigation — B keeps the warm-severity verdict triad (no clinical red) and a calm dark night-Coach, so the clinical palette never tips into cold or alarmist; Recovery Mode copy for Robert stays hopeful regardless of palette.</p>
+  <div class="pick-row">
+    <span class="pick lead">🔒 LOCKED · B · Clinical — teal #2D7B7E + gold #D4A574, medical authority</span>
+    <span class="pick">A · Botanical — not selected</span>
+    <span class="pick">C · Editorial — not selected</span>
+  </div>
+</div>
+
+<!-- ===== 1.6 DESIGN PRINCIPLES ===== -->
+<h2 id="principles">1.6 · Design principles — locked, apply across the app</h2>
+<ul class="list">
+  <li><b>Warm-severity verdict triad — never clinical red.</b> NAFLD / MASH users catastrophize («fatty liver → cirrhosis → cancer»). Severity reads teal → amber → clay, never a stoplight red.</li>
+  <li><b>Night mode = the AI Coach surface.</b> The 2am-anxious user — Nick after a scary lab, Robert checking his recovery — gets a calm dark Coach automatically 22:00–06:00.</li>
+  <li><b>Hopeful, non-judgmental framing.</b> Especially for Robert: alcohol-related liver disease is stigmatised and often hidden from family. Use «recovery», «healing», «rebuild» — never «damage» or «abuse».</li>
+  <li><b>Every AI Coach answer cites a source</b> — AASLD / AGA / EASL / Mayo Clinic. No citation = refusal pivot.</li>
+  <li><b>No diagnosis language.</b> «Your ALT 85 maps to the elevated range per AASLD», never «you have NASH».</li>
+  <li><b>Plain-English labs.</b> Every ALT / AST / GGT / FIB-4 value gets a verdict pill plus a one-line explanation a non-clinician understands.</li>
+  <li><b>Liver Score is a trend, not a verdict.</b> Always show the 6-month direction — ALT lags weight loss by months, so a single absolute number demotivates.</li>
+  <li><b>Privacy-first.</b> Labs and food photos stay on-device by default; iCloud sync is opt-in. RAG runs on-device (sqlite-vec).</li>
+</ul>
+
+<!-- ============================================================ -->
+<!-- ===== MODULE 2 · JTBD ===== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-2">
+  <span class="num">МОДУЛЬ 2</span>
+  <h2>JTBD юзеров · 6 когорт</h2>
+  <p class="desc">6 deep cohorts from Hepatica Master v2 PART 2, and the 8 jobs-to-be-done that drive them. JTBD intensity sets onboarding question order, home-screen widget priority, and (Module 3) the feature roadmap. Quotes verbatim from Master v2 APPENDIX A.</p>
+</div>
+
+<!-- ===== 2.1 COHORTS ===== -->
+<h2 id="cohorts">2.1 · 6 cohorts</h2>
+<p class="lede">From Master v2 PART 2. Anchor cohorts (gold left border) each define a distinct door of entry and paywall variant. Together: ~135M TAM, $162M SAM across US · GB · DE · CA · AU.</p>
+
+<div class="persona-grid">
+
+  <div class="persona anchor">
+    <div class="ph"><b>🍷 Newly Diagnosed Nick</b><span class="age">35–60</span><span class="share">25%</span></div>
+    <div class="pain">"Doctor said reverse it with diet. Cool. WHAT diet though??"</div>
+    <div class="row"><div class="l">Anchor</div><div class="v"><span class="anchor-tag">Default cohort · onboarding</span></div></div>
+    <div class="row"><div class="l">Door</div><div class="v">"What can I actually eat?"</div></div>
+    <div class="row"><div class="l">Top jobs</div><div class="v"><b>J1</b> · <b>J2</b> · <b>J8</b></div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-med">medium · fear-driven · 48% trial→paid</span></div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Standard <b>$39.99/yr</b></div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/FattyLiverDisease 60K · r/NAFLD 8K</div></div>
+  </div>
+
+  <div class="persona">
+    <div class="ph"><b>💉 GLP-1 Greta</b><span class="age">30–55</span><span class="share">15%</span></div>
+    <div class="pain">"Down 30 lbs on Wegovy. ALT was 65, now 32. Connected?"</div>
+    <div class="row"><div class="l">Door</div><div class="v">"Is Ozempic reducing my liver fat?"</div></div>
+    <div class="row"><div class="l">Top jobs</div><div class="v"><b>J3</b> · <b>J2</b> · <b>J1</b></div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-high">high · health-tracking premium · 55%</span></div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Family <b>$79.99/yr</b> · JabWell bundle</div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/Ozempic 60K · r/Mounjaro 50K</div></div>
+  </div>
+
+  <div class="persona">
+    <div class="ph"><b>🍔 Pre-Diabetic Pete</b><span class="age">40–65</span><span class="share">20%</span></div>
+    <div class="pain">"HbA1c 6.0, ALT 70, weight up. Where do I even start??"</div>
+    <div class="row"><div class="l">Door</div><div class="v">"Insulin resistance + liver — double hit"</div></div>
+    <div class="row"><div class="l">Top jobs</div><div class="v"><b>J5</b> · <b>J1</b> · <b>J3</b></div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-med">medium · mass-market · 42% trial→paid</span></div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Standard <b>$39.99/yr</b></div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/PreDiabetes 35K · r/diabetes_t2 95K</div></div>
+  </div>
+
+  <div class="persona anchor">
+    <div class="ph"><b>💊 Rezdiffra Rachel</b><span class="age">45–70</span><span class="share">8%</span></div>
+    <div class="pain">"Started Rezdiffra. Insurance wants documentation it's working."</div>
+    <div class="row"><div class="l">Anchor</div><div class="v"><span class="anchor-tag">Premium WTP · revenue anchor</span></div></div>
+    <div class="row"><div class="l">Door</div><div class="v">"$40K drug — I need tracking"</div></div>
+    <div class="row"><div class="l">Top jobs</div><div class="v"><b>J6</b> · <b>J2</b> · <b>J3</b></div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-high">highest · $99 = rounding error · 62%</span></div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Lifetime <b>$99</b> + Rezdiffra Pro $49.99</div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/MASH · American Liver Foundation</div></div>
+  </div>
+
+  <div class="persona">
+    <div class="ph"><b>🧬 PCOS-NAFLD Patricia</b><span class="age">25–45</span><span class="share">15%</span></div>
+    <div class="pain">"PCOS PLUS fatty liver. Double hormonal hit?"</div>
+    <div class="row"><div class="l">Door</div><div class="v">Cysta AI in-app cross-promote</div></div>
+    <div class="row"><div class="l">Top jobs</div><div class="v"><b>J7</b> · <b>J2</b> · <b>J3</b></div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-high">high · PCOS-subscription habit · 50%</span></div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Family <b>$79.99/yr</b> · Cysta bundle $99</div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/PCOS 350K · Cysta AI user base</div></div>
+  </div>
+
+  <div class="persona anchor">
+    <div class="ph"><b>🍺 Recovering Robert</b><span class="age">30–65</span><span class="share">17%</span></div>
+    <div class="pain">"Quit drinking 90 days ago. Is my liver healing? How do I know?"</div>
+    <div class="row"><div class="l">Anchor</div><div class="v"><span class="anchor-tag">⭐ NEW · biggest underserved cohort</span></div></div>
+    <div class="row"><div class="l">Door</div><div class="v">"Quit drinking — is my liver recovering?"</div></div>
+    <div class="row"><div class="l">Top jobs</div><div class="v"><b>J4</b> · <b>J2</b> · <b>J3</b></div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-med">medium · highly motivated · 55%</span></div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Standard <b>$39.99/yr</b> + Recovery Mode $19.99</div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/stopdrinking 500K · I Am Sober 1M+</div></div>
+  </div>
+
+</div>
+
+<!-- ===== 2.2 JTBD CARDS ===== -->
+<h2 id="jtbds">2.2 · 8 jobs-to-be-done</h2>
+<p class="lede">Each card: number + statement + anchor cohort + the killer feature it drives. J1–J6 are ⭐⭐⭐⭐⭐ peak jobs (gold border) — the MVP Tier-1 build list. Sourced from per-cohort JTBD tables in Master v2 PART 2 &amp; 4.1.</p>
+
+<div class="jtbd-grid">
+
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J1</span><b>🍴 "Tell me exactly what I can eat"</b><span class="stars">⭐⭐⭐⭐⭐</span></div>
+    <div class="stmt">For Nick — "just eat healthy" from a rushed 8-minute GP visit is useless. He needs a yes/no on the meal in front of him.</div>
+    <div class="row"><div class="l">Anchor</div><div class="v">🍷 <b>Nick</b> · 🍔 Pete</div></div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Photo Food Scanner</b> — per-meal liver-risk rating (AcidWise DNA)</div></div>
+  </div>
+
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J2</span><b>🩸 "Explain my labs in plain English"</b><span class="stars">⭐⭐⭐⭐⭐</span></div>
+    <div class="stmt">ALT 85, AST 62 — numbers with no context spawn 6 months of anxiety between follow-up appointments.</div>
+    <div class="row"><div class="l">Anchor</div><div class="v">🍷 <b>Nick</b> · 💊 Rachel · 🍺 Robert</div></div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Lab Interpreter</b> — OCR for ALT / AST / GGT / FIB-4 + verdict pills</div></div>
+  </div>
+
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J3</span><b>📈 "Show me my treatment is actually working"</b><span class="stars">⭐⭐⭐⭐⭐</span></div>
+    <div class="stmt">Greta on Ozempic, Rachel on Rezdiffra — both need objective proof between labs that are 3–6 months apart.</div>
+    <div class="row"><div class="l">Anchor</div><div class="v">💉 <b>Greta</b> · 💊 Rachel</div></div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Multi-lab trend dashboard</b> — weight · glucose · ALT on one timeline</div></div>
+  </div>
+
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J4</span><b>🌱 "Show my liver healing now I've stopped drinking"</b><span class="stars">⭐⭐⭐⭐⭐</span></div>
+    <div class="stmt">For Robert, 90 days sober — watching GGT fall is the single strongest reinforcement of his sobriety.</div>
+    <div class="row"><div class="l">Anchor</div><div class="v">🍺 <b>Robert</b></div></div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>GGT / ALT recovery timeline</b> + sober streak (Recovery Mode)</div></div>
+  </div>
+
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J5</span><b>🧭 "Where do I even start?"</b><span class="stars">⭐⭐⭐⭐⭐</span></div>
+    <div class="stmt">Pete gets HbA1c, ALT and weight flagged at once — metabolic-syndrome overwhelm with no priority order.</div>
+    <div class="row"><div class="l">Anchor</div><div class="v">🍔 <b>Pete</b></div></div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Onboarding triage</b> — cohort detection routes home screen + Coach</div></div>
+  </div>
+
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J6</span><b>📄 "Document Rezdiffra for my insurance"</b><span class="stars">⭐⭐⭐⭐⭐</span></div>
+    <div class="stmt">Rachel's $40K/yr drug needs prior-auth re-proof every 6 months — clinical improvement, on paper.</div>
+    <div class="row"><div class="l">Anchor</div><div class="v">💊 <b>Rachel</b></div></div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Adherence + outcome PDF</b> · FibroScan score tracker (Rezdiffra Pro)</div></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jh"><span class="jtbd-num">J7</span><b>🧬 "Track PCOS and fatty liver together"</b><span class="stars">⭐⭐⭐⭐</span></div>
+    <div class="stmt">50% of women with PCOS have NAFLD — Patricia wants one dashboard, not two separate apps.</div>
+    <div class="row"><div class="l">Anchor</div><div class="v">🧬 <b>Patricia</b></div></div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Multi-condition dashboard</b> · Cysta AI cross-link</div></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jh"><span class="jtbd-num">J8</span><b>🫶 "Will I be ok? — give me a realistic prognosis"</b><span class="stars">⭐⭐⭐⭐</span></div>
+    <div class="stmt">"Fatty liver → cirrhosis → cancer" catastrophizing is universal — 75% of cases never progress, but fear paralyses.</div>
+    <div class="row"><div class="l">Anchor</div><div class="v">🍷 <b>Nick</b> · all cohorts</div></div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>AI Coach RAG</b> — staged, evidence-cited reassurance</div></div>
+  </div>
+
+</div>
+
+<!-- ===== 2.3 JTBD SCAN ===== -->
+<h2 id="jtbd-scan">2.3 · JTBD scan — 6 cohorts × 8 jobs</h2>
+<p class="lede">Intensity ★1–5 per cohort × job; ★5 tinted. Confirms J1 / J2 are near-universal (MVP Tier 1), while J4 is Robert-specific, J6 Rachel-specific, J7 Patricia-specific — i.e. premium add-on modules, not core.</p>
+<div class="scan-wrap">
+<table class="jtbd-scan">
+  <thead><tr>
+    <th>Cohort</th>
+    <th>J1 Eat</th><th>J2 Labs</th><th>J3 Progress</th><th>J4 Recovery</th><th>J5 Triage</th><th>J6 Rezdiffra</th><th>J7 PCOS</th><th>J8 Prognosis</th>
+  </tr></thead>
+  <tbody>
+    <tr><td class="cohort-cell">🍷 Nick</td><td class="star s5">★5</td><td class="star s5">★5</td><td class="star s4">★4</td><td class="star s2">★2</td><td class="star s3">★3</td><td class="star s1">★1</td><td class="star s1">★1</td><td class="star s5">★5</td></tr>
+    <tr><td class="cohort-cell">💉 Greta</td><td class="star s4">★4</td><td class="star s4">★4</td><td class="star s5">★5</td><td class="star s2">★2</td><td class="star s3">★3</td><td class="star s2">★2</td><td class="star s2">★2</td><td class="star s3">★3</td></tr>
+    <tr><td class="cohort-cell">🍔 Pete</td><td class="star s5">★5</td><td class="star s4">★4</td><td class="star s4">★4</td><td class="star s2">★2</td><td class="star s5">★5</td><td class="star s1">★1</td><td class="star s1">★1</td><td class="star s3">★3</td></tr>
+    <tr><td class="cohort-cell">💊 Rachel</td><td class="star s2">★2</td><td class="star s5">★5</td><td class="star s5">★5</td><td class="star s2">★2</td><td class="star s2">★2</td><td class="star s5">★5</td><td class="star s1">★1</td><td class="star s3">★3</td></tr>
+    <tr><td class="cohort-cell">🧬 Patricia</td><td class="star s4">★4</td><td class="star s4">★4</td><td class="star s4">★4</td><td class="star s1">★1</td><td class="star s3">★3</td><td class="star s1">★1</td><td class="star s5">★5</td><td class="star s3">★3</td></tr>
+    <tr><td class="cohort-cell">🍺 Robert</td><td class="star s2">★2</td><td class="star s5">★5</td><td class="star s5">★5</td><td class="star s5">★5</td><td class="star s3">★3</td><td class="star s1">★1</td><td class="star s1">★1</td><td class="star s4">★4</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<!-- ===== MODULE 3 · ROADMAP — FEATURE CONSILIUM ===== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-3">
+  <span class="num">МОДУЛЬ 3</span>
+  <h2>Roadmap · фича-консилиум · 🔒 15 → P0/P1/P2</h2>
+  <p class="desc">15 candidate features run through a 4-round consilium — Round 1 cohort-demand vote, Round 2 strategic re-vote with revision, Round 3 weighted aggregate, Round 4 runoff. Σ = 0.40·(demand×2) + 0.30·conversion + 0.20·moat + 0.10·build-speed. Sourced from PRODUCT_DESIGN.md + V1_SCOPE.md.</p>
+</div>
+
+<!-- ===== 3.1 FEATURE LONG-LIST ===== -->
+<h2 id="features">3.1 · Feature long-list — 15 candidates</h2>
+<p class="lede">Every feature with its anchor cohorts, ship cost, sibling reuse and compliance risk. Tier tag = where it landed after the consilium (P0 / P1 / P2).</p>
+<div class="feat-grid">
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F1</span><h3>🍴 Photo Food Scanner</h3></div><span class="tag t1">P0</span></div>
+    <p class="desc">Photo a meal → AI liver-risk rating (Green / Yellow / Red) + top-3 risk drivers + a liver-friendly swap. Feeds the daily Liver Score.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Nick · Pete · Greta</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Small · 1–2 wk · AcidWise reuse ~85%</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk med">med</span> &nbsp; "liver-risk rating", not diagnosis</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F2</span><h3>🩸 Lab Interpreter (OCR)</h3></div><span class="tag t1">P0</span></div>
+    <p class="desc">Photo a blood test → Vision OCR extracts ALT / AST / GGT / ALP / bilirubin / FIB-4 / HbA1c → plain-English explanation + trend.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Nick · Rachel · Robert · all</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Large · 4–5 wk · Cysta AI lineage</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk high">high</span> &nbsp; "per AASLD threshold" framing only</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F3</span><h3>🧠 AI Coach (DeepSeek + RAG)</h3></div><span class="tag t1">P0</span></div>
+    <p class="desc">Chat grounded in AASLD / AGA / EASL / Mayo. Cohort-specific system prompts, visible citations, refusal pivots, night mode.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>all 6</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Large · 4–6 wk · ~7,000-chunk RAG</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk high">high</span> &nbsp; citation required, refusal pivots</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F4</span><h3>💊 Medication Tracker</h3></div><span class="tag t1">P0</span></div>
+    <p class="desc">Rezdiffra · GLP-1s · vitamin E · metformin. Dose, adherence streak, side-effect log (diarrhea / fatigue / nausea).</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Rachel · Greta</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Small · 1–2 wk · JabWell reuse</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk high">high</span> &nbsp; never dosing advice</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F5</span><h3>🍷 Alcohol Tracker</h3></div><span class="tag t1">P0</span></div>
+    <p class="desc">Daily drink log (per-country units), sober streak, GGT recovery timeline, NA beverage database, non-judgmental relapse handler.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Robert · Nick · Pete</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Medium · 2 wk</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk med">med</span> &nbsp; harm-reduction framing</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F6</span><h3>📊 Multi-Lab Trend Dashboard</h3></div><span class="tag t1">P0</span></div>
+    <p class="desc">All markers on one timeline — liver panel, metabolic crossover, fibrosis risk, recovery mode, combined multi-metric overlay.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Greta · Rachel · Robert · all</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Medium · 3 wk</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk low">low</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F7</span><h3>📅 FibroScan Score Tracker</h3></div><span class="tag t2">P1</span></div>
+    <p class="desc">LSM (kPa) + CAP (dB/m) trend, F0→F4 staging visual, fibrosis-regression view, insurance reauth reminders.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Rachel</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Small · 1–2 wk</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk high">high</span> &nbsp; educational ranges, never diagnostic</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F8</span><h3>🔗 Symptom-Cause AI Analytics</h3></div><span class="tag t2">P1</span></div>
+    <p class="desc">Correlates fatigue + labs + diet + alcohol + meds → "your GGT spike correlates with 3+ drinks that weekend".</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>all 6</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Medium · 3 wk</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk low">low</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F9</span><h3>🥗 Liver-Friendly Recipe Engine</h3></div><span class="tag t2">P1</span></div>
+    <p class="desc">Mediterranean-first, low-fructose / low-saturated-fat, coffee-friendly, PCOS-metabolic compatible. 50+ recipes V1.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Nick · Pete · Patricia</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Medium · 3 wk · content-heavy</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk low">low</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F10</span><h3>📄 Doctor-Shareable PDF</h3></div><span class="tag t2">P1</span></div>
+    <p class="desc">3-month lab trends + medication adherence + food-score + symptom diary. Hepatologist + GP formats, anonymizable.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Rachel · Nick · Pete</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Small · 1–2 wk · PDFKit</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk low">low</span> &nbsp; data export, no claims</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F11</span><h3>🍺 Recovery Mode</h3></div><span class="tag t2">P1</span></div>
+    <p class="desc">Sober streak + milestones, "your liver at Day 30/60/90/180" evidence cards, GGT recovery curve, NA database. Robert add-on.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Robert</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Medium · 2–3 wk</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk med">med</span> &nbsp; non-judgmental relapse copy</div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F12</span><h3>💉 Rezdiffra Pro</h3></div><span class="tag t3">P2</span></div>
+    <p class="desc">Extended FibroScan history, insurance appeal letter generator, pre-hepatologist summary, multi-med cocktail tracker.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Rachel</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Medium · 3 wk · +$49.99/yr add-on</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk high">high</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F13</span><h3>🔬 Diet Lab</h3></div><span class="tag t3">P2</span></div>
+    <p class="desc">A/B compare 2 diets (Mediterranean vs keto vs IF), 90-day framework, statistical lab correlation.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Pete · Greta</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Medium · 3 wk · +$29.99/yr add-on</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk low">low</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F14</span><h3>🧬 PCOS-NAFLD Cross-Link</h3></div><span class="tag t3">P2</span></div>
+    <p class="desc">Cysta AI ↔ Hepatica account link, synced cycle / insulin-resistance / inositol fields, hormone-aware food guidance.</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Patricia</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Medium · 2–3 wk · gated on Cysta sync</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk med">med</span></div>
+    </div>
+  </article>
+
+  <article class="feat">
+    <div class="head"><div class="left"><span class="num">F15</span><h3>📚 Educational Lessons</h3></div><span class="tag t3">P2</span></div>
+    <p class="desc">20–30 micro-lessons (~3 min): "What is NAFLD", "Reading your ALT", "GGT and alcohol", "FIB-4 explained".</p>
+    <div class="rows">
+      <div class="frow"><span class="lbl">Cohorts</span><b>Nick · Pete</b></div>
+      <div class="frow"><span class="lbl">Ship</span>Medium · 3 wk · content-heavy</div>
+      <div class="frow"><span class="lbl">Compliance</span><span class="risk low">low</span></div>
+    </div>
+  </article>
+
+</div>
+
+<!-- ===== 3.2 CONSILIUM ===== -->
+<h2 id="feature-consilium">3.2 · Feature consilium — 4 rounds</h2>
+
+<div class="round">
+  <span class="r-tag">Round 1 · cohort demand</span>
+  <h3>All 6 cohorts score each feature 0–5</h3>
+  <p>Each cohort scored every feature on «how much do I need this», audience-weighted (Nick .25 · Greta .15 · Pete .20 · Rachel .08 · Patricia .15 · Robert .17). Pure demand ranks <b>Lab Interpreter (4.50)</b>, <b>Multi-Lab Dashboard (4.47)</b> and <b>AI Coach (4.25)</b> at the top.</p>
+  <p>But demand alone <b>buries two category-defining features</b>: Alcohol Tracker (2.96) and FibroScan (2.41) score low because each serves a single anchor cohort — yet they are the highest-conversion features for Robert and Rachel and they are pure category whitespace. Round 1 demand alone would mis-build the roadmap → re-vote.</p>
+</div>
+
+<div class="round r2">
+  <span class="r-tag">Round 2 · strategic re-vote + revision</span>
+  <h3>Founder + ASO + engineering re-score Conversion · Moat · Build</h3>
+  <p>Every feature re-scored 0–10 on <b>Conversion</b> (drives trial→paid), <b>Moat</b> (category whitespace / differentiation) and <b>Build</b> (10 = fastest, most sibling reuse). Revisions logged this round:</p>
+  <ul>
+    <li><b>Alcohol Tracker → moat 10.</b> The GGT-recovery timeline is genuinely uncontested — no liver app serves the sober community (r/stopdrinking 500K).</li>
+    <li><b>FibroScan → moat 9.</b> Rachel's $40K-drug cohort has zero dedicated tracking tools today.</li>
+    <li><b>Recipe Engine → moat cut to 4.</b> MyFitnessPal and Mediterranean recipe apps crowd this lane heavily.</li>
+    <li><b>PCOS Cross-Link → build 4.</b> Gated on the Cysta AI integration handshake — not a self-contained build.</li>
+  </ul>
+</div>
+
+<h3 style="margin-top:22px;">Round 3 · weighted aggregate</h3>
+<p class="lede">Σ = 0.40·(demand×2) + 0.30·conversion + 0.20·moat + 0.10·build. Rows sorted by Σ; cluster colour = P0 (teal) / P1 (gold) / P2 (grey).</p>
+<div class="agg-wrap">
+<table class="agg">
+  <thead><tr>
+    <th>Rank</th><th>Feature</th><th>Demand /5</th><th>Conv /10</th><th>Moat /10</th><th>Build /10</th><th>Σ aggregate</th><th>Cluster</th>
+  </tr></thead>
+  <tbody>
+    <tr class="p0"><td class="rank">1</td><td class="fname">🩸 Lab Interpreter (OCR)</td><td class="n">4.50</td><td class="n">9</td><td class="n">8</td><td class="n">5</td><td class="sigma">8.40</td><td class="cluster">P0</td></tr>
+    <tr class="p0"><td class="rank">2</td><td class="fname">🧠 AI Coach (DeepSeek + RAG)</td><td class="n">4.25</td><td class="n">9</td><td class="n">9</td><td class="n">4</td><td class="sigma">8.30</td><td class="cluster">P0</td></tr>
+    <tr class="p0"><td class="rank">3</td><td class="fname">🍴 Photo Food Scanner</td><td class="n">3.95</td><td class="n">9</td><td class="n">7</td><td class="n">8</td><td class="sigma">8.06</td><td class="cluster">P0</td></tr>
+    <tr class="p0"><td class="rank">4</td><td class="fname">📊 Multi-Lab Trend Dashboard</td><td class="n">4.47</td><td class="n">8</td><td class="n">7</td><td class="n">6</td><td class="sigma">7.98</td><td class="cluster">P0</td></tr>
+    <tr class="p0"><td class="rank">5</td><td class="fname">🍷 Alcohol Tracker</td><td class="n">2.96</td><td class="n">9</td><td class="n">10</td><td class="n">7</td><td class="sigma">7.77</td><td class="cluster">P0</td></tr>
+    <tr class="p1"><td class="rank">6</td><td class="fname">📅 FibroScan Score Tracker</td><td class="n">2.41</td><td class="n">8</td><td class="n">9</td><td class="n">7</td><td class="sigma">6.83</td><td class="cluster">P1</td></tr>
+    <tr class="p0"><td class="rank">7</td><td class="fname">💊 Medication Tracker <span class="lock-tag">↑ R4</span></td><td class="n">3.19</td><td class="n">7</td><td class="n">6</td><td class="n">8</td><td class="sigma">6.65</td><td class="cluster">P0</td></tr>
+    <tr class="p1"><td class="rank">8</td><td class="fname">🍺 Recovery Mode</td><td class="n">2.13</td><td class="n">8</td><td class="n">9</td><td class="n">7</td><td class="sigma">6.60</td><td class="cluster">P1</td></tr>
+    <tr class="p1"><td class="rank">9</td><td class="fname">📄 Doctor-Shareable PDF</td><td class="n">3.16</td><td class="n">6</td><td class="n">7</td><td class="n">8</td><td class="sigma">6.53</td><td class="cluster">P1</td></tr>
+    <tr class="p1"><td class="rank">10</td><td class="fname">🔗 Symptom-Cause Analytics</td><td class="n">3.65</td><td class="n">6</td><td class="n">6</td><td class="n">6</td><td class="sigma">6.52</td><td class="cluster">P1</td></tr>
+    <tr class="p1"><td class="rank">11</td><td class="fname">🥗 Liver-Friendly Recipe Engine</td><td class="n">3.97</td><td class="n">6</td><td class="n">4</td><td class="n">7</td><td class="sigma">6.48</td><td class="cluster">P1</td></tr>
+    <tr class="p2"><td class="rank">12</td><td class="fname">🔬 Diet Lab</td><td class="n">3.05</td><td class="n">6</td><td class="n">6</td><td class="n">6</td><td class="sigma">6.04</td><td class="cluster">P2</td></tr>
+    <tr class="p2"><td class="rank">13</td><td class="fname">💉 Rezdiffra Pro</td><td class="n">1.47</td><td class="n">7</td><td class="n">9</td><td class="n">6</td><td class="sigma">5.68</td><td class="cluster">P2</td></tr>
+    <tr class="p2"><td class="rank">14</td><td class="fname">📚 Educational Lessons</td><td class="n">3.45</td><td class="n">5</td><td class="n">3</td><td class="n">6</td><td class="sigma">5.46</td><td class="cluster">P2</td></tr>
+    <tr class="p2"><td class="rank">15</td><td class="fname">🧬 PCOS-NAFLD Cross-Link</td><td class="n">1.75</td><td class="n">5</td><td class="n">7</td><td class="n">4</td><td class="sigma">4.70</td><td class="cluster">P2</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="runoff">
+  <h3>Round 4 · runoff — re-vote on close calls</h3>
+  <ul>
+    <li><b>💊 Medication Tracker → P0 (founder override).</b> It scores 6.65 — mid-pack — but Rachel and Greta (23% of audience) literally cannot onboard without it: Rezdiffra and GLP-1s are their entire reason for the app. Anchor-cohort table-stakes beat aggregate score. This is the consilium's designed escape hatch.</li>
+    <li><b>📅 FibroScan (6.83) out-scores three P1 features</b> but ships as P1 — it depends on the Lab Interpreter pipeline landing first, so it cannot lead the build.</li>
+    <li><b>🧬 PCOS Cross-Link (4.70, last) → P2.</b> Resolves the PRODUCT_DESIGN (T3) vs V1_SCOPE (Week 3) disagreement: Patricia (15%) is fully served at launch by the generic Multi-Lab Dashboard; the deep Cysta AI sync is a fast-follow, not a launch blocker.</li>
+    <li><b>📚 Educational Lessons → P2.</b> Lowest moat (3) — patient-education content is a crowded lane; build only if onboarding telemetry shows lesson demand.</li>
+  </ul>
+  <div class="pick-row">
+    <span class="pick lead">P0 · 6 features — MVP core</span>
+    <span class="pick">P1 · 5 features — differentiators</span>
+    <span class="pick">P2 · 4 features — premium / fast-follow</span>
+  </div>
+</div>
+
+<!-- ===== 3.3 P-TIER ROADMAP ===== -->
+<h2 id="ptiers">3.3 · P-tier roadmap — 8-week ship plan</h2>
+<p class="lede">Three clusters by ship-window. Codebase reuse (AcidWise · JabWell · Cysta AI ≈ 85%) keeps P0 inside a 3-week sprint.</p>
+<div class="roadmap-grid">
+
+  <div class="ptier p0">
+    <span class="weeks">P0 · weeks 1–3</span>
+    <h3>MVP core · must-ship-for-launch</h3>
+    <ul>
+      <li><b>🩸 Lab Interpreter + OCR</b> The JTBD anchor for Nick, Rachel and Robert — plain-English ALT / AST / GGT / FIB-4.</li>
+      <li><b>🧠 AI Coach (DeepSeek + RAG)</b> Universal. AASLD / AGA / EASL-grounded, cohort-aware system prompts.</li>
+      <li><b>🍴 Photo Food Scanner</b> Nick's #1 job. AcidWise port — Vision pipeline reused ~85%.</li>
+      <li><b>📊 Multi-Lab Trend Dashboard</b> The "is it working" proof surface for Greta and Rachel.</li>
+      <li><b>🍷 Alcohol Tracker</b> GGT recovery timeline — the uncontested Robert moat.</li>
+      <li><b>💊 Medication Tracker</b> Table-stakes for Rachel (Rezdiffra) and Greta (GLP-1) — runoff override.</li>
+    </ul>
+    <div class="total">Σ 6 features · weeks 1–3 (parallel tracks)</div>
+  </div>
+
+  <div class="ptier p1">
+    <span class="weeks">P1 · weeks 4–8</span>
+    <h3>Differentiators · before US launch</h3>
+    <ul>
+      <li><b>📅 FibroScan Score Tracker</b> Rachel's F0–F4 staging + insurance reauth reminders.</li>
+      <li><b>🍺 Recovery Mode</b> Sober streak + "your liver at Day 90" cards (Robert add-on).</li>
+      <li><b>📄 Doctor-Shareable PDF</b> Hepatologist + GP report — cheap PDFKit filler.</li>
+      <li><b>🔗 Symptom-Cause Analytics</b> Weekly AI insight — the retention engine.</li>
+      <li><b>🥗 Liver-Friendly Recipe Engine</b> Mediterranean-first, 50+ recipes.</li>
+    </ul>
+    <div class="total">Σ 5 features · weeks 4–8</div>
+  </div>
+
+  <div class="ptier p2">
+    <span class="weeks">P2 · month 2–3 · post-launch</span>
+    <h3>Premium add-ons · fast-follow</h3>
+    <ul>
+      <li><b>🔬 Diet Lab</b> A/B diet experiment framework (+$29.99/yr — Pete / Greta).</li>
+      <li><b>💉 Rezdiffra Pro</b> Insurance appeal generator + extended FibroScan (+$49.99/yr — Rachel).</li>
+      <li><b>📚 Educational Lessons</b> 20–30 micro-lessons — build on demand telemetry.</li>
+      <li><b>🧬 PCOS-NAFLD Cross-Link</b> Cysta AI account sync — gated fast-follow (Patricia).</li>
+    </ul>
+    <div class="total">Σ 4 features · month 2–3</div>
+  </div>
+
+</div>
+
+<div class="seq-strip">
+  <h3>Horizontal sequencing · W1 → W9 AU launch</h3>
+  <div class="seq-row">
+    <div class="seq"><b>W1</b>Onboarding cohort-triage + Photo Food Scanner (AcidWise port)</div>
+    <div class="seq"><b>W2</b>Manual lab entry + Lab Interpreter OCR start</div>
+    <div class="seq"><b>W3</b>AI Coach RAG start + Med Tracker (JabWell) + Alcohol Tracker</div>
+    <div class="seq"><b>W4</b>AI Coach finish + Multi-Lab Dashboard + Paywall + 5 CPPs</div>
+    <div class="seq"><b>W5</b>FibroScan Tracker + Recovery Mode start</div>
+    <div class="seq"><b>W6</b>Recovery Mode finish + Doctor PDF + Symptom Analytics</div>
+    <div class="seq"><b>W7</b>Recipe Engine + multi-locale + QA</div>
+    <div class="seq"><b>W8</b>Final QA + TestFlight 50 users</div>
+    <div class="seq launch"><b>W9</b>🇦🇺 AU LAUNCH</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ===== MODULE 4 · TAB ARCHITECTURE ===== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-4">
+  <span class="num">МОДУЛЬ 4</span>
+  <h2>Архитектура табов · 🔒 Locked B · 4-tab + «+Log» FAB</h2>
+  <p class="desc">What users actually need (derived from the 8 JTBD), a 3-candidate tab consilium, and the locked tab bar rendered in an iPhone frame. Lock: Today · Labs · «+Log» FAB · Coach · Progress.</p>
+</div>
+
+<!-- ===== 4.1 WHAT USERS NEED ===== -->
+<h2 id="tab-need">4.1 · What users need — derived from the JTBD</h2>
+<p class="lede">Strip the 6 cohorts down to shared needs and five recurring jobs remain. Each maps to exactly one navigation surface — that is the tab spine.</p>
+<table class="tab-spec">
+  <thead><tr><th>Universal need</th><th>JTBD evidence</th><th>Served by</th></tr></thead>
+  <tbody>
+    <tr><td><b>"Make today about MY situation"</b></td><td>J5 triage · cohort overwhelm (Pete, Nick)</td><td class="tabname">Today</td></tr>
+    <tr><td><b>"Make sense of my bloodwork"</b></td><td>J2 — near-universal ★5 across cohorts</td><td class="tabname">Labs</td></tr>
+    <tr><td><b>"Log it without friction"</b></td><td>every JTBD — meal photo, drink, lab, med, symptom</td><td class="tabname">+Log FAB</td></tr>
+    <tr><td><b>"Answers I can trust, any hour"</b></td><td>J1 / J8 — Coach, incl. 2am anxiety</td><td class="tabname">Coach</td></tr>
+    <tr><td><b>"Proof I'm getting better"</b></td><td>J3 progress · J4 recovery (Greta, Rachel, Robert)</td><td class="tabname">Progress</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== 4.2 TAB CONSILIUM ===== -->
+<h2 id="tab-consilium">4.2 · Tab consilium — 3 candidates, 6 cohorts vote</h2>
+<table class="tab-spec">
+  <thead><tr><th>#</th><th>Candidate</th><th>Tabs (left → right · center FAB)</th></tr></thead>
+  <tbody>
+    <tr><td><b>A</b></td><td><b>5-tab classic</b></td><td>Home · Labs · Food · Coach · Progress &nbsp;(no FAB) — the PRODUCT_DESIGN.md first draft</td></tr>
+    <tr class="locked-row"><td><b>B</b></td><td><b>4-tab + Log FAB ✓</b></td><td><b>Today · Labs · [+Log] · Coach · Progress</b></td></tr>
+    <tr><td><b>C</b></td><td><b>Track-everything</b></td><td>Today · Track · Coach · Learn &nbsp;(no FAB)</td></tr>
+  </tbody>
+</table>
+<table class="vote">
+  <thead><tr><th>Voter / cohort</th><th>Audience</th><th>A · 5-tab</th><th>B · 4-tab + FAB 🔒</th><th>C · Track</th></tr></thead>
+  <tbody>
+    <tr><td class="voter">🍷 Newly Diagnosed Nick</td><td class="aud">25%</td><td class="score hi">5</td><td class="score">4</td><td class="score">3</td></tr>
+    <tr><td class="voter">💉 GLP-1 Greta</td><td class="aud">15%</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍔 Pre-Diabetic Pete</td><td class="aud">20%</td><td class="score">4</td><td class="score hi">4</td><td class="score">3</td></tr>
+    <tr><td class="voter">💊 Rezdiffra Rachel</td><td class="aud">8%</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🧬 PCOS-NAFLD Patricia</td><td class="aud">15%</td><td class="score">3</td><td class="score hi">4</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍺 Recovering Robert</td><td class="aud">17%</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr class="totals"><td class="voter">Σ weighted /5</td><td class="aud">—</td><td class="score">3.70</td><td class="score locked">4.40 🔒</td><td class="score">3.00</td></tr>
+  </tbody>
+</table>
+<div class="runoff">
+  <h3>Why B wins — and revises the draft</h3>
+  <p><b>B · 4-tab + «+Log» FAB locked (4.40 / 5).</b> The centre +Log FAB is the Loveiko logging-DNA — Cysta AI, JabWell and Salvora all converged on it. Hepatica's logging is the highest-frequency in the family: a meal photo at every meal, a daily drink log for Robert, lab scans, med doses. A one-tap capture beats a buried tab.</p>
+  <p>Candidate A burns a whole tab on Food when food-scan <b>is</b> the primary +Log action; Nick still gets food-first via the cohort-aware Today dashboard. C's vague "Track" tab tested worst across every cohort. <b>⚠️ This revises PRODUCT_DESIGN.md's 5-tab draft → 4-tab + FAB</b> (logged in DECISIONS.md).</p>
+</div>
+
+<!-- ===== 4.3 TAB BAR MOCK ===== -->
+<h2 id="tabbar">4.3 · Tab bar — iPhone-frame mock</h2>
+<div class="phone-frame">
+  <div class="phone-screen">
+    <div class="scr-title"><span>Today</span><span style="font-size:11px;color:var(--ink-2);background:var(--pearl);border:1px solid var(--divider);padding:3px 8px;border-radius:999px;">Liver 58 ↑</span></div>
+    <div class="scr-card"><b>ALT 84 U/L · –23 since diet start</b><br>Watch · next lab due in 6 weeks</div>
+    <div class="scr-card"><b>Food scan · lunch</b><br>Liver-friendly ✅ · grilled salmon + greens</div>
+    <div class="scr-card ai"><b>Coach noticed</b><br>"Your GGT is back in range — 3 sober months showing. <em>Open insight →</em>"</div>
+    <div class="phone-tabbar">
+      <a class="tab active"><span class="icn">⌂</span>Today</a>
+      <a class="tab"><span class="icn">🧪</span>Labs</a>
+      <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
+      <a class="tab"><span class="icn">💬</span>Coach</a>
+      <a class="tab"><span class="icn">📈</span>Progress</a>
+    </div>
+  </div>
+</div>
+<p class="lede" style="font-size:13px;">Centre FAB <b>+Log</b> = the primary daily ritual. One tap → choose <b>meal photo / drink / lab scan / medication / symptom</b> → 3-tap save. Each capture flows into Today + Coach context + the relevant tab. SF Symbols: <code>house.fill</code> · <code>testtube.2</code> · <code>plus</code> · <code>bubble.left.fill</code> · <code>chart.line.uptrend.xyaxis</code>.</p>
+
+<!-- ===== 4.4 PER-TAB SPEC ===== -->
+<h2 id="tab-spec">4.4 · Per-tab spec</h2>
+<table class="tab-spec">
+  <thead><tr><th>Tab</th><th>Primary content</th><th>Top JTBD</th><th>Anchor cohort</th><th>Key components</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">Today</td><td>Cohort dashboard — Liver Score 0–100 + reordered widget stack + Coach handoff strip</td><td>J5 · J8</td><td>all</td><td>score-hero · widget-stack · Coach-prompt</td></tr>
+    <tr><td class="tabname">Labs</td><td>Lab interpreter + OCR scan + ALT / AST / GGT / FIB-4 trends + FibroScan staging</td><td>J2</td><td>🍷 Nick · 💊 Rachel</td><td>lab-row · verdict-pill · trend-chart · camera-scan</td></tr>
+    <tr><td class="tabname">+Log (FAB)</td><td>One-tap capture: meal photo · drink · lab scan · medication · symptom</td><td>every JTBD</td><td>all</td><td>capture-sheet · food-risk-badge</td></tr>
+    <tr><td class="tabname">Coach</td><td>AI chat with RAG citations + safety strip + night mode 22:00–06:00</td><td>J1 · J8</td><td>all</td><td>chat-bubble · citation-chip · safety-strip</td></tr>
+    <tr><td class="tabname">Progress</td><td>Liver-score history · recovery timeline · weight · doctor PDF · milestones</td><td>J3 · J4</td><td>🍺 Robert · 💉 Greta</td><td>trend-dashboard · recovery-timeline · PDF-exporter</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== 4.5 COHORT-AWARE TODAY ===== -->
+<h2 id="cohort-home">4.5 · Cohort-aware Today — widget reorder</h2>
+<p class="lede">The tab spine is fixed for all cohorts; the <b>Today</b> dashboard reorders its widget stack by the cohort detected in onboarding. Source: DESIGN_SYSTEM.md.</p>
+<div class="scan-wrap">
+<table class="tab-spec">
+  <thead><tr><th>Slot</th><th>🍷 Nick</th><th>💉 Greta</th><th>🍔 Pete</th><th>💊 Rachel</th><th>🧬 Patricia</th><th>🍺 Robert</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">1st</td><td>Food Scanner</td><td>ALT + weight trend</td><td>Metabolic dashboard</td><td>FibroScan tracker</td><td>PCOS-NAFLD track</td><td>Recovery streak (GGT)</td></tr>
+    <tr><td class="tabname">2nd</td><td>Lab trend ALT/AST</td><td>GLP-1 adherence</td><td>Diet adherence</td><td>Rezdiffra adherence</td><td>Cycle × liver</td><td>Sober day counter</td></tr>
+    <tr><td class="tabname">3rd</td><td>AI Coach suggestion</td><td>AI Coach suggestion</td><td>AI Coach suggestion</td><td>AI Coach suggestion</td><td>AI Coach suggestion</td><td>AI Coach suggestion</td></tr>
+    <tr><td class="tabname">4th</td><td>Alcohol check-in</td><td>Apple Health weight</td><td>Blood pressure log</td><td>Hepatologist prep</td><td>Inositol tracker</td><td>NA beverage log</td></tr>
+    <tr><td class="tabname">5th</td><td>Liver Score</td><td>Liver Score</td><td>Liver Score</td><td>Insurance reauth</td><td>Liver Score</td><td>Liver Score</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<!-- ===== MODULE 5 · COMPONENTS & STACK ===== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-5">
+  <span class="num">МОДУЛЬ 5</span>
+  <h2>Компоненты и стек · ~85% sibling reuse</h2>
+  <p class="desc">Which Loveiko siblings Hepatica is built from, the reusable component inventory, and the full tech stack — benchmarked against Cysta AI. Hepatica ships fast because ~85% of the codebase is ported, not written.</p>
+</div>
+
+<!-- ===== 5.1 SIBLING REUSE ===== -->
+<h2 id="siblings">5.1 · Sibling reuse map</h2>
+<p class="lede">Hepatica is the next app in the Loveiko health-tracking cohort. It inherits proven engineering from four siblings — only the liver domain layer is new.</p>
+<div class="sib-grid">
+  <div class="sib-card gold">
+    <div class="sh"><span class="rank">🥇 food</span><b>AcidWise</b><span class="score">~85%</span></div>
+    <p class="reason">Photo food scanner ports nearly intact — AVFoundation capture, the Vision analysis pipeline and the 3-level rating engine. Acidity rating → liver-risk rating is a prompt + threshold swap.</p>
+    <p class="diff"><b>Reused:</b> camera · Vision pipeline · risk-badge · daily-score accumulator. <b>New:</b> liver-risk prompt (saturated fat / fructose / ultra-processed / alcohol traces).</p>
+  </div>
+  <div class="sib-card gold">
+    <div class="sh"><span class="rank">🥇 labs + pattern</span><b>Cysta AI</b><span class="score">lineage</span></div>
+    <p class="reason">The lab-interpreter lineage — Vision OCR, multi-page accumulator, confidence badges, trend graphs. Plus the AI Coach RAG pattern, the +Log FAB tab scaffold, the RevenueCat paywall, and <em>this workbench / consilium method</em>.</p>
+    <p class="diff"><b>Reused:</b> Lab Interpreter · RAG Coach · verdict triad · paywall · workbench. <b>New:</b> liver lab fields (ALT/AST/GGT/FIB-4) vs hormone panel.</p>
+  </div>
+  <div class="sib-card">
+    <div class="sh"><span class="rank">🥈 meds</span><b>JabWell</b><span class="score">~70%</span></div>
+    <p class="reason">Medication tracker — multi-medication, dose, adherence streak, side-effect log. GLP-1 tracking ports verbatim for the Greta cohort. Plateau detector → fibrosis-stagnation alert.</p>
+    <p class="diff"><b>Reused:</b> med-chip · adherence streak · side-effect log · 7-slot paywall. <b>New:</b> Rezdiffra dose model.</p>
+  </div>
+  <div class="sib-card">
+    <div class="sh"><span class="rank">🥉 journal</span><b>Salvora</b><span class="score">~60%</span></div>
+    <p class="reason">Trigger correlator → alcohol / diet trigger log. Severity pill, the 5-screen onboarding kit, the doctor PDF exporter. Folik contributes the photo-compare slider and the consilium methodology.</p>
+    <p class="diff"><b>Reused:</b> trigger-card · severity-pill · onboarding kit · doctor PDF. <b>New:</b> GGT recovery timeline (Hepatica original).</p>
+  </div>
+</div>
+
+<!-- ===== 5.2 COMPONENT INVENTORY ===== -->
+<h2 id="components">5.2 · Component inventory</h2>
+<p class="lede">Reusable UI components and where each is ported from. Two components are Hepatica originals — the sober-recovery timeline and the FibroScan stage chip.</p>
+<table class="tab-spec">
+  <thead><tr><th>Component</th><th>Ported from</th><th>Hepatica role</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">Liver Score hero</td><td>Cysta AI score-hero</td><td>0–100 liver-health score on Today, trend delta</td></tr>
+    <tr><td class="tabname">Verdict pill</td><td>Cysta AI · Salvora</td><td>In range / Watch / Elevated — warm triad, no red</td></tr>
+    <tr><td class="tabname">Lab row</td><td>Cysta AI lab interpreter</td><td>Value + reference range + OCR confidence badge</td></tr>
+    <tr><td class="tabname">AI chat bubble + citation chip</td><td>Cysta AI · JabWell</td><td>Coach answers with inline AASLD / AGA / EASL chips</td></tr>
+    <tr><td class="tabname">Safety strip</td><td>Salvora · Cysta AI</td><td>Persistent disclaimer on Coach + scan surfaces</td></tr>
+    <tr><td class="tabname">Food-risk badge</td><td>AcidWise</td><td>Green / Yellow / Red per-meal liver-risk rating</td></tr>
+    <tr><td class="tabname">Medication chip + streak</td><td>JabWell</td><td>Rezdiffra / GLP-1 dose, adherence streak</td></tr>
+    <tr><td class="tabname">Side-effect log row</td><td>JabWell</td><td>Diarrhea / fatigue / nausea timing log</td></tr>
+    <tr><td class="tabname">Multi-lab trend chart</td><td>Cysta AI · JabWell</td><td>ALT / weight / glucose on one timeline</td></tr>
+    <tr><td class="tabname">Photo-compare slider</td><td>Folik</td><td>30 / 60 / 90-day before-after (Recovery Mode)</td></tr>
+    <tr><td class="tabname">Trigger card</td><td>Salvora</td><td>"GGT spike ↔ 3+ drinks that weekend"</td></tr>
+    <tr><td class="tabname">Doctor PDF exporter</td><td>Salvora · Cysta AI</td><td>Hepatologist + GP report, anonymizable</td></tr>
+    <tr><td class="tabname">Cohort-dynamic paywall</td><td>JabWell 7-slot · Cysta AI</td><td>Fear-playbook copy per cohort, 4 tiers</td></tr>
+    <tr><td class="tabname">+Log FAB capture sheet</td><td>Cysta AI · JabWell · Salvora</td><td>One-tap meal / drink / lab / med / symptom</td></tr>
+    <tr><td class="tabname">GGT recovery timeline</td><td><b>Hepatica original</b></td><td>Sober streak × GGT/ALT normalisation curve</td></tr>
+    <tr><td class="tabname">FibroScan stage chip</td><td><b>Hepatica original</b></td><td>F0–F4 staging visual, regression view</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== 5.3 TECH STACK ===== -->
+<h2 id="stack">5.3 · Tech stack</h2>
+<p class="lede">Loveiko-standard stack — every choice matches a shipped sibling. Source: API_REGISTRY.md + CLAUDE.md.</p>
+<table class="tab-spec">
+  <thead><tr><th>Layer</th><th>Choice</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">Platform</td><td>iOS native Swift</td><td>UIKit-based, <b>not SwiftUI</b> — Loveiko DNA. iOS 17+</td></tr>
+    <tr><td class="tabname">AI Coach</td><td>DeepSeek V3 (<code>deepseek-chat</code>)</td><td>Buffered JSON in V1; via Cloudflare Worker proxy</td></tr>
+    <tr><td class="tabname">Embeddings</td><td>OpenAI <code>text-embedding-3-small</code></td><td>512 dimensions — compact corpus</td></tr>
+    <tr><td class="tabname">Vision / OCR</td><td>OpenAI <code>gpt-4o-mini</code> + VisionKit</td><td>Lab OCR (ALT/AST/GGT/FIB-4) + meal photo scoring</td></tr>
+    <tr><td class="tabname">RAG</td><td>sqlite-vec on-device</td><td>~50 MB · ~7,000 chunks · AASLD / AGA / EASL / PubMed</td></tr>
+    <tr><td class="tabname">Backend proxy</td><td>Cloudflare Worker <code>hepatica-api</code></td><td>Holds all 3rd-party keys; iOS never does</td></tr>
+    <tr><td class="tabname">Backend / analytics</td><td>Supabase</td><td>RevenueCat webhooks, anonymous events — no PII</td></tr>
+    <tr><td class="tabname">Subscriptions</td><td>StoreKit 2 + RevenueCat</td><td>4 tiers + 3 add-ons · entitlement <code>premium</code></td></tr>
+    <tr><td class="tabname">Capture</td><td>AVFoundation · VisionKit · PDFKit</td><td>Meal photos · lab doc scan · PDF import</td></tr>
+    <tr><td class="tabname">Health</td><td>Apple HealthKit (read-only)</td><td>Weight, steps — optional, opt-in</td></tr>
+    <tr><td class="tabname">Notifications</td><td>UNUserNotificationCenter</td><td>Lab / med / sobriety reminders — opt-in, default OFF</td></tr>
+    <tr><td class="tabname">Build</td><td>XcodeGen</td><td><code>project.yml</code> source of truth</td></tr>
+    <tr><td class="tabname">Gross margin</td><td>~97%</td><td>~$0.10/user/mo AI cost vs $40+ ARPU</td></tr>
+  </tbody>
+</table>
+
+<div class="handoff-card">
+  <b>Studied: the Cysta AI stack.</b> Hepatica's stack was benchmarked 1:1 against its closest sibling. They match exactly on: DeepSeek V3 chat · <code>text-embedding-3-small</code> @ 512d · <code>gpt-4o-mini</code> Vision OCR · sqlite-vec on-device RAG · Cloudflare Worker proxy pattern · StoreKit 2 + RevenueCat · Supabase analytics · VisionKit lab scanning. Hepatica diverges from Cysta AI on only three points:
+  <ul>
+    <li><b>UI layer</b> — Hepatica uses UIKit-based Swift (Loveiko DNA per CLAUDE.md); Cysta AI's docs lean SwiftUI. Per-app call, no shared-code impact.</li>
+    <li><b>RAG corpus</b> — liver / hepatology (AASLD · AGA · EASL · Rezdiffra label) vs Cysta AI's PCOS corpus (ACOG · ESHRE · Endocrine Society).</li>
+    <li><b>Vision OCR fields</b> — ALT / AST / GGT / FIB-4 / FibroScan kPa vs Cysta AI's AMH / LH:FSH / SHBG hormone panel.</li>
+  </ul>
+  Everything else — proxy auth, rate-limit posture, secrets handling, paywall scaffold — is the shared Loveiko pattern.
+</div>
+
+<footer>
+  <b>Hepatica — Design System Workbench</b> · updated 2026-05-20 · source: <b>Hepatica_Master_v2_FINAL.md</b> · sibling pattern: Cysta AI.<br>
+  🔒 Locked: design system <b>B · Clinical</b> (teal #2D7B7E + gold #D4A574) · roadmap <b>15 features → 6 P0 / 5 P1 / 4 P2</b> · tabs <b>4-tab + «+Log» FAB</b>.<br>
+  Next: Modules 6–8 — Critical screens · App Store screenshots · Paywall variants.
+</footer>
+
+</body>
+</html>
