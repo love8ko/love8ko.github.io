@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Hepatica — Screen Flow Workbench · Part 2</title>
+<title>Hepatica — Onboarding Funnel Workbench · Part 3</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -841,759 +841,623 @@
   <a href="#top">↑ Top</a>
   <span class="sep"></span>
   <a href="design.html">design.html · M1–7</a>
-  <a href="flow.html">← flow.html · M8–10</a>
-  <a href="#module-11" class="is-module"><span class="nav-num">M11</span>Progress</a>
-  <a href="#module-12" class="is-module"><span class="nav-num">M12</span>Log</a>
-  <a href="#module-13" class="is-module"><span class="nav-num">M13</span>Settings</a>
-  <a href="#module-14" class="is-module"><span class="nav-num">M14</span>Review</a>
-  <a href="flow3.html">flow3.html · M15–16 →</a>
+  <a href="flow.html">flow.html · M8–10</a>
+  <a href="flow2.html">← flow2.html · M11–14</a>
+  <a href="#module-15" class="is-module"><span class="nav-num">M15</span>Onboarding</a>
+  <a href="#module-16" class="is-module"><span class="nav-num">M16</span>Paywall</a>
   <span class="sep"></span>
-  <a href="#progress-worked">progress</a>
-  <a href="#log-sheet">log sheet</a>
-  <a href="#settings-anatomy">settings</a>
-  <a href="#audit">cross-tab audit</a>
+  <a href="#wow-formula">formula</a>
+  <a href="#onb-consilium">structure</a>
+  <a href="#onb-length">length</a>
+  <a href="#onb-trust">trust</a>
+  <a href="#onb-flow">worked flow</a>
+  <a href="#wow-cohorts">wow × 6</a>
+  <a href="#onb-reconcile">swift reconcile</a>
 </nav>
 
 <header>
-  <h1>Hepatica — Screen Flow Workbench · Part 2</h1>
-  <p class="lede">Part 2 of the worked screen flow — continues from <a href="flow.html" style="color:var(--brand);font-weight:700;">flow.html</a> (Modules 8–10 — core flow, Today, Coach, Labs) and <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a> (Modules 1–7). Here: <b>Module 11 — Progress</b>, <b>Module 12 — Log</b>, <b>Module 13 — Settings</b>, and <b>Module 14 — the whole-app review</b>, where all five tabs are evaluated together as one product.</p>
+  <h1>Hepatica — Onboarding Funnel Workbench · Part 3</h1>
+  <p class="lede">Part 3 designs the <b>pre-auth funnel</b> — the dashed "Onboarding" TODO gate from <a href="flow.html" style="color:var(--brand);font-weight:700;">flow.html</a> §8.1. Companion to <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a> (M1–7), flow.html (M8–10) and <a href="flow2.html" style="color:var(--brand);font-weight:700;">flow2.html</a> (M11–14). Here: <b>Module 15 — Onboarding</b>, and <b>Module 16 — Paywall</b> (the second TODO gate). Best practice borrowed from the Folik &amp; Calibrum onboarding consilia and Cysta AI's typed-result reveal.</p>
   <div class="meta-bar">
-    <span class="pill brand">📐 Screen flow · Modules 11–14</span>
+    <span class="pill brand">📐 Pre-auth funnel · Modules 15–16</span>
     <span class="pill lock">🔒 Design system · B · Clinical</span>
-    <span class="pill vote">Tab order: Today · Coach · +Log · Progress · Labs</span>
-    <span class="pill sib">Best practice: Cysta AI · Folik · Calibrum</span>
+    <span class="pill vote">WOW-then-justify · +6–11pp trial→paid</span>
+    <span class="pill sib">Best practice: Folik · Calibrum · Cysta AI</span>
   </div>
 </header>
 
 <!-- ============================================================ -->
-<!-- ==================== MODULE 11 · PROGRESS ================== -->
+<!-- ================== MODULE 15 · ONBOARDING ================== -->
 <!-- ============================================================ -->
-<div class="module-banner" id="module-11">
-  <span class="num">МОДУЛЬ 11</span>
-  <h2>Progress — the long view, milestones &amp; the doctor PDF</h2>
-  <p class="desc">Today answers "how am I <em>right now</em>"; Progress answers "how far have I <em>come</em>". It holds the full-history charts, the cohort's whole metric set (not just the hero), the milestone timeline, and the doctor-visit PDF export. §11.1 settles the organising principle, §11.2 works the screen for Robert, §11.3 covers all 6 cohorts, §11.4 the milestones + PDF.</p>
+<div class="module-banner" id="module-15">
+  <span class="num">МОДУЛЬ 15</span>
+  <h2>Onboarding — the pre-auth funnel, worked WOW-then-justify</h2>
+  <p class="desc">flow.html §8.1 left Onboarding as a dashed TODO gate. This module designs it. §15.1 sets the framework — the WOW-then-justify formula; §15.2 runs the consilium; §15.3 works the 8-screen flow for Robert; §15.4 draws the WOW for all 6 cohorts; §15.5 reconciles with the already-built Swift onboarding. Pre-auth throughout — no email, no Sign in with Apple before the paywall. Status: draft — nothing locked.</p>
 </div>
 
-<!-- ===== 11.1 PROGRESS CONSILIUM ===== -->
-<h2 id="progress-consilium">11.1 · Progress consilium — how to organise the long view</h2>
-<p class="lede">Progress can hold a lot — multiple metrics, months of history, milestones, an export. Three ways to organise it; the cohorts vote.</p>
-<table class="tab-spec">
-  <thead><tr><th>Candidate</th><th>Organising principle</th><th>Risk</th><th>Verdict</th></tr></thead>
-  <tbody>
-    <tr><td class="tabname">A · One mega-timeline</td><td>Every metric plotted on a single shared timeline.</td><td>Six lines on one axis is unreadable — units don't share a scale.</td><td><span class="warn">✗ Rejected</span></td></tr>
-    <tr class="locked-row"><td class="tabname">B · Per-metric cards ⭐</td><td>A metric switcher on top; the cohort's hero chart large, secondary metrics as cards below; milestones + PDF at the foot.</td><td>None material — matches how each cohort already thinks about its numbers.</td><td><span class="ok">✓ Ships</span></td></tr>
-    <tr><td class="tabname">C · Milestone-feed first</td><td>Achievements/wins lead; charts are a secondary scroll.</td><td>Buries the data the renewal decision rests on; reads as gamified.</td><td><span class="warn">✗ Rejected</span></td></tr>
-  </tbody>
-</table>
-<table class="vote">
-  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · mega</th><th class="score">B · cards</th><th class="score">C · feed</th></tr></thead>
-  <tbody>
-    <tr><td class="voter">🍷 Nick</td><td class="aud">25</td><td class="score">2</td><td class="score hi">5</td><td class="score">3</td></tr>
-    <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">3</td><td class="score hi">5</td><td class="score">2</td></tr>
-    <tr><td class="voter">🍔 Pete</td><td class="aud">20</td><td class="score">3</td><td class="score hi">5</td><td class="score">2</td></tr>
-    <tr><td class="voter">💊 Rachel</td><td class="aud">8</td><td class="score">2</td><td class="score hi">5</td><td class="score">1</td></tr>
-    <tr><td class="voter">🧬 Patricia</td><td class="aud">15</td><td class="score">2</td><td class="score hi">5</td><td class="score">3</td></tr>
-    <tr><td class="voter">🍺 Robert</td><td class="aud">17</td><td class="score">2</td><td class="score hi">4</td><td class="score">4</td></tr>
-    <tr class="totals"><td>Weighted Σ</td><td class="aud">100</td><td class="score">2.40</td><td class="score locked">4.83</td><td class="score">2.66</td></tr>
-  </tbody>
-</table>
-<div class="runoff">
-  <h3>Why B — per-metric cards</h3>
-  <p><b>Robert is the only one tempted by the milestone feed</b> (C=4) — his streak is emotional fuel. But even he scores B=4, because when he is deciding whether the app is worth renewing he wants the <em>chart</em>, not a trophy case. The fix isn't to lead with milestones — it's to keep them <em>visible inside</em> B (§11.4). Rachel kills C outright: a feed of badges is the opposite of the sober clinical document her insurer needs.</p>
-  <div class="pick-row">
-    <span class="pick lead">⭐ B · Per-metric cards — ships</span>
-    <span class="pick">A · mega-timeline — rejected · unreadable</span>
-    <span class="pick">C · milestone-feed — folded into B as a section</span>
+<!-- ===== 15.1 WOW FORMULA ===== -->
+<h2 id="wow-formula">15.1 · The WOW-then-justify formula</h2>
+<p class="lede">Hepatica's siblings Folik and Calibrum both locked the same onboarding shape — and both measured <b>+6–11pp trial-to-paid</b> against a plain question funnel. We adopt it as Hepatica's onboarding framework. Seven beats; the WOW is the hinge.</p>
+<div class="loop-wrap">
+  <div class="loop-row">
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">1</span><span class="ls-ico">💔</span></div><div class="ls-t">Pain hook</div><div class="ls-d">One emotional sentence the user already believes — "Doctor said reverse it. With what?"</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">2</span><span class="ls-ico">🚪</span></div><div class="ls-t">Lane select</div><div class="ls-d">The 6 cohort doors + "just exploring". The user self-sorts — everything downstream personalises off this.</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">3</span><span class="ls-ico">✍️</span></div><div class="ls-t">Quiz · anchor</div><div class="ls-d">4–5 light taps (labs known, meds, goal). Each answer is an anchor the WOW will pay back.</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">4</span><span class="ls-ico">🌀</span></div><div class="ls-t">Pre-WOW breath</div><div class="ls-d">"Building your plan…" + the method line — AASLD / AGA / EASL grounding. Trust before the reveal.</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step hot"><div class="ls-top"><span class="ls-n">5</span><span class="ls-ico">✨</span></div><div class="ls-t">The WOW screen</div><div class="ls-d">The catharsis — the user's own projected dashboard: their hero chart, their marker, their lane. Not a demo.</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">6</span><span class="ls-ico">🌿</span></div><div class="ls-t">Post-WOW breath</div><div class="ls-d">"Your plan is ready." A calm beat that names what they just saw and hands off to the offer.</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">7</span><span class="ls-ico">🔓</span></div><div class="ls-t">Paywall</div><div class="ls-d">Copy triggered on what the WOW showed — Robert's paywall headline references his GGT curve.</div></div>
   </div>
-</div>
-
-<!-- ===== 11.2 PROGRESS WORKED ===== -->
-<h2 id="progress-worked">11.2 · Progress — worked for Robert</h2>
-<p class="lede">The Progress tab for Robert. A metric switcher on top, the full GGT recovery history large, the supporting stats, the next milestone, and the doctor-PDF export at the foot.</p>
-<div class="screen-block">
-  <div class="phone-frame">
-    <div class="phone-screen" style="gap:8px;">
-      <div class="sc-head"><div class="sc-greet"><small>Progress</small>Robert's recovery</div></div>
-      <div class="prog-seg"><span class="on">GGT</span><span>Sober days</span><span>Weight</span><span>All</span></div>
-      <div class="sc-card hero">
-        <div class="sc-lbl"><span>GGT · full history</span><span class="sc-vp watch">Watch</span></div>
-        <div class="sc-chart-h"><span class="sc-chart-v">95<small> U/L</small></span><span class="sc-delta good">↓ 145 since Day 0</span></div>
-        <svg viewBox="0 0 250 104" width="100%" style="margin-top:5px;" role="img" aria-label="Robert GGT full recovery history">
-          <path d="M22,16 C90,42 160,72 234,86 L234,98 C160,86 90,56 22,32 Z" fill="#2D7B7E" fill-opacity="0.11"/>
-          <line x1="22" y1="90" x2="234" y2="90" stroke="#C68A3E" stroke-width="1.3" stroke-dasharray="3 3"/>
-          <text x="232" y="86" text-anchor="end" font-size="6.5" fill="#C68A3E" font-family="ui-monospace,SF Mono">AASLD ref ~50</text>
-          <polyline points="22,16 60,40 96,56 132,66 168,74" fill="none" stroke="#2D7B7E" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-          <polyline points="168,74 204,84 234,88" fill="none" stroke="#B0824D" stroke-width="2.4" stroke-dasharray="5 4" stroke-linecap="round"/>
-          <circle cx="22" cy="16" r="2.8" fill="#2D7B7E"/><circle cx="60" cy="40" r="2.8" fill="#2D7B7E"/><circle cx="96" cy="56" r="2.8" fill="#2D7B7E"/><circle cx="132" cy="66" r="2.8" fill="#2D7B7E"/>
-          <circle cx="168" cy="74" r="3.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.4"/>
-          <text x="20" y="12" font-size="7" fill="#8B9B9B" font-family="ui-monospace,SF Mono">240</text>
-          <text x="20" y="102" font-size="6.5" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Day 0</text>
-          <text x="234" y="102" text-anchor="end" font-size="6.5" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Day 160</text>
-        </svg>
-        <div class="sc-disc">Educational tracking — the band is the typical AASLD post-abstinence range, not a personal prediction.</div>
-      </div>
-      <div class="sc-pills">
-        <div class="prog-stat"><div class="v">47</div><div class="l">Days sober</div></div>
-        <div class="prog-stat"><div class="v">−145</div><div class="l">GGT drop</div></div>
-        <div class="prog-stat"><div class="v">92%</div><div class="l">Weeks logged</div></div>
-      </div>
-      <div class="sc-card" style="display:flex;align-items:center;gap:9px;">
-        <span style="font-size:17px;">🎉</span>
-        <div style="flex:1;"><div style="font-size:10px;font-weight:800;color:var(--brand-deep);">Next · Day 60 — "Your liver at 2 months"</div><div style="font-size:9px;color:var(--ink-2);">13 days away · 4 milestones reached so far</div></div>
-        <span style="color:var(--brand);font-weight:800;">→</span>
-      </div>
-      <div class="sc-ribbon">
-        <span style="font-size:14px;">📄</span>
-        <span class="sr-t">Export a doctor-visit PDF — labs, trends &amp; adherence</span>
-        <span class="sr-go">→</span>
-      </div>
-      <div class="phone-tabbar">
-        <a class="tab"><span class="icn">⌂</span>Today</a>
-        <a class="tab"><span class="icn">💬</span>Coach</a>
-        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
-        <a class="tab active"><span class="icn">📈</span>Progress</a>
-        <a class="tab"><span class="icn">🧪</span>Labs</a>
-      </div>
-    </div>
-  </div>
-  <div class="screen-annot">
-    <h3>Standing in the user's shoes</h3>
-    <div class="pov-lead">Robert comes to Progress at a different moment than Today — usually near the trial's end, asking the renewal question: <b>"is this app actually showing me something real?"</b> The full-history curve is the answer Today's recent-trend chart can't give.</div>
-    <div class="annot-row"><span class="ar-z">Metric switcher</span><span class="ar-v">GGT · Sober days · Weight · All. Today shows only the hero; Progress lets him <b>pull any metric forward</b>.</span></div>
-    <div class="annot-row"><span class="ar-z">Full history</span><span class="ar-v">Day 0 → Day 160, every logged point — the long arc. Same chart grammar as §8.5: actual solid, projection dashed, band shaded.</span></div>
-    <div class="annot-row"><span class="ar-z">Supporting stats</span><span class="ar-v">Three honest numbers — sober days, total GGT drop, logging consistency. "Weeks logged" quietly rewards the loop.</span></div>
-    <div class="annot-row"><span class="ar-z">Milestones inside</span><span class="ar-v">The milestone card lives <em>in</em> Progress (the consilium's fix for Robert) — emotional fuel without a gamified feed taking over.</span></div>
-    <div class="annot-row"><span class="ar-z">Doctor PDF</span><span class="ar-v">The export — the same artefact Coach can generate (§9.4). Progress is the natural home for "show this to my doctor".</span></div>
-    <div class="borrowed"><b>Borrowed — Calibrum (the chart-history tab + printable doctor brief), Cysta AI (metric switcher + 3-month export). </b> Progress is the renewal screen — it has to make six months of small actions feel like one large arc.</div>
-  </div>
-</div>
-
-<!-- ===== 11.3 PROGRESS PER COHORT ===== -->
-<h2 id="progress-cohorts">11.3 · The metric set, per cohort</h2>
-<p class="lede">Same B-layout, different contents. Each cohort's Progress tab carries its own metric switcher and chart set — the hero plus the supporting metrics that cohort's JTBD needs.</p>
-<table class="tab-spec">
-  <thead><tr><th>Cohort</th><th>Metric switcher</th><th>Hero chart</th><th>Doctor-PDF angle</th></tr></thead>
-  <tbody>
-    <tr><td class="tabname">🍷 Nick</td><td>ALT · AST · Liver score · Diet</td><td>6-month ALT vs AASLD 40</td><td>"Diet is working" — trend for the follow-up visit</td></tr>
-    <tr><td class="tabname">💉 Greta</td><td>ALT · Weight · GLP-1 · All</td><td>Dual-axis ALT ↓ + weight ↓</td><td>GLP-1 liver response — for the prescriber</td></tr>
-    <tr><td class="tabname">🍔 Pete</td><td>HbA1c · ALT · FIB-4 · Weight</td><td>Dual-axis HbA1c + ALT + FIB-4</td><td>Metabolic-syndrome panel for the PCP</td></tr>
-    <tr><td class="tabname">💊 Rachel</td><td>FibroScan · FIB-4 · ALT · Rezdiffra</td><td>FibroScan F3→F2→F1 staircase</td><td>Fibrosis regression + adherence — for insurance re-auth</td></tr>
-    <tr><td class="tabname">🧬 Patricia</td><td>ALT · Cycle · Inositol · Weight</td><td>ALT trend shaded by cycle phase</td><td>PCOS + liver — for the gynae/endo</td></tr>
-    <tr><td class="tabname">🍺 Robert</td><td>GGT · Sober days · Weight · All</td><td>GGT recovery — rendered in §11.2</td><td>Recovery markers — for the GP / hepatologist</td></tr>
-  </tbody>
-</table>
-<div class="cohort-strip">
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Progress</small>Greta</div></div>
-        <div class="prog-seg"><span class="on">ALT</span><span>Weight</span><span>GLP-1</span><span>All</span></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>ALT × weight · 20 weeks</span></div>
-          <svg viewBox="0 0 140 50" width="100%" style="margin-top:3px;">
-            <line x1="6" y1="30" x2="134" y2="30" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
-            <polyline points="6,9 44,16 82,22 114,28" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="6,20 44,27 82,34 114,40" fill="none" stroke="#C68A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="114" cy="28" r="2.8" fill="#2D7B7E"/><circle cx="114" cy="40" r="2.6" fill="#C68A3E"/>
-          </svg>
-          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8px;">ALT ↓34 · weight ↓18 lb, locked-step</span></div>
-        </div>
-        <div class="sc-pills"><div class="prog-stat"><div class="v">−34</div><div class="l">ALT</div></div><div class="prog-stat"><div class="v">−18</div><div class="l">Pounds</div></div><div class="prog-stat"><div class="v">98%</div><div class="l">Doses</div></div></div>
-        <div class="sc-mini-tab"><i>⌂</i><i>💬</i><span class="mt-fab">+</span><i class="on">📈</i><i>🧪</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">💉 GLP-1 Greta</div><div class="cc-job">Dual-axis hero — the two lines falling together is the whole story.</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Progress</small>Rachel</div></div>
-        <div class="prog-seg"><span class="on">FibroScan</span><span>FIB-4</span><span>ALT</span><span>Rx</span></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>FibroScan · 14-month staircase</span></div>
-          <svg viewBox="0 0 140 50" width="100%" style="margin-top:3px;">
-            <rect x="6" y="6" width="128" height="13" fill="#EBD0C8" fill-opacity="0.45"/>
-            <rect x="6" y="19" width="128" height="13" fill="#F0DFC2" fill-opacity="0.55"/>
-            <rect x="6" y="32" width="128" height="12" fill="#CFE3E2" fill-opacity="0.6"/>
-            <polyline points="10,12 52,12 52,26 96,26 96,38 130,38" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="10" cy="12" r="2.6" fill="#2D7B7E"/><circle cx="52" cy="26" r="2.6" fill="#2D7B7E"/><circle cx="96" cy="38" r="2.8" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
-          </svg>
-          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8px;">12.5 → 8.1 kPa · F3 → F2</span></div>
-        </div>
-        <div class="sc-pills"><div class="prog-stat"><div class="v">F2</div><div class="l">Stage</div></div><div class="prog-stat"><div class="v">−4.4</div><div class="l">kPa</div></div><div class="prog-stat"><div class="v">99%</div><div class="l">Rezdiffra</div></div></div>
-        <div class="sc-mini-tab"><i>⌂</i><i>💬</i><span class="mt-fab">+</span><i class="on">📈</i><i>🧪</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">💊 Rezdiffra Rachel</div><div class="cc-job">Staircase + adherence % — the export her insurer reads at re-authorisation.</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Progress</small>Patricia</div></div>
-        <div class="prog-seg"><span class="on">ALT</span><span>Cycle</span><span>Inositol</span><span>All</span></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>ALT × cycle phase · 4 cycles</span></div>
-          <svg viewBox="0 0 140 50" width="100%" style="margin-top:3px;">
-            <rect x="6" y="6" width="30" height="32" fill="#CFE3E2" fill-opacity="0.45"/><rect x="68" y="6" width="30" height="32" fill="#CFE3E2" fill-opacity="0.45"/>
-            <line x1="6" y1="34" x2="134" y2="34" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
-            <polyline points="6,14 36,20 66,15 96,24 126,29" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="126" cy="29" r="2.8" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
-          </svg>
-          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8px;">ALT easing across cycles — phase noise legible</span></div>
-        </div>
-        <div class="sc-pills"><div class="prog-stat"><div class="v">−14</div><div class="l">ALT</div></div><div class="prog-stat"><div class="v">4</div><div class="l">Cycles</div></div><div class="prog-stat"><div class="v">86%</div><div class="l">Inositol</div></div></div>
-        <div class="sc-mini-tab"><i>⌂</i><i>💬</i><span class="mt-fab">+</span><i class="on">📈</i><i>🧪</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">🧬 PCOS-NAFLD Patricia</div><div class="cc-job">Cycle shading makes the wobble legible — the trend still eases down.</div></div>
-  </div>
-
+  <div class="loop-repeat"><span class="lr-ico">↻</span> The WOW is the hinge — every beat before it plants an anchor, every beat after it cashes one in.</div>
 </div>
 <div class="m6-callout note">
-  <b>Today vs Progress — the division of labour.</b> Today renders the <em>recent</em> hero chart to answer "is it working today?" and drive the daily loop. Progress renders the <em>full history</em> of every metric, the milestone arc and the export — it answers "is six months of this worth renewing?". Same chart grammar, two time horizons; no screen duplicates the other.
+  <b>Credit &amp; evidence.</b> This is not invented here — it is the locked <b>Folik</b> onboarding consilium and the <b>Calibrum</b> onboarding rework, both of which beat a plain question funnel by <b>+6–11pp trial-to-paid</b>. <b>Cysta AI</b> shipped the lighter cousin: Welcome → persona select → quiz → typed result "You're [type]" + a mini preview. The principle all three share: the WOW is a <em>personalised future-self mock</em> — the user's own projected chart — never a generic feature tour. And it is all pre-auth: no email, no Sign in with Apple before the paywall.
+</div>
+<div class="m6-callout">
+  <b>The gap in our build.</b> The already-scaffolded Swift onboarding (§15.5) is a <em>pure question funnel</em> — 9 steps, no WOW. <code>CohortResultView</code> is a text reveal; <code>TrustMethodView</code> is credentials. It collects seven anchors and never cashes one in — the user reaches the paywall having been interrogated, not answered. Module 15 inserts the missing catharsis.
 </div>
 
-<!-- ===== 11.4 MILESTONES + PDF ===== -->
-<h2 id="progress-milestones">11.4 · Milestones &amp; the doctor-visit PDF</h2>
-<p class="lede">Two pieces that live at the foot of Progress: the milestone timeline (the consilium's home for Robert's emotional fuel) and the doctor-visit PDF — the artefact that turns six months of logging into one page a clinician reads in 30 seconds.</p>
-<div class="screen-block">
-  <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:14px;">
-    <div class="round" style="margin-top:0;max-width:430px;">
-      <span class="r-tag">Milestone timeline</span>
-      <h3>Robert's recovery milestones</h3>
-      <div class="roadmap-track">
-        <div class="rm-node done"><div class="rm-dot">✓</div><div class="rm-day">Day 7</div><div class="rm-lbl">First week</div></div>
-        <div class="rm-node done"><div class="rm-dot">✓</div><div class="rm-day">Day 30</div><div class="rm-lbl">GGT first drop</div></div>
-        <div class="rm-node next"><div class="rm-dot">◌</div><div class="rm-day">Day 60</div><div class="rm-lbl">Liver at 2 months</div></div>
-        <div class="rm-node locked"><div class="rm-dot">🔒</div><div class="rm-day">Day 90</div><div class="rm-lbl">Recovery quarter</div></div>
-        <div class="rm-node locked"><div class="rm-dot">🔒</div><div class="rm-day">Day 180</div><div class="rm-lbl">Half-year</div></div>
-      </div>
-      <p style="font-size:11.5px;color:var(--ink-2);line-height:1.55;margin-top:10px;">Milestones are <b>factual, not gamified</b> — each is a real, cited recovery moment ("most alcohol-related GGT normalises by ~6–12 weeks"), never a points-and-badges trophy. Universal milestones (logging streaks) and cohort milestones (GGT, FibroScan stage, ALT-in-range) interleave on one track.</p>
-    </div>
-    <div class="pdf-preview" style="max-width:240px;">
-      <div class="pp-h"><span>Hepatica · Doctor Visit Summary</span><span style="color:var(--ink-3);">p.1</span></div>
-      <div style="font-size:7px;color:var(--ink-3);margin-top:4px;">Robert M. · prepared 21 May 2026</div>
-      <div class="pp-line" style="margin-top:8px;"></div><div class="pp-line short"></div>
-      <div style="font-size:7px;font-weight:800;color:var(--brand-deep);margin-top:8px;">LIVER MARKERS · 6-MONTH TREND</div>
-      <div class="pp-line"></div><div class="pp-line"></div><div class="pp-line short"></div>
-      <div style="font-size:7px;font-weight:800;color:var(--brand-deep);margin-top:8px;">QUESTIONS FOR YOUR DOCTOR</div>
-      <div class="pp-line"></div><div class="pp-line short"></div>
-      <span class="pp-chip">AASLD 2023</span> <span class="pp-chip">NIAAA</span>
-    </div>
-  </div>
-  <div class="screen-annot">
-    <h3>Why these two close the tab</h3>
-    <div class="annot-row"><span class="ar-z">Milestones</span><span class="ar-v"><b>The consilium's fix.</b> Robert wanted a milestone feed; the data must lead — so milestones live <em>inside</em> Progress as a timeline, visible but not in charge.</span></div>
-    <div class="annot-row"><span class="ar-z">Factual framing</span><span class="ar-v">Each milestone is a cited recovery fact, not a badge — keeps the calm clinical tone and dodges the "gamification beyond streaks" anti-pattern.</span></div>
-    <div class="annot-row"><span class="ar-z">The PDF</span><span class="ar-v">One-to-two pages: patient + protocol, marker trends with reference ranges, the 14-day symptom view, and Coach-drafted questions — <b>each with its guideline citation</b>.</span></div>
-    <div class="annot-row"><span class="ar-z">Rachel's JTBD</span><span class="ar-v">For Rachel this <em>is</em> the product — adherence % + FibroScan regression in an exportable form is what her insurer demands at re-auth. Highest-WTP cohort, served here.</span></div>
-    <div class="annot-row"><span class="ar-z">Shared artefact</span><span class="ar-v">The same PDF Coach offers at §9.4 — built once, reachable from Coach (a conversation) and Progress (the history). Carries the "patient-generated, not a clinical record" watermark on every page.</span></div>
-    <div class="borrowed"><b>Borrowed — Calibrum's "Pre-Doctor Visit Brief" (printable, B&amp;W, questions each citing a guideline §) and Cysta AI's 3-month doctor export.</b></div>
-  </div>
-</div>
-
-<!-- ===== 11.5 PROGRESS READY ===== -->
-<h2 id="progress-summary">11.5 · Progress — ready for review</h2>
-<div class="m6-callout win">
-  <b>Module 11 — ready for founder review.</b> Consilium picked B · per-metric cards (Σ 4.83): a metric switcher, the cohort hero chart at full history, supporting metrics, milestones and the doctor PDF. §11.2 worked it for Robert; §11.3 set the per-cohort metric switchers and hero charts (dual-axis, FibroScan staircase, cycle-shaded); §11.4 placed the milestone timeline (factual, not gamified) and the doctor-visit PDF. The Today/Progress split is explicit — recent trend vs full arc. Next — <b>Module 12 · Log</b>.
-</div>
-
-<!-- ============================================================ -->
-<!-- ====================== MODULE 12 · LOG ===================== -->
-<!-- ============================================================ -->
-<div class="module-banner" id="module-12">
-  <span class="num">МОДУЛЬ 12</span>
-  <h2>Log — the «+» FAB, the highest-frequency interaction</h2>
-  <p class="desc">The centre «+Log» FAB is tapped more than any other control — every meal, every dose, every sober day. It has to be instant, predictable and dismissible. §12.1 runs the consilium on the capture UX, §12.2 works the capture sheet, §12.3 walks the five mini-flows behind it.</p>
-</div>
-
-<!-- ===== 12.1 LOG CONSILIUM ===== -->
-<h2 id="log-consilium">12.1 · Log consilium — what happens when «+» is tapped</h2>
-<p class="lede">The FAB is a ritual control — used many times a day, often one-handed, often mid-task. Three interaction models; the cohorts vote.</p>
+<!-- ===== 15.2 ONBOARDING CONSILIUM ===== -->
+<h2 id="onb-consilium">15.2 · Onboarding consilium — does the funnel need a WOW?</h2>
+<p class="lede">Three ways to shape the pre-auth funnel. The 6 cohorts vote with the standard audience weights. The question: keep the built question funnel, restructure it WOW-then-justify, or strip it to the bone.</p>
 <table class="tab-spec">
-  <thead><tr><th>Candidate</th><th>On tapping «+»</th><th>Feel</th><th>Verdict</th></tr></thead>
+  <thead><tr><th>Candidate</th><th>Shape</th><th>Risk</th><th>Verdict</th></tr></thead>
   <tbody>
-    <tr><td class="tabname">A · Full-screen page</td><td>Pushes a whole logging screen onto the stack.</td><td>Heavy — a full navigation for a 2-second action; needs a back-tap to escape.</td><td><span class="warn">✗ Rejected</span></td></tr>
-    <tr class="locked-row"><td class="tabname">B · Bottom-sheet, 5 tiles ⭐</td><td>A half-height sheet slides up — 5 capture tiles; tap a tile → its mini-form. Swipe down to dismiss.</td><td>Fast, predictable, never loses the screen behind it. The Loveiko FAB pattern.</td><td><span class="ok">✓ Ships</span></td></tr>
-    <tr><td class="tabname">C · Smart single-action</td><td>FAB guesses the most likely capture by cohort + time; long-press for the full menu.</td><td>Fastest when it guesses right — disorienting when it guesses wrong.</td><td><span class="warn">~ Folded in</span></td></tr>
+    <tr><td class="tabname">A · Question funnel, as-built</td><td>The scaffolded 9-step Swift flow as-is: Welcome → Pain → Triage → Labs → Meds → Goals → Diet → CohortResult (text reveal) → TrustMethod → Paywall.</td><td>Collects 7 anchors and never pays one back. CohortResult is a paragraph, not a moment. The paywall arrives cold — nothing earned the trial. This is Folik's measured <em>losing</em> variant.</td><td><span class="warn">✗ Rejected</span></td></tr>
+    <tr class="locked-row"><td class="tabname">B · WOW-then-justify ⭐</td><td>Pain → Lane → compressed quiz → pre-WOW breath → <b>personalised WOW (future-self dashboard mock)</b> → post-WOW breath → Paywall. The quiz answers <em>render</em> the WOW.</td><td>None material — adds one net screen (§15.5). The WOW must stay an honest <em>projection</em>, never a fabricated personal prediction — handled in copy + the disclaimer strip.</td><td><span class="ok">✓ Ships</span></td></tr>
+    <tr><td class="tabname">C · Ultra-lean</td><td>Pain → Lane select → instant WOW → Paywall. Drop the quiz entirely; the WOW is cohort-generic, not answer-personalised.</td><td>Fastest, but the WOW is generic — no labs, no meds, no goal — so it can't show <em>the user's</em> numbers. Loses the anchoring that makes B's WOW land.</td><td><span class="warn">✗ Rejected</span></td></tr>
   </tbody>
 </table>
 <table class="vote">
-  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · page</th><th class="score">B · sheet</th><th class="score">C · smart</th></tr></thead>
+  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · as-built</th><th class="score">B · WOW ⭐</th><th class="score">C · ultra-lean</th></tr></thead>
   <tbody>
     <tr><td class="voter">🍷 Nick</td><td class="aud">25</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
-    <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">2</td><td class="score hi">5</td><td class="score">4</td></tr>
-    <tr><td class="voter">🍔 Pete</td><td class="aud">20</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
-    <tr><td class="voter">💊 Rachel</td><td class="aud">8</td><td class="score">2</td><td class="score hi">5</td><td class="score">4</td></tr>
+    <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">2</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍔 Pete</td><td class="aud">20</td><td class="score">2</td><td class="score hi">5</td><td class="score">2</td></tr>
+    <tr><td class="voter">💊 Rachel</td><td class="aud">8</td><td class="score">3</td><td class="score hi">5</td><td class="score">1</td></tr>
     <tr><td class="voter">🧬 Patricia</td><td class="aud">15</td><td class="score">2</td><td class="score hi">5</td><td class="score">3</td></tr>
     <tr><td class="voter">🍺 Robert</td><td class="aud">17</td><td class="score">3</td><td class="score hi">5</td><td class="score">4</td></tr>
-    <tr class="totals"><td>Weighted Σ</td><td class="aud">100</td><td class="score">2.60</td><td class="score locked">5.00</td><td class="score">3.39</td></tr>
+    <tr class="totals"><td>Weighted Σ</td><td class="aud">100</td><td class="score">2.50</td><td class="score locked">5.00</td><td class="score">2.81</td></tr>
   </tbody>
 </table>
 <div class="runoff">
-  <h3>Why B — the bottom-sheet, with C folded in</h3>
-  <p><b>B is unanimous</b> — a sheet is fast <em>and</em> predictable, and it never costs the user the screen they were on. <b>C's idea isn't wasted:</b> Greta, Rachel and Robert all scored it 4, because their daily action is obvious (a dose, a dose, a sober day). So C folds into B — the sheet always opens with the <b>cohort's most-likely tile pre-highlighted at the top</b>, full-width. The user gets the smart guess <em>and</em> the predictable menu, with no wrong-guess penalty.</p>
+  <h3>Why B — WOW-then-justify</h3>
+  <p><b>B is unanimous (Σ 5.00)</b> — rare, and it says something. Every cohort arrives carrying a <em>fear</em> — and a question funnel never answers a fear, it only interrogates it. The WOW screen is the first time the app <em>says something back</em>.</p>
+  <p><b>Pete (20%) kills A and C hardest:</b> his job is "where do I even start with metabolic syndrome" — he needs to <em>see</em> the HbA1c + ALT dual projection, which only B's answer-personalised WOW can draw. <b>Rachel (8%, highest WTP) kills C outright</b> — a generic WOW can't show her FibroScan staircase or the insurance-PDF preview, and that preview is the single thing that justifies the price to her. <b>Robert half-likes C</b> (=4): his pain is simple — "GGT 240→80, is it real?" — and even a generic curve moves him; but B's curve is <em>his</em> curve, so he still scores B=5. A loses everywhere — it is literally the measured-loser funnel.</p>
   <div class="pick-row">
-    <span class="pick lead">⭐ B · Bottom-sheet — ships</span>
-    <span class="pick">C · smart guess — folded in as the highlighted tile</span>
-    <span class="pick">A · full-screen page — rejected · too heavy</span>
+    <span class="pick lead">⭐ B · WOW-then-justify — ships</span>
+    <span class="pick">A · question funnel as-built — rejected · no catharsis</span>
+    <span class="pick">C · ultra-lean — rejected · WOW too generic to anchor</span>
   </div>
 </div>
 
-<!-- ===== 12.2 LOG SHEET ===== -->
-<h2 id="log-sheet">12.2 · The capture sheet — worked</h2>
-<p class="lede">The «+» tapped from Robert's Today. The sheet slides over a dimmed Today; the cohort's likely action — a sober day — sits highlighted on top, the other four below. Swipe down or tap a tile.</p>
+<!-- ===== 15.3 LENGTH CONSILIUM ===== -->
+<h2 id="onb-length">15.3 · Length consilium — how long should the funnel be?</h2>
+<p class="lede">B won the structure vote — but WOW-then-justify can be run in 6 screens or 12. Every screen costs drop-off; every <em>anchored</em> screen earns conversion. The 6 cohorts vote on the screen count.</p>
+<table class="tab-spec">
+  <thead><tr><th>Candidate</th><th>Screens</th><th>Trade</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">A · Lean</td><td>6 — Pain · Lane · 1-card quiz · WOW · breath+proof merged · Paywall</td><td>Fastest, lowest raw drop-off. But one quiz card can't anchor a rich WOW, and merging the proof into the breath buries it at the commitment moment.</td><td><span class="warn">✗ Rejected</span></td></tr>
+    <tr class="locked-row"><td class="tabname">B · Balanced ⭐</td><td>8 onboarding screens + paywall — Welcome · Pain · Lane · compressed Quiz · pre-WOW breath · WOW · post-WOW breath · Proof</td><td>Every screen does one job: plant an anchor, deliver the WOW, or earn trust. Matches Folik (8) and Calibrum (6 + WOW). No filler.</td><td><span class="ok">✓ Ships</span></td></tr>
+    <tr><td class="tabname">C · Thorough</td><td>12 — the 5 built quiz steps kept separate + everything else</td><td>Maximal data capture. But four extra quiz screens add drop-off for zero extra anchor value — the WOW only needs labs + goal + lane.</td><td><span class="warn">✗ Rejected</span></td></tr>
+  </tbody>
+</table>
+<table class="vote">
+  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · lean 6</th><th class="score">B · balanced 8 ⭐</th><th class="score">C · thorough 12</th></tr></thead>
+  <tbody>
+    <tr><td class="voter">🍷 Nick</td><td class="aud">25</td><td class="score">4</td><td class="score hi">5</td><td class="score">2</td></tr>
+    <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍔 Pete</td><td class="aud">20</td><td class="score">3</td><td class="score hi">5</td><td class="score">4</td></tr>
+    <tr><td class="voter">💊 Rachel</td><td class="aud">8</td><td class="score">2</td><td class="score hi">5</td><td class="score">5</td></tr>
+    <tr><td class="voter">🧬 Patricia</td><td class="aud">15</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍺 Robert</td><td class="aud">17</td><td class="score">4</td><td class="score hi">4</td><td class="score">2</td></tr>
+    <tr class="totals"><td>Weighted Σ</td><td class="aud">100</td><td class="score">3.34</td><td class="score locked">4.83</td><td class="score">2.94</td></tr>
+  </tbody>
+</table>
+<div class="runoff">
+  <h3>Why B — 8 screens + paywall</h3>
+  <p><b>Lean (A) is tempting</b> — anxious Nick and keep-it-simple Robert both reward it (=4). But cutting the pre-WOW breath removes the trust setup that makes the WOW credible, and merging the proof away wastes the one beat that does the converting. <b>Thorough (C) only Rachel loves</b> (=5, high intent, will answer anything) — every other cohort punishes the four redundant quiz screens. The number is 8: the five built Swift quiz steps <b>must compress to one</b> (§15.7), and nothing else gets cut.</p>
+  <div class="pick-row">
+    <span class="pick lead">⭐ B · 8 screens + paywall — ships</span>
+    <span class="pick">A · lean 6 — rejected · WOW under-anchored</span>
+    <span class="pick">C · thorough 12 — rejected · quiz drop-off</span>
+  </div>
+</div>
+
+<!-- ===== 15.4 TRUST CONSILIUM ===== -->
+<h2 id="onb-trust">15.4 · Trust consilium — how a brand-new app earns belief</h2>
+<p class="lede">Hepatica launches with <b>zero users</b>. It cannot — and must not — claim a userbase it doesn't have. So where does pre-auth trust come from, and where does it sit? The 6 cohorts vote.</p>
+<table class="tab-spec">
+  <thead><tr><th>Candidate</th><th>Trust mechanism</th><th>Risk</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">A · Method line only</td><td>Trust = the "grounded in AASLD / AGA / EASL" line tucked inside the pre-WOW breath. Nothing dedicated.</td><td>Too quiet for the commitment decision. The user hits the price having seen the evidence claim for one second, in passing.</td><td><span class="warn">✗ Rejected</span></td></tr>
+    <tr class="locked-row"><td class="tabname">B · Dedicated proof screen ⭐</td><td>A full screen right before the paywall — one big, honest number about the <b>evidence base</b>: the research and sources Hepatica is built on.</td><td>Adds one screen. Must be scrupulously honest — about the <em>research</em>, never a fake userbase (see the copy table below).</td><td><span class="ok">✓ Ships</span></td></tr>
+    <tr><td class="tabname">C · Persistent source strip</td><td>A small AASLD/AGA/EASL chip strip on every onboarding screen.</td><td>Wallpaper. Always present, never noticed — and it competes with each screen's actual job.</td><td><span class="warn">✗ Rejected</span></td></tr>
+  </tbody>
+</table>
+<table class="vote">
+  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · method line</th><th class="score">B · proof screen ⭐</th><th class="score">C · source strip</th></tr></thead>
+  <tbody>
+    <tr><td class="voter">🍷 Nick</td><td class="aud">25</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍔 Pete</td><td class="aud">20</td><td class="score">2</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">💊 Rachel</td><td class="aud">8</td><td class="score">2</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🧬 Patricia</td><td class="aud">15</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍺 Robert</td><td class="aud">17</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr class="totals"><td>Weighted Σ</td><td class="aud">100</td><td class="score">2.72</td><td class="score locked">5.00</td><td class="score">3.00</td></tr>
+  </tbody>
+</table>
+<div class="runoff">
+  <h3>Why B — a dedicated proof screen, placed at the commitment moment</h3>
+  <p><b>Unanimous (Σ 5.00).</b> Every cohort came with a fear, every cohort is one tap from a price — and a brand-new app has no reviews, no "10M downloads", no testimonials to lean on. What it <em>does</em> have is real: the evidence base. The proof screen makes that the trust anchor, full-screen, right where the conversion decision happens. <b>Robert (=5)</b> in particular — his whole question is "is this <em>real</em>?" — a guideline-grade evidence screen answers it. A (method line) is too quiet; C (strip) is ignored wallpaper.</p>
+  <div class="pick-row">
+    <span class="pick lead">⭐ B · dedicated proof screen — ships</span>
+    <span class="pick">A · method line only — rejected · too quiet</span>
+    <span class="pick">C · persistent strip — rejected · wallpaper</span>
+  </div>
+</div>
+
+<h3 style="margin-top:26px;">15.4a · The proof screen — honest "big number", Apple-safe</h3>
+<p class="lede">The founder's instinct is right: a big credibility number near the paywall converts. The trap is <em>what</em> number. Hepatica has no users — so the number is the <b>evidence base</b>, not a userbase. The corpus is a hard fact: <code>DECISIONS.md</code> D12 — <b>408 source documents → 1,819 research passages</b> (PubMed NAFLD abstracts + AASLD/AGA/ACG/EASL/NICE/WHO guideline PDFs + FDA labels). And those guidelines distil epidemiology of a disease studied across <em>millions</em> of patients. That is the honest, substantiated "wow number".</p>
 <div class="screen-block">
   <div class="phone-frame">
-    <div class="phone-screen" style="gap:9px;">
-      <div class="sc-head"><div class="sc-greet"><small>Tue · May 20</small>Good morning, Robert</div><span class="sc-streak">🔥 47 days</span></div>
-      <div class="sc-pills"><div class="sc-pill score"><div class="v">58</div><div class="l">Liver score ↑</div></div><div class="sc-pill"><div class="v">47</div><div class="l">Days sober</div></div><div class="sc-pill"><div class="v">🍺</div><div class="l">Recovery</div></div></div>
-      <div class="sc-card hero" style="min-height:60px;"><div class="sc-lbl"><span>Liver recovery · GGT</span></div></div>
-      <div class="phone-tabbar">
-        <a class="tab"><span class="icn">⌂</span>Today</a>
-        <a class="tab"><span class="icn">💬</span>Coach</a>
-        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
-        <a class="tab"><span class="icn">📈</span>Progress</a>
-        <a class="tab"><span class="icn">🧪</span>Labs</a>
+    <div class="phone-screen" style="gap:11px;">
+      <div class="sc-head"><div class="sc-greet"><small>Before you decide</small>Why you can trust this plan</div></div>
+      <div class="sc-card hero" style="text-align:center;padding:16px 12px;">
+        <div style="font-size:8px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--cta-deep);">The research behind your plan</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:34px;color:var(--brand-deep);line-height:1.05;margin-top:6px;">Millions</div>
+        <div style="font-size:11px;color:var(--ink);line-height:1.4;margin-top:3px;">of liver patients in the studies your plan is built on.</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:10px;">
+          <span class="sc-vp good">AASLD</span><span class="sc-vp good">AGA</span><span class="sc-vp good">EASL</span><span class="sc-vp good">PubMed</span><span class="sc-vp good">FDA</span>
+        </div>
       </div>
-      <div class="log-dim"></div>
-      <div class="log-sheet">
-        <div class="log-handle"></div>
-        <div class="ls-h">Log something</div>
-        <div class="log-option suggested">
-          <span class="lo-ic">🍺</span>
-          <div style="flex:1;"><div class="lo-t">Mark today sober — Day 48</div><div class="lo-d">Your daily action · keeps the streak &amp; the curve moving</div></div>
-          <span class="log-suggest-tag">suggested</span>
-        </div>
-        <div class="log-grid">
-          <div class="log-option"><span class="lo-ic">📷</span><div><div class="lo-t">Meal photo</div><div class="lo-d">Liver-risk scan</div></div></div>
-          <div class="log-option"><span class="lo-ic">🩸</span><div><div class="lo-t">Lab panel</div><div class="lo-d">Scan · PDF · manual</div></div></div>
-          <div class="log-option"><span class="lo-ic">💊</span><div><div class="lo-t">Medication</div><div class="lo-d">Dose + adherence</div></div></div>
-          <div class="log-option"><span class="lo-ic">🩹</span><div><div class="lo-t">Symptom</div><div class="lo-d">Energy · mood · pain</div></div></div>
-        </div>
+      <div class="sc-card" style="display:flex;gap:9px;text-align:center;">
+        <div style="flex:1;"><div style="font-family:ui-monospace,'SF Mono';font-weight:800;font-size:16px;color:var(--brand-deep);">400+</div><div style="font-size:8px;color:var(--ink-2);">clinical sources</div></div>
+        <div style="width:1px;background:var(--divider);"></div>
+        <div style="flex:1;"><div style="font-family:ui-monospace,'SF Mono';font-weight:800;font-size:16px;color:var(--brand-deep);">1,800+</div><div style="font-size:8px;color:var(--ink-2);">research passages</div></div>
+        <div style="width:1px;background:var(--divider);"></div>
+        <div style="flex:1;"><div style="font-family:ui-monospace,'SF Mono';font-weight:800;font-size:16px;color:var(--brand-deep);">0</div><div style="font-size:8px;color:var(--ink-2);">generic advice</div></div>
+      </div>
+      <div class="sc-insight"><span class="si-x">📚</span><div><div class="si-e">What this means</div><div class="si-t">Every answer your Coach gives is pulled from this evidence — the same guidelines your hepatologist uses — never generic wellness copy.</div></div></div>
+      <div class="sc-disc">Hepatica is a new app — these numbers describe the published <b>research</b> it is built on, not a user count. No claim is made about Hepatica's own results.</div>
+      <div class="sc-cta">See my plan &amp; pricing</div>
+      <div class="phone-tabbar" style="opacity:0.25;">
+        <a class="tab"><span class="icn">⌂</span>Today</a><a class="tab"><span class="icn">💬</span>Coach</a>
+        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
+        <a class="tab"><span class="icn">📈</span>Progress</a><a class="tab"><span class="icn">🧪</span>Labs</a>
       </div>
     </div>
   </div>
   <div class="screen-annot">
-    <h3>Standing in the user's shoes</h3>
-    <div class="pov-lead">Robert taps «+» the same way every evening. He should be done logging before he's even thought about it — the sheet must put his action <b>under his thumb, first, every time</b>.</div>
-    <div class="annot-row"><span class="ar-z">Slides over</span><span class="ar-v">The sheet covers a <b>dimmed Today</b> — never a new screen. Swipe down returns him exactly where he was. Zero navigation cost.</span></div>
-    <div class="annot-row"><span class="ar-z">Suggested tile</span><span class="ar-v">Candidate C, folded in: the cohort's likely action is <b>full-width on top, gold-highlighted</b> — Robert's "sober day", Rachel's "medication", Nick's "meal photo".</span></div>
-    <div class="annot-row"><span class="ar-z">Five tiles</span><span class="ar-v">Meal · Drink/sober · Lab · Medication · Symptom — the complete capture set. Always the same five, always the same place — muscle memory.</span></div>
-    <div class="annot-row"><span class="ar-z">JTBD step</span><span class="ar-v">This <em>is</em> the daily loop's input step (Module 6). Everything on Today is the payoff; this sheet is the deposit.</span></div>
-    <div class="annot-row"><span class="ar-z">Tap → mini-form</span><span class="ar-v">Each tile opens a 2–3-tap mini-form, not a page — §12.3. The whole log is done without leaving Today.</span></div>
-    <div class="borrowed"><b>Borrowed — the Loveiko FAB pattern (AcidWise, JabWell): a bottom-sheet of capture tiles, dismissible, screen-preserving. Cysta AI's «+Log» is the direct sibling.</b></div>
-  </div>
-</div>
-
-<!-- ===== 12.3 LOG MINI-FLOWS ===== -->
-<h2 id="log-flows">12.3 · The five mini-flows</h2>
-<p class="lede">Behind each tile, a mini-form built for 2–3 taps. None is a full screen; each writes to Today, to the relevant tab, and into the Coach's context.</p>
-<div class="cohort-strip">
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Log</small>Meal photo</div></div>
-        <div class="sc-card" style="background:var(--brand-deep);border:none;height:74px;position:relative;">
-          <div style="position:absolute;inset:12px;border:2px solid rgba(212,165,116,0.7);border-radius:8px;"></div>
-        </div>
-        <div class="sc-card" style="display:flex;align-items:center;gap:8px;padding:8px 9px;">
-          <span style="font-size:16px;">🥗</span>
-          <div style="flex:1;"><div style="font-size:9px;font-weight:800;color:var(--ink);">Grilled salmon bowl</div><div style="font-size:7.5px;color:var(--ink-2);">Top risk: none flagged</div></div>
-          <span class="sc-vp good">Liver-friendly</span>
-        </div>
-        <div class="sc-cta" style="font-size:8.5px;padding:7px;">Add to today's log</div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">📷 Meal photo</div><div class="cc-job">Camera → liver-risk verdict + swap suggestion. AcidWise scanner DNA. Feeds the Liver-Friendly Score.</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Log</small>Drink / sober day</div></div>
-        <div class="sc-card" style="text-align:center;padding:13px 8px;">
-          <div style="font-size:22px;">🌿</div>
-          <div style="font-size:11px;font-weight:800;color:var(--brand-deep);margin-top:3px;">Day 48 — alcohol-free</div>
-          <div style="font-size:7.5px;color:var(--ink-2);margin-top:2px;">One tap confirms today.</div>
-        </div>
-        <div style="display:flex;gap:5px;">
-          <div class="sc-cta" style="flex:1;font-size:8.5px;padding:7px;">✓ Sober today</div>
-          <div class="sc-cta ghost" style="flex:1;font-size:8.5px;padding:7px;">I drank — log it</div>
-        </div>
-        <div class="sc-disc" style="text-align:center;">Logging a drink never breaks the recovery — it just moves the curve. No judgment.</div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">🍺 Drink / sober day</div><div class="cc-job">Sober tap or non-judgmental drink log. Either writes the streak + GGT context. Robert's daily action.</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Log</small>Lab panel</div></div>
-        <div class="lab-add">
-          <div class="la-opt primary"><div class="la-ic">📷</div><div class="la-t">Camera scan</div></div>
-          <div class="la-opt"><div class="la-ic">📄</div><div class="la-t">Upload PDF</div></div>
-          <div class="la-opt"><div class="la-ic">✏️</div><div class="la-t">Manual</div></div>
-        </div>
-        <div class="sc-card" style="text-align:center;padding:12px 8px;">
-          <div style="font-size:8.5px;color:var(--ink-2);line-height:1.5;">Routes straight into the Labs capture flow — <b style="color:var(--brand-deep);">Module 10.4</b>. Built once, entered from two places.</div>
-        </div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">🩸 Lab panel</div><div class="cc-job">Re-uses the M10.4 scan / PDF / manual capture — no duplicate flow. Lands the result in the Labs grid.</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Log</small>Medication</div></div>
-        <div class="sc-action" style="padding:9px 10px;">
-          <div class="sa-tick">✓</div>
-          <div><div class="sa-t" style="font-size:9.5px;">Rezdiffra 100 mg</div><div class="sa-d">Morning dose · taken</div></div>
-        </div>
-        <div class="sc-card" style="padding:8px 9px;">
-          <div class="sc-lbl"><span>Adherence · this month</span><span style="color:var(--good);">28 / 30</span></div>
-          <div class="sc-heat" style="margin-top:5px;"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="today"></i></div>
-        </div>
-        <div class="sc-card" style="display:flex;gap:7px;align-items:center;padding:7px 9px;">
-          <span style="font-size:13px;">🩹</span><div style="font-size:7.5px;color:var(--ink-2);line-height:1.35;">Any side effects? Log diarrhoea / fatigue with this dose.</div>
-        </div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">💊 Medication</div><div class="cc-job">Dose tick + adherence streak + side-effect prompt. JabWell tracker DNA. Rezdiffra for Rachel, GLP-1 for Greta.</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Log</small>Symptom</div></div>
-        <div class="sc-card" style="padding:9px;">
-          <div style="font-size:8.5px;font-weight:800;color:var(--ink);">How's your energy today?</div>
-          <div style="display:flex;gap:4px;margin-top:7px;">
-            <span class="sc-vp" style="background:var(--alert-bg);color:#6B3A12;">Low</span>
-            <span class="sc-vp watch">Okay</span>
-            <span class="sc-vp good" style="outline:2px solid var(--brand);">Good</span>
-          </div>
-        </div>
-        <div class="sc-card" style="padding:9px;">
-          <div style="font-size:8.5px;font-weight:800;color:var(--ink);">Mood · sleep · pain</div>
-          <div style="font-size:7.5px;color:var(--ink-2);margin-top:4px;line-height:1.4;">Quick chips — builds the 14-day symptom view for the doctor PDF.</div>
-        </div>
-        <div class="sc-cta" style="font-size:8.5px;padding:7px;">Save check-in</div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">🩹 Symptom</div><div class="cc-job">Energy / mood / sleep / pain chips. Feeds the symptom-cause AI correlations + the doctor-PDF heatmap.</div></div>
-  </div>
-
-</div>
-<div class="m6-callout note">
-  <b>Every capture has three destinations.</b> A logged item updates Today (the hero chart, the streak, the heatmap), writes to its home tab (a meal → Labs-adjacent score, a dose → Progress adherence), and enters the Coach's context so the next question is answered with fresh data. Compliance: the drink log is non-judgmental by construction (<code>COMPLIANCE.md</code> — "logging a drink never breaks the recovery"); meal scans give a liver-risk <em>rating</em>, never a diagnosis.
-</div>
-
-<!-- ===== 12.4 LOG READY ===== -->
-<h2 id="log-summary">12.4 · Log — ready for review</h2>
-<div class="m6-callout win">
-  <b>Module 12 — ready for founder review.</b> Consilium was unanimous (B · bottom-sheet, Σ 5.00) with Candidate C folded in — the sheet opens over a dimmed Today with the cohort's likely action pre-highlighted full-width, four more tiles below. §12.3 worked all five mini-flows (meal · drink/sober · lab · medication · symptom), each a 2–3-tap form, none a full screen; the Lab tile re-uses the M10.4 capture rather than duplicating it. Every capture fans out to Today + its home tab + Coach context. Next — <b>Module 13 · Settings</b>.
-</div>
-
-<!-- ============================================================ -->
-<!-- ==================== MODULE 13 · SETTINGS ================== -->
-<!-- ============================================================ -->
-<div class="module-banner" id="module-13">
-  <span class="num">МОДУЛЬ 13</span>
-  <h2>Settings — the cohort switch &amp; Today customisation</h2>
-  <p class="desc">Settings is where the user owns the cohort-aware behaviour the rest of the app runs on. It holds the <b>cohort switch</b> (re-assign your lane post-onboarding), the per-cohort <b>JTBD tracking path</b>, and the toggles that <b>show/hide Today's widgets</b>. §13.1 the anatomy, §13.2 the cohort switch + tracking paths, §13.3 the Today-customisation before/after.</p>
-</div>
-
-<!-- ===== 13.1 SETTINGS ANATOMY ===== -->
-<h2 id="settings-anatomy">13.1 · Settings — screen anatomy</h2>
-<p class="lede">One scrolling screen, grouped iOS-style. The two groups that matter for this workbench: <b>Your lane</b> (the cohort) and <b>Today screen</b> (the widget toggles). Until Onboarding ships, the cohort row is also the debug lane switch §8.4 referred to.</p>
-<div class="screen-block">
-  <div class="phone-frame">
-    <div class="phone-screen" style="gap:9px;">
-      <div class="sc-head"><div class="sc-greet"><small>Settings</small>Settings</div></div>
-      <div class="settings-group">
-        <div class="sg-h">Account</div>
-        <div class="settings-row first"><span class="sr-ic">⭐</span><span class="sr-t">Subscription</span><span class="sr-v">Annual · trial</span></div>
-        <div class="settings-row"><span class="sr-ic">↺</span><span class="sr-t">Restore purchases</span><span style="color:var(--ink-3);">›</span></div>
-      </div>
-      <div class="settings-group">
-        <div class="sg-h">Your lane</div>
-        <div class="settings-row first"><span class="sr-ic">🍺</span><span class="sr-t">Cohort<div style="font-size:7.5px;color:var(--ink-3);font-weight:600;">Recovering Robert · tap to change</div></span><span style="color:var(--ink-3);">›</span></div>
-      </div>
-      <div class="settings-group">
-        <div class="sg-h">Today screen — show / hide</div>
-        <div class="settings-row first"><span class="sr-ic">📉</span><span class="sr-t">Hero JTBD chart<div style="font-size:7.5px;color:var(--ink-3);font-weight:600;">core — always on</div></span><span class="toggle locked"></span></div>
-        <div class="settings-row"><span class="sr-ic">🔥</span><span class="sr-t">Streak &amp; days-sober pill</span><span class="toggle"></span></div>
-        <div class="settings-row"><span class="sr-ic">✨</span><span class="sr-t">«Hepatica noticed» insight</span><span class="toggle"></span></div>
-        <div class="settings-row"><span class="sr-ic">🎉</span><span class="sr-t">Milestone card</span><span class="toggle"></span></div>
-        <div class="settings-row"><span class="sr-ic">📅</span><span class="sr-t">Weekly heatmap</span><span class="toggle off"></span></div>
-        <div class="settings-row"><span class="sr-ic">💬</span><span class="sr-t">Coach ribbon</span><span class="toggle"></span></div>
-      </div>
-      <div class="settings-group">
-        <div class="sg-h">App</div>
-        <div class="settings-row first"><span class="sr-ic">🔔</span><span class="sr-t">Notifications</span><span style="color:var(--ink-3);">›</span></div>
-        <div class="settings-row"><span class="sr-ic">🛡</span><span class="sr-t">Re-read disclaimer &amp; sources</span><span style="color:var(--ink-3);">›</span></div>
-      </div>
-      <div class="phone-tabbar">
-        <a class="tab"><span class="icn">⌂</span>Today</a>
-        <a class="tab"><span class="icn">💬</span>Coach</a>
-        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
-        <a class="tab"><span class="icn">📈</span>Progress</a>
-        <a class="tab"><span class="icn">🧪</span>Labs</a>
-      </div>
-    </div>
-  </div>
-  <div class="screen-annot">
-    <h3>Standing in the user's shoes</h3>
-    <div class="pov-lead">A user opens Settings for one of two reasons: their situation changed (a new diagnosis, they quit drinking) and the app no longer fits — or Today feels too busy. Both are <b>cohort-aware controls</b>, and both live here.</div>
-    <div class="annot-row"><span class="ar-z">Reached from</span><span class="ar-v">A gear on Today's header (not a sixth tab — the tab bar is locked at five). Low-frequency, so it stays out of the bar.</span></div>
-    <div class="annot-row"><span class="ar-z">Your lane</span><span class="ar-v">The cohort row — the single control that drives Today's layout, Coach's tone and Labs' pinning. Opens the switch in §13.2.</span></div>
-    <div class="annot-row"><span class="ar-z">Today toggles</span><span class="ar-v">One switch per Today widget. The user trims their own home screen — §13.3 shows the effect.</span></div>
-    <div class="annot-row"><span class="ar-z">Locked widget</span><span class="ar-v">The <b>hero JTBD chart</b> toggle is locked on — it's the core value and carries the compliance disclaimer. A user can't accidentally hide the reason the app works.</span></div>
-    <div class="annot-row"><span class="ar-z">Compliance</span><span class="ar-v">"Re-read disclaimer &amp; sources" is always reachable; the hero chart's educational disclaimer can never be toggled away (<code>COMPLIANCE.md</code>).</span></div>
-    <div class="borrowed"><b>Borrowed — Calibrum &amp; Cysta AI settings (grouped iOS lists, a single "your focus / lane" control). The Today-widget toggles are the Hepatica-specific addition.</b></div>
-  </div>
-</div>
-
-<!-- ===== 13.2 COHORT SWITCH ===== -->
-<h2 id="settings-cohort">13.2 · The cohort switch &amp; the JTBD tracking path</h2>
-<p class="lede">Tapping the cohort row opens the switch. Picking a cohort previews its <b>tracking path</b> — the JTBD chain that cohort lives on — before the user commits. Changing it re-shapes Today, Coach and Labs at once.</p>
-<div class="screen-block">
-  <div class="phone-frame">
-    <div class="phone-screen" style="gap:10px;">
-      <div class="sc-head"><div class="sc-greet"><small>Settings › Lane</small>Change your lane</div></div>
-      <div class="cohort-switch-card">
-        <div style="font-size:7.5px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--cta-deep);">Current</div>
-        <div class="cs-cur">🍺 Recovering Robert</div>
-        <div class="cohort-pick">
-          <span>🍷 Nick</span><span>💉 Greta</span><span>🍔 Pete</span><span>💊 Rachel</span><span>🧬 Patricia</span><span class="on">🍺 Robert</span>
-        </div>
-      </div>
-      <div class="sc-card">
-        <div class="sc-lbl"><span>Your tracking path · Robert</span></div>
-        <div class="path-strip">
-          <span class="ps-node start">Sober day</span><span class="ps-arr">→</span>
-          <span class="ps-node">GGT panel</span><span class="ps-arr">→</span>
-          <span class="ps-node">Recovery curve</span><span class="ps-arr">→</span>
-          <span class="ps-node end">Day-60 milestone</span>
-        </div>
-        <div style="font-size:8px;color:var(--ink-2);line-height:1.45;margin-top:8px;">This is the JTBD chain Hepatica will track for you. Switching cohort changes the hero chart, the Coach's tone and which analyte Labs pins.</div>
-      </div>
-      <div class="sc-card" style="background:var(--watch-bg);border-color:#E7CFA3;">
-        <div style="font-size:8.5px;color:#7A4012;line-height:1.5;">⚠️ Switching lanes is self-reported setup — not a clinical assessment. Your logged data is kept; only the focus changes.</div>
-      </div>
-      <div class="sc-cta">Keep Recovering Robert</div>
-      <div class="phone-tabbar">
-        <a class="tab"><span class="icn">⌂</span>Today</a>
-        <a class="tab"><span class="icn">💬</span>Coach</a>
-        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
-        <a class="tab"><span class="icn">📈</span>Progress</a>
-        <a class="tab"><span class="icn">🧪</span>Labs</a>
-      </div>
-    </div>
-  </div>
-  <div class="screen-annot">
-    <h3>The control that drives everything</h3>
-    <div class="pov-lead">The cohort isn't a label — it's the <b>routing key</b> for the whole app. So the switch must show the user <em>what changes</em> before they commit, and reassure them nothing logged is lost.</div>
-    <div class="annot-row"><span class="ar-z">Tracking path</span><span class="ar-v">Each cohort's JTBD rendered as a 4-step chain — start action → marker → chart → milestone. The user sees the <b>plan</b>, not just a name.</span></div>
-    <div class="annot-row"><span class="ar-z">Preview before commit</span><span class="ar-v">Tapping a cohort previews its path; the path updates live. "Keep / Switch" is the only destructive-ish action and it's explicit.</span></div>
-    <div class="annot-row"><span class="ar-z">What it re-points</span><span class="ar-v">Today's hero chart + widget order (§8.4), Coach's lead lens + tone (§9.4), Labs' pinned analyte (§10.3), Progress's metric set (§11.3). One switch, four tabs.</span></div>
-    <div class="annot-row"><span class="ar-z">Data is safe</span><span class="ar-v">Every logged value is kept across a switch — only the <em>view</em> changes. Said plainly, so the user isn't afraid to correct a mis-set lane.</span></div>
-    <div class="annot-row"><span class="ar-z">Compliance</span><span class="ar-v">The amber strip repeats the onboarding line — cohort is self-reported tracking setup, not a diagnosis (<code>COMPLIANCE.md</code>).</span></div>
-  </div>
-</div>
-<div class="round" style="margin-top:16px;">
-  <span class="r-tag">All six tracking paths</span>
-  <h3>The JTBD chain Settings surfaces per cohort</h3>
-  <table class="tab-spec" style="margin-top:8px;">
-    <tbody>
-      <tr><td class="tabname">🍷 Nick</td><td><div class="path-strip" style="margin-top:0;"><span class="ps-node start">Scan meal</span><span class="ps-arr">→</span><span class="ps-node">Liver score</span><span class="ps-arr">→</span><span class="ps-node">ALT panel</span><span class="ps-arr">→</span><span class="ps-node end">6-month trend</span></div></td></tr>
-      <tr><td class="tabname">💉 Greta</td><td><div class="path-strip" style="margin-top:0;"><span class="ps-node start">Weigh-in</span><span class="ps-arr">→</span><span class="ps-node">ALT panel</span><span class="ps-arr">→</span><span class="ps-node">ALT × weight</span><span class="ps-arr">→</span><span class="ps-node end">GLP-1 response</span></div></td></tr>
-      <tr><td class="tabname">🍔 Pete</td><td><div class="path-strip" style="margin-top:0;"><span class="ps-node start">HbA1c</span><span class="ps-arr">→</span><span class="ps-node">ALT panel</span><span class="ps-arr">→</span><span class="ps-node">FIB-4</span><span class="ps-arr">→</span><span class="ps-node end">Metabolic trend</span></div></td></tr>
-      <tr><td class="tabname">💊 Rachel</td><td><div class="path-strip" style="margin-top:0;"><span class="ps-node start">Rezdiffra dose</span><span class="ps-arr">→</span><span class="ps-node">FibroScan</span><span class="ps-arr">→</span><span class="ps-node">F-stage staircase</span><span class="ps-arr">→</span><span class="ps-node end">Insurance PDF</span></div></td></tr>
-      <tr><td class="tabname">🧬 Patricia</td><td><div class="path-strip" style="margin-top:0;"><span class="ps-node start">Cycle day</span><span class="ps-arr">→</span><span class="ps-node">Inositol + ALT</span><span class="ps-arr">→</span><span class="ps-node">ALT × cycle</span><span class="ps-arr">→</span><span class="ps-node end">Cross-condition view</span></div></td></tr>
-      <tr><td class="tabname">🍺 Robert</td><td><div class="path-strip" style="margin-top:0;"><span class="ps-node start">Sober day</span><span class="ps-arr">→</span><span class="ps-node">GGT panel</span><span class="ps-arr">→</span><span class="ps-node">Recovery curve</span><span class="ps-arr">→</span><span class="ps-node end">Day-60 milestone</span></div></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- ===== 13.3 TODAY CUSTOMISATION ===== -->
-<h2 id="settings-today">13.3 · Today customisation — the toggles in effect</h2>
-<p class="lede">The §13.1 toggles aren't decoration — they re-shape Today. Here is the same Robert Today with every widget on, and trimmed to the essentials. The hero chart and its disclaimer survive both.</p>
-<div class="cohort-strip">
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today · full</small>Robert</div><span class="sc-streak">🔥 47</span></div>
-        <div class="sc-pills"><div class="sc-pill score"><div class="v">58</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">47</div><div class="l">Sober</div></div></div>
-        <div class="sc-insight"><span class="si-x">✨</span><div><div class="si-e">Hepatica noticed</div><div class="si-t">GGT down 145 since Day 1.</div></div></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>GGT recovery</span><span class="sc-vp watch">Watch</span></div>
-          <svg viewBox="0 0 140 40" width="100%" style="margin-top:3px;"><line x1="6" y1="32" x2="134" y2="32" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/><polyline points="6,8 40,18 74,25 104,29" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="104,29 134,33" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-dasharray="4 3"/><circle cx="104" cy="29" r="3" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/></svg>
-        </div>
-        <div class="sc-card" style="display:flex;gap:7px;align-items:center;padding:7px 9px;"><span style="font-size:13px;">🎉</span><div style="font-size:7.5px;color:var(--ink-2);">Day 60 milestone — 13 days away</div></div>
-        <div class="sc-card" style="padding:7px 9px;"><div class="sc-lbl"><span>This week</span><span style="color:var(--good);">6/7</span></div><div class="sc-heat" style="margin-top:4px;"><i class="on"></i><i class="on"></i><i class="on"></i><i class="rescue"></i><i class="on"></i><i class="on"></i><i class="today"></i></div></div>
-        <div class="sc-ribbon" style="padding:6px 9px;"><span style="font-size:12px;">💬</span><span class="sr-t">Ask Coach →</span></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">All widgets on</div><div class="cc-job">Score · insight · hero · milestone · heatmap · Coach ribbon — the full default Today.</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today · trimmed</small>Robert</div><span class="sc-streak">🔥 47</span></div>
-        <div class="sc-pills"><div class="sc-pill score"><div class="v">58</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">47</div><div class="l">Sober</div></div></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>GGT recovery</span><span class="sc-vp watch">Watch</span></div>
-          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;"><line x1="6" y1="36" x2="134" y2="36" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/><polyline points="6,9 42,20 80,28 110,33" fill="none" stroke="#2D7B7E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="110,33 134,37" fill="none" stroke="#B0824D" stroke-width="2.4" stroke-dasharray="4 3"/><circle cx="110" cy="33" r="3.2" fill="#fff" stroke="#2D7B7E" stroke-width="2.4"/></svg>
-          <div class="sc-disc">Educational tracking — not a diagnosis.</div>
-        </div>
-        <div class="sc-action" style="padding:8px 9px;"><div class="sa-tick" style="width:22px;height:22px;font-size:12px;">+</div><div class="sa-t" style="font-size:9px;">Log Day 48 sober</div></div>
-        <div class="sc-ribbon" style="padding:6px 9px;"><span style="font-size:12px;">💬</span><span class="sr-t">Ask Coach →</span></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">Trimmed — heatmap, insight &amp; milestone off</div><div class="cc-job">A calmer Today. The hero chart + disclaimer + daily action stay — they can't be switched off.</div></div>
-  </div>
-
-</div>
-<div class="m6-callout note">
-  <b>What can't be toggled off.</b> The hero JTBD chart and its educational disclaimer, the daily-action card, and the tab bar are fixed — they are the core value and the compliance surface. Everything else (insight banner, milestone card, weekly heatmap, Coach ribbon, streak pill) is the user's call. Customisation lets a user calm a busy screen without ever letting them hide the reason the app works — or the disclaimer that keeps it Health &amp; Fitness, not Medical.
-</div>
-
-<!-- ===== 13.4 SETTINGS READY ===== -->
-<h2 id="settings-summary">13.4 · Settings — ready for review</h2>
-<div class="m6-callout win">
-  <b>Module 13 — ready for founder review.</b> Settings is the home of the cohort-aware controls: §13.1 the grouped anatomy with per-widget Today toggles; §13.2 the cohort switch that previews each lane's JTBD tracking path before commit and re-points Today + Coach + Labs + Progress in one move; §13.3 proved the toggles re-shape Today, with the hero chart, disclaimer and daily action locked on. Until Onboarding ships, the cohort row doubles as the §8.4 debug lane switch. Next — <b>Module 14 · the whole-app review</b>.
-</div>
-
-<!-- ============================================================ -->
-<!-- ================== MODULE 14 · WHOLE-APP =================== -->
-<!-- ============================================================ -->
-<div class="module-banner" id="module-14">
-  <span class="num">МОДУЛЬ 14</span>
-  <h2>Whole-app review — the five tabs evaluated together</h2>
-  <p class="desc">Modules 8–13 worked each tab on its own. This module steps back and judges the product as one thing: the complete flow map (§14.1), a cross-tab consistency audit that surfaces the real gaps (§14.2), the build → evaluate → re-evaluate loop the whole workbench ran on (§14.3), the open questions (§14.4), and the ready-for-lock summary (§14.5).</p>
-</div>
-
-<!-- ===== 14.1 COMPLETE FLOW MAP ===== -->
-<h2 id="flow-complete">14.1 · The complete app flow</h2>
-<p class="lede">The whole journey, end to end. Onboarding and Paywall stay dashed TODO gates — each gets its own consilium later. Everything from the Disclaimer inward is now worked screen-by-screen across Modules 8–13.</p>
-<div class="flow-map">
-  <div class="flow-stage"><span class="fs-step">START</span><span class="fs-t">📲 Launch</span><span class="fs-d">App opens — cold start.</span></div>
-  <span class="flow-conn">→</span>
-  <div class="flow-stage todo"><span class="fs-step">LATER</span><span class="fs-t">Onboarding</span><span class="fs-d">6-question cohort triage → assigns the lane.</span><span class="flow-todo-pill">TODO</span></div>
-  <span class="flow-conn">→</span>
-  <div class="flow-stage todo"><span class="fs-step">LATER</span><span class="fs-t">Paywall</span><span class="fs-d">4 tiers · 7-day trial.</span><span class="flow-todo-pill">TODO</span></div>
-  <span class="flow-conn">→</span>
-  <div class="flow-stage gate"><span class="fs-step">M8 · WORKED</span><span class="fs-t">🛡 Disclaimer</span><span class="fs-d">One-time gate → opens Today.</span></div>
-  <span class="flow-conn">→</span>
-  <div class="flow-stage app"><span class="fs-step">M8–13 · WORKED</span><span class="fs-t">Main app</span><span class="fs-d">Lands on Today. 5 surfaces, all worked:</span>
-    <div class="flow-apptabs"><span class="entry">Today</span><span>Coach</span><span>+Log</span><span>Progress</span><span>Labs</span></div>
+    <h3>The honest "millions" — and where it goes</h3>
+    <div class="pov-lead">The founder asked for a big proof badge near the paywall. The answer: <b>yes — but the number describes the evidence, not the userbase.</b> "Built on research covering millions of liver patients" is true, substantiated, and the way guideline medicine actually works. "Millions of users" is false, Apple-rejectable, and unnecessary.</div>
+    <div class="annot-row"><span class="ar-z">The big word</span><span class="ar-v"><b>"Millions"</b> sits huge — but the line under it fixes the meaning: <em>"of liver patients in the studies your plan is built on."</em> The claim is about the <b>research</b>, attached to named bodies.</span></div>
+    <div class="annot-row"><span class="ar-z">Substantiation</span><span class="ar-v">The three stats are hard facts from <code>DECISIONS.md</code> D12 — 400+ sources, 1,800+ passages, the source chips are the real corpus. Apple 2.3.1 wants claims substantiated; these are.</span></div>
+    <div class="annot-row"><span class="ar-z">The honesty line</span><span class="ar-v">A quiet <code>sc-disc</code> states plainly: this is the <em>research</em> base, not a user count. It <em>strengthens</em> trust — and removes any rejection surface.</span></div>
+    <div class="annot-row"><span class="ar-z">Placement</span><span class="ar-v">Screen 8 — between the post-WOW breath and the paywall (§15.5). The user is warm from the WOW; the proof screen is the last credibility beat before the price. A one-line echo of it also bands the paywall itself.</span></div>
+    <div class="annot-row"><span class="ar-z">Compliance</span><span class="ar-v">No userbase claim, no "trusted by millions", no testimonials, no outcome promise. Only the evidence base + named guideline bodies. <b>Copy goes to compliance sign-off.</b></span></div>
+    <div class="borrowed"><b>Borrowed — Calibrum (the source-badge wall: Endocrine Society · AUA · AAFP) and Folik ("we packed 300+ pages from AAD, ISHRS, FDA, PubMed"). Hepatica scales it to a full screen at the commitment moment.</b></div>
   </div>
 </div>
 <table class="tab-spec" style="margin-top:14px;">
-  <thead><tr><th>Surface</th><th>Module</th><th>What it answers</th><th>Consilium outcome</th></tr></thead>
+  <thead><tr><th>Proof-line candidate</th><th>The copy</th><th>Apple-safe?</th></tr></thead>
   <tbody>
-    <tr><td class="tabname">⌂ Today</td><td>M8</td><td>"Is it working — right now?"</td><td>Cohort-aware hero chart + daily loop · skeleton empty state</td></tr>
-    <tr><td class="tabname">💬 Coach</td><td>M9</td><td>"What does this mean — and what do I do?"</td><td>B · specialist-lens panel (Σ 4.80) · v2 verdict-first layout</td></tr>
-    <tr><td class="tabname">+ Log</td><td>M12</td><td>"Capture what just happened."</td><td>B · bottom-sheet, 5 tiles (Σ 5.00) · smart tile folded in</td></tr>
-    <tr><td class="tabname">📈 Progress</td><td>M11</td><td>"How far have I come — is it worth renewing?"</td><td>B · per-metric cards (Σ 4.83) · milestones + doctor PDF</td></tr>
-    <tr><td class="tabname">🧪 Labs</td><td>M10</td><td>"Are my numbers OK?"</td><td>B · analyte-grid first (Σ 5.00) · ranges + capture in-tab</td></tr>
-    <tr><td class="tabname">⚙ Settings</td><td>M13</td><td>"Re-fit the app to my situation."</td><td>Cohort switch + JTBD path + Today-widget toggles</td></tr>
+    <tr class="locked-row"><td class="tabname">1 · Research-base "millions" ⭐</td><td>"<b>Millions</b> of liver patients in the studies your plan is built on." + "400+ AASLD · AGA · EASL &amp; PubMed sources."</td><td><span class="ok">✓ Safe</span> — the number is the research literature, attached to named bodies; substantiated.</td></tr>
+    <tr><td class="tabname">2 · Corpus count</td><td>"<b>400+ clinical sources. 1,800+ research passages.</b> Every answer drawn from guidelines, never generic advice."</td><td><span class="ok">✓ Safest</span> — hard facts from D12. Less emotionally big, zero risk. Good as the subline.</td></tr>
+    <tr><td class="tabname">3 · Guideline-grade seal</td><td>A seal: "<b>Guideline-grade</b>" + AASLD · AGA · EASL. "Hepatica only says what the liver guidelines say."</td><td><span class="ok">✓ Safe</span> — authority framing, no number to substantiate.</td></tr>
+    <tr><td class="tabname">4 · Userbase claim</td><td>"Join <b>millions</b> improving their liver" / "Trusted by millions of users".</td><td><span class="warn">✗ Banned</span> — false (zero users), Apple 2.3.1 rejection, deceptive. Never ship.</td></tr>
   </tbody>
 </table>
+<div class="m6-callout note">
+  <b>Recommended:</b> ship <b>candidate 1 as the hero line + candidate 2 as the substantiating stats</b> (exactly the mockup above), and echo a one-line band — "Built on 400+ AASLD/AGA/EASL &amp; PubMed sources" — on the paywall itself (Module 16). Candidate 4 is documented here only as the anti-pattern. The rule: <b>every big number in this funnel describes the evidence, never Hepatica's own results or userbase</b> — until real outcome data exists, post-launch.
+</div>
 
-<!-- ===== 14.2 CROSS-TAB AUDIT ===== -->
-<h2 id="audit">14.2 · Cross-tab consistency audit</h2>
-<p class="lede">Each tab was designed in its own module — so they have to be checked <em>against each other</em>. ✓ = handled; ⚠ = a real gap to close before lock. The audit is honest: it surfaces what the per-tab modules left open.</p>
-<div class="scan-wrap">
-<table class="audit jtbd-scan" style="min-width:760px;">
-  <thead><tr><th>Surface</th><th>Design tokens</th><th>Warm verdict triad</th><th>Citation / safety</th><th>Empty state</th><th>Cohort-aware</th><th>Doctor-PDF link</th></tr></thead>
-  <tbody>
-    <tr><td class="tabname">⌂ Today</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl p">⚠</td></tr>
-    <tr><td class="tabname">💬 Coach</td><td class="cl y">✓</td><td class="cl p">⚠</td><td class="cl y">✓</td><td class="cl p">⚠</td><td class="cl y">✓</td><td class="cl y">✓</td></tr>
-    <tr><td class="tabname">+ Log</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl p">⚠</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl y">✓</td></tr>
-    <tr><td class="tabname">📈 Progress</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl p">⚠</td><td class="cl y">✓</td><td class="cl y">✓</td></tr>
-    <tr><td class="tabname">🧪 Labs</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl y">✓</td><td class="cl p">⚠</td></tr>
-  </tbody>
-</table>
+<!-- ===== 15.5 WORKED FLOW ===== -->
+<h2 id="onb-flow">15.5 · The B flow — worked for Robert</h2>
+<p class="lede">The recommended funnel — 8 screens then the paywall — worked for <b>Recovering Robert</b>, the way §8.3 worked Today. Robert's tone rule governs every word: <b>non-judgmental — never "addiction", never "alcoholic", never "relapse".</b></p>
+<div class="seq-strip">
+  <h3>The 8-screen pre-auth funnel</h3>
+  <div class="seq-row">
+    <div class="seq"><b>01</b>Welcome · the promise</div>
+    <div class="seq"><b>02</b>Pain hook</div>
+    <div class="seq"><b>03</b>Lane select · 6 doors</div>
+    <div class="seq"><b>04</b>Quiz · 3-card anchor</div>
+    <div class="seq"><b>05</b>Pre-WOW breath</div>
+    <div class="seq"><b>06</b>The WOW screen</div>
+    <div class="seq"><b>07</b>Post-WOW breath</div>
+    <div class="seq"><b>08</b>Proof · §15.4a</div>
+    <div class="seq launch"><b>09</b>Paywall → M16</div>
+  </div>
+</div>
+
+<!-- screen 1 -->
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:10px;padding-bottom:16px;min-height:496px;">
+      <div style="text-align:center;margin-top:14px;"><div style="font-size:36px;">🌿</div><div class="disc-mark" style="margin-top:3px;">Hepatica</div></div>
+      <div class="sc-card hero" style="text-align:center;padding:16px 13px;">
+        <div style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:18px;color:var(--brand-deep);line-height:1.2;">Reverse fatty liver.<br>Reclaim your vitality.</div>
+        <div style="font-size:10px;color:var(--ink-2);line-height:1.5;margin-top:6px;">An AI companion grounded in AASLD, AGA &amp; EASL guidance — built to help you read your liver and watch it recover.</div>
+      </div>
+      <div style="margin-top:auto;display:flex;flex-direction:column;gap:7px;">
+        <div class="sc-cta">Get started</div>
+        <div class="sc-cta ghost">I already have an account</div>
+        <div class="sc-disc" style="text-align:center;">No email needed to explore — your data stays on your device.</div>
+      </div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Screen 1 · Welcome — the promise</h3>
+    <div class="pov-lead">Robert found Hepatica from r/stopdrinking. He is hopeful but burned by health apps that judged him. Screen 1 must read <b>calm and clinical</b>, never boot-camp.</div>
+    <div class="annot-row"><span class="ar-z">One promise</span><span class="ar-v">The tagline, nothing else — no feature list. "Reverse fatty liver" is the aspirational wellness frame (allowed per <code>COMPLIANCE.md</code>).</span></div>
+    <div class="annot-row"><span class="ar-z">No login wall</span><span class="ar-v">Pre-auth — the whole funnel is anonymous. No email, no Sign in with Apple before the paywall.</span></div>
+    <div class="annot-row"><span class="ar-z">Tone set here</span><span class="ar-v">Soft leaf mark, off-white surface — the calm-authority tone Robert needs is established in the first second.</span></div>
+    <div class="borrowed"><b>Borrowed — Folik: single-promise welcome, no feature grid.</b></div>
+  </div>
+</div>
+
+<!-- screen 2 -->
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:12px;padding-bottom:16px;min-height:496px;">
+      <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>01 / 08</small></div></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-size:9px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--cta-deep);">Sound familiar?</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:19px;color:var(--brand-deep);line-height:1.32;margin-top:8px;">"GGT was 240. Now it's 80. Is my liver actually healing — or am I fooling myself?"</div>
+        <div style="font-size:10px;color:var(--ink-2);line-height:1.5;margin-top:10px;">You did the hard part. Hepatica is built to show you the proof.</div>
+      </div>
+      <div class="sc-cta">Yes — show me</div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Screen 2 · Pain hook</h3>
+    <div class="pov-lead">This is Robert's exact sentence, lifted from his cohort pain line. He sees himself in it before he has tapped anything — that recognition is the hook.</div>
+    <div class="annot-row"><span class="ar-z">Mirror, don't sell</span><span class="ar-v">One sentence in the user's own voice. No product claim — it ends on a <em>question</em>, the same question he carries.</span></div>
+    <div class="annot-row"><span class="ar-z">Compliance</span><span class="ar-v">A question, never a claim — "is my liver healing?" not "your liver is healing". The reassurance ("you did the hard part") is behavioural, not medical.</span></div>
+    <div class="annot-row"><span class="ar-z">Per cohort</span><span class="ar-v">Nick sees "Doctor said reverse it. With what?"; Rachel sees the $40K-drug fear. Same beat, the cohort's own words.</span></div>
+    <div class="borrowed"><b>Borrowed — Calibrum: pain mirrored verbatim from cohort research.</b></div>
+  </div>
+</div>
+
+<!-- screen 3 -->
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:7px;padding-bottom:16px;min-height:496px;">
+      <div class="sc-head"><div class="sc-greet" style="font-size:13px;"><small>02 / 08</small>What brings you to Hepatica?</div></div>
+      <div class="sc-card" style="padding:9px 11px;"><div style="font-size:10px;color:var(--ink);">🍷 &nbsp;My doctor just said <i>fatty liver</i>.</div></div>
+      <div class="sc-card" style="padding:9px 11px;"><div style="font-size:10px;color:var(--ink);">💉 &nbsp;I'm on a GLP-1 — Ozempic / Wegovy / Mounjaro.</div></div>
+      <div class="sc-card" style="padding:9px 11px;"><div style="font-size:10px;color:var(--ink);">🍔 &nbsp;Pre-diabetic — metabolic stuff to get ahead of.</div></div>
+      <div class="sc-card" style="padding:9px 11px;"><div style="font-size:10px;color:var(--ink);">💊 &nbsp;I'm on Rezdiffra for MASH.</div></div>
+      <div class="sc-card" style="padding:9px 11px;"><div style="font-size:10px;color:var(--ink);">🧬 &nbsp;PCOS <i>and</i> a fatty liver.</div></div>
+      <div class="sc-card hero" style="padding:9px 11px;background:var(--brand);border-color:var(--brand);"><div style="font-size:10px;font-weight:800;color:var(--pearl);">🍺 &nbsp;I've stopped drinking — I want to watch my liver recover.</div></div>
+      <div class="sc-cta ghost" style="margin-top:2px;">Just exploring for now</div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Screen 3 · Lane select — the cohort triage</h3>
+    <div class="pov-lead">Robert reads all six doors and lands on his instantly — <em>"stopped drinking… recover"</em> — framed as agency, never as a confession.</div>
+    <div class="annot-row"><span class="ar-z">Self-sort</span><span class="ar-v">Six doors + a "just exploring" exit. The tapped door sets the cohort that personalises every screen downstream.</span></div>
+    <div class="annot-row"><span class="ar-z">Robert's wording</span><span class="ar-v">His door never says "alcoholic" or "addiction" — it says "stopped drinking… watch my liver recover". The cohort label is internal only.</span></div>
+    <div class="annot-row"><span class="ar-z">No dead end</span><span class="ar-v">"Just exploring" still routes to a generic WOW + soft paywall — never a blank exit.</span></div>
+    <div class="borrowed"><b>Borrowed — Cysta AI: persona-door select. Maps 1:1 to the built Swift <code>CohortTriageView</code>.</b></div>
+  </div>
+</div>
+
+<!-- screen 4 -->
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:9px;padding-bottom:16px;min-height:496px;">
+      <div class="sc-head"><div class="sc-greet" style="font-size:13px;"><small>03 / 08</small>Three quick taps</div></div>
+      <div class="sc-card" style="padding:9px 11px;">
+        <div style="font-size:9.5px;font-weight:800;color:var(--ink);">Do you know your recent liver numbers?</div>
+        <div style="display:flex;gap:4px;margin-top:6px;"><span class="sc-vp good" style="outline:2px solid var(--brand);">Yes — I have them</span><span class="sc-vp" style="background:var(--pearl);color:var(--ink-2);">Roughly</span><span class="sc-vp" style="background:var(--pearl);color:var(--ink-2);">Not yet</span></div>
+        <div style="display:flex;gap:5px;align-items:center;margin-top:6px;"><span style="font-size:8px;color:var(--ink-2);font-weight:700;">GGT</span><span style="font-size:8.5px;font-family:ui-monospace,'SF Mono';background:var(--pearl);border:1px solid var(--divider);border-radius:5px;padding:3px 12px;color:var(--brand-deep);font-weight:800;">80</span><span style="font-size:7.5px;color:var(--ink-3);">U/L · optional</span></div>
+      </div>
+      <div class="sc-card" style="padding:9px 11px;">
+        <div style="font-size:9.5px;font-weight:800;color:var(--ink);">What are you tracking alongside?</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:6px;"><span class="sc-vp good" style="outline:2px solid var(--brand);">Sober days</span><span class="sc-vp" style="background:var(--pearl);color:var(--ink-2);">Weight</span><span class="sc-vp" style="background:var(--pearl);color:var(--ink-2);">Sleep</span><span class="sc-vp" style="background:var(--pearl);color:var(--ink-2);">Nothing yet</span></div>
+      </div>
+      <div class="sc-card" style="padding:9px 11px;">
+        <div style="font-size:9.5px;font-weight:800;color:var(--ink);">Your goal, in one line</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:6px;"><span class="sc-vp good" style="outline:2px solid var(--brand);">See my liver heal</span><span class="sc-vp" style="background:var(--pearl);color:var(--ink-2);">Stay on track</span><span class="sc-vp" style="background:var(--pearl);color:var(--ink-2);">Reach normal range</span></div>
+      </div>
+      <div class="sc-cta" style="margin-top:auto;">Build my plan</div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Screen 4 · Quiz — the anchor</h3>
+    <div class="pov-lead">Five separate Swift question screens collapse into one calm scroll. Robert enters GGT 80 — that single number is the anchor screen 6 pays back.</div>
+    <div class="annot-row"><span class="ar-z">Anchors, not interrogation</span><span class="ar-v">Every answer renders something in the WOW. Three cards, ~5 taps — not five screens.</span></div>
+    <div class="annot-row"><span class="ar-z">Numbers optional</span><span class="ar-v">"Roughly" / "Not yet" still works — the WOW falls back to a typical-range curve. No one is gated on having labs.</span></div>
+    <div class="annot-row"><span class="ar-z">Cohort-conditional</span><span class="ar-v">Meds &amp; diet questions fold in only when the cohort needs them — Robert is never asked about Rezdiffra.</span></div>
+    <div class="borrowed"><b>Borrowed — Folik: compressed multi-question card. The 5 built Swift quiz steps merge here (§15.7).</b></div>
+  </div>
+</div>
+
+<!-- screen 5 -->
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:14px;padding-bottom:16px;min-height:496px;justify-content:center;">
+      <div style="text-align:center;"><div style="font-size:30px;">🌀</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:16px;color:var(--brand-deep);margin-top:8px;">Building your recovery plan…</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:7px;">
+        <div class="sc-card" style="padding:8px 10px;font-size:9px;color:var(--ink);">✓ &nbsp;Reading your numbers against AASLD post-abstinence ranges</div>
+        <div class="sc-card" style="padding:8px 10px;font-size:9px;color:var(--ink);">✓ &nbsp;Tuning your Coach's tone</div>
+        <div class="sc-card" style="padding:8px 10px;font-size:9px;color:var(--ink-3);">○ &nbsp;Drawing your liver-recovery timeline…</div>
+      </div>
+      <div class="sc-disc" style="text-align:center;">Grounded in AASLD, AGA &amp; EASL guidance.</div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Screen 5 · Pre-WOW breath</h3>
+    <div class="pov-lead">A two-second held breath. It does real work — it tells Robert <em>the method</em> (guideline-grounded) right before the reveal, so the WOW lands as credible, not as marketing.</div>
+    <div class="annot-row"><span class="ar-z">Trust before payoff</span><span class="ar-v">The checklist names the method — AASLD ranges, guideline grounding — a beat before the chart appears.</span></div>
+    <div class="annot-row"><span class="ar-z">Anticipation</span><span class="ar-v">The third line is still "drawing…" — the WOW is one tap away. A designed pause, not a spinner.</span></div>
+    <div class="annot-row"><span class="ar-z">Absorbs two Swift steps</span><span class="ar-v">The built <code>CohortResultView</code> + <code>TrustMethodView</code> collapse into this single breath (§15.7).</span></div>
+    <div class="borrowed"><b>Borrowed — Calibrum: the "analysing" interstitial that doubles as a credibility statement.</b></div>
+  </div>
+</div>
+
+<!-- screen 6 -->
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:9px;padding-bottom:16px;min-height:496px;">
+      <div class="sc-head"><div class="sc-greet" style="font-size:13px;"><small>Robert — your recovery plan</small>Here's the view you'll build</div></div>
+      <div class="sc-card hero">
+        <div class="sc-lbl"><span>Liver recovery · GGT</span><span class="sc-vp watch">Watch</span></div>
+        <div class="sc-chart-h"><span class="sc-chart-v">80<small> U/L</small></span><span class="sc-delta good">↓ 160 since you quit</span></div>
+        <svg viewBox="0 0 250 96" width="100%" style="margin-top:5px;" role="img" aria-label="Robert GGT recovery projection">
+          <path d="M26,12 C100,30 170,54 240,68 L240,82 C170,62 100,40 26,34 Z" fill="#2D7B7E" fill-opacity="0.12"/>
+          <line x1="26" y1="76" x2="240" y2="76" stroke="#C68A3E" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <polyline points="26,15 70,38 116,54 150,62" fill="none" stroke="#2D7B7E" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="150,62 200,72 240,78" fill="none" stroke="#B0824D" stroke-width="2.4" stroke-dasharray="5 4" stroke-linecap="round"/>
+          <circle cx="26" cy="15" r="2.8" fill="#2D7B7E"/><circle cx="70" cy="38" r="2.8" fill="#2D7B7E"/><circle cx="116" cy="54" r="2.8" fill="#2D7B7E"/>
+          <circle cx="150" cy="62" r="3.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.4"/>
+          <text x="24" y="11" font-size="7.5" fill="#8B9B9B" font-family="ui-monospace,SF Mono">240</text>
+          <text x="232" y="72" text-anchor="end" font-size="7" fill="#C68A3E" font-family="ui-monospace,SF Mono">AASLD ref</text>
+        </svg>
+        <div class="sc-disc">A projection, not a personal medical prediction — the band is the typical AASLD post-abstinence range. Your real line builds from what you log.</div>
+      </div>
+      <div class="sc-pills">
+        <div class="sc-pill"><div class="v">47</div><div class="l">Days sober</div></div>
+        <div class="sc-pill"><div class="v">−160</div><div class="l">GGT drop</div></div>
+        <div class="sc-pill"><div class="v">Day 60</div><div class="l">Next milestone</div></div>
+      </div>
+      <div class="sc-insight"><span class="si-x">✨</span><div><div class="si-e">Your plan</div><div class="si-t">Your sober milestones live right inside this chart — the curve and the streak move together.</div></div></div>
+      <div class="sc-cta">This is my plan →</div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Screen 6 · The WOW screen — the catharsis</h3>
+    <div class="pov-lead"><b>This is the moment Module 15 exists for.</b> Robert spent five screens being asked questions. Screen 6 finally <em>answers</em> him — and it answers with his own number, <b>80</b>, on a curve heading into the normal band. His fear gets a visual reply. He has paid nothing; he has seen the artefact he came for.</div>
+    <div class="annot-row"><span class="ar-z">His future self</span><span class="ar-v">This is <b>his</b> projected Progress tab (§11.2) — the same chart he'll see post-purchase, not a stock demo.</span></div>
+    <div class="annot-row"><span class="ar-z">His anchor cashed</span><span class="ar-v">GGT 80 from screen 4 is the hollow today-dot. Quiz answer → WOW payoff, visibly.</span></div>
+    <div class="annot-row"><span class="ar-z">Honest projection</span><span class="ar-v">Forward segment dashed; band = published AASLD range; the <code>sc-disc</code> strip is non-negotiable. Never "cured/healed" — "into range", "the view you'll build".</span></div>
+    <div class="borrowed"><b>Borrowed — Folik &amp; Calibrum: the personalised future-self chart as the onboarding climax. Chart grammar reused from §11.2 exactly.</b></div>
+  </div>
+</div>
+
+<!-- screen 7 -->
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:13px;padding-bottom:16px;min-height:496px;justify-content:center;">
+      <div style="text-align:center;"><div style="font-size:30px;">🌿</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:17px;color:var(--brand-deep);margin-top:7px;">Your plan is ready, Robert.</div>
+      </div>
+      <div style="font-size:10px;color:var(--ink-2);line-height:1.55;text-align:center;padding:0 6px;">We've set up your GGT recovery timeline, a sober-day tracker, and a Coach that talks about liver recovery — never about willpower.</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div class="sc-card" style="padding:7px 10px;font-size:9px;color:var(--ink);">📉 &nbsp;Recovery chart — GGT into the AASLD range</div>
+        <div class="sc-card" style="padding:7px 10px;font-size:9px;color:var(--ink);">🔥 &nbsp;Sober-day streak + Day-60 milestone</div>
+        <div class="sc-card" style="padding:7px 10px;font-size:9px;color:var(--ink);">💬 &nbsp;A Coach that never judges</div>
+      </div>
+      <div class="sc-cta" style="margin-top:4px;">Start my 7-day trial</div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Screen 7 · Post-WOW breath</h3>
+    <div class="pov-lead">A one-screen exhale between the WOW and the price. It names what he just saw and reassures on tone — then hands off to the offer while the catharsis is still warm.</div>
+    <div class="annot-row"><span class="ar-z">Name the payoff</span><span class="ar-v">Recaps the three things "built" — the WOW made concrete and ownable.</span></div>
+    <div class="annot-row"><span class="ar-z">Tone reassurance</span><span class="ar-v">Explicit: the Coach talks recovery, not willpower. Robert's deciding fear ("will it judge me?") is answered before the price.</span></div>
+    <div class="annot-row"><span class="ar-z">Warms the paywall</span><span class="ar-v">"7-day trial" is named here, so screen 9 is not a cold open. Screen 8 (Proof, §15.4a) sits between this and the price.</span></div>
+    <div class="borrowed"><b>Borrowed — Folik: the "your plan is ready" confirmation beat between WOW and paywall.</b></div>
+  </div>
+</div>
+
+<div class="m6-callout note">
+  <b>Screens 8 &amp; 9.</b> <b>Screen 8 — the Proof screen</b> is fully worked in <a href="#onb-trust" style="color:#194A4C;font-weight:800;">§15.4a</a>: the honest evidence-base "Millions" badge, placed here at the commitment moment. <b>Screen 9 — the Paywall</b> is <b>Module 16</b> below — its headline must echo Robert's WOW ("Keep watching your liver recover · 7-day free trial"). The funnel ends where M16 begins.
+</div>
+
+<!-- ===== 15.6 WOW × 6 COHORTS ===== -->
+<h2 id="wow-cohorts">15.6 · The WOW screen — across all 6 cohorts</h2>
+<p class="lede">Screen 6 is the same shell for everyone — a hero chart, three stats, one CTA — but the chart, the projection and the headline swap to the cohort. Same screen, six future selves. Every chart keeps the grammar: actual solid, projection dashed, guidance band, gold reference line.</p>
+<div class="cohort-strip">
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Your plan</small>🍷 Nick</div></div>
+        <div style="font-size:10px;font-weight:800;color:var(--brand-deep);line-height:1.3;">Here's your liver back in range.</div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>ALT projection</span></div>
+          <svg viewBox="0 0 140 44" width="100%" style="margin-top:3px;">
+            <line x1="6" y1="31" x2="134" y2="31" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
+            <polyline points="6,10 42,18 78,24" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="78,24 108,29 134,33" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-dasharray="4 3" stroke-linecap="round"/>
+            <circle cx="78" cy="24" r="3" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
+            <text x="120" y="28" font-size="6" fill="#C68A3E" font-family="ui-monospace,SF Mono">ALT 40</text>
+          </svg>
+        </div>
+        <div class="sc-pills"><div class="sc-pill"><div class="v" style="font-size:12px;">85</div><div class="l">ALT now</div></div><div class="sc-pill"><div class="v" style="font-size:12px;">40</div><div class="l">Goal</div></div><div class="sc-pill"><div class="v" style="font-size:12px;">~16w</div><div class="l">Projected</div></div></div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">This is my plan →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍷 Newly Diagnosed Nick</div><div class="cc-job">His ALT crossing the AASLD-40 line answers "what diet?" without a word of diet copy.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Your plan</small>💉 Greta</div></div>
+        <div style="font-size:10px;font-weight:800;color:var(--brand-deep);line-height:1.3;">Watch your GLP-1 work on your liver.</div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>ALT × weight</span></div>
+          <svg viewBox="0 0 140 44" width="100%" style="margin-top:3px;">
+            <polyline points="6,11 42,17 78,22" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="78,22 134,30" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-dasharray="4 3"/>
+            <polyline points="6,23 42,28 78,33" fill="none" stroke="#C68A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="78,33 134,39" fill="none" stroke="#C68A3E" stroke-width="2" stroke-dasharray="4 3"/>
+            <circle cx="78" cy="22" r="2.8" fill="#fff" stroke="#2D7B7E" stroke-width="2"/><circle cx="78" cy="33" r="2.6" fill="#fff" stroke="#C68A3E" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="sc-pills"><div class="sc-pill"><div class="v" style="font-size:12px;">−34</div><div class="l">ALT</div></div><div class="sc-pill"><div class="v" style="font-size:12px;">−18</div><div class="l">Pounds</div></div><div class="sc-pill"><div class="v" style="font-size:12px;">dual</div><div class="l">One view</div></div></div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">Show me the proof →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">💉 GLP-1 Greta</div><div class="cc-job">Two lines falling locked-step — the drug reached the organ, not just the scale.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Your plan</small>🍔 Pete</div></div>
+        <div style="font-size:10px;font-weight:800;color:var(--brand-deep);line-height:1.3;">Two numbers, one plan — here's the start.</div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>HbA1c × ALT</span></div>
+          <svg viewBox="0 0 140 44" width="100%" style="margin-top:3px;">
+            <polyline points="6,12 42,18 78,23" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="78,23 134,30" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-dasharray="4 3"/>
+            <polyline points="6,24 42,28 78,32" fill="none" stroke="#C68A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="78,32 134,37" fill="none" stroke="#C68A3E" stroke-width="2" stroke-dasharray="4 3"/>
+            <circle cx="78" cy="23" r="2.8" fill="#fff" stroke="#2D7B7E" stroke-width="2"/><circle cx="78" cy="32" r="2.6" fill="#fff" stroke="#C68A3E" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="sc-pills"><div class="sc-pill"><div class="v" style="font-size:12px;">6.0</div><div class="l">HbA1c</div></div><div class="sc-pill"><div class="v" style="font-size:12px;">70</div><div class="l">ALT</div></div><div class="sc-pill"><div class="v" style="font-size:12px;">↓↓</div><div class="l">Together</div></div></div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">Build my plan →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍔 Pre-Diabetic Pete</div><div class="cc-job">Two falling lines answer "where do I start" — metabolic syndrome as one fight.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Your plan</small>💊 Rachel</div></div>
+        <div style="font-size:10px;font-weight:800;color:var(--brand-deep);line-height:1.3;">Your Rezdiffra story — documented.</div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>FibroScan · F-stage</span></div>
+          <svg viewBox="0 0 140 44" width="100%" style="margin-top:3px;">
+            <rect x="6" y="6" width="128" height="11" fill="#EBD0C8" fill-opacity="0.5"/>
+            <rect x="6" y="17" width="128" height="11" fill="#F0DFC2" fill-opacity="0.55"/>
+            <rect x="6" y="28" width="128" height="10" fill="#CFE3E2" fill-opacity="0.6"/>
+            <polyline points="10,11 54,11 54,22 92,22" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="92,22 92,33 130,33" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-dasharray="4 3"/>
+            <circle cx="10" cy="11" r="2.6" fill="#2D7B7E"/><circle cx="92" cy="22" r="2.8" fill="#fff" stroke="#2D7B7E" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="sc-pills"><div class="sc-pill"><div class="v" style="font-size:12px;">F3→F2</div><div class="l">Stage</div></div><div class="sc-pill"><div class="v" style="font-size:12px;">−4.4</div><div class="l">kPa</div></div><div class="sc-pill"><div class="v" style="font-size:11px;">📄 PDF</div><div class="l">For insurer</div></div></div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">Start documenting →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">💊 Rezdiffra Rachel</div><div class="cc-job">The insurance-PDF chip is the price justification — shown before the price.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Your plan</small>🧬 Patricia</div></div>
+        <div style="font-size:10px;font-weight:800;color:var(--brand-deep);line-height:1.3;">PCOS and your liver — one screen.</div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>ALT × cycle phase</span></div>
+          <svg viewBox="0 0 140 44" width="100%" style="margin-top:3px;">
+            <rect x="6" y="6" width="30" height="30" fill="#CFE3E2" fill-opacity="0.45"/><rect x="68" y="6" width="30" height="30" fill="#CFE3E2" fill-opacity="0.45"/>
+            <line x1="6" y1="32" x2="134" y2="32" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
+            <polyline points="6,14 30,19 54,15 78,22" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="78,22 106,26 134,29" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-dasharray="4 3"/>
+            <circle cx="78" cy="22" r="3" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
+          </svg>
+        </div>
+        <div class="sc-pills"><div class="sc-pill"><div class="v" style="font-size:12px;">−14</div><div class="l">ALT</div></div><div class="sc-pill"><div class="v" style="font-size:12px;">4</div><div class="l">Cycles</div></div><div class="sc-pill"><div class="v" style="font-size:11px;">linked</div><div class="l">PCOS+liver</div></div></div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">This is my plan →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🧬 PCOS-NAFLD Patricia</div><div class="cc-job">Cycle-shaded ALT — the two conditions she juggles, finally on one chart.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Your plan</small>🍺 Robert</div></div>
+        <div style="font-size:10px;font-weight:800;color:var(--brand-deep);line-height:1.3;">GGT 240 → 80 → into range.</div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>GGT recovery</span><span class="sc-vp watch">Watch</span></div>
+          <svg viewBox="0 0 140 44" width="100%" style="margin-top:3px;">
+            <path d="M6,9 C46,20 90,31 134,37 L134,42 C90,37 46,27 6,16 Z" fill="#2D7B7E" fill-opacity="0.12"/>
+            <line x1="6" y1="35" x2="134" y2="35" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
+            <polyline points="6,9 40,21 78,28" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="78,28 134,34" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-dasharray="4 3"/>
+            <circle cx="78" cy="28" r="3" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
+          </svg>
+        </div>
+        <div class="sc-pills"><div class="sc-pill"><div class="v" style="font-size:12px;">47</div><div class="l">Days sober</div></div><div class="sc-pill"><div class="v" style="font-size:12px;">−160</div><div class="l">GGT</div></div><div class="sc-pill"><div class="v" style="font-size:11px;">Day 60</div><div class="l">Next</div></div></div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">This is my plan →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍺 Recovering Robert</div><div class="cc-job">His own number, 80, on a curve into the band — the fear gets a visual answer.</div></div>
+  </div>
+
 </div>
 <div class="m6-callout">
-  <b>Gaps the audit surfaces — to close before lock.</b>
-  <ul style="margin:6px 0 0;padding-left:20px;line-height:1.6;font-size:12.5px;color:var(--ink-2);">
-    <li><b>Empty state isn't worked for Coach &amp; Progress.</b> §8.6 nails Today and §10.1 nails Labs. Coach's first-open (no history) and Progress's pre-data state (one panel logged, no trend yet) each need a designed skeleton — same principle, not yet drawn.</li>
-    <li><b>Coach's verdict isn't on the triad.</b> Coach answers verdict-first in <em>prose</em>; it doesn't reuse the good/watch/alert pills. Likely fine — a chat isn't a lab row — but worth a deliberate decision, not an omission.</li>
-    <li><b>Log has no safety strip.</b> The drink log is non-judgmental in copy, but the alcohol-tracker safety line from <code>COMPLIANCE.md</code> ("for alcohol use disorder support, consult a professional") isn't placed yet.</li>
-    <li><b>Doctor-PDF entry points.</b> Reachable from Coach (§9.4) and Progress (§11.4). Today and Labs only feed it — confirm that's intended and they don't need their own entry.</li>
-  </ul>
+  <b>Compliance guard — every WOW chart.</b> The forward segment is <em>always</em> dashed and labelled a projection. The shaded band is <em>always</em> published guidance (AASLD / AGA / EASL), never a personal forecast. The "a projection, not a personal medical prediction" disclaimer strip ships on all six. No WOW headline may say <em>cured</em>, <em>healed</em> or <em>guaranteed</em> — allowed verbs are <em>into range</em>, <em>the view you'll build</em>, <em>projected</em>. Robert's chart never shows the word "relapse" — a downward wobble is floored to "stable" per the §8.5 noise-floor rule.
 </div>
 
-<!-- ===== 14.3 ITERATION LOOP ===== -->
-<h2 id="iteration-loop">14.3 · The loop — built → evaluated → re-evaluated</h2>
-<p class="lede">Every module in this workbench ran the same loop. It's not decoration — it's why the screens are defensible: each was built, then judged from the user's seat and by a 6-cohort vote, then re-worked where it failed.</p>
-<div class="loop-wrap">
-  <div class="loop-row">
-    <div class="loop-step"><div class="ls-top"><span class="ls-n">1</span><span class="ls-ico">✏️</span></div><div class="ls-t">Build</div><div class="ls-d">Draft the screen from the cohort's JTBD — a real artefact, not a wireframe.</div></div>
-    <span class="loop-arrow">→</span>
-    <div class="loop-step"><div class="ls-top"><span class="ls-n">2</span><span class="ls-ico">👤</span></div><div class="ls-t">Stand in the user's shoes</div><div class="ls-d">Write the POV annotation — what they see, feel, do. Catches overload &amp; dead ends.</div></div>
-    <span class="loop-arrow">→</span>
-    <div class="loop-step"><div class="ls-top"><span class="ls-n">3</span><span class="ls-ico">🗳</span></div><div class="ls-t">Consilium</div><div class="ls-d">3 candidates, 6 cohorts vote, audience-weighted Σ. The cohorts pick, not taste.</div></div>
-    <span class="loop-arrow">→</span>
-    <div class="loop-step hot"><div class="ls-top"><span class="ls-n">4</span><span class="ls-ico">🔁</span></div><div class="ls-t">Re-evaluate &amp; iterate</div><div class="ls-d">Where it failed, re-build. Coach ran this three times before it was right.</div></div>
-    <span class="loop-arrow">→</span>
-    <div class="loop-step"><div class="ls-top"><span class="ls-n">5</span><span class="ls-ico">🔒</span></div><div class="ls-t">Recommend for lock</div><div class="ls-d">Ready-for-review summary → founder + compliance sign-off → Swift V1 spec.</div></div>
-  </div>
-  <div class="loop-repeat"><span class="lr-ico">↻</span> Ran once per module — and visibly more than once where the first answer was wrong.</div>
-</div>
-<div class="round r2">
-  <span class="r-tag">Where the loop changed the design</span>
-  <h3>Three places re-evaluation overruled the first build</h3>
-  <ul>
-    <li><b>Coach v1 → v2.</b> v1 took "panel of specialists" literally — three lenses, every answer. The user-POV pass caught the overload; v2 collapsed it to a verdict-first answer with the panel one tap away. The consilium idea survived; the literal execution didn't.</li>
-    <li><b>The tab order.</b> The locked bar was Today · Labs · +Log · Coach · Progress. Re-evaluated against frequency: Coach is a near-daily surface, Labs is quarterly. The bar was re-ordered to <b>Today · Coach · +Log · Progress · Labs</b> — Coach promoted, Labs moved to the calm edge.</li>
-    <li><b>Day-1 empty state.</b> First built only for Robert. Re-evaluated as a churn risk that hits <em>every</em> cohort — re-worked into six designed skeletons (§8.6), each with its own ghost chart and step-zero CTA.</li>
-  </ul>
-</div>
-
-<!-- ===== 14.4 OPEN QUESTIONS ===== -->
-<h2 id="open-questions">14.4 · Open questions before lock</h2>
+<!-- ===== 15.7 RECONCILE WITH SWIFT ===== -->
+<h2 id="onb-reconcile">15.7 · Reconciling with the built Swift onboarding</h2>
+<p class="lede">The iOS app already scaffolds a 9-step onboarding (<code>OnboardingContainer.swift</code>, steps 0–8). It is a pure question funnel — no WOW. Here is the exact mapping from the 9 built steps to the recommended B flow: what to <b>keep</b>, <b>compress</b>, <b>merge</b>, <b>replace</b>, and <b>add</b>.</p>
+<table class="tab-spec">
+  <thead><tr><th>Built Swift step</th><th>→ B-flow screen</th><th>Action</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">0 · WelcomeView</td><td>S1 · Welcome</td><td><b class="ok">KEEP</b></td><td>Already a single-promise hero — minor copy polish only.</td></tr>
+    <tr><td class="tabname">1 · PainHookView</td><td>S2 · Pain hook</td><td><b class="ok">KEEP</b></td><td>Already the emotional hook — verify the per-cohort pain strings (Robert = GGT 240→80).</td></tr>
+    <tr><td class="tabname">2 · CohortTriageView</td><td>S3 · Lane select</td><td><b class="ok">KEEP</b></td><td>6 doors + "just exploring" — 1:1 match. Restyle door copy to the user-voice lines in §15.5.</td></tr>
+    <tr><td class="tabname">3 · LabsKnownView</td><td>S4 · Quiz card 1</td><td><b class="warn">COMPRESS</b></td><td>First card of the merged quiz scroll. Add the optional inline value field.</td></tr>
+    <tr><td class="tabname">4 · MedicationsQuizView</td><td>S4 · Quiz (conditional)</td><td><b class="warn">MERGE</b></td><td>Folded into the scroll, shown only when the cohort needs it — skipped for Robert. Still feeds <code>CohortDetector</code>.</td></tr>
+    <tr><td class="tabname">5 · GoalsView</td><td>S4 · Quiz card 3</td><td><b class="warn">COMPRESS</b></td><td>Becomes the "goal in one line" card.</td></tr>
+    <tr><td class="tabname">6 · DietPrefView</td><td>S4 · Quiz (conditional)</td><td><b class="warn">MERGE</b></td><td>Folded in, cohort-conditional — Nick/Pete/Greta see it, Robert can skip.</td></tr>
+    <tr><td class="tabname">7 · CohortResultView</td><td>S5 · pre-WOW breath</td><td><b class="warn">REPLACE</b></td><td>The text reveal is demoted — its <code>resolveCohort()</code> / <code>CohortDetector</code> logic is <em>kept</em> and now picks which WOW chart renders. The paragraph becomes the breath.</td></tr>
+    <tr><td class="tabname">8 · TrustMethodView</td><td>S5 breath + S8 Proof</td><td><b class="warn">SPLIT</b></td><td>The AASLD/AGA/EASL method line moves into the pre-WOW breath; the full evidence content is elevated into the new Proof screen near the paywall (§15.4a).</td></tr>
+    <tr><td class="tabname">— (not built)</td><td>S6 · WOW screen</td><td><b style="color:var(--cta-deep);">ADD</b></td><td>The personalised future-self chart — the one screen the Swift build is missing entirely.</td></tr>
+    <tr><td class="tabname">— (not built)</td><td>S7 · post-WOW breath</td><td><b style="color:var(--cta-deep);">ADD</b></td><td>"Your plan is ready" confirmation beat.</td></tr>
+    <tr><td class="tabname">— (not built)</td><td>S8 · Proof screen</td><td><b style="color:var(--cta-deep);">ADD</b></td><td>The honest evidence-base badge (§15.4a) — partly from TrustMethod's content, elevated to a full screen at the commitment moment.</td></tr>
+  </tbody>
+</table>
 <div class="m6-callout note">
-  <b>What still needs a founder or compliance decision.</b>
-  <ul style="margin:6px 0 0;padding-left:20px;line-height:1.6;font-size:12.5px;color:var(--ink-2);">
-    <li><b>Compliance sign-off</b> — all Disclaimer copy, the Coach lens labels + "AI guidance · not a medical diagnosis" header, every safety strip, the FibroScan/FIB-4 screening-tool wording, and the refusal-pivot set.</li>
-    <li><b>Close the §14.2 gaps</b> — Coach &amp; Progress empty states; the Log safety strip; the Coach verdict-pill decision.</li>
-    <li><b>Dark / night theme</b> — deferred to the Swift build per founder call; out of scope for this flow workbench. The <code>--night-*</code> tokens stay specced in design.html M1.</li>
-    <li><b>Onboarding &amp; Paywall</b> — still dashed TODO gates. Each needs its own consilium; recommend they're the next workbench module set.</li>
-    <li><b>Lock scope</b> — confirm the recommended picks (Coach B/v2+v3, Labs B, Progress B, Log B) become the Swift V1 spec, and the rejected candidates (doctor avatars, upload-first Labs, full-screen Log) are archived with their rationale.</li>
-  </ul>
+  <b>Net count &amp; engineering reuse.</b> Built = 9 question steps → B flow = <b>8 onboarding screens</b> + paywall. The 4 separate quiz steps (3–6) collapse into <b>1</b> quiz scroll; CohortResult + TrustMethod (7–8) collapse into the pre-WOW breath + feed the Proof screen; <b>3 net-new screens</b> are added (WOW · post-WOW breath · Proof). Net 9 → 8 — one fewer screen, with the catharsis the funnel was missing. Nothing is thrown away: <code>CohortDetector</code> and <code>OnboardingAnswers</code> are untouched — the resolved cohort now <em>selects the WOW chart</em> instead of <em>selecting a paragraph</em>; <code>OnboardingState</code> gains <code>wow</code> / <code>wowConfirm</code> / <code>proof</code> steps and loses the standalone <code>cohortResult</code> / <code>trustMethod</code> cases. The WOW chart is the <b>same SwiftUI chart component as the Progress hero (§11.2)</b> — built once, shown in onboarding as a projection and post-purchase as the live Progress tab.
 </div>
 
-<!-- ===== 14.5 READY FOR LOCK ===== -->
-<h2 id="lock-summary">14.5 · Ready for lock</h2>
-<div class="decision-callout">
-  <div>
-    <h2>The five-tab product — worked end to end</h2>
-    <p class="vibe">Today · Coach · +Log · Progress · Labs — every surface worked screen-by-screen, across all 6 cohorts, with the empty state designed and the compliance line held throughout. Three consilia run (Coach · Labs · Log), the Progress organising principle settled, the Coach screen iterated three times in the open. The tab order was re-evaluated and changed. On founder + compliance sign-off — and after the §14.2 gaps are closed — these screens become the spec for the Swift V1 skeleton; the decisions append to <code>DECISIONS.md</code>.</p>
-  </div>
-  <div class="score-badge">M8–14 ✓ ready</div>
-</div>
+<!-- ===== 15.8 READY ===== -->
+<h2 id="onb-summary">15.8 · Module 15 — ready for review</h2>
 <div class="m6-callout win">
-  <b>Modules 8–14 — ready for founder review.</b> Core flow + Today (M8), Coach (M9), Labs (M10), Progress (M11), Log (M12), Settings (M13), and this whole-app review (M14). Nothing is locked. Next workbench set, per §14.4: the Onboarding and Paywall consilia — the two dashed gates that still sit upstream of everything here.
+  <b>Module 15 — ready for founder review.</b> Three consilia run: <b>structure</b> (B · WOW-then-justify, Σ 5.00), <b>length</b> (B · 8 screens + paywall, Σ 4.83), <b>trust</b> (B · dedicated proof screen, Σ 5.00). §15.1 framed the +6–11pp WOW-then-justify formula; §15.5 worked all 8 screens for Robert with non-judgmental copy throughout; §15.6 drew the WOW for all 6 cohorts; §15.4a designed the honest evidence-base proof screen — "Millions" describing the <em>research</em>, never a userbase, with the source counts (400+ / 1,800+) substantiated from <code>DECISIONS.md</code> D12; §15.7 mapped the 9 built Swift steps → 8 B-flow screens. Compliance: pre-auth throughout (no email / Sign in with Apple before the paywall), every WOW chart an honest dashed projection, no diagnosis, no "cured", no fabricated userbase claim. To compliance sign-off: the proof-screen copy, the WOW headlines, the pain-hook lines. Next — <b>Module 16 · Paywall</b>.
+</div>
+
+<!-- ============================================================ -->
+<!-- =================== MODULE 16 · PAYWALL ==================== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-16">
+  <span class="num">МОДУЛЬ 16</span>
+  <h2>Paywall — the funnel's payoff</h2>
+  <p class="desc">The second dashed TODO gate from flow.html §8.1. The paywall is the last beat of the WOW-then-justify formula — and the one rule Module 15 hands it: <b>the paywall headline must echo the WOW the user just saw.</b> Full design is the next workbench pass.</p>
+</div>
+<h2 id="paywall-next">16.1 · Paywall consilium — next</h2>
+<p class="lede">Reserved. The paywall design picks up here — to be worked the way Module 15 was: a consilium, then the screen.</p>
+<div class="m6-callout note">
+  <b>What Module 16 will cover.</b> The 3-tier + Lifetime pricing (Weekly $4.99 · Annual Standard $39.99 · Annual Family $79.99 · Lifetime $99) and the per-cohort default tier; the dynamic Fear-Playbook copy; the 7-day trial framing; and the two hand-offs from Module 15 — (1) the <b>paywall headline echoes the WOW</b> (Robert: "Keep watching your liver recover"; Rachel: "Keep documenting your Rezdiffra story"), and (2) a one-line echo of the §15.4a proof badge — "Built on 400+ AASLD/AGA/EASL &amp; PubMed sources" — bands the paywall above the price. Status: stub — consilium to run next.
 </div>
 
 <footer>
-  <b>Hepatica — Screen Flow Workbench · Part 2</b> · continues <b>flow.html</b> (M8–10), pre-auth funnel in <b>flow3.html</b> (M15–16) · companion to <b>design.html</b> (M1–7) · updated 2026-05-21 · sibling pattern: Cysta AI · Folik · Calibrum.<br>
-  Module 11 — Progress charts, milestones &amp; doctor PDF. Module 12 — the +Log capture sheet &amp; 5 mini-flows. Module 13 — Settings: cohort switch, JTBD tracking path, Today-widget toggles. Module 14 — whole-app review: cross-tab audit &amp; the build → evaluate → re-evaluate loop. Nothing locked; on review the screens become the spec for the Swift V1 skeleton.
+  <b>Hepatica — Onboarding Funnel Workbench · Part 3</b> · continues <b>flow2.html</b> (M11–14) · companion to <b>design.html</b> (M1–7) &amp; <b>flow.html</b> (M8–10) · updated 2026-05-21 · sibling pattern: Folik · Calibrum · Cysta AI.<br>
+  Module 15 — Onboarding: the WOW-then-justify formula · the onboarding consilium · the 8-screen pre-auth flow worked for Robert · the WOW screen across all 6 cohorts · reconciliation with the built Swift onboarding. Module 16 — Paywall (next). Nothing locked; on review the screens become the spec for restructuring the Swift onboarding.
 </footer>
 
 </body>
