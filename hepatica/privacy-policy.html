@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Hepatica: AI Fatty Liver Companion</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px; line-height: 1.7; color: #1C1C1E; background: #EEF3F2; }
+        h1 { font-size: 1.9em; margin-bottom: 0.2em; color: #2D7B7E; }
+        h2 { font-size: 1.25em; margin-top: 1.8em; color: #2D7B7E; }
+        h3 { font-size: 1.05em; margin-top: 1.2em; color: #4A6E70; }
+        .date { color: #6B7280; font-size: 0.9em; margin-bottom: 2em; }
+        ul { padding-left: 1.2em; }
+        li { margin-bottom: 0.4em; }
+        a { color: #B07D2E; }
+        .highlight { background: #FFFFFF; padding: 14px 18px; border-left: 3px solid #2D7B7E; margin: 16px 0; border-radius: 6px; }
+        .warn { background: #FFFFFF; padding: 14px 18px; border-left: 3px solid #D4A574; margin: 16px 0; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="date">Effective date: May 21, 2026</p>
+
+<p>Hepatica: AI Fatty Liver Companion ("the App") is developed and published by Valerii Loveiko. We take your privacy seriously and are committed to protecting your personal information. This privacy policy explains how the App collects, uses, stores, and protects your data.</p>
+
+<div class="highlight">
+    <strong>Summary:</strong> Your lab values, meal photos, lab-report photos, medication and alcohol logs, FibroScan scores, and AI Coach chat history are stored locally on your device. Meal photos, lab-report photos, and Coach messages are sent to secure third-party AI services only after you give per-feature consent, and are not retained by those providers after processing. We do not collect your name or email, we do not use advertising or tracking SDKs, and we do not sell, share, or monetize your personal data.
+</div>
+
+<div class="warn">
+    <strong>Educational only:</strong> Hepatica is a Health &amp; Fitness wellness companion, not a medical device. The App does not diagnose, treat, cure, or prevent any condition. Always consult your doctor or hepatologist before starting, changing, or stopping any treatment. See the <a href="medical-disclaimer.html">Medical Disclaimer</a>.
+</div>
+
+<h2>1. Information We Collect</h2>
+
+<h3>1.1 Health and Lab Data You Enter</h3>
+<p>Hepatica lets you record liver-related health information so you can track it over time. This includes:</p>
+<ul>
+    <li>Blood lab values you enter or scan — ALT, AST, GGT, ALP, bilirubin, albumin, platelets, HbA1c, triglycerides, fasting glucose, ferritin, and a FIB-4 score the App calculates from values you provide</li>
+    <li>FibroScan results (CAP / liver-stiffness kPa) that you enter from your own clinical report</li>
+    <li>Weight, blood pressure, waist measurement, and symptom notes (fatigue, nausea, and similar)</li>
+    <li>Optional onboarding answers (age band, the cohort that best describes your situation)</li>
+</ul>
+<p>All of this is stored exclusively on your device. It is used for trend charts, the multi-lab dashboard, doctor-shareable reports, and to give the AI Coach context. It is never transmitted to any external server.</p>
+
+<h3>1.2 Lab-Report Photos</h3>
+<p>When you use the Lab Interpreter, you may photograph a printed or on-screen blood-panel report so the App can read the values for you. Lab reports can contain personal identifiers (your name, date of birth, a medical-record number).</p>
+<ul>
+    <li>The photo is sent — only when you tap to scan it and after you accept the per-feature consent — via encrypted HTTPS to our AI vision provider (see §3.1) for optical character recognition</li>
+    <li>Only the recognised lab values are kept in the App; you can review and correct them</li>
+    <li>The image itself is processed and discarded — it is not retained by the AI provider after processing, and Hepatica does not upload it to any server of ours</li>
+    <li>You may crop or cover identifying details before scanning; the App only needs the test names and numbers</li>
+    <li>You can also enter every value manually and never use the photo feature at all</li>
+</ul>
+
+<h3>1.3 Meal Photos (Photo Food Scanner)</h3>
+<p>When you use the Photo Food Scanner, the App accesses your camera or photo library at your explicit request to capture a meal. These photos are:</p>
+<ul>
+    <li>Used to generate an educational "liver-risk" rating for the meal (a simple safe / moderate / limit indication)</li>
+    <li>Stored locally on your device as part of your meal log</li>
+    <li>Sent — only after per-feature consent — to our AI vision provider (see §3.1) for the rating, then not retained by the provider</li>
+    <li>Never used for face recognition or any biometric analysis — the scanner looks at food, not people. Hepatica does not compute, store, or transmit facial landmarks or biometric templates</li>
+</ul>
+<p>The App does not scan your photo library and does not collect EXIF metadata (location, date, camera model) from your photos.</p>
+
+<h3>1.4 AI Liver Coach Chat Data</h3>
+<p>When you use the AI Liver Coach, your messages and the AI's responses are handled as follows:</p>
+<ul>
+    <li>Messages are sent — only after explicit per-feature consent — via encrypted HTTPS to our AI text provider (see §3.2), proxied through our Cloudflare Worker</li>
+    <li>Chat history is stored locally on your device</li>
+    <li>Every Coach response is grounded in an on-device clinical knowledge base; citations link to the source guideline (AASLD, AGA, EASL, Mayo Clinic, and selected PubMed extracts)</li>
+    <li>The on-device knowledge base never leaves your device</li>
+    <li>No photos, lab-report images, identifiers, or Apple Health records are sent to the chat provider — only your message text and a brief on-device context summary (your cohort, age band, and recent lab ranges) so the answer fits your situation</li>
+</ul>
+
+<h3>1.5 Medication and Alcohol Logs</h3>
+<p>If you log medications (for example Rezdiffra adherence, GLP-1 doses such as Ozempic / Wegovy / Mounjaro, or a Vitamin E protocol) or alcohol intake and a sober streak, this information is:</p>
+<ul>
+    <li>Stored exclusively on your device</li>
+    <li>Used for timeline visualizations, recovery tracking, and the doctor-shareable PDF</li>
+    <li>Never transmitted to any external server</li>
+</ul>
+<p>Hepatica does not prescribe, supply, or modify any medication or dose. The medication log is solely a personal journal of what you are already doing under your own clinician's care.</p>
+
+<h3>1.6 Apple Health Data</h3>
+<p>With your permission, Hepatica can read selected data from Apple Health (for example body mass, HbA1c, steps, active energy). This access is <strong>read-only</strong> — the App does not write to Apple Health. Data read from Apple Health is used on-device for your dashboard and trends and is never transmitted off the device. You can grant or revoke this access at any time in iOS Settings → Privacy &amp; Security → Health.</p>
+
+<h3>1.7 Subscription Information</h3>
+<p>Hepatica offers optional subscriptions and a one-time purchase managed entirely through Apple's App Store and StoreKit. All payment processing and billing are handled by Apple — we do not collect, process, or store payment information. We use RevenueCat to track subscription status (see §3.4).</p>
+
+<h3>1.8 Anonymous Analytics</h3>
+<p>To understand aggregate App usage and reliability, Hepatica records a small amount of <strong>anonymous</strong> event data (for example "onboarding completed", "paywall viewed", a subscription event from RevenueCat) in our Supabase backend (see §3.5). These events are tied only to an anonymous, system-generated identifier. They contain no name, no email, no lab values, no photos, and no chat content.</p>
+
+<h3>1.9 Information We Do NOT Collect</h3>
+<p>Hepatica does <strong>not</strong> collect:</p>
+<ul>
+    <li>Your name, email address, phone number, or any contact information</li>
+    <li>Your physical location or GPS coordinates</li>
+    <li>Advertising identifiers (IDFA) or any identifier used for cross-app tracking</li>
+    <li>Browsing history or activity outside the App</li>
+    <li>Contacts, calendar, or other personal data from your device</li>
+    <li>Biometric identifiers, face-recognition templates, or face embeddings</li>
+    <li>Social media accounts or login credentials</li>
+</ul>
+
+<h2>2. How We Use Your Information</h2>
+<p>The information processed by the App is used exclusively for:</p>
+<ul>
+    <li><strong>Multi-Lab Dashboard &amp; trends:</strong> local visualization of your liver markers over time</li>
+    <li><strong>Lab Interpreter:</strong> reading and explaining the values on a blood panel you scan or enter</li>
+    <li><strong>Photo Food Scanner:</strong> an educational liver-risk rating for a meal you photograph</li>
+    <li><strong>AI Liver Coach:</strong> generating sourced, citation-backed educational answers about liver health</li>
+    <li><strong>Medication &amp; Recovery tracking:</strong> local logs and streaks for adherence and alcohol recovery</li>
+    <li><strong>Doctor-shareable PDF:</strong> an on-device export of your trend data for your appointment</li>
+    <li><strong>Personalization:</strong> adapting in-app copy and Coach prompts to the cohort you selected</li>
+    <li><strong>Reliability:</strong> anonymous, aggregate analytics to fix bugs and improve the App</li>
+</ul>
+<p>We do not use your data for advertising, profiling, or any purpose unrelated to the core functionality of the App.</p>
+
+<h2>3. Third-Party Services</h2>
+
+<h3>3.1 OpenAI (Lab OCR &amp; Meal Scan — Optional)</h3>
+<p>When you scan a lab report or a meal, Hepatica uses OpenAI's vision models to read the report or rate the meal. This call only happens when you explicitly request it and after you accept the per-feature consent prompt.</p>
+<ul>
+    <li>The image is transmitted via encrypted HTTPS to OpenAI's API, proxied via a Cloudflare Worker</li>
+    <li>OpenAI returns recognised lab values, or a liver-risk rating for a meal</li>
+    <li>API inputs and outputs are <strong>not used to train OpenAI's models</strong> and are <strong>not retained</strong> after processing</li>
+    <li>No personal identifiers are sent alongside the image — only the image and the analysis instruction</li>
+    <li>For details, see <a href="https://openai.com/policies/api-data-usage-policies">OpenAI's API Data Usage Policy</a></li>
+</ul>
+
+<h3>3.2 DeepSeek (AI Liver Coach Text)</h3>
+<p>Hepatica uses DeepSeek's API to generate AI Coach responses, grounded by our on-device liver knowledge base. When you send a message:</p>
+<ul>
+    <li>The message text is transmitted via encrypted HTTPS to DeepSeek's API, proxied via a Cloudflare Worker</li>
+    <li>DeepSeek returns a generated response that the App grounds against the on-device citation corpus before presenting it</li>
+    <li>No photos, lab images, identifiers, or Apple Health data are ever sent to DeepSeek</li>
+    <li>A brief context summary (cohort, age band, recent lab ranges) is included so the response is tailored to your case</li>
+    <li>API inputs are not retained after processing</li>
+</ul>
+
+<h3>3.3 Cloudflare (API Gateway)</h3>
+<p>All AI requests are routed through a Cloudflare Worker proxy that forwards traffic to OpenAI and DeepSeek without logging or storing request bodies. The Worker exists solely to keep API keys server-side and to apply rate limiting.</p>
+
+<h3>3.4 RevenueCat (Subscription Management)</h3>
+<p>Hepatica uses RevenueCat to manage subscription status. RevenueCat receives an anonymous, system-generated user identifier, your subscription status (active, trial, expired), and the product identifier purchased. RevenueCat does not receive your name, email, lab values, photos, logs, or any personal information. For details, see <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a>.</p>
+
+<h3>3.5 Supabase (Anonymous Analytics Backend)</h3>
+<p>Hepatica uses Supabase to store anonymous usage and subscription events (see §1.8). Each event is tied only to an anonymous identifier and contains no personal health data, photos, or chat content. Supabase acts as our data processor for this limited, anonymous telemetry. For details, see <a href="https://supabase.com/privacy">Supabase's Privacy Policy</a>.</p>
+
+<h3>3.6 Apple Services</h3>
+<ul>
+    <li><strong>StoreKit 2:</strong> subscription management and payment processing. All financial data is handled by Apple.</li>
+    <li><strong>HealthKit:</strong> read-only access to the Apple Health categories you approve. Apple Health data stays on-device.</li>
+    <li><strong>iCloud Backup:</strong> if enabled on your device, local App data may be included in your device backup. This is controlled by your device settings.</li>
+</ul>
+
+<h3>3.7 No Advertising or Third-Party Tracking SDKs</h3>
+<p>Hepatica does not integrate advertising networks, cross-app tracking SDKs, or third-party behavioral-analytics platforms (Google Analytics, Firebase Analytics, Mixpanel, Amplitude, the Meta SDK, and similar). The App contains no advertisements. The only off-device data flows are the AI processing, RevenueCat, and the anonymous Supabase telemetry described above.</p>
+
+<h2>4. Data Storage and Security</h2>
+
+<h3>4.1 Local Storage</h3>
+<p>All lab values, FibroScan scores, meal photos, medication and alcohol logs, chat history, symptom notes, and personalization settings are stored locally on your device using Apple's standard storage frameworks, with file protection enabled. This data resides only on your device, is protected by your device's passcode / Face ID / Touch ID and encryption, is not accessible to the developer, and can be deleted at any time from within the App or by deleting the App.</p>
+
+<h3>4.2 On-Device Knowledge Base</h3>
+<p>The liver-health citation corpus ships embedded in the App and is queried entirely on-device. It contains extracts from AASLD, AGA and EASL guidelines, Mayo Clinic patient material, the Rezdiffra (resmetirom) FDA label, and selected PubMed literature on NAFLD/MASLD, alcohol-associated liver disease, and GLP-1 medications. It never leaves your device and is not personalized.</p>
+
+<h3>4.3 Network Security</h3>
+<p>All network communications are encrypted using industry-standard TLS 1.2+/HTTPS. No data is transmitted in plain text. The App enforces Apple's App Transport Security.</p>
+
+<h3>4.4 API Key Security</h3>
+<p>Third-party API credentials are kept server-side on the Cloudflare Worker and are not stored in plain text within the application.</p>
+
+<h2>5. Data Retention</h2>
+<ul>
+    <li><strong>Lab values, FibroScan scores, photos, logs, chat history:</strong> retained on your device until you delete individual items or uninstall the App</li>
+    <li><strong>OpenAI / DeepSeek requests:</strong> not retained after processing — zero-retention API usage</li>
+    <li><strong>Cloudflare Worker:</strong> no request bodies logged or retained</li>
+    <li><strong>RevenueCat:</strong> anonymous subscription records retained per their data-retention policy</li>
+    <li><strong>Supabase:</strong> anonymous event records retained for aggregate analytics; they contain no personal data</li>
+    <li><strong>Subscription data (Apple):</strong> managed entirely by Apple</li>
+</ul>
+
+<h2>6. Your Rights and Choices</h2>
+
+<h3>6.1 Camera, Photo Library and Health Access</h3>
+<p>You can revoke the App's camera, photo-library, or Apple Health access at any time through iOS Settings → Hepatica (and iOS Settings → Privacy &amp; Security → Health). Without these permissions you can still use Hepatica as a manual tracker.</p>
+
+<h3>6.2 AI Consent</h3>
+<p>The first AI Coach message, the first lab scan, and the first meal scan each prompt you for explicit, separate consent. You can decline any of them and continue using Hepatica as a manual tracker. You can re-show these prompts from Settings.</p>
+
+<h3>6.3 Deleting Your Data</h3>
+<p>Because your personal data is stored locally on your device, you can delete individual entries within the App, use Settings → Delete all my data to wipe every log at once, or delete all data by uninstalling the App. No request to the developer is necessary — we do not hold your health data on external servers.</p>
+
+<h3>6.4 Subscription Management</h3>
+<p>Manage, cancel, or modify your subscription through iOS Settings → Apple ID → Subscriptions. Cancellation takes effect at the end of the current billing period. Refunds are handled by Apple.</p>
+
+<h2>7. Children's Privacy</h2>
+<p>Hepatica is not directed at children under 12 and is rated 12+ on the App Store. We do not knowingly collect personal information from children. If a parent or guardian is tracking on behalf of a younger family member, the consenting adult enters and reviews all data — no separate account or personal data is collected from the child.</p>
+
+<h2>8. International Users and Compliance</h2>
+<p>Hepatica is available worldwide. We comply with applicable data-protection regulations:</p>
+<ul>
+    <li><strong>GDPR (EU/EEA) &amp; DSGVO (Germany):</strong> minimal data collection, no profiling, no advertising. Legal basis: your consent (camera, photo, Health and per-feature AI consent) and legitimate interest (core service and anonymous reliability telemetry). Right to erasure: delete your data in-App or uninstall the App.</li>
+    <li><strong>UK GDPR:</strong> the same rights and protections apply.</li>
+    <li><strong>CCPA/CPRA (California):</strong> we do not sell or share personal information and do not use it for behavioral advertising.</li>
+    <li><strong>PIPEDA (Canada):</strong> compliant — minimal, consent-based, secure.</li>
+    <li><strong>Other jurisdictions:</strong> our privacy-by-design approach — minimal collection, local storage, no tracking, no advertising — is designed for global compliance.</li>
+</ul>
+
+<h2>9. Medical Disclaimer</h2>
+<p>Hepatica is an <strong>educational wellness companion</strong>, not a medical device. It does not diagnose, treat, cure, or prevent any condition. Lab interpretations, FibroScan tracking, FIB-4 scores, food ratings, and AI Coach answers are educational information and self-reported tracking, not clinical assessments. Always consult your doctor or hepatologist. See the full <a href="medical-disclaimer.html">Medical Disclaimer</a>.</p>
+
+<h2>10. Changes to This Policy</h2>
+<p>We may update this policy to reflect changes in functionality or regulations. Material changes will be indicated by updating the effective date. Continued use after changes constitutes acceptance of the updated policy.</p>
+
+<h2>11. Contact Us</h2>
+<p>For questions about this privacy policy or your data:</p>
+<ul>
+    <li>Developer: Valerii Loveiko</li>
+    <li>Email: <a href="mailto:sergejkar@gmail.com">sergejkar@gmail.com</a></li>
+    <li>Support: <a href="https://love8ko.github.io/hepatica/support.html">love8ko.github.io/hepatica/support.html</a></li>
+</ul>
+
+<p style="margin-top: 2em; color: #6B7280; font-size: 0.85em;">
+    <a href="medical-disclaimer.html">Medical Disclaimer</a> &middot;
+    <a href="terms-of-use.html">Terms of Use</a> &middot;
+    <a href="support.html">Support</a>
+</p>
+
+</body>
+</html>
