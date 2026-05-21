@@ -847,23 +847,22 @@
   <a href="#module-16" class="is-module"><span class="nav-num">M16</span>Paywall</a>
   <a href="#module-17" class="is-module"><span class="nav-num">M17</span>Restructure</a>
   <a href="#module-18" class="is-module"><span class="nav-num">M18</span>Post-paywall</a>
+  <a href="#module-19" class="is-module"><span class="nav-num">M19</span>Assets</a>
   <span class="sep"></span>
   <a href="#wow-formula">formula</a>
   <a href="#onb-flow">worked flow</a>
-  <a href="#wow-cohorts">wow × 6</a>
-  <a href="#reviews-screen">reviews</a>
   <a href="#paywall-consilium">paywall</a>
-  <a href="#paywall-cohorts">paywall × 6</a>
   <a href="#restructure-consilium">restructure</a>
   <a href="#setup-consilium">setup consilium</a>
   <a href="#setup-cohorts">setup × 6</a>
+  <a href="#asset-consilium">asset consilium</a>
 </nav>
 
 <header>
   <h1>Hepatica — Funnel &amp; Post-Paywall Workbench · Part 3</h1>
-  <p class="lede">Part 3 closes the workbench. Companion to <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a> (M1–7), <a href="flow.html" style="color:var(--brand);font-weight:700;">flow.html</a> (M8–10) and <a href="flow2.html" style="color:var(--brand);font-weight:700;">flow2.html</a> (M11–14). Here: <b>M15 — Onboarding</b> and <b>M16 — Paywall</b> (the pre-auth funnel), <b>M17 — the fresh-eyes restructure consilium</b> (a pass over the whole M1–18 flow), and <b>M18 — the post-paywall Setup walkthrough</b>. Best practice borrowed from the Folik &amp; Calibrum onboarding consilia and Cysta AI's typed-result reveal &amp; Setup pattern.</p>
+  <p class="lede">Part 3 closes the workbench. Companion to <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a> (M1–7), <a href="flow.html" style="color:var(--brand);font-weight:700;">flow.html</a> (M8–10) and <a href="flow2.html" style="color:var(--brand);font-weight:700;">flow2.html</a> (M11–14). Here: <b>M15 — Onboarding</b> and <b>M16 — Paywall</b> (the pre-auth funnel), <b>M17 — the fresh-eyes restructure consilium</b>, <b>M18 — the post-paywall Setup walkthrough</b>, and <b>M19 — the in-app illustration &amp; hero asset system</b>. Best practice borrowed from the Folik &amp; Calibrum onboarding consilia and Cysta AI's typed-result reveal &amp; Setup pattern.</p>
   <div class="meta-bar">
-    <span class="pill brand">📐 Funnel · restructure · post-paywall · Modules 15–18</span>
+    <span class="pill brand">📐 Funnel · restructure · post-paywall · assets · Modules 15–19</span>
     <span class="pill lock">🔒 Design system · B · Clinical</span>
     <span class="pill vote">WOW-then-justify · +6–11pp trial→paid</span>
     <span class="pill sib">Best practice: Folik · Calibrum · Cysta AI</span>
@@ -1721,7 +1720,7 @@
 <!-- ===== 16.5 READY ===== -->
 <h2 id="paywall-summary">16.5 · Module 16 — ready for review</h2>
 <div class="m6-callout win">
-  <b>Module 16 — ready for founder review.</b> One consilium run: <b>B · cohort-routed fear-playbook</b> (Σ 5.00, unanimous) over A · static (2.48) and C · aggressive (1.35). §16.2 worked the full single-scroll paywall for Robert — hero placeholder, WOW-echoing H1, proof band, 4-bullet value stack, 4 tier cards with <b>Weekly preselected</b> per the founder override, CTA, restore/terms, disclaimer. §16.3 gave the H1 + 3 bullets for all 6 cohorts. §16.4 mapped the built <code>PaywallView.swift</code> → the B design: three pure-UI changes (preselect Weekly · per-cohort H1 · proof band) plus the RevenueCat wiring of the placeholder purchase. Compliance: Health &amp; Fitness disclaimer on the paywall, no diagnosis, no fake reviews or userbase, light-mode forced, hero image deferred. To compliance sign-off: the 6 paywall H1s, the 6 bullet sets, the §15.9 reviews-screen activation rule. <b>The pre-auth funnel — Modules 15 + 16 — is complete.</b> Continues below — <b>M17</b> is a fresh-eyes restructure pass over the whole flow, and <b>M18</b> designs the post-paywall Setup walkthrough; the workbench now covers Modules 1–18.
+  <b>Module 16 — ready for founder review.</b> One consilium run: <b>B · cohort-routed fear-playbook</b> (Σ 5.00, unanimous) over A · static (2.48) and C · aggressive (1.35). §16.2 worked the full single-scroll paywall for Robert — hero placeholder, WOW-echoing H1, proof band, 4-bullet value stack, 4 tier cards with <b>Weekly preselected</b> per the founder override, CTA, restore/terms, disclaimer. §16.3 gave the H1 + 3 bullets for all 6 cohorts. §16.4 mapped the built <code>PaywallView.swift</code> → the B design: three pure-UI changes (preselect Weekly · per-cohort H1 · proof band) plus the RevenueCat wiring of the placeholder purchase. Compliance: Health &amp; Fitness disclaimer on the paywall, no diagnosis, no fake reviews or userbase, light-mode forced, hero image deferred. To compliance sign-off: the 6 paywall H1s, the 6 bullet sets, the §15.9 reviews-screen activation rule. <b>The pre-auth funnel — Modules 15 + 16 — is complete.</b> Continues below — <b>M17</b> is a fresh-eyes restructure pass over the whole flow, <b>M18</b> designs the post-paywall Setup walkthrough, and <b>M19</b> settles the illustration style; the workbench now covers Modules 1–19.
 </div>
 
 <!-- ============================================================ -->
@@ -1786,7 +1785,7 @@
 <!-- ===== 17.3 APPLIED & CARRIED ===== -->
 <h2 id="restructure-applied">17.3 · Restructure — applied &amp; carried</h2>
 <div class="m6-callout win">
-  <b>Module 17 — the restructure pass.</b> <b>Applied this pass:</b> both flow maps (flow.html §8.1, flow2.html §14.1) rebuilt to show M15/M16/M18 worked and the Disclaimer post-paywall; flow2.html §14.4–14.5 refreshed; the flow3.html M15 banner cross-refs corrected; all four files' nav + footers updated to M15–18. <b>Resolved by vote:</b> the canonical tab order — B · Today · Coach · +Log · Progress · Labs (Σ 5.00). <b>Carried to the Swift V1 rework:</b> the <code>RootTabView</code> re-order, the Disclaimer's two consent checkboxes (§18.2), the no-WOW onboarding (§15.7), the paywall tier preselect (§16.4). <b>Carried as a follow-up workbench pass:</b> the §14.2 cross-tab gaps — Coach &amp; Progress empty states, the Log safety strip, the Coach verdict-pill decision. Logged in <code>DECISIONS.md</code> D20.
+  <b>Module 17 — the restructure pass.</b> <b>Applied this pass:</b> both flow maps (flow.html §8.1, flow2.html §14.1) rebuilt to show M15/M16/M18 worked and the Disclaimer post-paywall; flow2.html §14.4–14.5 refreshed; the flow3.html M15 banner cross-refs corrected; all four files' nav + footers refreshed. <b>Resolved by vote:</b> the canonical tab order — B · Today · Coach · +Log · Progress · Labs (Σ 5.00). <b>Carried to the Swift V1 rework:</b> the <code>RootTabView</code> re-order, the Disclaimer's two consent checkboxes (§18.2), the no-WOW onboarding (§15.7), the paywall tier preselect (§16.4). <b>Carried as a follow-up workbench pass:</b> the §14.2 cross-tab gaps — Coach &amp; Progress empty states, the Log safety strip, the Coach verdict-pill decision. Logged in <code>DECISIONS.md</code> D20.
 </div>
 
 <!-- ============================================================ -->
@@ -2094,12 +2093,93 @@
 <!-- ===== 18.6 READY ===== -->
 <h2 id="setup-summary">18.6 · Module 18 — ready for review</h2>
 <div class="m6-callout win">
-  <b>Module 18 — ready for founder review.</b> One consilium run: <b>C · the merge</b> (Σ 5.00, unanimous) over B · Cysta-literal (4.00) and A · as-built (2.70) — the locked 5-card spine is Welcome · Focus · Baseline · Daily-90s-plan · Ready. §18.2 reconciled the Disclaimer gate with the built two-checkbox <code>DisclaimerView</code> (educational-use + AI-processing consent). §18.3 worked all 5 cards for Nick; §18.4 fitted Baseline + Focus + Ready to all 6 cohorts. §18.5 mapped the built Swift Setup → the C design: keep the container, rename TabsTour→Focus, merge LabEntryOffer into Baseline, drop CohortSetup, add Baseline + DailyPlan. Compliance: Health &amp; Fitness throughout, two explicit consent checks, no diagnosis, light-mode forced, hero images deferred to the asset sprint. To compliance sign-off: the Disclaimer copy, the Setup card copy. <b>With M17 + M18 the workbench covers Modules 1–18 — the whole flow, pre-launch through the first daily loop.</b>
+  <b>Module 18 — ready for founder review.</b> One consilium run: <b>C · the merge</b> (Σ 5.00, unanimous) over B · Cysta-literal (4.00) and A · as-built (2.70) — the locked 5-card spine is Welcome · Focus · Baseline · Daily-90s-plan · Ready. §18.2 reconciled the Disclaimer gate with the built two-checkbox <code>DisclaimerView</code> (educational-use + AI-processing consent). §18.3 worked all 5 cards for Nick; §18.4 fitted Baseline + Focus + Ready to all 6 cohorts. §18.5 mapped the built Swift Setup → the C design: keep the container, rename TabsTour→Focus, merge LabEntryOffer into Baseline, drop CohortSetup, add Baseline + DailyPlan. Compliance: Health &amp; Fitness throughout, two explicit consent checks, no diagnosis, light-mode forced, hero images deferred to the asset sprint. To compliance sign-off: the Disclaimer copy, the Setup card copy. <b>With M17 + M18 the workbench covers Modules 1–18 — the whole flow, pre-launch through the first daily loop.</b> M19 below settles the in-app illustration style.
+</div>
+
+<!-- ============================================================ -->
+<!-- ========= MODULE 19 · ASSET / ILLUSTRATION SYSTEM ========== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-19">
+  <span class="num">МОДУЛЬ 19</span>
+  <h2>In-app illustration &amp; hero system — the asset-style consilium</h2>
+  <p class="desc">The asset prompts were first drafted in the editorial-photography style of the sibling Cysta AI (logged D22). The founder challenged it — Hepatica has a different design system and a different audience. This module runs the consilium properly: §19.1 votes the visual direction; §19.2 specs the winning illustration system. The detailed per-asset prompt file is <code>private/ASSET_PROMPTS.md</code>. Status: draft — nothing locked.</p>
+</div>
+
+<!-- ===== 19.1 ASSET CONSILIUM ===== -->
+<h2 id="asset-consilium">19.1 · The asset-style consilium — photography, or illustration?</h2>
+<p class="lede">Two locked documents already point the way. <code>DESIGN_SYSTEM.md</code> names the aesthetic <b>«Mayo Clinic × Headspace»</b> and its onboarding rule says «<b>Illustrations</b> only до disclaimer-accept» — the visuals were always conceived as illustration. And <code>design.html</code> §7.3 locks an anti-pattern: «no glowing livers, no detox juices — <b>the category is clinical authority, not wellness</b>». Editorial apothecary still-life (dried botanicals, herbal tea, linen) is exactly the <em>wellness</em> register that anti-pattern rejects. Three directions, the 6 cohorts vote.</p>
+<div class="cohort-strip">
+  <div class="cohort-cell">
+    <div style="height:118px;border-radius:13px;background:linear-gradient(135deg,#2D7B7E 0%,#3F6E5E 45%,#D4A574 100%);box-shadow:inset 0 0 30px rgba(0,0,0,0.28);display:flex;align-items:flex-end;padding:9px;"><span style="font-size:8px;font-weight:800;color:#fff;background:rgba(0,0,0,0.32);border-radius:5px;padding:3px 6px;">apothecary still-life · linen · dried botanicals</span></div>
+    <div class="cc-cap"><div class="cc-name">A · Editorial photography</div><div class="cc-job">Cysta DNA — premium, but a wellness-boutique register.</div></div>
+  </div>
+  <div class="cohort-cell">
+    <div style="height:118px;border-radius:13px;background:radial-gradient(circle at 32% 30%,#F7FAF9 0%,#CFE3E2 55%,#A9CFCB 100%);display:flex;align-items:center;justify-content:center;gap:7px;"><span style="width:34px;height:34px;border-radius:50%;background:linear-gradient(150deg,#2D7B7E,#194A4C);"></span><span style="width:46px;height:22px;border-radius:999px;background:#D4A574;"></span></div>
+    <div class="cc-cap"><div class="cc-name">B · Calm clinical illustration ⭐</div><div class="cc-job">Mayo × Headspace — the locked design system itself.</div></div>
+  </div>
+  <div class="cohort-cell">
+    <div style="height:118px;border-radius:13px;display:flex;"><div style="flex:1;background:linear-gradient(135deg,#2D7B7E,#D4A574);border-radius:13px 0 0 13px;"></div><div style="flex:1;background:radial-gradient(circle at 50% 40%,#F7FAF9,#CFE3E2);border-radius:0 13px 13px 0;"></div></div>
+    <div class="cc-cap"><div class="cc-name">C · Hybrid</div><div class="cc-job">Illustration base + photo heroes — two vocabularies.</div></div>
+  </div>
+</div>
+<table class="tab-spec">
+  <thead><tr><th>Candidate</th><th>Shape</th><th>Risk</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">A · Editorial photography</td><td>The first-draft style — editorial product photography, apothecary still-life, dried liver botanicals, linen, no faces. Sibling Cysta / Folik / Salvora DNA, re-palettised teal/gold.</td><td>It is the <em>wellness</em> register §7.3 explicitly rejects; reads precious / lifestyle-boutique to the older, male-skewing NAFLD cohorts; mismatched to the «Headspace» half of the locked design system.</td><td><span class="warn">✗ Rejected</span></td></tr>
+    <tr class="locked-row"><td class="tabname">B · Calm clinical illustration ⭐</td><td>Soft semi-flat vector illustration — gentle gradients + paper grain, warm rounded forms, generous negative space, abstract metaphors (a line easing into a band, a path, a calm horizon); the liver only as the brand's abstract teal→gold lobe.</td><td>None material. Must be <em>rich</em> craft-illustration (Headspace-grade depth &amp; texture), never cheap flat clip-art — handled in §19.2's style DNA.</td><td><span class="ok">✓ Ships</span></td></tr>
+    <tr><td class="tabname">C · Hybrid</td><td>Illustration as the base system, plus a few photographic heroes on the highest-stakes screens (paywall, proof).</td><td>Re-imports the wellness/photography problem exactly on the paywall, where it costs most; two vocabularies for a solo founder to keep coherent.</td><td><span class="warn">✗ Rejected</span></td></tr>
+  </tbody>
+</table>
+<table class="vote">
+  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · photo</th><th class="score">B · illustration ⭐</th><th class="score">C · hybrid</th></tr></thead>
+  <tbody>
+    <tr><td class="voter">🍷 Nick</td><td class="aud">25</td><td class="score">3</td><td class="score hi">5</td><td class="score">4</td></tr>
+    <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">4</td><td class="score hi">4</td><td class="score">5</td></tr>
+    <tr><td class="voter">🍔 Pete</td><td class="aud">20</td><td class="score">2</td><td class="score hi">5</td><td class="score">4</td></tr>
+    <tr><td class="voter">💊 Rachel</td><td class="aud">8</td><td class="score">2</td><td class="score hi">4</td><td class="score">5</td></tr>
+    <tr><td class="voter">🧬 Patricia</td><td class="aud">15</td><td class="score">4</td><td class="score hi">5</td><td class="score">4</td></tr>
+    <tr><td class="voter">🍺 Robert</td><td class="aud">17</td><td class="score">2</td><td class="score hi">5</td><td class="score">4</td></tr>
+    <tr class="totals"><td>Weighted Σ</td><td class="aud">100</td><td class="score">2.85</td><td class="score locked">4.77</td><td class="score">4.23</td></tr>
+  </tbody>
+</table>
+<div class="runoff">
+  <h3>Why B — calm clinical illustration</h3>
+  <p><b>B wins clearly (Σ 4.77).</b> It is not a new idea — it is what <code>DESIGN_SYSTEM.md</code> already specifies («Mayo Clinic × Headspace», «illustrations only до disclaimer-accept»). <b>Pete (20%) and Rachel (8%) kill A hardest</b> (=2): a practical pre-diabetic man and a $40K-drug MASH patient read apothecary still-life as lifestyle fluff, not clinical authority. <b>Robert (17%) scores B=5</b> — Headspace's calm illustration is the visual language of recovery apps; it lowers health anxiety where a precious photograph cannot. <b>Greta &amp; Patricia</b> (the wellness-leaning cohorts) are the only ones who warm to A — and even they prefer B or C. <b>C is rejected</b> not on taste but on incoherence: a photographic paywall hero drops the user back into the wellness register at the exact moment authority matters most, and two vocabularies are a consistency tax a solo founder shouldn't pay. <b>Runoff note:</b> B only wins if it is executed as <em>rich</em> illustration — Headspace-grade craft, depth, gradient, texture — never flat clip-art. The earlier photography pick (D22) is superseded; logged D23.</p>
+  <div class="pick-row">
+    <span class="pick lead">⭐ B · calm clinical illustration — ships</span>
+    <span class="pick">A · editorial photography — rejected · wellness register, off-system</span>
+    <span class="pick">C · hybrid — rejected · incoherent at the paywall</span>
+  </div>
+</div>
+
+<!-- ===== 19.2 THE ILLUSTRATION SYSTEM ===== -->
+<h2 id="asset-system">19.2 · The illustration system — what B is</h2>
+<p class="lede">One coherent illustration language across every generated asset — onboarding heroes, paywall heroes, the Setup cards, empty states and icons. The detailed per-asset prompts live in <code>private/ASSET_PROMPTS.md</code>; this is the system it is built on.</p>
+<table class="tab-spec">
+  <thead><tr><th>Dimension</th><th>The B system</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">Register</td><td>Calm clinical illustration — «Mayo Clinic × Headspace»: clinical clarity meets Headspace calm. Reassuring, never anxious; authoritative, never cold.</td></tr>
+    <tr><td class="tabname">Render</td><td>Soft semi-flat vector — gentle gradients, subtle paper-grain texture, soft diffused light, warm rounded organic forms, generous negative space, no harsh outlines. Rich craft-illustration, not flat clip-art, not 3D, not photoreal.</td></tr>
+    <tr><td class="tabname">Palette</td><td>The locked tokens only — teal <code>#2D7B7E</code> + warm gold <code>#D4A574</code> + off-white <code>#EEF3F2</code>; warm severity (amber → clay) used sparingly. No clinical red, no neon.</td></tr>
+    <tr><td class="tabname">Subjects</td><td>Abstract calm metaphors — a line easing into a guidance band, a path of stepping stones, a low calm horizon at sunrise, concentric rings, a single unfurling leaf, a tide going out. The liver appears <em>only</em> as the brand's abstract teal→gold lobe glyph — never anatomical, never a literal organ.</td></tr>
+    <tr><td class="tabname">Carry-over rules</td><td>No faces / no people; no liver-anatomy close-ups (locked anti-pattern); no clinical red; <b>zero alcohol imagery anywhere</b> (Robert hard rule + veto); no cute mascots or organs-with-eyes.</td></tr>
+    <tr><td class="tabname">Inventory</td><td>23 imagesets — Sprint B (7 onboarding heroes, 3:4) · Sprint C (6 paywall heroes 3:4 + 5 Setup cards 1:1) · Sprint E (5 empty-state / icon, 1:1). Slugs, screens and aspect ratios unchanged from the first draft.</td></tr>
+    <tr><td class="tabname">Aspect matrix</td><td><b>3:4</b> — full-screen heroes (onboarding + paywall, contained) &amp; <code>pdf-cover</code>. <b>1:1</b> — Setup cards, empty states, icons. 9:16 not used in V1.</td></tr>
+  </tbody>
+</table>
+<div class="m6-callout note">
+  <b>The prompt spec.</b> <code>private/ASSET_PROMPTS.md</code> (gitignored, founder-only) is rewritten to this system: a calm-illustration master skeleton, all 23 per-asset concepts re-imagined as illustration metaphors, the 7-point WOW QA gate, and a 6-cohort weighted Σ≥7.5 lock per asset. Hero images are generated in a later visual-assets sprint; the workbench mockups (M15/M16/M18) keep the dashed placeholder zones until then. The shared Swift <code>HeroImage</code> component renders each asset with a <code>Color.hepBrandSoft</code> fallback until its PNG lands.
+</div>
+
+<!-- ===== 19.3 READY ===== -->
+<h2 id="asset-summary">19.3 · Module 19 — ready for review</h2>
+<div class="m6-callout win">
+  <b>Module 19 — ready for founder review.</b> One consilium run: <b>B · calm clinical illustration</b> (Σ 4.77) over C · hybrid (4.23) and A · editorial photography (2.85). The decision realigns the asset style with the locked design system («Mayo Clinic × Headspace») and the §7.3 «clinical authority, not wellness» anti-pattern, and fits the older, male-skewing NAFLD audience. §19.2 specs the system; <code>private/ASSET_PROMPTS.md</code> is rewritten to match (23 assets, illustration prompts). Supersedes D22 — logged <code>DECISIONS.md</code> D23. <b>The workbench now covers Modules 1–19; the whole product is designed end to end — flow, funnel, post-paywall, and the visual system.</b>
 </div>
 
 <footer>
   <b>Hepatica — Funnel &amp; Post-Paywall Workbench · Part 3</b> · continues <b>flow2.html</b> (M11–14) · companion to <b>design.html</b> (M1–7) &amp; <b>flow.html</b> (M8–10) · updated 2026-05-21 · sibling pattern: Folik · Calibrum · Cysta AI.<br>
-  Module 15 — Onboarding: the WOW-then-justify formula · 3 consilia (structure · length · trust) · the 8-screen pre-auth flow worked for Robert · the WOW screen × 6 cohorts · the honest evidence proof screen · the §15.9 reviews screen (shipped dark) · Swift reconciliation. Module 16 — Paywall: the consilium · the cohort-routed fear-playbook worked for Robert · the paywall × 6 cohorts · Swift reconciliation. Module 17 — fresh-eyes flow restructure: the findings table · the tab-order reconciliation vote · applied &amp; carried. Module 18 — post-paywall onboarding: the Setup-flow consilium · the reconciled Disclaimer gate · the 5-card walkthrough worked for Nick · Setup × 6 cohorts · Swift reconciliation. The workbench now covers Modules 1–18. Nothing locked; on review the screens become the spec for the Swift V1 build &amp; rework.
+  Module 15 — Onboarding: the WOW-then-justify formula · 3 consilia (structure · length · trust) · the 8-screen pre-auth flow worked for Robert · the WOW screen × 6 cohorts · the honest evidence proof screen · the §15.9 reviews screen (shipped dark) · Swift reconciliation. Module 16 — Paywall: the consilium · the cohort-routed fear-playbook worked for Robert · the paywall × 6 cohorts · Swift reconciliation. Module 17 — fresh-eyes flow restructure: the findings table · the tab-order reconciliation vote · applied &amp; carried. Module 18 — post-paywall onboarding: the Setup-flow consilium · the reconciled Disclaimer gate · the 5-card walkthrough worked for Nick · Setup × 6 cohorts · Swift reconciliation. Module 19 — in-app illustration &amp; hero asset system: the asset-style consilium (B · calm clinical illustration) · the illustration-system spec. The workbench now covers Modules 1–19. Nothing locked; on review the screens become the spec for the Swift V1 build &amp; rework.
 </footer>
 
 </body>
