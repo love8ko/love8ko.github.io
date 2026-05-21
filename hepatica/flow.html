@@ -1528,12 +1528,12 @@
   <thead><tr><th>Candidate</th><th>Concept</th><th>Trust signal</th><th>Compliance</th></tr></thead>
   <tbody>
     <tr><td class="tabname">A · Single AI Coach</td><td>One neutral "Hepatica Coach" voice. Cites guidelines inline. The Calibrum / Cysta AI pattern.</td><td>Citations carry the authority — one calm voice.</td><td><span class="ok">✓ Clean</span> — no persona risk.</td></tr>
-    <tr class="locked-row"><td class="tabname">B · Specialist-lens panel ⭐</td><td>Still one AI, but an answer can surface 2–3 labelled <b>perspectives by guideline domain</b> — "Hepatology lens · AASLD", "Addiction-medicine lens · AGA/SAMHSA", "Metabolic lens". A lens is a viewpoint, never a person.</td><td>Reads like a multidisciplinary review — the panel effect — while staying honestly an AI.</td><td><span class="ok">✓ Clean</span> — lenses are guideline domains, no names, no avatars, no "Dr.".</td></tr>
+    <tr class="locked-row"><td class="tabname">B · Specialist-view panel ⭐</td><td>Still one AI, but an answer can surface 2–3 labelled <b>views by medical specialty</b> — "Hepatology view · AASLD", "Recovery view · NIAAA", "Metabolic view · ADA". A view is a guideline perspective, never a person.</td><td>Reads like a multidisciplinary review — the panel effect — while staying honestly an AI.</td><td><span class="ok">✓ Clean</span> — views are guideline domains, no names, no avatars, no "Dr.".</td></tr>
     <tr><td class="tabname">C · Doctor-avatar panel</td><td>Named, portrait-avatar "doctors" — "Dr. Hale, Hepatologist" — answer in turn.</td><td>Highest surface trust… until the user clocks they're fake.</td><td><span class="warn">✗ Blocked</span> — implies real licensed practitioners. Rejected, not archived silently.</td></tr>
   </tbody>
 </table>
 <table class="vote">
-  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · single</th><th class="score">B · lens panel</th><th class="score">C · avatars</th></tr></thead>
+  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · single</th><th class="score">B · view panel</th><th class="score">C · avatars</th></tr></thead>
   <tbody>
     <tr><td class="voter">🍷 Nick</td><td class="aud">25</td><td class="score">4</td><td class="score hi">4</td><td class="score">3</td></tr>
     <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">4</td><td class="score hi">5</td><td class="score">3</td></tr>
@@ -1545,27 +1545,27 @@
   </tbody>
 </table>
 <div class="runoff">
-  <h3>Why B — the specialist-lens panel</h3>
-  <p><b>The cohorts split on whether they want a panel at all — but never on whether they want fake doctors.</b> Robert scores B=5 the moment an "Addiction-medicine lens" reads his GGT without a single judgmental word — a generic coach can't signal that competence. Pete and Rachel score B=5 because a metabolic / hepatology split mirrors how their real care team actually works. Nick is the dissenter at B=4: anxious and newly diagnosed, he wants reassurance, not a committee — which is the warning that drives the v1→v2 iteration below.</p>
+  <h3>Why B — the specialist-view panel</h3>
+  <p><b>The cohorts split on whether they want a panel at all — but never on whether they want fake doctors.</b> Robert scores B=5 the moment a "Recovery view" reads his GGT without a single judgmental word — a generic coach can't signal that competence. Pete and Rachel score B=5 because a metabolic / hepatology split mirrors how their real care team actually works. Nick is the dissenter at B=4: anxious and newly diagnosed, he wants reassurance, not a committee — which is the warning that drives the v1→v2 iteration below.</p>
   <p><b>Candidate C loses everywhere.</b> The first time a cohort notices "Dr. Hale" is a generated portrait, every answer retroactively feels like a trick — and it puts the listing at Health &amp; Fitness review risk. The trust a panel buys is destroyed by faking the panellists.</p>
   <div class="pick-row">
-    <span class="pick lead">⭐ B · Specialist-lens panel — ships</span>
-    <span class="pick">A · single coach — kept as B's default one-lens view</span>
+    <span class="pick lead">⭐ B · Specialist-view panel — ships</span>
+    <span class="pick">A · single coach — kept as B's default one-view answer</span>
     <span class="pick">C · doctor avatars — rejected · compliance ✗</span>
   </div>
 </div>
 <div class="lens-legend">
-  <div class="ll"><div class="ll-bar"></div><div><div class="ll-t">🫀 Hepatology lens</div><div class="ll-d">Liver enzymes, fibrosis, diet — the default lens for every cohort.</div><div class="ll-src">grounds: AASLD · EASL · Mayo</div></div></div>
-  <div class="ll addiction"><div class="ll-bar"></div><div><div class="ll-t">🍺 Addiction-medicine lens</div><div class="ll-d">Alcohol, recovery timelines, relapse — non-judgmental by construction.</div><div class="ll-src">grounds: AGA · SAMHSA · NIAAA</div></div></div>
-  <div class="ll metabolic"><div class="ll-bar"></div><div><div class="ll-t">⚖️ Metabolic lens</div><div class="ll-d">Glucose, weight, GLP-1, PCOS — the cross-condition viewpoint.</div><div class="ll-src">grounds: ADA · Endocrine Society</div></div></div>
+  <div class="ll"><div class="ll-bar"></div><div><div class="ll-t">🫀 Hepatology view</div><div class="ll-d">Liver enzymes, fibrosis, diet — the default view for every cohort.</div><div class="ll-src">grounds: AASLD · EASL · Mayo</div></div></div>
+  <div class="ll addiction"><div class="ll-bar"></div><div><div class="ll-t">🍺 Recovery view</div><div class="ll-d">Alcohol, recovery timelines, relapse — the addiction-medicine perspective, non-judgmental by construction.</div><div class="ll-src">grounds: NIAAA · AGA · SAMHSA</div></div></div>
+  <div class="ll metabolic"><div class="ll-bar"></div><div><div class="ll-t">⚖️ Metabolic view</div><div class="ll-d">Glucose, weight, GLP-1, PCOS — the cross-condition perspective.</div><div class="ll-src">grounds: ADA · Endocrine Society</div></div></div>
 </div>
 <div class="m6-callout note">
-  <b>The compliance guardrail for B.</b> A "lens" is a guideline domain, not a human: no names, no portrait avatars, no "Dr.", no fabricated credentials. Every Coach answer still carries the safety strip and a refusal-pivot path (<code>COMPLIANCE.md</code>); the persistent header reads <b>"AI guidance · not a medical diagnosis"</b>. The panel feeling is allowed; the panel <em>fiction</em> is not.
+  <b>The compliance guardrail for B.</b> A "view" is a medical-specialty perspective, not a human: no names, no portrait avatars, no "Dr.", no fabricated credentials. Every Coach answer still carries the safety strip and a refusal-pivot path (<code>COMPLIANCE.md</code>); the persistent header reads <b>"AI guidance · not a medical diagnosis"</b>. The panel feeling is allowed; the panel <em>fiction</em> is not.
 </div>
 
 <!-- ===== 9.2 COACH v1 ===== -->
 <h2 id="coach-v1">9.2 · Coach v1 — the panel, built literally</h2>
-<p class="lede">First iteration: take "specialist panel" at face value — every answer shows all three lenses, each fully written out, each with its own citations. Worked here for Robert. It is faithful to the consilium… and it fails.</p>
+<p class="lede">First iteration: take "specialist panel" at face value — every answer shows all three views, each fully written out, each with its own citations. Worked here for Robert. It is faithful to the consilium… and it fails.</p>
 <div class="screen-block">
   <div class="phone-frame">
     <div class="phone-screen" style="gap:8px;">
@@ -1577,17 +1577,17 @@
         <div class="cv-bub user">Is a 145-point GGT drop normal? I'm 47 days sober.</div>
         <div class="cv-bub ai">
           <div class="cv-lens">
-            <span class="lens-tag">🫀 Hepatology lens</span>
+            <span class="lens-tag">🫀 Hepatology view</span>
             <div class="cv-lt">A GGT fall of that size in the first weeks of abstinence is well within the documented range. GGT has a half-life of 2–3 weeks, so early drops are steep.</div>
             <span class="cv-cite">AASLD 2023 · GGT &amp; alcohol</span>
           </div>
           <div class="cv-lens addiction">
-            <span class="lens-tag addiction">🍺 Addiction-medicine lens</span>
+            <span class="lens-tag addiction">🍺 Recovery view</span>
             <div class="cv-lt">At Day 47 you're inside the window where markers move fastest. Most measurable recovery in GGT happens by week 6–12 of continuous abstinence.</div>
             <span class="cv-cite">NIAAA · recovery timeline</span>
           </div>
           <div class="cv-lens metabolic">
-            <span class="lens-tag metabolic">⚖️ Metabolic lens</span>
+            <span class="lens-tag metabolic">⚖️ Metabolic view</span>
             <div class="cv-lt">If weight and diet also shifted when you quit, some of the GGT change reflects metabolic improvement, not alcohol alone.</div>
             <span class="cv-cite">EASL · metabolic GGT</span>
           </div>
@@ -1608,18 +1608,18 @@
   </div>
   <div class="screen-annot">
     <h3>Evaluate — where v1 breaks</h3>
-    <div class="pov-lead">Robert asked one anxious question and got a <b>three-part committee report</b>. He wanted to hear "yes, that's normal" — instead he is scrolling a wall of text, and the most reassuring sentence is buried in lens two.</div>
-    <div class="annot-row"><span class="ar-z">Overload</span><span class="ar-v">Three lenses × a paragraph × a citation each is <b>~9 things to read</b> for a yes/no question. This is exactly Nick's B=4 warning from the consilium — a panel can feel like homework.</span></div>
+    <div class="pov-lead">Robert asked one anxious question and got a <b>three-part committee report</b>. He wanted to hear "yes, that's normal" — instead he is scrolling a wall of text, and the most reassuring sentence is buried in view two.</div>
+    <div class="annot-row"><span class="ar-z">Overload</span><span class="ar-v">Three views × a paragraph × a citation each is <b>~9 things to read</b> for a yes/no question. This is exactly Nick's B=4 warning from the consilium — a panel can feel like homework.</span></div>
     <div class="annot-row"><span class="ar-z">Buried answer</span><span class="ar-v">The direct answer ("yes, normal") is implied, never stated first. The user has to assemble it from three viewpoints.</span></div>
     <div class="annot-row"><span class="ar-z">Wasted on simple Qs</span><span class="ar-v">Most questions don't need three domains. Forcing all three every time makes the panel feel like padding, not rigour.</span></div>
-    <div class="annot-row"><span class="ar-z">What survives</span><span class="ar-v">The lens <em>concept</em> is good — the labels are credible and honest. The mistake is showing the whole panel <b>unconditionally</b>. v2 keeps lenses, drops the wall.</span></div>
-    <div class="borrowed"><b>Re-evaluation → v2.</b> Lead with one plain answer in the user's cohort lens; offer the other lenses as an opt-in. The panel becomes <em>available depth</em>, not <em>forced depth</em>.</div>
+    <div class="annot-row"><span class="ar-z">What survives</span><span class="ar-v">The view <em>concept</em> is good — the labels are credible and honest. The mistake is showing the whole panel <b>unconditionally</b>. v2 keeps the views, drops the wall.</span></div>
+    <div class="borrowed"><b>Re-evaluation → v2.</b> Lead with one plain answer in the user's cohort view; offer the other views as an opt-in. The panel becomes <em>available depth</em>, not <em>forced depth</em>.</div>
   </div>
 </div>
 
 <!-- ===== 9.3 COACH v2 ===== -->
 <h2 id="coach-v2">9.3 · Coach v2 — collapse the panel to one answer</h2>
-<p class="lede">Second iteration. The answer leads with <b>one</b> lens — the one matching the user's cohort (Robert → addiction-medicine). It opens with the plain verdict. The other two lenses collapse into a single tappable row. Same rigour, a tenth of the reading.</p>
+<p class="lede">Second iteration. The answer leads with <b>one</b> view — the one matching the user's cohort (Robert → recovery). It opens with the plain verdict. The other two views collapse into a single tappable row. Same rigour, a tenth of the reading.</p>
 <div class="screen-block">
   <div class="phone-frame">
     <div class="phone-screen" style="gap:8px;">
@@ -1631,7 +1631,7 @@
         <div class="cv-bub user">Is a 145-point GGT drop normal? I'm 47 days sober.</div>
         <div class="cv-bub ai">
           <div class="cv-lens addiction">
-            <span class="lens-tag addiction">🍺 Addiction-medicine lens</span>
+            <span class="lens-tag addiction">🍺 Recovery view</span>
             <div class="cv-lt"><b>Yes — that's a normal, healthy drop.</b> GGT clears fast once drinking stops; the steepest fall is in the first 6–12 weeks of abstinence, and at Day 47 you're right inside that window.</div>
             <span class="cv-cite">NIAAA · recovery timeline →</span>
           </div>
@@ -1656,8 +1656,8 @@
     <h3>Re-evaluate — what v2 fixes</h3>
     <div class="pov-lead">Robert reads <b>five words</b> — "Yes — that's a normal, healthy drop" — and exhales. The reassurance he came for is the first thing on screen; the rigour is one tap away if he wants it.</div>
     <div class="annot-row"><span class="ar-z">Verdict first</span><span class="ar-v">Every answer opens with the plain-language conclusion in <b>bold</b>, then the why. No assembling.</span></div>
-    <div class="annot-row"><span class="ar-z">Cohort lens leads</span><span class="ar-v">The lead lens is chosen by cohort — Robert gets addiction-medicine, Rachel hepatology, Pete metabolic. The right specialist answers first, automatically.</span></div>
-    <div class="annot-row"><span class="ar-z">Panel on demand</span><span class="ar-v"><b>"+ 2 more specialist views"</b> expands the other lenses inline. The consilium's panel effect is preserved — as a choice, not a tax.</span></div>
+    <div class="annot-row"><span class="ar-z">Cohort view leads</span><span class="ar-v">The lead view is chosen by cohort — Robert gets recovery, Rachel hepatology, Pete metabolic. The right specialty answers first, automatically.</span></div>
+    <div class="annot-row"><span class="ar-z">Panel on demand</span><span class="ar-v"><b>"+ 2 more specialist views"</b> expands the other views inline. The consilium's panel effect is preserved — as a choice, not a tax.</span></div>
     <div class="annot-row"><span class="ar-z">One citation</span><span class="ar-v">One inline citation chip → opens a source sheet. Full reference text never clutters the bubble.</span></div>
     <div class="annot-row"><span class="ar-z">Quick prompts</span><span class="ar-v">Two seeded follow-ups keep the conversation moving without a blank-input stall — borrowed from Cysta AI.</span></div>
     <div class="borrowed"><b>Borrowed — Cysta AI (verdict-first bubble + quick-prompt chips), Calibrum (one calm voice, citation as the trust anchor).</b> v2 is the recommended layout. v3 next adds per-cohort tone and the doctor-PDF handoff.</div>
@@ -1719,7 +1719,7 @@
 <!-- ===== 9.5 COACH READY ===== -->
 <h2 id="coach-summary">9.5 · Coach — ready for review</h2>
 <div class="m6-callout win">
-  <b>Module 9 — ready for founder review.</b> The consilium settled the founder's question: ship the <b>specialist-lens panel</b> (Candidate B, weighted Σ 4.80) — panel-grade trust without faking doctors; the doctor-avatar route (C) is rejected on compliance and documented as such. The screen was then iterated in the open: v1 built the panel literally and failed an overload test, v2 collapsed it to a verdict-first answer with the panel one tap away, v3 added per-cohort tone and the doctor-visit hand-off. Recommended to lock: <b>v2 layout + v3 refinements</b>. To compliance sign-off: the lens labels, the "AI guidance · not a medical diagnosis" header, the safety-strip wording and the refusal-pivot set.
+  <b>Module 9 — ready for founder review.</b> The consilium settled the founder's question: ship the <b>specialist-view panel</b> (Candidate B, weighted Σ 4.80) — panel-grade trust without faking doctors; the doctor-avatar route (C) is rejected on compliance and documented as such. The screen was then iterated in the open: v1 built the panel literally and failed an overload test, v2 collapsed it to a verdict-first answer with the panel one tap away, v3 added per-cohort tone and the doctor-visit hand-off. Recommended to lock: <b>v2 layout + v3 refinements</b>. To compliance sign-off: the view labels, the "AI guidance · not a medical diagnosis" header, the safety-strip wording and the refusal-pivot set.
 </div>
 
 <!-- ============================================================ -->
