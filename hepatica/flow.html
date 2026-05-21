@@ -788,7 +788,7 @@
   <a href="#module-9" class="is-module"><span class="nav-num">M9</span>Coach</a>
   <a href="#module-10" class="is-module"><span class="nav-num">M10</span>Labs</a>
   <a href="flow2.html">flow2.html · M11–14 →</a>
-  <a href="flow3.html">flow3.html · M15–16 →</a>
+  <a href="flow3.html">flow3.html · M15–18 →</a>
   <span class="sep"></span>
   <a href="#flow-map">flow map</a>
   <a href="#today-anatomy">today</a>
@@ -819,7 +819,7 @@
 
 <!-- ===== 8.1 FLOW MAP ===== -->
 <h2 id="flow-map">8.1 · The app flow map</h2>
-<p class="lede">The whole journey on one line. Onboarding and Paywall are deliberately <b>not designed yet</b> — they are dashed TODO gates here so they slot in later with zero restructuring. This build fires the Disclaimer on first launch; once the Paywall lands, the trigger moves to post-purchase — the screen itself doesn't change.</p>
+<p class="lede">The whole journey on one line — now worked end to end. The pre-auth funnel (Onboarding, Paywall) is designed in <a href="flow3.html" style="color:var(--brand-deep);font-weight:800;">flow3.html</a> M15–16; the post-paywall Setup walkthrough in M18. Everything from the Disclaimer inward is worked screen-by-screen across M8–13. The Disclaimer fires <b>post-paywall</b> — confirmed by the built RootRouter — and hands off to the Setup walkthrough, then Today.</p>
 <div class="flow-map">
   <div class="flow-stage">
     <span class="fs-step">START</span>
@@ -827,28 +827,35 @@
     <span class="fs-d">App opens — cold start.</span>
   </div>
   <span class="flow-conn">→</span>
-  <div class="flow-stage todo">
-    <span class="fs-step">STAGE 1 · LATER</span>
+  <div class="flow-stage">
+    <span class="fs-step">M15 · WORKED ↗</span>
     <span class="fs-t">Onboarding</span>
-    <span class="fs-d">6-question cohort triage → assigns the lane.</span>
-    <span class="flow-todo-pill">TODO · own consilium</span>
+    <span class="fs-d">WOW-then-justify funnel — 8 pre-auth screens + cohort triage.</span>
+    <span class="flow-todo-pill">✓ flow3.html · M15</span>
   </div>
   <span class="flow-conn">→</span>
-  <div class="flow-stage todo">
-    <span class="fs-step">STAGE 2 · LATER</span>
+  <div class="flow-stage">
+    <span class="fs-step">M16 · WORKED ↗</span>
     <span class="fs-t">Paywall</span>
-    <span class="fs-d">4 tiers · 7-day trial · Fear-Playbook copy.</span>
-    <span class="flow-todo-pill">TODO · own consilium</span>
+    <span class="fs-d">Cohort-routed fear-playbook · 4 tiers · 7-day trial.</span>
+    <span class="flow-todo-pill">✓ flow3.html · M16</span>
   </div>
   <span class="flow-conn">→</span>
   <div class="flow-stage gate">
-    <span class="fs-step">STAGE 3 · NOW</span>
+    <span class="fs-step">M8 · WORKED</span>
     <span class="fs-t">🛡 Disclaimer</span>
-    <span class="fs-d">One-time gate. Accept once to enter — §8.2.</span>
+    <span class="fs-d">One-time post-paywall gate — §8.2.</span>
+  </div>
+  <span class="flow-conn">→</span>
+  <div class="flow-stage">
+    <span class="fs-step">M18 · WORKED ↗</span>
+    <span class="fs-t">Setup</span>
+    <span class="fs-d">5-card post-paywall walkthrough — primes the first daily loop.</span>
+    <span class="flow-todo-pill">✓ flow3.html · M18</span>
   </div>
   <span class="flow-conn">→</span>
   <div class="flow-stage app">
-    <span class="fs-step">STAGE 4 · NOW</span>
+    <span class="fs-step">M8–13 · WORKED</span>
     <span class="fs-t">Main app</span>
     <span class="fs-d">Lands on Today; 4-tab + «+Log» FAB.</span>
     <div class="flow-apptabs">
@@ -857,7 +864,7 @@
   </div>
 </div>
 <div class="m6-callout note">
-  <b>Why the disclaimer is screen 1 of our work.</b> Per the founder brief, Onboarding and Paywall are separate later stages — each gets its own consilium. The Disclaimer is the first screen we design because it is the fixed hand-off point: whatever Onboarding and Paywall end up being, they always end here, and the Disclaimer always opens into Today. Designing it now means the future gates plug in without touching anything downstream.
+  <b>Why the Disclaimer was screen 1 of our work.</b> The Disclaimer was designed first because it is the <em>fixed hand-off point</em> — whatever the upstream gates became, they always end here. They are now all worked: Onboarding (<a href="flow3.html#module-15" style="color:var(--brand-deep);font-weight:800;">M15</a>), Paywall (<a href="flow3.html#module-16" style="color:var(--brand-deep);font-weight:800;">M16</a>) and the post-paywall Setup walkthrough (<a href="flow3.html#module-18" style="color:var(--brand-deep);font-weight:800;">M18</a>). The Disclaimer fires post-purchase and hands to Setup → Today — exactly as the built RootRouter gates it.
 </div>
 
 <!-- ===== 8.2 DISCLAIMER SCREEN ===== -->
@@ -902,7 +909,7 @@
     <div class="annot-row"><span class="ar-z">Motivation</span><span class="ar-v">None yet — this is a <b>gate, not a task</b>. The job is to lower fear and set honest expectations so every later number is trusted.</span></div>
     <div class="annot-row"><span class="ar-z">JTBD step</span><span class="ar-v">Pre-JTBD. The user does exactly one thing — taps <b>"I understand — Continue"</b> — and never sees this screen again.</span></div>
     <div class="annot-row"><span class="ar-z">Compliance</span><span class="ar-v">Every line is drafted from <code>COMPLIANCE.md</code> — "education not advice", "doesn't diagnose", FibroScan/FIB-4 as screening tools, emergency routing. <b>Copy is a draft — needs founder + compliance sign-off.</b></span></div>
-    <div class="borrowed"><b>Borrowed — Calibrum.</b> Calibrum's post-paywall first-run is a sequence of single-purpose screens, each with one input and one primary action. The Disclaimer follows that: one screen, one button, no forms, exit-proof. <b>TODO marker:</b> trigger is first-launch now; moves to post-purchase once the Paywall ships.</div>
+    <div class="borrowed"><b>Borrowed — Calibrum.</b> Calibrum's post-paywall first-run is a sequence of single-purpose screens, each with one input and one primary action. The Disclaimer follows that: one screen, one button, no forms, exit-proof. The Paywall now ships (<a href="flow3.html#module-16" style="color:var(--brand-deep);font-weight:800;">M16</a>) — the Disclaimer fires post-purchase, then hands to the M18 Setup walkthrough.</div>
   </div>
 </div>
 
@@ -1510,7 +1517,7 @@
 <!-- ===== 8.7 RECOMMENDED FOR REVIEW ===== -->
 <h2 id="flow-summary">8.7 · Ready for review</h2>
 <div class="m6-callout win">
-  <b>Module 8 — ready for founder review.</b> The core flow is worked screen-by-screen from the user's seat: the flow map (Onboarding + Paywall as dashed TODO gates), the Disclaimer gate, the Today screen worked top-to-bottom, the same Today across all 6 cohorts, the six motivating JTBD charts drawn in full, and the Day-1 skeleton empty state across all 6 cohorts. Best practice is borrowed and credited — Calibrum's skeleton zero-state, Folik's dual anchoring + baseline framing, Cysta's cohort lanes. Continues directly below — <b>Module 9 · Coach</b> and <b>Module 10 · Labs</b>; Progress, Log, Settings and the whole-app review carry on in <a href="flow2.html" style="color:#194A4C;font-weight:800;">flow2.html</a>. Nothing here is locked; on review the disclaimer copy goes to compliance sign-off and the screens become the spec for the Swift V1 skeleton.
+  <b>Module 8 — ready for founder review.</b> The core flow is worked screen-by-screen from the user's seat: the flow map (Onboarding &amp; Paywall now worked in <a href="flow3.html" style="color:#194A4C;font-weight:800;">flow3.html</a> M15–16, Setup in M18), the Disclaimer gate, the Today screen worked top-to-bottom, the same Today across all 6 cohorts, the six motivating JTBD charts drawn in full, and the Day-1 skeleton empty state across all 6 cohorts. Best practice is borrowed and credited — Calibrum's skeleton zero-state, Folik's dual anchoring + baseline framing, Cysta's cohort lanes. Continues directly below — <b>Module 9 · Coach</b> and <b>Module 10 · Labs</b>; Progress, Log, Settings and the whole-app review carry on in <a href="flow2.html" style="color:#194A4C;font-weight:800;">flow2.html</a>. Nothing here is locked; on review the disclaimer copy goes to compliance sign-off and the screens become the spec for the Swift V1 skeleton.
 </div>
 
 <!-- ============================================================ -->
@@ -1995,7 +2002,7 @@
 </div>
 
 <footer>
-  <b>Hepatica — Screen Flow Workbench · Part 1</b> · companion to <b>design.html</b> (M1–7) · continues in <b>flow2.html</b> (M11–14) &amp; <b>flow3.html</b> (M15–16 · pre-auth onboarding funnel) · updated 2026-05-21 · sibling pattern: Cysta AI · Folik · Calibrum.<br>
+  <b>Hepatica — Screen Flow Workbench · Part 1</b> · companion to <b>design.html</b> (M1–7) · continues in <b>flow2.html</b> (M11–14) &amp; <b>flow3.html</b> (M15–18 · funnel, restructure &amp; post-paywall) · updated 2026-05-21 · sibling pattern: Cysta AI · Folik · Calibrum.<br>
   Module 8 — flow map · Disclaimer gate · Today worked top-to-bottom · 6 cohort screens · 6 motivating JTBD charts · Day-1 empty states for all 6 cohorts. Module 9 — Coach consilium + 3 design iterations. Module 10 — Labs analyte grid + per-cohort emphasis + lab capture. Tab order: Today · Coach · +Log · Progress · Labs. Nothing locked; on review the screens become the spec for the Swift V1 skeleton.
 </footer>
 

@@ -845,23 +845,25 @@
   <a href="flow2.html">← flow2.html · M11–14</a>
   <a href="#module-15" class="is-module"><span class="nav-num">M15</span>Onboarding</a>
   <a href="#module-16" class="is-module"><span class="nav-num">M16</span>Paywall</a>
+  <a href="#module-17" class="is-module"><span class="nav-num">M17</span>Restructure</a>
+  <a href="#module-18" class="is-module"><span class="nav-num">M18</span>Post-paywall</a>
   <span class="sep"></span>
   <a href="#wow-formula">formula</a>
-  <a href="#onb-consilium">structure</a>
-  <a href="#onb-length">length</a>
-  <a href="#onb-trust">trust</a>
   <a href="#onb-flow">worked flow</a>
   <a href="#wow-cohorts">wow × 6</a>
   <a href="#reviews-screen">reviews</a>
   <a href="#paywall-consilium">paywall</a>
   <a href="#paywall-cohorts">paywall × 6</a>
+  <a href="#restructure-consilium">restructure</a>
+  <a href="#setup-consilium">setup consilium</a>
+  <a href="#setup-cohorts">setup × 6</a>
 </nav>
 
 <header>
-  <h1>Hepatica — Onboarding Funnel Workbench · Part 3</h1>
-  <p class="lede">Part 3 designs the <b>pre-auth funnel</b> — the dashed "Onboarding" TODO gate from <a href="flow.html" style="color:var(--brand);font-weight:700;">flow.html</a> §8.1. Companion to <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a> (M1–7), flow.html (M8–10) and <a href="flow2.html" style="color:var(--brand);font-weight:700;">flow2.html</a> (M11–14). Here: <b>Module 15 — Onboarding</b>, and <b>Module 16 — Paywall</b> (the second TODO gate). Best practice borrowed from the Folik &amp; Calibrum onboarding consilia and Cysta AI's typed-result reveal.</p>
+  <h1>Hepatica — Funnel &amp; Post-Paywall Workbench · Part 3</h1>
+  <p class="lede">Part 3 closes the workbench. Companion to <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a> (M1–7), <a href="flow.html" style="color:var(--brand);font-weight:700;">flow.html</a> (M8–10) and <a href="flow2.html" style="color:var(--brand);font-weight:700;">flow2.html</a> (M11–14). Here: <b>M15 — Onboarding</b> and <b>M16 — Paywall</b> (the pre-auth funnel), <b>M17 — the fresh-eyes restructure consilium</b> (a pass over the whole M1–18 flow), and <b>M18 — the post-paywall Setup walkthrough</b>. Best practice borrowed from the Folik &amp; Calibrum onboarding consilia and Cysta AI's typed-result reveal &amp; Setup pattern.</p>
   <div class="meta-bar">
-    <span class="pill brand">📐 Pre-auth funnel · Modules 15–16</span>
+    <span class="pill brand">📐 Funnel · restructure · post-paywall · Modules 15–18</span>
     <span class="pill lock">🔒 Design system · B · Clinical</span>
     <span class="pill vote">WOW-then-justify · +6–11pp trial→paid</span>
     <span class="pill sib">Best practice: Folik · Calibrum · Cysta AI</span>
@@ -874,7 +876,7 @@
 <div class="module-banner" id="module-15">
   <span class="num">МОДУЛЬ 15</span>
   <h2>Onboarding — the pre-auth funnel, worked WOW-then-justify</h2>
-  <p class="desc">flow.html §8.1 left Onboarding as a dashed TODO gate. This module designs it. §15.1 sets the framework — the WOW-then-justify formula; §15.2 runs the consilium; §15.3 works the 8-screen flow for Robert; §15.4 draws the WOW for all 6 cohorts; §15.5 reconciles with the already-built Swift onboarding. Pre-auth throughout — no email, no Sign in with Apple before the paywall. Status: draft — nothing locked.</p>
+  <p class="desc">flow.html §8.1 left Onboarding as a dashed TODO gate. This module designs it. §15.1 sets the framework — the WOW-then-justify formula; §15.2–15.4 run the structure, length &amp; trust consilia; §15.5 works the 8-screen flow for Robert; §15.6 draws the WOW for all 6 cohorts; §15.7 reconciles with the already-built Swift onboarding; §15.9 designs the honest reviews screen. Pre-auth throughout — no email, no Sign in with Apple before the paywall. Status: draft — nothing locked.</p>
 </div>
 
 <!-- ===== 15.1 WOW FORMULA ===== -->
@@ -1719,12 +1721,385 @@
 <!-- ===== 16.5 READY ===== -->
 <h2 id="paywall-summary">16.5 · Module 16 — ready for review</h2>
 <div class="m6-callout win">
-  <b>Module 16 — ready for founder review.</b> One consilium run: <b>B · cohort-routed fear-playbook</b> (Σ 5.00, unanimous) over A · static (2.48) and C · aggressive (1.35). §16.2 worked the full single-scroll paywall for Robert — hero placeholder, WOW-echoing H1, proof band, 4-bullet value stack, 4 tier cards with <b>Weekly preselected</b> per the founder override, CTA, restore/terms, disclaimer. §16.3 gave the H1 + 3 bullets for all 6 cohorts. §16.4 mapped the built <code>PaywallView.swift</code> → the B design: three pure-UI changes (preselect Weekly · per-cohort H1 · proof band) plus the RevenueCat wiring of the placeholder purchase. Compliance: Health &amp; Fitness disclaimer on the paywall, no diagnosis, no fake reviews or userbase, light-mode forced, hero image deferred. To compliance sign-off: the 6 paywall H1s, the 6 bullet sets, the §15.9 reviews-screen activation rule. <b>The pre-auth funnel — Modules 15 + 16 — is complete; the workbench now covers Modules 1–16.</b>
+  <b>Module 16 — ready for founder review.</b> One consilium run: <b>B · cohort-routed fear-playbook</b> (Σ 5.00, unanimous) over A · static (2.48) and C · aggressive (1.35). §16.2 worked the full single-scroll paywall for Robert — hero placeholder, WOW-echoing H1, proof band, 4-bullet value stack, 4 tier cards with <b>Weekly preselected</b> per the founder override, CTA, restore/terms, disclaimer. §16.3 gave the H1 + 3 bullets for all 6 cohorts. §16.4 mapped the built <code>PaywallView.swift</code> → the B design: three pure-UI changes (preselect Weekly · per-cohort H1 · proof band) plus the RevenueCat wiring of the placeholder purchase. Compliance: Health &amp; Fitness disclaimer on the paywall, no diagnosis, no fake reviews or userbase, light-mode forced, hero image deferred. To compliance sign-off: the 6 paywall H1s, the 6 bullet sets, the §15.9 reviews-screen activation rule. <b>The pre-auth funnel — Modules 15 + 16 — is complete.</b> Continues below — <b>M17</b> is a fresh-eyes restructure pass over the whole flow, and <b>M18</b> designs the post-paywall Setup walkthrough; the workbench now covers Modules 1–18.
+</div>
+
+<!-- ============================================================ -->
+<!-- ============ MODULE 17 · FLOW RESTRUCTURE ================== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-17">
+  <span class="num">МОДУЛЬ 17</span>
+  <h2>Fresh-eyes flow restructure — a consilium pass over M1–18</h2>
+  <p class="desc">The workbench was built incrementally across many sessions — design system, then the worked tabs, then the funnel. This module is the step-back pass: a fresh read of the whole flow, catching where the documents drifted from each other or from the built Swift app, fixing what could be fixed in place, and recording what is carried forward. §17.1 is the findings table; §17.2 re-confirms the contested tab order by vote; §17.3 records what was applied and what is carried.</p>
+</div>
+
+<!-- ===== 17.1 FINDINGS ===== -->
+<h2 id="restructure-consilium">17.1 · The fresh-eyes pass — what drifted</h2>
+<p class="lede">Seven findings from reading M1–18 end to end. Most are <em>drift</em> — a later module made an earlier one stale — and were fixed in place this pass. Two are <em>workbench↔code</em> gaps where the built Swift app and the workbench disagree; those become Swift V1 rework items. One is a real <em>gap</em> — a sequence the workbench never drew — filled by M18.</p>
+<table class="tab-spec">
+  <thead><tr><th>Area</th><th>What the fresh-eyes pass found</th><th>Type</th><th>Resolution</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">flow.html §8.1 · flow2.html §14.1 — flow maps</td><td>Onboarding &amp; Paywall still drawn as dashed "TODO · own consilium" gates, lede "deliberately not designed yet" — but M15 &amp; M16 designed them.</td><td><span class="warn">drift</span></td><td>Both flow maps rebuilt — Onboarding→M15, Paywall→M16, a Setup→M18 stage added, Disclaimer marked post-paywall. <b class="ok">Fixed.</b></td></tr>
+    <tr><td class="tabname">flow.html §8.2 — Disclaimer vs built <code>DisclaimerView.swift</code></td><td>The workbench mockup shows four info points + one "Continue" button. The built screen has "what Hepatica DOES / DOES NOT" blocks and <b>two mandatory consent checkboxes</b> — educational-use + AI-processing consent.</td><td><span style="font-size:9px;font-weight:800;color:var(--cta-deep);">wb ↔ code</span></td><td>§18.2 redraws the Disclaimer reconciled — the AI-consent checkbox is compliance-required (Coach sends labs &amp; messages to DeepSeek). §8.2 stands as the calm-framing reference.</td></tr>
+    <tr><td class="tabname"><code>RootTabView.swift</code> — tab order</td><td>The built bar is <b>Today · Labs · +Log · Coach · Progress</b> — the pre-re-evaluation order. The workbench locked <b>Today · Coach · +Log · Progress · Labs</b> at §4.3 (Coach promoted, Labs to the calm edge).</td><td><span style="font-size:9px;font-weight:800;color:var(--cta-deep);">wb ↔ code</span></td><td>§17.2 re-confirms the workbench order by a 6-cohort vote; <code>RootTabView</code> is a Swift V1 rework item.</td></tr>
+    <tr><td class="tabname">flow2.html §14.4 — open questions</td><td>Listed "Onboarding &amp; Paywall — still dashed TODO gates" as the next workbench set — stale once M15/M16 shipped.</td><td><span class="warn">drift</span></td><td>Replaced with the live open item — Swift reconciliation (tab order, the no-WOW onboarding, the paywall preselect). <b class="ok">Fixed.</b></td></tr>
+    <tr><td class="tabname">flow3.html — Module 15 banner</td><td>Section cross-references off by two — "§15.3 works the flow… §15.5 reconciles" where the real sections are §15.5 / §15.6 / §15.7.</td><td><span class="warn">drift</span></td><td>Banner cross-refs corrected. <b class="ok">Fixed.</b></td></tr>
+    <tr><td class="tabname">flow2.html §14.2 — cross-tab gaps</td><td>Coach &amp; Progress empty states, the Log alcohol safety strip, and the Coach verdict-pill decision — flagged honestly, still not drawn.</td><td><span style="font-size:9px;font-weight:800;color:var(--ink-2);">carried</span></td><td>Not closed in this pass — they are real screens, not drift. Carried to the Swift V1 build as tracked TODOs; recommend a small follow-up workbench pass.</td></tr>
+    <tr><td class="tabname">Post-paywall sequence</td><td>RootRouter gates Paywall → Disclaimer → <b>Setup (5 cards)</b> → Tabs. The 5-card Setup walkthrough existed only in Swift — the workbench never designed it.</td><td><span class="warn">gap</span></td><td>M18 designs the post-paywall Setup walkthrough — consilium, the Disclaimer reconciled, the 5 cards worked, all 6 cohorts. <b class="ok">Fixed.</b></td></tr>
+  </tbody>
+</table>
+<div class="m6-callout">
+  <b>What the pass did <em>not</em> find.</b> Tab order is consistent across all four HTML files — the drift is only against the built Swift. Cohort weights (Nick 25 / Greta 15 / Pete 20 / Rachel 8 / Patricia 15 / Robert 17) and pricing (Weekly $4.99 · Standard $39.99 · Family $79.99 · Lifetime $99) are stated identically everywhere. The 6-cohort model, the design-system tokens and the JTBD map hold across M1–16. The workbench is sound — this pass tightened the seams, it did not rebuild.
+</div>
+
+<!-- ===== 17.2 TAB ORDER VOTE ===== -->
+<h2 id="tab-order-vote">17.2 · The tab-order reconciliation — workbench vs the built app</h2>
+<p class="lede">The one place the workbench and the built Swift app openly disagree. <code>RootTabView.swift</code> was written before §4.3 re-evaluated the bar by interaction frequency. Two orders, the 6 cohorts vote — the winner is the canonical order both the workbench and the Swift V1 rework adopt.</p>
+<table class="tab-spec">
+  <thead><tr><th>Candidate</th><th>Order (left → right · centre FAB)</th><th>Rationale</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">A · built-Swift</td><td>Today · Labs · +Log · Coach · Progress</td><td>The order <code>RootTabView.swift</code> ships today — Labs second. Pre-dates the §4.3 frequency re-evaluation.</td></tr>
+    <tr class="locked-row"><td class="tabname">B · workbench ⭐</td><td><b>Today · Coach · +Log · Progress · Labs</b></td><td>§4.3's re-evaluated order — Coach is a near-daily surface (incl. the 2 a.m. anxiety check) so it sits at slot 2; Labs is consulted ~quarterly so it moves to the calm outer edge.</td></tr>
+  </tbody>
+</table>
+<table class="vote">
+  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · built</th><th class="score">B · workbench ⭐</th></tr></thead>
+  <tbody>
+    <tr><td class="voter">🍷 Nick</td><td class="aud">25</td><td class="score">3</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">3</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">🍔 Pete</td><td class="aud">20</td><td class="score">3</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">💊 Rachel</td><td class="aud">8</td><td class="score">4</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">🧬 Patricia</td><td class="aud">15</td><td class="score">3</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">🍺 Robert</td><td class="aud">17</td><td class="score">2</td><td class="score hi">5</td></tr>
+    <tr class="totals"><td>Weighted Σ</td><td class="aud">100</td><td class="score">2.91</td><td class="score locked">5.00</td></tr>
+  </tbody>
+</table>
+<div class="runoff">
+  <h3>Why B — and why the Swift app changes, not the workbench</h3>
+  <p><b>B is unanimous (Σ 5.00).</b> Every cohort opens Coach far more often than Labs — Coach is the daily question surface, Labs is where a new panel lands once a quarter. <b>Robert scores A=2:</b> putting Labs at slot 2 buries the two surfaces he lives in — his Coach ("is it healing?") and his Progress recovery curve. <b>Rachel is softest on A (=4)</b> — she is the most Labs-heavy cohort, so Labs near the front costs her least — but even she prefers B. The vote settles it: the canonical order is <b>Today · Coach · +Log · Progress · Labs</b>; <code>RootTabView.swift</code> is re-ordered to match in the Swift V1 rework.</p>
+  <div class="pick-row">
+    <span class="pick lead">⭐ B · Today · Coach · +Log · Progress · Labs — canonical</span>
+    <span class="pick">A · built-Swift order — superseded · RootTabView rework</span>
+  </div>
+</div>
+
+<!-- ===== 17.3 APPLIED & CARRIED ===== -->
+<h2 id="restructure-applied">17.3 · Restructure — applied &amp; carried</h2>
+<div class="m6-callout win">
+  <b>Module 17 — the restructure pass.</b> <b>Applied this pass:</b> both flow maps (flow.html §8.1, flow2.html §14.1) rebuilt to show M15/M16/M18 worked and the Disclaimer post-paywall; flow2.html §14.4–14.5 refreshed; the flow3.html M15 banner cross-refs corrected; all four files' nav + footers updated to M15–18. <b>Resolved by vote:</b> the canonical tab order — B · Today · Coach · +Log · Progress · Labs (Σ 5.00). <b>Carried to the Swift V1 rework:</b> the <code>RootTabView</code> re-order, the Disclaimer's two consent checkboxes (§18.2), the no-WOW onboarding (§15.7), the paywall tier preselect (§16.4). <b>Carried as a follow-up workbench pass:</b> the §14.2 cross-tab gaps — Coach &amp; Progress empty states, the Log safety strip, the Coach verdict-pill decision. Logged in <code>DECISIONS.md</code> D20.
+</div>
+
+<!-- ============================================================ -->
+<!-- ========= MODULE 18 · POST-PAYWALL ONBOARDING ============== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-18">
+  <span class="num">МОДУЛЬ 18</span>
+  <h2>Post-paywall onboarding — the Disclaimer &amp; the Setup walkthrough</h2>
+  <p class="desc">The funnel does not end at the paywall. RootRouter gates Paywall → Disclaimer → Setup (5 cards) → Tabs — and the Setup walkthrough existed only in Swift. This module designs it: §18.1 runs the card-set consilium; §18.2 reconciles the Disclaimer gate; §18.3 works the 5 cards for Nick; §18.4 covers all 6 cohorts; §18.5 reconciles with the built Swift Setup. Modeled on Cysta AI's post-paywall Setup pattern. Status: draft — nothing locked.</p>
+</div>
+
+<!-- ===== 18.1 SETUP CONSILIUM ===== -->
+<h2 id="setup-consilium">18.1 · Setup-flow consilium — which five cards?</h2>
+<p class="lede">The post-paywall Setup is the bridge between "I paid" and "I have a habit". Cysta AI runs five cards; the built Swift app runs a different five. Three card-sets, the 6 cohorts vote with the standard audience weights.</p>
+<table class="tab-spec">
+  <thead><tr><th>Candidate</th><th>The five cards</th><th>Risk</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">A · built-Swift, as-is</td><td>Welcome → Tabs tour → Log first labs → Personalize → Ready.</td><td>"Tabs tour" is a generic feature tour with no cohort anchor. "Personalize" re-asks what the M15 lane-select already established. "Log first labs" as its own card pressures a day-1 action many users can't do yet — and a fail there sours the whole setup.</td><td><span class="warn">✗ Rejected</span></td></tr>
+    <tr><td class="tabname">B · Cysta semantics, literal</td><td>Welcome → Focus → Baseline → Daily 90s plan → Ready.</td><td>Faithful to Cysta's proven funnel and every card carries a cohort anchor — but Baseline is display-only, dropping the built app's genuinely useful "scan your first lab now" capture.</td><td><span class="warn">✗ Rejected</span></td></tr>
+    <tr class="locked-row"><td class="tabname">C · Merge ⭐</td><td>Welcome → Focus → <b>Baseline (+ optional on-the-spot lab scan)</b> → Daily 90s plan → Ready.</td><td>None material. Keeps Cysta's anchored funnel, folds the built "log first labs" into Baseline as an <em>optional</em> scan, and drops "Personalize" as redundant — the cohort is already set in onboarding (M15).</td><td><span class="ok">✓ Ships</span></td></tr>
+  </tbody>
+</table>
+<table class="vote">
+  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · as-built</th><th class="score">B · Cysta</th><th class="score">C · merge ⭐</th></tr></thead>
+  <tbody>
+    <tr><td class="voter">🍷 Nick</td><td class="aud">25</td><td class="score">3</td><td class="score">4</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">2</td><td class="score">4</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">🍔 Pete</td><td class="aud">20</td><td class="score">3</td><td class="score">4</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">💊 Rachel</td><td class="aud">8</td><td class="score">3</td><td class="score">4</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">🧬 Patricia</td><td class="aud">15</td><td class="score">2</td><td class="score">4</td><td class="score hi">5</td></tr>
+    <tr><td class="voter">🍺 Robert</td><td class="aud">17</td><td class="score">3</td><td class="score">4</td><td class="score hi">5</td></tr>
+    <tr class="totals"><td>Weighted Σ</td><td class="aud">100</td><td class="score">2.70</td><td class="score">4.00</td><td class="score locked">5.00</td></tr>
+  </tbody>
+</table>
+<div class="runoff">
+  <h3>Why C — the merge</h3>
+  <p><b>C is unanimous (Σ 5.00).</b> The cohorts reject A because two of its five cards waste the user's attention: a generic tab tour teaches nothing the cohort cares about, and "Personalize" asks a question already answered three screens earlier. <b>Greta &amp; Patricia score A=2</b> hardest — their setup needs to feel like the app already knows them (GLP-1, PCOS), and a generic tour signals it doesn't. B fixes the anchoring but leaves the lab-capture on the table; C keeps it as an <em>optional</em> Baseline action — there if the user has a report to hand, never a blocker if not.</p>
+  <div class="pick-row">
+    <span class="pick lead">⭐ C · Welcome · Focus · Baseline · Daily 90s plan · Ready — ships</span>
+    <span class="pick">B · Cysta literal — rejected · drops the lab capture</span>
+    <span class="pick">A · as-built — rejected · two wasted cards</span>
+  </div>
+</div>
+<div class="m6-callout note">
+  <b>The locked Setup spine — 5 cards.</b> <b>1 · Welcome</b> — "you're in", set the 2-minute expectation. <b>2 · Focus</b> — the cohort's top-3 surfaces, so Today doesn't open cold. <b>3 · Baseline</b> — three day-1 entries (skippable), with an optional "scan a lab report" shortcut. <b>4 · Daily 90s plan</b> — the Today→+Log→Coach loop, framed as 90 seconds. <b>5 · Ready</b> — a per-cohort send-off into the right tab. Every card is skippable; the bar shows a 5-pill progress capsule + Back + Skip. Asset slugs: <code>setup-welcome · setup-focus · setup-baseline · setup-plan · setup-ready</code> (§ASSET_PROMPTS).
+</div>
+
+<!-- ===== 18.2 DISCLAIMER RECONCILED ===== -->
+<h2 id="disclaimer-gate">18.2 · The Disclaimer gate — reconciled with the built screen</h2>
+<p class="lede">The first post-paywall screen. flow.html §8.2 drew it as a calm four-point info screen with one Continue button — but the built <code>DisclaimerView.swift</code> carries <b>two mandatory consent checkboxes</b>: educational-use and AI-processing. The AI checkbox is not optional polish — the Coach sends labs and messages to DeepSeek, so explicit consent is a compliance requirement. §18.2 reconciles the two: §8.2's calm framing, the built screen's consent gate.</p>
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen gate" style="padding-bottom:16px;min-height:520px;gap:8px;">
+      <div class="disc-mark">Hepatica 🌿</div>
+      <div class="disc-h">Before you start</div>
+      <div class="disc-intro">Hepatica is your educational companion for fatty-liver health — here's what that means, and what it doesn't.</div>
+      <div class="sc-card" style="padding:8px 11px;">
+        <div style="font-size:8px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--brand-deep);">What Hepatica does</div>
+        <div style="font-size:9px;color:var(--ink);line-height:1.55;margin-top:3px;">✓ Tracks your liver markers over time &nbsp; ✓ Explains labs in plain language, with sources &nbsp; ✓ Builds doctor-ready summaries</div>
+      </div>
+      <div class="sc-card" style="padding:8px 11px;">
+        <div style="font-size:8px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--cta-deep);">What it does not</div>
+        <div style="font-size:9px;color:var(--ink);line-height:1.55;margin-top:3px;">✕ Diagnose NAFLD or MASH &nbsp; ✕ Stage fibrosis &nbsp; ✕ Replace your doctor or hepatologist</div>
+      </div>
+      <div style="display:flex;gap:7px;align-items:flex-start;background:var(--bg-soft);border-radius:9px;padding:7px 9px;">
+        <span style="font-size:13px;">☑️</span><span style="font-size:8.5px;color:var(--ink);line-height:1.45;">Hepatica is for tracking and education — not a medical device, not a diagnosis, not a replacement for my doctor.</span>
+      </div>
+      <div style="display:flex;gap:7px;align-items:flex-start;background:var(--bg-soft);border-radius:9px;padding:7px 9px;">
+        <span style="font-size:13px;">☑️</span><span style="font-size:8.5px;color:var(--ink);line-height:1.45;">I consent to Hepatica sending Coach messages and lab scans to our AI partner for processing, as described in the Privacy Policy.</span>
+      </div>
+      <div class="sc-cta" style="margin-top:auto;">I agree — Continue</div>
+      <div class="sc-disc" style="text-align:center;">Both boxes are required. By continuing you acknowledge Hepatica is a Health &amp; Fitness app, not a medical device.</div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Standing in the user's shoes</h3>
+    <div class="pov-lead">The user just paid and wants in. This gate has to hold the line on compliance without feeling like a legal wall — calm header, plain DOES / DOES NOT, two checkboxes, one button that stays disabled until both are ticked.</div>
+    <div class="annot-row"><span class="ar-z">Two consent checks</span><span class="ar-v"><b>Educational-use</b> and <b>AI-processing</b> — both mandatory. The Continue button is disabled until both are ticked; this matches the built <code>DisclaimerView.swift</code>.</span></div>
+    <div class="annot-row"><span class="ar-z">Why the AI box</span><span class="ar-v">The Coach sends labs and messages to DeepSeek via the Worker proxy — explicit, separable consent is required, not bundled into a single "I agree".</span></div>
+    <div class="annot-row"><span class="ar-z">DOES / DOES NOT</span><span class="ar-v">The warm verdict palette, never clinical red — the "does not" block uses the gold <code>--cta-deep</code>, not an alert tone. Diagnosis, staging and doctor-replacement are explicitly disclaimed.</span></div>
+    <div class="annot-row"><span class="ar-z">Placement</span><span class="ar-v">Fires once, <b>post-paywall</b>, immediately before the Setup walkthrough. Acceptance + timestamp persist to <code>disclaimerAcceptedAt</code> / <code>aiConsent</code>.</span></div>
+    <div class="annot-row"><span class="ar-z">Compliance</span><span class="ar-v">Every line drafted from <code>COMPLIANCE.md</code>. Supersedes the §8.2 single-button mockup; §8.2 stays the reference for the calm-framing tone. Copy to founder + compliance sign-off.</span></div>
+    <div class="borrowed"><b>Borrowed — Cysta AI &amp; JabWell: the post-paywall consent gate with separable AI-processing consent. The §8.2 calm "Before you start" framing is kept; the two-checkbox gate is added to match the built screen.</b></div>
+  </div>
+</div>
+
+<!-- ===== 18.3 SETUP WORKED — NICK ===== -->
+<h2 id="setup-worked">18.3 · The Setup walkthrough — worked for Nick</h2>
+<p class="lede">The 5-card C-variant walkthrough, worked for <b>Newly Diagnosed Nick</b> (25% — the mass cohort). Each card is a single job: a 5-pill progress capsule, a 1:1 illustration zone (asset deferred), one idea, one button. Skippable throughout.</p>
+<div class="cohort-strip">
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div style="display:flex;gap:2px;align-items:center;">
+          <span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--divider);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--divider);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--divider);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--divider);border-radius:2px;"></span>
+          <span style="font-size:6.5px;color:var(--ink-3);margin-left:4px;">Skip</span>
+        </div>
+        <div class="sc-card" style="height:60px;border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;"><div style="font-size:16px;">🎨</div><div style="font-size:6px;color:var(--ink-3);font-weight:700;">setup-welcome · 1:1</div></div>
+        <div style="font-size:11px;font-weight:800;color:var(--brand-deep);line-height:1.25;">Welcome to Hepatica Pro.</div>
+        <div style="font-size:8px;color:var(--ink-2);line-height:1.5;">You're in. Two minutes to set up — then your liver dashboard is yours.</div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;margin-top:auto;">Let's go →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">1 · Welcome</div><div class="cc-job">Lands the purchase — sets a 2-minute expectation, no task yet.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div style="display:flex;gap:2px;align-items:center;">
+          <span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--divider);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--divider);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--divider);border-radius:2px;"></span>
+          <span style="font-size:6.5px;color:var(--ink-3);margin-left:4px;">Skip</span>
+        </div>
+        <div style="font-size:11px;font-weight:800;color:var(--brand-deep);line-height:1.25;">Here's where your focus goes.</div>
+        <div style="display:flex;flex-direction:column;gap:4px;margin-top:1px;">
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);"><b style="color:var(--brand-deep);">① Labs</b> — your ALT &amp; AST, tracked to the AASLD-40 line</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);"><b style="color:var(--brand-deep);">② +Log</b> — photograph any meal for a liver score</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);"><b style="color:var(--brand-deep);">③ Coach</b> — ask "what do I eat?" — answered, cited</div>
+        </div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;margin-top:auto;">Next →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">2 · Focus</div><div class="cc-job">The cohort's top-3 surfaces — so Today never opens cold.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div style="display:flex;gap:2px;align-items:center;">
+          <span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--divider);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--divider);border-radius:2px;"></span>
+          <span style="font-size:6.5px;color:var(--ink-3);margin-left:4px;">Skip</span>
+        </div>
+        <div style="font-size:11px;font-weight:800;color:var(--brand-deep);line-height:1.25;">Your day-1 numbers.</div>
+        <div style="font-size:7.5px;color:var(--ink-2);">Three quick entries — skip any you don't have yet.</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🧪 Latest ALT / AST <span style="color:var(--ink-3);">— tap to add</span></div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">⚖️ Weight or waist <span style="color:var(--ink-3);">— tap to add</span></div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🩺 Main symptom <span style="color:var(--ink-3);">— fatigue, none…</span></div>
+        </div>
+        <div class="sc-card" style="padding:5px 8px;font-size:7.5px;color:var(--brand-deep);font-weight:700;border-style:dashed;text-align:center;">📷 Or scan a lab report instead</div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;margin-top:auto;">Got it →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">3 · Baseline</div><div class="cc-job">3 day-1 entries — skippable — + the optional lab scan folded in.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div style="display:flex;gap:2px;align-items:center;">
+          <span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--divider);border-radius:2px;"></span>
+          <span style="font-size:6.5px;color:var(--ink-3);margin-left:4px;">Skip</span>
+        </div>
+        <div style="font-size:11px;font-weight:800;color:var(--brand-deep);line-height:1.25;">90 seconds a day.</div>
+        <div style="display:flex;flex-direction:column;gap:4px;margin-top:1px;">
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);"><b style="color:var(--cta-deep);">30s</b> &nbsp;Today — check your ALT trend</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);"><b style="color:var(--cta-deep);">30s</b> &nbsp;+Log — a meal photo</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);"><b style="color:var(--cta-deep);">30s</b> &nbsp;Coach — ask one question</div>
+        </div>
+        <div style="font-size:7.5px;color:var(--ink-2);line-height:1.5;">Small, daily — and the line moves. That's the whole method.</div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;margin-top:auto;">I can do that →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">4 · Daily 90s plan</div><div class="cc-job">The Today→+Log→Coach loop, framed as a 90-second habit.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div style="display:flex;gap:2px;align-items:center;">
+          <span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span><span style="height:3px;flex:1;background:var(--brand);border-radius:2px;"></span>
+        </div>
+        <div class="sc-card" style="height:60px;border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;"><div style="font-size:16px;">🎨</div><div style="font-size:6px;color:var(--ink-3);font-weight:700;">setup-ready · 1:1</div></div>
+        <div style="font-size:11px;font-weight:800;color:var(--brand-deep);line-height:1.25;">You're all set, Nick.</div>
+        <div style="font-size:8px;color:var(--ink-2);line-height:1.5;">Your Today tab is built around your ALT. Start there — your first scan starts the streak.</div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;margin-top:auto;">Enter Hepatica →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">5 · Ready</div><div class="cc-job">Per-cohort send-off into the right tab — Nick lands on Today.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== 18.4 SETUP × 6 COHORTS ===== -->
+<h2 id="setup-cohorts">18.4 · The Setup walkthrough × 6 cohorts</h2>
+<p class="lede">One 5-card spine, six fittings. The <b>Baseline</b> card is the most cohort-distinct — shown here for all six. Its three day-1 entries swap to what that cohort tracks; the Focus surfaces and the Ready send-off swap with it.</p>
+<div class="cohort-strip">
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Setup · 3 of 5</small>🍷 Nick — your day-1 numbers</div></div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🧪 Latest ALT / AST</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">⚖️ Weight or waist</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🩺 Main symptom</div>
+        </div>
+        <div class="sc-cta" style="font-size:8px;padding:6px;margin-top:auto;">Got it →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍷 Newly Diagnosed Nick</div><div class="cc-job">Focus: Labs · +Log · Coach. Ready → Today.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Setup · 3 of 5</small>💉 Greta — your day-1 numbers</div></div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">💉 GLP-1 med &amp; dose</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">⚖️ Starting weight</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🧪 Latest ALT</div>
+        </div>
+        <div class="sc-cta" style="font-size:8px;padding:6px;margin-top:auto;">Got it →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">💉 GLP-1 Greta</div><div class="cc-job">Focus: Progress · +Log dose · Coach. Ready → Progress.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Setup · 3 of 5</small>🍔 Pete — your day-1 numbers</div></div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🩸 Latest HbA1c / glucose</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">⚖️ Weight</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🧪 Latest ALT</div>
+        </div>
+        <div class="sc-cta" style="font-size:8px;padding:6px;margin-top:auto;">Got it →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍔 Pre-Diabetic Pete</div><div class="cc-job">Focus: Labs · +Log meal · Today. Ready → Today.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Setup · 3 of 5</small>💊 Rachel — your day-1 numbers</div></div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">💊 Rezdiffra start date</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">📊 Baseline FibroScan kPa / stage</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🧪 Latest labs</div>
+        </div>
+        <div class="sc-cta" style="font-size:8px;padding:6px;margin-top:auto;">Got it →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">💊 Rezdiffra Rachel</div><div class="cc-job">Focus: Labs · Progress PDF · +Log dose. Ready → Labs.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Setup · 3 of 5</small>🧬 Patricia — your day-1 numbers</div></div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🧬 PCOS diagnosis date</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🗓 Cycle day today</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🧪 Latest ALT</div>
+        </div>
+        <div class="sc-cta" style="font-size:8px;padding:6px;margin-top:auto;">Got it →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🧬 PCOS-NAFLD Patricia</div><div class="cc-job">Focus: Labs · Today PCOS+liver · Coach. Ready → Today.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:6px;">
+        <div class="sc-head"><div class="sc-greet" style="font-size:11px;"><small>Setup · 3 of 5</small>🍺 Robert — your day-1 numbers</div></div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🗓 Sober-since date</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🧪 Latest GGT</div>
+          <div class="sc-card" style="padding:5px 8px;font-size:8px;color:var(--ink);">🎯 Your main goal</div>
+        </div>
+        <div class="sc-cta" style="font-size:8px;padding:6px;margin-top:auto;">Got it →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍺 Recovering Robert</div><div class="cc-job">Focus: Progress GGT · Today streak · Coach. Ready → Progress.</div></div>
+  </div>
+
+</div>
+<div class="m6-callout note">
+  <b>What swaps, what stays.</b> Swaps per cohort: the <b>Focus</b> three surfaces, the <b>Baseline</b> three entries, and the <b>Ready</b> send-off tab. Constant for all six: the 5-card spine, the progress capsule, Back / Skip on every card, the Welcome and Daily-90s-plan copy, the skippability rule. The cohort itself is <em>not</em> re-asked — it was set at M15 lane-select and simply read here. No card is ever a hard gate: a user with no labs to hand skips Baseline and still reaches Today.
+</div>
+
+<!-- ===== 18.5 SWIFT RECONCILE ===== -->
+<h2 id="setup-reconcile">18.5 · Reconciling with the built Swift Setup</h2>
+<p class="lede">The Swift app already has a <code>SetupContainer</code> + <code>SetupState</code> and five screen files — but candidate A's five, not C's. Bringing it to the C design is two renames, one merge, one drop, two new screens.</p>
+<table class="tab-spec">
+  <thead><tr><th>Element</th><th>Built Swift Setup does</th><th>C design needs</th><th>Action</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">SetupContainer / SetupState</td><td>5-step container, 5-pill progress, Back + Skip, slide transitions, <code>finish()</code> → <code>setupComplete</code>.</td><td>Same container — the step list changes to Welcome / Focus / Baseline / Daily-plan / Ready.</td><td><b class="ok">KEEP</b></td></tr>
+    <tr><td class="tabname">SetupWelcomeView · SetupReadyView</td><td>Welcome card + "you're all set" card.</td><td>Kept — polish copy; Ready gets a per-cohort send-off line + entry tab.</td><td><b class="ok">KEEP</b></td></tr>
+    <tr><td class="tabname">SetupTabsTourView</td><td>Generic 4-tab feature tour.</td><td>Becomes <code>SetupFocusView</code> — the cohort's top-3 surfaces.</td><td><b class="warn">CHANGE</b></td></tr>
+    <tr><td class="tabname">SetupLabEntryOfferView</td><td>Standalone "log your first labs" card.</td><td>Folded into Baseline as an optional "scan a lab report" row — no longer its own step.</td><td><b style="color:var(--cta-deep);">MERGE</b></td></tr>
+    <tr><td class="tabname">SetupCohortSetupView</td><td>"Personalize to your situation."</td><td>Dropped — the cohort is already set at M15 lane-select; re-asking is the rejected candidate A.</td><td><b style="color:var(--alert);">REMOVE</b></td></tr>
+    <tr><td class="tabname">SetupBaselineView <span style="font-weight:600;color:var(--ink-3);">(new)</span></td><td>—</td><td>3 cohort-specific day-1 entries, all skippable, + the optional lab-scan shortcut.</td><td><b style="color:var(--cta-deep);">ADD</b></td></tr>
+    <tr><td class="tabname">SetupDailyPlanView <span style="font-weight:600;color:var(--ink-3);">(new)</span></td><td>—</td><td>The Today→+Log→Coach loop card, "90 seconds a day".</td><td><b style="color:var(--cta-deep);">ADD</b></td></tr>
+    <tr><td class="tabname">Baseline data</td><td>—</td><td>Entries persist to <code>onboardingAnswersJSON</code> + the lab store, so Today opens populated.</td><td><b style="color:var(--alert);">WIRE</b></td></tr>
+  </tbody>
+</table>
+<div class="m6-callout note">
+  <b>Disclaimer + Setup, in the gate chain.</b> RootRouter already gates Paywall → <code>DisclaimerView</code> → <code>SetupContainer</code> → <code>RootTabView</code> behind <code>disclaimerAcceptedAt</code> / <code>setupComplete</code> — the chain is correct and stays. The §18.2 reconcile is copy-only on <code>DisclaimerView</code> (the two consent checkboxes already exist there). The Setup work is the five screens above; the cohort is read from <code>cohortRaw</code>, never re-asked. All Setup screens force light mode and reuse the shared <code>ContinueButton</code> / <code>HeroImage</code> components.
+</div>
+
+<!-- ===== 18.6 READY ===== -->
+<h2 id="setup-summary">18.6 · Module 18 — ready for review</h2>
+<div class="m6-callout win">
+  <b>Module 18 — ready for founder review.</b> One consilium run: <b>C · the merge</b> (Σ 5.00, unanimous) over B · Cysta-literal (4.00) and A · as-built (2.70) — the locked 5-card spine is Welcome · Focus · Baseline · Daily-90s-plan · Ready. §18.2 reconciled the Disclaimer gate with the built two-checkbox <code>DisclaimerView</code> (educational-use + AI-processing consent). §18.3 worked all 5 cards for Nick; §18.4 fitted Baseline + Focus + Ready to all 6 cohorts. §18.5 mapped the built Swift Setup → the C design: keep the container, rename TabsTour→Focus, merge LabEntryOffer into Baseline, drop CohortSetup, add Baseline + DailyPlan. Compliance: Health &amp; Fitness throughout, two explicit consent checks, no diagnosis, light-mode forced, hero images deferred to the asset sprint. To compliance sign-off: the Disclaimer copy, the Setup card copy. <b>With M17 + M18 the workbench covers Modules 1–18 — the whole flow, pre-launch through the first daily loop.</b>
 </div>
 
 <footer>
-  <b>Hepatica — Onboarding Funnel Workbench · Part 3</b> · continues <b>flow2.html</b> (M11–14) · companion to <b>design.html</b> (M1–7) &amp; <b>flow.html</b> (M8–10) · updated 2026-05-21 · sibling pattern: Folik · Calibrum · Cysta AI.<br>
-  Module 15 — Onboarding: the WOW-then-justify formula · 3 consilia (structure · length · trust) · the 8-screen pre-auth flow worked for Robert · the WOW screen × 6 cohorts · the honest evidence proof screen · the §15.9 reviews screen (shipped dark) · Swift reconciliation. Module 16 — Paywall: the consilium · the cohort-routed fear-playbook worked for Robert · the paywall × 6 cohorts · Swift reconciliation. The pre-auth funnel M15–16 is complete. Nothing locked; on review the screens become the spec for restructuring the Swift onboarding + paywall.
+  <b>Hepatica — Funnel &amp; Post-Paywall Workbench · Part 3</b> · continues <b>flow2.html</b> (M11–14) · companion to <b>design.html</b> (M1–7) &amp; <b>flow.html</b> (M8–10) · updated 2026-05-21 · sibling pattern: Folik · Calibrum · Cysta AI.<br>
+  Module 15 — Onboarding: the WOW-then-justify formula · 3 consilia (structure · length · trust) · the 8-screen pre-auth flow worked for Robert · the WOW screen × 6 cohorts · the honest evidence proof screen · the §15.9 reviews screen (shipped dark) · Swift reconciliation. Module 16 — Paywall: the consilium · the cohort-routed fear-playbook worked for Robert · the paywall × 6 cohorts · Swift reconciliation. Module 17 — fresh-eyes flow restructure: the findings table · the tab-order reconciliation vote · applied &amp; carried. Module 18 — post-paywall onboarding: the Setup-flow consilium · the reconciled Disclaimer gate · the 5-card walkthrough worked for Nick · Setup × 6 cohorts · Swift reconciliation. The workbench now covers Modules 1–18. Nothing locked; on review the screens become the spec for the Swift V1 build &amp; rework.
 </footer>
 
 </body>

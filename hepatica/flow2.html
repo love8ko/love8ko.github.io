@@ -846,7 +846,7 @@
   <a href="#module-12" class="is-module"><span class="nav-num">M12</span>Log</a>
   <a href="#module-13" class="is-module"><span class="nav-num">M13</span>Settings</a>
   <a href="#module-14" class="is-module"><span class="nav-num">M14</span>Review</a>
-  <a href="flow3.html">flow3.html · M15–16 →</a>
+  <a href="flow3.html">flow3.html · M15–18 →</a>
   <span class="sep"></span>
   <a href="#progress-worked">progress</a>
   <a href="#log-sheet">log sheet</a>
@@ -1487,15 +1487,17 @@
 
 <!-- ===== 14.1 COMPLETE FLOW MAP ===== -->
 <h2 id="flow-complete">14.1 · The complete app flow</h2>
-<p class="lede">The whole journey, end to end. Onboarding and Paywall stay dashed TODO gates — each gets its own consilium later. Everything from the Disclaimer inward is now worked screen-by-screen across Modules 8–13.</p>
+<p class="lede">The whole journey, end to end — every stage now worked. The pre-auth funnel (Onboarding, Paywall) is designed in <a href="flow3.html" style="color:var(--brand-deep);font-weight:800;">flow3.html</a> M15–16, the post-paywall Setup walkthrough in M18; everything from the Disclaimer inward is worked screen-by-screen across Modules 8–13.</p>
 <div class="flow-map">
   <div class="flow-stage"><span class="fs-step">START</span><span class="fs-t">📲 Launch</span><span class="fs-d">App opens — cold start.</span></div>
   <span class="flow-conn">→</span>
-  <div class="flow-stage todo"><span class="fs-step">LATER</span><span class="fs-t">Onboarding</span><span class="fs-d">6-question cohort triage → assigns the lane.</span><span class="flow-todo-pill">TODO</span></div>
+  <div class="flow-stage"><span class="fs-step">M15 · WORKED ↗</span><span class="fs-t">Onboarding</span><span class="fs-d">WOW-then-justify funnel + cohort triage.</span><span class="flow-todo-pill">✓ flow3.html · M15</span></div>
   <span class="flow-conn">→</span>
-  <div class="flow-stage todo"><span class="fs-step">LATER</span><span class="fs-t">Paywall</span><span class="fs-d">4 tiers · 7-day trial.</span><span class="flow-todo-pill">TODO</span></div>
+  <div class="flow-stage"><span class="fs-step">M16 · WORKED ↗</span><span class="fs-t">Paywall</span><span class="fs-d">Cohort-routed fear-playbook · 4 tiers.</span><span class="flow-todo-pill">✓ flow3.html · M16</span></div>
   <span class="flow-conn">→</span>
-  <div class="flow-stage gate"><span class="fs-step">M8 · WORKED</span><span class="fs-t">🛡 Disclaimer</span><span class="fs-d">One-time gate → opens Today.</span></div>
+  <div class="flow-stage gate"><span class="fs-step">M8 · WORKED</span><span class="fs-t">🛡 Disclaimer</span><span class="fs-d">One-time post-paywall gate.</span></div>
+  <span class="flow-conn">→</span>
+  <div class="flow-stage"><span class="fs-step">M18 · WORKED ↗</span><span class="fs-t">Setup</span><span class="fs-d">5-card post-paywall walkthrough.</span><span class="flow-todo-pill">✓ flow3.html · M18</span></div>
   <span class="flow-conn">→</span>
   <div class="flow-stage app"><span class="fs-step">M8–13 · WORKED</span><span class="fs-t">Main app</span><span class="fs-d">Lands on Today. 5 surfaces, all worked:</span>
     <div class="flow-apptabs"><span class="entry">Today</span><span>Coach</span><span>+Log</span><span>Progress</span><span>Labs</span></div>
@@ -1573,7 +1575,7 @@
     <li><b>Compliance sign-off</b> — all Disclaimer copy, the Coach lens labels + "AI guidance · not a medical diagnosis" header, every safety strip, the FibroScan/FIB-4 screening-tool wording, and the refusal-pivot set.</li>
     <li><b>Close the §14.2 gaps</b> — Coach &amp; Progress empty states; the Log safety strip; the Coach verdict-pill decision.</li>
     <li><b>Dark / night theme</b> — deferred to the Swift build per founder call; out of scope for this flow workbench. The <code>--night-*</code> tokens stay specced in design.html M1.</li>
-    <li><b>Onboarding &amp; Paywall</b> — still dashed TODO gates. Each needs its own consilium; recommend they're the next workbench module set.</li>
+    <li><b>Swift reconciliation</b> — the built app diverges from the locked workbench: the <code>RootTabView</code> tab order, the no-WOW onboarding, the paywall tier preselect. <a href="flow3.html#module-17" style="color:var(--brand-deep);font-weight:800;">M17</a> catalogs the deltas; confirm they become the Swift V1 rework scope.</li>
     <li><b>Lock scope</b> — confirm the recommended picks (Coach B/v2+v3, Labs B, Progress B, Log B) become the Swift V1 spec, and the rejected candidates (doctor avatars, upload-first Labs, full-screen Log) are archived with their rationale.</li>
   </ul>
 </div>
@@ -1588,11 +1590,11 @@
   <div class="score-badge">M8–14 ✓ ready</div>
 </div>
 <div class="m6-callout win">
-  <b>Modules 8–14 — ready for founder review.</b> Core flow + Today (M8), Coach (M9), Labs (M10), Progress (M11), Log (M12), Settings (M13), and this whole-app review (M14). Nothing is locked. Next workbench set, per §14.4: the Onboarding and Paywall consilia — the two dashed gates that still sit upstream of everything here.
+  <b>Modules 8–14 — ready for founder review.</b> Core flow + Today (M8), Coach (M9), Labs (M10), Progress (M11), Log (M12), Settings (M13), and this whole-app review (M14). Nothing is locked. The upstream gates are now worked too — Onboarding &amp; Paywall in <a href="flow3.html" style="color:#194A4C;font-weight:800;">flow3.html</a> M15–16, the post-paywall Setup walkthrough in M18, and the fresh-eyes restructure consilium in M17. The workbench now covers Modules 1–18.
 </div>
 
 <footer>
-  <b>Hepatica — Screen Flow Workbench · Part 2</b> · continues <b>flow.html</b> (M8–10), pre-auth funnel in <b>flow3.html</b> (M15–16) · companion to <b>design.html</b> (M1–7) · updated 2026-05-21 · sibling pattern: Cysta AI · Folik · Calibrum.<br>
+  <b>Hepatica — Screen Flow Workbench · Part 2</b> · continues <b>flow.html</b> (M8–10), funnel + restructure + post-paywall in <b>flow3.html</b> (M15–18) · companion to <b>design.html</b> (M1–7) · updated 2026-05-21 · sibling pattern: Cysta AI · Folik · Calibrum.<br>
   Module 11 — Progress charts, milestones &amp; doctor PDF. Module 12 — the +Log capture sheet &amp; 5 mini-flows. Module 13 — Settings: cohort switch, JTBD tracking path, Today-widget toggles. Module 14 — whole-app review: cross-tab audit &amp; the build → evaluate → re-evaluate loop. Nothing locked; on review the screens become the spec for the Swift V1 skeleton.
 </footer>
 
