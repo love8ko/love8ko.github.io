@@ -510,7 +510,8 @@
   <a href="#module-5" class="is-module"><span class="nav-num">M5</span>Stack</a>
   <a href="#module-6" class="is-module"><span class="nav-num">M6</span>Loop</a>
   <a href="#module-7" class="is-module"><span class="nav-num">M7</span>Shots</a>
-  <a href="flow.html" class="is-module">Screen Flow · M8–9 ↗</a>
+  <a href="flow.html">flow.html · M8–10 ↗</a>
+  <a href="flow2.html">flow2.html · M11–14 ↗</a>
   <span class="sep"></span>
   <a href="#archive">📦 archive</a>
   <a href="#core-loop">loop vote</a>
@@ -1321,7 +1322,7 @@
 <div class="module-banner" id="module-4">
   <span class="num">МОДУЛЬ 4</span>
   <h2>Архитектура табов · 🔒 Locked B · 4-tab + «+Log» FAB</h2>
-  <p class="desc">What users actually need (derived from the 8 JTBD), a 3-candidate tab consilium, and the locked tab bar rendered in an iPhone frame. Lock: Today · Labs · «+Log» FAB · Coach · Progress.</p>
+  <p class="desc">What users actually need (derived from the 8 JTBD), a 3-candidate tab consilium, and the locked tab bar rendered in an iPhone frame. Architecture: 4-tab + «+Log» FAB. Order revised 2026-05-21 → <b>Today · Coach · «+Log» FAB · Progress · Labs</b> (see §4.3).</p>
 </div>
 
 <!-- ===== 4.1 WHAT USERS NEED ===== -->
@@ -1331,10 +1332,10 @@
   <thead><tr><th>Universal need</th><th>JTBD evidence</th><th>Served by</th></tr></thead>
   <tbody>
     <tr><td><b>"Make today about MY situation"</b></td><td>J5 triage · cohort overwhelm (Pete, Nick)</td><td class="tabname">Today</td></tr>
-    <tr><td><b>"Make sense of my bloodwork"</b></td><td>J2 — near-universal ★5 across cohorts</td><td class="tabname">Labs</td></tr>
-    <tr><td><b>"Log it without friction"</b></td><td>every JTBD — meal photo, drink, lab, med, symptom</td><td class="tabname">+Log FAB</td></tr>
     <tr><td><b>"Answers I can trust, any hour"</b></td><td>J1 / J8 — Coach, incl. 2am anxiety</td><td class="tabname">Coach</td></tr>
+    <tr><td><b>"Log it without friction"</b></td><td>every JTBD — meal photo, drink, lab, med, symptom</td><td class="tabname">+Log FAB</td></tr>
     <tr><td><b>"Proof I'm getting better"</b></td><td>J3 progress · J4 recovery (Greta, Rachel, Robert)</td><td class="tabname">Progress</td></tr>
+    <tr><td><b>"Make sense of my bloodwork"</b></td><td>J2 — near-universal ★5 across cohorts</td><td class="tabname">Labs</td></tr>
   </tbody>
 </table>
 
@@ -1344,7 +1345,7 @@
   <thead><tr><th>#</th><th>Candidate</th><th>Tabs (left → right · center FAB)</th></tr></thead>
   <tbody>
     <tr><td><b>A</b></td><td><b>5-tab classic</b></td><td>Home · Labs · Food · Coach · Progress &nbsp;(no FAB) — the PRODUCT_DESIGN.md first draft</td></tr>
-    <tr class="locked-row"><td><b>B</b></td><td><b>4-tab + Log FAB ✓</b></td><td><b>Today · Labs · [+Log] · Coach · Progress</b></td></tr>
+    <tr class="locked-row"><td><b>B</b></td><td><b>4-tab + Log FAB ✓</b></td><td><b>Today · Coach · [+Log] · Progress · Labs</b> &nbsp;<span style="font-weight:600;color:var(--ink-3);">(order revised 2026-05-21)</span></td></tr>
     <tr><td><b>C</b></td><td><b>Track-everything</b></td><td>Today · Track · Coach · Learn &nbsp;(no FAB)</td></tr>
   </tbody>
 </table>
@@ -1376,14 +1377,16 @@
     <div class="scr-card ai"><b>Coach noticed</b><br>"Your GGT is back in range — 3 sober months showing. <em>Open insight →</em>"</div>
     <div class="phone-tabbar">
       <a class="tab active"><span class="icn">⌂</span>Today</a>
-      <a class="tab"><span class="icn">🧪</span>Labs</a>
-      <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
       <a class="tab"><span class="icn">💬</span>Coach</a>
+      <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
       <a class="tab"><span class="icn">📈</span>Progress</a>
+      <a class="tab"><span class="icn">🧪</span>Labs</a>
     </div>
   </div>
 </div>
-<p class="lede" style="font-size:13px;">Centre FAB <b>+Log</b> = the primary daily ritual. One tap → choose <b>meal photo / drink / lab scan / medication / symptom</b> → 3-tap save. Each capture flows into Today + Coach context + the relevant tab. SF Symbols: <code>house.fill</code> · <code>testtube.2</code> · <code>plus</code> · <code>bubble.left.fill</code> · <code>chart.line.uptrend.xyaxis</code>.</p>
+<p class="lede" style="font-size:13px;">Centre FAB <b>+Log</b> = the primary daily ritual. One tap → choose <b>meal photo / drink / lab scan / medication / symptom</b> → 3-tap save. Each capture flows into Today + Coach context + the relevant tab. SF Symbols: <code>house.fill</code> · <code>bubble.left.fill</code> · <code>plus</code> · <code>chart.line.uptrend.xyaxis</code> · <code>testtube.2</code>.</p>
+<div class="m6-callout note">
+  <b>Order revised 2026-05-21 — Today · Coach · «+Log» · Progress · Labs.</b> The locked architecture (4-tab + FAB) is unchanged; only the left-to-right order moved. Re-evaluated by interaction frequency: <b>Coach</b> is a near-daily surface (and the 2 a.m. anxiety check), so it was promoted to slot 2; <b>Labs</b> is consulted roughly quarterly when a new panel lands, so it moved to the calm outer edge. Worked screen-by-screen in <a href="flow.html" style="color:var(--brand-deep);font-weight:800;">flow.html</a> · logged in <code>DECISIONS.md</code>.</div>
 
 <!-- ===== 4.4 PER-TAB SPEC ===== -->
 <h2 id="tab-spec">4.4 · Per-tab spec</h2>
@@ -1391,10 +1394,10 @@
   <thead><tr><th>Tab</th><th>Primary content</th><th>Top JTBD</th><th>Anchor cohort</th><th>Key components</th></tr></thead>
   <tbody>
     <tr><td class="tabname">Today</td><td>Cohort dashboard — Liver Score 0–100 + reordered widget stack + Coach handoff strip</td><td>J5 · J8</td><td>all</td><td>score-hero · widget-stack · Coach-prompt</td></tr>
-    <tr><td class="tabname">Labs</td><td>Lab interpreter + OCR scan + ALT / AST / GGT / FIB-4 trends + FibroScan staging</td><td>J2</td><td>🍷 Nick · 💊 Rachel</td><td>lab-row · verdict-pill · trend-chart · camera-scan</td></tr>
-    <tr><td class="tabname">+Log (FAB)</td><td>One-tap capture: meal photo · drink · lab scan · medication · symptom</td><td>every JTBD</td><td>all</td><td>capture-sheet · food-risk-badge</td></tr>
     <tr><td class="tabname">Coach</td><td>AI chat with RAG citations + safety strip + night mode 22:00–06:00</td><td>J1 · J8</td><td>all</td><td>chat-bubble · citation-chip · safety-strip</td></tr>
+    <tr><td class="tabname">+Log (FAB)</td><td>One-tap capture: meal photo · drink · lab scan · medication · symptom</td><td>every JTBD</td><td>all</td><td>capture-sheet · food-risk-badge</td></tr>
     <tr><td class="tabname">Progress</td><td>Liver-score history · recovery timeline · weight · doctor PDF · milestones</td><td>J3 · J4</td><td>🍺 Robert · 💉 Greta</td><td>trend-dashboard · recovery-timeline · PDF-exporter</td></tr>
+    <tr><td class="tabname">Labs</td><td>Lab interpreter + OCR scan + ALT / AST / GGT / FIB-4 trends + FibroScan staging</td><td>J2</td><td>🍷 Nick · 💊 Rachel</td><td>lab-row · verdict-pill · trend-chart · camera-scan</td></tr>
   </tbody>
 </table>
 
@@ -2169,7 +2172,7 @@
 <footer>
   <b>Hepatica — Design System Workbench</b> · updated 2026-05-20 · source: <b>Hepatica_Master_v2_FINAL.md</b> · sibling pattern: Cysta AI.<br>
   🔒 Locked: design system <b>B · Clinical</b> (teal #2D7B7E + gold #D4A574) · roadmap <b>15 features → 6 P0 / 5 P1 / 4 P2</b> · tabs <b>4-tab + «+Log» FAB</b>. Candidates A &amp; C archived in Module 1.<br>
-  Modules 8–9 — the worked screen-by-screen flow (core flow · Today · cohort screens · the working tabs) — live on the companion page <b><a href="flow.html" style="color:var(--brand);">flow.html</a></b>.
+  Modules 8–14 — the worked screen-by-screen flow — live on the companion pages <b><a href="flow.html" style="color:var(--brand);">flow.html</a></b> (M8 core flow &amp; Today · M9 Coach · M10 Labs) and <b><a href="flow2.html" style="color:var(--brand);">flow2.html</a></b> (M11 Progress · M12 Log · M13 Settings · M14 whole-app review).
 </footer>
 
 </body>

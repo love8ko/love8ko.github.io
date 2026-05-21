@@ -695,6 +695,87 @@
   .chart-legend span { display:inline-flex; align-items:center; gap:5px; }
   .chart-legend i { width:16px; height:0; display:inline-block; }
   .chart-disc { font-size:9.5px; color:var(--ink-3); font-style:italic; line-height:1.45; margin-top:8px; }
+
+  /* ==================== M9 · COACH ==================== */
+  .phone-screen.night { background:var(--night-bg); color:var(--night-text); }
+  .phone-tabbar.dark { background:var(--night-surface); border-color:var(--night-divider); }
+  .phone-tabbar.dark .tab { color:rgba(234,242,241,0.5); }
+  .phone-tabbar.dark .tab.active { color:var(--night-accent); }
+  .phone-tabbar.dark .tab .icn { background:var(--night-divider); color:rgba(234,242,241,0.7); }
+  .phone-tabbar.dark .tab.active .icn { background:var(--night-accent); color:var(--night-bg); }
+  .coach-bar { display:flex; align-items:center; gap:6px; background:var(--brand-soft); border-radius:9px; padding:6px 9px; }
+  .coach-bar.dark { background:var(--night-surface); border:1px solid var(--night-divider); }
+  .coach-bar .cb-dot { width:19px; height:19px; border-radius:50%; background:var(--brand); color:var(--pearl); font-size:10px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .coach-bar .cb-t { font-size:9px; font-weight:800; color:var(--brand-deep); line-height:1.25; }
+  .coach-bar.dark .cb-t { color:var(--night-text); }
+  .coach-bar .cb-t small { display:block; font-size:7px; color:var(--ink-3); font-weight:700; }
+  .coach-bar.dark .cb-t small { color:rgba(234,242,241,0.55); }
+  .cv-chat { display:flex; flex-direction:column; gap:6px; }
+  .cv-bub { border-radius:13px; padding:8px 10px; max-width:92%; font-size:10px; line-height:1.5; }
+  .cv-bub.user { background:var(--cta-soft); color:var(--ink); align-self:flex-end; border-bottom-right-radius:4px; }
+  .cv-bub.ai { background:var(--ai-bg); border:1px solid var(--ai-border); color:var(--ink); align-self:flex-start; border-bottom-left-radius:4px; width:92%; }
+  .cv-bub.user.dark { background:var(--night-bubble-user); color:var(--night-text); }
+  .cv-bub.ai.dark { background:var(--night-surface); border-color:var(--night-divider); color:var(--night-text); }
+  .cv-lens { border-left:2.5px solid var(--brand); padding-left:8px; }
+  .cv-lens + .cv-lens { margin-top:7px; padding-top:7px; border-top:1px dashed var(--divider); }
+  .cv-bub.dark .cv-lens + .cv-lens { border-color:var(--night-divider); }
+  .cv-lens.addiction { border-color:var(--cta-deep); }
+  .cv-lens.metabolic { border-color:var(--watch); }
+  .lens-tag { display:inline-block; font-size:7px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase; color:var(--brand-deep); background:var(--brand-soft); border-radius:999px; padding:2px 7px; }
+  .lens-tag.addiction { color:#7A4012; background:var(--cta-soft); }
+  .lens-tag.metabolic { color:#7A4012; background:var(--watch-bg); }
+  .cv-lt { font-size:9.5px; line-height:1.5; margin-top:3px; }
+  .cv-cite { font-family:ui-monospace,"SF Mono",monospace; font-size:7.5px; color:var(--brand-deep); border-bottom:1px dotted var(--brand-deep); margin-top:3px; display:inline-block; }
+  .cv-bub.dark .cv-cite { color:var(--night-accent); border-color:var(--night-accent); }
+  .cv-more { font-size:8.5px; font-weight:800; color:var(--cta-deep); background:var(--cta-soft); border:1px solid #E7CFA3; border-radius:8px; padding:5px 8px; text-align:center; margin-top:6px; }
+  .cv-safety { font-size:7.5px; color:#7A4012; background:var(--watch-bg); border:1px solid #E7CFA3; border-radius:7px; padding:5px 7px; line-height:1.4; }
+  .cv-safety.dark { background:#3A2419; color:#F1C8A0; border-color:#5C3520; }
+  .cv-quick { display:flex; gap:4px; flex-wrap:wrap; }
+  .cv-quick span { font-size:8px; font-weight:700; background:var(--pearl); border:1px solid var(--divider); border-radius:999px; padding:4px 8px; color:var(--ink-2); }
+  .cv-bub.ai.dark ~ .cv-quick span, .phone-screen.night .cv-quick span { background:var(--night-surface); border-color:var(--night-divider); color:rgba(234,242,241,0.7); }
+  .cv-composer { display:flex; align-items:center; gap:6px; background:var(--pearl); border:1px solid var(--divider); border-radius:999px; padding:5px 6px 5px 11px; }
+  .phone-screen.night .cv-composer { background:var(--night-surface); border-color:var(--night-divider); }
+  .cv-composer .cc-ph { flex:1; font-size:8.5px; color:var(--ink-3); }
+  .cv-composer .cc-send { width:21px; height:21px; border-radius:50%; background:var(--cta); color:#fff; font-size:12px; display:flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0; }
+  .lens-legend { display:flex; gap:7px; flex-wrap:wrap; margin-top:12px; }
+  .lens-legend .ll { display:flex; gap:7px; align-items:flex-start; background:var(--card); border:1px solid var(--divider); border-radius:10px; padding:9px 11px; flex:1; min-width:210px; }
+  .lens-legend .ll .ll-bar { width:3px; align-self:stretch; border-radius:2px; background:var(--brand); flex-shrink:0; }
+  .lens-legend .ll.addiction .ll-bar { background:var(--cta-deep); }
+  .lens-legend .ll.metabolic .ll-bar { background:var(--watch); }
+  .lens-legend .ll .ll-t { font-size:11px; font-weight:800; color:var(--brand-deep); }
+  .lens-legend .ll .ll-d { font-size:10.5px; color:var(--ink-2); line-height:1.5; margin-top:2px; }
+  .lens-legend .ll .ll-src { font-family:ui-monospace,"SF Mono",monospace; font-size:9px; color:var(--cta-deep); margin-top:3px; }
+
+  /* ==================== M10 · LABS ==================== */
+  .lab-add { display:flex; gap:5px; }
+  .lab-add .la-opt { flex:1; background:var(--pearl); border:1px solid var(--divider); border-radius:10px; padding:7px 3px 6px; text-align:center; }
+  .lab-add .la-opt.primary { background:var(--cta-soft); border-color:#E7CFA3; }
+  .lab-add .la-opt .la-ic { font-size:14px; }
+  .lab-add .la-opt .la-t { font-size:7.5px; font-weight:800; color:var(--brand-deep); margin-top:2px; line-height:1.2; }
+  .lab-panel-head { display:flex; justify-content:space-between; align-items:baseline; }
+  .lab-panel-head .lph-t { font-size:8px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-3); }
+  .lab-panel-head .lph-s { font-size:8px; color:var(--ink-3); font-family:ui-monospace,"SF Mono",monospace; }
+  .analyte { background:var(--card); border:1px solid var(--divider); border-radius:10px; padding:7px 10px; }
+  .analyte.pin { border-color:var(--brand); border-left:3px solid var(--brand); background:var(--bg-soft); }
+  .analyte .an-top { display:flex; justify-content:space-between; align-items:center; }
+  .analyte .an-name { font-size:10px; font-weight:800; color:var(--ink); }
+  .analyte .an-name small { font-weight:700; color:var(--ink-3); font-size:7.5px; }
+  .analyte .an-rhs { display:flex; align-items:center; gap:6px; }
+  .analyte .an-val { font-family:ui-monospace,"SF Mono",monospace; font-size:13px; font-weight:800; color:var(--brand-deep); }
+  .analyte .an-val small { font-size:7px; color:var(--ink-3); font-weight:700; }
+  .range-bar { position:relative; height:5px; border-radius:999px; margin:7px 0 3px; }
+  .range-bar.liver { background:linear-gradient(90deg, var(--good-bg) 0% 56%, var(--watch-bg) 56% 80%, var(--alert-bg) 80% 100%); }
+  .range-bar .rb-mark { position:absolute; top:50%; width:9px; height:9px; border-radius:50%; border:2px solid #fff; transform:translate(-50%,-50%); box-shadow:0 1px 3px rgba(20,40,40,0.3); }
+  .range-bar .rb-mark.good { background:var(--good); }
+  .range-bar .rb-mark.watch { background:var(--watch); }
+  .range-bar .rb-mark.alert { background:var(--alert); }
+  .analyte .an-foot { display:flex; justify-content:space-between; font-size:6.5px; color:var(--ink-3); font-family:ui-monospace,"SF Mono",monospace; }
+  .analyte .an-note { font-size:8px; color:var(--ink-2); line-height:1.42; margin-top:5px; padding-top:5px; border-top:1px dashed var(--divider); }
+  .analyte .an-note b { color:var(--brand-deep); }
+  .cap-step { display:flex; gap:5px; align-items:center; }
+  .cap-step .cs-n { width:15px; height:15px; border-radius:50%; background:var(--brand); color:#fff; font-size:8px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .cap-step .cs-t { font-size:8.5px; color:var(--ink); line-height:1.35; }
+  .ocr-chip { font-size:7px; font-weight:800; background:var(--good-bg); color:#194A4C; border-radius:999px; padding:2px 6px; }
 </style>
 </head>
 <body id="top">
@@ -702,25 +783,30 @@
 <nav class="top-nav">
   <a href="#top">↑ Top</a>
   <span class="sep"></span>
-  <a href="design.html" class="is-module">← design.html · M1–M7</a>
-  <a href="#module-8" class="is-module"><span class="nav-num">M8</span>Flow</a>
+  <a href="design.html">← design.html · M1–7</a>
+  <a href="#module-8" class="is-module"><span class="nav-num">M8</span>Today</a>
+  <a href="#module-9" class="is-module"><span class="nav-num">M9</span>Coach</a>
+  <a href="#module-10" class="is-module"><span class="nav-num">M10</span>Labs</a>
+  <a href="flow2.html">flow2.html · M11–14 →</a>
   <span class="sep"></span>
   <a href="#flow-map">flow map</a>
-  <a href="#disclaimer-screen">disclaimer</a>
   <a href="#today-anatomy">today</a>
-  <a href="#today-cohorts">cohort screens</a>
-  <a href="#motivating-charts">charts</a>
   <a href="#first-run">empty state</a>
+  <a href="#coach-consilium">coach consilium</a>
+  <a href="#coach-v2">coach screen</a>
+  <a href="#labs-consilium">labs consilium</a>
+  <a href="#labs-grid">labs grid</a>
 </nav>
 
 <header>
-  <h1>Hepatica — Screen Flow Workbench</h1>
-  <p class="lede">Companion page to <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a>. The design system, JTBD, roadmap, tab architecture, engagement loop and App Store screenshots (Modules 1–7) live there; this page holds the worked, screen-by-screen user flow. <b>Module 8 — core flow &amp; the Today screen</b> is below; Module 9 (the working tab screens) follows next sprint.</p>
+  <h1>Hepatica — Screen Flow Workbench · Part 1</h1>
+  <p class="lede">Companion to <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a> (Modules 1–7 — design system, JTBD, roadmap, tab architecture, engagement loop, screenshots). This page holds the worked, screen-by-screen user flow: <b>Module 8 — core flow &amp; Today</b>, <b>Module 9 — Coach</b>, <b>Module 10 — Labs</b>. The remaining tabs continue in <a href="flow2.html" style="color:var(--brand);font-weight:700;">flow2.html</a> — Module 11 Progress · 12 Log · 13 Settings · 14 whole-app review.</p>
   <div class="meta-bar">
-    <span class="pill brand">📐 Screen flow · Module 8</span>
+    <span class="pill brand">📐 Screen flow · Modules 8–10</span>
     <span class="pill lock">🔒 Design system · B · Clinical</span>
+    <span class="pill vote">Tab order: Today · Coach · +Log · Progress · Labs</span>
     <span class="pill sib">Best practice: Cysta AI · Folik · Calibrum</span>
-    <span class="pill sib">Companion: design.html · Modules 1–7</span>
+    <span class="pill sib">Continues: flow2.html · M11–14</span>
   </div>
 </header>
 
@@ -765,7 +851,7 @@
     <span class="fs-t">Main app</span>
     <span class="fs-d">Lands on Today; 4-tab + «+Log» FAB.</span>
     <div class="flow-apptabs">
-      <span class="entry">Today</span><span>Labs</span><span>+Log</span><span>Coach</span><span>Progress</span>
+      <span class="entry">Today</span><span>Coach</span><span>+Log</span><span>Progress</span><span>Labs</span>
     </div>
   </div>
 </div>
@@ -875,10 +961,10 @@
       </div>
       <div class="phone-tabbar">
         <a class="tab active"><span class="icn">⌂</span>Today</a>
-        <a class="tab"><span class="icn">🧪</span>Labs</a>
-        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
         <a class="tab"><span class="icn">💬</span>Coach</a>
+        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
         <a class="tab"><span class="icn">📈</span>Progress</a>
+        <a class="tab"><span class="icn">🧪</span>Labs</a>
       </div>
     </div>
   </div>
@@ -916,7 +1002,7 @@
           <div class="sc-chart-h"><span class="sc-chart-v" style="font-size:13px;">66<small> U/L</small></span><span class="sc-delta good">↓ 26</span></div>
         </div>
         <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">📷</div><div class="sa-t" style="font-size:9px;">Scan today's lunch</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
       </div>
     </div>
     <div class="cc-cap"><div class="cc-name">🍷 Newly Diagnosed Nick</div><div class="cc-job">"Doctor said fatty liver — what do I eat?"</div><div class="cc-chart">Chart · 6-month ALT trend vs AASLD 40</div></div>
@@ -936,7 +1022,7 @@
           <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">ALT ↓34 · weight ↓18 lb</span></div>
         </div>
         <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">⚖️</div><div class="sa-t" style="font-size:9px;">Log today's weigh-in</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
       </div>
     </div>
     <div class="cc-cap"><div class="cc-name">💉 GLP-1 Greta</div><div class="cc-job">"Show me Ozempic is working on my liver."</div><div class="cc-chart">Chart · dual-axis ALT ↓ + weight ↓</div></div>
@@ -956,7 +1042,7 @@
           <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">both markers trending down</span></div>
         </div>
         <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">🩸</div><div class="sa-t" style="font-size:9px;">Log fasting glucose</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
       </div>
     </div>
     <div class="cc-cap"><div class="cc-name">🍔 Pre-Diabetic Pete</div><div class="cc-job">"HbA1c 6.0 + ALT 70 — where do I start?"</div><div class="cc-chart">Chart · dual-axis HbA1c + ALT</div></div>
@@ -977,7 +1063,7 @@
           <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">12.5 → 8.1 kPa over 12 mo</span></div>
         </div>
         <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">💊</div><div class="sa-t" style="font-size:9px;">Log Rezdiffra dose</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
       </div>
     </div>
     <div class="cc-cap"><div class="cc-name">💊 Rezdiffra Rachel</div><div class="cc-job">"Document the $40K drug is working."</div><div class="cc-chart">Chart · FibroScan F3→F2 staging timeline</div></div>
@@ -997,7 +1083,7 @@
           <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">ALT easing across cycles</span></div>
         </div>
         <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">💊</div><div class="sa-t" style="font-size:9px;">Log inositol</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
       </div>
     </div>
     <div class="cc-cap"><div class="cc-name">🧬 PCOS-NAFLD Patricia</div><div class="cc-job">"PCOS + fatty liver — track them together."</div><div class="cc-chart">Chart · ALT trend annotated by cycle phase</div></div>
@@ -1018,7 +1104,7 @@
           <div class="sc-chart-h"><span class="sc-chart-v" style="font-size:13px;">95<small> U/L</small></span><span class="sc-delta good">↓ 145</span></div>
         </div>
         <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">+</div><div class="sa-t" style="font-size:9px;">Log Day 48 sober</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
       </div>
     </div>
     <div class="cc-cap"><div class="cc-name">🍺 Recovering Robert</div><div class="cc-job">"90 days sober — is my liver healing?"</div><div class="cc-chart">Chart · GGT recovery curve + sober-day overlay</div></div>
@@ -1108,9 +1194,130 @@
   <b>Compliance.</b> Every chart carries an educational-tracking disclaimer; the band is a published <em>population</em> range (AASLD), never a personal promise; the projection copy stays conditional ("if the trend continues", "projected"); no dated outcome claim sits beside the "Reverse fatty liver" tagline; severity stays on the warm triad — no clinical red.
 </div>
 
+<!-- ===== 8.5.1 THE REMAINING FOUR CHARTS ===== -->
+<h2 id="motivating-charts-2">8.5.1 · The remaining four charts — Greta · Pete · Rachel · Patricia</h2>
+<p class="lede">Robert and Nick are drawn above. Here the other four are worked the same way, so all six hero charts exist as real artwork — not just a table row. Each keeps the grammar: the user's <b>actual</b> marker solid, a dashed <b>projection</b>, the <b>reference line</b> in gold. Greta and Pete carry two markers on one timeline; Rachel reads as a fibrosis-stage staircase; Patricia's line is annotated by cycle phase.</p>
+<div class="chart-gallery">
+
+  <div class="chart-card">
+    <div class="cc-h">💉 Greta — ALT × weight</div>
+    <div class="cc-sub">Answers: "Is the GLP-1 reaching my liver, not just the scale?"</div>
+    <svg viewBox="0 0 340 168" width="100%" style="margin-top:9px;" role="img" aria-label="Greta ALT and weight dual-axis chart">
+      <line x1="38" y1="96" x2="312" y2="96" stroke="#C68A3E" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="312" y="92" text-anchor="end" font-size="8.5" fill="#C68A3E" font-family="ui-monospace,SF Mono">AASLD ALT ref · 40 U/L</text>
+      <polyline points="38,34 112,52 186,72 248,86" fill="none" stroke="#2D7B7E" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="248,86 288,92 312,94" fill="none" stroke="#B0824D" stroke-width="2.8" stroke-dasharray="6 4" stroke-linecap="round"/>
+      <polyline points="38,70 112,86 186,104 248,118" fill="none" stroke="#C68A3E" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="38" cy="34" r="3.4" fill="#2D7B7E"/><circle cx="112" cy="52" r="3.4" fill="#2D7B7E"/><circle cx="186" cy="72" r="3.4" fill="#2D7B7E"/>
+      <circle cx="248" cy="86" r="4.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.8"/>
+      <circle cx="38" cy="70" r="3" fill="#C68A3E"/><circle cx="112" cy="86" r="3" fill="#C68A3E"/><circle cx="186" cy="104" r="3" fill="#C68A3E"/><circle cx="248" cy="118" r="3" fill="#C68A3E"/>
+      <text x="34" y="28" font-size="9" fill="#4C5B5C" font-family="ui-monospace,SF Mono">ALT 66</text>
+      <text x="236" y="81" font-size="9" fill="#194A4C" font-family="ui-monospace,SF Mono" font-weight="800">38 · today</text>
+      <text x="252" y="130" font-size="8.5" fill="#B0824D" font-family="ui-monospace,SF Mono">weight −18 lb</text>
+      <line x1="38" y1="150" x2="312" y2="150" stroke="#D6E2E0" stroke-width="1"/>
+      <text x="38" y="162" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Week 0</text>
+      <text x="312" y="162" text-anchor="end" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Week 20</text>
+    </svg>
+    <div class="chart-legend">
+      <span><i style="border-top:2.8px solid #2D7B7E;"></i> logged ALT</span>
+      <span><i style="border-top:2.4px solid #C68A3E;"></i> weight</span>
+      <span><i style="border-top:2.8px dashed #B0824D;"></i> projection</span>
+    </div>
+    <div class="cc-read"><b>How it motivates:</b> the two lines fall <em>together</em>. Greta worries the scale is moving but her liver isn't — the locked-step descent is the proof that the drug reached the organ, not just the waistline.</div>
+    <div class="chart-disc">Educational tracking — weight is Apple Health-synced; ALT is user-logged. Not a treatment-efficacy claim.</div>
+  </div>
+
+  <div class="chart-card">
+    <div class="cc-h">🍔 Pete — HbA1c × ALT</div>
+    <div class="cc-sub">Answers: "Are my liver and my blood sugar one problem improving together?"</div>
+    <svg viewBox="0 0 340 168" width="100%" style="margin-top:9px;" role="img" aria-label="Pete HbA1c and ALT dual-axis chart">
+      <line x1="38" y1="100" x2="312" y2="100" stroke="#C68A3E" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="312" y="96" text-anchor="end" font-size="8.5" fill="#C68A3E" font-family="ui-monospace,SF Mono">HbA1c 5.7% · pre-diabetes line</text>
+      <polyline points="38,38 120,56 202,78 252,90" fill="none" stroke="#2D7B7E" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="252,90 290,97 312,100" fill="none" stroke="#B0824D" stroke-width="2.8" stroke-dasharray="6 4" stroke-linecap="round"/>
+      <polyline points="38,66 120,82 202,102 252,114" fill="none" stroke="#C68A3E" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="38" cy="38" r="3.4" fill="#2D7B7E"/><circle cx="120" cy="56" r="3.4" fill="#2D7B7E"/><circle cx="202" cy="78" r="3.4" fill="#2D7B7E"/>
+      <circle cx="252" cy="90" r="4.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.8"/>
+      <circle cx="38" cy="66" r="3" fill="#C68A3E"/><circle cx="120" cy="82" r="3" fill="#C68A3E"/><circle cx="202" cy="102" r="3" fill="#C68A3E"/><circle cx="252" cy="114" r="3" fill="#C68A3E"/>
+      <text x="34" y="32" font-size="9" fill="#4C5B5C" font-family="ui-monospace,SF Mono">HbA1c 6.1</text>
+      <text x="240" y="85" font-size="9" fill="#194A4C" font-family="ui-monospace,SF Mono" font-weight="800">5.7 · today</text>
+      <text x="256" y="126" font-size="8.5" fill="#B0824D" font-family="ui-monospace,SF Mono">ALT 72 → 47</text>
+      <line x1="38" y1="150" x2="312" y2="150" stroke="#D6E2E0" stroke-width="1"/>
+      <text x="38" y="162" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Month 0</text>
+      <text x="312" y="162" text-anchor="end" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Month 6</text>
+    </svg>
+    <div class="chart-legend">
+      <span><i style="border-top:2.8px solid #2D7B7E;"></i> HbA1c</span>
+      <span><i style="border-top:2.4px solid #C68A3E;"></i> ALT</span>
+      <span><i style="border-top:2.8px dashed #B0824D;"></i> projection</span>
+    </div>
+    <div class="cc-read"><b>How it motivates:</b> Pete arrived overwhelmed — "metabolic syndrome" is five problems at once. One chart with both markers descending reframes it as a <em>single</em> fight he is already winning.</div>
+    <div class="chart-disc">Educational tracking — FIB-4 risk score available as a secondary card. Not a diabetes or fibrosis diagnosis.</div>
+  </div>
+
+  <div class="chart-card">
+    <div class="cc-h">💊 Rachel — FibroScan staging</div>
+    <div class="cc-sub">Answers: "Is the $40K drug actually regressing my fibrosis — on paper?"</div>
+    <svg viewBox="0 0 340 168" width="100%" style="margin-top:9px;" role="img" aria-label="Rachel FibroScan kPa staircase chart">
+      <rect x="38" y="22" width="274" height="34" fill="#EBD0C8" fill-opacity="0.45"/>
+      <rect x="38" y="56" width="274" height="34" fill="#F0DFC2" fill-opacity="0.55"/>
+      <rect x="38" y="90" width="274" height="34" fill="#CFE3E2" fill-opacity="0.7"/>
+      <text x="306" y="42" text-anchor="end" font-size="8" fill="#6B3A12" font-family="ui-monospace,SF Mono">F3 · ≥10 kPa</text>
+      <text x="306" y="76" text-anchor="end" font-size="8" fill="#7A4012" font-family="ui-monospace,SF Mono">F2 · 8–10 kPa</text>
+      <text x="306" y="110" text-anchor="end" font-size="8" fill="#194A4C" font-family="ui-monospace,SF Mono">F1 · &lt;8 kPa</text>
+      <polyline points="44,38 120,38 120,72 210,72 210,104 282,104" fill="none" stroke="#2D7B7E" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="282,104 312,110" fill="none" stroke="#B0824D" stroke-width="2.8" stroke-dasharray="6 4" stroke-linecap="round"/>
+      <circle cx="44" cy="38" r="3.8" fill="#2D7B7E"/><circle cx="120" cy="72" r="3.8" fill="#2D7B7E"/><circle cx="210" cy="104" r="3.8" fill="#2D7B7E"/>
+      <circle cx="282" cy="104" r="4.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.8"/>
+      <text x="44" y="34" font-size="9" fill="#4C5B5C" font-family="ui-monospace,SF Mono">12.5</text>
+      <text x="262" y="100" font-size="9" fill="#194A4C" font-family="ui-monospace,SF Mono" font-weight="800">8.1 · today</text>
+      <line x1="38" y1="150" x2="312" y2="150" stroke="#D6E2E0" stroke-width="1"/>
+      <text x="38" y="162" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Month 0</text>
+      <text x="312" y="162" text-anchor="end" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Month 14</text>
+    </svg>
+    <div class="chart-legend">
+      <span><i style="border-top:2.8px solid #2D7B7E;"></i> logged kPa</span>
+      <span><i style="border-top:2.8px dashed #B0824D;"></i> projection</span>
+      <span><i style="border-top:9px solid rgba(240,223,194,0.7);"></i> F-stage bands</span>
+    </div>
+    <div class="cc-read"><b>How it motivates:</b> each step down is a fibrosis stage. Rachel doesn't renew for streaks — she renews because this is the documented, exportable evidence her insurer demands at re-authorisation.</div>
+    <div class="chart-disc">FibroScan readings are self-logged. F-stage bands are educational thresholds — staging is a clinical decision, not a Hepatica output.</div>
+  </div>
+
+  <div class="chart-card">
+    <div class="cc-h">🧬 Patricia — ALT × cycle phase</div>
+    <div class="cc-sub">Answers: "Are my PCOS and my liver one hormonal picture I can manage?"</div>
+    <svg viewBox="0 0 340 168" width="100%" style="margin-top:9px;" role="img" aria-label="Patricia ALT by cycle phase chart">
+      <rect x="38" y="22" width="68" height="106" fill="#CFE3E2" fill-opacity="0.45"/>
+      <rect x="174" y="22" width="68" height="106" fill="#CFE3E2" fill-opacity="0.45"/>
+      <line x1="38" y1="112" x2="312" y2="112" stroke="#C68A3E" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="312" y="108" text-anchor="end" font-size="8.5" fill="#C68A3E" font-family="ui-monospace,SF Mono">AASLD ALT ref · 40 U/L</text>
+      <polyline points="38,40 72,52 106,44 140,62 174,54 208,70 242,64 276,80" fill="none" stroke="#2D7B7E" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="276,80 312,90" fill="none" stroke="#B0824D" stroke-width="2.8" stroke-dasharray="6 4" stroke-linecap="round"/>
+      <circle cx="38" cy="40" r="3" fill="#2D7B7E"/><circle cx="106" cy="44" r="3" fill="#2D7B7E"/><circle cx="174" cy="54" r="3" fill="#2D7B7E"/><circle cx="242" cy="64" r="3" fill="#2D7B7E"/>
+      <circle cx="276" cy="80" r="4.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.8"/>
+      <text x="34" y="34" font-size="9" fill="#4C5B5C" font-family="ui-monospace,SF Mono">ALT 58</text>
+      <text x="262" y="75" font-size="9" fill="#194A4C" font-family="ui-monospace,SF Mono" font-weight="800">44 · today</text>
+      <line x1="38" y1="150" x2="312" y2="150" stroke="#D6E2E0" stroke-width="1"/>
+      <text x="48" y="162" font-size="7.5" fill="#226163" font-family="ui-monospace,SF Mono">follicular</text>
+      <text x="118" y="162" font-size="7.5" fill="#8B9B9B" font-family="ui-monospace,SF Mono">luteal</text>
+      <text x="186" y="162" font-size="7.5" fill="#226163" font-family="ui-monospace,SF Mono">follicular</text>
+      <text x="256" y="162" font-size="7.5" fill="#8B9B9B" font-family="ui-monospace,SF Mono">luteal</text>
+    </svg>
+    <div class="chart-legend">
+      <span><i style="border-top:2.8px solid #2D7B7E;"></i> logged ALT</span>
+      <span><i style="border-top:2.8px dashed #B0824D;"></i> projection</span>
+      <span><i style="border-top:9px solid rgba(207,227,226,0.6);"></i> follicular phase</span>
+    </div>
+    <div class="cc-read"><b>How it motivates:</b> the cycle shading makes the wobble <em>legible</em> — Patricia sees her ALT rhythm is hormonal, not failure. The trend still eases downward across cycles, so the noise stops feeling like relapse.</div>
+    <div class="chart-disc">Cycle phases are user-logged or Cysta AI-synced. Educational correlation view — not a hormonal or liver diagnosis.</div>
+  </div>
+
+</div>
+
 <!-- ===== 8.6 FIRST-RUN / EMPTY STATE ===== -->
 <h2 id="first-run">8.6 · Day 1 — the empty state that still sells</h2>
-<p class="lede">The hardest screen to design: a brand-new user, fresh past the Disclaimer, with <b>zero data</b>. The charts can't be blank — a blank Today reads as "nothing here". So every chart card is <b>always rendered</b> as a skeleton: a ghost line where the user's data will live, a pulsing "today" dot, and a caption that turns the emptiness into an invitation.</p>
+<p class="lede">The hardest screen to design: a brand-new user, fresh past the Disclaimer, with <b>zero data</b>. The charts can't be blank — a blank Today reads as "nothing here". So every chart card is <b>always rendered</b> as a skeleton: a ghost line where the user's data will live, a pulsing "today" dot, and a caption that turns the emptiness into an invitation. Robert is worked in full below; the strip after it carries the same skeleton across <b>all six cohorts</b> — each Day-1 Today is shaped by that cohort's first job.</p>
 <div class="screen-block">
   <div class="phone-frame">
     <div class="phone-screen" style="gap:9px;">
@@ -1143,10 +1350,10 @@
       </div>
       <div class="phone-tabbar">
         <a class="tab active"><span class="icn">⌂</span>Today</a>
-        <a class="tab"><span class="icn">🧪</span>Labs</a>
-        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
         <a class="tab"><span class="icn">💬</span>Coach</a>
+        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
         <a class="tab"><span class="icn">📈</span>Progress</a>
+        <a class="tab"><span class="icn">🧪</span>Labs</a>
       </div>
     </div>
   </div>
@@ -1161,15 +1368,634 @@
   </div>
 </div>
 
+<h3 style="margin-top:30px;">All six cohorts — the same skeleton, six first jobs</h3>
+<p class="lede">The empty Today is not generic. The ghost hero card draws the chart that cohort will live in, and the primary CTA is that cohort's <b>step zero</b> — the one baseline action that turns every promise into a line. The score reads "—" everywhere; honesty is identical across lanes.</p>
+<div class="cohort-strip">
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Day 1</small>Welcome, Nick</div><span class="sc-streak" style="background:var(--bg-soft);color:var(--ink-3);">🔥 0</span></div>
+        <div class="sc-pills"><div class="sc-pill score" style="background:var(--brand-soft);border-color:var(--brand-soft);"><div class="v" style="color:var(--ink-3);">—</div><div class="l" style="color:var(--ink-3);">Liver score</div></div><div class="sc-pill"><div class="v" style="color:var(--ink-3);">0</div><div class="l">Scans</div></div></div>
+        <div class="sc-card hero" style="border-style:dashed;">
+          <div class="sc-lbl"><span>ALT trend</span><span style="color:var(--ink-3);">no data</span></div>
+          <svg viewBox="0 0 140 38" width="100%" style="margin-top:3px;">
+            <line x1="8" y1="32" x2="132" y2="32" stroke="#D6E2E0" stroke-width="1"/>
+            <polyline points="14,18 50,17 86,19 122,17" fill="none" stroke="#C9D6D4" stroke-width="1.8" stroke-dasharray="3 3"/>
+            <circle cx="14" cy="18" r="6" fill="#B0824D" fill-opacity="0.15"/><circle cx="14" cy="18" r="3" fill="none" stroke="#B0824D" stroke-width="1.8"/>
+          </svg>
+          <div class="sc-disc" style="text-align:center;">your ALT line builds here</div>
+        </div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">📷 Scan your first meal</div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍷 Newly Diagnosed Nick</div><div class="cc-job">Step zero — start the food-scan habit; ALT comes at the next blood test.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Day 1</small>Welcome, Greta</div><span class="sc-streak" style="background:var(--bg-soft);color:var(--ink-3);">🔥 0</span></div>
+        <div class="sc-pills"><div class="sc-pill score" style="background:var(--brand-soft);border-color:var(--brand-soft);"><div class="v" style="color:var(--ink-3);">—</div><div class="l" style="color:var(--ink-3);">Liver score</div></div><div class="sc-pill"><div class="v" style="color:var(--ink-3);">0</div><div class="l">Weigh-ins</div></div></div>
+        <div class="sc-card hero" style="border-style:dashed;">
+          <div class="sc-lbl"><span>ALT × weight</span><span style="color:var(--ink-3);">no data</span></div>
+          <svg viewBox="0 0 140 38" width="100%" style="margin-top:3px;">
+            <line x1="8" y1="32" x2="132" y2="32" stroke="#D6E2E0" stroke-width="1"/>
+            <polyline points="14,15 50,15 86,16 122,15" fill="none" stroke="#C9D6D4" stroke-width="1.8" stroke-dasharray="3 3"/>
+            <polyline points="14,23 50,24 86,23 122,24" fill="none" stroke="#E2CDA8" stroke-width="1.8" stroke-dasharray="3 3"/>
+            <circle cx="14" cy="15" r="5.5" fill="#B0824D" fill-opacity="0.15"/><circle cx="14" cy="15" r="2.8" fill="none" stroke="#B0824D" stroke-width="1.6"/>
+          </svg>
+          <div class="sc-disc" style="text-align:center;">your dual trend builds here</div>
+        </div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">⚖️ Add weight + last ALT</div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">💉 GLP-1 Greta</div><div class="cc-job">Step zero — anchor weight + a recent ALT so the two lines can pair up.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Day 1</small>Welcome, Pete</div><span class="sc-streak" style="background:var(--bg-soft);color:var(--ink-3);">🔥 0</span></div>
+        <div class="sc-pills"><div class="sc-pill score" style="background:var(--brand-soft);border-color:var(--brand-soft);"><div class="v" style="color:var(--ink-3);">—</div><div class="l" style="color:var(--ink-3);">Liver score</div></div><div class="sc-pill"><div class="v" style="color:var(--ink-3);">0</div><div class="l">Logs</div></div></div>
+        <div class="sc-card hero" style="border-style:dashed;">
+          <div class="sc-lbl"><span>HbA1c × ALT</span><span style="color:var(--ink-3);">no data</span></div>
+          <svg viewBox="0 0 140 38" width="100%" style="margin-top:3px;">
+            <line x1="8" y1="32" x2="132" y2="32" stroke="#D6E2E0" stroke-width="1"/>
+            <polyline points="14,15 50,15 86,16 122,15" fill="none" stroke="#C9D6D4" stroke-width="1.8" stroke-dasharray="3 3"/>
+            <polyline points="14,23 50,24 86,23 122,24" fill="none" stroke="#E2CDA8" stroke-width="1.8" stroke-dasharray="3 3"/>
+            <circle cx="14" cy="15" r="5.5" fill="#B0824D" fill-opacity="0.15"/><circle cx="14" cy="15" r="2.8" fill="none" stroke="#B0824D" stroke-width="1.6"/>
+          </svg>
+          <div class="sc-disc" style="text-align:center;">your metabolic trend builds here</div>
+        </div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">🩸 Add HbA1c + ALT</div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍔 Pre-Diabetic Pete</div><div class="cc-job">Step zero — enter both numbers so the "one problem" view exists from day one.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Day 1</small>Welcome, Rachel</div><span class="sc-streak" style="background:var(--bg-soft);color:var(--ink-3);">🔥 0</span></div>
+        <div class="sc-pills"><div class="sc-pill score" style="background:var(--brand-soft);border-color:var(--brand-soft);"><div class="v" style="color:var(--ink-3);">—</div><div class="l" style="color:var(--ink-3);">Liver score</div></div><div class="sc-pill"><div class="v" style="color:var(--ink-3);">—</div><div class="l">FibroScan</div></div></div>
+        <div class="sc-card hero" style="border-style:dashed;">
+          <div class="sc-lbl"><span>FibroScan · kPa</span><span style="color:var(--ink-3);">no data</span></div>
+          <svg viewBox="0 0 140 38" width="100%" style="margin-top:3px;">
+            <line x1="8" y1="32" x2="132" y2="32" stroke="#D6E2E0" stroke-width="1"/>
+            <polyline points="14,15 50,15 50,22 92,22 92,28 126,28" fill="none" stroke="#C9D6D4" stroke-width="1.8" stroke-dasharray="3 3"/>
+            <circle cx="14" cy="15" r="5.5" fill="#B0824D" fill-opacity="0.15"/><circle cx="14" cy="15" r="2.8" fill="none" stroke="#B0824D" stroke-width="1.6"/>
+          </svg>
+          <div class="sc-disc" style="text-align:center;">your F-stage timeline builds here</div>
+        </div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">🔬 Add your FibroScan kPa</div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">💊 Rezdiffra Rachel</div><div class="cc-job">Step zero — log the baseline kPa; every later scan is regression she can export.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Day 1</small>Welcome, Patricia</div><span class="sc-streak" style="background:var(--bg-soft);color:var(--ink-3);">🔥 0</span></div>
+        <div class="sc-pills"><div class="sc-pill score" style="background:var(--brand-soft);border-color:var(--brand-soft);"><div class="v" style="color:var(--ink-3);">—</div><div class="l" style="color:var(--ink-3);">Liver score</div></div><div class="sc-pill"><div class="v" style="color:var(--ink-3);">—</div><div class="l">Cycle day</div></div></div>
+        <div class="sc-card hero" style="border-style:dashed;">
+          <div class="sc-lbl"><span>ALT × cycle</span><span style="color:var(--ink-3);">no data</span></div>
+          <svg viewBox="0 0 140 38" width="100%" style="margin-top:3px;">
+            <rect x="8" y="6" width="34" height="26" fill="#CFE3E2" fill-opacity="0.4"/><rect x="76" y="6" width="34" height="26" fill="#CFE3E2" fill-opacity="0.4"/>
+            <line x1="8" y1="32" x2="132" y2="32" stroke="#D6E2E0" stroke-width="1"/>
+            <polyline points="14,18 50,17 86,19 122,17" fill="none" stroke="#C9D6D4" stroke-width="1.8" stroke-dasharray="3 3"/>
+            <circle cx="14" cy="18" r="5.5" fill="#B0824D" fill-opacity="0.15"/><circle cx="14" cy="18" r="2.8" fill="none" stroke="#B0824D" stroke-width="1.6"/>
+          </svg>
+          <div class="sc-disc" style="text-align:center;">your cycle × liver view builds here</div>
+        </div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">📅 Set cycle + add ALT</div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🧬 PCOS-NAFLD Patricia</div><div class="cc-job">Step zero — set the cycle anchor so ALT logs land in their hormonal phase.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Day 1</small>Welcome, Robert</div><span class="sc-streak" style="background:var(--bg-soft);color:var(--ink-3);">🔥 0</span></div>
+        <div class="sc-pills"><div class="sc-pill score" style="background:var(--brand-soft);border-color:var(--brand-soft);"><div class="v" style="color:var(--ink-3);">—</div><div class="l" style="color:var(--ink-3);">Liver score</div></div><div class="sc-pill"><div class="v" style="color:var(--ink-3);">0</div><div class="l">Days sober</div></div></div>
+        <div class="sc-card hero" style="border-style:dashed;">
+          <div class="sc-lbl"><span>GGT recovery</span><span style="color:var(--ink-3);">no data</span></div>
+          <svg viewBox="0 0 140 38" width="100%" style="margin-top:3px;">
+            <line x1="8" y1="32" x2="132" y2="32" stroke="#D6E2E0" stroke-width="1"/>
+            <polyline points="14,18 50,17 86,19 122,17" fill="none" stroke="#C9D6D4" stroke-width="1.8" stroke-dasharray="3 3"/>
+            <circle cx="14" cy="18" r="6" fill="#B0824D" fill-opacity="0.15"/><circle cx="14" cy="18" r="3" fill="none" stroke="#B0824D" stroke-width="1.8"/>
+          </svg>
+          <div class="sc-disc" style="text-align:center;">your recovery line builds here</div>
+        </div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">🩸 Log your baseline blood test</div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍺 Recovering Robert</div><div class="cc-job">Step zero — baseline GGT, or log Day 1 sober; either anchors the curve.</div></div>
+  </div>
+
+</div>
+<div class="m6-callout note">
+  <b>The universal empty-state rule.</b> Across all six lanes: every chart card is <em>always</em> drawn as a dashed skeleton — never hidden, never collapsed; the Liver score shows an honest <b>"—"</b>, never a fabricated number; the first logged data point animates into the ghost line with a micro-praise toast ("Baseline locked — your curve starts here"); and the secondary action is always present (a sober day for Robert, a meal scan for Nick) so a user with no labs to hand still has a way to start the streak. A blank Today is the single biggest Day-1 churn risk — so Day 1 is a <em>designed</em> screen in every cohort, not a fallback.
+</div>
+
 <!-- ===== 8.7 RECOMMENDED FOR REVIEW ===== -->
 <h2 id="flow-summary">8.7 · Ready for review</h2>
 <div class="m6-callout win">
-  <b>Module 8 — ready for founder review.</b> The core flow is worked screen-by-screen from the user's seat: the flow map (Onboarding + Paywall as dashed TODO gates), the Disclaimer gate, the Today screen worked top-to-bottom, the same Today across all 6 cohorts, the six motivating JTBD charts, and the Day-1 skeleton empty state. Best practice is borrowed and credited — Calibrum's skeleton zero-state, Folik's dual anchoring + baseline framing, Cysta's cohort lanes. Next sprint — <b>Module 9</b>: the working tabs (Labs · +Log · Coach · Progress) screen by screen. Nothing here is locked; on review the disclaimer copy goes to compliance sign-off and the screens become the spec for the Swift V1 skeleton.
+  <b>Module 8 — ready for founder review.</b> The core flow is worked screen-by-screen from the user's seat: the flow map (Onboarding + Paywall as dashed TODO gates), the Disclaimer gate, the Today screen worked top-to-bottom, the same Today across all 6 cohorts, the six motivating JTBD charts drawn in full, and the Day-1 skeleton empty state across all 6 cohorts. Best practice is borrowed and credited — Calibrum's skeleton zero-state, Folik's dual anchoring + baseline framing, Cysta's cohort lanes. Continues directly below — <b>Module 9 · Coach</b> and <b>Module 10 · Labs</b>; Progress, Log, Settings and the whole-app review carry on in <a href="flow2.html" style="color:#194A4C;font-weight:800;">flow2.html</a>. Nothing here is locked; on review the disclaimer copy goes to compliance sign-off and the screens become the spec for the Swift V1 skeleton.
+</div>
+
+<!-- ============================================================ -->
+<!-- ===================== MODULE 9 · COACH ===================== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-9">
+  <span class="num">МОДУЛЬ 9</span>
+  <h2>Coach — the AI companion, worked screen-by-screen</h2>
+  <p class="desc">The founder's idea: make Coach feel like a <b>consilium of specialists</b>, because a panel reads as more trustworthy than one generic chatbot. The tension: Calibrum and Cysta AI both ship a <em>single</em> AI coach, and <code>COMPLIANCE.md</code> forbids implying real licensed clinicians. So §9.1 runs the consilium — the 6 cohorts vote — and §9.2→9.4 iterate the winning screen built → evaluated → re-evaluated, deliberately fixing an information-overload failure along the way. Status: draft — nothing locked.</p>
+</div>
+
+<!-- ===== 9.1 COACH CONSILIUM ===== -->
+<h2 id="coach-consilium">9.1 · Coach consilium — should it be a panel of doctors?</h2>
+<p class="lede">Three ways to build the Coach. The cohorts vote on which the app ships. The constraint is fixed up front: Hepatica is <b>Health &amp; Fitness, not Medical</b> — no candidate may present the AI as a named, licensed, human doctor. The question is how to earn panel-grade trust <em>without</em> crossing that line.</p>
+<table class="tab-spec">
+  <thead><tr><th>Candidate</th><th>Concept</th><th>Trust signal</th><th>Compliance</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">A · Single AI Coach</td><td>One neutral "Hepatica Coach" voice. Cites guidelines inline. The Calibrum / Cysta AI pattern.</td><td>Citations carry the authority — one calm voice.</td><td><span class="ok">✓ Clean</span> — no persona risk.</td></tr>
+    <tr class="locked-row"><td class="tabname">B · Specialist-lens panel ⭐</td><td>Still one AI, but an answer can surface 2–3 labelled <b>perspectives by guideline domain</b> — "Hepatology lens · AASLD", "Addiction-medicine lens · AGA/SAMHSA", "Metabolic lens". A lens is a viewpoint, never a person.</td><td>Reads like a multidisciplinary review — the panel effect — while staying honestly an AI.</td><td><span class="ok">✓ Clean</span> — lenses are guideline domains, no names, no avatars, no "Dr.".</td></tr>
+    <tr><td class="tabname">C · Doctor-avatar panel</td><td>Named, portrait-avatar "doctors" — "Dr. Hale, Hepatologist" — answer in turn.</td><td>Highest surface trust… until the user clocks they're fake.</td><td><span class="warn">✗ Blocked</span> — implies real licensed practitioners. Rejected, not archived silently.</td></tr>
+  </tbody>
+</table>
+<table class="vote">
+  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · single</th><th class="score">B · lens panel</th><th class="score">C · avatars</th></tr></thead>
+  <tbody>
+    <tr><td class="voter">🍷 Nick</td><td class="aud">25</td><td class="score">4</td><td class="score hi">4</td><td class="score">3</td></tr>
+    <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">4</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍔 Pete</td><td class="aud">20</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">💊 Rachel</td><td class="aud">8</td><td class="score">4</td><td class="score hi">5</td><td class="score">2</td></tr>
+    <tr><td class="voter">🧬 Patricia</td><td class="aud">15</td><td class="score">3</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍺 Robert</td><td class="aud">17</td><td class="score">3</td><td class="score hi">5</td><td class="score">2</td></tr>
+    <tr class="totals"><td>Weighted Σ</td><td class="aud">100</td><td class="score">3.45</td><td class="score locked">4.80</td><td class="score">2.78</td></tr>
+  </tbody>
+</table>
+<div class="runoff">
+  <h3>Why B — the specialist-lens panel</h3>
+  <p><b>The cohorts split on whether they want a panel at all — but never on whether they want fake doctors.</b> Robert scores B=5 the moment an "Addiction-medicine lens" reads his GGT without a single judgmental word — a generic coach can't signal that competence. Pete and Rachel score B=5 because a metabolic / hepatology split mirrors how their real care team actually works. Nick is the dissenter at B=4: anxious and newly diagnosed, he wants reassurance, not a committee — which is the warning that drives the v1→v2 iteration below.</p>
+  <p><b>Candidate C loses everywhere.</b> The first time a cohort notices "Dr. Hale" is a generated portrait, every answer retroactively feels like a trick — and it puts the listing at Health &amp; Fitness review risk. The trust a panel buys is destroyed by faking the panellists.</p>
+  <div class="pick-row">
+    <span class="pick lead">⭐ B · Specialist-lens panel — ships</span>
+    <span class="pick">A · single coach — kept as B's default one-lens view</span>
+    <span class="pick">C · doctor avatars — rejected · compliance ✗</span>
+  </div>
+</div>
+<div class="lens-legend">
+  <div class="ll"><div class="ll-bar"></div><div><div class="ll-t">🫀 Hepatology lens</div><div class="ll-d">Liver enzymes, fibrosis, diet — the default lens for every cohort.</div><div class="ll-src">grounds: AASLD · EASL · Mayo</div></div></div>
+  <div class="ll addiction"><div class="ll-bar"></div><div><div class="ll-t">🍺 Addiction-medicine lens</div><div class="ll-d">Alcohol, recovery timelines, relapse — non-judgmental by construction.</div><div class="ll-src">grounds: AGA · SAMHSA · NIAAA</div></div></div>
+  <div class="ll metabolic"><div class="ll-bar"></div><div><div class="ll-t">⚖️ Metabolic lens</div><div class="ll-d">Glucose, weight, GLP-1, PCOS — the cross-condition viewpoint.</div><div class="ll-src">grounds: ADA · Endocrine Society</div></div></div>
+</div>
+<div class="m6-callout note">
+  <b>The compliance guardrail for B.</b> A "lens" is a guideline domain, not a human: no names, no portrait avatars, no "Dr.", no fabricated credentials. Every Coach answer still carries the safety strip and a refusal-pivot path (<code>COMPLIANCE.md</code>); the persistent header reads <b>"AI guidance · not a medical diagnosis"</b>. The panel feeling is allowed; the panel <em>fiction</em> is not.
+</div>
+
+<!-- ===== 9.2 COACH v1 ===== -->
+<h2 id="coach-v1">9.2 · Coach v1 — the panel, built literally</h2>
+<p class="lede">First iteration: take "specialist panel" at face value — every answer shows all three lenses, each fully written out, each with its own citations. Worked here for Robert. It is faithful to the consilium… and it fails.</p>
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:8px;">
+      <div class="coach-bar">
+        <span class="cb-dot">H</span>
+        <div class="cb-t">Hepatica Coach<small>AI guidance · not a medical diagnosis</small></div>
+      </div>
+      <div class="cv-chat">
+        <div class="cv-bub user">Is a 145-point GGT drop normal? I'm 47 days sober.</div>
+        <div class="cv-bub ai">
+          <div class="cv-lens">
+            <span class="lens-tag">🫀 Hepatology lens</span>
+            <div class="cv-lt">A GGT fall of that size in the first weeks of abstinence is well within the documented range. GGT has a half-life of 2–3 weeks, so early drops are steep.</div>
+            <span class="cv-cite">AASLD 2023 · GGT &amp; alcohol</span>
+          </div>
+          <div class="cv-lens addiction">
+            <span class="lens-tag addiction">🍺 Addiction-medicine lens</span>
+            <div class="cv-lt">At Day 47 you're inside the window where markers move fastest. Most measurable recovery in GGT happens by week 6–12 of continuous abstinence.</div>
+            <span class="cv-cite">NIAAA · recovery timeline</span>
+          </div>
+          <div class="cv-lens metabolic">
+            <span class="lens-tag metabolic">⚖️ Metabolic lens</span>
+            <div class="cv-lt">If weight and diet also shifted when you quit, some of the GGT change reflects metabolic improvement, not alcohol alone.</div>
+            <span class="cv-cite">EASL · metabolic GGT</span>
+          </div>
+          <div class="cv-safety">Educational — not a diagnosis. Discuss your results with your doctor.</div>
+        </div>
+      </div>
+      <div style="margin-top:auto;display:flex;flex-direction:column;gap:6px;">
+        <div class="cv-composer"><span class="cc-ph">Ask the Coach anything…</span><span class="cc-send">↑</span></div>
+      </div>
+      <div class="phone-tabbar">
+        <a class="tab"><span class="icn">⌂</span>Today</a>
+        <a class="tab active"><span class="icn">💬</span>Coach</a>
+        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
+        <a class="tab"><span class="icn">📈</span>Progress</a>
+        <a class="tab"><span class="icn">🧪</span>Labs</a>
+      </div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Evaluate — where v1 breaks</h3>
+    <div class="pov-lead">Robert asked one anxious question and got a <b>three-part committee report</b>. He wanted to hear "yes, that's normal" — instead he is scrolling a wall of text, and the most reassuring sentence is buried in lens two.</div>
+    <div class="annot-row"><span class="ar-z">Overload</span><span class="ar-v">Three lenses × a paragraph × a citation each is <b>~9 things to read</b> for a yes/no question. This is exactly Nick's B=4 warning from the consilium — a panel can feel like homework.</span></div>
+    <div class="annot-row"><span class="ar-z">Buried answer</span><span class="ar-v">The direct answer ("yes, normal") is implied, never stated first. The user has to assemble it from three viewpoints.</span></div>
+    <div class="annot-row"><span class="ar-z">Wasted on simple Qs</span><span class="ar-v">Most questions don't need three domains. Forcing all three every time makes the panel feel like padding, not rigour.</span></div>
+    <div class="annot-row"><span class="ar-z">What survives</span><span class="ar-v">The lens <em>concept</em> is good — the labels are credible and honest. The mistake is showing the whole panel <b>unconditionally</b>. v2 keeps lenses, drops the wall.</span></div>
+    <div class="borrowed"><b>Re-evaluation → v2.</b> Lead with one plain answer in the user's cohort lens; offer the other lenses as an opt-in. The panel becomes <em>available depth</em>, not <em>forced depth</em>.</div>
+  </div>
+</div>
+
+<!-- ===== 9.3 COACH v2 ===== -->
+<h2 id="coach-v2">9.3 · Coach v2 — collapse the panel to one answer</h2>
+<p class="lede">Second iteration. The answer leads with <b>one</b> lens — the one matching the user's cohort (Robert → addiction-medicine). It opens with the plain verdict. The other two lenses collapse into a single tappable row. Same rigour, a tenth of the reading.</p>
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:8px;">
+      <div class="coach-bar">
+        <span class="cb-dot">H</span>
+        <div class="cb-t">Hepatica Coach<small>AI guidance · not a medical diagnosis</small></div>
+      </div>
+      <div class="cv-chat">
+        <div class="cv-bub user">Is a 145-point GGT drop normal? I'm 47 days sober.</div>
+        <div class="cv-bub ai">
+          <div class="cv-lens addiction">
+            <span class="lens-tag addiction">🍺 Addiction-medicine lens</span>
+            <div class="cv-lt"><b>Yes — that's a normal, healthy drop.</b> GGT clears fast once drinking stops; the steepest fall is in the first 6–12 weeks of abstinence, and at Day 47 you're right inside that window.</div>
+            <span class="cv-cite">NIAAA · recovery timeline →</span>
+          </div>
+          <div class="cv-more">+ 2 more specialist views — Hepatology · Metabolic ⌄</div>
+          <div class="cv-safety">Educational — not a diagnosis. A drop is encouraging, but your doctor reads GGT in full context.</div>
+        </div>
+      </div>
+      <div style="margin-top:auto;display:flex;flex-direction:column;gap:6px;">
+        <div class="cv-quick"><span>Why does GGT fall first?</span><span>What's next at Day 60?</span></div>
+        <div class="cv-composer"><span class="cc-ph">Ask the Coach anything…</span><span class="cc-send">↑</span></div>
+      </div>
+      <div class="phone-tabbar">
+        <a class="tab"><span class="icn">⌂</span>Today</a>
+        <a class="tab active"><span class="icn">💬</span>Coach</a>
+        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
+        <a class="tab"><span class="icn">📈</span>Progress</a>
+        <a class="tab"><span class="icn">🧪</span>Labs</a>
+      </div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Re-evaluate — what v2 fixes</h3>
+    <div class="pov-lead">Robert reads <b>five words</b> — "Yes — that's a normal, healthy drop" — and exhales. The reassurance he came for is the first thing on screen; the rigour is one tap away if he wants it.</div>
+    <div class="annot-row"><span class="ar-z">Verdict first</span><span class="ar-v">Every answer opens with the plain-language conclusion in <b>bold</b>, then the why. No assembling.</span></div>
+    <div class="annot-row"><span class="ar-z">Cohort lens leads</span><span class="ar-v">The lead lens is chosen by cohort — Robert gets addiction-medicine, Rachel hepatology, Pete metabolic. The right specialist answers first, automatically.</span></div>
+    <div class="annot-row"><span class="ar-z">Panel on demand</span><span class="ar-v"><b>"+ 2 more specialist views"</b> expands the other lenses inline. The consilium's panel effect is preserved — as a choice, not a tax.</span></div>
+    <div class="annot-row"><span class="ar-z">One citation</span><span class="ar-v">One inline citation chip → opens a source sheet. Full reference text never clutters the bubble.</span></div>
+    <div class="annot-row"><span class="ar-z">Quick prompts</span><span class="ar-v">Two seeded follow-ups keep the conversation moving without a blank-input stall — borrowed from Cysta AI.</span></div>
+    <div class="borrowed"><b>Borrowed — Cysta AI (verdict-first bubble + quick-prompt chips), Calibrum (one calm voice, citation as the trust anchor).</b> v2 is the recommended layout. v3 next adds per-cohort tone and the doctor-PDF handoff.</div>
+  </div>
+</div>
+
+<!-- ===== 9.4 COACH v3 ===== -->
+<h2 id="coach-v3">9.4 · Coach v3 — cohort tone &amp; the doctor hand-off</h2>
+<p class="lede">Third iteration — two refinements on the v2 layout. <b>Per-cohort tone</b> — the same question answered in three voices. And the <b>doctor-visit hand-off</b> — any conversation becomes an export Rachel can hand her hepatologist. (A dark/night surface is deferred to the Swift build — out of scope for this flow workbench.)</p>
+<div class="cohort-strip">
+
+  <div class="cohort-cell" style="width:230px;">
+    <div class="phone-frame sm" style="max-width:230px;">
+      <div class="phone-screen">
+        <div class="coach-bar"><span class="cb-dot">H</span><div class="cb-t">Hepatica Coach<small>tone · per cohort</small></div></div>
+        <div class="cv-chat">
+          <div class="cv-bub ai" style="width:100%;">
+            <div class="cv-lens"><span class="lens-tag">🍷 to Nick</span><div class="cv-lt">"Elevated, but very common — and it moves. Here's the one change with the most evidence behind it."</div></div>
+            <div class="cv-lens" style="border-color:var(--brand-deep);"><span class="lens-tag">💊 to Rachel</span><div class="cv-lt">"ALT 64 U/L, down from 81. Tracking with your FibroScan regression — I'll add it to your visit summary."</div></div>
+            <div class="cv-lens addiction"><span class="lens-tag addiction">🍺 to Robert</span><div class="cv-lt">"That number is your liver doing the work. No judgment here — just the trend, and it's going the right way."</div></div>
+          </div>
+        </div>
+        <div class="sc-mini-tab"><i>⌂</i><i class="on">💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🎭 Cohort tone</div><div class="cc-job">One ALT result, three voices — reassuring for Nick, clinical for Rachel, non-judgmental for Robert. Tone is set by the cohort, content stays guideline-true.</div></div>
+  </div>
+
+  <div class="cohort-cell" style="width:230px;">
+    <div class="phone-frame sm" style="max-width:230px;">
+      <div class="phone-screen">
+        <div class="coach-bar"><span class="cb-dot">H</span><div class="cb-t">Hepatica Coach<small>visit hand-off</small></div></div>
+        <div class="cv-chat">
+          <div class="cv-bub ai" style="width:100%;">
+            <div class="cv-lt" style="margin-top:0;">This thread covered your ALT trend, the FibroScan drop and a Rezdiffra side-effect question. Want it as a doctor-visit summary?</div>
+            <span class="cv-cite">3 cited sources in this chat</span>
+          </div>
+        </div>
+        <div class="sc-ribbon" style="margin-top:2px;">
+          <span style="font-size:14px;">📄</span>
+          <span class="sr-t">Turn this conversation into a doctor-visit summary</span>
+          <span class="sr-go">→</span>
+        </div>
+        <div class="sc-card" style="border-style:dashed;text-align:center;padding:12px 8px;">
+          <div style="font-size:9px;font-weight:800;color:var(--brand-deep);">📑 Visit Summary · PDF</div>
+          <div style="font-size:7.5px;color:var(--ink-2);margin-top:3px;line-height:1.4;">Questions to ask · marker trends · each with its guideline citation</div>
+        </div>
+        <div class="sc-mini-tab"><i>⌂</i><i class="on">💬</i><span class="mt-fab">+</span><i>📈</i><i>🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">📄 Doctor hand-off</div><div class="cc-job">Any Coach thread exports to a print-ready visit summary — the Calibrum "Brief" pattern. Drives Rachel's insurance-documentation JTBD; shared with M11's Progress export.</div></div>
+  </div>
+
+</div>
+<div class="m6-callout note">
+  <b>Refusal pivots are spec'd into the composer.</b> Per <code>COMPLIANCE.md</code>, the Coach never diagnoses, never advises a medication change, and routes crisis input (acute symptoms, withdrawal, suicidal ideation) to ER / 988 / urgent care. A "can't answer that" always pivots to something it <em>can</em> do — "I can't confirm a diagnosis, but I can summarise your trend for your doctor". No answer ships without a citation or a pivot.
+</div>
+
+<!-- ===== 9.5 COACH READY ===== -->
+<h2 id="coach-summary">9.5 · Coach — ready for review</h2>
+<div class="m6-callout win">
+  <b>Module 9 — ready for founder review.</b> The consilium settled the founder's question: ship the <b>specialist-lens panel</b> (Candidate B, weighted Σ 4.80) — panel-grade trust without faking doctors; the doctor-avatar route (C) is rejected on compliance and documented as such. The screen was then iterated in the open: v1 built the panel literally and failed an overload test, v2 collapsed it to a verdict-first answer with the panel one tap away, v3 added per-cohort tone and the doctor-visit hand-off. Recommended to lock: <b>v2 layout + v3 refinements</b>. To compliance sign-off: the lens labels, the "AI guidance · not a medical diagnosis" header, the safety-strip wording and the refusal-pivot set.
+</div>
+
+<!-- ============================================================ -->
+<!-- ====================== MODULE 10 · LABS ==================== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-10">
+  <span class="num">МОДУЛЬ 10</span>
+  <h2>Labs — the analytes shown immediately, Calibrum-style</h2>
+  <p class="desc">The founder brief: Labs must open like Calibrum and Cysta AI — the user sees their actual markers <em>the instant the tab loads</em>, each with a reference range and an in-range / watch / out-of-range read. No "scan something first" wall. Lab capture (camera · PDF · manual) lives in this tab too. §10.1 runs the layout consilium, §10.2 works the analyte grid, §10.3 reorders it per cohort, §10.4 the capture flow.</p>
+</div>
+
+<!-- ===== 10.1 LABS CONSILIUM ===== -->
+<h2 id="labs-consilium">10.1 · Labs consilium — what does the tab open to?</h2>
+<p class="lede">Three things the Labs tab could show first. The cohorts vote. The brief already rules out the empty-wall pattern — the consilium confirms it and picks the shape.</p>
+<table class="tab-spec">
+  <thead><tr><th>Candidate</th><th>Tab opens to…</th><th>Pre-data state</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">A · Upload-first</td><td>A big "Add your labs" CTA. Analytes appear only after a scan.</td><td>A blank wall — the exact churn risk §8.6 fights everywhere else.</td><td><span class="warn">✗ Rejected</span></td></tr>
+    <tr class="locked-row"><td class="tabname">B · Analyte-grid first ⭐</td><td>The analyte cards immediately — ALT · AST · GGT · ALP · FIB-4 · HbA1c — each with value, reference range and verdict. "Add Lab Panel" is a row at the top.</td><td>Ghost analyte rows with "—" + "Add to see your value" — never a blank tab.</td><td><span class="ok">✓ Ships</span></td></tr>
+    <tr><td class="tabname">C · Single-score first</td><td>One composite "Liver Panel score"; analytes are a drill-down.</td><td>Works, but Today already owns the composite score — Labs must show the <em>components</em>.</td><td><span class="warn">✗ Rejected</span></td></tr>
+  </tbody>
+</table>
+<table class="vote">
+  <thead><tr><th>Cohort</th><th class="aud">aud %</th><th class="score">A · upload</th><th class="score">B · grid</th><th class="score">C · score</th></tr></thead>
+  <tbody>
+    <tr><td class="voter">🍷 Nick</td><td class="aud">25</td><td class="score">2</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">💉 Greta</td><td class="aud">15</td><td class="score">2</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍔 Pete</td><td class="aud">20</td><td class="score">2</td><td class="score hi">5</td><td class="score">2</td></tr>
+    <tr><td class="voter">💊 Rachel</td><td class="aud">8</td><td class="score">3</td><td class="score hi">5</td><td class="score">2</td></tr>
+    <tr><td class="voter">🧬 Patricia</td><td class="aud">15</td><td class="score">2</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr><td class="voter">🍺 Robert</td><td class="aud">17</td><td class="score">2</td><td class="score hi">5</td><td class="score">3</td></tr>
+    <tr class="totals"><td>Weighted Σ</td><td class="aud">100</td><td class="score">2.13</td><td class="score locked">5.00</td><td class="score">2.72</td></tr>
+  </tbody>
+</table>
+<div class="runoff">
+  <h3>Why B — the analyte grid, unanimous</h3>
+  <p><b>Every cohort opens Labs to answer one question — "are my numbers OK?"</b> A upload-first or score-first tab makes them tap twice for an answer that should be the first thing on screen. B is the only candidate that respects why the tab exists. The Liver score belongs to Today; Labs is where the user reads the parts. Calibrum and Cysta AI both land here for the same reason.</p>
+  <div class="pick-row">
+    <span class="pick lead">⭐ B · Analyte-grid first — ships</span>
+    <span class="pick">A · upload-first — rejected · blank wall</span>
+    <span class="pick">C · score-first — rejected · duplicates Today</span>
+  </div>
+</div>
+<div class="m6-callout note">
+  <b>The empty-state rule, applied to Labs.</b> Pre-data the analyte cards still render — name, reference range, and a ghost "—" value with "Add to see your value". The §8.6 skeleton principle holds: the tab is never blank, the structure always teaches what's coming.
+</div>
+
+<!-- ===== 10.2 LABS GRID ===== -->
+<h2 id="labs-grid">10.2 · Labs — the analyte grid, worked</h2>
+<p class="lede">The Labs tab for <b>Robert</b>, with one panel logged. Add-panel row on top; the analytes below, each a card with the value, a reference-range bar showing where the user sits, and a verdict on the warm triad. GGT is pinned for Robert (§10.3 covers per-cohort pinning).</p>
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:7px;">
+      <div class="sc-head"><div class="sc-greet"><small>Labs</small>Your liver panel</div></div>
+      <div class="lab-add">
+        <div class="la-opt primary"><div class="la-ic">📷</div><div class="la-t">Camera scan</div></div>
+        <div class="la-opt"><div class="la-ic">📄</div><div class="la-t">Upload PDF</div></div>
+        <div class="la-opt"><div class="la-ic">✏️</div><div class="la-t">Manual entry</div></div>
+      </div>
+      <div class="lab-panel-head"><span class="lph-t">Latest panel</span><span class="lph-s">Apr 12 · LabCorp</span></div>
+      <div class="analyte pin">
+        <div class="an-top">
+          <div class="an-name">GGT <small>· alcohol-sensitive</small></div>
+          <div class="an-rhs"><span class="sc-vp watch">Watch</span><span class="an-val">95<small> U/L</small></span></div>
+        </div>
+        <div class="range-bar liver"><span class="rb-mark watch" style="left:63%;"></span></div>
+        <div class="an-foot"><span>0</span><span>AASLD ref · &lt;50</span><span>250+</span></div>
+        <div class="an-note"><b>↓ 145 since your first panel.</b> Most alcohol-related GGT clears within the first 6–12 weeks of abstinence — keep tracking the trend with your doctor. <span style="font-family:ui-monospace,SF Mono;color:var(--cta-deep);">AASLD 2023</span></div>
+      </div>
+      <div class="analyte">
+        <div class="an-top">
+          <div class="an-name">ALT <small>· U/L</small></div>
+          <div class="an-rhs"><span class="sc-vp watch">Watch</span><span class="an-val">41<small> U/L</small></span></div>
+        </div>
+        <div class="range-bar liver"><span class="rb-mark watch" style="left:57%;"></span></div>
+        <div class="an-foot"><span>0</span><span>AASLD ref · &lt;40</span><span>120+</span></div>
+      </div>
+      <div class="analyte">
+        <div class="an-top">
+          <div class="an-name">AST <small>· U/L</small></div>
+          <div class="an-rhs"><span class="sc-vp good">In range</span><span class="an-val">34<small> U/L</small></span></div>
+        </div>
+        <div class="range-bar liver"><span class="rb-mark good" style="left:40%;"></span></div>
+        <div class="an-foot"><span>0</span><span>AASLD ref · &lt;35</span><span>120+</span></div>
+      </div>
+      <div class="analyte">
+        <div class="an-top">
+          <div class="an-name">ALP <small>· U/L</small></div>
+          <div class="an-rhs"><span class="sc-vp good">In range</span><span class="an-val">88<small> U/L</small></span></div>
+        </div>
+        <div class="range-bar liver"><span class="rb-mark good" style="left:34%;"></span></div>
+        <div class="an-foot"><span>0</span><span>ref · 44–121</span><span>200+</span></div>
+      </div>
+      <div class="analyte">
+        <div class="an-top">
+          <div class="an-name">FIB-4 <small>· fibrosis index</small></div>
+          <div class="an-rhs"><span class="sc-vp good">Low risk</span><span class="an-val">1.1</span></div>
+        </div>
+        <div class="range-bar liver"><span class="rb-mark good" style="left:27%;"></span></div>
+        <div class="an-foot"><span>0</span><span>low &lt;1.3 · high &gt;2.67</span><span>4+</span></div>
+      </div>
+      <div class="sc-disc">Educational — reference ranges are AASLD population thresholds, not a personal diagnosis. FIB-4 is a screening index, not biopsy-equivalent.</div>
+      <div class="phone-tabbar">
+        <a class="tab"><span class="icn">⌂</span>Today</a>
+        <a class="tab"><span class="icn">💬</span>Coach</a>
+        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
+        <a class="tab"><span class="icn">📈</span>Progress</a>
+        <a class="tab active"><span class="icn">🧪</span>Labs</a>
+      </div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Standing in the user's shoes</h3>
+    <div class="pov-lead">Robert opens Labs the day after a blood draw with one question — <b>"how bad is it?"</b> The grid answers per marker in one glance: the dot's position on the range bar and its colour <em>are</em> the answer, before he reads a single number.</div>
+    <div class="annot-row"><span class="ar-z">Sees first</span><span class="ar-v">The <b>add-panel row</b> then the analytes — open instantly, no empty wall. The Camera-scan tile is gold-highlighted as the fastest path.</span></div>
+    <div class="annot-row"><span class="ar-z">Range bar</span><span class="ar-v">Each marker plotted on a <b>good → watch → out-of-range</b> track. The dot's position is the verdict; the pill just names it. Warm triad — <b>no clinical red</b>.</span></div>
+    <div class="annot-row"><span class="ar-z">Pinned analyte</span><span class="ar-v">GGT sits on top for Robert with an interpretation note + citation — his JTBD marker. The pin is cohort-driven (§10.3).</span></div>
+    <div class="annot-row"><span class="ar-z">Reference framing</span><span class="ar-v">Every range cites the <b>AASLD threshold</b>; FIB-4 is labelled a <b>screening index</b>. Copy never says "you have" — per <code>COMPLIANCE.md</code>.</span></div>
+    <div class="annot-row"><span class="ar-z">JTBD step</span><span class="ar-v">"Read where I stand." Tapping any card opens its trend; the trend lives in Progress (§11) — Labs answers <em>now</em>, Progress answers <em>over time</em>.</span></div>
+    <div class="borrowed"><b>Borrowed — Calibrum (the analyte-row grid with verdict pills, visible the second the tab opens), Cysta AI (the pinned primary analyte with a full interpretation + guideline citation, compact grid for the rest).</b></div>
+  </div>
+</div>
+
+<!-- ===== 10.3 PER-COHORT EMPHASIS ===== -->
+<h2 id="labs-cohorts">10.3 · The same grid, six emphases</h2>
+<p class="lede">The analyte set is the same; what changes is the <b>pinned-top card</b> — the cohort's JTBD marker, expanded with an interpretation note. Everything else collapses into the scrolling grid below it.</p>
+<table class="tab-spec">
+  <thead><tr><th>Cohort</th><th>Pinned-top analyte</th><th>Secondary emphasis</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">🍷 Nick</td><td>ALT</td><td>AST</td><td>The number the doctor named — "your ALT is high".</td></tr>
+    <tr><td class="tabname">💉 Greta</td><td>ALT</td><td>GGT · weight context</td><td>Proof the GLP-1 reached the liver, not just the scale.</td></tr>
+    <tr><td class="tabname">🍔 Pete</td><td>HbA1c</td><td>FIB-4 · ALT</td><td>Metabolic syndrome is read glucose-first.</td></tr>
+    <tr><td class="tabname">💊 Rachel</td><td>FibroScan LSM (kPa)</td><td>FIB-4 · ALT/AST</td><td>Fibrosis stage is the insurance-documentation marker.</td></tr>
+    <tr><td class="tabname">🧬 Patricia</td><td>ALT (cycle-tagged)</td><td>HbA1c</td><td>Liver marker read in its hormonal-phase context.</td></tr>
+    <tr><td class="tabname">🍺 Robert</td><td>GGT</td><td>AST · ALT</td><td>The fastest-moving alcohol-recovery marker — rendered in §10.2.</td></tr>
+  </tbody>
+</table>
+<div class="cohort-strip">
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Labs</small>Pete</div></div>
+        <div class="analyte pin">
+          <div class="an-top"><div class="an-name">HbA1c</div><div class="an-rhs"><span class="sc-vp watch">Watch</span><span class="an-val" style="font-size:12px;">5.9<small> %</small></span></div></div>
+          <div class="range-bar liver"><span class="rb-mark watch" style="left:60%;"></span></div>
+          <div class="an-foot"><span>4</span><span>pre-diab 5.7–6.4</span><span>9+</span></div>
+          <div class="an-note">Down from 6.1. Glucose and liver move together — keep both in view.</div>
+        </div>
+        <div class="analyte"><div class="an-top"><div class="an-name">FIB-4</div><div class="an-rhs"><span class="sc-vp good">Low</span><span class="an-val" style="font-size:12px;">1.2</span></div></div><div class="range-bar liver"><span class="rb-mark good" style="left:30%;"></span></div></div>
+        <div class="analyte"><div class="an-top"><div class="an-name">ALT</div><div class="an-rhs"><span class="sc-vp watch">Watch</span><span class="an-val" style="font-size:12px;">52<small> U/L</small></span></div></div><div class="range-bar liver"><span class="rb-mark watch" style="left:62%;"></span></div></div>
+        <div class="sc-mini-tab"><i>⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i class="on">🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍔 Pre-Diabetic Pete</div><div class="cc-job">HbA1c pinned — metabolic syndrome is read glucose-first, ALT second.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Labs</small>Rachel</div></div>
+        <div class="analyte pin">
+          <div class="an-top"><div class="an-name">FibroScan <small>· LSM</small></div><div class="an-rhs"><span class="sc-vp watch">F2</span><span class="an-val" style="font-size:12px;">8.1<small> kPa</small></span></div></div>
+          <div class="range-bar liver"><span class="rb-mark watch" style="left:58%;"></span></div>
+          <div class="an-foot"><span>F0</span><span>F2 · 8–10 kPa</span><span>F4</span></div>
+          <div class="an-note">Down from 12.5 kPa (F3). FibroScan is a screening tool — staging is your hepatologist's call.</div>
+        </div>
+        <div class="analyte"><div class="an-top"><div class="an-name">FIB-4</div><div class="an-rhs"><span class="sc-vp watch">Mid</span><span class="an-val" style="font-size:12px;">1.9</span></div></div><div class="range-bar liver"><span class="rb-mark watch" style="left:56%;"></span></div></div>
+        <div class="analyte"><div class="an-top"><div class="an-name">ALT</div><div class="an-rhs"><span class="sc-vp good">In range</span><span class="an-val" style="font-size:12px;">36<small> U/L</small></span></div></div><div class="range-bar liver"><span class="rb-mark good" style="left:44%;"></span></div></div>
+        <div class="sc-mini-tab"><i>⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i class="on">🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">💊 Rezdiffra Rachel</div><div class="cc-job">FibroScan pinned as a distinct kPa + F-stage card — her insurance-documentation marker.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Labs</small>Nick</div></div>
+        <div class="analyte pin">
+          <div class="an-top"><div class="an-name">ALT</div><div class="an-rhs"><span class="sc-vp watch">Watch</span><span class="an-val" style="font-size:12px;">66<small> U/L</small></span></div></div>
+          <div class="range-bar liver"><span class="rb-mark watch" style="left:66%;"></span></div>
+          <div class="an-foot"><span>0</span><span>AASLD ref · &lt;40</span><span>120+</span></div>
+          <div class="an-note">The number your doctor flagged. Elevated, common, and it responds to diet — track it here every panel.</div>
+        </div>
+        <div class="analyte"><div class="an-top"><div class="an-name">AST</div><div class="an-rhs"><span class="sc-vp watch">Watch</span><span class="an-val" style="font-size:12px;">44<small> U/L</small></span></div></div><div class="range-bar liver"><span class="rb-mark watch" style="left:58%;"></span></div></div>
+        <div class="analyte"><div class="an-top"><div class="an-name">FIB-4</div><div class="an-rhs"><span class="sc-vp good">Low</span><span class="an-val" style="font-size:12px;">0.9</span></div></div><div class="range-bar liver"><span class="rb-mark good" style="left:22%;"></span></div></div>
+        <div class="sc-mini-tab"><i>⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i class="on">🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍷 Newly Diagnosed Nick</div><div class="cc-job">ALT pinned — the one marker his doctor named, with plain-English context.</div></div>
+  </div>
+
+</div>
+<div class="m6-callout note">
+  <b>Compliance on the Labs tab.</b> Reference ranges are AASLD population thresholds, shown as ranges — never "normal/abnormal for you". FibroScan and FIB-4 carry the screening-tool disclaimer (<code>COMPLIANCE.md</code>): kPa and F-stage are self-logged tracking, staging is a clinical decision. No card says "you have NAFLD/MASH"; the warm triad replaces clinical red so an out-of-range value reads as "discuss this", not "alarm".
+</div>
+
+<!-- ===== 10.4 LAB CAPTURE ===== -->
+<h2 id="labs-capture">10.4 · Adding a panel — scan · PDF · manual</h2>
+<p class="lede">Three ways into the grid, all reachable from the add-panel row. Camera scan is the fastest and the default-highlighted; the OCR pipeline is reused wholesale from Cysta AI's lab interpreter.</p>
+<div class="cohort-strip">
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Add panel</small>Camera scan</div></div>
+        <div class="sc-card" style="background:var(--brand-deep);border:none;padding:0;overflow:hidden;">
+          <div style="height:96px;position:relative;background:repeating-linear-gradient(180deg,#1E3A3B 0 7px,#22413f 7px 14px);">
+            <div style="position:absolute;inset:14px;border:2px dashed var(--cta);border-radius:8px;"></div>
+            <div style="position:absolute;top:6px;left:50%;transform:translateX(-50%);font-size:7.5px;font-weight:800;color:var(--cta);">edges detected ✓</div>
+          </div>
+        </div>
+        <div class="sc-card" style="padding:8px 9px;display:flex;flex-direction:column;gap:5px;">
+          <div style="display:flex;justify-content:space-between;"><span style="font-size:8.5px;font-weight:800;color:var(--ink);">ALT</span><span style="font-size:8.5px;font-family:ui-monospace,SF Mono;font-weight:800;color:var(--brand-deep);">41 U/L</span><span class="ocr-chip">OCR 99%</span></div>
+          <div style="display:flex;justify-content:space-between;"><span style="font-size:8.5px;font-weight:800;color:var(--ink);">GGT</span><span style="font-size:8.5px;font-family:ui-monospace,SF Mono;font-weight:800;color:var(--brand-deep);">95 U/L</span><span class="ocr-chip">OCR 97%</span></div>
+          <div style="display:flex;justify-content:space-between;"><span style="font-size:8.5px;font-weight:800;color:var(--ink);">AST</span><span style="font-size:8.5px;font-family:ui-monospace,SF Mono;font-weight:800;color:var(--cta-deep);">34 U/L</span><span class="ocr-chip" style="background:var(--watch-bg);color:#7A4012;">check</span></div>
+        </div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">Review &amp; save 5 markers</div>
+        <div class="sc-mini-tab"><i>⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i class="on">🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">📷 Camera scan</div><div class="cc-job">Snap a LabCorp / Quest printout. Auto edge-detect, perspective-correct, per-marker OCR confidence; low-confidence rows flagged "check" before save.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Add panel</small>Upload PDF</div></div>
+        <div class="sc-card" style="border-style:dashed;text-align:center;padding:16px 8px;">
+          <div style="font-size:22px;">📄</div>
+          <div style="font-size:9px;font-weight:800;color:var(--brand-deep);margin-top:4px;">Pick a lab report PDF</div>
+          <div style="font-size:7.5px;color:var(--ink-2);margin-top:2px;line-height:1.4;">Files · Mail attachments · iCloud Drive</div>
+        </div>
+        <div class="cap-step"><span class="cs-n">1</span><span class="cs-t">Emailed lab PDFs import directly — no printing.</span></div>
+        <div class="cap-step"><span class="cs-n">2</span><span class="cs-t">Multi-page reports accumulate into one panel.</span></div>
+        <div class="cap-step"><span class="cs-n">3</span><span class="cs-t">Same OCR review screen before save.</span></div>
+        <div class="sc-disc">The PDF is parsed on-device, then discarded — nothing is stored on Hepatica's servers.</div>
+        <div class="sc-mini-tab"><i>⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i class="on">🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">📄 Upload PDF</div><div class="cc-job">For the emailed report — the most common format. Multi-page accumulator; on-device parse, no retention.</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Add panel</small>Manual entry</div></div>
+        <div class="sc-card" style="padding:8px 9px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:8.5px;font-weight:800;color:var(--ink);">ALT</span><span style="font-size:8.5px;font-family:ui-monospace,SF Mono;background:var(--pearl);border:1px solid var(--divider);border-radius:5px;padding:3px 14px;color:var(--ink-3);">_ _ U/L</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:8.5px;font-weight:800;color:var(--ink);">GGT</span><span style="font-size:8.5px;font-family:ui-monospace,SF Mono;background:var(--pearl);border:1px solid var(--divider);border-radius:5px;padding:3px 14px;color:var(--ink-3);">_ _ U/L</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:8.5px;font-weight:800;color:var(--ink);">AST</span><span style="font-size:8.5px;font-family:ui-monospace,SF Mono;background:var(--pearl);border:1px solid var(--divider);border-radius:5px;padding:3px 14px;color:var(--ink-3);">_ _ U/L</span></div>
+          <div style="font-size:7px;color:var(--cta-deep);font-weight:700;">+ add another marker</div>
+        </div>
+        <div class="cap-step"><span class="cs-n">✓</span><span class="cs-t">FIB-4 auto-calculates from AST + ALT + platelets + age.</span></div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">Save panel</div>
+        <div class="sc-mini-tab"><i>⌂</i><i>💬</i><span class="mt-fab">+</span><i>📈</i><i class="on">🧪</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">✏️ Manual entry</div><div class="cc-job">For when the user only has the numbers read to them. FIB-4 is computed, never typed — one less thing to get wrong.</div></div>
+  </div>
+
+</div>
+<div class="m6-callout note">
+  <b>Shared with the +Log FAB.</b> The "🩸 Lab" capture option in the Module 12 log sheet routes into this exact same scan / PDF / manual flow — capture is built once and entered from two places. Privacy: lab images and PDFs are processed on-device for OCR and then discarded; nothing is uploaded (<code>COMPLIANCE.md</code> · privacy).
+</div>
+
+<!-- ===== 10.5 LABS READY ===== -->
+<h2 id="labs-summary">10.5 · Labs — ready for review</h2>
+<div class="m6-callout win">
+  <b>Module 10 — ready for founder review.</b> The consilium was unanimous (B · analyte-grid first, Σ 5.00): Labs opens straight to the markers — value, reference-range bar, warm-triad verdict — with the add-panel row on top and no empty wall. §10.2 worked the grid for Robert; §10.3 pins the JTBD analyte per cohort (GGT · ALT · HbA1c · FibroScan); §10.4 worked the three capture paths, OCR pipeline reused from Cysta AI. Compliance: AASLD reference ranges, FibroScan/FIB-4 screening-tool disclaimers, no diagnosis copy, no clinical red. Progress · Log · Settings · whole-app review continue in <a href="flow2.html" style="color:#194A4C;font-weight:800;">flow2.html</a>.
 </div>
 
 <footer>
-  <b>Hepatica — Screen Flow Workbench</b> · companion to <b>design.html</b> (Modules 1–7) · updated 2026-05-21 · sibling pattern: Cysta AI · Folik · Calibrum.<br>
-  Module 8 — app flow map · Disclaimer gate · Today screen · 6 cohort screens · motivating JTBD charts · first-run empty state. Next: Module 9 — the working tab screens (Labs · +Log · Coach · Progress) &amp; the Swift V1 skeleton.
+  <b>Hepatica — Screen Flow Workbench · Part 1</b> · companion to <b>design.html</b> (M1–7) · continues in <b>flow2.html</b> (M11–14) · updated 2026-05-21 · sibling pattern: Cysta AI · Folik · Calibrum.<br>
+  Module 8 — flow map · Disclaimer gate · Today worked top-to-bottom · 6 cohort screens · 6 motivating JTBD charts · Day-1 empty states for all 6 cohorts. Module 9 — Coach consilium + 3 design iterations. Module 10 — Labs analyte grid + per-cohort emphasis + lab capture. Tab order: Today · Coach · +Log · Progress · Labs. Nothing locked; on review the screens become the spec for the Swift V1 skeleton.
 </footer>
 
 </body>
