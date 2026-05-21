@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hepatica — Screen Flow Workbench</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ====== LOCKED DESIGN SYSTEM — Hepatica · Candidate B «Clinical» · 2026-05-20 ====== */
+  :root {
+    --ink:        #1E2A2B;
+    --ink-2:      #4C5B5C;
+    --ink-3:      #8B9B9B;
+    --bg:         #EEF3F2;
+    --bg-soft:    #F7FAF9;
+    --card:       #FFFFFF;
+    --divider:    #D6E2E0;
+
+    --brand:      #2D7B7E;          /* teal — locked */
+    --brand-mid:  #226163;
+    --brand-deep: #194A4C;
+    --brand-soft: #CFE3E2;
+
+    --cta:        #D4A574;          /* gold — locked */
+    --cta-deep:   #B0824D;
+    --cta-soft:   #F1DFC4;
+
+    --pearl:      #EEF3F2;
+    --pearl-soft: #F7FAF9;
+
+    --good:       #2D7B7E;  --good-bg:  #CFE3E2;
+    --watch:      #C68A3E;  --watch-bg: #F0DFC2;
+    --alert:      #B5503C;  --alert-bg: #EBD0C8;
+
+    --ai-bg:      #E2ECEB;  --ai-border: #C4D8D6;
+
+    --night-bg:   #0F1F20;  --night-surface: #18302F;
+    --night-bubble-user: #244241; --night-divider: #2C4544;
+    --night-accent: #D4A574; --night-text: #EAF2F1;
+  }
+
+  /* ============ CANDIDATE A · BOTANICAL — sage-green + warm gold (archived) ====== */
+  .cand-a {
+    --brand: #5E7E68; --brand-mid: #4C6957; --brand-deep: #3B5446; --brand-soft: #DDE6DC;
+    --cta: #D4A574; --cta-deep: #B0824D; --cta-soft: #F1DFC4;
+    --pearl: #F3EEE3; --pearl-soft: #FBF7EF;
+    --ink: #29302A; --ink-2: #5C6359; --ink-3: #97A091;
+    --card: #FFFFFF; --divider: #E4DCCB;
+    --good: #5E7E68; --good-bg: #D8E4DA;
+    --watch: #C68A3E; --watch-bg: #F1DFC4;
+    --alert: #C0703F; --alert-bg: #EFD8C6;
+    --ai-bg: #E7EDE5; --ai-border: #CFDDCC;
+    --night-bg: #14201A; --night-surface: #1E2C24; --night-bubble-user: #2C3F32;
+    --night-divider: #30453A; --night-accent: #D4A574; --night-text: #F3EEE3;
+  }
+  /* ============ CANDIDATE B · CLINICAL — teal + gold (LOCKED) ============ */
+  .cand-b {
+    --brand: #2D7B7E; --brand-mid: #226163; --brand-deep: #194A4C; --brand-soft: #CFE3E2;
+    --cta: #D4A574; --cta-deep: #B0824D; --cta-soft: #F1DFC4;
+    --pearl: #EEF3F2; --pearl-soft: #F7FAF9;
+    --ink: #1E2A2B; --ink-2: #4C5B5C; --ink-3: #8B9B9B;
+    --card: #FFFFFF; --divider: #D6E2E0;
+    --good: #2D7B7E; --good-bg: #CFE3E2;
+    --watch: #C68A3E; --watch-bg: #F0DFC2;
+    --alert: #B5503C; --alert-bg: #EBD0C8;
+    --ai-bg: #E2ECEB; --ai-border: #C4D8D6;
+    --night-bg: #0F1F20; --night-surface: #18302F; --night-bubble-user: #244241;
+    --night-divider: #2C4544; --night-accent: #D4A574; --night-text: #EAF2F1;
+  }
+  /* ============ CANDIDATE C · EDITORIAL — warm charcoal + amber (archived) ======= */
+  .cand-c {
+    --brand: #3A3A36; --brand-mid: #2C2C29; --brand-deep: #1F1F1D; --brand-soft: #E0DCD2;
+    --cta: #C98A3C; --cta-deep: #9E6A28; --cta-soft: #EFDEC2;
+    --pearl: #F1EDE6; --pearl-soft: #F8F5EF;
+    --ink: #26241F; --ink-2: #5A574E; --ink-3: #968F81;
+    --card: #FFFFFF; --divider: #E2DBCF;
+    --good: #6E7F5A; --good-bg: #DEE3D2;
+    --watch: #C98A3C; --watch-bg: #EFDEC2;
+    --alert: #B25638; --alert-bg: #ECD3C7;
+    --ai-bg: #ECE8DF; --ai-border: #D6CFBF;
+    --night-bg: #1B1A17; --night-surface: #262420; --night-bubble-user: #34322B;
+    --night-divider: #38362F; --night-accent: #C98A3C; --night-text: #F1EDE6;
+  }
+
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    padding: 28px 24px 96px;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  h1, h2, h3, h4 { font-family: -apple-system, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif; letter-spacing: -0.01em; }
+  h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+  h2 { font-size: 22px; font-weight: 700; margin: 44px 0 14px; }
+  h3 { font-size: 16px; font-weight: 700; margin: 22px 0 10px; color: var(--ink); }
+  code { font-family: ui-monospace, "SF Mono", monospace; font-size: 11.5px; background: var(--bg-soft); padding: 1px 5px; border-radius: 4px; color: var(--cta-deep); }
+
+  .lede { color: var(--ink-2); max-width: 940px; line-height: 1.55; margin-bottom: 6px; font-size: 14px; }
+  .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 8px; }
+  .pill { background: var(--card); border: 1px solid var(--divider); border-radius: 999px; padding: 5px 12px; font-size: 12px; color: var(--ink-2); font-weight: 600; }
+  .pill.lock  { background: var(--good-bg); color: #194A4C; border-color: #AFCFCE; }
+  .pill.vote  { background: var(--cta-soft); color: var(--cta-deep); border-color: #E7CFA3; }
+  .pill.brand { background: var(--brand-soft); color: var(--brand-deep); border-color: var(--brand-soft); }
+  .pill.sib   { background: var(--cta-soft); color: var(--cta-deep); border-color: #E7CFA3; }
+
+  /* ==================== TOP NAV ==================== */
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(238, 243, 242, 0.94);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--divider);
+    margin: 0 -24px 18px; padding: 10px 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--ink-2);
+    font-size: 12.5px; font-weight: 600;
+    padding: 6px 11px; border-radius: 999px; border: 1px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover { background: var(--card); color: var(--brand-deep); border-color: var(--divider); }
+  .top-nav a.is-module { background: var(--brand); color: var(--pearl); }
+  .top-nav a.is-module:hover { background: var(--brand-mid); color: var(--pearl); }
+  .top-nav .nav-num { font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; background: var(--cta); color: #fff; padding: 2px 6px; border-radius: 5px; }
+  .top-nav .sep { width: 1px; height: 16px; background: var(--divider); margin: 0 4px; }
+
+  /* ==================== DECISION CALLOUT ==================== */
+  .decision-callout {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+    color: var(--pearl); border-radius: 24px;
+    padding: 26px 28px 22px; margin: 22px 0 8px;
+    display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: end;
+  }
+  @media (max-width: 720px) { .decision-callout { grid-template-columns: 1fr; } }
+  .decision-callout h2 { color: var(--pearl); margin: 0; font-size: 26px; }
+  .decision-callout .vibe { color: rgba(234,242,241,0.86); max-width: 760px; margin-top: 8px; line-height: 1.55; font-size: 13.5px; }
+  .decision-callout .score-badge {
+    background: var(--cta); color: var(--brand-deep);
+    border-radius: 999px; padding: 10px 18px; font-weight: 800; font-size: 15px;
+    font-family: ui-monospace, "SF Mono", monospace; white-space: nowrap;
+  }
+
+  /* ==================== MODULE BANNERS ==================== */
+  .module-banner {
+    margin: 60px 0 18px; padding: 18px 22px;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%);
+    color: var(--pearl); border-radius: 18px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .module-banner .num { font-family: ui-monospace, "SF Mono", monospace; font-size: 12.5px; font-weight: 800; letter-spacing: 0.08em; background: var(--cta); color: var(--brand-deep); padding: 5px 11px; border-radius: 8px; }
+  .module-banner h2 { margin: 0; color: var(--pearl); font-size: 22px; }
+  .module-banner .desc { color: rgba(234,242,241,0.86); font-size: 13px; line-height: 1.55; flex-basis: 100%; margin-top: 4px; max-width: 1000px; }
+
+  /* ==================== CANDIDATE / SYSTEM BLOCK ==================== */
+  .cand {
+    background: var(--card); border: 1px solid var(--divider);
+    border-left: 6px solid var(--brand);
+    border-radius: 16px; padding: 18px 22px 24px; margin-top: 14px;
+  }
+  .cand-head { display: flex; flex-direction: column; gap: 6px; padding-bottom: 14px; border-bottom: 1px dashed var(--divider); margin-bottom: 6px; }
+  .cand-tag { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; letter-spacing: 0.10em; color: var(--cta-deep); }
+  .cand-name { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-size: 26px; font-weight: 800; color: var(--brand-deep); }
+  .cand-c .cand-name { font-family: "Charter", "Newsreader", Georgia, "Times New Roman", ui-serif, serif; font-weight: 700; }
+  .cand-concept { font-size: 13.5px; color: var(--ink); line-height: 1.5; max-width: 760px; }
+  .cand-row { display: flex; gap: 10px; align-items: baseline; font-size: 12.5px; margin-top: 2px; }
+  .cand-row .cand-l { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); width: 64px; flex-shrink: 0; }
+  .cand-row .cand-v { color: var(--ink-2); line-height: 1.5; }
+  .cand-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .cohort-chip { font-size: 11px; font-weight: 700; background: var(--brand-soft); color: var(--brand-deep); border-radius: 999px; padding: 2px 9px; }
+
+  /* ==================== TOKEN GRID ==================== */
+  .token-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin-top: 10px; }
+  .token { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1px solid var(--divider); border-radius: 10px; padding: 8px 10px; font-family: ui-monospace, "SF Mono", monospace; font-size: 11.5px; }
+  .token .chip { width: 28px; height: 28px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.10); flex-shrink: 0; }
+  .token .label { color: var(--ink-2); display: block; font-size: 10.5px; line-height: 1.2; }
+  .token .hex { color: var(--ink); font-weight: 700; line-height: 1.2; }
+
+  /* ==================== DAY / NIGHT MODES ==================== */
+  .modes-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; }
+  @media (max-width: 820px) { .modes-row { grid-template-columns: 1fr; } }
+  .mode-block { border-radius: 22px; padding: 22px 18px; min-height: 560px; display: flex; flex-direction: column; gap: 12px; }
+  .mode-block.day   { background: var(--pearl); }
+  .mode-block.night { background: var(--night-bg); color: var(--night-text); }
+  .mode-label { font-size: 10.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; }
+  .mode-block.night .mode-label { color: var(--night-accent); opacity: 0.85; }
+
+  .type-sample { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.015em; color: var(--brand-deep); line-height: 1.15; }
+  .cand-c .type-sample { font-family: "Charter", "Newsreader", Georgia, ui-serif, serif; font-weight: 700; }
+
+  .score-hero { background: var(--brand); color: var(--pearl); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 4px; }
+  .score-hero .label { font-size: 11px; color: rgba(255,255,255,0.66); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+  .score-hero .stage { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 48px; line-height: 1; color: var(--cta); }
+  .cand-c .score-hero .stage { font-family: "Charter", "Newsreader", Georgia, ui-serif, serif; }
+  .score-hero .stage small { font-size: 18px; color: rgba(255,255,255,0.55); font-weight: 700; }
+  .score-hero .delta { font-size: 12.5px; font-weight: 600; color: #C8DAB4; margin-top: 4px; }
+
+  .mock-card { background: var(--card); border-radius: 16px; padding: 14px; box-shadow: 0 1px 3px rgba(20,40,40,0.07); }
+  .mock-card.dark { background: var(--night-surface); border: 1px solid var(--night-divider); color: var(--night-text); }
+  .tracker-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--divider); }
+  .mock-card.dark .tracker-row { border-color: var(--night-divider); }
+  .tracker-row:last-child { border-bottom: none; }
+  .tracker-name { font-weight: 600; font-size: 14px; }
+  .tracker-sub { font-size: 11.5px; color: var(--ink-2); }
+  .mock-card.dark .tracker-sub { color: rgba(234,242,241,0.6); }
+
+  .verdict-pill { border-radius: 999px; padding: 4px 10px; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+  .verdict-pill::before { content: '\25CF'; font-size: 9px; }
+  .verdict-pill.good  { background: var(--good-bg);  color: #194A4C; }
+  .verdict-pill.watch { background: var(--watch-bg); color: #7A4012; }
+  .verdict-pill.alert { background: var(--alert-bg); color: #6B3A12; }
+
+  .chat .bubble { border-radius: 18px; padding: 12px 14px; margin-bottom: 8px; max-width: 88%; font-size: 13px; line-height: 1.5; }
+  .chat .bubble.user { background: var(--cta-soft); color: var(--ink); margin-left: auto; border-top-right-radius: 5px; }
+  .chat .bubble.user.dark { background: var(--night-bubble-user); color: var(--night-text); }
+  .chat .bubble.assistant { background: var(--ai-bg); color: var(--ink); border: 1px solid var(--ai-border); border-top-left-radius: 5px; }
+  .chat .bubble.assistant.dark { background: var(--night-surface); color: var(--night-text); border-color: var(--night-divider); }
+  .citation { font-size: 11.5px; margin-top: 6px; display: inline-block; }
+  .citation.day  { color: var(--brand-deep); border-bottom: 1px dotted var(--brand-deep); }
+  .citation.dark { color: var(--night-accent); border-bottom: 1px dotted var(--night-accent); }
+  .safety-strip { background: var(--watch-bg); color: #7A4012; font-size: 11px; padding: 8px 12px; border-radius: 10px; margin-top: 6px; border: 1px solid #E7CFA3; line-height: 1.45; }
+  .safety-strip.dark { background: #3A2419; color: #F1C8A0; border-color: #5C3520; }
+  .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 0.10em; text-transform: uppercase; color: var(--night-accent); opacity: 0.85; }
+
+  /* ==================== GENERIC TABLES ==================== */
+  table.matrix, table.vote, table.jtbd-scan, table.agg, table.tab-spec, table.ss-cheat {
+    width: 100%; border-collapse: collapse;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider); margin-top: 12px;
+  }
+  table th, table td { padding: 9px 12px; text-align: left; font-size: 12.5px; border-bottom: 1px solid var(--divider); vertical-align: top; }
+  table th { background: var(--brand-soft); color: var(--brand-deep); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 800; }
+  table tr:last-child td { border-bottom: none; }
+  .hex-chip { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: middle; margin-right: 2px; border: 1px solid rgba(0,0,0,0.12); }
+  .lock-tag { font-size: 9.5px; font-weight: 800; letter-spacing: 0.06em; background: var(--good-bg); color: #194A4C; border-radius: 5px; padding: 2px 7px; }
+  .dim-tag  { font-size: 9.5px; font-weight: 800; letter-spacing: 0.06em; background: var(--bg-soft); color: var(--ink-3); border-radius: 5px; padding: 2px 7px; border: 1px solid var(--divider); }
+  table.matrix tr.locked-row td { background: rgba(45,123,126,0.07); }
+
+  table.vote td.voter { font-weight: 700; color: var(--ink); white-space: nowrap; }
+  table.vote td.aud { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; color: var(--ink-3); text-align: center; }
+  table.vote td.score { text-align: center; font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; font-size: 13px; }
+  table.vote td.score.hi { background: rgba(45,123,126,0.14); color: #194A4C; font-weight: 800; }
+  table.vote tr.totals td { background: var(--bg-soft); font-weight: 800; border-top: 2px solid var(--brand); font-size: 13px; }
+  table.vote tr.totals td.score { font-size: 15px; }
+  table.vote tr.totals td.lead   { background: rgba(45,123,126,0.10); color: #194A4C; }
+  table.vote tr.totals td.locked { background: var(--brand); color: #fff; }
+
+  table.jtbd-scan td.cohort-cell { font-weight: 800; white-space: nowrap; }
+  table.jtbd-scan td.star { text-align: center; font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; font-size: 13px; }
+  table.jtbd-scan td.star.s5 { background: var(--good-bg); color: var(--good); }
+  table.jtbd-scan td.star.s4 { color: var(--cta-deep); }
+  table.jtbd-scan td.star.s3 { color: var(--ink-2); }
+  table.jtbd-scan td.star.s2 { color: var(--ink-3); }
+  table.jtbd-scan td.star.s1 { color: var(--ink-3); opacity: 0.55; }
+  .scan-wrap { overflow-x: auto; margin-top: 12px; border-radius: 14px; }
+  table.jtbd-scan { min-width: 860px; }
+
+  .ok { color: #194A4C; font-weight: 700; } .warn { color: #7A4012; font-weight: 700; }
+
+  /* ==================== LISTS ==================== */
+  ul.list { margin-top: 10px; line-height: 1.65; background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 14px 18px 14px 36px; }
+  ul.list li { margin-bottom: 7px; font-size: 13.5px; }
+  ul.list li b { color: var(--brand-deep); }
+
+  /* ==================== RUNOFF / RECOMMENDATION ==================== */
+  .runoff { background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 14px 18px; margin-top: 16px; }
+  .runoff h3 { margin-top: 4px; }
+  .runoff p { font-size: 13px; color: var(--ink-2); line-height: 1.6; margin-bottom: 8px; }
+  .runoff p b { color: var(--ink); }
+  .runoff ul { padding-left: 22px; line-height: 1.55; font-size: 12.5px; color: var(--ink-2); margin-top: 6px; }
+  .runoff ul li { margin-bottom: 6px; }
+  .runoff ul li b { color: var(--ink); }
+  .runoff .pick-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .runoff .pick { font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; font-weight: 700; background: var(--bg-soft); border: 1px solid var(--divider); border-radius: 8px; padding: 6px 11px; color: var(--ink-2); }
+  .runoff .pick.lead { background: var(--good-bg); border-color: #AFCFCE; color: #194A4C; }
+
+  /* ==================== M1 · DECISION ARCHIVE (collapsible) ==================== */
+  details.archive { margin-top: 30px; background: var(--bg-soft); border: 1px solid var(--divider); border-radius: 16px; padding: 2px 20px 10px; }
+  details.archive > summary { cursor: pointer; padding: 16px 2px; font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 15px; color: var(--ink-2); list-style: none; display: flex; align-items: center; gap: 9px; }
+  details.archive > summary::-webkit-details-marker { display: none; }
+  details.archive > summary::before { content: '\25B8'; color: var(--cta-deep); font-size: 12px; }
+  details.archive[open] > summary::before { content: '\25BE'; }
+  details.archive > summary:hover { color: var(--brand-deep); }
+  details.archive[open] > summary { border-bottom: 1px solid var(--divider); }
+  details.archive > summary .arch-pill { margin-left: auto; font-family: ui-monospace, "SF Mono", monospace; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; color: var(--ink-3); background: var(--card); border: 1px solid var(--divider); border-radius: 999px; padding: 3px 9px; }
+  details.archive .arch-note { font-size: 12.5px; color: var(--ink-3); line-height: 1.55; margin: 12px 0 0; }
+  details.archive h2 { font-size: 18px; margin: 30px 0 8px; }
+  details.archive > h2:first-of-type { margin-top: 18px; }
+
+  /* ==================== PERSONA GRID ==================== */
+  .persona-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; margin-top: 14px; }
+  .persona { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .persona.anchor { border-left: 4px solid var(--cta); }
+  .persona .ph { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .persona .ph b { font-size: 15px; font-weight: 800; color: var(--ink); }
+  .persona .age { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; color: var(--ink-3); }
+  .persona .share { margin-left: auto; background: var(--brand-soft); color: var(--brand-deep); font-size: 11px; font-weight: 800; font-family: ui-monospace, "SF Mono", monospace; border-radius: 999px; padding: 2px 8px; }
+  .persona .pain { font-size: 12.5px; color: var(--ink); font-style: italic; line-height: 1.5; border-left: 3px solid var(--brand-soft); padding-left: 10px; }
+  .persona .row { display: flex; gap: 8px; font-size: 12px; align-items: flex-start; }
+  .persona .l { font-size: 10px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); width: 78px; flex-shrink: 0; padding-top: 2px; }
+  .persona .v { color: var(--ink); line-height: 1.5; }
+  .persona .v b { color: var(--brand-deep); }
+  .persona .v .wtp-high { color: #194A4C; font-weight: 800; }
+  .persona .v .wtp-med  { color: #7A4012; font-weight: 800; }
+  .anchor-tag { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--cta-soft); color: var(--cta-deep); border-radius: 5px; padding: 2px 6px; }
+
+  /* ==================== JTBD GRID ==================== */
+  .jtbd-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; margin-top: 14px; }
+  .jtbd-card { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .jtbd-card.peak { border-left: 4px solid var(--cta); }
+  .jtbd-card .jh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .jtbd-num { background: var(--brand); color: var(--pearl); border-radius: 999px; padding: 2px 9px; font-size: 11px; font-weight: 800; font-family: ui-monospace, "SF Mono", monospace; }
+  .jtbd-card .jh b { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .stars { margin-left: auto; font-size: 10.5px; letter-spacing: 0.02em; }
+  .jtbd-card .stmt { font-size: 12.5px; color: var(--ink); font-style: italic; border-left: 3px solid var(--good-bg); padding-left: 10px; line-height: 1.5; }
+  .jtbd-card .row { display: flex; gap: 8px; font-size: 12px; align-items: flex-start; }
+  .jtbd-card .l { font-size: 10px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); width: 56px; flex-shrink: 0; padding-top: 2px; }
+  .jtbd-card .v { color: var(--ink); line-height: 1.5; }
+  .jtbd-card .v b { color: var(--brand-deep); }
+
+  /* ==================== M3 · FEATURE LONG-LIST ==================== */
+  .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+  @media (max-width: 1100px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 660px)  { .feat-grid { grid-template-columns: 1fr; } }
+  .feat { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .feat .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .feat .left { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .feat .num { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; color: var(--ink-3); }
+  .feat h3 { margin: 0; font-size: 14px; font-weight: 800; }
+  .feat .tag { font-family: ui-monospace, "SF Mono", monospace; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+  .feat .tag.t1 { background: var(--good-bg); color: #194A4C; }
+  .feat .tag.t2 { background: var(--cta-soft); color: var(--cta-deep); }
+  .feat .tag.t3 { background: var(--divider); color: var(--ink-2); }
+  .feat .desc { font-size: 12px; color: var(--ink-2); line-height: 1.5; }
+  .feat .rows { display: flex; flex-direction: column; gap: 4px; margin-top: 2px; padding-top: 8px; border-top: 1px dashed var(--divider); }
+  .feat .frow { display: flex; gap: 6px; font-size: 11.5px; line-height: 1.45; color: var(--ink-2); }
+  .feat .frow b { color: var(--ink); font-weight: 700; }
+  .feat .frow .lbl { min-width: 76px; color: var(--ink-3); font-weight: 800; font-size: 10.5px; letter-spacing: 0.03em; text-transform: uppercase; }
+  .feat .risk { display: inline-block; padding: 1px 7px; border-radius: 6px; font-size: 10.5px; font-weight: 800; }
+  .feat .risk.low { background: var(--good-bg); color: #194A4C; }
+  .feat .risk.med { background: var(--watch-bg); color: #7A4012; }
+  .feat .risk.high { background: #ECD0C8; color: #7A2D24; }
+
+  /* ==================== M3 · AGGREGATE TABLE ==================== */
+  .agg-wrap { overflow-x: auto; margin-top: 14px; border-radius: 14px; }
+  table.agg { min-width: 880px; }
+  table.agg td.rank { font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; color: var(--ink-3); text-align: center; width: 46px; }
+  table.agg td.fname { font-weight: 700; color: var(--ink); }
+  table.agg td.n { font-family: ui-monospace, "SF Mono", monospace; text-align: center; font-weight: 700; }
+  table.agg td.sigma { font-family: ui-monospace, "SF Mono", monospace; text-align: center; font-weight: 800; font-size: 14px; background: var(--bg-soft); border-left: 2px solid var(--brand); }
+  table.agg td.cluster { font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; font-size: 11px; text-align: center; }
+  table.agg tr.p0 td { background: var(--good-bg); }
+  table.agg tr.p0 td.sigma { background: var(--good); color: #fff; }
+  table.agg tr.p0 td.cluster { color: #194A4C; }
+  table.agg tr.p1 td { background: var(--cta-soft); }
+  table.agg tr.p1 td.sigma { background: var(--cta-deep); color: #fff; }
+  table.agg tr.p1 td.cluster { color: var(--cta-deep); }
+  table.agg tr.p2 td { background: var(--bg-soft); }
+  table.agg tr.p2 td.cluster { color: var(--ink-2); }
+
+  /* ==================== M3 · P-TIER ROADMAP ==================== */
+  .roadmap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+  @media (max-width: 920px) { .roadmap-grid { grid-template-columns: 1fr; } }
+  .ptier { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+  .ptier.p0 { border-top: 4px solid var(--good); }
+  .ptier.p1 { border-top: 4px solid var(--cta-deep); }
+  .ptier.p2 { border-top: 4px solid var(--ink-3); }
+  .ptier h3 { margin: 0 0 4px; font-size: 15.5px; font-weight: 800; }
+  .ptier.p0 h3 { color: var(--good); }
+  .ptier.p1 h3 { color: var(--cta-deep); }
+  .ptier.p2 h3 { color: var(--ink-2); }
+  .ptier .weeks { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; color: var(--ink-3); letter-spacing: 0.04em; text-transform: uppercase; }
+  .ptier ul { padding-left: 0; list-style: none; margin-top: 6px; display: flex; flex-direction: column; gap: 8px; }
+  .ptier ul li { font-size: 12px; line-height: 1.5; color: var(--ink-2); padding: 8px 10px; background: var(--bg-soft); border-radius: 9px; }
+  .ptier ul li b { display: block; font-size: 12.5px; color: var(--ink); margin-bottom: 1px; }
+  .ptier .total { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--divider); font-size: 11px; color: var(--ink-3); font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; }
+  .seq-strip { margin-top: 22px; background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 14px 16px; overflow-x: auto; }
+  .seq-strip h3 { margin-top: 2px; margin-bottom: 8px; }
+  .seq-row { display: flex; gap: 8px; min-width: 1080px; align-items: stretch; }
+  .seq { flex: 1; background: var(--bg-soft); border-radius: 10px; padding: 8px 10px; font-size: 11px; line-height: 1.4; color: var(--ink-2); display: flex; flex-direction: column; gap: 3px; }
+  .seq b { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; color: var(--brand); letter-spacing: 0.06em; font-weight: 800; }
+  .seq.launch { background: var(--brand); color: var(--pearl); }
+  .seq.launch b { color: var(--cta); }
+
+  /* ==================== M3 · ROUND BLOCKS ==================== */
+  .round { background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 14px 18px; margin-top: 14px; }
+  .round.r2 { border-left: 4px solid var(--cta); }
+  .round .r-tag { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: var(--cta-deep); text-transform: uppercase; }
+  .round h3 { margin: 4px 0 8px; font-size: 15px; }
+  .round p { font-size: 12.5px; color: var(--ink-2); line-height: 1.6; margin-bottom: 6px; }
+  .round p b { color: var(--ink); }
+  .round ul { padding-left: 20px; font-size: 12.5px; line-height: 1.55; color: var(--ink-2); margin-top: 4px; }
+  .round ul li { margin-bottom: 5px; }
+  .round ul li b { color: var(--ink); }
+
+  /* ==================== M4 · SIBLING CARDS ==================== */
+  .sib-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 12px; }
+  .sib-card { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 16px 18px; }
+  .sib-card.gold { border: 2px solid var(--cta); box-shadow: 0 4px 18px rgba(45,123,126,0.10); }
+  .sib-card .sh { display: flex; align-items: baseline; gap: 8px; }
+  .sib-card .sh .rank { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; color: var(--cta-deep); }
+  .sib-card .sh b { font-size: 15.5px; font-weight: 800; color: var(--ink); }
+  .sib-card .sh .score { margin-left: auto; font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; font-size: 11.5px; color: var(--brand-deep); background: var(--brand-soft); border-radius: 999px; padding: 3px 9px; }
+  .sib-card .reason { font-size: 12px; color: var(--ink); line-height: 1.5; margin: 8px 0 0; }
+  .sib-card .diff { font-size: 11.5px; color: var(--ink-2); line-height: 1.45; margin-top: 6px; }
+  .sib-card .diff b { color: var(--ink); }
+
+  /* ==================== M4 · iPHONE TAB-BAR FRAME ==================== */
+  .phone-frame { max-width: 320px; margin: 14px auto 18px; background: var(--bg); border-radius: 32px; border: 8px solid #0F1F20; padding: 22px 12px 8px; position: relative; box-shadow: 0 18px 44px rgba(20,40,40,0.22); }
+  .phone-frame::before { content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); width: 100px; height: 22px; border-radius: 0 0 18px 18px; background: #0F1F20; }
+  .phone-screen { background: var(--card); border-radius: 22px; min-height: 380px; padding: 14px 12px 92px; color: var(--ink); display: flex; flex-direction: column; gap: 10px; position: relative; }
+  .phone-screen .scr-title { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 17px; color: var(--brand-deep); display: flex; justify-content: space-between; align-items: center; }
+  .phone-screen .scr-card { background: var(--pearl); border-radius: 12px; padding: 10px 12px; font-size: 11.5px; line-height: 1.45; color: var(--ink); border: 1px solid var(--divider); }
+  .phone-screen .scr-card b { color: var(--brand-deep); }
+  .phone-screen .scr-card.ai { background: var(--ai-bg); border-color: var(--ai-border); }
+  .phone-tabbar { position: absolute; left: 0; right: 0; bottom: 6px; background: var(--card); border-top: 1px solid var(--divider); border-radius: 0 0 22px 22px; padding: 10px 6px 14px; display: grid; grid-template-columns: 1fr 1fr 72px 1fr 1fr; gap: 4px; align-items: center; }
+  .phone-tabbar .tab { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10px; font-weight: 700; color: var(--ink-3); text-decoration: none; }
+  .phone-tabbar .tab.active { color: var(--brand-deep); }
+  .phone-tabbar .tab .icn { width: 22px; height: 22px; border-radius: 6px; background: var(--divider); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: var(--ink-2); }
+  .phone-tabbar .tab.active .icn { background: var(--brand); color: var(--pearl); }
+  .phone-tabbar .fab-wrap { display: flex; flex-direction: column; align-items: center; }
+  .phone-tabbar .fab { width: 56px; height: 56px; border-radius: 50%; background: var(--cta); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; box-shadow: 0 8px 18px rgba(176,130,77,0.40); margin: -22px 0 0; }
+  .phone-tabbar .fab-label { font-size: 9.5px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cta-deep); margin-top: 2px; }
+
+  /* ==================== M5 · HANDOFF CARD ==================== */
+  .handoff-card { background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 16px 20px; font-size: 12.5px; line-height: 1.6; color: var(--ink); margin-top: 14px; }
+  .handoff-card b { color: var(--cta-deep); }
+  .handoff-card ul { margin: 6px 0 4px; padding-left: 22px; }
+  .handoff-card ul li { margin-bottom: 4px; }
+  table.tab-spec td.tabname { font-weight: 800; color: var(--brand-deep); white-space: nowrap; }
+  table.tab-spec td code { white-space: nowrap; }
+
+  /* ==================== M7 · APP STORE SCREENSHOTS ==================== */
+  .cheat-wrap { margin: 10px 0 4px; background: var(--brand-deep); border-radius: 14px; overflow-x: auto; border: 1px solid var(--brand-mid); }
+  table.ss-cheat { background: transparent; border: none; border-radius: 0; min-width: 940px; margin: 0; }
+  table.ss-cheat thead th { background: var(--brand); color: var(--cta); border-bottom: 1px solid var(--brand-mid); white-space: nowrap; }
+  table.ss-cheat tbody td { color: var(--pearl); border-bottom: 1px solid var(--brand-mid); vertical-align: top; font-size: 12px; line-height: 1.46; }
+  table.ss-cheat tbody tr:last-child td { border-bottom: none; }
+  table.ss-cheat td.cell-num { font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; color: var(--cta); width: 26px; text-align: center; }
+  table.ss-cheat td.cell-title { font-weight: 800; color: #F4E4D0; width: 24%; }
+  table.ss-cheat td.cell-sub { color: rgba(238,243,242,0.72); width: 26%; }
+  table.ss-cheat td.cell-hero { color: var(--brand-soft); font-size: 11.5px; }
+  table.ss-cheat td.cell-aso { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; color: var(--cta); white-space: nowrap; }
+  table.ss-cheat tbody tr.killer td { background: rgba(212,165,116,0.10); }
+  .ss-cap { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; margin: 28px 0 0; }
+  .ss-cap h3 { margin: 0; font-size: 14.5px; }
+  .ss-cap .ss-cap-meta { font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; color: var(--ink-3); }
+
+  .ss-killer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: 14px; margin-top: 20px; }
+  .ss-killer { background: var(--card); border-radius: 18px; border: 1px solid var(--divider); padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 10px; position: relative; }
+  .ss-killer.rank1 { border: 2px solid var(--cta); box-shadow: 0 4px 18px rgba(212,165,116,0.18); }
+  .ss-killer.rank2 { border-color: var(--brand); }
+  .ss-killer.rank3 { border-color: var(--good); }
+  .ss-killer.rank4 { border-color: var(--brand-mid); }
+  .ss-killer.rank5 { border-color: var(--cta-deep); }
+  .ss-rank { position: absolute; top: -10px; left: 14px; background: var(--brand); color: var(--pearl); border-radius: 999px; padding: 3px 10px; font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; font-weight: 800; letter-spacing: 0.05em; }
+  .ss-killer.rank1 .ss-rank { background: var(--cta); color: var(--brand-deep); }
+  .ss-killer.rank3 .ss-rank { background: var(--good); }
+  .ss-killer.rank4 .ss-rank { background: var(--brand-mid); }
+  .ss-killer.rank5 .ss-rank { background: var(--cta-deep); }
+  .ss-killer h4 { font-size: 14px; margin: 6px 0 0; }
+  .ss-killer .ss-mockup { background: var(--night-bg); color: var(--night-text); border-radius: 14px; padding: 13px; min-height: 186px; display: flex; flex-direction: column; gap: 9px; }
+  .ss-mk-h { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 16px; line-height: 1.18; color: var(--pearl); }
+  .ss-mk-h em { color: var(--cta); font-style: normal; }
+  .ss-mk-card { background: var(--night-surface); border: 1px solid var(--night-divider); border-radius: 10px; padding: 10px; }
+  .ss-killer .ss-why { font-size: 12px; color: var(--ink); line-height: 1.5; border-left: 3px solid var(--cta); padding-left: 10px; }
+  .ss-killer .ss-why b { color: var(--brand-deep); }
+  .ss-killer .ss-meta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 10px; font-size: 10.5px; color: var(--ink-2); padding-top: 8px; border-top: 1px solid var(--divider); }
+  .ss-killer .ss-meta-row b { display: block; font-size: 9px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1px; }
+  ul.list.dontlist li::marker { color: var(--alert); font-weight: 800; }
+
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--divider); font-size: 11.5px; color: var(--ink-3); line-height: 1.6; }
+  footer b { color: var(--ink-2); }
+  /* ==================== M6 · CORE LOOP & ENGAGEMENT ==================== */
+  .m6-callout { background: var(--card); border: 1px solid var(--divider); border-left: 4px solid var(--alert); border-radius: 14px; padding: 14px 18px; margin-top: 14px; font-size: 12.5px; line-height: 1.62; color: var(--ink); }
+  .m6-callout b { color: var(--alert); }
+  .m6-callout.win { border-left-color: var(--good); }
+  .m6-callout.win b { color: var(--good); }
+  .m6-callout.note { border-left-color: var(--cta-deep); }
+  .m6-callout.note b { color: var(--cta-deep); }
+
+  /* daily loop diagram */
+  .loop-wrap { margin-top: 14px; background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 16px; overflow-x: auto; }
+  .loop-row { display: flex; gap: 5px; align-items: stretch; min-width: 960px; }
+  .loop-step { flex: 1; background: var(--bg-soft); border: 1px solid var(--divider); border-radius: 12px; padding: 11px 12px; display: flex; flex-direction: column; gap: 5px; }
+  .loop-step .ls-top { display: flex; align-items: center; gap: 7px; }
+  .loop-step .ls-n { font-family: ui-monospace,"SF Mono",monospace; font-size: 10px; font-weight: 800; color: #fff; background: var(--brand); width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .loop-step .ls-ico { font-size: 17px; }
+  .loop-step .ls-t { font-size: 12px; font-weight: 800; color: var(--brand-deep); }
+  .loop-step .ls-d { font-size: 11px; color: var(--ink-2); line-height: 1.42; }
+  .loop-step.hot { background: var(--cta-soft); border-color: #E7CFA3; }
+  .loop-step.hot .ls-n { background: var(--cta-deep); }
+  .loop-step.hot .ls-t { color: var(--cta-deep); }
+  .loop-arrow { align-self: center; color: var(--ink-3); font-size: 15px; font-weight: 800; flex-shrink: 0; }
+  .loop-repeat { margin-top: 11px; font-size: 11.5px; color: var(--cta-deep); font-weight: 700; display: flex; align-items: center; gap: 7px; line-height: 1.5; }
+  .loop-repeat .lr-ico { font-size: 16px; }
+
+  /* streak strip */
+  .streak-strip { display: inline-flex; align-items: center; gap: 11px; background: var(--card); border: 1px solid var(--divider); border-radius: 999px; padding: 7px 15px 7px 11px; }
+  .streak-strip .fire { font-size: 21px; }
+  .streak-strip .sd-n { font-family: -apple-system,"SF Pro Rounded",sans-serif; font-size: 23px; font-weight: 800; color: var(--brand-deep); line-height: 1; }
+  .streak-strip .sd-l { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+  .streak-strip .sd-rescue { font-size: 10.5px; font-weight: 700; background: var(--good-bg); color: #194A4C; border-radius: 999px; padding: 3px 9px; }
+  .streak-dots { display: inline-flex; gap: 4px; margin: 9px 0 0; flex-wrap: wrap; }
+  .streak-dots .sdot { width: 15px; height: 15px; border-radius: 5px; background: var(--divider); }
+  .streak-dots .sdot.on { background: var(--brand); }
+  .streak-dots .sdot.rescue { background: var(--cta); }
+  .streak-dots .sdot.today { box-shadow: 0 0 0 2px var(--cta-deep); }
+
+  /* insight banner — "Hepatica Noticed" */
+  .insight-banner { display: flex; align-items: flex-start; gap: 10px; background: linear-gradient(120deg, var(--cta-soft) 0%, var(--pearl-soft) 76%); border: 1px solid #E7CFA3; border-radius: 14px; padding: 12px 14px; margin-top: 10px; max-width: 540px; }
+  .insight-banner .ib-star { font-size: 16px; flex-shrink: 0; line-height: 1.3; }
+  .insight-banner .ib-body { flex: 1; }
+  .insight-banner .ib-eyebrow { font-size: 9.5px; font-weight: 800; letter-spacing: 0.10em; text-transform: uppercase; color: var(--cta-deep); }
+  .insight-banner .ib-txt { font-size: 12.5px; color: var(--ink); line-height: 1.52; margin-top: 2px; }
+  .insight-banner .ib-src { font-family: ui-monospace,"SF Mono",monospace; font-size: 10px; color: var(--brand-deep); margin-top: 6px; display: inline-block; border-bottom: 1px dotted var(--brand-deep); }
+  .insight-banner .ib-x { color: var(--ink-3); font-size: 15px; font-weight: 700; flex-shrink: 0; }
+
+  /* milestone banner + grid */
+  .milestone-banner { display: flex; align-items: center; gap: 11px; background: linear-gradient(120deg, var(--good-bg) 0%, var(--pearl-soft) 80%); border: 1px solid #AFCFCE; border-radius: 14px; padding: 12px 15px; margin-top: 10px; max-width: 540px; }
+  .milestone-banner .mb-ico { font-size: 22px; flex-shrink: 0; }
+  .milestone-banner .mb-t { font-size: 13px; font-weight: 800; color: var(--brand-deep); }
+  .milestone-banner .mb-d { font-size: 11.5px; color: var(--ink-2); line-height: 1.45; margin-top: 1px; }
+  .mstone-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(184px,1fr)); gap: 8px; margin-top: 12px; }
+  .mstone { background: var(--card); border: 1px solid var(--divider); border-radius: 11px; padding: 9px 11px; display: flex; gap: 9px; align-items: flex-start; }
+  .mstone .ms-ico { font-size: 16px; flex-shrink: 0; }
+  .mstone .ms-tag { font-size: 8.5px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); }
+  .mstone .ms-t { font-size: 11.5px; font-weight: 700; color: var(--ink); line-height: 1.38; margin-top: 1px; }
+  .mstone.universal { border-left: 3px solid var(--brand); }
+  .mstone.cohort { border-left: 3px solid var(--cta); }
+
+  /* "your liver at day X" card */
+  .liverday-card { background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%); color: var(--pearl); border-radius: 16px; padding: 16px 18px; margin-top: 12px; max-width: 380px; }
+  .liverday-card .ld-day { font-family: ui-monospace,"SF Mono",monospace; font-size: 11px; font-weight: 800; letter-spacing: 0.07em; color: var(--cta); }
+  .liverday-card .ld-h { font-family: -apple-system,"SF Pro Rounded",sans-serif; font-size: 18px; font-weight: 800; margin-top: 3px; }
+  .liverday-card .ld-d { font-size: 12px; line-height: 1.52; color: rgba(234,242,241,0.88); margin-top: 6px; }
+  .liverday-card .ld-src { font-family: ui-monospace,"SF Mono",monospace; font-size: 9.5px; color: var(--cta); margin-top: 8px; }
+
+  /* weekly recap card */
+  .recap-card { background: linear-gradient(135deg, var(--brand-soft) 0%, var(--pearl-soft) 84%); border: 1px solid #AFCFCE; border-radius: 16px; padding: 16px 18px; margin-top: 12px; max-width: 430px; }
+  .recap-card .rc-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 0.10em; text-transform: uppercase; color: var(--cta-deep); }
+  .recap-card .rc-h { font-family: -apple-system,"SF Pro Rounded",sans-serif; font-size: 17px; font-weight: 800; color: var(--brand-deep); margin-top: 2px; }
+  .recap-card .rc-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 11px; }
+  .recap-card .rc-stat { background: var(--card); border-radius: 10px; padding: 9px 8px; text-align: center; }
+  .recap-card .rc-stat .n { font-family: -apple-system,"SF Pro Rounded",sans-serif; font-size: 21px; font-weight: 800; color: var(--brand-deep); }
+  .recap-card .rc-stat .l { font-size: 9px; font-weight: 800; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.04em; }
+  .recap-card .rc-insight { font-size: 12px; color: var(--ink); line-height: 1.52; margin-top: 11px; background: var(--card); border-radius: 10px; padding: 9px 11px; }
+  .recap-card .rc-insight b { color: var(--brand-deep); }
+  .recap-card .rc-focus { font-size: 11.5px; color: var(--cta-deep); font-weight: 700; margin-top: 9px; line-height: 1.45; }
+
+  /* renewal milestone roadmap track */
+  .roadmap-track { display: flex; align-items: flex-start; gap: 0; margin-top: 14px; overflow-x: auto; padding: 4px 0; }
+  .rm-node { flex: 1; min-width: 118px; display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; text-align: center; padding: 0 4px; }
+  .rm-node::before { content: ''; position: absolute; top: 13px; left: -50%; width: 100%; height: 3px; background: var(--divider); z-index: 0; }
+  .rm-node:first-child::before { display: none; }
+  .rm-node.done::before { background: var(--brand); }
+  .rm-dot { width: 28px; height: 28px; border-radius: 50%; background: var(--card); border: 3px solid var(--divider); display: flex; align-items: center; justify-content: center; font-size: 12px; z-index: 1; }
+  .rm-node.done .rm-dot { background: var(--brand); border-color: var(--brand); color: #fff; }
+  .rm-node.next .rm-dot { border-color: var(--cta-deep); background: var(--cta-soft); }
+  .rm-node.locked .rm-dot { opacity: 0.55; }
+  .rm-day { font-family: ui-monospace,"SF Mono",monospace; font-size: 11px; font-weight: 800; color: var(--brand-deep); }
+  .rm-lbl { font-size: 10.5px; color: var(--ink-2); line-height: 1.35; }
+  .rm-node.next .rm-day { color: var(--cta-deep); }
+  .rm-node.locked .rm-day, .rm-node.locked .rm-lbl { color: var(--ink-3); }
+
+  /* mini projection chart */
+  .proj-card { background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 14px 16px 12px; margin-top: 12px; max-width: 480px; }
+  .proj-card .pc-h { font-size: 13px; font-weight: 800; color: var(--brand-deep); }
+  .proj-card .pc-sub { font-size: 11px; color: var(--ink-2); margin-top: 2px; line-height: 1.45; }
+  .proj-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px; font-size: 10px; color: var(--ink-2); }
+  .proj-legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .proj-legend i { width: 17px; height: 0; display: inline-block; }
+  /* ==================== M8 · CORE FLOW & SCREENS ==================== */
+  /* flow map */
+  .flow-map { display:flex; align-items:stretch; gap:0; margin-top:14px; overflow-x:auto; padding:6px 0 10px; }
+  .flow-stage { flex:0 0 auto; width:142px; background:var(--card); border:1px solid var(--divider); border-radius:13px; padding:11px 12px; display:flex; flex-direction:column; gap:4px; }
+  .flow-stage .fs-step { font-family:ui-monospace,"SF Mono",monospace; font-size:9px; font-weight:800; letter-spacing:0.06em; color:var(--ink-3); }
+  .flow-stage .fs-t { font-size:13px; font-weight:800; color:var(--brand-deep); display:flex; align-items:center; gap:5px; }
+  .flow-stage .fs-d { font-size:10.5px; color:var(--ink-2); line-height:1.4; }
+  .flow-stage.todo { border-style:dashed; background:var(--bg-soft); }
+  .flow-stage.todo .fs-t { color:var(--ink-3); }
+  .flow-stage.todo .fs-step { color:var(--cta-deep); }
+  .flow-stage.gate { border:2px solid var(--cta); }
+  .flow-stage.gate .fs-t { color:var(--cta-deep); }
+  .flow-stage.app { width:230px; background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 100%); border-color:var(--brand); }
+  .flow-stage.app .fs-step, .flow-stage.app .fs-d { color:rgba(234,242,241,0.78); }
+  .flow-stage.app .fs-t { color:var(--pearl); }
+  .flow-apptabs { display:flex; gap:4px; margin-top:6px; flex-wrap:wrap; }
+  .flow-apptabs span { font-size:9.5px; font-weight:700; background:rgba(255,255,255,0.14); color:var(--pearl); border-radius:6px; padding:3px 7px; }
+  .flow-apptabs span.entry { background:var(--cta); color:var(--brand-deep); font-weight:800; }
+  .flow-conn { align-self:center; color:var(--ink-3); font-size:15px; font-weight:800; padding:0 3px; flex:0 0 auto; }
+  .flow-todo-pill { font-size:8px; font-weight:800; letter-spacing:0.06em; background:var(--cta-soft); color:var(--cta-deep); border:1px solid #E7CFA3; border-radius:999px; padding:2px 6px; align-self:flex-start; }
+
+  /* screen block: phone + user-POV annotation */
+  .screen-block { display:flex; gap:24px; flex-wrap:wrap; align-items:flex-start; margin-top:16px; }
+  .screen-block .phone-frame { margin:0; flex:0 0 auto; }
+  .screen-annot { flex:1; min-width:300px; }
+  .screen-annot > h3 { margin-top:0; }
+  .annot-row { display:flex; gap:10px; padding:9px 0; border-bottom:1px dashed var(--divider); }
+  .annot-row:last-of-type { border-bottom:none; }
+  .annot-row .ar-z { font-size:9.5px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; color:var(--cta-deep); width:104px; flex-shrink:0; padding-top:2px; }
+  .annot-row .ar-v { font-size:12.5px; color:var(--ink); line-height:1.52; }
+  .annot-row .ar-v b { color:var(--brand-deep); }
+  .borrowed { font-size:11.5px; color:var(--ink-2); background:var(--bg-soft); border:1px solid var(--divider); border-left:3px solid var(--cta); border-radius:9px; padding:9px 12px; margin-top:12px; line-height:1.55; }
+  .borrowed b { color:var(--cta-deep); }
+  .pov-lead { font-size:13px; color:var(--ink); line-height:1.6; background:var(--brand-soft); border-radius:10px; padding:10px 13px; margin-top:4px; }
+  .pov-lead b { color:var(--brand-deep); }
+
+  /* ===== screen UI — components rendered inside .phone-screen ===== */
+  .sc-head { display:flex; justify-content:space-between; align-items:flex-start; }
+  .sc-greet { font-family:-apple-system,"SF Pro Rounded",sans-serif; font-weight:800; font-size:15px; color:var(--brand-deep); line-height:1.15; }
+  .sc-greet small { display:block; font-size:9px; color:var(--ink-3); font-weight:700; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:1px; }
+  .sc-streak { display:inline-flex; align-items:center; gap:3px; background:var(--cta-soft); color:var(--cta-deep); font-weight:800; font-size:10.5px; border-radius:999px; padding:4px 9px; white-space:nowrap; }
+  .sc-pills { display:flex; gap:5px; }
+  .sc-pill { flex:1; background:var(--pearl); border:1px solid var(--divider); border-radius:11px; padding:7px 3px; text-align:center; }
+  .sc-pill .v { font-family:-apple-system,"SF Pro Rounded",sans-serif; font-weight:800; font-size:15px; color:var(--brand-deep); line-height:1; }
+  .sc-pill .l { font-size:7px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-3); margin-top:3px; }
+  .sc-pill.score { background:var(--brand); border-color:var(--brand); }
+  .sc-pill.score .v { color:var(--cta); }
+  .sc-pill.score .l { color:rgba(255,255,255,0.72); }
+  .sc-card { background:var(--card); border:1px solid var(--divider); border-radius:12px; padding:9px 11px; }
+  .sc-card.hero { border:1.5px solid var(--brand-soft); box-shadow:0 2px 8px rgba(45,123,126,0.08); }
+  .sc-lbl { font-size:8px; font-weight:800; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-3); display:flex; justify-content:space-between; align-items:center; }
+  .sc-chart-h { display:flex; justify-content:space-between; align-items:baseline; margin-top:3px; }
+  .sc-chart-v { font-family:-apple-system,"SF Pro Rounded",sans-serif; font-weight:800; font-size:17px; color:var(--brand-deep); }
+  .sc-chart-v small { font-size:9px; color:var(--ink-3); font-weight:700; }
+  .sc-delta { font-size:9.5px; font-weight:800; }
+  .sc-delta.good { color:var(--good); }
+  .sc-disc { font-size:7.5px; color:var(--ink-3); line-height:1.35; margin-top:5px; font-style:italic; }
+  .sc-insight { display:flex; gap:6px; align-items:flex-start; background:linear-gradient(120deg,var(--cta-soft) 0%,var(--pearl-soft) 80%); border:1px solid #E7CFA3; border-radius:11px; padding:8px 10px; }
+  .sc-insight .si-x { font-size:13px; }
+  .sc-insight .si-t { font-size:9.5px; color:var(--ink); line-height:1.42; }
+  .sc-insight .si-e { font-size:7.5px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--cta-deep); }
+  .sc-action { background:var(--ai-bg); border:1px solid var(--ai-border); border-radius:12px; padding:9px 11px; display:flex; align-items:center; gap:9px; }
+  .sc-action .sa-tick { width:26px; height:26px; border-radius:50%; border:2px solid var(--brand); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:var(--brand); font-weight:800; font-size:13px; }
+  .sc-action .sa-t { font-size:10.5px; font-weight:800; color:var(--brand-deep); }
+  .sc-action .sa-d { font-size:9px; color:var(--ink-2); line-height:1.35; }
+  .sc-heat { display:flex; gap:3px; margin-top:5px; }
+  .sc-heat i { width:100%; height:13px; border-radius:3px; background:var(--divider); }
+  .sc-heat i.on { background:var(--brand); }
+  .sc-heat i.rescue { background:var(--cta); }
+  .sc-heat i.today { box-shadow:inset 0 0 0 1.5px var(--cta-deep); background:var(--pearl); }
+  .sc-ribbon { display:flex; align-items:center; gap:7px; background:var(--brand-soft); border-radius:11px; padding:8px 10px; }
+  .sc-ribbon .sr-t { font-size:9.5px; color:var(--brand-deep); font-weight:700; line-height:1.35; }
+  .sc-ribbon .sr-go { margin-left:auto; color:var(--brand); font-weight:800; font-size:12px; }
+  .sc-cta { background:var(--cta); color:#fff; text-align:center; border-radius:10px; padding:10px; font-size:11px; font-weight:800; letter-spacing:0.02em; }
+  .sc-cta.ghost { background:transparent; color:var(--brand-deep); border:1px dashed var(--brand); }
+  .sc-vp { font-size:8px; font-weight:800; border-radius:999px; padding:2px 7px; white-space:nowrap; }
+  .sc-vp.good { background:var(--good-bg); color:#194A4C; }
+  .sc-vp.watch { background:var(--watch-bg); color:#7A4012; }
+  .sc-mini-tab { position:absolute; left:0; right:0; bottom:6px; background:var(--card); border-top:1px solid var(--divider); border-radius:0 0 22px 22px; padding:8px 8px 12px; display:flex; justify-content:space-around; align-items:center; }
+  .sc-mini-tab i { font-size:13px; opacity:0.4; }
+  .sc-mini-tab i.on { opacity:1; }
+  .sc-mini-tab .mt-fab { width:30px; height:30px; border-radius:50%; background:var(--cta); color:#fff; display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:800; margin-top:-16px; box-shadow:0 5px 12px rgba(176,130,77,0.4); }
+
+  /* disclaimer screen */
+  .disc-mark { font-family:-apple-system,"SF Pro Rounded",sans-serif; font-weight:800; font-size:13px; color:var(--brand); text-align:center; }
+  .disc-h { font-family:-apple-system,"SF Pro Rounded",sans-serif; font-weight:800; font-size:21px; color:var(--brand-deep); line-height:1.2; margin-top:2px; }
+  .disc-intro { font-size:11px; color:var(--ink-2); line-height:1.5; }
+  .disc-pt { display:flex; gap:9px; align-items:flex-start; padding:8px 0; border-bottom:1px solid var(--divider); }
+  .disc-pt:last-of-type { border-bottom:none; }
+  .disc-pt .dp-ic { font-size:16px; flex-shrink:0; }
+  .disc-pt .dp-t { font-size:10.5px; font-weight:800; color:var(--ink); }
+  .disc-pt .dp-d { font-size:9.5px; color:var(--ink-2); line-height:1.45; margin-top:1px; }
+  .disc-pt.emrg { background:var(--alert-bg); border-radius:9px; border-bottom:none; padding:8px 9px; }
+  .disc-pt.emrg .dp-t { color:#6B3A12; }
+  .disc-learn { font-size:9.5px; color:var(--brand); text-align:center; border-bottom:1px dotted var(--brand); align-self:center; padding-bottom:1px; }
+  .disc-foot { font-size:7.5px; color:var(--ink-3); text-align:center; line-height:1.4; }
+
+  /* cohort screen strip */
+  .cohort-strip { display:flex; gap:14px; margin-top:14px; overflow-x:auto; padding:4px 2px 12px; }
+  .cohort-cell { flex:0 0 auto; width:216px; }
+  .cohort-cell > .cc-cap { margin-top:9px; }
+  .cc-cap .cc-name { font-size:12.5px; font-weight:800; color:var(--brand-deep); }
+  .cc-cap .cc-job { font-size:10.5px; color:var(--ink-2); line-height:1.45; font-style:italic; margin-top:2px; }
+  .cc-cap .cc-chart { font-size:10px; color:var(--cta-deep); font-weight:700; margin-top:4px; }
+  .phone-frame.sm { max-width:216px; border-width:6px; border-radius:26px; padding:16px 8px 7px; }
+  .phone-frame.sm::before { width:66px; height:15px; }
+  .phone-frame.sm .phone-screen { min-height:312px; padding:10px 9px 52px; gap:7px; border-radius:18px; }
+
+  /* chart gallery (8.5) */
+  .chart-gallery { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; }
+  @media (max-width:880px){ .chart-gallery { grid-template-columns:1fr; } }
+  .chart-card { background:var(--card); border:1px solid var(--divider); border-radius:14px; padding:15px 17px; }
+  .chart-card .cc-h { font-size:13.5px; font-weight:800; color:var(--brand-deep); }
+  .chart-card .cc-sub { font-size:11px; color:var(--ink-2); line-height:1.45; margin-top:2px; }
+  .chart-card .cc-read { font-size:11.5px; color:var(--ink); line-height:1.55; margin-top:9px; padding-top:9px; border-top:1px dashed var(--divider); }
+  .chart-card .cc-read b { color:var(--brand-deep); }
+  .chart-legend { display:flex; gap:13px; flex-wrap:wrap; margin-top:7px; font-size:10px; color:var(--ink-2); }
+  .chart-legend span { display:inline-flex; align-items:center; gap:5px; }
+  .chart-legend i { width:16px; height:0; display:inline-block; }
+  .chart-disc { font-size:9.5px; color:var(--ink-3); font-style:italic; line-height:1.45; margin-top:8px; }
+</style>
+</head>
+<body id="top">
+
+<nav class="top-nav">
+  <a href="#top">↑ Top</a>
+  <span class="sep"></span>
+  <a href="design.html" class="is-module">← design.html · M1–M7</a>
+  <a href="#module-8" class="is-module"><span class="nav-num">M8</span>Flow</a>
+  <span class="sep"></span>
+  <a href="#flow-map">flow map</a>
+  <a href="#disclaimer-screen">disclaimer</a>
+  <a href="#today-anatomy">today</a>
+  <a href="#today-cohorts">cohort screens</a>
+  <a href="#motivating-charts">charts</a>
+  <a href="#first-run">empty state</a>
+</nav>
+
+<header>
+  <h1>Hepatica — Screen Flow Workbench</h1>
+  <p class="lede">Companion page to <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a>. The design system, JTBD, roadmap, tab architecture, engagement loop and App Store screenshots (Modules 1–7) live there; this page holds the worked, screen-by-screen user flow. <b>Module 8 — core flow &amp; the Today screen</b> is below; Module 9 (the working tab screens) follows next sprint.</p>
+  <div class="meta-bar">
+    <span class="pill brand">📐 Screen flow · Module 8</span>
+    <span class="pill lock">🔒 Design system · B · Clinical</span>
+    <span class="pill sib">Best practice: Cysta AI · Folik · Calibrum</span>
+    <span class="pill sib">Companion: design.html · Modules 1–7</span>
+  </div>
+</header>
+
+<div class="module-banner" id="module-8">
+  <span class="num">МОДУЛЬ 8</span>
+  <h2>Core flow &amp; the Today screen — worked screen-by-screen</h2>
+  <p class="desc">Standing in the user's shoes, from screen 1. The app flow map (with Onboarding &amp; Paywall as marked future gates), the Disclaimer screen, the Today screen worked out top-to-bottom, the same Today across all 6 cohorts, and the motivating JTBD charts. Best practice borrowed from Cysta AI · Folik · Calibrum. Status: draft screens for founder review — nothing locked.</p>
+</div>
+
+<!-- ===== 8.1 FLOW MAP ===== -->
+<h2 id="flow-map">8.1 · The app flow map</h2>
+<p class="lede">The whole journey on one line. Onboarding and Paywall are deliberately <b>not designed yet</b> — they are dashed TODO gates here so they slot in later with zero restructuring. This build fires the Disclaimer on first launch; once the Paywall lands, the trigger moves to post-purchase — the screen itself doesn't change.</p>
+<div class="flow-map">
+  <div class="flow-stage">
+    <span class="fs-step">START</span>
+    <span class="fs-t">📲 Launch</span>
+    <span class="fs-d">App opens — cold start.</span>
+  </div>
+  <span class="flow-conn">→</span>
+  <div class="flow-stage todo">
+    <span class="fs-step">STAGE 1 · LATER</span>
+    <span class="fs-t">Onboarding</span>
+    <span class="fs-d">6-question cohort triage → assigns the lane.</span>
+    <span class="flow-todo-pill">TODO · own consilium</span>
+  </div>
+  <span class="flow-conn">→</span>
+  <div class="flow-stage todo">
+    <span class="fs-step">STAGE 2 · LATER</span>
+    <span class="fs-t">Paywall</span>
+    <span class="fs-d">4 tiers · 7-day trial · Fear-Playbook copy.</span>
+    <span class="flow-todo-pill">TODO · own consilium</span>
+  </div>
+  <span class="flow-conn">→</span>
+  <div class="flow-stage gate">
+    <span class="fs-step">STAGE 3 · NOW</span>
+    <span class="fs-t">🛡 Disclaimer</span>
+    <span class="fs-d">One-time gate. Accept once to enter — §8.2.</span>
+  </div>
+  <span class="flow-conn">→</span>
+  <div class="flow-stage app">
+    <span class="fs-step">STAGE 4 · NOW</span>
+    <span class="fs-t">Main app</span>
+    <span class="fs-d">Lands on Today; 4-tab + «+Log» FAB.</span>
+    <div class="flow-apptabs">
+      <span class="entry">Today</span><span>Labs</span><span>+Log</span><span>Coach</span><span>Progress</span>
+    </div>
+  </div>
+</div>
+<div class="m6-callout note">
+  <b>Why the disclaimer is screen 1 of our work.</b> Per the founder brief, Onboarding and Paywall are separate later stages — each gets its own consilium. The Disclaimer is the first screen we design because it is the fixed hand-off point: whatever Onboarding and Paywall end up being, they always end here, and the Disclaimer always opens into Today. Designing it now means the future gates plug in without touching anything downstream.
+</div>
+
+<!-- ===== 8.2 DISCLAIMER SCREEN ===== -->
+<h2 id="disclaimer-screen">8.2 · Screen 1 — the Disclaimer gate</h2>
+<p class="lede">A calm, plain, one-screen gate — not a scary legal wall. It sets the relationship: Hepatica is an educational companion, the doctor diagnoses. Light-mode forced. Shown once; acceptance is stored at <code>com.love8ko.hepatica.disclaimer.accepted.v1</code>.</p>
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen gate" style="padding-bottom:16px;min-height:496px;gap:9px;">
+      <div class="disc-mark">Hepatica 🌿</div>
+      <div class="disc-h">Before you start</div>
+      <div class="disc-intro">Hepatica is your educational companion for fatty-liver health. Here's what that means — and what it doesn't.</div>
+      <div style="background:var(--card);border:1px solid var(--divider);border-radius:12px;padding:4px 11px;">
+        <div class="disc-pt">
+          <span class="dp-ic">📚</span>
+          <div><div class="dp-t">Education, not medical advice</div><div class="dp-d">Hepatica helps you understand your liver markers and track change over time. It doesn't replace your doctor or hepatologist.</div></div>
+        </div>
+        <div class="disc-pt">
+          <span class="dp-ic">🩺</span>
+          <div><div class="dp-t">It doesn't diagnose</div><div class="dp-d">Hepatica never tells you that you have NAFLD or MASH. Diagnosis is a clinical decision only your doctor can make.</div></div>
+        </div>
+        <div class="disc-pt">
+          <span class="dp-ic">🔬</span>
+          <div><div class="dp-t">Lab, FIB-4 &amp; FibroScan readouts are screening tools</div><div class="dp-d">They're here to inform your next conversation with your doctor — not to stage your liver or confirm fibrosis.</div></div>
+        </div>
+      </div>
+      <div class="disc-pt emrg">
+        <span class="dp-ic">🚨</span>
+        <div><div class="dp-t">In an emergency</div><div class="dp-d">Severe abdominal pain, jaundice, vomiting blood, or alcohol-withdrawal symptoms — seek urgent care now. Don't wait.</div></div>
+      </div>
+      <a class="disc-learn">Read the full disclaimer &amp; sources →</a>
+      <div style="margin-top:auto;display:flex;flex-direction:column;gap:7px;">
+        <div class="sc-cta">I understand — Continue</div>
+        <div class="disc-foot">Shown once. By continuing you acknowledge Hepatica is a Health &amp; Fitness app, not a medical device.</div>
+      </div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Standing in the user's shoes</h3>
+    <div class="pov-lead">The user just paid. They're anxious about their liver and want to <b>get in</b>. This screen has to build trust in 8 seconds without scaring them back out — calm tone, plain language, one obvious button.</div>
+    <div class="annot-row"><span class="ar-z">Sees first</span><span class="ar-v">A soft brand mark and <b>"Before you start"</b> — a friendly framing, not "Legal" or "Terms". No liver imagery (aversive, per locked anti-patterns).</span></div>
+    <div class="annot-row"><span class="ar-z">Reads</span><span class="ar-v">Four plain points — education vs advice, no diagnosis, screening-tool framing, and an emergency line. Each is one sentence, each maps to <code>COMPLIANCE.md</code>.</span></div>
+    <div class="annot-row"><span class="ar-z">Motivation</span><span class="ar-v">None yet — this is a <b>gate, not a task</b>. The job is to lower fear and set honest expectations so every later number is trusted.</span></div>
+    <div class="annot-row"><span class="ar-z">JTBD step</span><span class="ar-v">Pre-JTBD. The user does exactly one thing — taps <b>"I understand — Continue"</b> — and never sees this screen again.</span></div>
+    <div class="annot-row"><span class="ar-z">Compliance</span><span class="ar-v">Every line is drafted from <code>COMPLIANCE.md</code> — "education not advice", "doesn't diagnose", FibroScan/FIB-4 as screening tools, emergency routing. <b>Copy is a draft — needs founder + compliance sign-off.</b></span></div>
+    <div class="borrowed"><b>Borrowed — Calibrum.</b> Calibrum's post-paywall first-run is a sequence of single-purpose screens, each with one input and one primary action. The Disclaimer follows that: one screen, one button, no forms, exit-proof. <b>TODO marker:</b> trigger is first-launch now; moves to post-purchase once the Paywall ships.</div>
+  </div>
+</div>
+
+<!-- ===== 8.3 TODAY ANATOMY ===== -->
+<h2 id="today-anatomy">8.3 · Screen 2 — Today, worked top-to-bottom</h2>
+<p class="lede">The screen the user returns to every day. Shown here for <b>Recovering Robert</b> — the cohort whose chart is the strongest "wow". Every zone is annotated: what the user sees, what motivates them, which step of the loop it serves.</p>
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:9px;">
+      <div class="sc-head">
+        <div class="sc-greet"><small>Tue · May 20</small>Good morning, Robert</div>
+        <span class="sc-streak">🔥 47 days</span>
+      </div>
+      <div class="sc-pills">
+        <div class="sc-pill score"><div class="v">58</div><div class="l">Liver score ↑</div></div>
+        <div class="sc-pill"><div class="v">47</div><div class="l">Days sober</div></div>
+        <div class="sc-pill"><div class="v">🍺</div><div class="l">Recovery lane</div></div>
+      </div>
+      <div class="sc-insight">
+        <span class="si-x">✨</span>
+        <div><div class="si-e">Hepatica noticed</div><div class="si-t">GGT down 145 since Day 1 — consistent with the AASLD post-abstinence recovery timeline.</div></div>
+      </div>
+      <div class="sc-card hero">
+        <div class="sc-lbl"><span>Liver recovery · GGT</span><span class="sc-vp watch">Watch</span></div>
+        <div class="sc-chart-h"><span class="sc-chart-v">95<small> U/L</small></span><span class="sc-delta good">↓ 145 since you quit</span></div>
+        <svg viewBox="0 0 250 96" width="100%" style="margin-top:5px;" role="img" aria-label="GGT recovery trend">
+          <path d="M26,11 C100,28 170,52 240,70 L240,84 C170,63 100,40 26,37 Z" fill="#2D7B7E" fill-opacity="0.11"/>
+          <line x1="26" y1="78" x2="240" y2="78" stroke="#C68A3E" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <polyline points="26,14 54,36 86,51 128,63" fill="none" stroke="#2D7B7E" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="128,63 186,77 240,80" fill="none" stroke="#B0824D" stroke-width="2.4" stroke-dasharray="5 4" stroke-linecap="round"/>
+          <circle cx="26" cy="14" r="2.8" fill="#2D7B7E"/>
+          <circle cx="54" cy="36" r="2.8" fill="#2D7B7E"/>
+          <circle cx="86" cy="51" r="2.8" fill="#2D7B7E"/>
+          <circle cx="128" cy="63" r="3.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.4"/>
+          <text x="24" y="10" font-size="7.5" fill="#8B9B9B" font-family="ui-monospace,SF Mono">240</text>
+          <text x="232" y="74" text-anchor="end" font-size="7" fill="#C68A3E" font-family="ui-monospace,SF Mono">AASLD ref</text>
+        </svg>
+        <div class="sc-disc">Educational tracking — not a diagnosis. The band is the typical AASLD recovery range.</div>
+      </div>
+      <div class="sc-action">
+        <div class="sa-tick">+</div>
+        <div><div class="sa-t">Log Day 48 sober</div><div class="sa-d">Your one daily action — keeps the streak and the curve moving.</div></div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-lbl"><span>This week</span><span style="color:var(--good);">6 / 7 logged</span></div>
+        <div class="sc-heat"><i class="on"></i><i class="on"></i><i class="on"></i><i class="rescue"></i><i class="on"></i><i class="on"></i><i class="today"></i></div>
+      </div>
+      <div class="sc-card" style="display:flex;align-items:center;gap:9px;">
+        <span style="font-size:17px;">🎉</span>
+        <div style="flex:1;"><div style="font-size:10px;font-weight:800;color:var(--brand-deep);">Day 60 milestone ahead</div><div style="font-size:9px;color:var(--ink-2);">"Your liver at 2 months" — 13 days away.</div></div>
+        <span style="color:var(--brand);font-weight:800;">→</span>
+      </div>
+      <div class="sc-ribbon">
+        <span style="font-size:14px;">💬</span>
+        <span class="sr-t">Ask Coach — "Is a 145-point GGT drop normal?"</span>
+        <span class="sr-go">→</span>
+      </div>
+      <div class="phone-tabbar">
+        <a class="tab active"><span class="icn">⌂</span>Today</a>
+        <a class="tab"><span class="icn">🧪</span>Labs</a>
+        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
+        <a class="tab"><span class="icn">💬</span>Coach</a>
+        <a class="tab"><span class="icn">📈</span>Progress</a>
+      </div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Standing in the user's shoes</h3>
+    <div class="pov-lead">Robert is 47 days sober and quietly terrified the damage is permanent. He opens Today to answer one question: <b>"Is my liver actually healing?"</b> The screen answers it before he scrolls.</div>
+    <div class="annot-row"><span class="ar-z">Header + streak</span><span class="ar-v"><b>Behavioral anchor.</b> "47 days" is the number that <em>is</em> his recovery — it greets him before any clinical data.</span></div>
+    <div class="annot-row"><span class="ar-z">Liver-score strip</span><span class="ar-v">Three glanceable pills — composite score (↑ trend), streak, cohort lane. One row, one second to read.</span></div>
+    <div class="annot-row"><span class="ar-z">«Hepatica noticed»</span><span class="ar-v">The wow beat from Module 6 — a cited correlation that says "it's working" in plain words.</span></div>
+    <div class="annot-row"><span class="ar-z">JTBD chart</span><span class="ar-v"><b>The motivating graph.</b> GGT 240→95, dropping through the typical-recovery band toward the AASLD line. This <em>is</em> the answer to "is my liver healing" — §8.5.</span></div>
+    <div class="annot-row"><span class="ar-z">Today's action</span><span class="ar-v">One tap — "Log Day 48 sober". The loop's daily step; everything above is the payoff for doing it.</span></div>
+    <div class="annot-row"><span class="ar-z">Heatmap</span><span class="ar-v"><b>Dual anchoring.</b> Even on a week with no new blood test, the heatmap shows visible accumulation — momentum the biology can't give yet.</span></div>
+    <div class="annot-row"><span class="ar-z">Milestone + Coach</span><span class="ar-v">A forward pull ("Day 60, 13 days away") and a seeded Coach hand-off — no blank chat.</span></div>
+    <div class="borrowed"><b>Borrowed — Folik (dual anchoring + the JTBD chart as hero), Calibrum (the chart, not the number, is the centre of the home screen), Cysta AI (cohort lane + insight banner).</b> The order is deliberate: behavioral proof on top, clinical proof in the middle, the daily action and the hand-offs below.</div>
+  </div>
+</div>
+
+<!-- ===== 8.4 TODAY BY COHORT ===== -->
+<h2 id="today-cohorts">8.4 · The same Today, across all 6 cohorts</h2>
+<p class="lede">The layout in §8.3 is fixed — but the hero chart, the daily action and the lane widget swap to the cohort assigned at onboarding. Same screen, six jobs-to-be-done. Robert is spotlighted above; here are all six side by side.</p>
+<div class="cohort-strip">
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Nick</div><span class="sc-streak">🔥 12</span></div>
+        <div class="sc-pills"><div class="sc-pill score"><div class="v">61</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">12</div><div class="l">Scan streak</div></div></div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>ALT trend</span></div>
+          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
+            <line x1="6" y1="34" x2="134" y2="34" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
+            <polyline points="6,9 38,17 72,23 110,28" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="110,28 134,33" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-dasharray="4 3"/>
+            <circle cx="110" cy="28" r="3" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
+          </svg>
+          <div class="sc-chart-h"><span class="sc-chart-v" style="font-size:13px;">66<small> U/L</small></span><span class="sc-delta good">↓ 26</span></div>
+        </div>
+        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">📷</div><div class="sa-t" style="font-size:9px;">Scan today's lunch</div></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍷 Newly Diagnosed Nick</div><div class="cc-job">"Doctor said fatty liver — what do I eat?"</div><div class="cc-chart">Chart · 6-month ALT trend vs AASLD 40</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Greta</div><span class="sc-streak">🔥 23</span></div>
+        <div class="sc-pills"><div class="sc-pill score"><div class="v">64</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">−18<small style="font-size:7px;">lb</small></div><div class="l">on GLP-1</div></div></div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>ALT × weight</span></div>
+          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
+            <polyline points="6,11 40,18 74,24 110,30" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="6,20 40,25 74,31 110,37" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="110" cy="30" r="2.8" fill="#2D7B7E"/><circle cx="110" cy="37" r="2.8" fill="#B0824D"/>
+          </svg>
+          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">ALT ↓34 · weight ↓18 lb</span></div>
+        </div>
+        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">⚖️</div><div class="sa-t" style="font-size:9px;">Log today's weigh-in</div></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">💉 GLP-1 Greta</div><div class="cc-job">"Show me Ozempic is working on my liver."</div><div class="cc-chart">Chart · dual-axis ALT ↓ + weight ↓</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Pete</div><span class="sc-streak">🔥 9</span></div>
+        <div class="sc-pills"><div class="sc-pill score"><div class="v">52</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">5.9</div><div class="l">HbA1c</div></div></div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>Metabolic · HbA1c × ALT</span></div>
+          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
+            <polyline points="6,12 40,17 74,22 110,27" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="6,22 40,26 74,29 110,34" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="110" cy="27" r="2.8" fill="#2D7B7E"/><circle cx="110" cy="34" r="2.8" fill="#B0824D"/>
+          </svg>
+          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">both markers trending down</span></div>
+        </div>
+        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">🩸</div><div class="sa-t" style="font-size:9px;">Log fasting glucose</div></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍔 Pre-Diabetic Pete</div><div class="cc-job">"HbA1c 6.0 + ALT 70 — where do I start?"</div><div class="cc-chart">Chart · dual-axis HbA1c + ALT</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Rachel</div><span class="sc-streak">🔥 88</span></div>
+        <div class="sc-pills"><div class="sc-pill score"><div class="v">55</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">F2</div><div class="l">FibroScan</div></div></div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>FibroScan · LSM kPa</span></div>
+          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
+            <polyline points="6,12 50,12 50,22 96,22 96,30 130,30" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="6" cy="12" r="2.6" fill="#2D7B7E"/><circle cx="50" cy="22" r="2.6" fill="#2D7B7E"/><circle cx="96" cy="30" r="2.6" fill="#2D7B7E"/>
+            <text x="10" y="9" font-size="6.5" fill="#8B9B9B" font-family="ui-monospace,SF Mono">F3</text>
+            <text x="118" y="40" font-size="6.5" fill="#2D7B7E" font-family="ui-monospace,SF Mono">F2</text>
+          </svg>
+          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">12.5 → 8.1 kPa over 12 mo</span></div>
+        </div>
+        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">💊</div><div class="sa-t" style="font-size:9px;">Log Rezdiffra dose</div></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">💊 Rezdiffra Rachel</div><div class="cc-job">"Document the $40K drug is working."</div><div class="cc-chart">Chart · FibroScan F3→F2 staging timeline</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Patricia</div><span class="sc-streak">🔥 31</span></div>
+        <div class="sc-pills"><div class="sc-pill score"><div class="v">59</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">D14</div><div class="l">Cycle day</div></div></div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>ALT × cycle phase</span></div>
+          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
+            <line x1="6" y1="34" x2="134" y2="34" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
+            <polyline points="6,14 30,19 54,15 78,23 102,20 126,27" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="126" cy="27" r="3" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
+          </svg>
+          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">ALT easing across cycles</span></div>
+        </div>
+        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">💊</div><div class="sa-t" style="font-size:9px;">Log inositol</div></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🧬 PCOS-NAFLD Patricia</div><div class="cc-job">"PCOS + fatty liver — track them together."</div><div class="cc-chart">Chart · ALT trend annotated by cycle phase</div></div>
+  </div>
+
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Robert</div><span class="sc-streak">🔥 47</span></div>
+        <div class="sc-pills"><div class="sc-pill score"><div class="v">58</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">47</div><div class="l">Days sober</div></div></div>
+        <div class="sc-card hero"><div class="sc-lbl"><span>GGT recovery</span><span class="sc-vp watch">Watch</span></div>
+          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
+            <line x1="6" y1="36" x2="134" y2="36" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
+            <polyline points="6,8 32,18 60,25 92,30" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="92,30 134,35" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-dasharray="4 3"/>
+            <circle cx="92" cy="30" r="3" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
+          </svg>
+          <div class="sc-chart-h"><span class="sc-chart-v" style="font-size:13px;">95<small> U/L</small></span><span class="sc-delta good">↓ 145</span></div>
+        </div>
+        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">+</div><div class="sa-t" style="font-size:9px;">Log Day 48 sober</div></div>
+        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">🍺 Recovering Robert</div><div class="cc-job">"90 days sober — is my liver healing?"</div><div class="cc-chart">Chart · GGT recovery curve + sober-day overlay</div></div>
+  </div>
+
+</div>
+<div class="m6-callout note">
+  <b>Lane routing.</b> The cohort is assigned by the future Onboarding triage and stored as a <code>cohort</code> enum; Today reads it to pick the hero chart, the daily action and the lane widget. Until Onboarding ships, the lane is a Settings / debug toggle. This deepens Module 4.5's widget-reorder table into actual screens.
+</div>
+
+<!-- ===== 8.5 MOTIVATING CHARTS ===== -->
+<h2 id="motivating-charts">8.5 · The motivating charts — how each cohort sees "it's working"</h2>
+<p class="lede">The hero chart is the heart of Today. Every one follows the same grammar: the user's <b>actual</b> marker, a shaded <b>typical recovery band</b> from published guidance, the <b>reference line</b>, and a dashed <b>"if the trend continues"</b> projection. Small wobble is floored as "stable" — never drawn as a relapse.</p>
+<div class="chart-gallery">
+
+  <div class="chart-card">
+    <div class="cc-h">🍺 Robert — GGT recovery</div>
+    <div class="cc-sub">Answers: "Is my liver healing now that I've stopped drinking?"</div>
+    <svg viewBox="0 0 340 168" width="100%" style="margin-top:9px;" role="img" aria-label="Robert GGT recovery chart">
+      <path d="M38,28 C130,52 230,92 312,112 L312,130 C230,108 130,66 38,52 Z" fill="#2D7B7E" fill-opacity="0.12"/>
+      <line x1="38" y1="122" x2="312" y2="122" stroke="#C68A3E" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="312" y="118" text-anchor="end" font-size="8.5" fill="#C68A3E" font-family="ui-monospace,SF Mono">AASLD upper ref · ~50 U/L</text>
+      <polyline points="38,26 96,62 158,86 222,104" fill="none" stroke="#2D7B7E" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="222,104 270,120 312,126" fill="none" stroke="#B0824D" stroke-width="2.8" stroke-dasharray="6 4" stroke-linecap="round"/>
+      <circle cx="38" cy="26" r="3.4" fill="#2D7B7E"/>
+      <circle cx="96" cy="62" r="3.4" fill="#2D7B7E"/>
+      <circle cx="158" cy="86" r="3.4" fill="#2D7B7E"/>
+      <circle cx="222" cy="104" r="4.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.8"/>
+      <text x="34" y="20" font-size="9" fill="#4C5B5C" font-family="ui-monospace,SF Mono">240</text>
+      <text x="210" y="98" font-size="9" fill="#194A4C" font-family="ui-monospace,SF Mono" font-weight="800">95 · today</text>
+      <text x="310" y="146" text-anchor="end" font-size="8.5" fill="#B0824D" font-family="ui-monospace,SF Mono">projected ~Day 115</text>
+      <line x1="38" y1="150" x2="312" y2="150" stroke="#D6E2E0" stroke-width="1"/>
+      <text x="38" y="162" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Day 0</text>
+      <text x="312" y="162" text-anchor="end" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Day 160</text>
+    </svg>
+    <div class="chart-legend">
+      <span><i style="border-top:2.8px solid #2D7B7E;"></i> logged GGT</span>
+      <span><i style="border-top:2.8px dashed #B0824D;"></i> projection</span>
+      <span><i style="border-top:9px solid rgba(45,123,126,0.16);"></i> typical band</span>
+    </div>
+    <div class="cc-read"><b>How it motivates:</b> the line is visibly falling through the published recovery band toward the reference. Robert renews because at Day 47 he hasn't <em>reached</em> it yet — the dashed projection shows he will.</div>
+    <div class="chart-disc">Educational — the band is the typical AASLD post-abstinence range, not a personal prediction.</div>
+  </div>
+
+  <div class="chart-card">
+    <div class="cc-h">🍷 Nick — ALT trend</div>
+    <div class="cc-sub">Answers: "Is the diet my doctor told me to follow actually working?"</div>
+    <svg viewBox="0 0 340 168" width="100%" style="margin-top:9px;" role="img" aria-label="Nick ALT trend chart">
+      <path d="M38,40 C130,58 230,86 312,100 L312,118 C230,104 130,76 38,64 Z" fill="#2D7B7E" fill-opacity="0.12"/>
+      <line x1="38" y1="110" x2="312" y2="110" stroke="#C68A3E" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="312" y="106" text-anchor="end" font-size="8.5" fill="#C68A3E" font-family="ui-monospace,SF Mono">AASLD ALT ref · 40 U/L</text>
+      <polyline points="38,30 110,52 178,70 244,84" fill="none" stroke="#2D7B7E" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="244,84 286,98 312,106" fill="none" stroke="#B0824D" stroke-width="2.8" stroke-dasharray="6 4" stroke-linecap="round"/>
+      <circle cx="38" cy="30" r="3.4" fill="#2D7B7E"/>
+      <circle cx="110" cy="52" r="3.4" fill="#2D7B7E"/>
+      <circle cx="178" cy="70" r="3.4" fill="#2D7B7E"/>
+      <circle cx="244" cy="84" r="4.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.8"/>
+      <text x="34" y="24" font-size="9" fill="#4C5B5C" font-family="ui-monospace,SF Mono">92</text>
+      <text x="232" y="78" font-size="9" fill="#194A4C" font-family="ui-monospace,SF Mono" font-weight="800">66 · today</text>
+      <text x="310" y="132" text-anchor="end" font-size="8.5" fill="#B0824D" font-family="ui-monospace,SF Mono">projected into range</text>
+      <line x1="38" y1="150" x2="312" y2="150" stroke="#D6E2E0" stroke-width="1"/>
+      <text x="38" y="162" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Month 0</text>
+      <text x="312" y="162" text-anchor="end" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Month 6</text>
+    </svg>
+    <div class="chart-legend">
+      <span><i style="border-top:2.8px solid #2D7B7E;"></i> logged ALT</span>
+      <span><i style="border-top:2.8px dashed #B0824D;"></i> projection</span>
+      <span><i style="border-top:9px solid rgba(45,123,126,0.16);"></i> typical band</span>
+    </div>
+    <div class="cc-read"><b>How it motivates:</b> Nick's doctor said "fix it with diet" and left. This chart is the feedback the 10-minute appointment never gave him — proof, every meal scan, that the diet is landing.</div>
+    <div class="chart-disc">A −5 U/L wobble reads as "stable · within normal variation", never as regression — noise-floor framing.</div>
+  </div>
+
+</div>
+<table class="tab-spec" style="margin-top:14px;">
+  <thead><tr><th>Cohort</th><th>Hero metric</th><th>Chart shape</th><th>The JTBD it proves</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">🍷 Nick</td><td>ALT</td><td>6-month ALT trend vs AASLD 40 U/L line + projection</td><td>"My diet is working" — rendered above</td></tr>
+    <tr><td class="tabname">💉 Greta</td><td>ALT + weight</td><td>Dual-axis — ALT ↓ and weight ↓ on one timeline</td><td>"The GLP-1 is reaching my liver, not just the scale"</td></tr>
+    <tr><td class="tabname">🍔 Pete</td><td>HbA1c + ALT</td><td>Dual-axis metabolic — both markers descending together</td><td>"Liver and glucose are improving as one problem"</td></tr>
+    <tr><td class="tabname">💊 Rachel</td><td>FibroScan LSM</td><td>kPa staircase — F3 → F2 → F1 staging timeline</td><td>"The $40K drug is regressing my fibrosis — documented"</td></tr>
+    <tr><td class="tabname">🧬 Patricia</td><td>ALT × cycle</td><td>ALT trend with cycle-phase shading, easing across cycles</td><td>"PCOS and liver are tracked as one hormonal picture"</td></tr>
+    <tr><td class="tabname">🍺 Robert</td><td>GGT + sober days</td><td>GGT recovery curve vs typical band + sober overlay</td><td>"My liver is healing" — rendered above</td></tr>
+  </tbody>
+</table>
+<div class="m6-callout note">
+  <b>Compliance.</b> Every chart carries an educational-tracking disclaimer; the band is a published <em>population</em> range (AASLD), never a personal promise; the projection copy stays conditional ("if the trend continues", "projected"); no dated outcome claim sits beside the "Reverse fatty liver" tagline; severity stays on the warm triad — no clinical red.
+</div>
+
+<!-- ===== 8.6 FIRST-RUN / EMPTY STATE ===== -->
+<h2 id="first-run">8.6 · Day 1 — the empty state that still sells</h2>
+<p class="lede">The hardest screen to design: a brand-new user, fresh past the Disclaimer, with <b>zero data</b>. The charts can't be blank — a blank Today reads as "nothing here". So every chart card is <b>always rendered</b> as a skeleton: a ghost line where the user's data will live, a pulsing "today" dot, and a caption that turns the emptiness into an invitation.</p>
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen" style="gap:9px;">
+      <div class="sc-head">
+        <div class="sc-greet"><small>Day 1</small>Welcome, Robert</div>
+        <span class="sc-streak" style="background:var(--bg-soft);color:var(--ink-3);">🔥 0</span>
+      </div>
+      <div class="sc-pills">
+        <div class="sc-pill score" style="background:var(--brand-soft);border-color:var(--brand-soft);"><div class="v" style="color:var(--ink-3);">—</div><div class="l" style="color:var(--ink-3);">Liver score</div></div>
+        <div class="sc-pill"><div class="v" style="color:var(--ink-3);">0</div><div class="l">Days logged</div></div>
+        <div class="sc-pill"><div class="v">🍺</div><div class="l">Recovery lane</div></div>
+      </div>
+      <div class="sc-card hero" style="border-style:dashed;">
+        <div class="sc-lbl"><span>Liver recovery · GGT</span><span style="color:var(--ink-3);">no data yet</span></div>
+        <svg viewBox="0 0 250 90" width="100%" style="margin-top:5px;" role="img" aria-label="empty GGT chart skeleton">
+          <line x1="26" y1="76" x2="240" y2="76" stroke="#D6E2E0" stroke-width="1"/>
+          <polyline points="26,44 86,42 146,46 206,43" fill="none" stroke="#C9D6D4" stroke-width="2" stroke-dasharray="4 4"/>
+          <circle cx="26" cy="44" r="4" fill="none" stroke="#B0824D" stroke-width="2"/>
+          <circle cx="26" cy="44" r="7.5" fill="#B0824D" fill-opacity="0.16"/>
+          <text x="132" y="30" text-anchor="middle" font-size="9" fill="#8B9B9B" font-family="-apple-system,SF Pro">your recovery line builds here</text>
+        </svg>
+        <div class="sc-disc">Add your first GGT to anchor the curve.</div>
+      </div>
+      <div class="sc-cta">🩸 Log your baseline blood test</div>
+      <div class="sc-cta ghost">+ Log your first sober day</div>
+      <div class="sc-ribbon">
+        <span style="font-size:14px;">💬</span>
+        <span class="sr-t">New here? Ask Coach — "Where do I start?"</span>
+        <span class="sr-go">→</span>
+      </div>
+      <div class="phone-tabbar">
+        <a class="tab active"><span class="icn">⌂</span>Today</a>
+        <a class="tab"><span class="icn">🧪</span>Labs</a>
+        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
+        <a class="tab"><span class="icn">💬</span>Coach</a>
+        <a class="tab"><span class="icn">📈</span>Progress</a>
+      </div>
+    </div>
+  </div>
+  <div class="screen-annot">
+    <h3>Standing in the user's shoes</h3>
+    <div class="pov-lead">This is the make-or-break moment. The user has paid and entered with <b>nothing logged</b>. If Today looks empty, they churn before the trial ends. The skeleton turns "empty" into "ready".</div>
+    <div class="annot-row"><span class="ar-z">Sees first</span><span class="ar-v">The full Today layout — already shaped. The score reads <b>"—"</b>, not a fake number; honesty keeps trust.</span></div>
+    <div class="annot-row"><span class="ar-z">The chart</span><span class="ar-v">A dashed ghost line with a pulsing dot and the caption <b>"your recovery line builds here"</b> — the empty chart is reframed as a promise, not a void.</span></div>
+    <div class="annot-row"><span class="ar-z">Motivation</span><span class="ar-v">Two clear CTAs — log a baseline blood test, or log Day 1 sober. The first data point animates into the ghost line; a micro-praise toast confirms ("Baseline locked — your curve starts here").</span></div>
+    <div class="annot-row"><span class="ar-z">JTBD step</span><span class="ar-v">Step zero — "lock in the baseline". Until the user does it, every chart is a promise; after, the loop from Module 6 begins.</span></div>
+    <div class="borrowed"><b>Borrowed — Calibrum (skeleton zero-state — every chart card always visible with a ghost line + "your line builds here") and Folik ("Lock in your baseline — without it, every chart is empty"). </b> The empty state is a designed screen, not an afterthought.</div>
+  </div>
+</div>
+
+<!-- ===== 8.7 RECOMMENDED FOR REVIEW ===== -->
+<h2 id="flow-summary">8.7 · Ready for review</h2>
+<div class="m6-callout win">
+  <b>Module 8 — ready for founder review.</b> The core flow is worked screen-by-screen from the user's seat: the flow map (Onboarding + Paywall as dashed TODO gates), the Disclaimer gate, the Today screen worked top-to-bottom, the same Today across all 6 cohorts, the six motivating JTBD charts, and the Day-1 skeleton empty state. Best practice is borrowed and credited — Calibrum's skeleton zero-state, Folik's dual anchoring + baseline framing, Cysta's cohort lanes. Next sprint — <b>Module 9</b>: the working tabs (Labs · +Log · Coach · Progress) screen by screen. Nothing here is locked; on review the disclaimer copy goes to compliance sign-off and the screens become the spec for the Swift V1 skeleton.
+</div>
+
+<footer>
+  <b>Hepatica — Screen Flow Workbench</b> · companion to <b>design.html</b> (Modules 1–7) · updated 2026-05-21 · sibling pattern: Cysta AI · Folik · Calibrum.<br>
+  Module 8 — app flow map · Disclaimer gate · Today screen · 6 cohort screens · motivating JTBD charts · first-run empty state. Next: Module 9 — the working tab screens (Labs · +Log · Coach · Progress) &amp; the Swift V1 skeleton.
+</footer>
+
+</body>
+</html>

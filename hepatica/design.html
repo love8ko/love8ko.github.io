@@ -437,13 +437,15 @@
 
   /* ==================== M7 · APP STORE SCREENSHOTS ==================== */
   .cheat-wrap { margin: 10px 0 4px; background: var(--brand-deep); border-radius: 14px; overflow-x: auto; border: 1px solid var(--brand-mid); }
-  table.ss-cheat { background: transparent; border: none; border-radius: 0; min-width: 940px; margin: 0; }
+  table.ss-cheat { background: transparent; border: none; border-radius: 0; min-width: 1080px; margin: 0; }
   table.ss-cheat thead th { background: var(--brand); color: var(--cta); border-bottom: 1px solid var(--brand-mid); white-space: nowrap; }
   table.ss-cheat tbody td { color: var(--pearl); border-bottom: 1px solid var(--brand-mid); vertical-align: top; font-size: 12px; line-height: 1.46; }
   table.ss-cheat tbody tr:last-child td { border-bottom: none; }
   table.ss-cheat td.cell-num { font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; color: var(--cta); width: 26px; text-align: center; }
-  table.ss-cheat td.cell-title { font-weight: 800; color: #F4E4D0; width: 24%; }
-  table.ss-cheat td.cell-sub { color: rgba(238,243,242,0.72); width: 26%; }
+  table.ss-cheat td.cell-pain { color: var(--cta-soft); font-style: italic; width: 21%; }
+  table.ss-cheat td.cell-pain .j { display: block; font-style: normal; font-size: 10px; letter-spacing: 0.01em; color: var(--brand-soft); margin-top: 4px; }
+  table.ss-cheat td.cell-title { font-weight: 800; color: #F4E4D0; width: 16%; }
+  table.ss-cheat td.cell-sub { color: rgba(238,243,242,0.74); width: 24%; }
   table.ss-cheat td.cell-hero { color: var(--brand-soft); font-size: 11.5px; }
   table.ss-cheat td.cell-aso { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; color: var(--cta); white-space: nowrap; }
   table.ss-cheat tbody tr.killer td { background: rgba(212,165,116,0.10); }
@@ -474,6 +476,23 @@
   .ss-killer .ss-meta-row b { display: block; font-size: 9px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1px; }
   ul.list.dontlist li::marker { color: var(--alert); font-weight: 800; }
 
+  .ss-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+  .ss-bullets li { font-size: 11.5px; color: var(--ink-2); line-height: 1.4; padding-left: 13px; position: relative; }
+  .ss-bullets li::before { content: '\203A'; position: absolute; left: 2px; color: var(--cta-deep); font-weight: 800; }
+  .ss-mini .ss-bullets li { font-size: 10.5px; }
+
+  .ss-grid8 { display: grid; grid-template-columns: repeat(auto-fit, minmax(186px, 1fr)); gap: 12px; margin-top: 14px; }
+  .ss-mini { background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 12px 12px 14px; display: flex; flex-direction: column; gap: 7px; }
+  .ss-mini.killer { border: 2px solid var(--cta); }
+  .ss-mini .num-tag { font-family: ui-monospace, "SF Mono", monospace; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; color: var(--ink-3); }
+  .ss-mini.killer .num-tag { color: var(--cta-deep); }
+  .ss-mini .mini-hero { background: var(--pearl); border-radius: 8px; padding: 8px; font-size: 10px; color: var(--ink-2); border: 1px solid var(--divider); min-height: 64px; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.35; }
+  .ss-mini.killer .mini-hero { background: var(--brand-deep); color: var(--pearl); border-color: var(--brand-mid); }
+  .ss-mini .pain-line { font-size: 10.5px; color: var(--ink-2); font-style: italic; line-height: 1.4; }
+  .ss-mini h5 { font-size: 12.5px; margin: 2px 0 0; font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; color: var(--ink); line-height: 1.25; }
+  .ss-mini .sub-line { font-size: 11px; color: var(--ink-2); line-height: 1.4; }
+  .ss-mini .aso-chip { font-family: ui-monospace, "SF Mono", monospace; font-size: 10px; padding: 2px 6px; background: var(--brand-soft); color: var(--brand-deep); border-radius: 5px; align-self: flex-start; }
+
   footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--divider); font-size: 11.5px; color: var(--ink-3); line-height: 1.6; }
   footer b { color: var(--ink-2); }
 </style>
@@ -491,14 +510,13 @@
   <a href="#module-5" class="is-module"><span class="nav-num">M5</span>Stack</a>
   <a href="#module-6" class="is-module"><span class="nav-num">M6</span>Loop</a>
   <a href="#module-7" class="is-module"><span class="nav-num">M7</span>Shots</a>
-  <a href="#module-8" class="is-module"><span class="nav-num">M8</span>Flow</a>
+  <a href="flow.html" class="is-module">Screen Flow · M8–9 ↗</a>
   <span class="sep"></span>
   <a href="#archive">📦 archive</a>
+  <a href="#core-loop">loop vote</a>
   <a href="#renewal">renewal</a>
-  <a href="#flow-map">flow map</a>
-  <a href="#today-anatomy">today</a>
-  <a href="#today-cohorts">cohort screens</a>
-  <a href="#motivating-charts">charts</a>
+  <a href="#ss-cheat">cheat sheet</a>
+  <a href="#ss-killer">killer frames</a>
 </nav>
 
 <!-- ===== HEADER ===== -->
@@ -513,7 +531,7 @@
     <span class="pill lock">🔒 Roadmap · 15 features → P0/P1/P2</span>
     <span class="pill lock">🔒 Tabs · 4-tab + Log FAB</span>
     <span class="pill brand">📋 JTBD · 6 cohorts</span>
-    <span class="pill brand">📸 Screenshots · 30 frames · 5 CPP</span>
+    <span class="pill brand">📸 Screenshots · 8 frames</span>
     <span class="pill brand">5 markets · US · GB · DE · CA · AU</span>
     <span class="pill sib">Source: Hepatica_Master_v2_FINAL.md · 2026-05-20</span>
   </div>
@@ -1288,7 +1306,7 @@
     <div class="seq"><b>W1</b>Onboarding cohort-triage + Photo Food Scanner (AcidWise port)</div>
     <div class="seq"><b>W2</b>Manual lab entry + Lab Interpreter OCR start</div>
     <div class="seq"><b>W3</b>AI Coach RAG start + Med Tracker (JabWell) + Alcohol Tracker</div>
-    <div class="seq"><b>W4</b>AI Coach finish + Multi-Lab Dashboard + Paywall + 5 CPPs</div>
+    <div class="seq"><b>W4</b>AI Coach finish + Multi-Lab Dashboard + Paywall + 8 App Store screenshots</div>
     <div class="seq"><b>W5</b>FibroScan Tracker + Recovery Mode start</div>
     <div class="seq"><b>W6</b>Recovery Mode finish + Doctor PDF + Symptom Analytics</div>
     <div class="seq"><b>W7</b>Recipe Engine + multi-locale + QA</div>
@@ -1871,837 +1889,287 @@
 <!-- ============================================================ -->
 <div class="module-banner" id="module-7">
   <span class="num">МОДУЛЬ 7</span>
-  <h2>App Store screenshots · 30 frames</h2>
-  <p class="desc">6 frames × 5 Custom Product Pages = 30 master screenshots (× 3 device sizes, × DE locale). Cheat sheet first — every overlay headline, sub-line, hero illustration and the ASA keyword each frame is built to convert. CPP-A doubles as the default store listing. Frames 1–3 of each gallery are the thumbnail-visible killers; 1→6 runs strongest-JTBD → paywall.</p>
+  <h2>App Store screenshots · 8 frames</h2>
+  <p class="desc">One universal gallery, eight frames, ordered by the blend of <b>pain × JTBD strength × cohort size — biggest first</b>. The App Store thumbnail shows only the first three, so frames 1–3 are the scroll-stop killers and carry the sharpest jobs-to-be-done. Every frame is worked through below: headline, on-frame bullets, hero illustration.</p>
 </div>
 
-<!-- ===== 7.0 HOW THE CPP GALLERIES WORK ===== -->
-<h2 id="ss-priority">7.0 · How the CPP galleries work — and which to build first</h2>
-<p class="lede">Each Custom Product Page is a <b>standalone gallery</b> served to its own Apple Search Ads traffic — a Rezdiffra searcher and a "quit drinking" searcher never see the same six frames. <b>CPP-A (Nick) doubles as the default App Store listing</b>, so it ships first and carries the north-star keyword. Inside every gallery the App Store thumbnail shows only the <b>first three frames</b> — so frames 1–3 are the scroll-stop killers, and 1→6 runs strongest-JTBD → paywall. The build order below is audience × willingness-to-pay × how winnable the keyword is — <em>not</em> raw cohort size.</p>
-<table class="tab-spec">
-  <thead><tr><th>Build</th><th>CPP · cohort</th><th>Audience</th><th>Trial→Paid</th><th>Killer ASA keyword</th><th>Why this slot in the order</th></tr></thead>
-  <tbody>
-    <tr><td><b>1st</b></td><td class="tabname">CPP-A · 🍷 Nick</td><td>25%</td><td>48%</td><td><code>fatty liver</code> V49/D20</td><td>Anchor cohort <b>and</b> the default listing. North-star keyword, weakest incumbent (LiverPal — 4 reviews). Everything else waits on this set.</td></tr>
-    <tr><td><b>2nd</b></td><td class="tabname">CPP-D · 💊 Rachel</td><td>8%</td><td>62%</td><td><code>rezdiffra</code> V30/D25</td><td>Smallest cohort, but highest WTP ($99 Lifetime) and an <b>uncontested</b> drug-name keyword — the cheapest, highest-margin install in the set.</td></tr>
-    <tr><td><b>3rd</b></td><td class="tabname">CPP-E · 🍺 Robert</td><td>17%</td><td>55%</td><td><code>quit drinking liver</code> V32/D68</td><td>Biggest unserved wedge — r/stopdrinking 500K+. No competitor pairs sobriety with a liver biomarker; the gallery itself is the differentiator.</td></tr>
-    <tr><td><b>4th</b></td><td class="tabname">CPP-B · 💉 Greta</td><td>15%</td><td>55%</td><td><code>ozempic liver</code> V30/D25</td><td>Uncontested GLP-1 keyword (0/11 competitors rank), premium income, Family-tier conversion. Fast follow once the anchor is live.</td></tr>
-    <tr><td><b>5th</b></td><td class="tabname">CPP-C · 🍔 Pete</td><td>20%</td><td>42%</td><td><code>metabolic syndrome</code> V38/D54</td><td>Largest TAM, but every keyword is D52–69 — this gallery earns installs on ASA spend, not organic. Ship once the ad budget is live.</td></tr>
-  </tbody>
-</table>
+<!-- ===== 7.0 CHEAT SHEET ===== -->
+<h2 id="ss-cheat">7.0 · Cheat sheet — 8 frames, biggest pain &amp; JTBD first</h2>
+<p class="lede"><b>Designer starts here.</b> Each row is one screenshot, in install order — <b>frame 1 carries the rawest pain and the strongest job-to-be-done; frame 8 is the paywall.</b> <b>PAIN → JTBD</b> = the real user words (r/FattyLiverDisease, r/stopdrinking, r/Ozempic) and the job that frame is hired for, with its intensity. <b>HEADLINE</b> = the overlay copy (SF Pro Rounded 800, ≤8 words). <b>BULLETS</b> = the on-frame supporting points (≤6 words each, three max). <b>ILLUSTRATION</b> = the single hero visual — one per frame, never a stack. <b>ASO</b> = the Apple Search Ads keyword the frame converts (V/D from <code>ASO/KEYWORDS.md</code>). Gold rows = thumbnail-visible killers. 🌟 north star · 🎯 uncontested.</p>
 
-<!-- ===== 7.1 CHEAT SHEET — 30 FRAMES ===== -->
-<h2 id="ss-cheat">7.1 · Cheat sheet — 30 frames, copy strings, hero, ASO</h2>
-<p class="lede"><b>Designer starts here.</b> Five galleries, six frames each. <b>HEADLINE</b> = the locked overlay copy (SF Pro Rounded 800, ≤8 words). <b>SUB</b> = the secondary annotation line (SF Pro Text, ≤15 words). <b>HERO ILLUSTRATION</b> = the single in-frame element — one per frame, never a stack. <b>ASO</b> = the Apple Search Ads keyword that frame is built to convert (V/D from <code>ASO/KEYWORDS.md</code>, locked 2026-05-20). Gold rows = thumbnail-visible killers. 🌟 = north star · 🎯 = uncontested keyword.</p>
-
-<div class="ss-cap"><h3>CPP-A · 🍷 Newly Diagnosed Nick</h3><span class="ss-cap-meta">25% audience · default store listing · ASA Ad Group A</span></div>
 <div class="cheat-wrap">
 <table class="ss-cheat">
-  <thead><tr><th>#</th><th>HEADLINE (overlay)</th><th>SUB (annotation)</th><th>HERO ILLUSTRATION</th><th>ASO</th></tr></thead>
+  <thead><tr><th>#</th><th>PAIN → JTBD it answers</th><th>HEADLINE (overlay)</th><th>BULLETS (on-frame)</th><th>HERO ILLUSTRATION</th><th>ASO</th></tr></thead>
   <tbody>
-    <tr class="killer"><td class="cell-num">1</td><td class="cell-title">Just diagnosed with fatty liver? Scan every meal.</td><td class="cell-sub">Point the camera at the plate — a liver-risk verdict in seconds, no calorie counting.</td><td class="cell-hero">Food photo with a teal "Liver-Friendly ✅" badge settling onto it · camera-scan corners · teal gradient top band</td><td class="cell-aso">fatty liver V49/D20 🌟</td></tr>
-    <tr class="killer"><td class="cell-num">2</td><td class="cell-title">ALT 85 — here's what it means.</td><td class="cell-sub">Photograph your blood panel; every enzyme read back in plain English.</td><td class="cell-hero">Lab card — ALT 85 U/L, amber "Elevated" pill, ↓ trend arrow, "[AASLD 2023]" citation chip</td><td class="cell-aso">alt ast V52/D38</td></tr>
-    <tr class="killer"><td class="cell-num">3</td><td class="cell-title">Ask anything — citations from AASLD, Mayo Clinic.</td><td class="cell-sub">The AI Coach answers grounded in the guidelines, every reply carrying its source.</td><td class="cell-hero">Chat — "Can I eat sushi?" → AI reply with teal [AASLD 2023] chip + amber safety strip</td><td class="cell-aso">fatty liver ai V32/D54</td></tr>
-    <tr><td class="cell-num">4</td><td class="cell-title">See your progress — month by month.</td><td class="cell-sub">Six months of liver score on one rising line.</td><td class="cell-hero">Line chart — liver-friendly score 45→78, teal line, milestone dots</td><td class="cell-aso">liver tracker V44/D38</td></tr>
-    <tr><td class="cell-num">5</td><td class="cell-title">Your personalized liver plan.</td><td class="cell-sub">A home screen ordered for newly-diagnosed life: scan, labs, coach.</td><td class="cell-hero">Nick home screen — Food Scanner + Labs + AI Coach cards stacked, center "+Log" FAB</td><td class="cell-aso">nafld V34/D25</td></tr>
-    <tr><td class="cell-num">6</td><td class="cell-title">7-day free trial • $39.99/yr.</td><td class="cell-sub">Scan meals, read labs, ask the coach, watch progress — one plan.</td><td class="cell-hero">Paywall — 4 teal feature bullets, Standard tier selected, gold "Start free trial" CTA</td><td class="cell-aso">fatty liver diet V53/D52</td></tr>
-  </tbody>
-</table>
-</div>
-
-<div class="ss-cap"><h3>CPP-B · 💉 GLP-1 Greta</h3><span class="ss-cap-meta">15% audience · ASA Ad Group B · Family tier ($79.99/yr)</span></div>
-<div class="cheat-wrap">
-<table class="ss-cheat">
-  <thead><tr><th>#</th><th>HEADLINE (overlay)</th><th>SUB (annotation)</th><th>HERO ILLUSTRATION</th><th>ASO</th></tr></thead>
-  <tbody>
-    <tr class="killer"><td class="cell-num">1</td><td class="cell-title">On Ozempic? See it working on your liver.</td><td class="cell-sub">ALT and weight falling together on one chart — proof the drug is reaching your liver.</td><td class="cell-hero">Dual-axis chart — ALT 65→32 teal line over weight 105→90 kg gold line, both descending</td><td class="cell-aso">ozempic liver V30/D25 🎯</td></tr>
-    <tr class="killer"><td class="cell-num">2</td><td class="cell-title">Track Ozempic — never miss a dose.</td><td class="cell-sub">A weekly injection calendar with a streak that survives a missed week.</td><td class="cell-hero">Medication card — weekly injection calendar, gold checkmarks, dose-streak count</td><td class="cell-aso">wegovy fatty liver V74/D62</td></tr>
-    <tr class="killer"><td class="cell-num">3</td><td class="cell-title">Weight loss → liver improvement — connected.</td><td class="cell-sub">Apple Health weight flows straight into your liver trend.</td><td class="cell-hero">Correlation card — weight ↓ + ALT ↓ scatter, teal trend arrow, Apple Health glyph</td><td class="cell-aso">mounjaro liver V70/D56</td></tr>
-    <tr><td class="cell-num">4</td><td class="cell-title">All your liver markers in one view.</td><td class="cell-sub">ALT, AST, GGT and triglycerides — tiled, current, trending.</td><td class="cell-hero">4-tile dashboard — ALT / AST / GGT / triglycerides cards, each with a verdict pill</td><td class="cell-aso">glp-1 liver V36/D55</td></tr>
-    <tr><td class="cell-num">5</td><td class="cell-title">"Is my Ozempic working on my liver?"</td><td class="cell-sub">The Coach answers with the GLP-1 liver trial it is citing.</td><td class="cell-hero">Chat reply with a [GLP-1 trial] citation chip + safety strip</td><td class="cell-aso">semaglutide liver V33/D65</td></tr>
-    <tr><td class="cell-num">6</td><td class="cell-title">Family $79.99/yr • 2nd profile included.</td><td class="cell-sub">One subscription, two profiles — track alongside a partner.</td><td class="cell-hero">Paywall — Family tier selected, "2nd profile" row highlighted, gold CTA</td><td class="cell-aso">(conversion)</td></tr>
-  </tbody>
-</table>
-</div>
-
-<div class="ss-cap"><h3>CPP-C · 🍔 Pre-Diabetic Pete</h3><span class="ss-cap-meta">20% audience · ASA Ad Group C · Diet Lab cross-sell</span></div>
-<div class="cheat-wrap">
-<table class="ss-cheat">
-  <thead><tr><th>#</th><th>HEADLINE (overlay)</th><th>SUB (annotation)</th><th>HERO ILLUSTRATION</th><th>ASO</th></tr></thead>
-  <tbody>
-    <tr class="killer"><td class="cell-num">1</td><td class="cell-title">Pre-diabetes + fatty liver? One app.</td><td class="cell-sub">HbA1c, ALT and weight on one screen — stop juggling five trackers.</td><td class="cell-hero">Combined dashboard — HbA1c chip + ALT chip + weight chip, teal on off-white</td><td class="cell-aso">metabolic syndrome V38/D54</td></tr>
-    <tr class="killer"><td class="cell-num">2</td><td class="cell-title">Mediterranean diet — top-ranked for liver + glucose.</td><td class="cell-sub">A daily adherence calendar that scores every meal against your liver.</td><td class="cell-hero">Meal-adherence calendar with a liver-score overlay</td><td class="cell-aso">pre-diabetes V50/D31</td></tr>
-    <tr class="killer"><td class="cell-num">3</td><td class="cell-title">"Liver or glucose — where do I start?"</td><td class="cell-sub">The Coach triages it — liver first, via 7–10% weight loss.</td><td class="cell-hero">Chat reply "Liver first — 7–10% weight loss" with an [AASLD 2023] chip</td><td class="cell-aso">insulin resistance V63/D69</td></tr>
-    <tr><td class="cell-num">4</td><td class="cell-title">90-day reversal plan — track it all.</td><td class="cell-sub">ALT, HbA1c and weight, all trending down on one chart.</td><td class="cell-hero">Multi-line chart — ALT + HbA1c + weight, three lines descending over 90 days</td><td class="cell-aso">hba1c liver V70/D52</td></tr>
-    <tr><td class="cell-num">5</td><td class="cell-title">Exercise + diet — double the liver benefit.</td><td class="cell-sub">Log a workout and watch it move your liver score.</td><td class="cell-hero">Exercise log card wired to a liver-score correlation tile</td><td class="cell-aso">liver tracker V44/D38</td></tr>
-    <tr><td class="cell-num">6</td><td class="cell-title">$39.99/yr • Start with 7 days free.</td><td class="cell-sub">The Standard plan — scanner, labs, coach and the metabolic dashboard.</td><td class="cell-hero">Paywall — Standard tier, 4 feature bullets, gold CTA</td><td class="cell-aso">(conversion)</td></tr>
-  </tbody>
-</table>
-</div>
-
-<div class="ss-cap"><h3>CPP-D · 💊 Rezdiffra Rachel</h3><span class="ss-cap-meta">8% audience · ASA Ad Group D · Lifetime ($99) + Rezdiffra Pro add-on</span></div>
-<div class="cheat-wrap">
-<table class="ss-cheat">
-  <thead><tr><th>#</th><th>HEADLINE (overlay)</th><th>SUB (annotation)</th><th>HERO ILLUSTRATION</th><th>ASO</th></tr></thead>
-  <tbody>
-    <tr class="killer"><td class="cell-num">1</td><td class="cell-title">On Rezdiffra? Document it's working.</td><td class="cell-sub">A FibroScan timeline that turns F3→F2 into a chart your insurer accepts.</td><td class="cell-hero">FibroScan kPa chart — 14.2 kPa (F3) → 9.8 kPa (F2) over 12 months, teal line + stage band</td><td class="cell-aso">rezdiffra V30/D25 🎯</td></tr>
-    <tr class="killer"><td class="cell-num">2</td><td class="cell-title">Track daily Rezdiffra + side effects.</td><td class="cell-sub">An adherence streak beside a side-effect log — diarrhea, fatigue, rated by day.</td><td class="cell-hero">Med-tracker card — adherence streak + side-effect log rows with severity ratings</td><td class="cell-aso">resmetirom V31/D25</td></tr>
-    <tr class="killer"><td class="cell-num">3</td><td class="cell-title">ALT trending down since starting Rezdiffra.</td><td class="cell-sub">A "Started Rezdiffra" marker on your ALT chart shows the turn.</td><td class="cell-hero">ALT line chart with a vertical "Started Rezdiffra" marker + [MAESTRO-NASH] chip</td><td class="cell-aso">nash treatment V28/D25</td></tr>
-    <tr><td class="cell-num">4</td><td class="cell-title">Generate insurance documentation — in minutes.</td><td class="cell-sub">Adherence and outcome data, formatted for re-authorization.</td><td class="cell-hero">Letter-preview thumbnail — clinical-progress document, teal header</td><td class="cell-aso">mash V57/D25</td></tr>
-    <tr><td class="cell-num">5</td><td class="cell-title">Doctor-ready PDF for your hepatologist.</td><td class="cell-sub">A 2-page summary — FibroScan, labs, adherence, questions — in one tap.</td><td class="cell-hero">PDF preview, 2-page spread — FibroScan + labs + adherence + question list</td><td class="cell-aso">nash V57/D25</td></tr>
-    <tr><td class="cell-num">6</td><td class="cell-title">$99 Lifetime — no recurring charge.</td><td class="cell-sub">Pay once — built for the long Rezdiffra road.</td><td class="cell-hero">Paywall — Lifetime tier selected, Rachel feature set, teal CTA</td><td class="cell-aso">fibroscan V70/D28</td></tr>
-  </tbody>
-</table>
-</div>
-
-<div class="ss-cap"><h3>CPP-E · 🍺 Recovering Robert</h3><span class="ss-cap-meta">17% audience · ASA Ad Group E · Recovery Mode add-on ($19.99/yr)</span></div>
-<div class="cheat-wrap">
-<table class="ss-cheat">
-  <thead><tr><th>#</th><th>HEADLINE (overlay)</th><th>SUB (annotation)</th><th>HERO ILLUSTRATION</th><th>ASO</th></tr></thead>
-  <tbody>
-    <tr class="killer"><td class="cell-num">1</td><td class="cell-title">Quit drinking? See your liver heal.</td><td class="cell-sub">GGT 240→80 in 90 days — the number that proves recovery is real.</td><td class="cell-hero">GGT recovery line chart 240→80, milestone marker "Day 60 · GGT normalized", teal</td><td class="cell-aso">quit drinking liver V32/D68</td></tr>
-    <tr class="killer"><td class="cell-num">2</td><td class="cell-title">Sobriety + data = motivation that lasts.</td><td class="cell-sub">A sober streak beside a liver score that climbs as you hold the line.</td><td class="cell-hero">"Day 91" sober-streak badge + liver-score 38→72 trend card, teal accent</td><td class="cell-aso">sobriety liver V32/D55</td></tr>
-    <tr class="killer"><td class="cell-num">3</td><td class="cell-title">Find liver-safe alternatives.</td><td class="cell-sub">A database of NA beers, kombucha and sparkling water — liver-rated.</td><td class="cell-hero">Beverage grid — NA beer / kombucha / sparkling water tiles, each with a liver-risk chip</td><td class="cell-aso">alcohol liver recovery V38/D54</td></tr>
-    <tr><td class="cell-num">4</td><td class="cell-title">One slip doesn't erase your progress.</td><td class="cell-sub">The Coach handles a setback without shame — and shows what one weekend means.</td><td class="cell-hero">Warm AI reply "Day 91 isn't erased…" · no broken-streak red anywhere</td><td class="cell-aso">liver recovery V30/D25</td></tr>
-    <tr><td class="cell-num">5</td><td class="cell-title">Your 6-month liver recovery report.</td><td class="cell-sub">GGT −67%, ALT −45%, liver score 38→76 — shareable with your doctor.</td><td class="cell-hero">Report card — GGT −67% · ALT −45% · score 38→76, teal design</td><td class="cell-aso">ggt V80/D72</td></tr>
-    <tr><td class="cell-num">6</td><td class="cell-title">$39.99/yr • Recovery Mode included.</td><td class="cell-sub">The Standard plan plus the Recovery Mode add-on for the sober journey.</td><td class="cell-hero">Paywall — Standard tier + Recovery Mode callout, gold CTA</td><td class="cell-aso">alcohol liver V38/D54</td></tr>
+    <tr class="killer">
+      <td class="cell-num">1</td>
+      <td class="cell-pain">🍷 "Doctor said reverse it with diet. Cool — WHAT diet though??"<span class="j">JTBD · "tell me exactly what to eat" ⭐⭐⭐⭐⭐</span></td>
+      <td class="cell-title">Just diagnosed? Scan what's on your plate.</td>
+      <td class="cell-sub">› Point, shoot — verdict in 2 seconds<br>› Safe ✅ · moderate ⚠️ · avoid ❌<br>› Builds your daily Liver-Friendly Score</td>
+      <td class="cell-hero">Real meal photo mid-scan — camera corner brackets, a teal "Liver-Friendly ✅" badge dropping onto it, daily Liver Score ring top-corner</td>
+      <td class="cell-aso">fatty liver V49/D20 🌟</td>
+    </tr>
+    <tr class="killer">
+      <td class="cell-num">2</td>
+      <td class="cell-pain">🍷 "ALT 85, AST 62. Is this serious — or am I overreacting?"<span class="j">JTBD · "explain my labs in plain English" ⭐⭐⭐⭐⭐</span></td>
+      <td class="cell-title">ALT 85 — here's what it actually means.</td>
+      <td class="cell-sub">› Photograph your panel — OCR reads it<br>› Plain-English verdict vs the guideline<br>› ALT · AST · GGT · FIB-4 on a trend</td>
+      <td class="cell-hero">Lab card — "ALT 85 U/L", amber "Elevated" pill, "↓ from 110" arrow, a sparkline, an "[AASLD 2023]" citation chip</td>
+      <td class="cell-aso">alt ast V52/D38</td>
+    </tr>
+    <tr class="killer">
+      <td class="cell-num">3</td>
+      <td class="cell-pain">🍺 "Quit drinking 90 days. GGT was 240, now 80. Is this real?"<span class="j">JTBD · "show my liver recovering after quitting" ⭐⭐⭐⭐⭐</span></td>
+      <td class="cell-title">Quit drinking? Watch your liver come back.</td>
+      <td class="cell-sub">› GGT 240 → 80 across 90 days<br>› Sober streak + liver score together<br>› A slip is logged kindly — never zero'd</td>
+      <td class="cell-hero">GGT recovery line falling 240→80, a "Day 60 · GGT normalized" milestone dot, a "🔥 Day 91" sober-streak badge — warm, never red</td>
+      <td class="cell-aso">quit drinking liver V32/D68</td>
+    </tr>
+    <tr>
+      <td class="cell-num">4</td>
+      <td class="cell-pain">🍔 "3 months in — lost 4 kg, ALT didn't budge. Why am I trying?"<span class="j">JTBD · "show me objective progress" ⭐⭐⭐⭐</span></td>
+      <td class="cell-title">See your liver healing — month by month.</td>
+      <td class="cell-sub">› ALT, AST, GGT + score on one chart<br>› Every new lab redraws the trend<br>› A shaded band projects where you head</td>
+      <td class="cell-hero">Multi-line trend dashboard — ALT/AST/GGT descending, liver score rising 45→78, a soft teal projection band ahead of "today"</td>
+      <td class="cell-aso">liver tracker V44/D38</td>
+    </tr>
+    <tr>
+      <td class="cell-num">5</td>
+      <td class="cell-pain">💬 "Every site says something different. Who do I actually trust?"<span class="j">JTBD · "give me answers I can trust" ⭐⭐⭐⭐</span></td>
+      <td class="cell-title">Ask anything — answered with citations.</td>
+      <td class="cell-sub">› Grounded in AASLD · AGA · Mayo Clinic<br>› Every reply names its source<br>› Flags anything urgent → see a doctor</td>
+      <td class="cell-hero">Chat — user asks "Can I eat sushi?", the AI reply carries a teal "[AASLD 2023]" citation chip and an amber safety strip beneath</td>
+      <td class="cell-aso">fatty liver ai V32/D54</td>
+    </tr>
+    <tr>
+      <td class="cell-num">6</td>
+      <td class="cell-pain">💉 "Down 30 lb on Wegovy. ALT 65 → 32. Is that connected?"<span class="j">JTBD · "show GLP-1 is working on my liver" ⭐⭐⭐⭐⭐</span></td>
+      <td class="cell-title">On Ozempic? See it reach your liver.</td>
+      <td class="cell-sub">› ALT + weight fall together on one chart<br>› Log every Ozempic · Wegovy · Mounjaro dose<br>› Apple Health weight syncs in</td>
+      <td class="cell-hero">Dual-axis chart — a teal ALT line 65→32 over a gold weight line 105→90 kg, both descending, a weekly dose-streak chip</td>
+      <td class="cell-aso">ozempic liver V30/D25 🎯</td>
+    </tr>
+    <tr>
+      <td class="cell-num">7</td>
+      <td class="cell-pain">💊 "Hepatologist needs the FibroScan trend. Insurance wants proof."<span class="j">JTBD · "document my treatment for doctor &amp; insurer" ⭐⭐⭐⭐⭐</span></td>
+      <td class="cell-title">Walk into every appointment with proof.</td>
+      <td class="cell-sub">› FibroScan F3 → F2 across 12 months<br>› One-tap PDF — labs, adherence, questions<br>› Built for visits and insurance reauth</td>
+      <td class="cell-hero">FibroScan kPa chart falling 14.2→9.8 with an F3→F2 stage band, beside a 2-page doctor-PDF preview thumbnail, disclaimer strip along the foot</td>
+      <td class="cell-aso">fibroscan V70/D28</td>
+    </tr>
+    <tr>
+      <td class="cell-num">8</td>
+      <td class="cell-pain">🔓 "Worth paying for? Show me exactly what I get."<span class="j">JTBD · "decide — is this worth it?" · conversion</span></td>
+      <td class="cell-title">Start 7 days free.</td>
+      <td class="cell-sub">› Scanner, labs, Coach, recovery — all in<br>› Free 7 days, then $39.99/year<br>› Cancel anytime · your data stays yours</td>
+      <td class="cell-hero">Paywall — four teal feature bullets, a tier toggle (Weekly · Annual ✓ · Lifetime), a gold "Start free trial" button, restore + disclaimer</td>
+      <td class="cell-aso">(conversion frame)</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
 <div class="m6-callout note">
-  <b>Seeded illustration data — use these exact numbers.</b> So every frame, chart and lab card in a gallery tells one consistent story, illustrate from the seed set in <code>SCREENSHOTS_GUIDE.md</code>: <b>Nick</b> ALT 85→45 · AST 62→38 · GGT 52→28 (6-month arc) · <b>Greta</b> ALT 65→32 · AST 48→24 · GGT 40→18 (paired with weight 105→90 kg) · <b>Pete</b> ALT 70→38 · AST 55→30 · GGT 48→22 (+ HbA1c 6.0→5.7) · <b>Rachel</b> ALT 88→42 · AST 64→35 · GGT 55→25 (+ FibroScan 14.2→9.8 kPa) · <b>Robert</b> ALT 110→52 · AST 85→40 · GGT 240→80 (GGT is the hero number). All values are plausible <em>fake</em> data — never a real patient panel.
+  <b>Seeded illustration data — use these exact numbers.</b> So every chart and lab card across the eight frames tells one consistent story, illustrate from a single archetype user (seed set in <code>SCREENSHOTS_GUIDE.md</code>): <b>ALT</b> 110→85→45 · <b>AST</b> 85→62→38 · <b>GGT</b> 240→80 · <b>liver score</b> 45→78 · <b>FibroScan</b> 14.2→9.8 kPa (F3→F2) · <b>weight</b> 105→90 kg · <b>sober streak</b> Day 91. All values are plausible <em>fake</em> data — never a real patient panel, never an identifiable face.
 </div>
 
-<!-- ===== 7.2 VISUAL REFERENCE CARDS — 5 KILLER HERO FRAMES ===== -->
-<h2 id="ss-killer">7.2 · Visual reference cards — the 5 killer hero frames</h2>
-<p class="lede">Frame 1 of each gallery — the scroll-stopper that wins the install before a thumb ever moves. Cards are ordered by <b>build priority</b> (§7.0): each carries a draft hero, the reason it leads its gallery, and its ASA / compliance metadata.</p>
+<div class="m6-callout note">
+  <b>Localization — German ships at launch.</b> DE CPI runs ~$2–3 vs $4–8 US — the highest-ROI market in the plan, so all eight overlays and bullets get German variants on day one (<code>fettleber</code> is the DE north-star). Killer headlines: <b>1 ·</b> "Fettleber diagnostiziert? Scannen Sie jede Mahlzeit." <b>2 ·</b> "ALT 85 — das steckt wirklich dahinter." <b>3 ·</b> "Kein Alkohol? Sehen Sie Ihre Leber zurückkommen." Full set in <code>SCREENSHOTS.md</code> §Locale variants.
+</div>
+
+<!-- ===== 7.1 THE 3 KILLER FRAMES ===== -->
+<h2 id="ss-killer">7.1 · The 3 killer frames — worked through</h2>
+<p class="lede">Frames 1–3 are the only three the App Store thumbnail shows, and the three with the highest pain × JTBD score in the whole category. Each is built below — headline, on-frame bullets, draft hero — with the reason it ranks where it does on the ladder.</p>
 
 <div class="ss-killer-grid">
 
   <div class="ss-killer rank1">
-    <span class="ss-rank">BUILD 1 · CPP-A 🍷</span>
-    <h4>"Just diagnosed with fatty liver? Scan every meal."</h4>
+    <span class="ss-rank">FRAME 1 · KILLER</span>
+    <h4>"Just diagnosed? Scan what's on your plate."</h4>
     <div class="ss-mockup">
-      <div class="ss-mk-h">Just diagnosed?<br><em>Scan every meal.</em></div>
+      <div class="ss-mk-h">Just diagnosed?<br><em>Scan your plate.</em></div>
       <div class="ss-mk-card" style="display:flex;flex-direction:column;gap:7px;">
-        <div style="height:48px;border-radius:7px;background:linear-gradient(135deg,#2A4746,#1B3433);"></div>
+        <div style="height:50px;border-radius:7px;background:linear-gradient(135deg,#2A4746,#1B3433);"></div>
         <div style="display:flex;justify-content:space-between;align-items:center;">
           <span style="font-size:10px;color:rgba(238,243,242,0.68);">Grilled salmon bowl</span>
           <span style="background:var(--good-bg);color:#194A4C;font-size:9px;font-weight:800;border-radius:6px;padding:3px 7px;">Liver-Friendly ✅</span>
         </div>
       </div>
     </div>
-    <div class="ss-why"><b>Food Scanner leads</b> because Nick's #1 question — "what do I eat?" — is answered in one tap, the lowest cognitive load of any frame. 25% of the audience and the default store listing both ride this. North-star <code>fatty liver</code> sits in the title behind it.</div>
+    <ul class="ss-bullets">
+      <li>Point, shoot — a liver-risk verdict in 2 seconds</li>
+      <li>Safe ✅ · moderate ⚠️ · avoid ❌ — zero calorie math</li>
+      <li>Every scan feeds your daily Liver-Friendly Score</li>
+    </ul>
+    <div class="ss-why"><b>#1 — the rawest pain × the strongest JTBD.</b> A fresh diagnosis with no plan; "what do I eat?" is a ⭐⭐⭐⭐⭐ job answered in one tap — the lowest cognitive load of any screen. 25% of the audience opens here, and it carries the north-star keyword <code>fatty liver</code>.</div>
     <div class="ss-meta-row">
-      <div><b>Persona</b>Newly Diagnosed Nick · 25%</div>
+      <div><b>Rank</b>#1 · rawest pain</div>
+      <div><b>JTBD</b>"tell me what to eat" ⭐⭐⭐⭐⭐</div>
       <div><b>ASA keyword</b>fatty liver · V49/D20 🌟</div>
-      <div><b>Trial→Paid</b>48% · Standard $39.99</div>
-      <div><b>Compliance</b>"liver-risk rating", not a diagnosis</div>
+      <div><b>Compliance</b>"liver-risk rating" — never a diagnosis</div>
     </div>
   </div>
 
   <div class="ss-killer rank2">
-    <span class="ss-rank">BUILD 2 · CPP-D 💊</span>
-    <h4>"On Rezdiffra? Document it's working."</h4>
+    <span class="ss-rank">FRAME 2 · KILLER</span>
+    <h4>"ALT 85 — here's what it actually means."</h4>
     <div class="ss-mockup">
-      <div class="ss-mk-h">On Rezdiffra?<br><em>Document it works.</em></div>
+      <div class="ss-mk-h">ALT 85 —<br><em>what it means.</em></div>
       <div class="ss-mk-card">
-        <div style="font-size:9px;color:rgba(238,243,242,0.6);letter-spacing:0.06em;text-transform:uppercase;font-weight:700;">FibroScan · 12 months</div>
-        <div style="display:flex;align-items:baseline;gap:8px;margin-top:4px;">
-          <span style="font-family:ui-monospace,'SF Mono',monospace;font-size:21px;font-weight:800;color:var(--cta);">9.8<small style="font-size:10px;"> kPa</small></span>
-          <span style="font-size:10px;color:#9FC9C7;">F3 → F2 ↓</span>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-weight:700;font-size:11px;color:var(--pearl);">ALT</span>
+          <span style="background:var(--watch-bg);color:#7A4012;font-size:9px;font-weight:800;border-radius:6px;padding:3px 7px;">Elevated</span>
         </div>
-        <div style="font-family:ui-monospace,'SF Mono',monospace;font-size:8.5px;color:var(--cta);border-top:1px dashed rgba(212,165,116,0.45);margin-top:6px;padding-top:4px;">Educational · discuss staging with your doctor</div>
+        <div style="font-family:ui-monospace,'SF Mono',monospace;font-size:20px;font-weight:800;color:var(--cta);margin-top:3px;">85 <span style="font-size:10px;color:rgba(238,243,242,0.55);">U/L · ↓ from 110</span></div>
+        <div style="font-size:9.5px;color:rgba(238,243,242,0.68);line-height:1.4;margin-top:4px;">Elevated — the AASLD threshold is 40 U/L. Worth tracking and discussing with your doctor.</div>
+        <div style="font-family:ui-monospace,'SF Mono',monospace;font-size:8.5px;color:var(--cta);border-top:1px dashed rgba(212,165,116,0.45);margin-top:5px;padding-top:4px;">AASLD 2023 →</div>
       </div>
     </div>
-    <div class="ss-why"><b>The FibroScan timeline leads</b> because Rachel's job is documentation, not motivation — a clean F3→F2 chart is what her insurer wants. Smallest cohort (8%), but highest WTP and 62% trial→paid; <code>rezdiffra</code> is uncontested.</div>
+    <ul class="ss-bullets">
+      <li>Photograph your blood panel — OCR reads every value</li>
+      <li>Plain-English verdict against the AASLD threshold</li>
+      <li>ALT · AST · GGT · FIB-4 on a 6-month trend</li>
+    </ul>
+    <div class="ss-why"><b>#2 — acute fear.</b> A scary number nobody explained. Reading ALT 85 back against the guideline threshold turns panic into a plan — a ⭐⭐⭐⭐⭐ job that serves the two biggest cohorts at once, newly-diagnosed Nick and pre-diabetic Pete (45% combined).</div>
     <div class="ss-meta-row">
-      <div><b>Persona</b>Rezdiffra Rachel · 8%</div>
-      <div><b>ASA keyword</b>rezdiffra · V30/D25 🎯</div>
-      <div><b>Trial→Paid</b>62% · Lifetime $99</div>
-      <div><b>Compliance</b>educational disclaimer on every FibroScan frame</div>
+      <div><b>Rank</b>#2 · acute fear</div>
+      <div><b>JTBD</b>"explain my labs" ⭐⭐⭐⭐⭐</div>
+      <div><b>ASA keyword</b>alt ast · V52/D38</div>
+      <div><b>Compliance</b>threshold cited · "consistent with"</div>
     </div>
   </div>
 
   <div class="ss-killer rank3">
-    <span class="ss-rank">BUILD 3 · CPP-E 🍺</span>
-    <h4>"Quit drinking? See your liver heal."</h4>
+    <span class="ss-rank">FRAME 3 · KILLER</span>
+    <h4>"Quit drinking? Watch your liver come back."</h4>
     <div class="ss-mockup">
-      <div class="ss-mk-h">Quit drinking?<br><em>See your liver heal.</em></div>
+      <div class="ss-mk-h">Quit drinking?<br><em>Watch it come back.</em></div>
       <div class="ss-mk-card">
-        <div style="display:flex;justify-content:space-between;font-size:9px;color:rgba(238,243,242,0.6);"><span>GGT · Day 0</span><span>Day 90</span></div>
-        <svg viewBox="0 0 200 50" width="100%" style="margin-top:4px;" role="img" aria-label="GGT recovery line">
-          <polyline points="6,9 64,26 128,40 192,45" fill="none" stroke="#D4A574" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="6" cy="9" r="3" fill="#D4A574"/><circle cx="192" cy="45" r="3" fill="#D4A574"/>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:9px;color:rgba(238,243,242,0.6);letter-spacing:0.06em;text-transform:uppercase;font-weight:700;">GGT recovery</span>
+          <span style="background:var(--cta-soft);color:var(--cta-deep);font-size:9px;font-weight:800;border-radius:6px;padding:3px 7px;">🔥 Day 91</span>
+        </div>
+        <svg viewBox="0 0 200 46" width="100%" style="margin-top:5px;" role="img" aria-label="GGT recovery line">
+          <polyline points="6,8 64,24 128,37 192,42" fill="none" stroke="#D4A574" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="6" cy="8" r="3" fill="#D4A574"/><circle cx="192" cy="42" r="3" fill="#D4A574"/>
         </svg>
         <div style="display:flex;justify-content:space-between;font-family:ui-monospace,'SF Mono',monospace;font-size:11px;font-weight:800;color:var(--cta);"><span>240</span><span>80 ✓</span></div>
       </div>
     </div>
-    <div class="ss-why"><b>GGT recovery leads</b> because the drop from 240→80 is the single most emotionally loaded number in recovery — proof the liver heals. No competitor pairs sobriety with a biomarker; this frame <em>is</em> the wedge.</div>
+    <ul class="ss-bullets">
+      <li>GGT 240 → 80 across 90 days — recovery you can see</li>
+      <li>Sober streak and liver score, side by side</li>
+      <li>A slip is logged kindly — it never resets you to zero</li>
+    </ul>
+    <div class="ss-why"><b>#3 — the most emotionally loaded screen in the app.</b> "Is it too late?" GGT 240→80 next to a sober streak is proof the liver heals — a ⭐⭐⭐⭐⭐ job no competitor serves. Nobody pairs sobriety with a biomarker; this frame is the wedge into r/stopdrinking's 500K+.</div>
     <div class="ss-meta-row">
-      <div><b>Persona</b>Recovering Robert · 17%</div>
+      <div><b>Rank</b>#3 · most loaded</div>
+      <div><b>JTBD</b>"show my liver recovering" ⭐⭐⭐⭐⭐</div>
       <div><b>ASA keyword</b>quit drinking liver · V32/D68</div>
-      <div><b>Trial→Paid</b>55% · Standard + Recovery Mode</div>
-      <div><b>Compliance</b>non-judgmental tone · no relapse-shame</div>
-    </div>
-  </div>
-
-  <div class="ss-killer rank4">
-    <span class="ss-rank">BUILD 4 · CPP-B 💉</span>
-    <h4>"On Ozempic? See it working on your liver."</h4>
-    <div class="ss-mockup">
-      <div class="ss-mk-h">On Ozempic?<br><em>See it working.</em></div>
-      <div class="ss-mk-card">
-        <svg viewBox="0 0 200 54" width="100%" role="img" aria-label="ALT and weight dual line">
-          <polyline points="6,12 70,23 134,34 192,40" fill="none" stroke="#5FB0B2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <polyline points="6,26 70,33 134,41 192,48" fill="none" stroke="#D4A574" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div style="display:flex;gap:11px;font-size:9px;margin-top:5px;">
-          <span style="color:#5FB0B2;font-weight:700;">— ALT 65→32</span>
-          <span style="color:var(--cta);font-weight:700;">— Weight 105→90 kg</span>
-        </div>
-      </div>
-    </div>
-    <div class="ss-why"><b>The dual ALT + weight chart leads</b> because Greta already trusts the scale — she needs to see the liver move with it. <code>ozempic liver</code> is uncontested: 0 of 11 competitors rank for it.</div>
-    <div class="ss-meta-row">
-      <div><b>Persona</b>GLP-1 Greta · 15%</div>
-      <div><b>ASA keyword</b>ozempic liver · V30/D25 🎯</div>
-      <div><b>Trial→Paid</b>55% · Family $79.99</div>
-      <div><b>Compliance</b>own logged data + disclaimer strip</div>
-    </div>
-  </div>
-
-  <div class="ss-killer rank5">
-    <span class="ss-rank">BUILD 5 · CPP-C 🍔</span>
-    <h4>"Pre-diabetes + fatty liver? One app."</h4>
-    <div class="ss-mockup">
-      <div class="ss-mk-h">Pre-diabetes +<br><em>fatty liver? One app.</em></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;">
-        <div class="ss-mk-card" style="padding:8px 6px;text-align:center;"><div style="font-size:8px;color:rgba(238,243,242,0.6);">HbA1c</div><div style="font-family:ui-monospace,'SF Mono',monospace;font-size:13px;font-weight:800;color:var(--cta);">5.7</div></div>
-        <div class="ss-mk-card" style="padding:8px 6px;text-align:center;"><div style="font-size:8px;color:rgba(238,243,242,0.6);">ALT</div><div style="font-family:ui-monospace,'SF Mono',monospace;font-size:13px;font-weight:800;color:var(--cta);">38</div></div>
-        <div class="ss-mk-card" style="padding:8px 6px;text-align:center;"><div style="font-size:8px;color:rgba(238,243,242,0.6);">Weight</div><div style="font-family:ui-monospace,'SF Mono',monospace;font-size:13px;font-weight:800;color:var(--cta);">−7%</div></div>
-      </div>
-    </div>
-    <div class="ss-why"><b>The combined metabolic dashboard leads</b> because Pete is overwhelmed juggling five trackers — one screen with HbA1c, ALT and weight is the relief. Biggest TAM (20%), but his keywords are D52–69 — this gallery earns installs on ASA spend.</div>
-    <div class="ss-meta-row">
-      <div><b>Persona</b>Pre-Diabetic Pete · 20%</div>
-      <div><b>ASA keyword</b>metabolic syndrome · V38/D54</div>
-      <div><b>Trial→Paid</b>42% · Standard $39.99</div>
-      <div><b>Compliance</b>education, not diagnosis</div>
+      <div><b>Compliance</b>non-judgmental · no relapse-shame</div>
     </div>
   </div>
 
 </div>
 
-<!-- ===== 7.3 LOCALIZATION — DE VARIANTS ===== -->
-<h2 id="ss-locale">7.3 · Localization — DE headline variants</h2>
-<p class="lede">German ships <b>at launch</b>, not phase 2 — DE CPI runs ~$2–3 vs $4–8 US, the highest-ROI market in the launch plan. All six frames per CPP get German overlays; <code>fettleber</code> is the DE north-star keyword. Frame-1 headlines below; full sets in <code>SCREENSHOTS.md</code> §Locale variants. Re-launch the simulator with <code>-AppleLanguages "(de)"</code>, re-capture, re-overlay copy in Figma.</p>
-<table class="tab-spec">
-  <thead><tr><th>CPP</th><th>en-US headline (frame 1)</th><th>de-DE headline (frame 1)</th></tr></thead>
-  <tbody>
-    <tr><td class="tabname">CPP-A · 🍷 Nick</td><td>"Just diagnosed with fatty liver? Scan every meal."</td><td>"Fettleber diagnostiziert? Scannen Sie jede Mahlzeit."</td></tr>
-    <tr><td class="tabname">CPP-B · 💉 Greta</td><td>"On Ozempic? See it working on your liver."</td><td>"Ozempic? Verfolgen Sie die Wirkung auf Ihre Leber."</td></tr>
-    <tr><td class="tabname">CPP-C · 🍔 Pete</td><td>"Pre-diabetes + fatty liver? One app."</td><td>"Prädiabetes + Fettleber? Eine App für beides."</td></tr>
-    <tr><td class="tabname">CPP-D · 💊 Rachel</td><td>"On Rezdiffra? Document it's working."</td><td>"Rezdiffra? Dokumentieren Sie Ihren Fortschritt."</td></tr>
-    <tr><td class="tabname">CPP-E · 🍺 Robert</td><td>"Quit drinking? See your liver heal."</td><td>"Kein Alkohol mehr? Beobachten Sie Ihre Leberregeneration."</td></tr>
-  </tbody>
-</table>
+<!-- ===== 7.2 FRAMES 4-8 ===== -->
+<h2 id="ss-grid">7.2 · Frames 4–8 — the depth set</h2>
+<p class="lede">Once the first three have stopped the scroll, frames 4–8 do the convincing — progress, trust, treatment proof, then the ask. Strong jobs-to-be-done, but a less acute pain than the killers, so they sit deeper in the gallery.</p>
+<div class="ss-grid8">
 
-<!-- ===== 7.4 ANTI-PATTERNS ===== -->
-<h2 id="ss-dont">7.4 · Screenshot anti-patterns</h2>
+  <div class="ss-mini">
+    <span class="num-tag">FRAME 4 · PROGRESS</span>
+    <div class="pain-line">🍔 "Lost 4 kg, ALT didn't move. Why am I trying?"</div>
+    <h5>See your liver healing — month by month.</h5>
+    <ul class="ss-bullets">
+      <li>ALT, AST, GGT + liver score on one chart</li>
+      <li>Every new lab redraws the trend</li>
+      <li>A shaded band projects where you're headed</li>
+    </ul>
+    <div class="mini-hero">Multi-line trend · score 45→78 · projection band</div>
+    <span class="aso-chip">liver tracker · ⭐⭐⭐⭐</span>
+  </div>
+
+  <div class="ss-mini">
+    <span class="num-tag">FRAME 5 · TRUST</span>
+    <div class="pain-line">💬 "Every site says something different. Who do I trust?"</div>
+    <h5>Ask anything — answered with citations.</h5>
+    <ul class="ss-bullets">
+      <li>Grounded in AASLD, AGA &amp; Mayo Clinic</li>
+      <li>Every reply names its source — no guessing</li>
+      <li>Flags anything urgent → see a doctor</li>
+    </ul>
+    <div class="mini-hero">Coach reply + [AASLD 2023] chip + safety strip</div>
+    <span class="aso-chip">fatty liver ai · ⭐⭐⭐⭐</span>
+  </div>
+
+  <div class="ss-mini">
+    <span class="num-tag">FRAME 6 · GLP-1</span>
+    <div class="pain-line">💉 "Down 30 lb on Wegovy. ALT 65→32. Connected?"</div>
+    <h5>On Ozempic? See it reach your liver.</h5>
+    <ul class="ss-bullets">
+      <li>ALT and weight, falling together on one chart</li>
+      <li>Log every Ozempic · Wegovy · Mounjaro dose</li>
+      <li>Apple Health weight syncs in automatically</li>
+    </ul>
+    <div class="mini-hero">Dual-axis chart · ALT 65→32 over weight 105→90 kg</div>
+    <span class="aso-chip">ozempic liver 🎯 · ⭐⭐⭐⭐⭐</span>
+  </div>
+
+  <div class="ss-mini">
+    <span class="num-tag">FRAME 7 · PROOF</span>
+    <div class="pain-line">💊 "Hepatologist needs the trend. Insurance wants proof."</div>
+    <h5>Walk into every appointment with proof.</h5>
+    <ul class="ss-bullets">
+      <li>FibroScan F3 → F2, charted over 12 months</li>
+      <li>One-tap PDF — labs, adherence, your questions</li>
+      <li>Built for visits and insurance reauth</li>
+    </ul>
+    <div class="mini-hero">FibroScan 14.2→9.8 kPa + doctor-PDF preview</div>
+    <span class="aso-chip">fibroscan · ⭐⭐⭐⭐⭐</span>
+  </div>
+
+  <div class="ss-mini">
+    <span class="num-tag">FRAME 8 · PAYWALL</span>
+    <div class="pain-line">🔓 "Worth paying for? Show me what I get."</div>
+    <h5>Start 7 days free.</h5>
+    <ul class="ss-bullets">
+      <li>Scanner, labs, Coach, recovery — everything in</li>
+      <li>Free for 7 days, then $39.99 / year</li>
+      <li>Cancel anytime · your data stays yours</li>
+    </ul>
+    <div class="mini-hero">Paywall · tier toggle (Weekly · Annual ✓ · Lifetime) · gold CTA</div>
+    <span class="aso-chip">conversion frame</span>
+  </div>
+
+</div>
+
+<!-- ===== 7.3 ANTI-PATTERNS ===== -->
+<h2 id="ss-dont">7.3 · Screenshot anti-patterns</h2>
 <p class="lede">Hard-lines from <code>COMPLIANCE.md</code> + <code>SCREENSHOTS_GUIDE.md</code>. Any one of these fails App Review or breaks the Health &amp; Fitness (not Medical) positioning.</p>
 <ul class="list dontlist">
   <li><b>"Cure / reverse your fatty liver" as a promise</b> — banned. "Reverse fatty liver" lives only as the brand tagline, never beside a date or a guaranteed outcome. Use "track", "understand", "manage".</li>
-  <li><b>"You have NAFLD" / diagnosis copy</b> — banned. Use "consistent with elevated liver enzymes" · "ALT 85 — elevated per the AASLD threshold of 40".</li>
+  <li><b>"You have NAFLD" / diagnosis copy in a headline or bullet</b> — banned. Use "consistent with elevated liver enzymes" · "ALT 85 — elevated per the AASLD threshold of 40".</li>
   <li><b>FibroScan or FIB-4 staging without a visible educational disclaimer</b> — banned. "FIB-4 suggests intermediate risk — discuss with your doctor", never "FIB-4 confirms F3 fibrosis".</li>
-  <li><b>"Rezdiffra is working" as a definitive claim</b> — soften to "ALT trending down since starting Rezdiffra"; the chart shows the user's own logged data, observed, not promised.</li>
-  <li><b>Real or identifiable patient data</b> — seeded plausible values only (§7.1). No real faces, no faces in food photos, no "User: John Smith".</li>
-  <li><b>"#1 Fatty Liver App" / "best" / asterisk claims</b> — Apple 2.3.7 + unproven superiority. Use "evidence-based" or a specific, true feature claim.</li>
-  <li><b>Relapse-shame on Robert's frames</b> — no broken-streak red, no "you failed". A slip is logged honestly and framed non-judgmentally.</li>
+  <li><b>"Rezdiffra is working" / "Ozempic is working" as a definitive claim</b> — soften: the chart shows the user's own logged data, observed, not promised.</li>
+  <li><b>Real or identifiable patient data</b> — seeded plausible values only (§7.0). No real faces, no faces in food photos, no "User: John Smith".</li>
+  <li><b>"#1 Fatty Liver App" / "best" / asterisk claims in a bullet</b> — Apple 2.3.7 + unproven superiority. Use "evidence-based" or a specific, true feature claim.</li>
+  <li><b>Relapse-shame on frame 3</b> — no broken-streak red, no "you failed". A slip is logged honestly and framed non-judgmentally.</li>
   <li><b>Clinical stoplight-red severity</b> — kills warmth for fear-prone NAFLD users. Use the locked warm verdict triad (teal / amber / clay).</li>
-  <li><b>Crowded hero shots</b> — one element per frame. Three-card stacks read as wallpaper, not scroll-stop.</li>
+  <li><b>More than three bullets, or bullets over six words</b> — a crowded frame reads as wallpaper. One headline, ≤3 bullets, one hero element.</li>
   <li><b>Stock "detox" imagery</b> — no glowing livers, no green detox juices. The category is clinical authority, not wellness — illustrate with real UI.</li>
 </ul>
 
-<!-- ===== 7.5 RECOMMENDED FOR LOCK ===== -->
-<h2 id="ss-lock">7.5 · Recommended for lock</h2>
+<!-- ===== 7.4 RECOMMENDED FOR LOCK ===== -->
+<h2 id="ss-lock">7.4 · Recommended for lock</h2>
 <div class="m6-callout win">
-  <b>Module 7 — ready for founder review.</b> 30 frames specced: 5 CPP galleries × 6 frames, every overlay headline locked to <code>SCREENSHOTS.md</code>, every frame mapped to its ASA keyword and a single hero illustration. Build order is <b>Nick → Rachel → Robert → Greta → Pete</b> (§7.0). On your ⭐ approval this goes to <code>DECISIONS.md</code>, and screenshot production starts on CPP-A once the P0 features hit UI sign-off — captured from the Xcode simulator (real UI, not mockups), composed in Figma, shipped via fastlane <code>deliver</code>.
-</div>
-
-<!-- ============================================================ -->
-<!-- ===== MODULE 8 · CORE FLOW & THE TODAY SCREEN ===== -->
-<!-- ============================================================ -->
-<style>
-  /* ==================== M8 · CORE FLOW & SCREENS ==================== */
-  /* flow map */
-  .flow-map { display:flex; align-items:stretch; gap:0; margin-top:14px; overflow-x:auto; padding:6px 0 10px; }
-  .flow-stage { flex:0 0 auto; width:142px; background:var(--card); border:1px solid var(--divider); border-radius:13px; padding:11px 12px; display:flex; flex-direction:column; gap:4px; }
-  .flow-stage .fs-step { font-family:ui-monospace,"SF Mono",monospace; font-size:9px; font-weight:800; letter-spacing:0.06em; color:var(--ink-3); }
-  .flow-stage .fs-t { font-size:13px; font-weight:800; color:var(--brand-deep); display:flex; align-items:center; gap:5px; }
-  .flow-stage .fs-d { font-size:10.5px; color:var(--ink-2); line-height:1.4; }
-  .flow-stage.todo { border-style:dashed; background:var(--bg-soft); }
-  .flow-stage.todo .fs-t { color:var(--ink-3); }
-  .flow-stage.todo .fs-step { color:var(--cta-deep); }
-  .flow-stage.gate { border:2px solid var(--cta); }
-  .flow-stage.gate .fs-t { color:var(--cta-deep); }
-  .flow-stage.app { width:230px; background:linear-gradient(135deg,var(--brand) 0%,var(--brand-mid) 100%); border-color:var(--brand); }
-  .flow-stage.app .fs-step, .flow-stage.app .fs-d { color:rgba(234,242,241,0.78); }
-  .flow-stage.app .fs-t { color:var(--pearl); }
-  .flow-apptabs { display:flex; gap:4px; margin-top:6px; flex-wrap:wrap; }
-  .flow-apptabs span { font-size:9.5px; font-weight:700; background:rgba(255,255,255,0.14); color:var(--pearl); border-radius:6px; padding:3px 7px; }
-  .flow-apptabs span.entry { background:var(--cta); color:var(--brand-deep); font-weight:800; }
-  .flow-conn { align-self:center; color:var(--ink-3); font-size:15px; font-weight:800; padding:0 3px; flex:0 0 auto; }
-  .flow-todo-pill { font-size:8px; font-weight:800; letter-spacing:0.06em; background:var(--cta-soft); color:var(--cta-deep); border:1px solid #E7CFA3; border-radius:999px; padding:2px 6px; align-self:flex-start; }
-
-  /* screen block: phone + user-POV annotation */
-  .screen-block { display:flex; gap:24px; flex-wrap:wrap; align-items:flex-start; margin-top:16px; }
-  .screen-block .phone-frame { margin:0; flex:0 0 auto; }
-  .screen-annot { flex:1; min-width:300px; }
-  .screen-annot > h3 { margin-top:0; }
-  .annot-row { display:flex; gap:10px; padding:9px 0; border-bottom:1px dashed var(--divider); }
-  .annot-row:last-of-type { border-bottom:none; }
-  .annot-row .ar-z { font-size:9.5px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; color:var(--cta-deep); width:104px; flex-shrink:0; padding-top:2px; }
-  .annot-row .ar-v { font-size:12.5px; color:var(--ink); line-height:1.52; }
-  .annot-row .ar-v b { color:var(--brand-deep); }
-  .borrowed { font-size:11.5px; color:var(--ink-2); background:var(--bg-soft); border:1px solid var(--divider); border-left:3px solid var(--cta); border-radius:9px; padding:9px 12px; margin-top:12px; line-height:1.55; }
-  .borrowed b { color:var(--cta-deep); }
-  .pov-lead { font-size:13px; color:var(--ink); line-height:1.6; background:var(--brand-soft); border-radius:10px; padding:10px 13px; margin-top:4px; }
-  .pov-lead b { color:var(--brand-deep); }
-
-  /* ===== screen UI — components rendered inside .phone-screen ===== */
-  .sc-head { display:flex; justify-content:space-between; align-items:flex-start; }
-  .sc-greet { font-family:-apple-system,"SF Pro Rounded",sans-serif; font-weight:800; font-size:15px; color:var(--brand-deep); line-height:1.15; }
-  .sc-greet small { display:block; font-size:9px; color:var(--ink-3); font-weight:700; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:1px; }
-  .sc-streak { display:inline-flex; align-items:center; gap:3px; background:var(--cta-soft); color:var(--cta-deep); font-weight:800; font-size:10.5px; border-radius:999px; padding:4px 9px; white-space:nowrap; }
-  .sc-pills { display:flex; gap:5px; }
-  .sc-pill { flex:1; background:var(--pearl); border:1px solid var(--divider); border-radius:11px; padding:7px 3px; text-align:center; }
-  .sc-pill .v { font-family:-apple-system,"SF Pro Rounded",sans-serif; font-weight:800; font-size:15px; color:var(--brand-deep); line-height:1; }
-  .sc-pill .l { font-size:7px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-3); margin-top:3px; }
-  .sc-pill.score { background:var(--brand); border-color:var(--brand); }
-  .sc-pill.score .v { color:var(--cta); }
-  .sc-pill.score .l { color:rgba(255,255,255,0.72); }
-  .sc-card { background:var(--card); border:1px solid var(--divider); border-radius:12px; padding:9px 11px; }
-  .sc-card.hero { border:1.5px solid var(--brand-soft); box-shadow:0 2px 8px rgba(45,123,126,0.08); }
-  .sc-lbl { font-size:8px; font-weight:800; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink-3); display:flex; justify-content:space-between; align-items:center; }
-  .sc-chart-h { display:flex; justify-content:space-between; align-items:baseline; margin-top:3px; }
-  .sc-chart-v { font-family:-apple-system,"SF Pro Rounded",sans-serif; font-weight:800; font-size:17px; color:var(--brand-deep); }
-  .sc-chart-v small { font-size:9px; color:var(--ink-3); font-weight:700; }
-  .sc-delta { font-size:9.5px; font-weight:800; }
-  .sc-delta.good { color:var(--good); }
-  .sc-disc { font-size:7.5px; color:var(--ink-3); line-height:1.35; margin-top:5px; font-style:italic; }
-  .sc-insight { display:flex; gap:6px; align-items:flex-start; background:linear-gradient(120deg,var(--cta-soft) 0%,var(--pearl-soft) 80%); border:1px solid #E7CFA3; border-radius:11px; padding:8px 10px; }
-  .sc-insight .si-x { font-size:13px; }
-  .sc-insight .si-t { font-size:9.5px; color:var(--ink); line-height:1.42; }
-  .sc-insight .si-e { font-size:7.5px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--cta-deep); }
-  .sc-action { background:var(--ai-bg); border:1px solid var(--ai-border); border-radius:12px; padding:9px 11px; display:flex; align-items:center; gap:9px; }
-  .sc-action .sa-tick { width:26px; height:26px; border-radius:50%; border:2px solid var(--brand); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:var(--brand); font-weight:800; font-size:13px; }
-  .sc-action .sa-t { font-size:10.5px; font-weight:800; color:var(--brand-deep); }
-  .sc-action .sa-d { font-size:9px; color:var(--ink-2); line-height:1.35; }
-  .sc-heat { display:flex; gap:3px; margin-top:5px; }
-  .sc-heat i { width:100%; height:13px; border-radius:3px; background:var(--divider); }
-  .sc-heat i.on { background:var(--brand); }
-  .sc-heat i.rescue { background:var(--cta); }
-  .sc-heat i.today { box-shadow:inset 0 0 0 1.5px var(--cta-deep); background:var(--pearl); }
-  .sc-ribbon { display:flex; align-items:center; gap:7px; background:var(--brand-soft); border-radius:11px; padding:8px 10px; }
-  .sc-ribbon .sr-t { font-size:9.5px; color:var(--brand-deep); font-weight:700; line-height:1.35; }
-  .sc-ribbon .sr-go { margin-left:auto; color:var(--brand); font-weight:800; font-size:12px; }
-  .sc-cta { background:var(--cta); color:#fff; text-align:center; border-radius:10px; padding:10px; font-size:11px; font-weight:800; letter-spacing:0.02em; }
-  .sc-cta.ghost { background:transparent; color:var(--brand-deep); border:1px dashed var(--brand); }
-  .sc-vp { font-size:8px; font-weight:800; border-radius:999px; padding:2px 7px; white-space:nowrap; }
-  .sc-vp.good { background:var(--good-bg); color:#194A4C; }
-  .sc-vp.watch { background:var(--watch-bg); color:#7A4012; }
-  .sc-mini-tab { position:absolute; left:0; right:0; bottom:6px; background:var(--card); border-top:1px solid var(--divider); border-radius:0 0 22px 22px; padding:8px 8px 12px; display:flex; justify-content:space-around; align-items:center; }
-  .sc-mini-tab i { font-size:13px; opacity:0.4; }
-  .sc-mini-tab i.on { opacity:1; }
-  .sc-mini-tab .mt-fab { width:30px; height:30px; border-radius:50%; background:var(--cta); color:#fff; display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:800; margin-top:-16px; box-shadow:0 5px 12px rgba(176,130,77,0.4); }
-
-  /* disclaimer screen */
-  .disc-mark { font-family:-apple-system,"SF Pro Rounded",sans-serif; font-weight:800; font-size:13px; color:var(--brand); text-align:center; }
-  .disc-h { font-family:-apple-system,"SF Pro Rounded",sans-serif; font-weight:800; font-size:21px; color:var(--brand-deep); line-height:1.2; margin-top:2px; }
-  .disc-intro { font-size:11px; color:var(--ink-2); line-height:1.5; }
-  .disc-pt { display:flex; gap:9px; align-items:flex-start; padding:8px 0; border-bottom:1px solid var(--divider); }
-  .disc-pt:last-of-type { border-bottom:none; }
-  .disc-pt .dp-ic { font-size:16px; flex-shrink:0; }
-  .disc-pt .dp-t { font-size:10.5px; font-weight:800; color:var(--ink); }
-  .disc-pt .dp-d { font-size:9.5px; color:var(--ink-2); line-height:1.45; margin-top:1px; }
-  .disc-pt.emrg { background:var(--alert-bg); border-radius:9px; border-bottom:none; padding:8px 9px; }
-  .disc-pt.emrg .dp-t { color:#6B3A12; }
-  .disc-learn { font-size:9.5px; color:var(--brand); text-align:center; border-bottom:1px dotted var(--brand); align-self:center; padding-bottom:1px; }
-  .disc-foot { font-size:7.5px; color:var(--ink-3); text-align:center; line-height:1.4; }
-
-  /* cohort screen strip */
-  .cohort-strip { display:flex; gap:14px; margin-top:14px; overflow-x:auto; padding:4px 2px 12px; }
-  .cohort-cell { flex:0 0 auto; width:216px; }
-  .cohort-cell > .cc-cap { margin-top:9px; }
-  .cc-cap .cc-name { font-size:12.5px; font-weight:800; color:var(--brand-deep); }
-  .cc-cap .cc-job { font-size:10.5px; color:var(--ink-2); line-height:1.45; font-style:italic; margin-top:2px; }
-  .cc-cap .cc-chart { font-size:10px; color:var(--cta-deep); font-weight:700; margin-top:4px; }
-  .phone-frame.sm { max-width:216px; border-width:6px; border-radius:26px; padding:16px 8px 7px; }
-  .phone-frame.sm::before { width:66px; height:15px; }
-  .phone-frame.sm .phone-screen { min-height:312px; padding:10px 9px 52px; gap:7px; border-radius:18px; }
-
-  /* chart gallery (8.5) */
-  .chart-gallery { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; }
-  @media (max-width:880px){ .chart-gallery { grid-template-columns:1fr; } }
-  .chart-card { background:var(--card); border:1px solid var(--divider); border-radius:14px; padding:15px 17px; }
-  .chart-card .cc-h { font-size:13.5px; font-weight:800; color:var(--brand-deep); }
-  .chart-card .cc-sub { font-size:11px; color:var(--ink-2); line-height:1.45; margin-top:2px; }
-  .chart-card .cc-read { font-size:11.5px; color:var(--ink); line-height:1.55; margin-top:9px; padding-top:9px; border-top:1px dashed var(--divider); }
-  .chart-card .cc-read b { color:var(--brand-deep); }
-  .chart-legend { display:flex; gap:13px; flex-wrap:wrap; margin-top:7px; font-size:10px; color:var(--ink-2); }
-  .chart-legend span { display:inline-flex; align-items:center; gap:5px; }
-  .chart-legend i { width:16px; height:0; display:inline-block; }
-  .chart-disc { font-size:9.5px; color:var(--ink-3); font-style:italic; line-height:1.45; margin-top:8px; }
-</style>
-
-<div class="module-banner" id="module-8">
-  <span class="num">МОДУЛЬ 8</span>
-  <h2>Core flow &amp; the Today screen — worked screen-by-screen</h2>
-  <p class="desc">Standing in the user's shoes, from screen 1. The app flow map (with Onboarding &amp; Paywall as marked future gates), the Disclaimer screen, the Today screen worked out top-to-bottom, the same Today across all 6 cohorts, and the motivating JTBD charts. Best practice borrowed from Cysta AI · Folik · Calibrum. Status: draft screens for founder review — nothing locked.</p>
-</div>
-
-<!-- ===== 8.1 FLOW MAP ===== -->
-<h2 id="flow-map">8.1 · The app flow map</h2>
-<p class="lede">The whole journey on one line. Onboarding and Paywall are deliberately <b>not designed yet</b> — they are dashed TODO gates here so they slot in later with zero restructuring. This build fires the Disclaimer on first launch; once the Paywall lands, the trigger moves to post-purchase — the screen itself doesn't change.</p>
-<div class="flow-map">
-  <div class="flow-stage">
-    <span class="fs-step">START</span>
-    <span class="fs-t">📲 Launch</span>
-    <span class="fs-d">App opens — cold start.</span>
-  </div>
-  <span class="flow-conn">→</span>
-  <div class="flow-stage todo">
-    <span class="fs-step">STAGE 1 · LATER</span>
-    <span class="fs-t">Onboarding</span>
-    <span class="fs-d">6-question cohort triage → assigns the lane.</span>
-    <span class="flow-todo-pill">TODO · own consilium</span>
-  </div>
-  <span class="flow-conn">→</span>
-  <div class="flow-stage todo">
-    <span class="fs-step">STAGE 2 · LATER</span>
-    <span class="fs-t">Paywall</span>
-    <span class="fs-d">4 tiers · 7-day trial · Fear-Playbook copy.</span>
-    <span class="flow-todo-pill">TODO · own consilium</span>
-  </div>
-  <span class="flow-conn">→</span>
-  <div class="flow-stage gate">
-    <span class="fs-step">STAGE 3 · NOW</span>
-    <span class="fs-t">🛡 Disclaimer</span>
-    <span class="fs-d">One-time gate. Accept once to enter — §8.2.</span>
-  </div>
-  <span class="flow-conn">→</span>
-  <div class="flow-stage app">
-    <span class="fs-step">STAGE 4 · NOW</span>
-    <span class="fs-t">Main app</span>
-    <span class="fs-d">Lands on Today; 4-tab + «+Log» FAB.</span>
-    <div class="flow-apptabs">
-      <span class="entry">Today</span><span>Labs</span><span>+Log</span><span>Coach</span><span>Progress</span>
-    </div>
-  </div>
-</div>
-<div class="m6-callout note">
-  <b>Why the disclaimer is screen 1 of our work.</b> Per the founder brief, Onboarding and Paywall are separate later stages — each gets its own consilium. The Disclaimer is the first screen we design because it is the fixed hand-off point: whatever Onboarding and Paywall end up being, they always end here, and the Disclaimer always opens into Today. Designing it now means the future gates plug in without touching anything downstream.
-</div>
-
-<!-- ===== 8.2 DISCLAIMER SCREEN ===== -->
-<h2 id="disclaimer-screen">8.2 · Screen 1 — the Disclaimer gate</h2>
-<p class="lede">A calm, plain, one-screen gate — not a scary legal wall. It sets the relationship: Hepatica is an educational companion, the doctor diagnoses. Light-mode forced. Shown once; acceptance is stored at <code>com.love8ko.hepatica.disclaimer.accepted.v1</code>.</p>
-<div class="screen-block">
-  <div class="phone-frame">
-    <div class="phone-screen gate" style="padding-bottom:16px;min-height:496px;gap:9px;">
-      <div class="disc-mark">Hepatica 🌿</div>
-      <div class="disc-h">Before you start</div>
-      <div class="disc-intro">Hepatica is your educational companion for fatty-liver health. Here's what that means — and what it doesn't.</div>
-      <div style="background:var(--card);border:1px solid var(--divider);border-radius:12px;padding:4px 11px;">
-        <div class="disc-pt">
-          <span class="dp-ic">📚</span>
-          <div><div class="dp-t">Education, not medical advice</div><div class="dp-d">Hepatica helps you understand your liver markers and track change over time. It doesn't replace your doctor or hepatologist.</div></div>
-        </div>
-        <div class="disc-pt">
-          <span class="dp-ic">🩺</span>
-          <div><div class="dp-t">It doesn't diagnose</div><div class="dp-d">Hepatica never tells you that you have NAFLD or MASH. Diagnosis is a clinical decision only your doctor can make.</div></div>
-        </div>
-        <div class="disc-pt">
-          <span class="dp-ic">🔬</span>
-          <div><div class="dp-t">Lab, FIB-4 &amp; FibroScan readouts are screening tools</div><div class="dp-d">They're here to inform your next conversation with your doctor — not to stage your liver or confirm fibrosis.</div></div>
-        </div>
-      </div>
-      <div class="disc-pt emrg">
-        <span class="dp-ic">🚨</span>
-        <div><div class="dp-t">In an emergency</div><div class="dp-d">Severe abdominal pain, jaundice, vomiting blood, or alcohol-withdrawal symptoms — seek urgent care now. Don't wait.</div></div>
-      </div>
-      <a class="disc-learn">Read the full disclaimer &amp; sources →</a>
-      <div style="margin-top:auto;display:flex;flex-direction:column;gap:7px;">
-        <div class="sc-cta">I understand — Continue</div>
-        <div class="disc-foot">Shown once. By continuing you acknowledge Hepatica is a Health &amp; Fitness app, not a medical device.</div>
-      </div>
-    </div>
-  </div>
-  <div class="screen-annot">
-    <h3>Standing in the user's shoes</h3>
-    <div class="pov-lead">The user just paid. They're anxious about their liver and want to <b>get in</b>. This screen has to build trust in 8 seconds without scaring them back out — calm tone, plain language, one obvious button.</div>
-    <div class="annot-row"><span class="ar-z">Sees first</span><span class="ar-v">A soft brand mark and <b>"Before you start"</b> — a friendly framing, not "Legal" or "Terms". No liver imagery (aversive, per locked anti-patterns).</span></div>
-    <div class="annot-row"><span class="ar-z">Reads</span><span class="ar-v">Four plain points — education vs advice, no diagnosis, screening-tool framing, and an emergency line. Each is one sentence, each maps to <code>COMPLIANCE.md</code>.</span></div>
-    <div class="annot-row"><span class="ar-z">Motivation</span><span class="ar-v">None yet — this is a <b>gate, not a task</b>. The job is to lower fear and set honest expectations so every later number is trusted.</span></div>
-    <div class="annot-row"><span class="ar-z">JTBD step</span><span class="ar-v">Pre-JTBD. The user does exactly one thing — taps <b>"I understand — Continue"</b> — and never sees this screen again.</span></div>
-    <div class="annot-row"><span class="ar-z">Compliance</span><span class="ar-v">Every line is drafted from <code>COMPLIANCE.md</code> — "education not advice", "doesn't diagnose", FibroScan/FIB-4 as screening tools, emergency routing. <b>Copy is a draft — needs founder + compliance sign-off.</b></span></div>
-    <div class="borrowed"><b>Borrowed — Calibrum.</b> Calibrum's post-paywall first-run is a sequence of single-purpose screens, each with one input and one primary action. The Disclaimer follows that: one screen, one button, no forms, exit-proof. <b>TODO marker:</b> trigger is first-launch now; moves to post-purchase once the Paywall ships.</div>
-  </div>
-</div>
-
-<!-- ===== 8.3 TODAY ANATOMY ===== -->
-<h2 id="today-anatomy">8.3 · Screen 2 — Today, worked top-to-bottom</h2>
-<p class="lede">The screen the user returns to every day. Shown here for <b>Recovering Robert</b> — the cohort whose chart is the strongest "wow". Every zone is annotated: what the user sees, what motivates them, which step of the loop it serves.</p>
-<div class="screen-block">
-  <div class="phone-frame">
-    <div class="phone-screen" style="gap:9px;">
-      <div class="sc-head">
-        <div class="sc-greet"><small>Tue · May 20</small>Good morning, Robert</div>
-        <span class="sc-streak">🔥 47 days</span>
-      </div>
-      <div class="sc-pills">
-        <div class="sc-pill score"><div class="v">58</div><div class="l">Liver score ↑</div></div>
-        <div class="sc-pill"><div class="v">47</div><div class="l">Days sober</div></div>
-        <div class="sc-pill"><div class="v">🍺</div><div class="l">Recovery lane</div></div>
-      </div>
-      <div class="sc-insight">
-        <span class="si-x">✨</span>
-        <div><div class="si-e">Hepatica noticed</div><div class="si-t">GGT down 145 since Day 1 — consistent with the AASLD post-abstinence recovery timeline.</div></div>
-      </div>
-      <div class="sc-card hero">
-        <div class="sc-lbl"><span>Liver recovery · GGT</span><span class="sc-vp watch">Watch</span></div>
-        <div class="sc-chart-h"><span class="sc-chart-v">95<small> U/L</small></span><span class="sc-delta good">↓ 145 since you quit</span></div>
-        <svg viewBox="0 0 250 96" width="100%" style="margin-top:5px;" role="img" aria-label="GGT recovery trend">
-          <path d="M26,11 C100,28 170,52 240,70 L240,84 C170,63 100,40 26,37 Z" fill="#2D7B7E" fill-opacity="0.11"/>
-          <line x1="26" y1="78" x2="240" y2="78" stroke="#C68A3E" stroke-width="1.3" stroke-dasharray="3 3"/>
-          <polyline points="26,14 54,36 86,51 128,63" fill="none" stroke="#2D7B7E" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-          <polyline points="128,63 186,77 240,80" fill="none" stroke="#B0824D" stroke-width="2.4" stroke-dasharray="5 4" stroke-linecap="round"/>
-          <circle cx="26" cy="14" r="2.8" fill="#2D7B7E"/>
-          <circle cx="54" cy="36" r="2.8" fill="#2D7B7E"/>
-          <circle cx="86" cy="51" r="2.8" fill="#2D7B7E"/>
-          <circle cx="128" cy="63" r="3.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.4"/>
-          <text x="24" y="10" font-size="7.5" fill="#8B9B9B" font-family="ui-monospace,SF Mono">240</text>
-          <text x="232" y="74" text-anchor="end" font-size="7" fill="#C68A3E" font-family="ui-monospace,SF Mono">AASLD ref</text>
-        </svg>
-        <div class="sc-disc">Educational tracking — not a diagnosis. The band is the typical AASLD recovery range.</div>
-      </div>
-      <div class="sc-action">
-        <div class="sa-tick">+</div>
-        <div><div class="sa-t">Log Day 48 sober</div><div class="sa-d">Your one daily action — keeps the streak and the curve moving.</div></div>
-      </div>
-      <div class="sc-card">
-        <div class="sc-lbl"><span>This week</span><span style="color:var(--good);">6 / 7 logged</span></div>
-        <div class="sc-heat"><i class="on"></i><i class="on"></i><i class="on"></i><i class="rescue"></i><i class="on"></i><i class="on"></i><i class="today"></i></div>
-      </div>
-      <div class="sc-card" style="display:flex;align-items:center;gap:9px;">
-        <span style="font-size:17px;">🎉</span>
-        <div style="flex:1;"><div style="font-size:10px;font-weight:800;color:var(--brand-deep);">Day 60 milestone ahead</div><div style="font-size:9px;color:var(--ink-2);">"Your liver at 2 months" — 13 days away.</div></div>
-        <span style="color:var(--brand);font-weight:800;">→</span>
-      </div>
-      <div class="sc-ribbon">
-        <span style="font-size:14px;">💬</span>
-        <span class="sr-t">Ask Coach — "Is a 145-point GGT drop normal?"</span>
-        <span class="sr-go">→</span>
-      </div>
-      <div class="phone-tabbar">
-        <a class="tab active"><span class="icn">⌂</span>Today</a>
-        <a class="tab"><span class="icn">🧪</span>Labs</a>
-        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
-        <a class="tab"><span class="icn">💬</span>Coach</a>
-        <a class="tab"><span class="icn">📈</span>Progress</a>
-      </div>
-    </div>
-  </div>
-  <div class="screen-annot">
-    <h3>Standing in the user's shoes</h3>
-    <div class="pov-lead">Robert is 47 days sober and quietly terrified the damage is permanent. He opens Today to answer one question: <b>"Is my liver actually healing?"</b> The screen answers it before he scrolls.</div>
-    <div class="annot-row"><span class="ar-z">Header + streak</span><span class="ar-v"><b>Behavioral anchor.</b> "47 days" is the number that <em>is</em> his recovery — it greets him before any clinical data.</span></div>
-    <div class="annot-row"><span class="ar-z">Liver-score strip</span><span class="ar-v">Three glanceable pills — composite score (↑ trend), streak, cohort lane. One row, one second to read.</span></div>
-    <div class="annot-row"><span class="ar-z">«Hepatica noticed»</span><span class="ar-v">The wow beat from Module 6 — a cited correlation that says "it's working" in plain words.</span></div>
-    <div class="annot-row"><span class="ar-z">JTBD chart</span><span class="ar-v"><b>The motivating graph.</b> GGT 240→95, dropping through the typical-recovery band toward the AASLD line. This <em>is</em> the answer to "is my liver healing" — §8.5.</span></div>
-    <div class="annot-row"><span class="ar-z">Today's action</span><span class="ar-v">One tap — "Log Day 48 sober". The loop's daily step; everything above is the payoff for doing it.</span></div>
-    <div class="annot-row"><span class="ar-z">Heatmap</span><span class="ar-v"><b>Dual anchoring.</b> Even on a week with no new blood test, the heatmap shows visible accumulation — momentum the biology can't give yet.</span></div>
-    <div class="annot-row"><span class="ar-z">Milestone + Coach</span><span class="ar-v">A forward pull ("Day 60, 13 days away") and a seeded Coach hand-off — no blank chat.</span></div>
-    <div class="borrowed"><b>Borrowed — Folik (dual anchoring + the JTBD chart as hero), Calibrum (the chart, not the number, is the centre of the home screen), Cysta AI (cohort lane + insight banner).</b> The order is deliberate: behavioral proof on top, clinical proof in the middle, the daily action and the hand-offs below.</div>
-  </div>
-</div>
-
-<!-- ===== 8.4 TODAY BY COHORT ===== -->
-<h2 id="today-cohorts">8.4 · The same Today, across all 6 cohorts</h2>
-<p class="lede">The layout in §8.3 is fixed — but the hero chart, the daily action and the lane widget swap to the cohort assigned at onboarding. Same screen, six jobs-to-be-done. Robert is spotlighted above; here are all six side by side.</p>
-<div class="cohort-strip">
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Nick</div><span class="sc-streak">🔥 12</span></div>
-        <div class="sc-pills"><div class="sc-pill score"><div class="v">61</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">12</div><div class="l">Scan streak</div></div></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>ALT trend</span></div>
-          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
-            <line x1="6" y1="34" x2="134" y2="34" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
-            <polyline points="6,9 38,17 72,23 110,28" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="110,28 134,33" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-dasharray="4 3"/>
-            <circle cx="110" cy="28" r="3" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
-          </svg>
-          <div class="sc-chart-h"><span class="sc-chart-v" style="font-size:13px;">66<small> U/L</small></span><span class="sc-delta good">↓ 26</span></div>
-        </div>
-        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">📷</div><div class="sa-t" style="font-size:9px;">Scan today's lunch</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">🍷 Newly Diagnosed Nick</div><div class="cc-job">"Doctor said fatty liver — what do I eat?"</div><div class="cc-chart">Chart · 6-month ALT trend vs AASLD 40</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Greta</div><span class="sc-streak">🔥 23</span></div>
-        <div class="sc-pills"><div class="sc-pill score"><div class="v">64</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">−18<small style="font-size:7px;">lb</small></div><div class="l">on GLP-1</div></div></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>ALT × weight</span></div>
-          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
-            <polyline points="6,11 40,18 74,24 110,30" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="6,20 40,25 74,31 110,37" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="110" cy="30" r="2.8" fill="#2D7B7E"/><circle cx="110" cy="37" r="2.8" fill="#B0824D"/>
-          </svg>
-          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">ALT ↓34 · weight ↓18 lb</span></div>
-        </div>
-        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">⚖️</div><div class="sa-t" style="font-size:9px;">Log today's weigh-in</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">💉 GLP-1 Greta</div><div class="cc-job">"Show me Ozempic is working on my liver."</div><div class="cc-chart">Chart · dual-axis ALT ↓ + weight ↓</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Pete</div><span class="sc-streak">🔥 9</span></div>
-        <div class="sc-pills"><div class="sc-pill score"><div class="v">52</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">5.9</div><div class="l">HbA1c</div></div></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>Metabolic · HbA1c × ALT</span></div>
-          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
-            <polyline points="6,12 40,17 74,22 110,27" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="6,22 40,26 74,29 110,34" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="110" cy="27" r="2.8" fill="#2D7B7E"/><circle cx="110" cy="34" r="2.8" fill="#B0824D"/>
-          </svg>
-          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">both markers trending down</span></div>
-        </div>
-        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">🩸</div><div class="sa-t" style="font-size:9px;">Log fasting glucose</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">🍔 Pre-Diabetic Pete</div><div class="cc-job">"HbA1c 6.0 + ALT 70 — where do I start?"</div><div class="cc-chart">Chart · dual-axis HbA1c + ALT</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Rachel</div><span class="sc-streak">🔥 88</span></div>
-        <div class="sc-pills"><div class="sc-pill score"><div class="v">55</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">F2</div><div class="l">FibroScan</div></div></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>FibroScan · LSM kPa</span></div>
-          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
-            <polyline points="6,12 50,12 50,22 96,22 96,30 130,30" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="6" cy="12" r="2.6" fill="#2D7B7E"/><circle cx="50" cy="22" r="2.6" fill="#2D7B7E"/><circle cx="96" cy="30" r="2.6" fill="#2D7B7E"/>
-            <text x="10" y="9" font-size="6.5" fill="#8B9B9B" font-family="ui-monospace,SF Mono">F3</text>
-            <text x="118" y="40" font-size="6.5" fill="#2D7B7E" font-family="ui-monospace,SF Mono">F2</text>
-          </svg>
-          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">12.5 → 8.1 kPa over 12 mo</span></div>
-        </div>
-        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">💊</div><div class="sa-t" style="font-size:9px;">Log Rezdiffra dose</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">💊 Rezdiffra Rachel</div><div class="cc-job">"Document the $40K drug is working."</div><div class="cc-chart">Chart · FibroScan F3→F2 staging timeline</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Patricia</div><span class="sc-streak">🔥 31</span></div>
-        <div class="sc-pills"><div class="sc-pill score"><div class="v">59</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">D14</div><div class="l">Cycle day</div></div></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>ALT × cycle phase</span></div>
-          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
-            <line x1="6" y1="34" x2="134" y2="34" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
-            <polyline points="6,14 30,19 54,15 78,23 102,20 126,27" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="126" cy="27" r="3" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
-          </svg>
-          <div class="sc-chart-h"><span class="sc-delta good" style="font-size:8.5px;">ALT easing across cycles</span></div>
-        </div>
-        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">💊</div><div class="sa-t" style="font-size:9px;">Log inositol</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">🧬 PCOS-NAFLD Patricia</div><div class="cc-job">"PCOS + fatty liver — track them together."</div><div class="cc-chart">Chart · ALT trend annotated by cycle phase</div></div>
-  </div>
-
-  <div class="cohort-cell">
-    <div class="phone-frame sm">
-      <div class="phone-screen">
-        <div class="sc-head"><div class="sc-greet" style="font-size:12px;"><small>Today</small>Robert</div><span class="sc-streak">🔥 47</span></div>
-        <div class="sc-pills"><div class="sc-pill score"><div class="v">58</div><div class="l">Score ↑</div></div><div class="sc-pill"><div class="v">47</div><div class="l">Days sober</div></div></div>
-        <div class="sc-card hero"><div class="sc-lbl"><span>GGT recovery</span><span class="sc-vp watch">Watch</span></div>
-          <svg viewBox="0 0 140 46" width="100%" style="margin-top:3px;">
-            <line x1="6" y1="36" x2="134" y2="36" stroke="#C68A3E" stroke-width="1" stroke-dasharray="2 2"/>
-            <polyline points="6,8 32,18 60,25 92,30" fill="none" stroke="#2D7B7E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="92,30 134,35" fill="none" stroke="#B0824D" stroke-width="2.2" stroke-dasharray="4 3"/>
-            <circle cx="92" cy="30" r="3" fill="#fff" stroke="#2D7B7E" stroke-width="2.2"/>
-          </svg>
-          <div class="sc-chart-h"><span class="sc-chart-v" style="font-size:13px;">95<small> U/L</small></span><span class="sc-delta good">↓ 145</span></div>
-        </div>
-        <div class="sc-action" style="padding:7px 9px;"><div class="sa-tick" style="width:20px;height:20px;font-size:11px;">+</div><div class="sa-t" style="font-size:9px;">Log Day 48 sober</div></div>
-        <div class="sc-mini-tab"><i class="on">⌂</i><i>🧪</i><span class="mt-fab">+</span><i>💬</i><i>📈</i></div>
-      </div>
-    </div>
-    <div class="cc-cap"><div class="cc-name">🍺 Recovering Robert</div><div class="cc-job">"90 days sober — is my liver healing?"</div><div class="cc-chart">Chart · GGT recovery curve + sober-day overlay</div></div>
-  </div>
-
-</div>
-<div class="m6-callout note">
-  <b>Lane routing.</b> The cohort is assigned by the future Onboarding triage and stored as a <code>cohort</code> enum; Today reads it to pick the hero chart, the daily action and the lane widget. Until Onboarding ships, the lane is a Settings / debug toggle. This deepens Module 4.5's widget-reorder table into actual screens.
-</div>
-
-<!-- ===== 8.5 MOTIVATING CHARTS ===== -->
-<h2 id="motivating-charts">8.5 · The motivating charts — how each cohort sees "it's working"</h2>
-<p class="lede">The hero chart is the heart of Today. Every one follows the same grammar: the user's <b>actual</b> marker, a shaded <b>typical recovery band</b> from published guidance, the <b>reference line</b>, and a dashed <b>"if the trend continues"</b> projection. Small wobble is floored as "stable" — never drawn as a relapse.</p>
-<div class="chart-gallery">
-
-  <div class="chart-card">
-    <div class="cc-h">🍺 Robert — GGT recovery</div>
-    <div class="cc-sub">Answers: "Is my liver healing now that I've stopped drinking?"</div>
-    <svg viewBox="0 0 340 168" width="100%" style="margin-top:9px;" role="img" aria-label="Robert GGT recovery chart">
-      <path d="M38,28 C130,52 230,92 312,112 L312,130 C230,108 130,66 38,52 Z" fill="#2D7B7E" fill-opacity="0.12"/>
-      <line x1="38" y1="122" x2="312" y2="122" stroke="#C68A3E" stroke-width="1.4" stroke-dasharray="4 3"/>
-      <text x="312" y="118" text-anchor="end" font-size="8.5" fill="#C68A3E" font-family="ui-monospace,SF Mono">AASLD upper ref · ~50 U/L</text>
-      <polyline points="38,26 96,62 158,86 222,104" fill="none" stroke="#2D7B7E" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
-      <polyline points="222,104 270,120 312,126" fill="none" stroke="#B0824D" stroke-width="2.8" stroke-dasharray="6 4" stroke-linecap="round"/>
-      <circle cx="38" cy="26" r="3.4" fill="#2D7B7E"/>
-      <circle cx="96" cy="62" r="3.4" fill="#2D7B7E"/>
-      <circle cx="158" cy="86" r="3.4" fill="#2D7B7E"/>
-      <circle cx="222" cy="104" r="4.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.8"/>
-      <text x="34" y="20" font-size="9" fill="#4C5B5C" font-family="ui-monospace,SF Mono">240</text>
-      <text x="210" y="98" font-size="9" fill="#194A4C" font-family="ui-monospace,SF Mono" font-weight="800">95 · today</text>
-      <text x="310" y="146" text-anchor="end" font-size="8.5" fill="#B0824D" font-family="ui-monospace,SF Mono">projected ~Day 115</text>
-      <line x1="38" y1="150" x2="312" y2="150" stroke="#D6E2E0" stroke-width="1"/>
-      <text x="38" y="162" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Day 0</text>
-      <text x="312" y="162" text-anchor="end" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Day 160</text>
-    </svg>
-    <div class="chart-legend">
-      <span><i style="border-top:2.8px solid #2D7B7E;"></i> logged GGT</span>
-      <span><i style="border-top:2.8px dashed #B0824D;"></i> projection</span>
-      <span><i style="border-top:9px solid rgba(45,123,126,0.16);"></i> typical band</span>
-    </div>
-    <div class="cc-read"><b>How it motivates:</b> the line is visibly falling through the published recovery band toward the reference. Robert renews because at Day 47 he hasn't <em>reached</em> it yet — the dashed projection shows he will.</div>
-    <div class="chart-disc">Educational — the band is the typical AASLD post-abstinence range, not a personal prediction.</div>
-  </div>
-
-  <div class="chart-card">
-    <div class="cc-h">🍷 Nick — ALT trend</div>
-    <div class="cc-sub">Answers: "Is the diet my doctor told me to follow actually working?"</div>
-    <svg viewBox="0 0 340 168" width="100%" style="margin-top:9px;" role="img" aria-label="Nick ALT trend chart">
-      <path d="M38,40 C130,58 230,86 312,100 L312,118 C230,104 130,76 38,64 Z" fill="#2D7B7E" fill-opacity="0.12"/>
-      <line x1="38" y1="110" x2="312" y2="110" stroke="#C68A3E" stroke-width="1.4" stroke-dasharray="4 3"/>
-      <text x="312" y="106" text-anchor="end" font-size="8.5" fill="#C68A3E" font-family="ui-monospace,SF Mono">AASLD ALT ref · 40 U/L</text>
-      <polyline points="38,30 110,52 178,70 244,84" fill="none" stroke="#2D7B7E" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
-      <polyline points="244,84 286,98 312,106" fill="none" stroke="#B0824D" stroke-width="2.8" stroke-dasharray="6 4" stroke-linecap="round"/>
-      <circle cx="38" cy="30" r="3.4" fill="#2D7B7E"/>
-      <circle cx="110" cy="52" r="3.4" fill="#2D7B7E"/>
-      <circle cx="178" cy="70" r="3.4" fill="#2D7B7E"/>
-      <circle cx="244" cy="84" r="4.6" fill="#FFFFFF" stroke="#2D7B7E" stroke-width="2.8"/>
-      <text x="34" y="24" font-size="9" fill="#4C5B5C" font-family="ui-monospace,SF Mono">92</text>
-      <text x="232" y="78" font-size="9" fill="#194A4C" font-family="ui-monospace,SF Mono" font-weight="800">66 · today</text>
-      <text x="310" y="132" text-anchor="end" font-size="8.5" fill="#B0824D" font-family="ui-monospace,SF Mono">projected into range</text>
-      <line x1="38" y1="150" x2="312" y2="150" stroke="#D6E2E0" stroke-width="1"/>
-      <text x="38" y="162" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Month 0</text>
-      <text x="312" y="162" text-anchor="end" font-size="8" fill="#8B9B9B" font-family="ui-monospace,SF Mono">Month 6</text>
-    </svg>
-    <div class="chart-legend">
-      <span><i style="border-top:2.8px solid #2D7B7E;"></i> logged ALT</span>
-      <span><i style="border-top:2.8px dashed #B0824D;"></i> projection</span>
-      <span><i style="border-top:9px solid rgba(45,123,126,0.16);"></i> typical band</span>
-    </div>
-    <div class="cc-read"><b>How it motivates:</b> Nick's doctor said "fix it with diet" and left. This chart is the feedback the 10-minute appointment never gave him — proof, every meal scan, that the diet is landing.</div>
-    <div class="chart-disc">A −5 U/L wobble reads as "stable · within normal variation", never as regression — noise-floor framing.</div>
-  </div>
-
-</div>
-<table class="tab-spec" style="margin-top:14px;">
-  <thead><tr><th>Cohort</th><th>Hero metric</th><th>Chart shape</th><th>The JTBD it proves</th></tr></thead>
-  <tbody>
-    <tr><td class="tabname">🍷 Nick</td><td>ALT</td><td>6-month ALT trend vs AASLD 40 U/L line + projection</td><td>"My diet is working" — rendered above</td></tr>
-    <tr><td class="tabname">💉 Greta</td><td>ALT + weight</td><td>Dual-axis — ALT ↓ and weight ↓ on one timeline</td><td>"The GLP-1 is reaching my liver, not just the scale"</td></tr>
-    <tr><td class="tabname">🍔 Pete</td><td>HbA1c + ALT</td><td>Dual-axis metabolic — both markers descending together</td><td>"Liver and glucose are improving as one problem"</td></tr>
-    <tr><td class="tabname">💊 Rachel</td><td>FibroScan LSM</td><td>kPa staircase — F3 → F2 → F1 staging timeline</td><td>"The $40K drug is regressing my fibrosis — documented"</td></tr>
-    <tr><td class="tabname">🧬 Patricia</td><td>ALT × cycle</td><td>ALT trend with cycle-phase shading, easing across cycles</td><td>"PCOS and liver are tracked as one hormonal picture"</td></tr>
-    <tr><td class="tabname">🍺 Robert</td><td>GGT + sober days</td><td>GGT recovery curve vs typical band + sober overlay</td><td>"My liver is healing" — rendered above</td></tr>
-  </tbody>
-</table>
-<div class="m6-callout note">
-  <b>Compliance.</b> Every chart carries an educational-tracking disclaimer; the band is a published <em>population</em> range (AASLD), never a personal promise; the projection copy stays conditional ("if the trend continues", "projected"); no dated outcome claim sits beside the "Reverse fatty liver" tagline; severity stays on the warm triad — no clinical red.
-</div>
-
-<!-- ===== 8.6 FIRST-RUN / EMPTY STATE ===== -->
-<h2 id="first-run">8.6 · Day 1 — the empty state that still sells</h2>
-<p class="lede">The hardest screen to design: a brand-new user, fresh past the Disclaimer, with <b>zero data</b>. The charts can't be blank — a blank Today reads as "nothing here". So every chart card is <b>always rendered</b> as a skeleton: a ghost line where the user's data will live, a pulsing "today" dot, and a caption that turns the emptiness into an invitation.</p>
-<div class="screen-block">
-  <div class="phone-frame">
-    <div class="phone-screen" style="gap:9px;">
-      <div class="sc-head">
-        <div class="sc-greet"><small>Day 1</small>Welcome, Robert</div>
-        <span class="sc-streak" style="background:var(--bg-soft);color:var(--ink-3);">🔥 0</span>
-      </div>
-      <div class="sc-pills">
-        <div class="sc-pill score" style="background:var(--brand-soft);border-color:var(--brand-soft);"><div class="v" style="color:var(--ink-3);">—</div><div class="l" style="color:var(--ink-3);">Liver score</div></div>
-        <div class="sc-pill"><div class="v" style="color:var(--ink-3);">0</div><div class="l">Days logged</div></div>
-        <div class="sc-pill"><div class="v">🍺</div><div class="l">Recovery lane</div></div>
-      </div>
-      <div class="sc-card hero" style="border-style:dashed;">
-        <div class="sc-lbl"><span>Liver recovery · GGT</span><span style="color:var(--ink-3);">no data yet</span></div>
-        <svg viewBox="0 0 250 90" width="100%" style="margin-top:5px;" role="img" aria-label="empty GGT chart skeleton">
-          <line x1="26" y1="76" x2="240" y2="76" stroke="#D6E2E0" stroke-width="1"/>
-          <polyline points="26,44 86,42 146,46 206,43" fill="none" stroke="#C9D6D4" stroke-width="2" stroke-dasharray="4 4"/>
-          <circle cx="26" cy="44" r="4" fill="none" stroke="#B0824D" stroke-width="2"/>
-          <circle cx="26" cy="44" r="7.5" fill="#B0824D" fill-opacity="0.16"/>
-          <text x="132" y="30" text-anchor="middle" font-size="9" fill="#8B9B9B" font-family="-apple-system,SF Pro">your recovery line builds here</text>
-        </svg>
-        <div class="sc-disc">Add your first GGT to anchor the curve.</div>
-      </div>
-      <div class="sc-cta">🩸 Log your baseline blood test</div>
-      <div class="sc-cta ghost">+ Log your first sober day</div>
-      <div class="sc-ribbon">
-        <span style="font-size:14px;">💬</span>
-        <span class="sr-t">New here? Ask Coach — "Where do I start?"</span>
-        <span class="sr-go">→</span>
-      </div>
-      <div class="phone-tabbar">
-        <a class="tab active"><span class="icn">⌂</span>Today</a>
-        <a class="tab"><span class="icn">🧪</span>Labs</a>
-        <div class="fab-wrap"><div class="fab">+</div><div class="fab-label">Log</div></div>
-        <a class="tab"><span class="icn">💬</span>Coach</a>
-        <a class="tab"><span class="icn">📈</span>Progress</a>
-      </div>
-    </div>
-  </div>
-  <div class="screen-annot">
-    <h3>Standing in the user's shoes</h3>
-    <div class="pov-lead">This is the make-or-break moment. The user has paid and entered with <b>nothing logged</b>. If Today looks empty, they churn before the trial ends. The skeleton turns "empty" into "ready".</div>
-    <div class="annot-row"><span class="ar-z">Sees first</span><span class="ar-v">The full Today layout — already shaped. The score reads <b>"—"</b>, not a fake number; honesty keeps trust.</span></div>
-    <div class="annot-row"><span class="ar-z">The chart</span><span class="ar-v">A dashed ghost line with a pulsing dot and the caption <b>"your recovery line builds here"</b> — the empty chart is reframed as a promise, not a void.</span></div>
-    <div class="annot-row"><span class="ar-z">Motivation</span><span class="ar-v">Two clear CTAs — log a baseline blood test, or log Day 1 sober. The first data point animates into the ghost line; a micro-praise toast confirms ("Baseline locked — your curve starts here").</span></div>
-    <div class="annot-row"><span class="ar-z">JTBD step</span><span class="ar-v">Step zero — "lock in the baseline". Until the user does it, every chart is a promise; after, the loop from Module 6 begins.</span></div>
-    <div class="borrowed"><b>Borrowed — Calibrum (skeleton zero-state — every chart card always visible with a ghost line + "your line builds here") and Folik ("Lock in your baseline — without it, every chart is empty"). </b> The empty state is a designed screen, not an afterthought.</div>
-  </div>
-</div>
-
-<!-- ===== 8.7 RECOMMENDED FOR REVIEW ===== -->
-<h2 id="flow-summary">8.7 · Ready for review</h2>
-<div class="m6-callout win">
-  <b>Module 8 — ready for founder review.</b> The core flow is worked screen-by-screen from the user's seat: the flow map (Onboarding + Paywall as dashed TODO gates), the Disclaimer gate, the Today screen worked top-to-bottom, the same Today across all 6 cohorts, the six motivating JTBD charts, and the Day-1 skeleton empty state. Best practice is borrowed and credited — Calibrum's skeleton zero-state, Folik's dual anchoring + baseline framing, Cysta's cohort lanes. Next sprint — <b>Module 9</b>: the working tabs (Labs · +Log · Coach · Progress) screen by screen. Nothing here is locked; on review the disclaimer copy goes to compliance sign-off and the screens become the spec for the Swift V1 skeleton.
+  <b>Module 7 — ready for founder review.</b> One universal 8-frame gallery — a single set served to every cohort and every ad campaign — ordered by pain × JTBD × cohort size: food scanner → lab interpreter → GGT recovery → trend dashboard → AI Coach → GLP-1 proof → doctor PDF → paywall. Frames 1–3 are the thumbnail-visible killers. Every frame is worked through with a headline, ≤3 on-frame bullets and a single hero illustration; all copy is compliance-checked. On your ⭐ approval this goes to <code>DECISIONS.md</code> and production starts once the P0 features hit UI sign-off — captured from the Xcode simulator (real UI, not mockups), composed in Figma, shipped via fastlane <code>deliver</code>.
 </div>
 
 <footer>
   <b>Hepatica — Design System Workbench</b> · updated 2026-05-20 · source: <b>Hepatica_Master_v2_FINAL.md</b> · sibling pattern: Cysta AI.<br>
   🔒 Locked: design system <b>B · Clinical</b> (teal #2D7B7E + gold #D4A574) · roadmap <b>15 features → 6 P0 / 5 P1 / 4 P2</b> · tabs <b>4-tab + «+Log» FAB</b>. Candidates A &amp; C archived in Module 1.<br>
-  Next: Module 9 — the working tab screens (Labs · +Log · Coach · Progress) &amp; the Swift V1 skeleton.
+  Modules 8–9 — the worked screen-by-screen flow (core flow · Today · cohort screens · the working tabs) — live on the companion page <b><a href="flow.html" style="color:var(--brand);">flow.html</a></b>.
 </footer>
 
 </body>
