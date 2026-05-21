@@ -848,21 +848,23 @@
   <a href="#module-17" class="is-module"><span class="nav-num">M17</span>Restructure</a>
   <a href="#module-18" class="is-module"><span class="nav-num">M18</span>Post-paywall</a>
   <a href="#module-19" class="is-module"><span class="nav-num">M19</span>Assets</a>
+  <a href="#module-20" class="is-module"><span class="nav-num">M20</span>Action matrix</a>
+  <a href="#module-21" class="is-module"><span class="nav-num">M21</span>Coach engine</a>
   <span class="sep"></span>
   <a href="#wow-formula">formula</a>
-  <a href="#onb-flow">worked flow</a>
   <a href="#paywall-consilium">paywall</a>
   <a href="#restructure-consilium">restructure</a>
   <a href="#setup-consilium">setup consilium</a>
-  <a href="#setup-cohorts">setup × 6</a>
   <a href="#asset-consilium">asset consilium</a>
+  <a href="#action-matrix">action matrix</a>
+  <a href="#coach-engine">coach engine</a>
 </nav>
 
 <header>
   <h1>Hepatica — Funnel &amp; Post-Paywall Workbench · Part 3</h1>
-  <p class="lede">Part 3 closes the workbench. Companion to <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a> (M1–7), <a href="flow.html" style="color:var(--brand);font-weight:700;">flow.html</a> (M8–10) and <a href="flow2.html" style="color:var(--brand);font-weight:700;">flow2.html</a> (M11–14). Here: <b>M15 — Onboarding</b> and <b>M16 — Paywall</b> (the pre-auth funnel), <b>M17 — the fresh-eyes restructure consilium</b>, <b>M18 — the post-paywall Setup walkthrough</b>, and <b>M19 — the in-app illustration &amp; hero asset system</b>. Best practice borrowed from the Folik &amp; Calibrum onboarding consilia and Cysta AI's typed-result reveal &amp; Setup pattern.</p>
+  <p class="lede">Part 3 closes the workbench. Companion to <a href="design.html" style="color:var(--brand);font-weight:700;">design.html</a> (M1–7), <a href="flow.html" style="color:var(--brand);font-weight:700;">flow.html</a> (M8–10) and <a href="flow2.html" style="color:var(--brand);font-weight:700;">flow2.html</a> (M11–14). Here: <b>M15 — Onboarding</b>, <b>M16 — Paywall</b>, <b>M17 — restructure consilium</b>, <b>M18 — post-paywall Setup</b>, <b>M19 — the illustration &amp; hero asset system</b>, <b>M20 — the user-action matrix</b>, and <b>M21 — the Coach engine</b> (RAG × DeepSeek). Best practice borrowed from Folik &amp; Calibrum's onboarding consilia and Cysta AI &amp; Salvora's Coach &amp; Setup patterns.</p>
   <div class="meta-bar">
-    <span class="pill brand">📐 Funnel · restructure · post-paywall · assets · Modules 15–19</span>
+    <span class="pill brand">📐 Funnel · post-paywall · assets · matrix · Coach engine · Modules 15–21</span>
     <span class="pill lock">🔒 Design system · B · Clinical</span>
     <span class="pill vote">WOW-then-justify · +6–11pp trial→paid</span>
     <span class="pill sib">Best practice: Folik · Calibrum · Cysta AI</span>
@@ -2177,9 +2179,213 @@
   <b>Module 19 — ready for founder review.</b> One consilium run: <b>B · calm clinical illustration</b> (Σ 4.77) over C · hybrid (4.23) and A · editorial photography (2.85). The decision realigns the asset style with the locked design system («Mayo Clinic × Headspace») and the §7.3 «clinical authority, not wellness» anti-pattern, and fits the older, male-skewing NAFLD audience. §19.2 specs the system; <code>private/ASSET_PROMPTS.md</code> is rewritten to match (23 assets, illustration prompts). Supersedes D22 — logged <code>DECISIONS.md</code> D23. <b>The workbench now covers Modules 1–19; the whole product is designed end to end — flow, funnel, post-paywall, and the visual system.</b>
 </div>
 
+<!-- ============================================================ -->
+<!-- ============ MODULE 20 · USER-ACTION MATRIX =============== -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-20">
+  <span class="num">МОДУЛЬ 20</span>
+  <h2>User-action matrix — the coverage audit before Swift</h2>
+  <p class="desc">Modules 8–19 designed the screens. This module checks the <em>coverage</em>: every user action × every state it can be in — happy, empty, error, offline, edge, and light/dark — so the Swift build inherits no undesigned path. §20.1 is the matrix; §20.2 closes the gaps it surfaces (incl. paywall back-navigation and the light/dark contrast audit); §20.3 specs the debug menu as the tool that makes every path reachable for testers.</p>
+</div>
+
+<!-- ===== 20.1 THE MATRIX ===== -->
+<h2 id="action-matrix">20.1 · The matrix</h2>
+<p class="lede">Every user action down the side; every state across the top. <span style="color:var(--good);font-weight:800;">✓</span> designed · <span style="color:var(--watch);font-weight:800;">⚠</span> gap to close in §20.2 · <span style="color:var(--ink-3);font-weight:800;">—</span> not applicable. The <b>Light/Dark</b> column tracks whether the surface has been contrast-audited in both appearances — dark mode was deferred to the Swift build, so the core tabs read ⚠ until audited.</p>
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+<table class="tab-spec" style="min-width:720px;">
+  <thead><tr>
+    <th style="text-align:left;">User action</th>
+    <th>Happy</th><th>Empty</th><th>Error</th><th>Offline</th><th>Edge</th><th>Light/Dark</th>
+  </tr></thead>
+  <tbody>
+    <tr><td colspan="7" style="background:var(--brand-soft);color:var(--brand-deep);font-weight:800;font-size:11px;letter-spacing:0.04em;">PRE-AUTH FUNNEL</td></tr>
+    <tr><td class="tabname">Cold launch / resume</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td></tr>
+    <tr><td class="tabname">Onboarding triage / WOW</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td></tr>
+    <tr><td class="tabname">Paywall — view &amp; purchase</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td></tr>
+    <tr><td class="tabname">Paywall — back / skip</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td></tr>
+    <tr><td class="tabname">Disclaimer · Setup walkthrough</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td></tr>
+    <tr><td colspan="7" style="background:var(--brand-soft);color:var(--brand-deep);font-weight:800;font-size:11px;letter-spacing:0.04em;">TODAY</td></tr>
+    <tr><td class="tabname">Open Today / cohort dashboard</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td></tr>
+    <tr><td class="tabname">Toggle light/dark theme</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td></tr>
+    <tr><td colspan="7" style="background:var(--brand-soft);color:var(--brand-deep);font-weight:800;font-size:11px;letter-spacing:0.04em;">+LOG (5 MINI-FLOWS)</td></tr>
+    <tr><td class="tabname">Log meal photo</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td></tr>
+    <tr><td class="tabname">Log drink / sober day</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td></tr>
+    <tr><td class="tabname">Log lab / medication / symptom</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td></tr>
+    <tr><td colspan="7" style="background:var(--brand-soft);color:var(--brand-deep);font-weight:800;font-size:11px;letter-spacing:0.04em;">COACH</td></tr>
+    <tr><td class="tabname">Ask the Coach</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td></tr>
+    <tr><td class="tabname">Follow-up · switch view · export PDF</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td></tr>
+    <tr><td colspan="7" style="background:var(--brand-soft);color:var(--brand-deep);font-weight:800;font-size:11px;letter-spacing:0.04em;">LABS · PROGRESS · SETTINGS</td></tr>
+    <tr><td class="tabname">Scan lab → OCR confirm</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td></tr>
+    <tr><td class="tabname">View analyte grid / trends</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td></tr>
+    <tr><td class="tabname">Milestone · doctor PDF export</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td></tr>
+    <tr><td class="tabname">Switch cohort · customise Today</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td></tr>
+    <tr><td class="tabname">Restore / manage subscription</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--ink-3);">—</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--watch);font-weight:800;background:rgba(198,138,62,0.13);">⚠</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td><td style="text-align:center;color:var(--good);font-weight:800;">✓</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="m6-callout">
+  <b>What the matrix surfaces — 9 gaps.</b> <b>Empty:</b> Coach first-open and Progress pre-data have no designed skeleton (the M14 §14.2 gaps). <b>Error:</b> paywall purchase-failure, failed meal/lab capture, failed lab-OCR, subscription-restore failure. <b>Offline:</b> Coach has no offline fallback; paywall &amp; restore need an offline notice. <b>Edge:</b> the paywall is a locked gate (no back-navigation), there is no "undo a log", and the drink log has no safety strip (M14 §14.2). <b>Light/Dark:</b> the core tabs (Today, Labs, +Log, Settings) are designed light-only — dark mode is unaudited, the recurring white-on-white risk. §20.2 closes all nine.
+</div>
+
+<!-- ===== 20.2 CLOSING THE GAPS ===== -->
+<h2 id="matrix-gaps">20.2 · Closing the gaps</h2>
+<p class="lede">The nine gaps, resolved. The two empty states are drawn (the §8.6 ghost-skeleton pattern); the rest are decisions + rules the Swift build inherits.</p>
+<div class="cohort-strip">
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:8px;align-items:center;justify-content:center;min-height:300px;">
+        <div class="sc-card" style="width:74px;height:74px;border-style:dashed;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;">💬</div>
+        <div style="font-size:11px;font-weight:800;color:var(--brand-deep);text-align:center;">Your Coach is ready</div>
+        <div style="font-size:8.5px;color:var(--ink-2);text-align:center;line-height:1.5;">Ask anything about your liver, your labs or your plan — answers are cited to AASLD · AGA · EASL.</div>
+        <div class="sc-card" style="padding:5px 9px;font-size:7.5px;color:var(--brand-deep);font-weight:700;">"Is my ALT of 84 dangerous?"</div>
+        <div class="sc-card" style="padding:5px 9px;font-size:7.5px;color:var(--brand-deep);font-weight:700;">"What should I eat tonight?"</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">Coach — empty state</div><div class="cc-job">Ghost avatar + 2 cohort starter prompts — never a blank thread.</div></div>
+  </div>
+  <div class="cohort-cell">
+    <div class="phone-frame sm">
+      <div class="phone-screen" style="padding-bottom:12px;gap:8px;align-items:center;justify-content:center;min-height:300px;">
+        <div class="sc-card hero" style="width:100%;height:84px;border-style:dashed;display:flex;align-items:center;justify-content:center;"><span style="font-size:8px;color:var(--ink-3);font-weight:700;">your trend line builds here</span></div>
+        <div style="font-size:11px;font-weight:800;color:var(--brand-deep);text-align:center;">One point logged. Two more and the line begins.</div>
+        <div style="font-size:8.5px;color:var(--ink-2);text-align:center;line-height:1.5;">Progress needs a few data points before a trend is honest. Keep logging — the curve appears at point 3.</div>
+        <div class="sc-cta" style="font-size:8.5px;padding:7px;">Log today's number →</div>
+      </div>
+    </div>
+    <div class="cc-cap"><div class="cc-name">Progress — pre-data state</div><div class="cc-job">Dashed ghost chart + honest "needs 3 points" — no fabricated trend.</div></div>
+  </div>
+</div>
+<div class="m6-callout note">
+  <b>Paywall navigation (amends M16.2).</b> The paywall is no longer a locked gate. A <b>back affordance</b> returns the user to the onboarding/WOW screens so they can re-read what they're buying before committing — the funnel is reviewable, not a trap. For TestFlight a <b>tester-only Skip</b> (Folik pattern) passes the paywall without a purchase — gated by the same two-arm <code>#if DEBUG</code> + TestFlight check as §20.3, stripped from App Store builds. The four tiers, prices and Weekly-preselect (M16) are unchanged.
+</div>
+<div class="m6-callout note">
+  <b>Light/dark theme — contrast audit + the Today toggle.</b> The recurring sibling bug is white text on a white surface when a screen built light-only is forced dark. Rule for the Swift build: <b>every</b> text colour is a semantic token that flips with appearance — never a hardcoded white/near-white; the verdict triad and the <code>--night-*</code> tokens (already in <code>DESIGN_SYSTEM.md</code>) define both modes; every screen is checked in both before merge. A <b>light/dark toggle</b> sits on the Today tab, writing a theme <code>@AppStorage</code> override (System / Light / Dark). Coach keeps its 22:00–06:00 night-auto. The workbench's own M9 Coach chat mockups were re-checked — bubbles use <code>var(--ink)</code> on tinted backgrounds, no white-on-white.
+</div>
+<div class="m6-callout note">
+  <b>Error · offline · undo.</b> <b>Coach offline</b> — no network → the canned fallback "Coach is offline — here's your tracked data and trend summary" (per <code>API_REGISTRY.md</code>), never a spinner that hangs. <b>Failed capture / OCR</b> — meal, lab and OCR failures show a retry + a manual-entry path, never a dead end. <b>Purchase / restore failure</b> — a plain inline error + retry, the paywall stays usable. <b>Undo a log</b> — every +Log capture shows an undo on its confirmation toast (a mis-logged drink or meal is reversible). <b>Log safety strip</b> — the drink log carries the <code>COMPLIANCE.md</code> alcohol-support line ("for alcohol-use-disorder support, talk to a professional"). <b>Coach verdict</b> stays prose, not a triad pill — confirmed deliberate (a chat answer is not a lab row).
+</div>
+
+<!-- ===== 20.3 DEBUG SURFACE ===== -->
+<h2 id="debug-surface">20.3 · Testing surfaces — the debug menu</h2>
+<p class="lede">A coverage matrix is only honest if a tester can actually reach every cell. The standard tool — already scaffolded in the Swift app — is an in-app floating debug overlay with a jump-to teleporter.</p>
+<div class="m6-callout">
+  <b>The pattern (industry-standard, Loveiko reusable).</b> A draggable floating activator (a gold wrench) opens a debug panel with: <b>(a) jump-to teleporter</b> — teleport straight to any phase (Onboarding 0–8 · Paywall · Disclaimer · Setup 0–4 · any Core tab) via transient <code>@AppStorage</code> keys; <b>(b) presets</b> — Day-0 (wipe) and Day-30 (seed a power-user with mock labs/streaks); <b>(c) manual flag toggles</b>. Buttons grouped by phase. The built <code>DebugFloatingButton</code> + <code>DebugPanelView</code> + <code>DemoSeed</code> already implement this.
+</div>
+<div class="m6-callout note">
+  <b>The TestFlight wrapper — make it appear on the phone, never in the App Store build.</b> The leak-proofing is a <b>two-arm gate</b>: the debug overlay renders when <code>#if DEBUG</code> <b>OR</b> the app is a TestFlight build — detected by the sandbox App Store receipt (<code>appStoreReceiptURL</code> path ends <code>sandboxReceipt</code>), the check already in <code>Utils/BundleDebugFlags.swift</code>. Result: the panel is live for the founder in Xcode <em>and</em> for TestFlight testers on-device, and is compiled out of the public App Store release. Locked as the Loveiko standard — any new project wires it from this section in ~30 minutes.
+</div>
+
+<!-- ===== 20.4 READY ===== -->
+<h2 id="matrix-summary">20.4 · Module 20 — ready for review</h2>
+<div class="m6-callout win">
+  <b>Module 20 — ready for founder review.</b> The user-action matrix audited every action × six states and surfaced <b>9 gaps</b>, all now closed: the Coach &amp; Progress empty states are drawn (ghost-skeleton, §8.6 pattern); paywall back-navigation + a TestFlight Skip are specced (amends M16.2); the light/dark contrast rule + the Today theme toggle are locked; error / offline / undo / the Log safety strip are decided; the Coach verdict stays prose. §20.3 locks the floating debug menu + jump-to teleporter with a two-arm TestFlight wrapper. To the Swift build: the matrix is the QA checklist — no path ships undesigned.
+</div>
+
+<!-- ============================================================ -->
+<!-- ============ MODULE 21 · THE COACH ENGINE ================= -->
+<!-- ============================================================ -->
+<div class="module-banner" id="module-21">
+  <span class="num">МОДУЛЬ 21</span>
+  <h2>The Coach engine — RAG × DeepSeek, modeled on Cysta AI &amp; Salvora</h2>
+  <p class="desc">M9 designed the Coach <em>screen</em> — the specialist-view panel, verdict-first, per-cohort tone. This module designs the <em>engine</em> behind it, so the RAG knows how everything is loaded and works. The siblings Cysta AI and Salvora already ship this exact stack — M21 maps it onto Hepatica's built networking layer and the already-built <code>liver_knowledge.sqlite</code> corpus. §21.1 architecture · §21.2 the RAG · §21.3 the request pipeline · §21.4 the prompt library · §21.5 the Coach UI &amp; Swift reconcile.</p>
+</div>
+
+<!-- ===== 21.1 ARCHITECTURE ===== -->
+<h2 id="coach-engine">21.1 · Architecture — five components, all copied from siblings</h2>
+<p class="lede">The Coach is not invented here. Cysta AI and Salvora shipped a cited, RAG-grounded chat; Hepatica copies the five components and re-points them at the liver corpus and the 6 cohorts.</p>
+<table class="tab-spec">
+  <thead><tr><th>Component</th><th>Copied from</th><th>What changes for Hepatica</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">RAGService</td><td>Cysta <code>Services/RAGService.swift</code></td><td>Loads <code>liver_knowledge.sqlite</code> instead of <code>pcos_knowledge.sqlite</code>; identical in-memory cosine retrieval.</td></tr>
+    <tr><td class="tabname">CoachService</td><td>Cysta <code>Services/CoachService.swift</code></td><td>Liver intent-classifier triggers (jaundice, withdrawal, Rezdiffra dosing); same retrieve → prompt → DeepSeek path.</td></tr>
+    <tr><td class="tabname">PromptLibrary</td><td>Cysta + Salvora <code>Services/PromptLibrary.swift</code></td><td>Liver-coach base prompt; 6 Hepatica cohorts; the 3 specialist views (M9); liver compliance rules.</td></tr>
+    <tr><td class="tabname">CoachThreadStore</td><td>Salvora <code>Core/Stores/ChatThreadStore.swift</code></td><td>Per-thread <b>cohort</b> snapshot (Salvora snapshots persona); UserDefaults-JSON threads.</td></tr>
+    <tr><td class="tabname">Coach UI</td><td>Cysta <code>Features/Coach/*</code></td><td><code>ChatThreadDetailView</code> · <code>MessageBubble</code> · <code>SourceBlock</code> · <code>CoachFollowupParser</code> — re-themed Clinical; the M9 specialist-view panel.</td></tr>
+  </tbody>
+</table>
+<div class="m6-callout note">
+  <b>Already in place.</b> <code>Services/API.swift</code> + <code>APIClient.swift</code> route to the deployed Worker <code>hepatica-api.veribag.workers.dev</code> (<code>/deepseek</code>, <code>/openai</code>). <code>liver_knowledge.sqlite</code> is built and sits in <code>Hepatica/Hepatica/Resources/</code>. The build only adds the five Swift components above — no new infrastructure.
+</div>
+
+<!-- ===== 21.2 THE RAG ===== -->
+<h2 id="coach-rag">21.2 · How the RAG is loaded &amp; works</h2>
+<p class="lede">The on-device knowledge base — how it ships, how it loads, how a query finds its sources. No sqlite-vec extension: retrieval is pure-Swift cosine over an in-memory cache.</p>
+<table class="tab-spec">
+  <thead><tr><th>Stage</th><th>What happens</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">Ship</td><td><code>liver_knowledge.sqlite</code> (~7.6 MB — <code>meta</code> / <code>sources</code> / <code>chunks</code>; each chunk a 512-float embedding as a BLOB) is bundled in <code>Resources/</code> — <b>add it to the bundle target in <code>project.yml</code></b>. Built by the <code>scripts/rag/</code> pipeline from AASLD · AGA · EASL · FDA · PubMed (per <code>RAG.md</code>).</td></tr>
+    <tr><td class="tabname">Load</td><td>At app launch <code>RAGService.shared</code> opens the DB, reads every chunk + source into memory (<code>~3–8 MB</code> resident), then closes the file. All later queries hit the in-memory cache. DB missing/corrupt → silent graceful degrade (RAG returns empty).</td></tr>
+    <tr><td class="tabname">Embed the query</td><td>The user's question is embedded via the Worker <code>/openai</code> route — <code>text-embedding-3-small</code> @ <b>512 dimensions</b> (same model + dims the corpus was built with). An LRU cache (≤100 entries) avoids re-embedding repeats.</td></tr>
+    <tr><td class="tabname">Retrieve</td><td>Brute-force cosine similarity of the query vector against every cached chunk; sort; take <b>top-K (K≈5)</b>. Dimension mismatch (≠512) → return empty, never crash.</td></tr>
+    <tr><td class="tabname">Hand off</td><td>The top-K chunks + their source citations are passed to <code>PromptLibrary</code> for the system-prompt RAG block. Zero hits → the no-RAG-hit honest hedge (§21.4).</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== 21.3 THE PIPELINE ===== -->
+<h2 id="coach-pipeline">21.3 · The CoachService pipeline</h2>
+<p class="lede">What happens between the user tapping send and the answer appearing. Seven steps; the intent classifier and the no-hit hedge are the compliance guards.</p>
+<div class="loop-wrap">
+  <div class="loop-row">
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">1</span><span class="ls-ico">✍️</span></div><div class="ls-t">User message</div><div class="ls-d">Sent with the thread history + the thread's cohort snapshot.</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step hot"><div class="ls-top"><span class="ls-n">2</span><span class="ls-ico">🛡</span></div><div class="ls-t">Intent classifier</div><div class="ls-d">Client-side. Crisis (jaundice, vomiting blood, withdrawal, suicidal) · diagnosis-ask · dosing-ask → a canned refusal pivot, no LLM call.</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">3</span><span class="ls-ico">🔍</span></div><div class="ls-t">RAG retrieve</div><div class="ls-d">§21.2 — embed the query, cosine top-K liver-corpus chunks + citations.</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">4</span><span class="ls-ico">🧩</span></div><div class="ls-t">Context resolution</div><div class="ls-d">Inject the user's own loaded data — recent labs ≤90d, meals, streak, cohort — so the Coach answers about <em>their</em> numbers.</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">5</span><span class="ls-ico">📝</span></div><div class="ls-t">Assemble prompt</div><div class="ls-d">PromptLibrary builds the system prompt — base + compliance + cohort tone + specialist view + RAG block (§21.4).</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">6</span><span class="ls-ico">🤖</span></div><div class="ls-t">DeepSeek</div><div class="ls-d">Worker <code>/deepseek</code> — <code>deepseek-chat</code>, temp 0.4, max 1200, non-streaming, 30s timeout.</div></div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step"><div class="ls-top"><span class="ls-n">7</span><span class="ls-ico">✨</span></div><div class="ls-t">Parse → answer</div><div class="ls-d">Extract text, <code>[cN]</code> citations and the <code>[follow_ups]</code> block → <code>CoachAnswer</code> → render.</div></div>
+  </div>
+  <div class="loop-repeat"><span class="lr-ico">↻</span> Steps 2 and the no-hit hedge are the guards — the Coach never diagnoses, never invents a citation, never hangs offline (canned data-summary fallback).</div>
+</div>
+
+<!-- ===== 21.4 PROMPT LIBRARY ===== -->
+<h2 id="coach-prompt">21.4 · The prompt library — views, cohorts, compliance</h2>
+<p class="lede">The system prompt is assembled from blocks. The base role + compliance rules are constant; the specialist view and the cohort tone swap per thread; the RAG block swaps per query.</p>
+<table class="tab-spec">
+  <thead><tr><th>Block</th><th>Content</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">Base role</td><td>"An educational liver-health coach grounded in AASLD / AGA / EASL / Mayo / PubMed. Not a physician — does not diagnose, prescribe or stage."</td></tr>
+    <tr><td class="tabname">Compliance rules</td><td>From <code>COMPLIANCE.md</code> — no diagnosis ("consistent with", never "you have NAFLD"); no "cure / reverse" as a cure claim; no FibroScan/FIB-4 staging; no medication dosing; Rezdiffra disclaimer; alcohol framed as recovery, never judgment; every answer cites or pivots.</td></tr>
+    <tr><td class="tabname">3 specialist views</td><td>🫀 <b>Hepatology</b> (AASLD · EASL · Mayo — enzymes, fibrosis, diet) · 🍺 <b>Recovery</b> (NIAAA · AGA — alcohol, recovery timelines, non-judgmental) · ⚖️ <b>Metabolic</b> (ADA · Endocrine Society — glucose, weight, GLP-1, PCOS). A view is a guideline perspective, never a named person.</td></tr>
+    <tr><td class="tabname">Cohort → default view</td><td>🍷 Nick → Hepatology · 💉 Greta → Metabolic · 🍔 Pete → Metabolic · 💊 Rachel → Hepatology · 🧬 Patricia → Metabolic · 🍺 Robert → Recovery. The answer leads with that view; the other two collapse into "+ 2 more views" (M9 v2).</td></tr>
+    <tr><td class="tabname">Cohort tone</td><td>6 tones (M9 v3) — Nick empathetic-educator · Greta progress-focused · Pete triage-guide · Rachel clinical-partner · Patricia hormonal-systems · Robert non-judgmental-recovery.</td></tr>
+    <tr><td class="tabname">Escalation triggers</td><td>Jaundice · vomiting blood · severe abdominal pain · alcohol-withdrawal symptoms · suicidal ideation → an immediate "seek urgent care / 988" pivot, ahead of any RAG answer.</td></tr>
+    <tr><td class="tabname">Response shape</td><td>Verdict-first (M9 v2) — a plain bold answer, then the cited reasoning, then a calm disclaimer. Inline <code>[cN]</code> citation markers; a closing <code>[follow_ups]</code> block of ≤2 next questions.</td></tr>
+    <tr><td class="tabname">No-RAG-hit hedge</td><td>Zero chunks retrieved → the prompt instructs an explicit hedge ("I don't have a specific reference for this — here's general guidance, confirm with your doctor"). Never fabricate a citation.</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== 21.5 COACH UI + RECONCILE ===== -->
+<h2 id="coach-ui">21.5 · The Coach UI &amp; reconciling with the built Swift</h2>
+<p class="lede">M9 designed the screen; the built app has a <code>CoachView</code> stub. The UI is copied from Cysta's Coach feature and re-themed Clinical.</p>
+<table class="tab-spec">
+  <thead><tr><th>Element</th><th>Built today</th><th>The build</th><th>Action</th></tr></thead>
+  <tbody>
+    <tr><td class="tabname">CoachView</td><td><code>Tabs/CoachView.swift</code> — a <code>StubScreen</code>.</td><td>Thread list → <code>ChatThreadDetailView</code> (scroll + composer), the M9 specialist-view panel.</td><td><b style="color:var(--cta-deep);">BUILD</b></td></tr>
+    <tr><td class="tabname">MessageBubble</td><td>—</td><td>User right / assistant left + safety strip + <code>SourceBlock</code> + follow-up chips. <b>Renders <code>**bold**</code> / <code>*italic*</code> via <code>AttributedString(markdown:)</code> and strips inline <code>[cN]</code> markers</b> — so asterisks become bold, never literal text.</td><td><b style="color:var(--cta-deep);">BUILD</b></td></tr>
+    <tr><td class="tabname">SourceBlock</td><td>—</td><td>Collapsible "N sources" chip → numbered citation cards, tap → in-app browser.</td><td><b style="color:var(--cta-deep);">BUILD</b></td></tr>
+    <tr><td class="tabname">API routes</td><td><code>API.swift</code> — <code>/deepseek</code> + <code>/openai</code> defined &amp; reachable.</td><td>Unchanged — <code>CoachService</code> / <code>RAGService</code> call them.</td><td><b class="ok">KEEP</b></td></tr>
+    <tr><td class="tabname">Corpus</td><td><code>liver_knowledge.sqlite</code> in <code>Resources/</code>.</td><td>Add to the <code>project.yml</code> bundle target so it ships in the app.</td><td><b style="color:var(--alert);">WIRE</b></td></tr>
+  </tbody>
+</table>
+<div class="m6-callout note">
+  <b>The «asterisks» fix.</b> Raw DeepSeek output contains Markdown (<code>**bold**</code>) and inline <code>[c1]</code> citation markers. Rendered verbatim, the asterisks show as literal characters — the "system error" the founder flagged. The fix is the Cysta <code>MessageBubble</code> pattern, copied as-is: convert the text with <code>AttributedString(markdown:&nbsp;.inlineOnlyPreservingWhitespace)</code> so <code>**…**</code> renders bold and <code>*…*</code> italic, and regex-strip the <code>[cN]</code> markers from the body (the citations render in <code>SourceBlock</code> instead). Locked into the M21 build spec.
+</div>
+
+<!-- ===== 21.6 READY ===== -->
+<h2 id="coach-summary">21.6 · Module 21 — ready for review</h2>
+<div class="m6-callout win">
+  <b>Module 21 — ready for founder review.</b> The Coach engine is specced as five components copied from Cysta AI &amp; Salvora — <code>RAGService</code>, <code>CoachService</code>, <code>PromptLibrary</code>, <code>CoachThreadStore</code>, the Coach UI — re-pointed at <code>liver_knowledge.sqlite</code> and the 6 cohorts. §21.2 documents how the RAG ships, loads and retrieves (in-memory cosine, 512-d, top-K); §21.3 the 7-step pipeline with the client-side intent classifier; §21.4 the prompt library — 3 specialist views, 6 cohort tones, the compliance rules, the no-hit hedge; §21.5 the Coach UI + the Markdown-rendering fix for the asterisks bug. <b>With M20 + M21 the workbench covers Modules 1–21 — the product is designed end to end. The Swift V1 build is the next track, starting with the D20 funnel reconcile.</b>
+</div>
+
 <footer>
-  <b>Hepatica — Funnel &amp; Post-Paywall Workbench · Part 3</b> · continues <b>flow2.html</b> (M11–14) · companion to <b>design.html</b> (M1–7) &amp; <b>flow.html</b> (M8–10) · updated 2026-05-21 · sibling pattern: Folik · Calibrum · Cysta AI.<br>
-  Module 15 — Onboarding: the WOW-then-justify formula · 3 consilia (structure · length · trust) · the 8-screen pre-auth flow worked for Robert · the WOW screen × 6 cohorts · the honest evidence proof screen · the §15.9 reviews screen (shipped dark) · Swift reconciliation. Module 16 — Paywall: the consilium · the cohort-routed fear-playbook worked for Robert · the paywall × 6 cohorts · Swift reconciliation. Module 17 — fresh-eyes flow restructure: the findings table · the tab-order reconciliation vote · applied &amp; carried. Module 18 — post-paywall onboarding: the Setup-flow consilium · the reconciled Disclaimer gate · the 5-card walkthrough worked for Nick · Setup × 6 cohorts · Swift reconciliation. Module 19 — in-app illustration &amp; hero asset system: the asset-style consilium (B · calm clinical illustration) · the illustration-system spec. The workbench now covers Modules 1–19. Nothing locked; on review the screens become the spec for the Swift V1 build &amp; rework.
+  <b>Hepatica — Funnel, Post-Paywall &amp; Engine Workbench · Part 3</b> · continues <b>flow2.html</b> (M11–14) · companion to <b>design.html</b> (M1–7) &amp; <b>flow.html</b> (M8–10) · updated 2026-05-21 · sibling pattern: Folik · Calibrum · Cysta AI · Salvora.<br>
+  Module 15 — Onboarding · Module 16 — Paywall · Module 17 — fresh-eyes flow restructure · Module 18 — post-paywall onboarding (Disclaimer + Setup) · Module 19 — in-app illustration &amp; hero asset system (B · calm clinical illustration) · Module 20 — user-action matrix (coverage audit, 9 gaps closed, debug menu + TestFlight wrapper) · Module 21 — the Coach engine (RAG × DeepSeek, modeled on Cysta AI &amp; Salvora). The workbench now covers Modules 1–21 — the product is designed end to end. Nothing locked; on review the screens become the spec for the Swift V1 build &amp; rework, which starts with the D20 funnel reconcile.
 </footer>
 
 </body>
