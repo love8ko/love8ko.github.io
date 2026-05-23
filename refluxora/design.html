@@ -344,6 +344,81 @@
   /* Section headings inside Module 2 */
   h2.m2-head { font-size: 22px; margin: 28px 0 6px; color: #18524F; }
   h2.m2-head .m2-num { font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; background: #C5DDD7; color: #18524F; padding: 3px 9px; border-radius: 6px; margin-right: 10px; vertical-align: middle; }
+
+  /* ==================== MODULE 3 · SCREENSHOTS ==================== */
+  .shot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 14px; margin-top: 14px; }
+  .shot-card { background: var(--card); border: 1px solid var(--divider); border-radius: 18px; padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden; }
+  .shot-card.hero { border-left: 4px solid var(--cta); }
+  .shot-card.killer { border-left: 4px solid var(--brand); }
+  .shot-card.differentiator { border-left: 4px solid var(--brand-deep); }
+  .shot-card.trust { border-left: 4px solid var(--brand-mid); }
+  .shot-num { position: absolute; top: 14px; right: 16px; font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; background: var(--cta); color: #fff; padding: 3px 9px; border-radius: 6px; }
+  .shot-tier { font-size: 9.5px; font-weight: 800; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-3); }
+  .shot-headline { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-size: 19px; font-weight: 800; color: var(--brand-deep); line-height: 1.2; margin-top: -4px; padding-right: 40px; }
+  .shot-subline { font-size: 13px; color: var(--ink-2); line-height: 1.5; font-style: italic; }
+  .shot-why { font-size: 11.5px; color: var(--ink-2); line-height: 1.5; background: var(--bg-soft); border-left: 3px solid var(--brand-soft); padding: 8px 10px; border-radius: 6px; }
+  .shot-why b { color: var(--brand-deep); font-weight: 700; }
+  .shot-row { display: flex; gap: 10px; align-items: flex-start; }
+  .shot-mockup {
+    flex: 0 0 130px; background: var(--bg); border-radius: 18px;
+    border: 6px solid #18524F; padding: 14px 8px 8px; position: relative;
+    min-height: 220px; display: flex; flex-direction: column; gap: 6px;
+    box-shadow: 0 6px 18px rgba(20, 40, 40, 0.16);
+  }
+  .shot-mockup::before { content: ''; position: absolute; top: 4px; left: 50%; transform: translateX(-50%); width: 42px; height: 10px; border-radius: 0 0 10px 10px; background: #18524F; }
+  .shot-mockup .mock-headline { font-size: 9px; font-weight: 800; color: var(--brand-deep); line-height: 1.2; padding: 2px 2px; }
+  .shot-mockup .mock-sub { font-size: 7.5px; color: var(--ink-2); line-height: 1.3; padding: 0 2px 4px; }
+  .shot-mockup .mock-card { background: #fff; border-radius: 8px; padding: 7px 6px; flex: 1; display: flex; flex-direction: column; gap: 4px; border: 1px solid var(--divider); }
+  .shot-mockup .mock-big { font-family: ui-monospace, "SF Mono", monospace; font-size: 26px; font-weight: 800; color: var(--brand-deep); text-align: center; line-height: 1; margin: 4px 0; }
+  .shot-mockup .mock-big.cta { color: var(--cta-deep); }
+  .shot-mockup .mock-label { font-size: 7.5px; color: var(--ink-2); text-align: center; font-weight: 600; }
+  .shot-mockup .mock-bar { background: var(--brand); height: 4px; border-radius: 2px; }
+  .shot-mockup .mock-bar.short { width: 30%; }
+  .shot-mockup .mock-bar.mid { width: 60%; }
+  .shot-mockup .mock-bar.full { width: 100%; background: var(--cta); }
+  .shot-mockup .mock-chip { font-size: 7px; font-weight: 700; padding: 2px 5px; border-radius: 999px; display: inline-block; }
+  .shot-mockup .mock-chip.good { background: var(--good-bg); color: var(--brand-deep); }
+  .shot-mockup .mock-chip.watch { background: var(--watch-bg); color: var(--cta-deep); }
+  .shot-mockup .mock-chip.alert { background: var(--alert-bg); color: #6B3A12; }
+  .shot-mockup .mock-tabbar { display: flex; justify-content: space-around; gap: 3px; padding-top: 4px; border-top: 1px solid var(--divider); margin-top: 2px; }
+  .shot-mockup .mock-tab { font-size: 6.5px; color: var(--ink-3); font-weight: 700; }
+  .shot-mockup .mock-tab.active { color: var(--brand-deep); }
+  .shot-mockup .mock-fab { width: 18px; height: 18px; background: var(--cta); border-radius: 999px; margin: -10px auto 0; color: #fff; text-align: center; font-size: 12px; line-height: 18px; font-weight: 800; box-shadow: 0 2px 6px rgba(140,106,59,0.4); }
+  .shot-mockup .mock-gauge { width: 90px; height: 50px; border-radius: 100px 100px 0 0; background: linear-gradient(90deg, var(--brand-soft), var(--brand), var(--brand-deep)); margin: 6px auto 0; position: relative; overflow: hidden; }
+  .shot-mockup .mock-gauge::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 2px; height: 36px; background: var(--cta); transform-origin: bottom center; transform: translateX(-50%) rotate(28deg); }
+  .shot-mockup .mock-grid-2x3 { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .shot-mockup .mock-mini-card { background: var(--bg-soft); border-radius: 4px; padding: 3px 4px; font-size: 7px; color: var(--ink); border: 1px solid var(--divider); text-align: center; line-height: 1.3; }
+  .shot-mockup .mock-pill { font-size: 7px; font-weight: 700; background: var(--brand); color: #fff; padding: 2px 6px; border-radius: 999px; display: inline-block; }
+
+  .shot-content { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .shot-bullets { list-style: none; padding: 0; margin: 0; }
+  .shot-bullets li { font-size: 11.5px; color: var(--ink); padding: 3px 0 3px 16px; position: relative; line-height: 1.45; }
+  .shot-bullets li::before { content: '✓'; position: absolute; left: 0; color: var(--brand); font-weight: 800; }
+  .shot-illust { font-size: 11px; color: var(--ink-2); line-height: 1.55; }
+  .shot-illust b { color: var(--brand-deep); font-weight: 700; }
+  .shot-illust .illust-label { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-right: 4px; }
+
+  /* Summary table */
+  table.shot-summary { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 14px; overflow: hidden; border: 1px solid var(--divider); margin-top: 16px; }
+  table.shot-summary th, table.shot-summary td { padding: 9px 12px; text-align: left; font-size: 12px; border-bottom: 1px solid var(--divider); vertical-align: top; }
+  table.shot-summary th { background: var(--brand-soft); color: var(--brand-deep); font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 800; }
+  table.shot-summary tr:last-child td { border-bottom: none; }
+  table.shot-summary td.num { font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; color: var(--cta-deep); text-align: center; width: 36px; }
+  table.shot-summary td b { color: var(--brand-deep); }
+
+  /* Cohort accent map */
+  .accent-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin-top: 12px; }
+  .accent-card { background: var(--card); border: 1px solid var(--divider); border-radius: 10px; padding: 10px 12px; display: flex; gap: 10px; align-items: center; }
+  .accent-card .ac-num { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; background: var(--cta); color: #fff; padding: 2px 7px; border-radius: 5px; flex-shrink: 0; }
+  .accent-card .ac-swatch { display: flex; gap: 3px; flex-shrink: 0; }
+  .accent-card .ac-swatch .sw { width: 16px; height: 16px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.10); }
+  .accent-card .ac-meta { font-size: 11px; color: var(--ink-2); line-height: 1.4; flex: 1; }
+  .accent-card .ac-meta b { color: var(--ink); font-weight: 700; display: block; font-size: 11.5px; }
+
+  /* Production checklist */
+  ul.shot-checklist { margin-top: 12px; background: var(--card); border: 1px solid var(--divider); border-radius: 14px; padding: 14px 18px 14px 36px; line-height: 1.65; }
+  ul.shot-checklist li { font-size: 12.5px; color: var(--ink); margin-bottom: 6px; }
+  ul.shot-checklist li b { color: var(--brand-deep); }
 </style>
 </head>
 <body>
@@ -362,6 +437,13 @@
   <a href="#cohorts">Cohorts</a>
   <a href="#jtbds">JTBDs</a>
   <a href="#jtbd-scan">JTBD scan</a>
+  <span class="sep"></span>
+  <span class="nav-num">M3</span>
+  <a href="#shot-overview">Screenshots</a>
+  <a href="#shot-cards">8 shots</a>
+  <a href="#shot-accent">Accent map</a>
+  <span class="sep"></span>
+  <a href="flow.html">→ flow.html</a>
 </nav>
 
 <h1>Refluxora — Design System (locked)</h1>
@@ -970,6 +1052,385 @@
 
 </div>
 <!-- ==================== /MODULE 2 ==================== -->
+
+
+<!-- ==================== MODULE 3 · SCREENSHOTS ==================== -->
+<div class="cand-a">
+
+<div class="module-banner" id="module-3">
+  <span class="num">МОДУЛЬ 3</span>
+  <h2>Screenshots · 8-shot universal carousel</h2>
+  <p class="desc">Designer handoff for App Store v1. 8 shots × 3 device sizes × 5 locales = 120 PNGs. Single universal listing (per-CPP variants deferred to v4 if RTC &lt; 4%). Priority order: Apple shows shots 1-3 in search results → they carry the conversion. Shots 4-6 deepen value, 7-8 build trust/retention. Full spec: <a href="https://github.com/love8ko/Refluxora/blob/main/SCREENSHOTS.md" style="color:#FBF8F2; text-decoration: underline;"><code>SCREENSHOTS.md</code></a>.</p>
+</div>
+
+<h2 class="m2-head" id="shot-overview"><span class="m2-num">3.1</span>Carousel overview</h2>
+<p class="lede">Pain-first headlines (≤32 chars), supporting sublines (≤60 chars), 3-4 micro-proof bullets per shot. Each shot maps to a Tier 1 JTBD and a locked tab from <a href="flow.html">flow.html</a>. Banned words: <code>best</code> · <code>#1</code> · <code>cure</code> · <code>diagnose</code> · <code>treat</code> · <code>guaranteed</code>.</p>
+
+<table class="shot-summary">
+  <thead><tr><th>#</th><th>Headline</th><th>Hero element · UI tab</th><th>Cohort lean</th><th>JTBD</th><th>Tier</th></tr></thead>
+  <tbody>
+    <tr><td class="num">1</td><td><b>Reflux ruling your meals?</b></td><td>Days-since-flare counter · Today</td><td>Universal (Brian glyph)</td><td>J5 triage</td><td>Hero pain</td></tr>
+    <tr><td class="num">2</td><td><b>Built for YOUR reflux</b></td><td>6-cohort grid · Onboarding</td><td>All</td><td>J5 triage</td><td>Wedge</td></tr>
+    <tr><td class="num">3</td><td><b>Snap meal → verdict in 2s</b></td><td>Photo + severity pills · +Log</td><td>Brian · Frank · Sam</td><td>J1 eat</td><td>Killer #1</td></tr>
+    <tr><td class="num">4</td><td><b>Ask anything. Cited answers.</b></td><td>Coach chat + RAG · Coach</td><td>Universal</td><td>J2 · J8</td><td>Killer #2</td></tr>
+    <tr><td class="num">5</td><td><b>Silent reflux finally measured</b></td><td>RSI gauge at 18 · Today (Larry)</td><td>Larry ⭐</td><td>J8 LPR</td><td>Differentiator</td></tr>
+    <tr><td class="num">6</td><td><b>See if your meds work</b></td><td>Voquezna 8-week chart · Progress</td><td>Brian · Larry · Anna</td><td>J6 drugs</td><td>Add-on driver</td></tr>
+    <tr><td class="num">7</td><td><b>Your doctor speaks data</b></td><td>PDF export preview · Progress</td><td>All</td><td>J6 · J8</td><td>Trust</td></tr>
+    <tr><td class="num">8</td><td><b>Your plan. Today.</b></td><td>Plan tab + add-on gates · Plan</td><td>All</td><td>J3 · J5</td><td>Retention</td></tr>
+  </tbody>
+</table>
+
+<h2 class="m2-head" id="shot-cards"><span class="m2-num">3.2</span>Shot-by-shot designer brief</h2>
+<p class="lede">Each card: pain-first headline + subline + why it earned this slot + 3-4 bullets + illustration spec + mini-mockup of the UI screen to be captured. Mockups are conceptual — actual screens captured from <code>Debug Day-30</code> preset (см. <code>APP_ARCHITECTURE.md</code>).</p>
+
+<div class="shot-grid">
+
+  <!-- SHOT 1 -->
+  <div class="shot-card hero">
+    <div class="shot-num">SHOT 1</div>
+    <div class="shot-tier">Hero pain · Universal entry</div>
+    <div class="shot-headline">Reflux ruling your meals?</div>
+    <div class="shot-subline">Track triggers, ease nights, talk to your doctor with data.</div>
+    <div class="shot-why"><b>Why slot #1:</b> First impression. Must read in 2 seconds at search-result scale. Pain-first hook works across all 6 cohorts without picking sides. No feature claim yet — sets the emotional frame.</div>
+    <div class="shot-row">
+      <div class="shot-mockup">
+        <div class="mock-headline">Good morning, Brian</div>
+        <div class="mock-sub">Day 14 · Severe PPI</div>
+        <div class="mock-card">
+          <div class="mock-big">12</div>
+          <div class="mock-label">days since last flare</div>
+          <div class="mock-bar full" style="margin-top:6px;"></div>
+        </div>
+        <div class="mock-grid-2x3">
+          <div class="mock-mini-card">Tonight ready</div>
+          <div class="mock-mini-card">Coach: ask</div>
+        </div>
+        <div class="mock-tabbar">
+          <span class="mock-tab active">Today</span><span class="mock-tab">Coach</span><span class="mock-tab">·</span><span class="mock-tab">Prog</span><span class="mock-tab">Plan</span>
+        </div>
+        <div class="mock-fab">+</div>
+      </div>
+      <div class="shot-content">
+        <ul class="shot-bullets">
+          <li>Personalized for you</li>
+          <li>ACG · AGA · AAO-HNS sources</li>
+          <li>Health &amp; Fitness — not medical</li>
+        </ul>
+        <div class="shot-illust">
+          <span class="illust-label">UI</span>Today tab — <b>Brian's hero</b> (152pt mint counter). Cohort tempo strip above. 3 secondary cards. Floating tab bar.<br>
+          <span class="illust-label">BG</span>Soft cream <code>#F5F1EA</code>, optional ghost-leaf motif ≤8% opacity.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT 2 -->
+  <div class="shot-card hero">
+    <div class="shot-num">SHOT 2</div>
+    <div class="shot-tier">Wedge · 6-cohort differentiator</div>
+    <div class="shot-headline">Built for YOUR reflux</div>
+    <div class="shot-subline">Pregnancy · Foodie · PPI taper · LPR · Senior · Severe.</div>
+    <div class="shot-why"><b>Why slot #2:</b> #1 differentiator vs NoBurn (one-size-fits-all) and Cara Care (stale, German-only). Communicating "we know your specific story" in shot 2 doubles tap-through for browsers who'd bounce thinking "another generic GERD app."</div>
+    <div class="shot-row">
+      <div class="shot-mockup">
+        <div class="mock-headline">Which one sounds like you?</div>
+        <div class="mock-sub">Tap to start your path</div>
+        <div class="mock-grid-2x3" style="grid-template-rows: repeat(3, 1fr); flex:1;">
+          <div class="mock-mini-card">🔥 Brian<br><span style="opacity:.7">PPI not enough</span></div>
+          <div class="mock-mini-card">🤰 Patricia<br><span style="opacity:.7">Safe for baby?</span></div>
+          <div class="mock-mini-card">🍷 Frank<br><span style="opacity:.7">Don't quit coffee</span></div>
+          <div class="mock-mini-card">👴 Sam<br><span style="opacity:.7">7 meds + reflux</span></div>
+          <div class="mock-mini-card">🌿 Anna<br><span style="opacity:.7">Off PPI 12wks</span></div>
+          <div class="mock-mini-card" style="border-color:var(--cta);">🎤 Larry ⭐<br><span style="opacity:.7">Silent reflux</span></div>
+        </div>
+      </div>
+      <div class="shot-content">
+        <ul class="shot-bullets">
+          <li>7-question triage</li>
+          <li>Re-route anytime</li>
+          <li>One app, six paths</li>
+        </ul>
+        <div class="shot-illust">
+          <span class="illust-label">UI</span>Onboarding cohort grid — 6 cards (2×3) with emoji + name + ≤24-char pain quote. <b>Mint border</b> on selected.<br>
+          <span class="illust-label">BG</span>Cream with subtle radial brand-soft glow center. No tab bar (pre-onboarding).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT 3 -->
+  <div class="shot-card killer">
+    <div class="shot-num">SHOT 3</div>
+    <div class="shot-tier">Killer feature #1 · Photo scanner</div>
+    <div class="shot-headline">Snap meal → verdict in 2s</div>
+    <div class="shot-subline">Mint = safe. Gold = watch. Coral = trigger.</div>
+    <div class="shot-why"><b>Why slot #3:</b> Answers JTBD J1 ("Tell me what I can eat") — highest-intensity job for 4 of 6 cohorts. Food photos perform well in carousel thumbnails. Proven AcidWise DNA feature.</div>
+    <div class="shot-row">
+      <div class="shot-mockup">
+        <div class="mock-headline">Italian dinner</div>
+        <div class="mock-sub">8:42 PM · 2h before bed</div>
+        <div class="mock-card" style="background: linear-gradient(135deg, #8C6A3B, #C49B5E);">
+          <div style="text-align:center; font-size:24px; padding:8px 0;">🍝🍷</div>
+          <span class="mock-chip alert" style="align-self:flex-start;">🔴 Trigger 8/10</span>
+        </div>
+        <div style="font-size:7px; display:flex; flex-direction:column; gap:2px;">
+          <div><span class="mock-chip alert">🔴</span> Tomato sauce</div>
+          <div><span class="mock-chip watch">🟡</span> Red wine</div>
+          <div><span class="mock-chip watch">🟡</span> Garlic</div>
+          <div><span class="mock-chip good">🟢</span> Whole grain</div>
+        </div>
+      </div>
+      <div class="shot-content">
+        <ul class="shot-bullets">
+          <li>Trained on 12K reflux foods</li>
+          <li>Per-ingredient breakdown</li>
+          <li>Save to your trigger list</li>
+        </ul>
+        <div class="shot-illust">
+          <span class="illust-label">UI</span>+Log meal result — top: real Italian dinner photo (pasta + wine + garlic bread). Bottom: 4 ingredient rows with verdict pills. <b>Time stamp</b> "8:42 PM · 2h before bed".<br>
+          <span class="illust-label">BG</span>Dark restaurant ambient ≤30% opacity outside frame — "real life" framing.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT 4 -->
+  <div class="shot-card killer">
+    <div class="shot-num">SHOT 4</div>
+    <div class="shot-tier">Killer feature #2 · AI Coach</div>
+    <div class="shot-headline">Ask anything. Cited answers.</div>
+    <div class="shot-subline">DeepSeek V3 + on-device RAG: ACG, AGA, AAO-HNS, Koufman.</div>
+    <div class="shot-why"><b>Why slot #4:</b> Differentiator vs every competitor (NoBurn has no AI, Cara Care AI is stale). Answers J2 (decode labs), J8 (prognosis fear), J6 (drug efficacy). Daily-habit hook — once user asks 3 questions, retention curves diverge sharply.</div>
+    <div class="shot-row">
+      <div class="shot-mockup">
+        <div class="mock-headline">Coach</div>
+        <div class="mock-sub">Today's prompts for Brian →</div>
+        <div style="background: var(--cta-soft); border-radius: 8px; padding: 4px 6px; font-size: 7px; align-self: flex-end; max-width: 80%;">PPI not working — what next?</div>
+        <div style="background: var(--ai-bg); border: 1px solid var(--ai-border); border-radius: 8px; padding: 5px 6px; font-size: 7px; max-width: 90%; line-height: 1.4;">Refractory GERD affects 30-40% of PPI users. Options to discuss: 1) optimize timing, 2) switch to vonoprazan, 3) test H. pylori. <span style="color: var(--brand-deep); font-weight: 700;">[c1][c2][c3]</span></div>
+        <span class="mock-chip good" style="align-self:flex-start;">✓ Grounded · 3 sources</span>
+        <div style="background: var(--watch-bg); font-size: 6.5px; padding: 3px 5px; border-radius: 5px; color: var(--cta-deep); line-height: 1.3;">⚠ Discuss with your clinician</div>
+      </div>
+      <div class="shot-content">
+        <ul class="shot-bullets">
+          <li>Sources every answer</li>
+          <li>Cohort-aware prompts</li>
+          <li>Refuses dosing/diagnosis</li>
+          <li>Works offline (sqlite-vec)</li>
+        </ul>
+        <div class="shot-illust">
+          <span class="illust-label">UI</span>Coach chat — full Q+A. User bubble (gold cta-soft), assistant (mint ai-bg + border) with <b>[c1][c2][c3]</b> citation refs. Confidence chip + disclaimer ribbon (watch-bg). Follow-up chips below.<br>
+          <span class="illust-label">BG</span>Cream — clean, no distraction.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT 5 -->
+  <div class="shot-card differentiator">
+    <div class="shot-num">SHOT 5</div>
+    <div class="shot-tier">Differentiator · LPR uncontested</div>
+    <div class="shot-headline">Silent reflux finally measured</div>
+    <div class="shot-subline">RSI 9-question gauge. Sunday update. ENT-ready report.</div>
+    <div class="shot-why"><b>Why slot #5:</b> Larry cohort = 30M Americans, mostly undiagnosed, zero apps for them. THE differentiator no competitor has. Drives highest-margin add-on (LPR Pro $39.99/yr). Even non-Larry browsers see "this app takes obscure conditions seriously."</div>
+    <div class="shot-row">
+      <div class="shot-mockup">
+        <div class="mock-headline">Larry · Sunday</div>
+        <div class="mock-sub">12-week trajectory</div>
+        <div class="mock-card" style="padding-bottom: 4px;">
+          <div class="mock-gauge"></div>
+          <div class="mock-big" style="margin: 2px 0; font-size: 22px;">18</div>
+          <div class="mock-label">RSI · threshold 13</div>
+          <div style="background: var(--watch-bg); font-size: 6.5px; padding: 2px 4px; border-radius: 4px; color: var(--cta-deep); margin-top: 3px; line-height: 1.2;">Screening — discuss w/ ENT</div>
+        </div>
+        <div style="font-size: 7px; color: var(--brand-deep); text-align: center; font-weight: 700;">24 → 18 → 16 → 14 ↘</div>
+      </div>
+      <div class="shot-content">
+        <ul class="shot-bullets">
+          <li>Belafsky 9-symptom scale</li>
+          <li>Weekly trajectory chart</li>
+          <li>Acid Watcher diet built in</li>
+        </ul>
+        <div class="shot-illust">
+          <span class="illust-label">UI</span>Today hero (Larry) — <b>280×180pt semicircular RSI gauge</b>, score 18 in 144pt brand-deep, gold needle. Threshold tick 13. Inline disclaimer ribbon. Below: 12-week trend line 24→14 with "Voquezna started" marker.<br>
+          <span class="illust-label">BG</span>Cream + subtle waveform graphic ≤10% opacity (singer/podcaster prop).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT 6 -->
+  <div class="shot-card differentiator">
+    <div class="shot-num">SHOT 6</div>
+    <div class="shot-tier">Add-on driver · Drug efficacy</div>
+    <div class="shot-headline">See if your meds work</div>
+    <div class="shot-subline">Voquezna, omeprazole, Pepcid — week-by-week efficacy.</div>
+    <div class="shot-why"><b>Why slot #6:</b> Voquezna ($700/mo, FDA Nov 2023) has zero companion apps. Drives Brian + Larry + Anna add-ons. Universal pain ("I take 4 meds, no idea if they help"). Insurance-appeal templates monetize Voquezna Companion add-on.</div>
+    <div class="shot-row">
+      <div class="shot-mockup">
+        <div class="mock-headline">Voquezna · Day 28</div>
+        <div class="mock-sub">8-week efficacy</div>
+        <div class="mock-card" style="gap:3px;">
+          <div style="display:flex; gap:2px; align-items:flex-end; height: 50px; padding: 4px 0;">
+            <div style="background:#9BA8AC; width:10px; height:90%; border-radius:2px 2px 0 0;"></div>
+            <div style="background:var(--brand); width:10px; height:75%; border-radius:2px 2px 0 0;"></div>
+            <div style="background:var(--brand); width:10px; height:45%; border-radius:2px 2px 0 0;"></div>
+            <div style="background:var(--brand); width:10px; height:30%; border-radius:2px 2px 0 0;"></div>
+            <div style="background:var(--brand); width:10px; height:15%; border-radius:2px 2px 0 0;"></div>
+          </div>
+          <div class="mock-big cta" style="font-size: 18px;">−83%</div>
+          <div class="mock-label">heartburn days</div>
+        </div>
+        <div style="background: var(--cta); color:#fff; font-size: 7px; text-align:center; padding: 3px 0; border-radius: 4px; font-weight: 700;">Build insurance PDF →</div>
+      </div>
+      <div class="shot-content">
+        <ul class="shot-bullets">
+          <li>Symptom ↔ drug correlation</li>
+          <li>Insurance appeal templates</li>
+          <li>Pre-/post-comparison charts</li>
+        </ul>
+        <div class="shot-illust">
+          <span class="illust-label">UI</span>Progress → Voquezna efficacy view. Header: "Voquezna 20mg · Day 28" + mint ring 28/56. Main: <b>8-week bar chart</b> heartburn days/week (baseline 6 → week 8: 1). Stat callout <b>"−83%"</b>. Footer CTA: "Build insurance appeal PDF →" gold.<br>
+          <span class="illust-label">BG</span>Cream, no props — chart is the hero.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT 7 -->
+  <div class="shot-card trust">
+    <div class="shot-num">SHOT 7</div>
+    <div class="shot-tier">Trust · Clinician validation</div>
+    <div class="shot-headline">Your doctor speaks data</div>
+    <div class="shot-subline">GI · ENT · primary care formats. One tap to share.</div>
+    <div class="shot-why"><b>Why slot #7:</b> Trust signal — "real product, doctors take it seriously." Drives all 6 cohorts (Brian→GI, Larry→ENT, Sam→multi-doctor, Patricia→OB). Retention loop: 30-day data → export → return for more.</div>
+    <div class="shot-row">
+      <div class="shot-mockup">
+        <div class="mock-headline">30-day GERD report</div>
+        <div class="mock-sub">Choose format</div>
+        <div style="display:flex; gap:2px; flex-wrap:wrap;">
+          <span class="mock-chip good">GI</span>
+          <span class="mock-chip" style="background:var(--bg-soft); color:var(--ink-2); border:1px solid var(--divider);">ENT</span>
+          <span class="mock-chip" style="background:var(--bg-soft); color:var(--ink-2); border:1px solid var(--divider);">Primary</span>
+        </div>
+        <div class="mock-card" style="background: #fff; gap: 2px;">
+          <div style="font-size: 7px; font-weight: 700; color: var(--brand-deep);">📄 Page 1</div>
+          <div style="font-size: 6.5px; color: var(--ink-2);">8 heartburn days</div>
+          <div style="font-size: 6.5px; color: var(--ink-2);">3 trigger meals</div>
+          <div style="font-size: 6.5px; color: var(--ink-2);">14 PPI doses</div>
+          <div class="mock-bar mid" style="margin-top:4px;"></div>
+          <div class="mock-bar short" style="margin-top:2px;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-around; font-size: 11px;">📤 📧 💬 📁</div>
+      </div>
+      <div class="shot-content">
+        <ul class="shot-bullets">
+          <li>4 medical formats</li>
+          <li>Last 30/60/90 days</li>
+          <li>HIPAA-aware sharing</li>
+        </ul>
+        <div class="shot-illust">
+          <span class="illust-label">UI</span>Share-sheet preview of PDF export. <b>3 pages fanned</b>: Page 1 summary stats, Page 2 symptom trajectory line, Page 3 trigger food top-10. Format picker chips above: [GI][ENT][Primary][Insurance]. Share row below.<br>
+          <span class="illust-label">BG</span>Cream + subtle clipboard/stethoscope icon ≤10% opacity outside frame.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT 8 -->
+  <div class="shot-card trust">
+    <div class="shot-num">SHOT 8</div>
+    <div class="shot-tier">Retention · Daily protocol</div>
+    <div class="shot-headline">Your plan. Today.</div>
+    <div class="shot-subline">Diet, meds, sleep — what to do tonight, from your data.</div>
+    <div class="shot-why"><b>Why slot #8:</b> Closes the "what now?" loop. Universal — every cohort gets a personalized protocol on Day 1 (post-triage). Plan tab also houses 4 paid add-on gates — natural conversion surface without being a paywall hero.</div>
+    <div class="shot-row">
+      <div class="shot-mockup">
+        <div class="mock-headline">Tonight, 7:30 PM cutoff</div>
+        <div class="mock-sub">Frank · Day 14</div>
+        <div class="mock-card" style="gap: 3px;">
+          <div style="font-size: 7px; color: var(--ink);">🍽 Mediterranean swap</div>
+          <div style="font-size: 7px; color: var(--ink);">🛏 30°, left side</div>
+          <div style="font-size: 7px; color: var(--ink);">💊 Tums max 2</div>
+        </div>
+        <div class="mock-card" style="border-color: var(--brand); padding: 4px 5px;">
+          <div style="font-size: 7px; font-weight: 700; color: var(--brand-deep);">🔓 Acid Watcher</div>
+          <div style="font-size: 6.5px; color: var(--ink-2);">78% compliant · free</div>
+        </div>
+        <div class="mock-card" style="border-color: var(--cta-deep); padding: 4px 5px; background: var(--cta-soft);">
+          <div style="font-size: 7px; font-weight: 700; color: var(--cta-deep);">🔒 LPR Pro</div>
+          <div style="font-size: 6.5px; color: var(--ink-2);">Unlock · $39.99/yr</div>
+        </div>
+      </div>
+      <div class="shot-content">
+        <ul class="shot-bullets">
+          <li>Built from your triage</li>
+          <li>Updates with new data</li>
+          <li>Unlock add-ons when ready</li>
+        </ul>
+        <div class="shot-illust">
+          <span class="illust-label">UI</span>Plan tab — Frank default. <b>Today protocol card</b>: dinner / sleep / Tums. Week-of cards (horizontal scroll). Add-on gates: 🔓 Acid Watcher starter (owned, mint), 🔒 LPR Pro (locked, gold border, "$39.99/yr"). Collapsed "+ 2 more plans".<br>
+          <span class="illust-label">BG</span>Cream, no props — calm utility.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h2 class="m2-head" id="shot-accent"><span class="m2-num">3.3</span>Cohort accent map (within locked A Cool Relief)</h2>
+<p class="lede">Micro-touches inside each shot — icon tints, accent rings, badge fills. <b>No new colors</b> — every accent pulled from locked A Cool Relief.</p>
+
+<div class="accent-grid">
+  <div class="accent-card"><span class="ac-num">1</span><span class="ac-swatch"><span class="sw" style="background:#5BA89B;"></span></span><span class="ac-meta"><b>brand</b>calm authority</span></div>
+  <div class="accent-card"><span class="ac-num">2</span><span class="ac-swatch"><span class="sw" style="background:#C49B5E;"></span></span><span class="ac-meta"><b>cta</b>"choose your path" warmth</span></div>
+  <div class="accent-card"><span class="ac-num">3</span><span class="ac-swatch"><span class="sw" style="background:#D5E8E2;"></span><span class="sw" style="background:#EFE0BE;"></span><span class="sw" style="background:#ECD0C8;"></span></span><span class="ac-meta"><b>severity scale</b>good · watch · alert</span></div>
+  <div class="accent-card"><span class="ac-num">4</span><span class="ac-swatch"><span class="sw" style="background:#E4ECEA;"></span><span class="sw" style="background:#C5D8D3;"></span></span><span class="ac-meta"><b>ai-bg + ai-border</b>AI surface tone</span></div>
+  <div class="accent-card"><span class="ac-num">5</span><span class="ac-swatch"><span class="sw" style="background:#18524F;"></span><span class="sw" style="background:#C49B5E;"></span></span><span class="ac-meta"><b>brand-deep + cta</b>clinical premium</span></div>
+  <div class="accent-card"><span class="ac-num">6</span><span class="ac-swatch"><span class="sw" style="background:#5BA89B;"></span><span class="sw" style="background:#C49B5E;"></span></span><span class="ac-meta"><b>brand + cta</b>efficacy + action</span></div>
+  <div class="accent-card"><span class="ac-num">7</span><span class="ac-swatch"><span class="sw" style="background:#18524F;"></span><span class="sw" style="background:#C49B5E;"></span></span><span class="ac-meta"><b>brand-deep + cta</b>trust + action</span></div>
+  <div class="accent-card"><span class="ac-num">8</span><span class="ac-swatch"><span class="sw" style="background:#5BA89B;"></span><span class="sw" style="background:#8C6A3B;"></span></span><span class="ac-meta"><b>brand owned + cta-deep locked</b>unlock signal</span></div>
+</div>
+
+<h2 class="m2-head" id="shot-checklist"><span class="m2-num">3.4</span>Production checklist (per shot · per device · per locale)</h2>
+
+<ul class="shot-checklist">
+  <li><b>Resolution exact</b>: 1320×2868 (6.9") · 1242×2688 (6.5") · 1242×2208 (5.5")</li>
+  <li><b>Copy lengths</b>: headline ≤32 chars · subline ≤60 chars · bullets ≤24 chars</li>
+  <li><b>Cohort-realistic data</b>: Brian 12 days · Patricia 1,200/7,500mg · Larry RSI 18 · Anna Week 4/12 · Frank 8:42 PM</li>
+  <li><b>Status bar</b>: 9:41 AM · full signal · full battery · no notifications</li>
+  <li><b>Locked A Cool Relief tokens only</b> — no new colors</li>
+  <li><b>Floating tab bar visible</b> on shots 1, 5, 6, 7, 8 with correct active tab</li>
+  <li><b>Disclaimer footer visible</b> on Coach / RSI / Labs / PDF shots</li>
+  <li><b>Banned words check</b>: best · #1 · cure · diagnose · treat · leading · guaranteed</li>
+  <li><b>Drug brand mentions</b>: "Voquezna tracker" OK as user data; "Best for Voquezna" ❌</li>
+  <li><b>de-DE</b>: native German pass — separate design — Cara Care orphan capture critical (не машинный перевод)</li>
+</ul>
+
+<h2 class="m2-head" id="shot-localization"><span class="m2-num">3.5</span>Localization &amp; iteration</h2>
+<table class="shot-summary">
+  <thead><tr><th>Locale</th><th>Approach</th></tr></thead>
+  <tbody>
+    <tr><td><b>en-US</b></td><td>Master</td></tr>
+    <tr><td><b>en-GB</b></td><td>Same shots, "GERD" → "GORD" in any overlay copy</td></tr>
+    <tr><td><b>en-CA</b></td><td>Same as en-US</td></tr>
+    <tr><td><b>en-AU</b></td><td>Same as en-GB ("GORD")</td></tr>
+    <tr><td><b>de-DE</b></td><td><b>Native German pass — separate design.</b> Cara Care orphan capture critical (не машинный перевод)</td></tr>
+  </tbody>
+</table>
+
+<table class="shot-summary" style="margin-top:14px;">
+  <thead><tr><th>Iter</th><th>When</th><th>Trigger</th></tr></thead>
+  <tbody>
+    <tr><td><b>v1</b></td><td>Sprint 2</td><td>Initial submission (this spec)</td></tr>
+    <tr><td><b>v2</b></td><td>Month 2</td><td>Post-launch — replace worst-performing shot (per-shot RTC analysis)</td></tr>
+    <tr><td><b>v3</b></td><td>Month 4</td><td>Voquezna add-on launch — refresh shot 6</td></tr>
+    <tr><td><b>v4</b></td><td>Month 7</td><td>Add per-CPP variants if RTC &lt; 4% on universal listing</td></tr>
+  </tbody>
+</table>
+
+</div>
+<!-- ==================== /MODULE 3 ==================== -->
+
 
 <div class="footer">
   <p>Refluxora · Sprint 1 · 2026-05-23 · scaffold seed</p>
