@@ -279,6 +279,71 @@
   /* ==================== FOOTER ==================== */
   .footer { margin-top: 48px; font-size: 12px; color: #9BA8AC; text-align: center; }
   .footer a { color: #18524F; }
+
+  /* ==================== MODULE 2 · BANNER ==================== */
+  .module-banner {
+    margin: 60px 0 18px; padding: 18px 22px;
+    background: linear-gradient(135deg, #5BA89B 0%, #3D8985 100%);
+    color: #FBF8F2; border-radius: 18px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .module-banner .num { font-family: ui-monospace, "SF Mono", monospace; font-size: 12.5px; font-weight: 800; letter-spacing: 0.08em; background: #C49B5E; color: #18524F; padding: 5px 11px; border-radius: 8px; }
+  .module-banner h2 { margin: 0; color: #FBF8F2; font-size: 22px; }
+  .module-banner .desc { color: rgba(251,248,242,0.88); font-size: 13px; line-height: 1.55; flex-basis: 100%; margin-top: 4px; max-width: 1000px; }
+
+  /* ==================== MODULE 2 · PERSONA GRID ==================== */
+  .persona-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; margin-top: 14px; }
+  .persona { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .persona.anchor { border-left: 4px solid var(--cta); }
+  .persona .ph { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .persona .ph b { font-size: 15px; font-weight: 800; color: var(--ink); }
+  .persona .age { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; color: var(--ink-3); }
+  .persona .share { margin-left: auto; background: var(--brand-soft); color: var(--brand-deep); font-size: 11px; font-weight: 800; font-family: ui-monospace, "SF Mono", monospace; border-radius: 999px; padding: 2px 8px; }
+  .persona .pain { font-size: 12.5px; color: var(--ink); font-style: italic; line-height: 1.5; border-left: 3px solid var(--brand-soft); padding-left: 10px; }
+  .persona .row { display: flex; gap: 8px; font-size: 12px; align-items: flex-start; }
+  .persona .l { font-size: 10px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); width: 78px; flex-shrink: 0; padding-top: 2px; }
+  .persona .v { color: var(--ink); line-height: 1.5; }
+  .persona .v b { color: var(--brand-deep); }
+  .persona .v .wtp-high { color: var(--brand-deep); font-weight: 800; }
+  .persona .v .wtp-med  { color: var(--cta-deep); font-weight: 800; }
+  .anchor-tag { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--cta-soft); color: var(--cta-deep); border-radius: 5px; padding: 2px 6px; }
+
+  /* ==================== MODULE 2 · JTBD GRID ==================== */
+  .jtbd-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; margin-top: 14px; }
+  .jtbd-card { background: var(--card); border: 1px solid var(--divider); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .jtbd-card.peak { border-left: 4px solid var(--cta); }
+  .jtbd-card .jh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .jtbd-num { background: var(--brand); color: #FBF8F2; border-radius: 999px; padding: 2px 9px; font-size: 11px; font-weight: 800; font-family: ui-monospace, "SF Mono", monospace; }
+  .jtbd-card .jh b { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .stars { margin-left: auto; font-size: 10.5px; letter-spacing: 0.02em; color: var(--cta-deep); }
+  .jtbd-card .stmt { font-size: 12.5px; color: var(--ink); font-style: italic; border-left: 3px solid var(--good-bg); padding-left: 10px; line-height: 1.5; }
+  .jtbd-card .row { display: flex; gap: 8px; font-size: 12px; align-items: flex-start; }
+  .jtbd-card .l { font-size: 10px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); width: 64px; flex-shrink: 0; padding-top: 2px; }
+  .jtbd-card .v { color: var(--ink); line-height: 1.5; }
+  .jtbd-card .v b { color: var(--brand-deep); }
+
+  /* ==================== MODULE 2 · JTBD SCAN TABLE ==================== */
+  table.jtbd-scan {
+    width: 100%; border-collapse: collapse;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider); margin-top: 12px; min-width: 860px;
+  }
+  table.jtbd-scan th, table.jtbd-scan td { padding: 9px 12px; text-align: left; font-size: 12.5px; border-bottom: 1px solid var(--divider); vertical-align: middle; }
+  table.jtbd-scan th { background: var(--brand-soft); color: var(--brand-deep); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 800; text-align: center; }
+  table.jtbd-scan th:first-child { text-align: left; }
+  table.jtbd-scan tr:last-child td { border-bottom: none; }
+  table.jtbd-scan td.cohort-cell { font-weight: 800; white-space: nowrap; color: var(--ink); }
+  table.jtbd-scan td.star { text-align: center; font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; font-size: 13px; }
+  table.jtbd-scan td.star.s5 { background: var(--good-bg); color: var(--brand-deep); }
+  table.jtbd-scan td.star.s4 { color: var(--cta-deep); }
+  table.jtbd-scan td.star.s3 { color: var(--ink-2); }
+  table.jtbd-scan td.star.s2 { color: var(--ink-3); }
+  table.jtbd-scan td.star.s1 { color: var(--ink-3); opacity: 0.55; }
+  .scan-wrap { overflow-x: auto; margin-top: 12px; border-radius: 14px; }
+
+  /* Section headings inside Module 2 */
+  h2.m2-head { font-size: 22px; margin: 28px 0 6px; color: #18524F; }
+  h2.m2-head .m2-num { font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; background: #C5DDD7; color: #18524F; padding: 3px 9px; border-radius: 6px; margin-right: 10px; vertical-align: middle; }
 </style>
 </head>
 <body>
@@ -292,6 +357,11 @@
   <a href="#archive">Archive (B/C/D)</a>
   <a href="#decision">Decision matrix</a>
   <a href="#recommendation">Lock rationale</a>
+  <span class="sep"></span>
+  <span class="nav-num">M2</span>
+  <a href="#cohorts">Cohorts</a>
+  <a href="#jtbds">JTBDs</a>
+  <a href="#jtbd-scan">JTBD scan</a>
 </nav>
 
 <h1>Refluxora — Design System (locked)</h1>
@@ -624,6 +694,282 @@
   </div>
   <p class="rec-text" style="margin-top:16px;"><b>Process after lock:</b> update <code>DESIGN_SYSTEM.md</code> с :root tokens, add <code>🔒 Locked YYYY-MM-DD</code>, log decision в <code>DECISIONS.md</code>, rebuild <code>docs/design.html</code> as the full Hepatica-style workbench (palette + JTBD + persona scan + feature matrix), and start <code>docs/flow.html</code> in Sprint 2.</p>
 </section>
+
+<!-- ==================== MODULE 2 · JTBD юзеров · 6 когорт Refluxora ==================== -->
+<div class="module-banner">
+  <span class="num">МОДУЛЬ 2</span>
+  <h2>JTBD юзеров · 6 когорт Refluxora</h2>
+  <p class="desc">6 deep cohorts × 8 JTBDs. Anchor cohorts (gold border): 🔥 Brian (severe-PPI baseline) · 🤰 Patricia (pregnancy anchor) · 🎤 Larry (LPR ⭐ biggest underserved). Together: 145M TAM, 3.6M SAM, $173M ARR potential across US · GB · DE · CA · AU.</p>
+</div>
+
+<div class="cand-a">
+
+<!-- ==================== 2.1 · 6 cohorts ==================== -->
+<h2 class="m2-head" id="cohorts"><span class="m2-num">2.1</span>6 cohorts</h2>
+<p class="lede">Three anchors define the product hero: Brian (severity / drug-payer baseline), Patricia (time-locked pregnancy window), Larry (LPR — 30M Americans, mostly undiagnosed, biggest underserved wedge in App Store). Frank is the default door (largest newly-diagnosed funnel); Sam and Anna round out the polypharmacy + functional-medicine flanks.</p>
+
+<div class="persona-grid">
+
+  <!-- 1 · Burning Brian -->
+  <div class="persona anchor">
+    <div class="ph">
+      <b>🔥 Burning Brian</b>
+      <span class="age">40–55</span>
+      <span class="anchor-tag">anchor · severe baseline</span>
+      <span class="share">25%</span>
+    </div>
+    <div class="pain">"PPI not working anymore. Voquezna?"</div>
+    <div class="row"><div class="l">Door</div><div class="v">"Refractory GERD — what's next"</div></div>
+    <div class="row"><div class="l">Top JTBDs</div><div class="v"><b>J1</b> food triggers · <b>J2</b> labs · <b>J6</b> Voquezna efficacy</div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-high">high</span> · $700/mo drug-payer 52%</div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Annual Standard $39.99/yr <b>+ Voquezna Companion +$29.99</b></div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/GERD 60K · r/voquezna</div></div>
+  </div>
+
+  <!-- 2 · Pregnant Patricia -->
+  <div class="persona anchor">
+    <div class="ph">
+      <b>🤰 Pregnant Patricia</b>
+      <span class="age">25–38</span>
+      <span class="anchor-tag">anchor</span>
+      <span class="share">12%</span>
+    </div>
+    <div class="pain">"38 weeks, can't sleep, what's safe?"</div>
+    <div class="row"><div class="l">Door</div><div class="v">"Pregnancy-safe meds + sleep"</div></div>
+    <div class="row"><div class="l">Top JTBDs</div><div class="v"><b>J3</b> tonight plan · <b>J7</b> trimester · <b>J8</b> sleep</div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-med">medium</span> · time-limited 38%</div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Weekly $4.99/wk (<b>no trial</b> · habit lock)</div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/pregnant 250K · r/BabyBumps 600K</div></div>
+  </div>
+
+  <!-- 3 · Foodie Frank -->
+  <div class="persona anchor">
+    <div class="ph">
+      <b>🍷 Foodie Frank</b>
+      <span class="age">28–42</span>
+      <span class="anchor-tag">default door</span>
+      <span class="share">22%</span>
+    </div>
+    <div class="pain">"Doc said cut coffee. NO. Help me find what works."</div>
+    <div class="row"><div class="l">Door</div><div class="v">"Don't quit identity — find safe meals"</div></div>
+    <div class="row"><div class="l">Top JTBDs</div><div class="v"><b>J1</b> food triggers · <b>J4</b> A/B diet · <b>J5</b> restaurant</div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-med">medium</span> · habit-forming 45%</div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Annual Standard $39.99/yr <b>+ Diet Lab +$29.99</b></div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/GERD · r/AcidReflux 22K</div></div>
+  </div>
+
+  <!-- 4 · Senior Sam -->
+  <div class="persona">
+    <div class="ph">
+      <b>👴 Senior Sam</b>
+      <span class="age">60–75</span>
+      <span class="share">18%</span>
+    </div>
+    <div class="pain">"7 meds + GERD. Interactions?"</div>
+    <div class="row"><div class="l">Door</div><div class="v">"Polypharmacy safety net"</div></div>
+    <div class="row"><div class="l">Top JTBDs</div><div class="v"><b>J2</b> labs · <b>J5</b> restaurant · <b>J7</b> tonight plan</div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-high">high</span> · Medicare-payer 50%</div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Annual Family $79.99/yr (2nd profile)</div></div>
+    <div class="row"><div class="l">Community</div><div class="v">AARP · r/Seniors</div></div>
+  </div>
+
+  <!-- 5 · Anti-Pharma Anna -->
+  <div class="persona">
+    <div class="ph">
+      <b>🌿 Anti-Pharma Anna</b>
+      <span class="age">30–45</span>
+      <span class="share">8%</span>
+    </div>
+    <div class="pain">"Off PPI in 12 weeks. Natural protocols."</div>
+    <div class="row"><div class="l">Door</div><div class="v">"Functional-med taper, no drugs"</div></div>
+    <div class="row"><div class="l">Top JTBDs</div><div class="v"><b>J6</b> PPI taper · <b>J3</b> tonight · <b>J4</b> A/B diet</div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-high">high</span> · supplement-buyer 55%</div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Annual Standard $39.99/yr <b>+ PPI Taper Pro +$29.99</b></div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/functionalmedicine · r/AntiPharma</div></div>
+  </div>
+
+  <!-- 6 · LPR Larry -->
+  <div class="persona anchor">
+    <div class="ph">
+      <b>🎤 LPR Larry ⭐</b>
+      <span class="age">30–65</span>
+      <span class="anchor-tag">⭐ NEW · biggest underserved</span>
+      <span class="share">15%</span>
+    </div>
+    <div class="pain">"Silent reflux finally validated. RSI tracking. ENT report."</div>
+    <div class="row"><div class="l">Door</div><div class="v">"Validate silent reflux — career stake"</div></div>
+    <div class="row"><div class="l">Top JTBDs</div><div class="v"><b>J8</b> RSI/ENT · <b>J2</b> labs · <b>J6</b> Voquezna</div></div>
+    <div class="row"><div class="l">WTP</div><div class="v"><span class="wtp-high">highest</span> · career-defending 62%</div></div>
+    <div class="row"><div class="l">Tier</div><div class="v">Annual Standard $39.99/yr <b>+ LPR Pro +$39.99 ⭐</b></div></div>
+    <div class="row"><div class="l">Community</div><div class="v">r/LPR 15K · r/Singers · Koufman fans</div></div>
+  </div>
+
+</div>
+
+<!-- ==================== 2.2 · 8 jobs-to-be-done ==================== -->
+<h2 class="m2-head" id="jtbds"><span class="m2-num">2.2</span>8 jobs-to-be-done</h2>
+<p class="lede">Six peak jobs (J1–J6, ★5) earn a gold left border — these are universal Tier-1 drivers shared by ≥2 anchor cohorts. J7 (pregnancy) and J8 (LPR validation) are ★4 single-cohort premium hooks that anchor the two highest-WTP add-ons (Pregnancy DB inside Weekly · LPR Pro +$39.99).</p>
+
+<div class="jtbd-grid">
+
+  <!-- J1 -->
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J1</span><b>🍴 Food triggers</b><span class="stars">★★★★★</span></div>
+    <div class="stmt">"Tell me what I can actually eat."</div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Photo Food Scanner</b> (reflux-trigger rating, AcidWise DNA)</div></div>
+    <div class="row"><div class="l">Anchors</div><div class="v">🔥 Brian · 🍷 Frank</div></div>
+  </div>
+
+  <!-- J2 -->
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J2</span><b>🩸 Lab decoding</b><span class="stars">★★★★★</span></div>
+    <div class="stmt">"Decode my labs (H. pylori, gastrin, B12)."</div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Lab Interpreter</b> — Vision OCR + verdict pills</div></div>
+    <div class="row"><div class="l">Anchors</div><div class="v">🔥 Brian · 👴 Sam · 🎤 Larry</div></div>
+  </div>
+
+  <!-- J3 -->
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J3</span><b>🌙 Tonight plan</b><span class="stars">★★★★★</span></div>
+    <div class="stmt">"What's safe tonight? (sleep position, meds, food cutoff)"</div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Tonight Plan card</b> + sleep heatmap + Apple Health</div></div>
+    <div class="row"><div class="l">Anchors</div><div class="v">🤰 Patricia · 👴 Sam · 🌿 Anna</div></div>
+  </div>
+
+  <!-- J4 -->
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J4</span><b>🍷 Don't quit identity</b><span class="stars">★★★★★</span></div>
+    <div class="stmt">"Don't ask me to quit — find what works."</div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>A/B Diet Lab</b> (Mediterranean vs Acid Watcher 90d)</div></div>
+    <div class="row"><div class="l">Anchors</div><div class="v">🍷 Frank · 🌿 Anna</div></div>
+  </div>
+
+  <!-- J5 -->
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J5</span><b>🍽 Restaurant pre-flight</b><span class="stars">★★★★★</span></div>
+    <div class="stmt">"Restaurant pre-flight — what to order?"</div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Cuisine picker</b> + safe-menu RAG</div></div>
+    <div class="row"><div class="l">Anchors</div><div class="v">🍷 Frank · 👴 Sam</div></div>
+  </div>
+
+  <!-- J6 -->
+  <div class="jtbd-card peak">
+    <div class="jh"><span class="jtbd-num">J6</span><b>💊 Drug efficacy</b><span class="stars">★★★★★</span></div>
+    <div class="stmt">"Track this drug actually works (Voquezna / PPI taper)."</div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Voquezna Companion</b> · PPI Taper Pro · efficacy charts</div></div>
+    <div class="row"><div class="l">Anchors</div><div class="v">🔥 Brian · 🌿 Anna · 🎤 Larry</div></div>
+  </div>
+
+  <!-- J7 -->
+  <div class="jtbd-card">
+    <div class="jh"><span class="jtbd-num">J7</span><b>🤱 Pregnancy + reflux</b><span class="stars">★★★★</span></div>
+    <div class="stmt">"Pregnancy + reflux — what's safe for baby?"</div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>Trimester protocol</b> + pregnancy-safe meds DB</div></div>
+    <div class="row"><div class="l">Anchors</div><div class="v">🤰 Patricia</div></div>
+  </div>
+
+  <!-- J8 -->
+  <div class="jtbd-card">
+    <div class="jh"><span class="jtbd-num">J8</span><b>🎤 Validate silent reflux</b><span class="stars">★★★★</span></div>
+    <div class="stmt">"Validate silent reflux for my ENT."</div>
+    <div class="row"><div class="l">Drives</div><div class="v"><b>RSI gauge</b> + Acid Watcher diet + ENT PDF (LPR Pro)</div></div>
+    <div class="row"><div class="l">Anchors</div><div class="v">🎤 Larry</div></div>
+  </div>
+
+</div>
+
+<!-- ==================== 2.3 · JTBD scan ==================== -->
+<h2 class="m2-head" id="jtbd-scan"><span class="m2-num">2.3</span>JTBD scan — 6 cohorts × 8 jobs</h2>
+<p class="lede">Intensity grid (★1 weak → ★5 dominant). Confirms: <b>J2 (labs) universal Tier-1</b> · J1/J4/J5 foodie+severe stronger · <b>J6 anchor for paid add-ons</b> · J7 Patricia-only premium · <b>J8 Larry-only premium (LPR Pro anchor)</b>.</p>
+
+<div class="scan-wrap">
+<table class="jtbd-scan">
+  <thead>
+    <tr>
+      <th>Cohort</th>
+      <th>J1 🍴</th>
+      <th>J2 🩸</th>
+      <th>J3 🌙</th>
+      <th>J4 🍷</th>
+      <th>J5 🍽</th>
+      <th>J6 💊</th>
+      <th>J7 🤱</th>
+      <th>J8 🎤</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cohort-cell">🔥 Brian</td>
+      <td class="star s5">★5</td>
+      <td class="star s5">★5</td>
+      <td class="star s3">★3</td>
+      <td class="star s3">★3</td>
+      <td class="star s3">★3</td>
+      <td class="star s5">★5</td>
+      <td class="star s1">★1</td>
+      <td class="star s2">★2</td>
+    </tr>
+    <tr>
+      <td class="cohort-cell">🤰 Patricia</td>
+      <td class="star s4">★4</td>
+      <td class="star s2">★2</td>
+      <td class="star s5">★5</td>
+      <td class="star s3">★3</td>
+      <td class="star s3">★3</td>
+      <td class="star s2">★2</td>
+      <td class="star s5">★5</td>
+      <td class="star s1">★1</td>
+    </tr>
+    <tr>
+      <td class="cohort-cell">🍷 Frank</td>
+      <td class="star s5">★5</td>
+      <td class="star s3">★3</td>
+      <td class="star s3">★3</td>
+      <td class="star s5">★5</td>
+      <td class="star s5">★5</td>
+      <td class="star s2">★2</td>
+      <td class="star s1">★1</td>
+      <td class="star s2">★2</td>
+    </tr>
+    <tr>
+      <td class="cohort-cell">👴 Sam</td>
+      <td class="star s3">★3</td>
+      <td class="star s5">★5</td>
+      <td class="star s5">★5</td>
+      <td class="star s3">★3</td>
+      <td class="star s4">★4</td>
+      <td class="star s3">★3</td>
+      <td class="star s1">★1</td>
+      <td class="star s2">★2</td>
+    </tr>
+    <tr>
+      <td class="cohort-cell">🌿 Anna</td>
+      <td class="star s4">★4</td>
+      <td class="star s4">★4</td>
+      <td class="star s4">★4</td>
+      <td class="star s4">★4</td>
+      <td class="star s3">★3</td>
+      <td class="star s5">★5</td>
+      <td class="star s1">★1</td>
+      <td class="star s2">★2</td>
+    </tr>
+    <tr>
+      <td class="cohort-cell">🎤 Larry ⭐</td>
+      <td class="star s3">★3</td>
+      <td class="star s5">★5</td>
+      <td class="star s3">★3</td>
+      <td class="star s4">★4</td>
+      <td class="star s3">★3</td>
+      <td class="star s5">★5</td>
+      <td class="star s1">★1</td>
+      <td class="star s5">★5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+<!-- ==================== /MODULE 2 ==================== -->
 
 <div class="footer">
   <p>Refluxora · Sprint 1 · 2026-05-23 · scaffold seed</p>

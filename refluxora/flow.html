@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Refluxora — Screen Flow Workbench (locked tabs · 2026-05-23)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ==================== A · COOL RELIEF (locked) ==================== */
+  :root {
+    --brand:      #5BA89B;
+    --brand-mid:  #3D8985;
+    --brand-deep: #18524F;
+    --brand-soft: #C5DDD7;
+    --cta:        #C49B5E;
+    --cta-deep:   #8C6A3B;
+    --cta-soft:   #EBDFC6;
+    --bg:         #F5F1EA;
+    --bg-soft:    #FBF8F2;
+    --ink:        #2E3F44;
+    --ink-2:      #5D6B70;
+    --ink-3:      #9BA8AC;
+    --card:       #FFFFFF;
+    --divider:    #DED5C7;
+    --good:       #5BA89B;  --good-bg:  #D5E8E2;
+    --watch:      #C49B5E;  --watch-bg: #EFE0BE;
+    --alert:      #B5503C;  --alert-bg: #ECD0C8;
+    --ai-bg:      #E4ECEA;  --ai-border: #C5D8D3;
+  }
+
+  /* ==================== GLOBAL CHROME ==================== */
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    background: #ECE7DE; color: var(--ink);
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    padding: 28px 24px 96px;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  h1, h2, h3, h4 { font-family: -apple-system, "SF Pro Rounded", system-ui, sans-serif; letter-spacing: -0.01em; }
+  h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; color: var(--ink); }
+  h2 { font-size: 22px; color: #FFFFFF; }
+  h3 { font-size: 16px; color: var(--ink); }
+  .lede { color: var(--ink-2); max-width: 980px; line-height: 1.55; margin: 6px 0 8px; font-size: 14px; }
+  code { font-family: ui-monospace, "SF Mono", monospace; font-size: 11.5px; background: rgba(0,0,0,0.05); padding: 1px 5px; border-radius: 4px; }
+
+  .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 18px; }
+  .pill { background: #FFFFFF; border: 1px solid var(--divider); border-radius: 999px; padding: 5px 12px; font-size: 12px; color: var(--ink-2); font-weight: 600; }
+  .pill.brand { background: var(--brand-soft); color: var(--brand-deep); border-color: #B0CDC6; }
+  .pill.lock { background: var(--brand-deep); color: var(--cta); border-color: var(--brand-deep); }
+  .pill.vote { background: var(--cta-soft); color: var(--cta-deep); border-color: #E0CFAD; }
+
+  /* ==================== STICKY TOP NAV ==================== */
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(236, 231, 222, 0.94);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--divider);
+    margin: 0 -24px 18px; padding: 10px 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--ink-2);
+    font-size: 12.5px; font-weight: 600;
+    padding: 6px 11px; border-radius: 999px; border: 1px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover { background: #FFFFFF; color: var(--brand-deep); border-color: var(--divider); }
+  .top-nav a.active { background: var(--brand-deep); color: var(--bg); }
+  .top-nav .nav-num { font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; background: var(--cta); color: #fff; padding: 2px 6px; border-radius: 5px; }
+  .top-nav .sep { width: 1px; height: 16px; background: var(--divider); margin: 0 4px; }
+
+  /* ==================== MODULE BANNER (per tab section) ==================== */
+  .module-banner {
+    background: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand-mid) 100%);
+    color: #FFFFFF; border-radius: 22px; padding: 22px 26px;
+    margin: 40px 0 18px;
+  }
+  .module-banner .mb-tag { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; letter-spacing: 0.10em; color: var(--cta); margin-bottom: 6px; }
+  .module-banner h2 { font-size: 26px; margin-bottom: 6px; color: #FFFFFF; }
+  .module-banner .mb-sub { font-size: 13px; line-height: 1.55; opacity: 0.86; max-width: 820px; }
+  .module-banner .mb-pills { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .module-banner .mb-pills .pill { background: rgba(255,255,255,0.10); color: #FFFFFF; border-color: rgba(255,255,255,0.18); }
+
+  /* ==================== SCREEN BLOCK (phone + annotation) ==================== */
+  .screen-block {
+    display: grid; grid-template-columns: 340px 1fr; gap: 28px;
+    background: var(--bg); border: 1px solid var(--divider);
+    border-radius: 20px; padding: 24px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 920px) { .screen-block { grid-template-columns: 1fr; } }
+  .screen-block .annotation h3 { margin-bottom: 8px; font-size: 18px; color: var(--brand-deep); }
+  .screen-block .annotation p { font-size: 13px; color: var(--ink-2); line-height: 1.55; margin-bottom: 8px; }
+  .screen-block .annotation ul { font-size: 13px; color: var(--ink-2); line-height: 1.6; padding-left: 18px; margin-bottom: 8px; }
+  .screen-block .annotation li { margin-bottom: 3px; }
+  .screen-block .annotation li b { color: var(--ink); }
+
+  /* ==================== PHONE FRAME ==================== */
+  .phone-frame {
+    width: 320px; margin: 0 auto;
+    background: #1a1a1c; border-radius: 44px;
+    padding: 12px 10px;
+    box-shadow: 0 18px 40px -16px rgba(15, 27, 45, 0.35), 0 0 0 1px rgba(0,0,0,0.04);
+    position: relative;
+  }
+  .phone-frame::before {
+    content: ''; position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+    width: 96px; height: 22px; background: #1a1a1c; border-radius: 12px;
+    z-index: 10;
+  }
+  .phone-screen {
+    background: var(--bg); border-radius: 34px;
+    height: 620px; overflow: hidden;
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .phone-frame.sm { width: 200px; padding: 8px 6px; border-radius: 30px; }
+  .phone-frame.sm::before { width: 64px; height: 14px; top: 12px; border-radius: 8px; }
+  .phone-frame.sm .phone-screen { height: 380px; border-radius: 24px; }
+
+  .phone-statusbar {
+    height: 38px; display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 0 22px 4px; font-size: 11px; font-weight: 700; color: var(--ink); flex-shrink: 0;
+  }
+  .phone-frame.sm .phone-statusbar { height: 26px; padding: 0 14px 2px; font-size: 8px; }
+
+  .phone-content {
+    flex: 1; overflow: hidden; padding: 0 12px; display: flex; flex-direction: column; gap: 10px;
+    position: relative;
+  }
+  .phone-frame.sm .phone-content { padding: 0 8px; gap: 5px; }
+
+  /* ==================== PHONE TAB BAR + FAB ==================== */
+  .phone-tabbar {
+    height: 64px; background: rgba(255,255,255,0.94);
+    border-top: 1px solid var(--divider);
+    display: flex; align-items: center; justify-content: space-around;
+    position: relative; flex-shrink: 0;
+    backdrop-filter: blur(10px);
+  }
+  .phone-frame.sm .phone-tabbar { height: 38px; }
+  .tab-item {
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+    font-size: 9px; font-weight: 700; color: var(--ink-3);
+  }
+  .phone-frame.sm .tab-item { font-size: 7px; }
+  .tab-item .ti-glyph { font-size: 18px; line-height: 1; }
+  .phone-frame.sm .tab-item .ti-glyph { font-size: 12px; }
+  .tab-item.active { color: var(--brand-deep); }
+  .tab-fab {
+    position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--cta) 0%, var(--cta-deep) 100%);
+    color: #FFFFFF; font-size: 30px; font-weight: 300;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 18px -4px rgba(140, 106, 59, 0.55), 0 0 0 4px rgba(245, 241, 234, 0.96);
+  }
+  .phone-frame.sm .tab-fab { width: 36px; height: 36px; top: -14px; font-size: 20px; box-shadow: 0 4px 10px -2px rgba(140, 106, 59, 0.55), 0 0 0 3px rgba(245, 241, 234, 0.96); }
+  .tab-spacer { flex: 1; } /* slot under FAB */
+
+  /* ==================== TOP BAR ON SCREEN ==================== */
+  .scr-topbar {
+    padding: 8px 6px 2px; display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .scr-topbar .greet { font-size: 13px; font-weight: 800; color: var(--ink); line-height: 1.15; }
+  .scr-topbar .greet .sub { font-size: 10px; font-weight: 600; color: var(--ink-2); display: block; margin-top: 1px; }
+  .scr-topbar .scr-actions { display: flex; gap: 6px; }
+  .scr-actions .icon-btn {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--card); border: 1px solid var(--divider);
+    display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--ink-2);
+  }
+  .scr-actions .icon-btn.cohort { background: var(--brand-soft); color: var(--brand-deep); border-color: var(--brand-soft); font-weight: 800; font-size: 9px; }
+
+  /* tempo band */
+  .tempo-band { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--brand-soft) 0%, var(--brand) 60%, var(--brand-deep) 100%); margin: 4px 4px 0; opacity: 0.85; }
+  .tempo-band.larry { background: repeating-linear-gradient(90deg, var(--brand-deep) 0 14%, var(--brand-soft) 14% 16%); }
+  .tempo-band.patricia { background: linear-gradient(90deg, var(--brand-soft) 0%, var(--brand) 70%, var(--cta) 95%); }
+  .tempo-band.anna { background: repeating-linear-gradient(90deg, var(--brand) 0 7%, var(--brand-soft) 7% 8%); }
+  .tempo-band.brian { background: linear-gradient(90deg, var(--alert-bg), var(--cta-soft), var(--brand-soft)); }
+  .tempo-band.frank { background: var(--bg-soft); border: 1px dashed var(--divider); height: 4px; }
+  .tempo-band.sam { background: var(--brand-soft); }
+
+  /* hero card */
+  .hero-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 18px; padding: 14px; margin: 0 2px;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+  }
+  .phone-frame.sm .hero-card { padding: 8px; border-radius: 12px; }
+
+  /* RSI gauge (Larry) */
+  .rsi-gauge-svg { width: 220px; height: 130px; }
+  .phone-frame.sm .rsi-gauge-svg { width: 150px; height: 90px; }
+  .rsi-score-big { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 800; font-size: 56px; line-height: 1; color: var(--brand-deep); margin-top: -28px; }
+  .phone-frame.sm .rsi-score-big { font-size: 36px; margin-top: -20px; }
+  .rsi-label-sm { font-size: 9px; font-weight: 800; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-2); margin-top: 2px; }
+  .rsi-stat-sm { font-size: 10px; color: var(--ink-2); margin-top: 2px; }
+  .rsi-ribbon {
+    width: 100%; margin-top: 8px; background: var(--watch-bg); color: var(--cta-deep);
+    font-size: 9px; padding: 5px 8px; border-radius: 8px; line-height: 1.35; text-align: center; border: 1px solid var(--watch);
+  }
+  .phone-frame.sm .rsi-ribbon { font-size: 7px; padding: 3px 5px; }
+
+  /* big number (Brian) */
+  .big-num { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 900; font-size: 96px; line-height: 0.95; color: var(--brand-deep); letter-spacing: -0.04em; }
+  .phone-frame.sm .big-num { font-size: 64px; }
+  .big-num-label { font-size: 11px; font-weight: 700; color: var(--ink-2); margin-top: 2px; }
+
+  /* Tums ring (Patricia) */
+  .tums-ring { width: 150px; height: 150px; position: relative; }
+  .phone-frame.sm .tums-ring { width: 110px; height: 110px; }
+  .tums-ring-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .tums-ring-center .mg { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 700; font-size: 28px; color: var(--brand-deep); line-height: 1; }
+  .phone-frame.sm .tums-ring-center .mg { font-size: 20px; }
+  .tums-ring-center .lim { font-size: 9px; color: var(--ink-2); margin-top: 2px; }
+
+  /* Frank photo card */
+  .photo-hero {
+    width: 100%; height: 220px; border-radius: 14px;
+    background: linear-gradient(135deg, #d4a574 0%, #b87333 35%, #8b5a2b 70%, #663d1f 100%);
+    position: relative; overflow: hidden;
+    display: flex; align-items: flex-end; padding: 10px;
+  }
+  .phone-frame.sm .photo-hero { height: 130px; }
+  .photo-hero::after {
+    content: '🍝'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 80px; opacity: 0.85;
+  }
+  .phone-frame.sm .photo-hero::after { font-size: 50px; }
+  .photo-time-pill {
+    position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,0.86);
+    backdrop-filter: blur(8px); padding: 3px 8px; border-radius: 999px; font-size: 9px; font-weight: 700; color: var(--ink);
+  }
+  .photo-verdict {
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
+    padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 800;
+    color: var(--alert); border: 1px solid rgba(181,80,60,0.4);
+    z-index: 2; position: relative;
+  }
+  .phone-frame.sm .photo-verdict { font-size: 9px; padding: 3px 8px; }
+
+  /* Sam med countdown */
+  .sam-time { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 700; font-size: 64px; color: var(--brand-deep); line-height: 1; letter-spacing: -0.03em; }
+  .phone-frame.sm .sam-time { font-size: 44px; }
+  .sam-med { font-size: 22px; font-weight: 700; color: var(--brand-mid); margin-top: 4px; }
+  .phone-frame.sm .sam-med { font-size: 14px; }
+  .sam-badge { background: var(--good-bg); color: var(--brand-deep); font-size: 10px; padding: 4px 10px; border-radius: 999px; font-weight: 700; margin-top: 6px; }
+
+  /* Anna taper */
+  .anna-week { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 800; font-size: 64px; color: var(--brand-deep); line-height: 1; }
+  .phone-frame.sm .anna-week { font-size: 40px; }
+  .anna-of { font-size: 22px; color: var(--ink-2); margin-top: 4px; }
+  .phone-frame.sm .anna-of { font-size: 14px; }
+  .taper-bar { width: 100%; height: 18px; background: var(--brand-soft); border-radius: 9px; margin-top: 10px; overflow: hidden; display: flex; gap: 1px; padding: 1px; }
+  .phone-frame.sm .taper-bar { height: 10px; }
+  .taper-seg { flex: 1; border-radius: 4px; background: var(--bg-soft); }
+  .taper-seg.filled { background: var(--brand); }
+  .taper-seg.current { background: var(--cta); }
+
+  /* secondary card strip */
+  .secondary-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin: 0 2px; }
+  .sec-card {
+    background: var(--card); border: 1px solid var(--divider); border-radius: 10px;
+    padding: 8px 6px; text-align: center;
+  }
+  .sec-card .sv { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 800; font-size: 15px; color: var(--brand-deep); }
+  .sec-card .sl { font-size: 8px; font-weight: 600; color: var(--ink-2); line-height: 1.2; margin-top: 2px; }
+  .sec-card .sb { font-size: 16px; }
+
+  /* coach nudge */
+  .coach-nudge {
+    background: var(--ai-bg); border: 1px solid var(--ai-border);
+    border-radius: 12px; padding: 8px 10px; margin: 0 2px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .coach-nudge .cn-glyph { font-size: 18px; }
+  .coach-nudge .cn-text { font-size: 11px; font-weight: 700; color: var(--brand-deep); line-height: 1.3; }
+  .coach-nudge .cn-text small { font-size: 9px; font-weight: 500; color: var(--ink-2); display: block; }
+
+  /* disclaimer footer */
+  .scr-disclaimer {
+    background: var(--alert-bg); color: var(--cta-deep); border-top: 1px solid var(--watch);
+    padding: 5px 10px; font-size: 9px; line-height: 1.3; text-align: center; flex-shrink: 0;
+  }
+  .phone-frame.sm .scr-disclaimer { padding: 3px 6px; font-size: 7px; }
+
+  /* "what just changed" badge */
+  .badge-floater {
+    position: absolute; top: 38px; right: 14px; z-index: 5;
+    background: var(--cta-soft); color: var(--cta-deep); font-size: 9px; font-weight: 700;
+    padding: 3px 8px; border-radius: 999px; border: 1px solid var(--cta);
+  }
+
+  /* ==================== TAB SPEC TABLE ==================== */
+  .tab-spec-table {
+    background: #FFFFFF; border: 1px solid var(--divider); border-radius: 16px;
+    overflow: hidden; margin-top: 8px;
+  }
+  .tab-spec-table table { width: 100%; border-collapse: collapse; }
+  .tab-spec-table th { background: var(--ink); color: var(--bg); padding: 12px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; text-align: left; }
+  .tab-spec-table td { padding: 12px; border-bottom: 1px solid #E8E1D2; font-size: 13px; vertical-align: top; color: var(--ink-2); }
+  .tab-spec-table tr:last-child td { border-bottom: none; }
+  .tab-spec-table td b { color: var(--ink); }
+  .tab-spec-table td .tg { font-size: 18px; margin-right: 4px; }
+  .tab-spec-table tr.launch td { background: rgba(91,168,155,0.10); }
+  .tab-spec-table td code { font-size: 11px; }
+
+  /* ==================== COHORT GRID (6 small phones) ==================== */
+  .cohort-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    margin: 18px 0;
+  }
+  @media (max-width: 920px) { .cohort-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .cohort-grid { grid-template-columns: 1fr; } }
+  .cohort-tile { background: var(--card); border: 1px solid var(--divider); border-radius: 18px; padding: 14px 10px; }
+  .cohort-tile .ct-name { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 800; font-size: 13px; color: var(--brand-deep); text-align: center; margin-bottom: 4px; }
+  .cohort-tile .ct-desc { font-size: 10.5px; color: var(--ink-2); text-align: center; margin-top: 6px; line-height: 1.3; }
+
+  /* ==================== COHORT CHIPS ==================== */
+  .cohort-chip { font-size: 11px; font-weight: 700; padding: 4px 9px; border-radius: 999px; display: inline-block; margin: 2px; }
+  .cc-brian   { background: var(--brand-deep); color: var(--cta); }
+  .cc-patricia{ background: var(--cta-soft); color: var(--cta-deep); }
+  .cc-frank   { background: var(--cta-deep); color: #FFFFFF; }
+  .cc-sam     { background: var(--brand-mid); color: #FFFFFF; }
+  .cc-anna    { background: var(--brand); color: #FFFFFF; }
+  .cc-larry   { background: var(--brand-deep); color: var(--cta); border: 1px solid var(--cta); }
+
+  /* ==================== FAB SHEET ==================== */
+  .fab-sheet-mock {
+    position: absolute; bottom: 64px; left: 0; right: 0;
+    background: var(--bg-soft); border-top-left-radius: 22px; border-top-right-radius: 22px;
+    box-shadow: 0 -10px 30px -10px rgba(0,0,0,0.18);
+    padding: 10px 12px 14px;
+    z-index: 4;
+  }
+  .fab-sheet-mock .grab { width: 36px; height: 4px; background: var(--divider); border-radius: 999px; margin: 0 auto 8px; }
+  .fab-sheet-mock .sheet-title { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .fab-sheet-mock .sheet-title h4 { font-size: 16px; color: var(--ink); font-weight: 800; }
+  .fab-sheet-mock .sheet-title small { font-size: 9px; color: var(--ink-3); }
+  .chip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+  .chip-grid .chip {
+    background: var(--card); border: 1px solid var(--divider); border-radius: 10px;
+    padding: 8px 6px; font-size: 11px; font-weight: 700; color: var(--ink);
+    display: flex; align-items: center; gap: 6px; justify-content: center;
+  }
+  .chip-grid .chip.primary { border: 2px solid var(--cta); background: var(--cta-soft); color: var(--cta-deep); grid-column: span 2; padding: 11px 6px; font-size: 12px; }
+  .chip-grid .chip .ch-g { font-size: 14px; }
+  .quick-cta {
+    background: linear-gradient(135deg, var(--cta) 0%, var(--cta-deep) 100%);
+    color: #FFFFFF; text-align: center; padding: 10px;
+    border-radius: 12px; font-size: 12px; font-weight: 800;
+  }
+
+  /* ==================== COACH HOME ==================== */
+  .coach-sec {
+    background: var(--card); border: 1px solid var(--divider); border-radius: 12px;
+    padding: 10px 12px; margin: 0 2px;
+  }
+  .coach-sec .cs-tag { font-size: 8px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+  .coach-sec .cs-q { font-size: 11.5px; font-weight: 700; color: var(--ink); line-height: 1.35; margin-top: 4px; }
+  .coach-sec .cs-meta { font-size: 9px; color: var(--brand-deep); margin-top: 4px; font-weight: 600; }
+
+  .cheat-row { display: flex; gap: 6px; overflow: visible; margin-top: 6px; }
+  .cheat-card {
+    flex: 0 0 90px; background: var(--brand-soft); border: 1px solid var(--brand);
+    border-radius: 10px; padding: 6px; font-size: 9px; font-weight: 700; color: var(--brand-deep);
+    line-height: 1.2;
+  }
+  .cheat-card .ch-em { font-size: 16px; display: block; margin-bottom: 3px; }
+
+  /* ==================== CHAT BUBBLE ==================== */
+  .chat-row { padding: 6px 4px; }
+  .chat-q {
+    background: var(--brand-deep); color: var(--bg); border-radius: 14px;
+    border-bottom-right-radius: 4px; padding: 8px 11px; font-size: 11px; line-height: 1.4;
+    margin-left: 50px; margin-bottom: 8px;
+  }
+  .confidence-chip {
+    background: var(--good-bg); color: var(--brand-deep);
+    font-size: 9px; font-weight: 800; padding: 3px 8px; border-radius: 999px;
+    border: 1px solid var(--brand); display: inline-block;
+    margin-left: 2px;
+  }
+  .chat-a {
+    background: var(--ai-bg); border: 1px solid var(--ai-border);
+    border-radius: 14px; border-top-left-radius: 4px;
+    padding: 8px 11px; font-size: 11px; line-height: 1.4;
+    margin-right: 30px; margin-top: 4px; color: var(--ink);
+  }
+  .chat-a sup { color: var(--brand-deep); font-weight: 800; font-size: 9px; }
+  .safety-strip { font-size: 8.5px; color: var(--ink-3); margin: 4px 30px 0 0; font-style: italic; }
+  .disclaimer-ribbon {
+    background: var(--watch-bg); color: var(--cta-deep); border: 1px solid var(--watch);
+    border-radius: 8px; padding: 5px 8px; margin: 4px 30px 0 0;
+    font-size: 9px; line-height: 1.35;
+  }
+  .followup-row { margin: 6px 30px 0 0; display: flex; gap: 4px; flex-wrap: wrap; }
+  .followup-chip {
+    background: var(--card); border: 1px solid var(--brand); color: var(--brand-deep);
+    font-size: 9px; font-weight: 700; padding: 4px 8px; border-radius: 999px;
+  }
+  .sources-collapsed {
+    background: var(--bg-soft); border: 1px solid var(--divider);
+    border-radius: 8px; padding: 4px 8px; margin: 4px 30px 0 0;
+    font-size: 9px; font-weight: 600; color: var(--ink-2);
+    display: flex; justify-content: space-between;
+  }
+
+  /* ==================== PROGRESS CHART ==================== */
+  .seg-control {
+    background: var(--bg-soft); border: 1px solid var(--divider);
+    border-radius: 10px; padding: 3px; display: flex;
+    margin: 0 2px;
+  }
+  .seg-control .seg {
+    flex: 1; text-align: center; font-size: 10px; font-weight: 700;
+    padding: 5px; border-radius: 7px; color: var(--ink-2);
+  }
+  .seg-control .seg.active { background: var(--card); color: var(--brand-deep); box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+
+  .chart-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 14px; padding: 10px; margin: 0 2px;
+  }
+  .chart-card .ct-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+  .chart-card .ct-title { font-size: 12px; font-weight: 800; color: var(--ink); }
+  .chart-card .ct-meta { font-size: 9px; color: var(--ink-2); }
+
+  .rsi-line-svg { width: 100%; height: 130px; }
+
+  .range-pills { display: flex; gap: 4px; margin-top: 6px; }
+  .range-pills .rp {
+    flex: 1; text-align: center; font-size: 9px; font-weight: 700;
+    padding: 4px; border-radius: 6px; background: var(--bg-soft); color: var(--ink-2);
+  }
+  .range-pills .rp.active { background: var(--brand-deep); color: var(--bg); }
+
+  .pdf-cta {
+    background: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand-mid) 100%);
+    color: #FFFFFF; padding: 10px 12px;
+    border-radius: 12px; margin: 0 2px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .pdf-cta .ic { font-size: 18px; }
+  .pdf-cta .tx { flex: 1; }
+  .pdf-cta .tx b { font-size: 11px; display: block; }
+  .pdf-cta .tx small { font-size: 9px; opacity: 0.8; }
+  .pdf-cta .badge { background: var(--cta); color: #FFFFFF; font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 999px; }
+
+  /* ==================== PLAN CARDS ==================== */
+  .plan-protocol-strip {
+    background: var(--brand-soft); border: 1px solid var(--brand);
+    border-radius: 10px; padding: 8px 10px; margin: 0 2px;
+  }
+  .plan-protocol-strip .pps-title { font-size: 10px; font-weight: 800; color: var(--brand-deep); margin-bottom: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .plan-protocol-strip .pps-row { font-size: 10.5px; color: var(--ink); display: flex; align-items: center; gap: 6px; padding: 2px 0; }
+  .plan-protocol-strip .pps-row .box { width: 12px; height: 12px; border: 1.5px solid var(--brand-mid); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 9px; color: var(--brand-deep); }
+  .plan-protocol-strip .pps-row .box.done { background: var(--brand); color: #FFFFFF; border-color: var(--brand); }
+
+  .plan-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 14px; padding: 10px 12px; margin: 0 2px;
+  }
+  .plan-card.locked { border: 2px solid var(--cta); }
+  .plan-card .pc-head { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+  .plan-card .pc-icon { font-size: 18px; }
+  .plan-card .pc-title { font-size: 12px; font-weight: 800; color: var(--ink); flex: 1; }
+  .plan-card .pc-price { font-size: 10px; font-weight: 800; color: var(--cta-deep); background: var(--cta-soft); padding: 2px 6px; border-radius: 999px; }
+  .plan-card .pc-lock { font-size: 10px; color: var(--cta-deep); }
+  .plan-card .pc-body { font-size: 10px; color: var(--ink-2); line-height: 1.4; }
+  .plan-card .pc-body small { font-size: 8.5px; color: var(--ink-3); display: block; margin-top: 4px; font-style: italic; }
+  .plan-card .pc-unlock-cta {
+    background: var(--cta-soft); color: var(--cta-deep);
+    text-align: center; padding: 6px;
+    border-radius: 8px; font-size: 10px; font-weight: 800;
+    margin-top: 6px; border: 1px solid var(--cta);
+  }
+  .plan-card.owned .pc-unlock-cta { background: var(--good-bg); color: var(--brand-deep); border-color: var(--brand); }
+  .plan-card.owned .pc-price { background: var(--good-bg); color: var(--brand-deep); }
+
+  /* mini sparkline */
+  .mini-spark { width: 100%; height: 36px; margin-top: 4px; }
+
+  /* sample chart in plan card preview */
+  .sample-chart {
+    background: var(--bg-soft); border-radius: 8px; padding: 6px; margin-top: 4px;
+    height: 64px; display: flex; align-items: flex-end; gap: 2px;
+  }
+  .sample-chart .bar { flex: 1; background: var(--brand-mid); border-radius: 2px; opacity: 0.65; }
+
+  /* ==================== TWO-COLUMN ROWS ==================== */
+  .modes-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; }
+  @media (max-width: 860px) { .modes-row { grid-template-columns: 1fr; } }
+
+  /* ==================== FOOTER ==================== */
+  .footer { margin-top: 56px; padding: 20px; background: #FFFFFF; border: 1px solid var(--divider); border-radius: 16px; font-size: 12px; color: var(--ink-2); }
+  .footer h4 { color: var(--ink); margin-bottom: 8px; font-size: 14px; }
+  .footer a { color: var(--brand-deep); text-decoration: none; font-weight: 600; }
+  .footer a:hover { text-decoration: underline; }
+  .footer .doc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; margin: 8px 0 14px; }
+  .footer .doc-grid a { display: block; padding: 6px 8px; background: var(--bg); border-radius: 6px; font-size: 11.5px; }
+  .footer .doc-grid a code { background: transparent; padding: 0; }
+
+  /* small helpers */
+  .tg { font-size: 16px; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html">← Index</a>
+  <a href="design.html">Design system</a>
+  <span class="sep"></span>
+  <span class="nav-num">LOCKED</span>
+  <a href="#overview" class="active">Overview</a>
+  <a href="#today">1. Today</a>
+  <a href="#fab">2. +Log</a>
+  <a href="#coach">3. Coach</a>
+  <a href="#progress">4. Progress</a>
+  <a href="#plan">5. Plan</a>
+</nav>
+
+<h1>Refluxora — Screen Flow Workbench</h1>
+<p class="lede">Sprint 3 locked the <b>tab architecture</b> (4 tabs + raised +Log FAB). Sprint 4 locked the <b>UX per tab</b> across 5 sub-consiliums (Today · +Log · Coach · Progress · Plan). All mockups below render in the locked <b>A Cool Relief</b> design system. Six cohorts (🔥 Brian · 🤰 Patricia · 🍷 Frank · 👴 Sam · 🌿 Anna · 🎤 Larry) are routed through identical chrome with cohort-specific hero content. Sibling docs: <a href="design.html"><code>design.html</code></a> (tokens) · <a href="index.html"><code>index.html</code></a> (overview).</p>
+
+<div class="meta-bar">
+  <span class="pill lock">🔒 LOCKED 2026-05-23</span>
+  <span class="pill brand">A Cool Relief · mint #5BA89B + slate #2E3F44 + gold #C49B5E</span>
+  <span class="pill">5 tabs</span>
+  <span class="pill">6 cohorts</span>
+  <span class="pill">15 consilium docs</span>
+</div>
+
+<!-- ==================== OVERVIEW ==================== -->
+<section id="overview">
+<div class="module-banner">
+  <div class="mb-tag">SPRINT 3 · TABS ARCHITECTURE (Path D — Merge)</div>
+  <h2>Tab structure overview</h2>
+  <p class="mb-sub"><b>4 tabs + raised center +Log FAB</b> — Hepatica chrome pattern, proven. Three of four tabs map 1:1 to <code>RootTabView.swift</code> in Hepatica. Only Plan is novel (it owns the add-on monetization spine). Launch on Today — beats Coach (empty-chat), Progress (empty-chart) and Plan (compliance: "take 20mg" landing). Source: <a href="CONSILIUM_TABS_ARCH_2026-05-23_LOCKED.md"><code>CONSILIUM_TABS_ARCH_LOCKED</code></a>.</p>
+  <div class="mb-pills">
+    <span class="pill">All tab labels ≤8 chars</span>
+    <span class="pill">SF Symbols 5 (iOS 17)</span>
+    <span class="pill">Launch tab: Today</span>
+    <span class="pill">4 paid add-ons live inside Plan</span>
+  </div>
+</div>
+
+<div class="tab-spec-table">
+<table>
+<thead><tr><th>#</th><th>Tab</th><th>SF Symbol</th><th>Role</th><th>Launch?</th><th>Primary cohorts served</th></tr></thead>
+<tbody>
+<tr class="launch">
+  <td><b>0</b></td>
+  <td><span class="tg">🏠</span><b>Today</b></td>
+  <td><code>house.fill</code></td>
+  <td>Cohort-routed hero + daily ritual. 6 hero variants (RSI gauge · days-since · Tums ring · meal photo · med countdown · taper bar). Real-time updates from FAB commits.</td>
+  <td>✅ LAUNCH</td>
+  <td>All 6 (per-cohort hero)</td>
+</tr>
+<tr>
+  <td><b>1</b></td>
+  <td><span class="tg">💬</span><b>Coach</b></td>
+  <td><code>bubble.left.and.bubble.right.fill</code></td>
+  <td>DeepSeek V3 + on-device RAG. 4-section CoachHome (Daily Q · Try Asking · Cheat Sheets · Threads). 3-tier disclaimer pattern, 10 refusal categories.</td>
+  <td>—</td>
+  <td>All 6 (cohort-voiced personas)</td>
+</tr>
+<tr>
+  <td><b>—</b></td>
+  <td><span class="tg">➕</span><b>+Log</b></td>
+  <td><code>plus</code> (gold raised circle)</td>
+  <td>Capture sheet, cohort-filtered chips (Meal/Symptom/Med/Lab universal + Tums/RSI/Throat-clearing/PPI/Drink/Supplement cohort overrides). Long-press = 1-tap radial.</td>
+  <td>—</td>
+  <td>All 6 (chip override per cohort)</td>
+</tr>
+<tr>
+  <td><b>2</b></td>
+  <td><span class="tg">📈</span><b>Progress</b></td>
+  <td><code>chart.line.uptrend.xyaxis</code></td>
+  <td>Segmented Chart ↔ Timeline toggle + PDF export. Per-cohort hero chart (Larry's RSI 12-wk · Brian's heartburn-days · etc.). 4 cohort-routed PDF formats (GI · ENT · OB · Functional-med).</td>
+  <td>—</td>
+  <td>All 6 (per-cohort default view)</td>
+</tr>
+<tr>
+  <td><b>3</b></td>
+  <td><span class="tg">📋</span><b>Plan</b></td>
+  <td><code>list.bullet.clipboard.fill</code></td>
+  <td>Active protocol + 4 paid add-on gates: LPR Pro $39.99/yr · Voquezna Companion $29.99/yr · PPI Taper Pro $29.99/yr · Diet Lab $29.99/yr. Single monetization surface.</td>
+  <td>—</td>
+  <td>All 6 (cohort-priority card order)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div style="margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap;">
+  <span class="cohort-chip cc-brian">🔥 Brian — severe PPI (25%)</span>
+  <span class="cohort-chip cc-patricia">🤰 Patricia — pregnant (12%)</span>
+  <span class="cohort-chip cc-frank">🍷 Frank — foodie (22%)</span>
+  <span class="cohort-chip cc-sam">👴 Sam — 60+ chronic (18%)</span>
+  <span class="cohort-chip cc-anna">🌿 Anna — off-PPI (8%)</span>
+  <span class="cohort-chip cc-larry">🎤 Larry — LPR ⭐ (15%)</span>
+</div>
+</section>
+
+<!-- ==================== TAB 1 · TODAY ==================== -->
+<section id="today">
+<div class="module-banner">
+  <div class="mb-tag">SPRINT 4.1 · LAUNCH TAB</div>
+  <h2>Tab 1 — Today (cohort-routed hero)</h2>
+  <p class="mb-sub">Invariant chrome (top bar · tempo band · "what just changed" badge · coach nudge · disclaimer footer) wraps <b>6 cohort-routed 280pt hero cards</b>, each surfacing one BIG glyph (72–152pt) tuned to the cohort's primary metric. Real-time SwiftData inserts redraw hero on every FAB commit. Day-0 fallback shows preview animation; Day-7+ pulls through daily slot-machine changes anchored by Larry's Sunday RSI gauge ritual. Source: <a href="CONSILIUM_TAB_TODAY_2026-05-23_LOCKED.md"><code>CONSILIUM_TAB_TODAY_LOCKED</code></a>.</p>
+  <div class="mb-pills">
+    <span class="pill">280pt hero card · 22pt corner</span>
+    <span class="pill">Cohort tempo band (8pt)</span>
+    <span class="pill">"What just changed" 4s toast</span>
+    <span class="pill">Shared TodayHeroFrame</span>
+  </div>
+</div>
+
+<!-- HEADLINE: Larry RSI gauge -->
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="phone-statusbar"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content">
+        <div class="scr-topbar">
+          <div class="greet">Good morning, Larry<span class="sub">Day 47 · LPR ⭐</span></div>
+          <div class="scr-actions">
+            <div class="icon-btn cohort">RSI</div>
+            <div class="icon-btn">⚙</div>
+          </div>
+        </div>
+        <div class="tempo-band larry"></div>
+        <div class="badge-floater">RSI updated for Sunday</div>
+
+        <div class="hero-card">
+          <svg class="rsi-gauge-svg" viewBox="0 0 220 130">
+            <path d="M 20 120 A 90 90 0 0 1 200 120" fill="none" stroke="#C5DDD7" stroke-width="14" stroke-linecap="round"/>
+            <path d="M 20 120 A 90 90 0 0 1 152 30" fill="none" stroke="url(#rsiGrad)" stroke-width="14" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="rsiGrad" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#5BA89B"/>
+                <stop offset="100%" stop-color="#18524F"/>
+              </linearGradient>
+            </defs>
+            <!-- threshold tick at 13 -->
+            <line x1="110" y1="20" x2="110" y2="38" stroke="#B5503C" stroke-width="2" stroke-dasharray="3 2"/>
+            <!-- needle to RSI 18 -->
+            <line x1="110" y1="120" x2="160" y2="40" stroke="#C49B5E" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="110" cy="120" r="6" fill="#18524F"/>
+          </svg>
+          <div class="rsi-score-big">18</div>
+          <div class="rsi-label-sm">Reflux Symptom Index</div>
+          <div class="rsi-stat-sm">↓ 4 since last week · threshold &gt;13</div>
+          <div class="rsi-ribbon">⚠ RSI is a screening tool — discuss with your ENT.</div>
+        </div>
+
+        <div class="secondary-strip">
+          <div class="sec-card"><div class="sb">🗣</div><div class="sv">14d</div><div class="sl">Throat-clear streak &lt;2</div></div>
+          <div class="sec-card"><div class="sb">🌿</div><div class="sv">82%</div><div class="sl">Acid Watcher 7d</div></div>
+          <div class="sec-card"><div class="sb">🎤</div><div class="sv">3 of 5</div><div class="sl">Vocal hygiene today</div></div>
+        </div>
+
+        <div class="coach-nudge">
+          <div class="cn-glyph">💬</div>
+          <div class="cn-text">Ask Coach: "Is steam better than throat-clearing?"<small>per AAO-HNS LPR Guidelines</small></div>
+        </div>
+      </div>
+      <div class="scr-disclaimer">Refluxora is a tracking companion, not a medical device. Discuss findings with your clinician.</div>
+      <div class="phone-tabbar">
+        <div class="tab-item active"><span class="ti-glyph">🏠</span>Today</div>
+        <div class="tab-item"><span class="ti-glyph">💬</span>Coach</div>
+        <div class="tab-spacer"></div>
+        <div class="tab-item"><span class="ti-glyph">📈</span>Progress</div>
+        <div class="tab-item"><span class="ti-glyph">📋</span>Plan</div>
+        <div class="tab-fab">+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <h3>🎤 Larry · headline hero — RSI gauge</h3>
+    <p>Larry's hero is the most distinctive: a <b>280×180pt semicircular gauge</b> with a 144pt center score (here 18), gradient mint→deep-mint arc fill, gold (<code>--cta</code>) needle, threshold tick at Belafsky 13, and a non-dismissible inline ribbon framing RSI as <b>screening, not diagnosis</b> (per <code>COMPLIANCE.md</code>).</p>
+    <ul>
+      <li><b>Sunday 09:00 ritual:</b> 1800ms expo-out needle settle + 1200ms arc fill + 1600ms digit tick — the keystone slot-machine animation</li>
+      <li><b>Regression handling:</b> on Sunday RSI uptick, suppress dimming, route to Coach with pre-filled week-of-triggers context</li>
+      <li><b>Top-right pill:</b> RSI quick-log waveform icon → opens 9-question Belafsky sheet directly</li>
+      <li><b>Tempo band:</b> 7-day strip with Sunday halo (per-cohort visual rhythm)</li>
+      <li><b>Secondary strip:</b> throat-clearing streak · Acid Watcher 7d % · vocal hygiene checklist (3 cards × 108pt)</li>
+    </ul>
+    <p><b>Data bindings:</b> <code>LPRData.rsiScore</code> · <code>LPRData.rsiBreakdown</code> · <code>FoodEntry.acidWatcherCompliant</code> · <code>SymptomEntry.throatClearing</code>.</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 28px; font-size: 17px; color: var(--brand-deep);">All 6 cohort hero variants (shared TodayHeroFrame, different glyph zone)</h3>
+<p class="lede" style="margin-bottom: 14px;">Same chrome, same 280pt frame, same disclaimer footer. Only the 200pt glyph zone swaps — snapshot-test economy.</p>
+
+<div class="cohort-grid">
+
+  <!-- BRIAN: days-since-flare -->
+  <div class="cohort-tile">
+    <div class="ct-name">🔥 Burning Brian</div>
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>●●●⌶</span></div>
+        <div class="phone-content">
+          <div class="scr-topbar"><div class="greet">Brian<span class="sub">Day 47 · severe PPI</span></div><div class="scr-actions"><div class="icon-btn cohort" style="font-size:7px;">GI</div></div></div>
+          <div class="tempo-band brian"></div>
+          <div class="hero-card">
+            <div class="big-num">12</div>
+            <div class="big-num-label">days since flare</div>
+            <div style="background:var(--cta); color:#FFFFFF; font-size:9px; padding:3px 8px; border-radius:999px; margin-top:6px; font-weight:800;">+ Log today's trigger</div>
+          </div>
+          <div class="secondary-strip" style="grid-template-columns: 1fr 1fr;">
+            <div class="sec-card"><div class="sv" style="font-size:11px;">Voquezna ↓35%</div><div class="sl">8wk efficacy</div></div>
+            <div class="sec-card"><div class="sv" style="font-size:11px;">2/wk</div><div class="sl">Last 7 flares</div></div>
+          </div>
+        </div>
+        <div class="scr-disclaimer">Tracking companion · not medical advice</div>
+        <div class="phone-tabbar"><div class="tab-item active"><span class="ti-glyph">🏠</span>Today</div><div class="tab-item"><span class="ti-glyph">💬</span>Coach</div><div class="tab-spacer"></div><div class="tab-item"><span class="ti-glyph">📈</span>Progress</div><div class="tab-item"><span class="ti-glyph">📋</span>Plan</div><div class="tab-fab">+</div></div>
+      </div>
+    </div>
+    <div class="ct-desc"><b>Hero:</b> "12" 152pt SF Pro Rounded Black · <b>WOW:</b> never shows "0" on reset → "Today" pictograph instead.</div>
+  </div>
+
+  <!-- PATRICIA: Tums ring -->
+  <div class="cohort-tile">
+    <div class="ct-name">🤰 Pregnant Patricia</div>
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>●●●⌶</span></div>
+        <div class="phone-content">
+          <div class="scr-topbar"><div class="greet">Patricia<span class="sub">Week 28 · pregnant</span></div><div class="scr-actions"><div class="icon-btn cohort" style="font-size:7px;">28w</div></div></div>
+          <div class="tempo-band patricia"></div>
+          <div class="hero-card">
+            <div class="tums-ring">
+              <svg viewBox="0 0 110 110" style="width:100%; height:100%;">
+                <circle cx="55" cy="55" r="46" stroke="#C5DDD7" stroke-width="10" fill="none"/>
+                <circle cx="55" cy="55" r="46" stroke="#5BA89B" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="289" stroke-dashoffset="243" transform="rotate(-90 55 55)"/>
+              </svg>
+              <div class="tums-ring-center"><div class="mg">1,200</div><div class="lim">of 7,500 mg</div></div>
+            </div>
+            <div class="rsi-label-sm" style="margin-top:6px;">Tums today</div>
+            <div style="background:var(--watch-bg); color:var(--cta-deep); font-size:8px; padding:3px 7px; border-radius:6px; margin-top:6px; text-align:center; border:1px solid var(--watch);">Confirm Tums limit with your OB</div>
+          </div>
+          <div class="secondary-strip" style="grid-template-columns: 1fr 1fr;">
+            <div class="sec-card"><div class="sb">🌙</div><div class="sv" style="font-size:11px;">Left side</div><div class="sl">Tonight's sleep</div></div>
+            <div class="sec-card"><div class="sb">💊</div><div class="sv" style="font-size:10px;">Pepcid B</div><div class="sl">Safe-med ref</div></div>
+          </div>
+        </div>
+        <div class="scr-disclaimer">Tracking companion · not medical advice</div>
+        <div class="phone-tabbar"><div class="tab-item active"><span class="ti-glyph">🏠</span>Today</div><div class="tab-item"><span class="ti-glyph">💬</span>Coach</div><div class="tab-spacer"></div><div class="tab-item"><span class="ti-glyph">📈</span>Progress</div><div class="tab-item"><span class="ti-glyph">📋</span>Plan</div><div class="tab-fab">+</div></div>
+      </div>
+    </div>
+    <div class="ct-desc"><b>Hero:</b> 240pt Tums ring · ring darkens past 75% (5,625mg) — color brake. <b>Top-right:</b> trimester picker "28w".</div>
+  </div>
+
+  <!-- FRANK: meal photo -->
+  <div class="cohort-tile">
+    <div class="ct-name">🍷 Foodie Frank</div>
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>●●●⌶</span></div>
+        <div class="phone-content">
+          <div class="scr-topbar"><div class="greet">Frank<span class="sub">7-day clean streak</span></div><div class="scr-actions"><div class="icon-btn cohort" style="font-size:9px;">📷</div></div></div>
+          <div class="tempo-band frank"></div>
+          <div class="hero-card" style="padding:0; overflow:hidden;">
+            <div class="photo-hero">
+              <div class="photo-time-pill">8:12 PM · Cipriani</div>
+              <div class="photo-verdict">Heads up — your map flags this</div>
+            </div>
+          </div>
+          <div class="secondary-strip" style="grid-template-columns: 1fr 1fr;">
+            <div class="sec-card"><div class="sb">☕</div><div class="sv" style="font-size:10px;">Dark roast</div><div class="sl">Safer swap tip</div></div>
+            <div class="sec-card"><div class="sb">🍽</div><div class="sv" style="font-size:10px;">6 cuisines</div><div class="sl">Pre-flight kit</div></div>
+          </div>
+        </div>
+        <div class="scr-disclaimer">Tracking companion · not medical advice</div>
+        <div class="phone-tabbar"><div class="tab-item active"><span class="ti-glyph">🏠</span>Today</div><div class="tab-item"><span class="ti-glyph">💬</span>Coach</div><div class="tab-spacer"></div><div class="tab-item"><span class="ti-glyph">📈</span>Progress</div><div class="tab-item"><span class="ti-glyph">📋</span>Plan</div><div class="tab-fab">+</div></div>
+      </div>
+    </div>
+    <div class="ct-desc"><b>Hero:</b> 320pt full-bleed meal photo (only cohort with full-width hero). <b>Top-right:</b> camera shortcut → AVCapture direct.</div>
+  </div>
+
+  <!-- SAM: med countdown -->
+  <div class="cohort-tile">
+    <div class="ct-name">👴 Senior Sam</div>
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>●●●⌶</span></div>
+        <div class="phone-content">
+          <div class="scr-topbar"><div class="greet">Sam<span class="sub">5 meds on file</span></div><div class="scr-actions"><div class="icon-btn cohort" style="font-size:11px;">🎤</div></div></div>
+          <div class="tempo-band sam"></div>
+          <div class="hero-card">
+            <div class="rsi-label-sm" style="margin-top:0;">Next med</div>
+            <div class="sam-time">09:00</div>
+            <div class="sam-med">omeprazole</div>
+            <div class="sam-badge">✓ No conflicts</div>
+          </div>
+          <div class="secondary-strip" style="grid-template-columns: 1fr 1fr;">
+            <div class="sec-card"><div class="sb">📄</div><div class="sv" style="font-size:9px;">GI · PCP · Cardio</div><div class="sl">Multi-doctor PDF</div></div>
+            <div class="sec-card"><div class="sb">🛏</div><div class="sv" style="font-size:10px;">Wedge 6-8″</div><div class="sl">Pillow reminder</div></div>
+          </div>
+        </div>
+        <div class="scr-disclaimer">Tracking companion · not medical advice</div>
+        <div class="phone-tabbar"><div class="tab-item active"><span class="ti-glyph">🏠</span>Today</div><div class="tab-item"><span class="ti-glyph">💬</span>Coach</div><div class="tab-spacer"></div><div class="tab-item"><span class="ti-glyph">📈</span>Progress</div><div class="tab-item"><span class="ti-glyph">📋</span>Plan</div><div class="tab-fab">+</div></div>
+      </div>
+    </div>
+    <div class="ct-desc"><b>Hero:</b> 96pt next-med countdown · 600ms interaction scan on app foreground. <b>Top-right:</b> voice input mic for hands-free.</div>
+  </div>
+
+  <!-- ANNA: taper bar -->
+  <div class="cohort-tile">
+    <div class="ct-name">🌿 Anti-Pharma Anna</div>
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>●●●⌶</span></div>
+        <div class="phone-content">
+          <div class="scr-topbar"><div class="greet">Anna<span class="sub">Off-PPI taper</span></div><div class="scr-actions"><div class="icon-btn cohort" style="font-size:11px;">🌿</div></div></div>
+          <div class="tempo-band anna"></div>
+          <div class="hero-card">
+            <div class="rsi-label-sm" style="margin-top:0;">Taper</div>
+            <div style="display:flex; align-items:baseline; gap:6px;"><div class="anna-week">4</div><div class="anna-of">/ 12</div></div>
+            <div class="taper-bar">
+              <div class="taper-seg filled"></div><div class="taper-seg filled"></div><div class="taper-seg filled"></div><div class="taper-seg current"></div>
+              <div class="taper-seg"></div><div class="taper-seg"></div><div class="taper-seg"></div><div class="taper-seg"></div>
+              <div class="taper-seg"></div><div class="taper-seg"></div><div class="taper-seg"></div><div class="taper-seg"></div>
+            </div>
+          </div>
+          <div class="secondary-strip" style="grid-template-columns: 1fr 1fr;">
+            <div class="sec-card"><div class="sb">🌱</div><div class="sv" style="font-size:10px;">DGL · zinc</div><div class="sl">Supplements 4/4</div></div>
+            <div class="sec-card"><div class="sb">📉</div><div class="sv" style="font-size:10px;">Rebound clear</div><div class="sl">7d vs baseline</div></div>
+          </div>
+        </div>
+        <div class="scr-disclaimer">Tracking companion · not medical advice</div>
+        <div class="phone-tabbar"><div class="tab-item active"><span class="ti-glyph">🏠</span>Today</div><div class="tab-item"><span class="ti-glyph">💬</span>Coach</div><div class="tab-spacer"></div><div class="tab-item"><span class="ti-glyph">📈</span>Progress</div><div class="tab-item"><span class="ti-glyph">📋</span>Plan</div><div class="tab-fab">+</div></div>
+      </div>
+    </div>
+    <div class="ct-desc"><b>Hero:</b> 96pt week + 12-segment ladder. <b>WOW:</b> Monday 06:00 segment unlocks with 800ms wipe + 200ms gold flash + 4s PraiseToast.</div>
+  </div>
+
+  <!-- LARRY: RSI gauge small -->
+  <div class="cohort-tile">
+    <div class="ct-name">🎤 LPR Larry ⭐</div>
+    <div class="phone-frame sm">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>●●●⌶</span></div>
+        <div class="phone-content">
+          <div class="scr-topbar"><div class="greet">Larry<span class="sub">Day 47 · LPR ⭐</span></div><div class="scr-actions"><div class="icon-btn cohort" style="font-size:7px;">RSI</div></div></div>
+          <div class="tempo-band larry"></div>
+          <div class="hero-card">
+            <svg class="rsi-gauge-svg" viewBox="0 0 220 130">
+              <path d="M 20 120 A 90 90 0 0 1 200 120" fill="none" stroke="#C5DDD7" stroke-width="12" stroke-linecap="round"/>
+              <path d="M 20 120 A 90 90 0 0 1 152 30" fill="none" stroke="#18524F" stroke-width="12" stroke-linecap="round"/>
+              <line x1="110" y1="20" x2="110" y2="38" stroke="#B5503C" stroke-width="2" stroke-dasharray="3 2"/>
+              <line x1="110" y1="120" x2="160" y2="40" stroke="#C49B5E" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="110" cy="120" r="4" fill="#18524F"/>
+            </svg>
+            <div class="rsi-score-big">18</div>
+            <div class="rsi-label-sm">RSI · ↓4 this wk</div>
+            <div class="rsi-ribbon">⚠ Screening only — discuss with ENT</div>
+          </div>
+        </div>
+        <div class="scr-disclaimer">Tracking companion · not medical advice</div>
+        <div class="phone-tabbar"><div class="tab-item active"><span class="ti-glyph">🏠</span>Today</div><div class="tab-item"><span class="ti-glyph">💬</span>Coach</div><div class="tab-spacer"></div><div class="tab-item"><span class="ti-glyph">📈</span>Progress</div><div class="tab-item"><span class="ti-glyph">📋</span>Plan</div><div class="tab-fab">+</div></div>
+      </div>
+    </div>
+    <div class="ct-desc"><b>Hero:</b> 144pt RSI semicircular gauge — the cohort that justifies $39.99/yr LPR Pro add-on.</div>
+  </div>
+
+</div>
+
+<h3 style="margin-top: 28px; font-size: 17px; color: var(--brand-deep);">Per-cohort hero element matrix</h3>
+<div class="tab-spec-table">
+<table>
+<thead><tr><th>Cohort</th><th>BIG glyph (size · color)</th><th>Data binding</th><th>Top-right pill</th></tr></thead>
+<tbody>
+<tr><td><span class="cohort-chip cc-brian">🔥 Brian</span></td><td>"12" · <b>152pt</b> SF Pro Rounded Black · brand-deep</td><td><code>store.symptoms.filter { heartburn ≥ 3 }.last</code></td><td>"GI report" → DoctorPDFExporter</td></tr>
+<tr><td><span class="cohort-chip cc-patricia">🤰 Patricia</span></td><td>240pt Tums ring · "1,200" 72pt center · ring darkens past 75%</td><td><code>PregnancyData.tumsTracker.dailyDoseMg / 7500</code></td><td>Trimester picker "28w"</td></tr>
+<tr><td><span class="cohort-chip cc-frank">🍷 Frank</span></td><td>Last meal photo <b>320×320pt full-bleed</b> + verdict pill 20pt</td><td><code>FoodEntry.last { $0.photo != nil }</code></td><td>Camera shortcut → AVCapture</td></tr>
+<tr><td><span class="cohort-chip cc-sam">👴 Sam</span></td><td>"09:00" · <b>96pt</b> + med name 34pt brand-mid</td><td><code>MedSchedule.nextDose</code></td><td>Voice input mic → SFSpeechRecognizer</td></tr>
+<tr><td><span class="cohort-chip cc-anna">🌿 Anna</span></td><td>"Week 4" · <b>96pt</b> + "of 12" 34pt + 12-seg taper bar</td><td><code>TaperPlan.weekNumber / 12</code></td><td>Supplement leaf — 4 pre-set quick-log</td></tr>
+<tr><td><span class="cohort-chip cc-larry">🎤 Larry ⭐</span></td><td>RSI semicircular gauge 280×180pt · score <b>144pt</b> · gauge mint→deep gradient · gold needle</td><td><code>LPRData.rsiScore</code></td><td>RSI waveform — opens 9-question Belafsky sheet</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ==================== TAB 2 · +LOG FAB ==================== -->
+<section id="fab">
+<div class="module-banner">
+  <div class="mb-tag">SPRINT 4.2 · CAPTURE FAB</div>
+  <h2>Tab 2 — +Log FAB (cohort-filtered chip grid)</h2>
+  <p class="mb-sub">Center raised gold FAB on tab bar opens <code>RefluxoraLogSheet</code> (Hepatica fork) at 360pt detent. Chip grid is <b>cohort-filtered</b>: universal core (Meal · Symptom · Med · Lab) + per-cohort promotions (Patricia → Tums first; Larry → Throat-clearing + RSI; Brian → PPI dose; Frank → Drink; Anna → Supplement). <b>Long-press 350ms</b> opens 4-petal radial for 1-tap commits (Tums, throat-clear, PPI dose, "same symptom again"). EMOTION layer bans surveillance verbs ("log/record/track") in favor of ownership ("noted/captured/saved") and never celebrates on severity-≥4 days. Source: <a href="CONSILIUM_FAB_2026-05-23_LOCKED.md"><code>CONSILIUM_FAB_LOCKED</code></a>.</p>
+  <div class="mb-pills">
+    <span class="pill">2-tap default · 1-tap radial (Tums/throat-clear)</span>
+    <span class="pill">7-12 fields auto-filled invisibly</span>
+    <span class="pill">200ms .soft haptic + 4s toast</span>
+    <span class="pill">App Intents + Lock-screen widgets</span>
+  </div>
+</div>
+
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="phone-statusbar"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content" style="opacity: 0.45;">
+        <div class="scr-topbar">
+          <div class="greet">Larry<span class="sub">Day 47 · LPR ⭐</span></div>
+          <div class="scr-actions"><div class="icon-btn cohort">RSI</div></div>
+        </div>
+        <div class="tempo-band larry"></div>
+        <div class="hero-card" style="padding:10px;">
+          <div class="rsi-score-big" style="font-size: 40px; margin-top: 0;">18</div>
+          <div class="rsi-label-sm">Reflux Symptom Index</div>
+        </div>
+      </div>
+
+      <!-- FAB sheet open -->
+      <div class="fab-sheet-mock">
+        <div class="grab"></div>
+        <div class="sheet-title">
+          <h4>Capture</h4>
+          <small>Last: Throat-clear · 12 min ago</small>
+        </div>
+        <div class="chip-grid">
+          <div class="chip primary"><span class="ch-g">🗣</span> Throat-clearing <span style="font-size:9px; color:var(--ink-3); margin-left:4px;">+1 tap</span></div>
+          <div class="chip" style="border:2px solid var(--cta); background:var(--cta-soft); color:var(--cta-deep);"><span class="ch-g">🎤</span> RSI quick-9</div>
+          <div class="chip"><span class="ch-g">🍽</span> Meal photo</div>
+          <div class="chip"><span class="ch-g">💧</span> Symptom</div>
+          <div class="chip"><span class="ch-g">💊</span> Med dose</div>
+          <div class="chip"><span class="ch-g">📄</span> Lab scan</div>
+        </div>
+        <div class="quick-cta">Quick-log Throat-clearing</div>
+        <div style="text-align: center; font-size: 9px; color: var(--ink-3); margin-top: 6px;">Long-press FAB for radial · swipe down to cancel</div>
+      </div>
+      <div class="scr-disclaimer">Refluxora is a tracking companion, not a medical device.</div>
+      <div class="phone-tabbar">
+        <div class="tab-item"><span class="ti-glyph">🏠</span>Today</div>
+        <div class="tab-item"><span class="ti-glyph">💬</span>Coach</div>
+        <div class="tab-spacer"></div>
+        <div class="tab-item"><span class="ti-glyph">📈</span>Progress</div>
+        <div class="tab-item"><span class="ti-glyph">📋</span>Plan</div>
+        <div class="tab-fab" style="box-shadow: 0 0 0 6px rgba(196,155,94,0.30), 0 8px 18px -4px rgba(140,106,59,0.55), 0 0 0 4px rgba(245,241,234,0.96);">+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <h3>+Log sheet — Larry cohort override</h3>
+    <p>Universal core (Meal · Symptom · Med · Lab) becomes <b>Throat-clearing · RSI · Meal · Symptom</b> for Larry. Top 2 chips render full-row 64pt with gold border (the "primary" pair). Sticky bottom <b>Quick-log capsule</b> commits the top chip without sub-sheet — true 2-tap.</p>
+    <ul>
+      <li><b>FAB gestures:</b> tap (sheet) · long-press 350ms (radial) · swipe-up (camera) · swipe-down (undo banner 5s) · iOS 17 contextMenu (power-user)</li>
+      <li><b>Background enrichment</b> after commit (never blocks UI): Vision item detection · pH bucket lookup · drug-DB interaction · 4-hr symptom-meal correlation · Acid Watcher % recompute · praise gating</li>
+      <li><b>1-tap path:</b> FAB long-press radial OR Lock-screen widget OR Action Button (iPhone 15 Pro+) commits Tums/throat-clear/PPI dose without opening app</li>
+      <li><b>Praise gating</b> (EMOTION): severity ≥4 in last 6h suppresses all praise · RSI regression Sunday suppresses needle-fill animation · Brian never sees "streak broken" — Today reset pictograph instead</li>
+    </ul>
+  </div>
+</div>
+
+<h3 style="margin-top: 28px; font-size: 17px; color: var(--brand-deep);">Cohort chip-override matrix</h3>
+<p class="lede" style="margin-bottom: 8px;">Universal core: <b>Meal · Symptom · Med · Lab</b>. Cohort overrides promote 1-2 chips to positions 1-2 (full-row gold-bordered primary slot).</p>
+<div class="tab-spec-table">
+<table>
+<thead><tr><th>Cohort</th><th>Chip order (positions 1-4)</th><th>1-tap target (long-press radial)</th><th>Toast copy</th></tr></thead>
+<tbody>
+<tr><td><span class="cohort-chip cc-brian">🔥 Brian</span></td><td>Meal · <b>PPI dose</b> · Symptom · Lab</td><td>PPI dose <code>.rigid 0.8</code></td><td>"Taken — 9:04 AM."</td></tr>
+<tr><td><span class="cohort-chip cc-patricia">🤰 Patricia</span></td><td><b>Tums</b> · Meal · Symptom · Sleep</td><td>Tums +500mg <code>.soft 0.6</code></td><td>"Added — 1,200 / 7,500 mg today."</td></tr>
+<tr><td><span class="cohort-chip cc-frank">🍷 Frank</span></td><td>Meal · <b>Drink</b> · Symptom · Med</td><td>Drink (3 quick-tiles)</td><td>"Captured. Espresso flagged Watch (pH 5.0)."</td></tr>
+<tr><td><span class="cohort-chip cc-sam">👴 Sam</span></td><td><b>Med</b> · Symptom · BP · Meal</td><td>Voice input (no radial — a11y)</td><td>"Taken — 9:04 AM." (no praise — hygiene)</td></tr>
+<tr><td><span class="cohort-chip cc-anna">🌿 Anna</span></td><td>Meal · Symptom · <b>Supplement</b> · PPI dose</td><td>Supplement leaf 4-slot rail</td><td>"Added. DGL + zinc done for today."</td></tr>
+<tr><td><span class="cohort-chip cc-larry">🎤 Larry ⭐</span></td><td><b>Throat-clearing · RSI</b> · Meal · Symptom</td><td>Throat-clear +1 <code>.soft 0.5</code></td><td>"Noted — 7 today. Map updating."</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ==================== TAB 3 · COACH ==================== -->
+<section id="coach">
+<div class="module-banner">
+  <div class="mb-tag">SPRINT 4.3 · AI COMPANION</div>
+  <h2>Tab 3 — Coach (4-section home + cited chat)</h2>
+  <p class="mb-sub">Hepatica-pattern 4-section CoachHome (Daily Question · Try Asking · Cheat Sheets · Conversations) feeds answers that are inline-footnoted, cross-tier-diverse (2-3 sources), <b>confidence-banded</b> (Grounded/Partial/Off-corpus chip ABOVE every answer), cohort-retrieval-weighted (Larry T2 ×1.5 · Patricia T4 ×1.5 · Anna T5 ×1.5), and pinnable to Doctor PDF. Voiced through 6 cohort personas. 10 refusal categories with warm pivots. Emergency intent → red banner with localized 911/999/112/000. Source: <a href="CONSILIUM_COACH_2026-05-23_LOCKED.md"><code>CONSILIUM_COACH_LOCKED</code></a>.</p>
+  <div class="mb-pills">
+    <span class="pill">≤180 words per answer</span>
+    <span class="pill">3-tier disclaimer (footer + strip + ribbon)</span>
+    <span class="pill">10 refusal categories</span>
+    <span class="pill">Cohort-weighted RAG retrieval</span>
+  </div>
+</div>
+
+<div class="modes-row">
+  <!-- COACH HOME (List) -->
+  <div class="screen-block" style="grid-template-columns: 1fr; padding: 18px;">
+    <div class="phone-frame" style="margin: 0 auto;">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>● ●●● ⌶</span></div>
+        <div class="phone-content">
+          <div class="scr-topbar">
+            <div class="greet">Coach<span class="sub">Larry · LPR ⭐</span></div>
+            <div class="scr-actions"><div class="icon-btn">⋯</div></div>
+          </div>
+
+          <div class="coach-sec">
+            <div class="cs-tag">DAILY QUESTION · TODAY</div>
+            <div class="cs-q">"My throat has cleared 7+ times most mornings. Is that pepsin reaching the larynx?"</div>
+            <div class="cs-meta">Tap to start a thread →</div>
+          </div>
+
+          <div class="coach-sec">
+            <div class="cs-tag">TRY ASKING</div>
+            <div class="cs-q" style="font-size:10.5px;">→ "Validate my LPR — what does my RSI 18 mean?"</div>
+            <div class="cs-q" style="font-size:10.5px;">→ "What questions should I prep for ENT?"</div>
+            <div class="cs-q" style="font-size:10.5px;">→ "Is steam better than throat-clearing?"</div>
+          </div>
+
+          <div class="coach-sec">
+            <div class="cs-tag">CHEAT SHEETS · 8 OF 24</div>
+            <div class="cheat-row">
+              <div class="cheat-card"><span class="ch-em">🎤</span>What an RSI score actually means</div>
+              <div class="cheat-card"><span class="ch-em">🥗</span>Acid Watcher pH&gt;5 food list</div>
+              <div class="cheat-card"><span class="ch-em">💊</span>Voquezna vs PPI — different</div>
+            </div>
+            <div class="cs-meta" style="margin-top:6px;">See all 24 →</div>
+          </div>
+
+          <div class="coach-sec">
+            <div class="cs-tag">CONVERSATIONS</div>
+            <div style="font-size: 10.5px; color: var(--ink-2); padding: 4px 0;">📌 ENT prep — 3 questions · 2d ago</div>
+            <div style="font-size: 10.5px; color: var(--ink-2); padding: 4px 0; border-top: 1px dashed var(--divider);">Voquezna prior auth template · 5d ago</div>
+          </div>
+
+          <div style="background: var(--alert-bg); color: var(--cta-deep); font-size: 9px; padding: 5px 10px; border-radius: 0; text-align: center; margin: 8px -12px 0; border-top: 1px solid var(--watch);">Educational only · not medical advice</div>
+        </div>
+        <div class="phone-tabbar">
+          <div class="tab-item"><span class="ti-glyph">🏠</span>Today</div>
+          <div class="tab-item active"><span class="ti-glyph">💬</span>Coach</div>
+          <div class="tab-spacer"></div>
+          <div class="tab-item"><span class="ti-glyph">📈</span>Progress</div>
+          <div class="tab-item"><span class="ti-glyph">📋</span>Plan</div>
+          <div class="tab-fab">+</div>
+        </div>
+      </div>
+    </div>
+    <div class="annotation">
+      <h3>CoachHomeView — 4-section List (Hepatica pattern)</h3>
+      <ul>
+        <li><b>Daily Question</b> rotates <code>dayOfYear % 30</code> from 30-question cohort pool (180 total)</li>
+        <li><b>Try Asking</b> — 3 cohort-specific opener prompts</li>
+        <li><b>Cheat Sheets</b> — horizontal shelf, top-8 of 24-card pool, cohort-weighted relevance</li>
+        <li><b>Conversations</b> — past threads, swipe-delete + rename (Hepatica precedent)</li>
+        <li>Tier-1 sticky disclaimer footer above tab bar — Coach only</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COACH CHAT -->
+  <div class="screen-block" style="grid-template-columns: 1fr; padding: 18px;">
+    <div class="phone-frame" style="margin: 0 auto;">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>● ●●● ⌶</span></div>
+        <div class="phone-content" style="gap: 6px;">
+          <div class="scr-topbar">
+            <div class="greet" style="font-size: 11px;">RSI 18 — what now?<span class="sub">Larry · 4 messages</span></div>
+            <div class="scr-actions"><div class="icon-btn">📄</div></div>
+          </div>
+
+          <div class="chat-row">
+            <div class="chat-q">My RSI just came back at 18. Is that bad enough to see an ENT this week?</div>
+
+            <div style="margin: 2px 0 4px 0;">
+              <span class="confidence-chip">● Grounded · 3 sources</span>
+            </div>
+
+            <div class="chat-a">
+              <b>An RSI of 18 is above the Belafsky 13 threshold — your ENT visit is justified.</b> The 9-question RSI is a screening tool from Belafsky 2002<sup>[c1]</sup>, validated for detecting laryngopharyngeal reflux. Scores ≥13 correlate with abnormal pH-impedance findings in ~75% of cases<sup>[c2]</sup>. AAO-HNS recommends laryngoscopy + reflux finding score before empiric PPI trials at this severity<sup>[c3]</sup>.
+            </div>
+            <div class="safety-strip">Educational — confirm with your clinician.</div>
+            <div class="disclaimer-ribbon">⚠ RSI is a screening tool, not a diagnostic test. Laryngoscopy is needed to confirm LPR.</div>
+            <div class="followup-row">
+              <span class="followup-chip">Talking points for my ENT</span>
+              <span class="followup-chip">Save to ENT report</span>
+            </div>
+            <div class="sources-collapsed">
+              <span>Sources · 3</span><span>›</span>
+            </div>
+          </div>
+
+          <div style="background: var(--alert-bg); color: var(--cta-deep); font-size: 9px; padding: 5px 10px; text-align: center; margin: 6px -12px 0; border-top: 1px solid var(--watch);">Educational only · not medical advice</div>
+        </div>
+        <div class="phone-tabbar">
+          <div class="tab-item"><span class="ti-glyph">🏠</span>Today</div>
+          <div class="tab-item active"><span class="ti-glyph">💬</span>Coach</div>
+          <div class="tab-spacer"></div>
+          <div class="tab-item"><span class="ti-glyph">📈</span>Progress</div>
+          <div class="tab-item"><span class="ti-glyph">📋</span>Plan</div>
+          <div class="tab-fab">+</div>
+        </div>
+      </div>
+    </div>
+    <div class="annotation">
+      <h3>CoachChatView — answer anatomy</h3>
+      <ul>
+        <li><b>Confidence chip</b> (Grounded · Partial · Off-corpus) ABOVE every answer — non-dismissible</li>
+        <li><b>Bold verdict sentence</b> + 2-5 grounded sentences (≤180 words total — Hepatica simplify lock)</li>
+        <li><b>Inline [c1] [c2] [c3] superscripts</b> brand-mid 11pt anchored to claiming sentence</li>
+        <li><b>Safety strip</b> below — rotates 4 variants</li>
+        <li><b>Hard disclaimer ribbon</b> (watch-bg 28pt) on 6 claim types: pregnancy meds · PPI taper · RSI interpretation · lab values · Voquezna efficacy · supplement dosing</li>
+        <li><b>Follow-up chips</b> — 1-2 cohort-voiced (Larry: "Save to ENT report" → DoctorPDF queue)</li>
+        <li><b>Sources collapsed</b> by default; tap [c1] → 240pt verbatim popover</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== TAB 4 · PROGRESS ==================== -->
+<section id="progress">
+<div class="module-banner">
+  <div class="mb-tag">SPRINT 4.4 · CHARTS + TIMELINE + PDF</div>
+  <h2>Tab 4 — Progress (chart ↔ photo-timeline toggle + doctor PDF)</h2>
+  <p class="mb-sub">Segmented control <b>Chart ↔ Timeline</b> (44pt × 280pt) + PDF export top-right with queue badge. Per-cohort default: Frank/Patricia/Anna → Timeline (foodstagram), Brian/Sam/Larry → Chart (clinical trajectory). Chart view has per-cohort hero (Larry's <b>RSI 12-week LineMark</b> is the keystone — Belafsky threshold ruled at y=13, AreaMark zones, gold Sunday PointMarks). Timeline is Instagram-density NoBurn killer with 393×393pt full-bleed photo cells + verdict pills. PDF: 4 cohort-routed formats (GI · ENT · OB · Functional) × 5 fixed pages. Source: <a href="CONSILIUM_PROGRESS_2026-05-23_LOCKED.md"><code>CONSILIUM_PROGRESS_LOCKED</code></a>.</p>
+  <div class="mb-pills">
+    <span class="pill">Larry RSI = $39.99/yr LPR Pro justifier</span>
+    <span class="pill">Vector PDF via CGContext (not raster)</span>
+    <span class="pill">Coach Q&amp;A appendix with hard exclusions</span>
+    <span class="pill">Locale-routed footer (US/GB/DE/CA/AU)</span>
+  </div>
+</div>
+
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="phone-statusbar"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content">
+        <div class="scr-topbar">
+          <div class="greet">Progress<span class="sub">Larry · LPR ⭐ · default Chart</span></div>
+          <div class="scr-actions"><div class="icon-btn" style="background: var(--brand-deep); color: #FFFFFF; border-color: var(--brand-deep);">📄</div></div>
+        </div>
+
+        <div class="seg-control">
+          <div class="seg active">📈 Chart</div>
+          <div class="seg">📸 Timeline</div>
+        </div>
+
+        <div class="pdf-cta">
+          <div class="ic">📄</div>
+          <div class="tx"><b>ENT report ready</b><small>3 Coach threads pinned · 12-wk RSI</small></div>
+          <div class="badge">3</div>
+        </div>
+
+        <div class="chart-card">
+          <div class="ct-head">
+            <div class="ct-title">RSI · 12-week trajectory</div>
+            <div class="ct-meta">22 → 18</div>
+          </div>
+          <svg class="rsi-line-svg" viewBox="0 0 280 130" preserveAspectRatio="none">
+            <!-- alert zone above 13 -->
+            <rect x="0" y="0" width="280" height="65" fill="#ECD0C8" opacity="0.18"/>
+            <!-- watch zone 13-30 -->
+            <rect x="0" y="0" width="280" height="65" fill="#EFE0BE" opacity="0.10"/>
+            <!-- threshold rule at y=13 -->
+            <line x1="0" y1="65" x2="280" y2="65" stroke="#B5503C" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <text x="270" y="62" font-size="9" fill="#B5503C" text-anchor="end" font-weight="700">Belafsky 13</text>
+            <!-- RSI line -->
+            <polyline points="10,15 35,20 60,25 85,35 110,30 135,45 160,50 185,55 210,60 235,68 260,72 270,75" fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#5BA89B"/>
+                <stop offset="100%" stop-color="#18524F"/>
+              </linearGradient>
+            </defs>
+            <!-- Sunday PointMarks -->
+            <circle cx="10" cy="15" r="3.5" fill="#C49B5E" stroke="#18524F" stroke-width="1.5"/>
+            <circle cx="60" cy="25" r="3.5" fill="#C49B5E" stroke="#18524F" stroke-width="1.5"/>
+            <circle cx="110" cy="30" r="3.5" fill="#C49B5E" stroke="#18524F" stroke-width="1.5"/>
+            <circle cx="160" cy="50" r="3.5" fill="#C49B5E" stroke="#18524F" stroke-width="1.5"/>
+            <circle cx="210" cy="60" r="3.5" fill="#C49B5E" stroke="#18524F" stroke-width="1.5"/>
+            <circle cx="260" cy="72" r="3.5" fill="#C49B5E" stroke="#18524F" stroke-width="1.5"/>
+            <!-- Voquezna vertical -->
+            <line x1="135" y1="0" x2="135" y2="130" stroke="#C49B5E" stroke-width="1" stroke-dasharray="3 3"/>
+            <text x="138" y="120" font-size="7" fill="#8C6A3B" font-weight="700">Voquezna</text>
+          </svg>
+          <div class="range-pills">
+            <div class="rp">7d</div>
+            <div class="rp">30d</div>
+            <div class="rp">90d</div>
+            <div class="rp active">12w</div>
+            <div class="rp">All</div>
+          </div>
+          <div class="rsi-ribbon" style="margin-top: 8px;">⚠ RSI is a screening tool — discuss with your ENT.</div>
+        </div>
+
+        <div class="chart-card">
+          <div class="ct-head"><div class="ct-title">Acid Watcher % · weekly</div><div class="ct-meta">82% 7d</div></div>
+          <svg class="mini-spark" viewBox="0 0 240 36" preserveAspectRatio="none">
+            <polyline points="0,28 24,24 48,22 72,18 96,20 120,14 144,12 168,10 192,8 216,6 240,5" fill="none" stroke="#5BA89B" stroke-width="2.5"/>
+          </svg>
+        </div>
+
+      </div>
+      <div class="scr-disclaimer">Refluxora is a tracking companion, not a medical device.</div>
+      <div class="phone-tabbar">
+        <div class="tab-item"><span class="ti-glyph">🏠</span>Today</div>
+        <div class="tab-item"><span class="ti-glyph">💬</span>Coach</div>
+        <div class="tab-spacer"></div>
+        <div class="tab-item active"><span class="ti-glyph">📈</span>Progress</div>
+        <div class="tab-item"><span class="ti-glyph">📋</span>Plan</div>
+        <div class="tab-fab">+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <h3>Larry's RSI 12-week trajectory — keystone chart</h3>
+    <p>The single most important chart in the app — Larry's <b>RSI 12-week LineMark</b> with Belafsky <code>RuleMark</code> at y=13, AreaMark zones (watch-bg above 13, alert-bg above 30), gold <code>PointMark</code> Sundays, and Voquezna-start vertical dashed rule. This is what the ENT spends 30 seconds with on page 1 of the PDF — the entire <b>$39.99/yr LPR Pro monetization defense</b>.</p>
+    <ul>
+      <li><b>Toggle:</b> Chart ↔ Timeline · 320ms cross-fade · <code>.soft 0.5</code> haptic · "Pin as default" pill on non-default view</li>
+      <li><b>PDF export CTA</b> top-right with queue badge (3 = Coach threads pinned)</li>
+      <li><b>4 PDF formats:</b> <b>ENT ⭐</b> (Larry — RSI 12-wk + 9-dim radar + Acid Watcher %) · <b>GI</b> (Brian/Frank/Sam — heatmap + trajectory + adherence Gantt) · <b>OB</b> (Patricia — Tums vs ceiling + safe-meds + Coach Q&amp;A pregnancy-excluded) · <b>Functional-med</b> (Anna — taper ladder + supplement PubMed bibliography)</li>
+      <li><b>Cross-tab handoffs:</b> Sunday RSI regression → Coach with pre-filled week-of-triggers · long-press chart → "Add to Doctor PDF queue" · Frank heatmap cell → filters Timeline by (food, symptom)</li>
+      <li><b>Empty state:</b> Hepatica MarkerGoalSkeleton — never shows fake data, never blocks on empty (D0: goal-skeleton with threshold rule + "Your trend builds here"; D7: sparse points; D14: thin line; D30+: full fidelity)</li>
+      <li><b>Compliance lexicon:</b> banned "caused by/triggered by/diagnose"; required "you reported · co-occurred with · observed in N% of entries"</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ==================== TAB 5 · PLAN ==================== -->
+<section id="plan">
+<div class="module-banner">
+  <div class="mb-tag">SPRINT 4.5 · PROTOCOL + 4 ADD-ON GATES</div>
+  <h2>Tab 5 — Plan (free baseline + 4 paid add-on gates)</h2>
+  <p class="mb-sub">Stacked <code>PlanSection</code> cards: <b>TodayProtocolStrip</b> (sticky 64pt habit checklist) + free baseline per cohort (Diet · Sleep · Meds-display · cohort skeleton) + <b>4 add-on live-demo cards</b> with soft lock chip (no blur, no greyout — real chrome, anonymized sample data). Zero paywalls Day 0-6. Single full paywall sheet only on cohort-defined peak-WTP trigger event. Captures (writes) NEVER gate — only premium reads (PDF export, A/B compare, full pH DB). Anti-dark-pattern rules locked (no fake countdowns, no shame copy, no peer comparison, no flare-paywalls). Source: <a href="CONSILIUM_PLAN_2026-05-23_LOCKED.md"><code>CONSILIUM_PLAN_LOCKED</code></a>.</p>
+  <div class="mb-pills">
+    <span class="pill">LPR Pro $39.99/yr · Larry hero</span>
+    <span class="pill">Voquezna Companion $29.99/yr · Brian+Larry</span>
+    <span class="pill">PPI Taper Pro $29.99/yr · Anna</span>
+    <span class="pill">Diet Lab $29.99/yr · Frank+Anna</span>
+  </div>
+</div>
+
+<div class="screen-block">
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="phone-statusbar"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content">
+        <div class="scr-topbar">
+          <div class="greet">Plan<span class="sub">Larry · LPR ⭐ · Day 47</span></div>
+          <div class="scr-actions"><div class="icon-btn">⋯</div></div>
+        </div>
+
+        <div class="plan-protocol-strip">
+          <div class="pps-title">Today's protocol · 2/4</div>
+          <div class="pps-row"><div class="box done">✓</div>No food after 7:30 PM</div>
+          <div class="pps-row"><div class="box done">✓</div>Snap your meal</div>
+          <div class="pps-row"><div class="box">·</div>Vocal hygiene: hydrate not throat-clear</div>
+          <div class="pps-row"><div class="box">·</div>RSI Sunday check-in</div>
+        </div>
+
+        <!-- LOCKED — LPR Pro hero (Larry primary) -->
+        <div class="plan-card locked">
+          <div class="pc-head">
+            <div class="pc-icon">🎤</div>
+            <div class="pc-title">LPR Pro</div>
+            <div class="pc-price">+$39.99/yr</div>
+          </div>
+          <div class="pc-body">
+            Full Acid Watcher 1,800-food pH database · 12-week RSI trajectory PDF formatted for ENT · vocal hygiene 4-program carousel (Singer · Teacher · Lawyer · Broadcaster)
+            <div class="sample-chart">
+              <div class="bar" style="height: 95%;"></div><div class="bar" style="height: 85%;"></div><div class="bar" style="height: 78%;"></div><div class="bar" style="height: 70%;"></div><div class="bar" style="height: 62%;"></div><div class="bar" style="height: 55%;"></div><div class="bar" style="height: 50%; background: var(--cta);"></div>
+            </div>
+            <small>Sample data — your trajectory after 14 days</small>
+          </div>
+          <div class="pc-unlock-cta">🔒 Unlock — try 7 days, then $39.99/yr</div>
+        </div>
+
+        <!-- OWNED — free baseline section (Acid Watcher starter) -->
+        <div class="plan-card owned">
+          <div class="pc-head">
+            <div class="pc-icon">🥗</div>
+            <div class="pc-title">Acid Watcher starter</div>
+            <div class="pc-price">FREE</div>
+          </div>
+          <div class="pc-body" style="font-size: 9.5px;">
+            <b>12 staples:</b> oatmeal · banana · melon · cucumber · root veg · whole grains · low-fat fish · skinless chicken · egg whites · almond milk · ginger · fennel
+          </div>
+          <div class="pc-unlock-cta">Ask Coach about this →</div>
+        </div>
+
+        <!-- LOCKED — Voquezna (secondary) -->
+        <div class="plan-card locked">
+          <div class="pc-head">
+            <div class="pc-icon">💊</div>
+            <div class="pc-title">Voquezna Companion</div>
+            <div class="pc-price">+$29.99/yr</div>
+          </div>
+          <div class="pc-body" style="font-size: 9.5px;">8-week efficacy chart for GI · insurance prior-auth template · side-effect log<small>Sample data — discuss with your gastroenterologist</small></div>
+          <div class="pc-unlock-cta">🔒 Unlock</div>
+        </div>
+
+        <div style="font-size: 9px; color: var(--ink-3); text-align: center; padding: 4px;">More plans (2): PPI Taper Pro · Diet Lab →</div>
+      </div>
+      <div class="scr-disclaimer">Refluxora is a tracking companion, not a medical device.</div>
+      <div class="phone-tabbar">
+        <div class="tab-item"><span class="ti-glyph">🏠</span>Today</div>
+        <div class="tab-item"><span class="ti-glyph">💬</span>Coach</div>
+        <div class="tab-spacer"></div>
+        <div class="tab-item"><span class="ti-glyph">📈</span>Progress</div>
+        <div class="tab-item active"><span class="ti-glyph">📋</span>Plan</div>
+        <div class="tab-fab">+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <h3>Plan home — Larry cohort priority</h3>
+    <p>Cohort-priority order: <b>LPR Pro hero</b> (locked, gold border, live preview) → free baseline (Diet · Meds · Sleep) → Voquezna Companion secondary → "More plans (2)" collapsed group for irrelevant add-ons. Single Tab, no scrolling exhaustion.</p>
+    <ul>
+      <li><b>TodayProtocolStrip</b> (sticky 64pt top) — 3-4 cohort-derived check-rows resetting 03:00 (parity with Anna supplement)</li>
+      <li><b>Soft lock chip</b> (not blur, not greyout) — real chrome, anonymized sample data, 11pt "Sample data" watermark</li>
+      <li><b>Trigger events</b> for LPR Pro paywall: (a) 2nd RSI logged AND improvement ≥3 points OR (b) 4 weeks active AND Acid Watcher adherence ≥40% OR (c) user taps "Save to ENT report" on Coach answer</li>
+      <li><b>Cross-tab upsell rate limit:</b> max 2 surface-touches per 7 days per add-on outside Plan tab itself</li>
+      <li><b>Lapsed users keep capture forever</b> — only premium reads (PDF export, A/B compare, full pH DB) gate</li>
+      <li><b>Anti-dark-pattern rules:</b> no fake countdowns · no shame copy · no peer comparison · no interstitial paywalls · no paywall during flare (severity ≥4 in 6h suppresses 24h) · no paywall on Patricia ≥34w trimester · no win-back discount</li>
+    </ul>
+  </div>
+</div>
+
+<h3 style="margin-top: 28px; font-size: 17px; color: var(--brand-deep);">4 add-on gates · cohort priority + trigger events</h3>
+<div class="tab-spec-table">
+<table>
+<thead><tr><th>Add-on</th><th>Price</th><th>Cohort</th><th>Trigger event (only thing that fires paywall sheet)</th></tr></thead>
+<tbody>
+<tr><td><b>LPR Pro ⭐</b><br>(Acid Watcher 1,800 foods · 12-wk RSI PDF · vocal hygiene)</td><td>+$39.99/yr</td><td><span class="cohort-chip cc-larry">🎤 Larry</span></td><td>(a) 2nd RSI logged + improvement ≥3pt · OR (b) 4 weeks active + Acid Watcher ≥40% · OR (c) user taps "Save to ENT report"</td></tr>
+<tr><td><b>Voquezna Companion</b><br>(efficacy tracker · insurance appeal · drug-DB interactions)</td><td>+$29.99/yr</td><td><span class="cohort-chip cc-brian">🔥 Brian</span> + <span class="cohort-chip cc-larry">🎤 Larry</span></td><td>(a) PPI logged 14+ consecutive days + breakthrough symptom ≥4 in 7d · OR (b) user mentions "Voquezna"/"vonoprazan" to Coach · OR (c) Coach refusal pivot #2 fires</td></tr>
+<tr><td><b>PPI Taper Pro</b><br>(12-week wizard · DGL/zinc/mastic protocols · rebound watch)</td><td>+$29.99/yr</td><td><span class="cohort-chip cc-anna">🌿 Anna</span></td><td>(a) Taper plan started + week 3 reached (~25%) · OR (b) rebound symptom ≥4 during taper · OR (c) DGL/zinc/mastic logged 3+ times</td></tr>
+<tr><td><b>Diet Lab</b><br>(Mediterranean vs Acid Watcher A/B · restaurant kit 50+ chains · coffee chemistry)</td><td>+$29.99/yr</td><td><span class="cohort-chip cc-frank">🍷 Frank</span> + <span class="cohort-chip cc-anna">🌿 Anna</span></td><td>(a) 30 days active + trigger map ≥3 foods at ≥70% correlation · OR (b) photo-timeline opened 5+ times · OR (c) same trigger food logged 3+ times after flare</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="lede" style="margin-top: 14px;"><b>Trial scope:</b> 7-day trial covers SINGLE add-on triggered into (not all add-ons — prevents trial-shopping). <b>Multi-add-on owners</b> get <code>Refluxora Pro · N add-ons active</code> consolidation ribbon. <b>Phase 3 (Month 7+):</b> Loveiko Health Suite $199/yr cross-app bundle surfaces as Plan footer hint at 2-add-on threshold.</p>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<div class="footer">
+  <h4>15 locked consilium docs referenced in this workbench</h4>
+  <div class="doc-grid">
+    <a href="CONSILIUM_TABS_ARCH_2026-05-23_LOCKED.md"><code>CONSILIUM_TABS_ARCH_LOCKED</code> — Sprint 3 (Path D)</a>
+    <a href="CONSILIUM_TAB_TODAY_2026-05-23_LOCKED.md"><code>CONSILIUM_TAB_TODAY_LOCKED</code> — Sprint 4.1</a>
+    <a href="CONSILIUM_TAB_TODAY_2026-05-23_iter1_big.md"><code>_iter1_big</code></a>
+    <a href="CONSILIUM_TAB_TODAY_2026-05-23_iter1_wow.md"><code>_iter1_wow</code></a>
+    <a href="CONSILIUM_TAB_TODAY_2026-05-23_iter1_cohort.md"><code>_iter1_cohort</code></a>
+    <a href="CONSILIUM_FAB_2026-05-23_LOCKED.md"><code>CONSILIUM_FAB_LOCKED</code> — Sprint 4.2</a>
+    <a href="CONSILIUM_FAB_2026-05-23_iter1_speed.md"><code>_iter1_speed</code></a>
+    <a href="CONSILIUM_FAB_2026-05-23_iter1_rich.md"><code>_iter1_rich</code></a>
+    <a href="CONSILIUM_FAB_2026-05-23_iter1_emotion.md"><code>_iter1_emotion</code></a>
+    <a href="CONSILIUM_COACH_2026-05-23_LOCKED.md"><code>CONSILIUM_COACH_LOCKED</code> — Sprint 4.3</a>
+    <a href="CONSILIUM_COACH_2026-05-23_iter1_authority.md"><code>_iter1_authority</code></a>
+    <a href="CONSILIUM_COACH_2026-05-23_iter1_voice.md"><code>_iter1_voice</code></a>
+    <a href="CONSILIUM_COACH_2026-05-23_iter1_compliance.md"><code>_iter1_compliance</code></a>
+    <a href="CONSILIUM_PROGRESS_2026-05-23_LOCKED.md"><code>CONSILIUM_PROGRESS_LOCKED</code> — Sprint 4.4</a>
+    <a href="CONSILIUM_PLAN_2026-05-23_LOCKED.md"><code>CONSILIUM_PLAN_LOCKED</code> — Sprint 4.5</a>
+  </div>
+  <h4>Related</h4>
+  <p>Sibling workbenches: <a href="design.html">design.html</a> (A Cool Relief tokens) · <a href="index.html">index.html</a> (project overview) · <a href="https://love8ko.github.io/refluxora/flow.html">flow.html (this file)</a></p>
+  <p style="margin-top: 12px; color: var(--ink-3);">Refluxora · Sprint 4 complete · 2026-05-23 · 5 tabs locked · ready for Sprint 5 Xcode implementation (~138 Swift files identified across all tabs).</p>
+</div>
+
+</body>
+</html>
