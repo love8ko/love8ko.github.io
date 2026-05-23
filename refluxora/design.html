@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Refluxora — Design System Candidates (Sprint 1)</title>
+<title>Refluxora — Design System (locked: A Cool Relief · 2026-05-23)</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -286,23 +286,21 @@
 <nav class="top-nav">
   <a href="index.html">← Index</a>
   <span class="sep"></span>
-  <span class="nav-num">SPRINT 1</span>
-  <a href="#cand-a" class="is-cand">A · Cool Relief</a>
-  <a href="#cand-b" class="is-cand">B · Warm Foodie</a>
-  <a href="#cand-c" class="is-cand">C · Pregnancy Soft</a>
-  <a href="#cand-d" class="is-cand">D · Bold Modern</a>
+  <span class="nav-num">LOCKED</span>
+  <a href="#cand-a" class="is-cand">A · Cool Relief 🔒</a>
+  <span class="sep"></span>
+  <a href="#archive">Archive (B/C/D)</a>
   <a href="#decision">Decision matrix</a>
-  <a href="#recommendation">Recommendation</a>
+  <a href="#recommendation">Lock rationale</a>
 </nav>
 
-<h1>Refluxora — Design System Candidates</h1>
-<p class="lede">Sprint 1 deliverable. Four palette candidates, each shown with the same UI primitives (typography, buttons, RSI gauge, food entries, AI Coach bubble, paywall hero, Voquezna tracker, 6 cohort accents). Founder picks one; locked variant fills the production tokens in <a href="https://github.com/love8ko/Refluxora/blob/main/DESIGN_SYSTEM.md"><code>DESIGN_SYSTEM.md</code></a> and is logged in <a href="https://github.com/love8ko/Refluxora/blob/main/DECISIONS.md"><code>DECISIONS.md</code></a>.</p>
+<h1>Refluxora — Design System (locked)</h1>
+<p class="lede">Founder locked <b>A · Cool Relief</b> on 2026-05-23 after Sprint 1's 4-candidate workbench. Production tokens (CSS + Swift) live в <a href="https://github.com/love8ko/Refluxora/blob/main/DESIGN_SYSTEM.md"><code>DESIGN_SYSTEM.md</code></a>. Lock rationale logged в <a href="https://github.com/love8ko/Refluxora/blob/main/DECISIONS.md"><code>DECISIONS.md</code></a>. Sprint 2 (Xcode) copies the Swift token enum verbatim. Other three candidates archived in collapsible section below.</p>
 
 <div class="meta-bar">
-  <span class="pill">4 candidates</span>
-  <span class="pill">3-min skim</span>
-  <span class="pill vote">⏳ founder vote pending</span>
-  <span class="pill brand">🔥 Refluxora · GERD + LPR</span>
+  <span class="pill brand">🔒 A Cool Relief · locked 2026-05-23</span>
+  <span class="pill">mint #5BA89B · slate #2E3F44 · cream #F5F1EA · gold #C49B5E</span>
+  <span class="pill">🔥 Refluxora · GERD + LPR</span>
 </div>
 
 <!-- ==================== CANDIDATE A · COOL RELIEF ==================== -->
@@ -374,6 +372,16 @@
     </div>
   </div>
 </section>
+
+<!-- ==================== ARCHIVE: rejected candidates B / C / D ==================== -->
+<details id="archive" style="margin-top:48px; background:#FFFFFF; border:1px solid #DED5C7; border-radius:18px; padding:8px 24px 18px;">
+<summary style="cursor:pointer; padding:18px 0; font-family:-apple-system,'SF Pro Rounded',system-ui; font-weight:800; font-size:16px; color:#5D6B70; list-style:none; display:flex; align-items:center; gap:10px;">
+  <span style="font-family:ui-monospace,'SF Mono',monospace; font-size:11px; font-weight:800; letter-spacing:0.06em; color:#9BA8AC; background:#F5F1EA; border:1px solid #DED5C7; border-radius:999px; padding:3px 10px;">ARCHIVED</span>
+  Rejected candidates · B Warm Foodie · C Pregnancy Soft · D Bold Modern
+  <span style="margin-left:auto; font-size:12px; font-weight:500; color:#9BA8AC;">(click to expand)</span>
+</summary>
+
+<p style="font-size:13px; color:#5D6B70; line-height:1.6; margin:14px 0;">These three palettes were ruled out by founder on 2026-05-23 in favor of A Cool Relief. Kept here for design-history reference, screenshot diffs in future consilium, and recall если cohort-specific add-on (e.g. Pregnancy Mode landing) wants to riff на one of these accents.</p>
 
 <!-- ==================== CANDIDATE B · WARM FOODIE ==================== -->
 <section id="cand-b" class="cand-block cand-b">
@@ -582,9 +590,12 @@
   </div>
 </section>
 
+</details>
+<!-- ==================== /ARCHIVE ==================== -->
+
 <!-- ==================== DECISION MATRIX ==================== -->
-<h2 id="decision" style="margin-top:48px; font-size:24px;">Decision matrix</h2>
-<p class="lede">All 4 candidates support the 6-cohort architecture — the difference is which cohort the palette amplifies first. Rate each on the criteria from <code>DESIGN_SYSTEM.md</code>.</p>
+<h2 id="decision" style="margin-top:48px; font-size:24px;">Decision matrix (Sprint 1 evaluation)</h2>
+<p class="lede">All 4 candidates support the 6-cohort architecture — the difference is which cohort the palette amplifies first. A · Cool Relief won on cross-cohort viability + differentiation. Full criteria from <code>DESIGN_SYSTEM.md</code>.</p>
 <div class="decision-table">
 <table>
 <thead><tr><th>Criterion</th><th>A · Cool Relief</th><th>B · Warm Foodie</th><th>C · Pregnancy Soft</th><th>D · Bold Modern</th></tr></thead>
@@ -603,7 +614,8 @@
 
 <!-- ==================== RECOMMENDATION ==================== -->
 <section id="recommendation" class="rec-callout">
-  <h2>Recommendation order (Sprint 1 brief to founder)</h2>
+  <h2>🔒 Lock decision — A Cool Relief (2026-05-23)</h2>
+  <p class="rec-text" style="margin-bottom:8px;">Founder approved A Cool Relief after reviewing Sprint 1 workbench. The recommendation order presented для founder was:</p>
   <div class="rec-list">
     <div class="rec-row"><span class="rec-rank">1.</span><span class="rec-text"><b>A · Cool Relief</b> — best cross-cohort fit, calming = on-brief, mint differentiates от NoBurn teal. Safe pick that doesn't over-rotate to one persona. ⭐ Default recommendation.</span></div>
     <div class="rec-row"><span class="rec-rank">2.</span><span class="rec-text"><b>D · Bold Modern</b> — best for premium positioning (Voquezna era, LPR Pro $39.99/yr). Most differentiated и most "Year-2-ready" if Larry + Voquezna become the wedge ($5.5M best-case scenario).</span></div>
