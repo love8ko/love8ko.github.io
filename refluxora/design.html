@@ -4,61 +4,619 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Refluxora — Design System Workbench (Sprint 1 · pending)</title>
+<title>Refluxora — Design System Candidates (Sprint 1)</title>
 <style>
-  body { font-family: -apple-system, "SF Pro Text", sans-serif; background: #F5F1EA; color: #2E3F44; padding: 48px 24px; max-width: 800px; margin: 0 auto; }
-  h1 { font-size: 28px; margin-bottom: 8px; }
-  .tag { display: inline-block; background: #5BA89B22; color: #2D7B7E; padding: 4px 10px; border-radius: 10px; font-size: 12px; font-weight: 600; margin-bottom: 16px; }
-  p { line-height: 1.6; margin-bottom: 16px; }
-  table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-  th, td { padding: 12px 8px; border-bottom: 1px solid #D6D0C2; text-align: left; vertical-align: top; }
-  th { background: #FFFFFF; }
-  .swatch { display: inline-block; width: 18px; height: 18px; border-radius: 4px; vertical-align: middle; margin-right: 6px; border: 1px solid #00000010; }
-  .footer { margin-top: 32px; font-size: 12px; color: #8B9B9B; }
-  a { color: #2D7B7E; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ==================== CANDIDATE PALETTES ==================== */
+  /* A · Cool Relief — calming clinical (Brian + Larry) */
+  .cand-a {
+    --brand:      #5BA89B;
+    --brand-mid:  #3D8985;
+    --brand-deep: #18524F;
+    --brand-soft: #C5DDD7;
+    --cta:        #C49B5E;
+    --cta-deep:   #8C6A3B;
+    --cta-soft:   #EBDFC6;
+    --bg:         #F5F1EA;
+    --bg-soft:    #FBF8F2;
+    --ink:        #2E3F44;
+    --ink-2:      #5D6B70;
+    --ink-3:      #9BA8AC;
+    --card:       #FFFFFF;
+    --divider:    #DED5C7;
+    --good:       #5BA89B;  --good-bg:  #D5E8E2;
+    --watch:      #C49B5E;  --watch-bg: #EFE0BE;
+    --alert:      #B5503C;  --alert-bg: #ECD0C8;
+    --ai-bg:      #E4ECEA;  --ai-border: #C5D8D3;
+  }
+
+  /* B · Warm Foodie — foodie premium (Frank + Anna) */
+  .cand-b {
+    --brand:      #7A9477;
+    --brand-mid:  #5A7458;
+    --brand-deep: #38503A;
+    --brand-soft: #D2DCC9;
+    --cta:        #C46A53;
+    --cta-deep:   #944730;
+    --cta-soft:   #ECCFC1;
+    --bg:         #FAF5EE;
+    --bg-soft:    #FDFAF4;
+    --ink:        #2B2620;
+    --ink-2:      #5D544A;
+    --ink-3:      #A09486;
+    --card:       #FFFFFF;
+    --divider:    #E4DCCB;
+    --good:       #7A9477;  --good-bg:  #DBE4D2;
+    --watch:      #C46A53;  --watch-bg: #ECCFC1;
+    --alert:      #A8472C;  --alert-bg: #EBC9BC;
+    --ai-bg:      #ECEEDC;  --ai-border: #D6D6BC;
+  }
+
+  /* C · Pregnancy Soft — gentle safety (Patricia + Sam soft) */
+  .cand-c {
+    --brand:      #8DAEC8;
+    --brand-mid:  #698EAD;
+    --brand-deep: #3F6582;
+    --brand-soft: #D0DEEA;
+    --cta:        #E7B7B4;
+    --cta-deep:   #B07A75;
+    --cta-soft:   #F4DBD8;
+    --bg:         #FCF8F6;
+    --bg-soft:    #FEFCFB;
+    --ink:        #2C3138;
+    --ink-2:      #5C636C;
+    --ink-3:      #9DA3AC;
+    --card:       #FFFFFF;
+    --divider:    #E5DDD9;
+    --good:       #8DAEC8;  --good-bg:  #D5E2EB;
+    --watch:      #E7B7B4;  --watch-bg: #F4DBD8;
+    --alert:      #B5503C;  --alert-bg: #ECD0C8;
+    --ai-bg:      #EAEFF4;  --ai-border: #D2DEE9;
+  }
+
+  /* D · Bold Modern — premium drug-companion (Voquezna upsell) */
+  .cand-d {
+    --brand:      #FF6B57;
+    --brand-mid:  #D2503D;
+    --brand-deep: #0F1B2D;
+    --brand-soft: #FFD7CE;
+    --cta:        #F8E8C4;
+    --cta-deep:   #C49B5E;
+    --cta-soft:   #FFF3DC;
+    --bg:         #F0EBE3;
+    --bg-soft:    #FAF6EE;
+    --ink:        #0F1B2D;
+    --ink-2:      #36465A;
+    --ink-3:      #7B8694;
+    --card:       #FFFFFF;
+    --divider:    #DCD3C2;
+    --good:       #2D7B7E;  --good-bg:  #CFE3E2;
+    --watch:      #FF6B57;  --watch-bg: #FFD7CE;
+    --alert:      #B5503C;  --alert-bg: #ECD0C8;
+    --ai-bg:      #E6E8EE;  --ai-border: #C8CCD4;
+  }
+
+  /* ==================== GLOBAL CHROME ==================== */
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    background: #ECE7DE; color: #2E3F44;
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    padding: 28px 24px 96px;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  h1, h2, h3, h4 { font-family: -apple-system, "SF Pro Rounded", system-ui, sans-serif; letter-spacing: -0.01em; }
+  h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; color: #2E3F44; }
+  .lede { color: #5D6B70; max-width: 940px; line-height: 1.55; margin: 6px 0 8px; font-size: 14px; }
+  code { font-family: ui-monospace, "SF Mono", monospace; font-size: 11.5px; background: rgba(0,0,0,0.05); padding: 1px 5px; border-radius: 4px; }
+
+  .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 18px; }
+  .pill { background: #FFFFFF; border: 1px solid #DED5C7; border-radius: 999px; padding: 5px 12px; font-size: 12px; color: #5D6B70; font-weight: 600; }
+  .pill.brand { background: #C5DDD7; color: #18524F; border-color: #B0CDC6; }
+  .pill.vote { background: #EBDFC6; color: #8C6A3B; border-color: #E0CFAD; }
+
+  /* ==================== STICKY TOP NAV ==================== */
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(236, 231, 222, 0.94);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid #DED5C7;
+    margin: 0 -24px 18px; padding: 10px 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; color: #5D6B70;
+    font-size: 12.5px; font-weight: 600;
+    padding: 6px 11px; border-radius: 999px; border: 1px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover { background: #FFFFFF; color: #18524F; border-color: #DED5C7; }
+  .top-nav a.is-cand { background: #2E3F44; color: #F5F1EA; }
+  .top-nav a.is-cand:hover { background: #18524F; color: #F5F1EA; }
+  .top-nav .nav-num { font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; background: #C49B5E; color: #fff; padding: 2px 6px; border-radius: 5px; }
+  .top-nav .sep { width: 1px; height: 16px; background: #DED5C7; margin: 0 4px; }
+
+  /* ==================== CANDIDATE BLOCK ==================== */
+  .cand-block {
+    background: var(--bg); color: var(--ink);
+    border: 1px solid var(--divider);
+    border-radius: 20px; padding: 28px; margin-top: 24px;
+  }
+  .cand-block h2 { color: var(--brand-deep); font-size: 28px; margin-bottom: 4px; }
+  .cand-block .cand-sub { color: var(--ink-2); font-size: 14px; line-height: 1.55; margin-bottom: 18px; max-width: 740px; }
+  .cand-tag { font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; letter-spacing: 0.10em; color: var(--cta-deep); margin-bottom: 6px; }
+  .cand-grid {
+    display: grid; grid-template-columns: 280px 1fr;
+    gap: 24px; margin-top: 16px;
+  }
+  @media (max-width: 900px) { .cand-grid { grid-template-columns: 1fr; } }
+
+  /* Tokens column */
+  .tokens { display: flex; flex-direction: column; gap: 8px; }
+  .token {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 10px; padding: 8px 10px;
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 11.5px;
+  }
+  .token .chip { width: 28px; height: 28px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.10); flex-shrink: 0; }
+  .token .label { color: var(--ink-2); display: block; font-size: 10.5px; line-height: 1.2; }
+  .token .hex { color: var(--ink); font-weight: 700; line-height: 1.2; }
+
+  /* Demos column */
+  .demos { display: flex; flex-direction: column; gap: 14px; }
+  .demo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 700px) { .demo-row { grid-template-columns: 1fr; } }
+
+  .demo-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px; padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .demo-card .demo-title { font-size: 11px; font-weight: 800; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-3); }
+
+  /* Typography sample */
+  .type-h1 { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 800; font-size: 28px; line-height: 1.1; color: var(--brand-deep); letter-spacing: -0.02em; }
+  .type-h2 { font-weight: 700; font-size: 18px; color: var(--ink); }
+  .type-body { font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+  .type-mono { font-family: ui-monospace, "SF Mono", monospace; font-size: 28px; font-weight: 800; color: var(--brand); letter-spacing: -0.01em; }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 12px 22px; border-radius: 14px; font-weight: 700; font-size: 14px; cursor: pointer; border: none; }
+  .btn-primary { background: var(--brand); color: #FFFFFF; }
+  .btn-primary:hover { background: var(--brand-mid); }
+  .btn-cta { background: var(--cta); color: var(--brand-deep); }
+  .btn-cta:hover { background: var(--cta-deep); color: #FFFFFF; }
+  .btn-secondary { background: var(--bg-soft); color: var(--ink); border: 1px solid var(--divider); }
+  .btn-ghost { background: transparent; color: var(--brand-deep); }
+  .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  /* RSI gauge mock */
+  .rsi-gauge {
+    text-align: center; padding: 12px 8px;
+    background: linear-gradient(135deg, var(--brand-soft) 0%, var(--cta-soft) 100%);
+    border-radius: 12px;
+  }
+  .rsi-score { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 800; font-size: 52px; line-height: 1; color: var(--brand-deep); }
+  .rsi-label { font-size: 10.5px; font-weight: 800; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-2); margin-top: 4px; }
+  .rsi-stat { font-size: 12px; color: var(--ink-2); margin-top: 6px; }
+
+  /* Food entry mock */
+  .food-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--divider); font-size: 13px; }
+  .food-row:last-child { border: none; }
+  .food-emoji { font-size: 24px; }
+  .food-name { font-weight: 600; color: var(--ink); }
+  .food-time { font-size: 11px; color: var(--ink-3); }
+  .verdict-pill { border-radius: 999px; padding: 3px 9px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+  .verdict-pill.good  { background: var(--good-bg);  color: var(--brand-deep); }
+  .verdict-pill.watch { background: var(--watch-bg); color: var(--cta-deep); }
+  .verdict-pill.alert { background: var(--alert-bg); color: var(--alert); }
+
+  /* AI Coach chat bubble */
+  .chat-bubble {
+    background: var(--ai-bg); color: var(--ink);
+    border: 1px solid var(--ai-border);
+    border-radius: 18px; border-top-left-radius: 5px;
+    padding: 12px 14px; font-size: 13px; line-height: 1.5;
+  }
+  .chat-citation { font-size: 11px; color: var(--brand-deep); border-bottom: 1px dotted var(--brand-deep); margin-top: 8px; display: inline-block; }
+  .disclaimer-strip { background: var(--watch-bg); color: var(--cta-deep); font-size: 11px; padding: 8px 12px; border-radius: 10px; line-height: 1.45; border: 1px solid var(--watch); }
+
+  /* Paywall hero */
+  .paywall-hero { background: var(--brand-deep); color: #FFFFFF; border-radius: 14px; padding: 18px; }
+  .cand-d .paywall-hero { background: var(--brand); color: #0F1B2D; }
+  .paywall-hero h3 { color: inherit; font-size: 18px; margin-bottom: 4px; }
+  .paywall-hero .ph-sub { font-size: 12.5px; opacity: 0.86; line-height: 1.5; margin-bottom: 10px; }
+  .paywall-hero .ph-price { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 800; font-size: 24px; color: var(--cta); }
+  .cand-d .paywall-hero .ph-price { color: var(--brand-deep); }
+  .paywall-hero .ph-trial { font-size: 11px; opacity: 0.74; margin-top: 4px; }
+
+  /* Voquezna tracker mock */
+  .vq-mock { background: var(--bg-soft); border-radius: 10px; padding: 12px; border: 1px solid var(--divider); }
+  .vq-progress { height: 8px; background: var(--divider); border-radius: 999px; margin-top: 6px; overflow: hidden; }
+  .vq-progress-fill { height: 100%; background: var(--brand); width: 35%; border-radius: 999px; }
+  .vq-stat-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; color: var(--ink-2); margin-top: 6px; }
+
+  /* Cohort accents demo */
+  .cohort-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+  .cohort-chip { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+  .cc-brian   { background: var(--brand-deep); color: var(--cta); }
+  .cc-patricia{ background: var(--cta-soft); color: var(--cta-deep); }
+  .cc-frank   { background: var(--cta-deep); color: #FFFFFF; }
+  .cc-sam     { background: var(--brand-mid); color: #FFFFFF; }
+  .cc-anna    { background: var(--brand); color: #FFFFFF; }
+  .cc-larry   { background: var(--brand-deep); color: var(--cta); border: 1px solid var(--cta); }
+
+  /* ==================== DECISION TABLE ==================== */
+  .decision-table {
+    background: #FFFFFF; border: 1px solid #DED5C7; border-radius: 16px;
+    overflow: hidden; margin-top: 22px;
+  }
+  .decision-table table { width: 100%; border-collapse: collapse; }
+  .decision-table th { background: #2E3F44; color: #F5F1EA; padding: 12px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; text-align: left; }
+  .decision-table td { padding: 12px; border-bottom: 1px solid #E8E1D2; font-size: 13px; vertical-align: top; }
+  .decision-table tr:last-child td { border-bottom: none; }
+  .decision-table td b { color: #2E3F44; }
+  .decision-table .rec-1 { background: rgba(91,168,155,0.10); }
+
+  /* ==================== RECOMMENDATION CALLOUT ==================== */
+  .rec-callout {
+    background: linear-gradient(135deg, #2E3F44 0%, #18524F 100%);
+    color: #F5F1EA; border-radius: 20px; padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .rec-callout h2 { color: #FFFFFF; margin-bottom: 8px; font-size: 22px; }
+  .rec-callout .rec-list { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+  .rec-callout .rec-row { display: grid; grid-template-columns: 48px 1fr; gap: 12px; align-items: baseline; }
+  .rec-rank { font-family: -apple-system, "SF Pro Rounded", system-ui; font-weight: 800; font-size: 24px; color: #C49B5E; }
+  .rec-text { font-size: 14px; line-height: 1.55; color: rgba(245,241,234,0.92); }
+  .rec-text b { color: #FFFFFF; }
+
+  /* ==================== FOOTER ==================== */
+  .footer { margin-top: 48px; font-size: 12px; color: #9BA8AC; text-align: center; }
+  .footer a { color: #18524F; }
 </style>
 </head>
 <body>
-<div class="tag">Sprint 1 · candidates · founder review</div>
-<h1>Refluxora — Design System Workbench</h1>
-<p>4 design-system candidates are being prepared. Founder picks 1; locked variant fills the production tokens in <a href="https://github.com/love8ko/Refluxora/blob/main/DESIGN_SYSTEM.md"><code>DESIGN_SYSTEM.md</code></a> and is logged in <a href="https://github.com/love8ko/Refluxora/blob/main/DECISIONS.md"><code>DECISIONS.md</code></a>.</p>
 
+<nav class="top-nav">
+  <a href="index.html">← Index</a>
+  <span class="sep"></span>
+  <span class="nav-num">SPRINT 1</span>
+  <a href="#cand-a" class="is-cand">A · Cool Relief</a>
+  <a href="#cand-b" class="is-cand">B · Warm Foodie</a>
+  <a href="#cand-c" class="is-cand">C · Pregnancy Soft</a>
+  <a href="#cand-d" class="is-cand">D · Bold Modern</a>
+  <a href="#decision">Decision matrix</a>
+  <a href="#recommendation">Recommendation</a>
+</nav>
+
+<h1>Refluxora — Design System Candidates</h1>
+<p class="lede">Sprint 1 deliverable. Four palette candidates, each shown with the same UI primitives (typography, buttons, RSI gauge, food entries, AI Coach bubble, paywall hero, Voquezna tracker, 6 cohort accents). Founder picks one; locked variant fills the production tokens in <a href="https://github.com/love8ko/Refluxora/blob/main/DESIGN_SYSTEM.md"><code>DESIGN_SYSTEM.md</code></a> and is logged in <a href="https://github.com/love8ko/Refluxora/blob/main/DECISIONS.md"><code>DECISIONS.md</code></a>.</p>
+
+<div class="meta-bar">
+  <span class="pill">4 candidates</span>
+  <span class="pill">3-min skim</span>
+  <span class="pill vote">⏳ founder vote pending</span>
+  <span class="pill brand">🔥 Refluxora · GERD + LPR</span>
+</div>
+
+<!-- ==================== CANDIDATE A · COOL RELIEF ==================== -->
+<section id="cand-a" class="cand-block cand-a">
+  <div class="cand-tag">CANDIDATE A · CALMING CLINICAL</div>
+  <h2>Cool Relief 🌿</h2>
+  <p class="cand-sub">Mint + slate + cream. Calming, clinical-authority palette that reads as "trusted health" without going full medical-white. Differentiates от NoBurn (generic teal). Best fit for the two cohorts most defined by clinical authority: 🔥 Burning Brian (severe PPI, needs trustworthy companion) and 🎤 LPR Larry (validation + ENT-ready trust signal).</p>
+  <div class="cand-grid">
+    <div class="tokens">
+      <div class="token"><span class="chip" style="background:#5BA89B"></span><span><span class="label">brand</span><span class="hex">#5BA89B</span></span></div>
+      <div class="token"><span class="chip" style="background:#3D8985"></span><span><span class="label">brand-mid</span><span class="hex">#3D8985</span></span></div>
+      <div class="token"><span class="chip" style="background:#18524F"></span><span><span class="label">brand-deep</span><span class="hex">#18524F</span></span></div>
+      <div class="token"><span class="chip" style="background:#C5DDD7"></span><span><span class="label">brand-soft</span><span class="hex">#C5DDD7</span></span></div>
+      <div class="token"><span class="chip" style="background:#C49B5E"></span><span><span class="label">cta</span><span class="hex">#C49B5E</span></span></div>
+      <div class="token"><span class="chip" style="background:#8C6A3B"></span><span><span class="label">cta-deep</span><span class="hex">#8C6A3B</span></span></div>
+      <div class="token"><span class="chip" style="background:#F5F1EA;border-color:#DED5C7"></span><span><span class="label">bg</span><span class="hex">#F5F1EA</span></span></div>
+      <div class="token"><span class="chip" style="background:#2E3F44"></span><span><span class="label">ink</span><span class="hex">#2E3F44</span></span></div>
+    </div>
+
+    <div class="demos">
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">Typography</div>
+          <div class="type-h1">Calm your reflux</div>
+          <div class="type-h2">Reclaim your meals</div>
+          <div class="type-body">Photo food scanner with reflux-trigger likelihood rating.</div>
+          <div class="type-mono">RSI 18</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Buttons</div>
+          <div class="btn-row"><button class="btn btn-primary">Start scan</button><button class="btn btn-cta">Continue trial</button></div>
+          <div class="btn-row"><button class="btn btn-secondary">Skip</button><button class="btn btn-ghost">Restore</button></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">🎤 RSI Calculator (Larry)</div>
+          <div class="rsi-gauge"><div class="rsi-score">18</div><div class="rsi-label">Reflux Symptom Index</div><div class="rsi-stat">↓ 4 since last week · screening threshold &gt;13</div></div>
+          <div class="disclaimer-strip">⚠ RSI is a screening tool, not a diagnostic test. Discuss elevated scores with an ENT.</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Food entries (last 4h)</div>
+          <div class="food-row"><span class="food-emoji">☕</span><div><div class="food-name">Espresso</div><div class="food-time">7:32 AM</div></div><span class="verdict-pill watch">trigger</span></div>
+          <div class="food-row"><span class="food-emoji">🍞</span><div><div class="food-name">Oatmeal + banana</div><div class="food-time">7:45 AM</div></div><span class="verdict-pill good">safe</span></div>
+          <div class="food-row"><span class="food-emoji">🍝</span><div><div class="food-name">Tomato pasta</div><div class="food-time">8:12 PM</div></div><span class="verdict-pill alert">high acid</span></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">AI Coach reply</div>
+          <div class="chat-bubble">Your throat clearing 5 of 7 mornings correlates with late-evening tomato pasta. Acid pH ≈4.3 reaches the larynx during sleep. Try shifting dinner to before 7 PM and elevating sleep position 6-8&quot;.<span class="chat-citation">per AAO-HNS LPR Practice Guidelines</span></div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Paywall hero (Brian variant)</div>
+          <div class="paywall-hero"><h3>PPI not working anymore?</h3><div class="ph-sub">See what triggered today's flare. Track Voquezna efficacy. Share GI-ready PDF.</div><div class="ph-price">$39.99/yr</div><div class="ph-trial">7-day free trial · save 85%</div></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">💊 Voquezna tracker (Brian/Larry add-on)</div>
+          <div class="vq-mock"><b>Day 14 on Voquezna 20mg</b><div class="vq-progress"><div class="vq-progress-fill"></div></div><div class="vq-stat-row"><span>RSI improvement</span><b>↓ 35%</b></div><div class="vq-stat-row"><span>Heartburn days/wk</span><b>2 (was 5)</b></div></div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Cohort accent chips (within palette)</div>
+          <div class="cohort-row"><span class="cohort-chip cc-brian">🔥 Brian</span><span class="cohort-chip cc-patricia">🤰 Patricia</span><span class="cohort-chip cc-frank">🍷 Frank</span><span class="cohort-chip cc-sam">👴 Sam</span><span class="cohort-chip cc-anna">🌿 Anna</span><span class="cohort-chip cc-larry">🎤 Larry</span></div>
+          <p class="type-body" style="margin-top:8px;">All 6 cohorts share the same locked palette; only accent weight differs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CANDIDATE B · WARM FOODIE ==================== -->
+<section id="cand-b" class="cand-block cand-b">
+  <div class="cand-tag">CANDIDATE B · FOODIE PREMIUM</div>
+  <h2>Warm Foodie 🍷</h2>
+  <p class="cand-sub">Terracotta + sage + ivory. Cookbook-warm, encourages photo-journaling instead of feeling like medical surveillance. Strongest for 🍷 Foodie Frank (don't-quit-coffee-and-wine identity) and 🌿 Anti-Pharma Anna (functional-medicine natural aesthetic). Risk: may not communicate enough urgency for Brian's severe-pain hero.</p>
+  <div class="cand-grid">
+    <div class="tokens">
+      <div class="token"><span class="chip" style="background:#7A9477"></span><span><span class="label">brand (sage)</span><span class="hex">#7A9477</span></span></div>
+      <div class="token"><span class="chip" style="background:#5A7458"></span><span><span class="label">brand-mid</span><span class="hex">#5A7458</span></span></div>
+      <div class="token"><span class="chip" style="background:#38503A"></span><span><span class="label">brand-deep</span><span class="hex">#38503A</span></span></div>
+      <div class="token"><span class="chip" style="background:#D2DCC9"></span><span><span class="label">brand-soft</span><span class="hex">#D2DCC9</span></span></div>
+      <div class="token"><span class="chip" style="background:#C46A53"></span><span><span class="label">cta (terracotta)</span><span class="hex">#C46A53</span></span></div>
+      <div class="token"><span class="chip" style="background:#944730"></span><span><span class="label">cta-deep</span><span class="hex">#944730</span></span></div>
+      <div class="token"><span class="chip" style="background:#FAF5EE;border-color:#E4DCCB"></span><span><span class="label">bg (ivory)</span><span class="hex">#FAF5EE</span></span></div>
+      <div class="token"><span class="chip" style="background:#2B2620"></span><span><span class="label">ink</span><span class="hex">#2B2620</span></span></div>
+    </div>
+
+    <div class="demos">
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">Typography</div>
+          <div class="type-h1">Keep coffee. Keep wine.</div>
+          <div class="type-h2">Track smarter.</div>
+          <div class="type-body">Find safe versions of foods you love. Don't quit lifestyle blindly.</div>
+          <div class="type-mono">RSI 18</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Buttons</div>
+          <div class="btn-row"><button class="btn btn-primary">Log a meal</button><button class="btn btn-cta">Continue trial</button></div>
+          <div class="btn-row"><button class="btn btn-secondary">Skip</button><button class="btn btn-ghost">Restore</button></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">🎤 RSI Calculator</div>
+          <div class="rsi-gauge"><div class="rsi-score">18</div><div class="rsi-label">Reflux Symptom Index</div><div class="rsi-stat">↓ 4 since last week · screening threshold &gt;13</div></div>
+          <div class="disclaimer-strip">⚠ RSI is a screening tool, not a diagnostic test. Discuss elevated scores with an ENT.</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Food entries (last 4h)</div>
+          <div class="food-row"><span class="food-emoji">☕</span><div><div class="food-name">Espresso</div><div class="food-time">7:32 AM</div></div><span class="verdict-pill watch">trigger</span></div>
+          <div class="food-row"><span class="food-emoji">🍞</span><div><div class="food-name">Oatmeal + banana</div><div class="food-time">7:45 AM</div></div><span class="verdict-pill good">safe</span></div>
+          <div class="food-row"><span class="food-emoji">🍝</span><div><div class="food-name">Tomato pasta</div><div class="food-time">8:12 PM</div></div><span class="verdict-pill alert">high acid</span></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">AI Coach reply</div>
+          <div class="chat-bubble">Dark roast coffee has 30% less chlorogenic acid than light roast. Swap your espresso для a dark-roast pour-over after a meal (not on empty stomach). Tomato + late timing is your biggest trigger — try a non-tomato pesto Tuesday.<span class="chat-citation">per Annals of Internal Medicine 2018</span></div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Paywall hero (Frank variant)</div>
+          <div class="paywall-hero"><h3>Keep coffee. Keep wine.</h3><div class="ph-sub">Find your specific triggers. Don't quit lifestyle blindly.</div><div class="ph-price">$39.99/yr</div><div class="ph-trial">7-day free trial · save 85%</div></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">💊 Voquezna tracker</div>
+          <div class="vq-mock"><b>Day 14 on Voquezna 20mg</b><div class="vq-progress"><div class="vq-progress-fill"></div></div><div class="vq-stat-row"><span>RSI improvement</span><b>↓ 35%</b></div><div class="vq-stat-row"><span>Heartburn days/wk</span><b>2 (was 5)</b></div></div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Cohort accent chips</div>
+          <div class="cohort-row"><span class="cohort-chip cc-brian">🔥 Brian</span><span class="cohort-chip cc-patricia">🤰 Patricia</span><span class="cohort-chip cc-frank">🍷 Frank</span><span class="cohort-chip cc-sam">👴 Sam</span><span class="cohort-chip cc-anna">🌿 Anna</span><span class="cohort-chip cc-larry">🎤 Larry</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CANDIDATE C · PREGNANCY SOFT ==================== -->
+<section id="cand-c" class="cand-block cand-c">
+  <div class="cand-tag">CANDIDATE C · GENTLE SAFETY</div>
+  <h2>Pregnancy Soft 🌸</h2>
+  <p class="cand-sub">Blush + sky + off-white. Soft, reassuring, safety-first. Strongest for 🤰 Pregnant Patricia (3rd-trimester anxiety: "is this safe for baby?") and 👴 Senior Sam (gentle, not aggressive). Risk: Brian (severe pain) and Larry (career-threat) may need more urgency than this palette communicates.</p>
+  <div class="cand-grid">
+    <div class="tokens">
+      <div class="token"><span class="chip" style="background:#8DAEC8"></span><span><span class="label">brand (sky)</span><span class="hex">#8DAEC8</span></span></div>
+      <div class="token"><span class="chip" style="background:#698EAD"></span><span><span class="label">brand-mid</span><span class="hex">#698EAD</span></span></div>
+      <div class="token"><span class="chip" style="background:#3F6582"></span><span><span class="label">brand-deep</span><span class="hex">#3F6582</span></span></div>
+      <div class="token"><span class="chip" style="background:#D0DEEA"></span><span><span class="label">brand-soft</span><span class="hex">#D0DEEA</span></span></div>
+      <div class="token"><span class="chip" style="background:#E7B7B4"></span><span><span class="label">cta (blush)</span><span class="hex">#E7B7B4</span></span></div>
+      <div class="token"><span class="chip" style="background:#B07A75"></span><span><span class="label">cta-deep</span><span class="hex">#B07A75</span></span></div>
+      <div class="token"><span class="chip" style="background:#FCF8F6;border-color:#E5DDD9"></span><span><span class="label">bg (off-white)</span><span class="hex">#FCF8F6</span></span></div>
+      <div class="token"><span class="chip" style="background:#2C3138"></span><span><span class="label">ink</span><span class="hex">#2C3138</span></span></div>
+    </div>
+
+    <div class="demos">
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">Typography</div>
+          <div class="type-h1">Sleep through the night</div>
+          <div class="type-h2">— without scary meds</div>
+          <div class="type-body">Pregnancy-safe medication reference. Tums dosage tracker. Left-side sleep guidance.</div>
+          <div class="type-mono">RSI 18</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Buttons</div>
+          <div class="btn-row"><button class="btn btn-primary">Log Tums</button><button class="btn btn-cta">Continue trial</button></div>
+          <div class="btn-row"><button class="btn btn-secondary">Skip</button><button class="btn btn-ghost">Restore</button></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">🎤 RSI Calculator</div>
+          <div class="rsi-gauge"><div class="rsi-score">18</div><div class="rsi-label">Reflux Symptom Index</div><div class="rsi-stat">↓ 4 since last week · screening threshold &gt;13</div></div>
+          <div class="disclaimer-strip">⚠ RSI is a screening tool, not a diagnostic test. Discuss elevated scores with an ENT.</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Food entries (last 4h)</div>
+          <div class="food-row"><span class="food-emoji">☕</span><div><div class="food-name">Espresso</div><div class="food-time">7:32 AM</div></div><span class="verdict-pill watch">trigger</span></div>
+          <div class="food-row"><span class="food-emoji">🍞</span><div><div class="food-name">Oatmeal + banana</div><div class="food-time">7:45 AM</div></div><span class="verdict-pill good">safe</span></div>
+          <div class="food-row"><span class="food-emoji">🍝</span><div><div class="food-name">Tomato pasta</div><div class="food-time">8:12 PM</div></div><span class="verdict-pill alert">high acid</span></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">AI Coach reply</div>
+          <div class="chat-bubble">Famotidine (Pepcid) is FDA Pregnancy Category B — generally considered safe in 3rd trimester, but confirm с your OB before starting. Today you've logged 1,200mg calcium carbonate via Tums; daily limit per NIH is 7,500mg.<span class="chat-citation">per ACOG Pregnancy GERD Guidelines</span></div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Paywall hero (Patricia variant)</div>
+          <div class="paywall-hero"><h3>Pregnancy heartburn — без scary meds</h3><div class="ph-sub">Pregnancy-safe medication reference. Tums tracker. Left-side sleep.</div><div class="ph-price">$4.99/wk</div><div class="ph-trial">No trial · 3-month window</div></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">💊 Voquezna tracker</div>
+          <div class="vq-mock"><b>Day 14 on Voquezna 20mg</b><div class="vq-progress"><div class="vq-progress-fill"></div></div><div class="vq-stat-row"><span>RSI improvement</span><b>↓ 35%</b></div><div class="vq-stat-row"><span>Heartburn days/wk</span><b>2 (was 5)</b></div></div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Cohort accent chips</div>
+          <div class="cohort-row"><span class="cohort-chip cc-brian">🔥 Brian</span><span class="cohort-chip cc-patricia">🤰 Patricia</span><span class="cohort-chip cc-frank">🍷 Frank</span><span class="cohort-chip cc-sam">👴 Sam</span><span class="cohort-chip cc-anna">🌿 Anna</span><span class="cohort-chip cc-larry">🎤 Larry</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CANDIDATE D · BOLD MODERN ==================== -->
+<section id="cand-d" class="cand-block cand-d">
+  <div class="cand-tag">CANDIDATE D · PREMIUM DRUG-COMPANION</div>
+  <h2>Bold Modern 🚀</h2>
+  <p class="cand-sub">Electric coral + deep navy + bone. High-contrast, modern-pharma. Most differentiated from existing GERD apps (NoBurn uses generic teal). Strongest for premium positioning — Voquezna era ($700/mo drug, $39.99/yr LPR Pro add-on), Brian PPI-refractory escalation, Larry career-stake. Risk: may feel too aggressive for Patricia (pregnancy soft) or Sam (gentle senior).</p>
+  <div class="cand-grid">
+    <div class="tokens">
+      <div class="token"><span class="chip" style="background:#FF6B57"></span><span><span class="label">brand (coral)</span><span class="hex">#FF6B57</span></span></div>
+      <div class="token"><span class="chip" style="background:#D2503D"></span><span><span class="label">brand-mid</span><span class="hex">#D2503D</span></span></div>
+      <div class="token"><span class="chip" style="background:#0F1B2D"></span><span><span class="label">brand-deep (navy)</span><span class="hex">#0F1B2D</span></span></div>
+      <div class="token"><span class="chip" style="background:#FFD7CE"></span><span><span class="label">brand-soft</span><span class="hex">#FFD7CE</span></span></div>
+      <div class="token"><span class="chip" style="background:#F8E8C4"></span><span><span class="label">cta (gold)</span><span class="hex">#F8E8C4</span></span></div>
+      <div class="token"><span class="chip" style="background:#C49B5E"></span><span><span class="label">cta-deep</span><span class="hex">#C49B5E</span></span></div>
+      <div class="token"><span class="chip" style="background:#F0EBE3;border-color:#DCD3C2"></span><span><span class="label">bg (bone)</span><span class="hex">#F0EBE3</span></span></div>
+      <div class="token"><span class="chip" style="background:#0F1B2D"></span><span><span class="label">ink (navy)</span><span class="hex">#0F1B2D</span></span></div>
+    </div>
+
+    <div class="demos">
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">Typography</div>
+          <div class="type-h1">PPI not working?</div>
+          <div class="type-h2">See what triggered today's flare.</div>
+          <div class="type-body">Voquezna companion. Insurance appeal templates. GI-ready PDF.</div>
+          <div class="type-mono">RSI 18</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Buttons</div>
+          <div class="btn-row"><button class="btn btn-primary">Track Voquezna</button><button class="btn btn-cta">Continue trial</button></div>
+          <div class="btn-row"><button class="btn btn-secondary">Skip</button><button class="btn btn-ghost">Restore</button></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">🎤 RSI Calculator</div>
+          <div class="rsi-gauge"><div class="rsi-score">18</div><div class="rsi-label">Reflux Symptom Index</div><div class="rsi-stat">↓ 4 since last week · screening threshold &gt;13</div></div>
+          <div class="disclaimer-strip">⚠ RSI is a screening tool, not a diagnostic test. Discuss elevated scores with an ENT.</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Food entries (last 4h)</div>
+          <div class="food-row"><span class="food-emoji">☕</span><div><div class="food-name">Espresso</div><div class="food-time">7:32 AM</div></div><span class="verdict-pill watch">trigger</span></div>
+          <div class="food-row"><span class="food-emoji">🍞</span><div><div class="food-name">Oatmeal + banana</div><div class="food-time">7:45 AM</div></div><span class="verdict-pill good">safe</span></div>
+          <div class="food-row"><span class="food-emoji">🍝</span><div><div class="food-name">Tomato pasta</div><div class="food-time">8:12 PM</div></div><span class="verdict-pill alert">high acid</span></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">AI Coach reply</div>
+          <div class="chat-bubble">Your Nexium 40mg log shows escalation от 20mg over 90 days. Vonoprazan (Voquezna) reaches steady-state acid suppression в 2 hours vs PPIs' 5-7 days — useful data point для your GI. Want me to draft a prior-auth letter for insurance?<span class="chat-citation">per Voquezna FDA Label</span></div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Paywall hero (Voquezna upsell)</div>
+          <div class="paywall-hero"><h3>Voquezna Companion</h3><div class="ph-sub">Drug-specific tracking. Insurance appeal templates. Phathom partnership coming Q3.</div><div class="ph-price">+$29.99/yr</div><div class="ph-trial">add to your Annual plan</div></div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="demo-title">💊 Voquezna tracker</div>
+          <div class="vq-mock"><b>Day 14 on Voquezna 20mg</b><div class="vq-progress"><div class="vq-progress-fill"></div></div><div class="vq-stat-row"><span>RSI improvement</span><b>↓ 35%</b></div><div class="vq-stat-row"><span>Heartburn days/wk</span><b>2 (was 5)</b></div></div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-title">Cohort accent chips</div>
+          <div class="cohort-row"><span class="cohort-chip cc-brian">🔥 Brian</span><span class="cohort-chip cc-patricia">🤰 Patricia</span><span class="cohort-chip cc-frank">🍷 Frank</span><span class="cohort-chip cc-sam">👴 Sam</span><span class="cohort-chip cc-anna">🌿 Anna</span><span class="cohort-chip cc-larry">🎤 Larry</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DECISION MATRIX ==================== -->
+<h2 id="decision" style="margin-top:48px; font-size:24px;">Decision matrix</h2>
+<p class="lede">All 4 candidates support the 6-cohort architecture — the difference is which cohort the palette amplifies first. Rate each on the criteria from <code>DESIGN_SYSTEM.md</code>.</p>
+<div class="decision-table">
 <table>
-<thead><tr><th>#</th><th>Candidate</th><th>Palette</th><th>Mood</th><th>Best fit</th></tr></thead>
+<thead><tr><th>Criterion</th><th>A · Cool Relief</th><th>B · Warm Foodie</th><th>C · Pregnancy Soft</th><th>D · Bold Modern</th></tr></thead>
 <tbody>
-<tr>
-  <td>A</td>
-  <td><strong>Cool Relief</strong></td>
-  <td><span class="swatch" style="background:#5BA89B"></span>#5BA89B mint<br><span class="swatch" style="background:#2E3F44"></span>#2E3F44 slate<br><span class="swatch" style="background:#F5F1EA"></span>#F5F1EA cream</td>
-  <td>Calming clinical</td>
-  <td>🔥 Brian + 🎤 Larry</td>
-</tr>
-<tr>
-  <td>B</td>
-  <td><strong>Warm Foodie</strong></td>
-  <td><span class="swatch" style="background:#C46A53"></span>#C46A53 terracotta<br><span class="swatch" style="background:#7A9477"></span>#7A9477 sage<br><span class="swatch" style="background:#FAF5EE"></span>#FAF5EE ivory</td>
-  <td>Foodie premium</td>
-  <td>🍷 Frank + 🌿 Anna</td>
-</tr>
-<tr>
-  <td>C</td>
-  <td><strong>Pregnancy Soft</strong></td>
-  <td><span class="swatch" style="background:#E7B7B4"></span>#E7B7B4 blush<br><span class="swatch" style="background:#8DAEC8"></span>#8DAEC8 sky<br><span class="swatch" style="background:#FCF8F6"></span>#FCF8F6 off-white</td>
-  <td>Gentle safety</td>
-  <td>🤰 Patricia + 👴 Sam soft</td>
-</tr>
-<tr>
-  <td>D</td>
-  <td><strong>Bold Modern</strong></td>
-  <td><span class="swatch" style="background:#FF6B57"></span>#FF6B57 electric coral<br><span class="swatch" style="background:#0F1B2D"></span>#0F1B2D deep navy<br><span class="swatch" style="background:#F0EBE3"></span>#F0EBE3 bone</td>
-  <td>Premium drug-companion</td>
-  <td>💊 Voquezna Mode upsell</td>
-</tr>
+<tr class="rec-1"><td><b>Cross-cohort viability</b><br>(one DS, не 6)</td><td>✅ All 6 work; calming reads universal</td><td>⚠ Brian severity reads soft</td><td>⚠ Brian/Larry urgency reads soft</td><td>⚠ Patricia/Sam may feel aggressive</td></tr>
+<tr class="rec-1"><td><b>Compliance neutrality</b><br>(не "medical device")</td><td>✅ Mint ≠ clinical white</td><td>✅ Foodie warmth</td><td>✅ Lifestyle softness</td><td>✅ Pharma-modern, не medical</td></tr>
+<tr class="rec-1"><td><b>Differentiation от competitors</b><br>(NoBurn uses generic teal)</td><td>✅ Mint differentiates от NoBurn teal</td><td>✅ Terracotta unique in category</td><td>✅ Blush unique in category</td><td>✅✅ Most differentiated (coral + navy)</td></tr>
+<tr class="rec-1"><td><b>LPR Larry validation</b><br>(career-trust signal)</td><td>✅✅ Clinical authority</td><td>⚠ Foodie не ENT-clinic</td><td>⚠ Soft не professional</td><td>✅✅ Premium clinical-modern</td></tr>
+<tr class="rec-1"><td><b>Voquezna era positioning</b><br>($700/mo drug premium)</td><td>✅ Trustworthy</td><td>⚠ Soft не drug-companion</td><td>⚠ Soft не drug-companion</td><td>✅✅ Best для premium</td></tr>
+<tr class="rec-1"><td><b>Patricia comfort</b><br>(pregnancy anxiety)</td><td>✅ Calming</td><td>✅ Warm</td><td>✅✅ Built for her</td><td>⚠ May feel aggressive</td></tr>
+<tr class="rec-1"><td><b>Cross-promote с Hepatica</b><br>(GERD-NAFLD users)</td><td>✅ Distinct (Hepatica uses teal)</td><td>✅ Distinct</td><td>✅ Distinct</td><td>✅✅ Most distinct</td></tr>
+<tr class="rec-1"><td><b>App Store cohort shot variety</b><br>(6 CPPs need accent diversity)</td><td>✅ Mint + gold accents</td><td>✅ Sage + terracotta</td><td>⚠ Limited dynamic range</td><td>✅✅ Navy + coral + gold</td></tr>
 </tbody>
 </table>
+</div>
 
-<p style="margin-top: 24px;">Full workbench (palette swatches, typography, button states, paywall heroes, RSI/Acid-Watcher cards, disclaimer strips, 6 cohort hero shots per candidate) lands in this file once Sprint 1 starts.</p>
+<!-- ==================== RECOMMENDATION ==================== -->
+<section id="recommendation" class="rec-callout">
+  <h2>Recommendation order (Sprint 1 brief to founder)</h2>
+  <div class="rec-list">
+    <div class="rec-row"><span class="rec-rank">1.</span><span class="rec-text"><b>A · Cool Relief</b> — best cross-cohort fit, calming = on-brief, mint differentiates от NoBurn teal. Safe pick that doesn't over-rotate to one persona. ⭐ Default recommendation.</span></div>
+    <div class="rec-row"><span class="rec-rank">2.</span><span class="rec-text"><b>D · Bold Modern</b> — best for premium positioning (Voquezna era, LPR Pro $39.99/yr). Most differentiated и most "Year-2-ready" if Larry + Voquezna become the wedge ($5.5M best-case scenario).</span></div>
+    <div class="rec-row"><span class="rec-rank">3.</span><span class="rec-text"><b>B · Warm Foodie</b> — best for Frank/Anna funnel. Risk: feels "too lifestyle" when Brian or Larry land on the same paywall.</span></div>
+    <div class="rec-row"><span class="rec-rank">4.</span><span class="rec-text"><b>C · Pregnancy Soft</b> — wonderful for Patricia (12% of audience), но Brian (25%) и Larry (15%) — 40% of audience — wouldn't feel urgency for severe-pain или career-stake situations.</span></div>
+  </div>
+  <p class="rec-text" style="margin-top:16px;"><b>Process after lock:</b> update <code>DESIGN_SYSTEM.md</code> с :root tokens, add <code>🔒 Locked YYYY-MM-DD</code>, log decision в <code>DECISIONS.md</code>, rebuild <code>docs/design.html</code> as the full Hepatica-style workbench (palette + JTBD + persona scan + feature matrix), and start <code>docs/flow.html</code> in Sprint 2.</p>
+</section>
 
-<div class="footer">Reference: <a href="https://love8ko.github.io/hepatica/design.html">Hepatica's locked DS workbench</a> · scaffolding 2026-05-23</div>
+<div class="footer">
+  <p>Refluxora · Sprint 1 · 2026-05-23 · scaffold seed</p>
+  <p>Reference: <a href="https://love8ko.github.io/hepatica/design.html">Hepatica's locked DS workbench</a> (post-lock pattern we'll match in v2)</p>
+</div>
+
 </body>
 </html>
