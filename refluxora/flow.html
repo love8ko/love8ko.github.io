@@ -522,6 +522,7 @@
   <a href="#overview" class="active">Overview</a>
   <a href="#today">1. Today</a>
   <a href="#fab">2. +Log</a>
+  <a href="#meal-scan">2b. Meal Scan ✨</a>
   <a href="#coach">3. Coach</a>
   <a href="#progress">4. Progress</a>
   <a href="#plan">5. Plan</a>
@@ -531,11 +532,22 @@
 <p class="lede">Sprint 3 locked the <b>tab architecture</b> (4 tabs + raised +Log FAB). Sprint 4 locked the <b>UX per tab</b> across 5 sub-consiliums (Today · +Log · Coach · Progress · Plan). All mockups below render in the locked <b>A Cool Relief</b> design system. Six cohorts (🔥 Brian · 🤰 Patricia · 🍷 Frank · 👴 Sam · 🌿 Anna · 🎤 Larry) are routed through identical chrome with cohort-specific hero content. Sibling docs: <a href="design.html"><code>design.html</code></a> (tokens) · <a href="index.html"><code>index.html</code></a> (overview).</p>
 
 <div class="meta-bar">
-  <span class="pill lock">🔒 LOCKED 2026-05-23</span>
+  <span class="pill lock">🔒 LOCKED 2026-05-23 · v2 refinement 2026-05-24</span>
   <span class="pill brand">A Cool Relief · mint #5BA89B + slate #2E3F44 + gold #C49B5E</span>
-  <span class="pill">5 tabs</span>
+  <span class="pill">5 tabs + Meal Scan big-flow</span>
   <span class="pill">6 cohorts</span>
-  <span class="pill">15 consilium docs</span>
+  <span class="pill">20 consilium docs</span>
+</div>
+
+<div class="meta-bar" style="background: linear-gradient(135deg, var(--cta-soft), var(--brand-soft)); padding: 10px 14px; border-radius: 10px; margin-bottom: 16px;">
+  <span class="pill" style="background:var(--cta); color:white;">✨ v2 refinement · 2026-05-24</span>
+  <span style="font-size:12px; color:var(--ink-2);">After Sprint 5 Swift implementation: <b>Today v2</b> (3 size regressions + animation matrix + Larry Sunday RSI ceremony) · <b>Progress v2</b> (chart honesty fixes) · <b>Meal Scan</b> (NEW big-flow paradigm) · <b>Coach v2</b> (36 prompts + state overrides + photo safety + multi-thread) · <b>RAG v2</b> (corpus rebalance). Docs:
+  <a href="CONSILIUM_TAB_TODAY_2026-05-24_v2.md">Today v2</a> ·
+  <a href="CONSILIUM_PROGRESS_2026-05-24_v2.md">Progress v2</a> ·
+  <a href="CONSILIUM_MEAL_SCAN_2026-05-24_LOCKED.md">Meal Scan</a> ·
+  <a href="CONSILIUM_COACH_2026-05-24_v2.md">Coach v2</a> ·
+  <a href="CONSILIUM_RAG_2026-05-24_v2.md">RAG v2</a>
+  </span>
 </div>
 
 <!-- ==================== OVERVIEW ==================== -->
@@ -621,6 +633,18 @@
     <span class="pill">Cohort tempo band (8pt)</span>
     <span class="pill">"What just changed" 4s toast</span>
     <span class="pill">Shared TodayHeroFrame</span>
+  </div>
+</div>
+
+<div style="background: linear-gradient(135deg, var(--cta-soft), var(--brand-soft)); border-radius: 12px; padding: 14px 18px; margin: 12px 0; border-left: 4px solid var(--cta);">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.3px; color: var(--cta-deep); margin-bottom: 6px;">✨ v2 REFINEMENT · 2026-05-24 · <a href="CONSILIUM_TAB_TODAY_2026-05-24_v2.md" style="color: var(--cta-deep);">CONSILIUM_TAB_TODAY_v2</a></div>
+  <div style="font-size: 13px; color: var(--ink); line-height: 1.5;">
+    <b>3 silent size regressions in Sprint 5 Swift implementation</b> must restore before Sprint 6:
+    Patricia 56pt → <b>72pt</b> · Anna 64pt → <b>80pt</b> · <b>Larry 96pt → 144pt</b> (CRITICAL — RSI is the $39.99/yr LPR Pro hook; 96pt reads like a clock, 144pt reads like a verdict).
+    Brian drops 152 → 128 (overpowers 280pt card · 54% vertical leaves no breathing room).
+    Secondary cards revised per cohort JTBD (drop decorative checkboxes for outcome stats: Larry "RSI 18 (was 22) ↓4" replaces "3 of 5 vocal").
+    Per-cohort animation matrix locked (7am-open · log-reward · midnight) — <b>Larry Sunday 09:00 RSI ceremony</b> (4.6s needle sweep + arc fill + digit tick + ↓4 chip) becomes the App Store preview-video opening shot.
+    Enforced by snapshot test gating Sprint 6 commits.
   </div>
 </div>
 
@@ -982,17 +1006,171 @@
 </div>
 </section>
 
+<!-- ==================== MEAL SCAN BIG-FLOW (v2 NEW) ==================== -->
+<section id="meal-scan">
+<div class="module-banner" style="background: linear-gradient(135deg, var(--cta-soft), var(--brand-soft));">
+  <div class="mb-tag">✨ NEW · MEAL SCAN BIG-FLOW (v2 · 2026-05-24)</div>
+  <h2>Meal Scan — full-screen capture → Today landing → Coach handoff</h2>
+  <p class="mb-sub">Founder ask 2026-05-24: <i>«по скану meal сделай большим сканом чтобы и сканировалось и попадало сразу на главную и пообщаться с coach можно было».</i> Answer: <b>full-screen <code>.fullScreenCover</code></b> (Hepatica <code>MealScanView</code> fork) → 7-step state machine → per-cohort Today landing router → one-tap <b>"Discuss with Coach"</b> primary CTA seeds <code>CoachContextPayload</code> with photo + verdict + cohort + 72h symptom digest. NOT a sheet detent, NOT an embedded card — full-screen because founder said "big". Source: <a href="CONSILIUM_MEAL_SCAN_2026-05-24_LOCKED.md"><code>CONSILIUM_MEAL_SCAN_LOCKED</code></a>.</p>
+  <div class="mb-pills">
+    <span class="pill">7-step flow · 2-4s total</span>
+    <span class="pill">Per-cohort Today landing (Frank=hero, Larry=AW banner, etc.)</span>
+    <span class="pill">Coach handoff with auto-prompt template per cohort</span>
+    <span class="pill">"trigger rating" copy gate — never "causes reflux"</span>
+  </div>
+</div>
+
+<!-- 5-frame mockup -->
+<div class="screen-block" style="grid-template-columns: repeat(3, 1fr); gap: 18px;">
+
+  <!-- Frame 1: Camera UI -->
+  <div class="phone-frame">
+    <div class="phone-screen" style="background: #0b0f12;">
+      <div class="phone-statusbar" style="color: rgba(255,255,255,0.85);"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content" style="padding: 0; display: flex; flex-direction: column; height: 100%;">
+        <div style="flex: 1; background: linear-gradient(180deg, #1a2226, #0d1316); position: relative; display: flex; align-items: center; justify-content: center;">
+          <!-- Viewfinder rule-of-thirds overlay -->
+          <div style="position: absolute; inset: 60px 30px; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px;"></div>
+          <div style="font-size: 64px; opacity: 0.5;">🍝</div>
+          <!-- live quick-tag pill -->
+          <div style="position: absolute; bottom: 130px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.55); color: white; padding: 6px 12px; border-radius: 18px; font-size: 11px; backdrop-filter: blur(8px);">
+            🔍 detecting · <b>pasta + red wine</b>
+          </div>
+        </div>
+        <!-- Shutter row -->
+        <div style="background: rgba(0,0,0,0.6); padding: 16px 0 28px; display: flex; align-items: center; justify-content: center; gap: 30px;">
+          <div style="color: rgba(255,255,255,0.75); font-size: 11px; width: 60px; text-align: right;">Library</div>
+          <div style="width: 72px; height: 72px; border-radius: 36px; background: var(--cta); border: 4px solid rgba(255,255,255,0.95); box-shadow: 0 0 0 2px var(--cta-deep);"></div>
+          <div style="color: rgba(255,255,255,0.55); font-size: 11px; width: 60px;">Cancel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frame 2: Processing -->
+  <div class="phone-frame">
+    <div class="phone-screen" style="background: #0b0f12;">
+      <div class="phone-statusbar" style="color: rgba(255,255,255,0.85);"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content" style="padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 18px;">
+        <!-- Thumbnail center -->
+        <div style="width: 220px; height: 220px; border-radius: 18px; background: linear-gradient(135deg, #c08555, #6f4226); display: flex; align-items: center; justify-content: center; font-size: 80px; box-shadow: 0 12px 40px rgba(0,0,0,0.5);">🍝</div>
+        <!-- Mint shimmer caption -->
+        <div style="color: var(--brand-soft); font-size: 14px; letter-spacing: 0.3px;">
+          ✨ <i>Reading your meal…</i>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 4px;">
+          <div style="width: 6px; height: 6px; border-radius: 3px; background: var(--brand); opacity: 0.9;"></div>
+          <div style="width: 6px; height: 6px; border-radius: 3px; background: var(--brand); opacity: 0.55;"></div>
+          <div style="width: 6px; height: 6px; border-radius: 3px; background: var(--brand); opacity: 0.25;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frame 3: Verdict -->
+  <div class="phone-frame">
+    <div class="phone-screen" style="background: #0b0f12;">
+      <div class="phone-statusbar" style="color: rgba(255,255,255,0.85);"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content" style="padding: 14px 14px 18px; display: flex; flex-direction: column; gap: 12px;">
+        <!-- Thumb -->
+        <div style="width: 100%; height: 140px; border-radius: 14px; background: linear-gradient(135deg, #c08555, #6f4226); display: flex; align-items: center; justify-content: center; font-size: 64px;">🍝</div>
+        <!-- Verdict card -->
+        <div style="background: white; border-radius: 14px; padding: 12px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+            <span style="background: #ECD0C8; color: #8C3D2C; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700;">Heads up · 8/10</span>
+          </div>
+          <div style="font-size: 13px; color: var(--ink); margin-bottom: 4px;"><b>Pasta arrabbiata</b> · red wine</div>
+          <div style="font-size: 10px; color: var(--ink-2);">📚 based on Aviv Acid Watcher · pH 4.3</div>
+        </div>
+        <!-- Primary CTA -->
+        <div style="background: var(--cta); color: white; padding: 14px; border-radius: 14px; text-align: center; font-size: 14px; font-weight: 600; box-shadow: 0 8px 18px -4px rgba(140,106,59,0.45);">
+          💬 Discuss with Coach →
+        </div>
+        <!-- Secondary CTAs -->
+        <div style="background: white; border: 1.5px solid var(--brand); color: var(--brand-deep); padding: 11px; border-radius: 12px; text-align: center; font-size: 13px; font-weight: 600;">
+          Save &amp; close
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-2);">
+          <span style="text-decoration: underline;">Edit details</span>
+          <span style="text-decoration: underline;">Re-scan</span>
+        </div>
+        <!-- Disclaimer strip -->
+        <div style="background: var(--watch-bg); color: var(--ink-2); padding: 6px 10px; border-radius: 8px; font-size: 9px; text-align: center;">
+          Educational tracking only — not a medical device. Discuss with your clinician.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Annotation block (spans full row) -->
+  <div class="annotation" style="grid-column: span 3;">
+    <h3>5-frame flow · 3 cohort landings</h3>
+    <p><b>Founder constraint:</b> "большим сканом" → full-screen takeover (not FAB sheet, not embedded card). <b>Hepatica DNA reuse</b> ~80%: fork <code>MealScanView.swift</code>, swap <code>LiverDataStore → RefluxoraStore</code>, swap <code>liver-friendliness → reflux-trigger rating</code>, swap <code>hepBrand → RefluxoraColors.brand</code>.</p>
+    <p><b>Per-cohort post-capture landing</b> (only Frank's meal becomes hero; rest land as secondary content because their JTBD isn't "show me what I ate"):</p>
+    <div class="tab-spec-table" style="margin-top: 8px;">
+      <table>
+        <thead><tr><th>Cohort</th><th>Landing</th><th>Why this cohort cares</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cohort-chip cc-frank">🍷 Frank</span></td><td><b>Hero replace</b> — 320×320 photo becomes Today hero</td><td>Identity = photo journal · meal IS his Today</td></tr>
+          <tr><td><span class="cohort-chip cc-brian">🔥 Brian</span></td><td>Secondary card 200pt under hero · "Watch · 2h before bed"</td><td>Tracks flares; meal = flare-prediction input (4h watch window arms)</td></tr>
+          <tr><td><span class="cohort-chip cc-larry">🎤 Larry ⭐</span></td><td>Sticky AW banner · "Acid Watcher compliance 6/7 today · this one not on protocol"</td><td>KPI = AW % adherence · every meal nudges the ring</td></tr>
+          <tr><td><span class="cohort-chip cc-patricia">🤰 Patricia</span></td><td>Snippet row · "Captured · safe · 2h before bed ✓ left-side"</td><td>Worries about bedtime + Tums interaction, not the meal itself</td></tr>
+          <tr><td><span class="cohort-chip cc-sam">👴 Sam</span></td><td>Snippet row + interaction flag if drug+food collide</td><td>Risk surface = drugs · meal only matters for interactions</td></tr>
+          <tr><td><span class="cohort-chip cc-anna">🌿 Anna</span></td><td>Secondary card · DGL timing reminder · "supports week 4 protocol"</td><td>Food = part of taper protocol, not separate domain</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Coach handoff prompt matrix -->
+<h3 style="margin-top: 28px; font-size: 17px; color: var(--brand-deep);">Coach handoff — auto-prompt template per cohort</h3>
+<p class="lede" style="margin-bottom: 8px;">When user taps <b>"Discuss with Coach"</b> on verdict card, <code>CoachContextPayload</code> (photo + verdict + cohort + 72h symptom digest + active meds) seeds a new Coach thread with the cohort-templated prompt below. Coach replies in 60-110 words, 3 bullets + closing line, with ≥1 ACG/Aviv/ACOG citation chip.</p>
+<div class="tab-spec-table">
+<table>
+<thead><tr><th>Cohort</th><th>Auto-prompt template (≤30 words)</th></tr></thead>
+<tbody>
+<tr><td><span class="cohort-chip cc-brian">🔥 Brian</span></td><td><i>"I just ate {items}, trigger rating {n}/10, {hoursBeforeBed}h before bed. What should I watch for tonight, and would Voquezna timing help?"</i></td></tr>
+<tr><td><span class="cohort-chip cc-patricia">🤰 Patricia</span></td><td><i>"I'm {weeks} weeks pregnant. Just ate {items}. Is this combo OK for tonight's heartburn, and how many Tums can I safely keep in reserve?"</i></td></tr>
+<tr><td><span class="cohort-chip cc-frank">🍷 Frank</span></td><td><i>"Just had {items} with {drink}. Trigger {n}/10. Give me 3 swaps that keep the flavor profile but drop the pH below 5."</i></td></tr>
+<tr><td><span class="cohort-chip cc-sam">👴 Sam</span></td><td><i>"Just ate {items}. I'm on {medList}. Any interaction concerns, and should I shift my evening omeprazole?"</i></td></tr>
+<tr><td><span class="cohort-chip cc-anna">🌿 Anna</span></td><td><i>"Captured {items} — does this support week {n} of my taper, or push me toward rebound? Should I add DGL before bed?"</i></td></tr>
+<tr><td><span class="cohort-chip cc-larry">🎤 Larry ⭐</span></td><td><i>"Just ate {items}, pH {bucket}. This is {AWCompliant ? 'on' : 'off'} Acid Watcher. What's the impact on tonight's throat-clearing, and should I steam?"</i></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
 <!-- ==================== TAB 3 · COACH ==================== -->
 <section id="coach">
 <div class="module-banner">
   <div class="mb-tag">SPRINT 4.3 · AI COMPANION</div>
   <h2>Tab 3 — Coach (4-section home + cited chat)</h2>
-  <p class="mb-sub">Hepatica-pattern 4-section CoachHome (Daily Question · Try Asking · Cheat Sheets · Conversations) feeds answers that are inline-footnoted, cross-tier-diverse (2-3 sources), <b>confidence-banded</b> (Grounded/Partial/Off-corpus chip ABOVE every answer), cohort-retrieval-weighted (Larry T2 ×1.5 · Patricia T4 ×1.5 · Anna T5 ×1.5), and pinnable to Doctor PDF. Voiced through 6 cohort personas. 10 refusal categories with warm pivots. Emergency intent → red banner with localized 911/999/112/000. Source: <a href="CONSILIUM_COACH_2026-05-23_LOCKED.md"><code>CONSILIUM_COACH_LOCKED</code></a>.</p>
+  <p class="mb-sub">Hepatica-pattern 4-section CoachHome (Daily Question · Try Asking · Cheat Sheets · Conversations) feeds answers that are inline-footnoted, cross-tier-diverse (2-3 sources), <b>confidence-banded</b> (Grounded/Partial/Off-corpus chip ABOVE every answer), cohort-retrieval-weighted (Larry T2 ×1.5 · Patricia T4 ×1.5 · Anna T5 ×1.5), and pinnable to Doctor PDF. Voiced through 6 cohort personas. 10 refusal categories with warm pivots. Emergency intent → red banner with localized 911/999/112/000. Source: <a href="CONSILIUM_COACH_2026-05-23_LOCKED.md"><code>CONSILIUM_COACH_LOCKED</code></a> · <a href="CONSILIUM_COACH_2026-05-24_v2.md"><code>v2 refinement</code></a>.</p>
   <div class="mb-pills">
     <span class="pill">≤180 words per answer</span>
     <span class="pill">3-tier disclaimer (footer + strip + ribbon)</span>
-    <span class="pill">10 refusal categories</span>
+    <span class="pill">14 intent labels · 6 multi-locale red-flag canned ✨v2</span>
     <span class="pill">Cohort-weighted RAG retrieval</span>
+  </div>
+</div>
+
+<div style="background: linear-gradient(135deg, var(--cta-soft), var(--brand-soft)); border-radius: 12px; padding: 14px 18px; margin: 12px 0; border-left: 4px solid var(--cta);">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.3px; color: var(--cta-deep); margin-bottom: 6px;">✨ v2 REFINEMENT · 2026-05-24 · <a href="CONSILIUM_COACH_2026-05-24_v2.md" style="color: var(--cta-deep);">CONSILIUM_COACH_v2</a></div>
+  <div style="font-size: 13px; color: var(--ink); line-height: 1.55;">
+    v1 (Sprint 4) locked the WHAT. v2 (Sprint 6 pre-impl) locks the HOW at scale:
+    <b>36 enumerated starter prompts</b> (6 per cohort, Cysta StarterPromptLibrary pattern) ·
+    <b>12 state-aware override rules</b> (RSI ≥13 → larry_1+larry_6 chips; taper week ≥4 with rebound flag → anna_3 chips; etc.) ·
+    <b>42 daily-prompt matrix</b> (7 days × 6 cohorts — Sun=Larry RSI · Mon=Anna taper · etc.) ·
+    <b>7 follow-up chip taxonomy</b> · <b>multi-thread Cysta pattern</b> with topic-shift auto-spawn ·
+    <b>photo-attach safety matrix</b> (5 categories: meal proceed · lab OCR-not-interpret · endoscopy hard-refuse · skin hard-refuse · random polite-decline) ·
+    <b>intent classifier 10→14 labels</b> · <b>6 multi-language red-flag canned</b> (EN/DE/RU + 988/116/0800/911/999/112/000 routing) ·
+    <b>banned phrase dictionary EN/DE/RU</b> · <b>Larry exemplar system message template ~290 words</b> ·
+    <b>K=5 retrieval · 4000-token budget · 3-layer fallback ladder</b> ·
+    <b>MiniLM-L6-v2 CoreML fallback embedder</b> (de-risks OpenAI embeddings outage; ~22MB) ·
+    <b>refusal log as visible product feature</b> in doctor PDF — compliance as marketing wedge.
+    <br><br>
+    <b>BIG bets locked:</b> ① <i>"safety as UI not fine print"</i> (refusal log surfaces in PDF) · ② <i>"state-grounded prompts"</i> (chips hydrate with live RSI/taper-week/active-drug — Coach feels like it's been reading your tracker all week, because it has) · ③ <i>"network-resilient embedding"</i> (MiniLM + LRU + FTS → &lt;5% turns network-blocking).
   </div>
 </div>
 
@@ -1126,12 +1304,27 @@
 <div class="module-banner">
   <div class="mb-tag">SPRINT 4.4 · CHARTS + TIMELINE + PDF</div>
   <h2>Tab 4 — Progress (chart ↔ photo-timeline toggle + doctor PDF)</h2>
-  <p class="mb-sub">Segmented control <b>Chart ↔ Timeline</b> (44pt × 280pt) + PDF export top-right with queue badge. Per-cohort default: Frank/Patricia/Anna → Timeline (foodstagram), Brian/Sam/Larry → Chart (clinical trajectory). Chart view has per-cohort hero (Larry's <b>RSI 12-week LineMark</b> is the keystone — Belafsky threshold ruled at y=13, AreaMark zones, gold Sunday PointMarks). Timeline is Instagram-density NoBurn killer with 393×393pt full-bleed photo cells + verdict pills. PDF: 4 cohort-routed formats (GI · ENT · OB · Functional) × 5 fixed pages. Source: <a href="CONSILIUM_PROGRESS_2026-05-23_LOCKED.md"><code>CONSILIUM_PROGRESS_LOCKED</code></a>.</p>
+  <p class="mb-sub">Segmented control <b>Chart ↔ Timeline</b> (44pt × 280pt) + PDF export top-right with queue badge. Per-cohort default: Frank/Patricia/Anna → Timeline (foodstagram), Brian/Sam/Larry → Chart (clinical trajectory). Chart view has per-cohort hero (Larry's <b>RSI 12-week LineMark</b> is the keystone — Belafsky threshold ruled at y=13, AreaMark zones, gold Sunday PointMarks). Timeline is Instagram-density NoBurn killer with 393×393pt full-bleed photo cells + verdict pills. PDF: 4 cohort-routed formats (GI · ENT · OB · Functional) × 5 fixed pages. Source: <a href="CONSILIUM_PROGRESS_2026-05-23_LOCKED.md"><code>CONSILIUM_PROGRESS_LOCKED</code></a> · <a href="CONSILIUM_PROGRESS_2026-05-24_v2.md"><code>v2 chart honesty</code></a>.</p>
   <div class="mb-pills">
     <span class="pill">Larry RSI = $39.99/yr LPR Pro justifier</span>
     <span class="pill">Vector PDF via CGContext (not raster)</span>
     <span class="pill">Coach Q&amp;A appendix with hard exclusions</span>
     <span class="pill">Locale-routed footer (US/GB/DE/CA/AU)</span>
+  </div>
+</div>
+
+<div style="background: linear-gradient(135deg, var(--cta-soft), var(--brand-soft)); border-radius: 12px; padding: 14px 18px; margin: 12px 0; border-left: 4px solid var(--cta);">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.3px; color: var(--cta-deep); margin-bottom: 6px;">✨ v2 CHART HONESTY · 2026-05-24 · <a href="CONSILIUM_PROGRESS_2026-05-24_v2.md" style="color: var(--cta-deep);">CONSILIUM_PROGRESS_v2</a></div>
+  <div style="font-size: 13px; color: var(--ink); line-height: 1.55;">
+    Sprint 5 ships mock bars with linear-decline formulas → implies outcomes before user has data. v2 fixes 6 cohort-specific honesty issues:
+    Brian's fabricated "−83% since Voquezna" → real <code>SymptomEntry</code> @Query + <code>RuleMark</code> for Voquezna-start date ·
+    Patricia's banned causal "−65% with wedge" → <i>"co-occurred with wedge 65% of nights"</i> ·
+    Frank's color-without-sample-size heatmap → 2-encoding (opacity=N, color=correlation) + N≥5 gate ·
+    Sam's auto-scaled stable-data drama → fixed y-axis 0-10 ·
+    Anna's generic decline → actual <code>TaperPlan.dosePerWeek</code> mg with rebound LineMark + baseline RuleMark ·
+    <b>Larry's mock RSI 22→14 always crossing Belafsky threshold</b> → realistic noisy decline that doesn't always cross + dashed RuleMark always rendered + watch-bg AreaMark for &gt;13 zone + fixed y-axis 0-45.
+    <br><br>
+    Cross-cutting rules: <b>fixed y-axes</b> (no auto-scale drama) · <b>D0/D7 empty-state copy</b> ("Trend builds here · 5 of 14 days") · <b>mock-data watermark in DEBUG</b> · <b>causal-language banned in subtitles</b> · <b>thresholds always rendered</b> · <b>sample size visible</b>.
   </div>
 </div>
 
