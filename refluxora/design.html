@@ -443,6 +443,9 @@
   <a href="#shot-cards">8 shots</a>
   <a href="#shot-accent">Accent map</a>
   <span class="sep"></span>
+  <span class="nav-num" style="background:#C49B5E; color:#fff;">M16 ✨</span>
+  <a href="#paywall-workbench">Paywall ballot</a>
+  <span class="sep"></span>
   <a href="flow.html">→ flow.html</a>
 </nav>
 
@@ -1430,6 +1433,953 @@
 
 </div>
 <!-- ==================== /MODULE 3 ==================== -->
+
+<!-- ==================================================================
+     MODULE 16 · Paywall Workbench (Sprint 6 pre-impl ballot)
+     Self-contained section · to be inserted into docs/design.html
+     A Cool Relief tokens · 18 hero compositions · per-cohort founder vote
+     Source-of-truth consilium: CONSILIUM_PAYWALL_2026-05-25_LOCKED.md
+     ================================================================== -->
+
+<style>
+  /* ==================== M16 · scoped tokens ==================== */
+  .m16 {
+    --m16-brand:      #5BA89B;
+    --m16-brand-mid:  #3D8985;
+    --m16-brand-deep: #18524F;
+    --m16-brand-soft: #C5DDD7;
+    --m16-cta:        #C49B5E;
+    --m16-cta-deep:   #8C6A3B;
+    --m16-cta-soft:   #EBDFC6;
+    --m16-bg:         #F5F1EA;
+    --m16-bg-soft:    #FBF8F2;
+    --m16-ink:        #2E3F44;
+    --m16-ink-2:      #5D6B70;
+    --m16-ink-3:      #9BA8AC;
+    --m16-card:       #FFFFFF;
+    --m16-divider:    #DED5C7;
+    --m16-alert:      #B5503C;
+    --m16-alert-soft: #ECD0C8;
+    --m16-good:       #5BA89B;
+    --m16-good-bg:    #D5E8E2;
+  }
+
+  /* ==================== M16 · banner ==================== */
+  .m16-banner {
+    margin: 60px 0 18px; padding: 20px 24px;
+    background: linear-gradient(135deg, var(--m16-cta-soft) 0%, var(--m16-brand-soft) 100%);
+    color: var(--m16-brand-deep); border-radius: 18px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    border: 1px solid var(--m16-divider);
+  }
+  .m16-banner .num {
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 12.5px; font-weight: 800;
+    letter-spacing: 0.08em; background: var(--m16-cta); color: var(--m16-brand-deep);
+    padding: 5px 11px; border-radius: 8px;
+  }
+  .m16-banner h2 { margin: 0; color: var(--m16-brand-deep); font-size: 22px; font-weight: 800; }
+  .m16-banner .desc {
+    color: var(--m16-ink); font-size: 13px; line-height: 1.55;
+    flex-basis: 100%; margin-top: 4px; max-width: 1000px;
+  }
+
+  /* ==================== M16 · section heads ==================== */
+  .m16 .m16-head {
+    margin: 30px 0 12px; font-size: 17px; font-weight: 800;
+    color: var(--m16-brand-deep); display: flex; align-items: center; gap: 10px;
+  }
+  .m16 .m16-head .m16-num {
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 11px;
+    background: var(--m16-brand-soft); color: var(--m16-brand-deep);
+    padding: 3px 8px; border-radius: 5px; font-weight: 800;
+  }
+  .m16 .m16-lede {
+    font-size: 13px; color: var(--m16-ink-2); line-height: 1.55;
+    margin: 4px 0 14px; max-width: 940px;
+  }
+
+  /* ==================== M16 · tier cards mock ==================== */
+  .m16-tier-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+    margin: 12px 0 22px;
+  }
+  .m16-tier {
+    background: var(--m16-card); border: 1.5px solid var(--m16-divider);
+    border-radius: 14px; padding: 14px 12px; position: relative;
+    display: flex; flex-direction: column; gap: 4px; min-height: 130px;
+  }
+  .m16-tier.selected {
+    border-color: var(--m16-brand); border-width: 2.5px;
+    box-shadow: 0 0 0 4px rgba(91,168,155,0.12);
+  }
+  .m16-tier .m16-badge {
+    position: absolute; top: -8px; left: 10px;
+    background: var(--m16-cta); color: var(--m16-brand-deep);
+    font-size: 9.5px; font-weight: 800; letter-spacing: 0.06em;
+    padding: 3px 8px; border-radius: 5px; text-transform: uppercase;
+  }
+  .m16-tier .m16-badge.mint { background: var(--m16-brand); color: var(--m16-bg-soft); }
+  .m16-tier .m16-badge.cream { background: var(--m16-cta-soft); color: var(--m16-cta-deep); }
+  .m16-tier .m16-badge.outline {
+    background: transparent; color: var(--m16-ink-2);
+    border: 1px solid var(--m16-divider);
+  }
+  .m16-tier .m16-tier-name {
+    font-size: 13px; font-weight: 800; color: var(--m16-ink); margin-top: 4px;
+  }
+  .m16-tier .m16-tier-price {
+    font-size: 22px; font-weight: 800; color: var(--m16-brand-deep);
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .m16-tier .m16-tier-meta { font-size: 11px; color: var(--m16-ink-2); line-height: 1.4; }
+
+  /* ==================== M16 · cohort row ==================== */
+  .m16-cohort-row {
+    margin: 26px 0 18px; padding: 14px 16px;
+    background: var(--m16-bg-soft); border-radius: 14px;
+    border: 1px solid var(--m16-divider);
+  }
+  .m16-cohort-row .m16-cohort-hd {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;
+  }
+  .m16-cohort-row .m16-cohort-hd b {
+    font-size: 15px; color: var(--m16-brand-deep); font-weight: 800;
+  }
+  .m16-cohort-row .m16-cohort-hd .m16-cohort-share {
+    margin-left: auto;
+    font-family: ui-monospace, "SF Mono", monospace;
+    background: var(--m16-brand-soft); color: var(--m16-brand-deep);
+    padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 800;
+  }
+  .m16-cohort-row .m16-cohort-hd .m16-cohort-anchor {
+    font-size: 9px; font-weight: 800; letter-spacing: 0.08em;
+    background: var(--m16-cta-soft); color: var(--m16-cta-deep);
+    padding: 2px 7px; border-radius: 5px; text-transform: uppercase;
+  }
+
+  .m16-variants {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  }
+
+  /* ==================== M16 · phone frame mock ==================== */
+  .m16-phone {
+    width: 100%; max-width: 320px; aspect-ratio: 320 / 600;
+    margin: 0 auto;
+    background: var(--m16-bg); border: 8px solid var(--m16-ink);
+    border-radius: 32px; padding: 12px 12px 10px;
+    display: flex; flex-direction: column; gap: 7px;
+    cursor: pointer; transition: all 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .m16-phone:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(24,82,79,0.18);
+  }
+  .m16-phone.voted {
+    border-color: var(--m16-brand);
+    box-shadow: 0 0 0 4px rgba(91,168,155,0.45), 0 10px 30px rgba(24,82,79,0.22);
+  }
+  .m16-phone .m16-phone-top {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 8px; color: var(--m16-ink-3);
+  }
+  .m16-phone .m16-back {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--m16-card); border: 1px solid var(--m16-divider);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--m16-brand-deep); font-weight: 800;
+  }
+  .m16-phone .m16-skip {
+    font-size: 8px; font-weight: 800; letter-spacing: 0.06em;
+    background: rgba(181,80,60,0.08); color: var(--m16-alert);
+    border: 1px solid rgba(181,80,60,0.4);
+    padding: 2px 6px; border-radius: 999px;
+  }
+  .m16-phone .m16-variant-tag {
+    align-self: center; font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 9px; font-weight: 800; letter-spacing: 0.08em;
+    background: var(--m16-brand-deep); color: var(--m16-bg-soft);
+    padding: 2px 8px; border-radius: 4px; margin-top: 2px;
+  }
+  .m16-phone .m16-variant-tag.pain    { background: var(--m16-alert); }
+  .m16-phone .m16-variant-tag.promise { background: var(--m16-brand); }
+  .m16-phone .m16-variant-tag.social  { background: var(--m16-cta); color: var(--m16-brand-deep); }
+  .m16-phone .m16-h1 {
+    font-size: 13.5px; font-weight: 800; color: var(--m16-ink);
+    line-height: 1.25; margin-top: 6px; padding: 0 4px;
+  }
+  .m16-phone .m16-sub {
+    font-size: 10px; color: var(--m16-ink-2);
+    line-height: 1.4; padding: 0 4px;
+  }
+  .m16-phone .m16-bullets {
+    margin: 4px 0; padding: 6px 6px 4px;
+    background: var(--m16-card); border-radius: 9px;
+    border: 1px solid var(--m16-divider);
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .m16-phone .m16-bullet {
+    display: flex; gap: 6px; align-items: flex-start;
+    font-size: 8.5px; color: var(--m16-ink); line-height: 1.35;
+  }
+  .m16-phone .m16-bullet .m16-bullet-dot {
+    color: var(--m16-brand); font-weight: 800; flex-shrink: 0;
+  }
+  .m16-phone .m16-addon {
+    font-size: 8px; font-style: italic; color: var(--m16-brand-deep);
+    padding: 0 4px; line-height: 1.35;
+  }
+  .m16-phone .m16-mini-tiers {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 4px;
+    margin-top: auto;
+  }
+  .m16-phone .m16-mini-tier {
+    background: var(--m16-card); border: 1px solid var(--m16-divider);
+    border-radius: 7px; padding: 4px 5px; text-align: center;
+    font-size: 7.5px;
+  }
+  .m16-phone .m16-mini-tier.selected {
+    border-color: var(--m16-brand); border-width: 1.5px;
+    background: rgba(91,168,155,0.06);
+  }
+  .m16-phone .m16-mini-tier b {
+    display: block; font-size: 11px; color: var(--m16-brand-deep);
+    font-family: ui-monospace, "SF Mono", monospace; font-weight: 800;
+  }
+  .m16-phone .m16-mini-tier span { color: var(--m16-ink-2); font-size: 7px; }
+  .m16-phone .m16-mini-cta {
+    background: var(--m16-cta); color: var(--m16-bg-soft);
+    text-align: center; padding: 5px 0; border-radius: 8px;
+    font-size: 9px; font-weight: 800; margin-top: 4px;
+    position: relative; overflow: hidden;
+  }
+  .m16-phone .m16-mini-cta::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg,
+      transparent 35%, rgba(255,255,255,0.55) 50%, transparent 65%);
+    transform: translateX(-100%);
+    animation: m16Shimmer 2.4s linear infinite;
+  }
+  @keyframes m16Shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* ==================== M16 · vote badge ==================== */
+  .m16-vote-pill {
+    position: absolute; top: 12px; right: 12px;
+    background: var(--m16-brand-deep); color: var(--m16-bg-soft);
+    padding: 4px 9px; border-radius: 999px;
+    font-size: 9px; font-weight: 800; letter-spacing: 0.06em;
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .m16-phone.voted .m16-vote-pill { opacity: 1; }
+
+  /* ==================== M16 · timeline mock ==================== */
+  .m16-timeline-mock {
+    background: var(--m16-card); border: 1px solid var(--m16-divider);
+    border-radius: 14px; padding: 16px 18px;
+    margin: 14px 0; max-width: 500px;
+  }
+  .m16-tl-row {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 6px 0; position: relative;
+  }
+  .m16-tl-circle {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(24,82,79,0.18); color: var(--m16-brand-deep);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 13px; flex-shrink: 0;
+    z-index: 2; position: relative;
+  }
+  .m16-tl-connector {
+    position: absolute; left: 13.5px; top: 28px; bottom: -6px;
+    width: 1.5px; background: rgba(24,82,79,0.35);
+  }
+  .m16-tl-row:last-child .m16-tl-connector { display: none; }
+  .m16-tl-text { padding-top: 2px; }
+  .m16-tl-day {
+    font-size: 12px; font-weight: 800; color: var(--m16-brand-deep);
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .m16-tl-desc { font-size: 12px; color: var(--m16-ink-2); margin-top: 2px; line-height: 1.4; }
+
+  /* ==================== M16 · shimmer CTA demo ==================== */
+  .m16-cta-demo {
+    background: var(--m16-cta); color: white;
+    padding: 16px 24px; border-radius: 16px; text-align: center;
+    font-weight: 800; font-size: 16px; margin: 12px 0;
+    max-width: 360px; position: relative; overflow: hidden;
+    box-shadow: 0 8px 22px rgba(24,82,79,0.5);
+    animation: m16Pulse 2.2s ease-in-out infinite alternate;
+  }
+  .m16-cta-demo::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg,
+      transparent 35%, rgba(255,255,255,0.55) 50%, transparent 65%);
+    transform: translateX(-100%);
+    animation: m16Shimmer 2.4s linear infinite;
+    mix-blend-mode: plus-lighter;
+  }
+  @keyframes m16Pulse {
+    0% { transform: scale(1.0); }
+    100% { transform: scale(1.025); }
+  }
+
+  /* ==================== M16 · skip/back states ==================== */
+  .m16-skip-states { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .m16-skip-card {
+    background: var(--m16-card); border: 1px solid var(--m16-divider);
+    border-radius: 12px; padding: 14px;
+  }
+  .m16-skip-card .m16-skip-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.08em;
+    color: var(--m16-ink-3); text-transform: uppercase; margin-bottom: 8px;
+  }
+  .m16-skip-card .m16-skip-mock {
+    background: var(--m16-bg); border: 1px solid var(--m16-divider);
+    border-radius: 8px; padding: 10px 12px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .m16-skip-card .m16-skip-mock .m16-back {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--m16-card); border: 1px solid var(--m16-divider);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--m16-brand-deep); font-weight: 800;
+  }
+  .m16-skip-card .m16-skip-mock .m16-skip-pill {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.08em;
+    background: rgba(181,80,60,0.08); color: var(--m16-alert);
+    border: 1px solid rgba(181,80,60,0.4);
+    padding: 4px 10px; border-radius: 999px;
+  }
+  .m16-skip-card .m16-skip-note {
+    font-size: 11px; color: var(--m16-ink-2); margin-top: 10px; line-height: 1.5;
+  }
+
+  /* ==================== M16 · competitor row ==================== */
+  .m16-comp-row {
+    background: var(--m16-cta-soft); border: 1px solid var(--m16-cta-deep);
+    border-radius: 999px; padding: 8px 14px;
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--m16-ink); margin: 4px 0;
+  }
+  .m16-comp-row s { color: var(--m16-ink-3); opacity: 0.85; }
+  .m16-comp-row b { color: var(--m16-brand-deep); }
+  .m16-comp-arrow { color: var(--m16-cta-deep); font-weight: 800; }
+  .m16-comp-universal {
+    font-size: 11px; color: var(--m16-ink-2); font-style: italic;
+    margin-top: 8px; line-height: 1.5;
+  }
+
+  /* ==================== M16 · footer ==================== */
+  .m16-footer {
+    margin: 30px 0; padding: 22px 24px;
+    background: linear-gradient(135deg, var(--m16-brand-soft) 0%, var(--m16-cta-soft) 100%);
+    border-radius: 18px; border: 1px solid var(--m16-divider);
+    text-align: center;
+  }
+  .m16-footer h3 { font-size: 17px; color: var(--m16-brand-deep); margin-bottom: 6px; }
+  .m16-footer p { font-size: 13px; color: var(--m16-ink-2); line-height: 1.55; max-width: 600px; margin: 0 auto 12px; }
+  .m16-footer #m16-vote-counter {
+    display: inline-block;
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 13px; font-weight: 800;
+    background: var(--m16-brand-deep); color: var(--m16-bg-soft);
+    padding: 6px 14px; border-radius: 8px; margin: 8px 6px 0;
+  }
+  .m16-footer button#m16-submit-ballot {
+    background: var(--m16-cta); color: var(--m16-brand-deep);
+    border: none; padding: 10px 22px; border-radius: 10px;
+    font-size: 13px; font-weight: 800; cursor: pointer;
+    margin: 8px 6px 0; transition: all 0.2s;
+    opacity: 0.5; pointer-events: none;
+  }
+  .m16-footer button#m16-submit-ballot.ready {
+    opacity: 1; pointer-events: auto;
+    box-shadow: 0 4px 14px rgba(196,155,94,0.45);
+  }
+  .m16-footer button#m16-submit-ballot.ready:hover { transform: translateY(-2px); }
+</style>
+
+<div class="m16-banner" id="paywall-workbench">
+  <span class="num">МОДУЛЬ 16</span>
+  <h2>Paywall workbench — 6 cohorts × 3 variants · founder ballot</h2>
+  <p class="desc">
+    18 hero compositions для founder review. Каждая cohort row — 3 phone-frame mockups (β1 PAIN · β2 PROMISE · β3 SOCIAL). Tap preferred variant → frame glows mint + vote stored. После 6/6 votes — Submit ballot. Source-of-truth: <code>CONSILIUM_PAYWALL_2026-05-25_LOCKED.md</code>. Swift port: Sprint 6 (~10.5 hrs).
+  </p>
+</div>
+
+<div class="m16">
+
+  <!-- ==================== 16.1 · Pricing tier lock ==================== -->
+  <h2 class="m16-head"><span class="m16-num">16.1</span>Pricing tier lock — Weekly preselected</h2>
+  <p class="m16-lede">
+    4 tiers. Weekly preselected for every cohort (founder override · habit lock · matches Patricia preference). Annual tile gets the gold "Best value" badge to drive ~55–60% of upgrade clicks. Add-ons NOT shown here — they live on the Plan tab post-subscribe to avoid Hick's-Law choice paralysis.
+  </p>
+  <div class="m16-tier-row">
+    <div class="m16-tier selected">
+      <span class="m16-badge mint">Most flexible</span>
+      <div class="m16-tier-name">Weekly</div>
+      <div class="m16-tier-price">$4.99</div>
+      <div class="m16-tier-meta">/wk · cancel anytime · no trial</div>
+    </div>
+    <div class="m16-tier">
+      <span class="m16-badge">Best value · save 85%</span>
+      <div class="m16-tier-name">Annual</div>
+      <div class="m16-tier-price">$39.99</div>
+      <div class="m16-tier-meta">/yr · 7-day free trial · ≈ $0.77/wk</div>
+    </div>
+    <div class="m16-tier">
+      <span class="m16-badge cream">2 profiles</span>
+      <div class="m16-tier-name">Family</div>
+      <div class="m16-tier-price">$79.99</div>
+      <div class="m16-tier-meta">/yr · 7-day trial · 2 profiles</div>
+    </div>
+    <div class="m16-tier">
+      <span class="m16-badge outline">One-time</span>
+      <div class="m16-tier-name">Lifetime</div>
+      <div class="m16-tier-price">$99</div>
+      <div class="m16-tier-meta">once · no renewal · forever</div>
+    </div>
+  </div>
+
+  <!-- ==================== 16.2 · 6 cohort hero gallery ==================== -->
+  <h2 class="m16-head"><span class="m16-num">16.2</span>6 cohorts × 3 hero variants — vote your favorite</h2>
+  <p class="m16-lede">
+    Per cohort: <b>β1 PAIN</b> (urgency-first quote), <b>β2 PROMISE</b> (outcome + Calibrum timeline), <b>β3 SOCIAL</b> (quantified peer + clinical anchor). Tap the strongest variant per row.
+  </p>
+
+  <!-- ============== Brian ============== -->
+  <div class="m16-cohort-row">
+    <div class="m16-cohort-hd">
+      <b>🔥 Burning Brian</b>
+      <span class="m16-cohort-anchor">anchor · severe baseline</span>
+      <span class="m16-cohort-share">25%</span>
+    </div>
+    <div class="m16-variants">
+      <div class="m16-phone" data-cohort="brian" data-variant="pain">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag pain">β1 PAIN</div>
+        <div class="m16-h1">PPI stopped working?</div>
+        <div class="m16-sub">You're not alone. 30% of severe GERD goes refractory. Map your real triggers.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Track every flare against the food 4hr earlier</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Voquezna vs. PPI efficacy logged side-by-side</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Grounded on ACG 2022 + AGA refractory guidelines</div>
+        </div>
+        <div class="m16-addon">+ unlocks Voquezna Companion add-on after subscribe</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="brian" data-variant="promise">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag promise">β2 PROMISE</div>
+        <div class="m16-h1">From flare to pattern in 14 days</div>
+        <div class="m16-sub">Day 1: log tonight's burn. Day 7: top 3 triggers. Day 14: your GI report.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 1 — Photo-scan dinner, log burn 4hr later</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 7 — Top-3 trigger heatmap unlocks</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 14 — Doctor-ready PDF · ACG-grounded</div>
+        </div>
+        <div class="m16-addon">+ unlocks Voquezna Companion add-on after subscribe</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="brian" data-variant="social">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag social">β3 SOCIAL</div>
+        <div class="m16-h1">Join 7M refractory PPI users</div>
+        <div class="m16-sub">First GERD companion for the Voquezna era · ACG + AGA grounded</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Built with r/GERD's 60K severe-flare community</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Trained on ACG 2022 + Phathom Voquezna label</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Unlike NoBurn — 5 markets, drug-aware</div>
+        </div>
+        <div class="m16-addon">+ unlocks Voquezna Companion add-on after subscribe</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== Patricia ============== -->
+  <div class="m16-cohort-row">
+    <div class="m16-cohort-hd">
+      <b>🤰 Pregnant Patricia</b>
+      <span class="m16-cohort-anchor">anchor</span>
+      <span class="m16-cohort-share">12%</span>
+    </div>
+    <div class="m16-variants">
+      <div class="m16-phone" data-cohort="patricia" data-variant="pain">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag pain">β1 PAIN</div>
+        <div class="m16-h1">Heartburn at 38 weeks?</div>
+        <div class="m16-sub">You can't sleep. Tums "feels" wrong. We have the OB-aware answers.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Pregnancy-safe med reference · trimester rules</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Tums tracker · never crosses 7,500mg calcium</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Built on ACOG + AAP + Mayo OB guidance</div>
+        </div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="patricia" data-variant="promise">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag promise">β2 PROMISE</div>
+        <div class="m16-h1">Sleep through tonight</div>
+        <div class="m16-sub">Day 1: left-side protocol. Day 3: trigger journal. Day 7: a quieter night.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 1 — Left-side sleep + Tums log + meal cutoff</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 3 — Journal flags 2 foods making it worse</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 7 — Postpartum transition plan ready</div>
+        </div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="patricia" data-variant="social">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag social">β3 SOCIAL</div>
+        <div class="m16-h1">1.8M pregnant moms · same fight</div>
+        <div class="m16-sub">Built with r/BabyBumps 600K + OB-validated · pregnancy-safe by default.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Joined by 1.8M pregnant moms with reflux now</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Cross-checked against ACOG + AAP — no gambles</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Unlike Cara Care (stale 2020) — built for now</div>
+        </div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== Frank ============== -->
+  <div class="m16-cohort-row">
+    <div class="m16-cohort-hd">
+      <b>🍷 Foodie Frank</b>
+      <span class="m16-cohort-anchor">default door</span>
+      <span class="m16-cohort-share">22%</span>
+    </div>
+    <div class="m16-variants">
+      <div class="m16-phone" data-cohort="frank" data-variant="pain">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag pain">β1 PAIN</div>
+        <div class="m16-h1">Don't quit coffee. Get smart.</div>
+        <div class="m16-sub">Doc said cut everything. We say keep what doesn't hurt — and prove it.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Photo-scan any meal · personalized rank in 2s</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Italian, French, BBQ, wine — swap-list per dish</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>ACG 2022 lifestyle pillars · per-food rating</div>
+        </div>
+        <div class="m16-addon">+ unlocks Diet Lab add-on after subscribe</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="frank" data-variant="promise">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag promise">β2 PROMISE</div>
+        <div class="m16-h1">Map your safe menu in 14 days</div>
+        <div class="m16-sub">Day 1: scan one meal. Day 7: your safe list. Day 14: restaurant strategy.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 1 — Photo-scan tonight's dinner · log burn</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 7 — Top-15 safe foods · top-5 to drop</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 14 — Restaurant guidance · Med vs Acid Watcher</div>
+        </div>
+        <div class="m16-addon">+ unlocks Diet Lab add-on after subscribe</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="frank" data-variant="social">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag social">β3 SOCIAL</div>
+        <div class="m16-h1">18M foodies · same problem</div>
+        <div class="m16-sub">Mediterranean + Acid Watcher protocols in one app · IFFGD-validated.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Joined by 18M newly-diagnosed mild-GERD foodies</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Grounded on IFFGD + Cleveland Clinic + Mayo</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Unlike NoBurn — scan + 5 markets + Diet Lab</div>
+        </div>
+        <div class="m16-addon">+ unlocks Diet Lab add-on after subscribe</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== Sam ============== -->
+  <div class="m16-cohort-row">
+    <div class="m16-cohort-hd">
+      <b>👴 Senior Sam</b>
+      <span class="m16-cohort-share">18%</span>
+    </div>
+    <div class="m16-variants">
+      <div class="m16-phone" data-cohort="sam" data-variant="pain">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag pain">β1 PAIN</div>
+        <div class="m16-h1">7 meds. Reflux. Interactions?</div>
+        <div class="m16-sub">Polypharmacy + GERD is the silent ER-trip. We map it before it bites.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Med-interaction flags — PPI + statins, NSAIDs</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Aspiration pneumonia early-warning · sleep alerts</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Built on AGS Beers Criteria · pharmacy-grade</div>
+        </div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$79.99</b><span>/yr · Family</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="sam" data-variant="promise">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag promise">β2 PROMISE</div>
+        <div class="m16-h1">A calmer day in 14 days</div>
+        <div class="m16-sub">Day 1: 7-med audit. Day 7: trigger pattern. Day 14: PDF for your GP.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 1 — Add 7 meds + symptoms · interactions surface</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 7 — Pattern · meal-time + posture coaching</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 14 — Doctor-ready PDF · pharmacy-grade</div>
+        </div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$79.99</b><span>/yr · Family</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="sam" data-variant="social">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag social">β3 SOCIAL</div>
+        <div class="m16-h1">24M seniors · same daily fight</div>
+        <div class="m16-sub">2 profiles included · your spouse + you · Family tier · Beers-aligned.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Joined by 24M Americans 60+ managing reflux</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Aligned to AGS Beers Criteria · pharmacy-grade</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Unlike NoBurn — 2 profiles · large fonts · GP-ready</div>
+        </div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$79.99</b><span>/yr · Family</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== Anna ============== -->
+  <div class="m16-cohort-row">
+    <div class="m16-cohort-hd">
+      <b>🌿 Anti-Pharma Anna</b>
+      <span class="m16-cohort-share">8%</span>
+    </div>
+    <div class="m16-variants">
+      <div class="m16-phone" data-cohort="anna" data-variant="pain">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag pain">β1 PAIN</div>
+        <div class="m16-h1">Off PPI in 12 weeks.</div>
+        <div class="m16-sub">No cold turkey. No rebound. A tapered protocol built on functional-med data.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>12-wk AI-guided taper · DGL + zinc-carnosine timing</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Rebound-flare early-warning · taper-pause logic</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>ACG taper + IFFGD + Dr. Aviv Acid Watcher diet</div>
+        </div>
+        <div class="m16-addon">+ unlocks PPI Taper Pro add-on after subscribe</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="anna" data-variant="promise">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag promise">β2 PROMISE</div>
+        <div class="m16-h1">Your taper, your timeline</div>
+        <div class="m16-sub">Week 1: baseline. Week 6: half-dose. Week 12: off · with a safety net.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Week 1 — Baseline · log triggers · prep your kit</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Week 6 — Half-dose · DGL on cue · flare-watch</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Week 12 — Off PPI · 30-day safety net · share doc</div>
+        </div>
+        <div class="m16-addon">+ unlocks PPI Taper Pro add-on after subscribe</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="anna" data-variant="social">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag social">β3 SOCIAL</div>
+        <div class="m16-h1">5M off-PPI seekers · same goal</div>
+        <div class="m16-sub">Only app combining ACG taper + Acid Watcher diet + DGL timing.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Joined by 5M Americans trying to come off PPIs</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Grounded on ACG taper + Acid Watcher + IFFGD</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Unlike NoBurn — taper-aware · functional-med native</div>
+        </div>
+        <div class="m16-addon">+ unlocks PPI Taper Pro add-on after subscribe</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== Larry ============== -->
+  <div class="m16-cohort-row">
+    <div class="m16-cohort-hd">
+      <b>🎤 LPR Larry ⭐</b>
+      <span class="m16-cohort-anchor">top revenue lever</span>
+      <span class="m16-cohort-share">15%</span>
+    </div>
+    <div class="m16-variants">
+      <div class="m16-phone" data-cohort="larry" data-variant="pain">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag pain">β1 PAIN</div>
+        <div class="m16-h1">Silent reflux is real.</div>
+        <div class="m16-sub">Throat clear, lump, hoarse voice — your ENT was right. Track RSI weekly.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>RSI weekly · screening · take to your next ENT</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Acid Watcher diet · vocal hygiene · pepsin protocols</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>AAO-HNS LPR · Koufman + Aviv · clinically grounded</div>
+        </div>
+        <div class="m16-addon">+ unlocks LPR Pro (RSI + ENT report + Acid Watcher)</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="larry" data-variant="promise">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag promise">β2 PROMISE</div>
+        <div class="m16-h1">Your voice back in 14 days</div>
+        <div class="m16-sub">Day 1: RSI baseline. Day 7: vocal hygiene live. Day 14: ENT-ready report.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 1 — RSI baseline · log throat clear + lump</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 7 — Vocal hygiene live · Acid Watcher ranking</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 14 — ENT-ready report · share with ENT or SLP</div>
+        </div>
+        <div class="m16-addon">+ unlocks LPR Pro (RSI + ENT report + Acid Watcher)</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+      <div class="m16-phone" data-cohort="larry" data-variant="social">
+        <span class="m16-vote-pill">✓ VOTED</span>
+        <div class="m16-phone-top"><div class="m16-back">‹</div><div class="m16-skip">SKIP · DEBUG</div></div>
+        <div class="m16-variant-tag social">β3 SOCIAL</div>
+        <div class="m16-h1">30M Americans · most undiagnosed</div>
+        <div class="m16-sub">The first app built FOR LPR · AAO-HNS + Koufman + Aviv grounded.</div>
+        <div class="m16-bullets">
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Joined by 30M Americans with LPR — most undiagnosed</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>AAO-HNS + Koufman + Aviv Acid Watcher — primary</div>
+          <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Unlike NoBurn / Cara Care — built for silent reflux</div>
+        </div>
+        <div class="m16-addon">+ unlocks LPR Pro (RSI + ENT report + Acid Watcher)</div>
+        <div class="m16-mini-tiers">
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+        </div>
+        <div class="m16-mini-cta">Start with $4.99/wk</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 16.3 · Calibrum timeline ==================== -->
+  <h2 class="m16-head"><span class="m16-num">16.3</span>Calibrum 3-step trial timeline — switches per tier</h2>
+  <p class="m16-lede">
+    Vertical connector 1.5pt opacity 0.35 · 28pt circles at brand-deep opacity 0.18 · SF Symbol icons at brand-deep 12pt bold. Copy switches based on selected tier. Below: Annual (7-day trial) preset.
+  </p>
+  <div class="m16-timeline-mock">
+    <div class="m16-tl-row">
+      <div class="m16-tl-circle">✓</div>
+      <div class="m16-tl-connector"></div>
+      <div class="m16-tl-text">
+        <div class="m16-tl-day">Day 0</div>
+        <div class="m16-tl-desc">Trial starts · full access today</div>
+      </div>
+    </div>
+    <div class="m16-tl-row">
+      <div class="m16-tl-circle">🔔</div>
+      <div class="m16-tl-connector"></div>
+      <div class="m16-tl-text">
+        <div class="m16-tl-day">Day 5</div>
+        <div class="m16-tl-desc">We'll remind you 2 days before charge</div>
+      </div>
+    </div>
+    <div class="m16-tl-row">
+      <div class="m16-tl-circle">💳</div>
+      <div class="m16-tl-text">
+        <div class="m16-tl-day">Day 7</div>
+        <div class="m16-tl-desc">Annual $39.99 charged · cancel anytime in Settings</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 16.4 · Shimmer CTA demo ==================== -->
+  <h2 class="m16-head"><span class="m16-num">16.4</span>JabWell shimmer CTA — 2.4s sweep + 1.025 pulse</h2>
+  <p class="m16-lede">
+    Linear gradient band 200pt wide sweeps left→right over 2.4s. Pulse scaleEffect 1.0→1.025 over 1.1s (auto-reverses, calmer than JabWell's 1.1s because GERD audience skews 40+). Shadow halo brand-deep opacity 0.5 radius 16 offset y=6.
+  </p>
+  <div class="m16-cta-demo">Start 7-day free trial</div>
+  <p class="m16-lede" style="margin-top: -6px;">
+    Cohort-aware CTA title rules: Weekly → "Start with $4.99/wk" · Annual → "Start 7-day free trial" · Family → "Start Family trial — 7 days free" · Lifetime → "Get Lifetime · $99 once".
+  </p>
+
+  <!-- ==================== 16.5 · Skip + back states ==================== -->
+  <h2 class="m16-head"><span class="m16-num">16.5</span>CrySnap skip + back — TestFlight vs App Store</h2>
+  <p class="m16-lede">
+    Back arrow always present (Apple 3.1.2 dead-end avoidance). Skip is debug-gated via <code>#if INTERNAL_BUILD</code> — symbol does not exist in Release binary, so App Store reviewer never sees it.
+  </p>
+  <div class="m16-skip-states">
+    <div class="m16-skip-card">
+      <div class="m16-skip-label">TestFlight / DEBUG build</div>
+      <div class="m16-skip-mock">
+        <div class="m16-back">‹</div>
+        <div class="m16-skip-pill">Skip · DEBUG</div>
+      </div>
+      <div class="m16-skip-note">
+        Back returns to Testimonials screen (sets <code>onboardingDone=false</code>). Skip sets <code>SubscriptionService.shared.debugProOverride=true</code> + dismisses paywall as Pro.
+      </div>
+    </div>
+    <div class="m16-skip-card">
+      <div class="m16-skip-label">App Store / Release build</div>
+      <div class="m16-skip-mock">
+        <div class="m16-back">‹</div>
+        <div style="font-size:11px; color: var(--m16-ink-3); font-style: italic;">(no skip — symbol absent)</div>
+      </div>
+      <div class="m16-skip-note">
+        Only back arrow renders. Skip capsule is compile-time removed — Release scheme has empty <code>SWIFT_ACTIVE_COMPILATION_CONDITIONS</code>, no leak risk.
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 16.6 · Strikethrough competitor row ==================== -->
+  <h2 class="m16-head"><span class="m16-num">16.6</span>Strikethrough competitor row — per cohort + universal NoBurn</h2>
+  <p class="m16-lede">
+    Single row above the trial timeline. Cohort-specific clinical alternative anchor, with universal NoBurn comparison below in smaller italic.
+  </p>
+  <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-start;">
+    <div class="m16-comp-row">🔥 Refractory specialist visit <s>$300+/yr</s> <span class="m16-comp-arrow">→</span> <b>Refluxora $39.99/yr</b></div>
+    <div class="m16-comp-row">🤰 OB heartburn consult <s>$200+/visit</s> <span class="m16-comp-arrow">→</span> <b>Refluxora $4.99/wk</b></div>
+    <div class="m16-comp-row">🍷 Nutritionist <s>$150/session</s> <span class="m16-comp-arrow">→</span> <b>Refluxora $39.99/yr (with photo scanner)</b></div>
+    <div class="m16-comp-row">👴 Pharmacist consult <s>$50/check</s> <span class="m16-comp-arrow">→</span> <b>Refluxora $79.99/yr Family</b></div>
+    <div class="m16-comp-row">🌿 Functional medicine <s>$200+/visit</s> <span class="m16-comp-arrow">→</span> <b>Refluxora $39.99/yr</b></div>
+    <div class="m16-comp-row">🎤 ENT specialist <s>$400/visit</s> <span class="m16-comp-arrow">→</span> <b>Refluxora $39.99/yr (LPR Pro included)</b></div>
+  </div>
+  <div class="m16-comp-universal">
+    Universal: NoBurn <s>$3.99/wk</s> (US only, no LPR, no photo scanner) → <b>Refluxora $4.99/wk</b> (LPR Pro + 6-cohort + photo scanner + 5 markets)
+  </div>
+
+  <!-- ==================== 16.7 · Footer · founder ballot ==================== -->
+  <div class="m16-footer">
+    <h3>Cast your votes</h3>
+    <p>Per cohort, click your preferred hero variant. After 6/6 votes, Submit ballot opens mailto with structured payload → orchestrator wires winners into <code>PaywallConfig.resolve(cohort)</code> in Swift port (Sprint 6, ~10.5 hrs).</p>
+    <div id="m16-vote-counter">0 of 6 cohorts voted</div>
+    <button id="m16-submit-ballot">Submit ballot →</button>
+  </div>
+
+</div>
+
+<script>
+  (function() {
+    const COHORTS = ['brian','patricia','frank','sam','anna','larry'];
+    const VARIANT_LABEL = { pain: 'β1 PAIN', promise: 'β2 PROMISE', social: 'β3 SOCIAL' };
+    const COHORT_EMOJI = { brian:'🔥', patricia:'🤰', frank:'🍷', sam:'👴', anna:'🌿', larry:'🎤' };
+    const COHORT_NAME  = { brian:'Brian', patricia:'Patricia', frank:'Frank', sam:'Sam', anna:'Anna', larry:'Larry' };
+
+    function loadVotes() {
+      try {
+        const raw = localStorage.getItem('m16_paywall_votes');
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) { return {}; }
+    }
+    function saveVotes(v) {
+      try { localStorage.setItem('m16_paywall_votes', JSON.stringify(v)); } catch (e) {}
+    }
+    function applyVotes() {
+      const votes = loadVotes();
+      document.querySelectorAll('.m16-phone').forEach(el => {
+        el.classList.toggle('voted',
+          votes[el.dataset.cohort] === el.dataset.variant);
+      });
+      const counter = document.getElementById('m16-vote-counter');
+      const submit = document.getElementById('m16-submit-ballot');
+      const n = Object.keys(votes).filter(c => COHORTS.includes(c)).length;
+      counter.textContent = n + ' of 6 cohorts voted';
+      if (n === 6) submit.classList.add('ready'); else submit.classList.remove('ready');
+    }
+    document.querySelectorAll('.m16-phone').forEach(el => {
+      el.addEventListener('click', () => {
+        const votes = loadVotes();
+        votes[el.dataset.cohort] = el.dataset.variant;
+        saveVotes(votes); applyVotes();
+      });
+    });
+    document.getElementById('m16-submit-ballot').addEventListener('click', () => {
+      const votes = loadVotes();
+      if (Object.keys(votes).filter(c => COHORTS.includes(c)).length !== 6) return;
+      const lines = COHORTS.map(c =>
+        COHORT_EMOJI[c] + ' ' + COHORT_NAME[c] + ' → ' + VARIANT_LABEL[votes[c]]);
+      const body = encodeURIComponent(
+        'PAYWALL BALLOT · 2026-05-25\n\n' + lines.join('\n') +
+        '\n\nNotes: \n\n— Sent from design.html M16 workbench'
+      );
+      window.location.href =
+        'mailto:sergejkar@gmail.com?subject=Refluxora%20Paywall%20Ballot%20%C2%B7%202026-05-25&body=' + body;
+    });
+    applyVotes();
+  })();
+</script>
+
+<!-- =============== END · MODULE 16 · Paywall Workbench =============== -->
+
 
 
 <div class="footer">

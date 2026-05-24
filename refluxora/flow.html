@@ -523,6 +523,7 @@
   <a href="#today">1. Today</a>
   <a href="#fab">2. +Log</a>
   <a href="#meal-scan">2b. Meal Scan ✨</a>
+  <a href="#menu-prescan" style="background:#C49B5E; color:#fff; font-weight:700; padding:4px 8px; border-radius:6px;">2c. Menu Pre-Scan ⭐ KILLER</a>
   <a href="#coach">3. Coach</a>
   <a href="#progress">4. Progress</a>
   <a href="#plan">5. Plan</a>
@@ -1140,6 +1141,388 @@
 </table>
 </div>
 </section>
+
+<!-- ================================================================= -->
+<!-- MODULE 17 · MENU PRE-SCAN (KILLER FEATURE · Sprint 6)             -->
+<!-- 5-frame mockup for insertion into docs/flow.html                  -->
+<!-- Source: docs/CONSILIUM_MENU_PRESCAN_2026-05-25_LOCKED.md          -->
+<!-- ================================================================= -->
+<section id="menu-prescan">
+<div class="module-banner" style="background: linear-gradient(135deg, var(--brand-deep) 0%, var(--cta-deep) 100%);">
+  <div class="mb-tag">✨ NEW · MODULE 17 · MENU PRE-SCAN (KILLER FEATURE · 2026-05-25)</div>
+  <h2>Menu Pre-Scan — scan the menu <i>before</i> you order</h2>
+  <p class="mb-sub">Founder ask 2026-05-25: <i>«человек захочет сканировать меню перед заказом — иначе как он будет до заказа узнавать будет у него изжога или нет — собери консилиум, возможно вынесем как killer-feature».</i> Answer: <b>sibling of Meal Scan</b> (~60% infra reuse) — flips the temporal axis. Meal Scan = post-mortem diary; <b>Menu Pre-Scan = steering wheel</b>. Zero of 12 tracked competitors do this. Refluxora can <b>own the category</b>. Source: <a href="CONSILIUM_MENU_PRESCAN_2026-05-25_LOCKED.md"><code>CONSILIUM_MENU_PRESCAN_LOCKED</code></a>.</p>
+  <div class="mb-pills">
+    <span class="pill">5-frame flow · 1.5s total (P50)</span>
+    <span class="pill">Vision OCR + GPT-4o-mini fallback</span>
+    <span class="pill">6 per-cohort ranking algorithms</span>
+    <span class="pill">Larry's exact pH gated · LPR Pro $39.99/yr</span>
+    <span class="pill">+$340–520K Y1 ARR projection</span>
+  </div>
+</div>
+
+<!-- ============== COMPETITIVE GAP CALLOUT ============== -->
+<div style="background: linear-gradient(135deg, var(--cta-soft), var(--brand-soft)); border-radius: 12px; padding: 14px 18px; margin: 12px 0 18px; border-left: 4px solid var(--cta);">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.3px; color: var(--cta-deep); margin-bottom: 6px;">🥊 COMPETITIVE WHITE SPACE</div>
+  <div style="font-size: 13px; color: var(--ink); line-height: 1.55;">
+    <b>NoBurn</b> (US, $7.2K MRR) — post-meal log only · <b>Cara Care</b> (DE, stale) — no scanner · <b>GutDiaries</b> (IBS-first) — no GERD pre-scan · <b>Bearable</b> (horizontal) — no scan at all.
+    <br><b>Refluxora Menu Pre-Scan = first reflux app that prevents the burn, not just logs it.</b>
+  </div>
+</div>
+
+<!-- ============== 5-FRAME MOCKUP ROW (Larry cohort variant) ============== -->
+<div class="screen-block" style="grid-template-columns: repeat(5, 1fr); gap: 14px;">
+
+  <!-- ============== FRAME 1 · CAMERA VIEWFINDER ============== -->
+  <div class="phone-frame">
+    <div class="phone-screen" style="background: #0b0f12;">
+      <div class="phone-statusbar" style="color: rgba(255,255,255,0.85);"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content" style="padding: 0; display: flex; flex-direction: column; height: 100%;">
+        <!-- Top hint chip -->
+        <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); color: rgba(255,255,255,0.92); padding: 5px 11px; border-radius: 14px; font-size: 10px; font-weight: 600; backdrop-filter: blur(8px); z-index: 5;">
+          📑 Frame the menu — fill the page
+        </div>
+        <!-- Viewfinder area with simulated menu lines -->
+        <div style="flex: 1; background: linear-gradient(180deg, #2a2218, #1a1308); position: relative; display: flex; align-items: center; justify-content: center; padding: 90px 14px 110px;">
+          <!-- Rule-of-thirds overlay -->
+          <div style="position: absolute; inset: 75px 24px 110px; border: 1px solid rgba(255,255,255,0.18); border-radius: 6px;"></div>
+          <div style="position: absolute; left: 33.3%; top: 75px; bottom: 110px; width: 1px; background: rgba(255,255,255,0.08);"></div>
+          <div style="position: absolute; left: 66.6%; top: 75px; bottom: 110px; width: 1px; background: rgba(255,255,255,0.08);"></div>
+          <!-- Simulated menu page -->
+          <div style="background: #f1e6d2; color: #3a2e1c; width: 100%; padding: 12px 10px; border-radius: 3px; font-family: Georgia, serif; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+            <div style="text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 6px;">— MAINS —</div>
+            <div style="font-size: 9px; line-height: 1.5;">
+              <div style="display: flex; justify-content: space-between;"><span><b>Pasta Arrabbiata</b></span><span>14</span></div>
+              <div style="font-size: 7px; opacity: 0.7; margin-bottom: 3px;">tomato · chili · garlic</div>
+              <div style="display: flex; justify-content: space-between;"><span><b>Grilled Branzino</b></span><span>22</span></div>
+              <div style="font-size: 7px; opacity: 0.7; margin-bottom: 3px;">lemon · herbs · olive oil</div>
+              <div style="display: flex; justify-content: space-between;"><span><b>Steamed Sea Bass</b></span><span>24</span></div>
+              <div style="font-size: 7px; opacity: 0.7; margin-bottom: 3px;">ginger · scallion</div>
+              <div style="display: flex; justify-content: space-between;"><span><b>Margherita Pizza</b></span><span>16</span></div>
+              <div style="font-size: 7px; opacity: 0.7; margin-bottom: 3px;">tomato · mozzarella · basil</div>
+              <div style="display: flex; justify-content: space-between;"><span><b>Risotto al Limone</b></span><span>18</span></div>
+              <div style="font-size: 7px; opacity: 0.7;">arborio · lemon · parmesan</div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom: live counter pill + shutter -->
+        <div style="background: rgba(0,0,0,0.7); padding: 12px 0 24px; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+          <div style="background: rgba(91,168,155,0.22); border: 1px solid rgba(91,168,155,0.45); color: var(--brand-soft); padding: 4px 11px; border-radius: 12px; font-size: 10px; font-weight: 600;">
+            🔍 reading structure · <b>12 blocks detected</b>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 28px;">
+            <div style="color: rgba(255,255,255,0.6); font-size: 10px; width: 50px; text-align: right;">Library</div>
+            <div style="width: 64px; height: 64px; border-radius: 32px; background: var(--cta); border: 4px solid rgba(255,255,255,0.95); box-shadow: 0 0 0 2px var(--cta-deep);"></div>
+            <div style="color: rgba(255,255,255,0.5); font-size: 10px; width: 50px;">Cancel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== FRAME 2 · PROCESSING ============== -->
+  <div class="phone-frame">
+    <div class="phone-screen" style="background: #0b0f12;">
+      <div class="phone-statusbar" style="color: rgba(255,255,255,0.85);"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content" style="padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 18px;">
+        <!-- Menu thumbnail center -->
+        <div style="width: 180px; height: 220px; border-radius: 12px; background: #f1e6d2; color: #3a2e1c; padding: 14px 12px; font-family: Georgia, serif; box-shadow: 0 12px 40px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
+          <div style="text-align: center; font-size: 9px; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 8px;">— MAINS —</div>
+          <div style="font-size: 8px; line-height: 1.6; opacity: 0.5;">
+            <div>Pasta Arrabbiata</div>
+            <div>Grilled Branzino</div>
+            <div>Steamed Sea Bass</div>
+            <div>Margherita Pizza</div>
+            <div>Risotto al Limone</div>
+            <div>Tagliatelle Bolognese</div>
+            <div>Veal Saltimbocca</div>
+            <div>Caprese Salad</div>
+          </div>
+          <!-- Mint scan-line animation simulation -->
+          <div style="position: absolute; left: 0; right: 0; top: 60%; height: 2px; background: linear-gradient(90deg, transparent, var(--brand), transparent); opacity: 0.85;"></div>
+        </div>
+        <!-- Live counter caption -->
+        <div style="color: var(--brand-soft); font-size: 13px; letter-spacing: 0.3px; text-align: center;">
+          ✨ <i>Reading menu…</i><br>
+          <span style="color: white; font-weight: 700; font-size: 18px; letter-spacing: 0;">23 dishes detected</span>
+        </div>
+        <!-- progress dots -->
+        <div style="display: flex; gap: 8px;">
+          <div style="width: 6px; height: 6px; border-radius: 3px; background: var(--brand); opacity: 1;"></div>
+          <div style="width: 6px; height: 6px; border-radius: 3px; background: var(--brand); opacity: 0.65;"></div>
+          <div style="width: 6px; height: 6px; border-radius: 3px; background: var(--brand); opacity: 0.3;"></div>
+        </div>
+        <div style="color: rgba(255,255,255,0.5); font-size: 10px; margin-top: 4px;">ranking for <b>Larry · LPR ⭐</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== FRAME 3 · RESULTS (Larry cohort) ============== -->
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="phone-statusbar"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content" style="padding: 8px 10px 12px; gap: 7px; overflow-y: auto;">
+        <!-- Header strip -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 2px;">
+          <div>
+            <div style="font-size: 13px; font-weight: 800; color: var(--ink);">Menu picks</div>
+            <div style="font-size: 9px; color: var(--ink-2);">🎤 Larry · LPR · pH-ranked</div>
+          </div>
+          <div style="display: flex; gap: 4px;">
+            <span style="background: var(--good-bg); color: var(--brand-deep); padding: 2px 7px; border-radius: 10px; font-size: 9px; font-weight: 700;">▲ 3</span>
+            <span style="background: var(--watch-bg); color: var(--cta-deep); padding: 2px 7px; border-radius: 10px; font-size: 9px; font-weight: 700;">● 14</span>
+            <span style="background: var(--alert-bg); color: #8C3D2C; padding: 2px 7px; border-radius: 10px; font-size: 9px; font-weight: 700;">▼ 6</span>
+          </div>
+        </div>
+
+        <!-- BEST PICKS section header -->
+        <div style="font-size: 9px; font-weight: 800; color: var(--brand-deep); letter-spacing: 0.15em; padding: 4px 2px 0;">▲ BEST PICKS</div>
+
+        <!-- Card 1: Steamed Sea Bass -->
+        <div style="background: white; border: 1.5px solid var(--good); border-radius: 10px; padding: 8px 10px;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+            <span style="background: var(--good-bg); color: var(--brand-deep); padding: 2px 7px; border-radius: 9px; font-size: 9px; font-weight: 700;">pH 6.8 · AW safe</span>
+            <span style="font-size: 11px; font-weight: 700; color: var(--ink); flex: 1;">Steamed Sea Bass</span>
+            <span style="color: var(--ink-3); font-size: 12px;">›</span>
+          </div>
+          <div style="font-size: 9.5px; color: var(--ink-2); line-height: 1.35;">steamed · AW-tagged · LPR-friendly</div>
+        </div>
+
+        <!-- Card 2: Grilled Branzino -->
+        <div style="background: white; border: 1.5px solid var(--good); border-radius: 10px; padding: 8px 10px;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+            <span style="background: var(--good-bg); color: var(--brand-deep); padding: 2px 7px; border-radius: 9px; font-size: 9px; font-weight: 700;">pH 6.2 · AW safe</span>
+            <span style="font-size: 11px; font-weight: 700; color: var(--ink); flex: 1;">Grilled Branzino</span>
+            <span style="color: var(--ink-3); font-size: 12px;">›</span>
+          </div>
+          <div style="font-size: 9.5px; color: var(--ink-2); line-height: 1.35;">broiled · skip lemon garnish · pH-safe</div>
+        </div>
+
+        <!-- Card 3: Polenta -->
+        <div style="background: white; border: 1.5px solid var(--good); border-radius: 10px; padding: 8px 10px;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+            <span style="background: var(--good-bg); color: var(--brand-deep); padding: 2px 7px; border-radius: 9px; font-size: 9px; font-weight: 700;">pH 5.8 · AW safe</span>
+            <span style="font-size: 11px; font-weight: 700; color: var(--ink); flex: 1;">Polenta with Herbs</span>
+            <span style="color: var(--ink-3); font-size: 12px;">›</span>
+          </div>
+          <div style="font-size: 9.5px; color: var(--ink-2); line-height: 1.35;">corn base · Aviv Phase 1 approved</div>
+        </div>
+
+        <!-- SKIP section header -->
+        <div style="font-size: 9px; font-weight: 800; color: #8C3D2C; letter-spacing: 0.15em; padding: 4px 2px 0;">▼ SKIP</div>
+
+        <!-- Card 4: Pasta Arrabbiata -->
+        <div style="background: white; border: 1.5px solid var(--alert); border-radius: 10px; padding: 8px 10px; opacity: 0.92;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+            <span style="background: var(--alert-bg); color: #8C3D2C; padding: 2px 7px; border-radius: 9px; font-size: 9px; font-weight: 700;">pH 4.0 · AW skip</span>
+            <span style="font-size: 11px; font-weight: 700; color: var(--ink); flex: 1;">Pasta Arrabbiata</span>
+            <span style="color: var(--ink-3); font-size: 12px;">›</span>
+          </div>
+          <div style="font-size: 9.5px; color: var(--ink-2); line-height: 1.35;">tomato + chili = pepsin reactivation</div>
+        </div>
+
+        <!-- Bottom CTAs -->
+        <div style="margin-top: 4px; background: var(--cta); color: white; padding: 9px; border-radius: 10px; text-align: center; font-size: 11px; font-weight: 700; box-shadow: 0 4px 10px -2px rgba(140,106,59,0.4);">
+          📤 Share safe picks with table
+        </div>
+        <!-- Disclaimer ribbon -->
+        <div style="background: var(--watch-bg); color: var(--ink-2); padding: 5px 8px; border-radius: 6px; font-size: 8px; text-align: center;">
+          Educational tracking only — not a medical device.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== FRAME 4 · DISH DETAIL EXPANSION ============== -->
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="phone-statusbar"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content" style="padding: 8px 10px 12px; gap: 8px; overflow-y: auto;">
+        <!-- Back row -->
+        <div style="display: flex; align-items: center; gap: 6px; padding: 0 2px;">
+          <span style="color: var(--brand-deep); font-size: 11px; font-weight: 700;">‹ Back</span>
+        </div>
+
+        <!-- Hero: dish title + verdict -->
+        <div style="background: white; border-radius: 12px; padding: 12px;">
+          <span style="background: var(--good-bg); color: var(--brand-deep); padding: 3px 9px; border-radius: 11px; font-size: 10px; font-weight: 700;">pH 6.8 · AW safe</span>
+          <div style="font-size: 16px; font-weight: 800; color: var(--ink); margin-top: 6px; line-height: 1.2;">Steamed Sea Bass</div>
+          <div style="font-size: 10px; color: var(--ink-2); margin-top: 2px;">ginger · scallion · light soy</div>
+        </div>
+
+        <!-- pH score breakdown -->
+        <div style="background: white; border-radius: 10px; padding: 9px 10px;">
+          <div style="font-size: 9px; font-weight: 800; color: var(--brand-deep); letter-spacing: 0.12em; margin-bottom: 5px;">PH SCORE · 6.8</div>
+          <!-- mini gauge -->
+          <div style="height: 8px; background: linear-gradient(90deg, var(--alert) 0%, var(--alert) 30%, var(--cta) 50%, var(--brand) 65%, var(--brand-deep) 100%); border-radius: 4px; position: relative;">
+            <div style="position: absolute; top: -3px; left: 80%; width: 4px; height: 14px; background: var(--ink); border-radius: 2px; box-shadow: 0 0 0 1px white;"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 8px; color: var(--ink-3); margin-top: 3px;">
+            <span>2 acidic</span><span>5 ←AW cliff</span><span>9 alkaline</span>
+          </div>
+        </div>
+
+        <!-- Why this rank -->
+        <div style="background: white; border-radius: 10px; padding: 9px 10px;">
+          <div style="font-size: 9px; font-weight: 800; color: var(--brand-deep); letter-spacing: 0.12em; margin-bottom: 5px;">WHY THIS RANK</div>
+          <div style="font-size: 10px; color: var(--ink); line-height: 1.45;">
+            ✓ Steamed prep (+15)<br>
+            ✓ Acid Watcher tagged (+30)<br>
+            ✓ pH ≥5 cliff cleared (+50)<br>
+            ⚠ Skip lemon garnish if served
+          </div>
+        </div>
+
+        <!-- Citation -->
+        <div style="background: var(--ai-bg); border: 1px solid var(--ai-border); border-radius: 8px; padding: 6px 9px;">
+          <div style="font-size: 9px; color: var(--brand-deep);">📚 based on <b>Aviv Acid Watcher</b> · Phase 1</div>
+        </div>
+
+        <!-- Primary CTAs -->
+        <div style="background: var(--cta); color: white; padding: 11px; border-radius: 11px; text-align: center; font-size: 12px; font-weight: 700; box-shadow: 0 4px 10px -2px rgba(140,106,59,0.4);">
+          ✓ I'll order this
+        </div>
+        <div style="background: white; border: 1.5px solid var(--brand); color: var(--brand-deep); padding: 9px; border-radius: 10px; text-align: center; font-size: 11px; font-weight: 700;">
+          💬 Discuss with Coach
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== FRAME 5 · COACH HANDOFF / SHARE CTA ============== -->
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="phone-statusbar"><span>9:41</span><span>● ●●● ⌶</span></div>
+      <div class="phone-content" style="padding: 8px 10px 12px; gap: 7px; overflow-y: auto;">
+        <!-- Coach header -->
+        <div style="display: flex; align-items: center; gap: 6px; padding: 2px;">
+          <div style="width: 22px; height: 22px; border-radius: 11px; background: var(--brand-deep); color: var(--cta); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800;">C</div>
+          <div>
+            <div style="font-size: 11px; font-weight: 800; color: var(--ink);">Coach</div>
+            <div style="font-size: 8px; color: var(--ink-2);">Larry · LPR ⭐ · menu pick context</div>
+          </div>
+        </div>
+
+        <!-- Seeded user prompt bubble -->
+        <div style="align-self: flex-end; max-width: 88%; background: var(--brand-deep); color: white; padding: 8px 10px; border-radius: 12px 12px 4px 12px; font-size: 10.5px; line-height: 1.4;">
+          About to order <b>Steamed Sea Bass</b>, pH 6.8, Acid Watcher safe. What's the impact on tonight's throat-clearing?
+        </div>
+
+        <!-- Coach reply -->
+        <div style="background: var(--ai-bg); border: 1px solid var(--ai-border); border-radius: 12px 12px 12px 4px; padding: 9px 10px; max-width: 92%;">
+          <!-- Confidence chip -->
+          <div style="display: inline-block; background: var(--good-bg); color: var(--brand-deep); padding: 2px 7px; border-radius: 9px; font-size: 8.5px; font-weight: 700; margin-bottom: 5px;">✓ Grounded · ACG + Aviv</div>
+          <div style="font-size: 10.5px; color: var(--ink); line-height: 1.45;">
+            Good pick. A few notes for tonight:
+            <br>• Steamed prep keeps pepsin quiet — under your 5.0 cliff.
+            <br>• Skip lemon if it's plated — citric acid is your usual throat-clearing trigger.
+            <br>• Eat ≥3h before bed; left-side recline helps.
+            <br><span style="color: var(--ink-2); font-style: italic;">Discuss with your ENT.</span>
+          </div>
+          <!-- Citation chips -->
+          <div style="display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap;">
+            <span style="background: white; border: 1px solid var(--ai-border); color: var(--brand-deep); padding: 2px 6px; border-radius: 8px; font-size: 8px; font-weight: 700;">📚 Aviv ch.4</span>
+            <span style="background: white; border: 1px solid var(--ai-border); color: var(--brand-deep); padding: 2px 6px; border-radius: 8px; font-size: 8px; font-weight: 700;">📚 ACG 2022</span>
+          </div>
+        </div>
+
+        <!-- Follow-up chips -->
+        <div style="display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px;">
+          <span style="background: white; border: 1px solid var(--divider); color: var(--brand-deep); padding: 4px 8px; border-radius: 12px; font-size: 9px; font-weight: 600;">+ swap suggestion</span>
+          <span style="background: white; border: 1px solid var(--divider); color: var(--brand-deep); padding: 4px 8px; border-radius: 12px; font-size: 9px; font-weight: 600;">+ vocal hygiene tonight</span>
+        </div>
+
+        <!-- Share CTA at bottom -->
+        <div style="margin-top: 6px; background: linear-gradient(135deg, var(--cta), var(--cta-deep)); color: white; padding: 10px; border-radius: 11px; text-align: center; font-size: 11px; font-weight: 700; box-shadow: 0 4px 10px -2px rgba(140,106,59,0.4);">
+          📤 Share safe picks with table
+        </div>
+        <div style="font-size: 8px; color: var(--ink-3); text-align: center; margin-top: -2px;">3 dishes · plain text · no app required</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============== FRAME LABELS ============== -->
+<div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: -8px; margin-bottom: 16px;">
+  <div style="text-align: center;"><div style="font-size: 10px; font-weight: 800; color: var(--cta-deep); letter-spacing: 0.1em;">FRAME 1</div><div style="font-size: 11px; color: var(--brand-deep); font-weight: 700;">Viewfinder</div><div style="font-size: 10px; color: var(--ink-2);">live block-count + composition guides</div></div>
+  <div style="text-align: center;"><div style="font-size: 10px; font-weight: 800; color: var(--cta-deep); letter-spacing: 0.1em;">FRAME 2</div><div style="font-size: 11px; color: var(--brand-deep); font-weight: 700;">Processing</div><div style="font-size: 10px; color: var(--ink-2);">"23 dishes detected" · 0.8s P50</div></div>
+  <div style="text-align: center;"><div style="font-size: 10px; font-weight: 800; color: var(--cta-deep); letter-spacing: 0.1em;">FRAME 3</div><div style="font-size: 11px; color: var(--brand-deep); font-weight: 700;">Results · Larry</div><div style="font-size: 10px; color: var(--ink-2);">pH-ranked dish cards · top-3 / skip</div></div>
+  <div style="text-align: center;"><div style="font-size: 10px; font-weight: 800; color: var(--cta-deep); letter-spacing: 0.1em;">FRAME 4</div><div style="font-size: 11px; color: var(--brand-deep); font-weight: 700;">Detail</div><div style="font-size: 10px; color: var(--ink-2);">pH gauge + why-this-rank + cite</div></div>
+  <div style="text-align: center;"><div style="font-size: 10px; font-weight: 800; color: var(--cta-deep); letter-spacing: 0.1em;">FRAME 5</div><div style="font-size: 11px; color: var(--brand-deep); font-weight: 700;">Coach + Share</div><div style="font-size: 10px; color: var(--ink-2);">seeded handoff · ShareSheet viral hook</div></div>
+</div>
+
+<!-- ============== ANNOTATION + PER-COHORT DISH-CARD MATRIX ============== -->
+<div class="screen-block" style="grid-template-columns: 1fr; padding: 22px;">
+  <div class="annotation">
+    <h3>Per-cohort dish-card reason line (same scan, 6 ranking lenses)</h3>
+    <p>The same menu scan produces six different orderings depending on which cohort the user belongs to. Each card is 88pt tall (4 fit per first screen on iPhone 15). Pill is the verdict; reason line below explains <b>why this cohort gets this rank</b>.</p>
+    <div class="tab-spec-table" style="margin-top: 8px;">
+      <table>
+        <thead><tr><th>Cohort</th><th>Verdict pill</th><th>Reason line</th><th>Algorithm focus</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cohort-chip cc-brian">🔥 Brian</span></td><td><b>Safest pick · 2/10</b></td><td><i>"low refractory trigger load · no tomato/onion/citrus"</i></td><td>refractory PPI failure — penalises tomato, citrus, onion, garlic, chocolate (-15 each)</td></tr>
+          <tr><td><span class="cohort-chip cc-patricia">🤰 Patricia</span></td><td><b>OB-aligned · 3/10</b></td><td><i>"safe if eaten ≥3h before bed · no caffeine · low-fat"</i></td><td>FDA Cat-B (+30) · bedtime-proximity (×10/h, cap 30) · caffeine penalty</td></tr>
+          <tr><td><span class="cohort-chip cc-frank">🍷 Frank</span></td><td><b>Best flavor swap · 4/10</b></td><td><i>"salmon piccata over arrabbiata — 70% less acid, same Italian profile"</i></td><td>flavor-profile bonus (+15) · trigger-load math (cheese × tomato × portion × 1/hoursToBed)</td></tr>
+          <tr><td><span class="cohort-chip cc-sam">👴 Sam</span></td><td><b>OK with your meds · 3/10</b></td><td><i>"⚠ avoid grapefruit aperitif with amlodipine"</i> OR <i>"no interactions detected"</i></td><td>InteractionMatrix lookup (-50 per hit, hard cliff) · simple-protein bonus (+30)</td></tr>
+          <tr><td><span class="cohort-chip cc-anna">🌿 Anna</span></td><td><b>On protocol · Phase 1</b></td><td><i>"Acid Watcher Phase 1 compliant · take DGL 20min after"</i></td><td>Phase match (+40 / -20) · rebound triggers (-15 each) · DGL timing bonus</td></tr>
+          <tr><td><span class="cohort-chip cc-larry">🎤 Larry ⭐</span></td><td><b>pH 6.2 · AW safe</b></td><td><i>"broiled · Acid Watcher tagged · LPR-friendly"</i></td><td>pH ≥5 cliff (+50) · AW tag (+30) · prep-method bonus · throat-irritant penalty <b>· exact pH gated by LPR Pro $39.99/yr</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ============== COMPETITIVE MOAT TABLE ============== -->
+<h3 style="margin-top: 28px; font-size: 17px; color: var(--brand-deep);">Competitive moat · the only reflux app that takes the steering wheel</h3>
+<p class="lede" style="margin-bottom: 8px;">12 tracked competitors in <code>competitors/meta.yaml</code>. <b>Zero</b> scan menus pre-order. The category is empty. Refluxora can own it.</p>
+<div class="tab-spec-table">
+<table>
+<thead><tr><th>Capability</th><th>Refluxora</th><th>NoBurn</th><th>Cara Care</th><th>GutDiaries</th><th>Bearable</th></tr></thead>
+<tbody>
+<tr><td><b>Pre-order menu scan</b></td><td style="background: var(--good-bg);">✅ Killer</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td>OCR pipeline (Vision + GPT-4o-mini fallback)</td><td style="background: var(--good-bg);">✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td>Dish ontology (800+ items, 5 cuisines)</td><td style="background: var(--good-bg);">✅</td><td>❌</td><td>~basic</td><td>partial (FODMAP)</td><td>❌</td></tr>
+<tr><td>Per-cohort ranking (6 cohorts)</td><td style="background: var(--good-bg);">✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td>Drug-interaction check at pick-time</td><td style="background: var(--good-bg);">✅ Sam</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td>pH scoring (Aviv Acid Watcher)</td><td style="background: var(--good-bg);">✅ Larry</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td>Coach handoff with menu-pick context</td><td style="background: var(--good-bg);">✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td>FDA pregnancy category check</td><td style="background: var(--good-bg);">✅ Patricia</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============== MONETIZATION + BIG BET ============== -->
+<div style="background: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand-mid) 100%); color: white; border-radius: 16px; padding: 20px 24px; margin-top: 22px;">
+  <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; color: var(--cta); margin-bottom: 8px;">🎯 BIG BET · LOCKED 2026-05-25</div>
+  <div style="font-size: 16px; font-weight: 700; line-height: 1.45; max-width: 920px;">
+    Refluxora is the only reflux app that takes the steering wheel <i>before</i> the meal — not the clipboard after. Menu Pre-Scan owns the "won't ruin dinner" moment that no competitor has even attempted, and ships per-cohort medical-grade ranking that turns a 90-second restaurant panic into a 2-second confident pick — and converts Larry's LPR Pro upgrade into the most tangible $39.99/yr in the App Store.
+  </div>
+  <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px;">
+    <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); padding: 8px 14px; border-radius: 10px;">
+      <div style="font-size: 10px; opacity: 0.75; letter-spacing: 0.1em; font-weight: 700;">MONETIZATION</div>
+      <div style="font-size: 13px; font-weight: 700; margin-top: 2px;">Option D · free for all · LPR Pro adds exact pH</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); padding: 8px 14px; border-radius: 10px;">
+      <div style="font-size: 10px; opacity: 0.75; letter-spacing: 0.1em; font-weight: 700;">YEAR-1 ARR UPLIFT</div>
+      <div style="font-size: 13px; font-weight: 700; margin-top: 2px;">+$340–520K (realistic)</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); padding: 8px 14px; border-radius: 10px;">
+      <div style="font-size: 10px; opacity: 0.75; letter-spacing: 0.1em; font-weight: 700;">LPR PRO ATTACH LIFT</div>
+      <div style="font-size: 13px; font-weight: 700; margin-top: 2px;">+11–33pp on paid Larry base</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); padding: 8px 14px; border-radius: 10px;">
+      <div style="font-size: 10px; opacity: 0.75; letter-spacing: 0.1em; font-weight: 700;">SPRINT 6 EFFORT</div>
+      <div style="font-size: 13px; font-weight: 700; margin-top: 2px;">~27h (60% Meal Scan reuse)</div>
+    </div>
+  </div>
+</div>
+
+</section>
+<!-- ================================================================= -->
+<!-- END MODULE 17                                                     -->
+<!-- ================================================================= -->
+
 
 <!-- ==================== TAB 3 · COACH ==================== -->
 <section id="coach">
