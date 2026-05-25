@@ -1802,44 +1802,63 @@
 </style>
 
 <div class="m16-banner" id="paywall-workbench">
-  <span class="num">МОДУЛЬ 16</span>
-  <h2>Paywall workbench — 6 cohorts × 3 variants · founder ballot</h2>
+  <span class="num">МОДУЛЬ 16 · ROUND 4 HEPATICA REALIGN</span>
+  <h2>Paywall workbench — 2-tier Hepatica pattern · 6 cohorts × 3 variants · founder ballot</h2>
   <p class="desc">
-    18 hero compositions для founder review. Каждая cohort row — 3 phone-frame mockups (β1 PAIN · β2 PROMISE · β3 SOCIAL). Tap preferred variant → frame glows mint + vote stored. После 6/6 votes — Submit ballot. Source-of-truth: <code>CONSILIUM_PAYWALL_2026-05-25_LOCKED.md</code>. Swift port: Sprint 6 (~10.5 hrs).
+    🔄 <b>Round 4 amendment (2026-05-25 eve):</b> dropped to <b>2 tiers</b> (Weekly + Annual — Family/Lifetime deferred v1.2) · trust band "📖 Built on ACG · AGA · AAO-HNS LPR · Koufman · 2,000+ docs" added · default tier preselection now varies per cohort (Brian/Frank/Sam/Anna/Larry → Annual · Patricia → Weekly) · CTA copy switches `Continue` ↔ `Start my 7-day free trial` based on selected tier. 18 hero compositions remain. Tap preferred variant → frame glows mint + vote stored. После 6/6 votes — Submit ballot. Source-of-truth: <code>CONSILIUM_PAYWALL_2026-05-25_LOCKED.md §2.5</code>. Swift port: Sprint 6 (~7.5 hrs, was 10.5).
   </p>
 </div>
 
 <div class="m16">
 
-  <!-- ==================== 16.1 · Pricing tier lock ==================== -->
-  <h2 class="m16-head"><span class="m16-num">16.1</span>Pricing tier lock — Weekly preselected</h2>
+  <!-- ==================== 16.1 · Pricing tier lock (Round 4 — 2-tier Hepatica) ==================== -->
+  <h2 class="m16-head"><span class="m16-num">16.1</span>Pricing tier lock — 2-tier Hepatica (Round 4)</h2>
   <p class="m16-lede">
-    4 tiers. Weekly preselected for every cohort (founder override · habit lock · matches Patricia preference). Annual tile gets the gold "Best value" badge to drive ~55–60% of upgrade clicks. Add-ons NOT shown here — they live on the Plan tab post-subscribe to avoid Hick's-Law choice paralysis.
+    <b>2 tiers only</b> for v1 — exact Hepatica match. Default tier varies per cohort (Brian/Frank/Sam/Anna/Larry → Annual · Patricia → Weekly). Both tiers offer a <b>7-day free trial</b> (Round 4 change — Weekly now also has trial). User can toggle Weekly ↔ Annual; 5 UI elements switch live (tier highlight · CTA · timeline · legal microtext · brand label). Add-ons NOT shown here — they live on the Plan tab post-subscribe.
   </p>
-  <div class="m16-tier-row">
-    <div class="m16-tier selected">
-      <span class="m16-badge mint">Most flexible</span>
+  <div class="m16-tier-row" style="grid-template-columns: repeat(2, 1fr); max-width: 560px; margin: 0 auto 12px;">
+    <div class="m16-tier">
+      <span class="m16-badge mint">7-DAY FREE TRIAL</span>
       <div class="m16-tier-name">Weekly</div>
       <div class="m16-tier-price">$4.99</div>
-      <div class="m16-tier-meta">/wk · cancel anytime · no trial</div>
+      <div class="m16-tier-meta">/wk · cancel anytime</div>
     </div>
-    <div class="m16-tier">
-      <span class="m16-badge">Best value · save 85%</span>
+    <div class="m16-tier selected">
+      <span class="m16-badge">SAVE 85%</span>
       <div class="m16-tier-name">Annual</div>
       <div class="m16-tier-price">$39.99</div>
-      <div class="m16-tier-meta">/yr · 7-day free trial · ≈ $0.77/wk</div>
+      <div class="m16-tier-meta">/yr · ≈ $0.77/wk</div>
     </div>
-    <div class="m16-tier">
-      <span class="m16-badge cream">2 profiles</span>
-      <div class="m16-tier-name">Family</div>
-      <div class="m16-tier-price">$79.99</div>
-      <div class="m16-tier-meta">/yr · 7-day trial · 2 profiles</div>
+  </div>
+  <div style="background: rgba(196,155,94,0.12); border: 1px dashed rgba(196,155,94,0.4); border-radius: 8px; padding: 10px 14px; margin: 12px auto 0; max-width: 720px; font-size: 12px; color: #5D6B70; text-align: center;">
+    <b style="color:#8C6A3B;">DEFERRED v1.2:</b> Family $79.99/yr (2 profiles · Sam + Patricia postpartum) · Lifetime $99 one-time (Anna anti-recurring-payment ethos). Demand to be measured post-launch via in-app survey. Round 4 lock: ship v1 with Weekly + Annual only.
+  </div>
+
+  <!-- ==================== 16.1B · The 5 switching UI elements ==================== -->
+  <h2 class="m16-head" style="margin-top: 28px;"><span class="m16-num">16.1B</span>The 5 switching UI elements (Round 4 NEW)</h2>
+  <p class="m16-lede">
+    When the user toggles between Weekly ↔ Annual, these 5 elements re-render. Everything else stays static (H1, sub, bullets, trust band, back chevron, footer, top-bar skip).
+  </p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px;">
+    <div style="background: #FBF8F2; border: 1px solid #DED5C7; border-radius: 12px; padding: 14px;">
+      <div style="font-size: 11px; font-weight: 800; color: #5BA89B; letter-spacing: 0.4px; margin-bottom: 8px;">WEEKLY SELECTED</div>
+      <div style="font-size: 13px; color: #2E3F44; line-height: 1.7;">
+        <b>1. Tier card:</b> Weekly = gold 3pt border, cream fill<br>
+        <b>2. CTA:</b> <span style="background:#C49B5E; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700;">Start my 7-day free trial</span><br>
+        <b>3. Timeline:</b> Today → Day 5 (🔔 reminder) → Day 7 (💳 $4.99/wk)<br>
+        <b>4. Legal:</b> "Free for 7 days, then $4.99/wk. Auto-renews..."<br>
+        <b>5. Brand label:</b> REFLUXORA
+      </div>
     </div>
-    <div class="m16-tier">
-      <span class="m16-badge outline">One-time</span>
-      <div class="m16-tier-name">Lifetime</div>
-      <div class="m16-tier-price">$99</div>
-      <div class="m16-tier-meta">once · no renewal · forever</div>
+    <div style="background: #FBF8F2; border: 1px solid #C49B5E; border-radius: 12px; padding: 14px; box-shadow: 0 2px 10px rgba(196,155,94,0.18);">
+      <div style="font-size: 11px; font-weight: 800; color: #C49B5E; letter-spacing: 0.4px; margin-bottom: 8px;">ANNUAL SELECTED (default for 5/6 cohorts)</div>
+      <div style="font-size: 13px; color: #2E3F44; line-height: 1.7;">
+        <b>1. Tier card:</b> Annual = gold 3pt border, cream fill<br>
+        <b>2. CTA:</b> <span style="background:#C49B5E; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700;">Continue</span><br>
+        <b>3. Timeline:</b> Today → Week 4 (📈 trend lines) → Day 365 (📅 renews $39.99)<br>
+        <b>4. Legal:</b> "Free for 7 days, then $39.99/yr. Auto-renews..."<br>
+        <b>5. Brand label:</b> REFLUXORA <span style="color:#C49B5E;">(LPR PRO for Larry)</span>
+      </div>
     </div>
   </div>
 
@@ -1863,6 +1882,7 @@
         <div class="m16-variant-tag pain">β1 PAIN</div>
         <div class="m16-h1">PPI stopped working?</div>
         <div class="m16-sub">You're not alone. 30% of severe GERD goes refractory. Map your real triggers.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Track every flare against the food 4hr earlier</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Voquezna vs. PPI efficacy logged side-by-side</div>
@@ -1870,10 +1890,10 @@
         </div>
         <div class="m16-addon">+ unlocks Voquezna Companion add-on after subscribe</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
       <div class="m16-phone" data-cohort="brian" data-variant="promise">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -1881,6 +1901,7 @@
         <div class="m16-variant-tag promise">β2 PROMISE</div>
         <div class="m16-h1">From flare to pattern in 14 days</div>
         <div class="m16-sub">Day 1: log tonight's burn. Day 7: top 3 triggers. Day 14: your GI report.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 1 — Photo-scan dinner, log burn 4hr later</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 7 — Top-3 trigger heatmap unlocks</div>
@@ -1888,10 +1909,10 @@
         </div>
         <div class="m16-addon">+ unlocks Voquezna Companion add-on after subscribe</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
       <div class="m16-phone" data-cohort="brian" data-variant="social">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -1899,6 +1920,7 @@
         <div class="m16-variant-tag social">β3 SOCIAL</div>
         <div class="m16-h1">Join 7M refractory PPI users</div>
         <div class="m16-sub">First GERD companion for the Voquezna era · ACG + AGA grounded</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Built with r/GERD's 60K severe-flare community</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Trained on ACG 2022 + Phathom Voquezna label</div>
@@ -1906,10 +1928,10 @@
         </div>
         <div class="m16-addon">+ unlocks Voquezna Companion add-on after subscribe</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
     </div>
   </div>
@@ -1928,16 +1950,17 @@
         <div class="m16-variant-tag pain">β1 PAIN</div>
         <div class="m16-h1">Heartburn at 38 weeks?</div>
         <div class="m16-sub">You can't sleep. Tums "feels" wrong. We have the OB-aware answers.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Pregnancy-safe med reference · trimester rules</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Tums tracker · never crosses 7,500mg calcium</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Built on ACOG + AAP + Mayo OB guidance</div>
         </div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Start my 7-day free trial</div>
       </div>
       <div class="m16-phone" data-cohort="patricia" data-variant="promise">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -1945,16 +1968,17 @@
         <div class="m16-variant-tag promise">β2 PROMISE</div>
         <div class="m16-h1">Sleep through tonight</div>
         <div class="m16-sub">Day 1: left-side protocol. Day 3: trigger journal. Day 7: a quieter night.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 1 — Left-side sleep + Tums log + meal cutoff</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 3 — Journal flags 2 foods making it worse</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 7 — Postpartum transition plan ready</div>
         </div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Start my 7-day free trial</div>
       </div>
       <div class="m16-phone" data-cohort="patricia" data-variant="social">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -1962,16 +1986,17 @@
         <div class="m16-variant-tag social">β3 SOCIAL</div>
         <div class="m16-h1">1.8M pregnant moms · same fight</div>
         <div class="m16-sub">Built with r/BabyBumps 600K + OB-validated · pregnancy-safe by default.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Joined by 1.8M pregnant moms with reflux now</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Cross-checked against ACOG + AAP — no gambles</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Unlike Cara Care (stale 2020) — built for now</div>
         </div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Start my 7-day free trial</div>
       </div>
     </div>
   </div>
@@ -1990,6 +2015,7 @@
         <div class="m16-variant-tag pain">β1 PAIN</div>
         <div class="m16-h1">Don't quit coffee. Get smart.</div>
         <div class="m16-sub">Doc said cut everything. We say keep what doesn't hurt — and prove it.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Photo-scan any meal · personalized rank in 2s</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Italian, French, BBQ, wine — swap-list per dish</div>
@@ -1997,10 +2023,10 @@
         </div>
         <div class="m16-addon">+ unlocks Diet Lab add-on after subscribe</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
       <div class="m16-phone" data-cohort="frank" data-variant="promise">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -2008,6 +2034,7 @@
         <div class="m16-variant-tag promise">β2 PROMISE</div>
         <div class="m16-h1">Map your safe menu in 14 days</div>
         <div class="m16-sub">Day 1: scan one meal. Day 7: your safe list. Day 14: restaurant strategy.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 1 — Photo-scan tonight's dinner · log burn</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 7 — Top-15 safe foods · top-5 to drop</div>
@@ -2015,10 +2042,10 @@
         </div>
         <div class="m16-addon">+ unlocks Diet Lab add-on after subscribe</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
       <div class="m16-phone" data-cohort="frank" data-variant="social">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -2026,6 +2053,7 @@
         <div class="m16-variant-tag social">β3 SOCIAL</div>
         <div class="m16-h1">18M foodies · same problem</div>
         <div class="m16-sub">Mediterranean + Acid Watcher protocols in one app · IFFGD-validated.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Joined by 18M newly-diagnosed mild-GERD foodies</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Grounded on IFFGD + Cleveland Clinic + Mayo</div>
@@ -2033,10 +2061,10 @@
         </div>
         <div class="m16-addon">+ unlocks Diet Lab add-on after subscribe</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
     </div>
   </div>
@@ -2054,16 +2082,17 @@
         <div class="m16-variant-tag pain">β1 PAIN</div>
         <div class="m16-h1">7 meds. Reflux. Interactions?</div>
         <div class="m16-sub">Polypharmacy + GERD is the silent ER-trip. We map it before it bites.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Med-interaction flags — PPI + statins, NSAIDs</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Aspiration pneumonia early-warning · sleep alerts</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Built on AGS Beers Criteria · pharmacy-grade</div>
         </div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$79.99</b><span>/yr · Family</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
       <div class="m16-phone" data-cohort="sam" data-variant="promise">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -2071,16 +2100,17 @@
         <div class="m16-variant-tag promise">β2 PROMISE</div>
         <div class="m16-h1">A calmer day in 14 days</div>
         <div class="m16-sub">Day 1: 7-med audit. Day 7: trigger pattern. Day 14: PDF for your GP.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 1 — Add 7 meds + symptoms · interactions surface</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 7 — Pattern · meal-time + posture coaching</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 14 — Doctor-ready PDF · pharmacy-grade</div>
         </div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$79.99</b><span>/yr · Family</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
       <div class="m16-phone" data-cohort="sam" data-variant="social">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -2088,16 +2118,17 @@
         <div class="m16-variant-tag social">β3 SOCIAL</div>
         <div class="m16-h1">24M seniors · same daily fight</div>
         <div class="m16-sub">2 profiles included · your spouse + you · Family tier · Beers-aligned.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Joined by 24M Americans 60+ managing reflux</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Aligned to AGS Beers Criteria · pharmacy-grade</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Unlike NoBurn — 2 profiles · large fonts · GP-ready</div>
         </div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$79.99</b><span>/yr · Family</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
     </div>
   </div>
@@ -2115,6 +2146,7 @@
         <div class="m16-variant-tag pain">β1 PAIN</div>
         <div class="m16-h1">Off PPI in 12 weeks.</div>
         <div class="m16-sub">No cold turkey. No rebound. A tapered protocol built on functional-med data.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>12-wk AI-guided taper · DGL + zinc-carnosine timing</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Rebound-flare early-warning · taper-pause logic</div>
@@ -2122,10 +2154,10 @@
         </div>
         <div class="m16-addon">+ unlocks PPI Taper Pro add-on after subscribe</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
       <div class="m16-phone" data-cohort="anna" data-variant="promise">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -2133,6 +2165,7 @@
         <div class="m16-variant-tag promise">β2 PROMISE</div>
         <div class="m16-h1">Your taper, your timeline</div>
         <div class="m16-sub">Week 1: baseline. Week 6: half-dose. Week 12: off · with a safety net.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Week 1 — Baseline · log triggers · prep your kit</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Week 6 — Half-dose · DGL on cue · flare-watch</div>
@@ -2140,10 +2173,10 @@
         </div>
         <div class="m16-addon">+ unlocks PPI Taper Pro add-on after subscribe</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
       <div class="m16-phone" data-cohort="anna" data-variant="social">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -2151,6 +2184,7 @@
         <div class="m16-variant-tag social">β3 SOCIAL</div>
         <div class="m16-h1">5M off-PPI seekers · same goal</div>
         <div class="m16-sub">Only app combining ACG taper + Acid Watcher diet + DGL timing.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Joined by 5M Americans trying to come off PPIs</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Grounded on ACG taper + Acid Watcher + IFFGD</div>
@@ -2158,10 +2192,10 @@
         </div>
         <div class="m16-addon">+ unlocks PPI Taper Pro add-on after subscribe</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
     </div>
   </div>
@@ -2180,6 +2214,7 @@
         <div class="m16-variant-tag pain">β1 PAIN</div>
         <div class="m16-h1">Silent reflux is real.</div>
         <div class="m16-sub">Throat clear, lump, hoarse voice — your ENT was right. Track RSI weekly.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>RSI weekly · screening · take to your next ENT</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Acid Watcher diet · vocal hygiene · pepsin protocols</div>
@@ -2187,10 +2222,10 @@
         </div>
         <div class="m16-addon">+ unlocks LPR Pro (RSI + ENT report + Acid Watcher)</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
       <div class="m16-phone" data-cohort="larry" data-variant="promise">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -2198,6 +2233,7 @@
         <div class="m16-variant-tag promise">β2 PROMISE</div>
         <div class="m16-h1">Your voice back in 14 days</div>
         <div class="m16-sub">Day 1: RSI baseline. Day 7: vocal hygiene live. Day 14: ENT-ready report.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 1 — RSI baseline · log throat clear + lump</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Day 7 — Vocal hygiene live · Acid Watcher ranking</div>
@@ -2205,10 +2241,10 @@
         </div>
         <div class="m16-addon">+ unlocks LPR Pro (RSI + ENT report + Acid Watcher)</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
       <div class="m16-phone" data-cohort="larry" data-variant="social">
         <span class="m16-vote-pill">✓ VOTED</span>
@@ -2216,6 +2252,7 @@
         <div class="m16-variant-tag social">β3 SOCIAL</div>
         <div class="m16-h1">30M Americans · most undiagnosed</div>
         <div class="m16-sub">The first app built FOR LPR · AAO-HNS + Koufman + Aviv grounded.</div>
+        <div style="background: #C5DDD7; color: #18524F; font-size: 9px; padding: 4px 7px; border-radius: 8px; text-align: center; margin: 4px 0 6px; font-weight: 600; letter-spacing: 0.15px;">📖 ACG · AGA · AAO-HNS · 2,000+ docs</div>
         <div class="m16-bullets">
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>Joined by 30M Americans with LPR — most undiagnosed</div>
           <div class="m16-bullet"><span class="m16-bullet-dot">✓</span>AAO-HNS + Koufman + Aviv Acid Watcher — primary</div>
@@ -2223,10 +2260,10 @@
         </div>
         <div class="m16-addon">+ unlocks LPR Pro (RSI + ENT report + Acid Watcher)</div>
         <div class="m16-mini-tiers">
-          <div class="m16-mini-tier selected"><b>$4.99</b><span>/wk</span></div>
-          <div class="m16-mini-tier"><b>$39.99</b><span>/yr · trial</span></div>
+          <div class="m16-mini-tier"><b>$4.99</b><span>/wk · trial</span></div>
+          <div class="m16-mini-tier selected"><b>$39.99</b><span>/yr · ≈$0.77/wk</span></div>
         </div>
-        <div class="m16-mini-cta">Start with $4.99/wk</div>
+        <div class="m16-mini-cta">Continue</div>
       </div>
     </div>
   </div>
