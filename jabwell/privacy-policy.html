@@ -55,7 +55,7 @@
 <body>
     <h1>Privacy Policy</h1>
     <p class="app-name">JabWell · GLP-1 Tracker &amp; AI Coach</p>
-    <p class="date">Effective date: May 1, 2026</p>
+    <p class="date">Effective date: June 3, 2026</p>
 
     <h2>Summary</h2>
     <div class="highlight">
@@ -64,7 +64,9 @@
             <li><strong>Your health data stays on your device.</strong> Injection logs, weight, symptoms, photos, and chat history live in iOS storage protected by your device passcode and Apple's Data Protection.</li>
             <li><strong>We never sell your data.</strong></li>
             <li><strong>We never share your data with advertising networks or marketing partners.</strong></li>
-            <li><strong>AI Nurse chat queries do leave your device</strong> (sent to DeepSeek — see §4) but contain only the message text and a brief profile context (medication brand, current dose, weeks of treatment). They never include your weight numbers, your name, or your HealthKit data.</li>
+            <li><strong>AI features require your in-app permission before data is sent.</strong> AI Nurse chat, source retrieval, and AI Scan use third-party AI providers only after you agree in JabWell.</li>
+            <li><strong>AI Nurse chat queries do leave your device</strong> (sent through our Cloudflare Worker to DeepSeek — see §4) and may include your message text plus brief app context such as medication brand, dose, weeks of treatment, recent summaries, and safety mode. They do not include your name or Apple HealthKit records.</li>
+            <li><strong>Source search and AI Scan use OpenAI.</strong> Source search sends your typed query for embedding. AI Scan sends a captured photo only when you choose to scan.</li>
         </ul>
     </div>
 
@@ -79,7 +81,7 @@
         <li>AI Nurse chat history (your messages and Nora's responses, including cited sources)</li>
         <li>App preferences (Safe Mode, palette override, push notification opt-ins)</li>
     </ul>
-    <p>You can export all of this via <strong>Settings → Data export</strong>, or delete it via <strong>Settings → Delete all data</strong>, at any time.</p>
+    <p>You can delete this data via <strong>Settings → Account &amp; Data → Delete Account &amp; Data</strong>, or by uninstalling the app, at any time.</p>
 
     <h2>2. Apple HealthKit</h2>
     <p>JabWell reads <strong>body-mass (weight) samples</strong> from Apple HealthKit, and only with your explicit permission. This permission is requested when you tap "Connect Apple Health" on the Body tab.</p>
@@ -97,33 +99,41 @@
         <li><strong>Anonymous app analytics events</strong> (e.g. "log injection saved", "milestone-5 shown") with no personally identifying or health-specific values. We use this only to understand which features are working — never to profile individual users.</li>
         <li><strong>Crash reports</strong> via Apple's standard crash reporting (anonymized, opt-in via iOS Settings).</li>
         <li><strong>Subscription receipts</strong> verified by Apple via RevenueCat for entitlement management. These contain only the subscription identifier and an anonymous user ID — no health data.</li>
+        <li><strong>Third-party AI requests after your permission</strong> for AI Nurse chat, source search, or AI Scan as described below.</li>
     </ul>
     <p>We do not collect IP addresses for tracking. We do not use cookies. We do not run advertising SDKs.</p>
 
-    <h2>4. AI Nurse (Nora) chat</h2>
-    <p>When you send a message to Nora in the Coach tab, the message text and a brief profile context — your medication brand, current dose in mg, and weeks of treatment — are sent to <strong>DeepSeek</strong>, our AI inference provider, to generate Nora's reply.</p>
+    <h2>4. AI Nurse (Nora) chat and source retrieval</h2>
+    <p>Before your first AI request, JabWell shows an in-app disclosure and asks for your permission to share limited data with third-party AI providers. If you cancel, the AI request is not sent.</p>
     <div class="trust">
         <ul>
-            <li>DeepSeek receives only what you type plus the brief context above. <strong>It never receives your name, your weight numbers, your symptom history, or your HealthKit data.</strong></li>
-            <li>DeepSeek does not retain JabWell user messages for model training (per their API terms in effect at app launch).</li>
-            <li>Nora's responses are generated against medical literature bundled inside the app (FDA prescribing information, AAFP, Mayo Clinic, Cleveland Clinic, peer-reviewed PubMed studies). The retrieval over this corpus runs entirely on your device.</li>
+            <li>When you send a message to Nora in the Coach tab, the message text and brief app context may be sent through a JabWell/Loveiko Labs <strong>Cloudflare Worker</strong> to <strong>DeepSeek</strong> (<code>deepseek-chat</code>) to generate Nora's reply.</li>
+            <li>Brief app context may include medication brand, current dose, weeks on treatment, safety mode, topic tag, and short summaries such as recent symptoms or weight trend when a feature needs that context. We do not send your name or raw Apple HealthKit records.</li>
+            <li>To retrieve educational sources, your typed query is sent through the same Cloudflare Worker to <strong>OpenAI</strong> (<code>text-embedding-3-small</code>) to create an embedding. The app compares that embedding against the bundled source library and uses the top passages to ground Nora's answer.</li>
+            <li>DeepSeek and OpenAI receive AI requests only for these app functions. They do not receive RevenueCat subscription records from JabWell.</li>
             <li>Every Nora response is checked for compliance phrases before display, and includes an <em>"Educational, not medical advice. Consult your prescriber."</em> footer.</li>
         </ul>
     </div>
     <p>If you turn on <strong>Safe Mode</strong> in Settings, the profile context sent to DeepSeek omits weight numbers and replaces directional weight references with non-numeric phrasing.</p>
 
-    <h2>5. Photos</h2>
-    <p>JabWell uses your camera in two ways:</p>
+    <h2>5. AI Scan photos</h2>
+    <p>If you choose AI Scan, JabWell sends the photo you capture through our Cloudflare Worker to <strong>OpenAI</strong> (<code>gpt-4o</code>) for one-time classification of a pen, syringe, or injection-site image.</p>
     <ul>
-        <li><strong>Pen / syringe / injection-site scans (v1.0)</strong> — when you tap the scan button to identify a medication pen, log a pre-filled syringe dose, or photograph your post-injection site, the photo is sent through our Cloudflare Workers proxy to OpenAI Vision (GPT-4o) for one-shot identification. The request is sent with <code>store: false</code> — OpenAI does not retain the photo per their API terms. Our Cloudflare Worker does not log the photo payload either. The structured result text (medication name, dose, site notes) is stored on your device alongside the photo. The photo itself is also stored on your device unless you choose to delete it.</li>
-        <li><strong>Hair / skin photo journal (v1.0)</strong> — photos you capture for the weekly hair or skin tracker are stored <strong>only on your device</strong> in v1.0. AI analysis of hair or skin photos is opt-in and arrives in v1.1+; you will see a clear consent prompt before any hair/skin photo leaves the device.</li>
+        <li>Photos are sent only after you choose to scan and after you have accepted AI data sharing in the app.</li>
+        <li>JabWell does not store the scan photo on our servers.</li>
+        <li>The OpenAI Vision request uses <code>store:false</code> where supported.</li>
+        <li>The classification result is used only to help you log or review the scan inside JabWell.</li>
     </ul>
-    <p>You can delete any photo from JabWell at any time. Photos are never sent to advertising networks, never linked to your name or account (you don't have an account), and never used for ad targeting.</p>
+    <p>You can delete any photo from JabWell at any time. Photos are never sent to advertising networks, never linked to your name, and never used for ad targeting.</p>
 
-    <h2>6. Subscriptions and payments</h2>
+    <h2>6. Photo journal</h2>
+    <p>Photos you capture in the Hair / Skin photo journal are stored on your device. Photo journal images are not uploaded for advertising or marketing.</p>
+    <p>You can delete any photo from the journal at any time. Photos never go to advertising networks.</p>
+
+    <h2>7. Subscriptions and payments</h2>
     <p>JabWell is a paid app. Subscriptions are managed by Apple's App Store. We use <strong>RevenueCat</strong> to verify subscription receipts and manage entitlement state. RevenueCat receives only an anonymous user identifier and the subscription receipt — no health data, no name, no email. See RevenueCat's privacy policy at <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</p>
 
-    <h2>7. What we do NOT do</h2>
+    <h2>8. What we do NOT do</h2>
     <ul>
         <li>We do not sell your data.</li>
         <li>We do not share your data with advertising networks.</li>
@@ -132,24 +142,24 @@
         <li>We do not provide JabWell to anyone under 18.</li>
     </ul>
 
-    <h2>8. Children's privacy</h2>
+    <h2>9. Children's privacy</h2>
     <p>JabWell is for adults on GLP-1 medication. We do not knowingly collect data from anyone under 18. If you believe we have, contact us at the email below and we will delete the account.</p>
 
-    <h2>9. Data retention and deletion</h2>
-    <p>All on-device data persists until you delete it (<strong>Settings → Delete all data</strong>, or by uninstalling the app). Server-side analytics events are retained for up to 24 months and then aggregated. Crash reports are retained per Apple's standard policy.</p>
+    <h2>10. Data retention and deletion</h2>
+    <p>All on-device data persists until you delete it (<strong>Settings → Account &amp; Data → Delete Account &amp; Data</strong>, or by uninstalling the app). Server-side analytics events are retained for up to 24 months and then aggregated. Crash reports are retained per Apple's standard policy.</p>
 
-    <h2>10. Your rights</h2>
-    <p>Depending on where you live (EU/UK GDPR, California CCPA, etc.), you may have rights to access, correct, or delete your data. Because we hold no personally identifying data on our servers, most rights apply only to your local app data — which you can fully control via Settings → Data export and Settings → Delete all data.</p>
+    <h2>11. Your rights</h2>
+    <p>Depending on where you live (EU/UK GDPR, California CCPA, etc.), you may have rights to access, correct, or delete your data. Because we hold no personally identifying data on our servers, most rights apply only to your local app data — which you can fully control via Settings → Account &amp; Data → Delete Account &amp; Data.</p>
     <p>For requests about server-side analytics that may be associated with your anonymous device identifier, contact us:</p>
     <ul>
         <li>Email: <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></li>
         <li>We will respond within 30 days.</li>
     </ul>
 
-    <h2>11. Changes to this policy</h2>
+    <h2>12. Changes to this policy</h2>
     <p>If we materially change how data is handled, we will update this page and bump the date at the top. For significant changes (e.g. adding a new third-party provider), we will surface an in-app notice before the change takes effect.</p>
 
-    <h2>12. Contact</h2>
+    <h2>13. Contact</h2>
     <ul>
         <li>Email: <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></li>
         <li>App: JabWell, by Loveiko Labs</li>
