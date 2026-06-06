@@ -46,10 +46,10 @@
 <body>
     <h1>Privacy Policy</h1>
     <p class="app-name">PestSnap · Bug ID for Homes</p>
-    <p class="date">Effective date: April 24, 2026</p>
+    <p class="date">Effective date: June 6, 2026</p>
 
     <div class="highlight">
-        <strong>Summary:</strong> PestSnap keeps your scan history on your device. Photos you submit for identification are sent to our analysis proxy only for the few seconds the scan takes and are not retained. No account is required. No analytics. No ad trackers.
+        <strong>Summary:</strong> PestSnap keeps your scan history on your device. Photos you submit for identification are sent to our analysis proxy only for the few seconds the scan takes and are not retained. No account is required. We use privacy-conscious product analytics to understand app launches, onboarding, paywall views, and scan activity. No ad trackers.
     </div>
 
     <h2>1. Overview</h2>
@@ -85,7 +85,9 @@
     <p>RevenueCat does not receive any scan history, photos, chat messages, or pest data. See <a href="https://www.revenuecat.com/privacy">RevenueCat's Privacy Policy</a> for details.</p>
 
     <h2>5. Analytics and Tracking</h2>
-    <p><strong>PestSnap does not use any third-party analytics, advertising networks, or tracking SDKs.</strong></p>
+    <p>PestSnap uses <strong>PostHog</strong> for product analytics so we can understand app reliability and improve the onboarding, paywall, and scan experience. Analytics events may include app launches, onboarding progress, paywall views, scan mode selections, scan starts, scan completion or failure, app version, build number, device locale, timezone, and an app-generated installation identifier.</p>
+    <p>PostHog does not receive your photos, scan images, chat messages, name, email, precise location, contacts, or payment card details from PestSnap. Analytics data is used for product analytics and support/debugging only. We do not use PostHog for third-party advertising or cross-app tracking.</p>
+    <p>RevenueCat may forward subscription lifecycle events to PostHog, such as trial started, initial purchase, renewal, cancellation, expiration, or billing issue. These events are used to understand subscription performance and customer support issues. They do not include scan photos, chat messages, or payment card details.</p>
     <p>Only Apple's built-in crash diagnostics are collected if you have them enabled. You can disable these in your device Settings under Privacy &amp; Security → Analytics &amp; Improvements.</p>
 
     <h2>6. Affiliate Disclosures</h2>
@@ -106,7 +108,7 @@
     <p>PestSnap identifications are not a substitute for a licensed pest control inspection. For suspected termite activity, bed bug infestation, or any other serious pest issue, always consult a licensed professional exterminator. The Exterminator Finder is a convenience that surfaces public business listings; it is not an endorsement of any specific provider.</p>
 
     <h2>10. Data Deletion</h2>
-    <p>All scan history, photos saved within PestSnap, chat messages, and preferences are stored locally on your device. Deleting the PestSnap app permanently removes this data from your device. No server-side record of your scans or chats exists to be deleted. Your RevenueCat anonymous ID resets when you reinstall.</p>
+    <p>All scan history, photos saved within PestSnap, chat messages, and preferences are stored locally on your device. Deleting the PestSnap app permanently removes this data from your device. No server-side record of your scans or chats exists to be deleted. Your RevenueCat anonymous ID and PostHog installation identifier may reset when you reinstall.</p>
 
     <h2>11. Regional Compliance</h2>
     <p>PestSnap complies with the General Data Protection Regulation (GDPR) for users in the European Economic Area and with the California Consumer Privacy Act (CCPA) for California residents. Because we do not collect personally identifying information, most data-subject rights (access, rectification, portability, deletion) are satisfied automatically — you already hold full control over your data on your device.</p>
