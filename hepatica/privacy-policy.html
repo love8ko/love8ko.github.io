@@ -20,7 +20,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="date">Effective date: May 21, 2026</p>
+<p class="date">Effective date: August 31, 2026</p>
 
 <p>Hepatica: AI Fatty Liver Companion ("the App") is developed and published by Valerii Loveiko. We take your privacy seriously and are committed to protecting your personal information. This privacy policy explains how the App collects, uses, stores, and protects your data.</p>
 
@@ -87,7 +87,7 @@
 <p>With your permission, Hepatica can read selected data from Apple Health (for example body mass, HbA1c, steps, active energy). This access is <strong>read-only</strong> — the App does not write to Apple Health. Data read from Apple Health is used on-device for your dashboard and trends and is never transmitted off the device. You can grant or revoke this access at any time in iOS Settings → Privacy &amp; Security → Health.</p>
 
 <h3>1.7 Subscription Information</h3>
-<p>Hepatica offers optional subscriptions and a one-time purchase managed entirely through Apple's App Store and StoreKit. All payment processing and billing are handled by Apple — we do not collect, process, or store payment information. We use RevenueCat to track subscription status (see §3.4).</p>
+<p>Hepatica offers optional Weekly and Annual subscriptions managed entirely through Apple's App Store and StoreKit. All payment processing and billing are handled by Apple — we do not collect, process, or store payment information. We use RevenueCat to track subscription status (see §3.4).</p>
 
 <h3>1.8 Anonymous Analytics</h3>
 <p>To understand aggregate App usage and reliability, Hepatica records a small amount of <strong>anonymous</strong> event data (for example "onboarding completed", "paywall viewed", a subscription event from RevenueCat) in our Supabase backend (see §3.5). These events are tied only to an anonymous, system-generated identifier. They contain no name, no email, no lab values, no photos, and no chat content.</p>
@@ -144,7 +144,7 @@
 <p>All AI requests are routed through a Cloudflare Worker proxy that forwards traffic to OpenAI and DeepSeek without logging or storing request bodies. The Worker exists solely to keep API keys server-side and to apply rate limiting.</p>
 
 <h3>3.4 RevenueCat (Subscription Management)</h3>
-<p>Hepatica uses RevenueCat to manage subscription status. RevenueCat receives an anonymous, system-generated user identifier, your subscription status (active, trial, expired), and the product identifier purchased. RevenueCat does not receive your name, email, lab values, photos, logs, or any personal information. For details, see <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a>.</p>
+<p>Hepatica uses RevenueCat to manage subscription status. RevenueCat receives an anonymous, system-generated user identifier, your subscription status (active or expired), and the product identifier purchased. RevenueCat does not receive your name, email, lab values, photos, logs, or any personal information. For details, see <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a>.</p>
 
 <h3>3.5 Supabase (Anonymous Analytics Backend)</h3>
 <p>Hepatica uses Supabase to store anonymous usage and subscription events (see §1.8). Each event is tied only to an anonymous identifier and contains no personal health data, photos, or chat content. Supabase acts as our data processor for this limited, anonymous telemetry. For details, see <a href="https://supabase.com/privacy">Supabase's Privacy Policy</a>.</p>
