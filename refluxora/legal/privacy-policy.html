@@ -148,7 +148,7 @@
 <p>All AI requests are routed through a Cloudflare Worker proxy (<code>refluxora-api.veribag.workers.dev</code>) that forwards traffic to OpenAI and DeepSeek without logging or storing request bodies. The Worker exists solely to keep API keys server-side, to apply rate limiting, and to provide IP anonymization between your device and the AI providers.</p>
 
 <h3>3.4 RevenueCat (Subscription Management)</h3>
-<p>Refluxora uses RevenueCat to manage subscription status. RevenueCat receives an anonymous, system-generated user identifier, your subscription status (active, trial, expired), and the product identifier purchased. RevenueCat does not receive your name, email, symptoms, photos, logs, or any personal information. For details, see <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a>.</p>
+<p>Refluxora uses RevenueCat to manage subscription status. RevenueCat receives an anonymous, system-generated user identifier, your subscription status (for example active or expired), and the product identifier purchased. RevenueCat does not receive your name, email, symptoms, photos, logs, or any personal information. For details, see <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a>.</p>
 
 <h3>3.5 Supabase (Anonymous Analytics Backend)</h3>
 <p>Refluxora uses Supabase to store anonymous usage and subscription events (see §1.8). Each event is tied only to an anonymous identifier and contains no personal health data, photos, or chat content. Supabase acts as our data processor for this limited, anonymous telemetry. For details, see <a href="https://supabase.com/privacy">Supabase's Privacy Policy</a>.</p>
