@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>Privacy Policy</h1>
-<p class="date">Effective date: July 12, 2026</p>
+<p class="date">Effective date: September 10, 2026</p>
 
 <p>JewelSnap (“the App”) is published by Valeriy Loveiko. This policy explains
 what data is processed when you identify jewelry, use Expert Chat, manage a
@@ -26,17 +26,19 @@ unnecessary personal information in photos or messages.</p>
 
 <h2>AI processing and international transfers</h2>
 <p>The App automatically chooses an AI route based on app language, device
-region, and App Store storefront, or a developer-only test setting:</p>
+region, and App Store storefront:</p>
 <ul>
   <li>Global requests may be proxied to OpenAI for image analysis and DeepSeek
   for text chat.</li>
-  <li>China-routed image requests are proxied through Alibaba Cloud Function
-  Compute in Hangzhou to an Alibaba Model Studio/Qwen workspace hosted in
-  Singapore (<code>ap-southeast-1</code>).</li>
-  <li>China-routed Expert Chat is proxied to DeepSeek.</li>
+  <li>When the App Store storefront is mainland China or the device region is
+  China, scans, reanalysis, and Expert Chat are processed only through a
+  dedicated JewelSnap Alibaba Cloud Function Compute proxy and Alibaba Model
+  Studio/Qwen in Beijing (<code>cn-beijing</code>). This route has no global
+  fallback.</li>
 </ul>
 <p>This means AI data may be processed outside your country, including outside
-mainland China. Our proxies authenticate and forward requests and do not
+mainland China for global users. China-routed processing remains in the
+Alibaba Cloud China mainland deployment scope. Our proxies authenticate and forward requests and do not
 intentionally persist photos or chat history. AI providers may temporarily
 process or retain request data under their own service terms, security, abuse
 prevention, and legal obligations. We do not claim that processing is entirely
@@ -55,6 +57,13 @@ offerings and maintain subscription entitlement status. RevenueCat may process
 a pseudonymous app user identifier, product and transaction information,
 storefront, app/device technical data, and request diagnostics. JewelSnap does
 not receive your full payment-card details.</p>
+<p>The weekly plan may include a seven-day free introductory trial for eligible
+new subscribers. The annual plan has no free trial. Offer availability and
+localized prices are shown before purchase. Subscriptions renew automatically
+unless canceled through Apple account settings; after an eligible free trial,
+the weekly plan renews as a paid subscription. See the
+<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+and the purchase screen for subscription terms.</p>
 
 <h2>Operational logs</h2>
 <p>The App and proxies may record limited technical events such as operation,
@@ -62,6 +71,19 @@ selected backend, locale/storefront signal, latency, status, fallback reason,
 request ID, and aggregate token usage. We do not intentionally log photos,
 base64 image data, full prompts, chat history, or provider credentials.</p>
 
+<h2>Product usage and optional reminders</h2>
+<p>The App records a small queue of pseudonymous usage events, such as viewing
+onboarding, completing an analysis, or saving a piece. Events contain a random
+installation identifier, event identifier and time, app version, and locale.
+They do not contain photos, notes, jewelry descriptions, or chat messages.
+When first-party analytics is enabled for your region, these events are sent
+to our authenticated Cloudflare service and retained for up to 90 days.
+You can turn off usage events in the App’s Privacy settings; this also clears
+queued events and the local analytics identifier. Analytics upload is disabled
+for mainland China routing until a regional service is configured.</p>
+<p>Helpful notifications are optional and scheduled on your device only after
+you agree following a saved result. The introductory sequence contains up to
+four reminders over 14 days. You can disable it in the App or iOS Settings.</p>
 <h2>Permissions</h2>
 <p>Camera access is used to take jewelry photos. Photo-library access is used
 only for items you select. You can change these permissions in iOS Settings.
@@ -77,8 +99,8 @@ Retention by external processors is governed by their applicable terms and
 configuration.</p>
 
 <h2>Your choices</h2>
-<p>You can delete scans and chat in the App, reset local data from the available
-settings, revoke camera/photo permission, manage subscriptions through Apple,
+<p>You can delete scans and chat in the App, revoke camera/photo permission,
+manage subscriptions through Apple,
 or uninstall the App. Contact us for privacy questions. We may need limited
 technical details to investigate a request, and we cannot delete data that only
 exists on your device.</p>
