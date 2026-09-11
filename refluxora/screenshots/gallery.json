@@ -1,43 +1,39 @@
 {
-  "version": "concept-2026-09-11.1",
+  "version": "concept-2026-09-11.2",
   "locale": "en-US",
   "status": "design-concepts-not-for-app-store",
   "series": [
     {
       "prefix": "A",
-      "name": "Human / Cool Relief",
-      "description": "The situation first. A clear product detail.",
+      "name": "Human / The moment",
+      "description": "The person and the interruption come first.",
       "frames": [
         {
-          "position": "01",
-          "headline": "Reflux questions. Clearer answers.",
+          "headline": "Heartburn Keeping You Up?",
           "headlineLines": [
-            "Reflux questions.",
-            "Clearer answers."
+            "Heartburn",
+            "Keeping",
+            "You Up?"
           ],
-          "subline": "Make sense of your next question.",
-          "asset": "assets/01-question.jpg",
-          "scene": "An adult woman thoughtfully reading her phone at home.",
-          "shortJob": "When the same symptoms leave you with another question.",
-          "jtbd": "Recurring symptoms \u2192 a concrete explanation",
-          "proofLabel": "An answer to your question",
-          "sourceFiles": [
-            "Refluxora/Refluxora/Core/Tabs/Coach/CoachThreadDetailView.swift",
-            "Refluxora/Refluxora/Services/CoachService.swift"
-          ],
+          "accentLine": 2,
+          "subline": "Get a clearer next step tonight.",
+          "asset": "assets/01-night.jpg",
+          "scene": "A woman awake on the edge of her bed, with her partner asleep behind her.",
+          "shortJob": "Heartburn interrupts the night. Find one practical next step.",
+          "jtbd": "Interrupted sleep \u2192 understand evening context \u2192 one step",
+          "proofLabel": "ONE STEP TO CONSIDER",
           "ui": {
             "title": "Coach",
             "label": "AI explanation \u00b7 Example",
             "question": "Why is my heartburn worse at night?",
-            "focus": "Meal timing can matter.",
-            "explanation": "Leaving at least 3 hours between a meal and lying down may help with nighttime symptoms.",
-            "nextLabel": "A next step",
-            "next": "Note when you eat and when you lie down.",
+            "focus": "Leave 3 hours before lying down.",
+            "explanation": "After a meal, this interval may help with nighttime reflux symptoms.",
             "cta": "Save this answer",
             "disclaimer": "Educational example \u00b7 Not a diagnosis"
           },
-          "rationale": "The opening frame connects a recurring situation to a specific answer. It makes the assistant\u2019s value visible before asking people to care about tracking. The lead is a hypothesis based on the Brian direction, not measured conversion data.",
+          "rationale": "An interrupted night makes recurring heartburn personal and immediate. The meal-to-lying-down interval is a practical example, not a promise of relief.",
           "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
           "id": "A01",
           "series": "A",
           "readiness": "concept",
@@ -48,38 +44,33 @@
           "sourceScreenshot": null,
           "original": "originals/A01.png",
           "preview": "previews/A01.jpg",
-          "generationMethod": "Existing generated photography + deterministic HTML/CSS product concept",
+          "generationMethod": "Built-in ImageGen photograph + deterministic HTML/CSS interface and composition",
           "releaseApproved": false
         },
         {
-          "position": "02",
-          "headline": "Understand your test results.",
+          "headline": "What Can I Eat With Reflux?",
           "headlineLines": [
-            "Understand your",
-            "test results."
+            "What Can I Eat",
+            "With Reflux?"
           ],
-          "subline": "Medical terms. Everyday language.",
-          "asset": "assets/02-labs.jpg",
-          "scene": "An adult woman reading a printed report at her kitchen table.",
-          "shortJob": "When you have a result, but not a clear explanation.",
-          "jtbd": "J2 \u00b7 Understand an existing test result",
-          "proofLabel": "A result, explained",
-          "sourceFiles": [
-            "Refluxora/Refluxora/Setup/LabReviewView.swift",
-            "Refluxora/Refluxora/Setup/LabObservation.swift"
-          ],
+          "accentLine": 1,
+          "subline": "Check the menu before you order.",
+          "asset": "assets/02-restaurant.jpg",
+          "scene": "A woman considers an open menu before ordering in a warmly lit restaurant.",
+          "shortJob": "Choose an order with a specific adjustment in mind.",
+          "jtbd": "Restaurant uncertainty \u2192 review one dish \u2192 adjust the order",
+          "proofLabel": "ONE CHANGE TO CONSIDER",
           "ui": {
-            "title": "Lab results",
-            "label": "AI explanation \u00b7 Example",
-            "focus": "Near the lower end of this lab\u2019s range.",
-            "explanation": "B12 supports nerve and blood cell health. Your clinician may want to check this result further.",
-            "nextLabel": "Ask your clinician",
-            "next": "Would a follow-up test help clarify my B12 level?",
-            "cta": "Save to lab history",
-            "disclaimer": "Illustrative lab data \u00b7 Not a diagnosis"
+            "title": "Menu review",
+            "label": "AI meal guidance \u00b7 Example",
+            "focus": "Ask for sauce on the side.",
+            "explanation": "Citrus and rich sauces can bother some people. Your own response may differ.",
+            "cta": "Save this meal",
+            "disclaimer": "Illustrative menu \u00b7 Responses vary"
           },
-          "rationale": "A concrete result gives the explanation benefit a visible before-and-after: unfamiliar numbers become a readable explanation and a useful question. The B12 value and reference interval are synthetic demonstration data, not a real patient record or a universal normal range. A value of 220 pg/mL is not labelled reassuring or definitively normal.",
-          "source": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/",
+          "rationale": "The choice happens before ordering. Grilled salmon with lemon butter sauce becomes one explainable adjustment. The dish is not labelled safe and no individual trigger is predicted.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
           "id": "A02",
           "series": "A",
           "readiness": "concept",
@@ -90,38 +81,34 @@
           "sourceScreenshot": null,
           "original": "originals/A02.png",
           "preview": "previews/A02.jpg",
-          "generationMethod": "Existing generated photography + deterministic HTML/CSS product concept",
+          "generationMethod": "Built-in ImageGen photograph + deterministic HTML/CSS interface and composition",
           "releaseApproved": false
         },
         {
-          "position": "03",
-          "headline": "Food choices. Less guesswork.",
+          "headline": "Reflux Tests. What Do They Mean?",
           "headlineLines": [
-            "Food choices.",
-            "Less guesswork."
+            "Reflux Tests.",
+            "What Do",
+            "They Mean?"
           ],
-          "subline": "Check the menu before you order.",
-          "asset": "assets/03-menu.jpg",
-          "scene": "A woman and man deciding what to order in a restaurant.",
-          "shortJob": "When you want dinner out to feel like everyday life.",
-          "jtbd": "J1 / J4 / J5 \u00b7 Choose a meal before ordering",
-          "proofLabel": "One dish. One practical change.",
-          "sourceFiles": [
-            "Refluxora/Refluxora/Capture/MenuPreScan/MenuDishDetailSheet.swift",
-            "Refluxora/Refluxora/Capture/MenuPreScan/MenuPreScanResultView.swift"
-          ],
+          "accentLine": 2,
+          "subline": "Your report, in plain English.",
+          "asset": "assets/03-report.jpg",
+          "scene": "A woman studies a printed report at home in soft daylight.",
+          "shortJob": "Turn an unfamiliar reflux-test term into plain English.",
+          "jtbd": "Unfamiliar test report \u2192 understand one metric",
+          "proofLabel": "ACID EXPOSURE TIME, EXPLAINED",
           "ui": {
-            "title": "Menu review",
-            "label": "AI meal guidance \u00b7 Example",
-            "focus": "Ask for the sauce on the side.",
-            "explanation": "Citrus and high-fat foods can bother some people. Your own response may differ.",
-            "nextLabel": "Before you order",
-            "next": "Ask how the dish is prepared and choose an adjustment.",
-            "cta": "Save this meal",
-            "disclaimer": "Illustrative menu \u00b7 No universally safe foods"
+            "title": "Report review",
+            "label": "AI explanation \u00b7 Example",
+            "focus": "Time with acid in your esophagus.",
+            "explanation": "AET measures the percentage of time at pH below 4. Your clinician interprets it in context.",
+            "cta": "Save this explanation",
+            "disclaimer": "Illustrative data \u00b7 Not a diagnosis"
           },
-          "rationale": "The restaurant scene connects food guidance to social life. \u201cBefore you order\u201d makes the moment of use immediate. The example suggests one explainable change without declaring the dish safe or predicting a personal trigger.",
-          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "rationale": "The same synthetic acid exposure time of 7.2% appears on paper and in the interface. The example explains the metric without a diagnosis or threshold verdict. Third position is a creative hypothesis that broadens value beyond food and tracking.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
           "id": "A03",
           "series": "A",
           "readiness": "concept",
@@ -132,46 +119,42 @@
           "sourceScreenshot": null,
           "original": "originals/A03.png",
           "preview": "previews/A03.jpg",
-          "generationMethod": "Existing generated photography + deterministic HTML/CSS product concept",
+          "generationMethod": "Built-in ImageGen photograph + deterministic HTML/CSS interface and composition",
           "releaseApproved": false
         }
       ]
     },
     {
       "prefix": "B",
-      "name": "Product / Cool Relief",
-      "description": "The result first. Human context behind it.",
+      "name": "Product / The explanation",
+      "description": "The question, menu item or report takes the foreground.",
       "frames": [
         {
-          "position": "01",
-          "headline": "Reflux questions. Clearer answers.",
+          "headline": "Heartburn Keeping You Up?",
           "headlineLines": [
-            "Reflux questions.",
-            "Clearer answers."
+            "Heartburn",
+            "Keeping",
+            "You Up?"
           ],
-          "subline": "Make sense of your next question.",
-          "asset": "assets/01-question.jpg",
-          "scene": "An adult woman thoughtfully reading her phone at home.",
-          "shortJob": "When the same symptoms leave you with another question.",
-          "jtbd": "Recurring symptoms \u2192 a concrete explanation",
-          "proofLabel": "An answer to your question",
-          "sourceFiles": [
-            "Refluxora/Refluxora/Core/Tabs/Coach/CoachThreadDetailView.swift",
-            "Refluxora/Refluxora/Services/CoachService.swift"
-          ],
+          "accentLine": 2,
+          "subline": "Get a clearer next step tonight.",
+          "asset": "assets/01-night.jpg",
+          "scene": "A woman awake on the edge of her bed, with her partner asleep behind her.",
+          "shortJob": "Heartburn interrupts the night. Find one practical next step.",
+          "jtbd": "Interrupted sleep \u2192 understand evening context \u2192 one step",
+          "proofLabel": "ONE STEP TO CONSIDER",
           "ui": {
             "title": "Coach",
             "label": "AI explanation \u00b7 Example",
             "question": "Why is my heartburn worse at night?",
-            "focus": "Meal timing can matter.",
-            "explanation": "Leaving at least 3 hours between a meal and lying down may help with nighttime symptoms.",
-            "nextLabel": "A next step",
-            "next": "Note when you eat and when you lie down.",
+            "focus": "Leave 3 hours before lying down.",
+            "explanation": "After a meal, this interval may help with nighttime reflux symptoms.",
             "cta": "Save this answer",
             "disclaimer": "Educational example \u00b7 Not a diagnosis"
           },
-          "rationale": "The opening frame connects a recurring situation to a specific answer. It makes the assistant\u2019s value visible before asking people to care about tracking. The lead is a hypothesis based on the Brian direction, not measured conversion data.",
+          "rationale": "An interrupted night makes recurring heartburn personal and immediate. The meal-to-lying-down interval is a practical example, not a promise of relief.",
           "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
           "id": "B01",
           "series": "B",
           "readiness": "concept",
@@ -182,38 +165,33 @@
           "sourceScreenshot": null,
           "original": "originals/B01.png",
           "preview": "previews/B01.jpg",
-          "generationMethod": "Existing generated photography + deterministic HTML/CSS product concept",
+          "generationMethod": "Built-in ImageGen photograph + deterministic HTML/CSS interface and composition",
           "releaseApproved": false
         },
         {
-          "position": "02",
-          "headline": "Understand your test results.",
+          "headline": "What Can I Eat With Reflux?",
           "headlineLines": [
-            "Understand your",
-            "test results."
+            "What Can I Eat",
+            "With Reflux?"
           ],
-          "subline": "Medical terms. Everyday language.",
-          "asset": "assets/02-labs.jpg",
-          "scene": "An adult woman reading a printed report at her kitchen table.",
-          "shortJob": "When you have a result, but not a clear explanation.",
-          "jtbd": "J2 \u00b7 Understand an existing test result",
-          "proofLabel": "A result, explained",
-          "sourceFiles": [
-            "Refluxora/Refluxora/Setup/LabReviewView.swift",
-            "Refluxora/Refluxora/Setup/LabObservation.swift"
-          ],
+          "accentLine": 1,
+          "subline": "Check the menu before you order.",
+          "asset": "assets/02-restaurant.jpg",
+          "scene": "A woman considers an open menu before ordering in a warmly lit restaurant.",
+          "shortJob": "Choose an order with a specific adjustment in mind.",
+          "jtbd": "Restaurant uncertainty \u2192 review one dish \u2192 adjust the order",
+          "proofLabel": "ONE CHANGE TO CONSIDER",
           "ui": {
-            "title": "Lab results",
-            "label": "AI explanation \u00b7 Example",
-            "focus": "Near the lower end of this lab\u2019s range.",
-            "explanation": "B12 supports nerve and blood cell health. Your clinician may want to check this result further.",
-            "nextLabel": "Ask your clinician",
-            "next": "Would a follow-up test help clarify my B12 level?",
-            "cta": "Save to lab history",
-            "disclaimer": "Illustrative lab data \u00b7 Not a diagnosis"
+            "title": "Menu review",
+            "label": "AI meal guidance \u00b7 Example",
+            "focus": "Ask for sauce on the side.",
+            "explanation": "Citrus and rich sauces can bother some people. Your own response may differ.",
+            "cta": "Save this meal",
+            "disclaimer": "Illustrative menu \u00b7 Responses vary"
           },
-          "rationale": "A concrete result gives the explanation benefit a visible before-and-after: unfamiliar numbers become a readable explanation and a useful question. The B12 value and reference interval are synthetic demonstration data, not a real patient record or a universal normal range. A value of 220 pg/mL is not labelled reassuring or definitively normal.",
-          "source": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/",
+          "rationale": "The choice happens before ordering. Grilled salmon with lemon butter sauce becomes one explainable adjustment. The dish is not labelled safe and no individual trigger is predicted.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
           "id": "B02",
           "series": "B",
           "readiness": "concept",
@@ -224,38 +202,34 @@
           "sourceScreenshot": null,
           "original": "originals/B02.png",
           "preview": "previews/B02.jpg",
-          "generationMethod": "Existing generated photography + deterministic HTML/CSS product concept",
+          "generationMethod": "Built-in ImageGen photograph + deterministic HTML/CSS interface and composition",
           "releaseApproved": false
         },
         {
-          "position": "03",
-          "headline": "Food choices. Less guesswork.",
+          "headline": "Reflux Tests. What Do They Mean?",
           "headlineLines": [
-            "Food choices.",
-            "Less guesswork."
+            "Reflux Tests.",
+            "What Do",
+            "They Mean?"
           ],
-          "subline": "Check the menu before you order.",
-          "asset": "assets/03-menu.jpg",
-          "scene": "A woman and man deciding what to order in a restaurant.",
-          "shortJob": "When you want dinner out to feel like everyday life.",
-          "jtbd": "J1 / J4 / J5 \u00b7 Choose a meal before ordering",
-          "proofLabel": "One dish. One practical change.",
-          "sourceFiles": [
-            "Refluxora/Refluxora/Capture/MenuPreScan/MenuDishDetailSheet.swift",
-            "Refluxora/Refluxora/Capture/MenuPreScan/MenuPreScanResultView.swift"
-          ],
+          "accentLine": 2,
+          "subline": "Your report, in plain English.",
+          "asset": "assets/03-report.jpg",
+          "scene": "A woman studies a printed report at home in soft daylight.",
+          "shortJob": "Turn an unfamiliar reflux-test term into plain English.",
+          "jtbd": "Unfamiliar test report \u2192 understand one metric",
+          "proofLabel": "ACID EXPOSURE TIME, EXPLAINED",
           "ui": {
-            "title": "Menu review",
-            "label": "AI meal guidance \u00b7 Example",
-            "focus": "Ask for the sauce on the side.",
-            "explanation": "Citrus and high-fat foods can bother some people. Your own response may differ.",
-            "nextLabel": "Before you order",
-            "next": "Ask how the dish is prepared and choose an adjustment.",
-            "cta": "Save this meal",
-            "disclaimer": "Illustrative menu \u00b7 No universally safe foods"
+            "title": "Report review",
+            "label": "AI explanation \u00b7 Example",
+            "focus": "Time with acid in your esophagus.",
+            "explanation": "AET measures the percentage of time at pH below 4. Your clinician interprets it in context.",
+            "cta": "Save this explanation",
+            "disclaimer": "Illustrative data \u00b7 Not a diagnosis"
           },
-          "rationale": "The restaurant scene connects food guidance to social life. \u201cBefore you order\u201d makes the moment of use immediate. The example suggests one explainable change without declaring the dish safe or predicting a personal trigger.",
-          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "rationale": "The same synthetic acid exposure time of 7.2% appears on paper and in the interface. The example explains the metric without a diagnosis or threshold verdict. Third position is a creative hypothesis that broadens value beyond food and tracking.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
           "id": "B03",
           "series": "B",
           "readiness": "concept",
@@ -266,7 +240,7 @@
           "sourceScreenshot": null,
           "original": "originals/B03.png",
           "preview": "previews/B03.jpg",
-          "generationMethod": "Existing generated photography + deterministic HTML/CSS product concept",
+          "generationMethod": "Built-in ImageGen photograph + deterministic HTML/CSS interface and composition",
           "releaseApproved": false
         }
       ]
