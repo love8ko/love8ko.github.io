@@ -1,5 +1,5 @@
 {
-  "version": "concept-2026-09-11.6",
+  "version": "concept-2026-09-11.7",
   "locale": "en-US",
   "status": "design-concepts-not-for-app-store",
   "directionApproved": "C",
@@ -29,7 +29,7 @@
       "id": "job-03",
       "task": "Понять собственный медицинский отчёт",
       "priority": 4,
-      "benefit": "Показатель, объяснение и вопрос врачу",
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
       "frames": [
         "E03",
         "C03"
@@ -41,6 +41,7 @@
       "priority": 4,
       "benefit": "Выбранное действие с конкретным временем",
       "frames": [
+        "E04",
         "C04"
       ]
     },
@@ -50,6 +51,7 @@
       "priority": 3,
       "benefit": "Сохранённые записи о самочувствии и лечении",
       "frames": [
+        "E05",
         "C05"
       ]
     },
@@ -59,6 +61,7 @@
       "priority": 4,
       "benefit": "Понятная история собственных наблюдений",
       "frames": [
+        "E06",
         "C06"
       ]
     },
@@ -68,6 +71,7 @@
       "priority": 3,
       "benefit": "Еда и симптомы в одной временной истории",
       "frames": [
+        "E07",
         "C07"
       ]
     },
@@ -77,6 +81,7 @@
       "priority": 4,
       "benefit": "Готовая сводка для передачи на приёме",
       "frames": [
+        "E08",
         "C08"
       ]
     }
@@ -84,8 +89,8 @@
   "series": [
     {
       "prefix": "E",
-      "name": "E · Изжога, ресторан, PDF → AI",
-      "description": "Новая первая тройка: три разных главных образа. Сравните с C01–C03 ниже.",
+      "name": "E · Восемь задач, восемь понятных сцен",
+      "description": "Первые три кадра сохранены. E04–E08 продолжают выбранное направление: вечерний план, лечение, горло и голос, история, визит к врачу.",
       "frames": [
         {
           "headline": "Heartburn Keeping You Up?",
@@ -236,13 +241,291 @@
             "finding": "Esophagitis",
             "date": "Illustrative report · Example"
           }
+        },
+        {
+          "headline": "Make Tonight’s Plan Simple.",
+          "headlineLines": [
+            "Make Tonight’s",
+            "Plan Simple."
+          ],
+          "accentLine": 1,
+          "subline": "Choose one step. Set your time.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "YOUR CHOSEN EVENING STEP",
+          "ui": {
+            "title": "Tonight’s plan",
+            "label": "Your saved notes · Example",
+            "focus": "Finish dinner by 7:00 PM.",
+            "explanation": "Your chosen bedtime is 10:00 PM. This plan leaves 3 hours after dinner before lying down; this interval may help nighttime symptoms.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "context": [
+              [
+                "Finish dinner",
+                "7:00 PM"
+              ],
+              [
+                "Bedtime",
+                "10:00 PM"
+              ]
+            ],
+            "contextDate": "Sep 10 · Tonight",
+            "cta": "✓ Reminder set · 6:30 PM"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E04.png",
+          "preview": "previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": false,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false
+        },
+        {
+          "headline": "Keep Your Treatment Notes Together.",
+          "headlineLines": [
+            "Keep Your",
+            "Treatment",
+            "Notes Together."
+          ],
+          "accentLine": 2,
+          "subline": "Remember what you took and felt.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "YOUR SAVED NOTE",
+          "ui": {
+            "title": "Treatment notes",
+            "label": "Your saved notes · Example",
+            "focus": "Medication taken. Evening heartburn noted.",
+            "explanation": "Your own entries, kept together. These notes do not establish how well a treatment works.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "context": [
+              [
+                "8:00 AM",
+                "Medication taken"
+              ],
+              [
+                "9:15 PM",
+                "Heartburn noted"
+              ]
+            ],
+            "contextDate": "Sep 9 · Your entries",
+            "cta": "✓ Note saved"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E05.png",
+          "preview": "previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": false
+        },
+        {
+          "headline": "Throat or Voice Bothering You?",
+          "headlineLines": [
+            "Throat or Voice",
+            "Bothering You?"
+          ],
+          "accentLine": 1,
+          "subline": "Keep track of what you notice.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "YOUR VOICE NOTES",
+          "ui": {
+            "title": "Throat & voice",
+            "label": "Your saved notes · Example",
+            "focus": "Hoarse voice. Throat clearing. Notes saved.",
+            "explanation": "Record what you notice and when. Throat and voice symptoms can have different causes; these notes do not identify a diagnosis.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "context": [
+              [
+                "Voice",
+                "Hoarse"
+              ],
+              [
+                "Throat",
+                "Clearing"
+              ]
+            ],
+            "contextDate": "Sep 10 · Before work",
+            "cta": "✓ Notes saved"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E06.png",
+          "preview": "previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false
+        },
+        {
+          "headline": "Meals & Symptoms. One Timeline.",
+          "headlineLines": [
+            "Meals &",
+            "Symptoms.",
+            "One Timeline."
+          ],
+          "accentLine": 2,
+          "subline": "See your notes in one timeline.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "ONE EVENING, TWO ENTRIES",
+          "ui": {
+            "title": "Your timeline",
+            "label": "Your saved notes · Example",
+            "focus": "Dinner 8:30 PM. Heartburn 10:15 PM.",
+            "explanation": "Two saved events from the same evening. Their timing alone does not show that the meal caused the symptom.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "context": [
+              [
+                "8:30 PM",
+                "Dinner"
+              ],
+              [
+                "10:15 PM",
+                "Heartburn"
+              ]
+            ],
+            "contextDate": "Sep 7 · Your timeline",
+            "cta": "View saved entries"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E07.png",
+          "preview": "previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": false
+        },
+        {
+          "headline": "Bring Your History to Your Appointment.",
+          "headlineLines": [
+            "Bring Your",
+            "History to Your",
+            "Appointment."
+          ],
+          "accentLine": 2,
+          "subline": "Share a clear summary with your doctor.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "YOUR APPOINTMENT SUMMARY",
+          "ui": {
+            "title": "Appointment summary",
+            "label": "Your saved notes · Example",
+            "focus": "Your saved observations, ready to share.",
+            "explanation": "A summary of your saved meals, symptoms, treatment notes and report. Share it as a starting point for your appointment.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "context": [
+              [
+                "Sep 7–10",
+                "Saved observations"
+              ],
+              [
+                "Included",
+                "Meals · Symptoms · Report"
+              ]
+            ],
+            "contextDate": "Appointment summary",
+            "cta": "Share summary · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E08.png",
+          "preview": "previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": false,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ]
         }
       ]
     },
     {
       "prefix": "C",
-      "name": "C · Восемь ситуаций, один герой",
-      "description": "Ночная изжога → еда → обследование → ежедневная поддержка. Нажмите на кадр для увеличения.",
+      "name": "C · Предыдущая серия для сравнения",
+      "description": "Все восемь прежних концептов сохранены без изменений. Сравните решение той же задачи с новой серией E.",
       "frames": [
         {
           "headline": "Heartburn Keeping You Up?",
@@ -744,6 +1027,24 @@
       "prompt": "prompts/v5/E03-report.txt",
       "sha256": "2b935ecf0c3db87eaa04e1a6d64708fbe3e325d0f7f6fe306b18ee7bdccdd81b",
       "identityReference": null
+    },
+    {
+      "file": "sources/v6/E05-treatment.png",
+      "prompt": "prompts/v6/E05-treatment.txt",
+      "sha256": "b1b5de1f3c3adb0c65d6dcc20bac3ec2f6a1582da30c2804c8916b8e69b4564f",
+      "identityReference": null
+    },
+    {
+      "file": "sources/v6/E06-voice.png",
+      "prompt": "prompts/v6/E06-voice.txt",
+      "sha256": "57935ea40e34ebba7da377671efa573dd1bad38f387f79d7dffc198a8870497c",
+      "identityReference": null
+    },
+    {
+      "file": "sources/v6/E07-history.png",
+      "prompt": "prompts/v6/E07-history.txt",
+      "sha256": "f6f1c992b30bf80c9533c1c9e9051fc736f5a4a0831f4c7ec455cfc16cddac01",
+      "identityReference": null
     }
   ],
   "generator": {
@@ -753,7 +1054,7 @@
   "decisions": {
     "selectedDirection": "C, man around 45; creative direction approved, exports pending review",
     "deferred": "Standalone GERD / ACID REFLUX markers for frames 4–8; absent in this iteration",
-    "E": "Additional E01–E03 approved for production as concepts; endoscopy chosen by owner. C exports retained unchanged."
+    "E": "Owner liked revised E01–E03 and requested extension to eight. First trio retained; E04–E08 are new concepts for review. No repeated mandatory male portrait."
   },
-  "authorization": "Owner authorized revised E: remove in-art Refluxora branding, lighter photos, complete restaurant scene, smaller anatomy and PDF-to-AI explanation. C01–C08, app and simulator remain unchanged."
+  "authorization": "Extend the selected E direction to eight and publish to the existing public review gallery. Preserve first three E exports, C, application code and simulator."
 }

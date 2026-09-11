@@ -1,0 +1,70 @@
+/* All selectors are scoped to the five new frames. */
+.e-extended .art-photo{top:11%;mask-image:linear-gradient(transparent,#000 4%,#000 96%,transparent)}
+.e-extended .e-app{left:6%;width:88%;bottom:4%;padding:3.2cqw;transform:rotate(-1deg)}
+.e-extended .e-app-top strong{font-size:5.3cqw}
+.e-extended .e-result{margin-top:2.3cqw}
+.e-extended .e-app .ui-focus{font-size:7cqw}
+.e-extended .e-explanation{font-size:2.45cqw}
+.e-day{font-size:2.8cqw;color:#637a67;margin:1cqw 0 2cqw}
+.e-schedule{display:grid;grid-template-columns:1fr 1fr;gap:2cqw}
+.e-time{border:1px solid #c3d6bd;border-radius:2cqw;padding:2cqw;background:#e8efdf}
+.e-time span{display:block;font-size:3.1cqw;color:#516f56}
+.e-time strong{display:block;font-size:6.6cqw;line-height:1.1;letter-spacing:-.04em;margin-top:1cqw}
+.e-reminder,.e-share-button{background:#1b5745;color:#f4ffe8;padding:2cqw;border-radius:2cqw;font-size:3.8cqw;font-weight:700;text-align:center;margin-top:2cqw}
+.e-04 .art-photo{top:7%}
+.e-04 .e-app{bottom:3.6%}
+.e-saved-entries{display:grid;gap:1.6cqw}
+.e-entry{display:flex;align-items:center;gap:1.5cqw;padding:2cqw;background:#e5eedf;border-radius:2cqw;font-size:3.3cqw}
+.e-entry strong{font-size:3.4cqw}
+.e-entry-check{display:grid;place-items:center;width:5cqw;height:5cqw;border-radius:50%;background:#225d47;color:#f6fff0;font-size:3.4cqw}
+.e-entry-time{margin-left:auto;font-size:2.8cqw;white-space:nowrap;color:#506953}
+.e-05 .art-photo{top:10%}
+.e-observations{display:grid;grid-template-columns:1fr 1fr;gap:2cqw}
+.e-observation{position:relative;padding:2cqw 2cqw 3cqw;border:1px solid #b8d0b9;background:#e6efde;border-radius:2cqw}
+.e-observation>span:first-child{font-size:3cqw;display:block;color:#546e59}
+.e-observation strong{display:block;font-size:5.3cqw;margin-top:1cqw}
+.e-observation-check{position:absolute;right:1.5cqw;top:1.5cqw;font-size:3cqw;color:#2e6d47}
+.e-06 .art-photo{top:7%}
+.e-06 .e-app{left:10%;width:85%;transform:rotate(1deg)}
+.e-history{position:relative;display:grid;gap:2.5cqw}
+.e-history:before{content:'';position:absolute;left:10cqw;top:10%;bottom:10%;width:.5cqw;background:#adc6ad}
+.e-history-row{position:relative;display:flex;gap:4cqw;align-items:center;background:#eef2e6;border:1px solid #d3dfc9;border-radius:3cqw;padding:2.4cqw}
+.e-history-icon{width:19cqw;height:14cqw;flex:0 0 19cqw;display:grid;place-items:center}
+.e-meal-thumb{width:24cqw;height:16cqw;object-fit:contain}
+.history-1{border-radius:2cqw;background:#194e45;color:#d7f4cf;font-size:11cqw}
+.e-history-time{font-size:3.5cqw;color:#57725c;display:block;margin-bottom:.5cqw}
+.e-history-label{font-size:6cqw;letter-spacing:-.03em}
+.e-07 .e-app{bottom:3.6%;transform:rotate(-2deg)}
+.e-07 .e-app .ui-focus{font-size:6.5cqw}
+.e-08 .art-photo{top:10%}
+.e-08 .e-app{left:11%;width:84%;bottom:3.5%;transform:rotate(1deg)}
+.e-summary-document{position:relative;padding:2.5cqw 3cqw;background:#fffef6;border:1px solid #d5dec9;box-shadow:.8cqw .8cqw 0 #d0dac9;border-radius:1cqw}
+.e-summary-format{position:absolute;right:2cqw;top:2cqw;background:#c45b44;color:#fff4e8;padding:1cqw;border-radius:.7cqw;font-size:3cqw;font-weight:700}
+.e-summary-title{display:block;font-size:4.6cqw;width:72%;line-height:1.05;letter-spacing:-.03em}
+.e-summary-date{display:block;font-size:2.3cqw;color:#687d65;margin:1cqw 0}
+.e-summary-row{font-size:3cqw;padding:1cqw 0;border-top:1px solid #dbe2d2}
+.e-08 .e-app .ui-focus{font-size:6.5cqw}
+.e-08 .e-explanation{font-size:2.2cqw}
+
+.e-06 .art-photo{top:18%;left:22%;width:78%;mask-image:linear-gradient(transparent,#000 4%,#000 97%,transparent)}
+.e-06 .art-subline{max-width:65%}
+.e-07 .art-photo{top:14%}
+.e-07 .e-history-icon{height:10cqw;width:15cqw;flex-basis:15cqw}
+.e-07 .e-meal-thumb{height:12cqw;width:20cqw}
+.e-07 .e-history-row{padding:1.5cqw;gap:3cqw}
+.e-07 .history-1{font-size:8cqw}
+.e-07 .e-history-label{font-size:5.5cqw}
+.e-07 .e-history-time{font-size:3cqw}
+.e-07 .e-app .ui-focus{font-size:6.2cqw}
+
+.e-no-wrap{white-space:nowrap}
+.e-history-icon svg{width:9cqw;height:9cqw}
+.history-0{border-radius:2cqw;background:#d5e8ca;color:#245942}
+.e-08 .art-photo{top:14%;width:100%;left:0}
+.e-08 .phone{top:67%;left:47%;width:51%}
+.e-08 .summary-popout{top:69%;left:4%;width:45%}
+.e-08 .proof-card{bottom:3.5%}
+.e-08 .doc-brand{font-size:3cqw}
+.e-08 .proof-focus{font-size:6.8cqw}
+
+.e-07 .art-photo{top:18%}
