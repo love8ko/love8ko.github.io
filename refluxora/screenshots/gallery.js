@@ -8,11 +8,11 @@
     const heading=document.createElement('div');heading.className='series-heading';
     const tag=document.createElement('span');tag.className='series-tag';tag.textContent=series.prefix;
     const label=document.createElement('div');const title=document.createElement('h2');title.textContent=series.name;const desc=document.createElement('p');desc.textContent=series.description;label.append(title,desc);
-    const count=document.createElement('span');count.className='series-count';count.textContent='01 — 03';heading.append(tag,label,count);section.append(heading);
+    const count=document.createElement('span');count.className='series-count';count.textContent='01 — '+String(series.frames.length).padStart(2,'0');heading.append(tag,label,count);section.append(heading);
     const row=document.createElement('div');row.className='row';row.tabIndex=0;row.setAttribute('aria-label',series.name+' layouts');
     for(const frame of series.frames){
       const index=frames.length;frames.push(frame);
-      const figure=document.createElement('figure');figure.className='frame-item';
+      const figure=document.createElement('figure');figure.className='frame-item';figure.id=frame.id;
       const caption=document.createElement('figcaption');const id=document.createElement('span');id.className='frame-id';id.textContent=frame.id;const stage=document.createElement('span');stage.className='frame-stage';stage.textContent=frame.readiness==='approved'?'Ready for review':'Design concept';caption.append(id,stage);
       const button=document.createElement('button');button.type='button';button.className='shot';button.setAttribute('aria-label','View '+frame.id+' — '+frame.headline);button.dataset.id=frame.id;
       if(frame.preview&&frame.original){const img=document.createElement('img');img.src=url(frame.preview);img.alt=frame.headline;img.style.width='100%';img.addEventListener('error',()=>{button.textContent='Image unavailable. Open to try the original.';});button.append(img);}else{button.append(window.RefluxoraLayout(frame));}
@@ -39,5 +39,7 @@
   $('#viewer').addEventListener('click',e=>{if(e.target!==$('#viewer'))return;const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$('#viewer').close();});
   $('#viewer-body').addEventListener('touchstart',e=>{if(e.touches.length===1)touch={x:e.touches[0].clientX,y:e.touches[0].clientY};else touch=null;},{passive:true});
   $('#viewer-body').addEventListener('touchend',e=>{if(!touch)return;const dx=e.changedTouches[0].clientX-touch.x,dy=e.changedTouches[0].clientY-touch.y;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.4)show(active+(dx<0?1:-1));touch=null;},{passive:true});
+  const jobs=$('#jtbd-rows');
+  if(jobs)for(const j of data.jobs||[]){const row=document.createElement('tr');for(const val of [j.task,j.priority+'/5',j.benefit]){const cell=document.createElement('td');cell.textContent=val;row.append(cell);}const cell=document.createElement('td');for(const id of j.frames){const a=document.createElement('a');a.href='#'+id;a.textContent=id;a.addEventListener('click',e=>{e.preventDefault();const target=document.getElementById(id);target.scrollIntoView({behavior:'smooth',block:'center',inline:'center'});target.querySelector('button').focus({preventScroll:true});history.replaceState(null,'','#'+id);});cell.append(a);}row.append(cell);jobs.append(row);}
   $('#version').textContent=data.version;window.galleryReady=true;
 })();

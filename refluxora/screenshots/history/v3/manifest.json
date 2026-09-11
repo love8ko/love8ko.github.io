@@ -1,0 +1,372 @@
+{
+  "version": "concept-2026-09-11.3",
+  "locale": "en-US",
+  "status": "design-concepts-not-for-app-store",
+  "series": [
+    {
+      "prefix": "C",
+      "name": "Male lead \u00b7 About 45",
+      "description": "Same three situations. Same composition. One consistent character.",
+      "frames": [
+        {
+          "headline": "Heartburn Keeping You Up?",
+          "headlineLines": [
+            "Heartburn",
+            "Keeping",
+            "You Up?"
+          ],
+          "accentLine": 2,
+          "subline": "Get a clearer next step tonight.",
+          "asset": "assets/v3/C01-night.jpg",
+          "scene": "The lead sits awake at the edge of the bed while their partner sleeps; a bedside clock and small phone establish the interrupted night.",
+          "shortJob": "Heartburn interrupts the night. Find one practical next step.",
+          "jtbd": "Interrupted sleep \u2192 understand evening context \u2192 one step",
+          "proofLabel": "ONE STEP TO CONSIDER",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation \u00b7 Example",
+            "question": "Why is my heartburn worse at night?",
+            "focus": "Leave 3 hours before lying down.",
+            "explanation": "After a meal, this interval may help with nighttime reflux symptoms.",
+            "cta": "Save this answer",
+            "disclaimer": "Educational example \u00b7 Not a diagnosis"
+          },
+          "rationale": "An interrupted night makes recurring heartburn personal and immediate. The meal-to-lying-down interval is a practical example, not a promise of relief.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "C01",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C01.png",
+          "preview": "previews/C01.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead \u00b7 About 45",
+          "prompt": "prompts/v3/C01-night.txt",
+          "characterReference": "sources/v3/C01-night.png",
+          "proofDiagram": {
+            "start": "meal",
+            "duration": "3 hours",
+            "end": "bed"
+          },
+          "keywords": [
+            "GERD",
+            "ACID REFLUX"
+          ]
+        },
+        {
+          "headline": "What Can I Eat With Reflux?",
+          "headlineLines": [
+            "What Can I Eat",
+            "With Reflux?"
+          ],
+          "accentLine": 1,
+          "subline": "Check the menu before you order.",
+          "asset": "assets/v3/C02-restaurant.jpg",
+          "scene": "A couple points to a dish in an illustrated menu while a waiter takes their order; no food has been served.",
+          "shortJob": "Choose an order with a specific adjustment in mind.",
+          "jtbd": "Restaurant uncertainty \u2192 review one dish \u2192 adjust the order",
+          "proofLabel": "ONE CHANGE TO CONSIDER",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation \u00b7 Example",
+            "focus": "Ask for sauce on the side.",
+            "explanation": "Citrus and rich sauces can bother some people. Your own response may differ.",
+            "cta": "Save this meal",
+            "disclaimer": "Illustrative menu \u00b7 Responses vary"
+          },
+          "rationale": "The choice happens before ordering. Grilled salmon with lemon butter sauce becomes one explainable adjustment. The dish is not labelled safe and no individual trigger is predicted.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "C02",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C02.png",
+          "preview": "previews/C02.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead \u00b7 About 45",
+          "prompt": "prompts/v3/C02-restaurant.txt",
+          "characterReference": "sources/v3/C01-night.png",
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "keywords": [
+            "GERD",
+            "ACID REFLUX"
+          ]
+        },
+        {
+          "headline": "Reflux Tests. What Do They Mean?",
+          "headlineLines": [
+            "Reflux Tests.",
+            "What Do",
+            "They Mean?"
+          ],
+          "accentLine": 2,
+          "subline": "Your report, in plain English.",
+          "asset": "assets/v3/C03-clinic.jpg",
+          "scene": "Just after an appointment, a doctor passes the lead a report in a clinic; the patient checks the explanation on a phone.",
+          "shortJob": "Turn an unfamiliar reflux-test term into plain English.",
+          "jtbd": "Unfamiliar test report \u2192 understand one metric",
+          "proofLabel": "YOUR REPORT, EXPLAINED",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation \u00b7 Example",
+            "focus": "Time with acid in your esophagus.",
+            "explanation": "AET measures the percentage of time at pH below 4. Your clinician interprets it in context.",
+            "cta": "Save this explanation",
+            "disclaimer": "Illustrative data \u00b7 Not a diagnosis"
+          },
+          "rationale": "The same synthetic acid exposure time of 7.2% appears on paper and in the interface. The example explains the metric without a diagnosis or threshold verdict. Third position is a creative hypothesis that broadens value beyond food and tracking.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "C03",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C03.png",
+          "preview": "previews/C03.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead \u00b7 About 45",
+          "prompt": "prompts/v3/C03-clinic.txt",
+          "characterReference": "sources/v3/C01-night.png",
+          "reportPlacement": {
+            "--paper-left": "47%",
+            "--paper-top": "52.2%",
+            "--paper-width": "22%",
+            "--paper-transform": "rotate(-6deg) skewX(12deg)"
+          },
+          "keywords": [
+            "GERD",
+            "ACID REFLUX"
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "D",
+      "name": "Female lead \u00b7 About 40",
+      "description": "Same three situations. Same composition. One consistent character.",
+      "frames": [
+        {
+          "headline": "Heartburn Keeping You Up?",
+          "headlineLines": [
+            "Heartburn",
+            "Keeping",
+            "You Up?"
+          ],
+          "accentLine": 2,
+          "subline": "Get a clearer next step tonight.",
+          "asset": "assets/v3/D01-night.jpg",
+          "scene": "The lead sits awake at the edge of the bed while their partner sleeps; a bedside clock and small phone establish the interrupted night.",
+          "shortJob": "Heartburn interrupts the night. Find one practical next step.",
+          "jtbd": "Interrupted sleep \u2192 understand evening context \u2192 one step",
+          "proofLabel": "ONE STEP TO CONSIDER",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation \u00b7 Example",
+            "question": "Why is my heartburn worse at night?",
+            "focus": "Leave 3 hours before lying down.",
+            "explanation": "After a meal, this interval may help with nighttime reflux symptoms.",
+            "cta": "Save this answer",
+            "disclaimer": "Educational example \u00b7 Not a diagnosis"
+          },
+          "rationale": "An interrupted night makes recurring heartburn personal and immediate. The meal-to-lying-down interval is a practical example, not a promise of relief.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "D01",
+          "series": "D",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/D01.png",
+          "preview": "previews/D01.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Female lead \u00b7 About 40",
+          "prompt": "prompts/v3/D01-night.txt",
+          "characterReference": "sources/v3/D01-night.png",
+          "proofDiagram": {
+            "start": "meal",
+            "duration": "3 hours",
+            "end": "bed"
+          },
+          "keywords": [
+            "GERD",
+            "ACID REFLUX"
+          ]
+        },
+        {
+          "headline": "What Can I Eat With Reflux?",
+          "headlineLines": [
+            "What Can I Eat",
+            "With Reflux?"
+          ],
+          "accentLine": 1,
+          "subline": "Check the menu before you order.",
+          "asset": "assets/v3/D02-restaurant.jpg",
+          "scene": "A couple points to a dish in an illustrated menu while a waiter takes their order; no food has been served.",
+          "shortJob": "Choose an order with a specific adjustment in mind.",
+          "jtbd": "Restaurant uncertainty \u2192 review one dish \u2192 adjust the order",
+          "proofLabel": "ONE CHANGE TO CONSIDER",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation \u00b7 Example",
+            "focus": "Ask for sauce on the side.",
+            "explanation": "Citrus and rich sauces can bother some people. Your own response may differ.",
+            "cta": "Save this meal",
+            "disclaimer": "Illustrative menu \u00b7 Responses vary"
+          },
+          "rationale": "The choice happens before ordering. Grilled salmon with lemon butter sauce becomes one explainable adjustment. The dish is not labelled safe and no individual trigger is predicted.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "D02",
+          "series": "D",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/D02.png",
+          "preview": "previews/D02.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Female lead \u00b7 About 40",
+          "prompt": "prompts/v3/D02-restaurant.txt",
+          "characterReference": "sources/v3/D01-night.png",
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "keywords": [
+            "GERD",
+            "ACID REFLUX"
+          ]
+        },
+        {
+          "headline": "Reflux Tests. What Do They Mean?",
+          "headlineLines": [
+            "Reflux Tests.",
+            "What Do",
+            "They Mean?"
+          ],
+          "accentLine": 2,
+          "subline": "Your report, in plain English.",
+          "asset": "assets/v3/D03-clinic.jpg",
+          "scene": "Just after an appointment, a doctor passes the lead a report in a clinic; the patient checks the explanation on a phone.",
+          "shortJob": "Turn an unfamiliar reflux-test term into plain English.",
+          "jtbd": "Unfamiliar test report \u2192 understand one metric",
+          "proofLabel": "YOUR REPORT, EXPLAINED",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation \u00b7 Example",
+            "focus": "Time with acid in your esophagus.",
+            "explanation": "AET measures the percentage of time at pH below 4. Your clinician interprets it in context.",
+            "cta": "Save this explanation",
+            "disclaimer": "Illustrative data \u00b7 Not a diagnosis"
+          },
+          "rationale": "The same synthetic acid exposure time of 7.2% appears on paper and in the interface. The example explains the metric without a diagnosis or threshold verdict. Third position is a creative hypothesis that broadens value beyond food and tracking.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "D03",
+          "series": "D",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/D03.png",
+          "preview": "previews/D03.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Female lead \u00b7 About 40",
+          "prompt": "prompts/v3/D03-clinic.txt",
+          "characterReference": "sources/v3/D01-night.png",
+          "reportPlacement": {
+            "--paper-left": "40.5%",
+            "--paper-top": "55.1%",
+            "--paper-width": "23%",
+            "--paper-transform": "rotate(-7deg) skewX(10deg)"
+          },
+          "keywords": [
+            "GERD",
+            "ACID REFLUX"
+          ]
+        }
+      ]
+    }
+  ],
+  "authorization": "Owner approved six C/D concepts, same A direction with male/female leads, scene recognition and larger type.",
+  "publication": "https://love8ko.github.io/refluxora/screenshots/",
+  "archive": "history/v2/",
+  "sourceAssets": [
+    {
+      "file": "sources/v3/C01-night.png",
+      "prompt": "prompts/v3/C01-night.txt",
+      "sha256": "0ec150bbab779fd12a93511c893d61257361d415b66beab70fccd3e559f6031b",
+      "identityReference": null
+    },
+    {
+      "file": "sources/v3/C02-restaurant.png",
+      "prompt": "prompts/v3/C02-restaurant.txt",
+      "sha256": "3e6fad7bae8dccefc2162609d82601edcb09fc5aaf2ed2e49de7b473b3525692",
+      "identityReference": "sources/v3/C01-night.png"
+    },
+    {
+      "file": "sources/v3/C03-clinic.png",
+      "prompt": "prompts/v3/C03-clinic.txt",
+      "sha256": "369106ff4b95459eb023608ded764bb2c4c67d3e9ff9a0ed790fd271dbb48188",
+      "identityReference": "sources/v3/C01-night.png"
+    },
+    {
+      "file": "sources/v3/D01-night.png",
+      "prompt": "prompts/v3/D01-night.txt",
+      "sha256": "fe153bdd1b384e1ddad4ac5de9d0c96abc7455901d6262586012f268ae637568",
+      "identityReference": null
+    },
+    {
+      "file": "sources/v3/D02-restaurant.png",
+      "prompt": "prompts/v3/D02-restaurant.txt",
+      "sha256": "b81d4dd908675afcaa4bfa53f825c77d79f3f0e5dc5e6199d26a46b0c2ea57f7",
+      "identityReference": "sources/v3/D01-night.png"
+    },
+    {
+      "file": "sources/v3/D03-clinic.png",
+      "prompt": "prompts/v3/D03-clinic.txt",
+      "sha256": "62dcd7a13aedab6c370a4c1c2b8c993c7f3547e952fb0ed5170692179b211652",
+      "identityReference": "sources/v3/D01-night.png"
+    },
+    {
+      "file": "sources/v3/salmon-cutout.png",
+      "prompt": "prompts/v3/salmon-cutout.txt",
+      "sha256": "4d841848e74e420bf1aeaa75ca2b11ae6b96e11f3ebfda7368489d02bc774fb2",
+      "alpha": "True transparency; preserved unchanged",
+      "sharedBy": [
+        "C02",
+        "D02"
+      ]
+    }
+  ],
+  "research": {},
+  "generator": {
+    "tool": "built-in ImageGen",
+    "modelVersion": "Not exposed; Imagen 2.5 not selectable."
+  },
+  "castingNote": "Two creative audience hypotheses, not measured demographics or actual patient testimonials."
+}
