@@ -8,7 +8,7 @@
     const heading=document.createElement('div');heading.className='series-heading';
     const tag=document.createElement('span');tag.className='series-tag';tag.textContent=series.prefix;
     const label=document.createElement('div');const title=document.createElement('h2');title.textContent=series.name;const desc=document.createElement('p');desc.textContent=series.description;label.append(title,desc);
-    const count=document.createElement('span');count.className='series-count';count.textContent='01 — 03';heading.append(tag,label,count);section.append(heading);
+    const count=document.createElement('span');count.className='series-count';count.textContent='01 — 03 / 08';heading.append(tag,label,count);section.append(heading);
     const row=document.createElement('div');row.className='row';row.tabIndex=0;row.setAttribute('aria-label',series.name+' layouts');
     for(const frame of series.frames){
       const index=frames.length;frames.push(frame);
