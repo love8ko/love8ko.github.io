@@ -1,5 +1,5 @@
 {
-  "version": "concept-2026-09-11.4",
+  "version": "concept-2026-09-11.5",
   "locale": "en-US",
   "status": "design-concepts-not-for-app-store",
   "directionApproved": "C",
@@ -11,6 +11,7 @@
       "priority": 5,
       "benefit": "Ответ на собственный вопрос и следующий шаг",
       "frames": [
+        "E01",
         "C01"
       ]
     },
@@ -20,6 +21,7 @@
       "priority": 5,
       "benefit": "Разбор блюда до заказа и конкретное изменение",
       "frames": [
+        "E02",
         "C02"
       ]
     },
@@ -29,6 +31,7 @@
       "priority": 4,
       "benefit": "Показатель, объяснение и вопрос врачу",
       "frames": [
+        "E03",
         "C03"
       ]
     },
@@ -79,6 +82,161 @@
     }
   ],
   "series": [
+    {
+      "prefix": "E",
+      "name": "E · Изжога, меню, понятный отчёт",
+      "description": "Новая первая тройка: три разных главных образа. Сравните с C01–C03 ниже.",
+      "frames": [
+        {
+          "headline": "Heartburn Keeping You Up?",
+          "headlineLines": [
+            "Heartburn",
+            "Keeping",
+            "You Up?"
+          ],
+          "accentLine": 2,
+          "subline": "Your question. A clearer next step.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "TOMORROW NIGHT",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation · Example",
+            "focus": "Try an earlier dinner tomorrow night.",
+            "explanation": "A late meal followed soon by lying down may matter. For a future evening, leaving at least 3 hours after eating before lying down may help.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "question": "Why is my heartburn worse at night?",
+            "context": [
+              [
+                "Dinner",
+                "9:30 PM"
+              ],
+              [
+                "Lay down",
+                "10:15 PM"
+              ]
+            ],
+            "contextDate": "Sep 8 · Your evening"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E01.png",
+          "preview": "previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": false
+        },
+        {
+          "headline": "What Can I Order With Reflux?",
+          "headlineLines": [
+            "What Can I",
+            "Order With",
+            "Reflux?"
+          ],
+          "accentLine": 2,
+          "subline": "Check the menu before you order.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The existing restaurant photograph reframed around the pictured menu, pointing hand and waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "ONE CHANGE TO CONSIDER",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation · Example",
+            "focus": "Ask for sauce on the side.",
+            "explanation": "Citrus and rich sauces can bother some people. Your own response may differ.",
+            "disclaimer": "Illustrative data · Not a diagnosis"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E02.png",
+          "preview": "previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": false,
+          "foodAsset": "assets/v3/salmon-cutout.png"
+        },
+        {
+          "headline": "Endoscopy Report. What Does It Mean?",
+          "headlineLines": [
+            "Endoscopy",
+            "Report. What",
+            "Does It Mean?"
+          ],
+          "accentLine": 2,
+          "subline": "Medical terms, in plain English.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "YOUR REPORT, EXPLAINED",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation · Example",
+            "focus": "Inflammation of the food pipe lining.",
+            "explanation": "Your report mentions esophagitis. Ask your clinician what this means for your care.",
+            "disclaimer": "Explains the written finding · Not a diagnosis"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E03.png",
+          "preview": "previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "report": {
+            "title": "UPPER ENDOSCOPY REPORT",
+            "findingLabel": "Finding",
+            "finding": "Esophagitis",
+            "date": "Illustrative report · Example"
+          }
+        }
+      ]
+    },
     {
       "prefix": "C",
       "name": "C · Восемь ситуаций, один герой",
