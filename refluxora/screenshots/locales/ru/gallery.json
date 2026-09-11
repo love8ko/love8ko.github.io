@@ -1,0 +1,619 @@
+{
+  "version": "localization-2026-09-11.1",
+  "locale": "ru",
+  "label": "Русский",
+  "status": "design-concepts-not-for-app-store",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "RU · Восемь пользовательских задач",
+      "description": "Полностью локализованные русские концепты для проверки.",
+      "frames": [
+        {
+          "headline": "Изжога не даёт уснуть?",
+          "headlineLines": [
+            "Изжога не даёт",
+            "уснуть?"
+          ],
+          "accentLine": 1,
+          "subline": "Ваш вопрос. Понятный следующий шаг.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "ШАГ НА ЗАВТРА",
+          "ui": {
+            "title": "Объяснение ИИ",
+            "label": "Объяснение ИИ · Пример",
+            "focus": "Завтра поужинайте пораньше.",
+            "explanation": "Поздний ужин и скорое положение лёжа могут иметь значение. В другой вечер интервал не менее 3 часов между едой и сном может помочь.",
+            "disclaimer": "Демонстрационные данные · Не диагноз",
+            "question": "Почему изжога усиливается ночью?",
+            "context": [
+              [
+                "Ужин",
+                "21:30"
+              ],
+              [
+                "Легли",
+                "22:15"
+              ]
+            ],
+            "contextDate": "8 сент. · Ваш вечер"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/ru/originals/E01.png",
+          "preview": "locales/ru/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": false,
+          "copy": {
+            "example": "Пример",
+            "footer": "Демонстрационный интерфейс · Концепт",
+            "dishTitle": "Лосось на гриле",
+            "dishDescription": "Лимонно-сливочный соус",
+            "dishCaption": "ПРИМЕР ЗАКАЗА",
+            "dishAlt": "Лосось на гриле с рисом, фасолью и соусом в отдельной ёмкости",
+            "sourceLabel": "↗ NIDDK · Рекомендации по рефлюксу",
+            "anatomyCaption": "Как возникает рефлюкс"
+          },
+          "locale": "ru",
+          "lang": "ru"
+        },
+        {
+          "headline": "Что заказать при рефлюксе?",
+          "headlineLines": [
+            "Что заказать",
+            "при рефлюксе?"
+          ],
+          "accentLine": 1,
+          "subline": "Проверьте меню до заказа.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "ОДНО ИЗМЕНЕНИЕ",
+          "ui": {
+            "title": "Разбор меню",
+            "label": "Объяснение ИИ · Пример",
+            "focus": "Попросите подать соус отдельно.",
+            "explanation": "Цитрусовые и жирные соусы могут беспокоить некоторых людей. Ваша реакция может отличаться.",
+            "disclaimer": "Пример меню · Реакции различаются"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/ru/originals/E02.png",
+          "preview": "locales/ru/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": false,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "ru",
+          "lang": "ru",
+          "copy": {
+            "example": "Пример",
+            "footer": "Демонстрационный интерфейс · Концепт",
+            "dishTitle": "Лосось на гриле",
+            "dishDescription": "Лимонно-сливочный соус",
+            "dishCaption": "ПРИМЕР ЗАКАЗА",
+            "dishAlt": "Лосось на гриле с рисом, фасолью и соусом в отдельной ёмкости",
+            "sourceLabel": "↗ NIDDK · Рекомендации по рефлюксу"
+          }
+        },
+        {
+          "headline": "Разберитесь в результатах обследования",
+          "headlineLines": [
+            "Разберитесь",
+            "в результатах",
+            "обследования"
+          ],
+          "accentLine": 2,
+          "subline": "Загрузите PDF. Получите объяснение от ИИ.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "ПРОСТЫМИ СЛОВАМИ",
+          "ui": {
+            "title": "Объяснение ИИ",
+            "label": "Объяснение ИИ · Пример",
+            "focus": "Воспаление слизистой пищевода.",
+            "explanation": "В отчёте упомянут эзофагит. Спросите врача, что это значит для вашей тактики лечения.",
+            "disclaimer": "Объяснение записи в отчёте · Не диагноз"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/ru/originals/E03.png",
+          "preview": "locales/ru/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "report": {
+            "title": "Результаты.pdf",
+            "format": "PDF",
+            "type": "Гастроскопия",
+            "findingLabel": "Заключение",
+            "finding": "Эзофагит",
+            "date": "Учебный отчёт · Пример"
+          },
+          "copy": {
+            "example": "Пример",
+            "footer": "Демонстрационный интерфейс · Концепт",
+            "dishTitle": "Лосось на гриле",
+            "dishDescription": "Лимонно-сливочный соус",
+            "dishCaption": "ПРИМЕР ЗАКАЗА",
+            "dishAlt": "Лосось на гриле с рисом, фасолью и соусом в отдельной ёмкости",
+            "sourceLabel": "↗ NIDDK · Рекомендации по рефлюксу",
+            "paperNote": "Ваш загруженный отчёт",
+            "reportConnector": "PDF → ИИ",
+            "reportLead": "В отчёте указано"
+          },
+          "locale": "ru",
+          "lang": "ru"
+        },
+        {
+          "headline": "Простой план на вечер",
+          "headlineLines": [
+            "Простой план",
+            "на вечер"
+          ],
+          "accentLine": 1,
+          "subline": "Выберите один шаг. Задайте время.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "ВАШ ШАГ НА ВЕЧЕР",
+          "ui": {
+            "title": "План на вечер",
+            "label": "Ваши записи · Пример",
+            "focus": "Закончите ужин до 19:00.",
+            "explanation": "Вы планируете лечь в 22:00. Между ужином и сном остаётся 3 часа; такой интервал может помочь при ночных симптомах.",
+            "disclaimer": "Демонстрационные данные · Не диагноз",
+            "context": [
+              [
+                "Закончить ужин",
+                "19:00"
+              ],
+              [
+                "Лечь спать",
+                "22:00"
+              ]
+            ],
+            "contextDate": "10 сент. · Сегодня",
+            "cta": "✓ Напоминание · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/ru/originals/E04.png",
+          "preview": "locales/ru/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": false,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "locale": "ru",
+          "lang": "ru",
+          "copy": {
+            "example": "Пример",
+            "footer": "Демонстрационный интерфейс · Концепт",
+            "dishTitle": "Лосось на гриле",
+            "dishDescription": "Лимонно-сливочный соус",
+            "dishCaption": "ПРИМЕР ЗАКАЗА",
+            "dishAlt": "Лосось на гриле с рисом, фасолью и соусом в отдельной ёмкости",
+            "sourceLabel": "↗ NIDDK · Рекомендации по рефлюксу"
+          }
+        },
+        {
+          "headline": "Все записи о лечении — вместе",
+          "headlineLines": [
+            "Все записи",
+            "о лечении —",
+            "вместе"
+          ],
+          "accentLine": 2,
+          "subline": "Помните, что приняли и как себя чувствовали.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "ВАША ЗАПИСЬ",
+          "ui": {
+            "title": "Записи о лечении",
+            "label": "Ваши записи · Пример",
+            "focus": "Лекарство принято. Вечером отмечена изжога.",
+            "explanation": "Ваши записи хранятся вместе. По ним нельзя определить эффективность лечения.",
+            "disclaimer": "Демонстрационные данные · Не диагноз",
+            "context": [
+              [
+                "08:00",
+                "Лекарство принято"
+              ],
+              [
+                "21:15",
+                "Отмечена изжога"
+              ]
+            ],
+            "contextDate": "9 сент. · Ваши записи",
+            "cta": "✓ Запись сохранена"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/ru/originals/E05.png",
+          "preview": "locales/ru/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": false,
+          "locale": "ru",
+          "lang": "ru",
+          "copy": {
+            "example": "Пример",
+            "footer": "Демонстрационный интерфейс · Концепт",
+            "dishTitle": "Лосось на гриле",
+            "dishDescription": "Лимонно-сливочный соус",
+            "dishCaption": "ПРИМЕР ЗАКАЗА",
+            "dishAlt": "Лосось на гриле с рисом, фасолью и соусом в отдельной ёмкости",
+            "sourceLabel": "↗ NIDDK · Рекомендации по рефлюксу"
+          }
+        },
+        {
+          "headline": "Беспокоят горло или голос?",
+          "headlineLines": [
+            "Беспокоят горло",
+            "или голос?"
+          ],
+          "accentLine": 1,
+          "subline": "Записывайте, что замечаете.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "ЗАПИСИ О ГОЛОСЕ",
+          "ui": {
+            "title": "Горло и голос",
+            "label": "Ваши записи · Пример",
+            "focus": "Осиплость. Прочищение горла. Запись сохранена.",
+            "explanation": "Записывайте, что и когда замечаете. У симптомов горла и голоса бывают разные причины; эти записи не устанавливают диагноз.",
+            "disclaimer": "Демонстрационные данные · Не диагноз",
+            "context": [
+              [
+                "Голос",
+                "Осиплость"
+              ],
+              [
+                "Горло",
+                "Прочищение"
+              ]
+            ],
+            "contextDate": "10 сент. · Перед работой",
+            "cta": "✓ Записи сохранены"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/ru/originals/E06.png",
+          "preview": "locales/ru/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "locale": "ru",
+          "lang": "ru",
+          "copy": {
+            "example": "Пример",
+            "footer": "Демонстрационный интерфейс · Концепт",
+            "dishTitle": "Лосось на гриле",
+            "dishDescription": "Лимонно-сливочный соус",
+            "dishCaption": "ПРИМЕР ЗАКАЗА",
+            "dishAlt": "Лосось на гриле с рисом, фасолью и соусом в отдельной ёмкости",
+            "sourceLabel": "↗ NIDDK · Рекомендации по рефлюксу"
+          }
+        },
+        {
+          "headline": "Еда и симптомы. Одна хронология",
+          "headlineLines": [
+            "Еда и",
+            "симптомы.",
+            "Одна хронология"
+          ],
+          "accentLine": 2,
+          "subline": "Все записи — в одной ленте.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "ОДИН ВЕЧЕР, ДВЕ ЗАПИСИ",
+          "ui": {
+            "title": "Ваша хронология",
+            "label": "Ваши записи · Пример",
+            "focus": "Ужин 20:30. Изжога 22:15.",
+            "explanation": "Два события сохранены за один вечер. Их последовательность сама по себе не означает, что еда вызвала симптом.",
+            "disclaimer": "Демонстрационные данные · Не диагноз",
+            "context": [
+              [
+                "20:30",
+                "Ужин"
+              ],
+              [
+                "22:15",
+                "Изжога"
+              ]
+            ],
+            "contextDate": "7 сент. · Ваша хронология",
+            "cta": "Открыть записи"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/ru/originals/E07.png",
+          "preview": "locales/ru/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": false,
+          "locale": "ru",
+          "lang": "ru",
+          "copy": {
+            "example": "Пример",
+            "footer": "Демонстрационный интерфейс · Концепт",
+            "dishTitle": "Лосось на гриле",
+            "dishDescription": "Лимонно-сливочный соус",
+            "dishCaption": "ПРИМЕР ЗАКАЗА",
+            "dishAlt": "Лосось на гриле с рисом, фасолью и соусом в отдельной ёмкости",
+            "sourceLabel": "↗ NIDDK · Рекомендации по рефлюксу"
+          }
+        },
+        {
+          "headline": "Подготовьте историю к приёму",
+          "headlineLines": [
+            "Подготовьте",
+            "историю",
+            "к приёму"
+          ],
+          "accentLine": 2,
+          "subline": "Поделитесь понятной сводкой с врачом.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "СВОДКА К ПРИЁМУ",
+          "ui": {
+            "title": "Сводка к приёму",
+            "label": "Ваши записи · Пример",
+            "focus": "Ваши наблюдения готовы к отправке.",
+            "explanation": "Сводка ваших записей о еде, симптомах, лечении и отчёте. Используйте её как отправную точку на приёме.",
+            "disclaimer": "Демонстрационные данные · Не диагноз",
+            "context": [
+              [
+                "7–10 сент.",
+                "Сохранённые наблюдения"
+              ],
+              [
+                "Включены",
+                "Еда · Симптомы · Отчёт"
+              ]
+            ],
+            "contextDate": "Сводка к приёму",
+            "cta": "Поделиться сводкой · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/ru/originals/E08.png",
+          "preview": "locales/ru/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": false,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Пример",
+            "title": "Ваши наблюдения",
+            "date": "7–10 сент. · Пример",
+            "rows": [
+              "Еда и симптомы",
+              "Записи о лечении",
+              "Ваш отчёт"
+            ]
+          },
+          "locale": "ru",
+          "lang": "ru",
+          "copy": {
+            "example": "Пример",
+            "footer": "Демонстрационный интерфейс · Концепт",
+            "dishTitle": "Лосось на гриле",
+            "dishDescription": "Лимонно-сливочный соус",
+            "dishCaption": "ПРИМЕР ЗАКАЗА",
+            "dishAlt": "Лосось на гриле с рисом, фасолью и соусом в отдельной ёмкости",
+            "sourceLabel": "↗ NIDDK · Рекомендации по рефлюксу"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/ru/contact-sheet.html",
+  "download": "downloads/refluxora-E-ru.zip"
+}

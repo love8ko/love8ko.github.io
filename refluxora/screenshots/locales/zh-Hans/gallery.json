@@ -1,0 +1,615 @@
+{
+  "version": "localization-2026-09-11.1",
+  "locale": "zh-Hans",
+  "label": "简体中文",
+  "status": "design-concepts-not-for-app-store",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "简中 · 八个需求，八个清晰场景",
+      "description": "完整本地化的简体中文概念图，供审核使用。",
+      "frames": [
+        {
+          "headline": "烧心让您夜不能寐？",
+          "headlineLines": [
+            "烧心让您",
+            "夜不能寐？"
+          ],
+          "accentLine": 1,
+          "subline": "您的问题。更清晰的下一步。",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "明晚可以这样做",
+          "ui": {
+            "title": "AI 解读",
+            "label": "AI 解读 · 示例",
+            "focus": "明晚试着早点吃晚饭。",
+            "explanation": "晚餐较晚并很快躺下可能有影响。下次可尝试在进食后至少间隔 3 小时再躺下，可能会有所帮助。",
+            "disclaimer": "示例数据 · 非诊断",
+            "question": "为什么夜间烧心更严重？",
+            "context": [
+              [
+                "晚餐",
+                "21:30"
+              ],
+              [
+                "躺下",
+                "22:15"
+              ]
+            ],
+            "contextDate": "9月8日 · 您的晚间记录"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/zh-Hans/originals/E01.png",
+          "preview": "locales/zh-Hans/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": false,
+          "copy": {
+            "example": "示例",
+            "footer": "示例界面 · 设计概念",
+            "dishTitle": "烤三文鱼",
+            "dishDescription": "柠檬黄油酱",
+            "dishCaption": "点餐示例",
+            "dishAlt": "烤三文鱼配米饭、四季豆和单独盛放的酱汁",
+            "sourceLabel": "↗ NIDDK · 反流指南",
+            "anatomyCaption": "反流示意"
+          },
+          "locale": "zh-Hans",
+          "lang": "zh-Hans"
+        },
+        {
+          "headline": "反流时，外出就餐怎么点？",
+          "headlineLines": [
+            "反流时，",
+            "外出就餐怎么点？"
+          ],
+          "accentLine": 1,
+          "subline": "点餐前先看看菜单。",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "可以这样调整",
+          "ui": {
+            "title": "菜单分析",
+            "label": "AI 解读 · 示例",
+            "focus": "请将酱汁分开上。",
+            "explanation": "柑橘和浓郁酱汁可能会让部分人不适。每个人的反应可能不同。",
+            "disclaimer": "示例菜单 · 个人反应不同"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/zh-Hans/originals/E02.png",
+          "preview": "locales/zh-Hans/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": false,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "zh-Hans",
+          "lang": "zh-Hans",
+          "copy": {
+            "example": "示例",
+            "footer": "示例界面 · 设计概念",
+            "dishTitle": "烤三文鱼",
+            "dishDescription": "柠檬黄油酱",
+            "dishCaption": "点餐示例",
+            "dishAlt": "烤三文鱼配米饭、四季豆和单独盛放的酱汁",
+            "sourceLabel": "↗ NIDDK · 反流指南"
+          }
+        },
+        {
+          "headline": "看懂您的检查结果",
+          "headlineLines": [
+            "看懂您的",
+            "检查结果"
+          ],
+          "accentLine": 1,
+          "subline": "上传 PDF，获取 AI 解读。",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "用简单的话说明",
+          "ui": {
+            "title": "AI 解读",
+            "label": "AI 解读 · 示例",
+            "focus": "食管内壁发炎。",
+            "explanation": "报告中提到食管炎。请咨询医生，这对您的诊疗意味着什么。",
+            "disclaimer": "解释报告中的文字 · 非诊断"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/zh-Hans/originals/E03.png",
+          "preview": "locales/zh-Hans/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "report": {
+            "title": "检查结果.pdf",
+            "format": "PDF",
+            "type": "胃镜检查",
+            "findingLabel": "检查发现",
+            "finding": "食管炎",
+            "date": "示例报告 · 示例"
+          },
+          "copy": {
+            "example": "示例",
+            "footer": "示例界面 · 设计概念",
+            "dishTitle": "烤三文鱼",
+            "dishDescription": "柠檬黄油酱",
+            "dishCaption": "点餐示例",
+            "dishAlt": "烤三文鱼配米饭、四季豆和单独盛放的酱汁",
+            "sourceLabel": "↗ NIDDK · 反流指南",
+            "paperNote": "您上传的报告",
+            "reportConnector": "PDF → AI",
+            "reportLead": "报告中写着"
+          },
+          "locale": "zh-Hans",
+          "lang": "zh-Hans"
+        },
+        {
+          "headline": "今晚计划，简单一点",
+          "headlineLines": [
+            "今晚计划，",
+            "简单一点"
+          ],
+          "accentLine": 1,
+          "subline": "选一步，定个时间。",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "您今晚选择的一步",
+          "ui": {
+            "title": "今晚计划",
+            "label": "您的记录 · 示例",
+            "focus": "晚上 7 点前吃完晚饭。",
+            "explanation": "您计划 22:00 睡觉。晚餐后留出 3 小时再躺下，这个间隔可能有助于缓解夜间症状。",
+            "disclaimer": "示例数据 · 非诊断",
+            "context": [
+              [
+                "吃完晚饭",
+                "19:00"
+              ],
+              [
+                "上床睡觉",
+                "22:00"
+              ]
+            ],
+            "contextDate": "9月10日 · 今晚",
+            "cta": "✓ 提醒时间 · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/zh-Hans/originals/E04.png",
+          "preview": "locales/zh-Hans/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": false,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "locale": "zh-Hans",
+          "lang": "zh-Hans",
+          "copy": {
+            "example": "示例",
+            "footer": "示例界面 · 设计概念",
+            "dishTitle": "烤三文鱼",
+            "dishDescription": "柠檬黄油酱",
+            "dishCaption": "点餐示例",
+            "dishAlt": "烤三文鱼配米饭、四季豆和单独盛放的酱汁",
+            "sourceLabel": "↗ NIDDK · 反流指南"
+          }
+        },
+        {
+          "headline": "治疗记录，一处整理",
+          "headlineLines": [
+            "治疗记录，",
+            "一处整理"
+          ],
+          "accentLine": 1,
+          "subline": "记住用药和身体感受。",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "您保存的记录",
+          "ui": {
+            "title": "治疗记录",
+            "label": "您的记录 · 示例",
+            "focus": "已服药。已记录晚间烧心。",
+            "explanation": "将您自己的记录集中保存。这些记录不能说明治疗效果。",
+            "disclaimer": "示例数据 · 非诊断",
+            "context": [
+              [
+                "08:00",
+                "已服药"
+              ],
+              [
+                "21:15",
+                "已记录烧心"
+              ]
+            ],
+            "contextDate": "9月9日 · 您的记录",
+            "cta": "✓ 记录已保存"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/zh-Hans/originals/E05.png",
+          "preview": "locales/zh-Hans/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": false,
+          "locale": "zh-Hans",
+          "lang": "zh-Hans",
+          "copy": {
+            "example": "示例",
+            "footer": "示例界面 · 设计概念",
+            "dishTitle": "烤三文鱼",
+            "dishDescription": "柠檬黄油酱",
+            "dishCaption": "点餐示例",
+            "dishAlt": "烤三文鱼配米饭、四季豆和单独盛放的酱汁",
+            "sourceLabel": "↗ NIDDK · 反流指南"
+          }
+        },
+        {
+          "headline": "喉咙或声音不舒服？",
+          "headlineLines": [
+            "喉咙或声音",
+            "不舒服？"
+          ],
+          "accentLine": 1,
+          "subline": "记录您注意到的变化。",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "您的声音记录",
+          "ui": {
+            "title": "喉咙和声音",
+            "label": "您的记录 · 示例",
+            "focus": "声音嘶哑。频繁清嗓。已保存。",
+            "explanation": "记录您注意到的情况和时间。喉咙与声音不适可能有不同原因；这些记录不能用于诊断。",
+            "disclaimer": "示例数据 · 非诊断",
+            "context": [
+              [
+                "声音",
+                "嘶哑"
+              ],
+              [
+                "喉咙",
+                "清嗓"
+              ]
+            ],
+            "contextDate": "9月10日 · 工作前",
+            "cta": "✓ 记录已保存"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/zh-Hans/originals/E06.png",
+          "preview": "locales/zh-Hans/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "locale": "zh-Hans",
+          "lang": "zh-Hans",
+          "copy": {
+            "example": "示例",
+            "footer": "示例界面 · 设计概念",
+            "dishTitle": "烤三文鱼",
+            "dishDescription": "柠檬黄油酱",
+            "dishCaption": "点餐示例",
+            "dishAlt": "烤三文鱼配米饭、四季豆和单独盛放的酱汁",
+            "sourceLabel": "↗ NIDDK · 反流指南"
+          }
+        },
+        {
+          "headline": "饮食和症状，一条时间线",
+          "headlineLines": [
+            "饮食和症状，",
+            "一条时间线"
+          ],
+          "accentLine": 1,
+          "subline": "在时间线上查看所有记录。",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "同一晚的两条记录",
+          "ui": {
+            "title": "您的时间线",
+            "label": "您的记录 · 示例",
+            "focus": "晚餐 20:30。烧心 22:15。",
+            "explanation": "同一晚保存的两个事件。仅凭时间先后，不能说明这顿饭导致了症状。",
+            "disclaimer": "示例数据 · 非诊断",
+            "context": [
+              [
+                "20:30",
+                "晚餐"
+              ],
+              [
+                "22:15",
+                "烧心"
+              ]
+            ],
+            "contextDate": "9月7日 · 您的时间线",
+            "cta": "查看已保存记录"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/zh-Hans/originals/E07.png",
+          "preview": "locales/zh-Hans/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": false,
+          "locale": "zh-Hans",
+          "lang": "zh-Hans",
+          "copy": {
+            "example": "示例",
+            "footer": "示例界面 · 设计概念",
+            "dishTitle": "烤三文鱼",
+            "dishDescription": "柠檬黄油酱",
+            "dishCaption": "点餐示例",
+            "dishAlt": "烤三文鱼配米饭、四季豆和单独盛放的酱汁",
+            "sourceLabel": "↗ NIDDK · 反流指南"
+          }
+        },
+        {
+          "headline": "带上记录去看医生",
+          "headlineLines": [
+            "带上记录",
+            "去看医生"
+          ],
+          "accentLine": 1,
+          "subline": "向医生分享清晰摘要。",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "您的就诊摘要",
+          "ui": {
+            "title": "就诊摘要",
+            "label": "您的记录 · 示例",
+            "focus": "已整理好您的观察记录，可随时分享。",
+            "explanation": "汇总您保存的饮食、症状、治疗记录和报告。可将它作为就诊沟通的起点。",
+            "disclaimer": "示例数据 · 非诊断",
+            "context": [
+              [
+                "9月7日至10日",
+                "已保存的观察记录"
+              ],
+              [
+                "包括",
+                "饮食 · 症状 · 报告"
+              ]
+            ],
+            "contextDate": "就诊摘要",
+            "cta": "分享摘要 · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/zh-Hans/originals/E08.png",
+          "preview": "locales/zh-Hans/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": false,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · 示例",
+            "title": "您的观察记录",
+            "date": "9月7日至10日 · 示例",
+            "rows": [
+              "饮食和症状",
+              "治疗记录",
+              "您的报告"
+            ]
+          },
+          "locale": "zh-Hans",
+          "lang": "zh-Hans",
+          "copy": {
+            "example": "示例",
+            "footer": "示例界面 · 设计概念",
+            "dishTitle": "烤三文鱼",
+            "dishDescription": "柠檬黄油酱",
+            "dishCaption": "点餐示例",
+            "dishAlt": "烤三文鱼配米饭、四季豆和单独盛放的酱汁",
+            "sourceLabel": "↗ NIDDK · 反流指南"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/zh-Hans/contact-sheet.html",
+  "download": "downloads/refluxora-E-zh-Hans.zip"
+}

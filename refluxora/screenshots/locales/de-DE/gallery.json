@@ -1,0 +1,619 @@
+{
+  "version": "localization-2026-09-11.1",
+  "locale": "de-DE",
+  "label": "Deutsch",
+  "status": "design-concepts-not-for-app-store",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "DE · Acht Bedürfnisse, acht klare Szenen",
+      "description": "Vollständig lokalisierte deutsche Konzepte zur Prüfung.",
+      "frames": [
+        {
+          "headline": "Sodbrennen hält Sie nachts wach?",
+          "headlineLines": [
+            "Sodbrennen hält",
+            "Sie nachts wach?"
+          ],
+          "accentLine": 1,
+          "subline": "Ihre Frage. Ein klarer nächster Schritt.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "EIN SCHRITT FÜR MORGEN",
+          "ui": {
+            "title": "KI-Erklärung",
+            "label": "KI-Erklärung · Beispiel",
+            "focus": "Essen Sie morgen früher zu Abend.",
+            "explanation": "Eine späte Mahlzeit und baldiges Hinlegen können eine Rolle spielen. An einem anderen Abend können mindestens 3 Stunden Abstand zwischen Essen und Hinlegen helfen.",
+            "disclaimer": "Beispieldaten · Keine Diagnose",
+            "question": "Warum ist mein Sodbrennen nachts schlimmer?",
+            "context": [
+              [
+                "Abendessen",
+                "21:30"
+              ],
+              [
+                "Hingelegt",
+                "22:15"
+              ]
+            ],
+            "contextDate": "8. Sept. · Ihr Abend"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/de-DE/originals/E01.png",
+          "preview": "locales/de-DE/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": false,
+          "copy": {
+            "example": "Beispiel",
+            "footer": "Beispieloberfläche · Designkonzept",
+            "dishTitle": "Gegrillter Lachs",
+            "dishDescription": "Zitronen-Butter-Soße",
+            "dishCaption": "BESTELLBEISPIEL",
+            "dishAlt": "Gegrillter Lachs mit Reis, grünen Bohnen und Soße in einer separaten Schale",
+            "sourceLabel": "↗ NIDDK · Hinweise zu Reflux",
+            "anatomyCaption": "Reflux erklärt"
+          },
+          "locale": "de-DE",
+          "lang": "de"
+        },
+        {
+          "headline": "Was kann ich bei Reflux bestellen?",
+          "headlineLines": [
+            "Was kann ich",
+            "bei Reflux",
+            "bestellen?"
+          ],
+          "accentLine": 2,
+          "subline": "Prüfen Sie die Karte vor der Bestellung.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "EINE MÖGLICHE ÄNDERUNG",
+          "ui": {
+            "title": "Speisekarten-Check",
+            "label": "KI-Erklärung · Beispiel",
+            "focus": "Bestellen Sie die Soße separat.",
+            "explanation": "Zitrusfrüchte und gehaltvolle Soßen können manchen Menschen Beschwerden bereiten. Ihre Reaktion kann anders sein.",
+            "disclaimer": "Beispielmenü · Reaktionen sind verschieden"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/de-DE/originals/E02.png",
+          "preview": "locales/de-DE/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": false,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "de-DE",
+          "lang": "de",
+          "copy": {
+            "example": "Beispiel",
+            "footer": "Beispieloberfläche · Designkonzept",
+            "dishTitle": "Gegrillter Lachs",
+            "dishDescription": "Zitronen-Butter-Soße",
+            "dishCaption": "BESTELLBEISPIEL",
+            "dishAlt": "Gegrillter Lachs mit Reis, grünen Bohnen und Soße in einer separaten Schale",
+            "sourceLabel": "↗ NIDDK · Hinweise zu Reflux"
+          }
+        },
+        {
+          "headline": "Verstehen Sie Ihre Befunde",
+          "headlineLines": [
+            "Verstehen Sie",
+            "Ihre Befunde"
+          ],
+          "accentLine": 1,
+          "subline": "PDF hochladen. KI erklärt.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "KLAR ERKLÄRT",
+          "ui": {
+            "title": "KI-Erklärung",
+            "label": "KI-Erklärung · Beispiel",
+            "focus": "Entzündung der Speiseröhrenschleimhaut.",
+            "explanation": "Ihr Befund erwähnt eine Ösophagitis. Fragen Sie Ihre Ärztin oder Ihren Arzt, was das für Ihre Behandlung bedeutet.",
+            "disclaimer": "Erklärt den schriftlichen Befund · Keine Diagnose"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/de-DE/originals/E03.png",
+          "preview": "locales/de-DE/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "report": {
+            "title": "Befund.pdf",
+            "format": "PDF",
+            "type": "Magenspiegelung",
+            "findingLabel": "Befund",
+            "finding": "Ösophagitis",
+            "date": "Beispielbefund · Beispiel"
+          },
+          "copy": {
+            "example": "Beispiel",
+            "footer": "Beispieloberfläche · Designkonzept",
+            "dishTitle": "Gegrillter Lachs",
+            "dishDescription": "Zitronen-Butter-Soße",
+            "dishCaption": "BESTELLBEISPIEL",
+            "dishAlt": "Gegrillter Lachs mit Reis, grünen Bohnen und Soße in einer separaten Schale",
+            "sourceLabel": "↗ NIDDK · Hinweise zu Reflux",
+            "paperNote": "Ihr hochgeladener Befund",
+            "reportConnector": "PDF → KI",
+            "reportLead": "Ihr Befund nennt"
+          },
+          "locale": "de-DE",
+          "lang": "de"
+        },
+        {
+          "headline": "Ein einfacher Plan für heute Abend",
+          "headlineLines": [
+            "Ein einfacher Plan",
+            "für heute Abend"
+          ],
+          "accentLine": 1,
+          "subline": "Wählen Sie einen Schritt und eine Uhrzeit.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "IHR SCHRITT FÜR HEUTE ABEND",
+          "ui": {
+            "title": "Plan für heute Abend",
+            "label": "Ihre Notizen · Beispiel",
+            "focus": "Essen Sie bis 19:00 Uhr zu Abend.",
+            "explanation": "Ihre gewählte Schlafenszeit ist 22:00 Uhr. So liegen 3 Stunden zwischen Abendessen und Hinlegen; dieser Abstand kann bei nächtlichen Beschwerden helfen.",
+            "disclaimer": "Beispieldaten · Keine Diagnose",
+            "context": [
+              [
+                "Abendessen beenden",
+                "19:00"
+              ],
+              [
+                "Schlafenszeit",
+                "22:00"
+              ]
+            ],
+            "contextDate": "10. Sept. · Heute",
+            "cta": "✓ Erinnerung · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/de-DE/originals/E04.png",
+          "preview": "locales/de-DE/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": false,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "locale": "de-DE",
+          "lang": "de",
+          "copy": {
+            "example": "Beispiel",
+            "footer": "Beispieloberfläche · Designkonzept",
+            "dishTitle": "Gegrillter Lachs",
+            "dishDescription": "Zitronen-Butter-Soße",
+            "dishCaption": "BESTELLBEISPIEL",
+            "dishAlt": "Gegrillter Lachs mit Reis, grünen Bohnen und Soße in einer separaten Schale",
+            "sourceLabel": "↗ NIDDK · Hinweise zu Reflux"
+          }
+        },
+        {
+          "headline": "Alle Behandlungsnotizen an einem Ort",
+          "headlineLines": [
+            "Alle",
+            "Behandlungsnotizen",
+            "an einem Ort"
+          ],
+          "accentLine": 2,
+          "subline": "Notieren Sie Einnahme und Beschwerden.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "IHRE GESPEICHERTE NOTIZ",
+          "ui": {
+            "title": "Behandlungsnotizen",
+            "label": "Ihre Notizen · Beispiel",
+            "focus": "Medikament genommen. Sodbrennen notiert.",
+            "explanation": "Ihre eigenen Einträge bleiben zusammen. Sie zeigen nicht, wie gut eine Behandlung wirkt.",
+            "disclaimer": "Beispieldaten · Keine Diagnose",
+            "context": [
+              [
+                "08:00",
+                "Medikament genommen"
+              ],
+              [
+                "21:15",
+                "Sodbrennen notiert"
+              ]
+            ],
+            "contextDate": "9. Sept. · Ihre Einträge",
+            "cta": "✓ Notiz gespeichert"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/de-DE/originals/E05.png",
+          "preview": "locales/de-DE/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": false,
+          "locale": "de-DE",
+          "lang": "de",
+          "copy": {
+            "example": "Beispiel",
+            "footer": "Beispieloberfläche · Designkonzept",
+            "dishTitle": "Gegrillter Lachs",
+            "dishDescription": "Zitronen-Butter-Soße",
+            "dishCaption": "BESTELLBEISPIEL",
+            "dishAlt": "Gegrillter Lachs mit Reis, grünen Bohnen und Soße in einer separaten Schale",
+            "sourceLabel": "↗ NIDDK · Hinweise zu Reflux"
+          }
+        },
+        {
+          "headline": "Probleme mit Hals oder Stimme?",
+          "headlineLines": [
+            "Probleme mit Hals",
+            "oder Stimme?"
+          ],
+          "accentLine": 1,
+          "subline": "Notieren Sie, was auffällt.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "IHRE STIMMNOTIZEN",
+          "ui": {
+            "title": "Hals & Stimme",
+            "label": "Ihre Notizen · Beispiel",
+            "focus": "Heisere Stimme. Räuspern. Gespeichert.",
+            "explanation": "Notieren Sie, was Sie wann bemerken. Beschwerden an Hals und Stimme können verschiedene Ursachen haben; diese Notizen stellen keine Diagnose.",
+            "disclaimer": "Beispieldaten · Keine Diagnose",
+            "context": [
+              [
+                "Stimme",
+                "Heiser"
+              ],
+              [
+                "Hals",
+                "Räuspern"
+              ]
+            ],
+            "contextDate": "10. Sept. · Vor der Arbeit",
+            "cta": "✓ Notizen gespeichert"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/de-DE/originals/E06.png",
+          "preview": "locales/de-DE/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "locale": "de-DE",
+          "lang": "de",
+          "copy": {
+            "example": "Beispiel",
+            "footer": "Beispieloberfläche · Designkonzept",
+            "dishTitle": "Gegrillter Lachs",
+            "dishDescription": "Zitronen-Butter-Soße",
+            "dishCaption": "BESTELLBEISPIEL",
+            "dishAlt": "Gegrillter Lachs mit Reis, grünen Bohnen und Soße in einer separaten Schale",
+            "sourceLabel": "↗ NIDDK · Hinweise zu Reflux"
+          }
+        },
+        {
+          "headline": "Mahlzeiten und Symptome. Eine Zeitleiste",
+          "headlineLines": [
+            "Mahlzeiten und",
+            "Symptome.",
+            "Eine Zeitleiste"
+          ],
+          "accentLine": 2,
+          "subline": "Alle Notizen in einer Zeitleiste.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "EIN ABEND, ZWEI EINTRÄGE",
+          "ui": {
+            "title": "Ihre Zeitleiste",
+            "label": "Ihre Notizen · Beispiel",
+            "focus": "Abendessen 20:30 Uhr. Sodbrennen 22:15 Uhr.",
+            "explanation": "Zwei gespeicherte Ereignisse vom selben Abend. Die zeitliche Folge allein zeigt nicht, dass die Mahlzeit die Beschwerden verursacht hat.",
+            "disclaimer": "Beispieldaten · Keine Diagnose",
+            "context": [
+              [
+                "20:30",
+                "Abendessen"
+              ],
+              [
+                "22:15",
+                "Sodbrennen"
+              ]
+            ],
+            "contextDate": "7. Sept. · Ihre Zeitleiste",
+            "cta": "Einträge ansehen"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/de-DE/originals/E07.png",
+          "preview": "locales/de-DE/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": false,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": false,
+          "locale": "de-DE",
+          "lang": "de",
+          "copy": {
+            "example": "Beispiel",
+            "footer": "Beispieloberfläche · Designkonzept",
+            "dishTitle": "Gegrillter Lachs",
+            "dishDescription": "Zitronen-Butter-Soße",
+            "dishCaption": "BESTELLBEISPIEL",
+            "dishAlt": "Gegrillter Lachs mit Reis, grünen Bohnen und Soße in einer separaten Schale",
+            "sourceLabel": "↗ NIDDK · Hinweise zu Reflux"
+          }
+        },
+        {
+          "headline": "Bringen Sie Ihren Verlauf zum Termin mit",
+          "headlineLines": [
+            "Bringen Sie Ihren",
+            "Verlauf zum",
+            "Termin mit"
+          ],
+          "accentLine": 2,
+          "subline": "Teilen Sie eine klare Übersicht mit Ihrem Arzt.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "IHRE TERMINÜBERSICHT",
+          "ui": {
+            "title": "Terminübersicht",
+            "label": "Ihre Notizen · Beispiel",
+            "focus": "Ihre Beobachtungen sind bereit zum Teilen.",
+            "explanation": "Eine Übersicht Ihrer Einträge zu Mahlzeiten, Beschwerden, Behandlung und Befund. Nutzen Sie sie als Ausgangspunkt für Ihren Termin.",
+            "disclaimer": "Beispieldaten · Keine Diagnose",
+            "context": [
+              [
+                "7.–10. Sept.",
+                "Gespeicherte Beobachtungen"
+              ],
+              [
+                "Enthalten",
+                "Mahlzeiten · Beschwerden · Befund"
+              ]
+            ],
+            "contextDate": "Terminübersicht",
+            "cta": "Übersicht teilen · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "locales/de-DE/originals/E08.png",
+          "preview": "locales/de-DE/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": false,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Beispiel",
+            "title": "Ihre Beobachtungen",
+            "date": "7.–10. Sept. · Beispiel",
+            "rows": [
+              "Mahlzeiten & Beschwerden",
+              "Behandlungsnotizen",
+              "Ihr Befund"
+            ]
+          },
+          "locale": "de-DE",
+          "lang": "de",
+          "copy": {
+            "example": "Beispiel",
+            "footer": "Beispieloberfläche · Designkonzept",
+            "dishTitle": "Gegrillter Lachs",
+            "dishDescription": "Zitronen-Butter-Soße",
+            "dishCaption": "BESTELLBEISPIEL",
+            "dishAlt": "Gegrillter Lachs mit Reis, grünen Bohnen und Soße in einer separaten Schale",
+            "sourceLabel": "↗ NIDDK · Hinweise zu Reflux"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/de-DE/contact-sheet.html",
+  "download": "downloads/refluxora-E-de-DE.zip"
+}

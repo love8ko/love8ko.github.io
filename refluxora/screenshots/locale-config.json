@@ -1,0 +1,38 @@
+{
+  "defaultLocale": "en-US",
+  "version": "localization-2026-09-11.1",
+  "locales": [
+    {
+      "code": "en-US",
+      "label": "English",
+      "lang": "en",
+      "data": "locales/en-US/gallery.json",
+      "contactSheet": "contact-sheet.html",
+      "download": "downloads/refluxora-E-concepts.zip"
+    },
+    {
+      "code": "ru",
+      "label": "Русский",
+      "lang": "ru",
+      "data": "locales/ru/gallery.json",
+      "contactSheet": "locales/ru/contact-sheet.html",
+      "download": "downloads/refluxora-E-ru.zip"
+    },
+    {
+      "code": "de-DE",
+      "label": "Deutsch",
+      "lang": "de",
+      "data": "locales/de-DE/gallery.json",
+      "contactSheet": "locales/de-DE/contact-sheet.html",
+      "download": "downloads/refluxora-E-de-DE.zip"
+    },
+    {
+      "code": "zh-Hans",
+      "label": "简体中文",
+      "lang": "zh-Hans",
+      "data": "locales/zh-Hans/gallery.json",
+      "contactSheet": "locales/zh-Hans/contact-sheet.html",
+      "download": "downloads/refluxora-E-zh-Hans.zip"
+    }
+  ]
+}

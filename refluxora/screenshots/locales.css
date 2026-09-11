@@ -1,0 +1,23 @@
+/* Locale-specific type metrics; scene geometry remains unchanged. */
+.art.locale-ru,.art.locale-de-DE{font-family:Arial,"Helvetica Neue",sans-serif}
+.art.locale-zh-Hans{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+.locale-ru .art-head h3{font-size:12cqw;letter-spacing:-.045em}
+.locale-de-DE .art-head h3{font-size:11.5cqw;letter-spacing:-.04em}
+.locale-zh-Hans .art-head h3{font-size:13cqw;line-height:1.06;letter-spacing:0;font-weight:700}
+.locale-ru .art-subline,.locale-de-DE .art-subline{letter-spacing:-.035em}
+.locale-zh-Hans .art-subline{letter-spacing:0;line-height:1.15;font-weight:600}
+.locale-zh-Hans .ui-focus,.locale-zh-Hans .proof-focus{letter-spacing:0;line-height:1.12}
+.locale-zh-Hans .e-result-label,.locale-zh-Hans .proof-label{letter-spacing:.03em}
+.locale-ru.e-03 .art-head h3{font-size:11.2cqw}
+.locale-ru.e-05 .art-head h3{font-size:11.5cqw}
+.locale-ru.e-07 .art-head h3{font-size:9.8cqw}
+.locale-de-DE.e-01 .art-head h3,.locale-de-DE.e-04 .art-head h3,.locale-de-DE.e-06 .art-head h3,.locale-de-DE.e-08 .art-head h3{font-size:10.9cqw}
+.locale-de-DE.e-05 .art-head h3{font-size:9.8cqw}
+.locale-de-DE.e-07 .art-head h3{font-size:10.4cqw}
+.locale-de-DE.e-03 .e-app .ui-focus{font-size:5.8cqw}
+.locale-de-DE.e-05 .e-app .ui-focus,.locale-de-DE.e-06 .e-app .ui-focus{font-size:6.1cqw}
+.locale-de-DE.e-07 .e-app .ui-focus,.locale-de-DE.e-08 .proof-focus{font-size:5.9cqw}
+.locale-ru.e-05 .e-app .ui-focus,.locale-ru.e-06 .e-app .ui-focus{font-size:6.1cqw}
+.locale-zh-Hans.e-03 .e-report-title{font-size:5.2cqw}
+.locale-zh-Hans.e-03 .e-paper-term{font-size:7.5cqw}
+.locale-zh-Hans.e-08 .proof-focus{font-size:6.2cqw}

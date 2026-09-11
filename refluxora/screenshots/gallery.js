@@ -1,6 +1,12 @@
 (async()=>{
-  const $=s=>document.querySelector(s);let data,frames=[],active=0,trigger=null,touch=null;
-  try{const response=await fetch('gallery.json',{cache:'no-store'});if(!response.ok)throw Error();data=await response.json();}catch{$('#gallery').textContent='The layouts could not be loaded. Please refresh this page.';return;}
+  const $=s=>document.querySelector(s);let data,frames=[],active=0,trigger=null,touch=null,localeConfig,activeLocale='en-US';
+  try{
+    const configResponse=await fetch('locale-config.json',{cache:'no-store'});if(!configResponse.ok)throw Error();localeConfig=await configResponse.json();
+    const requested=new URLSearchParams(location.search).get('locale');if(localeConfig.locales.some(x=>x.code===requested))activeLocale=requested;
+    const locale=localeConfig.locales.find(x=>x.code===activeLocale);const response=await fetch(activeLocale==='en-US'?'gallery.json':locale.data,{cache:'no-store'});if(!response.ok)throw Error();data=await response.json();
+    const switcher=$('#locale-switcher');for(const item of localeConfig.locales){const a=document.createElement('a');a.href=item.code==='en-US'?'./':'?locale='+encodeURIComponent(item.code);a.textContent=item.label;if(item.code===activeLocale)a.setAttribute('aria-current','page');switcher.append(a);}
+    $('#contact-sheet-link').href=locale.contactSheet;$('#locale-zip-link').href=locale.download;$('#locale-status').textContent=locale.label+' · '+(activeLocale==='en-US'?'исходная серия':'полная локализация');document.documentElement.lang=locale.lang;
+  }catch{$('#gallery').textContent='The layouts could not be loaded. Please refresh this page.';return;}
   const url=p=>`${p}?v=${encodeURIComponent(data.version)}`;
   const gallery=$('#gallery');gallery.replaceChildren();
   for(const series of data.series){
