@@ -1,5 +1,5 @@
 {
-  "version": "concept-2026-09-11.5",
+  "version": "concept-2026-09-11.6",
   "locale": "en-US",
   "status": "design-concepts-not-for-app-store",
   "directionApproved": "C",
@@ -84,7 +84,7 @@
   "series": [
     {
       "prefix": "E",
-      "name": "E · Изжога, меню, понятный отчёт",
+      "name": "E · Изжога, ресторан, PDF → AI",
       "description": "Новая первая тройка: три разных главных образа. Сравните с C01–C03 ниже.",
       "frames": [
         {
@@ -152,7 +152,7 @@
           "accentLine": 2,
           "subline": "Check the menu before you order.",
           "asset": "assets/v4/C02-restaurant.jpg",
-          "scene": "The existing restaurant photograph reframed around the pictured menu, pointing hand and waiter taking the order; no served food.",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
           "shortJob": "Разбор блюда до заказа и конкретное изменение",
           "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
           "proofLabel": "ONE CHANGE TO CONSIDER",
@@ -187,14 +187,14 @@
           "foodAsset": "assets/v3/salmon-cutout.png"
         },
         {
-          "headline": "Endoscopy Report. What Does It Mean?",
+          "headline": "Understand Your Test Results.",
           "headlineLines": [
-            "Endoscopy",
-            "Report. What",
-            "Does It Mean?"
+            "Understand",
+            "Your Test",
+            "Results."
           ],
           "accentLine": 2,
-          "subline": "Medical terms, in plain English.",
+          "subline": "Upload a PDF. Get an AI explanation.",
           "asset": "assets/v5/E03-report.jpg",
           "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
           "shortJob": "Показатель, объяснение и вопрос врачу",
@@ -229,7 +229,9 @@
           "priority": 4,
           "directionApproved": false,
           "report": {
-            "title": "UPPER ENDOSCOPY REPORT",
+            "title": "Test Results.pdf",
+            "format": "PDF",
+            "type": "Upper endoscopy",
             "findingLabel": "Finding",
             "finding": "Esophagitis",
             "date": "Illustrative report · Example"

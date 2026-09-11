@@ -1,0 +1,757 @@
+{
+  "version": "concept-2026-09-11.5",
+  "locale": "en-US",
+  "status": "design-concepts-not-for-app-store",
+  "directionApproved": "C",
+  "jtbdPriorityNote": "Экспертный приоритет для продукта; не статистика спроса или конверсии",
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01",
+        "C01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02",
+        "C02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Показатель, объяснение и вопрос врачу",
+      "frames": [
+        "E03",
+        "C03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "C04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "C05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "C06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "C07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "C08"
+      ]
+    }
+  ],
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Изжога, меню, понятный отчёт",
+      "description": "Новая первая тройка: три разных главных образа. Сравните с C01–C03 ниже.",
+      "frames": [
+        {
+          "headline": "Heartburn Keeping You Up?",
+          "headlineLines": [
+            "Heartburn",
+            "Keeping",
+            "You Up?"
+          ],
+          "accentLine": 2,
+          "subline": "Your question. A clearer next step.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "TOMORROW NIGHT",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation · Example",
+            "focus": "Try an earlier dinner tomorrow night.",
+            "explanation": "A late meal followed soon by lying down may matter. For a future evening, leaving at least 3 hours after eating before lying down may help.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "question": "Why is my heartburn worse at night?",
+            "context": [
+              [
+                "Dinner",
+                "9:30 PM"
+              ],
+              [
+                "Lay down",
+                "10:15 PM"
+              ]
+            ],
+            "contextDate": "Sep 8 · Your evening"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E01.png",
+          "preview": "previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": false
+        },
+        {
+          "headline": "What Can I Order With Reflux?",
+          "headlineLines": [
+            "What Can I",
+            "Order With",
+            "Reflux?"
+          ],
+          "accentLine": 2,
+          "subline": "Check the menu before you order.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The existing restaurant photograph reframed around the pictured menu, pointing hand and waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "ONE CHANGE TO CONSIDER",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation · Example",
+            "focus": "Ask for sauce on the side.",
+            "explanation": "Citrus and rich sauces can bother some people. Your own response may differ.",
+            "disclaimer": "Illustrative data · Not a diagnosis"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E02.png",
+          "preview": "previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": false,
+          "foodAsset": "assets/v3/salmon-cutout.png"
+        },
+        {
+          "headline": "Endoscopy Report. What Does It Mean?",
+          "headlineLines": [
+            "Endoscopy",
+            "Report. What",
+            "Does It Mean?"
+          ],
+          "accentLine": 2,
+          "subline": "Medical terms, in plain English.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "YOUR REPORT, EXPLAINED",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation · Example",
+            "focus": "Inflammation of the food pipe lining.",
+            "explanation": "Your report mentions esophagitis. Ask your clinician what this means for your care.",
+            "disclaimer": "Explains the written finding · Not a diagnosis"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/E03.png",
+          "preview": "previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": false,
+          "report": {
+            "title": "UPPER ENDOSCOPY REPORT",
+            "findingLabel": "Finding",
+            "finding": "Esophagitis",
+            "date": "Illustrative report · Example"
+          }
+        }
+      ]
+    },
+    {
+      "prefix": "C",
+      "name": "C · Восемь ситуаций, один герой",
+      "description": "Ночная изжога → еда → обследование → ежедневная поддержка. Нажмите на кадр для увеличения.",
+      "frames": [
+        {
+          "headline": "Heartburn Keeping You Up?",
+          "headlineLines": [
+            "Heartburn",
+            "Keeping",
+            "You Up?"
+          ],
+          "accentLine": 2,
+          "subline": "Make sense of what happened tonight.",
+          "asset": "assets/v4/C01-night.jpg",
+          "scene": "A sleepless man sits at the edge of a bed while his partner sleeps.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "TOMORROW NIGHT",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation · Example",
+            "focus": "Try an earlier dinner tomorrow night.",
+            "explanation": "Your dinner was at 9:30 PM and you lay down at 10:15 PM. Meal timing may matter. For a future evening, leaving at least 3 hours after eating before lying down may help.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "question": "Why was my heartburn worse tonight?",
+            "context": [
+              [
+                "Dinner",
+                "9:30 PM"
+              ],
+              [
+                "Lay down",
+                "10:15 PM"
+              ]
+            ],
+            "contextDate": "Sep 8 · Your evening"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "C01",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C01.png",
+          "preview": "previews/C01.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C01-night.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "proofDiagram": {
+            "start": "meal",
+            "duration": "3 hours",
+            "end": "bed"
+          }
+        },
+        {
+          "headline": "What Can I Eat With Reflux?",
+          "headlineLines": [
+            "What Can I Eat",
+            "With Reflux?"
+          ],
+          "accentLine": 1,
+          "subline": "Check the menu before you order.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "A couple chooses a pictured dish in an open menu while a waiter takes their order; no food has been served.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "ONE CHANGE TO CONSIDER",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation · Example",
+            "focus": "Ask for sauce on the side.",
+            "explanation": "Citrus and rich sauces can bother some people. Your own response may differ.",
+            "disclaimer": "Illustrative data · Not a diagnosis"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "C02",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C02.png",
+          "preview": "previews/C02.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png"
+        },
+        {
+          "headline": "Reflux Tests. What Do They Mean?",
+          "headlineLines": [
+            "Reflux Tests.",
+            "What Do",
+            "They Mean?"
+          ],
+          "accentLine": 2,
+          "subline": "Your report, in plain English.",
+          "asset": "assets/v4/C03-clinic.jpg",
+          "scene": "After an appointment, the man reads his report and phone in a clinic waiting area.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "YOUR REPORT, EXPLAINED",
+          "ui": {
+            "title": "Refluxora",
+            "label": "AI explanation · Example",
+            "focus": "Acid detected during 7.2% of monitoring.",
+            "explanation": "AET is the percentage of time with esophageal pH below 4. Your clinician interprets the full test.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "nextQuestion": "How does this finding fit my symptoms?"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "C03",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C03.png",
+          "preview": "previews/C03.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C03-clinic.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "metric": {
+            "label": "Acid exposure time",
+            "value": "7.2%"
+          },
+          "reportPlacement": {
+            "--paper-left": "52.2%",
+            "--paper-top": "52%",
+            "--paper-width": "24%",
+            "--paper-transform": "rotate(-1deg)"
+          }
+        },
+        {
+          "headline": "Make Tonight’s Plan Simple.",
+          "headlineLines": [
+            "Make Tonight’s",
+            "Plan Simple."
+          ],
+          "accentLine": 1,
+          "subline": "Choose one step. Set your time.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The man and his partner plan their evening together at a kitchen table.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "YOUR CHOSEN EVENING STEP",
+          "ui": {
+            "title": "Refluxora",
+            "label": "Your saved notes · Example",
+            "focus": "Finish dinner by 7:00 PM.",
+            "explanation": "Your chosen bedtime is 10:00 PM. This plan leaves 3 hours after dinner before lying down; this interval may help nighttime symptoms.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "context": [
+              [
+                "Finish dinner",
+                "7:00 PM"
+              ],
+              [
+                "Bedtime",
+                "10:00 PM"
+              ]
+            ],
+            "contextDate": "Sep 10 · Tonight",
+            "cta": "✓ Reminder set · 6:30 PM"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "C04",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C04.png",
+          "preview": "previews/C04.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true
+        },
+        {
+          "headline": "Keep Your Treatment Notes Together.",
+          "headlineLines": [
+            "Keep Your",
+            "Treatment",
+            "Notes Together."
+          ],
+          "accentLine": 2,
+          "subline": "Remember what you took and felt.",
+          "asset": "assets/v4/C05-treatment.jpg",
+          "scene": "The man records a note at home with an unbranded medication package and a glass of water nearby.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "YOUR SAVED NOTE",
+          "ui": {
+            "title": "Refluxora",
+            "label": "Your saved notes · Example",
+            "focus": "Medication taken. Evening heartburn noted.",
+            "explanation": "Your own entries, kept together. These notes do not establish how well a treatment works.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "context": [
+              [
+                "8:00 AM",
+                "Medication taken"
+              ],
+              [
+                "9:15 PM",
+                "Heartburn noted"
+              ]
+            ],
+            "contextDate": "Sep 9 · Your entries",
+            "cta": "✓ Note saved"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "C05",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C05.png",
+          "preview": "previews/C05.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C05-treatment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true
+        },
+        {
+          "headline": "Throat or Voice Bothering You?",
+          "headlineLines": [
+            "Throat or Voice",
+            "Bothering You?"
+          ],
+          "accentLine": 1,
+          "subline": "Keep track of what you notice.",
+          "asset": "assets/v4/C06-voice.jpg",
+          "scene": "Before a work video call, the man uses his phone beside an open laptop and headphones.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "YOUR VOICE NOTES",
+          "ui": {
+            "title": "Refluxora",
+            "label": "Your saved notes · Example",
+            "focus": "Hoarse voice. Throat clearing. Notes saved.",
+            "explanation": "Record what you notice and when. Throat and voice symptoms can have different causes; these notes do not identify a diagnosis.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "context": [
+              [
+                "Voice",
+                "Hoarse"
+              ],
+              [
+                "Throat",
+                "Clearing"
+              ]
+            ],
+            "contextDate": "Sep 10 · Before work",
+            "cta": "✓ Notes saved"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "C06",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C06.png",
+          "preview": "previews/C06.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C06-voice.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true
+        },
+        {
+          "headline": "Meals. Symptoms. One Clear History.",
+          "headlineLines": [
+            "Meals.",
+            "Symptoms. One",
+            "Clear History."
+          ],
+          "accentLine": 2,
+          "subline": "See your notes in one timeline.",
+          "asset": "assets/v4/C07-history.jpg",
+          "scene": "The man reviews past days on his phone at home beside a calendar.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "ONE EVENING, TWO ENTRIES",
+          "ui": {
+            "title": "Refluxora",
+            "label": "Your saved notes · Example",
+            "focus": "Dinner 8:30 PM. Heartburn 10:15 PM.",
+            "explanation": "Two saved events from the same evening. Their timing alone does not show that the meal caused the symptom.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "context": [
+              [
+                "8:30 PM",
+                "Dinner"
+              ],
+              [
+                "10:15 PM",
+                "Heartburn"
+              ]
+            ],
+            "contextDate": "Sep 7 · Your timeline",
+            "cta": "View saved entries"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "C07",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C07.png",
+          "preview": "previews/C07.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C07-history.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true
+        },
+        {
+          "headline": "Bring Your History to Your Appointment.",
+          "headlineLines": [
+            "Bring Your",
+            "History to Your",
+            "Appointment."
+          ],
+          "accentLine": 2,
+          "subline": "Share a clear summary with your doctor.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "The man shows his prepared summary to a doctor during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "YOUR APPOINTMENT SUMMARY",
+          "ui": {
+            "title": "Refluxora",
+            "label": "Your saved notes · Example",
+            "focus": "Your saved observations, ready to share.",
+            "explanation": "A summary of your saved meals, symptoms, voice notes and confirmed report. Share it as a starting point for your appointment.",
+            "disclaimer": "Illustrative data · Not a diagnosis",
+            "context": [
+              [
+                "Sep 7–10",
+                "Saved observations"
+              ],
+              [
+                "Included",
+                "Meals · Symptoms · Report"
+              ]
+            ],
+            "contextDate": "Appointment summary",
+            "cta": "Share summary · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "C08",
+          "series": "C",
+          "readiness": "concept",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "original": "originals/C08.png",
+          "preview": "previews/C08.jpg",
+          "generationMethod": "Built-in ImageGen with within-series identity references + deterministic HTML/CSS scene composition",
+          "releaseApproved": false,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true
+        }
+      ]
+    }
+  ],
+  "publication": "https://love8ko.github.io/refluxora/screenshots/",
+  "archive": "history/v3/",
+  "sourceAssets": [
+    {
+      "file": "sources/v4/C01-night.png",
+      "prompt": "prompts/v4/C01-night.txt",
+      "sha256": "a32add5253e9e5138c7e44b89b008238b38e8db076ea1801352cd66ad0c164ca",
+      "identityReference": "sources/v4/C01-night.png"
+    },
+    {
+      "file": "sources/v4/C02-restaurant.png",
+      "prompt": "prompts/v4/C02-restaurant.txt",
+      "sha256": "30d8f02115c6ee940e75cfa1e6e00d8b30bafed464e68886383d112c0d2c2d61",
+      "identityReference": "sources/v4/C01-night.png"
+    },
+    {
+      "file": "sources/v4/C03-clinic.png",
+      "prompt": "prompts/v4/C03-clinic.txt",
+      "sha256": "4af01573dca8b61bec2c34e3f52fb2ae31affd8de28930cebafe126f05039a3e",
+      "identityReference": "sources/v4/C01-night.png"
+    },
+    {
+      "file": "sources/v4/C04-plan.png",
+      "prompt": "prompts/v4/C04-plan.txt",
+      "sha256": "4a5f1389e3c9e955a173eda0337efcc457302f60c000471dc289b216cc1cab73",
+      "identityReference": "sources/v4/C01-night.png"
+    },
+    {
+      "file": "sources/v4/C05-treatment.png",
+      "prompt": "prompts/v4/C05-treatment.txt",
+      "sha256": "2e934c7f4f5ba82c6204e3be97818e06de62a77eb1dec97eb5a89c514fe9a46f",
+      "identityReference": "sources/v4/C01-night.png"
+    },
+    {
+      "file": "sources/v4/C06-voice.png",
+      "prompt": "prompts/v4/C06-voice.txt",
+      "sha256": "593ab620df83f33ce8fcf5b695a15f305e7a933276a3a2f903c08ad8ab2528f0",
+      "identityReference": "sources/v4/C01-night.png"
+    },
+    {
+      "file": "sources/v4/C07-history.png",
+      "prompt": "prompts/v4/C07-history.txt",
+      "sha256": "4deb30d069aa3fd278bf82562127faab8cd801026521fcf853e5c056b4510fda",
+      "identityReference": "sources/v4/C01-night.png"
+    },
+    {
+      "file": "sources/v4/C08-appointment.png",
+      "prompt": "prompts/v4/C08-appointment.txt",
+      "sha256": "42eac77bc0879b5857404bc1b9ac1014a2720feda0584ddba3498297aec1a093",
+      "identityReference": "sources/v4/C01-night.png"
+    },
+    {
+      "file": "sources/v3/salmon-cutout.png",
+      "prompt": "prompts/v3/salmon-cutout.txt",
+      "sha256": "4d841848e74e420bf1aeaa75ca2b11ae6b96e11f3ebfda7368489d02bc774fb2"
+    },
+    {
+      "file": "sources/v5/E01-anatomy.png",
+      "prompt": "prompts/v5/E01-anatomy.txt",
+      "sha256": "afacb95ecdd61ad6dcf48a3f3638246d5fda4718404ebd3753c1a30e1847644e",
+      "identityReference": null
+    },
+    {
+      "file": "sources/v5/E03-report.png",
+      "prompt": "prompts/v5/E03-report.txt",
+      "sha256": "2b935ecf0c3db87eaa04e1a6d64708fbe3e325d0f7f6fe306b18ee7bdccdd81b",
+      "identityReference": null
+    }
+  ],
+  "generator": {
+    "tool": "built-in ImageGen",
+    "modelVersion": "Not exposed"
+  },
+  "decisions": {
+    "selectedDirection": "C, man around 45; creative direction approved, exports pending review",
+    "deferred": "Standalone GERD / ACID REFLUX markers for frames 4–8; absent in this iteration",
+    "E": "Additional E01–E03 approved for production as concepts; endoscopy chosen by owner. C exports retained unchanged."
+  },
+  "authorization": "Owner authorized additional E concepts; C01–C08, app and simulator remain unchanged."
+}

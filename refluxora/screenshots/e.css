@@ -1,18 +1,30 @@
 /* E: anatomy / ordering / report. These selectors never affect C. */
-.series-E .art-head{top:7%;width:87%}.series-E .art-head h3{font-size:12.75cqw;line-height:.99}.series-E .art-head .art-subline{font-size:7.5cqw;line-height:1.08;margin-top:3.5cqw}.series-E .art-photo{top:14%;left:0;width:100%;height:auto;object-fit:contain;mask-image:linear-gradient(transparent,#000 14%,#000 90%,transparent)}
-.series-E .scene-shade{background:linear-gradient(#042a2c 0%,#042a2cf0 13%,#052b2c05 35%,transparent 60%,#062c2b88 82%,#062c2b 96%)}
+.series-E .art-head{top:3%;width:87%}.series-E .art-head h3{font-size:12.75cqw;line-height:.99}.series-E .art-head .art-subline{font-size:7.5cqw;line-height:1.08;margin-top:3.5cqw}.series-E .art-photo{top:14%;left:0;width:100%;height:auto;object-fit:contain;mask-image:none}
+.series-E .scene-shade{display:none}
 .e-anatomy-caption{position:absolute;left:67%;top:43%;width:24%;font-size:4.3cqw;font-weight:600;color:#c2ebd5;line-height:1.12}
 .e-app{position:absolute;z-index:6;bottom:4%;left:8%;width:86%;padding:3.3cqw;background:#f7f5e9;color:#164e41;border:.45cqw solid #e6f7dd;border-radius:4cqw;box-shadow:1cqw 2cqw 0 #71938666,1cqw 4cqw 8cqw #001a24aa;transform:rotate(-1deg)}
 .e-app-top{display:flex;align-items:center;justify-content:space-between;gap:2cqw;margin-bottom:2cqw}.e-app-top strong{font-size:4.7cqw;letter-spacing:-.035em}.e-app-top span{font-size:2.3cqw;color:#4d7462}.e-ui-question{font-size:3.6cqw;font-weight:600;line-height:1.18;margin-bottom:2cqw}.e-context{display:flex;gap:2cqw;margin-bottom:2cqw}.e-context>div{background:#e1ecdf;border-radius:1.5cqw;padding:1.3cqw 2cqw;flex:1}.e-context span{display:block;font-size:2.5cqw;color:#577666}.e-context strong{display:block;font-size:3.6cqw;margin-top:.5cqw}.e-result{background:#c4f0d4;border-radius:2.3cqw;padding:2.5cqw}.e-result-label{display:block;font-size:2.1cqw;font-weight:700;letter-spacing:.05em;color:#50715b;margin-bottom:1cqw}.series-E .e-app .ui-focus{display:block;font-size:6.5cqw;line-height:1.04;letter-spacing:-.04em;margin:0;font-weight:700}.e-explanation{font-size:2.45cqw;line-height:1.3;margin:2cqw 0 0;color:#526d5d}
 /* The document stays the dominant middle object, with a close explanation below. */
 .e-report-print{position:absolute;z-index:3;left:17%;top:37%;width:66%;color:#234b40;padding:2cqw;transform:rotate(-3deg)}.e-report-title{display:block;font-size:6.4cqw;line-height:1.04;letter-spacing:-.025em}.e-report-demo{display:block;font-size:2.3cqw;margin:2cqw 0;color:#718477}.e-report-rule{height:1px;background:#bac6b8;margin:2cqw 0}.e-report-finding{padding:2.3cqw;background:#e5edb8}.e-report-finding>span{display:block;font-size:3.4cqw;margin-bottom:1cqw}.e-paper-term{display:block;font-size:7.4cqw;line-height:1;letter-spacing:-.045em}.e-paper-note{font-size:2.5cqw;color:#718477}.e-report-connector{position:absolute;z-index:4;top:63%;left:72%;font-size:13cqw;line-height:1;color:#b8efd0;transform:rotate(13deg)}
 .e-03 .e-app{width:81%;left:13%;bottom:4%;transform:rotate(1deg)}.e-ui-finding{display:flex;align-items:center;gap:2cqw;margin-bottom:2cqw}.e-ui-finding span{font-size:2.5cqw;color:#55745e}.e-ui-term{font-size:4.3cqw}.e-03 .e-app .ui-focus{font-size:6.7cqw}.e-03 .e-explanation{font-size:2.7cqw}
-/* Crop the existing scene around the menu and the act of ordering. */
-.e-restaurant-window{position:absolute;inset:33% 0 auto;height:41%;overflow:hidden;mask-image:linear-gradient(transparent,#000 10%,#000 83%,transparent)}
-.e-02 .e-restaurant-window .art-photo{position:absolute;top:-100%;left:-15%;width:130%;height:auto;max-width:none;mask-image:none}
-.e-02 .scene-shade{background:linear-gradient(#042a2c 0%,#042a2c 29%,transparent 39%,transparent 64%,#062c2b 83%)}
-.e-02 .phone{top:67%;left:48%;width:50%}.e-02 .food-popout{top:74%;left:-2%;width:56%}.e-02 .proof-card{bottom:4%;top:auto}.e-02 .food-caption{top:-2cqw;font-size:2.3cqw}.e-02 .art-head h3{font-size:12.75cqw}
-.e-03 .e-report-print{left:24%;top:35%;width:50%;padding:0;transform-origin:top left;transform:rotate(3.7deg) skewX(-4deg)}.e-03 .e-report-title{font-size:6cqw}.e-03 .e-paper-term{font-size:6.7cqw}.e-03 .e-report-connector{top:65%;left:73%}
-.e-02 .e-restaurant-window{top:34%;height:39%;mask-image:linear-gradient(transparent,#000 4%,#000 84%,transparent)}.e-02 .e-restaurant-window .art-photo{top:-82%;left:0;width:100%}.e-02 .e-restaurant-window:after{content:'';position:absolute;left:0;top:0;width:80%;height:24%;background:linear-gradient(#052b2ce8 0%,#052b2c99 45%,transparent)}
-.e-02 .e-restaurant-window .art-photo{top:-100%;left:-20%;width:120%}.series-E .e-app-top span{font-size:3.4cqw}.e-01 .e-app{bottom:3%;padding:3cqw}
-.e-02 .phone{top:65%}
+
+/* Revision 6: preserve the scene, remove branding, make PDF → AI explicit. */
+.series-E .art-photo{mask-image:linear-gradient(transparent,#000 4%,#000 95%,transparent)}
+.e-01 .art-photo{top:18%;left:9%;width:82%;mask-image:linear-gradient(transparent,#000 5%,#000 94%,transparent)}
+.e-01 .e-anatomy-caption{top:43%;left:65%;width:26%}
+.e-01 .e-app{bottom:3%;padding:3cqw}
+.e-app-top strong{font-size:5.4cqw}.e-app-top span{font-size:3cqw}
+.e-02 .art-photo{top:11%;left:0;width:100%;height:auto}
+.e-02 .phone{top:65%;left:48%;width:50%}
+.e-02 .food-popout{top:74%;left:-2%;width:56%}
+.e-02 .proof-card{bottom:4%;top:auto}
+.e-02 .food-caption{top:-2cqw;font-size:2.3cqw}
+.e-03 .e-report-print{left:24%;top:34%;width:50%;padding:0;transform-origin:top left;transform:rotate(3.7deg) skewX(-4deg)}
+.e-pdf-badge{display:inline-block;background:#c55b44;color:#fffaf0;border-radius:1.4cqw;padding:1.5cqw 2cqw;font-size:6cqw;font-weight:700;margin-bottom:2cqw}
+.e-03 .e-report-title{font-size:5.7cqw;white-space:nowrap}
+.e-report-type{display:block;font-size:3.5cqw;margin-top:1.5cqw}
+.e-03 .e-paper-term{font-size:6.7cqw}
+.e-03 .e-report-connector{top:65%;left:58%;font-size:6cqw;font-weight:700;transform:rotate(2deg)}
+
+.e-01 .art-photo{mask-image:linear-gradient(transparent,#000 5%,#000 94%,transparent),linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-composite:intersect}
+.e-03 .e-report-connector{background:#185346;color:#e3ffdf;font-size:5cqw;padding:1.5cqw 2.5cqw;border-radius:2cqw;top:65.3%;left:57%;box-shadow:0 1cqw 2cqw #123c3333}
