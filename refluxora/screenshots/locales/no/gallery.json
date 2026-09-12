@@ -1,0 +1,616 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "no",
+  "label": "Norsk",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Åtte behov, åtte klare skjerm",
+      "description": "Den valgte engelske retningen og kilde for lokaliserede skjermbilder",
+      "frames": [
+        {
+          "headline": "Halsbrann som holder deg opp?",
+          "headlineLines": [
+            "Halsbrann som",
+            "holder deg opp?"
+          ],
+          "accentLine": 1,
+          "subline": "Din spørsmål. En klar neste skritt.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "EN STEG FOR MORGENTID",
+          "ui": {
+            "title": "AI-forklaring",
+            "label": "AI-forklaring · Eksempel",
+            "focus": "Prøv en tidligere middag i morgen kveld.",
+            "explanation": "En sent tidligere måltid følgt av kort tid senere liggende kan være viktig. For en fremtidig kveld, å la være minst 3 timer etter måltid før liggende kan hjelpe.",
+            "disclaimer": "Illustrativ data · Ikke en diagnose",
+            "question": "Hvorfor er min halsbrann værre ved natt?",
+            "context": [
+              [
+                "Middag",
+                "21:30"
+              ],
+              [
+                "Ligg ned",
+                "22:15"
+              ]
+            ],
+            "contextDate": "Sep 8 · Din kveld"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/no/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Eksempel",
+            "footer": "Illustrativ interface · Designkonsept",
+            "dishTitle": "Grillet laks",
+            "dishDescription": "Sitron-smørsaus",
+            "dishCaption": "Eksempelbestilling",
+            "dishAlt": "Grillet laks med ris, grønnsaker og sausen i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-guide",
+            "anatomyCaption": "Reflux forklart"
+          },
+          "locale": "no",
+          "lang": "no",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Hva kan jeg bestille med reflux?",
+          "headlineLines": [
+            "Hva kan jeg bestille",
+            "med reflux?"
+          ],
+          "accentLine": 1,
+          "subline": "Sjekk menyen før du bestiller.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "EN KONKLUSJON Å TEGNE",
+          "ui": {
+            "title": "Menyoversikt",
+            "label": "AI-forklaring · Eksempel",
+            "focus": "Be om sausen ved siden av.",
+            "explanation": "Citrus og rikere sauser kan være problem for noen. Ditt eget svar kan variere.",
+            "disclaimer": "Illustrativ data · Ikke en diagnose"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/no/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "no",
+          "lang": "no",
+          "dir": "ltr",
+          "copy": {
+            "example": "Eksempel",
+            "footer": "Illustrativ interface · Designkonsept",
+            "dishTitle": "Grillet laks",
+            "dishDescription": "Sitron-smørsaus",
+            "dishCaption": "Eksempelbestilling",
+            "dishAlt": "Grillet laks med ris, grønnsaker og sausen i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-guide"
+          }
+        },
+        {
+          "headline": "Forstå dine testresultater.",
+          "headlineLines": [
+            "Forstå dine",
+            "testresultater."
+          ],
+          "accentLine": 1,
+          "subline": "Last opp en PDF. Få en AI-forklaring.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "INNEN FORRETNINGSRETSKAP",
+          "ui": {
+            "title": "AI-forklaring",
+            "label": "AI-forklaring · Eksempel",
+            "focus": "Inflammasjon av spiserørets slimhinne.",
+            "explanation": "Ditt rapporter viser øsofagitt. Spør din kliniker hva dette betyr for din behandling.",
+            "disclaimer": "Forklaring av skriftlig funn · Ikke en diagnose"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/no/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Test Resultater.pdf",
+            "format": "PDF",
+            "type": "Øvre endoskopi",
+            "findingLabel": "Funn",
+            "finding": "Øsofagitt",
+            "date": "Illustrativ rapport · Eksempel"
+          },
+          "copy": {
+            "example": "Eksempel",
+            "footer": "Illustrativ interface · Designkonsept",
+            "dishTitle": "Grillet laks",
+            "dishDescription": "Sitron-smørsaus",
+            "dishCaption": "Eksempelbestilling",
+            "dishAlt": "Grillet laks med ris, grønnsaker og sausen i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-guide",
+            "paperNote": "Ditt opplastet rapport",
+            "reportConnector": "PDF → AI",
+            "reportLead": "Rapporten sier"
+          },
+          "locale": "no",
+          "lang": "no",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Lag enkelt plan for natten i dag.",
+          "headlineLines": [
+            "Lag enkelt plan",
+            "for natten i dag."
+          ],
+          "accentLine": 1,
+          "subline": "Velg én steg. Angi tiden.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "DIN VALGT NATTSTEG",
+          "ui": {
+            "title": "Nattens plan",
+            "label": "Dine lagrede notater · Eksempel",
+            "focus": "Før middag kl. 19:00",
+            "explanation": "Din valgt slettetid er 22:00. Dette planen lar 3 timer etter middag før du ligger ned; denne intervallet kan hjelpe med nattens symptomer.",
+            "disclaimer": "Illustrativ data · Ikke en diagnose",
+            "context": [
+              [
+                "Før middag",
+                "19:00"
+              ],
+              [
+                "Slettetid",
+                "22:00"
+              ]
+            ],
+            "contextDate": "Sep 10 · Natt",
+            "cta": "✓ Remindring satt · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/no/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "no",
+          "lang": "no",
+          "dir": "ltr",
+          "copy": {
+            "example": "Eksempel",
+            "footer": "Illustrativ interface · Designkonsept",
+            "dishTitle": "Grillet laks",
+            "dishDescription": "Sitron-smørsaus",
+            "dishCaption": "Eksempelbestilling",
+            "dishAlt": "Grillet laks med ris, grønnsaker og sausen i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-guide"
+          }
+        },
+        {
+          "headline": "Hold dine behandlingsnotater sammen.",
+          "headlineLines": [
+            "Hold dine",
+            "behandlingsnotater sammen."
+          ],
+          "accentLine": 1,
+          "subline": "Husk hva du tok og hva du følte.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "DIN LAGRET NOTAT",
+          "ui": {
+            "title": "Behandlingsnotater",
+            "label": "Dine lagrede notater · Eksempel",
+            "focus": "Medisinsk behandling. Middagstilbakekast notert.",
+            "explanation": "Dine egne notater, holdt sammen. Disse notatene gir ikke en vurdering av hvordan en behandling fungerer.",
+            "disclaimer": "Illustrativ data · Ikke en diagnose",
+            "context": [
+              [
+                "08:00",
+                "Behandling utført"
+              ],
+              [
+                "21:15",
+                "Halsbrann notert"
+              ]
+            ],
+            "contextDate": "Sep 9 · Dine notater",
+            "cta": "✓ Notat lagret"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/no/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "no",
+          "lang": "no",
+          "dir": "ltr",
+          "copy": {
+            "example": "Eksempel",
+            "footer": "Illustrativ interface · Designkonsept",
+            "dishTitle": "Grillet laks",
+            "dishDescription": "Sitron-smørsaus",
+            "dishCaption": "Eksempelbestilling",
+            "dishAlt": "Grillet laks med ris, grønnsaker og sausen i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-guide"
+          }
+        },
+        {
+          "headline": "Hals eller stemme som størrer deg?",
+          "headlineLines": [
+            "Hals eller stemme",
+            "som størrer deg?"
+          ],
+          "accentLine": 1,
+          "subline": "Følg hva du merker.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "Dine stemme-notater",
+          "ui": {
+            "title": "Hals og stemme",
+            "label": "Dine lagrede notater · Eksempel",
+            "focus": "Høst stemme. Kremte. Notater lagret.",
+            "explanation": "Noter hva du merker og når. Hals- og stemmesymptomer kan ha ulike årsaker; disse notatene identifiserer ikke en diagnose.",
+            "disclaimer": "Illustrativ data · Ikke en diagnose",
+            "context": [
+              [
+                "Stemme",
+                "Høst"
+              ],
+              [
+                "Hals",
+                "Kremte"
+              ]
+            ],
+            "contextDate": "Sep 10 · Før arbeid",
+            "cta": "✓ Notater lagret"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/no/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "no",
+          "lang": "no",
+          "dir": "ltr",
+          "copy": {
+            "example": "Eksempel",
+            "footer": "Illustrativ interface · Designkonsept",
+            "dishTitle": "Grillet laks",
+            "dishDescription": "Sitron-smørsaus",
+            "dishCaption": "Eksempelbestilling",
+            "dishAlt": "Grillet laks med ris, grønnsaker og sausen i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-guide"
+          }
+        },
+        {
+          "headline": "Måltider og symptomer. En tidslinje.",
+          "headlineLines": [
+            "Måltider og symptomer.",
+            "En tidslinje."
+          ],
+          "accentLine": 1,
+          "subline": "Se dine notater i en tidslinje.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "EN ENGLISH, TO INNGANGSPOINTE",
+          "ui": {
+            "title": "Din tidslinje",
+            "label": "Dine lagrede notater · Eksempel",
+            "focus": "Måltid 20:30. Halsbrann 22:15.",
+            "explanation": "To lagrede hendelser fra samme kveld. Deres tidspunkt alene viser ikke at måltiden forårsake symptomet.",
+            "disclaimer": "Illustrativ data · Ikke en diagnose",
+            "context": [
+              [
+                "20:30",
+                "Middag"
+              ],
+              [
+                "22:15",
+                "Halsbrann"
+              ]
+            ],
+            "contextDate": "Sep 7 · Din tidslinje",
+            "cta": "Se lagrede inngangspunkter"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/no/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "no",
+          "lang": "no",
+          "dir": "ltr",
+          "copy": {
+            "example": "Eksempel",
+            "footer": "Illustrativ interface · Designkonsept",
+            "dishTitle": "Grillet laks",
+            "dishDescription": "Sitron-smørsaus",
+            "dishCaption": "Eksempelbestilling",
+            "dishAlt": "Grillet laks med ris, grønnsaker og sausen i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-guide"
+          }
+        },
+        {
+          "headline": "Bring din historie til din møte.",
+          "headlineLines": [
+            "Bring din historie",
+            "til din møte."
+          ],
+          "accentLine": 1,
+          "subline": "Del en klar summering med din lege.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "DIN MØTE-SUMMERING",
+          "ui": {
+            "title": "Møte-summary",
+            "label": "Dine lagrede notater · Eksempel",
+            "focus": "Dine lagrede observasjoner, klar til å dele.",
+            "explanation": "En oversikt over dine lagrede måltider, symtom, behandlingsnotater og rapport. Del denne som startpunkt for din møte.",
+            "disclaimer": "Illustrativ data · Ikke en diagnose",
+            "context": [
+              [
+                "07–10/09",
+                "Lagrede observasjoner"
+              ],
+              [
+                "Inkludert",
+                "Måltider · Symtom · Rapport"
+              ]
+            ],
+            "contextDate": "Møteoversikt",
+            "cta": "Del oversikt · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/no/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Eksempel",
+            "title": "Dine observasjoner",
+            "date": "Sep 7–10 · Eksempel",
+            "rows": [
+              "Måltider og symtom",
+              "Behandlingsnotater",
+              "Din rapport"
+            ]
+          },
+          "locale": "no",
+          "lang": "no",
+          "dir": "ltr",
+          "copy": {
+            "example": "Eksempel",
+            "footer": "Illustrativ interface · Designkonsept",
+            "dishTitle": "Grillet laks",
+            "dishDescription": "Sitron-smørsaus",
+            "dishCaption": "Eksempelbestilling",
+            "dishAlt": "Grillet laks med ris, grønnsaker og sausen i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-guide"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/no/contact-sheet.html",
+  "download": null
+}

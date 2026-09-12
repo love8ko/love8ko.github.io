@@ -1,0 +1,617 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "sv",
+  "label": "Svenska",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Åtta behov, åtta tydliga scenarier",
+      "description": "Den valda engelska riktningen och källan för lokaliserade skärmbilder.",
+      "frames": [
+        {
+          "headline": "Halsbränna som drar dig upp?",
+          "headlineLines": [
+            "Halsbränna som",
+            "drar dig upp?"
+          ],
+          "accentLine": 1,
+          "subline": "Din fråga. En tydlig nästa steg.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "EN STEG FÖR MORGON",
+          "ui": {
+            "title": "AI förklaring",
+            "label": "AI förklaring · Exempel",
+            "focus": "Försök en tidigare middag nästa natt.",
+            "explanation": "En sen mat många timmar senare kan vara en faktor. För en framtida kväll, att lämna minst 3 timmar efter mat innan du ligger ner kan hjälpa.",
+            "disclaimer": "Illustrativ data · Inte en diagnos",
+            "question": "Varför är mitt halsbränna värre på natten?",
+            "context": [
+              [
+                "Middag",
+                "21:30"
+              ],
+              [
+                "Lägg ner",
+                "22:15"
+              ]
+            ],
+            "contextDate": "Sep 8 · Din kväll"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sv/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Exempel",
+            "footer": "Illustrativ interface · Designkoncept",
+            "dishTitle": "Grillad sardine",
+            "dishDescription": "Citron- och smörsås",
+            "dishCaption": "EXEMPLERES KÖP",
+            "dishAlt": "Grillad sardine med ris, grönsaker och sauce i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-råd",
+            "anatomyCaption": "Reflux förklarad"
+          },
+          "locale": "sv",
+          "lang": "sv",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Vad kan jag beställa med reflux?",
+          "headlineLines": [
+            "Vad kan jag beställa",
+            "med reflux?"
+          ],
+          "accentLine": 1,
+          "subline": "Kontrollera menyn innan du beställer.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "EN ÄNDRING ATT Tänka PÅ",
+          "ui": {
+            "title": "Menybeskrivning",
+            "label": "AI förklaring · Exempel",
+            "focus": "Fråga om såsen på sidan.",
+            "explanation": "Citrus och rika sauser kan störa vissa personer. Ditt eget svar kan avvika.",
+            "disclaimer": "Illustrativ data · Inte en diagnos"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sv/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "sv",
+          "lang": "sv",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exempel",
+            "footer": "Illustrativ interface · Designkoncept",
+            "dishTitle": "Grillad sardine",
+            "dishDescription": "Citron- och smörsås",
+            "dishCaption": "EXEMPLERES KÖP",
+            "dishAlt": "Grillad sardine med ris, grönsaker och sauce i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-råd"
+          }
+        },
+        {
+          "headline": "Förstå dina testresultat.",
+          "headlineLines": [
+            "Förstå dina",
+            "testresultat."
+          ],
+          "accentLine": 1,
+          "subline": "Ladda upp en PDF. Få en AI-förklaring.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "I ENKLIG SVERIGE",
+          "ui": {
+            "title": "AI förklaring",
+            "label": "AI förklaring · Exempel",
+            "focus": "Inflammation av matstrupens slemhinna.",
+            "explanation": "Ditt rapporterat resultat nämner esofagit. Fråga din kliniker vad detta betyder för din behandling.",
+            "disclaimer": "Förklarar skriftligt fynd · Inte en diagnos"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sv/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Testresultat.pdf",
+            "format": "PDF",
+            "type": "Överstörda endoskopisk undersökning",
+            "findingLabel": "Fynd",
+            "finding": "Esofagit",
+            "date": "Illustrativ rapport · Exempel"
+          },
+          "copy": {
+            "example": "Exempel",
+            "footer": "Illustrativ interface · Designkoncept",
+            "dishTitle": "Grillad sardine",
+            "dishDescription": "Citron- och smörsås",
+            "dishCaption": "EXEMPLERES KÖP",
+            "dishAlt": "Grillad sardine med ris, grönsaker och sauce i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-råd",
+            "paperNote": "Ditt laddade rapport",
+            "reportConnector": "PDF → AI",
+            "reportLead": "Ditt rapporterat säger"
+          },
+          "locale": "sv",
+          "lang": "sv",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Gör natten enkel.",
+          "headlineLines": [
+            "Gör natten",
+            "enkel."
+          ],
+          "accentLine": 1,
+          "subline": "Välj en steg. Sätt tiden.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "DIN VALD NÄTTERSTEG",
+          "ui": {
+            "title": "Nytt plan för natten",
+            "label": "Dina sparade noteringar · Exempel",
+            "focus": "Färdig måltid innan 19:00.",
+            "explanation": "Din valda sängtid är 22:00. Denna plan låter 3 timmar efter måltid innan du ligger ner; denna intervall kan hjälpa till att minska nattsymptom.",
+            "disclaimer": "Illustrativ data · Inte en diagnos",
+            "context": [
+              [
+                "Färdig måltid",
+                "19:00"
+              ],
+              [
+                "Sängtid",
+                "22:00"
+              ]
+            ],
+            "contextDate": "Sep 10 · Natten",
+            "cta": "✓ Minnesvarn satt · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sv/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "sv",
+          "lang": "sv",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exempel",
+            "footer": "Illustrativ interface · Designkoncept",
+            "dishTitle": "Grillad sardine",
+            "dishDescription": "Citron- och smörsås",
+            "dishCaption": "EXEMPLERES KÖP",
+            "dishAlt": "Grillad sardine med ris, grönsaker och sauce i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-råd"
+          }
+        },
+        {
+          "headline": "Behåll dina behandlingsnoteringar tillsammans.",
+          "headlineLines": [
+            "Behåll dina",
+            "behandlingsnoteringar",
+            "tillsammans."
+          ],
+          "accentLine": 2,
+          "subline": "Kom ihåg vad du tog och hur du kände dig.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "DIN SPARAD NOTERING",
+          "ui": {
+            "title": "Behandlingsnoteringar",
+            "label": "Dina sparade noteringar · Exempel",
+            "focus": "Medicin tagen. Evenings heartburn noterad.",
+            "explanation": "Dina egna noteringar, behållna tillsammans. Dessa noteringar kan inte säga hur väl en behandling fungerar.",
+            "disclaimer": "Illustrativ data · Inte en diagnos",
+            "context": [
+              [
+                "08:00",
+                "Medicin tagen"
+              ],
+              [
+                "21:15",
+                "Heartburn noterad"
+              ]
+            ],
+            "contextDate": "Sep 9 · Dina noteringar",
+            "cta": "✓ Notering sparad"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sv/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "sv",
+          "lang": "sv",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exempel",
+            "footer": "Illustrativ interface · Designkoncept",
+            "dishTitle": "Grillad sardine",
+            "dishDescription": "Citron- och smörsås",
+            "dishCaption": "EXEMPLERES KÖP",
+            "dishAlt": "Grillad sardine med ris, grönsaker och sauce i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-råd"
+          }
+        },
+        {
+          "headline": "Rensar halsen eller rörelse i halsen?",
+          "headlineLines": [
+            "Rensar halsen eller",
+            "rörelse i halsen?"
+          ],
+          "accentLine": 1,
+          "subline": "Skriv ner vad du noterar.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "DIN TALMÄSSIGA NOTER",
+          "ui": {
+            "title": "Hals och röst",
+            "label": "Dina sparade noteringar · Exempel",
+            "focus": "Rörd röst. Rensa halsen. Noter sparade.",
+            "explanation": "Skriv vad du noterar och när. Hals- och röstsymtom kan ha olika orsaker; dessa noteringar identifierar inte en diagnos.",
+            "disclaimer": "Illustrativ data · Inte en diagnos",
+            "context": [
+              [
+                "Röst",
+                "Rörd"
+              ],
+              [
+                "Hals",
+                "Rensa halsen"
+              ]
+            ],
+            "contextDate": "Sep 10 · Före arbete",
+            "cta": "✓ Noter sparade"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sv/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "sv",
+          "lang": "sv",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exempel",
+            "footer": "Illustrativ interface · Designkoncept",
+            "dishTitle": "Grillad sardine",
+            "dishDescription": "Citron- och smörsås",
+            "dishCaption": "EXEMPLERES KÖP",
+            "dishAlt": "Grillad sardine med ris, grönsaker och sauce i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-råd"
+          }
+        },
+        {
+          "headline": "Måltider och symtom. En tidslinje.",
+          "headlineLines": [
+            "Måltider och symtom.",
+            "En tidslinje."
+          ],
+          "accentLine": 1,
+          "subline": "Se dina noteringar i en tidslinje.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "EN NÄTTER, TVÅ INTEGERS",
+          "ui": {
+            "title": "Din tidslinje",
+            "label": "Dina sparade noteringar · Exempel",
+            "focus": "Måltid 20:30. Halsbränna 22:15.",
+            "explanation": "Två sparade händelser från samma natt. Deras tidsförlopp ensamt visar inte att måltiden orsakade symtomen.",
+            "disclaimer": "Illustrativ data · Inte en diagnos",
+            "context": [
+              [
+                "20:30",
+                "Middag"
+              ],
+              [
+                "22:15",
+                "Halsbränna"
+              ]
+            ],
+            "contextDate": "Sep 7 · Din tidslinje",
+            "cta": "Visa sparade poster"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sv/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "sv",
+          "lang": "sv",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exempel",
+            "footer": "Illustrativ interface · Designkoncept",
+            "dishTitle": "Grillad sardine",
+            "dishDescription": "Citron- och smörsås",
+            "dishCaption": "EXEMPLERES KÖP",
+            "dishAlt": "Grillad sardine med ris, grönsaker och sauce i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-råd"
+          }
+        },
+        {
+          "headline": "Bära din historik till din bostad.",
+          "headlineLines": [
+            "Bära din historik",
+            "till din bostad."
+          ],
+          "accentLine": 1,
+          "subline": "Dela en tydlig sammanfattning med din läkare.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "DIN BOSTADSMÄSSIG SAMMANFATTNING",
+          "ui": {
+            "title": "Bystäckning",
+            "label": "Dina sparade noteringar · Exempel",
+            "focus": "Dina sparade observationer, redo att dela",
+            "explanation": "En sammanfattning av dina sparade måltider, symtom, behandlingsnoteringar och rapport. Dela den som startpunkt för din bokning.",
+            "disclaimer": "Illustrativ data · Inte en diagnos",
+            "context": [
+              [
+                "07–10/09",
+                "Sparade observationer"
+              ],
+              [
+                "Inkluderat",
+                "Måltider · Symtom · Rapport"
+              ]
+            ],
+            "contextDate": "Boknings sammanfattning",
+            "cta": "Dela sammanfattning · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sv/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Exempel",
+            "title": "Dina observationer",
+            "date": "Sep 7–10 · Exempel",
+            "rows": [
+              "Måltider & symtom",
+              "Behandlingsnoteringar",
+              "Din rapport"
+            ]
+          },
+          "locale": "sv",
+          "lang": "sv",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exempel",
+            "footer": "Illustrativ interface · Designkoncept",
+            "dishTitle": "Grillad sardine",
+            "dishDescription": "Citron- och smörsås",
+            "dishCaption": "EXEMPLERES KÖP",
+            "dishAlt": "Grillad sardine med ris, grönsaker och sauce i en separat ramekin",
+            "sourceLabel": "↗ NIDDK · Reflux-råd"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/sv/contact-sheet.html",
+  "download": null
+}

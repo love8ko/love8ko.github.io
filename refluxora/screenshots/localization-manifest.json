@@ -1,297 +1,5256 @@
 {
-  "version": "localization-2026-09-11.1",
+  "version": "localization-2026-09-11.2",
+  "targetAppVersion": "2.0",
   "locales": [
+    "ar-SA",
+    "bn-BD",
+    "ca",
+    "zh-Hans",
+    "zh-Hant",
+    "hr",
+    "cs",
+    "da",
+    "nl-NL",
+    "en-AU",
+    "en-CA",
+    "en-GB",
     "en-US",
-    "ru",
+    "fi",
+    "fr-FR",
+    "fr-CA",
     "de-DE",
-    "zh-Hans"
+    "el",
+    "gu-IN",
+    "he",
+    "hi",
+    "hu",
+    "id",
+    "it",
+    "ja",
+    "kn-IN",
+    "ko",
+    "ms",
+    "ml-IN",
+    "mr-IN",
+    "no",
+    "or-IN",
+    "pl",
+    "pt-BR",
+    "pt-PT",
+    "pa-IN",
+    "ro",
+    "ru",
+    "sk",
+    "sl-SI",
+    "es-MX",
+    "es-ES",
+    "sv",
+    "ta-IN",
+    "te-IN",
+    "th",
+    "tr",
+    "uk",
+    "ur-PK",
+    "vi"
   ],
   "exports": [
     {
-      "locale": "ru",
+      "locale": "ar-SA",
       "id": "E01",
-      "file": "locales/ru/originals/E01.png",
-      "sha256": "266143123578988052b2d975dc8ba53a3bb72b466ba8487093aee4236270e971",
+      "file": "fastlane/screenshots/ar-SA/01_E01.png",
+      "sha256": "8761bc97f32afcd945e5da3d25adcb88f82800a3ae3fc91e8181f6d414dfb074",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "ru",
+      "locale": "ar-SA",
       "id": "E02",
-      "file": "locales/ru/originals/E02.png",
-      "sha256": "58b2ac748bd670b475261fe6949af781bcacd9c73cafe6eed1747ada0005bfbe",
+      "file": "fastlane/screenshots/ar-SA/02_E02.png",
+      "sha256": "44418f75ebf9872b88172b398fefccb512911e1ebb4a9d4cfc8680ce0ef7bb40",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "ru",
+      "locale": "ar-SA",
       "id": "E03",
-      "file": "locales/ru/originals/E03.png",
-      "sha256": "1224f4c6a56f82fa573675e9463796dd329ea55026ebcfd2361ec8e649a85a98",
+      "file": "fastlane/screenshots/ar-SA/03_E03.png",
+      "sha256": "2103e425303ad66aa296639219b247124fb568fd1eb14c854e9cb0d5eb3ba3b7",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "ru",
+      "locale": "ar-SA",
       "id": "E04",
-      "file": "locales/ru/originals/E04.png",
-      "sha256": "06e5228ad01376db4463480462e18671a5e1094f491a63683fbcce4177a8d3c0",
+      "file": "fastlane/screenshots/ar-SA/04_E04.png",
+      "sha256": "322515d8193b75d6acf465e9edd0f92f71e7e0dad0ccab1e3bab2799576c07a4",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "ru",
+      "locale": "ar-SA",
       "id": "E05",
-      "file": "locales/ru/originals/E05.png",
-      "sha256": "503b7808c82a764cf0564455ac2c546419a06b06c1c51575dd0e3b0fab62c12f",
+      "file": "fastlane/screenshots/ar-SA/05_E05.png",
+      "sha256": "880e01645e03acfdfb0a55147ab43109cb167ee28d6954bb13f1e0eab533047d",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "ru",
+      "locale": "ar-SA",
       "id": "E06",
-      "file": "locales/ru/originals/E06.png",
-      "sha256": "d26a5edc5aa6f25ecea175c60b16c1d0d2117287d983f95d1a7d9ee4eb80895a",
+      "file": "fastlane/screenshots/ar-SA/06_E06.png",
+      "sha256": "0ef7c969e1f27c5e4fa09ff7930e2bf0ac5274fcbc511b174ae4ed0bc77a3044",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "ru",
+      "locale": "ar-SA",
       "id": "E07",
-      "file": "locales/ru/originals/E07.png",
-      "sha256": "0f096524cd2294f094b55f89de5eabf8b3da3c7057b1e96dd385eebbf34e33cd",
+      "file": "fastlane/screenshots/ar-SA/07_E07.png",
+      "sha256": "db9c17e6a2bc72e16d57645af0fdc877f3b3c993e6d92c1dcebba594194f5cbd",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "ru",
+      "locale": "ar-SA",
       "id": "E08",
-      "file": "locales/ru/originals/E08.png",
-      "sha256": "f353813341be23474938953a0a962470fba932b6a2c6159160e45ab42f411b82",
+      "file": "fastlane/screenshots/ar-SA/08_E08.png",
+      "sha256": "6081dc8a9187d72dfc227765a5d51af5bdc5e7aa59b9c099fc5102db4d40885d",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "de-DE",
+      "locale": "bn-BD",
       "id": "E01",
-      "file": "locales/de-DE/originals/E01.png",
-      "sha256": "c1090475921f75589a3af277c6e6721bae033af8178779ebf67a4ca0fed869cb",
+      "file": "fastlane/screenshots/bn-BD/01_E01.png",
+      "sha256": "c63b863a942d204b98e7026736fe047a8f69d2bece06b8f2decee90d8e52940c",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "de-DE",
+      "locale": "bn-BD",
       "id": "E02",
-      "file": "locales/de-DE/originals/E02.png",
-      "sha256": "d9df0b70716debdca4b26f369a827cb8954a4b551b3b9f5d88f35f106217a355",
+      "file": "fastlane/screenshots/bn-BD/02_E02.png",
+      "sha256": "5e71f3a4b74eff03fe10ea2181f6e0dfdfcafe69a9551e68fb539f3f424f7d2b",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "de-DE",
+      "locale": "bn-BD",
       "id": "E03",
-      "file": "locales/de-DE/originals/E03.png",
-      "sha256": "3e1914c4e78979bf672266256e44edbf6157ce7c2238af90326c4c8e46bb1402",
+      "file": "fastlane/screenshots/bn-BD/03_E03.png",
+      "sha256": "0afa47d9a27574aa3c668c46b9da77ff09ac9f3b056a4a18975b14c37da1cb67",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "de-DE",
+      "locale": "bn-BD",
       "id": "E04",
-      "file": "locales/de-DE/originals/E04.png",
-      "sha256": "0b732301655fc3e34fb7bac3566406f21f58ad40b346b020b05c64dd08972248",
+      "file": "fastlane/screenshots/bn-BD/04_E04.png",
+      "sha256": "0b6995e0e3a0dd47ee3e44b0c20a1da8625c4dc230d7699d0af457a7e3cd26df",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "de-DE",
+      "locale": "bn-BD",
       "id": "E05",
-      "file": "locales/de-DE/originals/E05.png",
-      "sha256": "427d38a0e9a5d035b2e8e7ef62b508e0fdddbe3c7e4299310417610c40193625",
+      "file": "fastlane/screenshots/bn-BD/05_E05.png",
+      "sha256": "af12df5312091d24482e7841fae8af2d11ec0b07f886762aa66b1486f06871f2",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "de-DE",
+      "locale": "bn-BD",
       "id": "E06",
-      "file": "locales/de-DE/originals/E06.png",
-      "sha256": "bad40653959ee7ad6671ab49662f4bc87307cb7c3cbffb6cacfdc86ae60e1e15",
+      "file": "fastlane/screenshots/bn-BD/06_E06.png",
+      "sha256": "3517757f6e902a52f44fb032433b5157109c1ef07ba990d4cd31b64bce9c7d6c",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "de-DE",
+      "locale": "bn-BD",
       "id": "E07",
-      "file": "locales/de-DE/originals/E07.png",
-      "sha256": "d1e82c79efd0670a50d1c47215eb9c1c2ab8a54b276360c358cb01f418ade58c",
+      "file": "fastlane/screenshots/bn-BD/07_E07.png",
+      "sha256": "72ee46f8bb4e276ba0629923b6117e2ec675cea4623b010728091587f4f407d8",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
-      "locale": "de-DE",
+      "locale": "bn-BD",
       "id": "E08",
-      "file": "locales/de-DE/originals/E08.png",
-      "sha256": "09ec1e6048f0a504d29791db63e08f78136c8f2680c3a216ca1981741844fd26",
+      "file": "fastlane/screenshots/bn-BD/08_E08.png",
+      "sha256": "39b59123dd55913a3bbe141d7a909751d9781f968a4008baa48ac1d89b079983",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ca",
+      "id": "E01",
+      "file": "fastlane/screenshots/ca/01_E01.png",
+      "sha256": "d70dbbb1a7bc0df23907a4f8753d4314edea11a3f5af0d7fb2352ea255e0e334",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ca",
+      "id": "E02",
+      "file": "fastlane/screenshots/ca/02_E02.png",
+      "sha256": "c5a2124b2ab70f20b559ec3495300656b7138bab72f2a73eabfbb5e50a1e8fe6",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ca",
+      "id": "E03",
+      "file": "fastlane/screenshots/ca/03_E03.png",
+      "sha256": "a1f8c07bec50c8a6588974fdcc06dc6169844a215fd9f759aa4ca33a90cae0ed",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ca",
+      "id": "E04",
+      "file": "fastlane/screenshots/ca/04_E04.png",
+      "sha256": "2e7025373deeb8d177a5147b297f8a4f522375d8bee1e3e4cf7d536c950e1281",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ca",
+      "id": "E05",
+      "file": "fastlane/screenshots/ca/05_E05.png",
+      "sha256": "e84918a2b05cdd2669f04fec67a7b6639555f9915721c8480431f63aa8d34af9",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ca",
+      "id": "E06",
+      "file": "fastlane/screenshots/ca/06_E06.png",
+      "sha256": "1d3719b4abdcd15006d2ddca24d301ebee46e93230329861b2e2e5b1ef2b2e97",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ca",
+      "id": "E07",
+      "file": "fastlane/screenshots/ca/07_E07.png",
+      "sha256": "90a60bbdd11aa07b1b0bc4aa093242fe939b7eca1ef95695da2480cdc2c3c6bc",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ca",
+      "id": "E08",
+      "file": "fastlane/screenshots/ca/08_E08.png",
+      "sha256": "a02e4ad9446a3ba7ba0f823eaa2bafb0640b924ba27b10ba1fc10fe07ed36d20",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
       "locale": "zh-Hans",
       "id": "E01",
-      "file": "locales/zh-Hans/originals/E01.png",
+      "file": "fastlane/screenshots/zh-Hans/01_E01.png",
       "sha256": "a33e3e3b3a6d93f0bc6175d7f6a653bc1df067ea02c7ea41b529630a64387548",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
       "locale": "zh-Hans",
       "id": "E02",
-      "file": "locales/zh-Hans/originals/E02.png",
+      "file": "fastlane/screenshots/zh-Hans/02_E02.png",
       "sha256": "4d3957b7fc3877b44aabcef76b61ad74d9994841b7acd09be7fd3f4cc07fa762",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
       "locale": "zh-Hans",
       "id": "E03",
-      "file": "locales/zh-Hans/originals/E03.png",
+      "file": "fastlane/screenshots/zh-Hans/03_E03.png",
       "sha256": "1d99f8327894990e81abb0b739e8d2e4d9f675655def833e9d2fd540420c9fcc",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
       "locale": "zh-Hans",
       "id": "E04",
-      "file": "locales/zh-Hans/originals/E04.png",
+      "file": "fastlane/screenshots/zh-Hans/04_E04.png",
       "sha256": "d7b082356479857591fdcddbe3c5f371cd1b303d45b5446871761c80aa283e92",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
       "locale": "zh-Hans",
       "id": "E05",
-      "file": "locales/zh-Hans/originals/E05.png",
+      "file": "fastlane/screenshots/zh-Hans/05_E05.png",
       "sha256": "b0ead1038023bfb7c0f75d0eee9f0c6aad6d984af8c66f29f73731b3cbc0de04",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
       "locale": "zh-Hans",
       "id": "E06",
-      "file": "locales/zh-Hans/originals/E06.png",
+      "file": "fastlane/screenshots/zh-Hans/06_E06.png",
       "sha256": "bae0e194ef20ab96625655296e92e467fecf9431332bd5ad3cb081296ec9ce1a",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
       "locale": "zh-Hans",
       "id": "E07",
-      "file": "locales/zh-Hans/originals/E07.png",
+      "file": "fastlane/screenshots/zh-Hans/07_E07.png",
       "sha256": "2ddeb5711f0448991102c33c8a0cb41433590edebbbfde6522f2bc55058ddb36",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     },
     {
       "locale": "zh-Hans",
       "id": "E08",
-      "file": "locales/zh-Hans/originals/E08.png",
+      "file": "fastlane/screenshots/zh-Hans/08_E08.png",
       "sha256": "e9cd40b18fdc283383e3e45d420e32934740a9f2b5ce530a1d1d1eabd5224aa2",
       "dimensions": [
         1320,
         2868
       ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "zh-Hant",
+      "id": "E01",
+      "file": "fastlane/screenshots/zh-Hant/01_E01.png",
+      "sha256": "e70eaa450b795749d731f91f7066fec4bae00e285f9ba9e3c35b8bf5b658b691",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "zh-Hant",
+      "id": "E02",
+      "file": "fastlane/screenshots/zh-Hant/02_E02.png",
+      "sha256": "010be7fd4aa85a5a3e6e4fc50271e9e15e5a32b6b996d5f95ae0fd8ccc04dc78",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "zh-Hant",
+      "id": "E03",
+      "file": "fastlane/screenshots/zh-Hant/03_E03.png",
+      "sha256": "47debdb0604c4e7c46d0e22bd3aa7ecc5ca2894db8a8a2128143cfeb4f9e2818",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "zh-Hant",
+      "id": "E04",
+      "file": "fastlane/screenshots/zh-Hant/04_E04.png",
+      "sha256": "7f3c72146795efb285f67111c2fbf76cdb2228fed45cf1ab349a029edb5b8dc6",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "zh-Hant",
+      "id": "E05",
+      "file": "fastlane/screenshots/zh-Hant/05_E05.png",
+      "sha256": "2b9e75e9551103ae41013c5d56f7aa23d20c7264f7505f5f7c8c9e2428918ad8",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "zh-Hant",
+      "id": "E06",
+      "file": "fastlane/screenshots/zh-Hant/06_E06.png",
+      "sha256": "0d33e6d5936bfb5925909561849d1263c7cc6941a28b1489f3a1ea8738920989",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "zh-Hant",
+      "id": "E07",
+      "file": "fastlane/screenshots/zh-Hant/07_E07.png",
+      "sha256": "da12fdb9ca074aed2b5d693663ffdb7a4d50145ba52631d08bace13de1ddecf8",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "zh-Hant",
+      "id": "E08",
+      "file": "fastlane/screenshots/zh-Hant/08_E08.png",
+      "sha256": "6fae677e2bae23490d11f87998e2a28e0e057091c7cb18d62ca3e95a9455ed17",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hr",
+      "id": "E01",
+      "file": "fastlane/screenshots/hr/01_E01.png",
+      "sha256": "978fb63dd49783788b642c72b297660997dd8dc6d65463690ee81e1cf6e2af1d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hr",
+      "id": "E02",
+      "file": "fastlane/screenshots/hr/02_E02.png",
+      "sha256": "457d3e5f7a78db1009fdc7440076e152983008f03be25205267bb1af8263cab0",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hr",
+      "id": "E03",
+      "file": "fastlane/screenshots/hr/03_E03.png",
+      "sha256": "f884c4e05a73dc756e1501baaa8a6119232e6ba22857882d576b1100442602d4",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hr",
+      "id": "E04",
+      "file": "fastlane/screenshots/hr/04_E04.png",
+      "sha256": "096e9b8e4f883094634ae3bd044f1997228e7b6040ed2a326e452d5311e30bfb",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hr",
+      "id": "E05",
+      "file": "fastlane/screenshots/hr/05_E05.png",
+      "sha256": "cb8c3f8bd1fc9b0c4427cc9b212a571825da899c46e1064352b82afeac9bb141",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hr",
+      "id": "E06",
+      "file": "fastlane/screenshots/hr/06_E06.png",
+      "sha256": "24468cb0ad2c832180753bd6a5a021ae8caf624b534603c564848f7f7c15bbc5",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hr",
+      "id": "E07",
+      "file": "fastlane/screenshots/hr/07_E07.png",
+      "sha256": "1a094aad46b2da31409b250be877f1ebf78ad7155c98e39b79e5e496ca630c93",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hr",
+      "id": "E08",
+      "file": "fastlane/screenshots/hr/08_E08.png",
+      "sha256": "8edf048318062e176ac735b5e388b57bfc64c0074eae82b66ca77fbe877a510f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "cs",
+      "id": "E01",
+      "file": "fastlane/screenshots/cs/01_E01.png",
+      "sha256": "d97b790eb3fbd00b07f4d79831661b5a15688208943bda0a15cbae7658a2919a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "cs",
+      "id": "E02",
+      "file": "fastlane/screenshots/cs/02_E02.png",
+      "sha256": "a68f702dfaa693aeaca26dd619f845b43cb6c5a7bbdccf7234575856c746cdc7",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "cs",
+      "id": "E03",
+      "file": "fastlane/screenshots/cs/03_E03.png",
+      "sha256": "c2a3cb47ab9061efdea2213f94477c4716633f2d2af059f4fa9a7576de5df985",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "cs",
+      "id": "E04",
+      "file": "fastlane/screenshots/cs/04_E04.png",
+      "sha256": "86f0ce4f9299d13430902d409def99bcdd97046a875da1f0aa8f8c71544b5420",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "cs",
+      "id": "E05",
+      "file": "fastlane/screenshots/cs/05_E05.png",
+      "sha256": "13779756574e8e3e71ec7fec69a2b0ffd9287eda94be1d377e2e34bfdf3adb7c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "cs",
+      "id": "E06",
+      "file": "fastlane/screenshots/cs/06_E06.png",
+      "sha256": "9246be28c7cd090a62329d3c054954d34903022b814d1a94ba083fd69e33b9f3",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "cs",
+      "id": "E07",
+      "file": "fastlane/screenshots/cs/07_E07.png",
+      "sha256": "4256473ca883d5a1d43bd7ba01c07ba6d567a9e38a9eb00fb60d546575bbe738",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "cs",
+      "id": "E08",
+      "file": "fastlane/screenshots/cs/08_E08.png",
+      "sha256": "467bede1a54e777f7991ca402dd45bb1fe8428502740596655e8f707aa1b5a1f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "da",
+      "id": "E01",
+      "file": "fastlane/screenshots/da/01_E01.png",
+      "sha256": "bc91bb5db61fcc15657254d96d8be1400a7462c4a594625935460814e03d3a6e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "da",
+      "id": "E02",
+      "file": "fastlane/screenshots/da/02_E02.png",
+      "sha256": "62e7c3e196ee8b432842176b5a0f5e7d9c092b1e2c3b2d7feb0d7834998303fc",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "da",
+      "id": "E03",
+      "file": "fastlane/screenshots/da/03_E03.png",
+      "sha256": "aefcbf99ff7c9c592bb7bcc73b34f254c3002019151f47372510a63597c327cf",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "da",
+      "id": "E04",
+      "file": "fastlane/screenshots/da/04_E04.png",
+      "sha256": "0dbccbe054bce4fa7731a031033489e48f27095754477be4ec79ebe5643759c9",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "da",
+      "id": "E05",
+      "file": "fastlane/screenshots/da/05_E05.png",
+      "sha256": "146bd280982293174bb4e7d9ea7c309ccc6aabbb2c21f2f70b80dcd90540d3f2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "da",
+      "id": "E06",
+      "file": "fastlane/screenshots/da/06_E06.png",
+      "sha256": "30a53a20635a9aef43d905aee8a94f2321dc3d9dfe421a093142505c46c2ded0",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "da",
+      "id": "E07",
+      "file": "fastlane/screenshots/da/07_E07.png",
+      "sha256": "63c32c90f012e0d2f74ffcffada5cfe7507d5dfa6b27015215056de60ef7bdc1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "da",
+      "id": "E08",
+      "file": "fastlane/screenshots/da/08_E08.png",
+      "sha256": "3a6346f9bf0f68a3df2813dcb3da92d921545c76b2287db238b2fe3a73e3a6c0",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "nl-NL",
+      "id": "E01",
+      "file": "fastlane/screenshots/nl-NL/01_E01.png",
+      "sha256": "720ba97d723bae02058d6f74fb5849e71e75361c7298f815684eb7c1e9ae71e3",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "nl-NL",
+      "id": "E02",
+      "file": "fastlane/screenshots/nl-NL/02_E02.png",
+      "sha256": "46752751d27ca827cde3fcffeadcc335fe03a0a1ceb3183e3ba29d841f500f6b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "nl-NL",
+      "id": "E03",
+      "file": "fastlane/screenshots/nl-NL/03_E03.png",
+      "sha256": "32c63fcdc7f70523bad71a7b9c2283e8f58ad42e86f2450e9464884743da1c61",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "nl-NL",
+      "id": "E04",
+      "file": "fastlane/screenshots/nl-NL/04_E04.png",
+      "sha256": "e95c7d14a74f7363459bb4e0e0ab1357016b5874398ddf2c02c9429188f59e15",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "nl-NL",
+      "id": "E05",
+      "file": "fastlane/screenshots/nl-NL/05_E05.png",
+      "sha256": "526ea91cdff6ed584577f0743a3446f41782aaa5c5669a7fb91072a03790ef1c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "nl-NL",
+      "id": "E06",
+      "file": "fastlane/screenshots/nl-NL/06_E06.png",
+      "sha256": "b018f2e833e1e777206018e9766bad0bf2b1bb91ef9c8505934be8c7708a2015",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "nl-NL",
+      "id": "E07",
+      "file": "fastlane/screenshots/nl-NL/07_E07.png",
+      "sha256": "4bbbe1b095aa47e852efb65339fa4adcda91a7cf1b3f71c2c98444c62acc974b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "nl-NL",
+      "id": "E08",
+      "file": "fastlane/screenshots/nl-NL/08_E08.png",
+      "sha256": "65fe40d5d030239bb6ea459feb247cc58ed831b95d5d99f72e4afe40e2a4f929",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-AU",
+      "id": "E01",
+      "file": "fastlane/screenshots/en-AU/01_E01.png",
+      "sha256": "e8a65838fc4b762a083f359b3cc381ef68bf378d7ce1eda58c527d470fe576b2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-AU",
+      "id": "E02",
+      "file": "fastlane/screenshots/en-AU/02_E02.png",
+      "sha256": "b7dcb13573a85813d0d586ca3b8c9b63ece641a9718a9591d87d95337bd89060",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-AU",
+      "id": "E03",
+      "file": "fastlane/screenshots/en-AU/03_E03.png",
+      "sha256": "e246c75d1d3f6b20176aee3755a44545b20c57c8742cfeef64fcf3b66dac268e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-AU",
+      "id": "E04",
+      "file": "fastlane/screenshots/en-AU/04_E04.png",
+      "sha256": "bd619faec1b1d31503a1bd411ce0343c746dc1e7ec735300e801528d30d9a4ab",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-AU",
+      "id": "E05",
+      "file": "fastlane/screenshots/en-AU/05_E05.png",
+      "sha256": "f91bc6a9f201bde8dc8cf9934e98249201f529bf5a6c9b28df172f53d51b140a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-AU",
+      "id": "E06",
+      "file": "fastlane/screenshots/en-AU/06_E06.png",
+      "sha256": "92b5762c09739699a128ef203355a215b5979227a902c020c4fdfb82fbc7c851",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-AU",
+      "id": "E07",
+      "file": "fastlane/screenshots/en-AU/07_E07.png",
+      "sha256": "9162cd02f227d21d7c053c16f73d3b57dfef46d56e55eab326e617b3c1107d67",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-AU",
+      "id": "E08",
+      "file": "fastlane/screenshots/en-AU/08_E08.png",
+      "sha256": "62b7170005704e9ba858aed7786815375c386fc0b5dbe6f108f80eeadba153ff",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-CA",
+      "id": "E01",
+      "file": "fastlane/screenshots/en-CA/01_E01.png",
+      "sha256": "e8a65838fc4b762a083f359b3cc381ef68bf378d7ce1eda58c527d470fe576b2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-CA",
+      "id": "E02",
+      "file": "fastlane/screenshots/en-CA/02_E02.png",
+      "sha256": "b7dcb13573a85813d0d586ca3b8c9b63ece641a9718a9591d87d95337bd89060",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-CA",
+      "id": "E03",
+      "file": "fastlane/screenshots/en-CA/03_E03.png",
+      "sha256": "e246c75d1d3f6b20176aee3755a44545b20c57c8742cfeef64fcf3b66dac268e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-CA",
+      "id": "E04",
+      "file": "fastlane/screenshots/en-CA/04_E04.png",
+      "sha256": "bd619faec1b1d31503a1bd411ce0343c746dc1e7ec735300e801528d30d9a4ab",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-CA",
+      "id": "E05",
+      "file": "fastlane/screenshots/en-CA/05_E05.png",
+      "sha256": "f91bc6a9f201bde8dc8cf9934e98249201f529bf5a6c9b28df172f53d51b140a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-CA",
+      "id": "E06",
+      "file": "fastlane/screenshots/en-CA/06_E06.png",
+      "sha256": "92b5762c09739699a128ef203355a215b5979227a902c020c4fdfb82fbc7c851",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-CA",
+      "id": "E07",
+      "file": "fastlane/screenshots/en-CA/07_E07.png",
+      "sha256": "9162cd02f227d21d7c053c16f73d3b57dfef46d56e55eab326e617b3c1107d67",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-CA",
+      "id": "E08",
+      "file": "fastlane/screenshots/en-CA/08_E08.png",
+      "sha256": "62b7170005704e9ba858aed7786815375c386fc0b5dbe6f108f80eeadba153ff",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-GB",
+      "id": "E01",
+      "file": "fastlane/screenshots/en-GB/01_E01.png",
+      "sha256": "e8a65838fc4b762a083f359b3cc381ef68bf378d7ce1eda58c527d470fe576b2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-GB",
+      "id": "E02",
+      "file": "fastlane/screenshots/en-GB/02_E02.png",
+      "sha256": "b7dcb13573a85813d0d586ca3b8c9b63ece641a9718a9591d87d95337bd89060",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-GB",
+      "id": "E03",
+      "file": "fastlane/screenshots/en-GB/03_E03.png",
+      "sha256": "e246c75d1d3f6b20176aee3755a44545b20c57c8742cfeef64fcf3b66dac268e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-GB",
+      "id": "E04",
+      "file": "fastlane/screenshots/en-GB/04_E04.png",
+      "sha256": "bd619faec1b1d31503a1bd411ce0343c746dc1e7ec735300e801528d30d9a4ab",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-GB",
+      "id": "E05",
+      "file": "fastlane/screenshots/en-GB/05_E05.png",
+      "sha256": "f91bc6a9f201bde8dc8cf9934e98249201f529bf5a6c9b28df172f53d51b140a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-GB",
+      "id": "E06",
+      "file": "fastlane/screenshots/en-GB/06_E06.png",
+      "sha256": "92b5762c09739699a128ef203355a215b5979227a902c020c4fdfb82fbc7c851",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-GB",
+      "id": "E07",
+      "file": "fastlane/screenshots/en-GB/07_E07.png",
+      "sha256": "9162cd02f227d21d7c053c16f73d3b57dfef46d56e55eab326e617b3c1107d67",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-GB",
+      "id": "E08",
+      "file": "fastlane/screenshots/en-GB/08_E08.png",
+      "sha256": "62b7170005704e9ba858aed7786815375c386fc0b5dbe6f108f80eeadba153ff",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-US",
+      "id": "E01",
+      "file": "fastlane/screenshots/en-US/01_E01.png",
+      "sha256": "e8a65838fc4b762a083f359b3cc381ef68bf378d7ce1eda58c527d470fe576b2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-US",
+      "id": "E02",
+      "file": "fastlane/screenshots/en-US/02_E02.png",
+      "sha256": "b7dcb13573a85813d0d586ca3b8c9b63ece641a9718a9591d87d95337bd89060",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-US",
+      "id": "E03",
+      "file": "fastlane/screenshots/en-US/03_E03.png",
+      "sha256": "e246c75d1d3f6b20176aee3755a44545b20c57c8742cfeef64fcf3b66dac268e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-US",
+      "id": "E04",
+      "file": "fastlane/screenshots/en-US/04_E04.png",
+      "sha256": "bd619faec1b1d31503a1bd411ce0343c746dc1e7ec735300e801528d30d9a4ab",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-US",
+      "id": "E05",
+      "file": "fastlane/screenshots/en-US/05_E05.png",
+      "sha256": "f91bc6a9f201bde8dc8cf9934e98249201f529bf5a6c9b28df172f53d51b140a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-US",
+      "id": "E06",
+      "file": "fastlane/screenshots/en-US/06_E06.png",
+      "sha256": "92b5762c09739699a128ef203355a215b5979227a902c020c4fdfb82fbc7c851",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-US",
+      "id": "E07",
+      "file": "fastlane/screenshots/en-US/07_E07.png",
+      "sha256": "9162cd02f227d21d7c053c16f73d3b57dfef46d56e55eab326e617b3c1107d67",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "en-US",
+      "id": "E08",
+      "file": "fastlane/screenshots/en-US/08_E08.png",
+      "sha256": "62b7170005704e9ba858aed7786815375c386fc0b5dbe6f108f80eeadba153ff",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fi",
+      "id": "E01",
+      "file": "fastlane/screenshots/fi/01_E01.png",
+      "sha256": "5bda9dcfe41b7b19c3cdfc926fce14d03102ba1ce353fbfe701f00838ea54d10",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fi",
+      "id": "E02",
+      "file": "fastlane/screenshots/fi/02_E02.png",
+      "sha256": "14247e49147c592d70ab2eef8e7de3bb45c1f4ac96514791f267feb97a574184",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fi",
+      "id": "E03",
+      "file": "fastlane/screenshots/fi/03_E03.png",
+      "sha256": "6cb953fb99b1d650877c61c764e2e81fd57a85c4f98856ea9831020a4ae35b8d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fi",
+      "id": "E04",
+      "file": "fastlane/screenshots/fi/04_E04.png",
+      "sha256": "8101c8700b2ac078c779d7e25c9285b8dfa5bbeef75fbbc32b359da542333376",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fi",
+      "id": "E05",
+      "file": "fastlane/screenshots/fi/05_E05.png",
+      "sha256": "bb97c18ef3712f193b114ceed0ef2307d56e8b00f4e1858f06932551e3732f51",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fi",
+      "id": "E06",
+      "file": "fastlane/screenshots/fi/06_E06.png",
+      "sha256": "7f7aa03f2ef069c3081aa231a461d7831a5422078f3e5f63dc215b6ac6dbbb48",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fi",
+      "id": "E07",
+      "file": "fastlane/screenshots/fi/07_E07.png",
+      "sha256": "7b6b1c8439c0e2addf31d5d7a44c306f21fc2bb14c33b981c9069c8e7ca5dff0",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fi",
+      "id": "E08",
+      "file": "fastlane/screenshots/fi/08_E08.png",
+      "sha256": "987d20df47b0d5454afdcb7ec9099ad8849a95a53b0a1b1b0620855edf77e595",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-FR",
+      "id": "E01",
+      "file": "fastlane/screenshots/fr-FR/01_E01.png",
+      "sha256": "d2f5c02f956ef60009a50e6df6a257e77628772c53d9c6194dc3de5234005f00",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-FR",
+      "id": "E02",
+      "file": "fastlane/screenshots/fr-FR/02_E02.png",
+      "sha256": "d7e02ddd5ce1002c1f5266b784fc1c6aedc5b772636479a127439e1a9dda3b67",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-FR",
+      "id": "E03",
+      "file": "fastlane/screenshots/fr-FR/03_E03.png",
+      "sha256": "82086fb77169065bcf865a3bf21f7bba49b3c4eb8f3233ad245753f9fc5bf97b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-FR",
+      "id": "E04",
+      "file": "fastlane/screenshots/fr-FR/04_E04.png",
+      "sha256": "898ddcf0ef0bff5f064fa93a8b8bc6d520b77ec47d940ef00cd0098c730bc67a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-FR",
+      "id": "E05",
+      "file": "fastlane/screenshots/fr-FR/05_E05.png",
+      "sha256": "d1d2473afeb478a1080adb2cbab79fcd79bb9346e2f09f4678a02647cf402d38",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-FR",
+      "id": "E06",
+      "file": "fastlane/screenshots/fr-FR/06_E06.png",
+      "sha256": "c7321c62c4d3573d10104f8d9dd2ff05cd3044553c3b9cbb244a21e21ae07ec8",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-FR",
+      "id": "E07",
+      "file": "fastlane/screenshots/fr-FR/07_E07.png",
+      "sha256": "67e3c4f1ba1776b77de9cb19be82d4950d4d5d32f973f993852133384737068c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-FR",
+      "id": "E08",
+      "file": "fastlane/screenshots/fr-FR/08_E08.png",
+      "sha256": "fc4b3e3bd3ae15fd3f9b2e44bc891a71baf83034dd5100ae581471b3c63309fd",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-CA",
+      "id": "E01",
+      "file": "fastlane/screenshots/fr-CA/01_E01.png",
+      "sha256": "e7f053f876de684db70edaa1570793b8ada5bf78e260b563bba231764df984b6",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-CA",
+      "id": "E02",
+      "file": "fastlane/screenshots/fr-CA/02_E02.png",
+      "sha256": "1ee1e232003c28d1f908aaaccb02ab4b335bf718c8f1c0478ba5f5483743b2ac",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-CA",
+      "id": "E03",
+      "file": "fastlane/screenshots/fr-CA/03_E03.png",
+      "sha256": "61b5cc77f37091a2757ce0926dfa24992a0a01c049e7d61693ef4f35ccb32fa6",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-CA",
+      "id": "E04",
+      "file": "fastlane/screenshots/fr-CA/04_E04.png",
+      "sha256": "2a534bf10b1a713bae99fe8c6399d16e41282de57832aef37844b70ef4e7e98e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-CA",
+      "id": "E05",
+      "file": "fastlane/screenshots/fr-CA/05_E05.png",
+      "sha256": "4fd569e8155dc227b0be69323c9b74d916642c9f8df4f4cafb5e7ecc1c797417",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-CA",
+      "id": "E06",
+      "file": "fastlane/screenshots/fr-CA/06_E06.png",
+      "sha256": "fb2cef685c74051bd9349a816c414611ecc7349aff808c84c40dd62c33158032",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-CA",
+      "id": "E07",
+      "file": "fastlane/screenshots/fr-CA/07_E07.png",
+      "sha256": "3c8d93d027a9d0711cded0598bae04655a4c1987abd29889ecd68c2daa57aee4",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "fr-CA",
+      "id": "E08",
+      "file": "fastlane/screenshots/fr-CA/08_E08.png",
+      "sha256": "ea6985115898c82e6fc19eace71a6662d9eb805ddcd1280cedf298641660aea6",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "de-DE",
+      "id": "E01",
+      "file": "fastlane/screenshots/de-DE/01_E01.png",
+      "sha256": "c1090475921f75589a3af277c6e6721bae033af8178779ebf67a4ca0fed869cb",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "de-DE",
+      "id": "E02",
+      "file": "fastlane/screenshots/de-DE/02_E02.png",
+      "sha256": "d9df0b70716debdca4b26f369a827cb8954a4b551b3b9f5d88f35f106217a355",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "de-DE",
+      "id": "E03",
+      "file": "fastlane/screenshots/de-DE/03_E03.png",
+      "sha256": "3e1914c4e78979bf672266256e44edbf6157ce7c2238af90326c4c8e46bb1402",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "de-DE",
+      "id": "E04",
+      "file": "fastlane/screenshots/de-DE/04_E04.png",
+      "sha256": "0b732301655fc3e34fb7bac3566406f21f58ad40b346b020b05c64dd08972248",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "de-DE",
+      "id": "E05",
+      "file": "fastlane/screenshots/de-DE/05_E05.png",
+      "sha256": "427d38a0e9a5d035b2e8e7ef62b508e0fdddbe3c7e4299310417610c40193625",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "de-DE",
+      "id": "E06",
+      "file": "fastlane/screenshots/de-DE/06_E06.png",
+      "sha256": "bad40653959ee7ad6671ab49662f4bc87307cb7c3cbffb6cacfdc86ae60e1e15",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "de-DE",
+      "id": "E07",
+      "file": "fastlane/screenshots/de-DE/07_E07.png",
+      "sha256": "d1e82c79efd0670a50d1c47215eb9c1c2ab8a54b276360c358cb01f418ade58c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "de-DE",
+      "id": "E08",
+      "file": "fastlane/screenshots/de-DE/08_E08.png",
+      "sha256": "09ec1e6048f0a504d29791db63e08f78136c8f2680c3a216ca1981741844fd26",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "el",
+      "id": "E01",
+      "file": "fastlane/screenshots/el/01_E01.png",
+      "sha256": "968f4e50b3e74dcf886eaf7b7ec713d02b1970340118e516187b68328e168f84",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "el",
+      "id": "E02",
+      "file": "fastlane/screenshots/el/02_E02.png",
+      "sha256": "c0828f8d76b37ac8f4fba39dd2bb8a7b312d132c079c9b4eb9ef59e9d6a88d40",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "el",
+      "id": "E03",
+      "file": "fastlane/screenshots/el/03_E03.png",
+      "sha256": "3067d0545f15ba23d851afed398b330fc8178e26459b7b01603dfa975db29b44",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "el",
+      "id": "E04",
+      "file": "fastlane/screenshots/el/04_E04.png",
+      "sha256": "14c269e522005443cb29e408547bd0f7d84465912bf3d9e7851d65df1e0edb48",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "el",
+      "id": "E05",
+      "file": "fastlane/screenshots/el/05_E05.png",
+      "sha256": "f74d4146d26b159d3e487d665f74f2128d6fa6fa6225966dc39aa8f17127d15c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "el",
+      "id": "E06",
+      "file": "fastlane/screenshots/el/06_E06.png",
+      "sha256": "77733d3eaa7d7d536fcb55bf82aa27652bb5889e8f8f9fca06ef214d3c54a4d4",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "el",
+      "id": "E07",
+      "file": "fastlane/screenshots/el/07_E07.png",
+      "sha256": "c763a071690d3381f11556ea2c0ca26f35eff814b3447415843a4e714fd8308d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "el",
+      "id": "E08",
+      "file": "fastlane/screenshots/el/08_E08.png",
+      "sha256": "54ca5cc346efb37b3c5e81aadc0a13cd13aa9e9d99e09bfd04c73987938730a1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "gu-IN",
+      "id": "E01",
+      "file": "fastlane/screenshots/gu-IN/01_E01.png",
+      "sha256": "2524181a3b6c043fe1e3960cb0e34f5a5153e2c9834234a0fb0dc1d1f467a86c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "gu-IN",
+      "id": "E02",
+      "file": "fastlane/screenshots/gu-IN/02_E02.png",
+      "sha256": "366ac2850d43c9ba588c29efa07cee513863b50092ba0fa900ba45809a35eb5c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "gu-IN",
+      "id": "E03",
+      "file": "fastlane/screenshots/gu-IN/03_E03.png",
+      "sha256": "43e3c315caf306070720ca57501a80fd598fee98239de8a1e9f5515e65b48bed",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "gu-IN",
+      "id": "E04",
+      "file": "fastlane/screenshots/gu-IN/04_E04.png",
+      "sha256": "292a5aa7ac54f6c61adaf28cb6bdcc5e0714fa7b6edaeaa6813b9249a33f1ce7",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "gu-IN",
+      "id": "E05",
+      "file": "fastlane/screenshots/gu-IN/05_E05.png",
+      "sha256": "faa4471d5dd28a4e7e7eec6343f1add76745caaba3c07cff248e88943cc2245e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "gu-IN",
+      "id": "E06",
+      "file": "fastlane/screenshots/gu-IN/06_E06.png",
+      "sha256": "fb6e065569b393836ba856ed81b76f44cd651de78dbaeb2ae1b9052ec30a9aac",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "gu-IN",
+      "id": "E07",
+      "file": "fastlane/screenshots/gu-IN/07_E07.png",
+      "sha256": "d63b242bce1586e4c87ef78f0cf54d1a269aaaa67bf4f780369af200ca5e8d97",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "gu-IN",
+      "id": "E08",
+      "file": "fastlane/screenshots/gu-IN/08_E08.png",
+      "sha256": "88a39a856916ad278b6cdcd4e64e3c733678f49a2b60f1f71bdd1b0e8278ec0c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "he",
+      "id": "E01",
+      "file": "fastlane/screenshots/he/01_E01.png",
+      "sha256": "787aa1457532f596c41a12b4814a5f8435fba72dfecdf4091b02322104cdc017",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "he",
+      "id": "E02",
+      "file": "fastlane/screenshots/he/02_E02.png",
+      "sha256": "63ea85567aae27f88e70da870868783e5a8cd7e99fb826beb5aca5d6d9789abd",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "he",
+      "id": "E03",
+      "file": "fastlane/screenshots/he/03_E03.png",
+      "sha256": "75ee113dc0e092b0141519310eab871e27440515e7ea9ddf0ef92dca70f619cc",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "he",
+      "id": "E04",
+      "file": "fastlane/screenshots/he/04_E04.png",
+      "sha256": "734781faacb320705afc3be5d9daa0bbdf149e1c244ebac571639d9290d66176",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "he",
+      "id": "E05",
+      "file": "fastlane/screenshots/he/05_E05.png",
+      "sha256": "c29caaeaef7a3fde34623b3c6729e22a797334fbf8dee4386eb28404d15f2566",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "he",
+      "id": "E06",
+      "file": "fastlane/screenshots/he/06_E06.png",
+      "sha256": "00f1ee92a9b7aa2aea02eba9ea0c626326b1526e94f9f35284421a332fb0d453",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "he",
+      "id": "E07",
+      "file": "fastlane/screenshots/he/07_E07.png",
+      "sha256": "76834c4ee4161c012d871be46e8feb52dffdad85f958eeccbd5abc8a093fd81a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "he",
+      "id": "E08",
+      "file": "fastlane/screenshots/he/08_E08.png",
+      "sha256": "44985688b072332d323ceec9ee22c69983de06acdf4b5b6d8c5b521f4b051060",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hi",
+      "id": "E01",
+      "file": "fastlane/screenshots/hi/01_E01.png",
+      "sha256": "7f3630c99edc2752d2b3a5b5a22696a54dfb87aa6bcd6a0541bec2d6d2b2b09f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hi",
+      "id": "E02",
+      "file": "fastlane/screenshots/hi/02_E02.png",
+      "sha256": "34b2d8b30795a6498535a7a3f03e806b72c0e729a51863f646520f67be61f68b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hi",
+      "id": "E03",
+      "file": "fastlane/screenshots/hi/03_E03.png",
+      "sha256": "771f31016a30b0e22ce561c5f1a556f1f2bc8d059fa36cd7b6e536ee82045847",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hi",
+      "id": "E04",
+      "file": "fastlane/screenshots/hi/04_E04.png",
+      "sha256": "a52db25117afe2643530950ef08c86c0e9d47ce79b0083e4eb939447517e5c0a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hi",
+      "id": "E05",
+      "file": "fastlane/screenshots/hi/05_E05.png",
+      "sha256": "f179b95cb229338cae2afc39c21151c49a794c3b8aa846ba9a42ef115962f423",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hi",
+      "id": "E06",
+      "file": "fastlane/screenshots/hi/06_E06.png",
+      "sha256": "4612bf645784a2555d4cb77c881b4aa2283c44f9e91b65a0fc22ae98f60d39a1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hi",
+      "id": "E07",
+      "file": "fastlane/screenshots/hi/07_E07.png",
+      "sha256": "bd51167eb73d21d8cc59376ebbc3ec1e1ecbb0e2ae2a566f88f57c35e9baf70a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hi",
+      "id": "E08",
+      "file": "fastlane/screenshots/hi/08_E08.png",
+      "sha256": "6c22636c3b3c1630d9bc88c9c5958e55ee24f2305de0d2a798b33cd94553d3ef",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hu",
+      "id": "E01",
+      "file": "fastlane/screenshots/hu/01_E01.png",
+      "sha256": "9fa179ce12d916635eee76a7be4c3dd4d1c7feaffa2af68da064aea141f7fceb",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hu",
+      "id": "E02",
+      "file": "fastlane/screenshots/hu/02_E02.png",
+      "sha256": "cc9b066fe8fd272ce3ced7a84eb03cffd7c809c513ca2b727e0aa152a0e16e5f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hu",
+      "id": "E03",
+      "file": "fastlane/screenshots/hu/03_E03.png",
+      "sha256": "ec45502e6dc0bb1f1ef49580358fd7570986a07a54ce9ecb8c6fbd778d496a55",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hu",
+      "id": "E04",
+      "file": "fastlane/screenshots/hu/04_E04.png",
+      "sha256": "e30a22bdd9f8b754ad309190fe38d0791aa3dfef86d7f01b40759ad8f3f3c6f2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hu",
+      "id": "E05",
+      "file": "fastlane/screenshots/hu/05_E05.png",
+      "sha256": "707c335805f43cd8b03dc8a4406c3db405ee7c815d9f95208d7766a17e517965",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hu",
+      "id": "E06",
+      "file": "fastlane/screenshots/hu/06_E06.png",
+      "sha256": "3714d867426cb65b6db6fe2e3a1ac29d7bd897cadae9892841358932f7575ed1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hu",
+      "id": "E07",
+      "file": "fastlane/screenshots/hu/07_E07.png",
+      "sha256": "f7132236c86334637aeb3295c5033c40a9979d9bf22328d1085cb6516aca4176",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "hu",
+      "id": "E08",
+      "file": "fastlane/screenshots/hu/08_E08.png",
+      "sha256": "b0a62a7824ee4a719034cf09a3d1ed69731e106eac0c5a4a012dc0312abee80d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "id",
+      "id": "E01",
+      "file": "fastlane/screenshots/id/01_E01.png",
+      "sha256": "eaea05978bd1ff38158dcc756bafde295506475697dd2be045cf855431e976a6",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "id",
+      "id": "E02",
+      "file": "fastlane/screenshots/id/02_E02.png",
+      "sha256": "39c2828444ecf78f6ebb77b7ee25139f1153fb09d9e065e5dd066f55167e4358",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "id",
+      "id": "E03",
+      "file": "fastlane/screenshots/id/03_E03.png",
+      "sha256": "fdd2c2986e3a9d0a0a4a58a2924bf2901071e5a59600d41be250b1f16f722ad8",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "id",
+      "id": "E04",
+      "file": "fastlane/screenshots/id/04_E04.png",
+      "sha256": "2eab31ecb7f18c0c79bf24cd3e6a903fe05d86c4a0176e74b9ad5d3a12d042f0",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "id",
+      "id": "E05",
+      "file": "fastlane/screenshots/id/05_E05.png",
+      "sha256": "b1bf7237d9c60f40f36c252d967011cfa2efc5851e11383bcead9d89d3b1afef",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "id",
+      "id": "E06",
+      "file": "fastlane/screenshots/id/06_E06.png",
+      "sha256": "93da8a15bb232e790180e70a31be3ec7c2e05140c4db65d1a170caf104e3219e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "id",
+      "id": "E07",
+      "file": "fastlane/screenshots/id/07_E07.png",
+      "sha256": "134343ad1804f4e3a114f51fd340004da08029a3f060f1432e985f8a4fb0ef82",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "id",
+      "id": "E08",
+      "file": "fastlane/screenshots/id/08_E08.png",
+      "sha256": "8057da4ae2ab2b7faeb7c9b8763306162259e78e807ca1a40bb1396b60d1baf1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "it",
+      "id": "E01",
+      "file": "fastlane/screenshots/it/01_E01.png",
+      "sha256": "d830cfd4af499ef397ddcc2ca178d1b6715c55977870f0918225d4e243ab747e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "it",
+      "id": "E02",
+      "file": "fastlane/screenshots/it/02_E02.png",
+      "sha256": "2626e0ac1f46289936fd7de4257ea91463192f8d4109fe656b4388db87a8f016",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "it",
+      "id": "E03",
+      "file": "fastlane/screenshots/it/03_E03.png",
+      "sha256": "35b5aac1724a1d66a75fff65706c937224945dba28c01bc626b0860b387905c5",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "it",
+      "id": "E04",
+      "file": "fastlane/screenshots/it/04_E04.png",
+      "sha256": "8d08d67be4ae73614442b55d144e97fb80a593ba7d93a1fb31c2e1d8c8b4a415",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "it",
+      "id": "E05",
+      "file": "fastlane/screenshots/it/05_E05.png",
+      "sha256": "dce64ef6b34488599bffbf998ecd7a9439981a5e5de246ab6fff880a07068c2a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "it",
+      "id": "E06",
+      "file": "fastlane/screenshots/it/06_E06.png",
+      "sha256": "b043df6b4158c0b01c56067d207bc306ff1a03677f88f3d2b273d0a7f343fcc4",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "it",
+      "id": "E07",
+      "file": "fastlane/screenshots/it/07_E07.png",
+      "sha256": "2d1db3b228ab5158eb01d8e789c95a3283d0d842cadf693f6fcfd03b17f6102d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "it",
+      "id": "E08",
+      "file": "fastlane/screenshots/it/08_E08.png",
+      "sha256": "9621c64d67a8f7562d547dd3bebc9447c41cb0c00bbb69f81b9c43b466114a86",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ja",
+      "id": "E01",
+      "file": "fastlane/screenshots/ja/01_E01.png",
+      "sha256": "bf6cb3fd9ba1446935e5fab16eb0e5cc79013d9042609f22176670e15df1fe7f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ja",
+      "id": "E02",
+      "file": "fastlane/screenshots/ja/02_E02.png",
+      "sha256": "31169e8304526798061a860e236bfcb881050bc60d0581ba7d507345e0ff792f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ja",
+      "id": "E03",
+      "file": "fastlane/screenshots/ja/03_E03.png",
+      "sha256": "9e640e75057c9c32f7e484b5df2236631ce861bcd89032d76fd6a7d3daea5f9d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ja",
+      "id": "E04",
+      "file": "fastlane/screenshots/ja/04_E04.png",
+      "sha256": "55df52aa7de1ac8719cd1e76eade87b93f0b0d250753b7af80781047083b2278",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ja",
+      "id": "E05",
+      "file": "fastlane/screenshots/ja/05_E05.png",
+      "sha256": "9e380d85f8c4c22a5f50ce22226fff53ca19a01e0b9c8d5d0b6bc50d9544dafc",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ja",
+      "id": "E06",
+      "file": "fastlane/screenshots/ja/06_E06.png",
+      "sha256": "3b716494e84d3352f344da03058e3326f157fdc00c738bf7062296a5ff1bd166",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ja",
+      "id": "E07",
+      "file": "fastlane/screenshots/ja/07_E07.png",
+      "sha256": "c61dafe5b9099a37ca4a6f50c1e4fdc38ca74de3c3fad2b44e7daf76026be333",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ja",
+      "id": "E08",
+      "file": "fastlane/screenshots/ja/08_E08.png",
+      "sha256": "a5a5632dba1a2c45552fad195f4ce140de44111713e5872e65f160df1a95bb24",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "kn-IN",
+      "id": "E01",
+      "file": "fastlane/screenshots/kn-IN/01_E01.png",
+      "sha256": "f5617b1649962714e1c43915279b31034c66b120c7355a1f1665c0672a51d717",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "kn-IN",
+      "id": "E02",
+      "file": "fastlane/screenshots/kn-IN/02_E02.png",
+      "sha256": "de9429acdb6f1b135cd3d290b7a2fafd22cd0d29d4cfde199c30688796120320",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "kn-IN",
+      "id": "E03",
+      "file": "fastlane/screenshots/kn-IN/03_E03.png",
+      "sha256": "523a4870ed279c2653ab5ab9379b266615133c7e1e328c260ab185a511f1013e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "kn-IN",
+      "id": "E04",
+      "file": "fastlane/screenshots/kn-IN/04_E04.png",
+      "sha256": "345fd4dfeb858a85c3298d31cc242819ae3b51a698ac1bf91e70ff825b6a7028",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "kn-IN",
+      "id": "E05",
+      "file": "fastlane/screenshots/kn-IN/05_E05.png",
+      "sha256": "feac9f919753feb4f04bbb61c4c77c393aa447d103d4d2077617d6d12c40dd5f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "kn-IN",
+      "id": "E06",
+      "file": "fastlane/screenshots/kn-IN/06_E06.png",
+      "sha256": "8ff7215af1c158a112ccd0016994cce8457701a4b22635bbcf039f62a1e35f23",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "kn-IN",
+      "id": "E07",
+      "file": "fastlane/screenshots/kn-IN/07_E07.png",
+      "sha256": "1a03a12c70c38410cebbf229f12e9597580a24eda1cea20bd431b7ea1c41bc87",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "kn-IN",
+      "id": "E08",
+      "file": "fastlane/screenshots/kn-IN/08_E08.png",
+      "sha256": "730516f0e7773126b5bfd19958c3e5517d607dc7c12f2f84e23f2787fa933b09",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ko",
+      "id": "E01",
+      "file": "fastlane/screenshots/ko/01_E01.png",
+      "sha256": "20da4ceee79dd6a567698123ca33620d9ce93abccef4f2f8a3e748e0b43a63f7",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ko",
+      "id": "E02",
+      "file": "fastlane/screenshots/ko/02_E02.png",
+      "sha256": "d33fd4b8ec3a0d93269b477d16a68a9b69dad38f472e80b4193991624bbf22d3",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ko",
+      "id": "E03",
+      "file": "fastlane/screenshots/ko/03_E03.png",
+      "sha256": "79bf0ba6b11dff3eb14258f779345bfe1b892e4abe7adb3e243e1bff3ae2f222",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ko",
+      "id": "E04",
+      "file": "fastlane/screenshots/ko/04_E04.png",
+      "sha256": "972206b09621550102ff2a326b327ee747a148df14bbcda1cd469ea763c66a2b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ko",
+      "id": "E05",
+      "file": "fastlane/screenshots/ko/05_E05.png",
+      "sha256": "ec1190ed424d3495d43bc0c7b8ffc602eb08e011f470edbe66d85f84d08fd534",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ko",
+      "id": "E06",
+      "file": "fastlane/screenshots/ko/06_E06.png",
+      "sha256": "3a2274f22091dd0eb7560b2dc3627205d45afcb0b49d5bddf26574d4e2039a8d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ko",
+      "id": "E07",
+      "file": "fastlane/screenshots/ko/07_E07.png",
+      "sha256": "2da3e3ec29afd7b3afbf84e0223e31f366ee26f102dd0355654d56d455b7c1e7",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ko",
+      "id": "E08",
+      "file": "fastlane/screenshots/ko/08_E08.png",
+      "sha256": "2d65633dbf13348c80dc1b2b737b6935ab84d412e972578001d75638794bba8e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ms",
+      "id": "E01",
+      "file": "fastlane/screenshots/ms/01_E01.png",
+      "sha256": "5738bd6bc6fd9374ad5015baedbd533df879bc63411d8dfaef734a5c27e9a642",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ms",
+      "id": "E02",
+      "file": "fastlane/screenshots/ms/02_E02.png",
+      "sha256": "dce3b9ebc9197a2e0d57c9a1226bbbe7fde1f39ff2fdb6698aea9d53763b3412",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ms",
+      "id": "E03",
+      "file": "fastlane/screenshots/ms/03_E03.png",
+      "sha256": "aa2405265a88d74236dac9545620a0f21803bc42ade60ad52549d2d66b3805b5",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ms",
+      "id": "E04",
+      "file": "fastlane/screenshots/ms/04_E04.png",
+      "sha256": "aaaf983ff6defb0f63d82c1c9eac38e5a415827e3acf194b4296e02ec84e791b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ms",
+      "id": "E05",
+      "file": "fastlane/screenshots/ms/05_E05.png",
+      "sha256": "7c3fa85606dc0194fe7edc8cef4ea41316c4f11340cdebee906148f3903499d4",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ms",
+      "id": "E06",
+      "file": "fastlane/screenshots/ms/06_E06.png",
+      "sha256": "000661cbd41d9947e3e03d10569b0572ff5e26864a0837dfb327edde22647df4",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ms",
+      "id": "E07",
+      "file": "fastlane/screenshots/ms/07_E07.png",
+      "sha256": "e5a2d88dc13067aefa5c6760dd4932fa661ae2901be48bb00da76fda4caa4565",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ms",
+      "id": "E08",
+      "file": "fastlane/screenshots/ms/08_E08.png",
+      "sha256": "1b23b9b43b13cf2333b767950182e1a6c5cb46df75d6f822a3964a9b9b8dbc50",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ml-IN",
+      "id": "E01",
+      "file": "fastlane/screenshots/ml-IN/01_E01.png",
+      "sha256": "8f2d5a3b8fbfff566a19b98ee3d4f877a4390341a1c5a778d7211e1d81cbdce7",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ml-IN",
+      "id": "E02",
+      "file": "fastlane/screenshots/ml-IN/02_E02.png",
+      "sha256": "a46291c78ab1f3fc5ec6df71bc1e3e464c7a4ab62c155d16a8d41770d9acba54",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ml-IN",
+      "id": "E03",
+      "file": "fastlane/screenshots/ml-IN/03_E03.png",
+      "sha256": "db13f0deae76e1e4101e6f79f5bf300ccb9dacc20f6af1655e98c9130ae7af8d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ml-IN",
+      "id": "E04",
+      "file": "fastlane/screenshots/ml-IN/04_E04.png",
+      "sha256": "566a6cf6fb37b319decc6e4a78ffd297bde9496703d5169c10c532377dab3db8",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ml-IN",
+      "id": "E05",
+      "file": "fastlane/screenshots/ml-IN/05_E05.png",
+      "sha256": "ec56310f6c92eb4e0373e33c17bbab9addaf5709ab933dedd30d7b441086d2d1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ml-IN",
+      "id": "E06",
+      "file": "fastlane/screenshots/ml-IN/06_E06.png",
+      "sha256": "bd1b7801761550ba47a1b74253029d113898e404a2c1c38c3193a39ec41abc62",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ml-IN",
+      "id": "E07",
+      "file": "fastlane/screenshots/ml-IN/07_E07.png",
+      "sha256": "7732b38833ffa1a366b67026ce2e3ef7ee48aa40f4862e2df38f669cb8a8ecb5",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ml-IN",
+      "id": "E08",
+      "file": "fastlane/screenshots/ml-IN/08_E08.png",
+      "sha256": "676b61ecf248814e3c27ed377d059e019983fb45bc2774ae165ef7ffdec87f15",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "mr-IN",
+      "id": "E01",
+      "file": "fastlane/screenshots/mr-IN/01_E01.png",
+      "sha256": "e46a2a73f946143a3a010952272804558ad7d84d13c856db87893042201f585e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "mr-IN",
+      "id": "E02",
+      "file": "fastlane/screenshots/mr-IN/02_E02.png",
+      "sha256": "21e8221893bc32f6a800b597c34df6e723cbf2ea10909318b7776d023c9f527b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "mr-IN",
+      "id": "E03",
+      "file": "fastlane/screenshots/mr-IN/03_E03.png",
+      "sha256": "10c6cacc9ee176e50f6195d8cafe1edfe80cc60f940c5c75acc99205253169d8",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "mr-IN",
+      "id": "E04",
+      "file": "fastlane/screenshots/mr-IN/04_E04.png",
+      "sha256": "ee057582f60806f1861f83c9e4ec7ad41192ed6de33f947f55d060826620eae4",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "mr-IN",
+      "id": "E05",
+      "file": "fastlane/screenshots/mr-IN/05_E05.png",
+      "sha256": "306561443201b5ec9e2180a87d12cce303f7b37e05d09306106df23f64741803",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "mr-IN",
+      "id": "E06",
+      "file": "fastlane/screenshots/mr-IN/06_E06.png",
+      "sha256": "53dd205bde7729db24628c905090f7a76dc6eda0054f23087a357f1e7ae573a3",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "mr-IN",
+      "id": "E07",
+      "file": "fastlane/screenshots/mr-IN/07_E07.png",
+      "sha256": "365d8947a643d7b1b77b4fd07e5113f852167197c53bf13d8a38a1facbf91f40",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "mr-IN",
+      "id": "E08",
+      "file": "fastlane/screenshots/mr-IN/08_E08.png",
+      "sha256": "acad7a66c0f547b1f25fb20580a9094e17f729baf4cb260145856bc56bea5ffe",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "no",
+      "id": "E01",
+      "file": "fastlane/screenshots/no/01_E01.png",
+      "sha256": "6a6520b307e56f81f5f0ec3d050edf2807b88ff4a6b3d85ab5bb54d39259db07",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "no",
+      "id": "E02",
+      "file": "fastlane/screenshots/no/02_E02.png",
+      "sha256": "aeeb75bc3778e5f75f494d982027c7dede0508e535ab42afdadbf8868e19db05",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "no",
+      "id": "E03",
+      "file": "fastlane/screenshots/no/03_E03.png",
+      "sha256": "d81c282ff186c79081c7fad32c7110df4dbf66fc06cc9aa48794ba032dc9bea8",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "no",
+      "id": "E04",
+      "file": "fastlane/screenshots/no/04_E04.png",
+      "sha256": "878c62e9154b8325012cc130b424a82747d7c061fed388d877c231a1b05f94e3",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "no",
+      "id": "E05",
+      "file": "fastlane/screenshots/no/05_E05.png",
+      "sha256": "ba381bcf7d02f474637534d4c79817045cef72fea99fc6e5299134c7aae5637c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "no",
+      "id": "E06",
+      "file": "fastlane/screenshots/no/06_E06.png",
+      "sha256": "9cd4651bf925348d78d5a23d178a89bc454105e4f92718630951e2493fa4cb26",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "no",
+      "id": "E07",
+      "file": "fastlane/screenshots/no/07_E07.png",
+      "sha256": "3350b9d37c0dfbced8e232f48187249b625c38f9f9f366c97fc589a3ee3141bb",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "no",
+      "id": "E08",
+      "file": "fastlane/screenshots/no/08_E08.png",
+      "sha256": "1f8ff314d8cc2ec4283faf4d4d22e63bbb3c76329951aca5c7514a5562f67479",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "or-IN",
+      "id": "E01",
+      "file": "fastlane/screenshots/or-IN/01_E01.png",
+      "sha256": "8913beafbc65565f6288bbddf1583b4314d42617a92ad4102d7411b1b5ef5ed4",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "or-IN",
+      "id": "E02",
+      "file": "fastlane/screenshots/or-IN/02_E02.png",
+      "sha256": "3ae3c1eb7f8f3d9e9fe7426e174095c2419d5f908042f1525c2204ef35f4299c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "or-IN",
+      "id": "E03",
+      "file": "fastlane/screenshots/or-IN/03_E03.png",
+      "sha256": "1acec944ec91d0a2c3b1dc167b018b41c6691079d92cc4e2ffd6b23f8cfb037f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "or-IN",
+      "id": "E04",
+      "file": "fastlane/screenshots/or-IN/04_E04.png",
+      "sha256": "c4cfac8b16fe21046cd163c4ee57f783e8299b7353662f3982c7a03a3f0392c7",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "or-IN",
+      "id": "E05",
+      "file": "fastlane/screenshots/or-IN/05_E05.png",
+      "sha256": "c0e0fec75a3af4f9930fa6a04af96e0047da334cb1d27d3ca73aeac6edf82c93",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "or-IN",
+      "id": "E06",
+      "file": "fastlane/screenshots/or-IN/06_E06.png",
+      "sha256": "a30967e23bf8a1cad60e22cc46dc1a51f0fe74ac9b6c95db51659521cc9acfb2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "or-IN",
+      "id": "E07",
+      "file": "fastlane/screenshots/or-IN/07_E07.png",
+      "sha256": "891216a95a8b54fdccad28db39e662fda9a806b38c944ebe10a025c4d7abce4a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "or-IN",
+      "id": "E08",
+      "file": "fastlane/screenshots/or-IN/08_E08.png",
+      "sha256": "cb235fe19dfd1291c6f31efdb95080a99b9f86320b57ebdf1fd6744bd955df87",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pl",
+      "id": "E01",
+      "file": "fastlane/screenshots/pl/01_E01.png",
+      "sha256": "f41fdfd5f5be18bb91a258747f8b528db4597a9d534fb9f91d8826478168fc5d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pl",
+      "id": "E02",
+      "file": "fastlane/screenshots/pl/02_E02.png",
+      "sha256": "d6cca3e6e10d7eb2c4aceb588d5d91a08816a6457be3fffb0c4ddac824d37e24",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pl",
+      "id": "E03",
+      "file": "fastlane/screenshots/pl/03_E03.png",
+      "sha256": "8642409e04db245706d91dfc53fbb0dd1dbbe27b39dd743dd8eb1f34b5529fda",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pl",
+      "id": "E04",
+      "file": "fastlane/screenshots/pl/04_E04.png",
+      "sha256": "9b8047c9de88a94a239a6ca5b6861f57eb64c47786e3362894cff8e8ef364932",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pl",
+      "id": "E05",
+      "file": "fastlane/screenshots/pl/05_E05.png",
+      "sha256": "38209cbb492805f01b2ee33a3f1b3a2aca0acaa987117558173be344f91e92f1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pl",
+      "id": "E06",
+      "file": "fastlane/screenshots/pl/06_E06.png",
+      "sha256": "fc27fdedd1ea1459b69ec10620acdf1ae8a784f5b692a8516cc651fd984ad5a9",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pl",
+      "id": "E07",
+      "file": "fastlane/screenshots/pl/07_E07.png",
+      "sha256": "865395ff9acdb3607b931e4f90eaf9c9d1521f49668f7a82ae8ef2b18ee5e628",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pl",
+      "id": "E08",
+      "file": "fastlane/screenshots/pl/08_E08.png",
+      "sha256": "ea4016f237a128ba6b15336f4eb402d7e6dfd3d498fdc463b9a0b36da1408dd9",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-BR",
+      "id": "E01",
+      "file": "fastlane/screenshots/pt-BR/01_E01.png",
+      "sha256": "89e97af12cc5d681f1b7863ebc813e38de8c717c0da35b24571a008482064704",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-BR",
+      "id": "E02",
+      "file": "fastlane/screenshots/pt-BR/02_E02.png",
+      "sha256": "0ee69221d8536ebd2ff3dbd05e9a4e2fed7c6291c68dddaad77a9b9bc094fbc1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-BR",
+      "id": "E03",
+      "file": "fastlane/screenshots/pt-BR/03_E03.png",
+      "sha256": "787a0847b227ac6ba6cef0d168f5b84578564015a8ecd765107a6c8d51fc1d11",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-BR",
+      "id": "E04",
+      "file": "fastlane/screenshots/pt-BR/04_E04.png",
+      "sha256": "83f43eff24295cc03e304148fca05d65210cf05a654494dd839a6d9a8c4a4937",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-BR",
+      "id": "E05",
+      "file": "fastlane/screenshots/pt-BR/05_E05.png",
+      "sha256": "697bcfc9ae474b9366ad6541eb78e14bd1a37402a0a18d024944b007e086a919",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-BR",
+      "id": "E06",
+      "file": "fastlane/screenshots/pt-BR/06_E06.png",
+      "sha256": "38d46f2f1d3e1bf41ae5f208aa0360cd10559f345c8568cd0838d3c1c2b0f541",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-BR",
+      "id": "E07",
+      "file": "fastlane/screenshots/pt-BR/07_E07.png",
+      "sha256": "8e98d2fac458071607917c7250193bceac179a34946503a5501202de7d11ee2a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-BR",
+      "id": "E08",
+      "file": "fastlane/screenshots/pt-BR/08_E08.png",
+      "sha256": "b4197c8b08abbc157d5256ffb88a590ac77a911a28e34f9fa184272aaf1196d9",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-PT",
+      "id": "E01",
+      "file": "fastlane/screenshots/pt-PT/01_E01.png",
+      "sha256": "bd7a5d8f33400e2d5b0041f313dd33db2cd5aa326d6a73b53a485531d81c38a3",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-PT",
+      "id": "E02",
+      "file": "fastlane/screenshots/pt-PT/02_E02.png",
+      "sha256": "71bd5ea89d642aa991dff826f977a61ab4bcd661a14ad2fd6fbe5147fb7cce99",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-PT",
+      "id": "E03",
+      "file": "fastlane/screenshots/pt-PT/03_E03.png",
+      "sha256": "bd18afa3b4894dd7c60595a515cb38d96a9cc71a1e6c7aa8f92bcea82bf6079a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-PT",
+      "id": "E04",
+      "file": "fastlane/screenshots/pt-PT/04_E04.png",
+      "sha256": "610c77d62442f5444282f78895ec12d8c46d89869af247d8c2dc07e30d8630ee",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-PT",
+      "id": "E05",
+      "file": "fastlane/screenshots/pt-PT/05_E05.png",
+      "sha256": "5809be0656992b48872af638aa90cbdf538c109e24a50a13b6fd9e5552dd5cda",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-PT",
+      "id": "E06",
+      "file": "fastlane/screenshots/pt-PT/06_E06.png",
+      "sha256": "807d292c864c61b3aa6d213d4442aab263598d51c0f2f798ed5c20c5aad5ed44",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-PT",
+      "id": "E07",
+      "file": "fastlane/screenshots/pt-PT/07_E07.png",
+      "sha256": "8d48a5275c15e94ed5827b752d4d5d89b1b881d8ce46b1b92e3f24bd341b0633",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pt-PT",
+      "id": "E08",
+      "file": "fastlane/screenshots/pt-PT/08_E08.png",
+      "sha256": "60a30c0ece25bd03b09688bc468f322ce395c5d435d7957d17d88c4c2132eaa6",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pa-IN",
+      "id": "E01",
+      "file": "fastlane/screenshots/pa-IN/01_E01.png",
+      "sha256": "4976bd66fe257ed6c885599dc944a7aa36ba917e49224757c0b00aedf77da77d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pa-IN",
+      "id": "E02",
+      "file": "fastlane/screenshots/pa-IN/02_E02.png",
+      "sha256": "8c1c44355fe2f8ba6d43b8f4e229b41fa18316b87086494af32645c48122e59e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pa-IN",
+      "id": "E03",
+      "file": "fastlane/screenshots/pa-IN/03_E03.png",
+      "sha256": "a3e5006b6fc6e9b43101bc0bc3c8ff5995f2c23a72428513ce119e93e64b2eb5",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pa-IN",
+      "id": "E04",
+      "file": "fastlane/screenshots/pa-IN/04_E04.png",
+      "sha256": "e419bb60986534edb2c476895ee1634dc0904ac811965f4327c962225d479dc3",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pa-IN",
+      "id": "E05",
+      "file": "fastlane/screenshots/pa-IN/05_E05.png",
+      "sha256": "a242b89f9a091d7424f32696ce828c04bd9f961c26f496d64b81995ecad47844",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pa-IN",
+      "id": "E06",
+      "file": "fastlane/screenshots/pa-IN/06_E06.png",
+      "sha256": "d34d90ed3b0fe0ebf035cae711101f3aeabf60d7cfaf146e0b915404073c1611",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pa-IN",
+      "id": "E07",
+      "file": "fastlane/screenshots/pa-IN/07_E07.png",
+      "sha256": "1cdae4f4d089db20eeef96ead48ea2a811cd46d65dd1e6719fde92e76b40464c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "pa-IN",
+      "id": "E08",
+      "file": "fastlane/screenshots/pa-IN/08_E08.png",
+      "sha256": "8264e6d31e27504a1de0d2d24fadc3fb12c2db5ca1166f17af2bb1935b79fbac",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ro",
+      "id": "E01",
+      "file": "fastlane/screenshots/ro/01_E01.png",
+      "sha256": "8773f16f1e9b566df352030f951d421016ad5ce368e94f2a0ccc3b3f3eb8557a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ro",
+      "id": "E02",
+      "file": "fastlane/screenshots/ro/02_E02.png",
+      "sha256": "e9f1d6c8e21d23367e97d2c2fd07ef6995dde543d5c75fde9b98b4b184e984f0",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ro",
+      "id": "E03",
+      "file": "fastlane/screenshots/ro/03_E03.png",
+      "sha256": "11743c30b095948ee436130413c8c2760ff7651bd1a1a8b66f94c686e91dec5b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ro",
+      "id": "E04",
+      "file": "fastlane/screenshots/ro/04_E04.png",
+      "sha256": "592d1f211aad0e26562df65bdbb129fbf7cce31288a031b74207d08ab7e71078",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ro",
+      "id": "E05",
+      "file": "fastlane/screenshots/ro/05_E05.png",
+      "sha256": "d2c8ce0b9ce0a45f1ecb415faba3f15a2e05a72e3614fd59b797ce4866fa4426",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ro",
+      "id": "E06",
+      "file": "fastlane/screenshots/ro/06_E06.png",
+      "sha256": "8d567e67a89a0fdfa8b9c0f73c6179a9a0dbbea2b059220ca59fa196b5f5519a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ro",
+      "id": "E07",
+      "file": "fastlane/screenshots/ro/07_E07.png",
+      "sha256": "ef8fcecf803de7b2e26af9be55ff9ee671ebdbdc04474e5e15c62b94388b04a4",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ro",
+      "id": "E08",
+      "file": "fastlane/screenshots/ro/08_E08.png",
+      "sha256": "41ecf8d2d23d63ae346baf09ddb394bc4d20b63117d9ed3c00ce4de098861d4d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ru",
+      "id": "E01",
+      "file": "fastlane/screenshots/ru/01_E01.png",
+      "sha256": "266143123578988052b2d975dc8ba53a3bb72b466ba8487093aee4236270e971",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ru",
+      "id": "E02",
+      "file": "fastlane/screenshots/ru/02_E02.png",
+      "sha256": "58b2ac748bd670b475261fe6949af781bcacd9c73cafe6eed1747ada0005bfbe",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ru",
+      "id": "E03",
+      "file": "fastlane/screenshots/ru/03_E03.png",
+      "sha256": "1224f4c6a56f82fa573675e9463796dd329ea55026ebcfd2361ec8e649a85a98",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ru",
+      "id": "E04",
+      "file": "fastlane/screenshots/ru/04_E04.png",
+      "sha256": "06e5228ad01376db4463480462e18671a5e1094f491a63683fbcce4177a8d3c0",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ru",
+      "id": "E05",
+      "file": "fastlane/screenshots/ru/05_E05.png",
+      "sha256": "503b7808c82a764cf0564455ac2c546419a06b06c1c51575dd0e3b0fab62c12f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ru",
+      "id": "E06",
+      "file": "fastlane/screenshots/ru/06_E06.png",
+      "sha256": "d26a5edc5aa6f25ecea175c60b16c1d0d2117287d983f95d1a7d9ee4eb80895a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ru",
+      "id": "E07",
+      "file": "fastlane/screenshots/ru/07_E07.png",
+      "sha256": "0f096524cd2294f094b55f89de5eabf8b3da3c7057b1e96dd385eebbf34e33cd",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ru",
+      "id": "E08",
+      "file": "fastlane/screenshots/ru/08_E08.png",
+      "sha256": "f353813341be23474938953a0a962470fba932b6a2c6159160e45ab42f411b82",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sk",
+      "id": "E01",
+      "file": "fastlane/screenshots/sk/01_E01.png",
+      "sha256": "057ca52b4ec5df89ef61e00cc4032e3f40e243dae22276045d175b72393338a3",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sk",
+      "id": "E02",
+      "file": "fastlane/screenshots/sk/02_E02.png",
+      "sha256": "8735651e5b370e26bb0d421bd49d3810b1f70a3ab1e70992a4fe749935dbaf27",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sk",
+      "id": "E03",
+      "file": "fastlane/screenshots/sk/03_E03.png",
+      "sha256": "c782238482b9a7bbd410ef80e1c2836aadd565405468ed684ef44dd4f04cf8dc",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sk",
+      "id": "E04",
+      "file": "fastlane/screenshots/sk/04_E04.png",
+      "sha256": "a5a71a466ee10d40ab458bb4b544efa5e9804cc195070d8319cd0d06d1e0d556",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sk",
+      "id": "E05",
+      "file": "fastlane/screenshots/sk/05_E05.png",
+      "sha256": "c4ac4c8ef2c2abd93ec8a0e8b5704280a538c5814f2fe3033da1dfdb43ba813a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sk",
+      "id": "E06",
+      "file": "fastlane/screenshots/sk/06_E06.png",
+      "sha256": "010b21b713800b8fba112f3764e74061a24c485e782669a50cdccfb9c6f7d815",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sk",
+      "id": "E07",
+      "file": "fastlane/screenshots/sk/07_E07.png",
+      "sha256": "3c2c5b6b0acf5e88976c8040e1741aa7215593e46935e7719148353e1d872b9f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sk",
+      "id": "E08",
+      "file": "fastlane/screenshots/sk/08_E08.png",
+      "sha256": "ffffe34ce880be0db4370fd659a554580fe367b659537860c756b752015534d2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sl-SI",
+      "id": "E01",
+      "file": "fastlane/screenshots/sl-SI/01_E01.png",
+      "sha256": "0433a7d323167f1757d66e51784f035b17b68ece587a6375fd48cfd5f4ca6047",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sl-SI",
+      "id": "E02",
+      "file": "fastlane/screenshots/sl-SI/02_E02.png",
+      "sha256": "5814358d4002788e6b077dfb0b319288ef6ac7d67a438094a1d831c640fd6428",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sl-SI",
+      "id": "E03",
+      "file": "fastlane/screenshots/sl-SI/03_E03.png",
+      "sha256": "63828337ccacea9448c097d51e55849f50fc2c9052bf7643ce7065d7cd1b9835",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sl-SI",
+      "id": "E04",
+      "file": "fastlane/screenshots/sl-SI/04_E04.png",
+      "sha256": "2230c5d4875fd842bd1e9337a6b2da791c8b1a0fc41c77db5ffab59b4c021bfd",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sl-SI",
+      "id": "E05",
+      "file": "fastlane/screenshots/sl-SI/05_E05.png",
+      "sha256": "7892937eaf251cdb031a914a20bc9da790428ecdd0ab777e229ae54b9212635a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sl-SI",
+      "id": "E06",
+      "file": "fastlane/screenshots/sl-SI/06_E06.png",
+      "sha256": "305f7760714d3042ad3046ce6f8c9b6757ed1ff7a346236018ed12d6e1e6b721",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sl-SI",
+      "id": "E07",
+      "file": "fastlane/screenshots/sl-SI/07_E07.png",
+      "sha256": "a961919e210ae5cb1d72635ff255cdd1ff8113c51145272a1355f1d314972f9d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sl-SI",
+      "id": "E08",
+      "file": "fastlane/screenshots/sl-SI/08_E08.png",
+      "sha256": "f67bc0822b7309193a5e8f4e36799cb4e7ab0dc7161e6bc49722bceefa0ebf4e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-MX",
+      "id": "E01",
+      "file": "fastlane/screenshots/es-MX/01_E01.png",
+      "sha256": "970d9834da2e5fc64dd50050b2acbdf4a920a88468564ec1610348eb506af7d1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-MX",
+      "id": "E02",
+      "file": "fastlane/screenshots/es-MX/02_E02.png",
+      "sha256": "52c5f32478ee337d82d29020e7f3d55fd4f3ebb7363528f741dd22c6882a7479",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-MX",
+      "id": "E03",
+      "file": "fastlane/screenshots/es-MX/03_E03.png",
+      "sha256": "6c6d89025c12d376bc6d4ff32ab48f1d693aa67cea16d0686fdda67b11752952",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-MX",
+      "id": "E04",
+      "file": "fastlane/screenshots/es-MX/04_E04.png",
+      "sha256": "9bdd636483c73429337e683cefb05e486b60332e8219f7fd4d006eefbb98718f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-MX",
+      "id": "E05",
+      "file": "fastlane/screenshots/es-MX/05_E05.png",
+      "sha256": "08129a1bdd8d79f503faba1fcf3669198a90db73c3620f04e45adef6038c7cc3",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-MX",
+      "id": "E06",
+      "file": "fastlane/screenshots/es-MX/06_E06.png",
+      "sha256": "902c07355bec2185f3b76621eee7d7c9c4cfa3ca32035dbe508ad5f8264e345b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-MX",
+      "id": "E07",
+      "file": "fastlane/screenshots/es-MX/07_E07.png",
+      "sha256": "21efaf566f320fc552dac0cec6920edb57ed0584e863f04ae4b23aeaa8cd1096",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-MX",
+      "id": "E08",
+      "file": "fastlane/screenshots/es-MX/08_E08.png",
+      "sha256": "cb1fda27f5146c6ba7a2837c33a36af80008390838707aa05810c54d589a6f44",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-ES",
+      "id": "E01",
+      "file": "fastlane/screenshots/es-ES/01_E01.png",
+      "sha256": "6550f1ef88592e7f163e1b90bb0971cca9fcfcb47a1eb010b7d74018962d75b9",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-ES",
+      "id": "E02",
+      "file": "fastlane/screenshots/es-ES/02_E02.png",
+      "sha256": "b6ea221eed228610a1942ffdbc1fb3d74c60b9c5784cfbe59ffa4b5bb1854e58",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-ES",
+      "id": "E03",
+      "file": "fastlane/screenshots/es-ES/03_E03.png",
+      "sha256": "693f1cbda37845f163f43dbee856d7a5128af61ade747c2aa941a12dec0bc1d9",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-ES",
+      "id": "E04",
+      "file": "fastlane/screenshots/es-ES/04_E04.png",
+      "sha256": "5177187dfaa4a8c3aeb03291a807e57251cf3cb958c687aa2ded14b56956ae16",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-ES",
+      "id": "E05",
+      "file": "fastlane/screenshots/es-ES/05_E05.png",
+      "sha256": "4103a5873a5a26e6d8557a28ceb087e3dc882f6f20c44fc7061b23433a62e8c2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-ES",
+      "id": "E06",
+      "file": "fastlane/screenshots/es-ES/06_E06.png",
+      "sha256": "902c07355bec2185f3b76621eee7d7c9c4cfa3ca32035dbe508ad5f8264e345b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-ES",
+      "id": "E07",
+      "file": "fastlane/screenshots/es-ES/07_E07.png",
+      "sha256": "21efaf566f320fc552dac0cec6920edb57ed0584e863f04ae4b23aeaa8cd1096",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "es-ES",
+      "id": "E08",
+      "file": "fastlane/screenshots/es-ES/08_E08.png",
+      "sha256": "fe424c243887e39f8698663646433819630ae7c2a2035af480a36f4b88c9c730",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sv",
+      "id": "E01",
+      "file": "fastlane/screenshots/sv/01_E01.png",
+      "sha256": "2999ad9fbebc09456e20cd6286357581fc995918e90e8427ce64d52d6e3be5a0",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sv",
+      "id": "E02",
+      "file": "fastlane/screenshots/sv/02_E02.png",
+      "sha256": "dde52e1a191550d580e062c10f6969d9735449145279fcf66f45a547df83515c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sv",
+      "id": "E03",
+      "file": "fastlane/screenshots/sv/03_E03.png",
+      "sha256": "4fb752a4d5a4f9ae54789b99b33455370311962fd05840ff181b53e0ef9165e3",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sv",
+      "id": "E04",
+      "file": "fastlane/screenshots/sv/04_E04.png",
+      "sha256": "fa40e2932f427f94dfb5b0bf243d3638a4ad1a60623b4a22097e89c0581619d5",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sv",
+      "id": "E05",
+      "file": "fastlane/screenshots/sv/05_E05.png",
+      "sha256": "aab4be3391d15fc706bca2c7aab973de104583d4a5375cbda56719fe3dcf21eb",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sv",
+      "id": "E06",
+      "file": "fastlane/screenshots/sv/06_E06.png",
+      "sha256": "fa708a756d0caba8ebd62e50d3e6e98bc323ae4d87e2a1f3763b566c7c47284b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sv",
+      "id": "E07",
+      "file": "fastlane/screenshots/sv/07_E07.png",
+      "sha256": "4bd21b13ddf0de20fd00674f22e03f89968f719819e76ccf95a8bab2f04a5a63",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "sv",
+      "id": "E08",
+      "file": "fastlane/screenshots/sv/08_E08.png",
+      "sha256": "788547fb6c434823fdbdacf6134cb840547cb42e5c1ad1c192a90bee539fabbd",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ta-IN",
+      "id": "E01",
+      "file": "fastlane/screenshots/ta-IN/01_E01.png",
+      "sha256": "42a5b993187b5e5ba4177b4295e4541fb9732029a06da19d5b2104885d79f299",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ta-IN",
+      "id": "E02",
+      "file": "fastlane/screenshots/ta-IN/02_E02.png",
+      "sha256": "8b8dd6b117698a93e48007ee902c7445c2b09aa53522982d81844e734d4d656e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ta-IN",
+      "id": "E03",
+      "file": "fastlane/screenshots/ta-IN/03_E03.png",
+      "sha256": "ff688922dfc954dc968c2f5f3fc2265b77b3a78124e5d6b6a0538fa9e26e6835",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ta-IN",
+      "id": "E04",
+      "file": "fastlane/screenshots/ta-IN/04_E04.png",
+      "sha256": "a80522c9e5003489161f80379cda9fa813373acce99a0eb070a8f9b6c9129e2d",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ta-IN",
+      "id": "E05",
+      "file": "fastlane/screenshots/ta-IN/05_E05.png",
+      "sha256": "8e25c3ec2eeeb189a43f7f742dbdc2e80073111b7400adb6bfa0ec1d1e9bec45",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ta-IN",
+      "id": "E06",
+      "file": "fastlane/screenshots/ta-IN/06_E06.png",
+      "sha256": "c099d372899ca9eef64d017eb1bd7189814a7131382cc5e8cb50aea0c9a26751",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ta-IN",
+      "id": "E07",
+      "file": "fastlane/screenshots/ta-IN/07_E07.png",
+      "sha256": "0e299a5a7bde7d83aa5b76f70ac6d106ef28ca9d43015c4a474c3fa45b8b7b3f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ta-IN",
+      "id": "E08",
+      "file": "fastlane/screenshots/ta-IN/08_E08.png",
+      "sha256": "ea707d80c3c36a8559e29282308a611f2f4b3a0eaf2f23446d71c9b577cd45b5",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "te-IN",
+      "id": "E01",
+      "file": "fastlane/screenshots/te-IN/01_E01.png",
+      "sha256": "ce0af9ddd22ba185fe44a04a77eba9f1404a8afc108b2e27f66230455af8d6ae",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "te-IN",
+      "id": "E02",
+      "file": "fastlane/screenshots/te-IN/02_E02.png",
+      "sha256": "93f00ab15ecbb3878ba2f31fbb3f74e2cf1b24699e0a1425425d9574890b34c0",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "te-IN",
+      "id": "E03",
+      "file": "fastlane/screenshots/te-IN/03_E03.png",
+      "sha256": "f95107c6d624dbef0a1773b191bab07f76bd9f488efa945cee49c9a7c65140f9",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "te-IN",
+      "id": "E04",
+      "file": "fastlane/screenshots/te-IN/04_E04.png",
+      "sha256": "6e3e488d7be06a9b7203291b7a849582757fac7693be8c8d695689fad93c5ec5",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "te-IN",
+      "id": "E05",
+      "file": "fastlane/screenshots/te-IN/05_E05.png",
+      "sha256": "e70df772726eb20392dd96a1719e6876b2bf6e1c246e627f7c6c530619a84752",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "te-IN",
+      "id": "E06",
+      "file": "fastlane/screenshots/te-IN/06_E06.png",
+      "sha256": "77f814c307aa01d235471759939ebec97766b1142afd5ee47d541ba2d7746bc6",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "te-IN",
+      "id": "E07",
+      "file": "fastlane/screenshots/te-IN/07_E07.png",
+      "sha256": "c14d04a005b29ed90c04dfc6ca23291ea5aa06fa6f84dedaa57a0c2a2952ab53",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "te-IN",
+      "id": "E08",
+      "file": "fastlane/screenshots/te-IN/08_E08.png",
+      "sha256": "05ebf7bfb3c09bc0f4266431f4ef1f583a781d29c961f7adba8441326f7e1a75",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "th",
+      "id": "E01",
+      "file": "fastlane/screenshots/th/01_E01.png",
+      "sha256": "634f8e527765e48c87140135d6568d95b5eeaeee17d58fe5785bd71022f70ced",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "th",
+      "id": "E02",
+      "file": "fastlane/screenshots/th/02_E02.png",
+      "sha256": "6af8b0f9a27a46a4782b91101c80b093cc3927b30ab3deeb78d9c77bfa673c72",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "th",
+      "id": "E03",
+      "file": "fastlane/screenshots/th/03_E03.png",
+      "sha256": "1baf55534ba43bd0e6c9cc788b075dffb67a9301d2a88435b4456c68af9d98b5",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "th",
+      "id": "E04",
+      "file": "fastlane/screenshots/th/04_E04.png",
+      "sha256": "80801972360b2c0194d6dcd83313a1c76198670be4b62be699e946167757b2c2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "th",
+      "id": "E05",
+      "file": "fastlane/screenshots/th/05_E05.png",
+      "sha256": "59b4719c5d6c8b53aef0f7e7c5cd09ae8d85fa1d81a278b785dd7b4f08e45a8f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "th",
+      "id": "E06",
+      "file": "fastlane/screenshots/th/06_E06.png",
+      "sha256": "87f2e1c0bbcb8c4e376b1f20aa2600989129ba8f681a43b5165df1732cd2d936",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "th",
+      "id": "E07",
+      "file": "fastlane/screenshots/th/07_E07.png",
+      "sha256": "cd45c4bcd96615776ff26100a062ac620c706b72e16cfaf20fd5ae10b0571a5b",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "th",
+      "id": "E08",
+      "file": "fastlane/screenshots/th/08_E08.png",
+      "sha256": "fbd00c2157a3a8203559334860986f2ca42b2953d092cf94ec1c41ff050629b2",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "tr",
+      "id": "E01",
+      "file": "fastlane/screenshots/tr/01_E01.png",
+      "sha256": "40089199e9f9de9e1a4167ab2cf2b9bdfacc1d5559690778916c6f76406c4caf",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "tr",
+      "id": "E02",
+      "file": "fastlane/screenshots/tr/02_E02.png",
+      "sha256": "6edc0d7e689172aeee4fd6481c968979a4138b72327d8123a480cf693256ad82",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "tr",
+      "id": "E03",
+      "file": "fastlane/screenshots/tr/03_E03.png",
+      "sha256": "7db91395ca615b5d4758fb4e2b43fdba4f2eb562ae894be5b49ccd8e1053d715",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "tr",
+      "id": "E04",
+      "file": "fastlane/screenshots/tr/04_E04.png",
+      "sha256": "8e69df68cbe8fb7eeca97800a0acc68f66b221e2b8ce46df68ec4715ec01a905",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "tr",
+      "id": "E05",
+      "file": "fastlane/screenshots/tr/05_E05.png",
+      "sha256": "1009c795deba96e14c258dbd0c28cb7c0bd3bb177c98b0c8fcbc61e574990979",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "tr",
+      "id": "E06",
+      "file": "fastlane/screenshots/tr/06_E06.png",
+      "sha256": "032e9336ee0bc4183964484bce60a2ecc46f0ed2211a17c572ddd84a01e0e2fc",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "tr",
+      "id": "E07",
+      "file": "fastlane/screenshots/tr/07_E07.png",
+      "sha256": "85a64fdf1c42d959cf01a06c7a77ccde810976945df5cfede4c30d721903a0b1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "tr",
+      "id": "E08",
+      "file": "fastlane/screenshots/tr/08_E08.png",
+      "sha256": "07ce8eb2c3b0b69e2647bfbd72b651d0141ea8a7830a4ad5c9520c01b72496bb",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "uk",
+      "id": "E01",
+      "file": "fastlane/screenshots/uk/01_E01.png",
+      "sha256": "6082ad305d28b32ff5939428ae72a81066f38a0047a602828dc9dfc41e63eb0a",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "uk",
+      "id": "E02",
+      "file": "fastlane/screenshots/uk/02_E02.png",
+      "sha256": "70b2773c373218e8a9b7f39c23e6b7a0631a388510c69a59e43febd8d53c4305",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "uk",
+      "id": "E03",
+      "file": "fastlane/screenshots/uk/03_E03.png",
+      "sha256": "684fe83f50dd236ceb7cbf83dfea7cba06279bf23247dd7b93f71bfa0ec8de14",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "uk",
+      "id": "E04",
+      "file": "fastlane/screenshots/uk/04_E04.png",
+      "sha256": "a977c5c803072887a1b4c52b5c9b6771490f5a1a0413ad8da684e5fc4b3b3f09",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "uk",
+      "id": "E05",
+      "file": "fastlane/screenshots/uk/05_E05.png",
+      "sha256": "c248a9a3dd6ab79394ae80f66f5205de2dfad72713e4ec3fef7bd3daf0c68d87",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "uk",
+      "id": "E06",
+      "file": "fastlane/screenshots/uk/06_E06.png",
+      "sha256": "901f2954d6cefd9b21028d3dde30bf8121989a27b5f57a0d3a281b63eac95b6e",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "uk",
+      "id": "E07",
+      "file": "fastlane/screenshots/uk/07_E07.png",
+      "sha256": "bdd81975dd0a32c7040d59d679285881c02fa558504c96bb8cb7b5bc3ec2d1c6",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "uk",
+      "id": "E08",
+      "file": "fastlane/screenshots/uk/08_E08.png",
+      "sha256": "184206fdc7123248b565dea851db1a969ced256f3c5699b7bd383d3bb35d2f7c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ur-PK",
+      "id": "E01",
+      "file": "fastlane/screenshots/ur-PK/01_E01.png",
+      "sha256": "64f080c20cfda334fee0bd0ca27082c5a21cf714b5b94ffdf3d96e56fe1321c0",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ur-PK",
+      "id": "E02",
+      "file": "fastlane/screenshots/ur-PK/02_E02.png",
+      "sha256": "c9bf5a637fde05fee7e2ef05745d1c51c3fa116bc4bbfb604d0fe8b579deebcf",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ur-PK",
+      "id": "E03",
+      "file": "fastlane/screenshots/ur-PK/03_E03.png",
+      "sha256": "7907706c8c37cc78d538a1172622f9f6866f996f564110731020f7b29243cf26",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ur-PK",
+      "id": "E04",
+      "file": "fastlane/screenshots/ur-PK/04_E04.png",
+      "sha256": "be2cbe8f663abd54cec6267fffe3ed681897f494d27778adbb96ac417942a1cd",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ur-PK",
+      "id": "E05",
+      "file": "fastlane/screenshots/ur-PK/05_E05.png",
+      "sha256": "0fe8d502178e38aaa7a225e9220d33faac1232ea4063774c22b87531e0544b39",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ur-PK",
+      "id": "E06",
+      "file": "fastlane/screenshots/ur-PK/06_E06.png",
+      "sha256": "bc9b471ab1b14a4dc3aa4f7e5ef2eb7f6e5842289527f8a8a612922c2334ddbd",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ur-PK",
+      "id": "E07",
+      "file": "fastlane/screenshots/ur-PK/07_E07.png",
+      "sha256": "29ddff715cf7719680918a6b6f8e0031db375dbbfc4cbae3997be58ea977272f",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "ur-PK",
+      "id": "E08",
+      "file": "fastlane/screenshots/ur-PK/08_E08.png",
+      "sha256": "ac4c778c679d3062346010091eb888ca17e229245d0ad7dee34f8fa9d52ee9e1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "vi",
+      "id": "E01",
+      "file": "fastlane/screenshots/vi/01_E01.png",
+      "sha256": "605e79fcddf9a0820dcda346842cca0be35cad4d1349c97732b1db8ecd674050",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "vi",
+      "id": "E02",
+      "file": "fastlane/screenshots/vi/02_E02.png",
+      "sha256": "be3a0439bd9285f95d11381769181fdd6c4ec19ca3769bd2e8d34ea0b12084e9",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "vi",
+      "id": "E03",
+      "file": "fastlane/screenshots/vi/03_E03.png",
+      "sha256": "f03178fed1a5213ffff44ee2b6cb55ec53becd8a9e026630abba5a3e1ff46d6c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "vi",
+      "id": "E04",
+      "file": "fastlane/screenshots/vi/04_E04.png",
+      "sha256": "5cba9b245b41f80db300851fd7e04d2e91c3e84d240498afdcfd4ef28fc3b3ae",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "vi",
+      "id": "E05",
+      "file": "fastlane/screenshots/vi/05_E05.png",
+      "sha256": "8b01bbc5210ea3ab223f30aafcddf947b6b622a0e05f629d85aed99cf9612fe1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "vi",
+      "id": "E06",
+      "file": "fastlane/screenshots/vi/06_E06.png",
+      "sha256": "99df882dbbbb0c2a148d170694376074de18065c153a37f48219cd2c0c2a3be7",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "vi",
+      "id": "E07",
+      "file": "fastlane/screenshots/vi/07_E07.png",
+      "sha256": "437420bebeed7d96d72022e20fa9c029e6fb033e3e185f2bb710d06711344671",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
+      "color": "RGB",
+      "alpha": false
+    },
+    {
+      "locale": "vi",
+      "id": "E08",
+      "file": "fastlane/screenshots/vi/08_E08.png",
+      "sha256": "ebacca71de655a8b450c9d651752c9b50a8eb699704ef242baf88983f50885f4",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "displayType": "APP_IPHONE_67",
       "color": "RGB",
       "alpha": false
     }

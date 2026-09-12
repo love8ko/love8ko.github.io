@@ -1,0 +1,618 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "te-IN",
+  "label": "తెలుగు",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "8 అవసరాలు, 8 స్పష్టమైన దృశ్యాలు",
+      "description": "ప్రాయోగిక ఆంగ్ల దిశ మరియు స్థానిక సమాచారం కోసం ఎంపిక చేయబడిన ఫోటోలు",
+      "frames": [
+        {
+          "headline": "గుండెమంట మీకు ఉంటుందా?",
+          "headlineLines": [
+            "గుండెమంట",
+            "మీకు ఉంటుందా?"
+          ],
+          "accentLine": 1,
+          "subline": "మీ ప్రశ్న. ఒక స్పష్టమైన కొత్త పరిస్థితి.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "అనుభవం కోసం ఒక పరిపాటి",
+          "ui": {
+            "title": "AI వివరణ",
+            "label": "AI వివరణ · ఉదాహరణ",
+            "focus": "రేపు రాత్రి భోజనాన్ని త్వరగా ముగించడానికి ప్రయత్నించండి.",
+            "explanation": "ఆలస్యంగా భోజనం చేసి వెంటనే పడుకోవడం ప్రభావం చూపవచ్చు...",
+            "disclaimer": "నమూనా డేటా · రోగ నిర్ధారణ కాదు",
+            "question": "రాత్రిపూట నా గుండెమంట ఎందుకు పెరుగుతుంది?",
+            "context": [
+              [
+                "రాత్రి భోజనం",
+                "రాత్రి 9:30"
+              ],
+              [
+                "పడుకోవడం",
+                "రాత్రి 10:15"
+              ]
+            ],
+            "contextDate": "సెప్ 8 · మీ సాయంత్రం"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/te-IN/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "పరిమాణం",
+            "footer": "ప్రదర్శన విధానం · డిజైన్ కాంసెప్ట్",
+            "dishTitle": "గ్రిల్డ్ సాల్మన్",
+            "dishDescription": "లెమన్ బటర్ సాస్",
+            "dishCaption": "ఉదాహరణ అర్డర్",
+            "dishAlt": "రైస్, గ్రీన్ బీన్స్ మరియు విడిగా సాస్‌తో గ్రిల్డ్ సాల్మన్",
+            "sourceLabel": "↗ NIDDK · రిఫ్లక్స్ గైడ్",
+            "anatomyCaption": "రిఫ్లక్స్ వివరణ"
+          },
+          "locale": "te-IN",
+          "lang": "te-IN",
+          "dir": "ltr"
+        },
+        {
+          "headline": "రిఫ్లక్స్ ఉన్నప్పుడు నేను ఏమి ఆర్డర్ చేయవచ్చు?",
+          "headlineLines": [
+            "రిఫ్లక్స్",
+            "ఉన్నప్పుడు నేను ఏమి",
+            "ఆర్డర్ చేయవచ్చు?"
+          ],
+          "accentLine": 2,
+          "subline": "అర్థం చేసుకోవడానికి మీ మెనును ముందు చూచుకోండి.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "ఒక మార్పు దృష్టికోణం",
+          "ui": {
+            "title": "మెను పరీక్ష",
+            "label": "AI వివరణ · ఉదాహరణ",
+            "focus": "సాస్ విడిగా అడగండి అని అడుగుచేయండి.",
+            "explanation": "ప్రకృతి మరియు ప్రాయుక్త స్థాయి స్పర్ధలు కొన్ని మందికి సమస్య చేస్తాయి. మీ స్వంత సమాధానం వ్యత్యాసం చేయవచ్చు.",
+            "disclaimer": "నమూనా డేటా · రోగ నిర్ధారణ కాదు"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/te-IN/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "te-IN",
+          "lang": "te-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "పరిమాణం",
+            "footer": "ప్రదర్శన విధానం · డిజైన్ కాంసెప్ట్",
+            "dishTitle": "గ్రిల్డ్ సాల్మన్",
+            "dishDescription": "లెమన్ బటర్ సాస్",
+            "dishCaption": "ఉదాహరణ అర్డర్",
+            "dishAlt": "రైస్, గ్రీన్ బీన్స్ మరియు విడిగా సాస్‌తో గ్రిల్డ్ సాల్మన్",
+            "sourceLabel": "↗ NIDDK · రిఫ్లక్స్ గైడ్"
+          }
+        },
+        {
+          "headline": "మీ పరీక్ష ఫలితాలను అర్థం చేసుకోండి.",
+          "headlineLines": [
+            "మీ పరీక్ష ఫలితాలను",
+            "అర్థం చేసుకోండి."
+          ],
+          "accentLine": 1,
+          "subline": "PDF అప్లోడ్ చేయండి. AI వివరాలను పొందండి.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "సులభ అంగీకారంలో",
+          "ui": {
+            "title": "AI వివరణ",
+            "label": "AI వివరణ · ఉదాహరణ",
+            "focus": "ఆహార వాహిక పొర విరుద్ధంగా ఉండే ప్రమాదం.",
+            "explanation": "మీ రిపోర్టులో ఈసోఫాగైటిస్ ఉంది. మీ వైద్య పరిస్థితి దీని వివరాలను అర్థం చేసుకోండి.",
+            "disclaimer": "లిఖితపూర్వక ఫలితం వివరిస్తుంది · రోగ నిర్ధారణ కాదు"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/te-IN/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "పరీక్షా_ఫలితాలు.pdf",
+            "format": "PDF",
+            "type": "అంచు పొర వ్యవస్థ",
+            "findingLabel": "ఫలితం",
+            "finding": "ఈసోఫాగైటిస్",
+            "date": "ప్రత్యయోగిక రిపోర్ట్ · ఉదాహరణ"
+          },
+          "copy": {
+            "example": "పరిమాణం",
+            "footer": "ప్రదర్శన విధానం · డిజైన్ కాంసెప్ట్",
+            "dishTitle": "గ్రిల్డ్ సాల్మన్",
+            "dishDescription": "లెమన్ బటర్ సాస్",
+            "dishCaption": "ఉదాహరణ అర్డర్",
+            "dishAlt": "రైస్, గ్రీన్ బీన్స్ మరియు విడిగా సాస్‌తో గ్రిల్డ్ సాల్మన్",
+            "sourceLabel": "↗ NIDDK · రిఫ్లక్స్ గైడ్",
+            "paperNote": "మీ అప్లోడ్ చేసిన రిపోర్ట్",
+            "reportConnector": "PDF → AI",
+            "reportLead": "మీ రిపోర్ట్ చెపుతుంది"
+          },
+          "locale": "te-IN",
+          "lang": "te-IN",
+          "dir": "ltr"
+        },
+        {
+          "headline": "ఈ రాత్రిని సాదాంధ్రంగా ప్రారంభించండి.",
+          "headlineLines": [
+            "ఈ రాత్రిని సాదాంధ్రంగా",
+            "ప్రారంభించండి."
+          ],
+          "accentLine": 1,
+          "subline": "ఒక పరిమితమైన చర్య ఎంచుకోండి. మీ సమయాన్ని నిర్ణయించండి.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "మీ ఎంచుకున్న రాత్రి చర్య",
+          "ui": {
+            "title": "ఈ రోజు ప్లాన్",
+            "label": "మీరు సేవ్ చేసిన గమనికలు · ఉదాహరణ",
+            "focus": "రాత్రి భోజనాన్ని 7:00 PM కల్లా పూర్తి చేయండి.",
+            "explanation": "మీ ఎంచుకున్న బేడీ సమయం 10:00 PM. ఈ ప్లాన్‌లో 3 గంటలు భోజన తర్వాత లోపల ఉంటాయి, ఇది రాత్రి లక్షణాలను సహాయపడుతుంది.",
+            "disclaimer": "నమూనా డేటా · రోగ నిర్ధారణ కాదు",
+            "context": [
+              [
+                "భోజనం పూర్తి చేయండి",
+                "19:00"
+              ],
+              [
+                "బేడీ సమయం",
+                "22:00"
+              ]
+            ],
+            "contextDate": "సెప్టెమ్బర్ 10 · ఈ రోజు",
+            "cta": "✓ రిమైండర్ సెట్ చేయబడింది · 6:30 PM"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/te-IN/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "te-IN",
+          "lang": "te-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "పరిమాణం",
+            "footer": "ప్రదర్శన విధానం · డిజైన్ కాంసెప్ట్",
+            "dishTitle": "గ్రిల్డ్ సాల్మన్",
+            "dishDescription": "లెమన్ బటర్ సాస్",
+            "dishCaption": "ఉదాహరణ అర్డర్",
+            "dishAlt": "రైస్, గ్రీన్ బీన్స్ మరియు విడిగా సాస్‌తో గ్రిల్డ్ సాల్మన్",
+            "sourceLabel": "↗ NIDDK · రిఫ్లక్స్ గైడ్"
+          }
+        },
+        {
+          "headline": "మీ చికిత్స నోట్లను ఒకే స్థానంలో ఉంచండి.",
+          "headlineLines": [
+            "మీ చికిత్స నోట్లను",
+            "ఒకే స్థానంలో ఉంచండి."
+          ],
+          "accentLine": 1,
+          "subline": "మీరు తీసుకున్నది మరియు అనుభవించినది గుర్తుచేయండి.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "మీ సేవ్ చేసిన నోట్",
+          "ui": {
+            "title": "చికిత్స నోట్లు",
+            "label": "మీరు సేవ్ చేసిన గమనికలు · ఉదాహరణ",
+            "focus": "మందు తీసుకున్నారు. రాత్రి గుండెమంట గుర్తు చేయబడింది.",
+            "explanation": "మీ స్వంత ప్రయత్నాలు, ఒకే వ్యవస్థలో ఉన్నాయి. ఈ నోట్లు చికిత్స ఎలా పనిచేస్తుందో గుర్తు చేయవు.",
+            "disclaimer": "నమూనా డేటా · రోగ నిర్ధారణ కాదు",
+            "context": [
+              [
+                "8:00 రోజు",
+                "మందు తీసుకున్నారు"
+              ],
+              [
+                "రాత్రి 9:15",
+                "గుండెమంట గుర్తు చేయబడింది"
+              ]
+            ],
+            "contextDate": "సెప్టెమ్బర్ 9 · మీ ప్రయత్నాలు",
+            "cta": "✓ నోట్ సేవ్ చేయబడింది"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/te-IN/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "te-IN",
+          "lang": "te-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "పరిమాణం",
+            "footer": "ప్రదర్శన విధానం · డిజైన్ కాంసెప్ట్",
+            "dishTitle": "గ్రిల్డ్ సాల్మన్",
+            "dishDescription": "లెమన్ బటర్ సాస్",
+            "dishCaption": "ఉదాహరణ అర్డర్",
+            "dishAlt": "రైస్, గ్రీన్ బీన్స్ మరియు విడిగా సాస్‌తో గ్రిల్డ్ సాల్మన్",
+            "sourceLabel": "↗ NIDDK · రిఫ్లక్స్ గైడ్"
+          }
+        },
+        {
+          "headline": "గొంతు లేదా స్వరం మీకు ఇబ్బంది కలిగిస్తోందా?",
+          "headlineLines": [
+            "గొంతు లేదా స్వరం మీకు",
+            "ఇబ్బంది కలిగిస్తోందా?"
+          ],
+          "accentLine": 1,
+          "subline": "మీ గుర్తు చేయవచ్చు వాటిని నిర్వహించండి.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "మీ వ్యాక్స్ నోట్లు",
+          "ui": {
+            "title": "గొంతు మరియు వోయిస్",
+            "label": "మీరు సేవ్ చేసిన గమనికలు · ఉదాహరణ",
+            "focus": "బొంగురు స్వరం. గొంతు సవరించుకోవడం. గమనికలు సేవ్ అయ్యాయి.",
+            "explanation": "మీరు ఎద్దుపు చేసుకునే వాటిని మరియు వారి సమయాన్ని నిర్వహించండి. గొంతు మరియు వోయిస్ లక్షణాలు వెంటనే కారణాలను కలిగి ఉంటాయి; ఈ నోట్లు రోగ నిర్ధారణ కు సంబంధించినవు.",
+            "disclaimer": "నమూనా డేటా · రోగ నిర్ధారణ కాదు",
+            "context": [
+              [
+                "స్వరం",
+                "బొంగురు"
+              ],
+              [
+                "గొంతు",
+                "సవరించుకోవడం"
+              ]
+            ],
+            "contextDate": "సెప్ 10 · పని ముందు",
+            "cta": "✓ నోట్లు సేవించబడుస్తాయి"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/te-IN/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "te-IN",
+          "lang": "te-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "పరిమాణం",
+            "footer": "ప్రదర్శన విధానం · డిజైన్ కాంసెప్ట్",
+            "dishTitle": "గ్రిల్డ్ సాల్మన్",
+            "dishDescription": "లెమన్ బటర్ సాస్",
+            "dishCaption": "ఉదాహరణ అర్డర్",
+            "dishAlt": "రైస్, గ్రీన్ బీన్స్ మరియు విడిగా సాస్‌తో గ్రిల్డ్ సాల్మన్",
+            "sourceLabel": "↗ NIDDK · రిఫ్లక్స్ గైడ్"
+          }
+        },
+        {
+          "headline": "ప్రతి వ్యక్తి మరియు లక్షణాలు. ఒక సమయ వ్యవస్థ.",
+          "headlineLines": [
+            "ప్రతి వ్యక్తి",
+            "మరియు లక్షణాలు.",
+            "ఒక సమయ వ్యవస్థ."
+          ],
+          "accentLine": 2,
+          "subline": "మీ నోట్లను ఒక సమయ వ్యవస్థలో చూడండి.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "ఒక రోజులో, రెండు ప్రవేశాలు",
+          "ui": {
+            "title": "మీ సమయాంతర వివరాలు",
+            "label": "మీరు సేవ్ చేసిన గమనికలు · ఉదాహరణ",
+            "focus": "రాత్రి 8:30. రాత్రి 10:15.",
+            "explanation": "ఒకే రోజులో నిర్వహించబడిన రెండు ప్రవేశాలు. వాటి సమయాన్ని మాత్రమే చూస్తే, భోజనం లక్షణాన్ని కారణంగా చూపించదు.",
+            "disclaimer": "నమూనా డేటా · రోగ నిర్ధారణ కాదు",
+            "context": [
+              [
+                "రాత్రి 8:30",
+                "రాత్రి భోజనం"
+              ],
+              [
+                "22:15",
+                "గుండెమంట"
+              ]
+            ],
+            "contextDate": "సెప్టెమ్బర్ 7 · మీ సమయాంతర వివరాలు",
+            "cta": "సేవించిన ప్రవేశాలను చూపించు"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/te-IN/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "te-IN",
+          "lang": "te-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "పరిమాణం",
+            "footer": "ప్రదర్శన విధానం · డిజైన్ కాంసెప్ట్",
+            "dishTitle": "గ్రిల్డ్ సాల్మన్",
+            "dishDescription": "లెమన్ బటర్ సాస్",
+            "dishCaption": "ఉదాహరణ అర్డర్",
+            "dishAlt": "రైస్, గ్రీన్ బీన్స్ మరియు విడిగా సాస్‌తో గ్రిల్డ్ సాల్మన్",
+            "sourceLabel": "↗ NIDDK · రిఫ్లక్స్ గైడ్"
+          }
+        },
+        {
+          "headline": "మీ వైద్య సమయంలో మీ విషయాలను తీసుకువెళ్ళండి.",
+          "headlineLines": [
+            "మీ వైద్య సమయంలో మీ",
+            "విషయాలను తీసుకువెళ్ళండి."
+          ],
+          "accentLine": 1,
+          "subline": "మీ వైద్యునికి స్పష్టమైన సమాప్తిని అందించండి.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "మీ వైద్య సమయ సమాప్తి",
+          "ui": {
+            "title": "విజిట్ సమ్మరీ",
+            "label": "మీరు సేవ్ చేసిన గమనికలు · ఉదాహరణ",
+            "focus": "మీ సేవ్ చేసిన లక్షణాలు, పార్ట్నర్లు కు శేషం చేయవచ్చు.",
+            "explanation": "మీ సేవ్ చేసిన భోజనాలు, లక్షణాలు, చికిత్స నోట్లు మరియు రిపోర్ట్ యొక్క ఒక సంప్రదాయం. మీ వైద్య సమయం కోసం ఈ రిపోర్ట్ ను పార్ట్నర్లు కు శేషం చేయవచ్చు.",
+            "disclaimer": "నమూనా డేటా · రోగ నిర్ధారణ కాదు",
+            "context": [
+              [
+                "సెప్ 7–10",
+                "సేవ్ చేసిన లక్షణాలు"
+              ],
+              [
+                "అంతుకు చేయబడిన",
+                "భోజనాలు · లక్షణాలు · రిపోర్ట్"
+              ]
+            ],
+            "contextDate": "వైద్య సమాప్తి రిపోర్ట్",
+            "cta": "సమ్మరీని షేర్ చేయండి · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/te-IN/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · ఉదాహరణ",
+            "title": "మీ లక్షణాలు",
+            "date": "సెప్ 7–10 · ఉదాహరణ",
+            "rows": [
+              "భోజనాలు మరియు లక్షణాలు",
+              "చికిత్స నోట్లు",
+              "మీ రిపోర్ట్"
+            ]
+          },
+          "locale": "te-IN",
+          "lang": "te-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "పరిమాణం",
+            "footer": "ప్రదర్శన విధానం · డిజైన్ కాంసెప్ట్",
+            "dishTitle": "గ్రిల్డ్ సాల్మన్",
+            "dishDescription": "లెమన్ బటర్ సాస్",
+            "dishCaption": "ఉదాహరణ అర్డర్",
+            "dishAlt": "రైస్, గ్రీన్ బీన్స్ మరియు విడిగా సాస్‌తో గ్రిల్డ్ సాల్మన్",
+            "sourceLabel": "↗ NIDDK · రిఫ్లక్స్ గైడ్"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/te-IN/contact-sheet.html",
+  "download": null
+}

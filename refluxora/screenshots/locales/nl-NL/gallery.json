@@ -1,0 +1,616 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "nl-NL",
+  "label": "Nederlands",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Acht behoeften, acht duidelijke beelden",
+      "description": "De geselecteerde Engelse richting en bron voor gelokaliseerde schermopnames.",
+      "frames": [
+        {
+          "headline": "Brandend maagzuur houdt je wakker?",
+          "headlineLines": [
+            "Brandend maagzuur",
+            "houdt je wakker?"
+          ],
+          "accentLine": 1,
+          "subline": "Je vraag. Een duidelijker volgende stap.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "EEN STAP VOOR MORGEN",
+          "ui": {
+            "title": "AI uitleg",
+            "label": "AI-uitleg · Voorbeeld",
+            "focus": "Probeer een eerder diner morgenavond.",
+            "explanation": "Een late maaltijd gevolgd door snel liggen kan belangrijk zijn. Voor een toekomstige avond, minstens 3 uur na het eten liggen, kan helpen.",
+            "disclaimer": "Illustratieve gegevens · Geen diagnose",
+            "question": "Waarom is mijn brandend maagzuur erger in de nacht?",
+            "context": [
+              [
+                "Diner",
+                "21:30"
+              ],
+              [
+                "Liggen",
+                "22:15"
+              ]
+            ],
+            "contextDate": "9 september · Je avond"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/nl-NL/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Voorbeeld",
+            "footer": "Illustratieve interface · Ontwerpconcept",
+            "dishTitle": "Gegrilde zalm",
+            "dishDescription": "Lemonboter saus",
+            "dishCaption": "Voorbeeldbestelling",
+            "dishAlt": "Gegrilde zalm met rijst, groene bonen en saus in een aparte ramekin",
+            "sourceLabel": "↗ NIDDK · Refluxrichtlijnen",
+            "anatomyCaption": "Reflux verklaard"
+          },
+          "locale": "nl-NL",
+          "lang": "nl-NL",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Wat kan ik bestellen met reflux?",
+          "headlineLines": [
+            "Wat kan ik bestellen",
+            "met reflux?"
+          ],
+          "accentLine": 1,
+          "subline": "Controleer het menu voor je bestelt.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "EEN WIZIGING OM TE OVERWEGEN",
+          "ui": {
+            "title": "Menu beoordeling",
+            "label": "AI-uitleg · Voorbeeld",
+            "focus": "Vraag om de saus apart te serveren.",
+            "explanation": "Citrus en rijke sauzen kunnen sommige mensen storen. Jouw eigen reactie kan verschillen.",
+            "disclaimer": "Illustratieve gegevens · Geen diagnose"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/nl-NL/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "nl-NL",
+          "lang": "nl-NL",
+          "dir": "ltr",
+          "copy": {
+            "example": "Voorbeeld",
+            "footer": "Illustratieve interface · Ontwerpconcept",
+            "dishTitle": "Gegrilde zalm",
+            "dishDescription": "Lemonboter saus",
+            "dishCaption": "Voorbeeldbestelling",
+            "dishAlt": "Gegrilde zalm met rijst, groene bonen en saus in een aparte ramekin",
+            "sourceLabel": "↗ NIDDK · Refluxrichtlijnen"
+          }
+        },
+        {
+          "headline": "Versta je testresultaten.",
+          "headlineLines": [
+            "Versta je",
+            "testresultaten."
+          ],
+          "accentLine": 1,
+          "subline": "Upload een PDF. Krijg een AI uitleg.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "IN EEN EENVOUDIGE TAAL",
+          "ui": {
+            "title": "AI uitleg",
+            "label": "AI-uitleg · Voorbeeld",
+            "focus": "Inflammatie van de bekleding van de slokdarm.",
+            "explanation": "Je rapport vermeldt oesofagitis. Vraag je arts wat dit betekent voor jouw zorg.",
+            "disclaimer": "Verklaart de schriftelijke bevinding · Geen diagnose"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/nl-NL/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Test Resultaten.pdf",
+            "format": "PDF",
+            "type": "Bovenste endoscopie",
+            "findingLabel": "Bevinding",
+            "finding": "Oesofagitis",
+            "date": "Illustratief rapport · Voorbeeld"
+          },
+          "copy": {
+            "example": "Voorbeeld",
+            "footer": "Illustratieve interface · Ontwerpconcept",
+            "dishTitle": "Gegrilde zalm",
+            "dishDescription": "Lemonboter saus",
+            "dishCaption": "Voorbeeldbestelling",
+            "dishAlt": "Gegrilde zalm met rijst, groene bonen en saus in een aparte ramekin",
+            "sourceLabel": "↗ NIDDK · Refluxrichtlijnen",
+            "paperNote": "Je geüploade rapport",
+            "reportConnector": "PDF → AI",
+            "reportLead": "Je rapport zegt"
+          },
+          "locale": "nl-NL",
+          "lang": "nl-NL",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Maak vandaag’s plan eenvoudig.",
+          "headlineLines": [
+            "Maak vandaag’s",
+            "plan eenvoudig."
+          ],
+          "accentLine": 1,
+          "subline": "Kies één stap. Stel je tijd in.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "JE GESCHIKTE AVONDSTAP",
+          "ui": {
+            "title": "Vandaag’s plan",
+            "label": "Uw opgeslagen notities · Voorbeeld",
+            "focus": "Eet het diner voor 19:00 uur.",
+            "explanation": "Je gekozen slaaptijd is 22:00 uur. Dit plan laat 3 uur na het eten voor liggen; dit interval kan helpen bij nachtelijke klachten.",
+            "disclaimer": "Illustratieve gegevens · Geen diagnose",
+            "context": [
+              [
+                "Eet het diner",
+                "19:00 uur"
+              ],
+              [
+                "Slaaptijd",
+                "22:00 uur"
+              ]
+            ],
+            "contextDate": "10 september · Vandaag",
+            "cta": "✓ Herinnering ingesteld · 18:30 uur"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/nl-NL/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "nl-NL",
+          "lang": "nl-NL",
+          "dir": "ltr",
+          "copy": {
+            "example": "Voorbeeld",
+            "footer": "Illustratieve interface · Ontwerpconcept",
+            "dishTitle": "Gegrilde zalm",
+            "dishDescription": "Lemonboter saus",
+            "dishCaption": "Voorbeeldbestelling",
+            "dishAlt": "Gegrilde zalm met rijst, groene bonen en saus in een aparte ramekin",
+            "sourceLabel": "↗ NIDDK · Refluxrichtlijnen"
+          }
+        },
+        {
+          "headline": "Houd je behandelingnotities bij elkaar.",
+          "headlineLines": [
+            "Houd je behandelingnotities",
+            "bij elkaar."
+          ],
+          "accentLine": 1,
+          "subline": "Herinner wat je hebt genomen en gevoeld.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "JE OPGESLAGEN NOTITIE",
+          "ui": {
+            "title": "Behandelingnotities",
+            "label": "Uw opgeslagen notities · Voorbeeld",
+            "focus": "Medicatie genomen. Avondklachten opgemerkt.",
+            "explanation": "Je eigen notities, bij elkaar gehouden. Deze notities tonen niet hoe goed een behandeling werkt.",
+            "disclaimer": "Illustratieve gegevens · Geen diagnose",
+            "context": [
+              [
+                "08:00 uur",
+                "Medicatie genomen"
+              ],
+              [
+                "21:15 uur",
+                "Brandend maagzuur"
+              ]
+            ],
+            "contextDate": "9 september · Je notities",
+            "cta": "✓ Notitie opgeslagen"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/nl-NL/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "nl-NL",
+          "lang": "nl-NL",
+          "dir": "ltr",
+          "copy": {
+            "example": "Voorbeeld",
+            "footer": "Illustratieve interface · Ontwerpconcept",
+            "dishTitle": "Gegrilde zalm",
+            "dishDescription": "Lemonboter saus",
+            "dishCaption": "Voorbeeldbestelling",
+            "dishAlt": "Gegrilde zalm met rijst, groene bonen en saus in een aparte ramekin",
+            "sourceLabel": "↗ NIDDK · Refluxrichtlijnen"
+          }
+        },
+        {
+          "headline": "Keel of stem storend?",
+          "headlineLines": [
+            "Keel of stem",
+            "storend?"
+          ],
+          "accentLine": 1,
+          "subline": "Houd bij wat je opmerkt.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "JE STEMNOTITIES",
+          "ui": {
+            "title": "Keel & stem",
+            "label": "Uw opgeslagen notities · Voorbeeld",
+            "focus": "Gekwetste stem. Keel schrapen. Notitie opgeslagen.",
+            "explanation": "Noteer wat je opmerkt en wanneer. Keel- en stemklachten kunnen verschillende oorzaken hebben; deze notities identificeren geen diagnose.",
+            "disclaimer": "Illustratieve gegevens · Geen diagnose",
+            "context": [
+              [
+                "Stem",
+                "Gekwetst"
+              ],
+              [
+                "Keel",
+                "Schrapen"
+              ]
+            ],
+            "contextDate": "10 september · Voor het werk",
+            "cta": "✓ Notities opgeslagen"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/nl-NL/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "nl-NL",
+          "lang": "nl-NL",
+          "dir": "ltr",
+          "copy": {
+            "example": "Voorbeeld",
+            "footer": "Illustratieve interface · Ontwerpconcept",
+            "dishTitle": "Gegrilde zalm",
+            "dishDescription": "Lemonboter saus",
+            "dishCaption": "Voorbeeldbestelling",
+            "dishAlt": "Gegrilde zalm met rijst, groene bonen en saus in een aparte ramekin",
+            "sourceLabel": "↗ NIDDK · Refluxrichtlijnen"
+          }
+        },
+        {
+          "headline": "Maaltijden & klachten. Eén tijdlijn.",
+          "headlineLines": [
+            "Maaltijden & klachten.",
+            "Eén tijdlijn."
+          ],
+          "accentLine": 1,
+          "subline": "Zie je notities in één tijdlijn.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "EEN AVOND, TWEE NOTITIES",
+          "ui": {
+            "title": "Je tijdlijn",
+            "label": "Uw opgeslagen notities · Voorbeeld",
+            "focus": "Diner 20:30. Klachten 22:15.",
+            "explanation": "Twee opgeslagen gebeurtenissen van dezelfde avond. Hun timing alleen toont niet dat het eten de klacht veroorzaakte.",
+            "disclaimer": "Illustratieve gegevens · Geen diagnose",
+            "context": [
+              [
+                "20:30",
+                "Diner"
+              ],
+              [
+                "22:15",
+                "Brandend maagzuur"
+              ]
+            ],
+            "contextDate": "7 september · Je tijdlijn",
+            "cta": "Bekijk opgeslagen notities"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/nl-NL/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "nl-NL",
+          "lang": "nl-NL",
+          "dir": "ltr",
+          "copy": {
+            "example": "Voorbeeld",
+            "footer": "Illustratieve interface · Ontwerpconcept",
+            "dishTitle": "Gegrilde zalm",
+            "dishDescription": "Lemonboter saus",
+            "dishCaption": "Voorbeeldbestelling",
+            "dishAlt": "Gegrilde zalm met rijst, groene bonen en saus in een aparte ramekin",
+            "sourceLabel": "↗ NIDDK · Refluxrichtlijnen"
+          }
+        },
+        {
+          "headline": "Breng je geschiedenis mee naar je afspraak.",
+          "headlineLines": [
+            "Breng je geschiedenis",
+            "mee naar je afspraak."
+          ],
+          "accentLine": 1,
+          "subline": "Deel een duidelijke samenvatting met je arts.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "JE AFSPRAKESAMENVATTING",
+          "ui": {
+            "title": "Bezoek samenvatting",
+            "label": "Uw opgeslagen notities · Voorbeeld",
+            "focus": "Je opgeslagen waarnemingen, klaar om te delen.",
+            "explanation": "Een samenvatting van je opgeslagen maaltijden, klachten, behandelingnotities en rapport. Deel het als een startpunt voor je afspraak.",
+            "disclaimer": "Illustratieve gegevens · Geen diagnose",
+            "context": [
+              [
+                "7–10 september",
+                "Opgeslagen waarnemingen"
+              ],
+              [
+                "Inbegrepen",
+                "Maaltijden · Klachten · Rapport"
+              ]
+            ],
+            "contextDate": "Afspraak samenvatting",
+            "cta": "Deel samenvatting · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/nl-NL/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Voorbeeld",
+            "title": "Je waarnemingen",
+            "date": "7–10 september",
+            "rows": [
+              "Maaltijden & klachten",
+              "Behandelingnotities",
+              "Je rapport"
+            ]
+          },
+          "locale": "nl-NL",
+          "lang": "nl-NL",
+          "dir": "ltr",
+          "copy": {
+            "example": "Voorbeeld",
+            "footer": "Illustratieve interface · Ontwerpconcept",
+            "dishTitle": "Gegrilde zalm",
+            "dishDescription": "Lemonboter saus",
+            "dishCaption": "Voorbeeldbestelling",
+            "dishAlt": "Gegrilde zalm met rijst, groene bonen en saus in een aparte ramekin",
+            "sourceLabel": "↗ NIDDK · Refluxrichtlijnen"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/nl-NL/contact-sheet.html",
+  "download": null
+}

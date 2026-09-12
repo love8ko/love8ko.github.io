@@ -1,0 +1,619 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "fr-FR",
+  "label": "Français (France)",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Huit besoins, huit scènes claires",
+      "description": "Direction et source anglais sélectionnés pour les captures d'écran localisées.",
+      "frames": [
+        {
+          "headline": "Les brûlures d'estomac vous empêchent-elles de dormir ?",
+          "headlineLines": [
+            "Les brûlures d'estomac",
+            "vous empêchent-elles",
+            "de dormir ?"
+          ],
+          "accentLine": 2,
+          "subline": "Votre question. Une prochaine étape plus claire.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "UNE ÉTAPPE POUR DEMAIN",
+          "ui": {
+            "title": "Explication IA",
+            "label": "Explication par l’IA · Exemple",
+            "focus": "Essayez de dîner plus tôt demain soir.",
+            "explanation": "Un dîner tardif suivi d'une position allongée peut avoir une importance. Pour un soir futur, laisser au moins 3 heures après le repas avant de s'allonger peut aider.",
+            "disclaimer": "Données illustratives · Pas de diagnostic",
+            "question": "Pourquoi mes brûlures d'estomac sont-elles plus intenses la nuit ?",
+            "context": [
+              [
+                "Dîner",
+                "21h30"
+              ],
+              [
+                "Se coucher",
+                "22h15"
+              ]
+            ],
+            "contextDate": "8 sept · Votre soirée"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fr-FR/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interface illustrative · Concept de design",
+            "dishTitle": "Saumon grillé",
+            "dishDescription": "Sauce beurre citron",
+            "dishCaption": "EXEMPLE DE COMMANDE",
+            "dishAlt": "Saumon grillé avec riz, haricots verts et sauce dans un ramequin séparé",
+            "sourceLabel": "↗ NIDDK · Guide sur le reflux",
+            "anatomyCaption": "Le reflux expliqué"
+          },
+          "locale": "fr-FR",
+          "lang": "fr-FR",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Qu'est-ce que je peux commander avec le reflux ?",
+          "headlineLines": [
+            "Qu'est-ce que je",
+            "peux commander",
+            "avec le reflux ?"
+          ],
+          "accentLine": 2,
+          "subline": "Vérifiez le menu avant de commander.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "UNE MODIFICATION À CONSIDÉRER",
+          "ui": {
+            "title": "Revue du menu",
+            "label": "Explication par l’IA · Exemple",
+            "focus": "Demandez la sauce à part.",
+            "explanation": "Les sauces acides et riches peuvent déranger certaines personnes. Votre propre réponse peut varier.",
+            "disclaimer": "Données illustratives · Pas de diagnostic"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fr-FR/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "fr-FR",
+          "lang": "fr-FR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interface illustrative · Concept de design",
+            "dishTitle": "Saumon grillé",
+            "dishDescription": "Sauce beurre citron",
+            "dishCaption": "EXEMPLE DE COMMANDE",
+            "dishAlt": "Saumon grillé avec riz, haricots verts et sauce dans un ramequin séparé",
+            "sourceLabel": "↗ NIDDK · Guide sur le reflux"
+          }
+        },
+        {
+          "headline": "Comprendre vos résultats de test.",
+          "headlineLines": [
+            "Comprendre vos",
+            "résultats de test."
+          ],
+          "accentLine": 1,
+          "subline": "Téléchargez un PDF. Obtenez une explication IA.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "EN TERMES SIMPLES",
+          "ui": {
+            "title": "Explication IA",
+            "label": "Explication par l’IA · Exemple",
+            "focus": "Inflammation de la muqueuse œsophagienne.",
+            "explanation": "Votre rapport mentionne une œsophagite. Demandez à votre professionnel de santé ce que cela signifie pour votre prise en charge.",
+            "disclaimer": "Explique l'observation écrite · Pas de diagnostic"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fr-FR/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Résultats des tests.pdf",
+            "format": "PDF",
+            "type": "Endoscopie supérieure",
+            "findingLabel": "Observation",
+            "finding": "Œsophagite",
+            "date": "Rapport illustratif · Exemple"
+          },
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interface illustrative · Concept de design",
+            "dishTitle": "Saumon grillé",
+            "dishDescription": "Sauce beurre citron",
+            "dishCaption": "EXEMPLE DE COMMANDE",
+            "dishAlt": "Saumon grillé avec riz, haricots verts et sauce dans un ramequin séparé",
+            "sourceLabel": "↗ NIDDK · Guide sur le reflux",
+            "paperNote": "Votre rapport téléchargé",
+            "reportConnector": "PDF → IA",
+            "reportLead": "Votre rapport indique"
+          },
+          "locale": "fr-FR",
+          "lang": "fr-FR",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Faites un plan simple pour ce soir.",
+          "headlineLines": [
+            "Faites un plan",
+            "simple pour ce soir."
+          ],
+          "accentLine": 1,
+          "subline": "Choisissez une étape. Fixez votre heure.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "VOTRE ÉTAPPE DE SOIRÉE CHOISIE",
+          "ui": {
+            "title": "Plan de ce soir",
+            "label": "Vos notes enregistrées · Exemple",
+            "focus": "Finissez le dîner à 19h00.",
+            "explanation": "Votre heure de coucher choisie est 22h00. Ce plan laisse au moins 3 heures après le dîner avant de s'allonger ; cet intervalle peut aider les symptômes nocturnes.",
+            "disclaimer": "Données illustratives · Pas de diagnostic",
+            "context": [
+              [
+                "Finir le dîner",
+                "19h00"
+              ],
+              [
+                "Heure de coucher",
+                "22h00"
+              ]
+            ],
+            "contextDate": "10 sept · Ce soir",
+            "cta": "✓ Rappel programmé · 18h30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fr-FR/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "fr-FR",
+          "lang": "fr-FR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interface illustrative · Concept de design",
+            "dishTitle": "Saumon grillé",
+            "dishDescription": "Sauce beurre citron",
+            "dishCaption": "EXEMPLE DE COMMANDE",
+            "dishAlt": "Saumon grillé avec riz, haricots verts et sauce dans un ramequin séparé",
+            "sourceLabel": "↗ NIDDK · Guide sur le reflux"
+          }
+        },
+        {
+          "headline": "Conservez vos notes de traitement ensemble.",
+          "headlineLines": [
+            "Conservez vos notes de",
+            "traitement ensemble."
+          ],
+          "accentLine": 1,
+          "subline": "Souvenez-vous de ce que vous avez pris et ressenti.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "VOS NOTES ENREGISTRÉES",
+          "ui": {
+            "title": "Notes de traitement",
+            "label": "Vos notes enregistrées · Exemple",
+            "focus": "Médicament pris. Brûlures d'estomac notées.",
+            "explanation": "Vos propres entrées, conservées ensemble. Ces notes ne montrent pas comment bien fonctionne un traitement.",
+            "disclaimer": "Données illustratives · Pas de diagnostic",
+            "context": [
+              [
+                "8h00",
+                "Médicament pris"
+              ],
+              [
+                "21h15",
+                "Brûlures d'estomac notées"
+              ]
+            ],
+            "contextDate": "9 sept · Vos entrées",
+            "cta": "✓ Notes enregistrées"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fr-FR/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "fr-FR",
+          "lang": "fr-FR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interface illustrative · Concept de design",
+            "dishTitle": "Saumon grillé",
+            "dishDescription": "Sauce beurre citron",
+            "dishCaption": "EXEMPLE DE COMMANDE",
+            "dishAlt": "Saumon grillé avec riz, haricots verts et sauce dans un ramequin séparé",
+            "sourceLabel": "↗ NIDDK · Guide sur le reflux"
+          }
+        },
+        {
+          "headline": "Votre gorge ou voix sont-ils dérangés ?",
+          "headlineLines": [
+            "Votre gorge ou voix",
+            "sont-ils dérangés ?"
+          ],
+          "accentLine": 1,
+          "subline": "Tenez un compte de ce que vous remarquez.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "VOS NOTES DE VOIX",
+          "ui": {
+            "title": "Gorge & voix",
+            "label": "Vos notes enregistrées · Exemple",
+            "focus": "Voix rauque. Se racler la gorge. Notes enregistrées.",
+            "explanation": "Enregistrez ce que vous remarquez et à quelle heure. Les symptômes de gorge et de voix peuvent avoir des causes différentes ; ces notes ne permettent pas d'identifier un diagnostic.",
+            "disclaimer": "Données illustratives · Pas de diagnostic",
+            "context": [
+              [
+                "Voix",
+                "Rauque"
+              ],
+              [
+                "Gorge",
+                "Se racler la gorge"
+              ]
+            ],
+            "contextDate": "10 sept · Avant le travail",
+            "cta": "✓ Notes enregistrées"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fr-FR/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "fr-FR",
+          "lang": "fr-FR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interface illustrative · Concept de design",
+            "dishTitle": "Saumon grillé",
+            "dishDescription": "Sauce beurre citron",
+            "dishCaption": "EXEMPLE DE COMMANDE",
+            "dishAlt": "Saumon grillé avec riz, haricots verts et sauce dans un ramequin séparé",
+            "sourceLabel": "↗ NIDDK · Guide sur le reflux"
+          }
+        },
+        {
+          "headline": "Repas & symptômes. Une seule chronologie.",
+          "headlineLines": [
+            "Repas & symptômes. Une",
+            "seule chronologie."
+          ],
+          "accentLine": 1,
+          "subline": "Voyez vos notes dans une seule chronologie.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "UNE SOIRÉE, DEUX ENTRÉES",
+          "ui": {
+            "title": "Votre chronologie",
+            "label": "Vos notes enregistrées · Exemple",
+            "focus": "Dîner 20h30. Brûlures d'estomac 22h15.",
+            "explanation": "Deux événements enregistrés de la même soirée. Leur timing seul ne montre pas que le repas a causé le symptôme.",
+            "disclaimer": "Données illustratives · Pas de diagnostic",
+            "context": [
+              [
+                "20h30",
+                "Dîner"
+              ],
+              [
+                "22h15",
+                "Brûlures d'estomac"
+              ]
+            ],
+            "contextDate": "7 sept · Votre chronologie",
+            "cta": "Voir les entrées enregistrées"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fr-FR/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "fr-FR",
+          "lang": "fr-FR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interface illustrative · Concept de design",
+            "dishTitle": "Saumon grillé",
+            "dishDescription": "Sauce beurre citron",
+            "dishCaption": "EXEMPLE DE COMMANDE",
+            "dishAlt": "Saumon grillé avec riz, haricots verts et sauce dans un ramequin séparé",
+            "sourceLabel": "↗ NIDDK · Guide sur le reflux"
+          }
+        },
+        {
+          "headline": "Apportez votre historique à votre rendez-vous.",
+          "headlineLines": [
+            "Apportez votre",
+            "historique à",
+            "votre rendez-vous."
+          ],
+          "accentLine": 2,
+          "subline": "Partagez un résumé clair avec votre médecin.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "VOTRE RÉSUMÉ DE RENDEZ-VOUS",
+          "ui": {
+            "title": "Résumé de la consultation",
+            "label": "Vos notes enregistrées · Exemple",
+            "focus": "Vos observations enregistrées, prêtes à partager.",
+            "explanation": "Un résumé de vos repas enregistrés, symptômes, notes de traitement et rapport. Partagez-le comme point de départ pour votre rendez-vous.",
+            "disclaimer": "Données illustratives · Pas de diagnostic",
+            "context": [
+              [
+                "7 sept – 10 sept",
+                "Observations enregistrées"
+              ],
+              [
+                "Inclus",
+                "Repas · Symptômes · Rapport"
+              ]
+            ],
+            "contextDate": "Résumé du rendez-vous",
+            "cta": "Partager le résumé · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fr-FR/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Exemple",
+            "title": "Vos observations",
+            "date": "7 sept – 10 sept · Exemple",
+            "rows": [
+              "Repas & symptômes",
+              "Notes de traitement",
+              "Votre rapport"
+            ]
+          },
+          "locale": "fr-FR",
+          "lang": "fr-FR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interface illustrative · Concept de design",
+            "dishTitle": "Saumon grillé",
+            "dishDescription": "Sauce beurre citron",
+            "dishCaption": "EXEMPLE DE COMMANDE",
+            "dishAlt": "Saumon grillé avec riz, haricots verts et sauce dans un ramequin séparé",
+            "sourceLabel": "↗ NIDDK · Guide sur le reflux"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/fr-FR/contact-sheet.html",
+  "download": null
+}

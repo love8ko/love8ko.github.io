@@ -1,8 +1,9 @@
 {
-  "version": "localization-2026-09-11.1",
+  "version": "localization-2026-09-11.2",
   "locale": "de-DE",
   "label": "Deutsch",
-  "status": "design-concepts-not-for-app-store",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
   "series": [
     {
       "prefix": "E",
@@ -46,7 +47,7 @@
           "position": "01",
           "id": "E01",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -55,13 +56,13 @@
           "original": "locales/de-DE/originals/E01.png",
           "preview": "locales/de-DE/previews/E01.jpg",
           "generationMethod": "Built-in ImageGen background + deterministic text and interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Male lead · About 45",
           "prompt": "prompts/v5/E01-anatomy.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 5,
-          "directionApproved": false,
+          "directionApproved": true,
           "copy": {
             "example": "Beispiel",
             "footer": "Beispieloberfläche · Designkonzept",
@@ -73,16 +74,16 @@
             "anatomyCaption": "Reflux erklärt"
           },
           "locale": "de-DE",
-          "lang": "de"
+          "lang": "de-DE",
+          "dir": "ltr"
         },
         {
           "headline": "Was kann ich bei Reflux bestellen?",
           "headlineLines": [
-            "Was kann ich",
-            "bei Reflux",
-            "bestellen?"
+            "Was kann ich bei",
+            "Reflux bestellen?"
           ],
-          "accentLine": 2,
+          "accentLine": 1,
           "subline": "Prüfen Sie die Karte vor der Bestellung.",
           "asset": "assets/v4/C02-restaurant.jpg",
           "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
@@ -101,7 +102,7 @@
           "position": "02",
           "id": "E02",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -110,16 +111,17 @@
           "original": "locales/de-DE/originals/E02.png",
           "preview": "locales/de-DE/previews/E02.jpg",
           "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Male lead · About 45",
           "prompt": "prompts/v4/C02-restaurant.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 5,
-          "directionApproved": false,
+          "directionApproved": true,
           "foodAsset": "assets/v3/salmon-cutout.png",
           "locale": "de-DE",
-          "lang": "de",
+          "lang": "de-DE",
+          "dir": "ltr",
           "copy": {
             "example": "Beispiel",
             "footer": "Beispieloberfläche · Designkonzept",
@@ -155,7 +157,7 @@
           "position": "03",
           "id": "E03",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -164,13 +166,13 @@
           "original": "locales/de-DE/originals/E03.png",
           "preview": "locales/de-DE/previews/E03.jpg",
           "generationMethod": "Built-in ImageGen background + deterministic text and interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Male lead · About 45",
           "prompt": "prompts/v5/E03-report.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "report": {
             "title": "Befund.pdf",
             "format": "PDF",
@@ -192,7 +194,8 @@
             "reportLead": "Ihr Befund nennt"
           },
           "locale": "de-DE",
-          "lang": "de"
+          "lang": "de-DE",
+          "dir": "ltr"
         },
         {
           "headline": "Ein einfacher Plan für heute Abend",
@@ -231,7 +234,7 @@
           "position": "04",
           "id": "E04",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -240,15 +243,16 @@
           "original": "locales/de-DE/originals/E04.png",
           "preview": "locales/de-DE/previews/E04.jpg",
           "generationMethod": "Existing photograph + new deterministic composition",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Existing C couple",
           "prompt": "prompts/v4/C04-plan.txt",
           "characterReference": "sources/v4/C01-night.png",
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "de-DE",
-          "lang": "de",
+          "lang": "de-DE",
+          "dir": "ltr",
           "copy": {
             "example": "Beispiel",
             "footer": "Beispieloberfläche · Designkonzept",
@@ -262,11 +266,10 @@
         {
           "headline": "Alle Behandlungsnotizen an einem Ort",
           "headlineLines": [
-            "Alle",
-            "Behandlungsnotizen",
+            "Alle Behandlungsnotizen",
             "an einem Ort"
           ],
-          "accentLine": 2,
+          "accentLine": 1,
           "subline": "Notieren Sie Einnahme und Beschwerden.",
           "asset": "assets/v6/E05-treatment.jpg",
           "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
@@ -297,7 +300,7 @@
           "position": "05",
           "id": "E05",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -306,15 +309,16 @@
           "original": "locales/de-DE/originals/E05.png",
           "preview": "locales/de-DE/previews/E05.jpg",
           "generationMethod": "Built-in ImageGen photograph + deterministic interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Object or gesture focused scene",
           "prompt": "prompts/v6/E05-treatment.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 3,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "de-DE",
-          "lang": "de",
+          "lang": "de-DE",
+          "dir": "ltr",
           "copy": {
             "example": "Beispiel",
             "footer": "Beispieloberfläche · Designkonzept",
@@ -328,8 +332,8 @@
         {
           "headline": "Probleme mit Hals oder Stimme?",
           "headlineLines": [
-            "Probleme mit Hals",
-            "oder Stimme?"
+            "Probleme mit",
+            "Hals oder Stimme?"
           ],
           "accentLine": 1,
           "subline": "Notieren Sie, was auffällt.",
@@ -362,7 +366,7 @@
           "position": "06",
           "id": "E06",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -371,15 +375,16 @@
           "original": "locales/de-DE/originals/E06.png",
           "preview": "locales/de-DE/previews/E06.jpg",
           "generationMethod": "Built-in ImageGen photograph + deterministic interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Object or gesture focused scene",
           "prompt": "prompts/v6/E06-voice.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "de-DE",
-          "lang": "de",
+          "lang": "de-DE",
+          "dir": "ltr",
           "copy": {
             "example": "Beispiel",
             "footer": "Beispieloberfläche · Designkonzept",
@@ -393,11 +398,10 @@
         {
           "headline": "Mahlzeiten und Symptome. Eine Zeitleiste",
           "headlineLines": [
-            "Mahlzeiten und",
-            "Symptome.",
+            "Mahlzeiten und Symptome.",
             "Eine Zeitleiste"
           ],
-          "accentLine": 2,
+          "accentLine": 1,
           "subline": "Alle Notizen in einer Zeitleiste.",
           "asset": "assets/v6/E07-history.jpg",
           "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
@@ -428,7 +432,7 @@
           "position": "07",
           "id": "E07",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -437,15 +441,16 @@
           "original": "locales/de-DE/originals/E07.png",
           "preview": "locales/de-DE/previews/E07.jpg",
           "generationMethod": "Built-in ImageGen photograph + deterministic interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Object or gesture focused scene",
           "prompt": "prompts/v6/E07-history.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 3,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "de-DE",
-          "lang": "de",
+          "lang": "de-DE",
+          "dir": "ltr",
           "copy": {
             "example": "Beispiel",
             "footer": "Beispieloberfläche · Designkonzept",
@@ -460,10 +465,9 @@
           "headline": "Bringen Sie Ihren Verlauf zum Termin mit",
           "headlineLines": [
             "Bringen Sie Ihren",
-            "Verlauf zum",
-            "Termin mit"
+            "Verlauf zum Termin mit"
           ],
-          "accentLine": 2,
+          "accentLine": 1,
           "subline": "Teilen Sie eine klare Übersicht mit Ihrem Arzt.",
           "asset": "assets/v4/C08-appointment.jpg",
           "scene": "A patient and doctor discuss the prepared history together during an appointment.",
@@ -494,7 +498,7 @@
           "position": "08",
           "id": "E08",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -503,13 +507,13 @@
           "original": "locales/de-DE/originals/E08.png",
           "preview": "locales/de-DE/previews/E08.jpg",
           "generationMethod": "Existing photograph + new deterministic composition",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Existing C couple",
           "prompt": "prompts/v4/C08-appointment.txt",
           "characterReference": "sources/v4/C01-night.png",
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "summaryRows": [
             "Meals & symptoms",
             "Treatment notes",
@@ -526,7 +530,8 @@
             ]
           },
           "locale": "de-DE",
-          "lang": "de",
+          "lang": "de-DE",
+          "dir": "ltr",
           "copy": {
             "example": "Beispiel",
             "footer": "Beispieloberfläche · Designkonzept",

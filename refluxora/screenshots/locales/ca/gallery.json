@@ -1,0 +1,617 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "ca",
+  "label": "Català",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Octavos necessitats, octavos escenes clares",
+      "description": "Direcció i font seleccionats en anglès per a les captures de pantalla localitzades.",
+      "frames": [
+        {
+          "headline": "La cremor et manté desvetllat?",
+          "headlineLines": [
+            "La cremor et",
+            "manté desvetllat?"
+          ],
+          "accentLine": 1,
+          "subline": "La teva pregunta. Un pas més clar.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "UN PAS PER DEMÀ",
+          "ui": {
+            "title": "Explicació de l'IA",
+            "label": "Explicació amb IA · Exemple",
+            "focus": "Prova de sopar més d'hora demà.",
+            "explanation": "Un menjar tardà seguit de la llit pot influir. Per a una nit futura, deixar almenys 3 hores després de menjar abans de dormir pot ajudar.",
+            "disclaimer": "Dades il·lustratives · No és un diagnòstic",
+            "question": "Per què la meva cremor és més dolenta de nit?",
+            "context": [
+              [
+                "Menjar",
+                "21:30"
+              ],
+              [
+                "Ponent-te",
+                "22:15"
+              ]
+            ],
+            "contextDate": "8 de setembre · La teva nit"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ca/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interfície il·lustrativa · Concret de disseny",
+            "dishTitle": "Salmon a la planxa",
+            "dishDescription": "Salsa de mantega amb llima",
+            "dishCaption": "ORDRE D'EXEMPLE",
+            "dishAlt": "Salmó a la planxa amb arròs, mongetes verdes i la salsa en un recipient apart",
+            "sourceLabel": "↗ NIDDK · Guia de reflux",
+            "anatomyCaption": "Reflux explicat"
+          },
+          "locale": "ca",
+          "lang": "ca",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Què puc menjar amb reflux?",
+          "headlineLines": [
+            "Què puc menjar",
+            "amb reflux?"
+          ],
+          "accentLine": 1,
+          "subline": "Revisa el menú abans de demanar.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "UN CANVI A CONSIDERAR",
+          "ui": {
+            "title": "Revisió del menú",
+            "label": "Explicació amb IA · Exemple",
+            "focus": "Demani la salsa apart.",
+            "explanation": "Les salses de cítrics i les riques poden molestar algunes persones. La teva resposta pot ser diferent.",
+            "disclaimer": "Dades il·lustratives · No és un diagnòstic"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ca/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "ca",
+          "lang": "ca",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interfície il·lustrativa · Concret de disseny",
+            "dishTitle": "Salmon a la planxa",
+            "dishDescription": "Salsa de mantega amb llima",
+            "dishCaption": "ORDRE D'EXEMPLE",
+            "dishAlt": "Salmó a la planxa amb arròs, mongetes verdes i la salsa en un recipient apart",
+            "sourceLabel": "↗ NIDDK · Guia de reflux"
+          }
+        },
+        {
+          "headline": "Entén els teus resultats d'assaig.",
+          "headlineLines": [
+            "Entén els teus",
+            "resultats d'assaig."
+          ],
+          "accentLine": 1,
+          "subline": "Carrega un PDF. Rebre una explicació de l'IA.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "EN LLANGUA COMÚN",
+          "ui": {
+            "title": "Explicació de l'IA",
+            "label": "Explicació amb IA · Exemple",
+            "focus": "Inflamació del revestiment de l'esòfag.",
+            "explanation": "El teu informe menciona esofagitis. Demana al teu clínic què vol dir aquesta observació per al teu tractament.",
+            "disclaimer": "Explica l'observació escrita · No és un diagnòstic"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ca/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Resultats d'assaig.pdf",
+            "format": "PDF",
+            "type": "Endoscòpia superior",
+            "findingLabel": "Observació",
+            "finding": "Esofagitis",
+            "date": "Informes il·lustratius · Exemple"
+          },
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interfície il·lustrativa · Concret de disseny",
+            "dishTitle": "Salmon a la planxa",
+            "dishDescription": "Salsa de mantega amb llima",
+            "dishCaption": "ORDRE D'EXEMPLE",
+            "dishAlt": "Salmó a la planxa amb arròs, mongetes verdes i la salsa en un recipient apart",
+            "sourceLabel": "↗ NIDDK · Guia de reflux",
+            "paperNote": "El teu informe carregat",
+            "reportConnector": "PDF → IA",
+            "reportLead": "El teu informe diu"
+          },
+          "locale": "ca",
+          "lang": "ca",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Fes el plan de la nit simple.",
+          "headlineLines": [
+            "Fes el plan de",
+            "la nit simple."
+          ],
+          "accentLine": 1,
+          "subline": "Tria un pas. Estableix el teu moment.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "EL PAS ESCOLHIT PER A LA NIT",
+          "ui": {
+            "title": "El plan de la nit",
+            "label": "Les vostres notes desades · Exemple",
+            "focus": "Finalitza el menjar abans de les 7:00 PM.",
+            "explanation": "El teu moment de dormir és a les 10:00 PM. Aquest plan deixa 3 hores després del menjar abans de posar-te a la llit; aquest interval pot ajudar amb els símptomes de nit.",
+            "disclaimer": "Dades il·lustratives · No és un diagnòstic",
+            "context": [
+              [
+                "Finalitza el menjar",
+                "19:00"
+              ],
+              [
+                "Moment de dormir",
+                "22:00"
+              ]
+            ],
+            "contextDate": "10 de setembre · La nit",
+            "cta": "✓ Recordatori posat · 6:30 PM"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ca/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ca",
+          "lang": "ca",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interfície il·lustrativa · Concret de disseny",
+            "dishTitle": "Salmon a la planxa",
+            "dishDescription": "Salsa de mantega amb llima",
+            "dishCaption": "ORDRE D'EXEMPLE",
+            "dishAlt": "Salmó a la planxa amb arròs, mongetes verdes i la salsa en un recipient apart",
+            "sourceLabel": "↗ NIDDK · Guia de reflux"
+          }
+        },
+        {
+          "headline": "Tingues junts els teus registres de tractament.",
+          "headlineLines": [
+            "Tingues junts els",
+            "teus registres",
+            "de tractament."
+          ],
+          "accentLine": 2,
+          "subline": "Recorda què vas prendre i com et senties.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "LA TEVA NOTA GUARDADA",
+          "ui": {
+            "title": "Registres de tractament",
+            "label": "Les vostres notes desades · Exemple",
+            "focus": "Medicament pres. Cremor de nit registrada.",
+            "explanation": "Les teves entrades pròpies, guardades juntes. Aquests registres no mostren com bé pot funcionar un tractament.",
+            "disclaimer": "Dades il·lustratives · No és un diagnòstic",
+            "context": [
+              [
+                "08:00",
+                "Medicament pres"
+              ],
+              [
+                "21:15",
+                "Cremor registrada"
+              ]
+            ],
+            "contextDate": "9 de setembre · Les teves entrades",
+            "cta": "✓ Nota guardada"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ca/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ca",
+          "lang": "ca",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interfície il·lustrativa · Concret de disseny",
+            "dishTitle": "Salmon a la planxa",
+            "dishDescription": "Salsa de mantega amb llima",
+            "dishCaption": "ORDRE D'EXEMPLE",
+            "dishAlt": "Salmó a la planxa amb arròs, mongetes verdes i la salsa en un recipient apart",
+            "sourceLabel": "↗ NIDDK · Guia de reflux"
+          }
+        },
+        {
+          "headline": "La gola o la veu et molesten?",
+          "headlineLines": [
+            "La gola o la veu",
+            "et molesten?"
+          ],
+          "accentLine": 1,
+          "subline": "Tingues registre de què et passa.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "LES TEVES NOTES DE VEU",
+          "ui": {
+            "title": "Gola i veu",
+            "label": "Les vostres notes desades · Exemple",
+            "focus": "Veu ronca. Neteja de gola. Notes guardades.",
+            "explanation": "Registra el que et passa i quan. Les símptomes de gola i veu poden tenir causes diferents; aquestes notes no identifiquen un diagnòstic.",
+            "disclaimer": "Dades il·lustratives · No és un diagnòstic",
+            "context": [
+              [
+                "Veu",
+                "Ronca"
+              ],
+              [
+                "Gola",
+                "Neteja"
+              ]
+            ],
+            "contextDate": "10 de setembre · Abans de treballar",
+            "cta": "✓ Nota guardada"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ca/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ca",
+          "lang": "ca",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interfície il·lustrativa · Concret de disseny",
+            "dishTitle": "Salmon a la planxa",
+            "dishDescription": "Salsa de mantega amb llima",
+            "dishCaption": "ORDRE D'EXEMPLE",
+            "dishAlt": "Salmó a la planxa amb arròs, mongetes verdes i la salsa en un recipient apart",
+            "sourceLabel": "↗ NIDDK · Guia de reflux"
+          }
+        },
+        {
+          "headline": "Menjar i símptomes. Una línia de temps.",
+          "headlineLines": [
+            "Menjar i símptomes.",
+            "Una línia de temps."
+          ],
+          "accentLine": 1,
+          "subline": "Veure les teves notes en una línia de temps.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "UNA NIT, DOS ENTRADES",
+          "ui": {
+            "title": "La teva línia de temps",
+            "label": "Les vostres notes desades · Exemple",
+            "focus": "Menjar 8:30 PM. Cremor 10:15 PM.",
+            "explanation": "Dos esdeveniments guardats de la mateixa nit. El seu moment sols no mostra que el menjar va causar el símptoma.",
+            "disclaimer": "Dades il·lustratives · No és un diagnòstic",
+            "context": [
+              [
+                "20:30",
+                "Menjar"
+              ],
+              [
+                "22:15",
+                "Cremor"
+              ]
+            ],
+            "contextDate": "7 de setembre · La teva línia de temps",
+            "cta": "Veure entrades guardades"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ca/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ca",
+          "lang": "ca",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interfície il·lustrativa · Concret de disseny",
+            "dishTitle": "Salmon a la planxa",
+            "dishDescription": "Salsa de mantega amb llima",
+            "dishCaption": "ORDRE D'EXEMPLE",
+            "dishAlt": "Salmó a la planxa amb arròs, mongetes verdes i la salsa en un recipient apart",
+            "sourceLabel": "↗ NIDDK · Guia de reflux"
+          }
+        },
+        {
+          "headline": "Porta la teva història a la teva cita.",
+          "headlineLines": [
+            "Porta la teva història",
+            "a la teva cita."
+          ],
+          "accentLine": 1,
+          "subline": "Comparteix un resum clar amb el teu metge.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "RESUM DE LA TEVA CITA",
+          "ui": {
+            "title": "Resum de la visita",
+            "label": "Les vostres notes desades · Exemple",
+            "focus": "Les teves observacions guardades, preparades per compartir.",
+            "explanation": "Un resum dels teus menjars, símptomes, registres de tractament i informe. Comparteix-ho com punt de partida per la teva cita.",
+            "disclaimer": "Dades il·lustratives · No és un diagnòstic",
+            "context": [
+              [
+                "7-10 de setembre",
+                "Observacions guardades"
+              ],
+              [
+                "Inclòs",
+                "Menjars · Símptomes · Informe"
+              ]
+            ],
+            "contextDate": "Resum de la cita",
+            "cta": "Compartir resum · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ca/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Exemple",
+            "title": "Les teves observacions",
+            "date": "7-10 de setembre · Exemple",
+            "rows": [
+              "Menjars i símptomes",
+              "Registres de tractament",
+              "El teu informe"
+            ]
+          },
+          "locale": "ca",
+          "lang": "ca",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemple",
+            "footer": "Interfície il·lustrativa · Concret de disseny",
+            "dishTitle": "Salmon a la planxa",
+            "dishDescription": "Salsa de mantega amb llima",
+            "dishCaption": "ORDRE D'EXEMPLE",
+            "dishAlt": "Salmó a la planxa amb arròs, mongetes verdes i la salsa en un recipient apart",
+            "sourceLabel": "↗ NIDDK · Guia de reflux"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/ca/contact-sheet.html",
+  "download": null
+}

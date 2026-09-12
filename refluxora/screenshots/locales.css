@@ -1,6 +1,41 @@
 /* Locale-specific type metrics; scene geometry remains unchanged. */
 .art.locale-ru,.art.locale-de-DE{font-family:Arial,"Helvetica Neue",sans-serif}
 .art.locale-zh-Hans{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+.art:not([lang^="en"]):not(.locale-ru):not(.locale-de-DE):not(.locale-zh-Hans) .art-head h3{font-size:11.3cqw;letter-spacing:-.025em}
+.art:not([lang^="en"]) .art-subline{font-size:6.9cqw;letter-spacing:-.02em}
+.art.locale-zh-Hant,.art.locale-ja,.art.locale-ko{font-family:"PingFang TC","Hiragino Sans","Apple SD Gothic Neo",sans-serif}
+.art.locale-zh-Hant .art-head h3,.art.locale-ja .art-head h3,.art.locale-ko .art-head h3{font-size:12.6cqw;letter-spacing:0;line-height:1.07}
+.art.locale-zh-Hant .art-subline,.art.locale-ja .art-subline,.art.locale-ko .art-subline{letter-spacing:0;line-height:1.15}
+.art.locale-ar-SA{font-family:"Geeza Pro","Noto Sans Arabic",Arial,sans-serif}
+.art.locale-he{font-family:"Arial Hebrew","Noto Sans Hebrew",Arial,sans-serif}
+.art.locale-ur-PK{font-family:"Noto Nastaliq Urdu","Geeza Pro",Arial,sans-serif}
+.art.locale-bn-BD{font-family:"Bangla Sangam MN","Noto Sans Bengali",sans-serif}
+.art.locale-gu-IN{font-family:"Gujarati Sangam MN","Noto Sans Gujarati",sans-serif}
+.art.locale-hi,.art.locale-mr-IN{font-family:"Kohinoor Devanagari","Devanagari Sangam MN",sans-serif}
+.art.locale-kn-IN{font-family:"Kannada Sangam MN","Noto Sans Kannada",sans-serif}
+.art.locale-ml-IN{font-family:"Malayalam Sangam MN","Noto Sans Malayalam",sans-serif}
+.art.locale-or-IN{font-family:"Oriya Sangam MN","Noto Sans Oriya",sans-serif}
+.art.locale-pa-IN{font-family:"Gurmukhi MN","Noto Sans Gurmukhi",sans-serif}
+.art.locale-ta-IN{font-family:"Tamil Sangam MN","Noto Sans Tamil",sans-serif}
+.art.locale-te-IN{font-family:"Telugu Sangam MN","Noto Sans Telugu",sans-serif}
+.art.locale-th{font-family:"Thonburi","Noto Sans Thai",sans-serif}
+.art.locale-ar-SA .art-head h3,.art.locale-he .art-head h3,.art.locale-ur-PK .art-head h3,
+.art.locale-bn-BD .art-head h3,.art.locale-gu-IN .art-head h3,.art.locale-hi .art-head h3,
+.art.locale-kn-IN .art-head h3,.art.locale-ml-IN .art-head h3,.art.locale-mr-IN .art-head h3,
+.art.locale-or-IN .art-head h3,.art.locale-pa-IN .art-head h3,.art.locale-ta-IN .art-head h3,
+.art.locale-te-IN .art-head h3,.art.locale-th .art-head h3{letter-spacing:0;line-height:1.14}
+.art.locale-ar-SA .art-subline,.art.locale-he .art-subline,.art.locale-ur-PK .art-subline,
+.art.locale-bn-BD .art-subline,.art.locale-gu-IN .art-subline,.art.locale-hi .art-subline,
+.art.locale-kn-IN .art-subline,.art.locale-ml-IN .art-subline,.art.locale-mr-IN .art-subline,
+.art.locale-or-IN .art-subline,.art.locale-pa-IN .art-subline,.art.locale-ta-IN .art-subline,
+.art.locale-te-IN .art-subline,.art.locale-th .art-subline{letter-spacing:0;line-height:1.2}
+.art.locale-ur-PK .art-head h3{line-height:1.3}
+.art[dir="rtl"] .art-head,.art[dir="rtl"] .e-app,.art[dir="rtl"] .phone-screen{text-align:right}
+.art[dir="rtl"] .art-foot,.art[dir="rtl"] .phone-status{direction:ltr}
+.art[dir="rtl"] .e-context,.art[dir="rtl"] .context-row,.art[dir="rtl"] .e-time,.art[dir="rtl"] .e-entry-time,.art[dir="rtl"] .e-history-time{unicode-bidi:isolate}
+.art[dir="rtl"] bdi{unicode-bidi:isolate;direction:ltr}
+.art[dir="rtl"] .ui-top,.art[dir="rtl"] .e-app-top{flex-direction:row-reverse}
+.art[dir="rtl"] .e-report-print{text-align:right}
 .locale-ru .art-head h3{font-size:12cqw;letter-spacing:-.045em}
 .locale-de-DE .art-head h3{font-size:11.5cqw;letter-spacing:-.04em}
 .locale-zh-Hans .art-head h3{font-size:13cqw;line-height:1.06;letter-spacing:0;font-weight:700}

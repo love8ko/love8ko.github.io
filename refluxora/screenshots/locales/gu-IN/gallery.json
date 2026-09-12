@@ -1,0 +1,616 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "gu-IN",
+  "label": "ગુજરાતી",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "ઇ · આઠ જરૂરીયાં, આઠ સ્પષ્ટ દૃશ્ય",
+      "description": "સ્થાનિક સ્ક્રીનશોટ માટે પસંદ કરેલો અંગ્રેજી દિશા અને મૂળ સ્ત્રોત.",
+      "frames": [
+        {
+          "headline": "છાતીમાં બળતરા તમારે ઊભો રાખે છે?",
+          "headlineLines": [
+            "છાતીમાં બળતરા",
+            "તમારે ઊભો રાખે છે?"
+          ],
+          "accentLine": 1,
+          "subline": "તમારો પ્રશ્ન. સ્પષ્ટ અગાઉનો પગલો.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "ભવિષ્યનો પગલો",
+          "ui": {
+            "title": "AI સમજૂતી",
+            "label": "AI સમજૂતી · ઉદાહરણ",
+            "focus": "કાલે રાત્રે પહેલા ખોરાક લેવો.",
+            "explanation": "ખોરાક પછી ઝૂલવા માટે સમય મહત્વપૂર્ણ હોઈ શકે છે. ભવિષ્યની રાત્રે ખોરાક પછી કમાંથી કેટલાક સમય પછી ઝૂલવા માટે મદદ મળી શકે છે.",
+            "disclaimer": "સ્થાનિક ડેટા · નિદાન નથી",
+            "question": "મને રાતે છાતીમાં બળતરા વધુ થાય છે?",
+            "context": [
+              [
+                "ભોજન",
+                "સાત વાગ્યે"
+              ],
+              [
+                "ઝૂલવો",
+                "દસ વાગ્યે"
+              ]
+            ],
+            "contextDate": "સપ્ટેમ્બર 8 · તમારી રાત"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/gu-IN/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "ઉદાહરણ",
+            "footer": "સ્થાનિક ડિઝાઇન આંશિક · ડિઝાઇન માટે ધારણા",
+            "dishTitle": "બર્નેડ સાલમોન",
+            "dishDescription": "લીમોન બર્નર સૉસ",
+            "dishCaption": "ઉદાહરણ ઓર્ડર",
+            "dishAlt": "બર્નેડ સાલમોન સાથે રિસે અને ગ્રીન બીન્સ અને સૉસ અલગથી માંગો",
+            "sourceLabel": "↗ NIDDK · રિફ્લક્સ માર્ગદર્શન",
+            "anatomyCaption": "રિફ્લક્સનું વિસ્તારિત વિશેષણ"
+          },
+          "locale": "gu-IN",
+          "lang": "gu-IN",
+          "dir": "ltr"
+        },
+        {
+          "headline": "રિફ્લક્સ સાથે શું માંગી શકાય?",
+          "headlineLines": [
+            "રિફ્લક્સ સાથે",
+            "શું માંગી શકાય?"
+          ],
+          "accentLine": 1,
+          "subline": "ઓર્ડર કરી પહેલા મેન્યુ જુઓ.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "એક બદલાવ ધ્યાનમાં લો",
+          "ui": {
+            "title": "મેન્યુ મૂલ્યાંકન",
+            "label": "AI સમજૂતી · ઉદાહરણ",
+            "focus": "સૉસ અલગથી માંગો",
+            "explanation": "સિટ્રસ અને ઘન સૉસ કેટલાક લોકોને અસ્વસ્થ કરી શકે છે. તમારી સાથે મોટાભાગની સાંભળ વિભિન્ન હોઈ શકે.",
+            "disclaimer": "સ્થાનિક ડેટા · નિદાન નથી"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/gu-IN/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "gu-IN",
+          "lang": "gu-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ઉદાહરણ",
+            "footer": "સ્થાનિક ડિઝાઇન આંશિક · ડિઝાઇન માટે ધારણા",
+            "dishTitle": "બર્નેડ સાલમોન",
+            "dishDescription": "લીમોન બર્નર સૉસ",
+            "dishCaption": "ઉદાહરણ ઓર્ડર",
+            "dishAlt": "બર્નેડ સાલમોન સાથે રિસે અને ગ્રીન બીન્સ અને સૉસ અલગથી માંગો",
+            "sourceLabel": "↗ NIDDK · રિફ્લક્સ માર્ગદર્શન"
+          }
+        },
+        {
+          "headline": "તમારા ટેસ્ટ રિપોર્ટની સમજ",
+          "headlineLines": [
+            "તમારા ટેસ્ટ",
+            "રિપોર્ટની સમજ"
+          ],
+          "accentLine": 1,
+          "subline": "પીડીએફ અપલોડ કરો. AI સમજ મેળવો.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "સામાન્ય સમજમાં",
+          "ui": {
+            "title": "AI સમજૂતી",
+            "label": "AI સમજૂતી · ઉદાહરણ",
+            "focus": "ખોરાક નળીના અસ્તરની સંસેચન",
+            "explanation": "તમારા રિપોર્ટમાં ઇસોફેજીટીસ નોંધાયેલ છે. તમારા કેર માટે તમારા ક્લિનિસિયનની સલાહ માંગો.",
+            "disclaimer": "લેખિત તારણ સમજાવે છે · નિદાન નથી"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/gu-IN/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "ટેસ્ટ રિપોર્ટ.પીડીએફ",
+            "format": "પીડીએફ",
+            "type": "ઉપરનો અંડોસ્કોપી",
+            "findingLabel": "તારણ",
+            "finding": "ઇસોફેજીટીસ",
+            "date": "દર્શનીય રિપોર્ટ · ઉદાહરણ"
+          },
+          "copy": {
+            "example": "ઉદાહરણ",
+            "footer": "સ્થાનિક ડિઝાઇન આંશિક · ડિઝાઇન માટે ધારણા",
+            "dishTitle": "બર્નેડ સાલમોન",
+            "dishDescription": "લીમોન બર્નર સૉસ",
+            "dishCaption": "ઉદાહરણ ઓર્ડર",
+            "dishAlt": "બર્નેડ સાલમોન સાથે રિસે અને ગ્રીન બીન્સ અને સૉસ અલગથી માંગો",
+            "sourceLabel": "↗ NIDDK · રિફ્લક્સ માર્ગદર્શન",
+            "paperNote": "તમારો અપલોડ કરેલો રિપોર્ટ",
+            "reportConnector": "પીડીએફ → AI",
+            "reportLead": "તમારો રિપોર્ટ કહે છે"
+          },
+          "locale": "gu-IN",
+          "lang": "gu-IN",
+          "dir": "ltr"
+        },
+        {
+          "headline": "આજની રાતનો પ્લાન સરળ રાખો.",
+          "headlineLines": [
+            "આજની રાતનો",
+            "પ્લાન સરળ રાખો."
+          ],
+          "accentLine": 1,
+          "subline": "એક પગલું પસંદ કરો. તમારો સમય નક્કી કરો.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "તમારો પસંદ કરેલો રાતનો પગલું",
+          "ui": {
+            "title": "આજનો પ્લેન",
+            "label": "તમારા સેવાના નોટ્સ · ઉદાહરણ",
+            "focus": "સાત વાગ્યે ભોજન પૂરો કરો.",
+            "explanation": "તમારો પસંદ કરેલો શયન સમય 10 વાગ્યે છે. આ પ્લેન ભોજન પછી 3 કલાક પછી શયન કરવાનો છે; આ અંતર રાત્રિભર લક્ષણોને સહાય કરી શકે છે.",
+            "disclaimer": "સ્થાનિક ડેટા · નિદાન નથી",
+            "context": [
+              [
+                "ભોજન પૂરો કરો",
+                "સાત વાગ્યે"
+              ],
+              [
+                "શયન સમય",
+                "દસ વાગ્યે"
+              ]
+            ],
+            "contextDate": "સપ્ટેમ્બર 10 · આજ",
+            "cta": "✓ યાદી સેવામાં · છાંટા વાગ્યે"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/gu-IN/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "gu-IN",
+          "lang": "gu-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ઉદાહરણ",
+            "footer": "સ્થાનિક ડિઝાઇન આંશિક · ડિઝાઇન માટે ધારણા",
+            "dishTitle": "બર્નેડ સાલમોન",
+            "dishDescription": "લીમોન બર્નર સૉસ",
+            "dishCaption": "ઉદાહરણ ઓર્ડર",
+            "dishAlt": "બર્નેડ સાલમોન સાથે રિસે અને ગ્રીન બીન્સ અને સૉસ અલગથી માંગો",
+            "sourceLabel": "↗ NIDDK · રિફ્લક્સ માર્ગદર્શન"
+          }
+        },
+        {
+          "headline": "તમારા ઉપચાર નોટ્સ એકસાથે રાખો.",
+          "headlineLines": [
+            "તમારા ઉપચાર નોટ્સ",
+            "એકસાથે રાખો."
+          ],
+          "accentLine": 1,
+          "subline": "તમે કેવું લીધું અને કેવું અનુભવ્યું રહ્યું હતું.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "તમારો સેવાનો નોટ",
+          "ui": {
+            "title": "ઉપચાર નોટ્સ",
+            "label": "તમારા સેવાના નોટ્સ · ઉદાહરણ",
+            "focus": "દવા લીધી. રાત્રિભર છાતીમાં બળતરા નોંધેલો.",
+            "explanation": "તમારી જાણીતી નોટ્સ, એકસાથે રાખેલી. આ નોટ્સ ઉપચારની કાર્યક્ષમતાની સારવાર કરતી નથી.",
+            "disclaimer": "સ્થાનિક ડેટા · નિદાન નથી",
+            "context": [
+              [
+                "અઠ્ઠા વાગ્યે",
+                "દવા લીધી"
+              ],
+              [
+                "નવ વાગ્યે",
+                "છાતીમાં બળતરા નોંધેલો"
+              ]
+            ],
+            "contextDate": "સપ્ટેમ્બર 9 · તમારી નોટ્સ",
+            "cta": "✓ નોટ સેવામાં"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/gu-IN/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "gu-IN",
+          "lang": "gu-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ઉદાહરણ",
+            "footer": "સ્થાનિક ડિઝાઇન આંશિક · ડિઝાઇન માટે ધારણા",
+            "dishTitle": "બર્નેડ સાલમોન",
+            "dishDescription": "લીમોન બર્નર સૉસ",
+            "dishCaption": "ઉદાહરણ ઓર્ડર",
+            "dishAlt": "બર્નેડ સાલમોન સાથે રિસે અને ગ્રીન બીન્સ અને સૉસ અલગથી માંગો",
+            "sourceLabel": "↗ NIDDK · રિફ્લક્સ માર્ગદર્શન"
+          }
+        },
+        {
+          "headline": "ગળું અથવા આવાજ તમને અડકે છે?",
+          "headlineLines": [
+            "ગળું અથવા આવાજ",
+            "તમને અડકે છે?"
+          ],
+          "accentLine": 1,
+          "subline": "તમે શું અનુભવો તેનો રેકોર્ડ રાખો.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "તમારી આવાજની નોંધ",
+          "ui": {
+            "title": "ગળું અને આવાજ",
+            "label": "તમારા સેવાના નોટ્સ · ઉદાહરણ",
+            "focus": "ધુંધળો આવાજ. ગળું સાફ કરવું. નોંધ સાચવેલ છે.",
+            "explanation": "તમે શું નોંધો છો અને ક્યારે છો. ગળું અને આવાજના લક્ષણો વિવિધ કારણો માટે હોઈ શકે છે; આ નોંધો કોઈ નિદાન ઓળખતા નથી.",
+            "disclaimer": "સ્થાનિક ડેટા · નિદાન નથી",
+            "context": [
+              [
+                "આવાજ",
+                "ધુંધળો"
+              ],
+              [
+                "ગળું",
+                "સાફ કરવું"
+              ]
+            ],
+            "contextDate": "સપ્ટેમ્બર 10 · કામ પહેલા",
+            "cta": "✓ નોંધ સાચવેલ"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/gu-IN/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "gu-IN",
+          "lang": "gu-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ઉદાહરણ",
+            "footer": "સ્થાનિક ડિઝાઇન આંશિક · ડિઝાઇન માટે ધારણા",
+            "dishTitle": "બર્નેડ સાલમોન",
+            "dishDescription": "લીમોન બર્નર સૉસ",
+            "dishCaption": "ઉદાહરણ ઓર્ડર",
+            "dishAlt": "બર્નેડ સાલમોન સાથે રિસે અને ગ્રીન બીન્સ અને સૉસ અલગથી માંગો",
+            "sourceLabel": "↗ NIDDK · રિફ્લક્સ માર્ગદર્શન"
+          }
+        },
+        {
+          "headline": "ભોજન અને લક્ષણો. એક સમય રેખા.",
+          "headlineLines": [
+            "ભોજન અને લક્ષણો.",
+            "એક સમય રેખા."
+          ],
+          "accentLine": 1,
+          "subline": "તમારી નોંધો એક સમય રેખામાં જોવા મળશે.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "એક રાત, બે નોંધો",
+          "ui": {
+            "title": "તમારી સમય રેખા",
+            "label": "તમારા સેવાના નોટ્સ · ઉદાહરણ",
+            "focus": "ભોજન 8:30 પૂર્વાખાલી. છાતીમાં બળતરા 10:15 પૂર્વાખાલી.",
+            "explanation": "એક જ રાતની બે સાચવેલ ઘટનાઓ. તેમની સમયગાળા જ તે ભોજનને લક્ષણ કારણ બનાવતી નથી.",
+            "disclaimer": "સ્થાનિક ડેટા · નિદાન નથી",
+            "context": [
+              [
+                "8:30 પૂર્વાખાલી",
+                "ભોજન"
+              ],
+              [
+                "દસ વાગ્યે",
+                "છાતીમાં બળતરા"
+              ]
+            ],
+            "contextDate": "સપ્ટેમ્બર 7 · તમારી સમય રેખા",
+            "cta": "સાચવેલ નોંધો જોવું"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/gu-IN/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "gu-IN",
+          "lang": "gu-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ઉદાહરણ",
+            "footer": "સ્થાનિક ડિઝાઇન આંશિક · ડિઝાઇન માટે ધારણા",
+            "dishTitle": "બર્નેડ સાલમોન",
+            "dishDescription": "લીમોન બર્નર સૉસ",
+            "dishCaption": "ઉદાહરણ ઓર્ડર",
+            "dishAlt": "બર્નેડ સાલમોન સાથે રિસે અને ગ્રીન બીન્સ અને સૉસ અલગથી માંગો",
+            "sourceLabel": "↗ NIDDK · રિફ્લક્સ માર્ગદર્શન"
+          }
+        },
+        {
+          "headline": "તમારી ઇતિહાસ તમારા મુલાકાત સાથે લઈ આવો.",
+          "headlineLines": [
+            "તમારી ઇતિહાસ તમારા",
+            "મુલાકાત સાથે લઈ આવો."
+          ],
+          "accentLine": 1,
+          "subline": "તમારા ડૉક્ટરને સ્પષ્ટ સારાંશ શેર કરો.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "તમારી મુલાકાતનો સારાંશ",
+          "ui": {
+            "title": "મુલાકાત સારાંશ",
+            "label": "તમારા સેવાના નોટ્સ · ઉદાહરણ",
+            "focus": "તમારા બચાવેલા અભિપ્રાયો, શેર કરવા માટે તૈયાર.",
+            "explanation": "તમારા બચાવેલા ભોજન, લક્ષણો, ઉપચાર નોંધો અને રિપોર્ટનો સારાંશ. તમારા મુલાકાત માટે શરૂઆત તરીકે શેર કરો.",
+            "disclaimer": "સ્થાનિક ડેટા · નિદાન નથી",
+            "context": [
+              [
+                "સપ્ટેમ્બર 7–10",
+                "બચાવેલા અભિપ્રાયો"
+              ],
+              [
+                "સમાવેશ",
+                "ભોજન · લક્ષણો · રિપોર્ટ"
+              ]
+            ],
+            "contextDate": "મુલાકાત સારાંશ",
+            "cta": "સારાંશ શેર · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/gu-IN/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · ઉદાહરણ",
+            "title": "તમારા અભિપ્રાયો",
+            "date": "સપ્ટેમ્બર 7–10 · ઉદાહરણ",
+            "rows": [
+              "ભોજન અને લક્ષણો",
+              "ઉપચાર નોટ્સ",
+              "તમારો રિપોર્ટ"
+            ]
+          },
+          "locale": "gu-IN",
+          "lang": "gu-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ઉદાહરણ",
+            "footer": "સ્થાનિક ડિઝાઇન આંશિક · ડિઝાઇન માટે ધારણા",
+            "dishTitle": "બર્નેડ સાલમોન",
+            "dishDescription": "લીમોન બર્નર સૉસ",
+            "dishCaption": "ઉદાહરણ ઓર્ડર",
+            "dishAlt": "બર્નેડ સાલમોન સાથે રિસે અને ગ્રીન બીન્સ અને સૉસ અલગથી માંગો",
+            "sourceLabel": "↗ NIDDK · રિફ્લક્સ માર્ગદર્શન"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/gu-IN/contact-sheet.html",
+  "download": null
+}

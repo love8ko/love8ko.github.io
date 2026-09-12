@@ -1,0 +1,617 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "it",
+  "label": "Italiano",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Otto bisogni, otto scene chiare",
+      "description": "La direzione inglese selezionata e la fonte per le screenshot localizzate.",
+      "frames": [
+        {
+          "headline": "Bruciore di stomaco che ti tiene sveglio?",
+          "headlineLines": [
+            "Bruciore di stomaco",
+            "che ti tiene sveglio?"
+          ],
+          "accentLine": 1,
+          "subline": "La tua domanda. Un passo più chiaro.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "UN PASSO PER DOMANI",
+          "ui": {
+            "title": "Spiegazione AI",
+            "label": "Spiegazione AI · Esempio",
+            "focus": "Prova a mangiare più presto la sera.",
+            "explanation": "Un pasto tardi seguito da un riposo immediato potrebbe influire. Per la sera successiva, lasciare almeno 3 ore dopo aver mangiato prima di sdraiarsi potrebbe aiutare.",
+            "disclaimer": "Dati illustrativi · Non è una diagnosi",
+            "question": "Perché il mio bruciore di stomaco peggiora la notte?",
+            "context": [
+              [
+                "Cena",
+                "21:30"
+              ],
+              [
+                "Distendersi",
+                "22:15"
+              ]
+            ],
+            "contextDate": "8 settembre · La tua sera"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/it/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Esempio",
+            "footer": "Interfaccia illustrativa · Concepimento del design",
+            "dishTitle": "Salmonato al forno",
+            "dishDescription": "Salsa al burro di limone",
+            "dishCaption": "ORDINE DI ESEMPIO",
+            "dishAlt": "Salmonato al forno con riso, bietole verdi e salsa in un contenitore separato",
+            "sourceLabel": "↗ NIDDK · Guida al reflusso",
+            "anatomyCaption": "Reflusso spiegato"
+          },
+          "locale": "it",
+          "lang": "it",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Cosa posso ordinare con il reflusso?",
+          "headlineLines": [
+            "Cosa posso ordinare",
+            "con il reflusso?"
+          ],
+          "accentLine": 1,
+          "subline": "Controlla il menu prima di ordinare.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "UNA MODIFICA DA CONSIDERARE",
+          "ui": {
+            "title": "Rivedi il menu",
+            "label": "Spiegazione AI · Esempio",
+            "focus": "Chiedi il condimento a parte.",
+            "explanation": "Salse al limone e ricche possono disturbare alcuni. La tua risposta potrebbe variare.",
+            "disclaimer": "Dati illustrativi · Non è una diagnosi"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/it/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "it",
+          "lang": "it",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esempio",
+            "footer": "Interfaccia illustrativa · Concepimento del design",
+            "dishTitle": "Salmonato al forno",
+            "dishDescription": "Salsa al burro di limone",
+            "dishCaption": "ORDINE DI ESEMPIO",
+            "dishAlt": "Salmonato al forno con riso, bietole verdi e salsa in un contenitore separato",
+            "sourceLabel": "↗ NIDDK · Guida al reflusso"
+          }
+        },
+        {
+          "headline": "Capisci i tuoi risultati del test.",
+          "headlineLines": [
+            "Capisci i tuoi",
+            "risultati del test."
+          ],
+          "accentLine": 1,
+          "subline": "Carica un PDF. Ricevi un'esplicazione AI.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "IN LINGUA COMUNE",
+          "ui": {
+            "title": "Spiegazione AI",
+            "label": "Spiegazione AI · Esempio",
+            "focus": "Infiammazione del rivestimento dell'esofago.",
+            "explanation": "Il tuo rapporto menziona esofagite. Chiedi al tuo clinico che cosa significa per la tua cura.",
+            "disclaimer": "Spiega il riscontro scritto · Non è una diagnosi"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/it/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Risultati del Test.pdf",
+            "format": "PDF",
+            "type": "Endoscopia superiore",
+            "findingLabel": "Riscontro",
+            "finding": "Esofagite",
+            "date": "Rapporto illustrativo · Esempio"
+          },
+          "copy": {
+            "example": "Esempio",
+            "footer": "Interfaccia illustrativa · Concepimento del design",
+            "dishTitle": "Salmonato al forno",
+            "dishDescription": "Salsa al burro di limone",
+            "dishCaption": "ORDINE DI ESEMPIO",
+            "dishAlt": "Salmonato al forno con riso, bietole verdi e salsa in un contenitore separato",
+            "sourceLabel": "↗ NIDDK · Guida al reflusso",
+            "paperNote": "Il tuo rapporto caricato",
+            "reportConnector": "PDF → AI",
+            "reportLead": "Il tuo rapporto dice"
+          },
+          "locale": "it",
+          "lang": "it",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Fai un piano semplice per questa sera.",
+          "headlineLines": [
+            "Fai un piano semplice",
+            "per questa sera."
+          ],
+          "accentLine": 1,
+          "subline": "Scegli un passo. Imposta l'ora.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "IL TUO PASSO SCELTO PER LA SERA",
+          "ui": {
+            "title": "Il piano di questa sera",
+            "label": "Le tue note salvate · Esempio",
+            "focus": "Finisci la cena alle 19:00.",
+            "explanation": "Il tuo orario di letto scelto è alle 22:00. Questo piano lascia 3 ore dopo la cena prima di sdraiarsi; questo intervallo potrebbe aiutare i sintomi notturni.",
+            "disclaimer": "Dati illustrativi · Non è una diagnosi",
+            "context": [
+              [
+                "Finisci la cena",
+                "19:00"
+              ],
+              [
+                "Orario di letto",
+                "22:00"
+              ]
+            ],
+            "contextDate": "10 settembre · Questa sera",
+            "cta": "✓ Ricordo impostato · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/it/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "it",
+          "lang": "it",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esempio",
+            "footer": "Interfaccia illustrativa · Concepimento del design",
+            "dishTitle": "Salmonato al forno",
+            "dishDescription": "Salsa al burro di limone",
+            "dishCaption": "ORDINE DI ESEMPIO",
+            "dishAlt": "Salmonato al forno con riso, bietole verdi e salsa in un contenitore separato",
+            "sourceLabel": "↗ NIDDK · Guida al reflusso"
+          }
+        },
+        {
+          "headline": "Mantieni insieme le tue note sul trattamento.",
+          "headlineLines": [
+            "Mantieni insieme",
+            "le tue note sul",
+            "trattamento."
+          ],
+          "accentLine": 2,
+          "subline": "Ricorda cosa hai preso e cosa hai sentito.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "LE TUE NOTE SALVATE",
+          "ui": {
+            "title": "Note sul trattamento",
+            "label": "Le tue note salvate · Esempio",
+            "focus": "Farmaco preso. Bruciore di stomaco registrato.",
+            "explanation": "Le tue stesse entrate, mantenute insieme. Queste note non indicano quanto bene un trattamento funzioni.",
+            "disclaimer": "Dati illustrativi · Non è una diagnosi",
+            "context": [
+              [
+                "08:00",
+                "Farmaco preso"
+              ],
+              [
+                "21:15",
+                "Bruciore di stomaco registrato"
+              ]
+            ],
+            "contextDate": "10 settembre · Le tue entrate",
+            "cta": "✓ Note salvate"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/it/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "it",
+          "lang": "it",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esempio",
+            "footer": "Interfaccia illustrativa · Concepimento del design",
+            "dishTitle": "Salmonato al forno",
+            "dishDescription": "Salsa al burro di limone",
+            "dishCaption": "ORDINE DI ESEMPIO",
+            "dishAlt": "Salmonato al forno con riso, bietole verdi e salsa in un contenitore separato",
+            "sourceLabel": "↗ NIDDK · Guida al reflusso"
+          }
+        },
+        {
+          "headline": "Tosse o voce che ti disturbano?",
+          "headlineLines": [
+            "Tosse o voce che",
+            "ti disturbano?"
+          ],
+          "accentLine": 1,
+          "subline": "Tieni traccia di ciò che noti.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "LE TUE NOTE SU VOCE",
+          "ui": {
+            "title": "Tosse e voce",
+            "label": "Le tue note salvate · Esempio",
+            "focus": "Voce rauca. Tosse. Note salvate.",
+            "explanation": "Registra ciò che noti e quando. I sintomi alla gola e alla voce possono avere diverse cause; queste note non identificano una diagnosi.",
+            "disclaimer": "Dati illustrativi · Non è una diagnosi",
+            "context": [
+              [
+                "Voce",
+                "Rauca"
+              ],
+              [
+                "Gola",
+                "Schiarirsi la voce"
+              ]
+            ],
+            "contextDate": "10 settembre · Prima del lavoro",
+            "cta": "✓ Note salvate"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/it/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "it",
+          "lang": "it",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esempio",
+            "footer": "Interfaccia illustrativa · Concepimento del design",
+            "dishTitle": "Salmonato al forno",
+            "dishDescription": "Salsa al burro di limone",
+            "dishCaption": "ORDINE DI ESEMPIO",
+            "dishAlt": "Salmonato al forno con riso, bietole verdi e salsa in un contenitore separato",
+            "sourceLabel": "↗ NIDDK · Guida al reflusso"
+          }
+        },
+        {
+          "headline": "Pasti e sintomi. Un'unica cronologia.",
+          "headlineLines": [
+            "Pasti e sintomi.",
+            "Un'unica cronologia."
+          ],
+          "accentLine": 1,
+          "subline": "Vedi le tue note in una singola cronologia.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "UNA SERA, DUE ENTRATE",
+          "ui": {
+            "title": "La tua cronologia",
+            "label": "Le tue note salvate · Esempio",
+            "focus": "Cena 20:30. Bruciore di stomaco 22:15.",
+            "explanation": "Due eventi salvati dalla stessa sera. Il loro momento solo non mostra che il pasto abbia causato il sintomo.",
+            "disclaimer": "Dati illustrativi · Non è una diagnosi",
+            "context": [
+              [
+                "20:30",
+                "Cena"
+              ],
+              [
+                "22:15",
+                "Bruciore di stomaco"
+              ]
+            ],
+            "contextDate": "7 settembre · La tua cronologia",
+            "cta": "Visualizza le entrate salvate"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/it/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "it",
+          "lang": "it",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esempio",
+            "footer": "Interfaccia illustrativa · Concepimento del design",
+            "dishTitle": "Salmonato al forno",
+            "dishDescription": "Salsa al burro di limone",
+            "dishCaption": "ORDINE DI ESEMPIO",
+            "dishAlt": "Salmonato al forno con riso, bietole verdi e salsa in un contenitore separato",
+            "sourceLabel": "↗ NIDDK · Guida al reflusso"
+          }
+        },
+        {
+          "headline": "Porta la tua storia all'appuntamento.",
+          "headlineLines": [
+            "Porta la tua storia",
+            "all'appuntamento."
+          ],
+          "accentLine": 1,
+          "subline": "Condividi un riassunto chiaro con il tuo medico.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "RISUMO DELL'APPUNTAMENTO",
+          "ui": {
+            "title": "Riassunto della visita",
+            "label": "Le tue note salvate · Esempio",
+            "focus": "Le tue osservazioni salvate, pronte per condividerle.",
+            "explanation": "Un riassunto delle tue pasti, sintomi, note sul trattamento e rapporto. Condividi come punto di partenza per il tuo appuntamento.",
+            "disclaimer": "Dati illustrativi · Non è una diagnosi",
+            "context": [
+              [
+                "7–10 settembre",
+                "Osservazioni salvate"
+              ],
+              [
+                "Incluso",
+                "Pasti · Sintomi · Rapporto"
+              ]
+            ],
+            "contextDate": "Riassunto dell'appuntamento",
+            "cta": "Condividi riassunto · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/it/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Esempio",
+            "title": "Le tue osservazioni",
+            "date": "7–10 settembre · Esempio",
+            "rows": [
+              "Pasti e sintomi",
+              "Note sul trattamento",
+              "Il tuo rapporto"
+            ]
+          },
+          "locale": "it",
+          "lang": "it",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esempio",
+            "footer": "Interfaccia illustrativa · Concepimento del design",
+            "dishTitle": "Salmonato al forno",
+            "dishDescription": "Salsa al burro di limone",
+            "dishCaption": "ORDINE DI ESEMPIO",
+            "dishAlt": "Salmonato al forno con riso, bietole verdi e salsa in un contenitore separato",
+            "sourceLabel": "↗ NIDDK · Guida al reflusso"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/it/contact-sheet.html",
+  "download": null
+}

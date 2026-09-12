@@ -1,0 +1,617 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "hi",
+  "label": "हिन्दी",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · आठ आवश्यकताएँ, आठ स्पष्ट दृश्य",
+      "description": "चयनित अंग्रेजी दिशा और स्रोत लोकलाइज़ किए गए स्क्रीनशॉट के लिए",
+      "frames": [
+        {
+          "headline": "सीने में जलन आपको रात तक रख रही है?",
+          "headlineLines": [
+            "सीने में जलन आपको",
+            "रात तक रख रही है?"
+          ],
+          "accentLine": 1,
+          "subline": "आपका सवाल। एक स्पष्ट अगला कदम।",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "आगे का एक चरण",
+          "ui": {
+            "title": "AI स्पष्टीकरण",
+            "label": "AI स्पष्टीकरण · उदाहरण",
+            "focus": "कल के रात के लिए एक आगे बढ़ने वाला लंच का प्रयास करें।",
+            "explanation": "एक देर रात का भोजन और फिर जल्दी से लेट होने का असर हो सकता है। आगे के रात के लिए, भोजन के 3 घंटे बाद लेट होने से मदद मिल सकती है।",
+            "disclaimer": "प्रदर्शित डेटा · यह निदान नहीं है",
+            "question": "क्योंकि मेरा सीने में जलन रात के समय बढ़ रही है?",
+            "context": [
+              [
+                "भोजन",
+                "9:30 बजे"
+              ],
+              [
+                "लेट होना",
+                "10:15 बजे"
+              ]
+            ],
+            "contextDate": "सेप्टेम्बर 8 · आपका रात का समय"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hi/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "उदाहरण",
+            "footer": "प्रदर्शित इंटरफ़ेस · डिज़ाइन कॉन्सेप्ट",
+            "dishTitle": "ग्रिल्ड सैल्मॉन",
+            "dishDescription": "लीमन बटर सॉस",
+            "dishCaption": "उदाहरण ऑर्डर",
+            "dishAlt": "ग्रिल्ड सैल्मॉन, राइस, ग्रीन बीन्स और सॉस अलग से रेमेकिन में",
+            "sourceLabel": "↗ NIDDK · रिफ्लक्स गाइडेंस",
+            "anatomyCaption": "रिफ्लक्स समझाया गया"
+          },
+          "locale": "hi",
+          "lang": "hi",
+          "dir": "ltr"
+        },
+        {
+          "headline": "रिफ्लक्स के साथ क्या आर्डर कर सकते हैं?",
+          "headlineLines": [
+            "रिफ्लक्स के साथ क्या",
+            "आर्डर कर सकते हैं?"
+          ],
+          "accentLine": 1,
+          "subline": "ऑर्डर से पहले मेनू की जांच करें।",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "एक बदलाव को ध्यान रखें",
+          "ui": {
+            "title": "मेनू देखें",
+            "label": "AI स्पष्टीकरण · उदाहरण",
+            "focus": "सॉस अलग से माँगें",
+            "explanation": "किसी को जल्दी और भरे सॉस अधिक रोक सकते हैं। आपका अपना जवाब अलग हो सकता है।",
+            "disclaimer": "प्रदर्शित डेटा · यह निदान नहीं है"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hi/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "hi",
+          "lang": "hi",
+          "dir": "ltr",
+          "copy": {
+            "example": "उदाहरण",
+            "footer": "प्रदर्शित इंटरफ़ेस · डिज़ाइन कॉन्सेप्ट",
+            "dishTitle": "ग्रिल्ड सैल्मॉन",
+            "dishDescription": "लीमन बटर सॉस",
+            "dishCaption": "उदाहरण ऑर्डर",
+            "dishAlt": "ग्रिल्ड सैल्मॉन, राइस, ग्रीन बीन्स और सॉस अलग से रेमेकिन में",
+            "sourceLabel": "↗ NIDDK · रिफ्लक्स गाइडेंस"
+          }
+        },
+        {
+          "headline": "अपने टेस्ट रिपोर्ट को समझें।",
+          "headlineLines": [
+            "अपने टेस्ट",
+            "रिपोर्ट को समझें।"
+          ],
+          "accentLine": 1,
+          "subline": "PDF अपलोड करें। AI समझाएं।",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "सरल हिंदी में",
+          "ui": {
+            "title": "AI स्पष्टीकरण",
+            "label": "AI स्पष्टीकरण · उदाहरण",
+            "focus": "भोजन के नली की परत में जलन",
+            "explanation": "आपके रिपोर्ट में ईसोफेजाइटिस है। अपने क्लिनिकियन से यह आपके इलाज के लिए क्या है बताएं।",
+            "disclaimer": "लिखित निष्कर्ष समझाएँ · यह निदान नहीं है"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hi/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "टेस्ट रिपोर्ट.pdf",
+            "format": "PDF",
+            "type": "उपर्युक्त अंदर दृष्टि",
+            "findingLabel": "पाया गया",
+            "finding": "ईसोफेजाइटिस",
+            "date": "प्रदर्शित रिपोर्ट · उदाहरण"
+          },
+          "copy": {
+            "example": "उदाहरण",
+            "footer": "प्रदर्शित इंटरफ़ेस · डिज़ाइन कॉन्सेप्ट",
+            "dishTitle": "ग्रिल्ड सैल्मॉन",
+            "dishDescription": "लीमन बटर सॉस",
+            "dishCaption": "उदाहरण ऑर्डर",
+            "dishAlt": "ग्रिल्ड सैल्मॉन, राइस, ग्रीन बीन्स और सॉस अलग से रेमेकिन में",
+            "sourceLabel": "↗ NIDDK · रिफ्लक्स गाइडेंस",
+            "paperNote": "आपका अपलोड किया गया रिपोर्ट",
+            "reportConnector": "PDF → AI",
+            "reportLead": "रिपोर्ट कहता है"
+          },
+          "locale": "hi",
+          "lang": "hi",
+          "dir": "ltr"
+        },
+        {
+          "headline": "आज के रात का योजना सरल बनाएं।",
+          "headlineLines": [
+            "आज के रात का",
+            "योजना सरल बनाएं।"
+          ],
+          "accentLine": 1,
+          "subline": "एक स्टेप चुनें। समय निर्धारित करें।",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "आपका चुना गया रात का स्टेप",
+          "ui": {
+            "title": "आज का योजना",
+            "label": "आपके संरक्षित नोट्स · उदाहरण",
+            "focus": "रात के 7:00 बजे तक भोजन पूरा करें",
+            "explanation": "आपका चुना हुआ सोने का समय 10:00 बजे है। यह योजना भोजन के बाद 3 घंटे का अंतर छोड़ती है जो रात के लक्षणों को सुधार सकता है।",
+            "disclaimer": "प्रदर्शित डेटा · यह निदान नहीं है",
+            "context": [
+              [
+                "भोजन पूरा करें",
+                "7:00 बजे"
+              ],
+              [
+                "सोने का समय",
+                "10:00 बजे"
+              ]
+            ],
+            "contextDate": "सेप्टेम्बर 10 · आज",
+            "cta": "✓ नोटिफिकेशन सेट · 6:30 बजे"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hi/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "hi",
+          "lang": "hi",
+          "dir": "ltr",
+          "copy": {
+            "example": "उदाहरण",
+            "footer": "प्रदर्शित इंटरफ़ेस · डिज़ाइन कॉन्सेप्ट",
+            "dishTitle": "ग्रिल्ड सैल्मॉन",
+            "dishDescription": "लीमन बटर सॉस",
+            "dishCaption": "उदाहरण ऑर्डर",
+            "dishAlt": "ग्रिल्ड सैल्मॉन, राइस, ग्रीन बीन्स और सॉस अलग से रेमेकिन में",
+            "sourceLabel": "↗ NIDDK · रिफ्लक्स गाइडेंस"
+          }
+        },
+        {
+          "headline": "अपने उपचार नोट्स को एक साथ रखें।",
+          "headlineLines": [
+            "अपने उपचार नोट्स",
+            "को एक साथ रखें।"
+          ],
+          "accentLine": 1,
+          "subline": "यह याद रखें कि आपने क्या लिया और क्या महसूस किया।",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "आपका संरक्षित नोट",
+          "ui": {
+            "title": "उपचार नोट्स",
+            "label": "आपके संरक्षित नोट्स · उदाहरण",
+            "focus": "दवा ली गई। रात का जलन नोट किया गया।",
+            "explanation": "आपके अपने एंट्रीज, एक साथ रखे गए। ये नोट्स उपचार किस तरह से काम करते हैं यह नहीं बताते।",
+            "disclaimer": "प्रदर्शित डेटा · यह निदान नहीं है",
+            "context": [
+              [
+                "8:00 बजे",
+                "दवा ली गई"
+              ],
+              [
+                "9:15 बजे",
+                "जलन नोट किया"
+              ]
+            ],
+            "contextDate": "सेप्टेम्बर 9 · आपके एंट्रीज",
+            "cta": "✓ नोट सेव किया"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hi/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "hi",
+          "lang": "hi",
+          "dir": "ltr",
+          "copy": {
+            "example": "उदाहरण",
+            "footer": "प्रदर्शित इंटरफ़ेस · डिज़ाइन कॉन्सेप्ट",
+            "dishTitle": "ग्रिल्ड सैल्मॉन",
+            "dishDescription": "लीमन बटर सॉस",
+            "dishCaption": "उदाहरण ऑर्डर",
+            "dishAlt": "ग्रिल्ड सैल्मॉन, राइस, ग्रीन बीन्स और सॉस अलग से रेमेकिन में",
+            "sourceLabel": "↗ NIDDK · रिफ्लक्स गाइडेंस"
+          }
+        },
+        {
+          "headline": "गला या आवाज़ आपको बाधित कर रही है?",
+          "headlineLines": [
+            "गला या आवाज़ आपको",
+            "बाधित कर रही है?"
+          ],
+          "accentLine": 1,
+          "subline": "क्या आप ध्यान रखेंगे कि आपको क्या महसूस होता है।",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "आपके वोइस नोट्स",
+          "ui": {
+            "title": "गला और आवाज़",
+            "label": "आपके संरक्षित नोट्स · उदाहरण",
+            "focus": "गला जलना। गला साफ़ करना। नोट्स सेव किए गए।",
+            "explanation": "आपको देखना और जब देखना। गला और आवाज़ के लक्षण अलग-अलग कारणों से हो सकते हैं; ये नोट्स कोई निदान नहीं पहचानते।",
+            "disclaimer": "प्रदर्शित डेटा · यह निदान नहीं है",
+            "context": [
+              [
+                "आवाज़",
+                "गला जलना"
+              ],
+              [
+                "गला",
+                "गला साफ़ करना"
+              ]
+            ],
+            "contextDate": "सेप्टेम्बर 10 · काम से पहले",
+            "cta": "✓ नोट्स सेव किए"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hi/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "hi",
+          "lang": "hi",
+          "dir": "ltr",
+          "copy": {
+            "example": "उदाहरण",
+            "footer": "प्रदर्शित इंटरफ़ेस · डिज़ाइन कॉन्सेप्ट",
+            "dishTitle": "ग्रिल्ड सैल्मॉन",
+            "dishDescription": "लीमन बटर सॉस",
+            "dishCaption": "उदाहरण ऑर्डर",
+            "dishAlt": "ग्रिल्ड सैल्मॉन, राइस, ग्रीन बीन्स और सॉस अलग से रेमेकिन में",
+            "sourceLabel": "↗ NIDDK · रिफ्लक्स गाइडेंस"
+          }
+        },
+        {
+          "headline": "भोजन और लक्षण। एक समय रेखा।",
+          "headlineLines": [
+            "भोजन और लक्षण।",
+            "एक समय रेखा।"
+          ],
+          "accentLine": 1,
+          "subline": "अपने नोट्स को एक समय रेखा में देखें।",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "एक रात, दो एंट्रीज़",
+          "ui": {
+            "title": "आपकी समय रेखा",
+            "label": "आपके संरक्षित नोट्स · उदाहरण",
+            "focus": "दिनभोज 8:30 बजे। सीने में जलन 10:15 बजे।",
+            "explanation": "एक ही रात से दो सेव किए गए घटनाएँ। उनका समय ही लक्षण को नहीं दिखाता कि भोजन ने लक्षण को बढ़ाया।",
+            "disclaimer": "प्रदर्शित डेटा · यह निदान नहीं है",
+            "context": [
+              [
+                "8:30 बजे",
+                "भोजन"
+              ],
+              [
+                "10:15 बजे",
+                "सीने में जलन"
+              ]
+            ],
+            "contextDate": "सेप्टेम्बर 7 · आपकी समय रेखा",
+            "cta": "सेव किए गए एंट्रीज़ देखें"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hi/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "hi",
+          "lang": "hi",
+          "dir": "ltr",
+          "copy": {
+            "example": "उदाहरण",
+            "footer": "प्रदर्शित इंटरफ़ेस · डिज़ाइन कॉन्सेप्ट",
+            "dishTitle": "ग्रिल्ड सैल्मॉन",
+            "dishDescription": "लीमन बटर सॉस",
+            "dishCaption": "उदाहरण ऑर्डर",
+            "dishAlt": "ग्रिल्ड सैल्मॉन, राइस, ग्रीन बीन्स और सॉस अलग से रेमेकिन में",
+            "sourceLabel": "↗ NIDDK · रिफ्लक्स गाइडेंस"
+          }
+        },
+        {
+          "headline": "अपने इतिहास को अपने मेडिकल अपॉइंटमेंट में लाएं।",
+          "headlineLines": [
+            "अपने इतिहास को अपने",
+            "मेडिकल अपॉइंटमेंट",
+            "में लाएं।"
+          ],
+          "accentLine": 2,
+          "subline": "अपने डॉक्टर से स्पष्ट सारांश शेयर करें।",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "आपका अपॉइंटमेंट सारांश",
+          "ui": {
+            "title": "विजिट सारांश",
+            "label": "आपके संरक्षित नोट्स · उदाहरण",
+            "focus": "अपने सेव्ड ऑब्सर्वेशन्स, शेयर करने के लिए तैयार",
+            "explanation": "अपने सेव्ड खाने, लक्षण, उपचार नोट्स और रिपोर्ट का सारांश। अपने अस्पताल की बातचीत के लिए इसे शेयर करें।",
+            "disclaimer": "प्रदर्शित डेटा · यह निदान नहीं है",
+            "context": [
+              [
+                "सेप्टेम्बर 7–10",
+                "सेव्ड ऑब्सर्वेशन्स"
+              ],
+              [
+                "शामिल",
+                "खाने · लक्षण · रिपोर्ट"
+              ]
+            ],
+            "contextDate": "अस्पताल का सारांश",
+            "cta": "सारांश शेयर करें · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hi/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · उदाहरण",
+            "title": "अपने ऑब्सर्वेशन्स",
+            "date": "सेप्टेम्बर 7–10 · उदाहरण",
+            "rows": [
+              "खाने और लक्षण",
+              "उपचार नोट्स",
+              "अपना रिपोर्ट"
+            ]
+          },
+          "locale": "hi",
+          "lang": "hi",
+          "dir": "ltr",
+          "copy": {
+            "example": "उदाहरण",
+            "footer": "प्रदर्शित इंटरफ़ेस · डिज़ाइन कॉन्सेप्ट",
+            "dishTitle": "ग्रिल्ड सैल्मॉन",
+            "dishDescription": "लीमन बटर सॉस",
+            "dishCaption": "उदाहरण ऑर्डर",
+            "dishAlt": "ग्रिल्ड सैल्मॉन, राइस, ग्रीन बीन्स और सॉस अलग से रेमेकिन में",
+            "sourceLabel": "↗ NIDDK · रिफ्लक्स गाइडेंस"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/hi/contact-sheet.html",
+  "download": null
+}

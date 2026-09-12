@@ -1,0 +1,617 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "pl",
+  "label": "Polski",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Ośmiu potrzeb, ośmiu jasnych scen",
+      "description": "Wybrane kierunek językowy i źródło dla lokalizowanych ekranów.",
+      "frames": [
+        {
+          "headline": "Zgaga Cię Zabierają Na Wypoczynek?",
+          "headlineLines": [
+            "Zgaga Cię Zabierają",
+            "Na Wypoczynek?"
+          ],
+          "accentLine": 1,
+          "subline": "Twoje pytanie. Jedna czynność dla dalszego kroku.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "KROK DLA JESZCZE JEDNEGO DNI",
+          "ui": {
+            "title": "Wyjaśnienie AI",
+            "label": "Wyjaśnienie AI · Przykład",
+            "focus": "Próbuj wcześniej obiad następnego dnia.",
+            "explanation": "Opóźniony posiłek, a następnie szybkie leżenie mogą mieć wpływ. Dla przyszłego wieczoru, pozostawaj co najmniej 3 godziny po jedzeniu przed leżeniem, aby pomóc.",
+            "disclaimer": "Ilustracyjne dane · To nie jest diagnoza",
+            "question": "Dlaczego moje zgaga są gorsze w nocy?",
+            "context": [
+              [
+                "Obiad",
+                "21:30"
+              ],
+              [
+                "Lezenie",
+                "22:15"
+              ]
+            ],
+            "contextDate": "Sep 8 · Twoja wieczorną"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pl/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Przykład",
+            "footer": "Ilustracyjny interfejs · Koncept projektowy",
+            "dishTitle": "Salmon z grilla",
+            "dishDescription": "Sos lemonowy z masłem",
+            "dishCaption": "PRZYKŁADOWY ZAMÓWIONY",
+            "dishAlt": "Salmon z grilla z ryżem, zielonymi fasolami i sosem w osobnym naczyniu",
+            "sourceLabel": "↗ NIDDK · Porady dotyczące refluksu",
+            "anatomyCaption": "Refluks wyjaśniony"
+          },
+          "locale": "pl",
+          "lang": "pl",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Co mogę zamówić z refluksiem?",
+          "headlineLines": [
+            "Co mogę zamówić",
+            "z refluksiem?"
+          ],
+          "accentLine": 1,
+          "subline": "Sprawdź menu przed zamówieniem.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "JEDNA ZMIENA DO UWAŻNIENIA",
+          "ui": {
+            "title": "Przegląd menu",
+            "label": "Wyjaśnienie AI · Przykład",
+            "focus": "Poproś o sos osobno.",
+            "explanation": "Kwasowo-świeże sosy mogą niepokoić niektórych osób. Twoja odpowiedź może się różnić.",
+            "disclaimer": "Ilustracyjne dane · To nie jest diagnoza"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pl/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "pl",
+          "lang": "pl",
+          "dir": "ltr",
+          "copy": {
+            "example": "Przykład",
+            "footer": "Ilustracyjny interfejs · Koncept projektowy",
+            "dishTitle": "Salmon z grilla",
+            "dishDescription": "Sos lemonowy z masłem",
+            "dishCaption": "PRZYKŁADOWY ZAMÓWIONY",
+            "dishAlt": "Salmon z grilla z ryżem, zielonymi fasolami i sosem w osobnym naczyniu",
+            "sourceLabel": "↗ NIDDK · Porady dotyczące refluksu"
+          }
+        },
+        {
+          "headline": "Zrozumienie Twoich wyników testów.",
+          "headlineLines": [
+            "Zrozumienie Twoich",
+            "wyników testów."
+          ],
+          "accentLine": 1,
+          "subline": "Prześlij PDF. Otrzymaj wyjaśnienie AI.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "W PROSTYM JĘZYKU",
+          "ui": {
+            "title": "Wyjaśnienie AI",
+            "label": "Wyjaśnienie AI · Przykład",
+            "focus": "Zapalenie wyściółki przełyku.",
+            "explanation": "Twoje raporty wspominają zapalenie przełyku. Poproś swojego lekarza, co to oznacza dla Twojego opieki.",
+            "disclaimer": "Wyjaśnia opisany wynik · To nie jest diagnoza"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pl/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Wyniki_badań.pdf",
+            "format": "PDF",
+            "type": "Badanie endoskopowe górnej części",
+            "findingLabel": "Wynik",
+            "finding": "Zapalenie przełyku",
+            "date": "Przykładowy raport · Przykład"
+          },
+          "copy": {
+            "example": "Przykład",
+            "footer": "Ilustracyjny interfejs · Koncept projektowy",
+            "dishTitle": "Salmon z grilla",
+            "dishDescription": "Sos lemonowy z masłem",
+            "dishCaption": "PRZYKŁADOWY ZAMÓWIONY",
+            "dishAlt": "Salmon z grilla z ryżem, zielonymi fasolami i sosem w osobnym naczyniu",
+            "sourceLabel": "↗ NIDDK · Porady dotyczące refluksu",
+            "paperNote": "Twoje załadowane raporty",
+            "reportConnector": "PDF → AI",
+            "reportLead": "Raport mówi"
+          },
+          "locale": "pl",
+          "lang": "pl",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Uprość plan na dziś.",
+          "headlineLines": [
+            "Uprość plan",
+            "na dziś."
+          ],
+          "accentLine": 1,
+          "subline": "Wybierz jedno kroku. Ustaw czas.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "TWÓJ WYBRANY KROK DLA DZISIEJ",
+          "ui": {
+            "title": "Plan na dziś",
+            "label": "Twoje zapisane notatki · Przykład",
+            "focus": "Zakończ obiad przed 19:00.",
+            "explanation": "Twoje wybierana godzina na śpiączkę to 22:00. Ten plan zapewnia 3 godziny po obiadzie przed leżeniem; ten interwał może pomóc w zmniejszeniu objawów w nocnej fazie.",
+            "disclaimer": "Ilustracyjne dane · To nie jest diagnoza",
+            "context": [
+              [
+                "Zakończ obiad",
+                "19:00"
+              ],
+              [
+                "Godzina na śpiączkę",
+                "22:00"
+              ]
+            ],
+            "contextDate": "Sep 10 · Dzisiejszy dzień",
+            "cta": "✓ Uwaga ustawiona · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pl/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "pl",
+          "lang": "pl",
+          "dir": "ltr",
+          "copy": {
+            "example": "Przykład",
+            "footer": "Ilustracyjny interfejs · Koncept projektowy",
+            "dishTitle": "Salmon z grilla",
+            "dishDescription": "Sos lemonowy z masłem",
+            "dishCaption": "PRZYKŁADOWY ZAMÓWIONY",
+            "dishAlt": "Salmon z grilla z ryżem, zielonymi fasolami i sosem w osobnym naczyniu",
+            "sourceLabel": "↗ NIDDK · Porady dotyczące refluksu"
+          }
+        },
+        {
+          "headline": "Trzymaj swoje notatki lecznicze razem.",
+          "headlineLines": [
+            "Trzymaj swoje notatki",
+            "lecznicze razem."
+          ],
+          "accentLine": 1,
+          "subline": "Pamiętaj, co wziąłeś i czułeś.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "TWÓJ ZAPISANY NOTATKA",
+          "ui": {
+            "title": "Notatki lecznicze",
+            "label": "Twoje zapisane notatki · Przykład",
+            "focus": "Lek pobrany. Obiad nocny zanotowany.",
+            "explanation": "Twoje własne wpisy, trzymane razem. Te notatki nie określają, jak dobrze leczenie działa.",
+            "disclaimer": "Ilustracyjne dane · To nie jest diagnoza",
+            "context": [
+              [
+                "8:00",
+                "Lek pobrany"
+              ],
+              [
+                "21:15",
+                "Zanotowany zgag"
+              ]
+            ],
+            "contextDate": "Sep 9 · Twoje wpisy",
+            "cta": "✓ Notatka zapisana"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pl/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "pl",
+          "lang": "pl",
+          "dir": "ltr",
+          "copy": {
+            "example": "Przykład",
+            "footer": "Ilustracyjny interfejs · Koncept projektowy",
+            "dishTitle": "Salmon z grilla",
+            "dishDescription": "Sos lemonowy z masłem",
+            "dishCaption": "PRZYKŁADOWY ZAMÓWIONY",
+            "dishAlt": "Salmon z grilla z ryżem, zielonymi fasolami i sosem w osobnym naczyniu",
+            "sourceLabel": "↗ NIDDK · Porady dotyczące refluksu"
+          }
+        },
+        {
+          "headline": "Zaburzenia gardła lub głosu?",
+          "headlineLines": [
+            "Zaburzenia gardła",
+            "lub głosu?"
+          ],
+          "accentLine": 1,
+          "subline": "Pamiętaj o tym, co zauważasz.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "Twoje notatki",
+          "ui": {
+            "title": "Głos i gardło",
+            "label": "Twoje zapisane notatki · Przykład",
+            "focus": "Zmęczone gardło. Odkrztuszanie. Notatki zapisane.",
+            "explanation": "Zapisz, co zauważasz i kiedy. Objawy gardła i głosu mogą mieć różne przyczyny; te notatki nie identyfikują diagnozy.",
+            "disclaimer": "Ilustracyjne dane · To nie jest diagnoza",
+            "context": [
+              [
+                "Głos",
+                "Zmęczone"
+              ],
+              [
+                "Gardło",
+                "Odkrztuszanie"
+              ]
+            ],
+            "contextDate": "10 sierpnia · Przed pracą",
+            "cta": "✓ Notatki zapisane"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pl/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "pl",
+          "lang": "pl",
+          "dir": "ltr",
+          "copy": {
+            "example": "Przykład",
+            "footer": "Ilustracyjny interfejs · Koncept projektowy",
+            "dishTitle": "Salmon z grilla",
+            "dishDescription": "Sos lemonowy z masłem",
+            "dishCaption": "PRZYKŁADOWY ZAMÓWIONY",
+            "dishAlt": "Salmon z grilla z ryżem, zielonymi fasolami i sosem w osobnym naczyniu",
+            "sourceLabel": "↗ NIDDK · Porady dotyczące refluksu"
+          }
+        },
+        {
+          "headline": "Potrawy i objawy. Jedna linia czasu.",
+          "headlineLines": [
+            "Potrawy i objawy.",
+            "Jedna linia czasu."
+          ],
+          "accentLine": 1,
+          "subline": "Zobacz swoje notatki w jednej linii czasu.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "JEDNA NOC, DWA WYJŚCIA",
+          "ui": {
+            "title": "Twoja linia czasu",
+            "label": "Twoje zapisane notatki · Przykład",
+            "focus": "Obiad 20:30. Zgaga 22:15.",
+            "explanation": "Dwa zapisane zdarzenia z tej samej nocy. Ich czasowe położenie nie pokazuje, że posiłek powodował objaw.",
+            "disclaimer": "Ilustracyjne dane · To nie jest diagnoza",
+            "context": [
+              [
+                "20:30",
+                "Obiad"
+              ],
+              [
+                "22:15",
+                "Zgaga"
+              ]
+            ],
+            "contextDate": "7 sierpnia · Twoja linia czasu",
+            "cta": "Pokaż zapisane wpisy"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pl/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "pl",
+          "lang": "pl",
+          "dir": "ltr",
+          "copy": {
+            "example": "Przykład",
+            "footer": "Ilustracyjny interfejs · Koncept projektowy",
+            "dishTitle": "Salmon z grilla",
+            "dishDescription": "Sos lemonowy z masłem",
+            "dishCaption": "PRZYKŁADOWY ZAMÓWIONY",
+            "dishAlt": "Salmon z grilla z ryżem, zielonymi fasolami i sosem w osobnym naczyniu",
+            "sourceLabel": "↗ NIDDK · Porady dotyczące refluksu"
+          }
+        },
+        {
+          "headline": "Przygotuj swoje historię do wizyty lekarskiej.",
+          "headlineLines": [
+            "Przygotuj swoje",
+            "historię do wizyty",
+            "lekarskiej."
+          ],
+          "accentLine": 2,
+          "subline": "Udostępnij jasny podsumowanie lekarzowi.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "Twoje podsumowanie wizyty",
+          "ui": {
+            "title": "Wizyta",
+            "label": "Twoje zapisane notatki · Przykład",
+            "focus": "Twoje zapisane obserwacje, gotowe do udostępnienia.",
+            "explanation": "Podsumowanie Twoich zapisanych posiłków, objawów, notatek leczenia i raportu. Udostępnij je jako punkt startowy dla Twojego wizyty.",
+            "disclaimer": "Ilustracyjne dane · To nie jest diagnoza",
+            "context": [
+              [
+                "07–10/09",
+                "Zapisane obserwacje"
+              ],
+              [
+                "Włączone",
+                "Posiłki · Objawy · Raport"
+              ]
+            ],
+            "contextDate": "Podsumowanie wizyty",
+            "cta": "Udostępnij podsumowanie · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pl/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Przykład",
+            "title": "Twoje obserwacje",
+            "date": "Sep 7–10 · Przykład",
+            "rows": [
+              "Posiłki i objawy",
+              "Notatki lecznicze",
+              "Twój raport"
+            ]
+          },
+          "locale": "pl",
+          "lang": "pl",
+          "dir": "ltr",
+          "copy": {
+            "example": "Przykład",
+            "footer": "Ilustracyjny interfejs · Koncept projektowy",
+            "dishTitle": "Salmon z grilla",
+            "dishDescription": "Sos lemonowy z masłem",
+            "dishCaption": "PRZYKŁADOWY ZAMÓWIONY",
+            "dishAlt": "Salmon z grilla z ryżem, zielonymi fasolami i sosem w osobnym naczyniu",
+            "sourceLabel": "↗ NIDDK · Porady dotyczące refluksu"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/pl/contact-sheet.html",
+  "download": null
+}

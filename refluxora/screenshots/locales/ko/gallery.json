@@ -1,0 +1,616 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "ko",
+  "label": "한국어",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · 8가지 필요사항, 8가지 명확한 장면",
+      "description": "선택한 영어 방향 및 로컬라이제이션을 위한 스크린샷 소스",
+      "frames": [
+        {
+          "headline": "밤에 속쓰림이 계속되는가요?",
+          "headlineLines": [
+            "밤에 속쓰림이",
+            "계속되는가요?"
+          ],
+          "accentLine": 1,
+          "subline": "당신의 질문. 더 명확한 다음 단계.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "내일의 한 단계",
+          "ui": {
+            "title": "AI 설명",
+            "label": "AI 설명 · 예시",
+            "focus": "내일 밤에 더 일찍 저녁을 먹어 보세요.",
+            "explanation": "늦은 식사 후 빠르게 누워서는 심각한 문제를 일으킬 수 있습니다. 다음 밤에 식사 후 3시간 이상 기다렸다가 누워야 할 수 있습니다.",
+            "disclaimer": "설명된 데이터 · 진단이 아닙니다",
+            "question": "밤에 속쓰림이 더 심해지는 이유는 무엇인가요?",
+            "context": [
+              [
+                "저녁 식사",
+                "21:30"
+              ],
+              [
+                "누워서",
+                "22:15"
+              ]
+            ],
+            "contextDate": "9월 8일 · 당신의 저녁"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ko/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "예시",
+            "footer": "설명된 인터페이스 · 디자인 개념",
+            "dishTitle": "구운 연어",
+            "dishDescription": "레몬 버터 소스",
+            "dishCaption": "예시 주문",
+            "dishAlt": "구운 연어, 밀가루, 녹색 콩, 소스를 따로 달라고 요청하세요",
+            "sourceLabel": "↗ NIDDK · 역류 가이드",
+            "anatomyCaption": "역류 설명"
+          },
+          "locale": "ko",
+          "lang": "ko",
+          "dir": "ltr"
+        },
+        {
+          "headline": "역류와 함께 주문할 수 있는 음식은 무엇인가요?",
+          "headlineLines": [
+            "역류와 함께 주문할 수",
+            "있는 음식은 무엇인가요?"
+          ],
+          "accentLine": 1,
+          "subline": "주문 전 메뉴를 확인하세요.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "고려해야 할 한 가지 변경 사항",
+          "ui": {
+            "title": "메뉴 검토",
+            "label": "AI 설명 · 예시",
+            "focus": "소스를 따로 달라고 요청하세요.",
+            "explanation": "수프 및 풍부한 소스는 일부 사람에게 불편할 수 있습니다. 귀하의 반응은 다를 수 있습니다.",
+            "disclaimer": "설명된 데이터 · 진단이 아닙니다"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ko/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "ko",
+          "lang": "ko",
+          "dir": "ltr",
+          "copy": {
+            "example": "예시",
+            "footer": "설명된 인터페이스 · 디자인 개념",
+            "dishTitle": "구운 연어",
+            "dishDescription": "레몬 버터 소스",
+            "dishCaption": "예시 주문",
+            "dishAlt": "구운 연어, 밀가루, 녹색 콩, 소스를 따로 달라고 요청하세요",
+            "sourceLabel": "↗ NIDDK · 역류 가이드"
+          }
+        },
+        {
+          "headline": "검사 결과를 이해하세요.",
+          "headlineLines": [
+            "검사 결과를",
+            "이해하세요."
+          ],
+          "accentLine": 1,
+          "subline": "PDF를 업로드하고 AI가 설명합니다.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "순수한 영어",
+          "ui": {
+            "title": "AI 설명",
+            "label": "AI 설명 · 예시",
+            "focus": "식도 점막의 염증",
+            "explanation": "귀하의 보고서에서 식도염이 언급되었습니다. 이는 귀하의 치료에 어떤 의미를 가지는지 의료진과 상담하세요.",
+            "disclaimer": "기록된 소견 · 진단이 아닙니다"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ko/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "검사 결과.pdf",
+            "format": "PDF",
+            "type": "상부 내시경",
+            "findingLabel": "소견",
+            "finding": "식도염",
+            "date": "예시 보고서 · 예시"
+          },
+          "copy": {
+            "example": "예시",
+            "footer": "설명된 인터페이스 · 디자인 개념",
+            "dishTitle": "구운 연어",
+            "dishDescription": "레몬 버터 소스",
+            "dishCaption": "예시 주문",
+            "dishAlt": "구운 연어, 밀가루, 녹색 콩, 소스를 따로 달라고 요청하세요",
+            "sourceLabel": "↗ NIDDK · 역류 가이드",
+            "paperNote": "업로드한 보고서",
+            "reportConnector": "PDF → AI",
+            "reportLead": "보고서가 말합니다"
+          },
+          "locale": "ko",
+          "lang": "ko",
+          "dir": "ltr"
+        },
+        {
+          "headline": "이번 밤의 계획을 간단히 하세요.",
+          "headlineLines": [
+            "이번 밤의 계획을",
+            "간단히 하세요."
+          ],
+          "accentLine": 1,
+          "subline": "한 단계를 선택하고 시간을 설정하세요.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "귀하가 선택한 저녁 단계",
+          "ui": {
+            "title": "이번 밤의 계획",
+            "label": "저장된 노트 · 예시",
+            "focus": "저녁 식사 7시 전에 마무리하세요.",
+            "explanation": "당신의 잠자리 시간은 10시입니다. 이 계획은 식사 후 3시간 동안 누워서 잠자리에 들어야 하는 시간을 둡니다. 이 간격은 밤에 증상이 발생할 수 있도록 도와줄 수 있습니다.",
+            "disclaimer": "설명된 데이터 · 진단이 아닙니다",
+            "context": [
+              [
+                "식사 마무리",
+                "19:00"
+              ],
+              [
+                "잠자리 시간",
+                "22:00"
+              ]
+            ],
+            "contextDate": "9월 10일 · 오늘",
+            "cta": "✓ 6:30 PM 경고 설정"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ko/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ko",
+          "lang": "ko",
+          "dir": "ltr",
+          "copy": {
+            "example": "예시",
+            "footer": "설명된 인터페이스 · 디자인 개념",
+            "dishTitle": "구운 연어",
+            "dishDescription": "레몬 버터 소스",
+            "dishCaption": "예시 주문",
+            "dishAlt": "구운 연어, 밀가루, 녹색 콩, 소스를 따로 달라고 요청하세요",
+            "sourceLabel": "↗ NIDDK · 역류 가이드"
+          }
+        },
+        {
+          "headline": "치료 노트를 함께 관리하세요.",
+          "headlineLines": [
+            "치료 노트를 함께",
+            "관리하세요."
+          ],
+          "accentLine": 1,
+          "subline": "드러내는 것과 느끼는 것을 기억하세요.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "저장된 노트",
+          "ui": {
+            "title": "치료 노트",
+            "label": "저장된 노트 · 예시",
+            "focus": "약물 복용. 저녁 속쓰림 기록",
+            "explanation": "당신의 직접 입력한 내용이 함께 관리됩니다. 이 노트는 치료가 얼마나 잘 작용하는지에 대한 판단을 제공하지 않습니다.",
+            "disclaimer": "설명된 데이터 · 진단이 아닙니다",
+            "context": [
+              [
+                "08:00",
+                "약물 복용"
+              ],
+              [
+                "21:15",
+                "속쓰림 기록"
+              ]
+            ],
+            "contextDate": "9월 9일 · 당신의 입력",
+            "cta": "✓ 노트 저장"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ko/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ko",
+          "lang": "ko",
+          "dir": "ltr",
+          "copy": {
+            "example": "예시",
+            "footer": "설명된 인터페이스 · 디자인 개념",
+            "dishTitle": "구운 연어",
+            "dishDescription": "레몬 버터 소스",
+            "dishCaption": "예시 주문",
+            "dishAlt": "구운 연어, 밀가루, 녹색 콩, 소스를 따로 달라고 요청하세요",
+            "sourceLabel": "↗ NIDDK · 역류 가이드"
+          }
+        },
+        {
+          "headline": "목이나 목소리가 불편할까요?",
+          "headlineLines": [
+            "목이나 목소리가",
+            "불편할까요?"
+          ],
+          "accentLine": 1,
+          "subline": "당신이 주의하는 것을 추적하세요.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "당신의 음성 노트",
+          "ui": {
+            "title": "목과 목소리",
+            "label": "저장된 노트 · 예시",
+            "focus": "목소리가 흐려져 있습니다. 목을 흐리게 하는 기침. 노트가 저장되었습니다.",
+            "explanation": "당신이 주의하는 것을 기록하고 시간을 기록하세요. 목과 목소리 증상은 다른 원인을 가질 수 있습니다. 이 노트는 진단을 식별하지 않습니다.",
+            "disclaimer": "설명된 데이터 · 진단이 아닙니다",
+            "context": [
+              [
+                "목소리",
+                "흐려짐"
+              ],
+              [
+                "목",
+                "기침"
+              ]
+            ],
+            "contextDate": "9월 10일 · 작업 전",
+            "cta": "✓ 노트가 저장되었습니다"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ko/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ko",
+          "lang": "ko",
+          "dir": "ltr",
+          "copy": {
+            "example": "예시",
+            "footer": "설명된 인터페이스 · 디자인 개념",
+            "dishTitle": "구운 연어",
+            "dishDescription": "레몬 버터 소스",
+            "dishCaption": "예시 주문",
+            "dishAlt": "구운 연어, 밀가루, 녹색 콩, 소스를 따로 달라고 요청하세요",
+            "sourceLabel": "↗ NIDDK · 역류 가이드"
+          }
+        },
+        {
+          "headline": "식사와 증상. 한 시간선.",
+          "headlineLines": [
+            "식사와 증상.",
+            "한 시간선."
+          ],
+          "accentLine": 1,
+          "subline": "한 시간선에서 노트를 확인하세요.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "한 밤, 두 개의 기록",
+          "ui": {
+            "title": "시간선",
+            "label": "저장된 노트 · 예시",
+            "focus": "저녁 8:30. 속쓰림 10:15.",
+            "explanation": "동일한 저녁에서 저장된 두 개의 이벤트. 그들의 시간만으로는 식사가 증상의 원인임을 보여주지 않습니다.",
+            "disclaimer": "설명된 데이터 · 진단이 아닙니다",
+            "context": [
+              [
+                "8:30",
+                "저녁 식사"
+              ],
+              [
+                "22:15",
+                "속쓰림"
+              ]
+            ],
+            "contextDate": "9월 7일 · 시간선",
+            "cta": "저장된 항목 보기"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ko/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ko",
+          "lang": "ko",
+          "dir": "ltr",
+          "copy": {
+            "example": "예시",
+            "footer": "설명된 인터페이스 · 디자인 개념",
+            "dishTitle": "구운 연어",
+            "dishDescription": "레몬 버터 소스",
+            "dishCaption": "예시 주문",
+            "dishAlt": "구운 연어, 밀가루, 녹색 콩, 소스를 따로 달라고 요청하세요",
+            "sourceLabel": "↗ NIDDK · 역류 가이드"
+          }
+        },
+        {
+          "headline": "당신의 예약에 역사를 가져가세요.",
+          "headlineLines": [
+            "당신의 예약에",
+            "역사를 가져가세요."
+          ],
+          "accentLine": 1,
+          "subline": "의사와 함께 명확한 요약을 공유하세요.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "당신의 예약 요약",
+          "ui": {
+            "title": "방문 요약",
+            "label": "저장된 노트 · 예시",
+            "focus": "저장된 관찰사항을 공유할 준비가 되었습니다.",
+            "explanation": "저장한 식사, 증상, 치료 노트 및 보고서의 요약입니다. 병원 상담 시 시작점으로 공유할 수 있습니다.",
+            "disclaimer": "설명된 데이터 · 진단이 아닙니다",
+            "context": [
+              [
+                "9/7–9/10",
+                "저장된 관찰사항"
+              ],
+              [
+                "포함됨",
+                "식사 · 증상 · 보고서"
+              ]
+            ],
+            "contextDate": "예약 요약",
+            "cta": "요약 공유 · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ko/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · 예시",
+            "title": "관찰사항",
+            "date": "9/7–9/10 · 예시",
+            "rows": [
+              "식사 및 증상",
+              "치료 노트",
+              "보고서"
+            ]
+          },
+          "locale": "ko",
+          "lang": "ko",
+          "dir": "ltr",
+          "copy": {
+            "example": "예시",
+            "footer": "설명된 인터페이스 · 디자인 개념",
+            "dishTitle": "구운 연어",
+            "dishDescription": "레몬 버터 소스",
+            "dishCaption": "예시 주문",
+            "dishAlt": "구운 연어, 밀가루, 녹색 콩, 소스를 따로 달라고 요청하세요",
+            "sourceLabel": "↗ NIDDK · 역류 가이드"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/ko/contact-sheet.html",
+  "download": null
+}

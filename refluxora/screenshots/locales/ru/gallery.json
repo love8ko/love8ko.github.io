@@ -1,8 +1,9 @@
 {
-  "version": "localization-2026-09-11.1",
+  "version": "localization-2026-09-11.2",
   "locale": "ru",
   "label": "Русский",
-  "status": "design-concepts-not-for-app-store",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
   "series": [
     {
       "prefix": "E",
@@ -12,8 +13,8 @@
         {
           "headline": "Изжога не даёт уснуть?",
           "headlineLines": [
-            "Изжога не даёт",
-            "уснуть?"
+            "Изжога не",
+            "даёт уснуть?"
           ],
           "accentLine": 1,
           "subline": "Ваш вопрос. Понятный следующий шаг.",
@@ -46,7 +47,7 @@
           "position": "01",
           "id": "E01",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -55,13 +56,13 @@
           "original": "locales/ru/originals/E01.png",
           "preview": "locales/ru/previews/E01.jpg",
           "generationMethod": "Built-in ImageGen background + deterministic text and interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Male lead · About 45",
           "prompt": "prompts/v5/E01-anatomy.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 5,
-          "directionApproved": false,
+          "directionApproved": true,
           "copy": {
             "example": "Пример",
             "footer": "Демонстрационный интерфейс · Концепт",
@@ -73,7 +74,8 @@
             "anatomyCaption": "Как возникает рефлюкс"
           },
           "locale": "ru",
-          "lang": "ru"
+          "lang": "ru",
+          "dir": "ltr"
         },
         {
           "headline": "Что заказать при рефлюксе?",
@@ -100,7 +102,7 @@
           "position": "02",
           "id": "E02",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -109,16 +111,17 @@
           "original": "locales/ru/originals/E02.png",
           "preview": "locales/ru/previews/E02.jpg",
           "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Male lead · About 45",
           "prompt": "prompts/v4/C02-restaurant.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 5,
-          "directionApproved": false,
+          "directionApproved": true,
           "foodAsset": "assets/v3/salmon-cutout.png",
           "locale": "ru",
           "lang": "ru",
+          "dir": "ltr",
           "copy": {
             "example": "Пример",
             "footer": "Демонстрационный интерфейс · Концепт",
@@ -155,7 +158,7 @@
           "position": "03",
           "id": "E03",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -164,13 +167,13 @@
           "original": "locales/ru/originals/E03.png",
           "preview": "locales/ru/previews/E03.jpg",
           "generationMethod": "Built-in ImageGen background + deterministic text and interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Male lead · About 45",
           "prompt": "prompts/v5/E03-report.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "report": {
             "title": "Результаты.pdf",
             "format": "PDF",
@@ -192,7 +195,8 @@
             "reportLead": "В отчёте указано"
           },
           "locale": "ru",
-          "lang": "ru"
+          "lang": "ru",
+          "dir": "ltr"
         },
         {
           "headline": "Простой план на вечер",
@@ -231,7 +235,7 @@
           "position": "04",
           "id": "E04",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -240,15 +244,16 @@
           "original": "locales/ru/originals/E04.png",
           "preview": "locales/ru/previews/E04.jpg",
           "generationMethod": "Existing photograph + new deterministic composition",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Existing C couple",
           "prompt": "prompts/v4/C04-plan.txt",
           "characterReference": "sources/v4/C01-night.png",
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "ru",
           "lang": "ru",
+          "dir": "ltr",
           "copy": {
             "example": "Пример",
             "footer": "Демонстрационный интерфейс · Концепт",
@@ -263,8 +268,8 @@
           "headline": "Все записи о лечении — вместе",
           "headlineLines": [
             "Все записи",
-            "о лечении —",
-            "вместе"
+            "о лечении",
+            "— вместе"
           ],
           "accentLine": 2,
           "subline": "Помните, что приняли и как себя чувствовали.",
@@ -297,7 +302,7 @@
           "position": "05",
           "id": "E05",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -306,15 +311,16 @@
           "original": "locales/ru/originals/E05.png",
           "preview": "locales/ru/previews/E05.jpg",
           "generationMethod": "Built-in ImageGen photograph + deterministic interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Object or gesture focused scene",
           "prompt": "prompts/v6/E05-treatment.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 3,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "ru",
           "lang": "ru",
+          "dir": "ltr",
           "copy": {
             "example": "Пример",
             "footer": "Демонстрационный интерфейс · Концепт",
@@ -328,8 +334,8 @@
         {
           "headline": "Беспокоят горло или голос?",
           "headlineLines": [
-            "Беспокоят горло",
-            "или голос?"
+            "Беспокоят",
+            "горло или голос?"
           ],
           "accentLine": 1,
           "subline": "Записывайте, что замечаете.",
@@ -362,7 +368,7 @@
           "position": "06",
           "id": "E06",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -371,15 +377,16 @@
           "original": "locales/ru/originals/E06.png",
           "preview": "locales/ru/previews/E06.jpg",
           "generationMethod": "Built-in ImageGen photograph + deterministic interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Object or gesture focused scene",
           "prompt": "prompts/v6/E06-voice.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "ru",
           "lang": "ru",
+          "dir": "ltr",
           "copy": {
             "example": "Пример",
             "footer": "Демонстрационный интерфейс · Концепт",
@@ -394,8 +401,8 @@
           "headline": "Еда и симптомы. Одна хронология",
           "headlineLines": [
             "Еда и",
-            "симптомы.",
-            "Одна хронология"
+            "симптомы. Одна",
+            "хронология"
           ],
           "accentLine": 2,
           "subline": "Все записи — в одной ленте.",
@@ -428,7 +435,7 @@
           "position": "07",
           "id": "E07",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -437,15 +444,16 @@
           "original": "locales/ru/originals/E07.png",
           "preview": "locales/ru/previews/E07.jpg",
           "generationMethod": "Built-in ImageGen photograph + deterministic interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Object or gesture focused scene",
           "prompt": "prompts/v6/E07-history.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 3,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "ru",
           "lang": "ru",
+          "dir": "ltr",
           "copy": {
             "example": "Пример",
             "footer": "Демонстрационный интерфейс · Концепт",
@@ -494,7 +502,7 @@
           "position": "08",
           "id": "E08",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -503,13 +511,13 @@
           "original": "locales/ru/originals/E08.png",
           "preview": "locales/ru/previews/E08.jpg",
           "generationMethod": "Existing photograph + new deterministic composition",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Existing C couple",
           "prompt": "prompts/v4/C08-appointment.txt",
           "characterReference": "sources/v4/C01-night.png",
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "summaryRows": [
             "Meals & symptoms",
             "Treatment notes",
@@ -527,6 +535,7 @@
           },
           "locale": "ru",
           "lang": "ru",
+          "dir": "ltr",
           "copy": {
             "example": "Пример",
             "footer": "Демонстрационный интерфейс · Концепт",

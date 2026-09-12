@@ -3,9 +3,9 @@
   try{
     const configResponse=await fetch('locale-config.json',{cache:'no-store'});if(!configResponse.ok)throw Error();localeConfig=await configResponse.json();
     const requested=new URLSearchParams(location.search).get('locale');if(localeConfig.locales.some(x=>x.code===requested))activeLocale=requested;
-    const locale=localeConfig.locales.find(x=>x.code===activeLocale);const response=await fetch(activeLocale==='en-US'?'gallery.json':locale.data,{cache:'no-store'});if(!response.ok)throw Error();data=await response.json();
-    const switcher=$('#locale-switcher');for(const item of localeConfig.locales){const a=document.createElement('a');a.href=item.code==='en-US'?'./':'?locale='+encodeURIComponent(item.code);a.textContent=item.label;if(item.code===activeLocale)a.setAttribute('aria-current','page');switcher.append(a);}
-    $('#contact-sheet-link').href=locale.contactSheet;$('#locale-zip-link').href=locale.download;$('#locale-status').textContent=locale.label+' · '+(activeLocale==='en-US'?'исходная серия':'полная локализация');document.documentElement.lang=locale.lang;
+    const locale=localeConfig.locales.find(x=>x.code===activeLocale);const response=await fetch(locale.data,{cache:'no-store'});if(!response.ok)throw Error();data=await response.json();
+    const select=$('#locale-select');for(const item of localeConfig.locales){const option=document.createElement('option');option.value=item.code;option.textContent=item.label+' · '+item.code;option.selected=item.code===activeLocale;select.append(option);}select.addEventListener('change',()=>{location.href=select.value==='en-US'?'./':'?locale='+encodeURIComponent(select.value);});
+    $('#contact-sheet-link').href=locale.contactSheet;const zip=$('#locale-zip-link');if(locale.download){zip.href=locale.download;zip.hidden=false;}else{zip.hidden=true;zip.removeAttribute('href');}$('#locale-status').textContent=locale.label+' · двойная проверка перевода';document.documentElement.lang=locale.lang;
   }catch{$('#gallery').textContent='The layouts could not be loaded. Please refresh this page.';return;}
   const url=p=>`${p}?v=${encodeURIComponent(data.version)}`;
   const gallery=$('#gallery');gallery.replaceChildren();
@@ -21,7 +21,7 @@
       const figure=document.createElement('figure');figure.className='frame-item';figure.id=frame.id;
       const caption=document.createElement('figcaption');const id=document.createElement('span');id.className='frame-id';id.textContent=frame.id;const stage=document.createElement('span');stage.className='frame-stage';stage.textContent=frame.readiness==='approved'?'Ready for review':'Design concept';caption.append(id,stage);
       const button=document.createElement('button');button.type='button';button.className='shot';button.setAttribute('aria-label','View '+frame.id+' — '+frame.headline);button.dataset.id=frame.id;
-      if(frame.preview&&frame.original){const img=document.createElement('img');img.src=url(frame.preview);img.alt=frame.headline;img.style.width='100%';img.addEventListener('error',()=>{button.textContent='Image unavailable. Open to try the original.';});button.append(img);}else{button.append(window.RefluxoraLayout(frame));}
+      if(frame.preview){const img=document.createElement('img');img.loading='lazy';img.src=url(frame.preview);img.alt=frame.headline;img.style.width='100%';img.addEventListener('error',()=>{button.textContent='Image unavailable.';});button.append(img);}else{button.append(window.RefluxoraLayout(frame));}
       button.addEventListener('click',()=>{trigger=button;show(index);$('#viewer').showModal();$('#close').focus();});
       const note=document.createElement('p');note.className='frame-note';note.textContent=frame.shortJob;figure.append(caption,button,note);row.append(figure);
     }
@@ -29,7 +29,7 @@
   }
   function show(index){active=(index+frames.length)%frames.length;const f=frames[active];$('#viewer-title').textContent=f.id;$('#viewer-status').textContent=f.readiness==='approved'?'Approved screen · full resolution':'Design concept · not for App Store';$('#viewer-body').replaceChildren();
     const ready=Boolean(f.original);$('#download').hidden=!ready;$('#original').hidden=!ready;
-    if(ready){const img=document.createElement('img');img.src=url(f.original);img.alt=f.headline;img.addEventListener('error',()=>{img.replaceWith(document.createTextNode('Image unavailable. Use Open original to retry.'));});$('#viewer-body').append(img);$('#original').href=url(f.original);$('#download').href=url(f.original);$('#download').download=f.id+'.png';}else{$('#original').removeAttribute('href');$('#download').removeAttribute('href');$('#viewer-body').append(window.RefluxoraLayout(f));}
+    if(ready){const img=document.createElement('img');img.src=url(f.original);img.alt=f.headline;img.addEventListener('error',()=>{img.replaceWith(document.createTextNode('Image unavailable. Use Open original to retry.'));});$('#viewer-body').append(img);$('#original').href=url(f.original);$('#download').href=url(f.original);$('#download').download=f.id+'.png';}else{$('#original').removeAttribute('href');$('#download').removeAttribute('href');const img=document.createElement('img');img.src=url(f.preview);img.alt=f.headline;$('#viewer-body').append(img);}
   }
   $('#close').addEventListener('click',()=>$('#viewer').close());$('#viewer').addEventListener('close',()=>{trigger?.focus();});
   $('#previous').addEventListener('click',()=>show(active-1));$('#next').addEventListener('click',()=>show(active+1));

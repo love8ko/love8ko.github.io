@@ -1,0 +1,616 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "he",
+  "label": "עברית",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "א · שמונה צרכים, שמונה תצוגות ברורות",
+      "description": "הכיוון האנגלי שנבחר והמקור להצגת מסכי תרגום מקומיים.",
+      "frames": [
+        {
+          "headline": "צרבת מפריעה לך לישון?",
+          "headlineLines": [
+            "צרבת מפריעה",
+            "לך לישון?"
+          ],
+          "accentLine": 1,
+          "subline": "שאלה שלך. צעד ברור הבא.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "שלב אחד ליום מחר",
+          "ui": {
+            "title": "הסבר AI",
+            "label": "הסבר AI · דוגמה",
+            "focus": "נסה ארוחה מוקדמת מחר בלילה.",
+            "explanation": "ארוחה מאוחרת שנשמרת עליה תחתיה תורם. עבור ערב עתידי, להתרחק לפחות שלוש שעות לאחר הארוחה לפני שתשכב על צדייך עלול להועיל.",
+            "disclaimer": "נתונים מדומים · לא אבחנה",
+            "question": "למה צרבת שלי גרועה בלילה?",
+            "context": [
+              [
+                "ארוחה",
+                "9:30 בלילה"
+              ],
+              [
+                "שכב",
+                "10:15 בלילה"
+              ]
+            ],
+            "contextDate": "8 בספטמבר · ערבך"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/he/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "דוגמה",
+            "footer": "תמונה מדומה · רעיון בדיד",
+            "dishTitle": "סלמון מעושן",
+            "dishDescription": "סוסה לימון",
+            "dishCaption": "דוגמה לطلب",
+            "dishAlt": "סלמון מעושן עם ריזה, בזיליקום וסוסה בקערה נפרדת",
+            "sourceLabel": "↗ NIDDK · מדריך לריפלוקס",
+            "anatomyCaption": "ריפלוקס מוסבר"
+          },
+          "locale": "he",
+          "lang": "he",
+          "dir": "rtl"
+        },
+        {
+          "headline": "מה שאפשר לבקש עם ריפלוקס?",
+          "headlineLines": [
+            "מה שאפשר לבקש",
+            "עם ריפלוקס?"
+          ],
+          "accentLine": 1,
+          "subline": "בדוק את התפריט לפני שתבקש.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "שינוי אחד לשקול",
+          "ui": {
+            "title": "مراجعة תפריט",
+            "label": "הסבר AI · דוגמה",
+            "focus": "בקש את הרוטב בצד.",
+            "explanation": "סוסות ציטרונים וסוסות עזות יכולות להטריד חלק מהאנשים. תשובתך יכולה להיות שונה.",
+            "disclaimer": "נתונים מדומים · לא אבחנה"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/he/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "he",
+          "lang": "he",
+          "dir": "rtl",
+          "copy": {
+            "example": "דוגמה",
+            "footer": "תמונה מדומה · רעיון בדיד",
+            "dishTitle": "סלמון מעושן",
+            "dishDescription": "סוסה לימון",
+            "dishCaption": "דוגמה לطلب",
+            "dishAlt": "סלמון מעושן עם ריזה, בזיליקום וסוסה בקערה נפרדת",
+            "sourceLabel": "↗ NIDDK · מדריך לריפלוקס"
+          }
+        },
+        {
+          "headline": "בנה את תוצאות הבדיקה שלך.",
+          "headlineLines": [
+            "בנה את תוצאות",
+            "הבדיקה שלך."
+          ],
+          "accentLine": 1,
+          "subline": "העלה קובץ PDF. קבל הסבר AI.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "בשפה פשוטה",
+          "ui": {
+            "title": "הסבר AI",
+            "label": "הסבר AI · דוגמה",
+            "focus": "הידרור של רירית הוושט.",
+            "explanation": "הรายงาน שלך מציין דלקת ושט. שואל את רופאך מה המשמעות של זה עבור טיפולך.",
+            "disclaimer": "הסבר לממצא כתוב · לא אבחנה"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/he/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "نتائج בדיקה.pdf",
+            "format": "PDF",
+            "type": ",endoscopy",
+            "findingLabel": "ממצא",
+            "finding": "דלקת ושט",
+            "date": "תמונה מדומה · דוגמה"
+          },
+          "copy": {
+            "example": "דוגמה",
+            "footer": "תמונה מדומה · רעיון בדיד",
+            "dishTitle": "סלמון מעושן",
+            "dishDescription": "סוסה לימון",
+            "dishCaption": "דוגמה לطلب",
+            "dishAlt": "סלמון מעושן עם ריזה, בזיליקום וסוסה בקערה נפרדת",
+            "sourceLabel": "↗ NIDDK · מדריך לריפלוקס",
+            "paperNote": "הรายงาน שהעלית",
+            "reportConnector": "PDF → AI",
+            "reportLead": "הรายงาน שלך אומר"
+          },
+          "locale": "he",
+          "lang": "he",
+          "dir": "rtl"
+        },
+        {
+          "headline": "הכין את תוכנית הערב שלך בצורה פשוטה.",
+          "headlineLines": [
+            "הכין את תוכנית הערב",
+            "שלך בצורה פשוטה."
+          ],
+          "accentLine": 1,
+          "subline": "اختر צעד אחד. קבע את הזמן.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "השלב שנבחר לערב",
+          "ui": {
+            "title": "תוכנית הערב",
+            "label": "ההערות שנשמרו · דוגמה",
+            "focus": "סיים את הארוחה עד 7:00 בלילה.",
+            "explanation": "השעון שנבחר לישון הוא 10:00 בלילה. תוכנית זו משאירת שלוש שעות אחרי הארוחה לפני שתשכב על צדייך; תקופת זו יכולה לעזור בתסמינים בלילה.",
+            "disclaimer": "נתונים מדומים · לא אבחנה",
+            "context": [
+              [
+                "סיים את הארוחה",
+                "7:00 בלילה"
+              ],
+              [
+                "שעון לישון",
+                "10:00 בלילה"
+              ]
+            ],
+            "contextDate": "10 בספטמבר · הערב",
+            "cta": "✓ תזכורת שהוגדרה · 6:30 בלילה"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/he/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "he",
+          "lang": "he",
+          "dir": "rtl",
+          "copy": {
+            "example": "דוגמה",
+            "footer": "תמונה מדומה · רעיון בדיד",
+            "dishTitle": "סלמון מעושן",
+            "dishDescription": "סוסה לימון",
+            "dishCaption": "דוגמה לطلب",
+            "dishAlt": "סלמון מעושן עם ריזה, בזיליקום וסוסה בקערה נפרדת",
+            "sourceLabel": "↗ NIDDK · מדריך לריפלוקס"
+          }
+        },
+        {
+          "headline": "הצטבר את תיעוד טיפולך.",
+          "headlineLines": [
+            "הצטבר את",
+            "תיעוד טיפולך."
+          ],
+          "accentLine": 1,
+          "subline": "זכור מה לקחת והרגשת.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "ההערה שנשמרה",
+          "ui": {
+            "title": "הערות טיפול",
+            "label": "ההערות שנשמרו · דוגמה",
+            "focus": "התרחשה תופעה. צרבת בלילה נרשמה.",
+            "explanation": "ההערות שלך, נשמרות יחד. ההערות האלה לא מראות איך טוב טיפול עובד.",
+            "disclaimer": "נתונים מדומים · לא אבחנה",
+            "context": [
+              [
+                "8:00 בוקר",
+                "התרחשה תופעה"
+              ],
+              [
+                "9:15 בלילה",
+                "צרבת נרשמה"
+              ]
+            ],
+            "contextDate": "9 בספטמבר · ההערות שלך",
+            "cta": "✓ הערה נשמרה"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/he/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "he",
+          "lang": "he",
+          "dir": "rtl",
+          "copy": {
+            "example": "דוגמה",
+            "footer": "תמונה מדומה · רעיון בדיד",
+            "dishTitle": "סלמון מעושן",
+            "dishDescription": "סוסה לימון",
+            "dishCaption": "דוגמה לطلب",
+            "dishAlt": "סלמון מעושן עם ריזה, בזיליקום וסוסה בקערה נפרדת",
+            "sourceLabel": "↗ NIDDK · מדריך לריפלוקס"
+          }
+        },
+        {
+          "headline": "גרון או קול מפריעים לך?",
+          "headlineLines": [
+            "גרון או קול",
+            "מפריעים לך?"
+          ],
+          "accentLine": 1,
+          "subline": "הצטבר מה שמציגים לך.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "הערות קול",
+          "ui": {
+            "title": "גרון וקול",
+            "label": "ההערות שנשמרו · דוגמה",
+            "focus": "קול עייף. ניקוי גרון. הערות נשמרות.",
+            "explanation": "הצטבר מה שמציגים לך ומתי. תסמינים של גרון וקול יכולים להיות עם סיבות שונות; ההערות האלה לא מציינות אבחנה.",
+            "disclaimer": "נתונים מדומים · לא אבחנה",
+            "context": [
+              [
+                "קול",
+                "עיף"
+              ],
+              [
+                "גרון",
+                "ניקוי"
+              ]
+            ],
+            "contextDate": "10 בספטמבר · לפני העבודה",
+            "cta": "✓ הערות נשמרות"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/he/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "he",
+          "lang": "he",
+          "dir": "rtl",
+          "copy": {
+            "example": "דוגמה",
+            "footer": "תמונה מדומה · רעיון בדיד",
+            "dishTitle": "סלמון מעושן",
+            "dishDescription": "סוסה לימון",
+            "dishCaption": "דוגמה לطلب",
+            "dishAlt": "סלמון מעושן עם ריזה, בזיליקום וסוסה בקערה נפרדת",
+            "sourceLabel": "↗ NIDDK · מדריך לריפלוקס"
+          }
+        },
+        {
+          "headline": "ארוחות ותסמינים. מסלול אחד.",
+          "headlineLines": [
+            "ארוחות ותסמינים.",
+            "מסלול אחד."
+          ],
+          "accentLine": 1,
+          "subline": "הצטבר את ההערות שלך במסלול אחד.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "ערב אחת, שתי הערות",
+          "ui": {
+            "title": "מסלול שלך",
+            "label": "ההערות שנשמרו · דוגמה",
+            "focus": "ארוחה 8:30 בלילה. צרבת 10:15 בלילה.",
+            "explanation": "שני אירועים שמורים מהערב نفسه. הזמן לבדו לא מראה שהארוחה גרמה לתסמין.",
+            "disclaimer": "נתונים מדומים · לא אבחנה",
+            "context": [
+              [
+                "8:30 בלילה",
+                "ארוחה"
+              ],
+              [
+                "10:15 בלילה",
+                "צרבת"
+              ]
+            ],
+            "contextDate": "7 בספטמבר · מסלול שלך",
+            "cta": "הצטבר הערות"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/he/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "he",
+          "lang": "he",
+          "dir": "rtl",
+          "copy": {
+            "example": "דוגמה",
+            "footer": "תמונה מדומה · רעיון בדיד",
+            "dishTitle": "סלמון מעושן",
+            "dishDescription": "סוסה לימון",
+            "dishCaption": "דוגמה לطلب",
+            "dishAlt": "סלמון מעושן עם ריזה, בזיליקום וסוסה בקערה נפרדת",
+            "sourceLabel": "↗ NIDDK · מדריך לריפלוקס"
+          }
+        },
+        {
+          "headline": "הצטבר את ההיסטוריה שלך לפגישתך.",
+          "headlineLines": [
+            "הצטבר את ההיסטוריה",
+            "שלך לפגישתך."
+          ],
+          "accentLine": 1,
+          "subline": "הצטבר סיכום ברור לרופא שלך.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "סיכום הפגישתך",
+          "ui": {
+            "title": "סיכום הפגישה",
+            "label": "ההערות שנשמרו · דוגמה",
+            "focus": "ההערות שמורות שלך, מוכנות לשתף.",
+            "explanation": "סיכום של הארוחות, תסמינים, הערות טיפול וรายงาน שמור. שתף אותו כנקודת התחלה לפגישתך.",
+            "disclaimer": "נתונים מדומים · לא אבחנה",
+            "context": [
+              [
+                "7 בספטמבר–10 בספטמבר",
+                "ההערות שמורות"
+              ],
+              [
+                "compounds",
+                "ארוחות · תסמינים · 报告"
+              ]
+            ],
+            "contextDate": "סיכום הפגישה",
+            "cta": "שתף סיכום · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/he/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · דוגמה",
+            "title": "ההערות שלך",
+            "date": "7 בספטמבר–10 בספטמבר · דוגמה",
+            "rows": [
+              "ארוחות ותסמינים",
+              "הערות טיפול",
+              "הรายงาน שלך"
+            ]
+          },
+          "locale": "he",
+          "lang": "he",
+          "dir": "rtl",
+          "copy": {
+            "example": "דוגמה",
+            "footer": "תמונה מדומה · רעיון בדיד",
+            "dishTitle": "סלמון מעושן",
+            "dishDescription": "סוסה לימון",
+            "dishCaption": "דוגמה לطلب",
+            "dishAlt": "סלמון מעושן עם ריזה, בזיליקום וסוסה בקערה נפרדת",
+            "sourceLabel": "↗ NIDDK · מדריך לריפלוקס"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/he/contact-sheet.html",
+  "download": null
+}

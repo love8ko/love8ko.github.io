@@ -1,0 +1,618 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "kn-IN",
+  "label": "ಕನ್ನಡ",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · 8 ಅಗತ್ಯಗಳು, 8 ಸ್ಪಷ್ಟ ಕ್ಷೇತ್ರಗಳು",
+      "description": "ಆಂಗ್ಲ ದಿಶೆಯನ್ನು ಆರಂಭಿಸಿದ ಮತ್ತು ವಿಶೇಷ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಅನುಸರಿಸಿದ ಲೋಕಲ್ ಸ್ಕ್ರೀನ್‌ಗಳಿಗಾಗಿ",
+      "frames": [
+        {
+          "headline": "ಎದೆ ಉರಿಯುವುದು ನಿಮ್ಮನ್ನು ಹೊರ್ಗೆ ಕೊಂಡು ಹೊರಟು ಬರುತ್ತಿದೆ?",
+          "headlineLines": [
+            "ಎದೆ ಉರಿಯುವುದು",
+            "ನಿಮ್ಮನ್ನು ಹೊರ್ಗೆ",
+            "ಕೊಂಡು ಹೊರಟು ಬರುತ್ತಿದೆ?"
+          ],
+          "accentLine": 2,
+          "subline": "ನಿಮ್ಮ ಪ್ರಶ್ನೆ. ಹೆಚ್ಚು ಸ್ಪಷ್ಟವಾದ ಅಗತ್ಯ ಕ್ರಮ.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "ನಿಮ್ಮ ಮುಂದಿನ ದಿನದ ಒಂದು ಕ್ರಮ",
+          "ui": {
+            "title": "AI ವಿವರಣೆ",
+            "label": "AI ವಿವರಣೆ · ಉದಾಹರಣೆ",
+            "focus": "ನಿಮ್ಮ ಮುಂದಿನ ದಿನ ರಾತ್ರಿಯಲ್ಲಿ ಹೆಚ್ಚು ಹೊಳೆಯುವ ದುಂಡು ಹಾಗೆ ಕೊಂಡು ಹೊರಡುವುದು.",
+            "explanation": "ಒಂದು ವೇಗದ ಭೋಜನ ಮತ್ತು ಅದನ್ನು ಹೊರ್ಗೆ ಕೊಂಡು ಹೊರಡುವುದು ಹೊರಗೆ ಕೊಂಡು ಹೊರಡುವುದು ಹೊರಗೆ ಕೊಂಡು ಹೊರಡುವುದು. ಹೊರಗೆ ಕೊಂಡು ಹೊರಡುವ ವೇಗದ ಭೋಜನ ಮತ್ತು ಅದನ್ನು ಹೊರಗೆ ಕೊಂಡು ಹೊರಡುವುದು ಹೊರಗೆ ಕೊಂಡು ಹೊರಡುವುದು.",
+            "disclaimer": "ವಿವರಿತ ಡೇಟಾ · ರೋಗನಿರ್ಣಯವಲ್ಲ",
+            "question": "ನಿಮ್ಮ ಎದೆ ಉರಿ ರಾತ್ರಿಯಲ್ಲಿ ಹೆಚ್ಚು ಹೊಳೆಯುತ್ತದೆ?",
+            "context": [
+              [
+                "ಊಟ",
+                "9:30 ಗಂಟಿ"
+              ],
+              [
+                "ಒಂದು ಬಾರಿ ಹೊರಗೆ ಕೊಂಡು ಹೊರಡು",
+                "10:15 ಗಂಟಿ"
+              ]
+            ],
+            "contextDate": "ಸೆಪ್ಟೆಂಬರ್ 8 · ನಿಮ್ಮ ರಾತ್ರಿ"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/kn-IN/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "ಸಮಾನ್ಯ",
+            "footer": "ವಿವರಿತ ಇಂಟರ್ಫೇಸ್ · ಡೆಸೈನ್ ಕಾಲ್ಪಾಯ",
+            "dishTitle": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್",
+            "dishDescription": "ಲೆಮಾನ್ ಬಟರ್ ಸಾಸ್",
+            "dishCaption": "ಸಮಾನ್ಯ ಅರ್ಡರ್",
+            "dishAlt": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್, ರೈಸ್, ಗ್ರೀನ್ ಬೀನ್ಸ್ ಮತ್ತು ಸಾಸ್ ಪ್ರತ್ಯೇಕವಾಗಿ ಕೇಳಿ",
+            "sourceLabel": "↗ NIDDK · ರಿಫ್ಲಕ್ಸ್ ಗುರುತು",
+            "anatomyCaption": "ರಿಫ್ಲಕ್ಸ್ ವಿವರಿಸಲ್ಲ"
+          },
+          "locale": "kn-IN",
+          "lang": "kn-IN",
+          "dir": "ltr"
+        },
+        {
+          "headline": "ರಿಫ್ಲಕ್ಸ್‌ಗೆ ಯಾವುದನ್ನು ಕೊಂಡು ತೆಗೆಯಬಹುದು?",
+          "headlineLines": [
+            "ರಿಫ್ಲಕ್ಸ್‌ಗೆ ಯಾವುದನ್ನು",
+            "ಕೊಂಡು ತೆಗೆಯಬಹುದು?"
+          ],
+          "accentLine": 1,
+          "subline": "ಆರ್ಡರ್ ಮಾಡುವ ಮೊದಲೆ, ಮೆನುವನ್ನು ಪರಿಶೀಲಿಸಿ",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "ಒಂದು ಬದಲಾಗುವ ವಿಷಯವನ್ನು ಪರಿಗಣಿಸಿ",
+          "ui": {
+            "title": "ಮೆನು ಪರಿಶೀಲನೆ",
+            "label": "AI ವಿವರಣೆ · ಉದಾಹರಣೆ",
+            "focus": "ಸಾಸ್ ಅನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ಕೇಳಿ",
+            "explanation": "ಕಿಟ್ಟ್ ಮತ್ತು ಪ್ರಾಯೋಗಿಕ ಸಾಸ್‌ಗಳು ಕೆಲವು ಮಾನವರಿಗೆ ಸಮಸ್ಯೆ ಮಾಡಬಹುದು. ನಿಮ್ಮ ವಿರುದ್ಧ ಪ್ರತಿಕ್ರಿಯೆಯು ವ್ಯತ್ಯಯಿಸಬಹುದು",
+            "disclaimer": "ವಿವರಿತ ಡೇಟಾ · ರೋಗನಿರ್ಣಯವಲ್ಲ"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/kn-IN/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "kn-IN",
+          "lang": "kn-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ಸಮಾನ್ಯ",
+            "footer": "ವಿವರಿತ ಇಂಟರ್ಫೇಸ್ · ಡೆಸೈನ್ ಕಾಲ್ಪಾಯ",
+            "dishTitle": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್",
+            "dishDescription": "ಲೆಮಾನ್ ಬಟರ್ ಸಾಸ್",
+            "dishCaption": "ಸಮಾನ್ಯ ಅರ್ಡರ್",
+            "dishAlt": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್, ರೈಸ್, ಗ್ರೀನ್ ಬೀನ್ಸ್ ಮತ್ತು ಸಾಸ್ ಪ್ರತ್ಯೇಕವಾಗಿ ಕೇಳಿ",
+            "sourceLabel": "↗ NIDDK · ರಿಫ್ಲಕ್ಸ್ ಗುರುತು"
+          }
+        },
+        {
+          "headline": "ನಿಮ್ಮ ಟೆಸ್ಟ್ ರಿಸಲ್ಟ್‌ಗಳನ್ನು ಅರ್ಥಪಡಿಸಿ",
+          "headlineLines": [
+            "ನಿಮ್ಮ ಟೆಸ್ಟ್",
+            "ರಿಸಲ್ಟ್‌ಗಳನ್ನು ಅರ್ಥಪಡಿಸಿ"
+          ],
+          "accentLine": 1,
+          "subline": "PDF ಅನ್ನು ಅಪ್ಲೋಡ್ ಮಾಡಿ. AI ಅನ್ನು ಅರ್ಥಪಡಿಸಿ",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "ಸುಲ್ಲು ಇಂಗ್ಲಿಷ್",
+          "ui": {
+            "title": "AI ವಿವರಣೆ",
+            "label": "AI ವಿವರಣೆ · ಉದಾಹರಣೆ",
+            "focus": "ಊಟದ ನಾಳದ ಲೈನಿಂಗ್‌ನಲ್ಲಿ ಪ್ರತಿಕ್ರಿಯೆ",
+            "explanation": "ನಿಮ್ಮ ರಿಪೋರ್ಟ್‌ನಲ್ಲಿ ಈಸೊಫಾಗೈಟಿಸ್ ಎಂದು ಕಣ್ಣು ಹೊರೆಯುತ್ತಿದೆ. ನಿಮ್ಮ ಕ್ಲಿನಿಕಲ್ ವ್ಯಕ್ತಿಯು ಈ ಹಾಗೆ ನಿಮ್ಮ ಚಿಕಿತ್ಸೆಗೆ ಏನು ಅರ್ಥಪಡಿಸಬಹುದು?",
+            "disclaimer": "ಲಿಖಿತ ವರದಿ ಅರ್ಥಪಡಿಸುವುದು · ರೋಗನಿರ್ಣಯವಲ್ಲ"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/kn-IN/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "ಟೆಸ್ಟ್ ರಿಸಲ್ಟ್‌.pdf",
+            "format": "PDF",
+            "type": "ಅಂತರ್ಗತ ಅಂತರ್ಗತ",
+            "findingLabel": "ಸ್ಥಿತಿ",
+            "finding": "ಈಸೊಫಾಗೈಟಿಸ್",
+            "date": "ಸೂಚನೆಯ ರಿಪೋರ್ಟ್ · ಉದಾಹರಣೆ"
+          },
+          "copy": {
+            "example": "ಸಮಾನ್ಯ",
+            "footer": "ವಿವರಿತ ಇಂಟರ್ಫೇಸ್ · ಡೆಸೈನ್ ಕಾಲ್ಪಾಯ",
+            "dishTitle": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್",
+            "dishDescription": "ಲೆಮಾನ್ ಬಟರ್ ಸಾಸ್",
+            "dishCaption": "ಸಮಾನ್ಯ ಅರ್ಡರ್",
+            "dishAlt": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್, ರೈಸ್, ಗ್ರೀನ್ ಬೀನ್ಸ್ ಮತ್ತು ಸಾಸ್ ಪ್ರತ್ಯೇಕವಾಗಿ ಕೇಳಿ",
+            "sourceLabel": "↗ NIDDK · ರಿಫ್ಲಕ್ಸ್ ಗುರುತು",
+            "paperNote": "ನಿಮ್ಮ ಅಪ್ಲೋಡ್ ಆಗಿದ್ದ ರಿಪೋರ್ಟ್",
+            "reportConnector": "PDF → AI",
+            "reportLead": "ನಿಮ್ಮ ರಿಪೋರ್ಟ್‌ನಲ್ಲಿ ಹೇಗೆ ಹೇಳಿದೆ"
+          },
+          "locale": "kn-IN",
+          "lang": "kn-IN",
+          "dir": "ltr"
+        },
+        {
+          "headline": "ಈಗೆಯ ಪ್ರತಿಯೋಗಿಯನ್ನು ಸರಳಗೊಳಿಸಿ",
+          "headlineLines": [
+            "ಈಗೆಯ ಪ್ರತಿಯೋಗಿಯನ್ನು",
+            "ಸರಳಗೊಳಿಸಿ"
+          ],
+          "accentLine": 1,
+          "subline": "ಒಂದು ಕ್ರಮವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ. ನಿಮ್ಮ ಸಮಯವನ್ನು ನಿರ್ಣಯಿಸಿ",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "ನಿಮ್ಮ ಆಯ್ಕೆಯ ರಾತ್ರಿ ಕ್ರಮ",
+          "ui": {
+            "title": "ಈಗಿನ ಪ್ಲಾನ್",
+            "label": "ನಿಮ್ಮ ಸಂರಕ್ಷಿತ ನೋಟ್ಸ್ · ಉದಾಹರಣೆ",
+            "focus": "ಊಟವನ್ನು 7:00 PM ಗೆ ಮುಗಿಸಿ",
+            "explanation": "ನಿಮ್ಮ ಆಯ್ಕೆಯ ಬೇಸ್ ಸಮಯ 10:00 PM. ಈ ಪ್ಲಾನ್‌ನಲ್ಲಿ 3 ಗಂಟೆಯ ಕಾಲ ಊಟದ ನಂತರ ಅಸ್ತಿತ್ವದಲ್ಲಿ ಹೋಗುವುದು; ಇದು ರಾತ್ರಿ ಲಕ್ಷಣಗಳನ್ನು ಸಹಾಯಿಸಬಹುದು.",
+            "disclaimer": "ವಿವರಿತ ಡೇಟಾ · ರೋಗನಿರ್ಣಯವಲ್ಲ",
+            "context": [
+              [
+                "ಊಟವನ್ನು ಮುಗಿಸಿ",
+                "19:00"
+              ],
+              [
+                "ಬೇಸ್",
+                "22:00"
+              ]
+            ],
+            "contextDate": "ಸೆಪ್ಟೆಂಬರ್ 10 · ಈಗ",
+            "cta": "✓ 6:30 PM ರಿಮೈಂಡರ್ ಸೆಟ್"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/kn-IN/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "kn-IN",
+          "lang": "kn-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ಸಮಾನ್ಯ",
+            "footer": "ವಿವರಿತ ಇಂಟರ್ಫೇಸ್ · ಡೆಸೈನ್ ಕಾಲ್ಪಾಯ",
+            "dishTitle": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್",
+            "dishDescription": "ಲೆಮಾನ್ ಬಟರ್ ಸಾಸ್",
+            "dishCaption": "ಸಮಾನ್ಯ ಅರ್ಡರ್",
+            "dishAlt": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್, ರೈಸ್, ಗ್ರೀನ್ ಬೀನ್ಸ್ ಮತ್ತು ಸಾಸ್ ಪ್ರತ್ಯೇಕವಾಗಿ ಕೇಳಿ",
+            "sourceLabel": "↗ NIDDK · ರಿಫ್ಲಕ್ಸ್ ಗುರುತು"
+          }
+        },
+        {
+          "headline": "ನಿಮ್ಮ ಚಿಕಿತ್ಸನ ನೋಟ್ಸ್‌ನ್ನು ಒಟ್ಟುಗೊಳಿಸಿ",
+          "headlineLines": [
+            "ನಿಮ್ಮ ಚಿಕಿತ್ಸನ",
+            "ನೋಟ್ಸ್‌ನ್ನು ಒಟ್ಟುಗೊಳಿಸಿ"
+          ],
+          "accentLine": 1,
+          "subline": "ನಿಮ್ಮೊಂದು ತ್ಯಾಗ ಮತ್ತು ಅನುಭವವನ್ನು ನೆನಪಿಡಿ",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "ನಿಮ್ಮ ಸಂರಕ್ಷಿತ ನೋಟ್",
+          "ui": {
+            "title": "ಚಿಕಿತ್ಸನ ನೋಟ್ಸ್",
+            "label": "ನಿಮ್ಮ ಸಂರಕ್ಷಿತ ನೋಟ್ಸ್ · ಉದಾಹರಣೆ",
+            "focus": "ಚಿಕಿತ್ಸನ ತೆಗೆಯಲ್ಪಟ್ಟಿದೆ. ರಾತ್ರಿ ಎದೆ ಉರಿ ಲಕ್ಷಣ ನೋಟ್ ಮಾಡಿದೆ",
+            "explanation": "ನಿಮ್ಮ ನೋಟ್ಸ್‌ನ್ನು ಒಟ್ಟುಗೊಳಿಸಿ. ಇವು ಚಿಕಿತ್ಸನ ಕೆಲಸ ಎಲ್ಲಾ ವಿಧಾನಗಳ ಮಟ್ಟವನ್ನು ನಿರ್ಣಯಿಸುವುದಿಲ್ಲ",
+            "disclaimer": "ವಿವರಿತ ಡೇಟಾ · ರೋಗನಿರ್ಣಯವಲ್ಲ",
+            "context": [
+              [
+                "08:00",
+                "ಚಿಕಿತ್ಸನ ತೆಗೆಯಲ್ಪಟ್ಟಿದೆ"
+              ],
+              [
+                "21:15",
+                "ಎದೆ ಉರಿ ಲಕ್ಷಣ ನೋಟ್ ಮಾಡಿದೆ"
+              ]
+            ],
+            "contextDate": "ಸೆಪ್ಟೆಂಬರ್ 9 · ನಿಮ್ಮ ನೋಟ್ಸ್",
+            "cta": "✓ ನೋಟ್ ಸೇವಿಸಲಾಗಿದೆ"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/kn-IN/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "kn-IN",
+          "lang": "kn-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ಸಮಾನ್ಯ",
+            "footer": "ವಿವರಿತ ಇಂಟರ್ಫೇಸ್ · ಡೆಸೈನ್ ಕಾಲ್ಪಾಯ",
+            "dishTitle": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್",
+            "dishDescription": "ಲೆಮಾನ್ ಬಟರ್ ಸಾಸ್",
+            "dishCaption": "ಸಮಾನ್ಯ ಅರ್ಡರ್",
+            "dishAlt": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್, ರೈಸ್, ಗ್ರೀನ್ ಬೀನ್ಸ್ ಮತ್ತು ಸಾಸ್ ಪ್ರತ್ಯೇಕವಾಗಿ ಕೇಳಿ",
+            "sourceLabel": "↗ NIDDK · ರಿಫ್ಲಕ್ಸ್ ಗುರುತು"
+          }
+        },
+        {
+          "headline": "ಗಂಟಲು ಅಥವಾ ವಾಕ್ ನೀರಿನಿಂದ ಬೇಕಾಗಿದೆ?",
+          "headlineLines": [
+            "ಗಂಟಲು ಅಥವಾ ವಾಕ್",
+            "ನೀರಿನಿಂದ ಬೇಕಾಗಿದೆ?"
+          ],
+          "accentLine": 1,
+          "subline": "ನಿಮ್ಮ ಅನುಭವಗಳನ್ನು ನೋಡಿ ನೋಡಿ",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "ನಿಮ್ಮ ವ್ಯಾಕ್ಸ್",
+          "ui": {
+            "title": "ಗುರುಡಿ ಮತ್ತು ವ್ಯಾಕ್ಸ್",
+            "label": "ನಿಮ್ಮ ಸಂರಕ್ಷಿತ ನೋಟ್ಸ್ · ಉದಾಹರಣೆ",
+            "focus": "ಗುರುಡಿ ಹೊರೆಯುವುದು. ಗಂಟಲು ಸ್ವಚ್ಛಗೊಳಿಸುವುದು. ನೋಟ್ಸ್ ಸಂಗ್ರಹಗೊಳಿಸಲ್ಪಟ್ಟಿವೆ.",
+            "explanation": "ನಿಮ್ಮ ಅನುಭವವನ್ನು ಹೇಗೆ ಮತ್ತು ಯಾವ ಸಮಯದಲ್ಲಿ ಸಂಗ್ರಹಿಸಿ. ಗುರುಡಿ ಮತ್ತು ವ್ಯಾಕ್ಸ್ ಲಕ್ಷಣಗಳು ವ್ಯತ್ಯಯ ಕಾರಣಗಳನ್ನು ಹೊಂದಬಹುದು; ಇದು ರೋಗನಿರ್ಣಯವನ್ನು ಗುರುತಿಸುವುದಿಲ್ಲ.",
+            "disclaimer": "ವಿವರಿತ ಡೇಟಾ · ರೋಗನಿರ್ಣಯವಲ್ಲ",
+            "context": [
+              [
+                "ವ್ಯಾಕ್ಸ್",
+                "ಗುರುಡಿ ಹೊರೆಯುವುದು"
+              ],
+              [
+                "ಗುರುಡಿ",
+                "ಗಂಟಲು ಸ್ವಚ್ಛಗೊಳಿಸುವುದು"
+              ]
+            ],
+            "contextDate": "ಸೆಪ್ 10 · ಕೆಲಸಕ್ಕೆ ಮುಂಚಿತ",
+            "cta": "✓ ನೋಟ್ಸ್ ಸಂಗ್ರಹಗೊಳಿಸಲ್ಪಟ್ಟಿವೆ"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/kn-IN/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "kn-IN",
+          "lang": "kn-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ಸಮಾನ್ಯ",
+            "footer": "ವಿವರಿತ ಇಂಟರ್ಫೇಸ್ · ಡೆಸೈನ್ ಕಾಲ್ಪಾಯ",
+            "dishTitle": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್",
+            "dishDescription": "ಲೆಮಾನ್ ಬಟರ್ ಸಾಸ್",
+            "dishCaption": "ಸಮಾನ್ಯ ಅರ್ಡರ್",
+            "dishAlt": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್, ರೈಸ್, ಗ್ರೀನ್ ಬೀನ್ಸ್ ಮತ್ತು ಸಾಸ್ ಪ್ರತ್ಯೇಕವಾಗಿ ಕೇಳಿ",
+            "sourceLabel": "↗ NIDDK · ರಿಫ್ಲಕ್ಸ್ ಗುರುತು"
+          }
+        },
+        {
+          "headline": "ಊಟಗಳು ಮತ್ತು ಲಕ್ಷಣಗಳು. ಒಂದು ಸಮಯ ರೇಖೆ.",
+          "headlineLines": [
+            "ಊಟಗಳು ಮತ್ತು ಲಕ್ಷಣಗಳು.",
+            "ಒಂದು ಸಮಯ ರೇಖೆ."
+          ],
+          "accentLine": 1,
+          "subline": "ನಿಮ್ಮ ನೋಟ್ಸ್‌ನ್ನು ಒಂದು ಸಮಯ ರೇಖೆಯಲ್ಲಿ ನೋಡಿ.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "ಒಂದು ರಾತ್ರಿ, ಎರಡು ಪ್ರವೇಶಗಳು",
+          "ui": {
+            "title": "ನಿಮ್ಮ ಸಮಯ ರೇಖೆ",
+            "label": "ನಿಮ್ಮ ಸಂರಕ್ಷಿತ ನೋಟ್ಸ್ · ಉದಾಹರಣೆ",
+            "focus": "ಊಟ 8:30 PM. ಎದೆ ಉರಿ 10:15 PM.",
+            "explanation": "ಒಂದು ರಾತ್ರಿಯಲ್ಲಿ ಸಂಗ್ರಹಗೊಳಿಸಿದ ಎರಡು ಘಟನೆಗಳು. ಇವು ಮಾತ್ರ ಸಮಯ ಮಾತ್ರೆಯಲ್ಲಿ ಅವು ಲಕ್ಷಣವನ್ನು ಕಾರಣಗೊಳಿಸಿದ್ದು ಅಲ್ಲ.",
+            "disclaimer": "ವಿವರಿತ ಡೇಟಾ · ರೋಗನಿರ್ಣಯವಲ್ಲ",
+            "context": [
+              [
+                "20:30",
+                "ಊಟ"
+              ],
+              [
+                "10:15 ಗಂಟಿ",
+                "ಎದೆ ಉರಿ"
+              ]
+            ],
+            "contextDate": "ಸೆಪ್ 7 · ನಿಮ್ಮ ಸಮಯ ರೇಖೆ",
+            "cta": "ಸಂಗ್ರಹಗೊಳಿಸಿದ ಪ್ರವೇಶಗಳನ್ನು ನೋಡಿ"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/kn-IN/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "kn-IN",
+          "lang": "kn-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ಸಮಾನ್ಯ",
+            "footer": "ವಿವರಿತ ಇಂಟರ್ಫೇಸ್ · ಡೆಸೈನ್ ಕಾಲ್ಪಾಯ",
+            "dishTitle": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್",
+            "dishDescription": "ಲೆಮಾನ್ ಬಟರ್ ಸಾಸ್",
+            "dishCaption": "ಸಮಾನ್ಯ ಅರ್ಡರ್",
+            "dishAlt": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್, ರೈಸ್, ಗ್ರೀನ್ ಬೀನ್ಸ್ ಮತ್ತು ಸಾಸ್ ಪ್ರತ್ಯೇಕವಾಗಿ ಕೇಳಿ",
+            "sourceLabel": "↗ NIDDK · ರಿಫ್ಲಕ್ಸ್ ಗುರುತು"
+          }
+        },
+        {
+          "headline": "ನಿಮ್ಮ ಸಮಯ ರೇಖೆಯನ್ನು ನಿಮ್ಮ ವೈದ್ಯ ಸಂಪರ್ಕದಲ್ಲಿ ತರುವುದು.",
+          "headlineLines": [
+            "ನಿಮ್ಮ ಸಮಯ ರೇಖೆಯನ್ನು",
+            "ನಿಮ್ಮ ವೈದ್ಯ",
+            "ಸಂಪರ್ಕದಲ್ಲಿ ತರುವುದು."
+          ],
+          "accentLine": 2,
+          "subline": "ನಿಮ್ಮ ವೈದ್ಯಕೀಯ ವಿವರಗಳನ್ನು ಸ್ಪಷ್ಟವಾಗಿ ನೀಡಿ.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "ನಿಮ್ಮ ವೈದ್ಯ ಸಮಯ ವಿವರ",
+          "ui": {
+            "title": "ವಿಶ್ಲೇಷಣೆ",
+            "label": "ನಿಮ್ಮ ಸಂರಕ್ಷಿತ ನೋಟ್ಸ್ · ಉದಾಹರಣೆ",
+            "focus": "ನಿಮ್ಮ ಸಂಗ್ರಹಗಾಳಿಗಳು, ಹಂಚಿನ ಸಮಯದಲ್ಲಿ ಹಂಚಿಕೆ ಮಾಡಬೇಕಾಗುವ ರೀತಿಯಲ್ಲಿ",
+            "explanation": "ನಿಮ್ಮ ಸಂಗ್ರಹಗಾಳಿಗಳು, ಹೆಚ್ಚುವ ಆಹಾರಗಳು, ಲಕ್ಷಣಗಳು, ಚಿಕಿತ್ಸೆ ನೋಟಗಳು ಮತ್ತು ವರದಿಯ ಒಂದು ಸಂಕ್ಷಿಪ್ತ ವಿವರ. ನಿಮ್ಮ ಅನುಸ್ಥಾಪನೆಗೆ ಹಾಕಬೇಕಾದ ಪ್ರಾರಂಭದ ಬಾಂಧವನ ರೂಪವನ್ನು ಹಂಚಿಕೆ ಮಾಡಿ.",
+            "disclaimer": "ವಿವರಿತ ಡೇಟಾ · ರೋಗನಿರ್ಣಯವಲ್ಲ",
+            "context": [
+              [
+                "ಸೆಪ್ಟೆಂಬರ್ 7–10",
+                "ಸಂಗ್ರಹಗಾಳಿಗಳು"
+              ],
+              [
+                "ಸೇರಿದ್ದು",
+                "ಆಹಾರಗಳು · ಲಕ್ಷಣಗಳು · ವರದಿ"
+              ]
+            ],
+            "contextDate": "ಅನುಸ್ಥಾಪನೆ ವಿವರ",
+            "cta": "ವಿವರ ಹಂಚಿಕೆ · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/kn-IN/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · ಉದಾಹರಣೆ",
+            "title": "ನಿಮ್ಮ ವಿವರಗಳು",
+            "date": "ಸೆಪ್ಟೆಂಬರ್ 7–10 · ಉದಾಹರಣೆ",
+            "rows": [
+              "ಆಹಾರಗಳು & ಲಕ್ಷಣಗಳು",
+              "ಚಿಕಿತ್ಸನ ನೋಟ್ಸ್",
+              "ನಿಮ್ಮ ವರದಿ"
+            ]
+          },
+          "locale": "kn-IN",
+          "lang": "kn-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ಸಮಾನ್ಯ",
+            "footer": "ವಿವರಿತ ಇಂಟರ್ಫೇಸ್ · ಡೆಸೈನ್ ಕಾಲ್ಪಾಯ",
+            "dishTitle": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್",
+            "dishDescription": "ಲೆಮಾನ್ ಬಟರ್ ಸಾಸ್",
+            "dishCaption": "ಸಮಾನ್ಯ ಅರ್ಡರ್",
+            "dishAlt": "ಗ್ರೈಲ್ಡ್ ಸಾಲ್ಮಾನ್, ರೈಸ್, ಗ್ರೀನ್ ಬೀನ್ಸ್ ಮತ್ತು ಸಾಸ್ ಪ್ರತ್ಯೇಕವಾಗಿ ಕೇಳಿ",
+            "sourceLabel": "↗ NIDDK · ರಿಫ್ಲಕ್ಸ್ ಗುರುತು"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/kn-IN/contact-sheet.html",
+  "download": null
+}

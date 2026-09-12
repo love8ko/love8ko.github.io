@@ -2,20 +2,20 @@
 window.RefluxoraTrioLayout = window.RefluxoraLayout;
 window.RefluxoraLayout = function(f) {
   if (f.series !== 'E' || Number(f.position) < 4) return window.RefluxoraTrioLayout(f);
-  const n=(tag,cls,text)=>{const el=document.createElement(tag);el.className=cls;if(text)el.textContent=text;return el;};
+  const n=(tag,cls,text)=>{const el=document.createElement(tag);el.className=cls;if(text)window.RefluxoraSetText(el,text,f.dir);return el;};
   const copy=f.copy||{};
   if(f.position==='08') {
     const art=window.RefluxoraCLayout({...f,series:'C'});art.classList.add('series-E','e-extended','e-08');
-    art.classList.add(`locale-${f.locale||'en-US'}`);art.lang=f.lang||'en';art.querySelector('.art-brand').remove();
+    art.classList.add(`locale-${f.locale||'en-US'}`);art.lang=f.lang||'en';art.dir=f.dir||'ltr';art.querySelector('.art-brand').remove();
     return art;
   }
-  const art=n('div',`art series-E e-extended e-${f.position} locale-${f.locale||'en-US'}`);art.dataset.id=f.id;art.lang=f.lang||'en';
+  const art=n('div',`art series-E e-extended e-${f.position} locale-${f.locale||'en-US'}`);art.dataset.id=f.id;art.lang=f.lang||'en';art.dir=f.dir||'ltr';
   const photo=n('img','art-photo');photo.src=f.asset;photo.alt=f.scene;art.append(photo);
   const head=n('div','art-head'),h=n('h3','');
   f.headlineLines.forEach((line,i)=>h.append(n('span',i===f.accentLine?'accent':'',line)));
   head.append(h,n('p','art-subline',f.subline));art.append(head);
   const app=n('div','e-app'),top=n('div','e-app-top');
-  top.append(n('strong','',f.ui.title),n('span','',copy.example||'Example'));app.append(top);
+  top.append(n('strong','',f.ui.title),n('span','',copy.example));app.append(top);
 
   if(f.position==='04') {
     const schedule=n('div','e-schedule');
@@ -40,13 +40,8 @@ window.RefluxoraLayout = function(f) {
     });
     app.append(n('div','e-day',f.ui.contextDate),timeline);
   }
-  if(f.position==='08') {
-    const doc=n('div','e-summary-document');doc.append(n('span','e-summary-format','PDF'),n('strong','e-summary-title','Your saved history'),n('span','e-summary-date','Sep 7–10 · Example'));
-    for(const text of f.summaryRows)doc.append(n('div','e-summary-row','✓ '+text));
-    app.append(doc,n('div','e-share-button',f.ui.cta));
-  }
   const result=n('div','e-result');result.append(n('span','e-result-label',f.proofLabel),n('strong','ui-focus proof-focus',f.ui.focus));
   app.append(result,n('p','e-explanation',f.ui.explanation));art.append(app);
-  const foot=n('div','art-foot');foot.append(n('span','',copy.footer||'Illustrative interface · Design concept'),n('span','',f.id));art.append(foot);
+  const foot=n('div','art-foot');foot.append(n('span','',copy.footer),n('span','',f.id));art.append(foot);
   return art;
 };

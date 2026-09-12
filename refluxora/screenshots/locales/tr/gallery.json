@@ -1,0 +1,618 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "tr",
+  "label": "Türkçe",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Sekiz ihtiyacınız, sekiz net görüntü",
+      "description": "Seçilen İngilizce yöneltme ve kaynak için yerel ekran görüntülerinde.",
+      "frames": [
+        {
+          "headline": "Gece Uyandırıcı Mide Yanması?",
+          "headlineLines": [
+            "Gece Uyandırıcı",
+            "Mide Yanması?"
+          ],
+          "accentLine": 1,
+          "subline": "Sorunuz. Daha net bir sonraki adım.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "BIR GÜN ÖNCÜK ADIM",
+          "ui": {
+            "title": "Yapay Zeka açıklaması",
+            "label": "Yapay Zeka açıklaması · Örnek",
+            "focus": "Yarın akşamı daha erken bir akşam yemeği deneyin.",
+            "explanation": "Gece yatmadan önceki bir yemek, sonrasında hemen yatma durumu önemli olabilir. Gelecekteki bir akşam yemeğiniz için, yemekten en az 3 saat sonra yatmanızı sağlamak, faydalı olabilir.",
+            "disclaimer": "Görsel veri · Bir teşhis değildir",
+            "question": "Neden gece mide yanma daha kötü oluyor?",
+            "context": [
+              [
+                "Akşam Yemeği",
+                "21:30"
+              ],
+              [
+                "Yat",
+                "22:15"
+              ]
+            ],
+            "contextDate": "Sep 8 · Gece senaryonuz"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/tr/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Örnek",
+            "footer": "Görsel arayüz · Tasarım kavramı",
+            "dishTitle": "Salamon",
+            "dishDescription": "Limon buterın sosu",
+            "dishCaption": "ÖRNEK SIPARIŞ",
+            "dishAlt": "Salamon, mısır, yeşil bezelye ve sosun ayrı bir kavanozda",
+            "sourceLabel": "↗ NIDDK · Reflü rehberi",
+            "anatomyCaption": "Reflü açıklayıcı"
+          },
+          "locale": "tr",
+          "lang": "tr",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Reflü ile İlişkili Neyi Sipariş Edebilirim?",
+          "headlineLines": [
+            "Reflü ile İlişkili",
+            "Neyi Sipariş",
+            "Edebilirim?"
+          ],
+          "accentLine": 2,
+          "subline": "Sipariş öncesi menüyü kontrol edin.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "BİR DEĞİŞİM DÜŞÜNÜLÜM",
+          "ui": {
+            "title": "Menü Değerlendirmesi",
+            "label": "Yapay Zeka açıklaması · Örnek",
+            "focus": "Sosun ayrı servis edilmesini isteyin.",
+            "explanation": "Taze ve zengin soslar bazı kişilerde rahatsızlık yaratabilir. Size göre cevaplar farklı olabilir.",
+            "disclaimer": "Görsel veri · Bir teşhis değildir"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/tr/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "tr",
+          "lang": "tr",
+          "dir": "ltr",
+          "copy": {
+            "example": "Örnek",
+            "footer": "Görsel arayüz · Tasarım kavramı",
+            "dishTitle": "Salamon",
+            "dishDescription": "Limon buterın sosu",
+            "dishCaption": "ÖRNEK SIPARIŞ",
+            "dishAlt": "Salamon, mısır, yeşil bezelye ve sosun ayrı bir kavanozda",
+            "sourceLabel": "↗ NIDDK · Reflü rehberi"
+          }
+        },
+        {
+          "headline": "Test Sonuçlarınızı Anlayın.",
+          "headlineLines": [
+            "Test Sonuçlarınızı",
+            "Anlayın."
+          ],
+          "accentLine": 1,
+          "subline": "PDF yükleyin. Yapay Zeka açıklaması alın.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "SAYIYLA ANLATILMIŞ",
+          "ui": {
+            "title": "Yapay Zeka açıklaması",
+            "label": "Yapay Zeka açıklaması · Örnek",
+            "focus": "Yemek boru kapağının iltihaplanması.",
+            "explanation": "Raporunuzda özofajit belirtiliyor. Doktorunuzun bu durumunuz için ne anlama geldiğini sorma.",
+            "disclaimer": "Yazılı bulgu açıklaması · Bir teşhis değildir"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/tr/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Test Sonuçları.pdf",
+            "format": "PDF",
+            "type": "Üst Bölgeler Endoskopi",
+            "findingLabel": "Bulgu",
+            "finding": "Özofajit",
+            "date": "Örnek Rapor · Örnek"
+          },
+          "copy": {
+            "example": "Örnek",
+            "footer": "Görsel arayüz · Tasarım kavramı",
+            "dishTitle": "Salamon",
+            "dishDescription": "Limon buterın sosu",
+            "dishCaption": "ÖRNEK SIPARIŞ",
+            "dishAlt": "Salamon, mısır, yeşil bezelye ve sosun ayrı bir kavanozda",
+            "sourceLabel": "↗ NIDDK · Reflü rehberi",
+            "paperNote": "Yüklenen rapor",
+            "reportConnector": "PDF → Yapay Zeka",
+            "reportLead": "Raporunuzda"
+          },
+          "locale": "tr",
+          "lang": "tr",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Bugünün Planını Basitçe Yapın.",
+          "headlineLines": [
+            "Bugünün Planını",
+            "Basitçe Yapın."
+          ],
+          "accentLine": 1,
+          "subline": "Bir adım seçin. Zaman ayarlayın.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "SEÇİLDİĞİNİZ GECE ADIMI",
+          "ui": {
+            "title": "Bugünkü planı",
+            "label": "Kaydedilmiş notlar · Örnek",
+            "focus": "Akşam yemekini 19:00'a kadar bitirin.",
+            "explanation": "Seçtiğiniz yatış saati 22:00'dur. Bu plan, yemekten sonra yatmadan önce 3 saat aralık bırakır; bu aralık gece belirtilerini azaltma için olabilir.",
+            "disclaimer": "Görsel veri · Bir teşhis değildir",
+            "context": [
+              [
+                "Yemek bitir",
+                "19:00"
+              ],
+              [
+                "Yatış saati",
+                "22:00"
+              ]
+            ],
+            "contextDate": "Sep 10 · Bugün",
+            "cta": "✓ 6:30 PM için hatırlatıcı ayarlandı"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/tr/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "tr",
+          "lang": "tr",
+          "dir": "ltr",
+          "copy": {
+            "example": "Örnek",
+            "footer": "Görsel arayüz · Tasarım kavramı",
+            "dishTitle": "Salamon",
+            "dishDescription": "Limon buterın sosu",
+            "dishCaption": "ÖRNEK SIPARIŞ",
+            "dishAlt": "Salamon, mısır, yeşil bezelye ve sosun ayrı bir kavanozda",
+            "sourceLabel": "↗ NIDDK · Reflü rehberi"
+          }
+        },
+        {
+          "headline": "Tedavi notlarınızı bir araya tutun.",
+          "headlineLines": [
+            "Tedavi notlarınızı",
+            "bir araya tutun."
+          ],
+          "accentLine": 1,
+          "subline": "Alınan tedaviyi ve hissedilenleri unutmayın.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "KAYDEDİLMİŞ NOT",
+          "ui": {
+            "title": "Tedavi notları",
+            "label": "Kaydedilmiş notlar · Örnek",
+            "focus": "Tedavi yapıldı. Gece mide yanması not edildi.",
+            "explanation": "Kendinizin girdiğiniz notlar, bir araya tutulmuştur. Bu notlar, tedavinin etkinliğini nasıl belirlediğini göstermez.",
+            "disclaimer": "Görsel veri · Bir teşhis değildir",
+            "context": [
+              [
+                "08:00",
+                "Tedavi yapıldı"
+              ],
+              [
+                "21:15",
+                "Mide yanması not edildi"
+              ]
+            ],
+            "contextDate": "Sep 9 · Girdiğinizler",
+            "cta": "✓ Not kaydedildi"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/tr/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "tr",
+          "lang": "tr",
+          "dir": "ltr",
+          "copy": {
+            "example": "Örnek",
+            "footer": "Görsel arayüz · Tasarım kavramı",
+            "dishTitle": "Salamon",
+            "dishDescription": "Limon buterın sosu",
+            "dishCaption": "ÖRNEK SIPARIŞ",
+            "dishAlt": "Salamon, mısır, yeşil bezelye ve sosun ayrı bir kavanozda",
+            "sourceLabel": "↗ NIDDK · Reflü rehberi"
+          }
+        },
+        {
+          "headline": "Boğaz veya sesiniz rahatsız mı?",
+          "headlineLines": [
+            "Boğaz veya sesiniz",
+            "rahatsız mı?"
+          ],
+          "accentLine": 1,
+          "subline": "Ne hissediyorsanızı takip edin.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "SES NOTLARINIZ",
+          "ui": {
+            "title": "Boğaz ve ses",
+            "label": "Kaydedilmiş notlar · Örnek",
+            "focus": "Kısık ses. Boğaz temizleme. Notlar kaydedildi.",
+            "explanation": "Neleri, ne zaman fark ettiğinizi kaydedin. Boğaz ve ses semptomlarının farklı nedenleri olabilir; bu notlar bir teşhis koymaz.",
+            "disclaimer": "Görsel veri · Bir teşhis değildir",
+            "context": [
+              [
+                "Ses",
+                "Kısık"
+              ],
+              [
+                "Boğaz",
+                "Temizleme"
+              ]
+            ],
+            "contextDate": "10 Eyl · İşten önce",
+            "cta": "✓ Notlar kaydedildi"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/tr/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "tr",
+          "lang": "tr",
+          "dir": "ltr",
+          "copy": {
+            "example": "Örnek",
+            "footer": "Görsel arayüz · Tasarım kavramı",
+            "dishTitle": "Salamon",
+            "dishDescription": "Limon buterın sosu",
+            "dishCaption": "ÖRNEK SIPARIŞ",
+            "dishAlt": "Salamon, mısır, yeşil bezelye ve sosun ayrı bir kavanozda",
+            "sourceLabel": "↗ NIDDK · Reflü rehberi"
+          }
+        },
+        {
+          "headline": "Öğünler ve Semptomlar. Tek Bir Zaman Çizelgesi.",
+          "headlineLines": [
+            "Öğünler ve",
+            "Semptomlar. Tek Bir",
+            "Zaman Çizelgesi."
+          ],
+          "accentLine": 2,
+          "subline": "Notlarınızı tek bir zaman çizelgesinde görün.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "BİR AKŞAM, İKİ KAYIT",
+          "ui": {
+            "title": "Zaman çizelgeniz",
+            "label": "Kaydedilmiş notlar · Örnek",
+            "focus": "Akşam yemeği 20:30. Mide yanması 22:15.",
+            "explanation": "Aynı akşama ait iki kaydedilmiş olay. Sadece zamanlamaları, öğünün semptoma neden olduğunu göstermez.",
+            "disclaimer": "Görsel veri · Bir teşhis değildir",
+            "context": [
+              [
+                "20:30",
+                "Akşam Yemeği"
+              ],
+              [
+                "22:15",
+                "Mide yanması"
+              ]
+            ],
+            "contextDate": "7 Eyl · Zaman çizelgeniz",
+            "cta": "Kaydedilen girişleri görüntüle"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/tr/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "tr",
+          "lang": "tr",
+          "dir": "ltr",
+          "copy": {
+            "example": "Örnek",
+            "footer": "Görsel arayüz · Tasarım kavramı",
+            "dishTitle": "Salamon",
+            "dishDescription": "Limon buterın sosu",
+            "dishCaption": "ÖRNEK SIPARIŞ",
+            "dishAlt": "Salamon, mısır, yeşil bezelye ve sosun ayrı bir kavanozda",
+            "sourceLabel": "↗ NIDDK · Reflü rehberi"
+          }
+        },
+        {
+          "headline": "Geçmişinizi Muayenenize Getirin.",
+          "headlineLines": [
+            "Geçmişinizi",
+            "Muayenenize Getirin."
+          ],
+          "accentLine": 1,
+          "subline": "Doktorunuzla net bir özet paylaşın.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "MUAYENE ÖZETİNİZ",
+          "ui": {
+            "title": "Ziyaret özeti",
+            "label": "Kaydedilmiş notlar · Örnek",
+            "focus": "Kaydedilmiş gözlemleriniz, paylaşmaya hazır.",
+            "explanation": "Kaydedilmiş yemekler, belirtiler, tedavi notları ve raporunuzun özeti. Doktorunuzun görüşüne başlama noktasına kullanabilirsiniz.",
+            "disclaimer": "Görsel veri · Bir teşhis değildir",
+            "context": [
+              [
+                "07–10/09",
+                "Kaydedilmiş gözlemler"
+              ],
+              [
+                "İçerik",
+                "Yemekler · Belirtiler · Rapor"
+              ]
+            ],
+            "contextDate": "Doktor görüşü özeti",
+            "cta": "Özeti paylaş · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/tr/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Örnek",
+            "title": "Gözlemleriniz",
+            "date": "Sep 7–10 · Örnek",
+            "rows": [
+              "Yemekler ve belirtiler",
+              "Tedavi notları",
+              "Raporunuz"
+            ]
+          },
+          "locale": "tr",
+          "lang": "tr",
+          "dir": "ltr",
+          "copy": {
+            "example": "Örnek",
+            "footer": "Görsel arayüz · Tasarım kavramı",
+            "dishTitle": "Salamon",
+            "dishDescription": "Limon buterın sosu",
+            "dishCaption": "ÖRNEK SIPARIŞ",
+            "dishAlt": "Salamon, mısır, yeşil bezelye ve sosun ayrı bir kavanozda",
+            "sourceLabel": "↗ NIDDK · Reflü rehberi"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/tr/contact-sheet.html",
+  "download": null
+}

@@ -1,0 +1,619 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "zh-Hant",
+  "label": "繁體中文",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · 八大需求，八大清晰場景",
+      "description": "所選英文方向與來源，用於本地化螢幕截圖。",
+      "frames": [
+        {
+          "headline": "火燒心讓你無法入眠？",
+          "headlineLines": [
+            "火燒心讓你",
+            "無法入眠？"
+          ],
+          "accentLine": 1,
+          "subline": "你的問題。更清晰的下一步。",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "明天的一步",
+          "ui": {
+            "title": "AI 解釋",
+            "label": "AI 解讀 · 範例",
+            "focus": "明天晚上試著提早吃晚餐。",
+            "explanation": "晚飯吃得晚，隨後躺下可能有影響。未來的晚上，至少在進食後三小時才躺下，可能有助改善夜間症狀。",
+            "disclaimer": "說明性資料 · 非診斷",
+            "question": "為何我的火燒心在晚上更嚴重？",
+            "context": [
+              [
+                "晚餐",
+                "晚上九點三十分"
+              ],
+              [
+                "躺下",
+                "晚上十點十五分"
+              ]
+            ],
+            "contextDate": "9 月 8 日 · 你的晚上"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/zh-Hant/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "範例",
+            "footer": "說明性介面 · 設計概念",
+            "dishTitle": "香煎鮭魚",
+            "dishDescription": "檸檬黃油醬",
+            "dishCaption": "範例點餐",
+            "dishAlt": "香煎三文魚配白米、青豆與醬料分裝於小容器",
+            "sourceLabel": "↗ NIDDK · 胃酸逆流指引",
+            "anatomyCaption": "胃酸逆流說明"
+          },
+          "locale": "zh-Hant",
+          "lang": "zh-Hant",
+          "dir": "ltr"
+        },
+        {
+          "headline": "我可以點什麼與胃酸逆流相容？",
+          "headlineLines": [
+            "我可以點什麼與",
+            "胃酸逆流相容？"
+          ],
+          "accentLine": 1,
+          "subline": "點餐前請查看菜單。",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "一個值得考慮的改變",
+          "ui": {
+            "title": "菜單審閱",
+            "label": "AI 解讀 · 範例",
+            "focus": "請將醬料分開盛裝。",
+            "explanation": "柑橘類與濃厚醬料可能影響一些人。你的反應可能不同。",
+            "disclaimer": "說明性資料 · 非診斷"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/zh-Hant/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "zh-Hant",
+          "lang": "zh-Hant",
+          "dir": "ltr",
+          "copy": {
+            "example": "範例",
+            "footer": "說明性介面 · 設計概念",
+            "dishTitle": "香煎鮭魚",
+            "dishDescription": "檸檬黃油醬",
+            "dishCaption": "範例點餐",
+            "dishAlt": "香煎三文魚配白米、青豆與醬料分裝於小容器",
+            "sourceLabel": "↗ NIDDK · 胃酸逆流指引"
+          }
+        },
+        {
+          "headline": "了解你的檢測結果。",
+          "headlineLines": [
+            "了解你的",
+            "檢測結果",
+            "。"
+          ],
+          "accentLine": 2,
+          "subline": "上傳 PDF。獲得 AI 解釋。",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "用大白話說明",
+          "ui": {
+            "title": "AI 解釋",
+            "label": "AI 解讀 · 範例",
+            "focus": "食道黏膜發炎。",
+            "explanation": "你的報告提及食道炎。請向你的臨床醫生詢問這對你的照護有什麼意義。",
+            "disclaimer": "說明書面報告結果 · 非診斷結果"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/zh-Hant/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "檢測結果.pdf",
+            "format": "PDF",
+            "type": "上消化道內視鏡",
+            "findingLabel": "發現",
+            "finding": "食道炎",
+            "date": "說明性報告 · 範例"
+          },
+          "copy": {
+            "example": "範例",
+            "footer": "說明性介面 · 設計概念",
+            "dishTitle": "香煎鮭魚",
+            "dishDescription": "檸檬黃油醬",
+            "dishCaption": "範例點餐",
+            "dishAlt": "香煎三文魚配白米、青豆與醬料分裝於小容器",
+            "sourceLabel": "↗ NIDDK · 胃酸逆流指引",
+            "paperNote": "你上傳的報告",
+            "reportConnector": "PDF → AI",
+            "reportLead": "你的報告說明"
+          },
+          "locale": "zh-Hant",
+          "lang": "zh-Hant",
+          "dir": "ltr"
+        },
+        {
+          "headline": "讓今晚的計畫簡單。",
+          "headlineLines": [
+            "讓今晚的",
+            "計畫簡單",
+            "。"
+          ],
+          "accentLine": 2,
+          "subline": "選擇一個步驟。設定時間。",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "你選擇的晚上步驟",
+          "ui": {
+            "title": "今晚的計畫",
+            "label": "您儲存的記錄 · 範例",
+            "focus": "七點鐘前完成晚餐。",
+            "explanation": "你選擇的就寢時間是晚上十點。這個計畫在進食後至少有三小時才躺下；這個間隔可能有助改善夜間症狀。",
+            "disclaimer": "說明性資料 · 非診斷",
+            "context": [
+              [
+                "完成晚餐",
+                "晚上七點鐘"
+              ],
+              [
+                "就寢時間",
+                "晚上十點鐘"
+              ]
+            ],
+            "contextDate": "9 月 10 日 · 今晚",
+            "cta": "✓ 提醒已設定"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/zh-Hant/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "zh-Hant",
+          "lang": "zh-Hant",
+          "dir": "ltr",
+          "copy": {
+            "example": "範例",
+            "footer": "說明性介面 · 設計概念",
+            "dishTitle": "香煎鮭魚",
+            "dishDescription": "檸檬黃油醬",
+            "dishCaption": "範例點餐",
+            "dishAlt": "香煎三文魚配白米、青豆與醬料分裝於小容器",
+            "sourceLabel": "↗ NIDDK · 胃酸逆流指引"
+          }
+        },
+        {
+          "headline": "將你的治療記錄放在一起。",
+          "headlineLines": [
+            "將你的治療記",
+            "錄放在一起。"
+          ],
+          "accentLine": 1,
+          "subline": "記得你服用的藥物與感受。",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "你儲存的筆記",
+          "ui": {
+            "title": "治療筆記",
+            "label": "您儲存的記錄 · 範例",
+            "focus": "服用藥物。晚上火燒心已記錄。",
+            "explanation": "你自己的筆記，一起保存。這些筆記不表示治療效果如何。",
+            "disclaimer": "說明性資料 · 非診斷",
+            "context": [
+              [
+                "早上八點鐘",
+                "服用藥物"
+              ],
+              [
+                "晚上九點十五分",
+                "火燒心已記錄"
+              ]
+            ],
+            "contextDate": "9 月 9 日 · 你的筆記",
+            "cta": "✓ 筆記已儲存"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/zh-Hant/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "zh-Hant",
+          "lang": "zh-Hant",
+          "dir": "ltr",
+          "copy": {
+            "example": "範例",
+            "footer": "說明性介面 · 設計概念",
+            "dishTitle": "香煎鮭魚",
+            "dishDescription": "檸檬黃油醬",
+            "dishCaption": "範例點餐",
+            "dishAlt": "香煎三文魚配白米、青豆與醬料分裝於小容器",
+            "sourceLabel": "↗ NIDDK · 胃酸逆流指引"
+          }
+        },
+        {
+          "headline": "喉嚨或聲音受影響？",
+          "headlineLines": [
+            "喉嚨或聲",
+            "音受影響",
+            "？"
+          ],
+          "accentLine": 2,
+          "subline": "記下你注意到的內容。",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "你的聲音筆記",
+          "ui": {
+            "title": "喉嚨與聲音",
+            "label": "您儲存的記錄 · 範例",
+            "focus": "聲音沙啞。清喉嚨。筆記已儲存。",
+            "explanation": "記下你注意到的內容與時間。喉嚨與聲音症狀可能有不同的原因；這些筆記不表示診斷。",
+            "disclaimer": "說明性資料 · 非診斷",
+            "context": [
+              [
+                "聲音",
+                "聲音沙啞"
+              ],
+              [
+                "喉嚨",
+                "清喉嚨"
+              ]
+            ],
+            "contextDate": "9 月 10 日 · 上班前",
+            "cta": "✓ 筆記已儲存"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/zh-Hant/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "zh-Hant",
+          "lang": "zh-Hant",
+          "dir": "ltr",
+          "copy": {
+            "example": "範例",
+            "footer": "說明性介面 · 設計概念",
+            "dishTitle": "香煎鮭魚",
+            "dishDescription": "檸檬黃油醬",
+            "dishCaption": "範例點餐",
+            "dishAlt": "香煎三文魚配白米、青豆與醬料分裝於小容器",
+            "sourceLabel": "↗ NIDDK · 胃酸逆流指引"
+          }
+        },
+        {
+          "headline": "餐點與症狀。一個時間軸。",
+          "headlineLines": [
+            "餐點與症狀。",
+            "一個時間軸。"
+          ],
+          "accentLine": 1,
+          "subline": "在一個時間軸上查看你的筆記。",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "一個晚上，兩筆記錄",
+          "ui": {
+            "title": "你的時間軸",
+            "label": "您儲存的記錄 · 範例",
+            "focus": "晚餐晚上八點三十分。火燒心晚上十點十五分。",
+            "explanation": "同一天晚上兩筆儲存的事件。它們的時間本身並不能顯示餐點導致症狀。",
+            "disclaimer": "說明性資料 · 非診斷",
+            "context": [
+              [
+                "晚上八點三十分",
+                "晚餐"
+              ],
+              [
+                "晚上十點十五分",
+                "火燒心"
+              ]
+            ],
+            "contextDate": "9 月 7 日 · 你的時間軸",
+            "cta": "查看儲存的記錄"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/zh-Hant/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "zh-Hant",
+          "lang": "zh-Hant",
+          "dir": "ltr",
+          "copy": {
+            "example": "範例",
+            "footer": "說明性介面 · 設計概念",
+            "dishTitle": "香煎鮭魚",
+            "dishDescription": "檸檬黃油醬",
+            "dishCaption": "範例點餐",
+            "dishAlt": "香煎三文魚配白米、青豆與醬料分裝於小容器",
+            "sourceLabel": "↗ NIDDK · 胃酸逆流指引"
+          }
+        },
+        {
+          "headline": "將你的病史帶到你的就診。",
+          "headlineLines": [
+            "將你的病史帶",
+            "到你的就診。"
+          ],
+          "accentLine": 1,
+          "subline": "與你的醫生分享一個清晰的總結。",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "你的就診總結",
+          "ui": {
+            "title": "就診總結",
+            "label": "您儲存的記錄 · 範例",
+            "focus": "你儲存的觀察，準備分享。",
+            "explanation": "你儲存的餐點、症狀、治療筆記與報告總結。將它作為你就診的起點分享。",
+            "disclaimer": "說明性資料 · 非診斷",
+            "context": [
+              [
+                "9 月 7 日至 10 日",
+                "儲存的觀察"
+              ],
+              [
+                "包含",
+                "餐點 · 症狀 · 報告"
+              ]
+            ],
+            "contextDate": "就診總結",
+            "cta": "分享總結 · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/zh-Hant/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · 範例",
+            "title": "你的觀察",
+            "date": "9 月 7 日至 10 日 · 範例",
+            "rows": [
+              "餐點與症狀",
+              "治療筆記",
+              "你的報告"
+            ]
+          },
+          "locale": "zh-Hant",
+          "lang": "zh-Hant",
+          "dir": "ltr",
+          "copy": {
+            "example": "範例",
+            "footer": "說明性介面 · 設計概念",
+            "dishTitle": "香煎鮭魚",
+            "dishDescription": "檸檬黃油醬",
+            "dishCaption": "範例點餐",
+            "dishAlt": "香煎三文魚配白米、青豆與醬料分裝於小容器",
+            "sourceLabel": "↗ NIDDK · 胃酸逆流指引"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/zh-Hant/contact-sheet.html",
+  "download": null
+}

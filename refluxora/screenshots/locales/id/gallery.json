@@ -1,0 +1,617 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "id",
+  "label": "Bahasa Indonesia",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Delapan kebutuhan, delapan skenario jelas",
+      "description": "Arah dan sumber bahasa Inggris yang dipilih untuk screenshot lokal.",
+      "frames": [
+        {
+          "headline": "Refluks membuat Anda tidak bisa tidur?",
+          "headlineLines": [
+            "Refluks membuat Anda",
+            "tidak bisa tidur?"
+          ],
+          "accentLine": 1,
+          "subline": "Pertanyaan Anda. Langkah yang lebih jelas.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "LANGKAH UNTUK BESOK",
+          "ui": {
+            "title": "Penjelasan AI",
+            "label": "Penjelasan AI · Contoh",
+            "focus": "Coba makan malam lebih awal besok malam.",
+            "explanation": "Makan malam yang terlambat diikuti dengan berbaring segera mungkin berpengaruh. Untuk malam hari mendatang, meninggalkan setidaknya 3 jam setelah makan sebelum berbaring mungkin membantu.",
+            "disclaimer": "Data ilustratif · Bukan diagnosis",
+            "question": "Mengapa refluks saya lebih parah di malam hari?",
+            "context": [
+              [
+                "Makan malam",
+                "Pukul 21.30"
+              ],
+              [
+                "Berbaring",
+                "Pukul 22.15"
+              ]
+            ],
+            "contextDate": "9 Agustus · Malam Anda"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/id/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Contoh",
+            "footer": "Antarmuka ilustratif · Konsep desain",
+            "dishTitle": "Ikan salmon panggang",
+            "dishDescription": "Saus mentega lemon",
+            "dishCaption": "Contoh pesanan",
+            "dishAlt": "Ikan salmon panggang dengan nasi, kacang hijau dan saus dalam mangkuk terpisah",
+            "sourceLabel": "↗ NIDDK · Panduan refluks",
+            "anatomyCaption": "Refluks dijelaskan"
+          },
+          "locale": "id",
+          "lang": "id",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Apa yang bisa saya pesan dengan refluks?",
+          "headlineLines": [
+            "Apa yang bisa saya",
+            "pesan dengan refluks?"
+          ],
+          "accentLine": 1,
+          "subline": "Periksa menu sebelum memesan.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "SATU PERUBAHAN YANG PERLU DIPERTIMBANGKAN",
+          "ui": {
+            "title": "Pemeriksaan menu",
+            "label": "Penjelasan AI · Contoh",
+            "focus": "Minta sausnya dipisah.",
+            "explanation": "Saus jeruk dan kaya bisa mengganggu beberapa orang. Respons Anda mungkin berbeda.",
+            "disclaimer": "Data ilustratif · Bukan diagnosis"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/id/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "id",
+          "lang": "id",
+          "dir": "ltr",
+          "copy": {
+            "example": "Contoh",
+            "footer": "Antarmuka ilustratif · Konsep desain",
+            "dishTitle": "Ikan salmon panggang",
+            "dishDescription": "Saus mentega lemon",
+            "dishCaption": "Contoh pesanan",
+            "dishAlt": "Ikan salmon panggang dengan nasi, kacang hijau dan saus dalam mangkuk terpisah",
+            "sourceLabel": "↗ NIDDK · Panduan refluks"
+          }
+        },
+        {
+          "headline": "Pahami Hasil Tes Anda.",
+          "headlineLines": [
+            "Pahami Hasil",
+            "Tes Anda."
+          ],
+          "accentLine": 1,
+          "subline": "Unggah PDF. Dapatkan penjelasan AI.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "Dalam Bahasa yang Mudah Dipahami",
+          "ui": {
+            "title": "Penjelasan AI",
+            "label": "Penjelasan AI · Contoh",
+            "focus": "Peradangan pada lapisan esofagus.",
+            "explanation": "Laporan Anda menyebutkan esofagitis. Tanyakan kepada konsultan medis Anda apa artinya bagi perawatan Anda.",
+            "disclaimer": "Menerangkan temuan tertulis · Bukan diagnosis"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/id/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Hasil Tes.pdf",
+            "format": "PDF",
+            "type": "Endoskopi atas",
+            "findingLabel": "Temuan",
+            "finding": "Esofagitis",
+            "date": "Laporan ilustratif · Contoh"
+          },
+          "copy": {
+            "example": "Contoh",
+            "footer": "Antarmuka ilustratif · Konsep desain",
+            "dishTitle": "Ikan salmon panggang",
+            "dishDescription": "Saus mentega lemon",
+            "dishCaption": "Contoh pesanan",
+            "dishAlt": "Ikan salmon panggang dengan nasi, kacang hijau dan saus dalam mangkuk terpisah",
+            "sourceLabel": "↗ NIDDK · Panduan refluks",
+            "paperNote": "Laporan yang Anda unggah",
+            "reportConnector": "PDF → AI",
+            "reportLead": "Laporan Anda menyebutkan"
+          },
+          "locale": "id",
+          "lang": "id",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Buat Rencana Malam Ini yang Sederhana.",
+          "headlineLines": [
+            "Buat Rencana Malam",
+            "Ini yang Sederhana."
+          ],
+          "accentLine": 1,
+          "subline": "Pilih satu langkah. Tetapkan waktu Anda.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "LANGKAH MALAM YANG ANDA PILIH",
+          "ui": {
+            "title": "Rencana malam ini",
+            "label": "Catatan yang Anda simpan · Contoh",
+            "focus": "Selesaikan makan malam pukul 19.00.",
+            "explanation": "Waktu tidur yang Anda pilih adalah pukul 22.00. Rencana ini meninggalkan 3 jam setelah makan sebelum berbaring; interval ini mungkin membantu gejala malam hari.",
+            "disclaimer": "Data ilustratif · Bukan diagnosis",
+            "context": [
+              [
+                "Selesaikan makan malam",
+                "Pukul 19.00"
+              ],
+              [
+                "Waktu tidur",
+                "Pukul 22.00"
+              ]
+            ],
+            "contextDate": "10 September · Malam ini",
+            "cta": "✓ Pengingat diatur · Pukul 18.30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/id/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "id",
+          "lang": "id",
+          "dir": "ltr",
+          "copy": {
+            "example": "Contoh",
+            "footer": "Antarmuka ilustratif · Konsep desain",
+            "dishTitle": "Ikan salmon panggang",
+            "dishDescription": "Saus mentega lemon",
+            "dishCaption": "Contoh pesanan",
+            "dishAlt": "Ikan salmon panggang dengan nasi, kacang hijau dan saus dalam mangkuk terpisah",
+            "sourceLabel": "↗ NIDDK · Panduan refluks"
+          }
+        },
+        {
+          "headline": "Jaga Catatan Pengobatan Anda Bersama.",
+          "headlineLines": [
+            "Jaga Catatan Pengobatan",
+            "Anda Bersama."
+          ],
+          "accentLine": 1,
+          "subline": "Ingat apa yang Anda ambil dan rasakan.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "CATATAN YANG ANDA SIMPAN",
+          "ui": {
+            "title": "Catatan pengobatan",
+            "label": "Catatan yang Anda simpan · Contoh",
+            "focus": "Obat yang diminum. Refluks malam hari dicatat.",
+            "explanation": "Catatan yang Anda masukkan, disimpan bersama. Catatan ini tidak menunjukkan seberapa efektif pengobatan tersebut.",
+            "disclaimer": "Data ilustratif · Bukan diagnosis",
+            "context": [
+              [
+                "Pukul 08.00",
+                "Obat yang diminum"
+              ],
+              [
+                "Pukul 21.15",
+                "Refluks dicatat"
+              ]
+            ],
+            "contextDate": "9 September · Catatan Anda",
+            "cta": "✓ Catatan disimpan"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/id/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "id",
+          "lang": "id",
+          "dir": "ltr",
+          "copy": {
+            "example": "Contoh",
+            "footer": "Antarmuka ilustratif · Konsep desain",
+            "dishTitle": "Ikan salmon panggang",
+            "dishDescription": "Saus mentega lemon",
+            "dishCaption": "Contoh pesanan",
+            "dishAlt": "Ikan salmon panggang dengan nasi, kacang hijau dan saus dalam mangkuk terpisah",
+            "sourceLabel": "↗ NIDDK · Panduan refluks"
+          }
+        },
+        {
+          "headline": "Tenggorokan atau Suara yang Mengganggu Anda?",
+          "headlineLines": [
+            "Tenggorokan",
+            "atau Suara yang",
+            "Mengganggu Anda?"
+          ],
+          "accentLine": 2,
+          "subline": "Lacak apa yang Anda amati.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "CATATAN SUARA ANDA",
+          "ui": {
+            "title": "Tenggorokan & suara",
+            "label": "Catatan yang Anda simpan · Contoh",
+            "focus": "Suara serak. Berdehem. Catatan disimpan.",
+            "explanation": "Catat apa yang Anda amati dan kapan. Gejala tenggorokan dan suara bisa memiliki penyebab berbeda; catatan ini tidak mengidentifikasi diagnosis.",
+            "disclaimer": "Data ilustratif · Bukan diagnosis",
+            "context": [
+              [
+                "Suara",
+                "Serak"
+              ],
+              [
+                "Tenggorokan",
+                "Berdehem"
+              ]
+            ],
+            "contextDate": "10 September · Sebelum bekerja",
+            "cta": "✓ Catatan disimpan"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/id/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "id",
+          "lang": "id",
+          "dir": "ltr",
+          "copy": {
+            "example": "Contoh",
+            "footer": "Antarmuka ilustratif · Konsep desain",
+            "dishTitle": "Ikan salmon panggang",
+            "dishDescription": "Saus mentega lemon",
+            "dishCaption": "Contoh pesanan",
+            "dishAlt": "Ikan salmon panggang dengan nasi, kacang hijau dan saus dalam mangkuk terpisah",
+            "sourceLabel": "↗ NIDDK · Panduan refluks"
+          }
+        },
+        {
+          "headline": "Makanan & Gejala. Satu Timeline.",
+          "headlineLines": [
+            "Makanan & Gejala.",
+            "Satu Timeline."
+          ],
+          "accentLine": 1,
+          "subline": "Lihat catatan Anda dalam satu timeline.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "SATU MALAM, DUA CATATAN",
+          "ui": {
+            "title": "Timeline Anda",
+            "label": "Catatan yang Anda simpan · Contoh",
+            "focus": "Makan malam pukul 20.30. Refluks pukul 22.15.",
+            "explanation": "Dua kejadian yang disimpan dari malam yang sama. Waktu mereka sendiri tidak menunjukkan bahwa makanan menyebabkan gejala.",
+            "disclaimer": "Data ilustratif · Bukan diagnosis",
+            "context": [
+              [
+                "Pukul 20.30",
+                "Makan malam"
+              ],
+              [
+                "Pukul 22.15",
+                "Refluks"
+              ]
+            ],
+            "contextDate": "7 September · Timeline Anda",
+            "cta": "Lihat catatan yang disimpan"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/id/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "id",
+          "lang": "id",
+          "dir": "ltr",
+          "copy": {
+            "example": "Contoh",
+            "footer": "Antarmuka ilustratif · Konsep desain",
+            "dishTitle": "Ikan salmon panggang",
+            "dishDescription": "Saus mentega lemon",
+            "dishCaption": "Contoh pesanan",
+            "dishAlt": "Ikan salmon panggang dengan nasi, kacang hijau dan saus dalam mangkuk terpisah",
+            "sourceLabel": "↗ NIDDK · Panduan refluks"
+          }
+        },
+        {
+          "headline": "Bawa Riwayat Anda ke Konsultasi Anda.",
+          "headlineLines": [
+            "Bawa Riwayat Anda",
+            "ke Konsultasi Anda."
+          ],
+          "accentLine": 1,
+          "subline": "Bagikan ringkasan yang jelas dengan dokter Anda.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "RINGKASAN KONSULTASI ANDA",
+          "ui": {
+            "title": "Ringkasan kunjungan",
+            "label": "Catatan yang Anda simpan · Contoh",
+            "focus": "Catatan yang disimpan, siap dibagikan.",
+            "explanation": "Ringkasan dari makanan, gejala, catatan pengobatan, dan laporan yang disimpan. Bagikan sebagai titik awal untuk konsultasi Anda.",
+            "disclaimer": "Data ilustratif · Bukan diagnosis",
+            "context": [
+              [
+                "7–10 September",
+                "Catatan yang disimpan"
+              ],
+              [
+                "Termasuk",
+                "Makanan · Gejala · Laporan"
+              ]
+            ],
+            "contextDate": "Ringkasan konsultasi",
+            "cta": "Bagikan ringkasan · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/id/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Contoh",
+            "title": "Pengamatan Anda",
+            "date": "7–10 September · Contoh",
+            "rows": [
+              "Makanan & gejala",
+              "Catatan pengobatan",
+              "Laporan Anda"
+            ]
+          },
+          "locale": "id",
+          "lang": "id",
+          "dir": "ltr",
+          "copy": {
+            "example": "Contoh",
+            "footer": "Antarmuka ilustratif · Konsep desain",
+            "dishTitle": "Ikan salmon panggang",
+            "dishDescription": "Saus mentega lemon",
+            "dishCaption": "Contoh pesanan",
+            "dishAlt": "Ikan salmon panggang dengan nasi, kacang hijau dan saus dalam mangkuk terpisah",
+            "sourceLabel": "↗ NIDDK · Panduan refluks"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/id/contact-sheet.html",
+  "download": null
+}

@@ -1,0 +1,617 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "fi",
+  "label": "Suomi",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Kahdeksan tarvetta, kahdeksan selkeää tilannetta",
+      "description": "Valittu englanti suunta ja lähteet paikallistettujen kuvien varten.",
+      "frames": [
+        {
+          "headline": "Narastus vaikuttaa unen pääsemiseen?",
+          "headlineLines": [
+            "Narastus vaikuttaa",
+            "unen pääsemiseen?"
+          ],
+          "accentLine": 1,
+          "subline": "Kysymys. Selkeämpi seuraava askel.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "ASKEL HUOMISEKSI",
+          "ui": {
+            "title": "Tekoäly selitys",
+            "label": "Tekoälyn selitys · Esimerkki",
+            "focus": "Kokeile huomenna illallisella aikaisempaa aikaa.",
+            "explanation": "Myöhäinen ateria, jota seuraa pian nukkuma, voi vaikuttaa. Tulevalla illalla, vähintään kolme tuntia aterian jälkeen nukkumaan mennä, saattaa auttaa.",
+            "disclaimer": "Esimerkkidata · Ei diagnoosi",
+            "question": "Miksi narastukseni on huonompi yötä?",
+            "context": [
+              [
+                "Ateria",
+                "21:30"
+              ],
+              [
+                "Nukkumaan",
+                "22:15"
+              ]
+            ],
+            "contextDate": "9. syyskuuta · Sinun illallisi"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fi/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Esimerkki",
+            "footer": "Esimerkkikäyttöliittymä · Käyttöliittymäkonsepti",
+            "dishTitle": "Grillattu lohi",
+            "dishDescription": "Sitruunivoikastike",
+            "dishCaption": "ESIMERKKITILAUS",
+            "dishAlt": "Grillattu lohi riisin ja vihreiden papujen kera, kastike erillisessä kulhossa",
+            "sourceLabel": "↗ NIDDK · Refluksin ohjeet",
+            "anatomyCaption": "Refluksin selitys"
+          },
+          "locale": "fi",
+          "lang": "fi",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Mikä voin tilata refluksin kanssa?",
+          "headlineLines": [
+            "Mikä voin tilata",
+            "refluksin kanssa?"
+          ],
+          "accentLine": 1,
+          "subline": "Tarkista valikko ennen tilaamista.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "YKSI ASIA HARKITTAVAKSI",
+          "ui": {
+            "title": "Valikon tarkastelu",
+            "label": "Tekoälyn selitys · Esimerkki",
+            "focus": "Pyydä kastike erikseen.",
+            "explanation": "Sitruunat ja rikkaita kastikkeja voi häiritä joitain ihmisiä. Omasta vastauksestasi voi olla ero.",
+            "disclaimer": "Esimerkkidata · Ei diagnoosi"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fi/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "fi",
+          "lang": "fi",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esimerkki",
+            "footer": "Esimerkkikäyttöliittymä · Käyttöliittymäkonsepti",
+            "dishTitle": "Grillattu lohi",
+            "dishDescription": "Sitruunivoikastike",
+            "dishCaption": "ESIMERKKITILAUS",
+            "dishAlt": "Grillattu lohi riisin ja vihreiden papujen kera, kastike erillisessä kulhossa",
+            "sourceLabel": "↗ NIDDK · Refluksin ohjeet"
+          }
+        },
+        {
+          "headline": "Ymmärrä testituloksia.",
+          "headlineLines": [
+            "Ymmärrä",
+            "testituloksia."
+          ],
+          "accentLine": 1,
+          "subline": "Lisää PDF. Saat tekoälyselityksen.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "YKSIKSI SELKEÄSTI",
+          "ui": {
+            "title": "Tekoäly selitys",
+            "label": "Tekoälyn selitys · Esimerkki",
+            "focus": "Ruokatorven limakalvon tulehdus.",
+            "explanation": "Raporttisi mainitsee ruokatorventulehdusta. Kysy lääkäriltä, mikä tämä tarkoittaa hoitosuunnalle.",
+            "disclaimer": "Selittää kirjallista löydöstä · Ei diagnoosi"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fi/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Testitulokset.pdf",
+            "format": "PDF",
+            "type": "Yläruokatorvi",
+            "findingLabel": "Löydös",
+            "finding": "Ruokatorventulehdus",
+            "date": "Esimerkkiraportti · Esimerkki"
+          },
+          "copy": {
+            "example": "Esimerkki",
+            "footer": "Esimerkkikäyttöliittymä · Käyttöliittymäkonsepti",
+            "dishTitle": "Grillattu lohi",
+            "dishDescription": "Sitruunivoikastike",
+            "dishCaption": "ESIMERKKITILAUS",
+            "dishAlt": "Grillattu lohi riisin ja vihreiden papujen kera, kastike erillisessä kulhossa",
+            "sourceLabel": "↗ NIDDK · Refluksin ohjeet",
+            "paperNote": "Lisätty raportti",
+            "reportConnector": "PDF → Tekoäly",
+            "reportLead": "Raporttisi sanoo"
+          },
+          "locale": "fi",
+          "lang": "fi",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Tee tämän illan suunnitelmasta yksinkertainen",
+          "headlineLines": [
+            "Tee tämän illan",
+            "suunnitelmasta",
+            "yksinkertainen"
+          ],
+          "accentLine": 2,
+          "subline": "Valitse yksi askel. Aseta aika.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "VALITSEMINEN TÄNÄNÄÄN",
+          "ui": {
+            "title": "Tänään ateria",
+            "label": "Tallentamasi muistiinpanot · Esimerkki",
+            "focus": "Lopeta ateria klo 19:00.",
+            "explanation": "Valitseminen unen aika on klo 22:00. Tämä suunnitelma jättää vähintään kolme tuntia aterian jälkeen nukkumaan; tämä aika voi auttaa yötä oireita.",
+            "disclaimer": "Esimerkkidata · Ei diagnoosi",
+            "context": [
+              [
+                "Lopeta ateria",
+                "19:00"
+              ],
+              [
+                "Unen aika",
+                "22:00"
+              ]
+            ],
+            "contextDate": "9. syyskuuta · Tänä illalla",
+            "cta": "✓ Muistutus asetettu · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fi/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "fi",
+          "lang": "fi",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esimerkki",
+            "footer": "Esimerkkikäyttöliittymä · Käyttöliittymäkonsepti",
+            "dishTitle": "Grillattu lohi",
+            "dishDescription": "Sitruunivoikastike",
+            "dishCaption": "ESIMERKKITILAUS",
+            "dishAlt": "Grillattu lohi riisin ja vihreiden papujen kera, kastike erillisessä kulhossa",
+            "sourceLabel": "↗ NIDDK · Refluksin ohjeet"
+          }
+        },
+        {
+          "headline": "Pidä hoitotietojasi yhdessä.",
+          "headlineLines": [
+            "Pidä hoitotietojasi",
+            "yhdessä."
+          ],
+          "accentLine": 1,
+          "subline": "Muista, mitä otit ja mitä tunnet.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "Tallennettu tieto",
+          "ui": {
+            "title": "Hoito-merkinnät",
+            "label": "Tallentamasi muistiinpanot · Esimerkki",
+            "focus": "Lääke otettu. Yötä narastus merkittynä.",
+            "explanation": "Omien merkintösi, yhdessä. Näitä merkintöjä ei ole osoitus hoitokäytännön tehokkuudesta.",
+            "disclaimer": "Esimerkkidata · Ei diagnoosi",
+            "context": [
+              [
+                "8:00",
+                "Lääke otettu"
+              ],
+              [
+                "21:15",
+                "Narastus merkittynä"
+              ]
+            ],
+            "contextDate": "9. syyskuuta · Merkinnät",
+            "cta": "✓ Tieto tallennettu"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fi/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "fi",
+          "lang": "fi",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esimerkki",
+            "footer": "Esimerkkikäyttöliittymä · Käyttöliittymäkonsepti",
+            "dishTitle": "Grillattu lohi",
+            "dishDescription": "Sitruunivoikastike",
+            "dishCaption": "ESIMERKKITILAUS",
+            "dishAlt": "Grillattu lohi riisin ja vihreiden papujen kera, kastike erillisessä kulhossa",
+            "sourceLabel": "↗ NIDDK · Refluksin ohjeet"
+          }
+        },
+        {
+          "headline": "Kurkun tai äänen häiriö?",
+          "headlineLines": [
+            "Kurkun tai",
+            "äänen häiriö?"
+          ],
+          "accentLine": 1,
+          "subline": "Tallenna, mitä huomaat.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "Äänen merkinnät",
+          "ui": {
+            "title": "Kurkku & ääni",
+            "label": "Tallentamasi muistiinpanot · Esimerkki",
+            "focus": "Ääni käheä. Kurkun nikaiselu. Merkinnät tallennettu.",
+            "explanation": "Tallenna, mitä huomaat ja milloin. Kurkun ja äänen oireet voivat olla erilaisia aiheita; näitä merkintöjä ei tunnisteta diagnoosiksi.",
+            "disclaimer": "Esimerkkidata · Ei diagnoosi",
+            "context": [
+              [
+                "Ääni",
+                "Käheä"
+              ],
+              [
+                "Kurkku",
+                "Kurkun nikaiselu"
+              ]
+            ],
+            "contextDate": "10. syyskuuta · Ennen työtä",
+            "cta": "✓ Tieto tallennettu"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fi/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "fi",
+          "lang": "fi",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esimerkki",
+            "footer": "Esimerkkikäyttöliittymä · Käyttöliittymäkonsepti",
+            "dishTitle": "Grillattu lohi",
+            "dishDescription": "Sitruunivoikastike",
+            "dishCaption": "ESIMERKKITILAUS",
+            "dishAlt": "Grillattu lohi riisin ja vihreiden papujen kera, kastike erillisessä kulhossa",
+            "sourceLabel": "↗ NIDDK · Refluksin ohjeet"
+          }
+        },
+        {
+          "headline": "Ateriat & oireet. Yksi ajankohta.",
+          "headlineLines": [
+            "Ateriat & oireet.",
+            "Yksi ajankohta."
+          ],
+          "accentLine": 1,
+          "subline": "Katso merkintösi yhdessä ajankohtassa.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "YKSI ILTA, KAKSI MERKINTÄÄ",
+          "ui": {
+            "title": "Aikajana",
+            "label": "Tallentamasi muistiinpanot · Esimerkki",
+            "focus": "Ateria 20:30. Narastus 22:15.",
+            "explanation": "Kaksi tallennettua tapahtumaa samasta illasta. Niiden aikajärjestys yksinään ei osoita, että ateria aiheutti oireita.",
+            "disclaimer": "Esimerkkidata · Ei diagnoosi",
+            "context": [
+              [
+                "20:30",
+                "Ateria"
+              ],
+              [
+                "22:15",
+                "Narastus"
+              ]
+            ],
+            "contextDate": "9. syyskuuta · Aikajana",
+            "cta": "Katso tallennettuja merkintöjä"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fi/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "fi",
+          "lang": "fi",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esimerkki",
+            "footer": "Esimerkkikäyttöliittymä · Käyttöliittymäkonsepti",
+            "dishTitle": "Grillattu lohi",
+            "dishDescription": "Sitruunivoikastike",
+            "dishCaption": "ESIMERKKITILAUS",
+            "dishAlt": "Grillattu lohi riisin ja vihreiden papujen kera, kastike erillisessä kulhossa",
+            "sourceLabel": "↗ NIDDK · Refluksin ohjeet"
+          }
+        },
+        {
+          "headline": "Tuo historiaa lääkärin vastaanottoon.",
+          "headlineLines": [
+            "Tuo historiaa lääkärin",
+            "vastaanottoon."
+          ],
+          "accentLine": 1,
+          "subline": "Jaa selkeä yhteenveto lääkärille.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "KÄYNTIYHTEENVETO",
+          "ui": {
+            "title": "Vastaanottovuorokauden yhteenveto",
+            "label": "Tallentamasi muistiinpanot · Esimerkki",
+            "focus": "Tallennettuja havaintoja, valmiita jakamista.",
+            "explanation": "Aterioiden, oireiden, hoitotietojen ja raportin yhteenveto. Jaa se lääkärin vastaanoton alustavana pohjana.",
+            "disclaimer": "Esimerkkidata · Ei diagnoosi",
+            "context": [
+              [
+                "9. – 10. syyskuuta",
+                "Tallennettuja havaintoja"
+              ],
+              [
+                "Sisällytettiin",
+                "Ateriat · Oireet · Raportti"
+              ]
+            ],
+            "contextDate": "Vastaanottovuorokauden yhteenveto",
+            "cta": "Jaa yhteenveto · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/fi/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Esimerkki",
+            "title": "Havaintosi",
+            "date": "9. – 10. syyskuuta · Esimerkki",
+            "rows": [
+              "Ateriat & oireet",
+              "Hoito-merkinnät",
+              "Raporttisi"
+            ]
+          },
+          "locale": "fi",
+          "lang": "fi",
+          "dir": "ltr",
+          "copy": {
+            "example": "Esimerkki",
+            "footer": "Esimerkkikäyttöliittymä · Käyttöliittymäkonsepti",
+            "dishTitle": "Grillattu lohi",
+            "dishDescription": "Sitruunivoikastike",
+            "dishCaption": "ESIMERKKITILAUS",
+            "dishAlt": "Grillattu lohi riisin ja vihreiden papujen kera, kastike erillisessä kulhossa",
+            "sourceLabel": "↗ NIDDK · Refluksin ohjeet"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/fi/contact-sheet.html",
+  "download": null
+}

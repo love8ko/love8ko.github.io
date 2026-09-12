@@ -1,0 +1,622 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "ta-IN",
+  "label": "தமிழ்",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · எட்டு வேண்டும், எட்டு விளக்கங்கள்",
+      "description": "தேர்வு செய்யப்பட்ட ஆங்கில அல்லது தேவையான மூலம் மற்றும் சிறப்பு பட்டியல் காட்சிகளுக்கான இலக்குகள்",
+      "frames": [
+        {
+          "headline": "நெஞ்செரிச்சல் உங்களை அதிகரிக்கிறதா?",
+          "headlineLines": [
+            "நெஞ்செரிச்சல் உங்களை",
+            "அதிகரிக்கிறதா?"
+          ],
+          "accentLine": 1,
+          "subline": "உங்கள் கேள்வி. அதிகமான அடுத்த நடை.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "நாள் முன்னேற்றம்",
+          "ui": {
+            "title": "AI விளக்கம்",
+            "label": "AI விளக்கம் · விளக்கம்",
+            "focus": "நாளை இரவு முன்னேற்றம் செய்யவும்.",
+            "explanation": "ஒரு விரைவான உணவு பின்னர் உடல் நிலை முடிவு செய்ய முடியும். ஒரு விரைவான இரவு நாட்களில், உணவின் பிறிது காலம் முடிவு செய்ய முடியும்.",
+            "disclaimer": "காட்சி அறிக்கை · இது நோயறிதல் அல்ல",
+            "question": "என்ன காரணம் நெஞ்செரிச்சல் இரவு முடிவு செய்யும்?",
+            "context": [
+              [
+                "உணவு",
+                "9:30 பிரியம்"
+              ],
+              [
+                "உடல் நிலை முடிவு",
+                "10:15 பிரியம்"
+              ]
+            ],
+            "contextDate": "செப்டம்பர் 8 · உங்கள் இரவு"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ta-IN/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "விளக்கம்",
+            "footer": "காட்சி விளக்கம் · வடிவமை அறிவிப்பு",
+            "dishTitle": "கால்பெட்டி சால்மான்",
+            "dishDescription": "லீமன் புரோம் சாஸ்",
+            "dishCaption": "எடுத்துக் காட்சி அமைப்பு",
+            "dishAlt": "கால்பெட்டி சால்மான், ரீசி, கீரை பூண்டுகள் மற்றும் சாஸ் தனியாக கேட்கவும் ரேமிகின்",
+            "sourceLabel": "↗ NIDDK · ரிஃப்ளக்ஸ் கூட்டுறவு",
+            "anatomyCaption": "ரிஃப்ளக்ஸ் விளக்கம்"
+          },
+          "locale": "ta-IN",
+          "lang": "ta-IN",
+          "dir": "ltr"
+        },
+        {
+          "headline": "நெஞ்செரிச்சலுக்கான எதிர்பாடுகள் என்ன?",
+          "headlineLines": [
+            "நெஞ்செரிச்சலுக்கான",
+            "எதிர்பாடுகள் என்ன?"
+          ],
+          "accentLine": 1,
+          "subline": "பிரியமான உணவு விரிவு செய்ய முன் பார்க்கவும்.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "ஒரு மாற்றத்தை பார்க்கவும்",
+          "ui": {
+            "title": "மெனு பார்வை",
+            "label": "AI விளக்கம் · விளக்கம்",
+            "focus": "சாஸை தனியாகக் கேட்கவும்.",
+            "explanation": "கிரீம் மற்றும் பொறிக்கும் சாஸ்கள் சில பேருக்கு பிரச்சனை செய்யலாம். உங்கள் பதில் வேறுபடும்.",
+            "disclaimer": "காட்சி அறிக்கை · இது நோயறிதல் அல்ல"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ta-IN/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "ta-IN",
+          "lang": "ta-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "விளக்கம்",
+            "footer": "காட்சி விளக்கம் · வடிவமை அறிவிப்பு",
+            "dishTitle": "கால்பெட்டி சால்மான்",
+            "dishDescription": "லீமன் புரோம் சாஸ்",
+            "dishCaption": "எடுத்துக் காட்சி அமைப்பு",
+            "dishAlt": "கால்பெட்டி சால்மான், ரீசி, கீரை பூண்டுகள் மற்றும் சாஸ் தனியாக கேட்கவும் ரேமிகின்",
+            "sourceLabel": "↗ NIDDK · ரிஃப்ளக்ஸ் கூட்டுறவு"
+          }
+        },
+        {
+          "headline": "தீர்வு காண உங்கள் பரிசோதனை விவரங்களை புரிய வைக்கவும்.",
+          "headlineLines": [
+            "தீர்வு காண உங்கள்",
+            "பரிசோதனை விவரங்களை",
+            "புரிய வைக்கவும்."
+          ],
+          "accentLine": 2,
+          "subline": "PDF அப்லோட் செய்யவும். AI விளக்கம் பெறவும்.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "புரியும் ஆங்கிலம்",
+          "ui": {
+            "title": "AI விளக்கம்",
+            "label": "AI விளக்கம் · விளக்கம்",
+            "focus": "உணவுக்குழாயின் உறையின் பாதிப்பு.",
+            "explanation": "உங்கள் பரிசோதனை எழுதப்பட்ட கண்டுபிடிப்பு ரிஃப்ளக்ஸ் ஆகும். உங்கள் மருத்துவ அறிவிப்பாளர் இது உங்கள் சேவைக்கு எதிராக என்ன செய்ய வேண்டும் என்று கூறவும்.",
+            "disclaimer": "எழுதப்பட்ட கண்டுபிடிப்பு · இது நோயறிதல் அல்ல"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ta-IN/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "பரிசோதனை_முடிவுகள்.pdf",
+            "format": "PDF",
+            "type": "உயர் முன் பரிசோதனை",
+            "findingLabel": "கண்டுபிடிப்பு",
+            "finding": "ஈசோபேஜைடிஸ்",
+            "date": "எடுத்துக் காட்டும் பரிசோதனை · எடுத்துக்காட்டு"
+          },
+          "copy": {
+            "example": "விளக்கம்",
+            "footer": "காட்சி விளக்கம் · வடிவமை அறிவிப்பு",
+            "dishTitle": "கால்பெட்டி சால்மான்",
+            "dishDescription": "லீமன் புரோம் சாஸ்",
+            "dishCaption": "எடுத்துக் காட்சி அமைப்பு",
+            "dishAlt": "கால்பெட்டி சால்மான், ரீசி, கீரை பூண்டுகள் மற்றும் சாஸ் தனியாக கேட்கவும் ரேமிகின்",
+            "sourceLabel": "↗ NIDDK · ரிஃப்ளக்ஸ் கூட்டுறவு",
+            "paperNote": "உங்கள் அப்லோட் செய்யப்பட்ட பரிசோதனை",
+            "reportConnector": "PDF → AI",
+            "reportLead": "பரிசோதனை எழுதியது"
+          },
+          "locale": "ta-IN",
+          "lang": "ta-IN",
+          "dir": "ltr"
+        },
+        {
+          "headline": "இன்று உங்கள் பிரியமான பிரச்சனையை எளிய வகையில் போகவும்.",
+          "headlineLines": [
+            "இன்று உங்கள் பிரியமான",
+            "பிரச்சனையை எளிய",
+            "வகையில் போகவும்."
+          ],
+          "accentLine": 2,
+          "subline": "ஒரு செயலை தேர்வு செய்யவும். உங்கள் நேரத்தை நிர்ணயிக்கவும்.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "உங்கள் தேர்வு செய்யப்பட்ட இறக்கும் விருப்பம்",
+          "ui": {
+            "title": "இன்று பிராந்திக்கும் பிராந்திக்கும்",
+            "label": "உங்கள் சேவித்த குறிப்புகள் · எடுத்துக்காட்டு",
+            "focus": "நிறம்பிய உணவு வேண்டும் 7:00 மணி முடிவு.",
+            "explanation": "உங்கள் தேர்வு நிறம்பும் நேரம் 10:00 மணி. இந்த பிராந்திக்கும் பிராந்திக்கும் 3 மணி நேரம் விட்டு நிறம்பும் நிலையில் இருக்கும்; இது இரவு காயம் போன்ற காரணங்களுக்கு உதவலாம்.",
+            "disclaimer": "காட்சி அறிக்கை · இது நோயறிதல் அல்ல",
+            "context": [
+              [
+                "நிறம்பும் உணவு",
+                "7:00 மணி"
+              ],
+              [
+                "நிறம்பும் நேரம்",
+                "10:00 மணி"
+              ]
+            ],
+            "contextDate": "செப்டம்பர் 10 · இன்று",
+            "cta": "✓ குறிப்பு நிறம்பப்பட்டுள்ளது · 6:30 மணி"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ta-IN/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ta-IN",
+          "lang": "ta-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "விளக்கம்",
+            "footer": "காட்சி விளக்கம் · வடிவமை அறிவிப்பு",
+            "dishTitle": "கால்பெட்டி சால்மான்",
+            "dishDescription": "லீமன் புரோம் சாஸ்",
+            "dishCaption": "எடுத்துக் காட்சி அமைப்பு",
+            "dishAlt": "கால்பெட்டி சால்மான், ரீசி, கீரை பூண்டுகள் மற்றும் சாஸ் தனியாக கேட்கவும் ரேமிகின்",
+            "sourceLabel": "↗ NIDDK · ரிஃப்ளக்ஸ் கூட்டுறவு"
+          }
+        },
+        {
+          "headline": "உங்கள் சேவித்த குறிப்புகளை ஒன்றுபடுத்துக்கு.",
+          "headlineLines": [
+            "உங்கள் சேவித்த",
+            "குறிப்புகளை",
+            "ஒன்றுபடுத்துக்கு."
+          ],
+          "accentLine": 2,
+          "subline": "உங்கள் எடுத்துக்கொள்ளும் விஷயங்களை மற்றும் அதை அனுபவித்துள்ளதை நினைவில் கொள்ளுங்கள்.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "உங்கள் சேவித்த குறிப்பு",
+          "ui": {
+            "title": "சேவித்த குறிப்புகள்",
+            "label": "உங்கள் சேவித்த குறிப்புகள் · எடுத்துக்காட்டு",
+            "focus": "மருத்துவம் எடுத்துக்கொள்ளப்பட்டுள்ளது. இவ்வேளை நெஞ்செரிச்சல் குறிப்பு.",
+            "explanation": "உங்கள் தனியான குறிப்புகள், ஒன்றுபடுத்தப்பட்டுள்ளன. இவை மருத்துவ சிகிச்சை எவ்வளவு செயல்படும் என்று கூறவும்.",
+            "disclaimer": "காட்சி அறிக்கை · இது நோயறிதல் அல்ல",
+            "context": [
+              [
+                "8:00 மணி",
+                "மருத்துவம் எடுத்துக்கொள்ளப்பட்டுள்ளது"
+              ],
+              [
+                "9:15 மணி",
+                "நெஞ்செரிச்சல் குறிப்பு"
+              ]
+            ],
+            "contextDate": "செப்டம்பர் 9 · உங்கள் குறிப்புகள்",
+            "cta": "✓ குறிப்பு நிறம்பப்பட்டது"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ta-IN/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ta-IN",
+          "lang": "ta-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "விளக்கம்",
+            "footer": "காட்சி விளக்கம் · வடிவமை அறிவிப்பு",
+            "dishTitle": "கால்பெட்டி சால்மான்",
+            "dishDescription": "லீமன் புரோம் சாஸ்",
+            "dishCaption": "எடுத்துக் காட்சி அமைப்பு",
+            "dishAlt": "கால்பெட்டி சால்மான், ரீசி, கீரை பூண்டுகள் மற்றும் சாஸ் தனியாக கேட்கவும் ரேமிகின்",
+            "sourceLabel": "↗ NIDDK · ரிஃப்ளக்ஸ் கூட்டுறவு"
+          }
+        },
+        {
+          "headline": "தொண்டை அல்லது வார்த்தை உங்களுக்கு தீர்மானமாக இருக்கிறதா?",
+          "headlineLines": [
+            "தொண்டை அல்லது வார்த்தை",
+            "உங்களுக்கு தீர்மானமாக",
+            "இருக்கிறதா?"
+          ],
+          "accentLine": 2,
+          "subline": "உங்கள் கவனித்த விஷயங்களை பதிவு செய்யுங்கள்.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "உங்கள் வார்த்தைகள்",
+          "ui": {
+            "title": "தொண்டை மற்றும் வாய்",
+            "label": "உங்கள் சேவித்த குறிப்புகள் · எடுத்துக்காட்டு",
+            "focus": "வாய் குறைந்துள்ளது. தொண்டையைச் சரிசெய்தல். குறிப்புகள் பதிவுசெய்க்கப்பட்டன.",
+            "explanation": "உங்கள் கவனிப்புகளை எவ்வாறு மற்றும் எப்போது பதிவு செய்யவும். தொண்டை மற்றும் வாய் குறிப்புகள் வெவ்வேறு காரணங்களுக்கு வாய்ப்பு கூறலாம்; இவை நோயறிதலை அறிவிக்கவும்.",
+            "disclaimer": "காட்சி அறிக்கை · இது நோயறிதல் அல்ல",
+            "context": [
+              [
+                "வாய்",
+                "குறைந்துள்ளது"
+              ],
+              [
+                "தொண்டை",
+                "சரிசெய்தல்"
+              ]
+            ],
+            "contextDate": "செப்டம்பர் 10 · வேலையில் முன்",
+            "cta": "✓ குறிப்புகள் பதிவுசெய்க்கப்பட்டன"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ta-IN/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ta-IN",
+          "lang": "ta-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "விளக்கம்",
+            "footer": "காட்சி விளக்கம் · வடிவமை அறிவிப்பு",
+            "dishTitle": "கால்பெட்டி சால்மான்",
+            "dishDescription": "லீமன் புரோம் சாஸ்",
+            "dishCaption": "எடுத்துக் காட்சி அமைப்பு",
+            "dishAlt": "கால்பெட்டி சால்மான், ரீசி, கீரை பூண்டுகள் மற்றும் சாஸ் தனியாக கேட்கவும் ரேமிகின்",
+            "sourceLabel": "↗ NIDDK · ரிஃப்ளக்ஸ் கூட்டுறவு"
+          }
+        },
+        {
+          "headline": "உணவு மற்றும் குறிப்புகள். ஒரு நேர்வின் வரிசை.",
+          "headlineLines": [
+            "உணவு மற்றும்",
+            "குறிப்புகள். ஒரு",
+            "நேர்வின் வரிசை."
+          ],
+          "accentLine": 2,
+          "subline": "உங்கள் குறிப்புகளை ஒரு நேர்வின் வரிசையில் பார்க்கவும்.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "ஒரு காலம், இரண்டு பதிப்புகள்",
+          "ui": {
+            "title": "உங்கள் நேர்வின் வரிசை",
+            "label": "உங்கள் சேவித்த குறிப்புகள் · எடுத்துக்காட்டு",
+            "focus": "வேலை 8:30 மணி. நெஞ்செரிச்சல் 10:15 மணி.",
+            "explanation": "முன்கிண்ணம் இரண்டு பதிப்புகள் ஒரே காலத்தில் பதிவுசெய்க்கப்பட்டுள்ளன. அவற்றின் நேரம் மட்டும் குறிப்பாக உணவு குறித்த குறிப்பை விளையாடுவதை தோன்றிக்கொள்ளாது.",
+            "disclaimer": "காட்சி அறிக்கை · இது நோயறிதல் அல்ல",
+            "context": [
+              [
+                "8:30 மணி",
+                "உணவு"
+              ],
+              [
+                "10:15 பிரியம்",
+                "நெஞ்செரிச்சல்"
+              ]
+            ],
+            "contextDate": "செப்டம்பர் 7 · உங்கள் நேர்வின் வரிசை",
+            "cta": "பதிவு செய்யப்பட்ட பதிப்புகளை பார்க்கவும்"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ta-IN/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ta-IN",
+          "lang": "ta-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "விளக்கம்",
+            "footer": "காட்சி விளக்கம் · வடிவமை அறிவிப்பு",
+            "dishTitle": "கால்பெட்டி சால்மான்",
+            "dishDescription": "லீமன் புரோம் சாஸ்",
+            "dishCaption": "எடுத்துக் காட்சி அமைப்பு",
+            "dishAlt": "கால்பெட்டி சால்மான், ரீசி, கீரை பூண்டுகள் மற்றும் சாஸ் தனியாக கேட்கவும் ரேமிகின்",
+            "sourceLabel": "↗ NIDDK · ரிஃப்ளக்ஸ் கூட்டுறவு"
+          }
+        },
+        {
+          "headline": "உங்கள் விருப்பத்திற்கு உங்கள் மருத்துவரின் விருப்பத்தை அனுப்புக்கொள்ளவும்.",
+          "headlineLines": [
+            "உங்கள் விருப்பத்திற்கு உங்கள்",
+            "மருத்துவரின் விருப்பத்தை",
+            "அனுப்புக்கொள்ளவும்."
+          ],
+          "accentLine": 2,
+          "subline": "மருத்துவருக்கு ஒரு சுருக்கமான விளக்கம் அனுப்புக்கொள்ளவும்.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "உங்கள் மருத்துவர் விருப்பம்",
+          "ui": {
+            "title": "விருப்பம் விளக்கம்",
+            "label": "உங்கள் சேவித்த குறிப்புகள் · எடுத்துக்காட்டு",
+            "focus": "உங்கள் சேவித்த கண்டுபிடிப்புகள், பகிரவும் தயாராக உள்ளன.",
+            "explanation": "உங்கள் சேவித்த உணவுகள், அறிகுறிகள், சிகிச்சை நோட்டுகள் மற்றும் புகைப்படம் ஆகியவற்றின் ஒரு சுருக்கம். உங்கள் அறிகுறிகளுக்கான அறிவிப்புக்கு இது தொடக்கமாக இருக்கும்.",
+            "disclaimer": "காட்சி அறிக்கை · இது நோயறிதல் அல்ல",
+            "context": [
+              [
+                "07–10/09",
+                "சேவித்த கண்டுபிடிப்புகள்"
+              ],
+              [
+                "முன்னும்",
+                "உணவுகள் · அறிகுறிகள் · புகைப்படம்"
+              ]
+            ],
+            "contextDate": "அறிகுறிகள் சுருக்கம்",
+            "cta": "சுருக்கத்தை பகிர் · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ta-IN/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · எடுத்துக்காட்சி",
+            "title": "உங்கள் கண்டுபிடிப்புகள்",
+            "date": "Sep 7–10 · எடுத்துக்காட்சி",
+            "rows": [
+              "உணவுகள் மற்றும் அறிகுறிகள்",
+              "சேவித்த குறிப்புகள்",
+              "உங்கள் புகைப்படம்"
+            ]
+          },
+          "locale": "ta-IN",
+          "lang": "ta-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "விளக்கம்",
+            "footer": "காட்சி விளக்கம் · வடிவமை அறிவிப்பு",
+            "dishTitle": "கால்பெட்டி சால்மான்",
+            "dishDescription": "லீமன் புரோம் சாஸ்",
+            "dishCaption": "எடுத்துக் காட்சி அமைப்பு",
+            "dishAlt": "கால்பெட்டி சால்மான், ரீசி, கீரை பூண்டுகள் மற்றும் சாஸ் தனியாக கேட்கவும் ரேமிகின்",
+            "sourceLabel": "↗ NIDDK · ரிஃப்ளக்ஸ் கூட்டுறவு"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/ta-IN/contact-sheet.html",
+  "download": null
+}

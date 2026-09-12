@@ -1,0 +1,623 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "th",
+  "label": "ไทย",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · 8 ขั้นตอน 8 ภาพที่ชัดเจน",
+      "description": "ทิศทางภาษาอังกฤษที่เลือกและแหล่งข้อมูลสำหรับภาพสกรีนช็อตที่ปรับภาษา",
+      "frames": [
+        {
+          "headline": "การที่แสบร้อนทำให้คุณนอนไม่หลับ?",
+          "headlineLines": [
+            "การที่แสบร้",
+            "อนทำให้คุณ",
+            "นอนไม่หลับ?"
+          ],
+          "accentLine": 2,
+          "subline": "คำถามของคุณ ขั้นตอนต่อไปที่ชัดเจนขึ้น",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "ขั้นตอนสำหรับวันพรุ่งนี้",
+          "ui": {
+            "title": "คำอธิบายจาก AI",
+            "label": "คำอธิบายจาก AI · ตัวอย่าง",
+            "focus": "ลองทานอาหารเย็นก่อนนอนอย่างน้อยหนึ่งชั่วโมงก่อนวันนี้",
+            "explanation": "การทานอาหารในเวลากลางคืนอาจส่งผลต่ออาการของคุณ สำหรับคืนหน้า ให้หลีกเลี่ยงการนอนหลับอย่างน้อย 3 ชั่วโมงหลังการทานอาหาร",
+            "disclaimer": "ข้อมูลตัวอย่าง · ไม่ใช่การวินิจฉัย",
+            "question": "ทำไมอาการแสบร้อนของฉันแย่ขึ้นตอนกลางคืน?",
+            "context": [
+              [
+                "อาหารเย็น",
+                "21:30"
+              ],
+              [
+                "นอนหลับ",
+                "22:15"
+              ]
+            ],
+            "contextDate": "วันที่ 8 ซึ่งคือคืนของคุณ"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/th/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "ตัวอย่าง",
+            "footer": "ตัวอย่างหน้าจอ · แนวคิดการออกแบบ",
+            "dishTitle": "ปลาแซลมอนย่าง",
+            "dishDescription": "ซอสเบอร์รีน้ำส้ม",
+            "dishCaption": "ตัวอย่างการสั่งอาหาร",
+            "dishAlt": "ปลาแซลมอนย่าง พร้อมข้าว ถั่วเขียว และซอสที่ขอแยกไว้ในชามเล็ก",
+            "sourceLabel": "↗ NIDDK · คำแนะนำเกี่ยวกับกรดไหลย้อน",
+            "anatomyCaption": "กรดไหลย้อนได้รับคำอธิบาย"
+          },
+          "locale": "th",
+          "lang": "th",
+          "dir": "ltr"
+        },
+        {
+          "headline": "อะไรที่ฉันสามารถสั่งได้ร่วมกับกรดไหลย้อนได้?",
+          "headlineLines": [
+            "อะไรที่ฉันสามา",
+            "รถสั่งได้ร่วมกับ",
+            "กรดไหลย้อนได้?"
+          ],
+          "accentLine": 2,
+          "subline": "ตรวจสอบเมนูก่อนสั่งอาหาร",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "การเปลี่ยนแปลงหนึ่งที่ต้องพิจารณา",
+          "ui": {
+            "title": "การตรวจสอบเมนู",
+            "label": "คำอธิบายจาก AI · ตัวอย่าง",
+            "focus": "ขอแยกซอส",
+            "explanation": "ซอสรสเปรี้ยวและซอสที่มีความเข้มข้นอาจทำให้บางคนรู้สึกไม่สบาย คำตอบของคุณอาจแตกต่างกัน",
+            "disclaimer": "ข้อมูลตัวอย่าง · ไม่ใช่การวินิจฉัย"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/th/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "th",
+          "lang": "th",
+          "dir": "ltr",
+          "copy": {
+            "example": "ตัวอย่าง",
+            "footer": "ตัวอย่างหน้าจอ · แนวคิดการออกแบบ",
+            "dishTitle": "ปลาแซลมอนย่าง",
+            "dishDescription": "ซอสเบอร์รีน้ำส้ม",
+            "dishCaption": "ตัวอย่างการสั่งอาหาร",
+            "dishAlt": "ปลาแซลมอนย่าง พร้อมข้าว ถั่วเขียว และซอสที่ขอแยกไว้ในชามเล็ก",
+            "sourceLabel": "↗ NIDDK · คำแนะนำเกี่ยวกับกรดไหลย้อน"
+          }
+        },
+        {
+          "headline": "เข้าใจผลการทดสอบของคุณ",
+          "headlineLines": [
+            "เข้าใจผล",
+            "การทดสอ",
+            "บของคุณ"
+          ],
+          "accentLine": 2,
+          "subline": "อัปโหลด PDF ได้รับการอธิบายจาก AI",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "ภาษาที่เข้าใจง่าย",
+          "ui": {
+            "title": "คำอธิบายจาก AI",
+            "label": "คำอธิบายจาก AI · ตัวอย่าง",
+            "focus": "การอักเสบของผนังหลอดอาหาร",
+            "explanation": "รายงานของคุณระบุว่ามีหลอดอาหารอักเสบ ให้แพทย์ของคุณแจ้งให้ทราบว่าสิ่งนี้หมายความอย่างไรต่อการรักษาของคุณ",
+            "disclaimer": "อธิบายผลการตรวจที่ระบุในรายงาน · ไม่ใช่การวินิจฉัย"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/th/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "ผลการทดสอบ.pdf",
+            "format": "PDF",
+            "type": "การตรวจทางหลอดอาหาร",
+            "findingLabel": "ผลการตรวจ",
+            "finding": "หลอดอาหารอักเสบ",
+            "date": "รายงานตัวอย่าง · ตัวอย่าง"
+          },
+          "copy": {
+            "example": "ตัวอย่าง",
+            "footer": "ตัวอย่างหน้าจอ · แนวคิดการออกแบบ",
+            "dishTitle": "ปลาแซลมอนย่าง",
+            "dishDescription": "ซอสเบอร์รีน้ำส้ม",
+            "dishCaption": "ตัวอย่างการสั่งอาหาร",
+            "dishAlt": "ปลาแซลมอนย่าง พร้อมข้าว ถั่วเขียว และซอสที่ขอแยกไว้ในชามเล็ก",
+            "sourceLabel": "↗ NIDDK · คำแนะนำเกี่ยวกับกรดไหลย้อน",
+            "paperNote": "รายงานที่คุณอัปโหลด",
+            "reportConnector": "PDF → AI",
+            "reportLead": "รายงานของคุณระบุว่า"
+          },
+          "locale": "th",
+          "lang": "th",
+          "dir": "ltr"
+        },
+        {
+          "headline": "ทำแผนคืนนี้ให้เรียบง่าย",
+          "headlineLines": [
+            "ทำแผนคื",
+            "นนี้ให้เรี",
+            "ยบง่าย"
+          ],
+          "accentLine": 2,
+          "subline": "เลือกขั้นตอนหนึ่ง กำหนดเวลา",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "ขั้นตอนคืนนี้ที่คุณเลือก",
+          "ui": {
+            "title": "แผนคืนนี้",
+            "label": "บันทึกของคุณ · ตัวอย่าง",
+            "focus": "เสร็จสิ้นอาหารเย็นก่อน 19:00",
+            "explanation": "เวลาที่คุณเลือกสำหรับการนอนคือ 22:00 แผนนี้มีช่วงเวลา 3 ชั่วโมงหลังจากอาหารเย็นก่อนที่คุณจะนอน ช่วงเวลานี้อาจช่วยลดอาการกลางคืน",
+            "disclaimer": "ข้อมูลตัวอย่าง · ไม่ใช่การวินิจฉัย",
+            "context": [
+              [
+                "เสร็จสิ้นอาหารเย็น",
+                "19:00"
+              ],
+              [
+                "เวลาที่นอน",
+                "22:00"
+              ]
+            ],
+            "contextDate": "สิงหาคม 10 · คืนนี้",
+            "cta": "✓ ตั้งเตือนแล้ว · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/th/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "th",
+          "lang": "th",
+          "dir": "ltr",
+          "copy": {
+            "example": "ตัวอย่าง",
+            "footer": "ตัวอย่างหน้าจอ · แนวคิดการออกแบบ",
+            "dishTitle": "ปลาแซลมอนย่าง",
+            "dishDescription": "ซอสเบอร์รีน้ำส้ม",
+            "dishCaption": "ตัวอย่างการสั่งอาหาร",
+            "dishAlt": "ปลาแซลมอนย่าง พร้อมข้าว ถั่วเขียว และซอสที่ขอแยกไว้ในชามเล็ก",
+            "sourceLabel": "↗ NIDDK · คำแนะนำเกี่ยวกับกรดไหลย้อน"
+          }
+        },
+        {
+          "headline": "รักษาบันทึกการรักษาของคุณไว้ร่วมกัน",
+          "headlineLines": [
+            "รักษาบันทึกก",
+            "ารรักษาของ",
+            "คุณไว้ร่วมกัน"
+          ],
+          "accentLine": 2,
+          "subline": "จำสิ่งที่คุณรับประทานและรู้สึก",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "บันทึกการรักษาของคุณ",
+          "ui": {
+            "title": "บันทึกการรักษา",
+            "label": "บันทึกของคุณ · ตัวอย่าง",
+            "focus": "รับประทานยาแล้ว อาการแสบร้อนกลางอกถูกบันทึก",
+            "explanation": "บันทึกของคุณเอง ที่ถูกเก็บรักษาไว้ร่วมกัน บันทึกเหล่านี้ไม่ได้แสดงว่าการรักษาทำงานได้ดีหรือไม่",
+            "disclaimer": "ข้อมูลตัวอย่าง · ไม่ใช่การวินิจฉัย",
+            "context": [
+              [
+                "08:00",
+                "รับประทานยาแล้ว"
+              ],
+              [
+                "21:15",
+                "อาการแสบร้อนกลางอกถูกบันทึก"
+              ]
+            ],
+            "contextDate": "สิงหาคม 9 · บันทึกของคุณ",
+            "cta": "✓ บันทึกแล้ว"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/th/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "th",
+          "lang": "th",
+          "dir": "ltr",
+          "copy": {
+            "example": "ตัวอย่าง",
+            "footer": "ตัวอย่างหน้าจอ · แนวคิดการออกแบบ",
+            "dishTitle": "ปลาแซลมอนย่าง",
+            "dishDescription": "ซอสเบอร์รีน้ำส้ม",
+            "dishCaption": "ตัวอย่างการสั่งอาหาร",
+            "dishAlt": "ปลาแซลมอนย่าง พร้อมข้าว ถั่วเขียว และซอสที่ขอแยกไว้ในชามเล็ก",
+            "sourceLabel": "↗ NIDDK · คำแนะนำเกี่ยวกับกรดไหลย้อน"
+          }
+        },
+        {
+          "headline": "ลำคอหรือเสียงรบกวนคุณหรือไม่?",
+          "headlineLines": [
+            "ลำคอหรือเ",
+            "สียงรบกวน",
+            "คุณหรือไม่?"
+          ],
+          "accentLine": 2,
+          "subline": "ติดตามสิ่งที่คุณสังเกต",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "บันทึกเสียงของคุณ",
+          "ui": {
+            "title": "ลำคอและเสียง",
+            "label": "บันทึกของคุณ · ตัวอย่าง",
+            "focus": "เสียงแหบ การขยับลำคอเพื่อขับเสมหะ บันทึกข้อมูลแล้ว",
+            "explanation": "บันทึกสิ่งที่คุณสังเกตเห็นและเวลาที่เกิดขึ้น อาการทางลำคอและเสียงอาจมีสาเหตุที่แตกต่างกัน บันทึกเหล่านี้ไม่ใช่การวินิจฉัยโรค",
+            "disclaimer": "ข้อมูลตัวอย่าง · ไม่ใช่การวินิจฉัย",
+            "context": [
+              [
+                "เสียง",
+                "แหบ"
+              ],
+              [
+                "ลำคอ",
+                "การขยับลำคอเพื่อขับเสมหะ"
+              ]
+            ],
+            "contextDate": "10 ก.ย. · ก่อนทำงาน",
+            "cta": "✓ บันทึกข้อมูลแล้ว"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/th/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "th",
+          "lang": "th",
+          "dir": "ltr",
+          "copy": {
+            "example": "ตัวอย่าง",
+            "footer": "ตัวอย่างหน้าจอ · แนวคิดการออกแบบ",
+            "dishTitle": "ปลาแซลมอนย่าง",
+            "dishDescription": "ซอสเบอร์รีน้ำส้ม",
+            "dishCaption": "ตัวอย่างการสั่งอาหาร",
+            "dishAlt": "ปลาแซลมอนย่าง พร้อมข้าว ถั่วเขียว และซอสที่ขอแยกไว้ในชามเล็ก",
+            "sourceLabel": "↗ NIDDK · คำแนะนำเกี่ยวกับกรดไหลย้อน"
+          }
+        },
+        {
+          "headline": "มื้ออาหารและอาการ ในไทม์ไลน์เดียว",
+          "headlineLines": [
+            "มื้ออาหารและอาการ",
+            "ในไทม์ไลน์เดียว"
+          ],
+          "accentLine": 1,
+          "subline": "ดูบันทึกของคุณได้ในไทม์ไลน์เดียว",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "หนึ่งเย็น สองรายการบันทึก",
+          "ui": {
+            "title": "ไทม์ไลน์ของคุณ",
+            "label": "บันทึกของคุณ · ตัวอย่าง",
+            "focus": "มื้อค่ำ 20:30 น. อาการแสบร้อนกลางอก 22:15 น.",
+            "explanation": "เหตุการณ์สองรายการที่บันทึกไว้ในเย็นวันเดียวกัน ลำดับเวลาเพียงอย่างเดียวไม่ได้แสดงว่ามื้ออาหารนั้นเป็นสาเหตุของอาการ",
+            "disclaimer": "ข้อมูลตัวอย่าง · ไม่ใช่การวินิจฉัย",
+            "context": [
+              [
+                "20:30",
+                "อาหารเย็น"
+              ],
+              [
+                "22:15",
+                "แสบร้อนกลางอก"
+              ]
+            ],
+            "contextDate": "7 ก.ย. · ไทม์ไลน์ของคุณ",
+            "cta": "ดูรายการที่บันทึกไว้"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/th/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "th",
+          "lang": "th",
+          "dir": "ltr",
+          "copy": {
+            "example": "ตัวอย่าง",
+            "footer": "ตัวอย่างหน้าจอ · แนวคิดการออกแบบ",
+            "dishTitle": "ปลาแซลมอนย่าง",
+            "dishDescription": "ซอสเบอร์รีน้ำส้ม",
+            "dishCaption": "ตัวอย่างการสั่งอาหาร",
+            "dishAlt": "ปลาแซลมอนย่าง พร้อมข้าว ถั่วเขียว และซอสที่ขอแยกไว้ในชามเล็ก",
+            "sourceLabel": "↗ NIDDK · คำแนะนำเกี่ยวกับกรดไหลย้อน"
+          }
+        },
+        {
+          "headline": "นำประวัติของคุณไปใช้ในการนัดพบแพทย์",
+          "headlineLines": [
+            "นำประวัติของ",
+            "คุณไปใช้ในกา",
+            "รนัดพบแพทย์"
+          ],
+          "accentLine": 2,
+          "subline": "แบ่งปันสรุปข้อมูลที่ชัดเจนกับแพทย์ของคุณ",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "สรุปการนัดพบแพทย์ของคุณ",
+          "ui": {
+            "title": "สรุปการเข้าพบแพทย์",
+            "label": "บันทึกของคุณ · ตัวอย่าง",
+            "focus": "ข้อมูลที่คุณบันทึกไว้ พร้อมแบ่งปันได้",
+            "explanation": "สรุปข้อมูลอาหาร อาการ ข้อความการรักษา และรายงานที่คุณบันทึกไว้ แบ่งปันเป็นจุดเริ่มต้นสำหรับการพบแพทย์",
+            "disclaimer": "ข้อมูลตัวอย่าง · ไม่ใช่การวินิจฉัย",
+            "context": [
+              [
+                "ต.ค. 7–10",
+                "ข้อมูลที่บันทึกไว้"
+              ],
+              [
+                "รวมอยู่แล้ว",
+                "อาหาร · อาการ · รายงาน"
+              ]
+            ],
+            "contextDate": "สรุปการพบแพทย์",
+            "cta": "แบ่งปันสรุป · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/th/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · ตัวอย่าง",
+            "title": "ข้อมูลที่คุณบันทึก",
+            "date": "ต.ค. 7–10 · ตัวอย่าง",
+            "rows": [
+              "อาหารและอาการ",
+              "บันทึกการรักษา",
+              "รายงานของคุณ"
+            ]
+          },
+          "locale": "th",
+          "lang": "th",
+          "dir": "ltr",
+          "copy": {
+            "example": "ตัวอย่าง",
+            "footer": "ตัวอย่างหน้าจอ · แนวคิดการออกแบบ",
+            "dishTitle": "ปลาแซลมอนย่าง",
+            "dishDescription": "ซอสเบอร์รีน้ำส้ม",
+            "dishCaption": "ตัวอย่างการสั่งอาหาร",
+            "dishAlt": "ปลาแซลมอนย่าง พร้อมข้าว ถั่วเขียว และซอสที่ขอแยกไว้ในชามเล็ก",
+            "sourceLabel": "↗ NIDDK · คำแนะนำเกี่ยวกับกรดไหลย้อน"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/th/contact-sheet.html",
+  "download": null
+}

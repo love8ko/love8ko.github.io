@@ -1,0 +1,617 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "hu",
+  "label": "Magyar",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Nyolc szükséglet, nyolc tisztán látható jelenet",
+      "description": "A kiválasztott angol irányítás és forrás a helyi képernyőkép szövegéhez.",
+      "frames": [
+        {
+          "headline": "Gyomorégés zavarta az alvásodat?",
+          "headlineLines": [
+            "Gyomorégés zavarta",
+            "az alvásodat?"
+          ],
+          "accentLine": 1,
+          "subline": "Kérdésed. Egy világosabb következő lépés.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "Egy lépés a holnapi napra",
+          "ui": {
+            "title": "AI magyarázat",
+            "label": "AI magyarázat · Példa",
+            "focus": "Próbáld meg egy korábbi vacsorát holnap este.",
+            "explanation": "Egy késő vacsora, amit hamar követően fekvés után követ, fontos lehet. A jövő estén legalább 3 órával a vacsora után fekvés előtt maradni segíthet.",
+            "disclaimer": "Illusztratív adat · Nem diagnózis",
+            "question": "Miért rosszabb a gyomorégésem éjszaka?",
+            "context": [
+              [
+                "Vacsora",
+                "21:30"
+              ],
+              [
+                "Fejtsd le magad",
+                "22:15"
+              ]
+            ],
+            "contextDate": "Szeptember 8 · Estéd"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hu/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Példa",
+            "footer": "Illusztratív felület · Tervezési koncept",
+            "dishTitle": "Főtt sárgarépa",
+            "dishDescription": "Citromos vajszósz",
+            "dishCaption": "PÉLDÁS RENDELÉS",
+            "dishAlt": "Főtt sárgarépa rizsszel, zöld babokkal és szósszal külön kis edényben",
+            "sourceLabel": "↗ NIDDK · Reflux útmutató",
+            "anatomyCaption": "Reflux magyarázat"
+          },
+          "locale": "hu",
+          "lang": "hu",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Mit lehet rendelni reflux esetén?",
+          "headlineLines": [
+            "Mit lehet rendelni",
+            "reflux esetén?"
+          ],
+          "accentLine": 1,
+          "subline": "Ellenőrizd a menüt, mielőtt rendelsz.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "EGY VÁLTOZÁS, AMIT FIGYELEMEZNI ÉRD",
+          "ui": {
+            "title": "Menü áttekintés",
+            "label": "AI magyarázat · Példa",
+            "focus": "Kérje a szószt külön.",
+            "explanation": "Citrus és gazdag szószok zavarhatnak néhány embert. A saját válaszod különböző lehet.",
+            "disclaimer": "Illusztratív adat · Nem diagnózis"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hu/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "hu",
+          "lang": "hu",
+          "dir": "ltr",
+          "copy": {
+            "example": "Példa",
+            "footer": "Illusztratív felület · Tervezési koncept",
+            "dishTitle": "Főtt sárgarépa",
+            "dishDescription": "Citromos vajszósz",
+            "dishCaption": "PÉLDÁS RENDELÉS",
+            "dishAlt": "Főtt sárgarépa rizsszel, zöld babokkal és szósszal külön kis edényben",
+            "sourceLabel": "↗ NIDDK · Reflux útmutató"
+          }
+        },
+        {
+          "headline": "Értelmezd a tesztelési eredményeidet.",
+          "headlineLines": [
+            "Értelmezd a tesztelési",
+            "eredményeidet."
+          ],
+          "accentLine": 1,
+          "subline": "Feltölt egy PDF-t. Kapj egy AI magyarázatot.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "EGYSZERŰ NYELVŰ",
+          "ui": {
+            "title": "AI magyarázat",
+            "label": "AI magyarázat · Példa",
+            "focus": "A nyelőcső belső nyálkahártyájának gyulladása.",
+            "explanation": "A feltöltött jelentézed említ egy ezofagitis-t. Kérdezd meg orvosa, hogy ez milyen hatással lehet a gondozásodra.",
+            "disclaimer": "Magyarázza az írásos leletet · Nem diagnózis"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hu/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Teszt Eredmények.pdf",
+            "format": "PDF",
+            "type": "Felső nyelőcsöveszköz",
+            "findingLabel": "Lelet",
+            "finding": "Ezofagitis",
+            "date": "Illusztratív jelentés · Példa"
+          },
+          "copy": {
+            "example": "Példa",
+            "footer": "Illusztratív felület · Tervezési koncept",
+            "dishTitle": "Főtt sárgarépa",
+            "dishDescription": "Citromos vajszósz",
+            "dishCaption": "PÉLDÁS RENDELÉS",
+            "dishAlt": "Főtt sárgarépa rizsszel, zöld babokkal és szósszal külön kis edényben",
+            "sourceLabel": "↗ NIDDK · Reflux útmutató",
+            "paperNote": "A feltöltött jelentézed",
+            "reportConnector": "PDF → AI",
+            "reportLead": "A jelentézed szerint"
+          },
+          "locale": "hu",
+          "lang": "hu",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Tegyél egyszerű tervet ma este.",
+          "headlineLines": [
+            "Tegyél egyszerű",
+            "tervet ma este."
+          ],
+          "accentLine": 1,
+          "subline": "Válaszd ki az egyik lépést. Állíts be egy időpontot.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "AZ ÖN VÁLASZTOTT ESTI LÉPÉS",
+          "ui": {
+            "title": "Ma este terv",
+            "label": "A megtartott jegyzeteked · Példa",
+            "focus": "Végezd el a vacsorát 7:00-kor.",
+            "explanation": "Az ön választott alvási időpontja 10:00. Ez a terv legalább 3 órával a vacsora után fekvés előtt hagyja; ez az időszak segíthet a szűrőként éjszakai tünetekre.",
+            "disclaimer": "Illusztratív adat · Nem diagnózis",
+            "context": [
+              [
+                "Végezd el a vacsorát",
+                "19:00"
+              ],
+              [
+                "Alvási időpont",
+                "22:00"
+              ]
+            ],
+            "contextDate": "Szeptember 10 · Ma este",
+            "cta": "✓ Figyelmeztetés beállítva · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hu/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "hu",
+          "lang": "hu",
+          "dir": "ltr",
+          "copy": {
+            "example": "Példa",
+            "footer": "Illusztratív felület · Tervezési koncept",
+            "dishTitle": "Főtt sárgarépa",
+            "dishDescription": "Citromos vajszósz",
+            "dishCaption": "PÉLDÁS RENDELÉS",
+            "dishAlt": "Főtt sárgarépa rizsszel, zöld babokkal és szósszal külön kis edényben",
+            "sourceLabel": "↗ NIDDK · Reflux útmutató"
+          }
+        },
+        {
+          "headline": "Tartd meg a kezelési jegyzeteidet együtt.",
+          "headlineLines": [
+            "Tartd meg a kezelési",
+            "jegyzeteidet együtt."
+          ],
+          "accentLine": 1,
+          "subline": "Emlékezz a szedett gyógyszerre és az érzékenységedre.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "AZ ÖN MEGTARTOTT JEGYZETE",
+          "ui": {
+            "title": "Kezelési jegyzetek",
+            "label": "A megtartott jegyzeteked · Példa",
+            "focus": "Gyógyszer szedve. Este gyomorégés jegyezve.",
+            "explanation": "Az ön saját bejegyzései, együtt tartva. Ezek a jegyzetek nem mutatják be, hogy a kezelés mennyire hatékony.",
+            "disclaimer": "Illusztratív adat · Nem diagnózis",
+            "context": [
+              [
+                "08:00",
+                "Gyógyszer szedve"
+              ],
+              [
+                "21:15",
+                "Gyomorégés jegyezve"
+              ]
+            ],
+            "contextDate": "Szeptember 9 · Bejegyzések",
+            "cta": "✓ Jegyzet megtartva"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hu/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "hu",
+          "lang": "hu",
+          "dir": "ltr",
+          "copy": {
+            "example": "Példa",
+            "footer": "Illusztratív felület · Tervezési koncept",
+            "dishTitle": "Főtt sárgarépa",
+            "dishDescription": "Citromos vajszósz",
+            "dishCaption": "PÉLDÁS RENDELÉS",
+            "dishAlt": "Főtt sárgarépa rizsszel, zöld babokkal és szósszal külön kis edényben",
+            "sourceLabel": "↗ NIDDK · Reflux útmutató"
+          }
+        },
+        {
+          "headline": "Torok vagy hang zavarta az életedet?",
+          "headlineLines": [
+            "Torok vagy hang",
+            "zavarta az életedet?"
+          ],
+          "accentLine": 1,
+          "subline": "Tartsd nyilván, amit észreveszel.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "AZ ÖN HANG JEGYZETE",
+          "ui": {
+            "title": "Torok & hang",
+            "label": "A megtartott jegyzeteked · Példa",
+            "focus": "Kemény hang. Toroktörzsölés. Jegyzet megtartva.",
+            "explanation": "Jegyezd be, amit észreveszel és mikor. A torok és hang tünetei különböző okokból lehetnek; ezek a jegyzetek nem azonosítanak diagnózist.",
+            "disclaimer": "Illusztratív adat · Nem diagnózis",
+            "context": [
+              [
+                "Hang",
+                "Kemény"
+              ],
+              [
+                "Torok",
+                "Törzsölés"
+              ]
+            ],
+            "contextDate": "Szeptember 10 · Munkához",
+            "cta": "✓ Jegyzet megtartva"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hu/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "hu",
+          "lang": "hu",
+          "dir": "ltr",
+          "copy": {
+            "example": "Példa",
+            "footer": "Illusztratív felület · Tervezési koncept",
+            "dishTitle": "Főtt sárgarépa",
+            "dishDescription": "Citromos vajszósz",
+            "dishCaption": "PÉLDÁS RENDELÉS",
+            "dishAlt": "Főtt sárgarépa rizsszel, zöld babokkal és szósszal külön kis edényben",
+            "sourceLabel": "↗ NIDDK · Reflux útmutató"
+          }
+        },
+        {
+          "headline": "Ételek & tünetek. Egy idővonal.",
+          "headlineLines": [
+            "Ételek & tünetek.",
+            "Egy idővonal."
+          ],
+          "accentLine": 1,
+          "subline": "Látja a jegyzeteit egy idővonalon.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "EGY ESTE, KÉT BEJELENTÉS",
+          "ui": {
+            "title": "Az idővonalod",
+            "label": "A megtartott jegyzeteked · Példa",
+            "focus": "Vacsora 20:30. Gyomorégés 22:15.",
+            "explanation": "Két megtartott esemény ugyanabban az estében. A késleltetés egyedül nem mutatja, hogy az étel okozta a tünetet.",
+            "disclaimer": "Illusztratív adat · Nem diagnózis",
+            "context": [
+              [
+                "20:30",
+                "Vacsora"
+              ],
+              [
+                "22:15",
+                "Gyomorégés"
+              ]
+            ],
+            "contextDate": "Szeptember 7 · Az idővonalod",
+            "cta": "Megtekintett bejegyzések"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hu/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "hu",
+          "lang": "hu",
+          "dir": "ltr",
+          "copy": {
+            "example": "Példa",
+            "footer": "Illusztratív felület · Tervezési koncept",
+            "dishTitle": "Főtt sárgarépa",
+            "dishDescription": "Citromos vajszósz",
+            "dishCaption": "PÉLDÁS RENDELÉS",
+            "dishAlt": "Főtt sárgarépa rizsszel, zöld babokkal és szósszal külön kis edényben",
+            "sourceLabel": "↗ NIDDK · Reflux útmutató"
+          }
+        },
+        {
+          "headline": "Hozza magával a történelmét az orvosi vizsgálatára.",
+          "headlineLines": [
+            "Hozza magával a",
+            "történelmét az",
+            "orvosi vizsgálatára."
+          ],
+          "accentLine": 2,
+          "subline": "Ossza meg egy tisztán összefüggő összefoglalót orvosával.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "AZ ORVOSI VIZSGÁLAT ÖSSZEFÜGGÉSE",
+          "ui": {
+            "title": "Látogatás összefoglaló",
+            "label": "A megtartott jegyzeteked · Példa",
+            "focus": "A megtartott megfigyelések, készen állnak a megosztáshoz.",
+            "explanation": "Egy összefoglaló a megtartott étkezésekről, tünetekről, kezelési jegyzetekről és jelentézed. Ossza meg ezt egy kezdőpontként az orvosi vizsgálatához.",
+            "disclaimer": "Illusztratív adat · Nem diagnózis",
+            "context": [
+              [
+                "Szeptember 7–10",
+                "Megtartott megfigyelések"
+              ],
+              [
+                "Beleértve",
+                "Ételek · Tünetek · Jelentés"
+              ]
+            ],
+            "contextDate": "Orvosi vizsgálat összefoglaló",
+            "cta": "Összefoglalás megosztása · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/hu/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Példa",
+            "title": "Megfigyelések",
+            "date": "Szeptember 7–10 · Példa",
+            "rows": [
+              "Ételek & tünetek",
+              "Kezelési jegyzetek",
+              "Jelentésed"
+            ]
+          },
+          "locale": "hu",
+          "lang": "hu",
+          "dir": "ltr",
+          "copy": {
+            "example": "Példa",
+            "footer": "Illusztratív felület · Tervezési koncept",
+            "dishTitle": "Főtt sárgarépa",
+            "dishDescription": "Citromos vajszósz",
+            "dishCaption": "PÉLDÁS RENDELÉS",
+            "dishAlt": "Főtt sárgarépa rizsszel, zöld babokkal és szósszal külön kis edényben",
+            "sourceLabel": "↗ NIDDK · Reflux útmutató"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/hu/contact-sheet.html",
+  "download": null
+}

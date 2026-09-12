@@ -1,8 +1,9 @@
 {
-  "version": "localization-2026-09-11.1",
+  "version": "localization-2026-09-11.2",
   "locale": "zh-Hans",
   "label": "简体中文",
-  "status": "design-concepts-not-for-app-store",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
   "series": [
     {
       "prefix": "E",
@@ -13,9 +14,10 @@
           "headline": "烧心让您夜不能寐？",
           "headlineLines": [
             "烧心让您",
-            "夜不能寐？"
+            "夜不能寐",
+            "？"
           ],
-          "accentLine": 1,
+          "accentLine": 2,
           "subline": "您的问题。更清晰的下一步。",
           "asset": "assets/v5/E01-anatomy.jpg",
           "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
@@ -46,7 +48,7 @@
           "position": "01",
           "id": "E01",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -55,13 +57,13 @@
           "original": "locales/zh-Hans/originals/E01.png",
           "preview": "locales/zh-Hans/previews/E01.jpg",
           "generationMethod": "Built-in ImageGen background + deterministic text and interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Male lead · About 45",
           "prompt": "prompts/v5/E01-anatomy.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 5,
-          "directionApproved": false,
+          "directionApproved": true,
           "copy": {
             "example": "示例",
             "footer": "示例界面 · 设计概念",
@@ -73,13 +75,14 @@
             "anatomyCaption": "反流示意"
           },
           "locale": "zh-Hans",
-          "lang": "zh-Hans"
+          "lang": "zh-Hans",
+          "dir": "ltr"
         },
         {
           "headline": "反流时，外出就餐怎么点？",
           "headlineLines": [
-            "反流时，",
-            "外出就餐怎么点？"
+            "反流时，外出",
+            "就餐怎么点？"
           ],
           "accentLine": 1,
           "subline": "点餐前先看看菜单。",
@@ -100,7 +103,7 @@
           "position": "02",
           "id": "E02",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -109,16 +112,17 @@
           "original": "locales/zh-Hans/originals/E02.png",
           "preview": "locales/zh-Hans/previews/E02.jpg",
           "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Male lead · About 45",
           "prompt": "prompts/v4/C02-restaurant.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 5,
-          "directionApproved": false,
+          "directionApproved": true,
           "foodAsset": "assets/v3/salmon-cutout.png",
           "locale": "zh-Hans",
           "lang": "zh-Hans",
+          "dir": "ltr",
           "copy": {
             "example": "示例",
             "footer": "示例界面 · 设计概念",
@@ -154,7 +158,7 @@
           "position": "03",
           "id": "E03",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -163,13 +167,13 @@
           "original": "locales/zh-Hans/originals/E03.png",
           "preview": "locales/zh-Hans/previews/E03.jpg",
           "generationMethod": "Built-in ImageGen background + deterministic text and interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Male lead · About 45",
           "prompt": "prompts/v5/E03-report.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "report": {
             "title": "检查结果.pdf",
             "format": "PDF",
@@ -191,15 +195,17 @@
             "reportLead": "报告中写着"
           },
           "locale": "zh-Hans",
-          "lang": "zh-Hans"
+          "lang": "zh-Hans",
+          "dir": "ltr"
         },
         {
           "headline": "今晚计划，简单一点",
           "headlineLines": [
-            "今晚计划，",
-            "简单一点"
+            "今晚计划",
+            "，简单一",
+            "点"
           ],
-          "accentLine": 1,
+          "accentLine": 2,
           "subline": "选一步，定个时间。",
           "asset": "assets/v4/C04-plan.jpg",
           "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
@@ -230,7 +236,7 @@
           "position": "04",
           "id": "E04",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -239,15 +245,16 @@
           "original": "locales/zh-Hans/originals/E04.png",
           "preview": "locales/zh-Hans/previews/E04.jpg",
           "generationMethod": "Existing photograph + new deterministic composition",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Existing C couple",
           "prompt": "prompts/v4/C04-plan.txt",
           "characterReference": "sources/v4/C01-night.png",
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "zh-Hans",
           "lang": "zh-Hans",
+          "dir": "ltr",
           "copy": {
             "example": "示例",
             "footer": "示例界面 · 设计概念",
@@ -261,10 +268,11 @@
         {
           "headline": "治疗记录，一处整理",
           "headlineLines": [
-            "治疗记录，",
-            "一处整理"
+            "治疗记录",
+            "，一处整",
+            "理"
           ],
-          "accentLine": 1,
+          "accentLine": 2,
           "subline": "记住用药和身体感受。",
           "asset": "assets/v6/E05-treatment.jpg",
           "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
@@ -295,7 +303,7 @@
           "position": "05",
           "id": "E05",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -304,15 +312,16 @@
           "original": "locales/zh-Hans/originals/E05.png",
           "preview": "locales/zh-Hans/previews/E05.jpg",
           "generationMethod": "Built-in ImageGen photograph + deterministic interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Object or gesture focused scene",
           "prompt": "prompts/v6/E05-treatment.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 3,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "zh-Hans",
           "lang": "zh-Hans",
+          "dir": "ltr",
           "copy": {
             "example": "示例",
             "footer": "示例界面 · 设计概念",
@@ -326,10 +335,11 @@
         {
           "headline": "喉咙或声音不舒服？",
           "headlineLines": [
-            "喉咙或声音",
-            "不舒服？"
+            "喉咙或声",
+            "音不舒服",
+            "？"
           ],
-          "accentLine": 1,
+          "accentLine": 2,
           "subline": "记录您注意到的变化。",
           "asset": "assets/v6/E06-voice.jpg",
           "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
@@ -360,7 +370,7 @@
           "position": "06",
           "id": "E06",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -369,15 +379,16 @@
           "original": "locales/zh-Hans/originals/E06.png",
           "preview": "locales/zh-Hans/previews/E06.jpg",
           "generationMethod": "Built-in ImageGen photograph + deterministic interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Object or gesture focused scene",
           "prompt": "prompts/v6/E06-voice.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "zh-Hans",
           "lang": "zh-Hans",
+          "dir": "ltr",
           "copy": {
             "example": "示例",
             "footer": "示例界面 · 设计概念",
@@ -425,7 +436,7 @@
           "position": "07",
           "id": "E07",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -434,15 +445,16 @@
           "original": "locales/zh-Hans/originals/E07.png",
           "preview": "locales/zh-Hans/previews/E07.jpg",
           "generationMethod": "Built-in ImageGen photograph + deterministic interface",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Object or gesture focused scene",
           "prompt": "prompts/v6/E07-history.txt",
           "characterReference": null,
           "keywords": [],
           "priority": 3,
-          "directionApproved": false,
+          "directionApproved": true,
           "locale": "zh-Hans",
           "lang": "zh-Hans",
+          "dir": "ltr",
           "copy": {
             "example": "示例",
             "footer": "示例界面 · 设计概念",
@@ -490,7 +502,7 @@
           "position": "08",
           "id": "E08",
           "series": "E",
-          "readiness": "concept",
+          "readiness": "approved",
           "dimensions": {
             "width": 1320,
             "height": 2868
@@ -499,13 +511,13 @@
           "original": "locales/zh-Hans/originals/E08.png",
           "preview": "locales/zh-Hans/previews/E08.jpg",
           "generationMethod": "Existing photograph + new deterministic composition",
-          "releaseApproved": false,
+          "releaseApproved": true,
           "character": "Existing C couple",
           "prompt": "prompts/v4/C08-appointment.txt",
           "characterReference": "sources/v4/C01-night.png",
           "keywords": [],
           "priority": 4,
-          "directionApproved": false,
+          "directionApproved": true,
           "summaryRows": [
             "Meals & symptoms",
             "Treatment notes",
@@ -523,6 +535,7 @@
           },
           "locale": "zh-Hans",
           "lang": "zh-Hans",
+          "dir": "ltr",
           "copy": {
             "example": "示例",
             "footer": "示例界面 · 设计概念",

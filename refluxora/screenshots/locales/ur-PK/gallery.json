@@ -1,0 +1,616 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "ur-PK",
+  "label": "اردو",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · اٹھاٹھا ہیں، اٹھاٹھا ہیں",
+      "description": "موجودہ انگلش دھارے اور ذریعہ کے لیے ملٹی لینگو سکرین شاٹس کے لیے۔",
+      "frames": [
+        {
+          "headline": "آپ کو سینے کی جلن کیوں رہی رہی ہے؟",
+          "headlineLines": [
+            "آپ کو سینے کی جلن",
+            "کیوں رہی رہی ہے؟"
+          ],
+          "accentLine": 1,
+          "subline": "آپ کا سوال۔ ایک واضح اگلی کارروائی۔",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "آج کا ایک ایکسپریمینٹ",
+          "ui": {
+            "title": "AI تشریح",
+            "label": "AI تشریح · مثال",
+            "focus": "آج کے رات کو ایک پہلے کھانے کی کوشش کریں۔",
+            "explanation": "اگر آپ کو کھانے کے بعد جلدی سونے کی ہے، تو یہ ممکن ہے کہ یہ آپ کے لیے مہمکر ہو۔ اگر آپ کو کھانے کے بعد 3 گھنٹے سے زیادہ وقت دینا ہے تو سونے کے لیے، تو یہ مدد کر سکتا ہے۔",
+            "disclaimer": "دیکھ بھال کرنے کے دیتے ہوئے ڈیٹا · یہ تشخیص نہیں ہے",
+            "question": "میں کیوں رات کو سینے کی جلن کا محسوس کر رہا ہوں؟",
+            "context": [
+              [
+                "کھانے کا وقت",
+                "9:30 بجے"
+              ],
+              [
+                "سونے کا وقت",
+                "10:15 بجے"
+              ]
+            ],
+            "contextDate": "Sep 8 · آپ کا رات کا وقت"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ur-PK/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "مثال",
+            "footer": "دیکھ بھال کرنے کا مثالی ویجیٹیشن · ڈیزائن کونسلٹیشن",
+            "dishTitle": "گریلڈ سالمن",
+            "dishDescription": "لیموں بٹر سوس",
+            "dishCaption": "مثالی اورڈر",
+            "dishAlt": "گریلڈ سالمن، ریسی، سبز گھنٹیوں اور سوس الگ سے مانگیں میں",
+            "sourceLabel": "↗ NIDDK · ریفلکس گائیڈنس",
+            "anatomyCaption": "ریفلکس کی تشریح"
+          },
+          "locale": "ur-PK",
+          "lang": "ur-PK",
+          "dir": "rtl"
+        },
+        {
+          "headline": "کیا ریفلکس کے ساتھ کچھ اور کھا سکتے ہیں؟",
+          "headlineLines": [
+            "کیا ریفلکس کے ساتھ",
+            "کچھ اور کھا سکتے ہیں؟"
+          ],
+          "accentLine": 1,
+          "subline": "ออرڈر کے پہلے میںوں کا مینو دیکھیں۔",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "ایک ہی تبدیلی کو سوچیں",
+          "ui": {
+            "title": "مینو جانچیں",
+            "label": "AI تشریح · مثال",
+            "focus": "سوس الگ سے مانگیں۔",
+            "explanation": "کیٹریکس اور گہرے سوس کچھ لوگوں کو پریشان کر سکتے ہیں۔ آپ کا اپنی ریاکشن ممکن ہے کہ مختلف ہو۔",
+            "disclaimer": "دیکھ بھال کرنے کے دیتے ہوئے ڈیٹا · یہ تشخیص نہیں ہے"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ur-PK/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "ur-PK",
+          "lang": "ur-PK",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "دیکھ بھال کرنے کا مثالی ویجیٹیشن · ڈیزائن کونسلٹیشن",
+            "dishTitle": "گریلڈ سالمن",
+            "dishDescription": "لیموں بٹر سوس",
+            "dishCaption": "مثالی اورڈر",
+            "dishAlt": "گریلڈ سالمن، ریسی، سبز گھنٹیوں اور سوس الگ سے مانگیں میں",
+            "sourceLabel": "↗ NIDDK · ریفلکس گائیڈنس"
+          }
+        },
+        {
+          "headline": "آپ کے ٹیسٹ رپورٹ کو سمجھیں۔",
+          "headlineLines": [
+            "آپ کے ٹیسٹ رپورٹ",
+            "کو سمجھیں۔"
+          ],
+          "accentLine": 1,
+          "subline": "PDF اپ لوڈ کریں۔ AI کا تشریح حاصل کریں۔",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "سادہ ہندی میں",
+          "ui": {
+            "title": "AI تشریح",
+            "label": "AI تشریح · مثال",
+            "focus": "خوراک کی نالی کی تہہ کی جلن ہو جاتی ہے۔",
+            "explanation": "آپ کے رپورٹ میں ای سوفی جائٹس کا ذکر ہے۔ اپنے کلینیشن کے ساتھ پوچھیں کہ یہ آپ کے علاج کے لیے کیا ہے۔",
+            "disclaimer": "تحریری رپورٹ کا تشریح · یہ تشخیص نہیں ہے"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ur-PK/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "ٹیسٹ رپورٹ.pdf",
+            "format": "PDF",
+            "type": "uppere ndoscopy",
+            "findingLabel": "پٹھی",
+            "finding": "ای سوفی جائٹس",
+            "date": "تشریحی رپورٹ · مثال"
+          },
+          "copy": {
+            "example": "مثال",
+            "footer": "دیکھ بھال کرنے کا مثالی ویجیٹیشن · ڈیزائن کونسلٹیشن",
+            "dishTitle": "گریلڈ سالمن",
+            "dishDescription": "لیموں بٹر سوس",
+            "dishCaption": "مثالی اورڈر",
+            "dishAlt": "گریلڈ سالمن، ریسی، سبز گھنٹیوں اور سوس الگ سے مانگیں میں",
+            "sourceLabel": "↗ NIDDK · ریفلکس گائیڈنس",
+            "paperNote": "آپ کا اپ لوڈ کیا گیا رپورٹ",
+            "reportConnector": "PDF → AI",
+            "reportLead": "آپ کا رپورٹ کہتا ہے"
+          },
+          "locale": "ur-PK",
+          "lang": "ur-PK",
+          "dir": "rtl"
+        },
+        {
+          "headline": "آج کے رات کا پلان سادہ بنائیں۔",
+          "headlineLines": [
+            "آج کے رات کا پلان",
+            "سادہ بنائیں۔"
+          ],
+          "accentLine": 1,
+          "subline": "ایک ہی چھوٹا سا کام چھوڑیں۔ اپنی گھڑی کو ٹائم کریں۔",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "آپ کا چوکھا رات کا کام",
+          "ui": {
+            "title": "آج کا پلان",
+            "label": "آپ کے محفوظ نوٹز · نمونہ",
+            "focus": "7:00 بجے تک کھانے کو مکمل کریں۔",
+            "explanation": "آپ کا چنے گئے سونے کا وقت 10:00 بجے ہے۔ اس پلان کے مطابق، کھانے کے بعد 3 گھنٹے کا فاصلہ سونے سے پہلے رہتا ہے، جو رات کے علامات کو ممکن طور پر کم کر سکتا ہے۔",
+            "disclaimer": "دیکھ بھال کرنے کے دیتے ہوئے ڈیٹا · یہ تشخیص نہیں ہے",
+            "context": [
+              [
+                "کھانے کو مکمل کریں",
+                "7:00 بجے"
+              ],
+              [
+                "سونے کا وقت",
+                "10:00 بجے"
+              ]
+            ],
+            "contextDate": "سپتامبر 10 · آج",
+            "cta": "✓ یادداشت سیٹ · 6:30 بجے"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ur-PK/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ur-PK",
+          "lang": "ur-PK",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "دیکھ بھال کرنے کا مثالی ویجیٹیشن · ڈیزائن کونسلٹیشن",
+            "dishTitle": "گریلڈ سالمن",
+            "dishDescription": "لیموں بٹر سوس",
+            "dishCaption": "مثالی اورڈر",
+            "dishAlt": "گریلڈ سالمن، ریسی، سبز گھنٹیوں اور سوس الگ سے مانگیں میں",
+            "sourceLabel": "↗ NIDDK · ریفلکس گائیڈنس"
+          }
+        },
+        {
+          "headline": "اپنے علاج کے نوٹز کو ایک جگہ رکھیں۔",
+          "headlineLines": [
+            "اپنے علاج کے نوٹز",
+            "کو ایک جگہ رکھیں۔"
+          ],
+          "accentLine": 1,
+          "subline": "یہ یاد رکھیں کہ آپ نے کیا اور کیا محسوس کیا۔",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "آپ کا محفوظ نوٹ",
+          "ui": {
+            "title": "علاج کے نوٹز",
+            "label": "آپ کے محفوظ نوٹز · نمونہ",
+            "focus": "دوش کی گئی ہے۔ شام کا سینے کی جلن نوٹ کیا گیا ہے۔",
+            "explanation": "آپ کے اپنے اندراجات، ایک جگہ رکھے گئے ہیں۔ یہ نوٹز علاج کی کارکردگی کو کیسے مکمل کریں کے بارے میں نہیں ہیں۔",
+            "disclaimer": "دیکھ بھال کرنے کے دیتے ہوئے ڈیٹا · یہ تشخیص نہیں ہے",
+            "context": [
+              [
+                "8:00 بجے",
+                "دوش کی گئی ہے"
+              ],
+              [
+                "9:15 بجے",
+                "سینے کی جلن نوٹ کی گئی ہے"
+              ]
+            ],
+            "contextDate": "سپتامبر 9 · آپ کے اندراجات",
+            "cta": "✓ نوٹ سیٹ کیا گیا"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ur-PK/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ur-PK",
+          "lang": "ur-PK",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "دیکھ بھال کرنے کا مثالی ویجیٹیشن · ڈیزائن کونسلٹیشن",
+            "dishTitle": "گریلڈ سالمن",
+            "dishDescription": "لیموں بٹر سوس",
+            "dishCaption": "مثالی اورڈر",
+            "dishAlt": "گریلڈ سالمن، ریسی، سبز گھنٹیوں اور سوس الگ سے مانگیں میں",
+            "sourceLabel": "↗ NIDDK · ریفلکس گائیڈنس"
+          }
+        },
+        {
+          "headline": "گلا یا ہوا ہوا ہے؟",
+          "headlineLines": [
+            "گلا یا ہوا",
+            "ہوا ہے؟"
+          ],
+          "accentLine": 1,
+          "subline": "کیا آپ کو محسوس ہوتا ہے کہ آپ کے پاس کچھ ہے؟",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "آپ کے گفتگو کے نوٹس",
+          "ui": {
+            "title": "گلا اور آواز",
+            "label": "آپ کے محفوظ نوٹز · نمونہ",
+            "focus": "گلا کی گھنگھریلی آواز۔ گلا صاف کرنا۔ نوٹس محفوظ کر لیے گئے۔",
+            "explanation": "آپ کو کیا محسوس ہوتا ہے اور کب ہوا ہے۔ گلا اور آواز کے علامات کی مختلف اسباب ہو سکتی ہیں؛ اس کے نوٹس میں کوئی تشخیص نہیں ہے۔",
+            "disclaimer": "دیکھ بھال کرنے کے دیتے ہوئے ڈیٹا · یہ تشخیص نہیں ہے",
+            "context": [
+              [
+                "آواز",
+                "گھنگھریلی آواز"
+              ],
+              [
+                "گلا",
+                "گلا صاف کرنا"
+              ]
+            ],
+            "contextDate": "10 ستمبر · کام سے پہلے",
+            "cta": "✓ نوٹس محفوظ کر لیے گئے"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ur-PK/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ur-PK",
+          "lang": "ur-PK",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "دیکھ بھال کرنے کا مثالی ویجیٹیشن · ڈیزائن کونسلٹیشن",
+            "dishTitle": "گریلڈ سالمن",
+            "dishDescription": "لیموں بٹر سوس",
+            "dishCaption": "مثالی اورڈر",
+            "dishAlt": "گریلڈ سالمن، ریسی، سبز گھنٹیوں اور سوس الگ سے مانگیں میں",
+            "sourceLabel": "↗ NIDDK · ریفلکس گائیڈنس"
+          }
+        },
+        {
+          "headline": "خوراک اور علامات۔ ایک ٹائم لائن۔",
+          "headlineLines": [
+            "خوراک اور علامات۔",
+            "ایک ٹائم لائن۔"
+          ],
+          "accentLine": 1,
+          "subline": "آپ کے نوٹس کو ایک ٹائم لائن میں دیکھیں۔",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "ایک رات، دو ایڈیشنز",
+          "ui": {
+            "title": "آپ کی ٹائم لائن",
+            "label": "آپ کے محفوظ نوٹز · نمونہ",
+            "focus": "شام 8:30 کھانے کے بعد۔ سینے کی جلن 10:15 کے بعد۔",
+            "explanation": "ایک رات کے دو محفوظ واقعات۔ ان کا وقت ایک دوسرے سے ہی نہیں دکھاتا کہ کھانے نے علامت کو پیدا کیا ہے۔",
+            "disclaimer": "دیکھ بھال کرنے کے دیتے ہوئے ڈیٹا · یہ تشخیص نہیں ہے",
+            "context": [
+              [
+                "شام 8:30",
+                "کھانے کا وقت"
+              ],
+              [
+                "10:15 بجے",
+                "سینے کی جلن"
+              ]
+            ],
+            "contextDate": "7 ستمبر · آپ کی ٹائم لائن",
+            "cta": "محفوظ ایڈیشنز دیکھیں"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ur-PK/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ur-PK",
+          "lang": "ur-PK",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "دیکھ بھال کرنے کا مثالی ویجیٹیشن · ڈیزائن کونسلٹیشن",
+            "dishTitle": "گریلڈ سالمن",
+            "dishDescription": "لیموں بٹر سوس",
+            "dishCaption": "مثالی اورڈر",
+            "dishAlt": "گریلڈ سالمن، ریسی، سبز گھنٹیوں اور سوس الگ سے مانگیں میں",
+            "sourceLabel": "↗ NIDDK · ریفلکس گائیڈنس"
+          }
+        },
+        {
+          "headline": "آپ کی میٹنگ کے لیے تاریخ کو لے کر آئیں۔",
+          "headlineLines": [
+            "آپ کی میٹنگ کے لیے",
+            "تاریخ کو لے کر آئیں۔"
+          ],
+          "accentLine": 1,
+          "subline": "آپ کے ڈاکٹر سے واضح مل کر دیکھیں۔",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "آپ کی میٹنگ کا خلاصہ",
+          "ui": {
+            "title": "ملاقات کا خلاصہ",
+            "label": "آپ کے محفوظ نوٹز · نمونہ",
+            "focus": "آپ کے محفوظ نتائج، شیئر کرنے کے لیے تیار ہیں۔",
+            "explanation": "آپ کے محفوظ کھانے، علامات، علاج نوٹس اور رپورٹ کا ایک مجموعی تجزیہ۔ اپنے میٹنگ کے لیے اسے شیئر کریں۔",
+            "disclaimer": "دیکھ بھال کرنے کے دیتے ہوئے ڈیٹا · یہ تشخیص نہیں ہے",
+            "context": [
+              [
+                "07–10/09",
+                "محفوظ نتائج"
+              ],
+              [
+                "شامل",
+                "کھانے · علامات · رپورٹ"
+              ]
+            ],
+            "contextDate": "میٹنگ کا تجزیہ",
+            "cta": "تجزیہ شیئر کریں · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ur-PK/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · مثال",
+            "title": "آپ کے نتائج",
+            "date": "Sep 7–10 · مثال",
+            "rows": [
+              "کھانے اور علامات",
+              "علاج کے نوٹز",
+              "آپ کا رپورٹ"
+            ]
+          },
+          "locale": "ur-PK",
+          "lang": "ur-PK",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "دیکھ بھال کرنے کا مثالی ویجیٹیشن · ڈیزائن کونسلٹیشن",
+            "dishTitle": "گریلڈ سالمن",
+            "dishDescription": "لیموں بٹر سوس",
+            "dishCaption": "مثالی اورڈر",
+            "dishAlt": "گریلڈ سالمن، ریسی، سبز گھنٹیوں اور سوس الگ سے مانگیں میں",
+            "sourceLabel": "↗ NIDDK · ریفلکس گائیڈنس"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/ur-PK/contact-sheet.html",
+  "download": null
+}

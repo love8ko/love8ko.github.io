@@ -1,0 +1,616 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "ar-SA",
+  "label": "العربية",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "إ · ثمانية احتياجات، ثمانية مشاهد واضحة",
+      "description": "الاتجاه الانجليزي المختار و المصدر للصور المترجمة.",
+      "frames": [
+        {
+          "headline": "حرقة المعدة تعيقك أثناء النوم؟",
+          "headlineLines": [
+            "حرقة المعدة تعيقك",
+            "أثناء النوم؟"
+          ],
+          "accentLine": 1,
+          "subline": "سؤالك. خطوة واضحة لاحقًا.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "خطوة لغدًا",
+          "ui": {
+            "title": "شرح ذكاء اصطناعي",
+            "label": "شرح بالذكاء الاصطناعي · مثال",
+            "focus": "حاول تناول العشاء في وقت أقرب إلى الليل غدًا.",
+            "explanation": "الوجبة المتأخرة تليها الاستلقاء بسرعة قد تكون ذات تأثير. لليلة مستقبلية، تجنب الاستلقاء لمدة 3 ساعات على الأقل بعد تناول الطعام قد يساعد.",
+            "disclaimer": "بيانات توضيحية · ليس تشخيصاً",
+            "question": "لماذا تزداد حرقة المعدة لديّ في الليل؟",
+            "context": [
+              [
+                "العشاء",
+                "9:30 مساءً"
+              ],
+              [
+                "الاستلقاء",
+                "10:15 مساءً"
+              ]
+            ],
+            "contextDate": "8 سبتمبر · عصرك"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ar-SA/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "مثال",
+            "footer": "واجهة توضيحية · مفهوم التصميم",
+            "dishTitle": "سمك مطهّى",
+            "dishDescription": "صلصة زبدة الليمون",
+            "dishCaption": "مثال على الطلب",
+            "dishAlt": "سمك مطهّى مع الأرز والخضروات الخضراء والصلصة في وعاء منفصل",
+            "sourceLabel": "↗ NIDDK · إرشادات الارتجاع",
+            "anatomyCaption": "شرح الارتجاع"
+          },
+          "locale": "ar-SA",
+          "lang": "ar-SA",
+          "dir": "rtl"
+        },
+        {
+          "headline": "ماذا يمكنني طلبه مع الارتجاع؟",
+          "headlineLines": [
+            "ماذا يمكنني طلبه",
+            "مع الارتجاع؟"
+          ],
+          "accentLine": 1,
+          "subline": "تحقق من القائمة قبل طلب الطعام.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "تغيير واحد للاعتبار",
+          "ui": {
+            "title": "مراجعة القائمة",
+            "label": "شرح بالذكاء الاصطناعي · مثال",
+            "focus": "اطلب الصلصة جانباً.",
+            "explanation": "الصلصات الحمضية والغنية قد تزعج بعض الناس. ردك الخاص قد يختلف.",
+            "disclaimer": "بيانات توضيحية · ليس تشخيصاً"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ar-SA/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "ar-SA",
+          "lang": "ar-SA",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "واجهة توضيحية · مفهوم التصميم",
+            "dishTitle": "سمك مطهّى",
+            "dishDescription": "صلصة زبدة الليمون",
+            "dishCaption": "مثال على الطلب",
+            "dishAlt": "سمك مطهّى مع الأرز والخضروات الخضراء والصلصة في وعاء منفصل",
+            "sourceLabel": "↗ NIDDK · إرشادات الارتجاع"
+          }
+        },
+        {
+          "headline": "فهم نتائج اختبارك.",
+          "headlineLines": [
+            "فهم نتائج",
+            "اختبارك."
+          ],
+          "accentLine": 1,
+          "subline": "حمل ملف PDF. احصل على شرح ذكاء اصطناعي.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "بكلمات بسيطة",
+          "ui": {
+            "title": "شرح ذكاء اصطناعي",
+            "label": "شرح بالذكاء الاصطناعي · مثال",
+            "focus": "التهاب بطانة المريء.",
+            "explanation": "يذكر تقريرك أنك تعاني من التهاب المريء. اسأل طبيبك ما يعنيه ذلك بالنسبة لعلاجك.",
+            "disclaimer": "يشرح نتيجة مكتوبة · ليس تشخيصاً"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ar-SA/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "نتائج الاختبار.pdf",
+            "format": "PDF",
+            "type": "منظار المريء العلوي",
+            "findingLabel": "نتيجة",
+            "finding": "التهاب المريء",
+            "date": "تقرير توضيحي · مثال"
+          },
+          "copy": {
+            "example": "مثال",
+            "footer": "واجهة توضيحية · مفهوم التصميم",
+            "dishTitle": "سمك مطهّى",
+            "dishDescription": "صلصة زبدة الليمون",
+            "dishCaption": "مثال على الطلب",
+            "dishAlt": "سمك مطهّى مع الأرز والخضروات الخضراء والصلصة في وعاء منفصل",
+            "sourceLabel": "↗ NIDDK · إرشادات الارتجاع",
+            "paperNote": "تقريرك المرفوع",
+            "reportConnector": "PDF → ذكاء اصطناعي",
+            "reportLead": "يقول تقريرك"
+          },
+          "locale": "ar-SA",
+          "lang": "ar-SA",
+          "dir": "rtl"
+        },
+        {
+          "headline": "اجعل خطتك لليلة بسيطة",
+          "headlineLines": [
+            "اجعل خطتك",
+            "لليلة بسيطة"
+          ],
+          "accentLine": 1,
+          "subline": "اختر خطوة واحدة. ضع وقتًا.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "خطوة عصرك المختارة",
+          "ui": {
+            "title": "خطة الليلة",
+            "label": "ملاحظاتك المحفوظة · مثال",
+            "focus": "احصل على العشاء بحلول الساعة 7:00 مساءً.",
+            "explanation": "وقتك المختار للنوم هو 10:00 مساءً. هذه الخطة تترك 3 ساعات بعد العشاء قبل الاستلقاء؛ قد يساعد هذا الفاصل في تخفيف أعراض الليل.",
+            "disclaimer": "بيانات توضيحية · ليس تشخيصاً",
+            "context": [
+              [
+                "احصل على العشاء",
+                "7:00 مساءً"
+              ],
+              [
+                "وقت النوم",
+                "10:00 مساءً"
+              ]
+            ],
+            "contextDate": "10 سبتمبر · الليلة",
+            "cta": "✓ تم ضبط التذكير · 6:30 مساءً"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ar-SA/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ar-SA",
+          "lang": "ar-SA",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "واجهة توضيحية · مفهوم التصميم",
+            "dishTitle": "سمك مطهّى",
+            "dishDescription": "صلصة زبدة الليمون",
+            "dishCaption": "مثال على الطلب",
+            "dishAlt": "سمك مطهّى مع الأرز والخضروات الخضراء والصلصة في وعاء منفصل",
+            "sourceLabel": "↗ NIDDK · إرشادات الارتجاع"
+          }
+        },
+        {
+          "headline": "احفظ ملاحظات علاجك معًا.",
+          "headlineLines": [
+            "احفظ ملاحظات",
+            "علاجك معًا."
+          ],
+          "accentLine": 1,
+          "subline": "تذكر ما تناولته وشعورك.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "ملاحظاتك المحفوظة",
+          "ui": {
+            "title": "ملاحظات العلاج",
+            "label": "ملاحظاتك المحفوظة · مثال",
+            "focus": "تناولت الدواء. ملاحظة حرقة المعدة في المساء.",
+            "explanation": "ملاحظاتك الخاصة، محفوظة معًا. هذه الملاحظات لا تُظهر مدى فعالية العلاج.",
+            "disclaimer": "بيانات توضيحية · ليس تشخيصاً",
+            "context": [
+              [
+                "8:00 صباحًا",
+                "تناولت الدواء"
+              ],
+              [
+                "9:15 مساءً",
+                "ملاحظة حرقة المعدة"
+              ]
+            ],
+            "contextDate": "9 سبتمبر · ملاحظاتك",
+            "cta": "✓ ملاحظة محفوظة"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ar-SA/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ar-SA",
+          "lang": "ar-SA",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "واجهة توضيحية · مفهوم التصميم",
+            "dishTitle": "سمك مطهّى",
+            "dishDescription": "صلصة زبدة الليمون",
+            "dishCaption": "مثال على الطلب",
+            "dishAlt": "سمك مطهّى مع الأرز والخضروات الخضراء والصلصة في وعاء منفصل",
+            "sourceLabel": "↗ NIDDK · إرشادات الارتجاع"
+          }
+        },
+        {
+          "headline": "الحلق أو الصوت يزعجك؟",
+          "headlineLines": [
+            "الحلق أو",
+            "الصوت يزعجك؟"
+          ],
+          "accentLine": 1,
+          "subline": "احفظ ما تلاحظه.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "ملاحظات صوتك",
+          "ui": {
+            "title": "الحلق والصوت",
+            "label": "ملاحظاتك المحفوظة · مثال",
+            "focus": "صوت خشن. تنظيف الحلق. ملاحظة محفوظة.",
+            "explanation": "احفظ ما تلاحظه ومتى. أعراض الحلق والصوت قد تكون لها أسباب مختلفة؛ هذه الملاحظات لا تحدد تشخيصًا.",
+            "disclaimer": "بيانات توضيحية · ليس تشخيصاً",
+            "context": [
+              [
+                "الصوت",
+                "خشن"
+              ],
+              [
+                "الحلق",
+                "التنظيف"
+              ]
+            ],
+            "contextDate": "10 سبتمبر · قبل العمل",
+            "cta": "✓ ملاحظة محفوظة"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ar-SA/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ar-SA",
+          "lang": "ar-SA",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "واجهة توضيحية · مفهوم التصميم",
+            "dishTitle": "سمك مطهّى",
+            "dishDescription": "صلصة زبدة الليمون",
+            "dishCaption": "مثال على الطلب",
+            "dishAlt": "سمك مطهّى مع الأرز والخضروات الخضراء والصلصة في وعاء منفصل",
+            "sourceLabel": "↗ NIDDK · إرشادات الارتجاع"
+          }
+        },
+        {
+          "headline": "الوجبات والأعراض. خط زمني واحد.",
+          "headlineLines": [
+            "الوجبات والأعراض.",
+            "خط زمني واحد."
+          ],
+          "accentLine": 1,
+          "subline": "شاهد ملاحظاتك في خط زمني واحد.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "ليلة واحدة، ملاحظتان",
+          "ui": {
+            "title": "خط زمني لك",
+            "label": "ملاحظاتك المحفوظة · مثال",
+            "focus": "العشاء 8:30 مساءً. حرقة المعدة 10:15 مساءً.",
+            "explanation": "حدثين محفوظتين من نفس الليلة. ترتيبهما فقط لا يظهر أن الوجبة سبب الأعراض.",
+            "disclaimer": "بيانات توضيحية · ليس تشخيصاً",
+            "context": [
+              [
+                "8:30 مساءً",
+                "العشاء"
+              ],
+              [
+                "10:15 مساءً",
+                "حرقة المعدة"
+              ]
+            ],
+            "contextDate": "7 سبتمبر · خط زمني لك",
+            "cta": "عرض الملاحظات المحفوظة"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ar-SA/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ar-SA",
+          "lang": "ar-SA",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "واجهة توضيحية · مفهوم التصميم",
+            "dishTitle": "سمك مطهّى",
+            "dishDescription": "صلصة زبدة الليمون",
+            "dishCaption": "مثال على الطلب",
+            "dishAlt": "سمك مطهّى مع الأرز والخضروات الخضراء والصلصة في وعاء منفصل",
+            "sourceLabel": "↗ NIDDK · إرشادات الارتجاع"
+          }
+        },
+        {
+          "headline": "أحضر تاريخك إلى موعدك.",
+          "headlineLines": [
+            "أحضر تاريخك",
+            "إلى موعدك."
+          ],
+          "accentLine": 1,
+          "subline": "شارك ملخصًا واضحًا مع طبيبك.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "ملخص موعدك",
+          "ui": {
+            "title": "ملخص الزيارة",
+            "label": "ملاحظاتك المحفوظة · مثال",
+            "focus": "ملاحظاتك المحفوظة، جاهزة للمشاركة.",
+            "explanation": "ملخص ملاحظاتك المحفوظة، والوجبات، والأعراض، والعلاج، والتقرير. شاركه كنقطة بداية لموعدك.",
+            "disclaimer": "بيانات توضيحية · ليس تشخيصاً",
+            "context": [
+              [
+                "7–10 سبتمبر",
+                "الملاحظات المحفوظة"
+              ],
+              [
+                "المضمنة",
+                "الوجبات · الأعراض · التقرير"
+              ]
+            ],
+            "contextDate": "ملخص الموعد",
+            "cta": "مشاركة الملخص · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ar-SA/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · مثال",
+            "title": "ملاحظاتك",
+            "date": "7–10 سبتمبر · مثال",
+            "rows": [
+              "الوجبات والأعراض",
+              "ملاحظات العلاج",
+              "تقريرك"
+            ]
+          },
+          "locale": "ar-SA",
+          "lang": "ar-SA",
+          "dir": "rtl",
+          "copy": {
+            "example": "مثال",
+            "footer": "واجهة توضيحية · مفهوم التصميم",
+            "dishTitle": "سمك مطهّى",
+            "dishDescription": "صلصة زبدة الليمون",
+            "dishCaption": "مثال على الطلب",
+            "dishAlt": "سمك مطهّى مع الأرز والخضروات الخضراء والصلصة في وعاء منفصل",
+            "sourceLabel": "↗ NIDDK · إرشادات الارتجاع"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/ar-SA/contact-sheet.html",
+  "download": null
+}

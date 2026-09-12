@@ -1,0 +1,618 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "ml-IN",
+  "label": "മലയാളം",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · എട്ട് ആവശ്യങ്ങൾ, എട്ട് പ്രത്യേക സംഗതികൾ",
+      "description": "ശുദ്ധീകരിച്ച ഇംഗ്ലീഷ് ദിശയും സൂത്രവിവരണവും ലോകലൈസ് ചെയ്യുന്ന സ്ക്രീന്ഷീറ്റുകൾക്കായി തിരിച്ചുവിട്ടത്",
+      "frames": [
+        {
+          "headline": "നെഞ്ചെരിച്ച് നിങ്ങൾ പോകുന്നു?",
+          "headlineLines": [
+            "നെഞ്ചെരിച്ച്",
+            "നിങ്ങൾ പോകുന്നു?"
+          ],
+          "accentLine": 1,
+          "subline": "നിങ്ങളുടെ ചോദ്യം. വിശ്വസനീയമായ അടുത്ത ചാപ്പർ.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "ഒരു പുതിയ ദിവസത്തിന്റെ കാര്യം",
+          "ui": {
+            "title": "AI വിശദീകരണം",
+            "label": "AI വിശദീകരണം · ഉദാഹരണം",
+            "focus": "ഈ വീണ്ടും വേഗത്തിൽ ദിവസത്തിന്റെ രാത്രിയിൽ പോകുക.",
+            "explanation": "ഒരു വേഗത്തിലുള്ള ഭക്ഷണം ശേഷം തുടങ്ങുന്ന പാട്ട് പ്രത്യേകമായി പ്രത്യക്ഷമാക്കാൻ കഴിയും. ഒരു വീണ്ടും വേഗത്തിൽ ദിവസത്തിന്റെ രാത്രിയിൽ, ഭക്ഷണം ശേഷം കുറഞ്ഞത് 3 മണിക്കൂറിന് പിന്നി വേണം.",
+            "disclaimer": "ഉദ്ധാരണ ഡാറ്റാ · രോഗനിർണ്ണയമല്ല",
+            "question": "നെഞ്ചെരിച്ച് രാത്രികാലത്ത് കൂടുതൽ പ്രതികൂലമാക്കുന്നു എന്തുകൊണ്ട്?",
+            "context": [
+              [
+                "ദിവസത്തിന്റെ ഭക്ഷണം",
+                "21:30"
+              ],
+              [
+                "ശ്വസനം",
+                "22:15"
+              ]
+            ],
+            "contextDate": "സെപ്റ്റംബർ 8 · നിങ്ങളുടെ രാത്രി"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ml-IN/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "ഉദാഹരണം",
+            "footer": "ഉദ്ധാരണ ഇൻഫർഫേസ് · ഡിസൈൻ കാര്യം",
+            "dishTitle": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ",
+            "dishDescription": "ലീമൺ ബുട്ടർ സോസ്",
+            "dishCaption": "ഉദാഹരണ ഓർഡർ",
+            "dishAlt": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ, രൈസ്, ഗ്രീൻ ബീൻസ് മാത്രം സോസ് പ്രത്യേകം ചോദിക്കുക",
+            "sourceLabel": "↗ NIDDK · റിഫ്ലക്സ് നിർദ്ദേശങ്ങൾ",
+            "anatomyCaption": "റിഫ്ലക്സ് വിശദീകരിച്ചു"
+          },
+          "locale": "ml-IN",
+          "lang": "ml-IN",
+          "dir": "ltr"
+        },
+        {
+          "headline": "എന്ത് രൂപത്തിൽ റിഫ്ലക്സ് കൂട്ടാനാകും?",
+          "headlineLines": [
+            "എന്ത് രൂപത്തിൽ",
+            "റിഫ്ലക്സ് കൂട്ടാനാകും?"
+          ],
+          "accentLine": 1,
+          "subline": "ഓർഡർ ചെയ്യുമ്പോൾ മെനു പരിശോധിക്കൂ.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "ഒരു മാറ്റം പരിഗണിക്കുക",
+          "ui": {
+            "title": "മെനു പരിശോധന",
+            "label": "AI വിശദീകരണം · ഉദാഹരണം",
+            "focus": "സോസ് പ്രത്യേകം ചോദിക്കുക",
+            "explanation": "കിടിക്കുന്ന പാചകക്കുറിയും പൊതുവും കൂടുതൽ പ്രതികരിക്കുന്നവർക്ക് പ്രശ്നമാകാവുന്നു. നിങ്ങളുടെ പ്രതികരണം വ്യത്യസ്തമാകിയിരിക്കും.",
+            "disclaimer": "ഉദ്ധാരണ ഡാറ്റാ · രോഗനിർണ്ണയമല്ല"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ml-IN/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "ml-IN",
+          "lang": "ml-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ഉദാഹരണം",
+            "footer": "ഉദ്ധാരണ ഇൻഫർഫേസ് · ഡിസൈൻ കാര്യം",
+            "dishTitle": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ",
+            "dishDescription": "ലീമൺ ബുട്ടർ സോസ്",
+            "dishCaption": "ഉദാഹരണ ഓർഡർ",
+            "dishAlt": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ, രൈസ്, ഗ്രീൻ ബീൻസ് മാത്രം സോസ് പ്രത്യേകം ചോദിക്കുക",
+            "sourceLabel": "↗ NIDDK · റിഫ്ലക്സ് നിർദ്ദേശങ്ങൾ"
+          }
+        },
+        {
+          "headline": "താങ്ങിയ പരിശോധനയുടെ വിശദീകരണം",
+          "headlineLines": [
+            "താങ്ങിയ പരിശോധനയുടെ",
+            "വിശദീകരണം"
+          ],
+          "accentLine": 1,
+          "subline": "PDF അപ്ലോഡ് ചെയ്യുക. AI വിശദീകരണം പ്രാപ്തി ചെയ്യൂ.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "സുഗന്ധമായ ഇംഗ്ലീഷിൽ",
+          "ui": {
+            "title": "AI വിശദീകരണം",
+            "label": "AI വിശദീകരണം · ഉദാഹരണം",
+            "focus": "അന്നനാളത്തിന്റെ ഉൾഭിത്തിയിൽ പ്രതിരോധം ഉണ്ടാക്കുന്നത്",
+            "explanation": "നിങ്ങളുടെ റിപ്പോർട്ട് റിഫ്ലക്സ് ഇൻഫ്ലമേഷൻ പറയുന്നു. നിങ്ങളുടെ ക്ലിനിക്കൽ സഹായകരായി എന്തായിരിക്കും ഇത് നിങ്ങളുടെ ചികിത്സയ്ക്ക് പ്രതികരിക്കുക.",
+            "disclaimer": "രേഖപ്പെടുത്തിയ കണ്ടെത്തൽ · രോഗനിർണ്ണയമല്ല"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ml-IN/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "പരിശോധനാഫലങ്ങൾ.pdf",
+            "format": "PDF",
+            "type": "ഉപരി എൻഡോസ്കോപ്പി",
+            "findingLabel": "കണ്ടെത്തൽ",
+            "finding": "ഈസോഫാഗൈറ്റിസ്",
+            "date": "ഉദാഹരണ റിപ്പോർട്ട് · ഉദാഹരണം"
+          },
+          "copy": {
+            "example": "ഉദാഹരണം",
+            "footer": "ഉദ്ധാരണ ഇൻഫർഫേസ് · ഡിസൈൻ കാര്യം",
+            "dishTitle": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ",
+            "dishDescription": "ലീമൺ ബുട്ടർ സോസ്",
+            "dishCaption": "ഉദാഹരണ ഓർഡർ",
+            "dishAlt": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ, രൈസ്, ഗ്രീൻ ബീൻസ് മാത്രം സോസ് പ്രത്യേകം ചോദിക്കുക",
+            "sourceLabel": "↗ NIDDK · റിഫ്ലക്സ് നിർദ്ദേശങ്ങൾ",
+            "paperNote": "അപ്ലോഡ് ചെയ്യപ്പെട്ട റിപ്പോർട്ട്",
+            "reportConnector": "PDF → AI",
+            "reportLead": "നിങ്ങളുടെ റിപ്പോർട്ട് പറയുന്നു"
+          },
+          "locale": "ml-IN",
+          "lang": "ml-IN",
+          "dir": "ltr"
+        },
+        {
+          "headline": "ഈ രാത്രിയുടെ പദ്ധതി എളുപ്പത്തിൽ നിർവ്വഹിക്കൂ.",
+          "headlineLines": [
+            "ഈ രാത്രിയുടെ",
+            "പദ്ധതി എളുപ്പത്തിൽ",
+            "നിർവ്വഹിക്കൂ."
+          ],
+          "accentLine": 2,
+          "subline": "ഒരു കണ്ടെത്തൽ തീരുവാക്കുക. നിങ്ങളുടെ സമയം നിർവ്വഹിക്കൂ.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "നിങ്ങളുടെ തീരുവാക്കിയ രാത്രിയുടെ പദ്ധതി",
+          "ui": {
+            "title": "ഈ രാത്രിയുടെ പദ്ധതി",
+            "label": "നിങ്ങളുടെ സേവിച്ച നോട്ടുകൾ · ഉദാഹരണം",
+            "focus": "7:00 PM വരെ വെള്ളിയാഴ്ചയുടെ ഭക്ഷണം പൂർത്തി ചെയ്യുക.",
+            "explanation": "നിങ്ങളുടെ തുടക്ക സമയം 10:00 PM. ഈ പദ്ധതി 7:00 PM വരെ ഭക്ഷണം പൂർത്തി ചെയ്യുകയും 10:00 PM വരെ പുറത്ത് പോകുകയും ചെയ്യുന്നു; ഈ അന്തർലീലം രാത്രി ലക്ഷണങ്ങൾക്ക് സഹായിക്കാവുന്നു.",
+            "disclaimer": "ഉദ്ധാരണ ഡാറ്റാ · രോഗനിർണ്ണയമല്ല",
+            "context": [
+              [
+                "വെള്ളിയാഴ്ചയുടെ ഭക്ഷണം പൂർത്തി ചെയ്യുക",
+                "19:00"
+              ],
+              [
+                "ശുചിയായ സമയം",
+                "22:00"
+              ]
+            ],
+            "contextDate": "സെപ്റ് 10 · ഈ രാത്രി",
+            "cta": "✓ നോട്ട് സേവിച്ചു · 6:30 PM"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ml-IN/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ml-IN",
+          "lang": "ml-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ഉദാഹരണം",
+            "footer": "ഉദ്ധാരണ ഇൻഫർഫേസ് · ഡിസൈൻ കാര്യം",
+            "dishTitle": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ",
+            "dishDescription": "ലീമൺ ബുട്ടർ സോസ്",
+            "dishCaption": "ഉദാഹരണ ഓർഡർ",
+            "dishAlt": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ, രൈസ്, ഗ്രീൻ ബീൻസ് മാത്രം സോസ് പ്രത്യേകം ചോദിക്കുക",
+            "sourceLabel": "↗ NIDDK · റിഫ്ലക്സ് നിർദ്ദേശങ്ങൾ"
+          }
+        },
+        {
+          "headline": "നിങ്ങളുടെ ചികിത്സ നോട്ടുകൾ ഒന്നാക്കുക.",
+          "headlineLines": [
+            "നിങ്ങളുടെ ചികിത്സ",
+            "നോട്ടുകൾ ഒന്നാക്കുക."
+          ],
+          "accentLine": 1,
+          "subline": "നിങ്ങളുടെ എന്തു എടുത്തു എന്തു അനുഭവിച്ചു.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "നിങ്ങളുടെ സേവിച്ച നോട്ട്",
+          "ui": {
+            "title": "ചികിത്സ നോട്ടുകൾ",
+            "label": "നിങ്ങളുടെ സേവിച്ച നോട്ടുകൾ · ഉദാഹരണം",
+            "focus": "ചികിത്സ എടുത്തു. രാത്രി നെഞ്ചെരി രേഖപ്പെടുത്തി.",
+            "explanation": "നിങ്ങളുടെ നോട്ടുകൾ, ഒന്നാക്കിയിരിക്കുന്നു. ഇവ ചികിത്സയുടെ എത്ര പ്രതിഫലിതമായി പ്രവർത്തിക്കുന്നു എന്നതിന് പ്രതിഫലിതമല്ല.",
+            "disclaimer": "ഉദ്ധാരണ ഡാറ്റാ · രോഗനിർണ്ണയമല്ല",
+            "context": [
+              [
+                "08:00",
+                "ചികിത്സ എടുത്തു"
+              ],
+              [
+                "21:15",
+                "നെഞ്ചെരി രേഖപ്പെടുത്തി"
+              ]
+            ],
+            "contextDate": "സെപ്റ് 9 · നിങ്ങളുടെ നോട്ടുകൾ",
+            "cta": "✓ നോട്ട് സേവിച്ചു"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ml-IN/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ml-IN",
+          "lang": "ml-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ഉദാഹരണം",
+            "footer": "ഉദ്ധാരണ ഇൻഫർഫേസ് · ഡിസൈൻ കാര്യം",
+            "dishTitle": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ",
+            "dishDescription": "ലീമൺ ബുട്ടർ സോസ്",
+            "dishCaption": "ഉദാഹരണ ഓർഡർ",
+            "dishAlt": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ, രൈസ്, ഗ്രീൻ ബീൻസ് മാത്രം സോസ് പ്രത്യേകം ചോദിക്കുക",
+            "sourceLabel": "↗ NIDDK · റിഫ്ലക്സ് നിർദ്ദേശങ്ങൾ"
+          }
+        },
+        {
+          "headline": "തൊണ്ടയൊക്കൽ അനുഭവിക്കുന്നു?",
+          "headlineLines": [
+            "തൊണ്ടയൊക്കൽ",
+            "അനുഭവിക്കുന്നു?"
+          ],
+          "accentLine": 1,
+          "subline": "നിങ്ങളുടെ എന്തെന്ത് അനുഭവിക്കുന്നു രേഖപ്പെട്ടു.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "നിങ്ങളുടെ വോയ്സ് നോട്ടുകൾ",
+          "ui": {
+            "title": "തൊട്ടിയും വോയ്സ്",
+            "label": "നിങ്ങളുടെ സേവിച്ച നോട്ടുകൾ · ഉദാഹരണം",
+            "focus": "വോയ്സ് പൊട്ടിയിട്ടുണ്ട്. തൊട്ടിയൊക്കൽ. നോട്ടുകൾ രേഖപ്പെട്ടു.",
+            "explanation": "നിങ്ങൾ കാണിക്കുന്നതും എപ്പോൾ ആയതും രേഖപ്പെട്കുക. തൊട്ടിയും വോയ്സ് ലക്ഷണങ്ങൾക്ക് വ്യത്യസ്ത കാരണങ്ങളുണ്ട്; ഇവ രോഗനിർണ്ണയത്തിന്റെ പരിശീലനമല്ല.",
+            "disclaimer": "ഉദ്ധാരണ ഡാറ്റാ · രോഗനിർണ്ണയമല്ല",
+            "context": [
+              [
+                "വോയ്സ്",
+                "വോയ്സ് പൊട്ടിയിട്ടുണ്ട്"
+              ],
+              [
+                "തൊട്ടി",
+                "തൊട്ടിയൊക്കൽ"
+              ]
+            ],
+            "contextDate": "സെപ്റ് 10 · ശുപാർശ പ്രവർത്തനത്തിന് മുമ്പ്",
+            "cta": "✓ നോട്ടുകൾ രേഖപ്പെട്ടു"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ml-IN/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ml-IN",
+          "lang": "ml-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ഉദാഹരണം",
+            "footer": "ഉദ്ധാരണ ഇൻഫർഫേസ് · ഡിസൈൻ കാര്യം",
+            "dishTitle": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ",
+            "dishDescription": "ലീമൺ ബുട്ടർ സോസ്",
+            "dishCaption": "ഉദാഹരണ ഓർഡർ",
+            "dishAlt": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ, രൈസ്, ഗ്രീൻ ബീൻസ് മാത്രം സോസ് പ്രത്യേകം ചോദിക്കുക",
+            "sourceLabel": "↗ NIDDK · റിഫ്ലക്സ് നിർദ്ദേശങ്ങൾ"
+          }
+        },
+        {
+          "headline": "ഭക്ഷണങ്ങളും ലക്ഷണങ്ങളും. ഒരു സമയ ചാരത്തിൽ.",
+          "headlineLines": [
+            "ഭക്ഷണങ്ങളും ലക്ഷണങ്ങളും.",
+            "ഒരു സമയ ചാരത്തിൽ."
+          ],
+          "accentLine": 1,
+          "subline": "നിങ്ങളുടെ നോട്ടുകളുടെ ഒരു സമയ ചാരത്തിൽ കാണുക.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "ഒരു രാത്രിയിൽ, രണ്ട് പേരുകൾ",
+          "ui": {
+            "title": "നിങ്ങളുടെ സമയ ചാരത്തിൽ",
+            "label": "നിങ്ങളുടെ സേവിച്ച നോട്ടുകൾ · ഉദാഹരണം",
+            "focus": "വെള്ളിയാഴ്ച പ്രവർത്തനം 8:30 PM. നെഞ്ചെരിച്ചല് 10:15 PM.",
+            "explanation": "ഒരു രാത്രിയിൽ നിന്ന് രണ്ട് രേഖപ്പെട്ട സമയങ്ങൾ. ഇവയുടെ സമയം മാത്രം ലക്ഷണത്തിന് പ്രതികരിക്കുന്നതായി കാണിക്കുന്നില്ല.",
+            "disclaimer": "ഉദ്ധാരണ ഡാറ്റാ · രോഗനിർണ്ണയമല്ല",
+            "context": [
+              [
+                "20:30",
+                "ദിവസത്തിന്റെ ഭക്ഷണം"
+              ],
+              [
+                "22:15",
+                "നെഞ്ചെരിച്ചല്"
+              ]
+            ],
+            "contextDate": "സെപ്റ് 7 · നിങ്ങളുടെ സമയ ചാരത്തിൽ",
+            "cta": "രേഖപ്പെട്ട പേരുകൾ കാണുക"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ml-IN/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ml-IN",
+          "lang": "ml-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ഉദാഹരണം",
+            "footer": "ഉദ്ധാരണ ഇൻഫർഫേസ് · ഡിസൈൻ കാര്യം",
+            "dishTitle": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ",
+            "dishDescription": "ലീമൺ ബുട്ടർ സോസ്",
+            "dishCaption": "ഉദാഹരണ ഓർഡർ",
+            "dishAlt": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ, രൈസ്, ഗ്രീൻ ബീൻസ് മാത്രം സോസ് പ്രത്യേകം ചോദിക്കുക",
+            "sourceLabel": "↗ NIDDK · റിഫ്ലക്സ് നിർദ്ദേശങ്ങൾ"
+          }
+        },
+        {
+          "headline": "നിങ്ങളുടെ അപ്പോയിന്റ്മെന്റിന് നിങ്ങളുടെ ചരിത്രം കൊടുക്കുക.",
+          "headlineLines": [
+            "നിങ്ങളുടെ",
+            "അപ്പോയിന്റ്മെന്റിന്",
+            "നിങ്ങളുടെ ചരിത്രം കൊടുക്കുക."
+          ],
+          "accentLine": 2,
+          "subline": "നിങ്ങളുടെ ഡോക്ടറുമായി സ്പഷ്ടമായ ഒരു പുരോഹിത പൂർണ്ണമാക്കുക.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "നിങ്ങളുടെ അപ്പോയിന്റ്മെന്റ് പൂർണ്ണമാക്കൽ",
+          "ui": {
+            "title": "വിവിധ പരിശീലന പൂർണ്ണമാക്കൽ",
+            "label": "നിങ്ങളുടെ സേവിച്ച നോട്ടുകൾ · ഉദാഹരണം",
+            "focus": "നിങ്ങളുടെ സൂക്ഷിച്ച പരിശോധനകൾ, പങ്കിടുന്നതിനായി തയ്യാറാക്കിയവ",
+            "explanation": "നിങ്ങളുടെ സൂക്ഷിച്ച ഭക്ഷണങ്ങൾ, ലക്ഷ്യങ്ങൾ, ചികിത്സ നോട്ടുകളും റിപ്പോർട്ടും ഒരു പൂർണ്ണ പരിശോധനയായിരിക്കും. നിങ്ങളുടെ അന്തരീക്ഷത്തിന് പോകുന്ന അന്തരീക്ഷത്തിന് പൂർണ്ണ പരിശോധനയായിരിക്കും.",
+            "disclaimer": "ഉദ്ധാരണ ഡാറ്റാ · രോഗനിർണ്ണയമല്ല",
+            "context": [
+              [
+                "സെപ്ടംബർ 7–10",
+                "സൂക്ഷിച്ച പരിശോധനകൾ"
+              ],
+              [
+                "ഉൾപ്പെടുത്തിയിരിക്കുന്നത്",
+                "ഭക്ഷണങ്ങൾ · ലക്ഷ്യങ്ങൾ · റിപ്പോർട്ട്"
+              ]
+            ],
+            "contextDate": "അന്തരീക്ഷ പരിശോധന",
+            "cta": "പരിശോധന പൂർണ്ണ പരിശോധന · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ml-IN/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · ഉദാഹരണം",
+            "title": "നിങ്ങളുടെ പരിശോധനകൾ",
+            "date": "സെപ്ടംബർ 7–10 · ഉദാഹരണം",
+            "rows": [
+              "ഭക്ഷണങ്ങൾ വിശദീകരണം",
+              "ചികിത്സ നോട്ടുകൾ",
+              "നിങ്ങളുടെ റിപ്പോർട്ട്"
+            ]
+          },
+          "locale": "ml-IN",
+          "lang": "ml-IN",
+          "dir": "ltr",
+          "copy": {
+            "example": "ഉദാഹരണം",
+            "footer": "ഉദ്ധാരണ ഇൻഫർഫേസ് · ഡിസൈൻ കാര്യം",
+            "dishTitle": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ",
+            "dishDescription": "ലീമൺ ബുട്ടർ സോസ്",
+            "dishCaption": "ഉദാഹരണ ഓർഡർ",
+            "dishAlt": "ഗ്രില്ലുകൊണ്ട് സൽമോൺ, രൈസ്, ഗ്രീൻ ബീൻസ് മാത്രം സോസ് പ്രത്യേകം ചോദിക്കുക",
+            "sourceLabel": "↗ NIDDK · റിഫ്ലക്സ് നിർദ്ദേശങ്ങൾ"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/ml-IN/contact-sheet.html",
+  "download": null
+}

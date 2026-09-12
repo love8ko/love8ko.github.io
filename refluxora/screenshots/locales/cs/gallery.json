@@ -1,0 +1,616 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "cs",
+  "label": "Čeština",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Osma potřeb, osm jasných scén",
+      "description": "Vybraný anglický směr a zdroj pro lokální náhledy.",
+      "frames": [
+        {
+          "headline": "Pálení žáhy vám nedá spát?",
+          "headlineLines": [
+            "Pálení žáhy",
+            "vám nedá spát?"
+          ],
+          "accentLine": 1,
+          "subline": "Vaše otázka. Jasnější další krok.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "KROK NA ZÍtra",
+          "ui": {
+            "title": "Vysvětlení AI",
+            "label": "Vysvětlení pomocí AI · Příklad",
+            "focus": "Zkuste jídelnu dříve večer.",
+            "explanation": "Pozdější jídlo následované rychlým ležením může být důležité. Pro budoucí večer, opouštění alespoň 3 hodiny po jídle před ležením může pomoci.",
+            "disclaimer": "Ilustrativní data · Není to diagnóza",
+            "question": "Proč je mé pálení žáhy horší večer?",
+            "context": [
+              [
+                "Večeře",
+                "21:30"
+              ],
+              [
+                "Ležet",
+                "22:15"
+              ]
+            ],
+            "contextDate": "9. 9 · Váš večer"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/cs/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Příklad",
+            "footer": "Ilustrativní rozhraní · Návrh designu",
+            "dishTitle": "Grilovaný losos",
+            "dishDescription": "Omáčka z citronového tuku",
+            "dishCaption": "PŘÍKLAD OBJEDNÁVKY",
+            "dishAlt": "Grilovaný losos s rýží, zelenými fazolkami a omáčkou v odděleném hrnci",
+            "sourceLabel": "↗ NIDDK · Návod na reflux",
+            "anatomyCaption": "Reflux vysvětlen"
+          },
+          "locale": "cs",
+          "lang": "cs",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Co mohu objednat s refluxem?",
+          "headlineLines": [
+            "Co mohu objednat",
+            "s refluxem?"
+          ],
+          "accentLine": 1,
+          "subline": "Zkontrolujte menu před objednávkou.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "JEDNA ZMĚNA NA ZVÁŽENÍ",
+          "ui": {
+            "title": "Prohlídka menu",
+            "label": "Vysvětlení pomocí AI · Příklad",
+            "focus": "Požádejte o omáčku zvlášť.",
+            "explanation": "Citronové a bohaté omáčky mohou některým lidem způsobit potíže. Váš vlastní reakce může být jiná.",
+            "disclaimer": "Ilustrativní data · Není to diagnóza"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/cs/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "cs",
+          "lang": "cs",
+          "dir": "ltr",
+          "copy": {
+            "example": "Příklad",
+            "footer": "Ilustrativní rozhraní · Návrh designu",
+            "dishTitle": "Grilovaný losos",
+            "dishDescription": "Omáčka z citronového tuku",
+            "dishCaption": "PŘÍKLAD OBJEDNÁVKY",
+            "dishAlt": "Grilovaný losos s rýží, zelenými fazolkami a omáčkou v odděleném hrnci",
+            "sourceLabel": "↗ NIDDK · Návod na reflux"
+          }
+        },
+        {
+          "headline": "Pochopte své výsledky testu.",
+          "headlineLines": [
+            "Pochopte své",
+            "výsledky testu."
+          ],
+          "accentLine": 1,
+          "subline": "Nahrajte PDF. Dostanete vysvětlení AI.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "V PROSTÉM JAZYCE",
+          "ui": {
+            "title": "Vysvětlení AI",
+            "label": "Vysvětlení pomocí AI · Příklad",
+            "focus": "Zánět sliznice jícnu.",
+            "explanation": "Vaše zpráva zmíní ezofagitidu. Zeptejte se svého lékaře, co to znamená pro vaši péči.",
+            "disclaimer": "Vysvětluje psaný nález · Není to diagnóza"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/cs/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Výsledky testu.pdf",
+            "format": "PDF",
+            "type": "Výše jícnu",
+            "findingLabel": "Nález",
+            "finding": "Ezofagitida",
+            "date": "Ilustrativní zpráva · Příklad"
+          },
+          "copy": {
+            "example": "Příklad",
+            "footer": "Ilustrativní rozhraní · Návrh designu",
+            "dishTitle": "Grilovaný losos",
+            "dishDescription": "Omáčka z citronového tuku",
+            "dishCaption": "PŘÍKLAD OBJEDNÁVKY",
+            "dishAlt": "Grilovaný losos s rýží, zelenými fazolkami a omáčkou v odděleném hrnci",
+            "sourceLabel": "↗ NIDDK · Návod na reflux",
+            "paperNote": "Vaše nahraná zpráva",
+            "reportConnector": "PDF → AI",
+            "reportLead": "Vaše zpráva říká"
+          },
+          "locale": "cs",
+          "lang": "cs",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Udělejte plán večer jednoduchý.",
+          "headlineLines": [
+            "Udělejte plán",
+            "večer jednoduchý."
+          ],
+          "accentLine": 1,
+          "subline": "Vyberte jeden krok. Nastavte čas.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "VÁŠ VYBRANÝ VEČER",
+          "ui": {
+            "title": "Plán večer",
+            "label": "Vaše uložené poznámky · Příklad",
+            "focus": "Dokončete večeři do 19:00.",
+            "explanation": "Vaše vybraná noc je 22:00. Tento plán zanechává 3 hodiny po večeři před ležením; tento interval může pomoci nočním příznakům.",
+            "disclaimer": "Ilustrativní data · Není to diagnóza",
+            "context": [
+              [
+                "Dokončete večeři",
+                "19:00"
+              ],
+              [
+                "Noc",
+                "22:00"
+              ]
+            ],
+            "contextDate": "9. 10 · Večer",
+            "cta": "✓ Připomínka nastavena · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/cs/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "cs",
+          "lang": "cs",
+          "dir": "ltr",
+          "copy": {
+            "example": "Příklad",
+            "footer": "Ilustrativní rozhraní · Návrh designu",
+            "dishTitle": "Grilovaný losos",
+            "dishDescription": "Omáčka z citronového tuku",
+            "dishCaption": "PŘÍKLAD OBJEDNÁVKY",
+            "dishAlt": "Grilovaný losos s rýží, zelenými fazolkami a omáčkou v odděleném hrnci",
+            "sourceLabel": "↗ NIDDK · Návod na reflux"
+          }
+        },
+        {
+          "headline": "Udržujte své záznamy o léčbě spolu.",
+          "headlineLines": [
+            "Udržujte své záznamy",
+            "o léčbě spolu."
+          ],
+          "accentLine": 1,
+          "subline": "Pamatujte si, co jste užili a jak jste se cítili.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "VÁŠ ULOŽENÝ ZÁZNAM",
+          "ui": {
+            "title": "Záznamy o léčbě",
+            "label": "Vaše uložené poznámky · Příklad",
+            "focus": "Léčivo užito. Pálení žáhy večer zaznamenáno.",
+            "explanation": "Vaše vlastní záznamy, udržované spolu. Tyto záznamy nemohou ukázat, jak dobře léčba funguje.",
+            "disclaimer": "Ilustrativní data · Není to diagnóza",
+            "context": [
+              [
+                "8:00",
+                "Léčivo užito"
+              ],
+              [
+                "21:15",
+                "Pálení žáhy zaznamenáno"
+              ]
+            ],
+            "contextDate": "9. 9 · Váše záznamy",
+            "cta": "✓ Záznam uložen"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/cs/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "cs",
+          "lang": "cs",
+          "dir": "ltr",
+          "copy": {
+            "example": "Příklad",
+            "footer": "Ilustrativní rozhraní · Návrh designu",
+            "dishTitle": "Grilovaný losos",
+            "dishDescription": "Omáčka z citronového tuku",
+            "dishCaption": "PŘÍKLAD OBJEDNÁVKY",
+            "dishAlt": "Grilovaný losos s rýží, zelenými fazolkami a omáčkou v odděleném hrnci",
+            "sourceLabel": "↗ NIDDK · Návod na reflux"
+          }
+        },
+        {
+          "headline": "Hrdlo nebo hlas vás trápí?",
+          "headlineLines": [
+            "Hrdlo nebo hlas",
+            "vás trápí?"
+          ],
+          "accentLine": 1,
+          "subline": "Zaznamenávejte, co si všimnete.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "VÁŠ HLOUBKOVÝ ZÁZNAM",
+          "ui": {
+            "title": "Hrdlo & hlas",
+            "label": "Vaše uložené poznámky · Příklad",
+            "focus": "Zatuchlý hlas. Okášlávání. Záznam uložen.",
+            "explanation": "Zaznamenávejte, co si všimnete a kdy. Příznaky hrdla a hlasu mohou mít různé příčiny; tyto záznamy neidentifikují diagnózu.",
+            "disclaimer": "Ilustrativní data · Není to diagnóza",
+            "context": [
+              [
+                "Hlas",
+                "Zatuchlý"
+              ],
+              [
+                "Hrdlo",
+                "Okášlávání"
+              ]
+            ],
+            "contextDate": "9. 10 · Před prací",
+            "cta": "✓ Záznam uložen"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/cs/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "cs",
+          "lang": "cs",
+          "dir": "ltr",
+          "copy": {
+            "example": "Příklad",
+            "footer": "Ilustrativní rozhraní · Návrh designu",
+            "dishTitle": "Grilovaný losos",
+            "dishDescription": "Omáčka z citronového tuku",
+            "dishCaption": "PŘÍKLAD OBJEDNÁVKY",
+            "dishAlt": "Grilovaný losos s rýží, zelenými fazolkami a omáčkou v odděleném hrnci",
+            "sourceLabel": "↗ NIDDK · Návod na reflux"
+          }
+        },
+        {
+          "headline": "Jídla & příznaky. Jedna časová osa.",
+          "headlineLines": [
+            "Jídla & příznaky.",
+            "Jedna časová osa."
+          ],
+          "accentLine": 1,
+          "subline": "Podívejte se na své záznamy na jedné časové ose.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "JEDEN VEČER, DVA ZÁZNAMY",
+          "ui": {
+            "title": "Vaše časová osa",
+            "label": "Vaše uložené poznámky · Příklad",
+            "focus": "Večeře 20:30. Pálení žáhy 22:15.",
+            "explanation": "Dva uložené události z jednoho večera. Jejich časování samotné neukazuje, že jídlo způsobilo příznak.",
+            "disclaimer": "Ilustrativní data · Není to diagnóza",
+            "context": [
+              [
+                "20:30",
+                "Večeře"
+              ],
+              [
+                "22:15",
+                "Pálení žáhy"
+              ]
+            ],
+            "contextDate": "9. 7 · Vaše časová osa",
+            "cta": "Zobrazit uložené záznamy"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/cs/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "cs",
+          "lang": "cs",
+          "dir": "ltr",
+          "copy": {
+            "example": "Příklad",
+            "footer": "Ilustrativní rozhraní · Návrh designu",
+            "dishTitle": "Grilovaný losos",
+            "dishDescription": "Omáčka z citronového tuku",
+            "dishCaption": "PŘÍKLAD OBJEDNÁVKY",
+            "dishAlt": "Grilovaný losos s rýží, zelenými fazolkami a omáčkou v odděleném hrnci",
+            "sourceLabel": "↗ NIDDK · Návod na reflux"
+          }
+        },
+        {
+          "headline": "Přinesete svou historii na příjem.",
+          "headlineLines": [
+            "Přinesete svou",
+            "historii na příjem."
+          ],
+          "accentLine": 1,
+          "subline": "Sdílejte jasný souhrn s vaším lékařem.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "VAŠE PŘÍJEMOVÁ ZÁZNAM",
+          "ui": {
+            "title": "Souhrn návštěvy",
+            "label": "Vaše uložené poznámky · Příklad",
+            "focus": "Vaše uložené pozorování, připravené na sdílení.",
+            "explanation": "Souhrn vašich uložených jídel, příznaků, záznamů o léčbě a zprávy. Sdílejte to jako základ pro váš příjem.",
+            "disclaimer": "Ilustrativní data · Není to diagnóza",
+            "context": [
+              [
+                "9. 7–10",
+                "Uložená pozorování"
+              ],
+              [
+                "Zahrnuto",
+                "Jídla · Příznaky · Zpráva"
+              ]
+            ],
+            "contextDate": "Souhrn návštěvy",
+            "cta": "Sdílet souhrn · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/cs/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Příklad",
+            "title": "Vaše pozorování",
+            "date": "9. 7–10 · Příklad",
+            "rows": [
+              "Jídla & příznaky",
+              "Záznamy o léčbě",
+              "Vaše zpráva"
+            ]
+          },
+          "locale": "cs",
+          "lang": "cs",
+          "dir": "ltr",
+          "copy": {
+            "example": "Příklad",
+            "footer": "Ilustrativní rozhraní · Návrh designu",
+            "dishTitle": "Grilovaný losos",
+            "dishDescription": "Omáčka z citronového tuku",
+            "dishCaption": "PŘÍKLAD OBJEDNÁVKY",
+            "dishAlt": "Grilovaný losos s rýží, zelenými fazolkami a omáčkou v odděleném hrnci",
+            "sourceLabel": "↗ NIDDK · Návod na reflux"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/cs/contact-sheet.html",
+  "download": null
+}

@@ -1,0 +1,621 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "ja",
+  "label": "日本語",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · 八つの必要事項、八つの明確な場面",
+      "description": "選択された英語の方向とソースでローカライズされたスクリーンショットを表示",
+      "frames": [
+        {
+          "headline": "胸やけで夜眠れない？",
+          "headlineLines": [
+            "胸やけで夜",
+            "眠れない？"
+          ],
+          "accentLine": 1,
+          "subline": "あなたの質問。より明確な次のステップ。",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "明日のステップ",
+          "ui": {
+            "title": "AI説明",
+            "label": "AI説明 · 例",
+            "focus": "明日夜の夕食を少し早くに",
+            "explanation": "夕食後にすぐに横になることは影響するかもしれません。今後の夜には、食事の3時間以上後に横になることを試すと良いかもしれません。",
+            "disclaimer": "説明的なデータ · 診断ではありません",
+            "question": "なぜ私の胸やけが夜に悪化するのか？",
+            "context": [
+              [
+                "夕食",
+                "21:30"
+              ],
+              [
+                "横になる",
+                "22:15"
+              ]
+            ],
+            "contextDate": "9月8日 · あなたの夜"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ja/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "例",
+            "footer": "説明的なインターフェース · デザインコンセプト",
+            "dishTitle": "グリルサーモン",
+            "dishDescription": "レモンバターソース",
+            "dishCaption": "例の注文",
+            "dishAlt": "グリルサーモンにご飯、グリーンビーンズ、ソースを別添のラメキンに入れて",
+            "sourceLabel": "↗ NIDDK · 逆流ガイド",
+            "anatomyCaption": "逆流の説明"
+          },
+          "locale": "ja",
+          "lang": "ja",
+          "dir": "ltr"
+        },
+        {
+          "headline": "逆流と一緒なら何が注文できますか？",
+          "headlineLines": [
+            "逆流と一緒な",
+            "ら何が注文で",
+            "きますか？"
+          ],
+          "accentLine": 2,
+          "subline": "注文する前にメニューを確認してください。",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "考慮すべき1つの変更",
+          "ui": {
+            "title": "メニューの確認",
+            "label": "AI説明 · 例",
+            "focus": "ソースは別添いでお願いします。",
+            "explanation": "レモンや濃いソースは一部の人には影響するかもしれません。あなたの反応は異なります。",
+            "disclaimer": "説明的なデータ · 診断ではありません"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ja/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "ja",
+          "lang": "ja",
+          "dir": "ltr",
+          "copy": {
+            "example": "例",
+            "footer": "説明的なインターフェース · デザインコンセプト",
+            "dishTitle": "グリルサーモン",
+            "dishDescription": "レモンバターソース",
+            "dishCaption": "例の注文",
+            "dishAlt": "グリルサーモンにご飯、グリーンビーンズ、ソースを別添のラメキンに入れて",
+            "sourceLabel": "↗ NIDDK · 逆流ガイド"
+          }
+        },
+        {
+          "headline": "あなたのテスト結果を理解してください。",
+          "headlineLines": [
+            "あなたのテス",
+            "ト結果を理解",
+            "してください。"
+          ],
+          "accentLine": 2,
+          "subline": "PDFをアップロード。AIによる説明を取得。",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "わかりやすい言葉で",
+          "ui": {
+            "title": "AI説明",
+            "label": "AI説明 · 例",
+            "focus": "食道粘膜の炎症",
+            "explanation": "あなたのレポートには食道炎が記載されています。医師にこの結果があなたのケアにどう影響するか尋ねてください。",
+            "disclaimer": "記載された所見を説明 · 診断ではありません"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ja/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "テスト結果.pdf",
+            "format": "PDF",
+            "type": "上部内視鏡検査",
+            "findingLabel": "所見",
+            "finding": "食道炎",
+            "date": "説明的なレポート · 例"
+          },
+          "copy": {
+            "example": "例",
+            "footer": "説明的なインターフェース · デザインコンセプト",
+            "dishTitle": "グリルサーモン",
+            "dishDescription": "レモンバターソース",
+            "dishCaption": "例の注文",
+            "dishAlt": "グリルサーモンにご飯、グリーンビーンズ、ソースを別添のラメキンに入れて",
+            "sourceLabel": "↗ NIDDK · 逆流ガイド",
+            "paperNote": "あなたのアップロードされたレポート",
+            "reportConnector": "PDF → AI",
+            "reportLead": "あなたのレポートには"
+          },
+          "locale": "ja",
+          "lang": "ja",
+          "dir": "ltr"
+        },
+        {
+          "headline": "今夜の計画をシンプルに。",
+          "headlineLines": [
+            "今夜の計画を",
+            "シンプルに。"
+          ],
+          "accentLine": 1,
+          "subline": "1つのステップを選択。時間設定。",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "あなたの選んだ夜のステップ",
+          "ui": {
+            "title": "今夜の計画",
+            "label": "あなたの保存されたノート · 例",
+            "focus": "夕食を7:00 PMまでに終えます。",
+            "explanation": "あなたの選んだ就寝時間は10:00 PMです。この計画は食事の3時間以上後に横になることを含み、この間隔は夜間の症状に良いかもしれません。",
+            "disclaimer": "説明的なデータ · 診断ではありません",
+            "context": [
+              [
+                "夕食を終える",
+                "19:00"
+              ],
+              [
+                "就寝時間",
+                "22:00"
+              ]
+            ],
+            "contextDate": "9月10日 · 今夜",
+            "cta": "✓ レマインダー設定 · 6:30 PM"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ja/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ja",
+          "lang": "ja",
+          "dir": "ltr",
+          "copy": {
+            "example": "例",
+            "footer": "説明的なインターフェース · デザインコンセプト",
+            "dishTitle": "グリルサーモン",
+            "dishDescription": "レモンバターソース",
+            "dishCaption": "例の注文",
+            "dishAlt": "グリルサーモンにご飯、グリーンビーンズ、ソースを別添のラメキンに入れて",
+            "sourceLabel": "↗ NIDDK · 逆流ガイド"
+          }
+        },
+        {
+          "headline": "治療のノートをまとめて保存してください。",
+          "headlineLines": [
+            "治療のノートを",
+            "まとめて保存し",
+            "てください。"
+          ],
+          "accentLine": 2,
+          "subline": "あなたが服用した薬と感じたことを覚えておいてください。",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "あなたの保存されたノート",
+          "ui": {
+            "title": "治療ノート",
+            "label": "あなたの保存されたノート · 例",
+            "focus": "薬を服用。夜の胸やけを記録。",
+            "explanation": "あなたの入力はまとめて保存されています。これらのノートは治療効果を示すものではありません。",
+            "disclaimer": "説明的なデータ · 診断ではありません",
+            "context": [
+              [
+                "08:00",
+                "薬を服用"
+              ],
+              [
+                "21:15",
+                "胸やけを記録"
+              ]
+            ],
+            "contextDate": "9月9日 · あなたの記録",
+            "cta": "✓ ノートを保存"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ja/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ja",
+          "lang": "ja",
+          "dir": "ltr",
+          "copy": {
+            "example": "例",
+            "footer": "説明的なインターフェース · デザインコンセプト",
+            "dishTitle": "グリルサーモン",
+            "dishDescription": "レモンバターソース",
+            "dishCaption": "例の注文",
+            "dishAlt": "グリルサーモンにご飯、グリーンビーンズ、ソースを別添のラメキンに入れて",
+            "sourceLabel": "↗ NIDDK · 逆流ガイド"
+          }
+        },
+        {
+          "headline": "喉や声に不快感がありますか？",
+          "headlineLines": [
+            "喉や声に不快感",
+            "がありますか？"
+          ],
+          "accentLine": 1,
+          "subline": "あなたが気づいたことを記録してください。",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "あなたの声のノート",
+          "ui": {
+            "title": "喉と声",
+            "label": "あなたの保存されたノート · 例",
+            "focus": "声が枯れて、喉を鳴らす。ノートを保存。",
+            "explanation": "あなたが気づいたこととその時間をお伝えください。喉や声の症状にはさまざまな原因がありますが、これらのノートは診断を示すものではありません。",
+            "disclaimer": "説明的なデータ · 診断ではありません",
+            "context": [
+              [
+                "声",
+                "声が枯れている"
+              ],
+              [
+                "喉",
+                "喉を鳴らす"
+              ]
+            ],
+            "contextDate": "9月10日 · 仕事前",
+            "cta": "✓ ノートを保存"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ja/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "ja",
+          "lang": "ja",
+          "dir": "ltr",
+          "copy": {
+            "example": "例",
+            "footer": "説明的なインターフェース · デザインコンセプト",
+            "dishTitle": "グリルサーモン",
+            "dishDescription": "レモンバターソース",
+            "dishCaption": "例の注文",
+            "dishAlt": "グリルサーモンにご飯、グリーンビーンズ、ソースを別添のラメキンに入れて",
+            "sourceLabel": "↗ NIDDK · 逆流ガイド"
+          }
+        },
+        {
+          "headline": "食事と症状。1つのタイムライン。",
+          "headlineLines": [
+            "食事と症状",
+            "。1つのタ",
+            "イムライン。"
+          ],
+          "accentLine": 2,
+          "subline": "あなたのノートを1つのタイムラインで確認してください。",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "1つの夜、2つの記録",
+          "ui": {
+            "title": "あなたのタイムライン",
+            "label": "あなたの保存されたノート · 例",
+            "focus": "夕食 8:30 PM。胸やけ 10:15 PM。",
+            "explanation": "同じ夜の2つの保存されたイベント。そのタイミングだけでは、食事によって症状が引き起こされたことを示すことはできません。",
+            "disclaimer": "説明的なデータ · 診断ではありません",
+            "context": [
+              [
+                "20:30",
+                "夕食"
+              ],
+              [
+                "22:15",
+                "胸やけ"
+              ]
+            ],
+            "contextDate": "9月7日 · あなたのタイムライン",
+            "cta": "保存された記録を表示"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ja/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "ja",
+          "lang": "ja",
+          "dir": "ltr",
+          "copy": {
+            "example": "例",
+            "footer": "説明的なインターフェース · デザインコンセプト",
+            "dishTitle": "グリルサーモン",
+            "dishDescription": "レモンバターソース",
+            "dishCaption": "例の注文",
+            "dishAlt": "グリルサーモンにご飯、グリーンビーンズ、ソースを別添のラメキンに入れて",
+            "sourceLabel": "↗ NIDDK · 逆流ガイド"
+          }
+        },
+        {
+          "headline": "あなたの歴史を診察に持ち込んでください。",
+          "headlineLines": [
+            "あなたの歴史を",
+            "診察に持ち込ん",
+            "でください。"
+          ],
+          "accentLine": 2,
+          "subline": "医師に明確な要約を共有してください。",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "あなたの診察要約",
+          "ui": {
+            "title": "訪問要約",
+            "label": "あなたの保存されたノート · 例",
+            "focus": "あなたの保存された観察結果、共有準備ができています。",
+            "explanation": "あなたの保存された食事、症状、治療ノート、レポートの要約。診察の開始点として共有してください。",
+            "disclaimer": "説明的なデータ · 診断ではありません",
+            "context": [
+              [
+                "9月7日～10日",
+                "保存された観察結果"
+              ],
+              [
+                "含まれる",
+                "食事 · 症状 · レポート"
+              ]
+            ],
+            "contextDate": "診察要約",
+            "cta": "要約を共有 · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/ja/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · 例",
+            "title": "あなたの観察結果",
+            "date": "9月7日～10日 · 例",
+            "rows": [
+              "食事と症状",
+              "治療ノート",
+              "あなたのレポート"
+            ]
+          },
+          "locale": "ja",
+          "lang": "ja",
+          "dir": "ltr",
+          "copy": {
+            "example": "例",
+            "footer": "説明的なインターフェース · デザインコンセプト",
+            "dishTitle": "グリルサーモン",
+            "dishDescription": "レモンバターソース",
+            "dishCaption": "例の注文",
+            "dishAlt": "グリルサーモンにご飯、グリーンビーンズ、ソースを別添のラメキンに入れて",
+            "sourceLabel": "↗ NIDDK · 逆流ガイド"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/ja/contact-sheet.html",
+  "download": null
+}

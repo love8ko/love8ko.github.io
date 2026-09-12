@@ -1,0 +1,617 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "pt-BR",
+  "label": "Português (Brasil)",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Oito necessidades, oito cenários claros",
+      "description": "A direção inglesa selecionada e a fonte para telas localizadas.",
+      "frames": [
+        {
+          "headline": "A Zia Está Te Mantendo Acordado?",
+          "headlineLines": [
+            "A Zia Está Te",
+            "Mantendo Acordado?"
+          ],
+          "accentLine": 1,
+          "subline": "Sua pergunta. Um próximo passo mais claro.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "UM PASSO PARA AMANHÃ",
+          "ui": {
+            "title": "Explicação da IA",
+            "label": "Explicação da IA · Exemplo",
+            "focus": "Tente uma janta mais cedo amanhã à noite.",
+            "explanation": "Uma refeição tardia seguida rapidamente por deitar-se pode ser relevante. Para uma noite futura, deixar pelo menos 3 horas após comer antes de deitar-se pode ajudar.",
+            "disclaimer": "Dados ilustrativos · Não é um diagnóstico",
+            "question": "Por que minha zia piora à noite?",
+            "context": [
+              [
+                "Janta",
+                "21h30"
+              ],
+              [
+                "Deitar-se",
+                "22h15"
+              ]
+            ],
+            "contextDate": "Sep 8 · Seu horário da noite"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pt-BR/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Exemplo",
+            "footer": "Interface ilustrativa · Conceito de design",
+            "dishTitle": "Salmão grelhado",
+            "dishDescription": "Molho de limão e manteiga",
+            "dishCaption": "EXEMPLO DE PEDIDO",
+            "dishAlt": "Salmão grelhado com arroz, feijão verde e molho em um recipiente separado",
+            "sourceLabel": "↗ NIDDK · Orientações para refluxo",
+            "anatomyCaption": "Refluxo explicado"
+          },
+          "locale": "pt-BR",
+          "lang": "pt-BR",
+          "dir": "ltr"
+        },
+        {
+          "headline": "O que posso pedir com o refluxo?",
+          "headlineLines": [
+            "O que posso pedir",
+            "com o refluxo?"
+          ],
+          "accentLine": 1,
+          "subline": "Verifique o cardápio antes de pedir.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "UMA MUDANÇA A CONSIDERAR",
+          "ui": {
+            "title": "Revisão do cardápio",
+            "label": "Explicação da IA · Exemplo",
+            "focus": "Peça o molho à parte.",
+            "explanation": "Sucos cítricos e molhos ricos podem irritar algumas pessoas. Sua resposta pode variar.",
+            "disclaimer": "Dados ilustrativos · Não é um diagnóstico"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pt-BR/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "pt-BR",
+          "lang": "pt-BR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemplo",
+            "footer": "Interface ilustrativa · Conceito de design",
+            "dishTitle": "Salmão grelhado",
+            "dishDescription": "Molho de limão e manteiga",
+            "dishCaption": "EXEMPLO DE PEDIDO",
+            "dishAlt": "Salmão grelhado com arroz, feijão verde e molho em um recipiente separado",
+            "sourceLabel": "↗ NIDDK · Orientações para refluxo"
+          }
+        },
+        {
+          "headline": "Entenda seus resultados do teste.",
+          "headlineLines": [
+            "Entenda seus",
+            "resultados do teste."
+          ],
+          "accentLine": 1,
+          "subline": "Envie um PDF. Obtenha uma explicação da IA.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "EM PORTUGUÊS SIMPLES",
+          "ui": {
+            "title": "Explicação da IA",
+            "label": "Explicação da IA · Exemplo",
+            "focus": "Inflamação do revestimento do esôfago.",
+            "explanation": "Seu relatório menciona esofagite. Pergunte ao seu clínico qual significado isso tem para o seu cuidado.",
+            "disclaimer": "Explica o achado escrito · Não é um diagnóstico"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pt-BR/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Resultados do Teste.pdf",
+            "format": "PDF",
+            "type": "Endoscopia alta",
+            "findingLabel": "Achado",
+            "finding": "Esofagite",
+            "date": "Relatório ilustrativo · Exemplo"
+          },
+          "copy": {
+            "example": "Exemplo",
+            "footer": "Interface ilustrativa · Conceito de design",
+            "dishTitle": "Salmão grelhado",
+            "dishDescription": "Molho de limão e manteiga",
+            "dishCaption": "EXEMPLO DE PEDIDO",
+            "dishAlt": "Salmão grelhado com arroz, feijão verde e molho em um recipiente separado",
+            "sourceLabel": "↗ NIDDK · Orientações para refluxo",
+            "paperNote": "Relatório enviado",
+            "reportConnector": "PDF → IA",
+            "reportLead": "Seu relatório diz"
+          },
+          "locale": "pt-BR",
+          "lang": "pt-BR",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Faça o plano da noite simples.",
+          "headlineLines": [
+            "Faça o plano da",
+            "noite simples."
+          ],
+          "accentLine": 1,
+          "subline": "Escolha um passo. Defina o horário.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "SEU PASSO ESCOLHIDO PARA A NOITE",
+          "ui": {
+            "title": "Plano da noite",
+            "label": "Seus anotações salvadas · Exemplo",
+            "focus": "Termine a refeição até às 19h00.",
+            "explanation": "Seu horário de dormir é 22h00. Este plano deixa 3 horas após a refeição antes de deitar-se; esse intervalo pode ajudar a aliviar os sintomas à noite.",
+            "disclaimer": "Dados ilustrativos · Não é um diagnóstico",
+            "context": [
+              [
+                "Termine a refeição",
+                "19h00"
+              ],
+              [
+                "Horário de dormir",
+                "22h00"
+              ]
+            ],
+            "contextDate": "Sep 10 · Hoje",
+            "cta": "✓ Lembrete definido · 18h30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pt-BR/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "pt-BR",
+          "lang": "pt-BR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemplo",
+            "footer": "Interface ilustrativa · Conceito de design",
+            "dishTitle": "Salmão grelhado",
+            "dishDescription": "Molho de limão e manteiga",
+            "dishCaption": "EXEMPLO DE PEDIDO",
+            "dishAlt": "Salmão grelhado com arroz, feijão verde e molho em um recipiente separado",
+            "sourceLabel": "↗ NIDDK · Orientações para refluxo"
+          }
+        },
+        {
+          "headline": "Mantenha seus registros de tratamento juntos.",
+          "headlineLines": [
+            "Mantenha seus",
+            "registros de",
+            "tratamento juntos."
+          ],
+          "accentLine": 2,
+          "subline": "Lembre-se do que você tomou e sentiu.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "SEU REGISTRO SALVADO",
+          "ui": {
+            "title": "Registros de tratamento",
+            "label": "Seus anotações salvadas · Exemplo",
+            "focus": "Medicação tomada. Azia notada.",
+            "explanation": "Seus próprios registros, mantidos juntos. Esses registros não indicam como bem um tratamento funciona.",
+            "disclaimer": "Dados ilustrativos · Não é um diagnóstico",
+            "context": [
+              [
+                "8h00",
+                "Medicação tomada"
+              ],
+              [
+                "21h15",
+                "Azia notada"
+              ]
+            ],
+            "contextDate": "Sep 9 · Seus registros",
+            "cta": "✓ Registro salvo"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pt-BR/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "pt-BR",
+          "lang": "pt-BR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemplo",
+            "footer": "Interface ilustrativa · Conceito de design",
+            "dishTitle": "Salmão grelhado",
+            "dishDescription": "Molho de limão e manteiga",
+            "dishCaption": "EXEMPLO DE PEDIDO",
+            "dishAlt": "Salmão grelhado com arroz, feijão verde e molho em um recipiente separado",
+            "sourceLabel": "↗ NIDDK · Orientações para refluxo"
+          }
+        },
+        {
+          "headline": "Garganta ou voz irritada?",
+          "headlineLines": [
+            "Garganta ou",
+            "voz irritada?"
+          ],
+          "accentLine": 1,
+          "subline": "Mantenha registro de o que você nota.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "SEUS ANOTAÇÕES",
+          "ui": {
+            "title": "Garganta e voz",
+            "label": "Seus anotações salvadas · Exemplo",
+            "focus": "Voz rouca. Limpar a garganta. Anotações salvas.",
+            "explanation": "Registre o que você nota e quando. Sintomas da garganta e voz podem ter causas diferentes; essas anotações não identificam um diagnóstico.",
+            "disclaimer": "Dados ilustrativos · Não é um diagnóstico",
+            "context": [
+              [
+                "Voz",
+                "Rouca"
+              ],
+              [
+                "Garganta",
+                "Limpar"
+              ]
+            ],
+            "contextDate": "10 set. Antes do trabalho",
+            "cta": "✓ Anotações salvas"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pt-BR/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "pt-BR",
+          "lang": "pt-BR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemplo",
+            "footer": "Interface ilustrativa · Conceito de design",
+            "dishTitle": "Salmão grelhado",
+            "dishDescription": "Molho de limão e manteiga",
+            "dishCaption": "EXEMPLO DE PEDIDO",
+            "dishAlt": "Salmão grelhado com arroz, feijão verde e molho em um recipiente separado",
+            "sourceLabel": "↗ NIDDK · Orientações para refluxo"
+          }
+        },
+        {
+          "headline": "Refeições e Sintomas. Uma Linha do Tempo.",
+          "headlineLines": [
+            "Refeições e Sintomas.",
+            "Uma Linha do Tempo."
+          ],
+          "accentLine": 1,
+          "subline": "Veja suas anotações em uma única linha do tempo.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "UMA NOITE, DUAS ENTRADAS",
+          "ui": {
+            "title": "Sua linha do tempo",
+            "label": "Seus anotações salvadas · Exemplo",
+            "focus": "Jantar às 20h30. Azia às 22h15.",
+            "explanation": "Dois eventos salvos da mesma noite. Sua posição no tempo não mostra que a refeição causou o sintoma.",
+            "disclaimer": "Dados ilustrativos · Não é um diagnóstico",
+            "context": [
+              [
+                "20h30",
+                "Janta"
+              ],
+              [
+                "22h15",
+                "Azia"
+              ]
+            ],
+            "contextDate": "07 set. Sua linha do tempo",
+            "cta": "Ver entradas salvas"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pt-BR/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "pt-BR",
+          "lang": "pt-BR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemplo",
+            "footer": "Interface ilustrativa · Conceito de design",
+            "dishTitle": "Salmão grelhado",
+            "dishDescription": "Molho de limão e manteiga",
+            "dishCaption": "EXEMPLO DE PEDIDO",
+            "dishAlt": "Salmão grelhado com arroz, feijão verde e molho em um recipiente separado",
+            "sourceLabel": "↗ NIDDK · Orientações para refluxo"
+          }
+        },
+        {
+          "headline": "Leve Seu Histórico para Sua Consulta.",
+          "headlineLines": [
+            "Leve Seu Histórico",
+            "para Sua Consulta."
+          ],
+          "accentLine": 1,
+          "subline": "Compartilhe uma resumo claro com seu médico.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "SEU RESUMO DA CONSULTA",
+          "ui": {
+            "title": "Visita resumida",
+            "label": "Seus anotações salvadas · Exemplo",
+            "focus": "Seus observações salvas, prontas para compartilhar.",
+            "explanation": "Resumo de suas refeições salvas, sintomas, anotações de tratamento e relatório. Compartilhe como ponto de partida para sua consulta.",
+            "disclaimer": "Dados ilustrativos · Não é um diagnóstico",
+            "context": [
+              [
+                "07–10/09",
+                "Observações salvas"
+              ],
+              [
+                "Incluído",
+                "Refeições · Sintomas · Relatório"
+              ]
+            ],
+            "contextDate": "Resumo da consulta",
+            "cta": "Compartilhar resumo · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/pt-BR/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Exemplo",
+            "title": "Suas observações",
+            "date": "Sep 7–10 · Exemplo",
+            "rows": [
+              "Refeições e sintomas",
+              "Registros de tratamento",
+              "Seu relatório"
+            ]
+          },
+          "locale": "pt-BR",
+          "lang": "pt-BR",
+          "dir": "ltr",
+          "copy": {
+            "example": "Exemplo",
+            "footer": "Interface ilustrativa · Conceito de design",
+            "dishTitle": "Salmão grelhado",
+            "dishDescription": "Molho de limão e manteiga",
+            "dishCaption": "EXEMPLO DE PEDIDO",
+            "dishAlt": "Salmão grelhado com arroz, feijão verde e molho em um recipiente separado",
+            "sourceLabel": "↗ NIDDK · Orientações para refluxo"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/pt-BR/contact-sheet.html",
+  "download": null
+}

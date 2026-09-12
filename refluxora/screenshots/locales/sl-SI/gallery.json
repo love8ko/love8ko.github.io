@@ -1,0 +1,617 @@
+{
+  "version": "localization-2026-09-11.2",
+  "locale": "sl-SI",
+  "label": "Slovenščina",
+  "status": "approved-for-app-store-upload",
+  "translationReview": "double-ai-checked",
+  "series": [
+    {
+      "prefix": "E",
+      "name": "E · Osebne potrebe, osebne jasne slike",
+      "description": "Izbrana angleška smer in vir za lokalizirane zaslone.",
+      "frames": [
+        {
+          "headline": "Zgaga te zdravite?",
+          "headlineLines": [
+            "Zgaga te",
+            "zdravite?"
+          ],
+          "accentLine": 1,
+          "subline": "Vaša vprašanje. Jasniji naslednji korak.",
+          "asset": "assets/v5/E01-anatomy.jpg",
+          "scene": "Educational illustration of a connected esophagus and stomach with a small upward reflux arrow, against a dim bedroom; no people.",
+          "shortJob": "Ответ на собственный вопрос и следующий шаг",
+          "jtbd": "Разобраться с повторяющейся ночной изжогой",
+          "proofLabel": "KORAK ZA ZAUTRJAJ",
+          "ui": {
+            "title": "AI objašnjenje",
+            "label": "AI objašnjenje · Primer",
+            "focus": "Poskusite prejšnjo obročno jutros.",
+            "explanation": "Začetek obroka, ki ga sledi z zavzetjem, lahko vpliva. Za prihodnje večer, če ostanejo vsaj 3 ura po obroku pred zavzetjem, to lahko pomaga.",
+            "disclaimer": "Ilustrativni podatki · Ni diagnoza",
+            "question": "Zgaga je zelo slaba v noči?",
+            "context": [
+              [
+                "Obroč",
+                "21:30"
+              ],
+              [
+                "Zavzetje",
+                "22:15"
+              ]
+            ],
+            "contextDate": "Sep 8 · Vaša večer"
+          },
+          "rationale": "Ответ на собственный вопрос и следующий шаг",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "01",
+          "id": "E01",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sl-SI/previews/E01.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E01-anatomy.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "copy": {
+            "example": "Primer",
+            "footer": "Ilustrativni vmesnik · Koncept dizajna",
+            "dishTitle": "Zaščitena sardina",
+            "dishDescription": "Limonov mlečni sos",
+            "dishCaption": "PRIMER ZA NABAVO",
+            "dishAlt": "Zaščitena sardina s rizom, zelenimi krompiri in sosom v posebnem posodah",
+            "sourceLabel": "↗ NIDDK · Vodilne navodila za refluks",
+            "anatomyCaption": "Refluks razložen"
+          },
+          "locale": "sl-SI",
+          "lang": "sl-SI",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Kaj lahko naročim z refluksom?",
+          "headlineLines": [
+            "Kaj lahko naročim",
+            "z refluksom?"
+          ],
+          "accentLine": 1,
+          "subline": "Preverite meni pred naročanjem.",
+          "asset": "assets/v4/C02-restaurant.jpg",
+          "scene": "The complete restaurant scene shows both diners choosing from a pictured menu and a waiter taking the order; no served food.",
+          "shortJob": "Разбор блюда до заказа и конкретное изменение",
+          "jtbd": "Выбрать еду, сохранив привычную социальную жизнь",
+          "proofLabel": "ENA SPREMENJA ZA UPORABO",
+          "ui": {
+            "title": "Ocenjevanje meni",
+            "label": "AI objašnjenje · Primer",
+            "focus": "Zahtevajte prosite omako posebej.",
+            "explanation": "Kisli in bogati prosite lahko zavzete nekateri ljudje. Vaš odgovor lahko različno odgovarja.",
+            "disclaimer": "Ilustrativni podatki · Ni diagnoza"
+          },
+          "rationale": "Разбор блюда до заказа и конкретное изменение",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "02",
+          "id": "E02",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sl-SI/previews/E02.jpg",
+          "generationMethod": "Existing C02 photo recomposed in HTML/CSS",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v4/C02-restaurant.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 5,
+          "directionApproved": true,
+          "foodAsset": "assets/v3/salmon-cutout.png",
+          "locale": "sl-SI",
+          "lang": "sl-SI",
+          "dir": "ltr",
+          "copy": {
+            "example": "Primer",
+            "footer": "Ilustrativni vmesnik · Koncept dizajna",
+            "dishTitle": "Zaščitena sardina",
+            "dishDescription": "Limonov mlečni sos",
+            "dishCaption": "PRIMER ZA NABAVO",
+            "dishAlt": "Zaščitena sardina s rizom, zelenimi krompiri in sosom v posebnem posodah",
+            "sourceLabel": "↗ NIDDK · Vodilne navodila za refluks"
+          }
+        },
+        {
+          "headline": "Razumijte vaše testne rezultate.",
+          "headlineLines": [
+            "Razumijte vaše",
+            "testne rezultate."
+          ],
+          "accentLine": 1,
+          "subline": "Naložite PDF. Prejmete AI objašnjenje.",
+          "asset": "assets/v5/E03-report.jpg",
+          "scene": "A large paper upper endoscopy report in a folder on a desk, with one highlighted finding; no face, doctor, blood sample or procedure.",
+          "shortJob": "Показатель, объяснение и вопрос врачу",
+          "jtbd": "Понять собственный медицинский отчёт",
+          "proofLabel": "V PREJSTNI ENGLIŠČI",
+          "ui": {
+            "title": "AI objašnjenje",
+            "label": "AI objašnjenje · Primer",
+            "focus": "Zavzete sluznica požireka.",
+            "explanation": "Vaš report navede ezofagitis. Zapišite vam zdravnik, kaj to pomeni za vašo zdravstveno zdravje.",
+            "disclaimer": "Objašnje zapisan nalaz · Ni diagnoza"
+          },
+          "rationale": "Показатель, объяснение и вопрос врачу",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/diagnosis",
+          "position": "03",
+          "id": "E03",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sl-SI/previews/E03.jpg",
+          "generationMethod": "Built-in ImageGen background + deterministic text and interface",
+          "releaseApproved": true,
+          "character": "Male lead · About 45",
+          "prompt": "prompts/v5/E03-report.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "report": {
+            "title": "Izvidi_preiskav.pdf",
+            "format": "PDF",
+            "type": "Zgoraj zavzeta preglednica",
+            "findingLabel": "Nalaz",
+            "finding": "Ezofagitis",
+            "date": "Ilustrativni report · Primer"
+          },
+          "copy": {
+            "example": "Primer",
+            "footer": "Ilustrativni vmesnik · Koncept dizajna",
+            "dishTitle": "Zaščitena sardina",
+            "dishDescription": "Limonov mlečni sos",
+            "dishCaption": "PRIMER ZA NABAVO",
+            "dishAlt": "Zaščitena sardina s rizom, zelenimi krompiri in sosom v posebnem posodah",
+            "sourceLabel": "↗ NIDDK · Vodilne navodila za refluks",
+            "paperNote": "Vaš naloženi report",
+            "reportConnector": "PDF → AI",
+            "reportLead": "Vaš report pove"
+          },
+          "locale": "sl-SI",
+          "lang": "sl-SI",
+          "dir": "ltr"
+        },
+        {
+          "headline": "Začnite danes z enostavno nočno plano.",
+          "headlineLines": [
+            "Začnite danes z",
+            "enostavno nočno plano."
+          ],
+          "accentLine": 1,
+          "subline": "Izberite eno korak. Nastavite čas.",
+          "asset": "assets/v4/C04-plan.jpg",
+          "scene": "The couple chooses an evening plan together at their kitchen table; a clock makes timing concrete.",
+          "shortJob": "Выбранное действие с конкретным временем",
+          "jtbd": "Превратить совет в выполнимое вечернее действие",
+          "proofLabel": "VAŠ IZBIRAN DNEVNIK KORAK",
+          "ui": {
+            "title": "Danesje plan",
+            "label": "Vaše shranjene napomene · Primer",
+            "focus": "Zakončite obroč v 19:00.",
+            "explanation": "Vaš izbran čas za spanje je 22:00. Ta plan omogoča 3 ur po obroku pred tem, ko se ležite; ta interval lahko pomaga pri večjih simptomih v noči.",
+            "disclaimer": "Ilustrativni podatki · Ni diagnoza",
+            "context": [
+              [
+                "Zakonči obroč",
+                "19:00"
+              ],
+              [
+                "Čas za spanje",
+                "22:00"
+              ]
+            ],
+            "contextDate": "Sep 10 · Dnes",
+            "cta": "✓ Napomnja shranjena · 18:30"
+          },
+          "rationale": "Выбранное действие с конкретным временем",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults/eating-diet-nutrition",
+          "position": "04",
+          "id": "E04",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sl-SI/previews/E04.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C04-plan.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "sl-SI",
+          "lang": "sl-SI",
+          "dir": "ltr",
+          "copy": {
+            "example": "Primer",
+            "footer": "Ilustrativni vmesnik · Koncept dizajna",
+            "dishTitle": "Zaščitena sardina",
+            "dishDescription": "Limonov mlečni sos",
+            "dishCaption": "PRIMER ZA NABAVO",
+            "dishAlt": "Zaščitena sardina s rizom, zelenimi krompiri in sosom v posebnem posodah",
+            "sourceLabel": "↗ NIDDK · Vodilne navodila za refluks"
+          }
+        },
+        {
+          "headline": "Ohranite svoje zdravstvene napomene skupaj.",
+          "headlineLines": [
+            "Ohranite svoje zdravstvene",
+            "napomene skupaj."
+          ],
+          "accentLine": 1,
+          "subline": "Zapomnite si, kaj ste vzeli in kaj ste se zavedali.",
+          "asset": "assets/v6/E05-treatment.jpg",
+          "scene": "An unbranded medication bottle and carton, water and a hand writing in a journal at home; no face or dose.",
+          "shortJob": "Сохранённые записи о самочувствии и лечении",
+          "jtbd": "Не забывать наблюдения на фоне лечения",
+          "proofLabel": "VAŠA SHRANJENA NAPOMENA",
+          "ui": {
+            "title": "Zdravstvene napomene",
+            "label": "Vaše shranjene napomene · Primer",
+            "focus": "Zdravilo vzeto. Večerni refluks zaznan.",
+            "explanation": "Vaše vse vključene napomene. Te napomene ne določajo, kako dobro zdravilo deluje.",
+            "disclaimer": "Ilustrativni podatki · Ni diagnoza",
+            "context": [
+              [
+                "08:00",
+                "Zdravilo vzeto"
+              ],
+              [
+                "21:15",
+                "Refluks zaznan"
+              ]
+            ],
+            "contextDate": "Sep 9 · Vaše vključene napomene",
+            "cta": "✓ Napomnja shranjena"
+          },
+          "rationale": "Сохранённые записи о самочувствии и лечении",
+          "source": null,
+          "position": "05",
+          "id": "E05",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sl-SI/previews/E05.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E05-treatment.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "sl-SI",
+          "lang": "sl-SI",
+          "dir": "ltr",
+          "copy": {
+            "example": "Primer",
+            "footer": "Ilustrativni vmesnik · Koncept dizajna",
+            "dishTitle": "Zaščitena sardina",
+            "dishDescription": "Limonov mlečni sos",
+            "dishCaption": "PRIMER ZA NABAVO",
+            "dishAlt": "Zaščitena sardina s rizom, zelenimi krompiri in sosom v posebnem posodah",
+            "sourceLabel": "↗ NIDDK · Vodilne navodila za refluks"
+          }
+        },
+        {
+          "headline": "Začne v grlu ali glavo?",
+          "headlineLines": [
+            "Začne v grlu",
+            "ali glavo?"
+          ],
+          "accentLine": 1,
+          "subline": "Zapomnite si, kaj opazite.",
+          "asset": "assets/v6/E06-voice.jpg",
+          "scene": "Before a work call, a person notices their throat beside a laptop and headset; a close crop emphasizes the gesture rather than a portrait.",
+          "shortJob": "Понятная история собственных наблюдений",
+          "jtbd": "Зафиксировать изменения горла и голоса",
+          "proofLabel": "VAŠE GLASovne ZAPISKE",
+          "ui": {
+            "title": "Grlo in glas",
+            "label": "Vaše shranjene napomene · Primer",
+            "focus": "Hripav glas. Počiščanje grla. Zapiski shranjeni.",
+            "explanation": "beležite, kaj opazite in kdaj. Simptomi grla in glasa lahko imajo različne vzroke; ti zapiski ne služijo za postavitev diagnoze.",
+            "disclaimer": "Ilustrativni podatki · Ni diagnoza",
+            "context": [
+              [
+                "Glas",
+                "Hripav"
+              ],
+              [
+                "Grlo",
+                "Počiščanje"
+              ]
+            ],
+            "contextDate": "10. sep · Pred delom",
+            "cta": "✓ Zapiski shranjeni"
+          },
+          "rationale": "Понятная история собственных наблюдений",
+          "source": null,
+          "position": "06",
+          "id": "E06",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sl-SI/previews/E06.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E06-voice.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "locale": "sl-SI",
+          "lang": "sl-SI",
+          "dir": "ltr",
+          "copy": {
+            "example": "Primer",
+            "footer": "Ilustrativni vmesnik · Koncept dizajna",
+            "dishTitle": "Zaščitena sardina",
+            "dishDescription": "Limonov mlečni sos",
+            "dishCaption": "PRIMER ZA NABAVO",
+            "dishAlt": "Zaščitena sardina s rizom, zelenimi krompiri in sosom v posebnem posodah",
+            "sourceLabel": "↗ NIDDK · Vodilne navodila za refluks"
+          }
+        },
+        {
+          "headline": "Obroki in simptomi. Ena časovna lenita.",
+          "headlineLines": [
+            "Obroki in simptomi.",
+            "Ena časovna lenita."
+          ],
+          "accentLine": 1,
+          "subline": "Svoje zapiske si oglejte v eni časovni leniti.",
+          "asset": "assets/v6/E07-history.jpg",
+          "scene": "An open journal, calendar and meal on a home table establish the context for a saved meal-and-symptom timeline; no face.",
+          "shortJob": "Еда и симптомы в одной временной истории",
+          "jtbd": "Восстановить последовательность событий",
+          "proofLabel": "EN VEČER, DVA VNOSA",
+          "ui": {
+            "title": "Vaša časovna lenita",
+            "label": "Vaše shranjene napomene · Primer",
+            "focus": "Zvečerja 20:30. Žganje v grlu 22:15.",
+            "explanation": "Dva shranjena dogodka iz istega večera. Sam čas pojavitve ne dokazuje, da je obrok povzročil simptom.",
+            "disclaimer": "Ilustrativni podatki · Ni diagnoza",
+            "context": [
+              [
+                "20:30",
+                "Obroč"
+              ],
+              [
+                "22:15",
+                "Žganje v grlu"
+              ]
+            ],
+            "contextDate": "7. sep · Vaša časovna lenita",
+            "cta": "Oglej shranjene vnose"
+          },
+          "rationale": "Еда и симптомы в одной временной истории",
+          "source": null,
+          "position": "07",
+          "id": "E07",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sl-SI/previews/E07.jpg",
+          "generationMethod": "Built-in ImageGen photograph + deterministic interface",
+          "releaseApproved": true,
+          "character": "Object or gesture focused scene",
+          "prompt": "prompts/v6/E07-history.txt",
+          "characterReference": null,
+          "keywords": [],
+          "priority": 3,
+          "directionApproved": true,
+          "locale": "sl-SI",
+          "lang": "sl-SI",
+          "dir": "ltr",
+          "copy": {
+            "example": "Primer",
+            "footer": "Ilustrativni vmesnik · Koncept dizajna",
+            "dishTitle": "Zaščitena sardina",
+            "dishDescription": "Limonov mlečni sos",
+            "dishCaption": "PRIMER ZA NABAVO",
+            "dishAlt": "Zaščitena sardina s rizom, zelenimi krompiri in sosom v posebnem posodah",
+            "sourceLabel": "↗ NIDDK · Vodilne navodila za refluks"
+          }
+        },
+        {
+          "headline": "Na obisk k zdravniku prinesite svojo zgodovino.",
+          "headlineLines": [
+            "Na obisk k zdravniku",
+            "prinesite svojo",
+            "zgodovino."
+          ],
+          "accentLine": 2,
+          "subline": "Z zdravnikom delite pregleden povzetek.",
+          "asset": "assets/v4/C08-appointment.jpg",
+          "scene": "A patient and doctor discuss the prepared history together during an appointment.",
+          "shortJob": "Готовая сводка для передачи на приёме",
+          "jtbd": "Подготовиться к разговору с врачом",
+          "proofLabel": "POVZETEK ZA VAŠ OBISK",
+          "ui": {
+            "title": "Povzetek obiska",
+            "label": "Vaše shranjene napomene · Primer",
+            "focus": "Vaša shranjena opažanja, pripravljena za deljenje.",
+            "explanation": "Povzetek vaših shranjenih obrokov, simptomov, zapisk o zdravljenju in poročilo. Uporabite ga kot izhodišče za vaš obisk.",
+            "disclaimer": "Ilustrativni podatki · Ni diagnoza",
+            "context": [
+              [
+                "07–10/09",
+                "Shranjena opažanja"
+              ],
+              [
+                "Vključeno",
+                "Obroki · Simptomi · Poročilo"
+              ]
+            ],
+            "contextDate": "Povzetek obiska",
+            "cta": "Deli povzetek · PDF"
+          },
+          "rationale": "Готовая сводка для передачи на приёме",
+          "source": null,
+          "position": "08",
+          "id": "E08",
+          "series": "E",
+          "readiness": "approved",
+          "dimensions": {
+            "width": 1320,
+            "height": 2868
+          },
+          "sourceScreenshot": null,
+          "preview": "locales/sl-SI/previews/E08.jpg",
+          "generationMethod": "Existing photograph + new deterministic composition",
+          "releaseApproved": true,
+          "character": "Existing C couple",
+          "prompt": "prompts/v4/C08-appointment.txt",
+          "characterReference": "sources/v4/C01-night.png",
+          "keywords": [],
+          "priority": 4,
+          "directionApproved": true,
+          "summaryRows": [
+            "Meals & symptoms",
+            "Treatment notes",
+            "Your report"
+          ],
+          "summary": {
+            "format": "PDF · Primer",
+            "title": "Vaša opažanja",
+            "date": "7.–10. sep · Primer",
+            "rows": [
+              "Obroki in simptomi",
+              "Zdravstvene napomene",
+              "Vaše poročilo"
+            ]
+          },
+          "locale": "sl-SI",
+          "lang": "sl-SI",
+          "dir": "ltr",
+          "copy": {
+            "example": "Primer",
+            "footer": "Ilustrativni vmesnik · Koncept dizajna",
+            "dishTitle": "Zaščitena sardina",
+            "dishDescription": "Limonov mlečni sos",
+            "dishCaption": "PRIMER ZA NABAVO",
+            "dishAlt": "Zaščitena sardina s rizom, zelenimi krompiri in sosom v posebnem posodah",
+            "sourceLabel": "↗ NIDDK · Vodilne navodila za refluks"
+          }
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-01",
+      "task": "Разобраться с повторяющейся ночной изжогой",
+      "priority": 5,
+      "benefit": "Ответ на собственный вопрос и следующий шаг",
+      "frames": [
+        "E01"
+      ]
+    },
+    {
+      "id": "job-02",
+      "task": "Выбрать еду, сохранив привычную социальную жизнь",
+      "priority": 5,
+      "benefit": "Разбор блюда до заказа и конкретное изменение",
+      "frames": [
+        "E02"
+      ]
+    },
+    {
+      "id": "job-03",
+      "task": "Понять собственный медицинский отчёт",
+      "priority": 4,
+      "benefit": "Содержание отчёта, объяснение и вопрос врачу",
+      "frames": [
+        "E03"
+      ]
+    },
+    {
+      "id": "job-04",
+      "task": "Превратить совет в выполнимое вечернее действие",
+      "priority": 4,
+      "benefit": "Выбранное действие с конкретным временем",
+      "frames": [
+        "E04"
+      ]
+    },
+    {
+      "id": "job-05",
+      "task": "Не забывать наблюдения на фоне лечения",
+      "priority": 3,
+      "benefit": "Сохранённые записи о самочувствии и лечении",
+      "frames": [
+        "E05"
+      ]
+    },
+    {
+      "id": "job-06",
+      "task": "Зафиксировать изменения горла и голоса",
+      "priority": 4,
+      "benefit": "Понятная история собственных наблюдений",
+      "frames": [
+        "E06"
+      ]
+    },
+    {
+      "id": "job-07",
+      "task": "Восстановить последовательность событий",
+      "priority": 3,
+      "benefit": "Еда и симптомы в одной временной истории",
+      "frames": [
+        "E07"
+      ]
+    },
+    {
+      "id": "job-08",
+      "task": "Подготовиться к разговору с врачом",
+      "priority": 4,
+      "benefit": "Готовая сводка для передачи на приёме",
+      "frames": [
+        "E08"
+      ]
+    }
+  ],
+  "contactSheet": "locales/sl-SI/contact-sheet.html",
+  "download": null
+}
