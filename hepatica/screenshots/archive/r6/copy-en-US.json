@@ -1,7 +1,6 @@
 {
   "locale": "en-US",
-  "revision": "r7",
-  "primaryVariant": "A",
+  "revision": "r6",
   "direction": "Two copy-density options with a compact phone and explicit liver-test explanations",
   "brand": "Hepatica",
   "exampleLabel": "Concept",
@@ -28,21 +27,7 @@
       "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
       "slot": "H01",
       "variant": "A",
-      "bullets": [],
-      "locale": "en-US",
-      "revision": "r7",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H01-A-r7.jpg",
-      "original": "originals/H01-A-r7.png",
-      "sourceAsset": "sources/r5-morning-liver-tests.png",
-      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
-      "copySHA256": "15d819931a0496795325f973fbdba7144ab2a7ffb0f9d7f6ef5667211107b084"
+      "bullets": []
     },
     {
       "id": "H02-A",
@@ -65,21 +50,7 @@
       "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
       "slot": "H02",
       "variant": "A",
-      "bullets": [],
-      "locale": "en-US",
-      "revision": "r7",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H02-A-r7.jpg",
-      "original": "originals/H02-A-r7.png",
-      "sourceAsset": "sources/r3-cafe-meal.png",
-      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
-      "copySHA256": "6c7ab75c9acb3982ca497c4b199c5dadb59389cf0ced1ecb1ec6740b63ceec7b"
+      "bullets": []
     },
     {
       "id": "H03-A",
@@ -117,21 +88,7 @@
       },
       "slot": "H03",
       "variant": "A",
-      "bullets": [],
-      "locale": "en-US",
-      "revision": "r7",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H03-A-r7.jpg",
-      "original": "originals/H03-A-r7.png",
-      "sourceAsset": "sources/r3-dinner-choice.png",
-      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
-      "copySHA256": "c4b7dabc9d6f21aef28ec72b2e9475d9754aecf0f62b916169e8b62ba70079e4"
+      "bullets": []
     },
     {
       "id": "H01-B",
@@ -157,21 +114,7 @@
       "bullets": [
         "Understand ALT & AST",
         "Prepare questions for your doctor"
-      ],
-      "locale": "en-US",
-      "revision": "r7",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H01-B-r7.jpg",
-      "original": "originals/H01-B-r7.png",
-      "sourceAsset": "sources/r5-morning-liver-tests.png",
-      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
-      "copySHA256": "45cae917bb3eaf593e079300557a11886ee9b94b5faf19a4be74c62e100ed2f6"
+      ]
     },
     {
       "id": "H02-B",
@@ -197,21 +140,7 @@
       "bullets": [
         "Photograph your meal",
         "Save its explanation"
-      ],
-      "locale": "en-US",
-      "revision": "r7",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H02-B-r7.jpg",
-      "original": "originals/H02-B-r7.png",
-      "sourceAsset": "sources/r3-cafe-meal.png",
-      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
-      "copySHA256": "92373eb4133adc9594ca33032a0d392fd9db8ac85f3bd3a0ec3282b237d36ec3"
+      ]
     },
     {
       "id": "H03-B",
@@ -252,50 +181,20 @@
       "bullets": [
         "Log drinks by date",
         "Include alcohol-free days"
-      ],
-      "locale": "en-US",
-      "revision": "r7",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H03-B-r7.jpg",
-      "original": "originals/H03-B-r7.png",
-      "sourceAsset": "sources/r3-dinner-choice.png",
-      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
-      "copySHA256": "233fad2aadfb1e9cf7ed20372a0168bc5de1bc01bfbadd1c4078c67bd1f1ebe9"
+      ]
     }
   ],
   "showBrand": false,
   "variants": [
     {
       "id": "A",
-      "title": "A · основная серия",
-      "description": "Крупные заголовки без подзаголовков. На первом кадре — приближённая женщина с распечаткой."
+      "title": "A · одна короткая строка",
+      "description": "Более свободный вариант: заголовок, короткое уточнение и действие."
     },
     {
       "id": "B",
-      "title": "B · для сравнения",
+      "title": "B · два коротких пункта",
       "description": "Чуть подробнее о возможностях: сравните, оправдан ли дополнительный текст."
     }
-  ],
-  "status": "For review",
-  "readiness": "concept",
-  "approval": null,
-  "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
-  "sourceBranch": "love8ko/1",
-  "screenshotBranch": "love8ko/appstore-screenshots-brief",
-  "dimensions": [
-    1320,
-    2868
-  ],
-  "totalPlannedFrames": 8,
-  "reviewScope": [
-    "H01",
-    "H02",
-    "H03"
   ]
 }
