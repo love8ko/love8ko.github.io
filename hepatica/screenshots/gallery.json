@@ -1,8 +1,8 @@
 {
   "locale": "en-US",
-  "revision": "r9",
+  "revision": "r10",
   "primaryVariant": "A",
-  "direction": "Eight everyday liver-care situations, large headlines and a focused app action",
+  "direction": "Distinct product-led situations ranked by breadth of the user job",
   "brand": "Hepatica",
   "exampleLabel": "Concept",
   "footer": "Illustrative concept",
@@ -30,7 +30,7 @@
       "variant": "A",
       "bullets": [],
       "locale": "en-US",
-      "revision": "r9",
+      "revision": "r10",
       "readiness": "concept",
       "approval": null,
       "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
@@ -38,8 +38,8 @@
         1320,
         2868
       ],
-      "preview": "previews/H01-A-r9.jpg",
-      "original": "originals/H01-A-r9.png",
+      "preview": "previews/H01-A-r10.jpg",
+      "original": "originals/H01-A-r10.png",
       "sourceAsset": "sources/r5-morning-liver-tests.png",
       "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
       "copySHA256": "4fab4a4174e0a65ddd7c8580fb17b69d046ee7e52b5167dff7f71b8b4700a052"
@@ -67,7 +67,7 @@
       "variant": "A",
       "bullets": [],
       "locale": "en-US",
-      "revision": "r9",
+      "revision": "r10",
       "readiness": "concept",
       "approval": null,
       "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
@@ -75,8 +75,8 @@
         1320,
         2868
       ],
-      "preview": "previews/H02-A-r9.jpg",
-      "original": "originals/H02-A-r9.png",
+      "preview": "previews/H02-A-r10.jpg",
+      "original": "originals/H02-A-r10.png",
       "sourceAsset": "sources/r3-cafe-meal.png",
       "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
       "copySHA256": "3529fd59f26cd70b54bf2db6bdd94d423d336a1d0e98e1de6387cfdbb87310d9"
@@ -119,7 +119,7 @@
       "variant": "A",
       "bullets": [],
       "locale": "en-US",
-      "revision": "r9",
+      "revision": "r10",
       "readiness": "concept",
       "approval": null,
       "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
@@ -127,8 +127,8 @@
         1320,
         2868
       ],
-      "preview": "previews/H03-A-r9.jpg",
-      "original": "originals/H03-A-r9.png",
+      "preview": "previews/H03-A-r10.jpg",
+      "original": "originals/H03-A-r10.png",
       "sourceAsset": "sources/r3-dinner-choice.png",
       "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
       "copySHA256": "ae4ef59441bbb3daa1ab8528b55f3225df8bda5b0caf71c757d0c35f34407ba2"
@@ -137,27 +137,43 @@
       "id": "H04-A",
       "slot": "H04",
       "headline": [
-        "Your Liver",
-        "Your Questions"
+        "Ask About",
+        "Your Liver"
       ],
-      "asset": "r8-evening-question.png",
-      "scene": "A woman at home in the evening types her own question with a report on her lap.",
-      "cardTitle": "LIVER-FOCUSED COACH",
-      "focus": "Ask your question",
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "A USEFUL ANSWER TO KEEP",
+      "focus": "Your question, made clearer",
       "icon": "chat",
-      "jtbd": "I want to ask a question about my liver results or everyday concerns in my own words.",
       "claims": [
         "coach"
       ],
-      "question": "What should I ask about my liver tests?",
-      "visualLimit": "Fictional scene and an example user question. No fabricated AI answer or clinician endorsement.",
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "One useful step",
+        "back": "Back",
+        "action": "",
+        "heading": "Let’s make this clearer",
+        "contextLabel": "What this result is based on",
+        "context": "My ultrasound report says fatty liver",
+        "answer": "Ultrasound can show fat in the liver, but it doesn't tell how much inflammation or scarring is present",
+        "resultLabel": "Keep a question for later (optional)",
+        "questions": [
+          "What tests should I ask my doctor to order next?"
+        ],
+        "button": "Save this result",
+        "example": "Example · result excerpt"
+      },
       "accent": 1,
       "subline": [],
       "bullets": [],
       "variant": "A",
-      "prompt": "prompts/r8-evening-question.txt",
+      "prompt": null,
       "locale": "en-US",
-      "revision": "r9",
+      "revision": "r10",
       "readiness": "concept",
       "approval": null,
       "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
@@ -165,36 +181,50 @@
         1320,
         2868
       ],
-      "preview": "previews/H04-A-r9.jpg",
-      "original": "originals/H04-A-r9.png",
-      "sourceAsset": "sources/r8-evening-question.png",
-      "sourceAssetSHA256": "b81a649cf5f370a08381e9984c111c6aa3596779dc50f187171e52dc352c4fa0",
-      "copySHA256": "8606df5425baab19efac267621a6fa0b5ed6b031731bbe1243df27411d0a7edc"
+      "preview": "previews/H04-A-r10.jpg",
+      "original": "originals/H04-A-r10.png",
+      "sourceAsset": null,
+      "sourceAssetSHA256": null,
+      "copySHA256": "e69e8e3cc50a1d69a953af994a168af3f615d6c08d5889d3af946886e9fcad84"
     },
     {
       "id": "H05-A",
       "slot": "H05",
       "headline": [
-        "Feeling Off?",
-        "Keep a Note"
+        "Doctor Visit",
+        "Bring a Brief"
       ],
-      "asset": "r8-afternoon-note.png",
-      "scene": "A man pauses work during a tiring afternoon and reaches for his phone to record how he feels.",
-      "cardTitle": "YOUR DATED OBSERVATIONS",
-      "focus": "Log how you feel",
-      "icon": "calendar",
-      "jtbd": "I want to remember when and how I felt unwell, so I can describe it accurately later.",
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "YOUR QUESTIONS, PREPARED",
+      "focus": "Bring the questions that matter",
+      "icon": "document",
       "claims": [
-        "dated-logs"
+        "doctor-brief"
       ],
-      "visualLimit": "Fictional everyday fatigue, not a visual diagnosis or evidence that a symptom is caused by liver disease.",
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Doctor Brief",
+        "back": "",
+        "action": "Generate",
+        "label": "Questions for your prescriber",
+        "questions": [
+          "What do my liver results mean?",
+          "What should I track before my next visit?"
+        ],
+        "add": "Add a question",
+        "example": "Example · editor detail"
+      },
       "accent": 1,
       "subline": [],
       "bullets": [],
       "variant": "A",
-      "prompt": "prompts/r8-afternoon-note.txt",
+      "prompt": "prompts/r10-doctor-conversation.txt",
       "locale": "en-US",
-      "revision": "r9",
+      "revision": "r10",
       "readiness": "concept",
       "approval": null,
       "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
@@ -202,73 +232,57 @@
         1320,
         2868
       ],
-      "preview": "previews/H05-A-r9.jpg",
-      "original": "originals/H05-A-r9.png",
-      "sourceAsset": "sources/r8-afternoon-note.png",
-      "sourceAssetSHA256": "9d8b910e54aefedd27f180e3d25a5b41989de5cfab89c9ea7cbd5a4abe21bec3",
-      "copySHA256": "a3467a9fe9cbdfc975c1c55e5191f1252f74209452e4ffc63e941afe210ba630"
+      "preview": "previews/H05-A-r10.jpg",
+      "original": "originals/H05-A-r10.png",
+      "sourceAsset": "sources/r10-doctor-conversation.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "367d3f19832f8a226efa0e50aacffafcbc1897f340f03a555899b9ad6fe12591"
     },
     {
       "id": "H06-A",
       "slot": "H06",
       "headline": [
-        "New Medication?",
-        "Keep the Details"
-      ],
-      "asset": "r8-medication-note.png",
-      "scene": "A woman reads a plain medication carton while holding her phone to record the details.",
-      "cardTitle": "YOUR MEDICATION RECORD",
-      "focus": "Log your medication",
-      "icon": "calendar",
-      "jtbd": "I want to remember what I took and when, without relying on memory at my next visit.",
-      "claims": [
-        "dated-logs"
-      ],
-      "visualLimit": "Unbranded fictional medication props. Recording an existing medication, not prescribing, scanning packaging, changing treatment or recommending a dose.",
-      "accent": 1,
-      "subline": [],
-      "bullets": [],
-      "variant": "A",
-      "prompt": "prompts/r8-medication-note.txt",
-      "locale": "en-US",
-      "revision": "r9",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H06-A-r9.jpg",
-      "original": "originals/H06-A-r9.png",
-      "sourceAsset": "sources/r8-medication-note.png",
-      "sourceAssetSHA256": "cf028fe238f16d88cf2d8992bc61af21a84d6f7c008e163e8f03c72712eef3be",
-      "copySHA256": "3aa86017b8b967c7a4a672f4777676bd1866b9e9be8059cfd5d73f4ff789731a"
-    },
-    {
-      "id": "H07-A",
-      "slot": "H07",
-      "headline": [
-        "Your Liver Story",
-        "Keep It Together"
+        "Past Results",
+        "Easy to Find"
       ],
       "asset": "r8-results-together.png",
-      "scene": "Hands gather dated reports and a notebook beside a phone, with a small friendly liver illustration on a handout.",
-      "cardTitle": "RESULTS YOU CAN RETURN TO",
-      "focus": "Revisit your liver results",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "OPEN YOUR EARLIER RESULTS",
+      "focus": "Find it without the paper hunt",
       "icon": "history",
-      "jtbd": "I want to find my previous liver results again without searching through loose papers.",
       "claims": [
         "lab-history"
       ],
-      "visualLimit": "Illustrative collection of personal papers. No invented lab values, improvement trend, recovery score or claim that this is an existing single app screen.",
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Saved results",
+        "back": "",
+        "action": "Done",
+        "summary": "2 saved results · 0 next steps marked done",
+        "items": [
+          {
+            "title": "I want to understand my lab results",
+            "text": "What do these liver-test terms mean?",
+            "date": "September 13, 2026"
+          },
+          {
+            "title": "I was told about a liver problem",
+            "text": "What should I ask at my next appointment?",
+            "date": "September 10, 2026"
+          }
+        ],
+        "example": "Example · saved entries"
+      },
       "accent": 1,
       "subline": [],
       "bullets": [],
       "variant": "A",
       "prompt": "prompts/r8-results-together.txt",
       "locale": "en-US",
-      "revision": "r9",
+      "revision": "r10",
       "readiness": "concept",
       "approval": null,
       "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
@@ -276,49 +290,53 @@
         1320,
         2868
       ],
-      "preview": "previews/H07-A-r9.jpg",
-      "original": "originals/H07-A-r9.png",
+      "preview": "previews/H06-A-r10.jpg",
+      "original": "originals/H06-A-r10.png",
       "sourceAsset": "sources/r8-results-together.png",
       "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
-      "copySHA256": "f68449c98631800eb8ea1863800b7d69bd9f7f18ca5c9a69574bbf0b2aa25466"
+      "copySHA256": "3473df30ee4cab03ecf1ea27787e295829b8fb458e70398bfa5251d7b7164814"
     },
     {
-      "id": "H08-A",
-      "slot": "H08",
+      "id": "H07-A",
+      "slot": "H07",
       "headline": [
-        "Your Next Visit",
-        "Go Prepared"
+        "Bad Night?",
+        "Make a Note"
       ],
-      "asset": "r8-appointment-prep.png",
-      "scene": "A man waiting for his appointment reviews his papers and prepares questions with a pen.",
-      "cardTitle": "QUESTIONS FOR YOUR DOCTOR",
-      "focus": "Prepare your Doctor Brief",
-      "icon": "document",
-      "jtbd": "I want to bring my own results and questions to my next appointment and leave with fewer things forgotten.",
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "REMEMBER WHAT HAPPENED",
+      "focus": "Your symptoms, with a date",
+      "icon": "calendar",
       "claims": [
-        "doctor-brief"
+        "dated-logs"
       ],
-      "visualLimit": "Fictional appointment preparation. Compact source-based Doctor Brief editor concept, not an actual exported clinical report.",
-      "mockup": {
-        "kind": "doctor-phone",
-        "caption": "ILLUSTRATIVE APP SCREEN",
-        "clock": "9:41",
-        "cancel": "Cancel",
-        "title": "Doctor Brief",
-        "save": "Generate",
-        "nameLabel": "REPORT NAME",
-        "name": "My next appointment",
-        "questionsLabel": "QUESTIONS FOR YOUR PRESCRIBER",
-        "question": "What should I ask about my liver tests?",
-        "add": "Add a question"
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Log a symptom",
+        "back": "",
+        "action": "Save",
+        "dayLabel": "Day",
+        "day": "Sep 13, 2026",
+        "typeLabel": "SYMPTOM",
+        "type": "Poor sleep",
+        "severityLabel": "SEVERITY · 3/5",
+        "severity": 3,
+        "scale": "1 = mild · 5 = severe",
+        "noteLabel": "NOTE · OPTIONAL",
+        "note": "Woke up several times last night",
+        "example": "Example · symptom form detail"
       },
       "accent": 1,
       "subline": [],
       "bullets": [],
       "variant": "A",
-      "prompt": "prompts/r8-appointment-prep.txt",
+      "prompt": "prompts/journal-r1.txt",
       "locale": "en-US",
-      "revision": "r9",
+      "revision": "r10",
       "readiness": "concept",
       "approval": null,
       "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
@@ -326,11 +344,63 @@
         1320,
         2868
       ],
-      "preview": "previews/H08-A-r9.jpg",
-      "original": "originals/H08-A-r9.png",
-      "sourceAsset": "sources/r8-appointment-prep.png",
-      "sourceAssetSHA256": "8ff45e7208e3c11083917f26ca27f2bc467da9ad5ce1ee59927deb81588c98b2",
-      "copySHA256": "c94efb8e4a2bf57c4f0ad4bc894c4978af031d6a3e3f696fec003b6c9dc19386"
+      "preview": "previews/H07-A-r10.jpg",
+      "original": "originals/H07-A-r10.png",
+      "sourceAsset": "sources/journal-r1.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "04e83281a3f191348330c504541141027d50bba16c7b82758d0ba1b3fe61db15"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Log Your",
+        "Medication"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "WHAT YOU TOOK AND WHEN",
+      "focus": "Keep your medication details",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Log medication",
+        "back": "",
+        "action": "Save",
+        "dayLabel": "Day",
+        "day": "Sep 13, 2026",
+        "nameLabel": "MEDICATION OR SUPPLEMENT",
+        "name": "My prescribed medication",
+        "doseLabel": "DOSE · OPTIONAL",
+        "dose": "",
+        "disclaimer": "Supplements may interact with medications. Discuss any new supplement with your doctor. Hepatica never recommends doses.",
+        "example": "Example · medication form detail"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "locale": "en-US",
+      "revision": "r10",
+      "readiness": "concept",
+      "approval": null,
+      "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "previews/H08-A-r10.jpg",
+      "original": "originals/H08-A-r10.png",
+      "sourceAsset": "sources/r10-medication-still-life.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "5230f2d6cfb6016a136b24e0799992299af84b10f8b97b6121e61aed8721030d"
     }
   ],
   "showBrand": false,
@@ -338,9 +408,10 @@
     {
       "id": "A",
       "title": "H01–H08 · English",
-      "description": "Восемь повседневных ситуаций: от вопросов об анализах до подготовки к приёму."
+      "description": "Первые три сюжета утверждены. H04–H08: конкретный вопрос → приём у врача → прошлые результаты → самочувствие → лекарства."
     }
   ],
+  "headlineFontSize": 60,
   "status": "For review",
   "readiness": "concept",
   "approval": null,
@@ -362,5 +433,5 @@
     "H07",
     "H08"
   ],
-  "download": "downloads/hepatica-H01-H08-en-US-r9.zip"
+  "download": "downloads/hepatica-H01-H08-en-US-r10.zip"
 }

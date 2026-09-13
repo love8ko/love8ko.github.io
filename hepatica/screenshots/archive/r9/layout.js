@@ -1,6 +1,5 @@
 /* All visible screenshot text comes from copy/en-US.json via gallery.json. */
 window.hepaticaLayout=function(f,shared){
- if(f.product)return window.hepaticaProductLayout(f,shared);
  const el=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls;if(text!==undefined)n.textContent=text;return n;};
  const art=el('article','art '+(f.slot||f.id)+' variant-'+(f.variant||''));art.lang='en-US';art.dataset.frame=f.id;
  const photo=el('img','photo');photo.src='assets/'+f.asset;photo.alt=f.scene;art.append(photo);
