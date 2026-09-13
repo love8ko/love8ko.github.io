@@ -1,6 +1,6 @@
 {
   "locale": "en-US",
-  "revision": "r6",
+  "revision": "r5",
   "direction": "Two copy-density options with a compact phone and explicit liver-test explanations",
   "brand": "Hepatica",
   "exampleLabel": "Concept",
@@ -9,12 +9,14 @@
     {
       "id": "H01-A",
       "headline": [
-        "Liver Tests",
+        "Liver Tests,",
         "Explained."
       ],
       "accent": 1,
-      "subline": [],
-      "asset": "r5-morning-liver-tests.png",
+      "subline": [
+        "Your report. In plain language."
+      ],
+      "asset": "r4-morning-liver-tests.png",
       "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
       "cardTitle": "START WITH YOUR RESULTS",
       "focus": "Add your liver report",
@@ -23,25 +25,25 @@
       "claims": [
         "report-explanation"
       ],
-      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "prompt": "prompts/r4-morning-liver-tests.txt",
       "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
       "slot": "H01",
       "variant": "A",
       "bullets": [],
       "locale": "en-US",
-      "revision": "r6",
+      "revision": "r5",
       "readiness": "concept",
       "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
+      "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
       "dimensions": [
         1320,
         2868
       ],
-      "preview": "previews/H01-A-r6.jpg",
-      "original": "originals/H01-A-r6.png",
-      "sourceAsset": "sources/r5-morning-liver-tests.png",
-      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
-      "copySHA256": "15d819931a0496795325f973fbdba7144ab2a7ffb0f9d7f6ef5667211107b084"
+      "preview": "previews/H01-A-r5.jpg",
+      "original": "originals/H01-A-r5.png",
+      "sourceAsset": "sources/r4-morning-liver-tests.png",
+      "sourceAssetSHA256": "a3f0f85332a19fb3b2f1d3ca613e1fe57ab21adf7cd56ea1a131b7fd83731aa2",
+      "copySHA256": "6bfc46e9c71731ffa04b4ba553ac4f0a5c468e6439746295fe75a9b89adc738e"
     },
     {
       "id": "H02-A",
@@ -50,7 +52,9 @@
         "What to Eat?"
       ],
       "accent": 1,
-      "subline": [],
+      "subline": [
+        "Everyday meals, explained."
+      ],
       "asset": "r3-cafe-meal.png",
       "scene": "A man photographs his sandwich and soup at an everyday cafe.",
       "cardTitle": "FOOD, EXPLAINED",
@@ -66,19 +70,19 @@
       "variant": "A",
       "bullets": [],
       "locale": "en-US",
-      "revision": "r6",
+      "revision": "r5",
       "readiness": "concept",
       "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
+      "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
       "dimensions": [
         1320,
         2868
       ],
-      "preview": "previews/H02-A-r6.jpg",
-      "original": "originals/H02-A-r6.png",
+      "preview": "previews/H02-A-r5.jpg",
+      "original": "originals/H02-A-r5.png",
       "sourceAsset": "sources/r3-cafe-meal.png",
       "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
-      "copySHA256": "6c7ab75c9acb3982ca497c4b199c5dadb59389cf0ced1ecb1ec6740b63ceec7b"
+      "copySHA256": "b491b96c3c8f6c033dc3b154a0a5a0595552ebb92147eda9e7aeb3a1431742e4"
     },
     {
       "id": "H03-A",
@@ -87,7 +91,9 @@
         "Still You."
       ],
       "accent": 1,
-      "subline": [],
+      "subline": [
+        "Drinks and alcohol-free days."
+      ],
       "asset": "r3-dinner-choice.png",
       "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
       "cardTitle": "YOUR DAILY RECORD",
@@ -118,19 +124,19 @@
       "variant": "A",
       "bullets": [],
       "locale": "en-US",
-      "revision": "r6",
+      "revision": "r5",
       "readiness": "concept",
       "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
+      "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
       "dimensions": [
         1320,
         2868
       ],
-      "preview": "previews/H03-A-r6.jpg",
-      "original": "originals/H03-A-r6.png",
+      "preview": "previews/H03-A-r5.jpg",
+      "original": "originals/H03-A-r5.png",
       "sourceAsset": "sources/r3-dinner-choice.png",
       "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
-      "copySHA256": "c4b7dabc9d6f21aef28ec72b2e9475d9754aecf0f62b916169e8b62ba70079e4"
+      "copySHA256": "435229ad347365e4d41e084181f6c20688e3ec6843165d7efc56f93e87e88cfc"
     },
     {
       "id": "H01-B",
@@ -140,7 +146,7 @@
       ],
       "accent": 1,
       "subline": [],
-      "asset": "r5-morning-liver-tests.png",
+      "asset": "r4-morning-liver-tests.png",
       "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
       "cardTitle": "START WITH YOUR RESULTS",
       "focus": "Add your liver report",
@@ -149,7 +155,7 @@
       "claims": [
         "report-explanation"
       ],
-      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "prompt": "prompts/r4-morning-liver-tests.txt",
       "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
       "slot": "H01",
       "variant": "B",
@@ -158,19 +164,19 @@
         "Prepare questions for your doctor"
       ],
       "locale": "en-US",
-      "revision": "r6",
+      "revision": "r5",
       "readiness": "concept",
       "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
+      "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
       "dimensions": [
         1320,
         2868
       ],
-      "preview": "previews/H01-B-r6.jpg",
-      "original": "originals/H01-B-r6.png",
-      "sourceAsset": "sources/r5-morning-liver-tests.png",
-      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
-      "copySHA256": "45cae917bb3eaf593e079300557a11886ee9b94b5faf19a4be74c62e100ed2f6"
+      "preview": "previews/H01-B-r5.jpg",
+      "original": "originals/H01-B-r5.png",
+      "sourceAsset": "sources/r4-morning-liver-tests.png",
+      "sourceAssetSHA256": "a3f0f85332a19fb3b2f1d3ca613e1fe57ab21adf7cd56ea1a131b7fd83731aa2",
+      "copySHA256": "b0faafd29a8614cfa80a5c242d32be5476799bda8ffa834532af9ce20b90332a"
     },
     {
       "id": "H02-B",
@@ -198,16 +204,16 @@
         "Save its explanation"
       ],
       "locale": "en-US",
-      "revision": "r6",
+      "revision": "r5",
       "readiness": "concept",
       "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
+      "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
       "dimensions": [
         1320,
         2868
       ],
-      "preview": "previews/H02-B-r6.jpg",
-      "original": "originals/H02-B-r6.png",
+      "preview": "previews/H02-B-r5.jpg",
+      "original": "originals/H02-B-r5.png",
       "sourceAsset": "sources/r3-cafe-meal.png",
       "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
       "copySHA256": "92373eb4133adc9594ca33032a0d392fd9db8ac85f3bd3a0ec3282b237d36ec3"
@@ -253,16 +259,16 @@
         "Include alcohol-free days"
       ],
       "locale": "en-US",
-      "revision": "r6",
+      "revision": "r5",
       "readiness": "concept",
       "approval": null,
-      "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
+      "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
       "dimensions": [
         1320,
         2868
       ],
-      "preview": "previews/H03-B-r6.jpg",
-      "original": "originals/H03-B-r6.png",
+      "preview": "previews/H03-B-r5.jpg",
+      "original": "originals/H03-B-r5.png",
       "sourceAsset": "sources/r3-dinner-choice.png",
       "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
       "copySHA256": "233fad2aadfb1e9cf7ed20372a0168bc5de1bc01bfbadd1c4078c67bd1f1ebe9"
@@ -284,7 +290,7 @@
   "status": "For review",
   "readiness": "concept",
   "approval": null,
-  "sourceProductCommit": "b461bab3fc5dbee5543b553be20b745435276190",
+  "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
   "sourceBranch": "love8ko/1",
   "screenshotBranch": "love8ko/appstore-screenshots-brief",
   "dimensions": [
