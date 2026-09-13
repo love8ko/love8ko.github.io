@@ -1,38 +1,32 @@
 {
   "locale": "en-US",
-  "revision": "r1",
+  "revision": "r2",
+  "direction": "Liver first · image-led",
   "brand": "Hepatica",
-  "exampleLabel": "Example",
-  "footer": "Illustrative layout · Design concept",
+  "exampleLabel": "Concept",
+  "footer": "Illustrative concept",
   "frames": [
     {
       "id": "H01",
       "headline": [
-        "Questions",
-        "About Your",
+        "Fatty",
         "Liver?"
       ],
-      "accent": 2,
-      "subline": [
-        "Clearer explanations.",
-        "Everyday support."
-      ],
-      "asset": "liver-report.png",
-      "scene": "A fictional woman considering a report at her kitchen table.",
-      "cardTitle": "Your liver question",
-      "question": "What can I keep track of?",
-      "focus": "Meals. Results. Daily notes.",
-      "explanation": "Keep the context for your next liver question.",
-      "note": "Educational support. Not a diagnosis.",
-      "jtbd": "Recognize a place to ask a concrete liver question.",
+      "accent": 1,
+      "subline": [],
+      "asset": "r2-fatty-liver.png",
+      "scene": "A large sculptural liver with a conceptual cutaway showing enlarged golden lipid droplets within the tissue.",
+      "cardTitle": "HEPATICA COACH",
+      "focus": "Ask your liver question",
+      "icon": "chat",
+      "jtbd": "A fatty liver finding leaves me unsure what it means or where to start.",
       "claims": [
-        "coach",
-        "lab-history",
-        "dated-logs"
+        "coach"
       ],
-      "prompt": "prompts/liver-report.txt",
+      "prompt": "prompts/r2-fatty-liver.txt",
+      "visualLimit": "Stylized educational fat metaphor; not patient anatomy, histology or a clinical diagnosis.",
       "locale": "en-US",
-      "revision": "r1",
+      "revision": "r2",
       "readiness": "concept",
       "approval": null,
       "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
@@ -40,38 +34,33 @@
         1320,
         2868
       ],
-      "preview": "previews/H01.jpg",
-      "original": "originals/H01.png",
-      "sourceAsset": "sources/liver-report.png",
-      "sourceAssetSHA256": "1d183f3de1ac1db137bbe513be07021b865d093662e871ed328a3c94e24ddd2b",
-      "copySHA256": "a2479fbd4fd4cfc3247ef8eef74497f430107f0bd982c2eb4121682c99592bb6"
+      "preview": "previews/H01-r2.jpg",
+      "original": "originals/H01-r2.png",
+      "sourceAsset": "sources/r2-fatty-liver.png",
+      "sourceAssetSHA256": "a2221cb16d0f5ef582129b2068d1a5d19e40fb03ebb0fa33d7afaef51ca831e6",
+      "copySHA256": "0ee075c3b4d1a74dfba7e6968d823dbb3cac4944e0b6f5b531538fd5f137922c"
     },
     {
       "id": "H02",
       "headline": [
-        "Fatty Liver.",
         "What Can",
         "I Eat?"
       ],
-      "accent": 0,
-      "subline": [
-        "Photograph your meal.",
-        "Keep the explanation."
-      ],
-      "asset": "liver-food.png",
-      "scene": "A fictional man with his phone and an ordinary lunch at home.",
-      "cardTitle": "Meal scan",
-      "question": "Your lunch. Your liver question.",
-      "focus": "Scan. Understand. Save.",
-      "explanation": "Photograph your meal. Keep its explanation in your food log.",
-      "note": "Food guidance, with your liver in mind.",
-      "jtbd": "Make sense of an ordinary meal with fatty liver concerns.",
+      "accent": 1,
+      "subline": [],
+      "asset": "r2-liver-meal.png",
+      "scene": "An anatomical liver model floats separately above an ordinary plate of pasta, chicken and vegetables.",
+      "cardTitle": "FOOD, EXPLAINED",
+      "focus": "Scan your meal",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
       "claims": [
         "meal-scan"
       ],
-      "prompt": "prompts/liver-food.txt",
+      "prompt": "prompts/r2-liver-meal.txt",
+      "visualLimit": "Educational liver symbol is separate from the meal. No food safety verdict or specific substitution is claimed.",
       "locale": "en-US",
-      "revision": "r1",
+      "revision": "r2",
       "readiness": "concept",
       "approval": null,
       "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
@@ -79,47 +68,33 @@
         1320,
         2868
       ],
-      "preview": "previews/H02.jpg",
-      "original": "originals/H02.png",
-      "sourceAsset": "sources/liver-food.png",
-      "sourceAssetSHA256": "30265f03e97b05a9e8ff12390965b14b18d13bd8724721cc4ed49cc06a37429d",
-      "copySHA256": "c8c754a4e512fe5d31c5c066b2b0e8138b6041e0d977526d2f1de784132fe608"
+      "preview": "previews/H02-r2.jpg",
+      "original": "originals/H02-r2.png",
+      "sourceAsset": "sources/r2-liver-meal.png",
+      "sourceAssetSHA256": "f9e2abc43bf66a3dae3eb37ac6f13c69f9a92f987d79cad7d6954209ac61de48",
+      "copySHA256": "c78c53ac830ac47481bd9747b9ab95082c625b3c36777fd8721556185d8a25c0"
     },
     {
       "id": "H03",
       "headline": [
-        "Liver Results.",
-        "In Plain",
-        "English."
+        "Stopped",
+        "Drinking?"
       ],
-      "accent": 0,
-      "subline": [
-        "Understand the terms.",
-        "Prepare your questions."
-      ],
-      "asset": "report-r1.png",
-      "scene": "An illustrative liver report on a teal folder with reading glasses and a pen.",
-      "paper": {
-        "title": "Liver blood tests",
-        "label": "A TERM ON YOUR REPORT",
-        "term": "ALT",
-        "definition": "A liver enzyme",
-        "date": "Example report · Sep 12, 2026"
-      },
-      "cardTitle": "A question to bring",
-      "question": "Make the next conversation clearer.",
-      "focus": "What does this result mean for me?",
-      "explanation": "Keep your results. Bring your questions to your clinician.",
-      "note": "One result is not a diagnosis.",
-      "jtbd": "Understand a lab term and prepare a personal question for a clinician.",
+      "accent": 1,
+      "subline": [],
+      "asset": "r2-liver-alcohol.png",
+      "scene": "A liver model above an ordinary scene where a hand sets a wine glass aside; water is nearby.",
+      "cardTitle": "YOUR ALCOHOL LOG",
+      "focus": "Log an alcohol-free day",
+      "icon": "calendar",
+      "jtbd": "After stopping drinking, I want to record my own days and observations without being judged.",
       "claims": [
-        "lab-terms",
-        "lab-history",
-        "doctor-brief"
+        "dated-logs"
       ],
-      "prompt": "prompts/report-r1.txt",
+      "prompt": "prompts/r2-liver-alcohol.txt",
+      "visualLimit": "Alcohol-specific context, not an explanation of all fatty liver. No repair, recovery timeline or treatment efficacy depicted.",
       "locale": "en-US",
-      "revision": "r1",
+      "revision": "r2",
       "readiness": "concept",
       "approval": null,
       "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
@@ -127,11 +102,11 @@
         1320,
         2868
       ],
-      "preview": "previews/H03.jpg",
-      "original": "originals/H03.png",
-      "sourceAsset": "sources/report-r1.png",
-      "sourceAssetSHA256": "6ea0048e022917177895d292b5c1d20b14acec748e52683579b3a572a1e32353",
-      "copySHA256": "2e90da4048280bd975c18abc4bcb8a22ebb02a1d5c03ed3e2725cf5450b59f93"
+      "preview": "previews/H03-r2.jpg",
+      "original": "originals/H03-r2.png",
+      "sourceAsset": "sources/r2-liver-alcohol.png",
+      "sourceAssetSHA256": "181e97428a8025339da7e25a8359f899ef762bd58a86647baed82e7ce4379fa1",
+      "copySHA256": "08ded7e3c1e246e876a694520c5f67b93f8cf00958b3a736c049cf3c70b66d1e"
     }
   ],
   "status": "For review",
