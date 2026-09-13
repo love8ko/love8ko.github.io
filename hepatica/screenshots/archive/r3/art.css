@@ -23,22 +23,3 @@
 .H03 h1{font-size:59px;letter-spacing:-3.3px}
 .H03 .photo{top:193px;left:-13px;width:466px;height:699px}
 .H03 .focus{font-size:22px;letter-spacing:-.85px}
-/* R4: enlarged, source-faithful input detail; no fabricated saved outcome. */
-.H01 .focus{font-size:22px}
-.art .app-detail{position:absolute;z-index:3;left:28px;right:28px;bottom:44px;margin:0}
-.art .mockup-action{font-size:23px;font-weight:800;letter-spacing:-.7px;line-height:1.1;margin:0 0 12px;text-align:center;color:#fff7e6;text-shadow:0 2px 12px #102f2d}
-.art .device{padding:6px;background:#274843;border:1px solid #97aaa0;border-radius:24px;box-shadow:0 9px 28px #00171470}
-.art .app-screen{overflow:hidden;border-radius:18px;background:#f6f5ef;color:#173e38;padding:0 12px 12px}
-.art .app-nav{height:40px;display:flex;align-items:center;justify-content:space-between;font-size:13px;gap:8px;border-bottom:1px solid #dfe5dc}
-.art .app-title{font-size:15px;font-weight:800}
-.art .app-cancel{color:#718079}
-.art .app-save{font-weight:800;color:#245b49}
-.art .app-day{display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:9px 3px}
-.art .app-date{font-weight:650;background:#e6ebe3;border-radius:5px;padding:2px 6px}
-.art .app-drinks{background:#fff;border:1px solid #dde3d8;border-radius:12px;padding:9px 12px 10px}
-.art .app-measure{font-size:12px;font-weight:750;margin:0}
-.art .app-step{display:flex;justify-content:center;align-items:center;gap:28px;height:45px}
-.art .app-minus,.art .app-plus{width:29px;height:29px;line-height:27px;text-align:center;background:#e5efe5;color:#30674f;border-radius:50%;font-size:21px;font-weight:750}
-.art .app-value{font-size:36px;line-height:1;color:#397553;font-weight:800;min-width:32px;text-align:center}
-.art .app-state{font-size:19px;line-height:1.15;font-weight:750;text-align:center;color:#426553;margin:2px 0 0}
-.art .mockup-caption{position:absolute;right:0;bottom:-16px;font-size:7px;letter-spacing:1px;color:#bdcdc6}

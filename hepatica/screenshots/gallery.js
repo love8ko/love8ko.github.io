@@ -1,6 +1,6 @@
 'use strict';
 (async()=>{
-  const data=await fetch('gallery.json?v=r3',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json();});
+  const data=await fetch('gallery.json?v=r4',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json();});
   const frames=data.frames,grid=document.getElementById('gallery'),dialog=document.getElementById('lightbox'),viewer=document.getElementById('viewer');let active=0,opener;
   document.getElementById('revision').textContent=data.revision;
   const setZoom=on=>{viewer.classList.toggle('zoomed',on);document.getElementById('zoom').setAttribute('aria-pressed',String(on));document.getElementById('zoom').textContent=on?'Fit to view':'Zoom 100%';};

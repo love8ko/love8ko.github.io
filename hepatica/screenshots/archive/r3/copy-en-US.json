@@ -1,0 +1,71 @@
+{
+  "locale": "en-US",
+  "revision": "r3",
+  "direction": "People in everyday liver-care situations",
+  "brand": "Hepatica",
+  "exampleLabel": "Concept",
+  "footer": "Illustrative concept",
+  "frames": [
+    {
+      "id": "H01",
+      "headline": [
+        "Fatty Liver?",
+        "What Now?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-morning-results.png",
+      "scene": "A woman pauses before work, comparing a results sheet with her phone at the kitchen table.",
+      "cardTitle": "HEPATICA COACH",
+      "focus": "Ask your liver question",
+      "icon": "chat",
+      "jtbd": "A fatty liver finding leaves me unsure what it means or where to start.",
+      "claims": [
+        "coach"
+      ],
+      "prompt": "prompts/r3-morning-results.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "sceneLabel": "Liver results"
+    },
+    {
+      "id": "H02",
+      "headline": [
+        "Liver in Mind.",
+        "What to Eat?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "FOOD, EXPLAINED",
+      "focus": "Scan your meal",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session."
+    },
+    {
+      "id": "H03",
+      "headline": [
+        "Less Alcohol.",
+        "Still You."
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "YOUR ALCOHOL LOG",
+      "focus": "Log an alcohol-free day",
+      "icon": "calendar",
+      "jtbd": "After stopping drinking, I want to record my own days and observations without being judged.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session."
+    }
+  ]
+}
