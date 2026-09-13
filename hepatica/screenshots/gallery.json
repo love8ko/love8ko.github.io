@@ -1,7 +1,7 @@
 {
   "locale": "en-US",
-  "revision": "r2",
-  "direction": "Liver first · image-led",
+  "revision": "r3",
+  "direction": "People in everyday liver-care situations",
   "brand": "Hepatica",
   "exampleLabel": "Concept",
   "footer": "Illustrative concept",
@@ -9,13 +9,13 @@
     {
       "id": "H01",
       "headline": [
-        "Fatty",
-        "Liver?"
+        "Fatty Liver?",
+        "What Now?"
       ],
       "accent": 1,
       "subline": [],
-      "asset": "r2-fatty-liver.png",
-      "scene": "A large sculptural liver with a conceptual cutaway showing enlarged golden lipid droplets within the tissue.",
+      "asset": "r3-morning-results.png",
+      "scene": "A woman pauses before work, comparing a results sheet with her phone at the kitchen table.",
       "cardTitle": "HEPATICA COACH",
       "focus": "Ask your liver question",
       "icon": "chat",
@@ -23,33 +23,34 @@
       "claims": [
         "coach"
       ],
-      "prompt": "prompts/r2-fatty-liver.txt",
-      "visualLimit": "Stylized educational fat metaphor; not patient anatomy, histology or a clinical diagnosis.",
+      "prompt": "prompts/r3-morning-results.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "sceneLabel": "Liver results",
       "locale": "en-US",
-      "revision": "r2",
+      "revision": "r3",
       "readiness": "concept",
       "approval": null,
-      "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
+      "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
       "dimensions": [
         1320,
         2868
       ],
-      "preview": "previews/H01-r2.jpg",
-      "original": "originals/H01-r2.png",
-      "sourceAsset": "sources/r2-fatty-liver.png",
-      "sourceAssetSHA256": "a2221cb16d0f5ef582129b2068d1a5d19e40fb03ebb0fa33d7afaef51ca831e6",
-      "copySHA256": "0ee075c3b4d1a74dfba7e6968d823dbb3cac4944e0b6f5b531538fd5f137922c"
+      "preview": "previews/H01-r3.jpg",
+      "original": "originals/H01-r3.png",
+      "sourceAsset": "sources/r3-morning-results.png",
+      "sourceAssetSHA256": "8b06bf92d084a0c0a4f3be1ef6ff54649323bf749ec87054fff74b011b6d2d08",
+      "copySHA256": "c61fee30cf7c76e9205da0eb934486ebb0595b46e445c6fb477f580fc097a8c9"
     },
     {
       "id": "H02",
       "headline": [
-        "What Can",
-        "I Eat?"
+        "Liver in Mind.",
+        "What to Eat?"
       ],
       "accent": 1,
       "subline": [],
-      "asset": "r2-liver-meal.png",
-      "scene": "An anatomical liver model floats separately above an ordinary plate of pasta, chicken and vegetables.",
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
       "cardTitle": "FOOD, EXPLAINED",
       "focus": "Scan your meal",
       "icon": "scan",
@@ -57,33 +58,33 @@
       "claims": [
         "meal-scan"
       ],
-      "prompt": "prompts/r2-liver-meal.txt",
-      "visualLimit": "Educational liver symbol is separate from the meal. No food safety verdict or specific substitution is claimed.",
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
       "locale": "en-US",
-      "revision": "r2",
+      "revision": "r3",
       "readiness": "concept",
       "approval": null,
-      "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
+      "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
       "dimensions": [
         1320,
         2868
       ],
-      "preview": "previews/H02-r2.jpg",
-      "original": "originals/H02-r2.png",
-      "sourceAsset": "sources/r2-liver-meal.png",
-      "sourceAssetSHA256": "f9e2abc43bf66a3dae3eb37ac6f13c69f9a92f987d79cad7d6954209ac61de48",
-      "copySHA256": "c78c53ac830ac47481bd9747b9ab95082c625b3c36777fd8721556185d8a25c0"
+      "preview": "previews/H02-r3.jpg",
+      "original": "originals/H02-r3.png",
+      "sourceAsset": "sources/r3-cafe-meal.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "adbfc89e938ab535aecedafe160e543043f5985682816dad66e23710db027e9d"
     },
     {
       "id": "H03",
       "headline": [
-        "Stopped",
-        "Drinking?"
+        "Less Alcohol.",
+        "Still You."
       ],
       "accent": 1,
       "subline": [],
-      "asset": "r2-liver-alcohol.png",
-      "scene": "A liver model above an ordinary scene where a hand sets a wine glass aside; water is nearby.",
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
       "cardTitle": "YOUR ALCOHOL LOG",
       "focus": "Log an alcohol-free day",
       "icon": "calendar",
@@ -91,28 +92,28 @@
       "claims": [
         "dated-logs"
       ],
-      "prompt": "prompts/r2-liver-alcohol.txt",
-      "visualLimit": "Alcohol-specific context, not an explanation of all fatty liver. No repair, recovery timeline or treatment efficacy depicted.",
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
       "locale": "en-US",
-      "revision": "r2",
+      "revision": "r3",
       "readiness": "concept",
       "approval": null,
-      "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
+      "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
       "dimensions": [
         1320,
         2868
       ],
-      "preview": "previews/H03-r2.jpg",
-      "original": "originals/H03-r2.png",
-      "sourceAsset": "sources/r2-liver-alcohol.png",
-      "sourceAssetSHA256": "181e97428a8025339da7e25a8359f899ef762bd58a86647baed82e7ce4379fa1",
-      "copySHA256": "08ded7e3c1e246e876a694520c5f67b93f8cf00958b3a736c049cf3c70b66d1e"
+      "preview": "previews/H03-r3.jpg",
+      "original": "originals/H03-r3.png",
+      "sourceAsset": "sources/r3-dinner-choice.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "b7f983ebe905d1f9591fb46cf8d6ba67dbdf7001a7352d43344917f6b3cd2391"
     }
   ],
   "status": "For review",
   "readiness": "concept",
   "approval": null,
-  "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
+  "sourceProductCommit": "2ca0c011ca2ca78f7e51ebcf4bc9398ebdf5a9f7",
   "sourceBranch": "love8ko/1",
   "screenshotBranch": "love8ko/appstore-screenshots-brief",
   "dimensions": [

@@ -1,0 +1,49 @@
+{
+  "revision": "r2",
+  "approval": null,
+  "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
+  "files": [
+    {
+      "id": "H01",
+      "revision": "r2",
+      "sha256": "cda3bbb9097e00a0b688549ba0f5251f8d3e72073f6365e371dd2eca206878c2",
+      "copySHA256": "0ee075c3b4d1a74dfba7e6968d823dbb3cac4944e0b6f5b531538fd5f137922c",
+      "sourceAssetSHA256": "a2221cb16d0f5ef582129b2068d1a5d19e40fb03ebb0fa33d7afaef51ca831e6",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "alpha": false,
+      "color": "RGB",
+      "bytes": 2192615
+    },
+    {
+      "id": "H02",
+      "revision": "r2",
+      "sha256": "bab69839a2730feb7d60032735e184ff7232828ef8de209def049b0f6b59d070",
+      "copySHA256": "c78c53ac830ac47481bd9747b9ab95082c625b3c36777fd8721556185d8a25c0",
+      "sourceAssetSHA256": "f9e2abc43bf66a3dae3eb37ac6f13c69f9a92f987d79cad7d6954209ac61de48",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "alpha": false,
+      "color": "RGB",
+      "bytes": 2735505
+    },
+    {
+      "id": "H03",
+      "revision": "r2",
+      "sha256": "4c26e9e9bf77b30e7246442dbb8e20c407fc2fd544cca69439c884fd61615f1e",
+      "copySHA256": "08ded7e3c1e246e876a694520c5f67b93f8cf00958b3a736c049cf3c70b66d1e",
+      "sourceAssetSHA256": "181e97428a8025339da7e25a8359f899ef762bd58a86647baed82e7ce4379fa1",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "alpha": false,
+      "color": "RGB",
+      "bytes": 1941669
+    }
+  ]
+}
