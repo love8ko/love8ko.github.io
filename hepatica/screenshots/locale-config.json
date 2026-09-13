@@ -1,0 +1,460 @@
+{
+  "version": "r12",
+  "targetAppVersion": "2.0",
+  "defaultLocale": "en-US",
+  "localeCount": 50,
+  "screenshotCount": 400,
+  "review": "machine draft plus independent local back-translation and visual QA",
+  "locales": [
+    {
+      "code": "ar-SA",
+      "label": "العربية",
+      "lang": "ar-SA",
+      "dir": "rtl",
+      "data": "locales/ar-SA/gallery.json",
+      "contactSheet": "locales/ar-SA/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "bn-BD",
+      "label": "বাংলা",
+      "lang": "bn-BD",
+      "dir": "ltr",
+      "data": "locales/bn-BD/gallery.json",
+      "contactSheet": "locales/bn-BD/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "ca",
+      "label": "Català",
+      "lang": "ca",
+      "dir": "ltr",
+      "data": "locales/ca/gallery.json",
+      "contactSheet": "locales/ca/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "zh-Hans",
+      "label": "简体中文",
+      "lang": "zh-Hans",
+      "dir": "ltr",
+      "data": "locales/zh-Hans/gallery.json",
+      "contactSheet": "locales/zh-Hans/contact-sheet.html",
+      "status": "approved-master"
+    },
+    {
+      "code": "zh-Hant",
+      "label": "繁體中文",
+      "lang": "zh-Hant",
+      "dir": "ltr",
+      "data": "locales/zh-Hant/gallery.json",
+      "contactSheet": "locales/zh-Hant/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "hr",
+      "label": "Hrvatski",
+      "lang": "hr",
+      "dir": "ltr",
+      "data": "locales/hr/gallery.json",
+      "contactSheet": "locales/hr/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "cs",
+      "label": "Čeština",
+      "lang": "cs",
+      "dir": "ltr",
+      "data": "locales/cs/gallery.json",
+      "contactSheet": "locales/cs/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "da",
+      "label": "Dansk",
+      "lang": "da",
+      "dir": "ltr",
+      "data": "locales/da/gallery.json",
+      "contactSheet": "locales/da/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "nl-NL",
+      "label": "Nederlands",
+      "lang": "nl-NL",
+      "dir": "ltr",
+      "data": "locales/nl-NL/gallery.json",
+      "contactSheet": "locales/nl-NL/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "en-AU",
+      "label": "English (Australia)",
+      "lang": "en-AU",
+      "dir": "ltr",
+      "data": "locales/en-AU/gallery.json",
+      "contactSheet": "locales/en-AU/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "en-CA",
+      "label": "English (Canada)",
+      "lang": "en-CA",
+      "dir": "ltr",
+      "data": "locales/en-CA/gallery.json",
+      "contactSheet": "locales/en-CA/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "en-GB",
+      "label": "English (UK)",
+      "lang": "en-GB",
+      "dir": "ltr",
+      "data": "locales/en-GB/gallery.json",
+      "contactSheet": "locales/en-GB/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "en-US",
+      "label": "English (US)",
+      "lang": "en-US",
+      "dir": "ltr",
+      "data": "locales/en-US/gallery.json",
+      "contactSheet": "locales/en-US/contact-sheet.html",
+      "status": "approved-master"
+    },
+    {
+      "code": "fi",
+      "label": "Suomi",
+      "lang": "fi",
+      "dir": "ltr",
+      "data": "locales/fi/gallery.json",
+      "contactSheet": "locales/fi/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "fr-FR",
+      "label": "Français (France)",
+      "lang": "fr-FR",
+      "dir": "ltr",
+      "data": "locales/fr-FR/gallery.json",
+      "contactSheet": "locales/fr-FR/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "fr-CA",
+      "label": "Français (Canada)",
+      "lang": "fr-CA",
+      "dir": "ltr",
+      "data": "locales/fr-CA/gallery.json",
+      "contactSheet": "locales/fr-CA/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "de-DE",
+      "label": "Deutsch",
+      "lang": "de-DE",
+      "dir": "ltr",
+      "data": "locales/de-DE/gallery.json",
+      "contactSheet": "locales/de-DE/contact-sheet.html",
+      "status": "approved-master"
+    },
+    {
+      "code": "el",
+      "label": "Ελληνικά",
+      "lang": "el",
+      "dir": "ltr",
+      "data": "locales/el/gallery.json",
+      "contactSheet": "locales/el/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "gu-IN",
+      "label": "ગુજરાતી",
+      "lang": "gu-IN",
+      "dir": "ltr",
+      "data": "locales/gu-IN/gallery.json",
+      "contactSheet": "locales/gu-IN/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "he",
+      "label": "עברית",
+      "lang": "he",
+      "dir": "rtl",
+      "data": "locales/he/gallery.json",
+      "contactSheet": "locales/he/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "hi",
+      "label": "हिन्दी",
+      "lang": "hi",
+      "dir": "ltr",
+      "data": "locales/hi/gallery.json",
+      "contactSheet": "locales/hi/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "hu",
+      "label": "Magyar",
+      "lang": "hu",
+      "dir": "ltr",
+      "data": "locales/hu/gallery.json",
+      "contactSheet": "locales/hu/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "id",
+      "label": "Bahasa Indonesia",
+      "lang": "id",
+      "dir": "ltr",
+      "data": "locales/id/gallery.json",
+      "contactSheet": "locales/id/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "it",
+      "label": "Italiano",
+      "lang": "it",
+      "dir": "ltr",
+      "data": "locales/it/gallery.json",
+      "contactSheet": "locales/it/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "ja",
+      "label": "日本語",
+      "lang": "ja",
+      "dir": "ltr",
+      "data": "locales/ja/gallery.json",
+      "contactSheet": "locales/ja/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "kn-IN",
+      "label": "ಕನ್ನಡ",
+      "lang": "kn-IN",
+      "dir": "ltr",
+      "data": "locales/kn-IN/gallery.json",
+      "contactSheet": "locales/kn-IN/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "ko",
+      "label": "한국어",
+      "lang": "ko",
+      "dir": "ltr",
+      "data": "locales/ko/gallery.json",
+      "contactSheet": "locales/ko/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "ms",
+      "label": "Bahasa Melayu",
+      "lang": "ms",
+      "dir": "ltr",
+      "data": "locales/ms/gallery.json",
+      "contactSheet": "locales/ms/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "ml-IN",
+      "label": "മലയാളം",
+      "lang": "ml-IN",
+      "dir": "ltr",
+      "data": "locales/ml-IN/gallery.json",
+      "contactSheet": "locales/ml-IN/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "mr-IN",
+      "label": "मराठी",
+      "lang": "mr-IN",
+      "dir": "ltr",
+      "data": "locales/mr-IN/gallery.json",
+      "contactSheet": "locales/mr-IN/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "no",
+      "label": "Norsk",
+      "lang": "no",
+      "dir": "ltr",
+      "data": "locales/no/gallery.json",
+      "contactSheet": "locales/no/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "or-IN",
+      "label": "ଓଡ଼ିଆ",
+      "lang": "or-IN",
+      "dir": "ltr",
+      "data": "locales/or-IN/gallery.json",
+      "contactSheet": "locales/or-IN/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "pl",
+      "label": "Polski",
+      "lang": "pl",
+      "dir": "ltr",
+      "data": "locales/pl/gallery.json",
+      "contactSheet": "locales/pl/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "pt-BR",
+      "label": "Português (Brasil)",
+      "lang": "pt-BR",
+      "dir": "ltr",
+      "data": "locales/pt-BR/gallery.json",
+      "contactSheet": "locales/pt-BR/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "pt-PT",
+      "label": "Português (Portugal)",
+      "lang": "pt-PT",
+      "dir": "ltr",
+      "data": "locales/pt-PT/gallery.json",
+      "contactSheet": "locales/pt-PT/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "pa-IN",
+      "label": "ਪੰਜਾਬੀ",
+      "lang": "pa-IN",
+      "dir": "ltr",
+      "data": "locales/pa-IN/gallery.json",
+      "contactSheet": "locales/pa-IN/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "ro",
+      "label": "Română",
+      "lang": "ro",
+      "dir": "ltr",
+      "data": "locales/ro/gallery.json",
+      "contactSheet": "locales/ro/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "ru",
+      "label": "Русский",
+      "lang": "ru",
+      "dir": "ltr",
+      "data": "locales/ru/gallery.json",
+      "contactSheet": "locales/ru/contact-sheet.html",
+      "status": "approved-master"
+    },
+    {
+      "code": "sk",
+      "label": "Slovenčina",
+      "lang": "sk",
+      "dir": "ltr",
+      "data": "locales/sk/gallery.json",
+      "contactSheet": "locales/sk/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "sl-SI",
+      "label": "Slovenščina",
+      "lang": "sl-SI",
+      "dir": "ltr",
+      "data": "locales/sl-SI/gallery.json",
+      "contactSheet": "locales/sl-SI/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "es-MX",
+      "label": "Español (México)",
+      "lang": "es-MX",
+      "dir": "ltr",
+      "data": "locales/es-MX/gallery.json",
+      "contactSheet": "locales/es-MX/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "es-ES",
+      "label": "Español (España)",
+      "lang": "es-ES",
+      "dir": "ltr",
+      "data": "locales/es-ES/gallery.json",
+      "contactSheet": "locales/es-ES/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "sv",
+      "label": "Svenska",
+      "lang": "sv",
+      "dir": "ltr",
+      "data": "locales/sv/gallery.json",
+      "contactSheet": "locales/sv/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "ta-IN",
+      "label": "தமிழ்",
+      "lang": "ta-IN",
+      "dir": "ltr",
+      "data": "locales/ta-IN/gallery.json",
+      "contactSheet": "locales/ta-IN/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "te-IN",
+      "label": "తెలుగు",
+      "lang": "te-IN",
+      "dir": "ltr",
+      "data": "locales/te-IN/gallery.json",
+      "contactSheet": "locales/te-IN/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "th",
+      "label": "ไทย",
+      "lang": "th",
+      "dir": "ltr",
+      "data": "locales/th/gallery.json",
+      "contactSheet": "locales/th/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "tr",
+      "label": "Türkçe",
+      "lang": "tr",
+      "dir": "ltr",
+      "data": "locales/tr/gallery.json",
+      "contactSheet": "locales/tr/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "uk",
+      "label": "Українська",
+      "lang": "uk",
+      "dir": "ltr",
+      "data": "locales/uk/gallery.json",
+      "contactSheet": "locales/uk/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "ur-PK",
+      "label": "اردو",
+      "lang": "ur-PK",
+      "dir": "rtl",
+      "data": "locales/ur-PK/gallery.json",
+      "contactSheet": "locales/ur-PK/contact-sheet.html",
+      "status": "ready-after-double-review"
+    },
+    {
+      "code": "vi",
+      "label": "Tiếng Việt",
+      "lang": "vi",
+      "dir": "ltr",
+      "data": "locales/vi/gallery.json",
+      "contactSheet": "locales/vi/contact-sheet.html",
+      "status": "ready-after-double-review"
+    }
+  ]
+}

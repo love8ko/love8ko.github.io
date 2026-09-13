@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "ms",
+  "label": "Bahasa Melayu",
+  "lang": "ms",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Ujian Hati",
+        "Diterangkan"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "MULAI DENGAN HASIL ANDA",
+      "focus": "Tambahkan laporan hati anda",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ms:H01-A",
+      "locale": "ms",
+      "localeName": "Bahasa Melayu",
+      "direction": "ltr",
+      "footer": "Konsep ilustratif",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ms/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ms/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "47ba685ac61626ff35ffbbc884d7465d74317d18b71ec821ca6989722b85bfc2"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Hati dalam Pikiran",
+        "Makan apa?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "MAKANAN, DITERANGKAN",
+      "focus": "Skenarikan makanan anda",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ms:H02-A",
+      "locale": "ms",
+      "localeName": "Bahasa Melayu",
+      "direction": "ltr",
+      "footer": "Konsep ilustratif",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ms/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ms/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "faa46b6855474e2add314b275dc05a07b539488e8beb31dd7d382684189b8127"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Kurangi Alkohol",
+        "Masih Anda"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "REKOD HARIAN ANDA",
+      "focus": "Catat minuman alkohol anda",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "SKRIN APLIKASI ILUSTRATIF",
+        "cancel": "Batal",
+        "title": "Catat minuman",
+        "save": "Simpan",
+        "dayLabel": "Hari",
+        "day": "13 Sept 2026",
+        "measure": "Minuman standard",
+        "value": "0",
+        "state": "Hari tanpa alkohol",
+        "clock": "9:41",
+        "count": "0 hari tanpa alkohol dalam 30 hari terakhir",
+        "disclaimer": "Pemantauan alkohol adalah untuk kesedaran peribadi. Untuk sokongan untuk kegunaan alkohol yang tidak terkawal, konsultasikan dengan doktor atau konselor yang berlesen."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ms:H03-A",
+      "locale": "ms",
+      "localeName": "Bahasa Melayu",
+      "direction": "ltr",
+      "footer": "Konsep ilustratif",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ms/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ms/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "7a37fb10421358cd9eff8e30525b371096cd1968ccdd9ba8e3a0f8f0b91fb612"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Tanya Tentang",
+        "Hati Anda"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "JAWAPAN YANG BERKEMBANG UNTUK DIKENANGI",
+      "focus": "Soalan anda, lebih jelas",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "Satu langkah yang berguna",
+        "back": "Kembali",
+        "action": "",
+        "heading": "Mari kita jadikan ini lebih jelas",
+        "contextLabel": "Apa yang menjadi asas kepada keputusan ini",
+        "context": "Laporan ultrasonik saya menyatakan hati berlemak",
+        "answer": "Ultrasonik boleh menunjukkan lemak dalam hati, tetapi ia tidak menunjukkan berapa banyak peradangan atau parut yang hadir",
+        "resultLabel": "Simpan keputusan ini untuk kemudian (pilihan)",
+        "questions": [
+          "Apa ujian yang perlu saya tanya doktor saya untuk tempoh seterusnya?"
+        ],
+        "button": "Simpan keputusan ini",
+        "example": "Contoh · potongan keputusan"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "ms:H04-A",
+      "locale": "ms",
+      "localeName": "Bahasa Melayu",
+      "direction": "ltr",
+      "footer": "Konsep ilustratif",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ms/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ms/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "e97952f4eb0adb814f7ddb8f8686cba3a6b242757be11db429828f42b6416df0"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Lawatan Doktor",
+        "Bawa Ringkasan"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "SOALAN ANDA, DIPERBENDAHARA",
+      "focus": "Bawa soalan yang penting",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Ringkasan Doktor",
+        "back": "",
+        "action": "Jana",
+        "label": "Soalan untuk pemberi ubat",
+        "questions": [
+          "Apa yang bermaksud keputusan hati saya?",
+          "Apa yang perlu saya pantau sebelum lawatan saya yang seterusnya?"
+        ],
+        "add": "Tambahkan soalan",
+        "example": "Contoh · editor detail"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "ms:H05-A",
+      "locale": "ms",
+      "localeName": "Bahasa Melayu",
+      "direction": "ltr",
+      "footer": "Konsep ilustratif",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ms/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ms/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "e3d9605a39863475736387c1bc57f9f8f2712090882782c5d9e9a906b4f0a6cb"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Hasil yang Lalu",
+        "Mudah Ditemui"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "BUKA HASIL YANG LALU ANDA",
+      "focus": "Cari tanpa mencari di atas kertas",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Hasil yang Disimpan",
+        "back": "",
+        "action": "Selesai",
+        "summary": "2 hasil yang disimpan · 0 langkah berikutnya yang selesai",
+        "items": [
+          {
+            "title": "Saya ingin memahami hasil ujian makmal saya",
+            "text": "Apa yang bermaksud istilah-istilah ujian hati ini?",
+            "date": "13 September 2026"
+          },
+          {
+            "title": "Saya telah diberitahu tentang masalah hati",
+            "text": "Apa yang saya perlu tanya dalam temu janji saya yang akan datang?",
+            "date": "10 September 2026"
+          }
+        ],
+        "example": "Contoh · entri yang disimpan"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "ms:H06-A",
+      "locale": "ms",
+      "localeName": "Bahasa Melayu",
+      "direction": "ltr",
+      "footer": "Konsep ilustratif",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ms/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ms/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "6e6433ce80211d23fe2c637097eb077c255a2c6073fc13b66e9b4aa4d8373207"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Malam yang Buruk?",
+        "Catatkan Catatan"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "INGAT APA YANG BERLAKU",
+      "focus": "Gejala anda, dengan tarikh",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Catat gejala",
+        "back": "",
+        "action": "Simpan",
+        "dayLabel": "Hari",
+        "day": "13 Sep 2026",
+        "typeLabel": "GEJALA",
+        "type": "Tidur buruk",
+        "severityLabel": "KEPARAH · 3/5",
+        "severity": 3,
+        "scale": "1 = ringan · 5 = parah",
+        "noteLabel": "CATATAN · PENDAHULUAN",
+        "note": "Bangun beberapa kali semalam",
+        "example": "Contoh · butiran borang gejala"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "ms:H07-A",
+      "locale": "ms",
+      "localeName": "Bahasa Melayu",
+      "direction": "ltr",
+      "footer": "Konsep ilustratif",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ms/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ms/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "b332806c57bf66cb325cdbc66bb522c0146c5364becda63019fc5e861e6ca816"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Catatkan",
+        "Penggunaan ubat"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "APA YANG ANDA AMALKAN DAN KAPAN",
+      "focus": "Simpan butiran penggunaan ubat anda",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Catat penggunaan ubat",
+        "back": "",
+        "action": "Simpan",
+        "dayLabel": "Hari",
+        "day": "13 Sept 2026",
+        "nameLabel": "UBAT ATAU SUPLEMENT",
+        "name": "Ubat yang saya terima",
+        "doseLabel": "KUANTITI · PENDAHULUAN",
+        "dose": "",
+        "disclaimer": "Suplement mungkin berinteraksi dengan ubat. Bincang dengan doktor anda sebelum mengambil suplement baru. Hepatica tidak pernah menasihati kuantiti.",
+        "example": "Contoh · butiran borang penggunaan ubat"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "ms:H08-A",
+      "locale": "ms",
+      "localeName": "Bahasa Melayu",
+      "direction": "ltr",
+      "footer": "Konsep ilustratif",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ms/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ms/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "dee1e93de38d6bd9d0d662fd388e7b87e087306bdba3ff58ae4e4e44a399c200"
+    }
+  ]
+}

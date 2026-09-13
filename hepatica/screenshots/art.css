@@ -93,7 +93,12 @@
 /* One headline size across all eight; shorter copy instead of shrinking later frames. */
 .art h1{font-size:60px;letter-spacing:-3.2px;line-height:1.04}
 .art[lang="zh-Hans"]{font-family:"Hiragino Sans GB","PingFang SC",sans-serif}
-.art[lang="zh-Hans"] h1{font-weight:800;letter-spacing:-1px}
+.art[lang="zh-Hant"],.art[lang="ja"],.art[lang="ko"]{font-family:-apple-system,"Hiragino Sans","PingFang TC",sans-serif}
+.art[lang="ar-SA"],.art[lang="he"],.art[lang="ur-PK"],.art[lang="hi"],.art[lang="bn-BD"],.art[lang="gu-IN"],.art[lang="kn-IN"],.art[lang="ml-IN"],.art[lang="mr-IN"],.art[lang="or-IN"],.art[lang="pa-IN"],.art[lang="ta-IN"],.art[lang="te-IN"],.art[lang="th"]{font-family:-apple-system,"Noto Sans",sans-serif}
+.art[dir="rtl"] .head{text-align:right}.art[dir="rtl"] footer{direction:rtl}.art[dir="rtl"] .action-strip,.art[dir="rtl"] .product-question,.art[dir="rtl"] .visit-question{direction:rtl}.art[dir="rtl"] .product-benefit{text-align:center}
+.art.localized-dense .product-body{padding-top:12px;padding-bottom:12px}.art.localized-dense .product-field{padding:10px;margin-bottom:10px}.art.localized-dense .product-answer-text{font-size:16px;line-height:1.32}.art.localized-dense .product-question{padding:9px 8px}.art.localized-dense .product-question p{font-size:15px}.art.localized-dense .visit-question{padding:7px 0}.art.localized-dense .visit-question p{font-size:16px}.art.localized-dense .history-entry{padding:12px 11px;margin-bottom:9px}.art.localized-dense .history-question{font-size:18px;margin-bottom:11px}.art.localized-dense .history-task{font-size:11px;margin-bottom:7px}.art.localized-dense .product-disclaimer,.art.localized-dense .medication-disclaimer{font-size:9px;line-height:1.35}
+.art.localized-dense .product-body{padding-top:8px;padding-bottom:8px}
+.art[lang="zh-Hans"] h1,.art[lang="zh-Hant"] h1,.art[lang="ja"] h1,.art[lang="ko"] h1{font-weight:800;letter-spacing:-1px}
 .art[lang="zh-Hans"] .focus,.art[lang="zh-Hans"] .mockup-action,.art[lang="zh-Hans"] .product-title,.art[lang="zh-Hans"] .product-field-value{letter-spacing:0}
 .product-art{background:radial-gradient(ellipse at 80% 50%,#2b5549 0%,#102f2d 68%)}
 .product-photo{position:absolute;object-fit:cover}

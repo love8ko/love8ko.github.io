@@ -2,7 +2,7 @@
 window.hepaticaLayout=function(f,shared){
  if(f.product)return window.hepaticaProductLayout(f,shared);
  const el=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls;if(text!==undefined)n.textContent=text;return n;};
- const art=el('article','art '+(f.slot||f.id)+' variant-'+(f.variant||''));art.lang=f.locale||'en-US';art.dataset.frame=f.id;
+ const art=el('article','art '+(f.slot||f.id)+' variant-'+(f.variant||''));art.lang=f.locale||'en-US';art.dir=f.direction||'ltr';art.dataset.frame=f.id;
  const photo=el('img','photo');photo.src='assets/'+f.asset;photo.alt=f.scene;art.append(photo);
  const head=el('div','head'),h=el('h1','');f.headline.forEach((s,i)=>h.append(el('span',i===f.accent?'accent':'',s)));head.append(h);if(f.subline?.length)head.append(el('p','subline',f.subline.join(' ')));if(f.bullets?.length){const list=el('ul','benefit-bullets');f.bullets.forEach(text=>list.append(el('li','',text)));head.append(list);}art.append(head);
  const paths={chat:'<path d="M20 11a8 8 0 0 1-8 8H5l-4 3 1-7a8 8 0 0 1 10-12 8 8 0 0 1 8 8Z"/><path d="M7 9h7M7 13h5"/>',scan:'<path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/><path d="M8 9h8v7H8zM10 9l1-2h2l1 2"/><circle cx="12" cy="12.5" r="1.6"/>',calendar:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 2v6M17 2v6M3 10h18M8 15l3 3 5-5"/>'};

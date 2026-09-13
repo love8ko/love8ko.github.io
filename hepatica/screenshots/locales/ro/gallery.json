@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "ro",
+  "label": "Română",
+  "lang": "ro",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Teste de ficat",
+        "Explicat"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "Începe cu rezultatele tale",
+      "focus": "Adaugă raportul tău de ficat",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ro:H01-A",
+      "locale": "ro",
+      "localeName": "Română",
+      "direction": "ltr",
+      "footer": "Concept ilustrativ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ro/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ro/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "32a896ab3180f2b0901274bc36126d39f99bc3ab2926e0c10543ffa9a7d36f90"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Ficatul în minte",
+        "Ce să mănânci?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "ALIMENTE, EXPlicat",
+      "focus": "Scanează masa ta",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ro:H02-A",
+      "locale": "ro",
+      "localeName": "Română",
+      "direction": "ltr",
+      "footer": "Concept ilustrativ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ro/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ro/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "272f2697b3b440a6db63888b0db00ef110709f407aed462e6a05e49029932d92"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Mai puțin alcool",
+        "Încă tu"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "ÎNREGISTRAREA ZILEI TA",
+      "focus": "Notează băuturile",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "ECRAN ILUSTRATIV AL APLICAȚIEI",
+        "cancel": "Anulare",
+        "title": "Înregistrează o băutură",
+        "save": "Salvează",
+        "dayLabel": "Zi",
+        "day": "13 sept 2026",
+        "measure": "Băuturi standard",
+        "value": "0",
+        "state": "Zi fără alcool",
+        "clock": "9:41",
+        "count": "0 zile fără alcool în ultimele 30 de zile",
+        "disclaimer": "Monitorizarea alcoolului este pentru conștientizarea personală. Pentru sprijin în cazul tulburării de consum alcoolic, consultați un medic sau un consilier certificat."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ro:H03-A",
+      "locale": "ro",
+      "localeName": "Română",
+      "direction": "ltr",
+      "footer": "Concept ilustrativ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ro/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ro/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "7b280f39c2b6ae8f164e533fa97796f4604a8cd77ad8ee52bb526b3a0300b2d8"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Întreabă Despre",
+        "Ficatul Tău"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "UN RĂSPUNS UTIL DE ȚINUT",
+      "focus": "Întrebarea ta, mai clară",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "Un pas util",
+        "back": "Înapoi",
+        "action": "",
+        "heading": "Să facem acest lucru mai clar",
+        "contextLabel": "Ce se bazează pe acest rezultat",
+        "context": "Raportul meu de ultrasonografie spune ficat gras",
+        "answer": "Ultrasonografia poate arăta grăsimea în ficat, dar nu indică câtă inflamație sau țesut cicatricial este prezent",
+        "resultLabel": "Ține o întrebare pentru mai târziu (opțional)",
+        "questions": [
+          "Ce teste ar trebui să cer doctorului în continuare?"
+        ],
+        "button": "Salvează acest rezultat",
+        "example": "Exemplu · extragere din rezultat"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "ro:H04-A",
+      "locale": "ro",
+      "localeName": "Română",
+      "direction": "ltr",
+      "footer": "Concept ilustrativ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ro/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ro/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "bc51340c0340815f149825ccda414a4cccf3a778a3dbd8e5fb9ade31dd990d16"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Vizita cu medicul",
+        "Aduce un Rezumat"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "ÎNTREBĂRILE TALE, PREPAREază",
+      "focus": "Aduce întrebările care contează",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Rezumat pentru medic",
+        "back": "",
+        "action": "Generează",
+        "label": "Întrebări pentru prescrieră",
+        "questions": [
+          "Ce înseamnă rezultatele mele de ficat?",
+          "Ce ar trebui să urmăresc înainte de următoarea vizită?"
+        ],
+        "add": "Adaugă o întrebare",
+        "example": "Exemplu · detaliu editor"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "ro:H05-A",
+      "locale": "ro",
+      "localeName": "Română",
+      "direction": "ltr",
+      "footer": "Concept ilustrativ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ro/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ro/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "e6bfbeabfeba9eccc34a22f8bb6aa8ce7d0bac660dbe6bd4bbb06cb98e8505fa"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Rezultate anterioare",
+        "Ușor de găsit"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "DESCARCAȚI REZULTATELE VOSTRE ANTERIOARE",
+      "focus": "Găsește-le fără a căuta prin hârtie",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Rezultate salvate",
+        "back": "",
+        "action": "Finalizat",
+        "summary": "2 rezultate salvate · 0 pași următori marcați ca finalizați",
+        "items": [
+          {
+            "title": "Vreau să înțeleg rezultatele mele de laborator",
+            "text": "Ce înseamnă aceste termeni ai testelor de ficat?",
+            "date": "13 septembrie 2026"
+          },
+          {
+            "title": "Mi s-a spus despre o problemă de ficat",
+            "text": "Ce ar trebui să întreb la următoarea mea vizită?",
+            "date": "10 septembrie 2026"
+          }
+        ],
+        "example": "Exemplu · intrări salvate"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "ro:H06-A",
+      "locale": "ro",
+      "localeName": "Română",
+      "direction": "ltr",
+      "footer": "Concept ilustrativ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ro/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ro/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "9cfdbd0b44d378a1a5c9c5933a3d5c3695c513add7aab1cca32f6ecb778df9c2"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Noapte proastă?",
+        "Fă o notă"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "REMEMBER CE A ÎNȚÂMPLAT",
+      "focus": "Simptomele tale, cu o dată",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Înregistrează un simptom",
+        "back": "",
+        "action": "Salvează",
+        "dayLabel": "Zi",
+        "day": "13 sept 2026",
+        "typeLabel": "SIMPTOM",
+        "type": "Somn proaspăt",
+        "severityLabel": "GRAVITATE · 3/5",
+        "severity": 3,
+        "scale": "1 = ușor · 5 = grav",
+        "noteLabel": "NOTĂ · OPȚIONAL",
+        "note": "Am trezit de mai multe ori noaptea trecută",
+        "example": "Exemplu · detaliu formular simptom"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "ro:H07-A",
+      "locale": "ro",
+      "localeName": "Română",
+      "direction": "ltr",
+      "footer": "Concept ilustrativ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ro/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ro/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "5b159ca2facee5e90df68a60be12df148867c8d7b807daca1e1d42441cb5484a"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Înregistrează-ți",
+        "Medicație"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "CE AI PRELUAT ȘI CÎND",
+      "focus": "Păstrează detaliile despre medicamentele tale",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Înregistrează medicamente",
+        "back": "",
+        "action": "Salvează",
+        "dayLabel": "Zi",
+        "day": "13 septembrie 2026",
+        "nameLabel": "MEDICAȚIE ȘI SUPPLEMENT",
+        "name": "Medicația prescrisă de mine",
+        "doseLabel": "DOZĂ · OPȚIONAL",
+        "dose": "",
+        "disclaimer": "Suplimentele pot interacționa cu medicamentele. Discută orice supliment nou cu medicul tău. Hepatica nu recomandă doze.",
+        "example": "Exemplu · detaliu formular medicament"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "ro:H08-A",
+      "locale": "ro",
+      "localeName": "Română",
+      "direction": "ltr",
+      "footer": "Concept ilustrativ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ro/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ro/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "8740190819ddf34e04332c14f52d42b5b06fdc1acf3b377821dfd41ce4fd526f"
+    }
+  ]
+}

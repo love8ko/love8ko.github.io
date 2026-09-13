@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "ca",
+  "label": "Català",
+  "lang": "ca",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Tests del fetge",
+        "Explicat"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "Començar amb els teus resultats",
+      "focus": "Afegeix el teu informe del fetge",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ca:H01-A",
+      "locale": "ca",
+      "localeName": "Català",
+      "direction": "ltr",
+      "footer": "Concepte il·lustratiu",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ca/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ca/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "fa4b3c5b4f124076036c698f231ea9f6a7bc417f80cdf31845ef2334fd94da0c"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Fetge i pensament",
+        "Què menjar?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "Aliments, explicat",
+      "focus": "Escaneja el teu menjar",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ca:H02-A",
+      "locale": "ca",
+      "localeName": "Català",
+      "direction": "ltr",
+      "footer": "Concepte il·lustratiu",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ca/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ca/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "744deab02399743a412c514ed88381aad317baaece910e366982d708eb460104"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Menys alcohol",
+        "Encara ets tu"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "El teu registre diari",
+      "focus": "Registra els teus drinks",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "Pantalla il·lustrativa de l'aplicació",
+        "cancel": "Cancel·lar",
+        "title": "Registra un drink",
+        "save": "Desar",
+        "dayLabel": "Dia",
+        "day": "13 set 2026",
+        "measure": "Drinks estàndard",
+        "value": "0",
+        "state": "Dia sense alcohol",
+        "clock": "9:41",
+        "count": "0 dies sense alcohol en els últims 30 dies",
+        "disclaimer": "El seguiment de l'alcohol és per a la consciència personal. Per a suport amb l'ús de l'alcohol, consulta el teu metge o un conseller certificat."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ca:H03-A",
+      "locale": "ca",
+      "localeName": "Català",
+      "direction": "ltr",
+      "footer": "Concepte il·lustratiu",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ca/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ca/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "b8c81e4d7a3a96a1f3cc39c705e763f76cbc5417b0661b63a908afe2a6961498"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Pregunta sobre",
+        "El teu fetge"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "UNA RESPOSTA ÚTIL PER GUARDAR",
+      "focus": "La teva pregunta, més clara",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "Un pas útil",
+        "back": "Tornar enrere",
+        "action": "",
+        "heading": "Fem que això sigui més clar",
+        "contextLabel": "Què aquest resultat s'ha basat",
+        "context": "El meu informe d'ultrasons diu fetge gras",
+        "answer": "L'ultrasonografia pot mostrar greixos al fetge, però no indica quant inflamació o escarramada hi ha",
+        "resultLabel": "Guarda una pregunta per més endavant (opcional)",
+        "questions": [
+          "Quins tests hauria de demanar al meu metge?"
+        ],
+        "button": "Guarda aquest resultat",
+        "example": "Exemple · fragment d'informe"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "ca:H04-A",
+      "locale": "ca",
+      "localeName": "Català",
+      "direction": "ltr",
+      "footer": "Concepte il·lustratiu",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ca/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ca/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "2cf132b1b139e5def73eac0e0ae337494799b7c963caee375af2630bd3821baa"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Visita amb el metge",
+        "Porta un resum"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "TOTES ELS TEVES PREGUNTES, PREPARADES",
+      "focus": "Porta les preguntes que et fan falta",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Resum per al metge",
+        "back": "",
+        "action": "Generar",
+        "label": "Preguntes per al teu metge",
+        "questions": [
+          "Què vol dir aquests resultats del fetge?",
+          "Què hauria de seguir abans de la meva pròxima visita?"
+        ],
+        "add": "Afegeix una pregunta",
+        "example": "Exemple · detall de l'editor"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "ca:H05-A",
+      "locale": "ca",
+      "localeName": "Català",
+      "direction": "ltr",
+      "footer": "Concepte il·lustratiu",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ca/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ca/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "3215e9150d2626aeb2f45cdb31443c38f60a1d0fa5975abd6debcd1f3200c26c"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Resultats passats",
+        "Fàcil de trobar"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "OBRE ELS TEUS RESULTATS ANTERIORS",
+      "focus": "Troba-ho sense buscar entre papers",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Resultats guardats",
+        "back": "",
+        "action": "Fet",
+        "summary": "2 resultats guardats · 0 passos següents marcats com a fet",
+        "items": [
+          {
+            "title": "Vull entendre els meus resultats d'anàlisi",
+            "text": "Què volen dir aquests termes dels tests del fetge?",
+            "date": "13 de setembre de 2026"
+          },
+          {
+            "title": "Em van dir que tinc un problema del fetge",
+            "text": "Què hauria de preguntar al meu propera cita?",
+            "date": "10 de setembre de 2026"
+          }
+        ],
+        "example": "Exemple · entrades guardades"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "ca:H06-A",
+      "locale": "ca",
+      "localeName": "Català",
+      "direction": "ltr",
+      "footer": "Concepte il·lustratiu",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ca/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ca/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "d4e4c8ab268810ae06793dcf0abb39c09a96369fd9d1c9ee1af0ee22834ed4dc"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Una nit dolenta?",
+        "Fes una nota"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "REMEMERA QUÈ VA PASSAR",
+      "focus": "Tus símptomes amb una data",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Registra un símptoma",
+        "back": "",
+        "action": "Desa",
+        "dayLabel": "Dia",
+        "day": "13 set 2026",
+        "typeLabel": "SÍMPTOM",
+        "type": "Sorprenent de dormir",
+        "severityLabel": "GRAU · 3/5",
+        "severity": 3,
+        "scale": "1 = lleu · 5 = greu",
+        "noteLabel": "NOTA · OPCIONAL",
+        "note": "M'he despertat diverses vegades la nit passada",
+        "example": "Exemple · detall de la forma de símptoma"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "ca:H07-A",
+      "locale": "ca",
+      "localeName": "Català",
+      "direction": "ltr",
+      "footer": "Concepte il·lustratiu",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ca/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ca/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "76b9189e2d94597b254f238f5b557459140ce05c6ec7982dde99d469d94867e3"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Registra el teu",
+        "Medicament"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "QUÈ HAS TAKEN I QUAN",
+      "focus": "Mantén els detalls del teu medicament",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Registra el medicament",
+        "back": "",
+        "action": "Desar",
+        "dayLabel": "Dia",
+        "day": "13 set 2026",
+        "nameLabel": "MEDICAMENT O SUPLEMENT",
+        "name": "El meu medicament prescrit",
+        "doseLabel": "DOSE · OPCIONAL",
+        "dose": "",
+        "disclaimer": "Els suplements poden interactuar amb medicaments. Discussiu qualsevol nou suplement amb el teu metge. Hepatica mai recomana doses.",
+        "example": "Exemple · detall de la forma de medicament"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "ca:H08-A",
+      "locale": "ca",
+      "localeName": "Català",
+      "direction": "ltr",
+      "footer": "Concepte il·lustratiu",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ca/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ca/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "d62b02f3b66beb31cec78881f9f8161303d520e5a790163253ad787fe5f491df"
+    }
+  ]
+}

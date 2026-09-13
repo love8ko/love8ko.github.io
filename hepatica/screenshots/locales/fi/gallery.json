@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "fi",
+  "label": "Suomi",
+  "lang": "fi",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Maksan tutkimukset",
+        "Selitettynä"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "ALOITA TULOSTEN PERUSTEILLA",
+      "focus": "Lisää maksan raporttisi",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "fi:H01-A",
+      "locale": "fi",
+      "localeName": "Suomi",
+      "direction": "ltr",
+      "footer": "Esimerkkikuvaukset",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/fi/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/fi/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "8185ba9665bc2332b1e38cc4928a427266d7ff91d823e564a734800f8df1a78f"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Maksaan keskittyen",
+        "Mikä syödä?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "RUOAA, SELITETTY",
+      "focus": "Skannaa ateriasi",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "fi:H02-A",
+      "locale": "fi",
+      "localeName": "Suomi",
+      "direction": "ltr",
+      "footer": "Esimerkkikuvaukset",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/fi/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/fi/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "4bf270c939046c904e1a26c79b710bc1393f1f813bf9226f40ee6144579af167"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Vähemmän alkoholia",
+        "Silti sinä"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "PÄIVÄTILASTO",
+      "focus": "Lisää juomasi",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "ESIMERKKI SOVELTAMISESTA",
+        "cancel": "Peruuta",
+        "title": "Lisää juoma",
+        "save": "Tallenna",
+        "dayLabel": "Päivä",
+        "day": "13. syys, 2026",
+        "measure": "Standardipäivä",
+        "value": "0",
+        "state": "Alkoholiton päivä",
+        "clock": "9:41",
+        "count": "0 alkoholittomaan päivään viimeisen 30 päivän aikana",
+        "disclaimer": "Alkoholipitoisuuden seuranta on henkilökohtainen tietoisuus. Alkoholipitoisuuden häiriötilan tukia varten konsultoi lääkäriäsi tai sertifioitua neuvonantajaa."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "fi:H03-A",
+      "locale": "fi",
+      "localeName": "Suomi",
+      "direction": "ltr",
+      "footer": "Esimerkkikuvaukset",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/fi/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/fi/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "563230dcbd1ec07b83c6a0c21d51259bb077b5e46e92a706e7766538647162e0"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Kysy tietoa",
+        "Maksaasi"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "YKSI HYÖDYLLINEN VASTAUS, JOTTA TALLENTAA",
+      "focus": "Kysymyssi, joka on selkeämpi",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "Yksi hyödyllinen askel",
+        "back": "Takaisin",
+        "action": "",
+        "heading": "Teemme tämän selkeämmäksi",
+        "contextLabel": "Mikä tämä tulos perustuu",
+        "context": "Ultrasääntöni sanoo rasvamaksa",
+        "answer": "Ultrasääntö näyttää rasvaa maksaan, mutta se ei kerro kuinka paljon tulehdusta tai kudosvaurioita on",
+        "resultLabel": "Tallenna kysymys myöhemmin (valinnainen)",
+        "questions": [
+          "Mikä testi pitäisi kysyä lääkäriltä seuraavaksi?"
+        ],
+        "button": "Tallenna tulos",
+        "example": "Esimerkki · tulosten osa"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "fi:H04-A",
+      "locale": "fi",
+      "localeName": "Suomi",
+      "direction": "ltr",
+      "footer": "Esimerkkikuvaukset",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/fi/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/fi/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "51e20e71fbde3497941b5aaac1876bdcd89931074be9655a984107a948ddc2f7"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Lääkärin vastaanotto",
+        "Tuo lyhyt yhteenveto"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "KYSYMYS, JOTKA OLETTAISIIN",
+      "focus": "Tuo merkityksellisiä kysymyksiä",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Lääkärin yhteenveto",
+        "back": "",
+        "action": "Luo",
+        "label": "Kysymykset lääkärille",
+        "questions": [
+          "Mikä tarkoittaa maksatuloksia?",
+          "Mikä tulisi seurata seuraavan vastaanoton ennen?"
+        ],
+        "add": "Lisää kysymys",
+        "example": "Esimerkki · editori"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "fi:H05-A",
+      "locale": "fi",
+      "localeName": "Suomi",
+      "direction": "ltr",
+      "footer": "Esimerkkikuvaukset",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/fi/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/fi/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "1ed47531cb6841a8650df470bb98cf7c0f1b27c4f8819f70314f0b06d19ff277"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Menneet tulokset",
+        "Helppo löytää"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "AVAA AIKAISET TULOKSET",
+      "focus": "Etsi ilman paperinhakua",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Tallennetut tulokset",
+        "back": "",
+        "action": "Valmis",
+        "summary": "2 tallennettua tulosta · 0 seuraavaa askelta merkattu valmiiksi",
+        "items": [
+          {
+            "title": "Haluaisin ymmärtää laboratoriotuloksia",
+            "text": "Mitä nämä maksan testitermit tarkoittavat?",
+            "date": "13. syyskuuta 2026"
+          },
+          {
+            "title": "Oli minulle kerrottu rasvamaksaongelma",
+            "text": "Mitä pitäisi kysyä seuraavalla lääkärin vastaanotolla?",
+            "date": "10. syyskuuta 2026"
+          }
+        ],
+        "example": "Esimerkki · tallennetut kirjaukset"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "fi:H06-A",
+      "locale": "fi",
+      "localeName": "Suomi",
+      "direction": "ltr",
+      "footer": "Esimerkkikuvaukset",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/fi/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/fi/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "1b93e026e4feaf1420855de6b422bba185a3fa76bb7e17197daeb9c6df88de8f"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Huono yö?",
+        "Lisää muistiinpano"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "MUISTA MITÄ TAPAHTUI",
+      "focus": "Symptomit ja päivämäärä",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Lisää symppomy",
+        "back": "",
+        "action": "Tallenna",
+        "dayLabel": "Päivä",
+        "day": "13. syyskuuta 2026",
+        "typeLabel": "SYMPTOMI",
+        "type": "Heikko unenlaatu",
+        "severityLabel": "VAARUUS · 3/5",
+        "severity": 3,
+        "scale": "1 = heikko · 5 = vakava",
+        "noteLabel": "MERKINTÄ · EI VAADITTAVA",
+        "note": "Kuului useita kertoja yötä",
+        "example": "Esimerkki · symptomin tiedot"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "fi:H07-A",
+      "locale": "fi",
+      "localeName": "Suomi",
+      "direction": "ltr",
+      "footer": "Esimerkkikuvaukset",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/fi/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/fi/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "47794b5e58d6bc91e820157d66775a03026cbf82bd68594ae19b79600b8518ca"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Lisää merkintää",
+        "Lääkkeet"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "MITÄ JA MILLOIN",
+      "focus": "Pidä lääkkeiden tiedot",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Lisää lääkkeet",
+        "back": "",
+        "action": "Tallenna",
+        "dayLabel": "Päivä",
+        "day": "13.9.2026",
+        "nameLabel": "LÄÄKE TAI LISÄRAHASTO",
+        "name": "Minun reseptiohjauslääke",
+        "doseLabel": "ANNOS · EI VAADITTAVA",
+        "dose": "",
+        "disclaimer": "Lisärahasot voivat vaikuttaa lääkkeisiin. Keskustele uudesta lisärahasosta lääkärin kanssa. Hepatica ei suosittele annoksia.",
+        "example": "Esimerkki · lääkkeen tiedot"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "fi:H08-A",
+      "locale": "fi",
+      "localeName": "Suomi",
+      "direction": "ltr",
+      "footer": "Esimerkkikuvaukset",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/fi/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/fi/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "81160311b77d893b3f40ae24e3e29e0aa84614618b8a9fd735f589210a841326"
+    }
+  ]
+}

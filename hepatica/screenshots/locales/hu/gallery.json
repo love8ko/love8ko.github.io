@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "hu",
+  "label": "Magyar",
+  "lang": "hu",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Májteszt",
+        "Magyarázva"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "Kezdje a saját eredményeivel",
+      "focus": "Adja hozzá a májtesztjét",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "hu:H01-A",
+      "locale": "hu",
+      "localeName": "Magyar",
+      "direction": "ltr",
+      "footer": "Igazoló koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hu/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hu/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "2bfbed10fb5d60338c8f9334d6dd98b61f7229e4bc36c01a174084a2d7606b4e"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Májra gondolva",
+        "Mit enni?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "ÉTKEZÉS, MAGYÁRAZVA",
+      "focus": "Szkennerje a vacsoráját",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "hu:H02-A",
+      "locale": "hu",
+      "localeName": "Magyar",
+      "direction": "ltr",
+      "footer": "Igazoló koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hu/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hu/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "3c22432c6ab549c3b43b54656f9c2292b206169732fd29004781003931b65842"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Kevesebb alkohol",
+        "Még mindig te"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "NAPI REGISZTRÁCIÓ",
+      "focus": "Regisztrálja az italait",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "ILLUSTRATÍV ALKALMAZÁS-KEPERNYŐ",
+        "cancel": "Mégse",
+        "title": "Regisztrálja az italt",
+        "save": "Mentés",
+        "dayLabel": "Nap",
+        "day": "2026. 09. 13.",
+        "measure": "Standard italok",
+        "value": "0",
+        "state": "Alkoholmentes nap",
+        "clock": "9:41",
+        "count": "0 alkoholmentes nap az utolsó 30 napon belül",
+        "disclaimer": "Az alkohol nyomon követése személyes tudatosság érdekében szolgál. Az alkohol-függőség támogatásához kérje fel orvost vagy tanácsadót."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "hu:H03-A",
+      "locale": "hu",
+      "localeName": "Magyar",
+      "direction": "ltr",
+      "footer": "Igazoló koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hu/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hu/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "6f7d5c2a8b098f1f42b3a11dac92c53807bed5d56730dc7119d27dc8aba9815d"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Kérdezz",
+        "Májod"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "EGY HASZNOS VÁLASZ, AMIT TARTANI Érdemes",
+      "focus": "Kérdésed, világosabbá tételére",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "Egy hasznos lépés",
+        "back": "Vissza",
+        "action": "",
+        "heading": "Vegyük ezt világosabbá",
+        "contextLabel": "Eredménye alapján",
+        "context": "Ultrahangosztályom szerint zsíros máj van",
+        "answer": "Az ultrahang mutatja a máj zsírosodását, de nem mondja meg, mennyi gyulladás vagy szövetkárosodás van jelen",
+        "resultLabel": "Tartsd meg a kérdést később (opcionális)",
+        "questions": [
+          "Milyen teszteket kérek a doktoromtól következő alkalomra?"
+        ],
+        "button": "Mentsd ezt az eredményt",
+        "example": "Példa · eredmény kivonat"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "hu:H04-A",
+      "locale": "hu",
+      "localeName": "Magyar",
+      "direction": "ltr",
+      "footer": "Igazoló koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hu/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hu/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "af8fd5084de808d961174a8acfbfc6dd1da777116e16090ae4b230f3de5ecb88"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Orvosi látogatás",
+        "Vigyél összefoglalót"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "AZ ÖN KÉRDÉSEI, KÉSZÜLJÖN",
+      "focus": "Hozza a fontos kérdéseket",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Orvosi rövidített összefoglaló",
+        "back": "",
+        "action": "Létrehozás",
+        "label": "Kérdések orvosi szakemberének",
+        "questions": [
+          "Mit jelent a májeredményeim?",
+          "Mit kell nyomon követni a következő látogatásom előtt?"
+        ],
+        "add": "Kérdés hozzáadása",
+        "example": "Példa · szerkesztői részlet"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "hu:H05-A",
+      "locale": "hu",
+      "localeName": "Magyar",
+      "direction": "ltr",
+      "footer": "Igazoló koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hu/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hu/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "823dbda13eb08f100e7690b753c417a26f33420eeb14ad9dc2c6456ea98cd3d3"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Régi eredmények",
+        "Könnyen előkerül"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "Nyissa meg az előző eredményeit",
+      "focus": "Nélkül a papírkeresés",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Megtartott eredmények",
+        "back": "",
+        "action": "Kész",
+        "summary": "2 megtartott eredmény · 0 következő lépés megjelölve késznek",
+        "items": [
+          {
+            "title": "Szeretném megérteni a laboreredményeimet",
+            "text": "Mit jelent ezek a májteszt kifejezések?",
+            "date": "2026. szeptember 13."
+          },
+          {
+            "title": "Egy májproblémáról szóltak velem",
+            "text": "Mit kérdjek a következő rendeződésen?",
+            "date": "2026. szeptember 10."
+          }
+        ],
+        "example": "Példa · megtartott bejegyzések"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "hu:H06-A",
+      "locale": "hu",
+      "localeName": "Magyar",
+      "direction": "ltr",
+      "footer": "Igazoló koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hu/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hu/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "30c9ba193d92b45be0b5f2855822e7c6322d4fd5b5a23a75199ecd3154c8c32e"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Rossz éjszaka?",
+        "Jegyzet"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "Emlékezzen a történtre",
+      "focus": "Jelentése, dátummal",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Jegyezze fel egy tünetet",
+        "back": "",
+        "action": "Mentés",
+        "dayLabel": "Nap",
+        "day": "2026. szept. 13.",
+        "typeLabel": "JELENSÉG",
+        "type": "Rossz alvás",
+        "severityLabel": "SÚLYSSÉG · 3/5",
+        "severity": 3,
+        "scale": "1 = enyhe · 5 = súlyos",
+        "noteLabel": "JEGYZET · OPCIONÁLIS",
+        "note": "Többet is felébresztett az előbb",
+        "example": "Példa · jelenség részlet"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "hu:H07-A",
+      "locale": "hu",
+      "localeName": "Magyar",
+      "direction": "ltr",
+      "footer": "Igazoló koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hu/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hu/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "0a8979f8453ec8c1322908195e326c3fc9d09b92c66e80daeb64c05b84fb8bed"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Feltüntetés",
+        "Gyógyszer"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "MIT SZEDTETT ÉS MIKOR",
+      "focus": "Tartsa nyilván a gyógyszeres adatokat",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Gyógyszer feltüntetése",
+        "back": "",
+        "action": "Mentés",
+        "dayLabel": "Nap",
+        "day": "2026. szeptember 13.",
+        "nameLabel": "GYÓGYSZER VAGY KIEGÉSZÍTŐ",
+        "name": "A szakorvosi előírás szerint szedett gyógyszer",
+        "doseLabel": "DÓZIS · OPCIONÁLIS",
+        "dose": "",
+        "disclaimer": "A kiegészítők módosíthatják a gyógyszer hatását. Minden új kiegészítő esetén beszéljen orvossal. A Hepatica soha nem javasol dózist.",
+        "example": "Példa · gyógyszer részlet"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "hu:H08-A",
+      "locale": "hu",
+      "localeName": "Magyar",
+      "direction": "ltr",
+      "footer": "Igazoló koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hu/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hu/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "c1c4c158ff7550796a1a6123fe6aad0b353dd74e1d993aef7e2659b43c0af076"
+    }
+  ]
+}

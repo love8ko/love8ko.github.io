@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "gu-IN",
+  "label": "ગુજરાતી",
+  "lang": "gu-IN",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "લિવર ટેસ્ટ્સ",
+        "સમજૂતી"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "તમારા પરિણામોથી શરૂ કરો",
+      "focus": "તમારો લિવર રિપોર્ટ ઉમેરો",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "gu-IN:H01-A",
+      "locale": "gu-IN",
+      "localeName": "ગુજરાતી",
+      "direction": "ltr",
+      "footer": "સંકેતાત્મક આધાર",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/gu-IN/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/gu-IN/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "734c46ac1d528fe5ac93a9994494225ce36e2aa8fa9371bb3397e5d7a004aae5"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "લિવરનું ધ્યાન રાખો",
+        "શું ખાવું?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "ખોરાક, સમજાયેલો",
+      "focus": "તમારો ભોજન સ્કેન કરો",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "gu-IN:H02-A",
+      "locale": "gu-IN",
+      "localeName": "ગુજરાતી",
+      "direction": "ltr",
+      "footer": "સંકેતાત્મક આધાર",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/gu-IN/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/gu-IN/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "932c92b0bf9993e4f4e5823ed599cdf1fe855a62cca22641313e2374ce927b51"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "ઓછો દારૂ",
+        "તમે તો તમે જ છો"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "તમારો દિવસનો રેકોર્ડ",
+      "focus": "તમારા પીણાનો રેકોર્ડ કરો",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "સંકેતાત્મક એપ સ્ક્રીન",
+        "cancel": "રદ કરો",
+        "title": "પીણું રેકોર્ડ કરો",
+        "save": "બચાવો",
+        "dayLabel": "દિવસ",
+        "day": "સપ્ટેમ્બર ૧૩, ૨૦૨૬",
+        "measure": "સ્ટેન્ડર્ડ પીણા",
+        "value": "૦",
+        "state": "દારૂ વિનાનો દિવસ",
+        "clock": "૯:૪૧",
+        "count": "છેલ્લા ૩૦ દિવસમાં ૦ દારૂ વિનાના દિવસો",
+        "disclaimer": "દારૂનું ટ્રેકિંગ વ્યક્તિગત જાગરૂકતા માટે છે. દારૂના સેવનના વિકાર (alcohol-use-disorder) માટે સહાય મેળવવા, તમારા ડૉક્ટર અથવા પ્રમાણિત કાઉન્સેલરની સલાહ લો."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "gu-IN:H03-A",
+      "locale": "gu-IN",
+      "localeName": "ગુજરાતી",
+      "direction": "ltr",
+      "footer": "સંકેતાત્મક આધાર",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/gu-IN/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/gu-IN/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "fe065667882a3c0afd789bf0d6f045df6194988938207dc7c91b166745c11907"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "પૂછો",
+        "તમારો લિવર"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "એક ઉપયોગી જવાબ રાખો",
+      "focus": "તમારો પ્રશ્ન, સ્પષ્ટ કરો",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "એક ઉપયોગી પગલું",
+        "back": "પાછો",
+        "action": "",
+        "heading": "અમે આ સ્પષ્ટ કરીએ",
+        "contextLabel": "આ પરિણામ આધારિત શું છે",
+        "context": "મારો યુલ્ટ્રાસાઉન્ડ રિપોર્ટ કહે છે કે મારો લિવર ફેટી છે",
+        "answer": "યુલ્ટ્રાસાઉન્ડ લિવરમાં ચરબી દર્શાવી શકે છે, પરંતુ તે સોજો (inflammation) અથવા સ્કેરિંગ કેટલું છે તે જણાવી શકતું નથી",
+        "resultLabel": "બાદમાં પ્રશ્ન રાખો (વિકલ્પ)",
+        "questions": [
+          "મારા લિવર પરિણામો માટે મારા ડૉક્ટરને કયા પરિક્ષણો આદેશ આપવા જોઈએ?"
+        ],
+        "button": "આ પરિણામ સાચવો",
+        "example": "સંદર્ભ · પરિણામ નમૂનો"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "gu-IN:H04-A",
+      "locale": "gu-IN",
+      "localeName": "ગુજરાતી",
+      "direction": "ltr",
+      "footer": "સંકેતાત્મક આધાર",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/gu-IN/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/gu-IN/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "3b66d9b938b5724285c0e7638855c33ac56def981261ce93befb9d5a5d10f17c"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "ડૉક્ટરની મુલાકાત",
+        "બ્રીફ સાથે રાખો"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "તમારા પ્રશ્નો, તૈયાર કરો",
+      "focus": "અહેવા પ્રશ્નો લઈએ જે મહત્વપૂર્ણ છે",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "ડૉક્ટર બ્રીફ",
+        "back": "",
+        "action": "જનરેટ કરો",
+        "label": "તમારા ડૉક્ટર માટેના પ્રશ્નો",
+        "questions": [
+          "મારા લિવર પરિણામો શું માંગે છે?",
+          "મારી મુલાકાત પહેલા મારે શું ટ્રેક કરવું જોઈએ?"
+        ],
+        "add": "પ્રશ્ન ઉમેરો",
+        "example": "સંદર્ભ · સંપાદક વિગત"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "gu-IN:H05-A",
+      "locale": "gu-IN",
+      "localeName": "ગુજરાતી",
+      "direction": "ltr",
+      "footer": "સંકેતાત્મક આધાર",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/gu-IN/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/gu-IN/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "c78c33a24800f4606b5c8151a0130cf707b698ae15d88af0f5ab653752dac754"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "જૂના પરિણામો",
+        "સહેલાઈથી મળે"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "અગાઉના પરિણામો ખોલો",
+      "focus": "પેપર શોધ વિના મળે",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "સાચવાયેલા પરિણામો",
+        "back": "",
+        "action": "કર્યું",
+        "summary": "2 સાચવાયેલા પરિણામો · 0 અગાઉના પગલાં કર્યા",
+        "items": [
+          {
+            "title": "મારા લેબ પરિણામોની સમજ મેળવો",
+            "text": "આ લિવર ટેસ્ટ શબ્દોનો અર્થ શું છે?",
+            "date": "સપ્ટેમ્બર 13, 2026"
+          },
+          {
+            "title": "મને લિવરનો સમસ્યા કહેવામાં આવ્યો હતો",
+            "text": "મારા અગાઉના મુલાકાત માટે શું પૂછવું જોઈએ?",
+            "date": "સપ્ટેમ્બર 10, 2026"
+          }
+        ],
+        "example": "સંદર્ભ · સાચવાયેલા નોટો"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "gu-IN:H06-A",
+      "locale": "gu-IN",
+      "localeName": "ગુજરાતી",
+      "direction": "ltr",
+      "footer": "સંકેતાત્મક આધાર",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/gu-IN/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/gu-IN/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "a2b253dafde354779fe70bc77f10961d3391577d93019b2079ec307c18230db1"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "ખરાબ રાત?",
+        "નોંધ લો"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "શું થયું હતું યાદ રાખો",
+      "focus": "તમારા લક્ષણો, તારીખ સાથે",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "લક્ષણ નોંધો",
+        "back": "",
+        "action": "સાચવો",
+        "dayLabel": "દિવસ",
+        "day": "સપ્ટેમ્બર 13, 2026",
+        "typeLabel": "લક્ષણ",
+        "type": "ખાસ સૂચવો નથી",
+        "severityLabel": "ભાર · 3/5",
+        "severity": 3,
+        "scale": "1 = માટે · 5 = ભારે",
+        "noteLabel": "નોંધ · વિકલ્પ",
+        "note": "ગઈ રાતે ઘણીવાર જાગ્યો",
+        "example": "ઉદાહરણ · લક્ષણ ફોર્મ વિગત"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "gu-IN:H07-A",
+      "locale": "gu-IN",
+      "localeName": "ગુજરાતી",
+      "direction": "ltr",
+      "footer": "સંકેતાત્મક આધાર",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/gu-IN/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/gu-IN/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "3c86111be47603a5958574dab0746fa7c6392e180b67ab91ce2edbabca72f670"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "નોંધ કરો તમારું",
+        "દવા"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "તમે કેવી રીતે લેવા અને ક્યારે",
+      "focus": "તમારી દવાની વિગતને રાખો",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "દવા નોંધ",
+        "back": "",
+        "action": "બચાવો",
+        "dayLabel": "દિવસ",
+        "day": "સપ્ટેમ્બર 13, 2026",
+        "nameLabel": "દવા અથવા સુપ્લીમેન્ટ",
+        "name": "મારી નિર્ધારિત દવા",
+        "doseLabel": "દોઝ · વિકલ્પ",
+        "dose": "",
+        "disclaimer": "સુપ્લીમેન્ટ્સ દવાઓ સાથે પ્રતિક્રિયા કરી શકે છે. કોઈપણ નવા સુપ્લીમેન્ટ વિશે તમારા ડૉક્ટર સાથે ચર્ચા કરો. Hepatica ક્યારેય ડોઝની ભલામણ કરતું નથી.",
+        "example": "ઉદાહરણ · દવા ફોર્મ વિગત"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "gu-IN:H08-A",
+      "locale": "gu-IN",
+      "localeName": "ગુજરાતી",
+      "direction": "ltr",
+      "footer": "સંકેતાત્મક આધાર",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/gu-IN/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/gu-IN/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "77b5338a79cb4f7bddde4819b44129f303537558c6ce8b6c793fb3495ad56c41"
+    }
+  ]
+}

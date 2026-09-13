@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "tr",
+  "label": "Türkçe",
+  "lang": "tr",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Karaciğer Testleri",
+        "Açıklanmış"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "SONUÇLARINIZLA BAŞLAYIN",
+      "focus": "Karaciğer raporunuzu ekleyin",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "tr:H01-A",
+      "locale": "tr",
+      "localeName": "Türkçe",
+      "direction": "ltr",
+      "footer": "Görsel örnek",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/tr/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/tr/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "4f21768f1df4d94596626520154a4f45a5145b1d7ba1f6617e1c301aa746c48f"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Karaciğer İçin Düşün",
+        "Ne yemeli?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "YEMEK, AÇIKLANMIŞ",
+      "focus": "Yemeğinizi tarayın",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "tr:H02-A",
+      "locale": "tr",
+      "localeName": "Türkçe",
+      "direction": "ltr",
+      "footer": "Görsel örnek",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/tr/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/tr/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "1830b303a8f37a664c679c2f19ea90ba47f9865a76d3acdc39aa0e95a0d31ae9"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Az Alkol",
+        "Hâlâ Siz"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "GÜNLÜK KAYITLARINIZ",
+      "focus": "İçkilerinizi kaydedin",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "GÖRSEL UYGULAMA EKRANI",
+        "cancel": "İptal",
+        "title": "İçki kaydı yap",
+        "save": "Kaydet",
+        "dayLabel": "Gün",
+        "day": "13 Eyl., 2026",
+        "measure": "Standart içki",
+        "value": "0",
+        "state": "Alkol içmeyen gün",
+        "clock": "09:41",
+        "count": "Son 30 gün içinde 0 alkol içmeyen gün",
+        "disclaimer": "Alkol takibi kişisel farkındalık içindir. Alkol kullanım bozukluğu desteği için bir doktorunuza veya sertifikalı danışmana danışın."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "tr:H03-A",
+      "locale": "tr",
+      "localeName": "Türkçe",
+      "direction": "ltr",
+      "footer": "Görsel örnek",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/tr/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/tr/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "fe93275c92549f04f10ff741a796de1dd4d8586b3356b240713f1382cb002d33"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Sor",
+        "Karaciğeriniz"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "BİR FAYDALI CEVAP BULUN",
+      "focus": "Sizin sorunuz, daha net hale getirildi",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "Bir faydalı adım",
+        "back": "Geri",
+        "action": "",
+        "heading": "Bu soruyu daha net hale getirelim",
+        "contextLabel": "Bu sonuç hangi verilere dayanıyor",
+        "context": "Müdahale edilmiş karaciğer raporum yağlı karaciğer deriyor",
+        "answer": "Ultrason, karaciğerde yağın varlığını gösterebilir, ancak ne kadar iltihaplanma veya ıslaklık olduğu hakkında bilgi vermez",
+        "resultLabel": "Sonradan bir soru saklayabilirsiniz (isteğe bağlı)",
+        "questions": [
+          "Bir sonraki doktorumdan ne tür testleri sipariş etmeliyim?"
+        ],
+        "button": "Bu sonucu kaydet",
+        "example": "Örnek · sonuç parçası"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "tr:H04-A",
+      "locale": "tr",
+      "localeName": "Türkçe",
+      "direction": "ltr",
+      "footer": "Görsel örnek",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/tr/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/tr/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "0589530bf6b90a7d3c8968ae0a844ad53eb32f9e3802a375669473df5c4b870b"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Doktor Ziyareti",
+        "Bir Özeti Getir"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "SİZİN SORULARINIZ, HAZIRLANMIŞ",
+      "focus": "Önemli olan soruları getirin",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Doktor Özeti",
+        "back": "",
+        "action": "Oluştur",
+        "label": "Sorularınız doktorunuza",
+        "questions": [
+          "Karaciğer sonuçları ne anlama geliyor?",
+          "Bir sonraki ziyarete kadar ne takip etmeliyim?"
+        ],
+        "add": "Soruyu ekle",
+        "example": "Örnek · düzenleyici detay"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "tr:H05-A",
+      "locale": "tr",
+      "localeName": "Türkçe",
+      "direction": "ltr",
+      "footer": "Görsel örnek",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/tr/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/tr/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "d7bfb1b4e59bc13f69becfc3f0186b9c839c4c0e732ffe8cff7b7ea1d24aeae7"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Geçmiş Sonuçlar",
+        "Kolayca Bul"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "ESKİ SONUÇLARINIZI AÇIN",
+      "focus": "Kağıt arama yapmadan bul",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Kaydedilen sonuçlar",
+        "back": "",
+        "action": "Tamamlandı",
+        "summary": "2 kaydedilen sonuç · 0 sonraki adım işaretlendi",
+        "items": [
+          {
+            "title": "Laboratuvar sonuçlarını anlamak istiyorum",
+            "text": "Bu karaciğer test terimlerinin ne anlama geldiğini merak ediyorum",
+            "date": "13 Eylül 2026"
+          },
+          {
+            "title": "Bana karaciğer sorunu hakkında söylendi",
+            "text": "İlk muayene sırasında ne sormam gerekir?",
+            "date": "10 Eylül 2026"
+          }
+        ],
+        "example": "Örnek · kaydedilen girişler"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "tr:H06-A",
+      "locale": "tr",
+      "localeName": "Türkçe",
+      "direction": "ltr",
+      "footer": "Görsel örnek",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/tr/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/tr/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "f05a04e1ffefec309b43926c4451cdb590e94f180b63692bb51e35c28a65519f"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Kötü bir gece mi?",
+        "Not al"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "NE OLMUŞTURİ ANıMUT",
+      "focus": "Tarihli belirtiniz",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Belirti kaydet",
+        "back": "",
+        "action": "Kaydet",
+        "dayLabel": "Gün",
+        "day": "13 Eyl 2026",
+        "typeLabel": "BELİRTİ",
+        "type": "İyikilik eksikliği",
+        "severityLabel": "Şiddet · 3/5",
+        "severity": 3,
+        "scale": "1 = hafif · 5 = ciddi",
+        "noteLabel": "NOT · İSTEKSEL",
+        "note": "Geçen gece birkaç kez uyanık kaldım",
+        "example": "Örnek · belirti formu detayı"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "tr:H07-A",
+      "locale": "tr",
+      "localeName": "Türkçe",
+      "direction": "ltr",
+      "footer": "Görsel örnek",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/tr/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/tr/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "1fe5a5548195bb1f01b9d039004f757ce7e88f976a51102b6c1bbd4dc38890a5"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Kayıt Et",
+        "İlaç"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "NE ALDIĞINIZ VE NE ZAMAN",
+      "focus": "İlaç detaylarını saklayın",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "İlaç kaydı",
+        "back": "",
+        "action": "Kaydet",
+        "dayLabel": "Gün",
+        "day": "13 Eyl, 2026",
+        "nameLabel": "İLAC veya TÜKETİM",
+        "name": "Benim yazılan ilaçlarım",
+        "doseLabel": "DOZ · İSTEKSEL",
+        "dose": "",
+        "disclaimer": "Tüketimler ilaçlarla etkileşebilir. Yeni bir tüketim almadan önce doktorunuzla konuşun. Hepatica herhangi bir doz önermez.",
+        "example": "Örnek · ilaç formu detayı"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "tr:H08-A",
+      "locale": "tr",
+      "localeName": "Türkçe",
+      "direction": "ltr",
+      "footer": "Görsel örnek",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/tr/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/tr/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "51c361bb92da6562bfd1996f49da2ceb7848d8a2bd7d56c2af3a36717d39c448"
+    }
+  ]
+}

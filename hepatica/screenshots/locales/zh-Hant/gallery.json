@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "zh-Hant",
+  "label": "繁體中文",
+  "lang": "zh-Hant",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "肝功能檢查",
+        "說明"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "從您的檢查結果開始",
+      "focus": "上傳您的肝臟檢查報告",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "zh-Hant:H01-A",
+      "locale": "zh-Hant",
+      "localeName": "繁體中文",
+      "direction": "ltr",
+      "footer": "說明性概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/zh-Hant/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/zh-Hant/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "09719503f11183a6fa034b99cb2c601e8b969c3a095a6ea743391f4d82f3e9fd"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "關注肝臟",
+        "該吃什麼？"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "飲食，說明",
+      "focus": "掃描您的餐點",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "zh-Hant:H02-A",
+      "locale": "zh-Hant",
+      "localeName": "繁體中文",
+      "direction": "ltr",
+      "footer": "說明性概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/zh-Hant/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/zh-Hant/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "e37da71b92a88daa5a50c7761fc21150909941968d104e91d9696ef5efdb33de"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "減少酒精攝取",
+        "依然是你"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "您的每日紀錄",
+      "focus": "紀錄您的飲酒",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "說明性應用畫面",
+        "cancel": "取消",
+        "title": "紀錄飲酒",
+        "save": "儲存",
+        "dayLabel": "日期",
+        "day": "2026年9月13日",
+        "measure": "標準飲酒量",
+        "value": "0",
+        "state": "無酒精日",
+        "clock": "9:41",
+        "count": "過去30天內有0天無酒精",
+        "disclaimer": "酒精追蹤僅為個人意識提升。如需酒精使用障礙支持，請諮詢您的醫生或認證諮商師。"
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "zh-Hant:H03-A",
+      "locale": "zh-Hant",
+      "localeName": "繁體中文",
+      "direction": "ltr",
+      "footer": "說明性概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/zh-Hant/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/zh-Hant/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "80c288ae2361f29d4738c39cec602975faa8d032e86e41dd8a7d5c3f4db231a5"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "詢問",
+        "您的肝臟"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "一個有用的答案，值得保存",
+      "focus": "您的問題，變得更清晰",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "一個有用的步驟",
+        "back": "返回",
+        "action": "",
+        "heading": "讓我們讓這更清晰",
+        "contextLabel": "這個結果是根據什麼來的",
+        "context": "我的超聲波報告顯示脂肪肝",
+        "answer": "超聲波可以顯示肝臟脂肪，但無法說明有多少發炎或纖維化",
+        "resultLabel": "稍後保留一個問題（可選）",
+        "questions": [
+          "我應該問醫生下一個要開哪些檢查？"
+        ],
+        "button": "保存這個結果",
+        "example": "範例 · 結果片段"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "zh-Hant:H04-A",
+      "locale": "zh-Hant",
+      "localeName": "繁體中文",
+      "direction": "ltr",
+      "footer": "說明性概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/zh-Hant/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/zh-Hant/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "2fd6562cab9404d976f56b206e1cd4ac48d9d7189129681fa7f9db3ca79c4c72"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "就診時",
+        "攜帶備忘錄"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "您的問題，已準備好",
+      "focus": "帶上重要的問題",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "就診備忘錄",
+        "back": "",
+        "action": "生成",
+        "label": "給您處方醫生的問題",
+        "questions": [
+          "我的肝臟檢查結果代表什麼？",
+          "我應該在下次訪問前追蹤什麼？"
+        ],
+        "add": "新增一個問題",
+        "example": "範例 · 編輯細節"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "zh-Hant:H05-A",
+      "locale": "zh-Hant",
+      "localeName": "繁體中文",
+      "direction": "ltr",
+      "footer": "說明性概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/zh-Hant/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/zh-Hant/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "4c4cdcb914205603b8f11782ce9f2f5d86c2e5ab329672a9af70e9b1d7b69ccb"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "過往結果",
+        "輕鬆查找"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "開啟您之前的結果",
+      "focus": "不用翻找紙張也能找到",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "已儲存的結果",
+        "back": "",
+        "action": "完成",
+        "summary": "2 個已儲存結果 · 0 個下一步驟標記為完成",
+        "items": [
+          {
+            "title": "我想了解我的驗血結果",
+            "text": "這些肝臟檢查術語是什麼意思？",
+            "date": "2026年9月13日"
+          },
+          {
+            "title": "我被告知有肝臟問題",
+            "text": "我該在下次就診時問什麼？",
+            "date": "2026年9月10日"
+          }
+        ],
+        "example": "範例 · 已儲存的項目"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "zh-Hant:H06-A",
+      "locale": "zh-Hant",
+      "localeName": "繁體中文",
+      "direction": "ltr",
+      "footer": "說明性概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/zh-Hant/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/zh-Hant/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "bd4f660ae3a9db1363a35b19e7000fdcff50180769b2a16fe456ce9451a8f203"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "睡不好嗎？",
+        "記個筆記"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "記住發生了什麼事",
+      "focus": "您的症狀，加上日期",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "記錄症狀",
+        "back": "",
+        "action": "儲存",
+        "dayLabel": "日期",
+        "day": "2026年9月13日",
+        "typeLabel": "症狀",
+        "type": "睡眠不佳",
+        "severityLabel": "嚴重程度 · 3/5",
+        "severity": 3,
+        "scale": "1 = 輕度 · 5 = 重度",
+        "noteLabel": "備註 · 選填",
+        "note": "昨晚醒了好幾次",
+        "example": "範例 · 症狀表單細節"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "zh-Hant:H07-A",
+      "locale": "zh-Hant",
+      "localeName": "繁體中文",
+      "direction": "ltr",
+      "footer": "說明性概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/zh-Hant/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/zh-Hant/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "b0141d9c302554d93790583c870ca56ea6fa303a17cc290825a7d15052ddde46"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "記錄您的",
+        "藥物"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "您吃了什麼以及什麼時候",
+      "focus": "保留您的藥物細節",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "記錄藥物",
+        "back": "",
+        "action": "儲存",
+        "dayLabel": "日期",
+        "day": "2026年9月13日",
+        "nameLabel": "藥物或補充品",
+        "name": "我的處方藥物",
+        "doseLabel": "劑量 · 選填",
+        "dose": "",
+        "disclaimer": "補充品可能與藥物產生交互作用。任何新補充品請與您的醫生討論。Hepatica從來不會推薦劑量。",
+        "example": "範例 · 藥物表單細節"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "zh-Hant:H08-A",
+      "locale": "zh-Hant",
+      "localeName": "繁體中文",
+      "direction": "ltr",
+      "footer": "說明性概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/zh-Hant/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/zh-Hant/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "964e7e28dc381bceede0999907af6b572c69932fc186ff45f5c6f7dd9484c7c8"
+    }
+  ]
+}

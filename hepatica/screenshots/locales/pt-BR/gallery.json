@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "pt-BR",
+  "label": "Português (Brasil)",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Exames do Fígado",
+        "Explicado"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "INICIE COM SEUS RESULTADOS",
+      "focus": "Adicione seu relatório do fígado",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "pt-BR:H01-A",
+      "locale": "pt-BR",
+      "localeName": "Português (Brasil)",
+      "direction": "ltr",
+      "footer": "Conceito ilustrativo",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/pt-BR/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/pt-BR/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "f92b246129cda0543b09f0fe1342ee94c9532cd7e5f08abd460ea6690a46ee97"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Fígado em Foco",
+        "O que comer?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "ALIMENTOS, EXPLICADOS",
+      "focus": "Escanere seu prato",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "pt-BR:H02-A",
+      "locale": "pt-BR",
+      "localeName": "Português (Brasil)",
+      "direction": "ltr",
+      "footer": "Conceito ilustrativo",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/pt-BR/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/pt-BR/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "85a7fb6c62d2d51c7477d7f250f216719f30907a3222ecb4835d0e938d8e0505"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Menos álcool",
+        "Ainda você"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "SEU REGISTRO DIÁRIO",
+      "focus": "Registre suas bebidas",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "Tela ilustrativa do app",
+        "cancel": "Cancelar",
+        "title": "Registrar um drink",
+        "save": "Salvar",
+        "dayLabel": "Dia",
+        "day": "13/09/2026",
+        "measure": "Drinks padrão",
+        "value": "0",
+        "state": "Dia sem álcool",
+        "clock": "09:41",
+        "count": "0 dias sem álcool nos últimos 30 dias",
+        "disclaimer": "Rastreamento de álcool é para conscientização pessoal. Para apoio no uso de álcool, consulte seu médico ou um conselheiro certificado."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "pt-BR:H03-A",
+      "locale": "pt-BR",
+      "localeName": "Português (Brasil)",
+      "direction": "ltr",
+      "footer": "Conceito ilustrativo",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/pt-BR/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/pt-BR/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "e297693311923a0358ec4307d84a1b88041f685ed58fe823b334475101f0ad3e"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Pergunte sobre",
+        "Seu Fígado"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "UMA RESPOSTA ÚTIL PARA GUARDAR",
+      "focus": "Sua pergunta, mais clara",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "Um passo útil",
+        "back": "Voltar",
+        "action": "",
+        "heading": "Vamos tornar isso mais claro",
+        "contextLabel": "Em que este resultado se baseia",
+        "context": "Meu relatório de ultrassom diz gordura no fígado",
+        "answer": "A ultrassonografia pode mostrar gordura no fígado, mas não indica o grau de inflamação ou cicatrização",
+        "resultLabel": "Mantenha uma pergunta para depois (opcional)",
+        "questions": [
+          "Quais exames eu devo pedir ao médico em seguida?"
+        ],
+        "button": "Salvar esse resultado",
+        "example": "Exemplo · trecho do resultado"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "pt-BR:H04-A",
+      "locale": "pt-BR",
+      "localeName": "Português (Brasil)",
+      "direction": "ltr",
+      "footer": "Conceito ilustrativo",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/pt-BR/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/pt-BR/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "fc835077bffa359e4f961b18b6bfa549e927d9b871b7d3250e3fefa299229bd0"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Visita ao Médico",
+        "Levar um Resumo"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "SUAS PERGUNTAS, PREPARADAS",
+      "focus": "Levar as perguntas que importam",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Resumo do Médico",
+        "back": "",
+        "action": "Gerar",
+        "label": "Perguntas para seu médico",
+        "questions": [
+          "O que meus resultados do fígado significam?",
+          "O que devo rastrear antes da minha próxima visita?"
+        ],
+        "add": "Adicionar uma pergunta",
+        "example": "Exemplo · detalhe do editor"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "pt-BR:H05-A",
+      "locale": "pt-BR",
+      "localeName": "Português (Brasil)",
+      "direction": "ltr",
+      "footer": "Conceito ilustrativo",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/pt-BR/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/pt-BR/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "f1c9b7d8eb3b78089d89c7d4401cae1d1b044d91a86ee0be76272314a13cf5a5"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Resultados anteriores",
+        "Fáceis de encontrar"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "ABRA SEUS RESULTADOS ANTERIORES",
+      "focus": "Encontre sem a caça ao papel",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Resultados salvos",
+        "back": "",
+        "action": "Feito",
+        "summary": "2 resultados salvos · 0 próximos passos concluídos",
+        "items": [
+          {
+            "title": "Eu quero entender meus resultados de laboratório",
+            "text": "O que significam esses termos dos exames do fígado?",
+            "date": "13 de setembro de 2026"
+          },
+          {
+            "title": "Fui informado sobre um problema no fígado",
+            "text": "O que devo perguntar na minha próxima consulta?",
+            "date": "10 de setembro de 2026"
+          }
+        ],
+        "example": "Exemplo · entradas salvas"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "pt-BR:H06-A",
+      "locale": "pt-BR",
+      "localeName": "Português (Brasil)",
+      "direction": "ltr",
+      "footer": "Conceito ilustrativo",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/pt-BR/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/pt-BR/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "d2ad1338b0d8d2060551202ec75ede809929d075e0c66a57b5d3b4776f74bed3"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Noite ruim?",
+        "Fazer uma anotação"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "LEMBRE O QUE OCORREU",
+      "focus": "Seus sintomas, com uma data",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Registrar um sintoma",
+        "back": "",
+        "action": "Salvar",
+        "dayLabel": "Dia",
+        "day": "13 de setembro de 2026",
+        "typeLabel": "SINTOMA",
+        "type": "Sono ruim",
+        "severityLabel": "GRAVIDADE · 3/5",
+        "severity": 3,
+        "scale": "1 = leve · 5 = grave",
+        "noteLabel": "NOTA · OPCIONAL",
+        "note": "Acordei várias vezes na noite passada",
+        "example": "Exemplo · detalhe do formulário de sintoma"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "pt-BR:H07-A",
+      "locale": "pt-BR",
+      "localeName": "Português (Brasil)",
+      "direction": "ltr",
+      "footer": "Conceito ilustrativo",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/pt-BR/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/pt-BR/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "5169b9bed1c61c676ed6ec168e18956084e81c5296bf9af23cb66fdabb789d1e"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Registre sua",
+        "Medicação"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "O QUE VOCÊ TOMOU E QUANDO",
+      "focus": "Mantenha os detalhes da sua medicação",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Registrar medicação",
+        "back": "",
+        "action": "Salvar",
+        "dayLabel": "Dia",
+        "day": "13 de setembro de 2026",
+        "nameLabel": "MEDICAÇÃO OU SUPLEMENTO",
+        "name": "Minha medicação prescrita",
+        "doseLabel": "DOSE · OPCIONAL",
+        "dose": "",
+        "disclaimer": "Suplementos podem interagir com medicamentos. Discuta qualquer novo suplemento com seu médico. O Hepatica nunca recomenda doses.",
+        "example": "Exemplo · detalhe do formulário de medicação"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "pt-BR:H08-A",
+      "locale": "pt-BR",
+      "localeName": "Português (Brasil)",
+      "direction": "ltr",
+      "footer": "Conceito ilustrativo",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/pt-BR/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/pt-BR/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "f224eb53118bbb06dd859ce786759a5e3222728afafc28614208e70305d11d2c"
+    }
+  ]
+}

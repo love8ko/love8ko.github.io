@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "ja",
+  "label": "日本語",
+  "lang": "ja",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "肝臓検査",
+        "説明"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "あなたの結果から始める",
+      "focus": "肝臓検査結果を追加",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ja:H01-A",
+      "locale": "ja",
+      "localeName": "日本語",
+      "direction": "ltr",
+      "footer": "説明的な概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ja/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ja/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "a64b640b8cd2a568f7e35377c97886ca0a38dcfc0be3ef46c502ef36f69881a0"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "肝臓のことを考えよう",
+        "何を食べるべき？"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "食事、説明",
+      "focus": "食事をスキャン",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ja:H02-A",
+      "locale": "ja",
+      "localeName": "日本語",
+      "direction": "ltr",
+      "footer": "説明的な概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ja/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ja/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "c8db3aa488a49f8e737e09c9c19f46c1be52447a9c9be3c6ef86e2c37253d87c"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "アルコールを控える",
+        "あなたらしさを大切に"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "あなたの毎日の記録",
+      "focus": "飲酒を記録",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "説明的なアプリ画面",
+        "cancel": "キャンセル",
+        "title": "飲酒を記録",
+        "save": "保存",
+        "dayLabel": "日",
+        "day": "2026年9月13日",
+        "measure": "標準的な飲酒量",
+        "value": "0",
+        "state": "休肝日",
+        "clock": "9:41",
+        "count": "過去30日間でアルコールを飲まなかった日は0日",
+        "disclaimer": "アルコールの記録は、個人的な意識のためです。アルコール使用障害のサポートが必要な場合は、医師や認定されたカウンセラーに相談してください。"
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ja:H03-A",
+      "locale": "ja",
+      "localeName": "日本語",
+      "direction": "ltr",
+      "footer": "説明的な概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ja/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ja/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "8a233fd947be9ba8a3ee89635090cadb2cd4086d51f24d44502fdae073001f99"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "質問する",
+        "あなたの肝臓"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "覚えられる有用な答え",
+      "focus": "あなたの質問、より明確に",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "一つの有用なステップ",
+        "back": "戻る",
+        "action": "",
+        "heading": "この質問をより明確にしましょう",
+        "contextLabel": "この結果がもとまっていること",
+        "context": "私の超音波検査結果は脂肪肝と書かれています",
+        "answer": "超音波検査は肝臓に脂肪があることを示すことができますが、炎症や瘢痕の量は示しません",
+        "resultLabel": "後で質問として保存（任意）",
+        "questions": [
+          "次に医師に検査を依頼すべきものは何ですか？"
+        ],
+        "button": "この結果を保存する",
+        "example": "例 · 結果の抜粋"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "ja:H04-A",
+      "locale": "ja",
+      "localeName": "日本語",
+      "direction": "ltr",
+      "footer": "説明的な概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ja/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ja/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "e13ffe66b90868f3b1dd4dfee3fc9019b87058701a385403b8b6f56f050ec49d"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "医師の診察",
+        "まとめを準備して"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "あなたの質問、準備済み",
+      "focus": "重要な質問をもって行く",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "医師への相談メモ",
+        "back": "",
+        "action": "生成する",
+        "label": "医師への質問",
+        "questions": [
+          "私の肝臓検査結果の意味は何ですか？",
+          "次回の診察までに何を記録すべきですか？"
+        ],
+        "add": "質問を追加する",
+        "example": "例 · 編集詳細"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "ja:H05-A",
+      "locale": "ja",
+      "localeName": "日本語",
+      "direction": "ltr",
+      "footer": "説明的な概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ja/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ja/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "02e24dc5e860d430ead2e4dff876991317c57cc7e07fead1822dbc86a8eb7d54"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "過去の結果",
+        "簡単に見つかる"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "以前の結果を開く",
+      "focus": "紙の探しから解放される",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "保存された結果",
+        "back": "",
+        "action": "完了",
+        "summary": "保存した結果2件 · 完了した次のステップ0件",
+        "items": [
+          {
+            "title": "私の検査結果を理解したい",
+            "text": "これらの肝臓検査用語の意味は？",
+            "date": "2026年9月13日"
+          },
+          {
+            "title": "肝臓の問題について話された",
+            "text": "次回の診察で何を聞けばいい？",
+            "date": "2026年9月10日"
+          }
+        ],
+        "example": "例 · 保存されたエントリ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "ja:H06-A",
+      "locale": "ja",
+      "localeName": "日本語",
+      "direction": "ltr",
+      "footer": "説明的な概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ja/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ja/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "cfdb4cf819044b6bd3394c23668c7d9199386fcd2b7f29c794d07f49546530f1"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "眠れなかった夜？",
+        "メモをつける"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "起こったことを覚えておく",
+      "focus": "あなたの症状と日付",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "症状を記録する",
+        "back": "",
+        "action": "保存",
+        "dayLabel": "日",
+        "day": "2026年9月13日",
+        "typeLabel": "症状",
+        "type": "睡眠が悪い",
+        "severityLabel": "深刻度 · 3/5",
+        "severity": 3,
+        "scale": "1 = 軽度 · 5 = 重度",
+        "noteLabel": "メモ · オプション",
+        "note": "昨夜何度か目が覚めた",
+        "example": "例 · 症状フォームの詳細"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "ja:H07-A",
+      "locale": "ja",
+      "localeName": "日本語",
+      "direction": "ltr",
+      "footer": "説明的な概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ja/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ja/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "8ffabaa2384fac4b96aebf8aa072ea3d7726c30c6c1cd104d1c7d8606954872a"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "記録しましょう",
+        "服用した薬"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "あなたが服用した薬と時間",
+      "focus": "薬の情報を記録しておきましょう",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "薬を記録",
+        "back": "",
+        "action": "保存",
+        "dayLabel": "日",
+        "day": "2026年9月13日",
+        "nameLabel": "薬またはサプリメント",
+        "name": "私の処方薬",
+        "doseLabel": "用量 · オプション",
+        "dose": "",
+        "disclaimer": "サプリメントは薬と相互作用する可能性があります。新しいサプリメントを始める際は、医師と相談してください。Hepaticaは用量を推奨しません。",
+        "example": "例 · 薬の記録フォーム"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "ja:H08-A",
+      "locale": "ja",
+      "localeName": "日本語",
+      "direction": "ltr",
+      "footer": "説明的な概念",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ja/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ja/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "005c087670110ca632e6dad6683dce932908f6de00a1377d099ea12106556378"
+    }
+  ]
+}

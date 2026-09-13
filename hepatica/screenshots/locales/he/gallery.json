@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "he",
+  "label": "עברית",
+  "lang": "he",
+  "dir": "rtl",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "בדיקות הכבד",
+        "הסברים"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "התחל עם תוצאותיך",
+      "focus": "הוסף את דוח הכבד שלך",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "he:H01-A",
+      "locale": "he",
+      "localeName": "עברית",
+      "direction": "rtl",
+      "footer": "מונח דוגמה",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/he/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/he/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "339496fec4eb32bff9ff872d76c9f8bfa16f0dee13e1e8b3cfa86b0ebc16f565"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "הכבד בראש",
+        "מה לאכול?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "מזון, הסבר",
+      "focus": "סרוק ארוחתך",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "he:H02-A",
+      "locale": "he",
+      "localeName": "עברית",
+      "direction": "rtl",
+      "footer": "מונח דוגמה",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/he/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/he/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "0fa0b8c9968c864be2e8a752ce28ac708a8346dcf95c6b1ab69c3c4590804b65"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "פחות אלכוהול",
+        "עדיין אתה"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "השעון היומי שלך",
+      "focus": "הוסף את התרעומתיך",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "화면 דוגמה של האפליקציה",
+        "cancel": "בטל",
+        "title": "הוסף תרעה",
+        "save": "שמור",
+        "dayLabel": "יום",
+        "day": "13.09.2026",
+        "measure": "תרעות סטנדרטיות",
+        "value": "0",
+        "state": "יום ללא אלכוהול",
+        "clock": "9:41",
+        "count": "0 ימים ללא אלכוהול ב-30 הימים האחרונים",
+        "disclaimer": "מעקב אלכוהול הוא למודעות אישית. לקבלת תמיכה בהפרעות שימוש באלכוהול, התייעץ עם רופא או יועץ מוסמך."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "he:H03-A",
+      "locale": "he",
+      "localeName": "עברית",
+      "direction": "rtl",
+      "footer": "מונח דוגמה",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/he/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/he/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "ad24b50a7fb98c494850aa41609ec136f9f38f4aa94b6414dfe24df4bc014ded"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "שאל על",
+        "הכבד שלך"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "תשובה שימושית אחת לשמור",
+      "focus": "שאלה שלך, ברורה יותר",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "שלב שימושי אחד",
+        "back": "חזרה",
+        "action": "",
+        "heading": "נעשה את זה ברור יותר",
+        "contextLabel": "מה שהערכה זו מתבססת על",
+        "context": "בדו\"ח האולטראסאונד שלי כתוב כבד שומני",
+        "answer": "אולטראסאונד יכול להראות שומן בכבד, אך הוא אינו מעיד על מידת הדלקת או הצלקות הקיימות",
+        "resultLabel": "שאלה אחת לשמור לימים הבאים (אופציונלי)",
+        "questions": [
+          "מה בדיקות אני צריך לבקש מהרופא הבא?"
+        ],
+        "button": "שמור את ההערכה",
+        "example": "דוגמה · קטע דוח"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "he:H04-A",
+      "locale": "he",
+      "localeName": "עברית",
+      "direction": "rtl",
+      "footer": "מונח דוגמה",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/he/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/he/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "d96f70f6eac26e0ae136fba42f1fa94f95fcdc8eb5595fa40e9ce28f9be53dfb"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "ביקור רופא",
+        "הביאו סיכום"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "שאלה שלך, מוכנה",
+      "focus": "העגת השאלות החשובות",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "סיכום לרופא",
+        "back": "",
+        "action": "הפקן",
+        "label": "שאלות לרופא",
+        "questions": [
+          "מה המשמעות של תוצאות הכבד שלי?",
+          "מה אני צריך לעקוב לפני הביקור הבא?"
+        ],
+        "add": "הוסף שאלה",
+        "example": "דוגמה · תיאור מפורט"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "he:H05-A",
+      "locale": "he",
+      "localeName": "עברית",
+      "direction": "rtl",
+      "footer": "מונח דוגמה",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/he/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/he/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "6b190585825ca94126d1f2b215d3750c00cde8213bbb72dd756dbdb064939f51"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "תוצאות קודמות",
+        "קל למצוא"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "פתח את התוצאות שלך",
+      "focus": "מצא ללא חיפוש על נייר",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "תוצאות שמורות",
+        "back": "",
+        "action": "סיים",
+        "summary": "2 תוצאות שמורות · 0 צעדים הבאים מסומנים כסיים",
+        "items": [
+          {
+            "title": "אני רוצה להבין את תוצאות המבדקים שלי",
+            "text": "מה המשמעות של מונחים בדיקות הכבד?",
+            "date": "13 בספטמבר 2026"
+          },
+          {
+            "title": "אמרו לי על בעיה בכבד",
+            "text": "מה שאפשר לשאול בפגיעת הביקור הבאה שלי?",
+            "date": "10 בספטמבר 2026"
+          }
+        ],
+        "example": "דוגמה · תקליטים שמורים"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "he:H06-A",
+      "locale": "he",
+      "localeName": "עברית",
+      "direction": "rtl",
+      "footer": "מונח דוגמה",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/he/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/he/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "2cab93c72fc8c262cf75cfcc843bf7a89153827195ad34e47f54adffddd0862a"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "לילה רע?",
+        "הוסף הערה"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "זכור מה קרה",
+      "focus": "סימפטומים שלך עם תאריך",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "הוסף סימפטום",
+        "back": "",
+        "action": "שמור",
+        "dayLabel": "יום",
+        "day": "13 בספטמבר 2026",
+        "typeLabel": "סימפטום",
+        "type": "ישנה קצף",
+        "severityLabel": "חומרה · 3/5",
+        "severity": 3,
+        "scale": "1 = קל · 5 = חמור",
+        "noteLabel": "הערה · חובה",
+        "note": "היתעורר מספר פעמים בלילה האחרון",
+        "example": "דוגמה · תיאור סימפטום"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "he:H07-A",
+      "locale": "he",
+      "localeName": "עברית",
+      "direction": "rtl",
+      "footer": "מונח דוגמה",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/he/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/he/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "b7dddafa837b0614605f8fd84c535c6c772e42b2a52deda960e8a9f5415aa6a7"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "הכנס את",
+        "התרופה"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "מה שצברת והיכן",
+      "focus": "הצטבר את פרטי התרופה שלך",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "הכנס תרופה",
+        "back": "",
+        "action": "שמור",
+        "dayLabel": "יום",
+        "day": "13 בספטמבר 2026",
+        "nameLabel": "תרופה או תוספת",
+        "name": "התרופה שנרשמה לי",
+        "doseLabel": "כמות · חובה",
+        "dose": "",
+        "disclaimer": "תוספי תזונה עלולים להשפיע על תרופות. התייעץ עם רופאך לגבי כל תוסף חדש. Hepatica אינה ממליצה על מינונים.",
+        "example": "דוגמה · תיאור תוספת"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "he:H08-A",
+      "locale": "he",
+      "localeName": "עברית",
+      "direction": "rtl",
+      "footer": "מונח דוגמה",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/he/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/he/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "e74632061d74147605770e0ccd0319acd0a5ef99049623664c20e0471f92225f"
+    }
+  ]
+}

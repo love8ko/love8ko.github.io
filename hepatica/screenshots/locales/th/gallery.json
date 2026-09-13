@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "th",
+  "label": "ไทย",
+  "lang": "th",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "ผลตรวจตับ",
+        "อธิบาย"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "เริ่มต้นด้วยผลตรวจของคุณ",
+      "focus": "เพิ่มรายงานตับของคุณ",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "th:H01-A",
+      "locale": "th",
+      "localeName": "ไทย",
+      "direction": "ltr",
+      "footer": "แนวคิดตัวอย่าง",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/th/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/th/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "1635476b2d6488b93c5656862cc415b99cd542a234b0a9f0013ad224afffc053"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "ใส่ใจสุขภาพตับ",
+        "ควรกินอะไร?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "อาหาร ที่อธิบายไว้แล้ว",
+      "focus": "สแกนมื้ออาหารของคุณ",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "th:H02-A",
+      "locale": "th",
+      "localeName": "ไทย",
+      "direction": "ltr",
+      "footer": "แนวคิดตัวอย่าง",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/th/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/th/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "b602cecd661f7878a1c850348588678cdc98c512b190353f32bcfd64ef642ac6"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "ลดการดื่มแอลกอฮอล์",
+        "ยังเป็นคุณคนเดิม"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "บันทึกประจำวันของคุณ",
+      "focus": "บันทึกการดื่มของคุณ",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "หน้าจอแอปตัวอย่าง",
+        "cancel": "ยกเลิก",
+        "title": "บันทึกการดื่ม",
+        "save": "บันทึก",
+        "dayLabel": "วันที่",
+        "day": "13 ก.ย. 2569",
+        "measure": "เครื่องดื่มมาตรฐาน",
+        "value": "0",
+        "state": "วันที่ไม่ดื่มแอลกอฮอล์",
+        "clock": "09:41",
+        "count": "0 วันที่ไม่ดื่มแอลกอฮอล์ใน 30 วันที่ผ่านมา",
+        "disclaimer": "การติดตามแอลกอฮอล์เป็นเพียงเพื่อความตระหนักส่วนตัว สำหรับการสนับสนุนภาวะการใช้แอลกอฮอล์เกินขนาด โปรดปรึกษาแพทย์หรือที่ปรึกษาที่ได้รับการรับรอง"
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "th:H03-A",
+      "locale": "th",
+      "localeName": "ไทย",
+      "direction": "ltr",
+      "footer": "แนวคิดตัวอย่าง",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/th/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/th/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "a88d34ca58a4105c2f7f3a3d9d03bd371e9eb08d9c5dd2e21d0970262f952288"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "สอบถามเกี่ยวกับ",
+        "ตับของคุณ"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "คำตอบที่มีประโยชน์ที่ควรเก็บไว้",
+      "focus": "คำถามของคุณ ทำให้ชัดเจนขึ้น",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "ขั้นตอนที่มีประโยชน์หนึ่งขั้นตอน",
+        "back": "ย้อนกลับ",
+        "action": "",
+        "heading": "เรามาทำให้ชัดเจนขึ้น",
+        "contextLabel": "ผลลัพธ์นี้มีพื้นฐานมาจากอะไร",
+        "context": "รายงานอัลตราซาวน์ของฉันระบุว่ามีไขมันสะสมในตับ",
+        "answer": "อัลตราซาวนด์สามารถแสดงไขมันในตับได้ แต่ไม่สามารถบอกระดับการอักเสบหรือพังผืดได้",
+        "resultLabel": "เก็บคำถามไว้สำหรับเวลาต่อไป (ตัวเลือก)",
+        "questions": [
+          "ฉันควรสอบถามแพทย์ให้สั่งตรวจอะไรต่อไป"
+        ],
+        "button": "เก็บผลลัพธ์นี้",
+        "example": "ตัวอย่าง · ข้อความผลลัพธ์"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "th:H04-A",
+      "locale": "th",
+      "localeName": "ไทย",
+      "direction": "ltr",
+      "footer": "แนวคิดตัวอย่าง",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/th/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/th/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "73c1c344b1940eaea5be1d7bde4c88786a4d6e62068c3b29026fa28cb19faa4d"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "การนัดหมายกับแพทย์",
+        "เตรียมสรุปข้อมูล"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "คำถามของคุณ ที่เตรียมไว้แล้ว",
+      "focus": "นำคำถามที่สำคัญมา",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "สรุปข้อมูลสำหรับแพทย์",
+        "back": "",
+        "action": "สร้างขึ้น",
+        "label": "คำถามสำหรับแพทย์ผู้รับผิดชอบ",
+        "questions": [
+          "ผลตรวจตับของฉันหมายถึงอะไร",
+          "ฉันควรติดตามอะไรก่อนการนัดหมายครั้งต่อไป"
+        ],
+        "add": "เพิ่มคำถาม",
+        "example": "ตัวอย่าง · รายละเอียดการแก้ไข"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "th:H05-A",
+      "locale": "th",
+      "localeName": "ไทย",
+      "direction": "ltr",
+      "footer": "แนวคิดตัวอย่าง",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/th/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/th/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "319f8fa44531a79cd944a92976b02843c881c353f2e5c8ce1e9711855d4b9769"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "ผลลัพธ์ที่ผ่านมา",
+        "ง่ายต่อการค้นหา"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "เปิดผลลัพธ์ที่คุณเคยเก็บไว้",
+      "focus": "ค้นหาโดยไม่ต้องตามหาเอกสาร",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "ผลลัพธ์ที่เก็บไว้",
+        "back": "",
+        "action": "เสร็จแล้ว",
+        "summary": "มีผลลัพธ์ที่เก็บไว้ 2 รายการ · 0 ขั้นตอนถัดไปถูกทำเครื่องหมายว่าเสร็จแล้ว",
+        "items": [
+          {
+            "title": "ฉันอยากเข้าใจผลตรวจเลือดของฉัน",
+            "text": "คำศัพท์เกี่ยวกับการตรวจตับหมายถึงอะไร?",
+            "date": "13 กันยายน 2569"
+          },
+          {
+            "title": "ฉันถูกบอกว่ามีปัญหาเกี่ยวกับตับ",
+            "text": "ฉันควรถามอะไรในครั้งต่อไปที่พบแพทย์?",
+            "date": "10 กันยายน 2569"
+          }
+        ],
+        "example": "ตัวอย่าง · ข้อมูลที่เก็บไว้"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "th:H06-A",
+      "locale": "th",
+      "localeName": "ไทย",
+      "direction": "ltr",
+      "footer": "แนวคิดตัวอย่าง",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/th/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/th/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "7b4820ff9ead5599e3076aed92922b1b5aa5e0953aaaf6b2dbce35ba779129f3"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "เมื่อคืนไม่ค่อยดี?",
+        "บันทึกข้อความ"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "จำสิ่งที่เกิดขึ้น",
+      "focus": "อาการของคุณพร้อมวันที่",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "บันทึกอาการ",
+        "back": "",
+        "action": "บันทึก",
+        "dayLabel": "วัน",
+        "day": "13 ก.ย. 2569",
+        "typeLabel": "อาการ",
+        "type": "นอนไม่หลับ",
+        "severityLabel": "ระดับความรุนแรง · 3/5",
+        "severity": 3,
+        "scale": "1 = น้อย · 5 = รุนแรง",
+        "noteLabel": "หมายเหตุ · ตัวเลือก",
+        "note": "ตื่นหลายครั้งในคืนที่ผ่านมา",
+        "example": "ตัวอย่าง · รายละเอียดแบบฟอร์มอาการ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "th:H07-A",
+      "locale": "th",
+      "localeName": "ไทย",
+      "direction": "ltr",
+      "footer": "แนวคิดตัวอย่าง",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/th/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/th/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "a6006f7689ab379ab06787c372fb48d944e9e2565b0380c6c77333bef5d92a38"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "บันทึกข้อมูล",
+        "ยา"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "สิ่งที่คุณใช้และเวลาที่ใช้",
+      "focus": "เก็บข้อมูลเกี่ยวกับยาของคุณ",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "บันทึกยา",
+        "back": "",
+        "action": "บันทึก",
+        "dayLabel": "วันที่",
+        "day": "13 ก.ย. 2569",
+        "nameLabel": "ยาหรืออาหารเสริม",
+        "name": "ยาที่แพทย์สั่งให้",
+        "doseLabel": "ปริมาณยา · ตัวเลือก",
+        "dose": "",
+        "disclaimer": "อาหารเสริมอาจมีผลต่อการใช้ยา ควรปรึกษาแพทย์ก่อนใช้อาหารเสริมใด ๆ เลย Hepatica ไม่เคยแนะนำปริมาณยา",
+        "example": "ตัวอย่าง · รายละเอียดแบบฟอร์มยา"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "th:H08-A",
+      "locale": "th",
+      "localeName": "ไทย",
+      "direction": "ltr",
+      "footer": "แนวคิดตัวอย่าง",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/th/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/th/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "1112082dd6f1b5e16cd0f1e23aa11d2fb8036410427cb2c48cf28bedb8d950b7"
+    }
+  ]
+}

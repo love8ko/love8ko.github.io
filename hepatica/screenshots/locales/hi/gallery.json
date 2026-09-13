@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "hi",
+  "label": "हिन्दी",
+  "lang": "hi",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "लिवर टेस्ट",
+        "विस्तार से समझें"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "अपने परिणाम से शुरू करें",
+      "focus": "अपना लिवर रिपोर्ट जोड़ें",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "hi:H01-A",
+      "locale": "hi",
+      "localeName": "हिन्दी",
+      "direction": "ltr",
+      "footer": "प्रदर्शन अवधारणा",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hi/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hi/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "9052bfd044722e4ff0308a319fe63df7865a08078f6f51222e41fa51588f761e"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "लिवर के बारे में",
+        "क्या खाना चाहिए?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "खाना, समझाया गया",
+      "focus": "अपना भोजन स्कैन करें",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "hi:H02-A",
+      "locale": "hi",
+      "localeName": "हिन्दी",
+      "direction": "ltr",
+      "footer": "प्रदर्शन अवधारणा",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hi/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hi/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "615b0a028898704f05aa6d8f9da5b72a35bcc45a325d9af3c00b1824b36ae440"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "कम शराब",
+        "आप वही रहेंगे"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "आपका दैनिक रिकॉर्ड",
+      "focus": "अपने पीने के लिए रिकॉर्ड करें",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "प्रदर्शन एप एक्सपोजर",
+        "cancel": "रद्द करें",
+        "title": "एक पीने के लिए रिकॉर्ड करें",
+        "save": "बचाएं",
+        "dayLabel": "दिन",
+        "day": "13 सितंबर, 2026",
+        "measure": "मानक पीने के अंश",
+        "value": "0",
+        "state": "शराब रहित दिन",
+        "clock": "9:41",
+        "count": "पिछले 30 दिनों में 0 शराब रहित दिन",
+        "disclaimer": "अल्कोहल ट्रैकिंग व्यक्तिगत जागरूकता के लिए है। अल्कोहल-यूज़-डिसऑर्डर सहायता के लिए, अपने डॉक्टर या प्रमाणित काउंसलर से संपर्क करें।"
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "hi:H03-A",
+      "locale": "hi",
+      "localeName": "हिन्दी",
+      "direction": "ltr",
+      "footer": "प्रदर्शन अवधारणा",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hi/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hi/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "80890da43f9a9351fa3d632065bb289be0cac014391266dc80c328d7113b7800"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "पूछें",
+        "आपका लिवर"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "एक उपयोगी उत्तर रखें",
+      "focus": "आपका सवाल, स्पष्ट कर दिया गया",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "एक उपयोगी कदम",
+        "back": "वापस",
+        "action": "",
+        "heading": "चलो इसे स्पष्ट करें",
+        "contextLabel": "इस परिणाम के आधार पर क्या है",
+        "context": "मेरी अल्ट्रासाउंड रिपोर्ट कहती है कि फैटी लिवर है",
+        "answer": "अल्ट्रासाउंड लिवर में वसा दिखा सकता है, लेकिन यह यह नहीं बताता कि कितनी सूजन (inflammation) या स्कारिंग मौजूद है",
+        "resultLabel": "आगे के सवाल के लिए एक परिणाम रखें (वैकल्पिक)",
+        "questions": [
+          "मेरे डॉक्टर को अगले कौन से टेस्ट कराने चाहिए?"
+        ],
+        "button": "इस परिणाम को बचाएं",
+        "example": "उदाहरण · परिणाम का अंश"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "hi:H04-A",
+      "locale": "hi",
+      "localeName": "हिन्दी",
+      "direction": "ltr",
+      "footer": "प्रदर्शन अवधारणा",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hi/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hi/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "a06b5b20f36a2b1041baddac50546d011c4e7b4fa9771572ed0b8ae60f42ede8"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "डॉक्टर से मुलाकात",
+        "ब्रीफ साथ ले जाएं"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "आपके सवाल, तैयार कर दिए गए",
+      "focus": "महत्वपूर्ण सवाल ले आएं",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "डॉक्टर ब्रीफ",
+        "back": "",
+        "action": "जनरेट करें",
+        "label": "आपके डॉक्टर के लिए सवाल",
+        "questions": [
+          "मेरे लिवर परिणाम क्या कहते हैं?",
+          "मेरे अगले दौरे तक क्या ट्रैक करना चाहिए?"
+        ],
+        "add": "एक प्रश्न जोड़ें",
+        "example": "उदाहरण · संपादक विवरण"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "hi:H05-A",
+      "locale": "hi",
+      "localeName": "हिन्दी",
+      "direction": "ltr",
+      "footer": "प्रदर्शन अवधारणा",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hi/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hi/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "a08002a55baedbc32087e75f2802c9cf5394dccb9e046c6340f9cb5d2f7c89f6"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "पिछले परिणाम",
+        "ढूंढना आसान"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "पहले के परिणाम खोलें",
+      "focus": "कागज के ढूंढ़ने के बिना ढूंढ़ें",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "अपने परिणाम जोड़ें",
+        "back": "",
+        "action": "कार्य समाप्त",
+        "summary": "2 संचित परिणाम · 0 अगले कदम निर्देशित करे",
+        "items": [
+          {
+            "title": "मेरे लैब परिणाम को समझना चाहता हूं",
+            "text": "इन लिवर-परीक्षण शब्दों का क्या अर्थ है?",
+            "date": "13 सितंबर, 2026"
+          },
+          {
+            "title": "मुझे एक लिवर समस्या के बारे में कहा गया था",
+            "text": "मेरे अगले दौर के दौरान कौन से सवाल पूछूं?",
+            "date": "10 सितंबर, 2026"
+          }
+        ],
+        "example": "उदाहरण · संचित प्रविष्टियाँ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "hi:H06-A",
+      "locale": "hi",
+      "localeName": "हिन्दी",
+      "direction": "ltr",
+      "footer": "प्रदर्शन अवधारणा",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hi/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hi/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "ed8ce209a4e4a1fff18373607f402147b17ad4a0d8088b1622152454ca3a9f8c"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "खराब रात?",
+        "एक नोट बनाएं"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "हुए घटना को याद रखें",
+      "focus": "आपके लक्षण, एक तारीख के साथ",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "एक लक्षण रिकॉर्ड करें",
+        "back": "",
+        "action": "बचाएं",
+        "dayLabel": "दिन",
+        "day": "13 सितंबर, 2026",
+        "typeLabel": "लक्षण",
+        "type": "खराब सोना",
+        "severityLabel": "गंभीरता · 3/5",
+        "severity": 3,
+        "scale": "1 = हल्का · 5 = गंभीर",
+        "noteLabel": "नोट · वैकल्पिक",
+        "note": "गत रात कई बार उठे",
+        "example": "उदाहरण · लक्षण फॉर्म विवरण"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "hi:H07-A",
+      "locale": "hi",
+      "localeName": "हिन्दी",
+      "direction": "ltr",
+      "footer": "प्रदर्शन अवधारणा",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hi/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hi/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "1899262c8293dcea7959e79ec49e795d7945aa20b978d1be5c8e130d0aae53b5"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "अपना रिकॉर्ड करें",
+        "दवा"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "आपने क्या लिया और कब",
+      "focus": "आपके दवा विवरण को रखें",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "दवा रिकॉर्ड करें",
+        "back": "",
+        "action": "बचाएं",
+        "dayLabel": "दिन",
+        "day": "सितंबर 13, 2026",
+        "nameLabel": "दवा या पूरक",
+        "name": "मेरी निर्धारित दवा",
+        "doseLabel": "दोज़ · वैकल्पिक",
+        "dose": "",
+        "disclaimer": "सप्लीमेंट्स दवाओं के साथ प्रतिक्रिया कर सकते हैं। किसी भी नए सप्लीमेंट के बारे में अपने डॉक्टर से चर्चा करें। Hepatica कभी भी खुराक (dose) की सलाह नहीं देता।",
+        "example": "उदाहरण · दवा फॉर्म विवरण"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "hi:H08-A",
+      "locale": "hi",
+      "localeName": "हिन्दी",
+      "direction": "ltr",
+      "footer": "प्रदर्शन अवधारणा",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hi/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hi/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "7afaaa1d6734a785996c83ff9859495fd5224da4d9ab73354e68c2c303e07495"
+    }
+  ]
+}

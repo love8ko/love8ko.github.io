@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "sk",
+  "label": "Slovenčina",
+  "lang": "sk",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Testy pečene",
+        "Vysvetlené"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "Začnite so svojimi výsledkami",
+      "focus": "Pridajte svoj pečenový test",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "sk:H01-A",
+      "locale": "sk",
+      "localeName": "Slovenčina",
+      "direction": "ltr",
+      "footer": "Ilustratívny koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/sk/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/sk/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "b035e4797fac0d516a2438498044687dc66bc990c6bb91b4eb3baba09a05d612"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Pečeň v mysli",
+        "Čo jesť?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "Jedlo, vysvetlené",
+      "focus": "Skenujte svoje jedlo",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "sk:H02-A",
+      "locale": "sk",
+      "localeName": "Slovenčina",
+      "direction": "ltr",
+      "footer": "Ilustratívny koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/sk/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/sk/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "2671ecc57aa020b890d1309e3c3a3829c09ea2dc59e4c965f6ceee6e59970e29"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Menej alkoholu",
+        "Stále ty"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "Váš denný záznam",
+      "focus": "Zapíšte pitie",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "Ilustratívny obrazový panel aplikácie",
+        "cancel": "Zrušiť",
+        "title": "Zaznamenajte pitie",
+        "save": "Uložiť",
+        "dayLabel": "Deň",
+        "day": "13. 9. 2026",
+        "measure": "Štandardné pitie",
+        "value": "0",
+        "state": "Deň bez alkoholu",
+        "clock": "9:41",
+        "count": "0 dní bez alkoholu za posledných 30",
+        "disclaimer": "Sledovanie alkoholu je pre osobnú vedomosť. Pre podporu alkoholového poruchy sa obráťte na lekára alebo certifikovaného poradcu."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "sk:H03-A",
+      "locale": "sk",
+      "localeName": "Slovenčina",
+      "direction": "ltr",
+      "footer": "Ilustratívny koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/sk/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/sk/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "91b063e2dcb5db0d16acc36a8a565e697b9df626415a3cd38de81fe0463f3fe4"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Zadajte otázku",
+        "Vaša pečeň"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "POUŽITEĽNÁ ODPOVEDA K UCHOVÁNÍ",
+      "focus": "Vaša otázka, jasnejšia",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "Jedna užitočná krok",
+        "back": "Späť",
+        "action": "",
+        "heading": "Urobme to jasnejšie",
+        "contextLabel": "Na čo sa tento výsledok založí",
+        "context": "Môj ultrazvukový správnik hovorí o tukovej pečeni",
+        "answer": "Ultrazvuk môže ukázať tuk v pečeni, ale neukazuje, koľko zápalu alebo poškodenia je prítomné",
+        "resultLabel": "Uchovajte otázku na neskôr (voliteľné)",
+        "questions": [
+          "Aké testy by som mal požiadať lekára na nasledujúce?"
+        ],
+        "button": "Uchovajte tento výsledok",
+        "example": "Príklad · výsledok z návštevy"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "sk:H04-A",
+      "locale": "sk",
+      "localeName": "Slovenčina",
+      "direction": "ltr",
+      "footer": "Ilustratívny koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/sk/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/sk/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "c4bd50740e9571e68b532ec6bbb97284b0331d7b9997061bbf516bd10557bfc6"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Návšteva lekára",
+        "Nespráva pre lekára"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "VAŠE OTÁZKY, PRIPRAVENÉ",
+      "focus": "Nespráva pre lekára, ktoré sú dôležité",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Nespráva pre lekára",
+        "back": "",
+        "action": "Vytvoriť",
+        "label": "Otázky pre lekára",
+        "questions": [
+          "Aký význam majú moje výsledky pečene?",
+          "Čo by som mal sledovať pred nasledujúcou návštevou?"
+        ],
+        "add": "Pridať otázku",
+        "example": "Príklad · detail editora"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "sk:H05-A",
+      "locale": "sk",
+      "localeName": "Slovenčina",
+      "direction": "ltr",
+      "footer": "Ilustratívny koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/sk/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/sk/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "95623a27ec137365142e3d291e07b8e904e5c849338e3d56e934076693eebf20"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Staršie výsledky",
+        "Snadno nájsť"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "OTVORIŤ VYŠETRENÉ VÝSLEDKY",
+      "focus": "Nájdi ich bez hľadania po papieri",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Uchované výsledky",
+        "back": "",
+        "action": "Hotovo",
+        "summary": "2 uchované výsledky · 0 ďalších krokov označených ako hotovo",
+        "items": [
+          {
+            "title": "Chcem pochopiť svoje laboratórne výsledky",
+            "text": "Aký význam majú tieto termíny z testov pečene?",
+            "date": "13. september 2026"
+          },
+          {
+            "title": "Bol som informovaný o probléme s pečenou",
+            "text": "Aké otázky by som mal zadať na nasledujúcu návštevu?",
+            "date": "10. september 2026"
+          }
+        ],
+        "example": "Príklad · uchované záznamy"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "sk:H06-A",
+      "locale": "sk",
+      "localeName": "Slovenčina",
+      "direction": "ltr",
+      "footer": "Ilustratívny koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/sk/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/sk/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "da9de9139f7d7897de3a42abd8497a626826426b1fbfe6a6b5407730d137bf57"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Zlý deň?",
+        "Zapíš si to"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "POZNAJ, ČO SA STALO",
+      "focus": "Tvoje príznaky s dátumom",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Zaznamenať príznak",
+        "back": "",
+        "action": "Uložiť",
+        "dayLabel": "Deň",
+        "day": "13. sep 2026",
+        "typeLabel": "POJEDENIE",
+        "type": "Slabý spánok",
+        "severityLabel": "ZÁRAZ · 3/5",
+        "severity": 3,
+        "scale": "1 = lehký · 5 = ťažký",
+        "noteLabel": "POZNÁMKA · NÁHODNÉ",
+        "note": "Vstal som niekoľkokrát minulú noc",
+        "example": "Príklad · formulár požiadavky"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "sk:H07-A",
+      "locale": "sk",
+      "localeName": "Slovenčina",
+      "direction": "ltr",
+      "footer": "Ilustratívny koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/sk/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/sk/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "26ac47505a788d9c77750bf0d77b2b5e3071268b108c157d949b78680f1365ca"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Zaznamenajte svoje",
+        "Lieky"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "ČO A KDY UŽÍVALI",
+      "focus": "Udržiavajte si informácie o lekárskej pomoci",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Zaznamenaj lekársky prostriedok",
+        "back": "",
+        "action": "Uložiť",
+        "dayLabel": "Deň",
+        "day": "13. 9. 2026",
+        "nameLabel": "LEKÁRSKY PROSTRIEDOK alebo DOPÓMOK",
+        "name": "Moje predpísané lekárske prostriedky",
+        "doseLabel": "DOZÁV · NÁHODNÉ",
+        "dose": "",
+        "disclaimer": "Doplnky môžu interagovať s lekárskymi prostriedkami. Diskutujte o akomkoľvek novom doplnku so svojím lekárom. Hepatica nikdy neodporúča dozávy.",
+        "example": "Príklad · formulár požiadavky"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "sk:H08-A",
+      "locale": "sk",
+      "localeName": "Slovenčina",
+      "direction": "ltr",
+      "footer": "Ilustratívny koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/sk/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/sk/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "1cb7524b6ff8de1671888334e0ca1850661b77aac0c45a078b3669d3f84c6a0e"
+    }
+  ]
+}

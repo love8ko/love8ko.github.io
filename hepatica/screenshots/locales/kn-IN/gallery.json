@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "kn-IN",
+  "label": "ಕನ್ನಡ",
+  "lang": "kn-IN",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "ಲಿವರ್ ಟೆಸ್ಟ್‌ಗಳು",
+        "ವಿವರಿಸಲಾಗಿದೆ"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "ನಿಮ್ಮ ಫಲಿತಾಂಶಗಳಿಂದ ಆರಂಭಿಸಿ",
+      "focus": "ನಿಮ್ಮ ಲಿವರ್ ರಿಪೋರ್ಟ್ ಸೇರಿಸಿ",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "kn-IN:H01-A",
+      "locale": "kn-IN",
+      "localeName": "ಕನ್ನಡ",
+      "direction": "ltr",
+      "footer": "ಅನುಮಾನಿತ ಸಂಗತಿ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/kn-IN/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/kn-IN/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "cbda22fb350ca2ec4a005971f6e932735a5ea1cac1f6b61885419443c6f52d2d"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "ಲಿವರ್ ಆರೋಗ್ಯದ ಬಗ್ಗೆ",
+        "ನೀವು ಏನು ತಿನ್ನಬೇಕು?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "ಆಹಾರ, ವಿವರಿಸಲಾಗಿದೆ",
+      "focus": "ನಿಮ್ಮ ಊಟವನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "kn-IN:H02-A",
+      "locale": "kn-IN",
+      "localeName": "ಕನ್ನಡ",
+      "direction": "ltr",
+      "footer": "ಅನುಮಾನಿತ ಸಂಗತಿ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/kn-IN/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/kn-IN/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "d4ea0c04f27ff9414c3f1cfc0013167fb0e9d532108cee81f3eedd3c3a95debc"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "ಕಡಿಮೆ ಮದ್ಯ",
+        "ನೀವು ಹಾಗೆಯೇ ಇರಿ"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "ನಿಮ್ಮ ದಿನದ ರಿಕಾರ್ಡ್",
+      "focus": "ನಿಮ್ಮ ಮದ್ಯವನ್ನು ನಿಂದಿಸಿ",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "ಅನುಮಾನಿತ ಆಪ್ ಸ್ಕ್ರೀನ್",
+        "cancel": "ವಾಪಸ್",
+        "title": "ಮದ್ಯವನ್ನು ನಿಂದಿಸಿ",
+        "save": "ಸೇವಿಸಿ",
+        "dayLabel": "ದಿನ",
+        "day": "ಸೆಪ್ಟೆಂಬರ್ ೧೩, ೨೦೨೬",
+        "measure": "ಸ್ಟ್ಯಾಂಡರ್ಡ್ ಮದ್ಯ",
+        "value": "0",
+        "state": "ಮದ್ಯವಿಲ್ಲದ ದಿನ",
+        "clock": "9:41",
+        "count": "30 ದಿನಗಳಲ್ಲಿ 0 ಮದ್ಯವಿಲ್ಲದ ದಿನಗಳು",
+        "disclaimer": "ಮದ್ಯದ ಟ್ರ್ಯಾಕಿಂಗ್ ವೈಯಕ್ತಿಕ ಅರಿವಿಗಾಗಿ ಮಾತ್ರ. ಮದ್ಯಪಾನದ ವ್ಯಸನದ ಬೆಂಬಲಕ್ಕಾಗಿ, ನಿಮ್ಮ ವೈದ್ಯರನ್ನು ಅಥವಾ ಪ್ರಮಾಣೀಕೃತ ಸಲಹೆಗಾರರನ್ನು ಸಂಪರ್ಕಿಸಿ."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "kn-IN:H03-A",
+      "locale": "kn-IN",
+      "localeName": "ಕನ್ನಡ",
+      "direction": "ltr",
+      "footer": "ಅನುಮಾನಿತ ಸಂಗತಿ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/kn-IN/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/kn-IN/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "08f4414e2cec505021dceec1cbc5a3792329bb4b73b59270cc6e3850bc7e6d30"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "ಇದರ ಬಗ್ಗೆ ಕೇಳಿ",
+        "ನಿಮ್ಮ ಲಿವರ್ ಬಗ್ಗೆ"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "ಒಂದು ಉಪಯುಕ್ತ ಉತ್ತರವನ್ನು ಇಟ್ಟುಕೊಳ್ಳಿ",
+      "focus": "ನಿಮ್ಮ ಪ್ರಶ್ನೆ, ಸ್ಪಷ್ಟವಾಗಿ ಮಾಡಿ",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "ಒಂದು ಉಪಯುಕ್ತ ಸ್ಥಿತಿ",
+        "back": "ಮರುಸ್ಥಾಪಿಸು",
+        "action": "",
+        "heading": "ನಾವು ಇದನ್ನು ಸ್ಪಷ್ಟವಾಗಿ ಮಾಡೋಣ",
+        "contextLabel": "ಈ ಫಲಿತಾಂಶವು ಆಧರಿಸಿದೆ",
+        "context": "ನನ್ನ ಅಲ್ಟ್ರಾಸೌಂಡ್ ರಿಪೋರ್ಟ್‌ನಲ್ಲಿ ಫ್ಯಾಟಿ ಲಿವರ್ ಎಂದು ಇದೆ",
+        "answer": "ಅಲ್ಟ್ರಾಸೌಂಡ್ ಲಿವರ್‌ನಲ್ಲಿರುವ ಕೊಬ್ಬನ್ನು ತೋರಿಸಬಹುದು, ಆದರೆ ಅದು ಇನ್ಫ್ಲಮೇಷನ್ ಅಥವಾ ಸ್ಕಾರಿಂಗ್ ಎಷ್ಟು ಇದೆ ಎಂದು ತಿಳಿಸುವುದಿಲ್ಲ",
+        "resultLabel": "ಬಾಕಿ ಇರುವ ಪ್ರಶ್ನೆಯನ್ನು ಇಟ್ಟುಕೊಳ್ಳಿ (ಆಯ್ಕೆಯ ಮೇಲೆ)",
+        "questions": [
+          "ನನ್ನ ವೈದ್ಯರಿಗೆ ಮುಂದಿನ ಆದೇಶಗಳನ್ನು ಯಾವುವನ್ನು ಕೇಳಬೇಕು?"
+        ],
+        "button": "ಈ ಫಲಿತಾಂಶವನ್ನು ಸೇವಿಸಿ",
+        "example": "ಉದಾಹರಣೆ · ಫಲಿತಾಂಶ ಕತ್ತಿ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "kn-IN:H04-A",
+      "locale": "kn-IN",
+      "localeName": "ಕನ್ನಡ",
+      "direction": "ltr",
+      "footer": "ಅನುಮಾನಿತ ಸಂಗತಿ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/kn-IN/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/kn-IN/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "0db4bbc3d606d671f91353e818633d134b652d8b5d70f74f60da63f9b7a2bc86"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "ವೈದ್ಯರ ಭೇಟಿ",
+        "ಸಂಕ್ಷಿಪ್ತ ವರದಿಯನ್ನು ತನ್ನಿ"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "ನಿಮ್ಮ ಪ್ರಶ್ನೆಗಳು, ಸಿದ್ಧವಾಗಿವೆ",
+      "focus": "ಅತ್ಯಂತ ಮುಖ್ಯವಾದ ಪ್ರಶ್ನೆಗಳನ್ನು ತರು",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "ವೈದ್ಯರ ಸಂಕ್ಷಿಪ್ತ ವರದಿ",
+        "back": "",
+        "action": "ಸೃಜನೆ",
+        "label": "ನಿಮ್ಮ ವೈದ್ಯರಿಗೆ ಕೇಳಬೇಕಾದ ಪ್ರಶ್ನೆಗಳು",
+        "questions": [
+          "ನನ್ನ ಲಿವರ್ ಫಲಿತಾಂಶಗಳು ಏನು ಅರ್ಥವನ್ನು ಹೊಂದಿವೆ?",
+          "ನನ್ನ ಮುಂದಿನ ಸಂದರ್ಶನದ ಮುನ್ನ ನನ್ನನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡುವುದು ಏನು?"
+        ],
+        "add": "ಪ್ರಶ್ನೆ ಸೇರಿಸಿ",
+        "example": "ವಿವರಗಳು · ಸಂಪಾದಕ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "kn-IN:H05-A",
+      "locale": "kn-IN",
+      "localeName": "ಕನ್ನಡ",
+      "direction": "ltr",
+      "footer": "ಅನುಮಾನಿತ ಸಂಗತಿ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/kn-IN/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/kn-IN/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "c03cf567edb5a15d134c6efb266862daaa9c892e4c5a9c6a30894a1aefee9ffa"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "ಹಳೆಯ ಫಲಿತಾಂಶಗಳು",
+        "ಹುಡುಕುವುದು ಸುಲಭ"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "ಮುಂಚಿನ ಫಲಿತಾಂಶಗಳನ್ನು ತೆರೆಯಿರಿ",
+      "focus": "ಪೇಪರ್ ಹಾಕುವ ಬದಲು ಅದನ್ನು ಹುಡುಕಿ",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "ಸೇವ್ ಮಾಡಿದ ಫಲಿತಾಂಶಗಳು",
+        "back": "",
+        "action": "ಅಂತ್ಯ",
+        "summary": "2 ಸೇವ್ ಮಾಡಿದ ಫಲಿತಾಂಶಗಳು · 0 ಮುಂದಿನ ಕ್ರಮಗಳನ್ನು ಅಂತ್ಯ",
+        "items": [
+          {
+            "title": "ನನ್ನ ಲ್ಯಾಬ್ ಫಲಿತಾಂಶಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು",
+            "text": "ಇವು ಲಿವರ್ ಟೆಸ್ಟ್ ಪದಗಳು ಎಂದರೇನು?",
+            "date": "ಸೆಪ್ಟೆಂಬರ್ 13, 2026"
+          },
+          {
+            "title": "ನನಗೆ ಲಿವರ್ ಸಮಸ್ಯೆ ಹೇಳಲಾಯಿತು",
+            "text": "ನನ್ನ ಮುಂದಿನ ಸಂದರ್ಶನದಲ್ಲಿ ನಾನು ಯಾವುದನ್ನು ಕೇಳಬೇಕು?",
+            "date": "ಸೆಪ್ಟೆಂಬರ್ 10, 2026"
+          }
+        ],
+        "example": "ವಿವರಗಳು · ಸೇವ್ ಮಾಡಿದ ಪ್ರವೇಶಗಳು"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "kn-IN:H06-A",
+      "locale": "kn-IN",
+      "localeName": "ಕನ್ನಡ",
+      "direction": "ltr",
+      "footer": "ಅನುಮಾನಿತ ಸಂಗತಿ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/kn-IN/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/kn-IN/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "2b644436c336c268b2e0f6cf89cea9bba6939b7e44722b8c1e2870fa8f02b816"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "ನಿದ್ರೆ ಸರಿಯಾಗಲಿಲ್ಲವೇ?",
+        "ಟಿಪ್ಪಣಿ ಮಾಡಿಕೊಳ್ಳಿ"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "ನೀವು ಅನುಭವಿಸಿದ ಸಂಗತಿಗಳು, ದಿನಾಂಕದೊಂದಿಗೆ",
+      "focus": "ನಿಮ್ಮ ಲಕ್ಷಣಗಳನ್ನು ದಿನಾಂಕದೊಂದಿಗೆ ನಿಖರಗೊಳಿಸಿ",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "ಲಕ್ಷಣವನ್ನು ನಿಖರಗೊಳಿಸಿ",
+        "back": "",
+        "action": "ಸೇವ್ ಮಾಡಿ",
+        "dayLabel": "ದಿನ",
+        "day": "ಸೆಪ್ಟೆಂಬರ್ 13, 2026",
+        "typeLabel": "ಸಂಕೇತ",
+        "type": "ಕೆಲವು ನಿದ್ರೆಯ ಕಷ್ಟ",
+        "severityLabel": "ಆಪ್ಟ್ · 3/5",
+        "severity": 3,
+        "scale": "1 = ಸ್ವಲ್ಪ · 5 = ಗಟ್ಟಿ",
+        "noteLabel": "ಟಿಪ್ಪಣಿ · ಆಯ್ಕೆಯ ಮೇಲೆ",
+        "note": "ಗುರುವಾಸರದಲ್ಲಿ ಹಲವು ಬಾರಿ ಎದ್ದು ನಿದ್ರೆಯನ್ನು ಬಿಡುವುದು",
+        "example": "ಉದಾಹರಣೆ · ಸಂಕೇತ ರೂಪದ ವಿವರ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "kn-IN:H07-A",
+      "locale": "kn-IN",
+      "localeName": "ಕನ್ನಡ",
+      "direction": "ltr",
+      "footer": "ಅನುಮಾನಿತ ಸಂಗತಿ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/kn-IN/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/kn-IN/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "73f67d3cc7ea02bbccd1d7942684a29eb7bc4d2218077ee49a8c52a293a12fdf"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "ದಾಖಲಿಸಿ",
+        "ಔಷಧಿ"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "ನೀವು ತೆಗೆದುಕೊಂಡು ಹೋದುದು ಮತ್ತು ಅದರ ಸಮಯ",
+      "focus": "ನಿಮ್ಮ ವಾಹನದ ವಿವರಗಳನ್ನು ಇಟ್ಟುಕೊಳ್ಳಿ",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "ಔಷಧಿಯ ವಿವರಗಳನ್ನು ದಾಖಲಿಸಿ",
+        "back": "",
+        "action": "ಸಂಗ್ರಹಿಸಿ",
+        "dayLabel": "ದಿನ",
+        "day": "ಸೆಪ್ಟೆಂಬರ್ 13, 2026",
+        "nameLabel": "ಔಷಧಿ ಅಥವಾ ಪೂರಕ",
+        "name": "ನನ್ನ ಸೂಚಿತ ಔಷಧಿ",
+        "doseLabel": "ಉಪಯೋಗ · ಆಯ್ಕೆಯ ಮೇಲೆ",
+        "dose": "",
+        "disclaimer": "ಪೂರಕಗಳು ಔಷಧಿಗಳೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಬಹುದು. ಯಾವುದೇ ಹೊಸ ಪೂರಕದ ಬಗ್ಗೆ ನಿಮ್ಮ ವೈದ್ಯರೊಂದಿಗೆ ಚರ್ಚಿಸಿ. Hepatica ಎಂದಿಗೂ ಪ್ರಮಾಣವನ್ನು (dose) ಶಿಫಾರಸು ಮಾಡುವುದಿಲ್ಲ.",
+        "example": "ಉದಾಹರಣೆ · ವಾಹನ ರೂಪದ ವಿವರ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "kn-IN:H08-A",
+      "locale": "kn-IN",
+      "localeName": "ಕನ್ನಡ",
+      "direction": "ltr",
+      "footer": "ಅನುಮಾನಿತ ಸಂಗತಿ",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/kn-IN/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/kn-IN/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "d3f6bc3cffa60b7b469c3d32ed24bb1e8c73240e76cec02c5cb00538374974da"
+    }
+  ]
+}

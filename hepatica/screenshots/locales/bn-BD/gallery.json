@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "bn-BD",
+  "label": "বাংলা",
+  "lang": "bn-BD",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "লিভার পরীক্ষা",
+        "সহজ ব্যাখ্যা"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "আপনার ফলাফল থেকে শুরু করুন",
+      "focus": "আপনার লিভার রিপোর্ট যোগ করুন",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "bn-BD:H01-A",
+      "locale": "bn-BD",
+      "localeName": "বাংলা",
+      "direction": "ltr",
+      "footer": "প্রদর্শনী ধারণা",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/bn-BD/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/bn-BD/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "ee3bff469cc3ea22808c26ad2e60036608ed84dd1a9fd49f998145d4ef6e61a0"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "লিভারের যত্ন নিন",
+        "কি খাবেন?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "খাবার, ব্যাখ্যা করা হয়েছে",
+      "focus": "আপনার খাবার স্ক্যান করুন",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "bn-BD:H02-A",
+      "locale": "bn-BD",
+      "localeName": "বাংলা",
+      "direction": "ltr",
+      "footer": "প্রদর্শনী ধারণা",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/bn-BD/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/bn-BD/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "6ae6dc6a15b841a6e3e8c6bf3c4decdbb7a73654fd387ab57a9d652951e7045e"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "কম মদ",
+        "আপনি যেমন তেমনই"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "আপনার দৈনিক রেকর্ড",
+      "focus": "আপনার মদ লগ করুন",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "প্রদর্শনী অ্যাপ স্ক্রিন",
+        "cancel": "বাতিল",
+        "title": "মদ লগ করুন",
+        "save": "সংরক্ষণ করুন",
+        "dayLabel": "দিন",
+        "day": "সেপ্টেম্বর ১৩, ২০২৬",
+        "measure": "স্ট্যান্ডার্ড মদ",
+        "value": "০",
+        "state": "মদ বিহীন দিন",
+        "clock": "৯:৪১",
+        "count": "৩০ দিনের মধ্যে ০ মদ বিহীন দিন",
+        "disclaimer": "মদ্যপান ট্র্যাকিং ব্যক্তিগত সচেতনতার জন্য। মদ্যপানের সমস্যা সমাধানে আপনার ডাক্তার বা একজন সার্টিফাইড কাউন্সিলরের সাথে যোগাযোগ করুন।"
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "bn-BD:H03-A",
+      "locale": "bn-BD",
+      "localeName": "বাংলা",
+      "direction": "ltr",
+      "footer": "প্রদর্শনী ধারণা",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/bn-BD/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/bn-BD/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "a95a41c021280abe77562f56faad3706f6eb333c909dc6c4e63a30796a33cec7"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "প্রশ্ন করুন",
+        "আপনার লিভার"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "একটি কার্যকর উত্তর রাখুন",
+      "focus": "আপনার প্রশ্ন স্পষ্ট হয়ে গেল",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "একটি কার্যকর পদক্ষেপ",
+        "back": "পিছনে",
+        "action": "",
+        "heading": "আমরা এটি স্পষ্ট করে তুলি",
+        "contextLabel": "এই ফলাফলের ভিত্তি কী?",
+        "context": "আমার আল্ট্রাসাউন্ড রিপোর্ট বলে ফ্যাটি লিভার",
+        "answer": "আল্ট্রাসাউন্ড লিভারে ফ্যাট দেখাতে পারে, কিন্তু এটি কতটা প্রদাহ (inflammation) বা স্কারিং আছে তা বলতে পারে না",
+        "resultLabel": "আপনার প্রশ্নটি পরে রাখুন (ঐচ্ছিক)",
+        "questions": [
+          "আমার ডাক্তারকে আর কী পরীক্ষা করাতে হবে?"
+        ],
+        "button": "এই ফলাফল সংরক্ষণ করুন",
+        "example": "উদাহরণ · ফলাফল অংশ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "bn-BD:H04-A",
+      "locale": "bn-BD",
+      "localeName": "বাংলা",
+      "direction": "ltr",
+      "footer": "প্রদর্শনী ধারণা",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/bn-BD/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/bn-BD/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "e4baf7c5b36c509147118be1e268c3993e04e293fea8c897d4cecb5bccef5e43"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "ডাক্তারের কাছে",
+        "ব্রিফ সাথে রাখুন"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "আপনার প্রশ্নগুলি, প্রস্তুত করুন",
+      "focus": "আপনার জন্য গুরুত্বপূর্ণ প্রশ্নগুলি আনুমানিক করুন",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "ডক্টর ব্রিফ",
+        "back": "",
+        "action": "প্রস্তুত করুন",
+        "label": "আপনার চিকিৎসকের জন্য প্রশ্ন",
+        "questions": [
+          "আমার লিভার পরীক্ষার ফলাফল কী বোঝায়?",
+          "আমার পরবর্তী পরামর্শের আগে আমি কী ট্র্যাক করতে হবে?"
+        ],
+        "add": "প্রশ্ন যোগ করুন",
+        "example": "উদাহরণ · সম্পাদনা বিস্তার"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "bn-BD:H05-A",
+      "locale": "bn-BD",
+      "localeName": "বাংলা",
+      "direction": "ltr",
+      "footer": "প্রদর্শনী ধারণা",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/bn-BD/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/bn-BD/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "068d361044c755bd71d25df1cb9157d1ffd732f882566751b0d60b669cb0accb"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "পূর্ববর্তী ফলাফল",
+        "সহজে খুঁজুন"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "আপনার আগের ফলাফল খুলুন",
+      "focus": "কাগজের খুঁজার ছাড়া খুঁজুন",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "সংরক্ষিত ফলাফল",
+        "back": "",
+        "action": "সম্পন্ন",
+        "summary": "2 সংরক্ষিত ফলাফল · 0 পরবর্তী পদক্ষেপ সম্পন্ন",
+        "items": [
+          {
+            "title": "আমার ল্যাব ফলাফল বুঝতে চাই",
+            "text": "এই লিভার পরীক্ষা শব্দগুলো কী বোঝায়?",
+            "date": "সেপ্টেম্বর ১৩, ২০২৬"
+          },
+          {
+            "title": "আমাকে লিভার সমস্যা বলা হয়েছিল",
+            "text": "আমার পরবর্তী অ্যাপয়েন্টমেন্টে আমি কী জিজ্ঞাসা করব?",
+            "date": "সেপ্টেম্বর ১০, ২০২৬"
+          }
+        ],
+        "example": "উদাহরণ · সংরক্ষিত প্রবেশ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "bn-BD:H06-A",
+      "locale": "bn-BD",
+      "localeName": "বাংলা",
+      "direction": "ltr",
+      "footer": "প্রদর্শনী ধারণা",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/bn-BD/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/bn-BD/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "de6b8c20b0e1f4839059ef8925cf59eeb7f354e00dcd1ab3a7a04eacb266ff9f"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "খারাপ রাত?",
+        "একটি নোট লিখুন"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "আপনি কী ঘটেছিল স্মরণ রাখুন",
+      "focus": "আপনার লক্ষণগুলো এবং তার তারিখ",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "লক্ষণ রেকর্ড করুন",
+        "back": "",
+        "action": "সংরক্ষণ করুন",
+        "dayLabel": "দিন",
+        "day": "সেপ্টেম্বর ১৩, ২০২৬",
+        "typeLabel": "লক্ষণ",
+        "type": "ভালো নিদ্রা নেই",
+        "severityLabel": "গুরুত্ব · 3/5",
+        "severity": 3,
+        "scale": "1 = কম · 5 = বেশি",
+        "noteLabel": "টীকা · বিকল্প",
+        "note": "গত রাতে অনেকবার জেগেছিলাম",
+        "example": "উদাহরণ · প্রতিক্রিয়া ফরম বিস্তার"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "bn-BD:H07-A",
+      "locale": "bn-BD",
+      "localeName": "বাংলা",
+      "direction": "ltr",
+      "footer": "প্রদর্শনী ধারণা",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/bn-BD/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/bn-BD/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "2be393cb15ae23e1ea404389efc6969a71bff68109b4e636af7741db7f43de27"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "লগ করুন",
+        "ঔষধ"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "আপনি কী এবং কখন গ্রহণ করেছেন",
+      "focus": "ঔষধ বিষয়ে আপনার তথ্য রাখুন",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "ঔষধ লগ করুন",
+        "back": "",
+        "action": "সংরক্ষণ করুন",
+        "dayLabel": "দিন",
+        "day": "সেপ্টেম্বর ১৩, ২০২৬",
+        "nameLabel": "ঔষধ বা পুষ্টি উপাদান",
+        "name": "আমার নির্ধারিত ঔষধ",
+        "doseLabel": "পরিমাণ · বিকল্প",
+        "dose": "",
+        "disclaimer": "উপাদানগুলি ঔষধের সাথে প্রভাব ফেলতে পারে। যে কোনো নতুন উপাদান নিয়ে আপনার ডাক্তারের সাথে আলোচনা করুন। Hepatica কোনো পরিমাণ পরামর্শ দেয় না।",
+        "example": "উদাহরণ · ঔষধ ফরম বিস্তার"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "bn-BD:H08-A",
+      "locale": "bn-BD",
+      "localeName": "বাংলা",
+      "direction": "ltr",
+      "footer": "প্রদর্শনী ধারণা",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/bn-BD/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/bn-BD/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "7f209c5df0a5365f0ab96663459456418cc6f53d3c35357e2e8bc6adc1a0fd9c"
+    }
+  ]
+}

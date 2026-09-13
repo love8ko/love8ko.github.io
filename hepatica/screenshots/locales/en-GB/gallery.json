@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "en-GB",
+  "label": "English (UK)",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Liver Tests",
+        "Explained"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "START WITH YOUR RESULTS",
+      "focus": "Add your liver report",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "en-GB:H01-A",
+      "locale": "en-GB",
+      "localeName": "English (UK)",
+      "direction": "ltr",
+      "footer": "Illustrative concept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/en-GB/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/en-GB/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "4fab4a4174e0a65ddd7c8580fb17b69d046ee7e52b5167dff7f71b8b4700a052"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Liver in Mind",
+        "What to Eat?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "FOOD, EXPLAINED",
+      "focus": "Scan your meal",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "en-GB:H02-A",
+      "locale": "en-GB",
+      "localeName": "English (UK)",
+      "direction": "ltr",
+      "footer": "Illustrative concept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/en-GB/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/en-GB/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "3529fd59f26cd70b54bf2db6bdd94d423d336a1d0e98e1de6387cfdbb87310d9"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Less Alcohol",
+        "Still You"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "YOUR DAILY RECORD",
+      "focus": "Log your drinks",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "ILLUSTRATIVE APP SCREEN",
+        "cancel": "Cancel",
+        "title": "Log a drink",
+        "save": "Save",
+        "dayLabel": "Day",
+        "day": "Sep 13, 2026",
+        "measure": "Standard drinks",
+        "value": "0",
+        "state": "Alcohol-free day",
+        "clock": "9:41",
+        "count": "0 alcohol-free days in the last 30",
+        "disclaimer": "Alcohol tracking is for personal awareness. For alcohol-use-disorder support, consult your doctor or a certified counselor."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "en-GB:H03-A",
+      "locale": "en-GB",
+      "localeName": "English (UK)",
+      "direction": "ltr",
+      "footer": "Illustrative concept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/en-GB/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/en-GB/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "ae4ef59441bbb3daa1ab8528b55f3225df8bda5b0caf71c757d0c35f34407ba2"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Ask About",
+        "Your Liver"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "A USEFUL ANSWER TO KEEP",
+      "focus": "Your question, made clearer",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "One useful step",
+        "back": "Back",
+        "action": "",
+        "heading": "Let’s make this clearer",
+        "contextLabel": "What this result is based on",
+        "context": "My ultrasound report says fatty liver",
+        "answer": "Ultrasound can show fat in the liver, but it doesn't tell how much inflammation or scarring is present",
+        "resultLabel": "Keep a question for later (optional)",
+        "questions": [
+          "What tests should I ask my doctor to order next?"
+        ],
+        "button": "Save this result",
+        "example": "Example · result excerpt"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "en-GB:H04-A",
+      "locale": "en-GB",
+      "localeName": "English (UK)",
+      "direction": "ltr",
+      "footer": "Illustrative concept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/en-GB/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/en-GB/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "e69e8e3cc50a1d69a953af994a168af3f615d6c08d5889d3af946886e9fcad84"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Doctor Visit",
+        "Bring a Brief"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "YOUR QUESTIONS, PREPARED",
+      "focus": "Bring the questions that matter",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Doctor Brief",
+        "back": "",
+        "action": "Generate",
+        "label": "Questions for your prescriber",
+        "questions": [
+          "What do my liver results mean?",
+          "What should I track before my next visit?"
+        ],
+        "add": "Add a question",
+        "example": "Example · editor detail"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "en-GB:H05-A",
+      "locale": "en-GB",
+      "localeName": "English (UK)",
+      "direction": "ltr",
+      "footer": "Illustrative concept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/en-GB/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/en-GB/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "367d3f19832f8a226efa0e50aacffafcbc1897f340f03a555899b9ad6fe12591"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Past Results",
+        "Easy to Find"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "OPEN YOUR EARLIER RESULTS",
+      "focus": "Find it without the paper hunt",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Saved results",
+        "back": "",
+        "action": "Done",
+        "summary": "2 saved results · 0 next steps marked done",
+        "items": [
+          {
+            "title": "I want to understand my lab results",
+            "text": "What do these liver-test terms mean?",
+            "date": "September 13, 2026"
+          },
+          {
+            "title": "I was told about a liver problem",
+            "text": "What should I ask at my next appointment?",
+            "date": "September 10, 2026"
+          }
+        ],
+        "example": "Example · saved entries"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "en-GB:H06-A",
+      "locale": "en-GB",
+      "localeName": "English (UK)",
+      "direction": "ltr",
+      "footer": "Illustrative concept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/en-GB/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/en-GB/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "3473df30ee4cab03ecf1ea27787e295829b8fb458e70398bfa5251d7b7164814"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Bad Night?",
+        "Make a Note"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "REMEMBER WHAT HAPPENED",
+      "focus": "Your symptoms, with a date",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Log a symptom",
+        "back": "",
+        "action": "Save",
+        "dayLabel": "Day",
+        "day": "Sep 13, 2026",
+        "typeLabel": "SYMPTOM",
+        "type": "Poor sleep",
+        "severityLabel": "SEVERITY · 3/5",
+        "severity": 3,
+        "scale": "1 = mild · 5 = severe",
+        "noteLabel": "NOTE · OPTIONAL",
+        "note": "Woke up several times last night",
+        "example": "Example · symptom form detail"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "en-GB:H07-A",
+      "locale": "en-GB",
+      "localeName": "English (UK)",
+      "direction": "ltr",
+      "footer": "Illustrative concept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/en-GB/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/en-GB/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "04e83281a3f191348330c504541141027d50bba16c7b82758d0ba1b3fe61db15"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Log Your",
+        "Medication"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "WHAT YOU TOOK AND WHEN",
+      "focus": "Keep your medication details",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Log medication",
+        "back": "",
+        "action": "Save",
+        "dayLabel": "Day",
+        "day": "Sep 13, 2026",
+        "nameLabel": "MEDICATION OR SUPPLEMENT",
+        "name": "My prescribed medication",
+        "doseLabel": "DOSE · OPTIONAL",
+        "dose": "",
+        "disclaimer": "Supplements may interact with medications. Discuss any new supplement with your doctor. Hepatica never recommends doses.",
+        "example": "Example · medication form detail"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "en-GB:H08-A",
+      "locale": "en-GB",
+      "localeName": "English (UK)",
+      "direction": "ltr",
+      "footer": "Illustrative concept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/en-GB/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/en-GB/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "5230f2d6cfb6016a136b24e0799992299af84b10f8b97b6121e61aed8721030d"
+    }
+  ]
+}

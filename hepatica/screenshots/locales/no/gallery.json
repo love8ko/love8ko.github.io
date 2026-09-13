@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "no",
+  "label": "Norsk",
+  "lang": "no",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Leverprøver",
+        "Forklart"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "START MED DIN RESULTATER",
+      "focus": "Legg inn din leverrapport",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "no:H01-A",
+      "locale": "no",
+      "localeName": "Norsk",
+      "direction": "ltr",
+      "footer": "Illustrativ konsept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/no/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/no/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "debb0ef98863065c8f388e59978818e9c6a0fc40e16d2be534c954a4d9bc1f80"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Leveren i tanken",
+        "Hva skal jeg spise?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "MAT, FORKLART",
+      "focus": "Scan din måltid",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "no:H02-A",
+      "locale": "no",
+      "localeName": "Norsk",
+      "direction": "ltr",
+      "footer": "Illustrativ konsept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/no/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/no/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "487d8b05f84ebf909b62a1705cf782f9ec2f1db4a095fca5404c0ac5a37f1d37"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Mindre alkohol",
+        "Så er du"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "DIN DAGLIG REGISTRERING",
+      "focus": "Logg dine drikker",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "ILLUSTRATIV APP-SCREEN",
+        "cancel": "Avbryt",
+        "title": "Logg en drikke",
+        "save": "Lagre",
+        "dayLabel": "Dag",
+        "day": "13. sep 2026",
+        "measure": "Standard drikker",
+        "value": "0",
+        "state": "Alkoholfri dag",
+        "clock": "9:41",
+        "count": "0 alkoholfrie dager i siste 30 dager",
+        "disclaimer": "Alkoholregistrering er for personlig bevissthet. For støtte til alkoholbrukssyndrom, konsulter din lege eller en sertifisert rådgiver."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "no:H03-A",
+      "locale": "no",
+      "localeName": "Norsk",
+      "direction": "ltr",
+      "footer": "Illustrativ konsept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/no/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/no/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "318f367d27343eb22576b3193f3338724eda7954530e610aa3acdb8753a262f1"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Spør om det",
+        "Din lever"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "EN BRUKEN SVAR FOR Å BEHOLDE",
+      "focus": "Din spørsmål, gjort tydeligere",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "En nyttig trinn",
+        "back": "Tilbake",
+        "action": "",
+        "heading": "La oss gjøre dette tydeligere",
+        "contextLabel": "Hva dette resultatet baseres på",
+        "context": "Min ultralyd-rapport sier fettlever",
+        "answer": "Ultralyd kan vise fett i leveren, men ikke graden av betennelse eller arrdannelse",
+        "resultLabel": "Hold et spørsmål til senere (valgfritt)",
+        "questions": [
+          "Hva er de neste testene jeg skal spørsmålet min lege om?"
+        ],
+        "button": "Lagre dette resultatet",
+        "example": "Eksempel · resultatutdrag"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "no:H04-A",
+      "locale": "no",
+      "localeName": "Norsk",
+      "direction": "ltr",
+      "footer": "Illustrativ konsept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/no/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/no/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "64ad5ff45b35cc148129c2f33c7a1f1b4eff37fbcbcf7cb3bfaecbfbfb674756"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Legevist",
+        "Ta med et sammendrag"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "DINE SPØRSMÅL, FORBEREDT",
+      "focus": "Bring spørsmålene som teller",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Leges kort",
+        "back": "",
+        "action": "Generer",
+        "label": "Spørsmål til din leges",
+        "questions": [
+          "Hva betyr mine leverresultater?",
+          "Hva skal jeg følge opp før neste besøk?"
+        ],
+        "add": "Legg til et spørsmål",
+        "example": "Eksempel · rediger detaljer"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "no:H05-A",
+      "locale": "no",
+      "localeName": "Norsk",
+      "direction": "ltr",
+      "footer": "Illustrativ konsept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/no/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/no/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "929adf952ebc9ce2f518c7c3dc006f77b39c50c73599c9b0f7fa046cbe0831c7"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Tidligere resultater",
+        "Enkelt å finne"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "ÅPNE DIN TIDLIGERE RESULTATER",
+      "focus": "Finn det uten å lete etter papirer",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Lagrede resultater",
+        "back": "",
+        "action": "Ferdig",
+        "summary": "2 lagrede resultater · 0 neste trinn markert ferdig",
+        "items": [
+          {
+            "title": "Jeg vil forstå mine laboratorieresultater",
+            "text": "Hva betyr disse leverprøvebegrepene?",
+            "date": "13. september 2026"
+          },
+          {
+            "title": "Jeg ble informert om et leverproblem",
+            "text": "Hva skal jeg spørsmål ved neste besøk?",
+            "date": "10. september 2026"
+          }
+        ],
+        "example": "Eksempel · lagrede innlegg"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "no:H06-A",
+      "locale": "no",
+      "localeName": "Norsk",
+      "direction": "ltr",
+      "footer": "Illustrativ konsept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/no/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/no/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "cfe8936f956070acdb88ae98bb22668310c18b8bb257d3a923e501e39e4f3694"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Dårlig natt?",
+        "Lag en notat"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "HUSK HVET HENNE",
+      "focus": "Dine symptomer, med dato",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Logg et symptom",
+        "back": "",
+        "action": "Lagre",
+        "dayLabel": "Dag",
+        "day": "13. sep 2026",
+        "typeLabel": "SYMPTOM",
+        "type": "Dårlig søvn",
+        "severityLabel": "STØRRELSE · 3/5",
+        "severity": 3,
+        "scale": "1 = lett · 5 = alvorlig",
+        "noteLabel": "NOTAT · VALGFRI",
+        "note": "Voke opp flere ganger i natt",
+        "example": "Eksempel · detaljer i symptombeskrivelse"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "no:H07-A",
+      "locale": "no",
+      "localeName": "Norsk",
+      "direction": "ltr",
+      "footer": "Illustrativ konsept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/no/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/no/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "030165b2fa05f4668ba2a8fb06ea17f910ace268c88e567894738d27f8d47330"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Logg din",
+        "Medisin"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "HVA DU TILBEDE OG NÅ",
+      "focus": "Hold detaljene om din medisin",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Logg medisin",
+        "back": "",
+        "action": "Lagre",
+        "dayLabel": "Dag",
+        "day": "09.13.2026",
+        "nameLabel": "MEDISIN eller SUPPLEMENT",
+        "name": "Min skrevet medisin",
+        "doseLabel": "DOSIS · VALGFRI",
+        "dose": "",
+        "disclaimer": "Supplementer kan påvirke medisiner. Diskuter eventuelle nye supplementer med din lege. Hepatica anbefaler aldri doser.",
+        "example": "Eksempel · detaljer i medisinbeskrivelse"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "no:H08-A",
+      "locale": "no",
+      "localeName": "Norsk",
+      "direction": "ltr",
+      "footer": "Illustrativ konsept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/no/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/no/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "a467dca6225d6759ac000eeb62638f3fec073ec24015d3e7cf90ca4c68ac268c"
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "ko",
+  "label": "한국어",
+  "lang": "ko",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "간 검사",
+        "설명"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "결과부터 시작하기",
+      "focus": "간 검사 보고서 추가",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ko:H01-A",
+      "locale": "ko",
+      "localeName": "한국어",
+      "direction": "ltr",
+      "footer": "시범 개념",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ko/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ko/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "23618a861a8ae16e289c2452329de68d6f317ab52e8d118bb337ccc21eeee71a"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "간 건강을 생각하며",
+        "무엇을 먹을까요?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "식품, 설명",
+      "focus": "식사 스캔",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ko:H02-A",
+      "locale": "ko",
+      "localeName": "한국어",
+      "direction": "ltr",
+      "footer": "시범 개념",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ko/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ko/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "8b57fc9c6851f53910fada8b07c3bc90534a4c4aa7578c7d1e7de153a836d0cd"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "술은 줄이고",
+        "나답게"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "일일 기록",
+      "focus": "술을 기록하다",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "시범 앱 화면",
+        "cancel": "취소",
+        "title": "술 기록하기",
+        "save": "저장",
+        "dayLabel": "일",
+        "day": "2026년 9월 13일",
+        "measure": "표준 음주량",
+        "value": "0",
+        "state": "술을 마시지 않은 날",
+        "clock": "9:41",
+        "count": "최근 30일 동안 금주한 날 0일",
+        "disclaimer": "알코올 추적은 개인의 인식을 위한 것이며, 알코올 사용 장애 지원을 위해서는 의사나 인증된 상담사와 상담하세요."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "ko:H03-A",
+      "locale": "ko",
+      "localeName": "한국어",
+      "direction": "ltr",
+      "footer": "시범 개념",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ko/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ko/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "7144b3d590ee0ed77a9767bc78a2d79cbeab6cb87c19398c934c428183dc596d"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "질문하기",
+        "간 건강에 대해"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "알아두면 유용한 답변",
+      "focus": "당신의 질문, 더 명확하게",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "유용한 한 걸음",
+        "back": "뒤로",
+        "action": "",
+        "heading": "이걸 더 명확하게 해보자",
+        "contextLabel": "이 답변의 근거가 된 결과",
+        "context": "초음파 결과에 지방간이라고 나와 있어요",
+        "answer": "초음파로 간 내 지방은 확인할 수 있지만, 염증이나 섬유화 정도까지는 알 수 없습니다",
+        "resultLabel": "나중에 질문으로 남기기 (선택 사항)",
+        "questions": [
+          "다음에 의사에게 어떤 검사를 요청해야 할까요?"
+        ],
+        "button": "이 결과 저장하기",
+        "example": "예시 · 결과 일부"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "ko:H04-A",
+      "locale": "ko",
+      "localeName": "한국어",
+      "direction": "ltr",
+      "footer": "시범 개념",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ko/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ko/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "0cc2b411d4a7d156f03158cb3e21ddab58dfa9486b7ca06e896125094ac7eecc"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "병원 방문 시",
+        "요약서와 함께하세요"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "당신의 질문, 준비해 두기",
+      "focus": "중요한 질문들을 가져가세요",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "의사와의 만남을 위한 요약서",
+        "back": "",
+        "action": "생성하기",
+        "label": "의사에게 물어볼 질문",
+        "questions": [
+          "내 간 검사 결과는 무슨 뜻인가요?",
+          "다음 진료 전에 무엇을 추적해야 할까요?"
+        ],
+        "add": "질문 추가",
+        "example": "예시 · 편집 세부사항"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "ko:H05-A",
+      "locale": "ko",
+      "localeName": "한국어",
+      "direction": "ltr",
+      "footer": "시범 개념",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ko/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ko/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "9f4bb160f74751b4db7362b76da64a875ef5a92cfc03a943ac0916581ff2f8e5"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "과거 결과",
+        "쉽게 찾기"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "이전 결과 열기",
+      "focus": "종이를 찾지 않고 찾기",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "저장된 결과",
+        "back": "",
+        "action": "완료",
+        "summary": "2개 저장된 결과 · 0개 다음 단계 완료",
+        "items": [
+          {
+            "title": "나의 검사 결과를 이해하고 싶어요",
+            "text": "이 간 검사 용어는 무엇을 의미하나요?",
+            "date": "2026년 9월 13일"
+          },
+          {
+            "title": "간 문제에 대해 말해 주셨어요",
+            "text": "다음 진료에서 무엇을 물어야 할까요?",
+            "date": "2026년 9월 10일"
+          }
+        ],
+        "example": "예시 · 저장된 항목"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "ko:H06-A",
+      "locale": "ko",
+      "localeName": "한국어",
+      "direction": "ltr",
+      "footer": "시범 개념",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ko/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ko/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "e5025ca922a19b289d52d53895a5686bdc3f2ed36cf1c234375b4332a586500a"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "힘든 밤이었나요?",
+        "메모하기"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "어떤 일이 있었는지 기억하기",
+      "focus": "날짜와 함께한 증상",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "증상 기록하기",
+        "back": "",
+        "action": "저장",
+        "dayLabel": "일",
+        "day": "2026년 9월 13일",
+        "typeLabel": "증상",
+        "type": "수면이 불량하다",
+        "severityLabel": "중증도 · 3/5",
+        "severity": 3,
+        "scale": "1 = 가벼운 · 5 = 심한",
+        "noteLabel": "참고 · 선택 사항",
+        "note": "어제 밤에 몇 번이나 깨어났다",
+        "example": "예시 · 증상 입력 세부 사항"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "ko:H07-A",
+      "locale": "ko",
+      "localeName": "한국어",
+      "direction": "ltr",
+      "footer": "시범 개념",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ko/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ko/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "67476e7a1716577517a2d4e6932ffefd18eba8de040e7359362aa316d381275c"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "기록하기",
+        "복용약"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "어떤 약물을 복용했고, 언제 복용했는지",
+      "focus": "복용한 약의 정보를 기록하세요",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "복용약 기록",
+        "back": "",
+        "action": "저장",
+        "dayLabel": "날짜",
+        "day": "2026년 9월 13일",
+        "nameLabel": "약 또는 보충제",
+        "name": "내가 처방받은 약물",
+        "doseLabel": "용량 · 선택 사항",
+        "dose": "",
+        "disclaimer": "보충제는 약물과 상호작용할 수 있습니다. 새로운 보충제를 시작하기 전에는 반드시 의사와 상담하세요. Hepatica는 용량을 추천하지 않습니다.",
+        "example": "예시 · 약물 입력 세부 사항"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "ko:H08-A",
+      "locale": "ko",
+      "localeName": "한국어",
+      "direction": "ltr",
+      "footer": "시범 개념",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/ko/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/ko/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "577495e1979ce0d057272d1b5047e1cd750169b1eaa2b41babbe967ab192c2c1"
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "te-IN",
+  "label": "తెలుగు",
+  "lang": "te-IN",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "కాలేయ పరీక్షలు",
+        "వివరణ"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "మీ ఫలితాలతో ప్రారంభించండి",
+      "focus": "మీ కాలేయ ప్రాధికం నమోదు చేయండి",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "te-IN:H01-A",
+      "locale": "te-IN",
+      "localeName": "తెలుగు",
+      "direction": "ltr",
+      "footer": "ఉదాహరణ కాన్సెప్ట్",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/te-IN/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/te-IN/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "b1058d348cb3f3312d92b02c3f9ba8d9e158a521100703b6ab96180d1510355d"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "కాలేయం గురించి జాగ్రత్తగా",
+        "ఏం తినాలి?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "పోషకాలు, వివరించబడింది",
+      "focus": "మీ భోజనాన్ని స్కాన్ చేయండి",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "te-IN:H02-A",
+      "locale": "te-IN",
+      "localeName": "తెలుగు",
+      "direction": "ltr",
+      "footer": "ఉదాహరణ కాన్సెప్ట్",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/te-IN/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/te-IN/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "84051a7c60e551b2c3b93f1699f93535d7175ae255c1150ce1521e5592f32c53"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "మద్యం తగ్గించండి",
+        "మీరు మీలాగే ఉంటారు"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "మీ రోజు నమోదు",
+      "focus": "మీ మద్యం నమోదు చేయండి",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "ఉదాహరణ ఆప్ స్క్రీన్",
+        "cancel": "రద్దు చేయండి",
+        "title": "మద్యం నమోదు చేయండి",
+        "save": "తయారు చేయండి",
+        "dayLabel": "రోజు",
+        "day": "సెప్టెంబర్ 13, 2026",
+        "measure": "స్టాండర్డ్ మద్యం",
+        "value": "0",
+        "state": "మద్యం లేని రోజు",
+        "clock": "9:41",
+        "count": "చివరి 30 రోజులలో 0 మద్యం లేని రోజులు",
+        "disclaimer": "మద్యం ట్రాకింగ్ వ్యక్తిగత అవగాహన కోసం మాత్రమే. మద్యం వినియోగ సమస్యల సహాయం కోసం, మీ వైద్యుడిని లేదా ధృవీకరించబడిన కౌన్సెలర్‌ను సంప్రదించండి."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "te-IN:H03-A",
+      "locale": "te-IN",
+      "localeName": "తెలుగు",
+      "direction": "ltr",
+      "footer": "ఉదాహరణ కాన్సెప్ట్",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/te-IN/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/te-IN/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "45738d7b8ecbe4a9d4c87f67a73c918b95e688d424e86b07ca16ac140a7d98cd"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "అడగండి",
+        "మీ కాలేయం"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "ఒక ఉపయోగకరమైన సమాధానం కాపాడండి",
+      "focus": "మీ ప్రశ్న స్పష్టం చేయబడింది",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "ఒక ఉపయోగకరమైన మార్గం",
+        "back": "పైకి",
+        "action": "",
+        "heading": "మీ ప్రశ్న స్పష్టం చేయండి",
+        "contextLabel": "ఈ ఫలితం ఆధారంగా ఏమిటి",
+        "context": "నా అల్ట్రాసౌండ్ రిపోర్ట్‌లో ఫ్యాటీ లివర్ అని ఉంది",
+        "answer": "అల్ట్రాసౌండ్ కాలేయంలో కొవ్వును చూపించవచ్చు, కానీ వాపు (inflammation) లేదా మచ్చలు (scarring) ఎంత ఉన్నాయో ఇది చెప్పలేదు",
+        "resultLabel": "పాటించాలని ఉన్న ప్రశ్న కోసం కొంచెం తర్వాత కాపాడండి (అవసరం కాదు)",
+        "questions": [
+          "నేను మా వైద్యునికి ఏ పరీక్షలను ఆర్డర్ చేయాలి?"
+        ],
+        "button": "ఈ ఫలితాన్ని కాపాడండి",
+        "example": "ఉదాహరణ · ఫలితం విస్తారణ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "te-IN:H04-A",
+      "locale": "te-IN",
+      "localeName": "తెలుగు",
+      "direction": "ltr",
+      "footer": "ఉదాహరణ కాన్సెప్ట్",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/te-IN/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/te-IN/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "ae4deaee596c1c69b51515ea5b4190ddffdd86fa9caf33efd7ba0b0b10b08cc2"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "వైద్యుని సంప్రదించడం",
+        "సారాంశాన్ని తీసుకురండి"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "మీ ప్రశ్నలు, సిద్ధం చేయబడినవి",
+      "focus": "మీకు కొలను ఉన్న ప్రశ్నలను తీసుకురండి",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "డాక్టర్ నోట్స్",
+        "back": "",
+        "action": "ఉత్పత్తి చేయండి",
+        "label": "మీ వైద్యునికి ప్రశ్నలు",
+        "questions": [
+          "మీ కాలేయ ఫలితాలు ఏమిటి?",
+          "మీ తరువాత సందర్శన కు ముందు ఏమి ట్రాక్ చేయాలి?"
+        ],
+        "add": "ప్రశ్న కలిపించండి",
+        "example": "ఉదాహరణ · సంపాదకుడి వివరాలు"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "te-IN:H05-A",
+      "locale": "te-IN",
+      "localeName": "తెలుగు",
+      "direction": "ltr",
+      "footer": "ఉదాహరణ కాన్సెప్ట్",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/te-IN/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/te-IN/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "eb77ee709222934a976b71ebe942a935a3535afc4a56e84a9655d0063b528f76"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "గత పరీక్షా ఫలితాలు",
+        "సులభంగా కనుగొనండి"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "మీ ప్రయోగ ఫలితాలను తెరవండి",
+      "focus": "పేపర్ హుంకర్ లేకుండా కనుగొనండి",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "ఉంచిన ఫలితాలు",
+        "back": "",
+        "action": "పూర్తి",
+        "summary": "2 ఉంచిన ఫలితాలు · 0 తదుపరి ప్రణాళికలు పూర్తి చేయబడ్డాయి",
+        "items": [
+          {
+            "title": "నా ల్యాబ్ ఫలితాలను అర్థం చేసుకోవాలి",
+            "text": "ఈ కాలేయ పరీక్ష పదాల అర్థం ఏమిటి?",
+            "date": "2026 సెప్టెంబర్ 13"
+          },
+          {
+            "title": "నాకు కాలేయ సమస్య గురించి చెప్పారు",
+            "text": "నా తదుపరి సందర్శనలో ఏమి అడగాలి?",
+            "date": "2026 సెప్టెంబర్ 10"
+          }
+        ],
+        "example": "ఉదాహరణ · ఉంచిన వివరాలు"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "te-IN:H06-A",
+      "locale": "te-IN",
+      "localeName": "తెలుగు",
+      "direction": "ltr",
+      "footer": "ఉదాహరణ కాన్సెప్ట్",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/te-IN/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/te-IN/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "ab26b3148365ab8037a8109eeeae9955886ca4653ec9ea465066f5ed4fa9bf86"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "నిద్ర సరిగా లేలేదా?",
+        "నోట్ చేసుకోండి"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "మీరు ఎదుర్కున్న లక్షణాలు, తేదీతో",
+      "focus": "మీ లక్షణాలను నమోదు చేయండి",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "లక్షణాన్ని నమోదు చేయండి",
+        "back": "",
+        "action": "తీసుకో",
+        "dayLabel": "రోజు",
+        "day": "సెప్టెంబర్ 13, 2026",
+        "typeLabel": "సంకేతం",
+        "type": "చెడు నిద్ర",
+        "severityLabel": "అంశం · 3/5",
+        "severity": 3,
+        "scale": "1 = చిన్న · 5 = భారీ",
+        "noteLabel": "ఇంకా · ఎంచుకోండి",
+        "note": "గత రాత్రి చాలా సార్లు ఎద్దిగినాడు",
+        "example": "ఉదాహరణ · సంకేతం రూపం వివరణ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "te-IN:H07-A",
+      "locale": "te-IN",
+      "localeName": "తెలుగు",
+      "direction": "ltr",
+      "footer": "ఉదాహరణ కాన్సెప్ట్",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/te-IN/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/te-IN/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "ecb9cbbae421ea2f6945671182db412f9ed725fb015eb573fe89b266d18bf20f"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "రికార్డ్ చేయండి",
+        "మందు"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "మీరు తీసుకున్న మరియు ఎప్పుడు తీసుకున్నారు",
+      "focus": "మీ మందు వివరాలను కాపాడండి",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "మందుల వివరాలను నమోదు చేయండి",
+        "back": "",
+        "action": "తయారు చేసినట్లు",
+        "dayLabel": "రోజు",
+        "day": "సెప్టెంబర్ 13, 2026",
+        "nameLabel": "మందు లేదా సప్లిమెంట్",
+        "name": "నాకు సూచించిన మందులు",
+        "doseLabel": "మందు మొత్తం · ఎంచుకోండి",
+        "dose": "",
+        "disclaimer": "సప్లిమెంట్లు మందులతో ప్రతిచర్య జరపవచ్చు. ఏదైనా కొత్త సప్లిమెంట్ గురించి మీ వైద్యుడితో చర్చించండి. Hepatica ఎప్పుడూ మోతాదులను సూచించదు.",
+        "example": "ఉదాహరణ · మందు రూపం వివరణ"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "te-IN:H08-A",
+      "locale": "te-IN",
+      "localeName": "తెలుగు",
+      "direction": "ltr",
+      "footer": "ఉదాహరణ కాన్సెప్ట్",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/te-IN/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/te-IN/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "3144e0ff75531bd06df5d3e6290339a1988333d84578e91691506ea103bb6ce0"
+    }
+  ]
+}

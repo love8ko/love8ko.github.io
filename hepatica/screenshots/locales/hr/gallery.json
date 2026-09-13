@@ -1,0 +1,466 @@
+{
+  "version": "r12",
+  "locale": "hr",
+  "label": "Hrvatski",
+  "lang": "hr",
+  "dir": "ltr",
+  "status": "ready-after-double-review",
+  "sourceMaster": {
+    "locale": "en-US",
+    "revision": "r10",
+    "approval": "Approved"
+  },
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Analize jetre",
+        "Objašnjeno"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "Počnite s vašim rezultatima",
+      "focus": "Dodajte vaš izvještaj o jetri",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "hr:H01-A",
+      "locale": "hr",
+      "localeName": "Hrvatski",
+      "direction": "ltr",
+      "footer": "Ilustrativni koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hr/previews/H01-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hr/01_H01.png",
+      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
+      "copySHA256": "b2e37f30a23e77e086fb36d3814b419d588981056555b34e9dea888936f5f7b1"
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Jetra u mislima",
+        "Što jest?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "Hrana, objašnjeno",
+      "focus": "Skanirajte svoj obrok",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "hr:H02-A",
+      "locale": "hr",
+      "localeName": "Hrvatski",
+      "direction": "ltr",
+      "footer": "Ilustrativni koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hr/previews/H02-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hr/02_H02.png",
+      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
+      "copySHA256": "5eaf8f62c8953422277197bbc03ec3f7beb8d5b70739af74c4b7a9eee8d1ff2c"
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Manje alkohola",
+        "Još uvijek ti"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "Dnevni zapis",
+      "focus": "Zapisať piće",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "Ilustrativni ekran aplikacije",
+        "cancel": "Odustani",
+        "title": "Zapisať piće",
+        "save": "Spremi",
+        "dayLabel": "Dan",
+        "day": "13. rujna 2026.",
+        "measure": "Standardni pici",
+        "value": "0",
+        "state": "Dan bez alkohola",
+        "clock": "9:41",
+        "count": "0 dana bez alkohola u zadnjih 30 dana",
+        "disclaimer": "Praćenje alkohola je za ličnu svijest. Za podršku u upotrebi alkohola, posavjetujte se s liječnikom ili certificiranim savjetnikom."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": [],
+      "renderKey": "hr:H03-A",
+      "locale": "hr",
+      "localeName": "Hrvatski",
+      "direction": "ltr",
+      "footer": "Ilustrativni koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hr/previews/H03-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hr/03_H03.png",
+      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
+      "copySHA256": "21a644f93b9d235afb95ed8d1e6773df52b74731e4b26ae9ccd8c46708347e8e"
+    },
+    {
+      "id": "H04-A",
+      "slot": "H04",
+      "headline": [
+        "Pitanja",
+        "Vaša jetra"
+      ],
+      "asset": null,
+      "scene": "A large first-session result interface connects a personal liver question with a useful question to keep; no lifestyle portrait.",
+      "cardTitle": "POKAZATI ODGOVOR KOJI JE POMOĆAN",
+      "focus": "Vaše pitanje, jasnije",
+      "icon": "chat",
+      "claims": [
+        "coach"
+      ],
+      "jtbd": "I have a liver concern and want to understand what to ask or do next.",
+      "visualLimit": "Source-based first-session result concept. Context excerpt and suggested question come from the retained live start example, not an invented Coach conversation.",
+      "product": {
+        "kind": "answer",
+        "phone": true,
+        "title": "Jedan korak prema napretku",
+        "back": "Natrag",
+        "action": "",
+        "heading": "Najavimo to jasnije",
+        "contextLabel": "Na čemu se ova rezultata temelji",
+        "context": "Moja ultrazvukova ispitivanja kaže da ima masnu jetru",
+        "answer": "Ultrazvuk može pokazati masu u jetri, ali ne može pokazati koliko je upala ili zračenja prisutno",
+        "resultLabel": "Zadržite pitanje za kasnije (opciono)",
+        "questions": [
+          "Koje testove bi trebao pitati liječnika da naredi sljedeće?"
+        ],
+        "button": "Spremi ovaj rezultat",
+        "example": "Primjer · izvorni dio rezultata"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": null,
+      "renderKey": "hr:H04-A",
+      "locale": "hr",
+      "localeName": "Hrvatski",
+      "direction": "ltr",
+      "footer": "Ilustrativni koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hr/previews/H04-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hr/04_H04.png",
+      "sourceAssetSHA256": null,
+      "copySHA256": "04c28058a23e05b6b4f69425dc4575a2b6b2c12b9277bf7eab6c084631259497"
+    },
+    {
+      "id": "H05-A",
+      "slot": "H05",
+      "headline": [
+        "Pregled s liječnikom",
+        "Ponesite sažetak"
+      ],
+      "asset": "r10-doctor-conversation.png",
+      "scene": "A woman hands her prepared questions to her clinician and points to the paper; a large Doctor Brief editor shows what she can prepare in the app.",
+      "cardTitle": "VAŠA PITANJA, PRIPRAVljena",
+      "focus": "Donijeti pitanja koja su važna",
+      "icon": "document",
+      "claims": [
+        "doctor-brief"
+      ],
+      "jtbd": "I do not want to leave my appointment having forgotten an important question.",
+      "visualLimit": "Fictional consultation, not clinician endorsement. A source-based editor fragment with example user questions; no automatic transfer from FirstSession or verified PDF export implied.",
+      "product": {
+        "kind": "visit",
+        "phone": false,
+        "title": "Kratki pregled s liječnikom",
+        "back": "",
+        "action": "Generiraj",
+        "label": "Pitanja za liječnika",
+        "questions": [
+          "Što znače moji rezultati jetre?",
+          "Što trebam praćiti prije sljedećeg pregleda?"
+        ],
+        "add": "Dodaj pitanje",
+        "example": "Primjer · detalji urednika"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-doctor-conversation.txt",
+      "renderKey": "hr:H05-A",
+      "locale": "hr",
+      "localeName": "Hrvatski",
+      "direction": "ltr",
+      "footer": "Ilustrativni koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hr/previews/H05-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hr/05_H05.png",
+      "sourceAssetSHA256": "e0c6cde2f5f96fa9715cc46bc621f2b033acc41fe6897637f38f7392f8716474",
+      "copySHA256": "938ad781cfa258def9864ec60a1a13aa8d9f432ef688d62b6063ce8301750b37"
+    },
+    {
+      "id": "H06-A",
+      "slot": "H06",
+      "headline": [
+        "Prošli rezultati",
+        "Lako pronaći"
+      ],
+      "asset": "r8-results-together.png",
+      "scene": "A prominent dated list of saved liver results sits over a secondary close view of paper reports; no trend chart or patient portrait.",
+      "cardTitle": "OTKRIJ PRIJEŠNJE REZULTATE",
+      "focus": "Pronađi bez potrage po papirima",
+      "icon": "history",
+      "claims": [
+        "lab-history"
+      ],
+      "jtbd": "I need to retrieve a previous liver result or question without searching through paperwork.",
+      "visualLimit": "Illustrative FirstHistory entries, not real patient results. Source task titles and user-authored example questions with dates; no lab values, unified Labs screen, or improvement trend.",
+      "product": {
+        "kind": "history",
+        "phone": true,
+        "title": "Spremljeni rezultati",
+        "back": "",
+        "action": "Gotovo",
+        "summary": "2 spremljeni rezultati · 0 sljedećih koraka označeno kao gotovo",
+        "items": [
+          {
+            "title": "Želim razumjeti svoje laboratorijske rezultate",
+            "text": "Što znače ove terminologije za testove jetre?",
+            "date": "13. rujna 2026."
+          },
+          {
+            "title": "Narazgovarao sam o problemu jetre",
+            "text": "Što bih trebao pitati na sljedećem sastanku?",
+            "date": "10. rujna 2026."
+          }
+        ],
+        "example": "Primjer · spremljene unose"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r8-results-together.txt",
+      "renderKey": "hr:H06-A",
+      "locale": "hr",
+      "localeName": "Hrvatski",
+      "direction": "ltr",
+      "footer": "Ilustrativni koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hr/previews/H06-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hr/06_H06.png",
+      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
+      "copySHA256": "d1720d0204e34bcb14fe4075c50b7d9a8f38b064819a327f9ece18ccc119dd65"
+    },
+    {
+      "id": "H07-A",
+      "slot": "H07",
+      "headline": [
+        "Loš noćni sat?",
+        "Napomeni"
+      ],
+      "asset": "journal-r1.png",
+      "scene": "A moon symbol and a large dated Poor sleep entry over a quiet notebook-and-tea scene make a specific morning-after check-in recognizable without another tired portrait.",
+      "cardTitle": "ZAPAMTI ŠTO JE DOŠLO",
+      "focus": "Vaši simptomi s datumom",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "After a poor night I want to note what happened while it is fresh, so I can describe it later.",
+      "visualLimit": "Poor sleep is a supported self-reported symptom, not a liver diagnosis. Enlarged selected fields from the symptom form; 3/5 is an example personal rating.",
+      "product": {
+        "kind": "symptom",
+        "phone": false,
+        "title": "Dopunite simptom",
+        "back": "",
+        "action": "Spremi",
+        "dayLabel": "Dan",
+        "day": "13. rujna 2026.",
+        "typeLabel": "SIMPTOM",
+        "type": "Loš spavaj",
+        "severityLabel": "INTENZITET · 3/5",
+        "severity": 3,
+        "scale": "1 = blagi · 5 = teži",
+        "noteLabel": "NAPOMENA · POŽELJAN",
+        "note": "Nisam spavao više puta prošlog noć",
+        "example": "Primjer · detalj forma simptoma"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/journal-r1.txt",
+      "renderKey": "hr:H07-A",
+      "locale": "hr",
+      "localeName": "Hrvatski",
+      "direction": "ltr",
+      "footer": "Ilustrativni koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hr/previews/H07-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hr/07_H07.png",
+      "sourceAssetSHA256": "ea668c9993d9ed1cafcc5bdf580b1079f07efaca31db9f4d26bc2faec5706673",
+      "copySHA256": "6d081b6dc916583f5661ba94e29640d6557d43f819f99f4d464b0cc8a80e3a21"
+    },
+    {
+      "id": "H08-A",
+      "slot": "H08",
+      "headline": [
+        "Dnevnik vaših",
+        "Lijekova"
+      ],
+      "asset": "r10-medication-still-life.png",
+      "scene": "An unbranded medicine bottle and carton sit on a kitchen counter above a large dated medication-entry form; there is no repeated portrait.",
+      "cardTitle": "ŠTA STE UZIMALI I KADA",
+      "focus": "Zadržite detalje o lijekovima",
+      "icon": "calendar",
+      "claims": [
+        "dated-logs"
+      ],
+      "jtbd": "I want to remember which medicine I took and on what date instead of relying on memory.",
+      "visualLimit": "Manual entry for an already-taken medicine. User example is deliberately not a drug recommendation; no scan, dose advice, schedule or interaction check promised.",
+      "product": {
+        "kind": "medication",
+        "phone": false,
+        "title": "Dnevnik lijekova",
+        "back": "",
+        "action": "Spremi",
+        "dayLabel": "Dan",
+        "day": "13. rujna 2026.",
+        "nameLabel": "LIJEK I DODATAK",
+        "name": "Moji prepisani lijekovi",
+        "doseLabel": "DOZA · POŽELJAN",
+        "dose": "",
+        "disclaimer": "Dodaci mogu djelovati na lijekove. Razgovarajte s liječnikom prije uzimanja bilo kojeg dodatka. Hepatica nikada ne preporučuje doze.",
+        "example": "Primjer · detalj forma lijekova"
+      },
+      "accent": 1,
+      "subline": [],
+      "bullets": [],
+      "variant": "A",
+      "prompt": "prompts/r10-medication-still-life.txt",
+      "renderKey": "hr:H08-A",
+      "locale": "hr",
+      "localeName": "Hrvatski",
+      "direction": "ltr",
+      "footer": "Ilustrativni koncept",
+      "revision": "r12",
+      "readiness": "localized-for-upload",
+      "approval": null,
+      "sourceMaster": {
+        "locale": "en-US",
+        "revision": "r10",
+        "approval": "Approved"
+      },
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "locales/hr/previews/H08-A.jpg",
+      "fastlaneFile": "fastlane/screenshots/hr/08_H08.png",
+      "sourceAssetSHA256": "3a326fbbed72db3726f4962fc0fde58a96081e80bd762c8976e56cd6c7f1a442",
+      "copySHA256": "c7ff7d5d5424082634dc23fc78dd7c94d9c977d9bb0852bfcd1f04ae45cd3a78"
+    }
+  ]
+}

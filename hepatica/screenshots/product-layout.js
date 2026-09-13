@@ -1,7 +1,7 @@
 /* R10: source-based, enlarged interface details. Every word lives in the copy manifest. */
 window.hepaticaProductLayout=function(f,shared){
  const el=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls;if(text!==undefined)n.textContent=text;return n;};
- const p=f.product,art=el('article','art product-art '+f.slot+' product-'+p.kind);art.lang=f.locale||'en-US';art.dataset.frame=f.id;
+ const p=f.product,art=el('article','art product-art '+f.slot+' product-'+p.kind);art.lang=f.locale||'en-US';art.dir=f.direction||'ltr';art.dataset.frame=f.id;
  if(f.asset){const photo=el('img','product-photo');photo.src='assets/'+f.asset;photo.alt=f.scene;art.append(photo);}
  const head=el('div','head'),h=el('h1','');f.headline.forEach((s,i)=>h.append(el('span',i===f.accent?'accent':'',s)));head.append(h);art.append(head);
  if(p.kind==='symptom'){const moon=el('div','night-symbol');moon.setAttribute('aria-hidden','true');moon.innerHTML='<svg viewBox="0 0 120 120"><path d="M95 77A45 45 0 0 1 42 15a47 47 0 1 0 53 62Z" fill="currentColor"/><path d="m92 10 3 9 9 3-9 3-3 9-3-9-9-3 9-3ZM109 46l2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="currentColor"/></svg>';art.append(moon);}
