@@ -8,3 +8,4 @@
 .audience-note{max-width:900px;font-size:14px;color:var(--muted);margin-bottom:30px}
 .variant-section{margin:35px 0 52px;scroll-margin-top:20px}
 .variant-section h2{margin:0 0 5px}.variant-section>.muted{margin:0 0 18px}
+.locale-picker{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0;font-weight:750}.locale-picker select{min-height:44px;max-width:100%;border:1px solid #aebdb4;border-radius:10px;background:#fffaf0;color:var(--ink);padding:8px 38px 8px 12px;font:inherit}.locale-section{margin:24px 0 52px}.locale-head{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.locale-head h2{margin:0}.locale-head a{margin-left:auto}.locale-section[hidden]{display:none}

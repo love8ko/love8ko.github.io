@@ -92,6 +92,9 @@
 .art .brief-add{font-size:9px;font-weight:800;color:#337154;margin:0}
 /* One headline size across all eight; shorter copy instead of shrinking later frames. */
 .art h1{font-size:60px;letter-spacing:-3.2px;line-height:1.04}
+.art[lang="zh-Hans"]{font-family:"Hiragino Sans GB","PingFang SC",sans-serif}
+.art[lang="zh-Hans"] h1{font-weight:800;letter-spacing:-1px}
+.art[lang="zh-Hans"] .focus,.art[lang="zh-Hans"] .mockup-action,.art[lang="zh-Hans"] .product-title,.art[lang="zh-Hans"] .product-field-value{letter-spacing:0}
 .product-art{background:radial-gradient(ellipse at 80% 50%,#2b5549 0%,#102f2d 68%)}
 .product-photo{position:absolute;object-fit:cover}
 .product-device{position:absolute;z-index:2;top:222px;left:55px;width:330px;height:596px;padding:7px;background:#182924;border:1px solid #8fa598;border-radius:39px;box-shadow:0 15px 35px #00171399,0 0 0 3px #345449}
@@ -123,7 +126,7 @@
 .product-panel .product-screen{border-radius:18px}
 .product-panel .product-title{font-size:25px}
 .product-visit .product-photo{top:145px;left:0;width:440px;height:540px;object-position:center 43%;mask-image:linear-gradient(transparent,#000 8%,#000 88%,transparent)}
-.product-visit .product-panel{left:28px;right:28px;top:629px;height:277px}
+.product-visit .product-panel{left:28px;right:28px;top:624px;height:282px}
 .product-visit .product-nav{padding:13px 15px}
 .product-visit .product-body{padding:12px 15px}
 .visit-question{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #d7e1d6}
