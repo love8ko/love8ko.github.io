@@ -4,7 +4,3 @@
 @media(max-width:700px){nav{padding:14px 18px;gap:10px}.links{gap:13px;font-size:12px}main{padding:24px 18px}.grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 0 15px;gap:18px}.frame{flex:0 0 min(74vw,310px);width:min(74vw,310px);flex-shrink:0;scroll-snap-align:start}.hub-grid{grid-template-columns:1fr 1fr}.modal-bar{padding:8px;gap:6px}.modal-bar button{font-size:12px;padding:8px 10px}.modal-bar a{font-size:11px}.viewer{padding:8px;height:calc(100dvh - 170px)}th,td{padding:11px 7px;font-size:12px}.sheet-grid{gap:8px}.toolbar{gap:8px}.toolbar a{font-size:12px;padding:8px 10px}}
 @media(max-width:360px){.hub-grid{grid-template-columns:1fr}.links{gap:10px}.modal-bar h2{font-size:16px}.toolbar a{font-size:11px}.lead{font-size:15px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-.variant-jump{display:flex;gap:20px;flex-wrap:wrap;font-weight:750;margin:18px 0}
-.audience-note{max-width:900px;font-size:14px;color:var(--muted);margin-bottom:30px}
-.variant-section{margin:35px 0 52px;scroll-margin-top:20px}
-.variant-section h2{margin:0 0 5px}.variant-section>.muted{margin:0 0 18px}

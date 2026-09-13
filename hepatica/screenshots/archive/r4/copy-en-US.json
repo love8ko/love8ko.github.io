@@ -1,0 +1,82 @@
+{
+  "locale": "en-US",
+  "revision": "r4",
+  "direction": "Everyday people with a liver-test handout and app log detail",
+  "brand": "Hepatica",
+  "exampleLabel": "Concept",
+  "footer": "Illustrative concept",
+  "frames": [
+    {
+      "id": "H01",
+      "headline": [
+        "Fatty Liver?",
+        "What Now?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r4-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "YOUR RESULTS, EXPLAINED",
+      "focus": "Understand your liver tests",
+      "icon": "chat",
+      "jtbd": "A fatty liver finding leaves me unsure what it means or where to start.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r4-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer."
+    },
+    {
+      "id": "H02",
+      "headline": [
+        "Liver in Mind.",
+        "What to Eat?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "FOOD, EXPLAINED",
+      "focus": "Scan your meal",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session."
+    },
+    {
+      "id": "H03",
+      "headline": [
+        "Less Alcohol.",
+        "Still You."
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "",
+      "focus": "Log an alcohol-free day",
+      "icon": "calendar",
+      "jtbd": "After stopping drinking, I want to record my own days and observations without being judged.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-log",
+        "caption": "APP DETAIL",
+        "cancel": "Cancel",
+        "title": "Log a drink",
+        "save": "Save",
+        "dayLabel": "Day",
+        "day": "Sep 13, 2026",
+        "measure": "Standard drinks",
+        "value": "0",
+        "state": "Alcohol-free day"
+      }
+    }
+  ]
+}
