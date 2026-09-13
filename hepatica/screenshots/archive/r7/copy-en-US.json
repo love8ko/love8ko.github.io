@@ -1,0 +1,201 @@
+{
+  "locale": "en-US",
+  "revision": "r7",
+  "primaryVariant": "A",
+  "direction": "Two copy-density options with a compact phone and explicit liver-test explanations",
+  "brand": "Hepatica",
+  "exampleLabel": "Concept",
+  "footer": "Illustrative concept",
+  "frames": [
+    {
+      "id": "H01-A",
+      "headline": [
+        "Liver Tests",
+        "Explained."
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "START WITH YOUR RESULTS",
+      "focus": "Add your liver report",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "A",
+      "bullets": []
+    },
+    {
+      "id": "H02-A",
+      "headline": [
+        "Liver in Mind.",
+        "What to Eat?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "FOOD, EXPLAINED",
+      "focus": "Scan your meal",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "A",
+      "bullets": []
+    },
+    {
+      "id": "H03-A",
+      "headline": [
+        "Less Alcohol.",
+        "Still You."
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "YOUR DAILY RECORD",
+      "focus": "Log your drinks",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "ILLUSTRATIVE APP SCREEN",
+        "cancel": "Cancel",
+        "title": "Log a drink",
+        "save": "Save",
+        "dayLabel": "Day",
+        "day": "Sep 13, 2026",
+        "measure": "Standard drinks",
+        "value": "0",
+        "state": "Alcohol-free day",
+        "clock": "9:41",
+        "count": "0 alcohol-free days in the last 30",
+        "disclaimer": "Alcohol tracking is for personal awareness. For alcohol-use-disorder support, consult your doctor or a certified counselor."
+      },
+      "slot": "H03",
+      "variant": "A",
+      "bullets": []
+    },
+    {
+      "id": "H01-B",
+      "headline": [
+        "Liver Tests,",
+        "Explained."
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r5-morning-liver-tests.png",
+      "scene": "The same woman before work holds a liver-test handout with a friendly printed liver illustration and a simple report table.",
+      "cardTitle": "START WITH YOUR RESULTS",
+      "focus": "Add your liver report",
+      "icon": "chat",
+      "jtbd": "I have liver blood-test results and want a plain-language explanation and questions to ask my doctor.",
+      "claims": [
+        "report-explanation"
+      ],
+      "prompt": "prompts/r5-morning-liver-tests.txt",
+      "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
+      "slot": "H01",
+      "variant": "B",
+      "bullets": [
+        "Understand ALT & AST",
+        "Prepare questions for your doctor"
+      ]
+    },
+    {
+      "id": "H02-B",
+      "headline": [
+        "Liver in Mind.",
+        "What to Eat?"
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-cafe-meal.png",
+      "scene": "A man photographs his sandwich and soup at an everyday cafe.",
+      "cardTitle": "FOOD, EXPLAINED",
+      "focus": "Scan your meal",
+      "icon": "scan",
+      "jtbd": "I have liver concerns and need help making sense of my ordinary meal.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/r3-cafe-meal.txt",
+      "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
+      "slot": "H02",
+      "variant": "B",
+      "bullets": [
+        "Photograph your meal",
+        "Save its explanation"
+      ]
+    },
+    {
+      "id": "H03-B",
+      "headline": [
+        "Less Alcohol.",
+        "Still You."
+      ],
+      "accent": 1,
+      "subline": [],
+      "asset": "r3-dinner-choice.png",
+      "scene": "A woman at dinner with friends declines offered wine and holds sparkling water with lime.",
+      "cardTitle": "YOUR DAILY RECORD",
+      "focus": "Log your drinks",
+      "icon": "calendar",
+      "jtbd": "I want a dated record of what I drink, including days without alcohol; not necessarily a sobriety streak.",
+      "claims": [
+        "dated-logs"
+      ],
+      "prompt": "prompts/r3-dinner-choice.txt",
+      "visualLimit": "AI-generated fictional dinner; enlarged illustrative UI detail faithfully uses existing DrinkLogView input fields. Zero is an unsaved input, not a fabricated history or recovery claim.",
+      "mockup": {
+        "kind": "drink-phone",
+        "caption": "ILLUSTRATIVE APP SCREEN",
+        "cancel": "Cancel",
+        "title": "Log a drink",
+        "save": "Save",
+        "dayLabel": "Day",
+        "day": "Sep 13, 2026",
+        "measure": "Standard drinks",
+        "value": "0",
+        "state": "Alcohol-free day",
+        "clock": "9:41",
+        "count": "0 alcohol-free days in the last 30",
+        "disclaimer": "Alcohol tracking is for personal awareness. For alcohol-use-disorder support, consult your doctor or a certified counselor."
+      },
+      "slot": "H03",
+      "variant": "B",
+      "bullets": [
+        "Log drinks by date",
+        "Include alcohol-free days"
+      ]
+    }
+  ],
+  "showBrand": false,
+  "variants": [
+    {
+      "id": "A",
+      "title": "A · основная серия",
+      "description": "Крупные заголовки без подзаголовков. На первом кадре — приближённая женщина с распечаткой."
+    },
+    {
+      "id": "B",
+      "title": "B · для сравнения",
+      "description": "Чуть подробнее о возможностях: сравните, оправдан ли дополнительный текст."
+    }
+  ]
+}

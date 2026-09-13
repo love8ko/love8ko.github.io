@@ -73,20 +73,3 @@
 .art .app-count{background:white;border:1px solid #dde3d8;border-radius:8px;padding:10px 6px;font-size:8px;font-weight:750;line-height:1.25;margin:9px 0}
 .art .app-disclaimer{font-size:6px;line-height:1.35;color:#687b70;margin:9px 2px}
 .art .mockup-caption{font-size:6px;bottom:-15px;right:0}
-/* R8 extends the approved A compositions; H01-H03 remain unchanged. */
-.H04 h1{font-size:54px;letter-spacing:-3px}
-.H05 h1{font-size:61px}
-.H06 h1,.H07 h1{font-size:47px;letter-spacing:-2.6px}
-.H08 h1{font-size:53px;letter-spacing:-2.8px}
-.H04 .photo{top:168px;width:466px;height:699px;left:-13px}
-.H05 .photo,.H06 .photo{top:151px;width:490px;height:735px;left:-25px}
-.H07 .photo{top:180px;width:466px;height:699px;left:-13px}
-.H08 .photo{top:132px;width:440px;height:660px;left:0}
-.art .question-bubble{position:absolute;z-index:3;left:28px;right:70px;bottom:153px;margin:0;padding:16px 19px;border-radius:18px 18px 18px 4px;background:#e4eee4;color:#214b40;font-size:23px;font-weight:750;line-height:1.25;letter-spacing:-.5px;box-shadow:0 7px 20px #00171433}
-.H07 .focus{font-size:23px}
-.H08 .mockup-action{font-size:29px}
-.art .brief-form{padding:14px 3px}
-.art .brief-label{font-size:6px;letter-spacing:.4px;font-weight:800;color:#698176;line-height:1.5;margin:0 0 7px}
-.art .brief-name{font-size:10px;font-weight:750;background:white;border:1px solid #dce5dc;padding:10px 7px;border-radius:8px;margin:0 0 17px;line-height:1.4}
-.art .brief-question{font-size:12px;line-height:1.45;font-weight:650;background:white;border:1px solid #dce5dc;padding:10px 8px;border-radius:8px;margin:0 0 13px}
-.art .brief-add{font-size:9px;font-weight:800;color:#337154;margin:0}
