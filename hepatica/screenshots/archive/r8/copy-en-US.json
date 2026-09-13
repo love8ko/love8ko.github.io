@@ -1,6 +1,6 @@
 {
   "locale": "en-US",
-  "revision": "r9",
+  "revision": "r8",
   "primaryVariant": "A",
   "direction": "Eight everyday liver-care situations, large headlines and a focused app action",
   "brand": "Hepatica",
@@ -11,7 +11,7 @@
       "id": "H01-A",
       "headline": [
         "Liver Tests",
-        "Explained"
+        "Explained."
       ],
       "accent": 1,
       "subline": [],
@@ -28,26 +28,12 @@
       "visualLimit": "Fictional scene. Printed liver is an illustrative handout, not a diagnostic image. No fabricated lab values or AI answer.",
       "slot": "H01",
       "variant": "A",
-      "bullets": [],
-      "locale": "en-US",
-      "revision": "r9",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H01-A-r9.jpg",
-      "original": "originals/H01-A-r9.png",
-      "sourceAsset": "sources/r5-morning-liver-tests.png",
-      "sourceAssetSHA256": "9c669cf5fd2268f8d55c67a7601324dd5f2d4c725cd287391c729cfeae13c9de",
-      "copySHA256": "4fab4a4174e0a65ddd7c8580fb17b69d046ee7e52b5167dff7f71b8b4700a052"
+      "bullets": []
     },
     {
       "id": "H02-A",
       "headline": [
-        "Liver in Mind",
+        "Liver in Mind.",
         "What to Eat?"
       ],
       "accent": 1,
@@ -65,27 +51,13 @@
       "visualLimit": "AI-generated fictional people and an illustrative situation; not a patient testimonial or a recorded app session.",
       "slot": "H02",
       "variant": "A",
-      "bullets": [],
-      "locale": "en-US",
-      "revision": "r9",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H02-A-r9.jpg",
-      "original": "originals/H02-A-r9.png",
-      "sourceAsset": "sources/r3-cafe-meal.png",
-      "sourceAssetSHA256": "0bc16cdd1033851866331e0ff0ed5b977a28a3cd940e55b2659dbc81c676369e",
-      "copySHA256": "3529fd59f26cd70b54bf2db6bdd94d423d336a1d0e98e1de6387cfdbb87310d9"
+      "bullets": []
     },
     {
       "id": "H03-A",
       "headline": [
-        "Less Alcohol",
-        "Still You"
+        "Less Alcohol.",
+        "Still You."
       ],
       "accent": 1,
       "subline": [],
@@ -117,28 +89,14 @@
       },
       "slot": "H03",
       "variant": "A",
-      "bullets": [],
-      "locale": "en-US",
-      "revision": "r9",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H03-A-r9.jpg",
-      "original": "originals/H03-A-r9.png",
-      "sourceAsset": "sources/r3-dinner-choice.png",
-      "sourceAssetSHA256": "69e5042ac2ebeae8c7b233f42d784ba33b1b3070995cee8256eed441bf6cac05",
-      "copySHA256": "ae4ef59441bbb3daa1ab8528b55f3225df8bda5b0caf71c757d0c35f34407ba2"
+      "bullets": []
     },
     {
       "id": "H04-A",
       "slot": "H04",
       "headline": [
-        "Your Liver",
-        "Your Questions"
+        "Your Liver.",
+        "Your Questions."
       ],
       "asset": "r8-evening-question.png",
       "scene": "A woman at home in the evening types her own question with a report on her lap.",
@@ -155,28 +113,14 @@
       "subline": [],
       "bullets": [],
       "variant": "A",
-      "prompt": "prompts/r8-evening-question.txt",
-      "locale": "en-US",
-      "revision": "r9",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H04-A-r9.jpg",
-      "original": "originals/H04-A-r9.png",
-      "sourceAsset": "sources/r8-evening-question.png",
-      "sourceAssetSHA256": "b81a649cf5f370a08381e9984c111c6aa3596779dc50f187171e52dc352c4fa0",
-      "copySHA256": "8606df5425baab19efac267621a6fa0b5ed6b031731bbe1243df27411d0a7edc"
+      "prompt": "prompts/r8-evening-question.txt"
     },
     {
       "id": "H05-A",
       "slot": "H05",
       "headline": [
         "Feeling Off?",
-        "Keep a Note"
+        "Keep a Note."
       ],
       "asset": "r8-afternoon-note.png",
       "scene": "A man pauses work during a tiring afternoon and reaches for his phone to record how he feels.",
@@ -192,28 +136,14 @@
       "subline": [],
       "bullets": [],
       "variant": "A",
-      "prompt": "prompts/r8-afternoon-note.txt",
-      "locale": "en-US",
-      "revision": "r9",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H05-A-r9.jpg",
-      "original": "originals/H05-A-r9.png",
-      "sourceAsset": "sources/r8-afternoon-note.png",
-      "sourceAssetSHA256": "9d8b910e54aefedd27f180e3d25a5b41989de5cfab89c9ea7cbd5a4abe21bec3",
-      "copySHA256": "a3467a9fe9cbdfc975c1c55e5191f1252f74209452e4ffc63e941afe210ba630"
+      "prompt": "prompts/r8-afternoon-note.txt"
     },
     {
       "id": "H06-A",
       "slot": "H06",
       "headline": [
         "New Medication?",
-        "Keep the Details"
+        "Keep the Details."
       ],
       "asset": "r8-medication-note.png",
       "scene": "A woman reads a plain medication carton while holding her phone to record the details.",
@@ -229,28 +159,14 @@
       "subline": [],
       "bullets": [],
       "variant": "A",
-      "prompt": "prompts/r8-medication-note.txt",
-      "locale": "en-US",
-      "revision": "r9",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H06-A-r9.jpg",
-      "original": "originals/H06-A-r9.png",
-      "sourceAsset": "sources/r8-medication-note.png",
-      "sourceAssetSHA256": "cf028fe238f16d88cf2d8992bc61af21a84d6f7c008e163e8f03c72712eef3be",
-      "copySHA256": "3aa86017b8b967c7a4a672f4777676bd1866b9e9be8059cfd5d73f4ff789731a"
+      "prompt": "prompts/r8-medication-note.txt"
     },
     {
       "id": "H07-A",
       "slot": "H07",
       "headline": [
-        "Your Liver Story",
-        "Keep It Together"
+        "Your Liver Story.",
+        "Keep It Together."
       ],
       "asset": "r8-results-together.png",
       "scene": "Hands gather dated reports and a notebook beside a phone, with a small friendly liver illustration on a handout.",
@@ -266,28 +182,14 @@
       "subline": [],
       "bullets": [],
       "variant": "A",
-      "prompt": "prompts/r8-results-together.txt",
-      "locale": "en-US",
-      "revision": "r9",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H07-A-r9.jpg",
-      "original": "originals/H07-A-r9.png",
-      "sourceAsset": "sources/r8-results-together.png",
-      "sourceAssetSHA256": "09e69c1c2cabafdf6e9fbfbf4516cce82fc5070a9929e69160f31521f23de72e",
-      "copySHA256": "f68449c98631800eb8ea1863800b7d69bd9f7f18ca5c9a69574bbf0b2aa25466"
+      "prompt": "prompts/r8-results-together.txt"
     },
     {
       "id": "H08-A",
       "slot": "H08",
       "headline": [
-        "Your Next Visit",
-        "Go Prepared"
+        "Your Next Visit.",
+        "Go Prepared."
       ],
       "asset": "r8-appointment-prep.png",
       "scene": "A man waiting for his appointment reviews his papers and prepares questions with a pen.",
@@ -316,21 +218,7 @@
       "subline": [],
       "bullets": [],
       "variant": "A",
-      "prompt": "prompts/r8-appointment-prep.txt",
-      "locale": "en-US",
-      "revision": "r9",
-      "readiness": "concept",
-      "approval": null,
-      "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
-      "dimensions": [
-        1320,
-        2868
-      ],
-      "preview": "previews/H08-A-r9.jpg",
-      "original": "originals/H08-A-r9.png",
-      "sourceAsset": "sources/r8-appointment-prep.png",
-      "sourceAssetSHA256": "8ff45e7208e3c11083917f26ca27f2bc467da9ad5ce1ee59927deb81588c98b2",
-      "copySHA256": "c94efb8e4a2bf57c4f0ad4bc894c4978af031d6a3e3f696fec003b6c9dc19386"
+      "prompt": "prompts/r8-appointment-prep.txt"
     }
   ],
   "showBrand": false,
@@ -340,27 +228,5 @@
       "title": "H01–H08 · English",
       "description": "Восемь повседневных ситуаций: от вопросов об анализах до подготовки к приёму."
     }
-  ],
-  "status": "For review",
-  "readiness": "concept",
-  "approval": null,
-  "sourceProductCommit": "39e92e2ab5d3e346072c68694562284bc48ab99c",
-  "sourceBranch": "love8ko/1",
-  "screenshotBranch": "love8ko/appstore-screenshots-brief",
-  "dimensions": [
-    1320,
-    2868
-  ],
-  "totalPlannedFrames": 8,
-  "reviewScope": [
-    "H01",
-    "H02",
-    "H03",
-    "H04",
-    "H05",
-    "H06",
-    "H07",
-    "H08"
-  ],
-  "download": "downloads/hepatica-H01-H08-en-US-r9.zip"
+  ]
 }
