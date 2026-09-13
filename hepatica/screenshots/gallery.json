@@ -1,0 +1,153 @@
+{
+  "locale": "en-US",
+  "revision": "r1",
+  "brand": "Hepatica",
+  "exampleLabel": "Example",
+  "footer": "Illustrative layout · Design concept",
+  "frames": [
+    {
+      "id": "H01",
+      "headline": [
+        "Questions",
+        "About Your",
+        "Liver?"
+      ],
+      "accent": 2,
+      "subline": [
+        "Clearer explanations.",
+        "Everyday support."
+      ],
+      "asset": "liver-report.png",
+      "scene": "A fictional woman considering a report at her kitchen table.",
+      "cardTitle": "Your liver question",
+      "question": "What can I keep track of?",
+      "focus": "Meals. Results. Daily notes.",
+      "explanation": "Keep the context for your next liver question.",
+      "note": "Educational support. Not a diagnosis.",
+      "jtbd": "Recognize a place to ask a concrete liver question.",
+      "claims": [
+        "coach",
+        "lab-history",
+        "dated-logs"
+      ],
+      "prompt": "prompts/liver-report.txt",
+      "locale": "en-US",
+      "revision": "r1",
+      "readiness": "concept",
+      "approval": null,
+      "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "previews/H01.jpg",
+      "original": "originals/H01.png",
+      "sourceAsset": "sources/liver-report.png",
+      "sourceAssetSHA256": "1d183f3de1ac1db137bbe513be07021b865d093662e871ed328a3c94e24ddd2b",
+      "copySHA256": "a2479fbd4fd4cfc3247ef8eef74497f430107f0bd982c2eb4121682c99592bb6"
+    },
+    {
+      "id": "H02",
+      "headline": [
+        "Fatty Liver.",
+        "What Can",
+        "I Eat?"
+      ],
+      "accent": 0,
+      "subline": [
+        "Photograph your meal.",
+        "Keep the explanation."
+      ],
+      "asset": "liver-food.png",
+      "scene": "A fictional man with his phone and an ordinary lunch at home.",
+      "cardTitle": "Meal scan",
+      "question": "Your lunch. Your liver question.",
+      "focus": "Scan. Understand. Save.",
+      "explanation": "Photograph your meal. Keep its explanation in your food log.",
+      "note": "Food guidance, with your liver in mind.",
+      "jtbd": "Make sense of an ordinary meal with fatty liver concerns.",
+      "claims": [
+        "meal-scan"
+      ],
+      "prompt": "prompts/liver-food.txt",
+      "locale": "en-US",
+      "revision": "r1",
+      "readiness": "concept",
+      "approval": null,
+      "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "previews/H02.jpg",
+      "original": "originals/H02.png",
+      "sourceAsset": "sources/liver-food.png",
+      "sourceAssetSHA256": "30265f03e97b05a9e8ff12390965b14b18d13bd8724721cc4ed49cc06a37429d",
+      "copySHA256": "c8c754a4e512fe5d31c5c066b2b0e8138b6041e0d977526d2f1de784132fe608"
+    },
+    {
+      "id": "H03",
+      "headline": [
+        "Liver Results.",
+        "In Plain",
+        "English."
+      ],
+      "accent": 0,
+      "subline": [
+        "Understand the terms.",
+        "Prepare your questions."
+      ],
+      "asset": "report-r1.png",
+      "scene": "An illustrative liver report on a teal folder with reading glasses and a pen.",
+      "paper": {
+        "title": "Liver blood tests",
+        "label": "A TERM ON YOUR REPORT",
+        "term": "ALT",
+        "definition": "A liver enzyme",
+        "date": "Example report · Sep 12, 2026"
+      },
+      "cardTitle": "A question to bring",
+      "question": "Make the next conversation clearer.",
+      "focus": "What does this result mean for me?",
+      "explanation": "Keep your results. Bring your questions to your clinician.",
+      "note": "One result is not a diagnosis.",
+      "jtbd": "Understand a lab term and prepare a personal question for a clinician.",
+      "claims": [
+        "lab-terms",
+        "lab-history",
+        "doctor-brief"
+      ],
+      "prompt": "prompts/report-r1.txt",
+      "locale": "en-US",
+      "revision": "r1",
+      "readiness": "concept",
+      "approval": null,
+      "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "preview": "previews/H03.jpg",
+      "original": "originals/H03.png",
+      "sourceAsset": "sources/report-r1.png",
+      "sourceAssetSHA256": "6ea0048e022917177895d292b5c1d20b14acec748e52683579b3a572a1e32353",
+      "copySHA256": "2e90da4048280bd975c18abc4bcb8a22ebb02a1d5c03ed3e2725cf5450b59f93"
+    }
+  ],
+  "status": "For review",
+  "readiness": "concept",
+  "approval": null,
+  "sourceProductCommit": "8cde6748f2ecb03e4131ddfa7d594544e1efb198",
+  "sourceBranch": "love8ko/1",
+  "screenshotBranch": "love8ko/appstore-screenshots-brief",
+  "dimensions": [
+    1320,
+    2868
+  ],
+  "totalPlannedFrames": 8,
+  "reviewScope": [
+    "H01",
+    "H02",
+    "H03"
+  ]
+}

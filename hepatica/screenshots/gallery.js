@@ -1,0 +1,11 @@
+'use strict';
+(async()=>{
+  const data=await fetch('gallery.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();});
+  const frames=data.frames,grid=document.getElementById('gallery'),dialog=document.getElementById('lightbox'),viewer=document.getElementById('viewer');let active=0,opener;
+  document.getElementById('revision').textContent=data.revision;
+  const setZoom=on=>{viewer.classList.toggle('zoomed',on);document.getElementById('zoom').setAttribute('aria-pressed',String(on));document.getElementById('zoom').textContent=on?'Fit to view':'Zoom 100%';};
+  function show(index){active=(index+frames.length)%frames.length;const f=frames[active],img=document.getElementById('full-image');img.src=f.original;img.alt=f.headline.join(' ');document.getElementById('modal-title').textContent=f.id+' · '+f.revision;document.getElementById('download').href=f.original;setZoom(false);viewer.scrollTo(0,0);}
+  frames.forEach((f,i)=>{const figure=document.createElement('figure');figure.className='frame';const button=document.createElement('button');button.setAttribute('aria-label','Открыть '+f.id+': '+f.headline.join(' '));const img=document.createElement('img');img.src=f.preview;img.alt=f.headline.join(' ');img.width=440;img.height=956;button.append(img);button.addEventListener('click',()=>{opener=button;show(i);dialog.showModal();document.getElementById('close').focus();});const cap=document.createElement('figcaption');cap.textContent=f.id;const label=document.createElement('span');label.textContent='en-US · '+f.revision+' · concept';cap.append(label);figure.append(button,cap);grid.append(figure);});
+  document.getElementById('previous').onclick=()=>show(active-1);document.getElementById('next').onclick=()=>show(active+1);document.getElementById('close').onclick=()=>dialog.close();document.getElementById('zoom').onclick=()=>setZoom(!viewer.classList.contains('zoomed'));
+  dialog.addEventListener('close',()=>opener?.focus());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();show(active-1);}if(e.key==='ArrowRight'){e.preventDefault();show(active+1);}});
+})().catch(error=>{document.getElementById('load-error').hidden=false;console.error(error);});
