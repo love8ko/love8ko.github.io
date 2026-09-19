@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Cysta · r4 render</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#D4A574;--gold-hi:#E8BF8E;--plum:#6B4E6E;--plum-deep:#4A3450;--ink:#3A2A3D;--pearl:#F4ECE6;--card:#FFFBF8;--warn:#B0702B;--ok:#3E7D5A;--muted:#7A6A7C}
+*{box-sizing:border-box;margin:0}
+body{background:#1a1219;font-family:Manrope,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.frame{container-type:inline-size;position:relative;width:440px;aspect-ratio:1320/2868;overflow:hidden;background:#1d1420;color:var(--pearl)}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,#140d16f2 0%,#140d16cc 17%,#140d1640 34%,#140d1600 55%,#140d1666 100%)}
+.head{position:absolute;top:5.4%;left:5%;right:5%;text-align:center;z-index:5}
+.head h1{font-size:11.6cqw;white-space:nowrap;line-height:1.02;font-weight:800;letter-spacing:-.045em;text-shadow:0 1cqw 5cqw #000a}
+.head h1 .a{color:var(--gold-hi)}
+.head p{margin-top:3cqw;font-size:4.5cqw;font-weight:600;color:#F4ECE6d0;letter-spacing:.01em}
+/* phone */
+.phone{position:absolute;z-index:3;left:50%;transform:translateX(-50%);top:28.5%;width:70%;aspect-ratio:9/19.3;border-radius:10cqw;background:#0e0a0f;padding:1.6cqw;box-shadow:0 0 0 .5cqw #3a2d3c,0 6cqw 16cqw #000c}
+.screen{position:relative;width:100%;height:100%;border-radius:8.6cqw;overflow:hidden;background:var(--pearl);color:var(--ink)}
+.island{position:absolute;top:2cqw;left:50%;transform:translateX(-50%);width:19cqw;height:5.4cqw;border-radius:9cqw;background:#0e0a0f;z-index:3}
+.sb{display:flex;justify-content:space-between;padding:2.6cqw 6cqw 0;font-size:3cqw;font-weight:700}
+.nav{padding:5cqw 5cqw 2cqw}
+.nav small{display:block;font-size:2.6cqw;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.nav b{display:block;font-size:5.4cqw;letter-spacing:-.03em;margin-top:.6cqw}
+.sum{margin:1cqw 4cqw 2cqw;padding:2.4cqw 3cqw;border-radius:3cqw;background:#F3E6D6;font-size:3cqw;font-weight:700;color:#7A5222}
+.sum b{font-size:4.4cqw;color:var(--warn)}
+.rows{margin:0 4cqw;display:grid;gap:1.4cqw}
+.row{display:flex;justify-content:space-between;align-items:center;background:var(--card);border-radius:2.6cqw;padding:2.2cqw 2.8cqw}
+.row .n{font-size:2.9cqw;font-weight:700;line-height:1.2}.row .n i{display:block;font-style:normal;font-size:2.3cqw;color:var(--muted);font-weight:600}
+.row .v{text-align:right;font-variant-numeric:tabular-nums}.row .v b{font-size:4.2cqw;font-weight:800}.row .v i{font-style:normal;font-size:2.2cqw;color:var(--muted);margin-left:.5cqw}
+.row .v em{display:block;font-style:normal;font-size:2.2cqw;font-weight:800;margin-top:.3cqw}
+.hi b,.hi em{color:var(--warn)}.okr em{color:var(--ok)}
+.pill{display:inline-block;font-size:2.4cqw;font-weight:800;padding:.8cqw 2cqw;border-radius:9cqw}
+/* glowing highlight that pops out of the phone */
+.glow{position:absolute;z-index:6;left:50%;transform:translateX(-50%);width:84%;border-radius:4.4cqw;background:linear-gradient(180deg,#2b1d2e,#1e1421);border:.7cqw solid var(--gold);box-shadow:0 0 6cqw #D4A574aa,0 0 1.6cqw #E8BF8E,0 4cqw 10cqw #000b;padding:3.6cqw 4.4cqw;text-align:center;color:var(--pearl)}
+.glow small{display:block;font-size:3cqw;font-weight:800;letter-spacing:.08em;color:var(--gold-hi);text-transform:uppercase}
+.glow strong{display:block;font-size:8.4cqw;line-height:1.02;letter-spacing:-.04em;font-weight:800;margin-top:1.2cqw}
+.glow strong .u{display:inline;font-size:4.4cqw;color:#F4ECE6b0;font-weight:700;letter-spacing:0}
+.glow>span{display:block;margin-top:1.4cqw;font-size:3.6cqw;font-weight:700;color:#F4ECE6d0}
+.glow .warn{color:var(--gold-hi)}
+/* callouts */
+.calls{position:absolute;z-index:6;left:6%;right:6%;bottom:4.6%;display:flex;justify-content:center;gap:2cqw;flex-wrap:wrap}
+.calls div{display:flex;align-items:center;gap:1.6cqw;background:#1e1421e6;border:.35cqw solid #D4A57488;border-radius:9cqw;padding:1.8cqw 3cqw 1.8cqw 1.8cqw;font-size:3.7cqw;font-weight:800;color:var(--pearl);box-shadow:0 2cqw 5cqw #000a}
+.calls div::before{content:"✓";display:grid;place-items:center;width:5.2cqw;height:5.2cqw;border-radius:50%;background:var(--gold);color:#2a1d2c;font-size:3.2cqw;flex:none}
+.foot{position:absolute;z-index:7;left:5%;right:5%;bottom:1.2%;display:flex;justify-content:space-between;font-size:2.1cqw;color:#F4ECE666}
+/* meal screen */
+.mealimg{margin:0 4cqw;height:24cqw;border-radius:3cqw;background:center/cover}
+.chips{display:flex;gap:1.2cqw;flex-wrap:wrap;margin:2cqw 4cqw}
+.chip{font-size:2.6cqw;font-weight:800;padding:1cqw 2cqw;border-radius:9cqw;background:#E2F0E7;color:var(--ok)}.chip.w{background:#F6E7D3;color:var(--warn)}
+.note{margin:1cqw 4cqw;font-size:2.8cqw;line-height:1.35;color:#5B4A5E;font-weight:600}
+/* doctor page */
+.stamps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4cqw;margin:1cqw 4cqw 2cqw}
+.stamp{background:var(--card);border-radius:2.4cqw;padding:2cqw 1cqw;text-align:center;font-size:2.5cqw;font-weight:800}
+.stamp::before{content:"✓";display:grid;place-items:center;margin:0 auto 1cqw;width:5cqw;height:5cqw;border-radius:50%;background:var(--plum);color:#fff;font-size:2.8cqw}
+.stamp.off{color:var(--muted)}.stamp.off::before{content:"";background:#E9DFE5}
+</style></head>
+<body>
+<div id="out"></div>
+<script>
+const F={
+S01:{bg:'bg-S01.jpg',h:['What Do Your','<span class="a">Labs</span> Mean?'],sub:'Testosterone · AMH · Insulin · LH:FSH',
+ screen:`<div class="nav"><small>Lab results · Jul 12</small><b>Blood panel</b></div>
+ <div class="sum"><b>10 of 19</b> outside your lab's range</div>
+ <div class="rows">
+  <div class="row hi"><span class="n">Total testosterone<i>your lab: 8–48</i></span><span class="v"><b>58</b><i>ng/dL</i><em>Above range</em></span></div>
+  <div class="row hi"><span class="n">Fasting insulin<i>your lab: 2.6–11.1</i></span><span class="v"><b>16.4</b><i>µIU/mL</i><em>Above range</em></span></div>
+  <div class="row"><span class="n">AMH<i>read with your other results</i></span><span class="v"><b>6.9</b><i>ng/mL</i></span></div>
+  <div class="row okr"><span class="n">SHBG<i>your lab: 18–144</i></span><span class="v"><b>32</b><i>nmol/L</i><em>Within range</em></span></div>
+  <div class="row hi"><span class="n">Vitamin D<i>your lab: 30–100</i></span><span class="v"><b>21</b><i>ng/mL</i><em>Below range</em></span></div>
+ </div>`,
+ glow:{top:'57%',html:'<small>Testosterone · above your range</small><strong>58 <span class="u">ng/dL</span></strong><span>your lab: 8–48</span>'},
+ calls:['Your lab\'s own range','Questions for your doctor']},
+S02:{bg:'bg-S02.jpg',h:['Snap Your Plate','Get <span class="a">One Swap</span>'],sub:'Protein · Fiber · Carbs · PCOS-aware',
+ screen:`<div class="nav"><small>Meal read · Lunch</small><b>Chicken & chickpea bowl</b></div>
+ <div class="mealimg" style="background-image:url(meal-thumb.jpg)"></div>
+ <div class="chips"><span class="chip">Protein 32 g</span><span class="chip">Fiber 9 g</span><span class="chip w">Fast carbs: white bread</span></div>
+ <div class="note">A good base. Fiber and protein slow how fast glucose rises; the white bread is the part to adjust.</div>`,
+ glow:{top:'60%',html:'<small>One swap</small><strong style="font-size:7.2cqw">White bread →<br>whole-grain</strong><span>Nothing banned. No counting.</span>'},
+ calls:['Any meal, one photo','No calorie math']},
+S03:{bg:'bg-S03.jpg',h:['Doctor Visit?','Bring <span class="a">One Page</span>'],sub:'Labs · Cycle · Meds · Questions',
+ screen:`<div class="nav"><small>Doctor</small><b>Your doctor page</b></div>
+ <div class="sum" style="background:#EDE3EE;color:#4A3450">Next visit <b style="color:#6B4E6E">Fri, Oct 2</b> · ready 2 days before</div>
+ <div class="stamps"><div class="stamp">Labs</div><div class="stamp">Cycle</div><div class="stamp">Meds</div><div class="stamp">Diagnosis</div><div class="stamp">Questions</div><div class="stamp off">Tried</div></div>
+ <div class="rows">
+  <div class="row"><span class="n">Since your last visit<i>Jun 3</i></span><span class="v"><em style="color:#6B4E6E;font-size:2.6cqw">Started inositol</em></span></div>
+  <div class="row"><span class="n">Questions ready<i>for Fri, Oct 2</i></span><span class="v"><b style="color:#6B4E6E">3</b></span></div>
+ </div>`,
+ glow:{top:'61%',html:'<small>Your doctor page</small><strong>5 of 6 <span class="u">filled</span></strong><span>Send as PDF · any doctor</span>'},
+ calls:['Everything in one page','Your questions ready']}
+};
+const qs=new URLSearchParams(location.search), id=qs.get('id')||'S01', f={...F[id]};
+if(qs.get('v')==='B'&&id==='S01') f.h=['Your Labs,','Made <span class="a">Clear</span>'];
+document.getElementById('out').innerHTML=`<div class="frame">
+ <img class="bg" src="${f.bg}" alt=""><div class="shade"></div>
+ <div class="head"><h1>${f.h[0]}<br>${f.h[1]}</h1><p>${f.sub}</p></div>
+ <div class="phone"><div class="screen"><div class="island"></div><div class="sb"><span>9:41</span><span>●●● ▮</span></div>${f.screen}</div></div>
+ <div class="glow" style="top:${f.glow.top}">${f.glow.html}</div>
+ <div class="calls">${f.calls.map(c=>`<div>${c}</div>`).join('')}</div>
+ <div class="foot"><span>Example data · illustrative</span><span>${id}${qs.get('v')?'-'+qs.get('v'):''}</span></div></div>`;
+</script>
+</body></html>
