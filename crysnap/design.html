@@ -40,17 +40,32 @@ tr.win td{background:#F4F8F1}
 .loop .step .k{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--coral-deep)}
 .loop .step.renew{border-color:var(--sage)}.loop .step.renew .k{color:var(--sage-deep)}
 ol.q{margin:10px 0 0;padding-left:20px}ol.q li{margin:10px 0}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x mandatory}
+.shots figure{margin:0;flex:none;width:210px;scroll-snap-align:start}.shots img{width:210px;border-radius:26px;border:1px solid var(--line);box-shadow:0 10px 24px -14px #2b262260;display:block;background:#fff}
+.shots figcaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
 footer{max-width:1180px;margin:auto;padding:20px 28px 32px;font-size:12px;color:var(--muted)}
 .archive-links{display:flex;gap:18px;flex-wrap:wrap}
 @media(max-width:900px){.grid,.grid.two{grid-template-columns:1fr 1fr}.loop{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){nav,main,footer{padding-left:16px;padding-right:16px}.grid,.grid.two,.loop{grid-template-columns:1fr}h1{font-size:30px}}
 </style></head><body><a class="skip" href="#main">К содержанию</a>
-<nav><a class="wordmark" href="design.html">CrySnap</a><div class="links"><a href="#audience">Аудитория</a><a href="#pains">Боли</a><a href="#competitors">Конкуренты</a><a href="#loop">Петля</a><a href="#features">Фишки</a><a href="#wow">Первые дни</a><a href="#paywall">Пейвол</a><a href="#decisions">Решения</a><a href="flow.html">Онбординг ↗</a></div></nav>
+<nav><a class="wordmark" href="design.html">CrySnap</a><div class="links"><a href="#audience">Аудитория</a><a href="#pains">Боли</a><a href="#competitors">Конкуренты</a><a href="#loop">Петля</a><a href="#features">Фишки</a><a href="#wow">Первые дни</a><a href="#paywall">Пейвол</a><a href="#sim">V2 в симуляторе</a><a href="#decisions">Решения</a><a href="flow.html">Онбординг ↗</a></div></nav>
 <main id="main">
-<div class="eyebrow">Продуктовый справочник V2 · черновик · 19 сентября 2026</div>
-<h1>Know why your baby is crying — and what to try next.<br><span style="color:var(--coral-deep)">A step-by-step plan that learns what works for your baby.</span></h1>
-<p class="lead">Родитель приходит из поиска App Store в 3 часа ночи с одним вопросом: «почему он плачет и что мне сделать прямо сейчас». V2 отвечает на него планом, а не ярлыком, запоминает, что сработало именно у этого малыша, и возвращает человека утром — с итогом ночи и прогнозом на вечер.</p>
+<div class="eyebrow">Продуктовый справочник V2 · 19 сентября 2026 · сборка в симуляторе</div>
+<h1>A calm plan for every crying spell.<br><span style="color:var(--coral-deep)">Timed steps tonight — and it remembers what worked for your baby.</span></h1>
+<p class="lead">Родитель приходит из поиска App Store в 3 часа ночи с одним вопросом: «почему он плачет и что мне сделать прямо сейчас». V2 честно не угадывает причину по звуку — отвечает планом, а не ярлыком, запоминает, что сработало именно у этого малыша, и возвращает человека утром — с итогом ночи и прогнозом на вечер.</p>
 <div class="toolbar"><a class="primary" href="flow.html">Онбординг V2 · прототип</a><a href="#jev">Что показал Jev</a><a href="#loop">Петля продукта</a><a href="#decisions">Открытые решения</a></div>
+
+<section id="sim"><h2>V2 в симуляторе</h2>
+<p class="muted">Реальные экраны сборки ветки love8ko/sprint (commit 74e6063) из iPhone 17 Pro Simulator, сценарии когорт через отладочные аргументы запуска. Иллюстрации сгенерированы Codex в одной живописной серии: главный объект в верхних 55% кадра, текст на Liquid Glass поверх спокойной нижней зоны.</p>
+<div class="shots"><figure><img loading="lazy" src="v2/00-onboarding.jpg" alt="1 · Боль: «It's 3am. You've tried everything.»"><figcaption>1 · Боль: «It's 3am. You've tried everything.»</figcaption></figure><figure><img loading="lazy" src="v2/01-onboarding.jpg" alt="2 · Демо: план с таймерами, причина с объяснением"><figcaption>2 · Демо: план с таймерами, причина с объяснением</figcaption></figure><figure><img loading="lazy" src="v2/02-onboarding.jpg" alt="3 · «Did it work? CrySnap remembers»"><figcaption>3 · «Did it work? CrySnap remembers»</figcaption></figure><figure><img loading="lazy" src="v2/03-onboarding.jpg" alt="4 · Первая неделя"><figcaption>4 · Первая неделя</figcaption></figure><figure><img loading="lazy" src="v2/04-paywall.jpg" alt="5 · Пейвол: «A calm plan…», обе подписки с 7 днями бесплатно, 3.1.2 strict"><figcaption>5 · Пейвол: «A calm plan…», обе подписки с 7 днями бесплатно, 3.1.2 strict</figcaption></figure><figure><img loading="lazy" src="v2/night-10-first-win.jpg" alt="6 · Первая победа: «Leo's playbook — started»"><figcaption>6 · Первая победа: «Leo's playbook — started»</figcaption></figure><figure><img loading="lazy" src="v2/night-12-plan.jpg" alt="7 · «Crying now» → план с таймерами"><figcaption>7 · «Crying now» → план с таймерами</figcaption></figure><figure><img loading="lazy" src="v2/night-13-tonight-day3.jpg" alt="8 · Tonight, день 3: итог ночи, плейбук, передача смены"><figcaption>8 · Tonight, день 3: итог ночи, плейбук, передача смены</figcaption></figure><figure><img loading="lazy" src="v2/grand-13-tonight-day3.jpg" alt="9 · То же у бабушки: плейбук Ella"><figcaption>9 · То же у бабушки: плейбук Ella</figcaption></figure><figure><img loading="lazy" src="v2/night-14-minute40.jpg" alt="10 · Minute 40 — поддержка родителя"><figcaption>10 · Minute 40 — поддержка родителя</figcaption></figure><figure><img loading="lazy" src="v2/night-15-nurse-line.jpg" alt="11 · Скрипт для линии медсестёр"><figcaption>11 · Скрипт для линии медсестёр</figcaption></figure><figure><img loading="lazy" src="v2/night-16-week7.jpg" alt="12 · Неделя малыша"><figcaption>12 · Неделя малыша</figcaption></figure><figure><img loading="lazy" src="v2/night-17-baby-tab.jpg" alt="13 · Вкладка Baby"><figcaption>13 · Вкладка Baby</figcaption></figure></div>
+<h3 style="margin-top:18px">Цикл проверки</h3>
+<div class="table-wrap"><table><thead><tr><th>Раунд</th><th>Полезно</th><th>Вернусь завтра</th><th>Начну триал</th><th>Продолжу платить</th><th>Что изменили после</th></tr></thead><tbody>
+<tr><td>Fable r2 (6 когорт, скриншоты)</td><td class="num">3–4</td><td class="num">3–4</td><td class="num">3–4</td><td class="num">2–3</td><td>Честные данные (сегменты «worked before» / «you said it helps», окно 3 часа вместо «busiest hour», периоды подписаны), длительность плача, путь «голод vs газики» и консультант по ГВ, «один дома» в Minute 40, как найти номер медсестёр</td></tr>
+<tr class="win"><td>Fable r3</td><td class="num">4 × 6</td><td class="num">4 × 6</td><td class="num">3–4</td><td class="num">2–3</td><td>Упёрлись в формат подписки → <b>годовая тоже с триалом</b> (решение владельца)</td></tr>
+<tr><td>Jev: продолжит платить (0–4)</td><td colspan="4">1.3 <span class="num">1.84</span> → V2 как собрано <span class="num">2.79</span>; колики 3.02, второй ребёнок 2.96, ночь 2.83, папа 2.78, бабушки 2.68, кормление 2.49</td><td>Добавки дают ≤ +0.12; недельная 2.43 и при $7.99, и при $4.99, годовая <b>3.09</b></td></tr>
+</tbody></table></div>
+<div class="callout warm"><strong>Классификатор:</strong> DeepInfant V2 на отложенных записях хуже константы «hungry» (0% pain/scared/lonely; модель выучила качество записи). В V2 причина определяется из контекста с объяснением («awake 95 min — typical for 5 weeks is 60–90»), микрофон только подтверждает плач (Apple SoundAnalysis). Одинаковые данные → одинаковый ответ. Подробно: <code>research/classifier-eval-2026-09-19/FINDINGS.md</code>.</div>
+</section>
 
 <section id="audience"><h2>Аудитория: кто пользуется и кто платит</h2>
 <p class="muted">Шесть когорт — это жизненные контексты, а не рекламные сегменты. Доли — оценка до запуска, а не данные о плательщиках; реальные доли берём из RevenueCat и App Store Connect. Цифры в карточках — Jev (24 синтетических человека × 2 прохода, не интервью).</p>
@@ -182,16 +197,16 @@ footer{max-width:1180px;margin:auto;padding:20px 28px 32px;font-size:12px;color:
 <tr><td>Дизайн</td><td><span class="pill warn">разнобой</span></td><td>Coral + Sage утверждены; Settings — стандартный List; нет Liquid Glass; ad-hoc размеры шрифтов.</td></tr>
 </tbody></table></div></section>
 
-<section id="decisions"><h2>Открытые решения владельцу</h2>
+<section id="decisions"><h2>Решения владельца (19 сентября)</h2>
 <ol class="q">
-<li><s>Результат скана = план с таймерами + Minute 40</s> — <b>решено 19.09: да</b>.</li>
-<li><s>Первая победа = «Плейбук начат» + план на сегодня</s> — <b>решено 19.09: одним экраном</b>.</li>
-<li><b>Обещание:</b> заголовок «Know why your baby is crying — and what to try next.» + подзаголовок «A step-by-step plan that learns what works for your baby.» <b>Решено 19.09: только в приложении</b>, ASO — отдельной итерацией после релиза.</li>
-<li><b>Передача смены и дневник для педиатра</b> — V2.1 (рекомендуем) или сейчас.</li>
-<li><b>Пуш про окно сна по возрасту</b> — только на главной, без пуша (рекомендуем; реакция 2.87).</li>
-<li><b>Классификатор:</b> если DeepInfant на наших тестовых записях окажется слабым — показываем «most likely / also possible» без процентов и продаём план (уже заложено).</li>
+<li><b>Результат скана = план с таймерами + Minute 40</b> — сделано.</li>
+<li><b>Первая победа</b> = «Плейбук начат» + план на сегодня одним экраном — сделано.</li>
+<li><b>Причина плача — из контекста</b>, не из звука; DeepInfant не входит в приложение — сделано.</li>
+<li><b>Обещание</b>: «A calm plan for every crying spell. / Timed steps tonight — and it remembers what worked for your baby.» (Jev r4 0.63 против 0.06 у «Know why…»). App Store title/subtitle не трогаем.</li>
+<li><b>Handoff mode</b> (роль в квизе, «Send handover», экран помощника) и <b>скрипт для линии медсестёр</b> — сделано.</li>
+<li><b>Подписки</b>: недельная $7.99 и годовая $39.99, <b>обе с 7 днями бесплатно</b>; недельная выбрана по умолчанию; апгрейд до годовой — только в Settings; в приложении никаких напоминаний о подписке. Нужно добавить intro offer годовой в App Store Connect.</li>
+<li><b>V2.1</b>: Listen mode (фоновое прослушивание), синхронизация с партнёром, PDF для педиатра, сон после 8 недель.</li>
 </ol>
-<div class="callout"><strong>Уже решено владельцем (19.09):</strong> модель + контекст; Weekly $7.99 + 7 дней триала, Yearly $39.99 без триала; 4 визуальных экрана → пейвол → квиз после оплаты; вкладки Tonight / Ask / Soothe / Baby; Coral + Sage + Liquid Glass только в хроме; никаких напоминаний о триале.</div>
 </section>
 
 <section id="archive"><h2>Архив</h2>
