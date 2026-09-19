@@ -82,32 +82,16 @@ td.num{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
 .open{font-size:13px;font-weight:700;color:var(--plum);text-decoration:none}
 .weak{background:#FBF1E6;border-radius:10px;padding:8px 10px;margin-top:10px}
 pre.tpl{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font:13px/1.55 ui-monospace,Menlo,monospace;white-space:pre-wrap;overflow-x:auto}
-/* ---------- r3: Hepatica-style ---------- */
-.shot.r3 .head{top:4.2%}
-.shot.r3 h3{font-size:12cqw;line-height:.98;letter-spacing:-.05em}
-.shot.r3 .photo{top:15.5%;height:69%;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 7%,#000 72%,transparent 96%);mask-image:linear-gradient(180deg,transparent 0,#000 7%,#000 72%,transparent 96%)}
-.tag{position:absolute;z-index:5;background:#FFFBF8;color:#3A2A3D;font-weight:700;font-size:4.2cqw;line-height:1.1;padding:2cqw 3cqw;border-radius:99px;box-shadow:0 1.5cqw 4cqw #1a0f1c66;white-space:nowrap}
-.tag b{color:#B0702B;font-size:5.4cqw;font-variant-numeric:tabular-nums}
-.tag .tri{position:absolute;top:-1.6cqw;left:12cqw;width:3.4cqw;height:3.4cqw;background:#FFFBF8;transform:rotate(45deg)}
-.tag.center{transform:translateX(-50%);background:#D4A574;color:#3A2A3D;font-size:4.6cqw;font-weight:800}
-.tag.small{font-size:3.5cqw;padding:1.5cqw 2.6cqw}
-.arrow{position:absolute;z-index:4;overflow:visible}
-.page-lines{position:absolute;z-index:4;display:grid;gap:3.05cqw}
-.page-lines span{display:block;background:#FFFFFF;color:#4A3450;font-weight:800;font-size:4.4cqw;line-height:1;padding:.6cqw 1.4cqw;border-radius:1cqw}
-ul.big{position:absolute;z-index:5;left:7%;right:6%;bottom:5.5%;margin:0;padding:0;list-style:none;display:grid;gap:2.6cqw}
-ul.big li{display:flex;align-items:center;gap:3cqw;font-size:6.1cqw;line-height:1.08;font-weight:800;letter-spacing:-.03em;color:#F4ECE6;text-shadow:0 .4cqw 2cqw #1a0f1c}
-ul.big li::before{content:"✓";flex:none;display:grid;place-items:center;width:7.4cqw;height:7.4cqw;border-radius:50%;background:#D4A574;color:#3A2A3D;font-size:4.4cqw;text-shadow:none}
-.thumbs{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 0}.thumbs img{width:92px;border-radius:12px;box-shadow:0 4px 14px #3a2a3d33}
 footer{max-width:1180px;margin:0 auto;padding:24px 16px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
-<nav><a class="wordmark" href="../design.html">Cysta AI</a><div class="links"><a href="../design.html">Design</a><a href="../flow.html">Flow</a><a href="./" aria-current="page">Screenshots</a></div><span class="note">WORKBENCH</span></nav>
+<nav><a class="wordmark" href="../../../design.html">Cysta AI</a><div class="links"><a href="../../../design.html">Design</a><a href="../../../flow.html">Flow</a><a href="../../">Screenshots</a></div><span class="note">WORKBENCH</span></nav>
 <main>
-  <div class="eyebrow">App Store · S01–S08 · English · r3</div>
+  <div class="eyebrow">App Store · S01–S08 · English · r2</div>
   <h1>Скриншоты Cysta AI 2.0</h1>
   <p class="lead">Метод Hepatica и Refluxora: <b>боль словами человека → узнаваемая сцена → один конкретный результат на карточке</b>. Порядок кадров задают боли, пересчитанные под то, что реально есть в приложении после спринта V2.</p>
-  <span class="status">r3 · Draft · первые три кадра на ревью</span>
+  <span class="status">Архив r2 · 19.09 · заменён r3 (владелец: мало аффинитивности, перегружено)</span>
   <div class="jump"><a href="#first3">Первые три</a><a href="#pains">Боли → кадры</a><a href="#all">Вся восьмёрка</a><a href="#feedback">Как прислать правки</a><a href="#history">Ревизии</a></div>
   <p class="howto">Для правки достаточно номера кадра: <b>«S02 — фото оставить, заголовок на …»</b>. Кадры открываются в полном размере 1320×2868 по ссылке под каждым.</p>
   <div class="banner"><strong>Что учтено из спринта (19.09, коммит 75f4184)</strong><span class="muted">Вкладка <b>Ask</b> и голос «Cysta endocrine guide» · «passport» → <b>your doctor page</b> · гайдлайн 2023 убран из базы знаний (только назвать, не цитировать) · есть замена в разборе еды, даты проверки, цикл диапазоном, карта анализов, лента My record · фертильность на витрине не показываем · экрана Privacy &amp; data нет. Полный список: <code>marketing/appstore-v2/SPRINT2_DELTA.md</code>.</span></div>
@@ -130,81 +114,119 @@ footer{max-width:1180px;margin:0 auto;padding:24px 16px 40px;color:var(--muted);
   </table></div>
   <p class="muted">* После появления страницы врача и подготовки к визиту «продолжит платить» выросло на 0.4–0.9, а страница стала главным платёжным мотивом (Jev 0.20). Поэтому она стоит третьей, хотя по силе боли шестая.</p>
 
-    <h2 id="first3">Первые три кадра · r3</h2>
-  <p class="muted">Переделано по замечанию владельца: на маленьком экране среди других приложений заголовки были мелкими, а кадр перегружен. Теперь как у Hepatica: <b>2 строки крупно → один узнаваемый предмет → 2 буллета</b>. Предмет, заголовок и низ выбраны турниром Jev (24 × 2) из трёх вариантов каждый. Фото — новые генерации (OpenRouter, GPT Image 2). Подписи на предметах — HTML, в картинке нет текста.</p>
-  <div class="thumbs"><span class="muted">Так их увидят в поиске (≈200 px):</span><img src="previews/r3-S01.jpg" alt=""><img src="previews/r3-S02.jpg" alt=""><img src="previews/r3-S03.jpg" alt=""></div>
+  <h2 id="first3">Первые три кадра</h2>
+  <p class="muted">Только эти три видны в поиске App Store без тапа. Фото — из онбординга и пейвола (та же героиня темы, одна серия со всем приложением). Карточка — крупный фрагмент результата, как у Refluxora и Hepatica: не снимок экрана, а увеличенная польза. Каждая строка есть в приложении (Apple 2.3.3: функция должна существовать). Данные — пример.</p>
 
   <div class="first3">
+    <!-- S01 -->
     <div class="shot-wrap">
       <div class="slot">S01 · АНАЛИЗЫ</div>
-      <div class="shot r3" aria-label="S01: Your Labs, Made Clear">
-        <div class="head"><h3><span>Your Labs,</span><span class="accent">Made Clear</span></h3></div>
-        <img class="photo" src="assets/r3-S01.jpg" alt="">
-        <div class="tag" style="left:12%;top:52.5%"><span class="tri"></span>Testosterone <b>58</b> · above range</div>
-        <ul class="big"><li>Every value vs your range</li><li>Questions for your doctor</li></ul>
-        <div class="foot"><span>Example · illustrative</span><span>S01</span></div>
+      <div class="shot" aria-label="S01: What do your PCOS labs mean?">
+        <div class="head"><h3><span>What do your</span><span class="accent">PCOS labs mean?</span></h3><p class="sub">Every value, its range, what to ask</p></div>
+        <img class="photo" src="../../assets/labs.jpg" alt="" style="top:19%;height:52%;object-position:50% 20%">
+        <div class="card">
+          <div class="card-top"><strong>Your lab report</strong><span>Example</span></div>
+          <div class="rows">
+            <div class="row"><span class="name">Total testosterone<br><span class="muted" style="font-size:2.5cqw">your lab: 8–60</span></span><span class="val st-hi"><b>62</b><i>ng/dL</i><em>Above your report's range</em></span></div>
+            <div class="row"><span class="name">Fasting insulin<br><span class="muted" style="font-size:2.5cqw">your lab: 2.6–24.9</span></span><span class="val st-ok"><b>18</b><i>µIU/mL</i><em>Within your report's range</em></span></div>
+          </div>
+          <div class="result"><span class="lbl">QUESTION FOR YOUR DOCTOR</span><span class="focus">Should I have a 2-hour glucose test?</span></div>
+          <ul class="bul"><li>Every value vs your lab's own range</li><li>Questions built from your results</li></ul>
+          <p class="fn">Educational, not a diagnosis. Your doctor reads your results together.</p>
+        </div>
+        <div class="foot"><span>Example data · illustrative scene</span><span>S01</span></div>
       </div>
-      <a class="open" href="previews/r3-S01.jpg" target="_blank" rel="noopener">Открыть S01 в полном размере ↗</a>
+      <a class="open" href="../../previews/r2/S01.jpg" target="_blank" rel="noopener">Открыть S01 в полном размере ↗</a>
       <div class="aff">
-        <h4>Jev r3 · что выбрали</h4>
-        <p><b>Предмет:</b> бланк с выделенной строкой <b>0.87</b> · женщина с бланком 0.13 · анатомия яичников <b>0.00</b></p>
-        <p><b>Заголовок:</b> «Your Labs, Made Clear» 0.42 · «What Do Your Labs Mean?» 0.38 (почти ничья) · «PCOS Labs Explained» 0.21</p>
-        <p><b>Низ:</b> два буллета <b>0.84</b> · одна плашка 0.11 · маленький телефон 0.05</p>
-        <p><b>Первым кадром:</b> анализы 0.49 · врач 0.31 · еда 0.20</p>
-        <p class="weak"><b>Что проверить.</b> Почти ничья заголовков — можно дать A/B в App Store (Product Page Optimization). В заголовке нет слова PCOS: узнаваемость держится на предмете и буллетах.</p>
+        <h4>Кому откликается</h4>
+        <p class="muted" style="margin-bottom:4px">«Этот кадр первым» (Jev, доля выбора)</p>
+        <div class="bars">
+          <div class="bar"><span>generic</span><span class="t"><i style="width:82%"></i></span><span class="v">0.41</span></div>
+          <div class="bar"><span>Naomi</span><span class="t"><i style="width:78%"></i></span><span class="v">0.39</span></div>
+          <div class="bar"><span>Anna</span><span class="t"><i style="width:76%"></i></span><span class="v">0.38</span></div>
+          <div class="bar"><span>всего</span><span class="t"><i style="width:42%"></i></span><span class="v">0.21</span></div>
+        </div>
+        <h4>Почему работает</h4>
+        <ul><li>Заголовок — её вопрос, а не название функции (0.72 против «Your labs, in plain English» 0.25).</li><li>Крупнее всего её число; цвет = статус (охра вне диапазона, зелёный в диапазоне) — как в приложении.</li><li>Результат — конкретный вопрос врачу, который закрывает боль «не знаю, что спросить».</li></ul>
+        <h4 style="margin-top:10px">Карточка: турнир Jev r2</h4><p><b>Эта карточка — 0.78</b> против трёх вариантов Fable (Fable: крупное число одной строкой 0.16 · вопрос «recheck testosterone?» 0.03 · карта связей 0.03).<br><span class="muted">Anna 0.88 · Maya 0.81 · Tanya 0.78 · Wendy 0.76 · generic 0.77 · Naomi 0.72</span></p><h4 style="margin-top:10px">Изменено после спринта</h4>
+        <p>Убран чип «2023 International PCOS Guideline» (гайдлайна больше нет в базе). Строки «Above / Within your report's range» — дословно из интерфейса.</p><p class="weak"><b>Слабое место / что проверить.</b> Проверить: не пугает ли охра на первом кадре; «2-hour glucose test» может быть непонятен Naomi. Для съёмки из тестового бланка цифры станут 58 (8–48) — нужна вторая строка в диапазоне.</p>
       </div>
     </div>
 
+    <!-- S02 -->
     <div class="shot-wrap">
       <div class="slot">S02 · ЕДА</div>
-      <div class="shot r3" aria-label="S02: Snap Your Plate, Get One Swap">
-        <div class="head"><h3><span>Snap Your Plate</span><span class="accent">Get One Swap</span></h3></div>
-        <img class="photo" src="assets/r3-S02.jpg" alt="">
-        <svg class="arrow" viewBox="0 0 100 40" preserveAspectRatio="none" style="left:12%;top:36%;width:76%;height:9%"><path d="M4 36 C 30 -6, 70 -6, 94 30" fill="none" stroke="#D4A574" stroke-width="2.2" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="M86 27 L94 31 L95 22" fill="none" stroke="#D4A574" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg>
-        <div class="tag center" style="left:50%;top:31.5%">One swap</div>
-        <div class="tag small" style="left:2%;top:55.5%">White bread</div>
-        <div class="tag small" style="right:2%;top:55.5%">Whole-grain</div>
-        <ul class="big"><li>One swap, not a diet</li><li>Nothing banned</li></ul>
-        <div class="foot"><span>Example · illustrative</span><span>S02</span></div>
+      <div class="shot" aria-label="S02: Snap your plate. Get one swap.">
+        <div class="head"><h3><span>Snap your plate.</span><span class="accent">Get one swap.</span></h3><p class="sub">PCOS-aware food help. Nothing banned.</p></div>
+        <img class="photo" src="../../assets/food.jpg" alt="" style="top:19%;height:54%;object-position:50% 30%">
+        <div class="card">
+          <div class="card-top"><strong>Meal read</strong><span>Example</span></div>
+          <div class="chips"><span class="chip ok">Protein <b>32 g</b></span><span class="chip ok">Fiber <b>9 g</b></span><span class="chip hi">Fast carbs: white bread</span></div>
+          <div class="result"><span class="lbl">ONE SWAP</span><span class="focus">White bread → whole-grain or more chickpeas</span></div>
+          <ul class="bul"><li>No calorie counting</li><li>Nothing banned — a steadier plate</li></ul>
+          <p class="fn">Educational only, not a nutrition prescription.</p>
+        </div>
+        <div class="foot"><span>Example data · illustrative scene</span><span>S02</span></div>
       </div>
-      <a class="open" href="previews/r3-S02.jpg" target="_blank" rel="noopener">Открыть S02 в полном размере ↗</a>
+      <a class="open" href="../../previews/r2/S02.jpg" target="_blank" rel="noopener">Открыть S02 в полном размере ↗</a>
       <div class="aff">
-        <h4>Jev r3 · что выбрали</h4>
-        <p><b>Предмет:</b> тарелка сверху со стрелкой замены <b>0.88</b> · женщина фотографирует обед 0.11 · кафе и меню 0.01</p>
-        <p><b>Заголовок:</b> «Snap Your Plate / Get One Swap» <b>0.71</b> · «What Can I Eat With PCOS?» 0.21 · «PCOS Plate» 0.08</p>
-        <p><b>Низ:</b> два буллета <b>0.61</b> · плашка 0.21 · телефон 0.18</p>
-        <p class="weak"><b>Что проверить.</b> Белый хлеб не должен читаться как «запрещено» — поэтому буллет «Nothing banned». Проверить стрелку в превью 200 px.</p>
+        <h4>Кому откликается</h4>
+        <p class="muted" style="margin-bottom:4px">«Этот кадр первым» (Jev). У Naomi «что есть?» — вопрос №1 первой недели.</p>
+        <div class="bars">
+          <div class="bar"><span>Wendy</span><span class="t"><i style="width:100%"></i></span><span class="v">0.59</span></div>
+          <div class="bar"><span>всего</span><span class="t"><i style="width:25%"></i></span><span class="v">0.15</span></div>
+        </div>
+        <h4>Почему работает</h4>
+        <ul><li>Заголовок-действие: сфоткай → получи одно (0.62 против 0.20).</li><li>Тарелка на фото = тарелка на карточке: мозг читает связь за секунду.</li><li>Буллеты снимают две главные вины из отзывов: калории и запреты.</li></ul>
+        <h4 style="margin-top:10px">Карточка: турнир Jev r2</h4><p><b>Эта карточка — 0.49</b> против трёх вариантов Fable («ONE SWAP» одной фразой 0.26 · «CYSTA NOTICED» 0.13 · «Can I eat this?» 0.12).<br><span class="muted">Wendy 0.57 · Anna 0.51 · generic 0.48 · Maya 0.47 · Naomi 0.45 · Tanya 0.44</span></p><h4 style="margin-top:10px">Изменено после спринта</h4>
+        <p>Строка замены теперь реально есть в разборе (формат «X → Y»), кадр можно снимать. Героиня и миска — те же, что на экране онбординга «Food».</p><p class="weak"><b>Слабое место / что проверить.</b> Перевес меньше, чем у S01 (0.49; в проходе a 0.44). Проверить, читается ли стрелка «→» в превью 200 px и не звучит ли «white bread» как запрет.</p>
       </div>
     </div>
 
+    <!-- S03 = S05 doctor page -->
     <div class="shot-wrap">
-      <div class="slot">S03 · ВРАЧ</div>
-      <div class="shot r3" aria-label="S03: Doctor Visit, Bring One Page">
-        <div class="head"><h3><span>Doctor Visit?</span><span class="accent">Bring One Page</span></h3></div>
-        <img class="photo" src="assets/r3-S03.jpg" alt="">
-        <div class="page-lines" style="left:47%;top:48.2%"><span>Labs</span><span>Cycle</span><span>Medicines</span><span>Questions</span></div>
-        <ul class="big"><li>Labs, meds &amp; cycle</li><li>Your questions ready</li></ul>
-        <div class="foot"><span>Example · illustrative</span><span>S03</span></div>
+      <div class="slot">S05 · СТРАНИЦА ВРАЧА (третьим)</div>
+      <div class="shot" aria-label="S05: Walk in with your whole story">
+        <div class="head"><h3><span>Walk in with your</span><span class="accent">whole story</span></h3><p class="sub">Labs, meds, what you tried — one page</p></div>
+        <img class="photo" src="../../assets/outcome-labs.jpg" alt="" style="top:19%;height:40%;object-position:62% 40%">
+        <div class="card" style="bottom:5.2%">
+          <div class="card-top"><strong>Your doctor page</strong><span>Example · updated Sep 18</span></div>
+          <div class="rows">
+            <div class="row"><span class="name">Metformin XR<br><span class="muted" style="font-size:2.5cqw">prescribed · since Jun 2025</span></span><span class="val st-date"><b>15</b><i>mo</i></span></div>
+            <div class="row"><span class="name">Myo-inositol<br><span class="muted" style="font-size:2.5cqw">since Aug 22 · check-in date</span></span><span class="val st-date"><b>Nov 14</b></span></div>
+            <div class="row"><span class="name">Key labs · Jul 2026</span><span class="val st-hi"><b>2 of 6</b><em>outside your lab's range</em></span></div>
+          </div>
+          <div class="result"><span class="lbl">QUESTIONS FOR FRI, OCT 2</span><span class="focus">Is inositol OK with my metformin?</span></div>
+          <ul class="bul"><li>Since your last visit: Jun 3</li><li>Send as PDF</li></ul>
+          <p class="fn">Your own records, organized for the conversation. Your doctor decides.</p>
+        </div>
+        <div class="foot"><span>Example data · illustrative scene</span><span>S05</span></div>
       </div>
-      <a class="open" href="previews/r3-S03.jpg" target="_blank" rel="noopener">Открыть S03 в полном размере ↗</a>
+      <a class="open" href="../../previews/r2/S05.jpg" target="_blank" rel="noopener">Открыть S05 в полном размере ↗</a>
       <div class="aff">
-        <h4>Jev r3 · что выбрали</h4>
-        <p><b>Предмет:</b> одна страница на планшете с галочками <b>0.69</b> · передаёт страницу врачу 0.29 · в приёмной с папкой 0.02</p>
-        <p><b>Заголовок:</b> «Doctor Visit / Bring One Page» <b>0.66</b> · «10-Minute Visit? Come Prepared» 0.28 · «Walk In With Your Whole Story» 0.06</p>
-        <p><b>Низ:</b> два буллета <b>0.69</b> · плашка 0.24 · телефон 0.07</p>
-        <p class="weak"><b>Что проверить.</b> Прошлый победитель r1 «Walk in with your whole story» в коротком формате проиграл (0.06). Вопросительный знак после «Doctor Visit» добавлен по образцу Hepatica — можно убрать.</p>
+        <h4>Кому откликается</h4>
+        <p class="muted" style="margin-bottom:4px">«Этот кадр первым» (Jev)</p>
+        <div class="bars">
+          <div class="bar"><span>Anna</span><span class="t"><i style="width:96%"></i></span><span class="v">0.48</span></div>
+          <div class="bar"><span>Maya</span><span class="t"><i style="width:50%"></i></span><span class="v">0.25</span></div>
+          <div class="bar"><span>Tanya</span><span class="t"><i style="width:46%"></i></span><span class="v">0.23</span></div>
+          <div class="bar"><span>всего</span><span class="t"><i style="width:36%"></i></span><span class="v">0.18</span></div>
+        </div>
+        <h4>Почему работает</h4>
+        <ul><li>Самый широкий охват после анализов: три когорты против одной у «работает ли».</li><li>Главный платёжный мотив спринта (0.20); «Your PCOS passport» как заголовок проиграл (0.08).</li><li>Фото — момент результата: она передаёт страницу врачу (кадр пейвола «labs»).</li></ul>
+        <h4 style="margin-top:10px">Карточка: турнир Jev r2</h4><p><b>Эта карточка — 0.55</b> против трёх вариантов Fable («Since Jun 3…» 0.18 · «5 of 6 filled» 0.15 · «Diagnosed Mar 2024…» 0.12).<br><span class="muted">Maya 0.86 · Anna 0.72 · Tanya 0.58 · Wendy 0.57 · generic 0.43 · <b>Naomi 0.22</b> (ей ближе «что изменилось с визита»)</span></p><h4 style="margin-top:10px">Изменено после спринта</h4>
+        <p>«Passport» → «your doctor page» (как в интерфейсе), «Share PDF» → «Send as PDF». Не обещаем «врач наконец услышит»: это результат за третье лицо.</p><p class="weak"><b>Слабое место / что проверить.</b> Naomi 0.22 — ей ближе «что изменилось с прошлого визита». Метформин и инозитол рядом — проверить, не читается ли как совет сочетать. Фото горизонтальное, обрезано.</p>
       </div>
     </div>
   </div>
-  <p class="muted">Стоимость r3: 4 генерации, $0.23 (одна на сравнение моделей: Gemini 3.1 Flash Image $0.10 дал полосы сверху и снизу, GPT Image 2 medium $0.04 — лучше). Данные Jev: <code>research/screenshots-r3-jev-2026-09-19/</code>.</p>
 
-<h2 id="all">Вся восьмёрка: статус</h2>
+  <h2 id="all">Вся восьмёрка: статус</h2>
   <div class="table-scroll"><table>
     <thead><tr><th>Кадр</th><th>Заголовок / подзаголовок (Jev)</th><th>Экран приложения</th><th>Фото</th><th>Статус</th></tr></thead>
     <tbody>
-      <tr><td><b>S01</b></td><td><b>Your Labs, Made Clear</b> · <span class="muted">r3 Jev 0.42</span></td><td>Бланк с выделенной строкой «Testosterone 58 · above range»</td><td>новая генерация r3</td><td><span class="pill p-ok">r3 на ревью</span></td></tr>
-      <tr><td><b>S02</b></td><td><b>Snap Your Plate / Get One Swap</b> · <span class="muted">r3 Jev 0.71</span></td><td>Тарелка сверху, стрелка white bread → whole-grain</td><td>новая генерация r3</td><td><span class="pill p-ok">r3 на ревью</span></td></tr>
-      <tr><td><b>S03</b></td><td><b>Doctor Visit? Bring One Page</b> · <span class="muted">r3 Jev 0.66</span></td><td>Одна страница: Labs · Cycle · Medicines · Questions</td><td>новая генерация r3</td><td><span class="pill p-ok">r3 на ревью</span></td></tr>
+      <tr><td><b>S01</b></td><td><b>What do your PCOS labs mean?</b><br>Every value, its range, what to ask · <span class="muted">w 0.72</span></td><td>Doctor → Lab results: значения против бланка + вопросы</td><td>онбординг <code>labs</code></td><td><span class="pill p-ok">на ревью</span></td></tr>
+      <tr><td><b>S02</b></td><td><b>Snap your plate. Get one swap.</b><br>PCOS-aware food help. Nothing banned. · <span class="muted">w 0.62</span></td><td>+ → Snap a meal → разбор с заменой</td><td>онбординг <code>food</code></td><td><span class="pill p-ok">на ревью</span></td></tr>
+      <tr><td><b>S05</b></td><td><b>Walk in with your whole story</b><br>Labs, meds, what you tried — one page · <span class="muted">w 0.58</span></td><td>Doctor → your doctor page</td><td>пейвол <code>outcome-labs</code></td><td><span class="pill p-ok">на ревью</span></td></tr>
       <tr><td><b>S03</b></td><td><b>Too early to judge? We'll say so</b><br>Check-in dates from when studies look · <span class="muted">Jev r2 0.56 (0.71/0.42) против старого «Stop guessing…» 0.19 — без даты, не устареет</span></td><td>Трек курса: starting point → now, «Too early to judge»</td><td>онбординг <code>supplements</code> или новая</td><td><span class="pill p-ok">заголовок обновлён</span></td></tr>
       <tr><td><b>S04</b></td><td><b>Irregular cycle? No fake dates</b><br>A real range from your own history · <span class="muted">w 0.49</span></td><td>My PCOS: плитки цикла, next likely Oct 9 – Oct 26 (так считает код; на Today есть строка fertile window — не снимать)</td><td>онбординг <code>cycle</code></td><td><span class="pill p-warn">без fertile window</span></td></tr>
       <tr><td><b>S06</b></td><td><b>PCOS answers you can check</b><br>Short answers. Sources you can open. · <span class="muted">Jev r2 0.56 (0.57/0.55) против «Is that PCOS advice true?» 0.28 и «Ask anything. See the source.» 0.16</span></td><td>Ask: шапка «AI · not a doctor», ≤90 слов, источники</td><td>онбординг <code>diagnosis</code></td><td><span class="pill p-ok">подзаголовок обновлён</span></td></tr>
@@ -223,13 +245,13 @@ footer{max-width:1180px;margin:0 auto;padding:24px 16px 40px;color:var(--muted);
 
   <h2 id="feedback">Как прислать правки</h2>
   <p class="muted">Скопируйте, заполните нужные строки и пришлите в чат. Пустые строки = без изменений.</p>
-<pre class="tpl">Ревизия: r3
-Первый кадр: S01 / S03 / свой вариант
-Порядок: S01 → S02 → S03 (врач) → работает ли → цикл → Ask → приватность → итог
+<pre class="tpl">Ревизия: r2
+Первый кадр: S01 / S05 / свой вариант
+Порядок: S01 → S02 → S05 → S03 → S04 → S06 → S07 → S08
 
 S01 — оставить / изменить / убрать · заголовок: … · подзаголовок: … · карточка: … · фото: …
 S02 — …
-S03 — …
+S05 — …
 
 Общее (цвет, шрифт, фото, тон): …</pre>
 
@@ -237,13 +259,12 @@ S03 — …
   <div class="table-scroll"><table>
     <thead><tr><th>Ревизия</th><th>Дата</th><th>Что изменилось</th><th>Почему</th><th>Открыть</th></tr></thead>
     <tbody>
-      <tr><td><b>r3</b> · текущая</td><td>19.09</td><td>Новый формат как у Hepatica: заголовок вдвое крупнее, один предмет во весь кадр (бланк с выделенной строкой, тарелка со стрелкой замены, одна страница для врача), 2 буллета. Новые генерации вместо фото онбординга. S03 = врач («Doctor Visit? Bring One Page»)</td><td>Владелец: мало аффинитивности, мелко в поиске, перегружено. Jev r3: предмет 0.87 / 0.88 / 0.69 против людей; 2 буллета 0.84 / 0.61 / 0.69</td><td><a href="#first3">эта страница</a></td></tr>
-      <tr><td><b>r2</b></td><td>19.09</td><td>Карточки первых трёх прошли турнир Jev; S03 — заголовок без даты «Too early to judge? We'll say so»; S06 — подзаголовок «Short answers. Sources you can open.»; слабые места по кадрам; кадры в полном размере</td><td>Jev r2 (24 × 2): карточки 0.78 / 0.49 / 0.55; гайдлайн 2023 убран из базы знаний</td><td><a href="archive/r2/">archive/r2 ↗</a></td></tr>
-      <tr><td><b>r1</b></td><td>19.09</td><td>Первая версия: боли → кадры по состоянию спринта V2, три кадра на фото онбординга, «Кому откликается»</td><td>Бриф 18.09 + 70 коммитов спринта</td><td><a href="archive/r1/">archive/r1 ↗</a></td></tr>
+      <tr><td><b>r2</b> · текущая</td><td>19.09</td><td>Карточки первых трёх прошли турнир Jev; S03 — заголовок без даты «Too early to judge? We'll say so»; S06 — подзаголовок «Short answers. Sources you can open.»; слабые места по кадрам; кадры в полном размере</td><td>Jev r2 (24 × 2): карточки 0.78 / 0.49 / 0.55; гайдлайн 2023 убран из базы знаний</td><td><a href="#first3">эта страница</a></td></tr>
+      <tr><td><b>r1</b></td><td>19.09</td><td>Первая версия: боли → кадры по состоянию спринта V2, три кадра на фото онбординга, «Кому откликается»</td><td>Бриф 18.09 + 70 коммитов спринта</td><td><a href="../r1/">archive/r1 ↗</a></td></tr>
     </tbody>
   </table></div>
   <p class="muted">Каждая новая ревизия: прошлая копируется в <code>archive/rN/</code>, здесь добавляется строка «что изменилось и почему». Утверждённые кадры не перезаписываются.</p>
 </main>
-<footer>Cysta AI · App Store screenshots workbench · r3 · 19 сентября 2026 · концепты, не для загрузки в App Store Connect</footer>
+<footer>Cysta AI · App Store screenshots workbench · r2 · 19 сентября 2026 · концепты, не для загрузки в App Store Connect</footer>
 </body>
 </html>
