@@ -41,12 +41,12 @@ code{font-size:12px;background:#EFE6D4;border-radius:5px;padding:1px 5px}
 @media(max-width:900px){.grid,.grid4{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){nav,main,footer{padding-left:16px;padding-right:16px}.grid,.grid4{grid-template-columns:1fr}h1{font-size:28px}}
 </style></head><body><a class="skip" href="#main">К содержанию</a>
-<nav><a class="wordmark" href="design.html">Salvora</a><div class="links"><a href="#why">Зачем</a><a href="#audience">Аудитория</a><a href="#pains">Боли</a><a href="#competitors">Конкуренты</a><a href="#killer">Киллер-фича</a><a href="#wow">Вау</a><a href="#renew">Продление</a><a href="#features">Готовность</a><a href="#decisions">Решения</a></div></nav>
+<nav><a class="wordmark" href="design.html">Salvora</a><div class="links"><a href="#why">Зачем</a><a href="#audience">Аудитория</a><a href="#pains">Боли</a><a href="#competitors">Конкуренты</a><a href="#killer">Киллер-фича</a><a href="#wow">Вау</a><a href="#renew">Продление</a><a href="#features">Готовность</a><a href="#results">Итоги спринта</a><a href="#decisions">Решения</a></div></nav>
 <main id="main">
-<div class="eyebrow">Продуктовый справочник V2 · этап 0 · позиционирование · 19 сентября 2026</div>
+<div class="eyebrow">Продуктовый справочник V2 · позиционирование + итоги спринта · 19 сентября 2026</div>
 <h1>A 60-second skin score your dermatologist knows,<br>your triggers, and one page for your next visit.</h1>
 <p class="lead">Человек приходит с одной из трёх болей, за которые готов платить: «не знаю, что вызывает обострения», «не знаю, работает ли лечение», «не могу показать врачу, как было». Трекеров экземы много: бесплатные (EczemaWise до 18.12, Atopic App) и около десятка новых платных 2026 года, у каждого ≤15 оценок. Salvora V2 продаёт не трекинг, а <b>результат</b>: балл, который знает дерматолог, триггеры из её же записей и одну страницу к визиту — с первого дня.</p>
-<div class="toolbar"><a class="primary" href="#killer">Киллер-фича: турнир Jev</a><a href="#wow">Вау первых дней</a><a href="#decisions">Открытые решения</a><a href="#audience">Аудитория</a></div>
+<div class="toolbar"><a class="primary" href="#results">Итоги спринта V2</a><a href="#killer">Киллер-фича: турнир Jev</a><a href="#wow">Вау первых дней</a><a href="#decisions">Открытые решения</a><a href="#audience">Аудитория</a></div>
 <p class="muted">Все цифры — Jev (TypeSafe System One): 24 синтетических человека, по 4 на персону + 4 из поиска, 2 прохода с обратным порядком вариантов, шум ≈ ±0.05. Это модель здравого смысла, а не платящие люди. Сырые данные: <code>research/*-jev-2026-09-19/</code> в репозитории Salvora, ветка <code>love8ko/sprint</code>. Консилиум: <code>docs/CONSILIUM_V2_POSITIONING_2026-09-19.md</code>.</p>
 
 <section id="why"><h2>Зачем вообще нужна Salvora</h2>
@@ -181,13 +181,38 @@ code{font-size:12px;background:#EFE6D4;border-radius:5px;padding:1px 5px}
 <tr><td>Дизайн</td><td><span class="pill warn">устарел</span></td><td>Свой таб-бар с кнопкой «+», 135 мест со шрифтом &lt;12pt, нет Dynamic Type. V2: системный TabView, Liquid Glass, Apothecary Sage.</td></tr>
 </tbody></table></div></section>
 
+
+<section id="results"><h2>Итоги спринта V2 — шесть раундов Fable, три замера Jev</h2>
+<p class="muted">Цикл Cysta: Jev выбирает рычаг → строим → съёмка всей первой недели каждой персоны (22 кадра своей ветки, симулятор «Salvora») → пять Fable-персон судят только свои скриншоты → правки в тот же день → повтор. 8 волн кода, ветка <code>love8ko/sprint</code>.</p>
+<div class="table-wrap"><table><thead><tr><th>Раунд</th><th>Linda</th><th>Mike</th><th>Jessica</th><th>Sarah</th><th>Rachel</th><th>Что изменили после</th></tr></thead><tbody>
+<tr><td>r1 · онбординг+пейвол<br><span class="muted">триал / годовая</span></td><td class="num">4 / 2</td><td class="num">4 / 1</td><td class="num">3 / 2</td><td class="num">4 / 2</td><td class="num">4 / 2</td><td>обе карточки тарифов над кнопкой (Jev: «ловушка» 0.50 → 0.40), «dermatologists use», пример страницы по когорте, флаги для Mike</td></tr>
+<tr><td>r2 · вся неделя<br><span class="muted">продлю / годовая</span></td><td class="num">3 / 3</td><td class="num">2 / 2</td><td class="num">3 / 3</td><td class="num">4 / 3</td><td class="num">3 / 3</td><td>«день 1 → сегодня» с фото того же места, план лечения, плитка средств, флаги до балла</td></tr>
+<tr><td>r3</td><td class="num">4 / 3</td><td class="num">3 / 3</td><td class="num">3 / 4</td><td class="num">3 / 4</td><td class="num">3 / 4</td><td>нет противоречия «зуд вверх / балл вниз», шаг на вечер из прогноза, побочки на странице</td></tr>
+<tr><td>r4</td><td class="num">4 / 4</td><td class="num">3 / 3</td><td class="num">4 / 4</td><td class="num">4 / 4</td><td class="num">3 / 4</td><td><b>недельная проверка на 7-й день — до первого списания</b>, тест «убери на 5 дней», «Is it serious?» в любой момент</td></tr>
+<tr><td>r5</td><td class="num">4 / 4</td><td class="num">3 / 4</td><td class="num">4 / 5</td><td class="num">5 / 4</td><td class="num">3 / 4</td><td>прогресс её словами (ночи, неделя Dupixent, волны TSW), «logged» ≠ «найдено»</td></tr>
+<tr><td><b>r6</b></td><td class="num">4 / 4</td><td class="num">3 / 4</td><td class="num">4 / 5</td><td class="num">5 / 4</td><td class="num">4 / 4</td><td><b>«Готов(а) продолжать и платить: да» — у всех пяти</b> (Mike — только годовую)</td></tr>
+</tbody></table></div>
+<div class="grid4" style="margin-top:18px">
+<figure class="card" style="padding:8px;margin:0"><img src="sprint/linda-01_onboarding_1.jpg" alt="Онбординг, экран 1" style="width:100%;border-radius:12px"><figcaption class="muted">Экран 1: обещание + «For me / For my child»</figcaption></figure>
+<figure class="card" style="padding:8px;margin:0"><img src="sprint/linda-02_onboarding_2.jpg" alt="Онбординг, боль" style="width:100%;border-radius:12px"><figcaption class="muted">Боль своими словами (родитель)</figcaption></figure>
+<figure class="card" style="padding:8px;margin:0"><img src="sprint/rachel-04_onboarding_4.jpg" alt="Первая неделя" style="width:100%;border-radius:12px"><figcaption class="muted">Первая неделя + пример страницы для врача</figcaption></figure>
+<figure class="card" style="padding:8px;margin:0"><img src="sprint/sarah-05_paywall.jpg" alt="Пейвол" style="width:100%;border-radius:12px"><figcaption class="muted">Пейвол: ценность → цена, обе карточки видны</figcaption></figure>
+<figure class="card" style="padding:8px;margin:0"><img src="sprint/mike-10_result.jpg" alt="Первый результат" style="width:100%;border-radius:12px"><figcaption class="muted">Первый результат: флаги → балл → шаг на вечер</figcaption></figure>
+<figure class="card" style="padding:8px;margin:0"><img src="sprint/linda-22_today_day8_done.jpg" alt="День 8" style="width:100%;border-radius:12px"><figcaption class="muted">День 8: 13 → 10, фото того же места</figcaption></figure>
+<figure class="card" style="padding:8px;margin:0"><img src="sprint/rachel-21_today_day8_scrolled.jpg" alt="Триггер" style="width:100%;border-radius:12px"><figcaption class="muted">Её триггер + «убери на 5 дней» + прогноз</figcaption></figure>
+<figure class="card" style="padding:8px;margin:0"><img src="sprint/sarah-23_today_day15_visit.jpg" alt="День 15" style="width:100%;border-radius:12px"><figcaption class="muted">День 15: страница к визиту, 13 → 7</figcaption></figure>
+</div>
+<div class="callout sage"><strong>Jev (24 × 2) по той же неделе:</strong> «продлит» 2.05 (1.6) → 2.31 → 2.40; годовая 2.52 → 2.56 — отдача синтетики убывает, как в Cysta. Следующий шаг — TestFlight и реальные люди.</div>
+<div class="callout"><strong>Главный сигнал для решения:</strong> 3 из 5 персон «недельную не продлю — годовую возьму». Jev: спокойная карточка на 6-й день «Annual $39.99 — меньше 5 недель» не отнимает оплат (0.32 = 0.32), даёт больше годовых (0.30 → 0.35) и меньше ощущения ловушки (0.39 → 0.25). Противоречит правилу «не напоминать о подписке» — решение владельца.</div>
+</section>
+
 <section id="decisions"><h2>Открытые решения владельцу</h2>
 <ol class="q">
 <li><b>Модель подписки</b> — <span class="pill ok">решено</span> Weekly $7.99 с 7-дневным триалом (по умолчанию), Annual $39.99 без триала.</li>
 <li><b>Онбординг, навигация, визуальное направление</b> — <span class="pill ok">решено</span> 4 визуальных экрана + тап «для кого», квиз после триала; Today · Ask · Journal · Doctor; Apothecary Sage + Liquid Glass.</li>
-<li><b>Главное обещание</b> — <span class="pill warn">на утверждение</span> «A 60-second skin score your dermatologist knows, your triggers, and one page for your next visit.» (0.43, стабильно). CPP: Rachel — «Find what triggers…», Sarah/Jessica — «See if your treatment is really working…», Mike — «Stop guessing…».</li>
-<li><b>Погода по локации</b> (авто-триггеры + вечерний прогноз) — <span class="pill newp">новый внешний сервис</span> +0.08 к продлению, №2 киллер-фича. Нужны разрешение на локацию (или город вручную) и сервис погоды. Делаем в V2 или позже?</li>
-<li><b>Доверие к триалу</b> — <span class="pill newp">на решение</span> Jev (с конкурентами в контексте): «ядро бесплатно навсегда» ощущается ловушкой реже (0.26 против 0.57), но триал начинают в 3 раза реже (0.21 против 0.62) — это смена модели подписки. Напоминание за 2 дня до конца триала: старт 0.62 → 0.50, «ловушка» 0.57 → 0.49. Сейчас в плане — без напоминания (ваше решение); риск — отзывы «scam», как у DermaScan.</li>
+<li><b>Главное обещание</b> — <span class="pill ok">решено 19.09</span> «A 60-second skin score your dermatologist knows, your triggers, and one page for your next visit.» (0.43, стабильно). CPP: Rachel — «Find what triggers…», Sarah/Jessica — «See if your treatment is really working…», Mike — «Stop guessing…».</li>
+<li><b>Погода по локации</b> (авто-триггеры + вечерний прогноз) — <span class="pill ok">решено: Open-Meteo, в 2.0</span> +0.08 к продлению, №2 киллер-фича. Нужны разрешение на локацию (или город вручную) и сервис погоды. Делаем в V2 или позже?</li>
+<li><b>Годовая внутри триала</b> — <span class="pill newp">на решение</span> 3 из 5 Fable-персон: «недельную не продлю, годовую возьму». Карточка на 6-й день — см. «Итоги спринта». <b>Доверие к триалу</b> — Jev (с конкурентами в контексте): «ядро бесплатно навсегда» ощущается ловушкой реже (0.26 против 0.57), но триал начинают в 3 раза реже (0.21 против 0.62) — это смена модели подписки. Напоминание за 2 дня до конца триала: старт 0.62 → 0.50, «ловушка» 0.57 → 0.49. Сейчас в плане — без напоминания (ваше решение); риск — отзывы «scam», как у DermaScan.</li>
 <li><b>Импорт EczemaWise</b> — <span class="pill warn">предложение: не в V2</span> Как фича 0.04, но как трафик — окно до 18.12. Аудитория маленькая (217 оценок iOS). NEA отдаёт данные по форме запроса, а фото у NEA нет — они пропадут с телефона 18.12. Предлагаю кампанию «сохраните фото и историю» (лендинг, ASA) в октябре–декабре; импорт файла NEA — если формат окажется пригодным.</li>
 <li><b>Германия</b> — <span class="pill warn">предложение</span> не в первую платную волну: Nia оплачивается кассами.</li>
 <li><b>Ночной триаж</b> — <span class="pill ok">предложение: в V2</span> Не отдельная вкладка, а сценарий в Ask + красные флаги в фото-чтении.</li>
