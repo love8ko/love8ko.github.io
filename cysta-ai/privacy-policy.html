@@ -20,12 +20,12 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="date">Effective date: May 17, 2026</p>
+<p class="date">Effective date: September 18, 2026 (updated for Cysta AI 2.0)</p>
 
 <p>Cysta AI: PCOS Coach ("the App") is developed and published by Valeriy Loveiko. We take your privacy seriously and are committed to protecting your personal information. This Privacy Policy explains how the App collects, uses, stores, and protects your data.</p>
 
 <div class="highlight">
-    <strong>Summary:</strong> The App processes lab photos / PDFs, optional progress photos, and AI Coach questions using secure third-party services. Photos and lab images are sent for analysis and are not retained after processing. All results, photos, cycle / symptom / supplement logs, and chat history are stored locally on your device. We do not sell, share, or monetize your personal data.
+    <strong>Summary:</strong> The App processes lab photos / PDFs, meal photos, optional progress photos, and AI Coach questions using secure third-party services, only after you give consent once when you start. With your permission it can read your period dates from Apple Health; that data never leaves your device. Photos and lab images are sent for analysis and are not retained after processing. All results, photos, cycle / symptom / supplement logs, and chat history are stored locally on your device. We do not sell, share, or monetize your personal data.
 </div>
 
 <div class="warn">
@@ -65,6 +65,24 @@
 </ul>
 <p>Cysta does not recommend, prescribe, or modify supplement dosages. The supplement log is solely a personal journal of what the user is already taking. All supplement names visible in the App are for educational logging only and are not endorsed or supplied by the developer.</p>
 
+<h3>1.3a Apple Health (HealthKit)</h3>
+<p>If you choose "Import from Apple Health", the App asks iOS for <strong>read-only</strong> access to one data type: <strong>menstrual flow</strong> (period dates) from the last 12 months. It is used only to fill your cycle history so your cycle range and periods-per-year work from day one.</p>
+<ul>
+    <li>Read only — the App never writes anything to Apple Health.</li>
+    <li>Stored only on your device, together with your other cycle logs. It is <strong>never sent</strong> to our AI partners, to the Cloudflare proxy, or to any server.</li>
+    <li>Never used for advertising, marketing or data mining, never sold, and never shared with third parties.</li>
+    <li>You can turn access off at any time in the iOS Health app → Sharing → Apps → Cysta AI, or in iOS Settings → Privacy &amp; Security → Health.</li>
+</ul>
+
+<h3>1.3b Meal Photos</h3>
+<p>When you snap a meal, the photo is sent to our AI vision partner (see 3.1) to describe the plate in PCOS terms and suggest one realistic swap. The photo and the result are stored on your device; the partner does not keep the image.</p>
+
+<h3>1.3c Doctor Visits, Passport and Check-in Dates</h3>
+<p>Visit dates, your questions for the doctor, your diagnosis notes, the supplements or medications you started and your check-in dates are stored <strong>only on your device</strong> and are used to build your PCOS passport page. They leave your device only when you choose to share that page yourself.</p>
+
+<h3>1.3d Reminders and Usage Events</h3>
+<p>Reminders are scheduled locally on your iPhone (no push server). The App keeps a small on-device log of product events (for example "first result reached") without any health text or values; it is not sent anywhere.</p>
+
 <h3>1.4 Extracted Lab Values</h3>
 <p>When you save a lab panel, the App stores:</p>
 <ul>
@@ -96,7 +114,7 @@
     <li>Your clinical record or any data from your healthcare provider's portal beyond what you explicitly export and import</li>
     <li>Your contacts, calendar, or other apps' data</li>
     <li>Any biometric template, face print, or fingerprint</li>
-    <li>Any HealthKit data (HealthKit integration is deferred to V1.2+ and will require explicit per-permission opt-in when added)</li>
+    <li>Any Apple Health data other than the read-only period dates you choose to import (see 1.3a) — and even that stays on your device</li>
 </ul>
 
 <h2>2. How We Use Your Information</h2>
@@ -114,7 +132,7 @@
 <p>Cysta uses the following third-party services. Only the data described below is shared, and only for the purpose stated. No personal identifiers are sent alongside.</p>
 
 <h3>3.1 AI Vision Partner (OpenAI, via Cloudflare Worker)</h3>
-<p>Lab photos / PDFs and (optionally) progress photos are sent for image analysis. The provider processes the request under a zero-retention policy and does not use the data to train models. The Cloudflare Worker proxy forwards the request without logging or storing content. <a href="https://openai.com/policies/api-data-usage-policies">OpenAI API Data Usage Policy</a>.</p>
+<p>Lab photos / PDFs, meal photos and (optionally) progress photos are sent for image analysis. The text of your Coach question is also sent to create a search embedding that finds the most relevant medical sources. The provider processes the request under a zero-retention policy and does not use the data to train models. The Cloudflare Worker proxy forwards the request without logging or storing content. <a href="https://openai.com/policies/api-data-usage-policies">OpenAI API Data Usage Policy</a>.</p>
 
 <h3>3.2 AI Text Partner (DeepSeek, via Cloudflare Worker)</h3>
 <p>AI Coach messages are sent for response generation. Only the current message text + a brief on-device context summary (cohort, week-in-app, recent lab snapshot) is sent. No photos, identifiers, or chat history. The Cloudflare Worker proxy forwards the request without logging or storing content.</p>
@@ -147,7 +165,8 @@
 <ul>
     <li><strong>Access.</strong> All your data is visible inside the App.</li>
     <li><strong>Deletion.</strong> Delete individual photos, panels, or logs inside the App, or uninstall the App to wipe everything.</li>
-    <li><strong>Revoke consent.</strong> Settings → AI consent → tap "Reset" on any feature to require a fresh consent prompt on next use.</li>
+    <li><strong>Consent.</strong> You give consent for AI processing once, on the screen after you start your subscription. You can withdraw it any time in Settings → AI consent.</li>
+    <li><strong>Apple Health.</strong> Health app → Sharing → Apps → Cysta AI to stop access.</li>
     <li><strong>Camera / photos.</strong> iOS Settings → Cysta AI → toggle Camera / Photos.</li>
     <li><strong>GDPR / UK GDPR rights:</strong> erasure, rectification, portability, restriction. Email <a href="mailto:sergejkar@gmail.com">sergejkar@gmail.com</a> to exercise these.</li>
 </ul>
