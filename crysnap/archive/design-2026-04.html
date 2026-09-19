@@ -1,0 +1,3480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CrySnap — Design Workbench</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    background: #f0f0f3;
+    color: #1a1a1f;
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-size: 30px; margin-bottom: 4px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  h2 { font-size: 22px; margin-bottom: 8px; margin-top: 8px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  h3 { font-size: 16px; margin-bottom: 4px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .lede { color: #5a5a60; margin-bottom: 32px; max-width: 720px; line-height: 1.5; }
+  .meta-info { font-size: 12px; color: #8a8a90; margin-bottom: 24px; }
+
+  section {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .section-intro { color: #5a5a60; font-size: 14px; line-height: 1.5; margin-bottom: 8px; max-width: 800px; }
+
+  /* === Palette grid === */
+  .palette-grid, .concepts-grid, .ss-strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 16px;
+  }
+  .palette-grid.locked { grid-template-columns: minmax(280px, 360px); justify-content: start; }
+  .palette-grid.rejected { grid-template-columns: repeat(3, 1fr); }
+  .rejected-toggle {
+    background: #fafafa; border: 1px dashed #d0d0d8; border-radius: 12px;
+    padding: 12px 18px; margin-top: 18px; cursor: pointer;
+    font-size: 13px; color: #6a6a70; user-select: none;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .rejected-toggle::before { content: "▶"; font-size: 10px; color: #a0a0a8; transition: transform 0.2s ease; }
+  details[open] .rejected-toggle::before { transform: rotate(90deg); }
+  .rejected-toggle::-webkit-details-marker { display: none; }
+  .rejected-note {
+    margin-top: 8px; padding: 8px 14px; background: #fff8e6;
+    border-radius: 8px; font-size: 11px; color: #8a6f1a;
+  }
+  .palette-col, .concept-card, .ss-strategy-card {
+    background: #fafafa;
+    border: 1px solid #ebebef;
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .palette-col:hover, .concept-card:hover, .ss-strategy-card:hover {
+    transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .palette-col.selected { border: 3px solid #2e6b3a; background: #f0f9f1; }
+  .concept-card.selected { border: 3px solid #b85a1a; background: #fff5ec; }
+  .ss-strategy-card.selected { border: 3px solid #4a5fc1; background: #f0f3ff; }
+
+  .col-header { text-align: center; }
+  .col-title { font-size: 16px; font-weight: 700; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .col-tagline { font-size: 11px; color: #6a6a70; font-style: italic; margin-top: 2px; }
+
+  .swatch-strip { display: flex; height: 28px; border-radius: 6px; overflow: hidden; }
+  .swatch-strip > div {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 8px; font-family: ui-monospace, monospace;
+    font-weight: 700; text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  }
+  .ss-mode-label {
+    font-size: 9px; color: #6a6a70; text-align: center;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    font-weight: 700; margin-top: 2px;
+  }
+
+  /* Screenshot mockup */
+  .screenshot {
+    border-radius: 14px; padding: 14px 12px; aspect-ratio: 9/16;
+    display: flex; flex-direction: column; gap: 8px; overflow: hidden;
+  }
+  .ss-headline {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 14px; font-weight: 800; line-height: 1.15;
+  }
+  .ss-scene {
+    flex: 1; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 6px; padding: 12px; text-align: center;
+  }
+  .scene-emoji { font-size: 32px; }
+  .scene-waveform {
+    width: 100%; height: 14px; border-radius: 5px;
+    background-image: linear-gradient(90deg, currentColor 30%, transparent 30%);
+    background-size: 5px 100%; opacity: 0.4;
+  }
+  .verdict-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 9px; border-radius: 999px;
+    font-size: 9px; font-weight: 700;
+  }
+  .ss-subline { font-size: 10px; line-height: 1.3; }
+  .ss-badge { display: flex; gap: 3px; justify-content: center; flex-wrap: wrap; margin-top: auto; }
+  .ss-badge span {
+    background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px;
+    font-size: 7px; font-weight: 700; letter-spacing: 0.04em; opacity: 0.7;
+  }
+
+  /* Paywall mockup */
+  .paywall { border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+  .paywall-title { font-size: 10px; font-weight: 700; }
+  .plan {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 9px; border-radius: 7px; font-size: 9px;
+    border: 1.5px solid;
+  }
+  .plan.selected { color: white; }
+  .plan-price { font-weight: 700; }
+  .cta {
+    text-align: center; padding: 8px; border-radius: 999px;
+    font-size: 10px; font-weight: 700; color: white;
+  }
+
+  /* Icon row in palette card */
+  .icon-row {
+    display: flex; align-items: center; justify-content: center;
+    padding: 10px 0; background: #f5f5f7; border-radius: 10px;
+  }
+  .icon-cell {
+    width: 56px; height: 56px; border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 24px;
+  }
+
+  /* Icon concept */
+  .concept-card { text-align: center; }
+  .concept-card h3 { margin-bottom: 4px; }
+  .concept-tagline { font-size: 11px; color: #6a6a70; margin-bottom: 12px; min-height: 32px; }
+  .concept-img {
+    width: 100%; aspect-ratio: 1/1; border-radius: 22px;
+    overflow: hidden; margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+  .concept-img img { width: 100%; height: 100%; display: block; }
+  .concept-variants { display: flex; gap: 6px; justify-content: center; margin-top: 6px; }
+  .concept-variants .mini {
+    width: 36px; height: 36px; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer;
+    border: 2px solid transparent; transition: transform 0.15s ease;
+  }
+  .concept-variants .mini.active { border-color: #b85a1a; transform: scale(1.15); }
+  .concept-variants .mini:hover { transform: scale(1.1); }
+  .concept-variants .mini img { width: 100%; height: 100%; }
+  .concept-meta { font-size: 11px; color: #6a6a70; margin-top: 8px; line-height: 1.4; }
+
+  /* === Screenshot Strategy mockups === */
+  .ss-strategy-card { padding: 14px; }
+  .ss-strategy-card h3 { margin-bottom: 4px; font-size: 15px; }
+  .ss-strategy-tagline { font-size: 11px; color: #6a6a70; margin-bottom: 10px; min-height: 36px; }
+  .ss-slot-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .ss-slot {
+    aspect-ratio: 9/19;
+    border-radius: 10px;
+    padding: 8px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+    font-size: 7px;
+    line-height: 1.2;
+  }
+  .ss-slot .num {
+    position: absolute;
+    background: rgba(255,255,255,0.85);
+    border-radius: 999px;
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1f;
+  }
+  .ss-slot.dark { background: #0F1115; color: #F2EDE5; }
+  .ss-slot.light-cream { background: #FAF7F2; color: #1A1A1F; }
+  .ss-slot.light-sage { background: #F5F2EC; color: #2A3328; }
+  .slot-headline { font-size: 8px; font-weight: 800; line-height: 1.1; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .slot-mini-scene {
+    flex: 1; border-radius: 4px; display: flex;
+    align-items: center; justify-content: center; flex-direction: column; gap: 3px;
+  }
+  .slot-mini-pill {
+    padding: 2px 5px; border-radius: 999px; font-size: 6px; font-weight: 700;
+  }
+  .slot-mini-bars {
+    display: flex; gap: 1.5px; align-items: center; height: 10px;
+  }
+  .slot-mini-bars > div {
+    width: 1.5px; background: currentColor; border-radius: 1px; opacity: 0.6;
+  }
+
+  /* === Consilium reasoning block === */
+  .consilium {
+    margin-top: 20px;
+    background: #f8f8fa;
+    border-radius: 12px;
+    padding: 16px 20px;
+  }
+  .consilium summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    color: #4a4a55;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+  }
+  .consilium summary::before {
+    content: "▶";
+    font-size: 10px;
+    color: #8a8a90;
+    transition: transform 0.2s ease;
+  }
+  .consilium[open] summary::before { transform: rotate(90deg); }
+  .consilium summary::-webkit-details-marker { display: none; }
+  .consilium-body { padding-top: 14px; font-size: 13px; line-height: 1.5; }
+  .vote-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 12px;
+  }
+  .vote-table th, .vote-table td {
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ebebef;
+  }
+  .vote-table th { background: #ebebef; font-weight: 700; font-size: 11px; }
+  .vote-table .winner { background: #e8f5e9; font-weight: 700; color: #2e6b3a; }
+  .vote-table .left { text-align: left; }
+  .voice-quote {
+    background: white;
+    border-left: 3px solid #ebebef;
+    padding: 10px 14px;
+    margin: 8px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .voice-quote .voice-name { font-weight: 700; color: #4a4a55; margin-bottom: 4px; font-size: 11px; }
+  .voice-quote.maya { border-color: #E8836A; }
+  .voice-quote.sarah { border-color: #4F8059; }
+  .voice-quote.lin { border-color: #6B8DAB; }
+  .voice-quote.carla { border-color: #C97A8C; }
+  .voice-quote.ux { border-color: #C49A4A; }
+  .voice-quote.ui { border-color: #5C5470; }
+
+  /* Browse row */
+  .browse-section .row {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 14px; background: #f5f5f7; border-radius: 12px;
+    overflow-x: auto; margin-bottom: 12px;
+  }
+  .icon-mini {
+    width: 64px; height: 64px; border-radius: 14px;
+    object-fit: cover; flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  .row-cell {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 4px; flex-shrink: 0;
+  }
+  .row-cell .label { font-size: 9px; color: #6a6a70; width: 64px; text-align: center; line-height: 1.2; }
+
+  .pill {
+    display: inline-block; padding: 3px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.02em;
+  }
+  .pill-recommended { background: #e8f5e9; color: #2e6b3a; }
+  .pill-killer { background: #fff4e6; color: #b85a1a; }
+  .pill-strategy { background: #f0f3ff; color: #4a5fc1; }
+
+  .footnote {
+    margin-top: 12px; font-size: 12px; color: #6a6a70; line-height: 1.5;
+  }
+
+  /* Selection panel */
+  .selection-panel {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #1a1a1f; color: #f2edd5;
+    padding: 16px 20px; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    min-width: 300px; z-index: 100; font-size: 13px;
+  }
+  .selection-panel h3 {
+    color: white; margin-bottom: 8px; font-size: 13px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .selection-panel .field {
+    display: flex; justify-content: space-between;
+    margin-bottom: 6px; gap: 12px;
+  }
+  .selection-panel .field-label { color: #9CA0A8; font-size: 12px; }
+  .selection-panel .field-value { color: #F2967D; font-weight: 700; font-size: 12px; text-align: right; }
+  .selection-panel button {
+    margin-top: 10px; background: #F2967D; color: #0F1115;
+    border: none; padding: 8px 14px; border-radius: 999px;
+    font-weight: 700; cursor: pointer; font-size: 12px; width: 100%;
+  }
+  .selection-panel button:hover { background: #E8836A; color: white; }
+
+  @media (max-width: 1100px) {
+    .palette-grid, .concepts-grid, .ss-strategy-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .palette-grid, .concepts-grid, .ss-strategy-grid { grid-template-columns: 1fr; }
+    .selection-panel { position: static; margin-top: 20px; }
+  }
+
+  /* Top navigation */
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid #e4e4ea; border-radius: 999px;
+    padding: 8px 14px; margin: -8px 0 18px; width: fit-content;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  }
+  .top-nav a {
+    text-decoration: none; color: #4a4a55;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 700;
+    transition: all 0.15s ease;
+  }
+  .top-nav a:hover { background: #FFF5F1; color: #E8836A; }
+  .top-nav a.featured {
+    background: linear-gradient(135deg, #E8836A 0%, #F2967D 100%);
+    color: white; box-shadow: 0 2px 8px rgba(232, 131, 106, 0.35);
+  }
+  .top-nav a.featured:hover { color: white; transform: translateY(-1px); }
+  .top-nav .sep { color: #d0d0d8; font-size: 10px; margin: 0 2px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav" aria-label="Page sections">
+  <a href="#palette">1 · Палитра</a>
+  <span class="sep">·</span>
+  <a href="#icon">2 · Иконка</a>
+  <span class="sep">·</span>
+  <a href="#screenshots">3 · Screenshots</a>
+  <span class="sep">·</span>
+  <a href="#concepts">4 · Концепты</a>
+  <span class="sep">·</span>
+  <a href="#browse">5 · Browse row</a>
+  <span class="sep">·</span>
+  <a href="#paywall-workbench" class="featured">💸 6 · Paywall</a>
+</nav>
+
+<h1>CrySnap — Design Workbench</h1>
+<div style="background: linear-gradient(135deg, #E8836A 0%, #7A9A6E 100%); color: white; padding: 16px 22px; border-radius: 14px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(232, 131, 106, 0.25);">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; opacity: 0.95;">✅ DECISION LOCKED · 2026-04-25</div>
+  <div style="font-size: 22px; font-weight: 800; margin-top: 4px; font-family: -apple-system, 'SF Pro Rounded', sans-serif;">Palette: D — Coral + Sage Dual 🟧🌿</div>
+  <div style="font-size: 13px; margin-top: 6px; opacity: 0.95; line-height: 1.5;">
+    Coral <code style="background: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px;">#E8836A</code> для CTA/action · Sage <code style="background: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px;">#7A9A6E</code> для chat/trust · Mode = SYSTEM + smart 3am prompt · Screenshots = 7 light + 1 dark (slot 3 voice). Icon = ОТЛОЖЕНА на phase 2 (после chat killer feature).
+  </div>
+</div>
+<p class="lede">Workbench для итераций по icon + screenshots. Палитра выбрана. <b>Iconка</b> (4 концепта) и <b>Screenshots</b> (4 стратегии) — на approve. Кликни на карточку чтобы выбрать.</p>
+<p class="meta-info">
+  Live: <a href="https://love8ko.github.io/crysnap/design.html">love8ko.github.io/crysnap/design.html</a> ·
+  Local: <code>file:///Users/sl/Documents/apps/12-crysnap/docs/palette-preview.html</code>
+</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: PALETTE -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="palette">
+  <h2>1. Palette — D Coral + Sage Dual <span class="pill" style="background: #2e6b3a; color: white; vertical-align: middle;">✅ LOCKED 2026-04-25</span></h2>
+  <p class="section-intro">Финальная палитра. Coral для action/CTA, sage для chat/trust. Mode = SYSTEM + smart 3am prompt. Screenshots = 7 light + 1 dark. Решение основано на консилиуме iter 2 (avg 9.7).</p>
+
+  <div class="palette-grid locked">
+    <!-- D: Coral + Sage Dual (LOCKED) -->
+    <div class="palette-col selected" style="border: 3px solid #2e6b3a; background: #f0f9f1;">
+      <div class="col-header">
+        <div class="col-title">D — Coral + Sage 🟧🌿</div>
+        <div class="col-tagline"><span class="pill pill-recommended" style="background: #2e6b3a; color: white;">✅ LOCKED</span></div>
+        <div class="col-tagline" style="margin-top: 4px;">Coral для action, sage для trust.</div>
+      </div>
+      <div class="swatch-strip">
+        <div style="background:#E8836A">#E8836A</div>
+        <div style="background:#7A9A6E">#7A9A6E</div>
+        <div style="background:#C49A4A">#C49A4A</div>
+        <div style="background:#C25C4F">#C25C4F</div>
+      </div>
+      <div class="ss-mode-label">Icon — dark</div>
+      <div class="icon-row"><div class="icon-cell" style="background:#0F1115; color:#F2967D">C</div></div>
+      <div class="ss-mode-label">Screenshot — light</div>
+      <div class="screenshot" style="background:#FAF7F2; color:#1A1A1F;">
+        <div class="ss-headline">Your baby has<br>something to say.</div>
+        <div class="ss-scene" style="background:#EFEDDB;">
+          <div class="scene-emoji">👩‍🍼</div>
+          <div class="scene-waveform" style="color:#7A9A6E;"></div>
+          <div class="verdict-pill" style="background:#7A9A6E; color:white;">🟢 HUNGRY 87%</div>
+        </div>
+        <div class="ss-subline">We help you listen in 3 seconds.</div>
+        <div class="ss-badge"><span>AAP</span><span>CDC</span><span>MAYO</span><span>LLL</span></div>
+      </div>
+      <div class="ss-mode-label">Paywall (coral CTA, sage trust)</div>
+      <div class="paywall" style="background:#FFFFFF; border: 1px solid #DCDDC8;">
+        <div class="paywall-title" style="color:#7A9A6E;">Your 24/7 baby team</div>
+        <div class="plan selected" style="background:#E8836A; border-color:#E8836A;">
+          <span>Weekly + 7-day trial</span><span class="plan-price">$4.99</span>
+        </div>
+        <div class="plan" style="border-color:#E0D9CF;">
+          <span>Annual SAVE 85%</span><span class="plan-price">$39.99</span>
+        </div>
+        <div class="cta" style="background:#E8836A;">Start 7-day free trial</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rejected-note">
+    💡 <b>Decision rule для Swift:</b> interactive/CTA → coral · passive/authoritative/chat → sage. См. <code>DESIGN_SYSTEM.md</code> для полной спецификации tokens.
+  </div>
+
+  <details>
+    <summary class="rejected-toggle">Показать rejected варианты (audit trail) — A Coral / B Sage / C Linen Rose</summary>
+    <div class="palette-grid rejected" style="margin-top: 14px;">
+
+      <!-- A: Coral (rejected) -->
+      <div class="palette-col" style="opacity: 0.65;">
+        <div class="col-header">
+          <div class="col-title">A — Coral 🟧</div>
+          <div class="col-tagline" style="color: #b85a4d;">❌ Rejected — single-mode не fits multi-surface</div>
+        </div>
+        <div class="swatch-strip">
+          <div style="background:#E8836A">#E8836A</div>
+          <div style="background:#5A8A6B">#5A8A6B</div>
+          <div style="background:#C49A4A">#C49A4A</div>
+          <div style="background:#C25C4F">#C25C4F</div>
+        </div>
+        <div class="screenshot" style="background:#FAF7F2; color:#1A1A1F;">
+          <div class="ss-headline">Your baby has<br>something to say.</div>
+          <div class="ss-scene" style="background:#F2EDE5;">
+            <div class="scene-emoji">👩‍🍼</div>
+            <div class="scene-waveform" style="color:#E8836A;"></div>
+            <div class="verdict-pill" style="background:#5A8A6B; color:white;">🟢 HUNGRY 87%</div>
+          </div>
+          <div class="ss-subline">We help you listen in 3 seconds.</div>
+          <div class="ss-badge"><span>AAP</span><span>CDC</span><span>MAYO</span><span>LLL</span></div>
+        </div>
+        <div class="concept-meta">Iter 1 winner (avg 8.3) → Iter 2 reconsidered (avg 5.0) — coral палитра жива в D, но без sage trust signal.</div>
+      </div>
+
+      <!-- B: Sage (rejected) -->
+      <div class="palette-col" style="opacity: 0.65;">
+        <div class="col-header">
+          <div class="col-title">B — Sage 🌿</div>
+          <div class="col-tagline" style="color: #b85a4d;">❌ Rejected — copper CTA конвертит хуже coral</div>
+        </div>
+        <div class="swatch-strip">
+          <div style="background:#7A9A6E">#7A9A6E</div>
+          <div style="background:#C97D4F">#C97D4F</div>
+          <div style="background:#4F8059">#4F8059</div>
+          <div style="background:#B85A4D">#B85A4D</div>
+        </div>
+        <div class="screenshot" style="background:#F5F2EC; color:#2A3328;">
+          <div class="ss-headline">Your baby has<br>something to say.</div>
+          <div class="ss-scene" style="background:#EAE5DA;">
+            <div class="scene-emoji">👩‍🍼</div>
+            <div class="scene-waveform" style="color:#7A9A6E;"></div>
+            <div class="verdict-pill" style="background:#4F8059; color:white;">🟢 HUNGRY 87%</div>
+          </div>
+          <div class="ss-subline">We help you listen in 3 seconds.</div>
+          <div class="ss-badge"><span>AAP</span><span>CDC</span><span>MAYO</span><span>LLL</span></div>
+        </div>
+        <div class="concept-meta">Avg 8.0. Sage trust сохранён в D, copper заменён coral CTA для urgency conversion.</div>
+      </div>
+
+      <!-- C: Linen Rose (rejected) -->
+      <div class="palette-col" style="opacity: 0.65;">
+        <div class="col-header">
+          <div class="col-title">C — Linen Rose 🍼</div>
+          <div class="col-tagline" style="color: #b85a4d;">❌ Rejected — premium tier, too expensive to execute</div>
+        </div>
+        <div class="swatch-strip">
+          <div style="background:#C97A8C">#C97A8C</div>
+          <div style="background:#6B8D7E">#6B8D7E</div>
+          <div style="background:#C49870">#C49870</div>
+          <div style="background:#B25555">#B25555</div>
+        </div>
+        <div class="screenshot" style="background:#F4EFE8; color:#3A2D26;">
+          <div class="ss-headline" style="font-family: New York, Georgia, serif;">Your baby has<br>something to say.</div>
+          <div class="ss-scene" style="background:#EBE3D6;">
+            <div class="scene-emoji">👩‍🍼</div>
+            <div class="scene-waveform" style="color:#C97A8C;"></div>
+            <div class="verdict-pill" style="background:#6B8D7E; color:white;">🟢 HUNGRY 87%</div>
+          </div>
+          <div class="ss-subline" style="font-family: New York, Georgia, serif;">We help you listen in 3 seconds.</div>
+          <div class="ss-badge"><span>AAP</span><span>CDC</span><span>MAYO</span><span>LLL</span></div>
+        </div>
+        <div class="concept-meta">Avg 7.2. Watercolor commission too costly. Defer to V2 premium tier ($59/yr) если цены поднимем.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="consilium">
+    <summary>🧠 Полное обоснование консилиума (для team / audit)</summary>
+    <div class="consilium-body">
+      <table class="vote-table">
+        <tr><th>Voice</th><th>A Coral</th><th>B Sage</th><th class="winner">D Dual</th><th>C Rose</th></tr>
+        <tr><td class="left">👶 Maya (3am desperation)</td><td>9</td><td>7</td><td class="winner">9</td><td>6</td></tr>
+        <tr><td class="left">👩 Sarah (anxious "is normal?")</td><td>6</td><td>9</td><td class="winner">9</td><td>7</td></tr>
+        <tr><td class="left">🌙 Lin (chronic exhaustion)</td><td>9</td><td>8</td><td class="winner">10</td><td>7</td></tr>
+        <tr><td class="left">🍼 Carla (lactation self-blame)</td><td>7</td><td>8</td><td class="winner">10</td><td>9</td></tr>
+        <tr><td class="left">🎯 UX Analyst (CR-driven)</td><td>10</td><td>8</td><td class="winner">10</td><td>7</td></tr>
+        <tr><td class="left">🎨 UI Designer (visual)</td><td>9</td><td>8</td><td class="winner">10</td><td>7</td></tr>
+        <tr style="font-weight: 700;"><td class="left">Среднее</td><td>8.3</td><td>8.0</td><td class="winner">9.7</td><td>7.2</td></tr>
+      </table>
+
+      <p style="margin: 16px 0 8px;"><b>Ключевые insights консилиума:</b></p>
+
+      <div class="voice-quote ux">
+        <div class="voice-name">🎯 UX Analyst</div>
+        «Coral на CTA = urgency drives conversion (validated на 11 портфельных приложениях). Sage на chat bubbles = trust signal для anxious S2. Dual решает оба JTBD одновременно — не надо выбирать "warmth vs trust", получаем и то и то на разных surfaces.»
+      </div>
+
+      <div class="voice-quote ui">
+        <div class="voice-name">🎨 UI Designer</div>
+        «Wedge через unowned palette: 7 competitors → 2 teal, 1 orange, 2 purple, 2 pink. <b>0 sage</b>, <b>0 coral+sage</b>. Dual = strongest visual differentiation в App Store row + paywall конверсия не страдает.»
+      </div>
+
+      <div class="voice-quote sarah">
+        <div class="voice-name">👩 Sarah (S2 anxious)</div>
+        «Sage на chat bubble = "врач говорит со мной" (зелёный = nature, AAP-grounded). Coral CTA = "сейчас, click here". Не путаются роли цветов как в одно-цветной палитре.»
+      </div>
+
+      <div class="voice-quote carla">
+        <div class="voice-name">🍼 Carla (lactation)</div>
+        «Лучше всего из 4-х. Sage = nurturing без infantilizing (как у IBCLC's office). Coral CTA не agressive — теплый соблазн нажать.»
+      </div>
+
+      <p style="margin-top: 16px; font-size: 13px;"><b>Почему НЕ A:</b> Single-coral палитра — sage верстки 8.3 хорошо, но не использует «trust» wedge. <b>Почему НЕ B:</b> Sage primary — теряет emotional warmth coral для conversion. <b>Почему НЕ C:</b> Rose territory overlap с First Ascent / Ninja Chemist + premium aesthetic дороже execute.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: ICON CONCEPTS -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="icon">
+  <h2>2. Иконка — 4 концепта <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">phase 2 sketch</span> <span style="font-size: 12px; color: #6a6a70; font-weight: normal;">кликни концепт + glow</span></h2>
+  <p class="section-intro">Каждый концепт — на dark navy bg <code>#0F1115</code>. Кликни на маленький превью под концептом чтобы переключить glow цвет. Главный preview обновится.</p>
+
+  <div class="concepts-grid">
+
+    <div class="concept-card" data-concept="1" onclick="selectConcept(this, '1. C + Waveform Halo')">
+      <h3>1. C + Waveform Halo</h3>
+      <p class="concept-tagline">Typographic. Letterform + crescent of sound bars above.</p>
+      <div class="concept-img">
+        <img id="img-1" src="../icons/01-letter-c-waveform-coral.png" alt="C with waveform halo">
+      </div>
+      <div class="concept-variants">
+        <div class="mini active" data-glow="coral" data-base="01-letter-c-waveform" onclick="event.stopPropagation(); switchGlow(this, 1, 'coral')"><img src="../icons/01-letter-c-waveform-coral.png"></div>
+        <div class="mini" data-glow="sage" data-base="01-letter-c-waveform" onclick="event.stopPropagation(); switchGlow(this, 1, 'sage')"><img src="../icons/01-letter-c-waveform-sage.png"></div>
+      </div>
+      <div class="concept-meta"><b>Pros:</b> Brand letter clear · Works at 40×40<br><b>Cons:</b> «Just another C app»</div>
+    </div>
+
+    <div class="concept-card" data-concept="2" onclick="selectConcept(this, '2. Speech Bubble + Sound')" style="border: 2px solid #b85a1a;">
+      <h3>2. Speech Bubble + Sound</h3>
+      <p class="concept-tagline"><span class="pill pill-killer">Chat killer feature</span><br>Bubble = chat. Sound = cry/voice.</p>
+      <div class="concept-img">
+        <img id="img-2" src="../icons/02-speech-bubble-coral.png" alt="Speech bubble with sound bars">
+      </div>
+      <div class="concept-variants">
+        <div class="mini active" data-glow="coral" data-base="02-speech-bubble" onclick="event.stopPropagation(); switchGlow(this, 2, 'coral')"><img src="../icons/02-speech-bubble-coral.png"></div>
+        <div class="mini" data-glow="sage" data-base="02-speech-bubble" onclick="event.stopPropagation(); switchGlow(this, 2, 'sage')"><img src="../icons/02-speech-bubble-sage.png"></div>
+      </div>
+      <div class="concept-meta"><b>Pros:</b> Tells «chat about cry» visually · Aligned с killer #1<br><b>Cons:</b> Could read «messaging app»</div>
+    </div>
+
+    <div class="concept-card" data-concept="3" onclick="selectConcept(this, '3. Voice Waveform')">
+      <h3>3. Voice Waveform</h3>
+      <p class="concept-tagline">Pure sound abstraction. Symmetric bell curve.</p>
+      <div class="concept-img">
+        <img id="img-3" src="../icons/03-voice-waveform-coral.png" alt="Voice waveform abstract">
+      </div>
+      <div class="concept-variants">
+        <div class="mini active" data-glow="coral" data-base="03-voice-waveform" onclick="event.stopPropagation(); switchGlow(this, 3, 'coral')"><img src="../icons/03-voice-waveform-coral.png"></div>
+        <div class="mini" data-glow="sage" data-base="03-voice-waveform" onclick="event.stopPropagation(); switchGlow(this, 3, 'sage')"><img src="../icons/03-voice-waveform-sage.png"></div>
+      </div>
+      <div class="concept-meta"><b>Pros:</b> Voice mode wedge · Brand asset potential<br><b>Cons:</b> Could clash с Spotify</div>
+    </div>
+
+    <div class="concept-card" data-concept="4" onclick="selectConcept(this, '4. Heart + Heartbeat')">
+      <h3>4. Heart + Heartbeat</h3>
+      <p class="concept-tagline">Emotional + medical. Heart + ECG line.</p>
+      <div class="concept-img">
+        <img id="img-4" src="../icons/04-heart-waveform-coral.png" alt="Heart with ECG line">
+      </div>
+      <div class="concept-variants">
+        <div class="mini active" data-glow="coral" data-base="04-heart-waveform" onclick="event.stopPropagation(); switchGlow(this, 4, 'coral')"><img src="../icons/04-heart-waveform-coral.png"></div>
+        <div class="mini" data-glow="sage" data-base="04-heart-waveform" onclick="event.stopPropagation(); switchGlow(this, 4, 'sage')"><img src="../icons/04-heart-waveform-sage.png"></div>
+      </div>
+      <div class="concept-meta"><b>Pros:</b> Health & Fitness category fit<br><b>Cons:</b> Many competitors use heart</div>
+    </div>
+  </div>
+
+  <details class="consilium">
+    <summary>🧠 Почему консилиум выбрал #2 Speech Bubble + Sound</summary>
+    <div class="consilium-body">
+      <table class="vote-table">
+        <tr><th>Voice</th><th>1. C halo</th><th class="winner">2. Speech</th><th>3. Wave</th><th>4. Heart</th></tr>
+        <tr><td class="left">👶 Maya (3am)</td><td>6</td><td class="winner">9</td><td>8</td><td>7</td></tr>
+        <tr><td class="left">👩 Sarah (anxious)</td><td>5</td><td class="winner">9</td><td>6</td><td>8</td></tr>
+        <tr><td class="left">🌙 Lin (chronic)</td><td>6</td><td class="winner">8</td><td>7</td><td>6</td></tr>
+        <tr><td class="left">🍼 Carla (lactation)</td><td>6</td><td class="winner">9</td><td>5</td><td>7</td></tr>
+        <tr><td class="left">🎯 UX Analyst</td><td>7</td><td class="winner">10</td><td>7</td><td>5</td></tr>
+        <tr><td class="left">🎨 UI Designer</td><td>7</td><td class="winner">9</td><td>8</td><td>6</td></tr>
+        <tr style="font-weight: 700;"><td class="left">Среднее</td><td>6.2</td><td class="winner">9.0</td><td>6.8</td><td>6.5</td></tr>
+      </table>
+
+      <p style="margin: 16px 0 8px;"><b>Ключевые insights:</b></p>
+
+      <div class="voice-quote ux">
+        <div class="voice-name">🎯 UX Analyst — главный голос</div>
+        «Icon должен передать <b>killer feature #1</b> (3 chat personas) или <b>killer feature #2</b> (voice mode). Speech bubble делает оба: bubble = chat persona, sound bars = cry analysis + voice. <b>Один значок = весь продукт</b>. C halo / Heart / Wave каждый передаёт только часть.»
+      </div>
+
+      <div class="voice-quote ui">
+        <div class="voice-name">🎨 UI Designer</div>
+        «Speech bubble в категории Health & Fitness baby — НИКТО не использует. Все competitors используют либо realistic baby (Nanni 3D astronaut), либо waveform (First Ascent), либо abstract heart (нет в нише). Bubble = <b>unowned visual territory</b>.»
+      </div>
+
+      <div class="voice-quote maya">
+        <div class="voice-name">👶 Maya (3am)</div>
+        «В 3am scrolling мозг ищет "что мне поможет". Speech bubble мгновенно говорит "это разговор", "кто-то ответит". Это успокаивает. Heart — это generic "забота", не специфично. Wave — "звук", не понятно зачем.»
+      </div>
+
+      <div class="voice-quote carla">
+        <div class="voice-name">🍼 Carla (lactation)</div>
+        «Speech bubble = "я могу спросить эксперта". Это для меня — я хочу IBCLC в кармане. Heart — это "приложение для отношений", не для ID problems. C halo — typographic, безличный.»
+      </div>
+
+      <p style="margin-top: 16px; font-size: 13px;"><b>Почему НЕ #1 C halo:</b> Generic letter, не передаёт killer feature. <b>Почему НЕ #3 Wave:</b> Audio app perception, может clash с Spotify/Voice memos. <b>Почему НЕ #4 Heart:</b> Generic health app, многие competitors уже используют heart shape.</p>
+
+      <p style="margin-top: 12px; font-size: 13px; color: #b85a1a;"><b>Important caveat:</b> Эти иконки — sketch direction (PIL-сгенерированы). Финальная иконка = professional commission на основе chosen концепта + chosen палитры. Использовать workbench для выбора DIRECTION, не финального asset.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: SCREENSHOT STRATEGY -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="screenshots">
+  <h2>3. Screenshots — 4 стратегии <span class="pill pill-strategy" style="font-size:10px; vertical-align:middle;">App Store CR</span> <span style="font-size: 12px; color: #6a6a70; font-weight: normal;">кликни стратегию</span></h2>
+  <p class="section-intro">8 слотов в App Store. Первые 3 = 85% CR (показываются БЕЗ тапа в search). Каждая стратегия — разный mode mix + разная storytelling логика. Цифры внутри маленьких прямоугольников = номер слота. 🌙 = dark, ☀️ = light.</p>
+
+  <div class="ss-strategy-grid">
+
+    <!-- Strategy A: 1 dark + 7 light (recommended) -->
+    <div class="ss-strategy-card" style="border: 2px solid #4a5fc1;" data-strategy="1d-7l" onclick="selectStrategy(this, 'A: 1 dark + 7 light (slot 3 voice)')">
+      <h3>A. 1 dark + 7 light</h3>
+      <p class="ss-strategy-tagline"><span class="pill pill-recommended">Recommended</span> Iter 2 winner. Story-peak dark slot 3 (voice 3am).</p>
+      <div class="ss-slot-trio">
+        <div class="ss-slot light-cream" style="position: relative;">
+          <span class="num">1</span>
+          <div class="slot-headline">Hook scene</div>
+          <div class="slot-mini-scene"><div style="font-size:18px;">👩‍🍼</div><div class="slot-mini-pill" style="background:#7A9A6E; color:white;">🟢 87%</div></div>
+        </div>
+        <div class="ss-slot light-cream" style="position: relative;">
+          <span class="num">2</span>
+          <div class="slot-headline">vs Nanni</div>
+          <div class="slot-mini-scene" style="font-size:6px; flex-direction:row; gap:4px;"><div style="opacity:0.5;">label</div>→<div style="background:#7A9A6E; padding:2px; border-radius:3px; color:white; font-size:5px;">chat</div></div>
+        </div>
+        <div class="ss-slot dark" style="position: relative;">
+          <span class="num">3</span>
+          <div class="slot-headline">3am voice</div>
+          <div class="slot-mini-scene"><div class="slot-mini-bars" style="color:#F2967D;"><div style="height:4px"></div><div style="height:7px"></div><div style="height:9px"></div><div style="height:5px"></div><div style="height:3px"></div></div></div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 4px; justify-content: center; font-size: 9px; color: #6a6a70;">+ 5 more LIGHT slots (4-8)</div>
+      <div class="concept-meta" style="margin-top: 8px;"><b>Pros:</b> Save dark wedge через slot 3 + win conversion through rest · Best of both<br><b>Cons:</b> Story-peak требует execution skill</div>
+    </div>
+
+    <!-- Strategy B: All light (safe) -->
+    <div class="ss-strategy-card" data-strategy="all-light" onclick="selectStrategy(this, 'B: All light (safe)')">
+      <h3>B. All light</h3>
+      <p class="ss-strategy-tagline">Match всех 7 competitors. Highest browse-context CR, но теряем dark wedge.</p>
+      <div class="ss-slot-trio">
+        <div class="ss-slot light-cream" style="position: relative;"><span class="num">1</span><div class="slot-headline">Hook</div><div class="slot-mini-scene"><div style="font-size:18px;">👩‍🍼</div></div></div>
+        <div class="ss-slot light-cream" style="position: relative;"><span class="num">2</span><div class="slot-headline">vs Nanni</div><div class="slot-mini-scene" style="font-size:5px;">label vs chat</div></div>
+        <div class="ss-slot light-cream" style="position: relative;"><span class="num">3</span><div class="slot-headline">9 cries grid</div><div class="slot-mini-scene"><div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px;"><div style="width:5px;height:5px;background:#7A9A6E;"></div><div style="width:5px;height:5px;background:#C49A4A;"></div><div style="width:5px;height:5px;background:#C25C4F;"></div><div style="width:5px;height:5px;background:#7A9A6E;"></div><div style="width:5px;height:5px;background:#7A9A6E;"></div><div style="width:5px;height:5px;background:#C49A4A;"></div></div></div></div>
+      </div>
+      <div style="display: flex; gap: 4px; justify-content: center; font-size: 9px; color: #6a6a70;">+ 5 more LIGHT slots (4-8)</div>
+      <div class="concept-meta" style="margin-top: 8px;"><b>Pros:</b> Matches browser psychology · No risky dark beat<br><b>Cons:</b> «Just another baby app» · Wastes 3am voice mode wedge</div>
+    </div>
+
+    <!-- Strategy C: 3 dark committed -->
+    <div class="ss-strategy-card" data-strategy="3d-5l" onclick="selectStrategy(this, 'C: 3 dark + 5 light (committed)')">
+      <h3>C. 3 dark + 5 light</h3>
+      <p class="ss-strategy-tagline">Committed dark wedge: slots 1+3+5 dark. Stronger differentiation, риск browse depression.</p>
+      <div class="ss-slot-trio">
+        <div class="ss-slot dark" style="position: relative;"><span class="num">1</span><div class="slot-headline">Dark hero</div><div class="slot-mini-scene"><div style="font-size:18px;">🌙</div><div class="slot-mini-pill" style="background:#F2967D; color:#0F1115;">🟢 87%</div></div></div>
+        <div class="ss-slot light-cream" style="position: relative;"><span class="num">2</span><div class="slot-headline">vs Nanni</div><div class="slot-mini-scene" style="font-size:5px;">label vs chat</div></div>
+        <div class="ss-slot dark" style="position: relative;"><span class="num">3</span><div class="slot-headline">3am voice</div><div class="slot-mini-scene"><div class="slot-mini-bars" style="color:#F2967D;"><div style="height:4px"></div><div style="height:7px"></div><div style="height:9px"></div><div style="height:5px"></div><div style="height:3px"></div></div></div></div>
+      </div>
+      <div style="display: flex; gap: 4px; justify-content: center; font-size: 9px; color: #6a6a70;">5 = dark · 4,6,7,8 = LIGHT</div>
+      <div class="concept-meta" style="margin-top: 8px;"><b>Pros:</b> Strongest dark wedge<br><b>Cons:</b> -5-10pp browse anxiety · loses authority strip readability</div>
+    </div>
+
+    <!-- Strategy D: All dark -->
+    <div class="ss-strategy-card" data-strategy="all-dark" onclick="selectStrategy(this, 'D: All dark (risky)')">
+      <h3>D. All dark</h3>
+      <p class="ss-strategy-tagline">Iter 1 plan. Strongest visual standout, но iter 2 voice avg 5.0 — все JTBD voices dropped.</p>
+      <div class="ss-slot-trio">
+        <div class="ss-slot dark" style="position: relative;"><span class="num">1</span><div class="slot-headline">Dark hero</div><div class="slot-mini-scene"><div style="font-size:18px;">🌙</div></div></div>
+        <div class="ss-slot dark" style="position: relative;"><span class="num">2</span><div class="slot-headline">vs Nanni</div><div class="slot-mini-scene" style="font-size:5px; color:#9CB892;">labels vs chat</div></div>
+        <div class="ss-slot dark" style="position: relative;"><span class="num">3</span><div class="slot-headline">Voice</div><div class="slot-mini-scene"><div class="slot-mini-bars" style="color:#F2967D;"><div style="height:4px"></div><div style="height:7px"></div><div style="height:9px"></div><div style="height:5px"></div><div style="height:3px"></div></div></div></div>
+      </div>
+      <div style="display: flex; gap: 4px; justify-content: center; font-size: 9px; color: #6a6a70;">all 8 = DARK</div>
+      <div class="concept-meta" style="margin-top: 8px;"><b>Pros:</b> Strongest visual standout · Full 3am brand identity<br><b>Cons:</b> «Depressing» browse perception · CR -8-15pp</div>
+    </div>
+
+  </div>
+
+  <details class="consilium">
+    <summary>🧠 Почему консилиум выбрал A — 1 dark + 7 light</summary>
+    <div class="consilium-body">
+      <table class="vote-table">
+        <tr><th>Voice</th><th class="winner">A: 1d+7l</th><th>B: all light</th><th>C: 3d+5l</th><th>D: all dark</th></tr>
+        <tr><td class="left">👶 Maya (3am)</td><td class="winner">9</td><td>6</td><td>7</td><td>4</td></tr>
+        <tr><td class="left">👩 Sarah (anxious)</td><td class="winner">9</td><td>8</td><td>6</td><td>5</td></tr>
+        <tr><td class="left">🌙 Lin (chronic)</td><td class="winner">10</td><td>7</td><td>7</td><td>5</td></tr>
+        <tr><td class="left">🍼 Carla (lactation)</td><td class="winner">10</td><td>7</td><td>6</td><td>6</td></tr>
+        <tr><td class="left">🎯 UX Analyst</td><td class="winner">10</td><td>7</td><td>5</td><td>4</td></tr>
+        <tr><td class="left">🎨 UI Designer</td><td class="winner">10</td><td>7</td><td>7</td><td>6</td></tr>
+        <tr style="font-weight: 700;"><td class="left">Среднее</td><td class="winner">9.7</td><td>7.0</td><td>6.3</td><td>5.0</td></tr>
+      </table>
+
+      <p style="margin: 16px 0 8px;"><b>Объективные данные что мы видели:</b></p>
+      <ul style="margin-left: 20px; line-height: 1.7;">
+        <li><b>0 из 7 competitors</b> используют dark backgrounds в App Store screenshots</li>
+        <li>Даже <b>Huckleberry</b> (у которого dark mode ЕСТЬ как feature) показывает dark mode на <b>светлой marketing-frame</b> (brightness 208/255)</li>
+        <li><b>Sleep apps</b> (Calm, Pillow) — единственные где dark screenshots работают (category=sleep сам по себе night-context)</li>
+        <li><b>Browse moment ≠ use moment.</b> Parent скроллит App Store днём → light environment + dark screenshot = «depressing/empty/wrong vibe»</li>
+      </ul>
+
+      <p style="margin: 16px 0 8px;"><b>Почему именно 1 dark slot 3?</b></p>
+
+      <div class="voice-quote ux">
+        <div class="voice-name">🎯 UX Analyst</div>
+        «Slot 3 = idealный момент для surprise dark beat. Browser уже engaged (прошёл slot 1+2 light), готов к narrative beat. Dark voice mode 3am = unique selling proposition (никто из competitors voice mode не имеет) + memorable enough чтобы remember at actual 3am later.»
+      </div>
+
+      <div class="voice-quote ui">
+        <div class="voice-name">🎨 UI Designer</div>
+        «Один dark slot среди 7 light = visual scroll-stopper. Vs all-dark где browser устаёт от темноты, или all-light где we исчезаем в категории. <b>Контраст работает — однообразие нет.</b>»
+      </div>
+
+      <div class="voice-quote maya">
+        <div class="voice-name">👶 Maya (3am)</div>
+        «Browse в 14:00 в waiting room — мне нужно уверенность что app серьёзный (light + AAP badges). Но slot 3 dark "3am phone dead-tired" — заставляет меня <b>помнить эту app именно ВНОЧЬЮ</b>. Это remembered experience.»
+      </div>
+
+      <div class="voice-quote sarah">
+        <div class="voice-name">👩 Sarah (anxious)</div>
+        «Если все слоты dark — выглядит как "edgy startup", не "medical companion". Нам нужны AAP badges visible (light), а dark только когда mention 3am crisis context.»
+      </div>
+
+      <p style="margin: 16px 0 8px;"><b>CR-prediction:</b></p>
+      <table class="vote-table">
+        <tr><th>Lever</th><th>D all-dark (iter 1)</th><th class="winner">A 1d+7l (iter 2)</th><th>Δ</th></tr>
+        <tr><td class="left">Screenshot CTR (first 3)</td><td>-10%</td><td>+5%</td><td>+15pp</td></tr>
+        <tr><td class="left">Onboarding completion</td><td>-5%</td><td>+3%</td><td>+8pp</td></tr>
+        <tr><td class="left">Trial start rate</td><td>-8%</td><td>+5%</td><td>+13pp</td></tr>
+        <tr><td class="left"><b>Overall T2P + install</b></td><td><b>-8%</b></td><td><b>+10-15%</b></td><td><b>+18-23pp</b></td></tr>
+      </table>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: FIRST 3 SCREENSHOTS — DETAILED -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<style>
+  /* Full-size hero screenshot mockups */
+  .hero-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+  }
+  .hero-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-card h3 {
+    font-size: 15px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-card .slot-meta {
+    font-size: 11px;
+    color: #6a6a70;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .hero-screenshot {
+    aspect-ratio: 9/19.5;
+    border-radius: 28px;
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-screenshot.cream { background: #FAF7F2; color: #1A1A1F; }
+  .hero-screenshot.dark { background: #0F1115; color: #F2EDE5; }
+
+  .hero-headline {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .hero-subhead {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: 0.7;
+  }
+
+  .hero-stage {
+    flex: 1;
+    border-radius: 18px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .hero-screenshot.cream .hero-stage { background: #F2EDE5; }
+  .hero-screenshot.dark .hero-stage { background: #181B22; }
+
+  .hero-emoji-scene {
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-emoji-scene.small { font-size: 44px; }
+
+  .hero-waveform-bars {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    height: 20px;
+  }
+  .hero-waveform-bars > div {
+    width: 3px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+
+  .hero-verdict-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .hero-action-hint {
+    font-size: 11px;
+    opacity: 0.6;
+    text-align: center;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+  .hero-badges span {
+    background: rgba(0,0,0,0.06);
+    padding: 4px 9px;
+    border-radius: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+  }
+  .hero-screenshot.dark .hero-badges span {
+    background: rgba(255,255,255,0.06);
+    color: #9CA0A8;
+  }
+
+  /* Slot 2 split screen */
+  .split-stage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+  .split-side {
+    border-radius: 12px;
+    padding: 12px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  .split-side.left {
+    background: #ebebef;
+    color: #8a8a90;
+    opacity: 0.85;
+  }
+  .split-side.right {
+    background: white;
+    color: #1A1A1F;
+  }
+  .split-label {
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+  }
+  .nanni-label {
+    background: #d0d0d6;
+    padding: 6px 14px;
+    border-radius: 999px;
+    color: #6a6a70;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .persona-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+    text-align: left;
+  }
+  .persona-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #E8836A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .persona-bubble {
+    background: #F2EDE5;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 9px;
+    line-height: 1.35;
+    color: #1A1A1F;
+    flex: 1;
+  }
+  .persona-name {
+    font-size: 8px;
+    color: #5a5a60;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .ask-followup {
+    color: #E8836A;
+    font-weight: 700;
+    margin-top: 4px;
+    font-size: 9px;
+  }
+
+  /* Slot 3 voice mode */
+  .voice-pulse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 14px 0;
+  }
+  .voice-pulse > div {
+    width: 4px;
+    border-radius: 2px;
+    background: #F2967D;
+    opacity: 0.85;
+  }
+  .voice-bubble {
+    background: rgba(242, 150, 125, 0.15);
+    border: 1px solid rgba(242, 150, 125, 0.3);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #F2EDE5;
+    align-self: stretch;
+  }
+  .response-bubble {
+    background: rgba(242, 237, 229, 0.06);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #F2EDE5;
+    align-self: stretch;
+  }
+  .voice-bubble .label, .response-bubble .label {
+    font-size: 8px;
+    font-weight: 700;
+    opacity: 0.7;
+    margin-bottom: 3px;
+  }
+
+  .killer-feature-strip {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .killer-feature-strip .kf-pill {
+    background: #fff4e6;
+    color: #b85a1a;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 1100px) {
+    .hero-trio { grid-template-columns: 1fr; max-width: 380px; margin: 20px auto 0; }
+  }
+</style>
+
+<style>
+  .jtbd-matrix {
+    margin: 16px 0 24px;
+    background: #fafafa;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid #ebebef;
+  }
+  .jtbd-matrix h3 { margin-bottom: 8px; font-size: 16px; }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 13px;
+  }
+  .matrix-table th {
+    background: #f0f0f3;
+    padding: 10px;
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #4a4a55;
+    border-bottom: 2px solid #ddd;
+  }
+  .matrix-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ebebef;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .matrix-table tr:last-child td { border-bottom: none; }
+  .matrix-table .pain { color: #b85a4d; font-weight: 600; font-size: 12.5px; }
+  .matrix-table .feat { font-size: 11.5px; color: #2e6b3a; }
+  .matrix-table .slot-tag {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 2px 3px 2px 0;
+  }
+  .matrix-table .slot-1 { background: #fff4e6; color: #b85a1a; }
+  .matrix-table .slot-2 { background: #f0f3ff; color: #4a5fc1; }
+  .matrix-table .slot-3 { background: #1a1a1f; color: #F2967D; }
+  .matrix-table .audience-rank {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .ar-1 { background: #ffe5d4; color: #b85a1a; }
+  .ar-2 { background: #ffeac9; color: #c97500; }
+  .ar-3 { background: #fff4d4; color: #a07b00; }
+  .ar-4 { background: #f0f0f3; color: #6a6a70; }
+
+  .killer-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .killer-card {
+    background: white;
+    border: 2px solid #ebebef;
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .killer-card.tier-1 { border-color: #E8836A; background: #fff8f4; }
+  .killer-card.tier-2 { border-color: #C49A4A; background: #fffbf2; }
+  .killer-card .tier-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .killer-card.tier-1 .tier-label { color: #b85a1a; }
+  .killer-card.tier-2 .tier-label { color: #a07b00; }
+  .killer-card h4 { font-size: 14px; margin-bottom: 6px; font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .killer-card p { font-size: 12px; line-height: 1.45; color: #4a4a55; }
+  .killer-card .competitive {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #6a6a70;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  @media (max-width: 800px) {
+    .killer-card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<section id="concepts">
+  <h2>4. Концепты 3 первых screenshots <span class="pill pill-killer" style="font-size:10px; vertical-align:middle;">85% CR decision</span></h2>
+  <p class="section-intro">Apple показывает первые 3 БЕЗ тапа в search results — это и есть весь download decision. Каждый слот должен показать конкретную killer feature + JTBD pain в один взгляд (0.4 sec scan time). Расположение элементов и copy подбираются чтобы поднять CTR install.</p>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- 4.0 — COMPREHENSIVE JTBD BRIEF (NEW) -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <style>
+    .audience-deep {
+      margin: 16px 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .audience-row {
+      background: white;
+      border: 2px solid #ebebef;
+      border-radius: 14px;
+      padding: 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+    }
+    .audience-row.rank-1 { border-color: #E8836A; }
+    .audience-row.rank-2 { border-color: #C49A4A; }
+    .audience-row.rank-3 { border-color: #7A9A6E; }
+    .audience-row.rank-4 { border-color: #C97A8C; }
+
+    .audience-header {
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .audience-row.rank-1 .audience-header { background: linear-gradient(160deg, #E8836A, #c25c4f); }
+    .audience-row.rank-2 .audience-header { background: linear-gradient(160deg, #C49A4A, #9a7a30); }
+    .audience-row.rank-3 .audience-header { background: linear-gradient(160deg, #7A9A6E, #4F8059); }
+    .audience-row.rank-4 .audience-header { background: linear-gradient(160deg, #C97A8C, #9d5868); }
+
+    .audience-rank-big {
+      font-size: 28px;
+      font-weight: 800;
+      font-family: -apple-system, "SF Pro Rounded", sans-serif;
+      line-height: 1;
+    }
+    .audience-emoji-big { font-size: 40px; line-height: 1; margin: 4px 0; }
+    .audience-name-big { font-size: 16px; font-weight: 700; }
+    .audience-stats { font-size: 11px; opacity: 0.9; line-height: 1.4; }
+
+    .audience-content {
+      padding: 16px 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .audience-block { font-size: 12px; line-height: 1.45; }
+    .audience-block .block-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6a6a70;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .audience-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .audience-block li {
+      padding: 4px 0;
+      font-size: 11.5px;
+      line-height: 1.4;
+      color: #2a2a30;
+    }
+    .audience-block li::before {
+      content: "›";
+      color: #b0b0b8;
+      margin-right: 6px;
+      font-weight: 700;
+    }
+
+    .pain-quote {
+      font-style: italic;
+      color: #b85a4d;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .wow-tag {
+      display: inline-block;
+      background: #fff4e6;
+      color: #b85a1a;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      margin: 2px 3px 2px 0;
+    }
+    .slot-pin {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      margin: 2px 3px 2px 0;
+    }
+    .pin-1 { background: #fff4e6; color: #b85a1a; }
+    .pin-2 { background: #f0f3ff; color: #4a5fc1; }
+    .pin-3 { background: #1a1a1f; color: #F2967D; }
+    .pin-other { background: #ebebef; color: #4a4a55; }
+
+    @media (max-width: 1100px) {
+      .audience-row { grid-template-columns: 1fr; }
+      .audience-content { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .audience-content { grid-template-columns: 1fr; }
+    }
+
+    /* WOW inventory */
+    .wow-inventory {
+      margin: 24px 0;
+      background: linear-gradient(135deg, #fff4e6 0%, #fff8f4 100%);
+      border-radius: 16px;
+      padding: 24px;
+      border: 2px solid #E8836A;
+    }
+    .wow-inventory h3 {
+      color: #b85a1a;
+      font-size: 18px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .wow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .wow-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(232, 131, 106, 0.1);
+    }
+    .wow-card .wow-tier {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b85a1a;
+      margin-bottom: 4px;
+    }
+    .wow-card h4 {
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-family: -apple-system, "SF Pro Rounded", sans-serif;
+      line-height: 1.2;
+    }
+    .wow-card .wow-quote {
+      font-size: 12px;
+      color: #1a1a1f;
+      background: #fafafa;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border-left: 3px solid #E8836A;
+      margin: 8px 0;
+      font-style: italic;
+      line-height: 1.4;
+    }
+    .wow-card .wow-why {
+      font-size: 11px;
+      color: #6a6a70;
+      line-height: 1.45;
+      margin-top: 8px;
+    }
+    .wow-card .wow-where {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed #ebebef;
+      font-size: 10px;
+      color: #4a4a55;
+    }
+    @media (max-width: 800px) {
+      .wow-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <h3 style="font-size: 18px; margin: 24px 0 4px;">🎯 4.0 — Полный JTBD-brief: что показывать каждой аудитории</h3>
+  <p style="font-size: 12.5px; color: #6a6a70; margin-bottom: 8px; line-height: 1.5;">
+    Для каждой аудитории (priority 1→4): <b>визуал что резонирует</b> + <b>copy hooks в порядке impact</b> + <b>где размещаем</b>. Это brief для дизайнера/копирайтера.
+  </p>
+
+  <div class="audience-deep">
+
+    <!-- ═════════ Maya — Rank 1 ═════════ -->
+    <div class="audience-row rank-1">
+      <div class="audience-header">
+        <div class="audience-rank-big">🥇 #1</div>
+        <div class="audience-emoji-big">👶</div>
+        <div class="audience-name-big">Maya 28</div>
+        <div class="audience-stats">
+          S1 new mother<br>
+          0-4 mo postpartum<br>
+          <b>2-3M US active</b><br>
+          🔴 EXTREME WTP
+        </div>
+      </div>
+      <div class="audience-content">
+        <div class="audience-block">
+          <div class="block-label">😣 Pain</div>
+          <p class="pain-quote">«Он плачет уже 40 минут. Я fed, changed, rocked. Сейчас сама заплачу. На Reddit ответ через 6 часов. Маму будить 3am стыдно.»</p>
+          <ul style="margin-top: 8px;">
+            <li>Sleep 3-5h fragmented</li>
+            <li>Hormonal turbulence</li>
+            <li>Guilt + helplessness</li>
+            <li>Eyes hurt от screens</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎨 Visual cues что резонируют</div>
+          <ul>
+            <li>Dim warm bedside lamp glow</li>
+            <li>Mom curled with baby (mid-shot)</li>
+            <li>Phone with coral pulse glow</li>
+            <li>Soft moonlight через окно</li>
+            <li>NO realistic crying baby (aversive)</li>
+            <li>Solidarity vibe «оба exhausted»</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">💬 Copy hooks (в порядке impact)</div>
+          <ul>
+            <li><b>«3am. Phone dead-tired.»</b> (slot 3 hero)</li>
+            <li><b>«Don't even open your eyes.»</b></li>
+            <li><b>«We get this moment.»</b></li>
+            <li>«5 seconds to answer.»</li>
+            <li>«Works offline — no WiFi needed.»</li>
+            <li>«You're not failing. We're here.»</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎁 WOW что закроет install</div>
+          <span class="wow-tag">🎙 Voice mode — hands-free</span>
+          <span class="wow-tag">⚡ 5 sec to verdict</span>
+          <span class="wow-tag">📴 Offline-first</span>
+          <span class="wow-tag">🔇 Silent on phone</span>
+          <p style="margin-top: 8px; font-size: 11px; color: #4a4a55;"><b>Где:</b></p>
+          <span class="slot-pin pin-3">SLOT 3 (peak)</span>
+          <span class="slot-pin pin-1">SLOT 1 (verdict pill)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════ Sarah — Rank 2 ═════════ -->
+    <div class="audience-row rank-2">
+      <div class="audience-header">
+        <div class="audience-rank-big">🥈 #2</div>
+        <div class="audience-emoji-big">😰</div>
+        <div class="audience-name-big">Sarah 31</div>
+        <div class="audience-stats">
+          S1+S2 first-time<br>
+          anxious parents<br>
+          <b>4-5M US incl dads</b><br>
+          🟠 HIGH WTP
+        </div>
+      </div>
+      <div class="audience-content">
+        <div class="audience-block">
+          <div class="block-label">😣 Pain</div>
+          <p class="pain-quote">«Это нормально что он так долго плачет? Reddit пугает, Google пугает, мама не помнит. Я не доверяю себе.»</p>
+          <ul style="margin-top: 8px;">
+            <li>Self-doubt + lack of reference</li>
+            <li>Reads pediatric blogs</li>
+            <li>4 mom FB groups</li>
+            <li>Compares к friends' babies</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎨 Visual cues что резонируют</div>
+          <ul>
+            <li>AAP/CDC/Mayo authority badges</li>
+            <li>Pediatric Nurse persona avatar</li>
+            <li>Chat bubble с reasoning (not labels)</li>
+            <li>«Powered by» credentialing strip</li>
+            <li>Soft daytime warm lighting</li>
+            <li>Confidence % visible always</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">💬 Copy hooks (в порядке impact)</div>
+          <ul>
+            <li><b>«Others give labels. We give answers.»</b> (slot 2 hero)</li>
+            <li><b>«Powered by AAP guidelines.»</b></li>
+            <li><b>«Real reasons. Real next steps.»</b></li>
+            <li>«Pediatric Nurse · 15 years at Children's Hospital»</li>
+            <li>«Validated on 10,000+ recordings — 89% accurate»</li>
+            <li>«When to call 911 — always visible»</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎁 WOW что закроет install</div>
+          <span class="wow-tag">💬 3 expert personas</span>
+          <span class="wow-tag">📚 AAP/CDC grounded</span>
+          <span class="wow-tag">🚨 ER triggers visible</span>
+          <span class="wow-tag">🩺 «15-yr nurse» credentialing</span>
+          <p style="margin-top: 8px; font-size: 11px; color: #4a4a55;"><b>Где:</b></p>
+          <span class="slot-pin pin-2">SLOT 2 (diff)</span>
+          <span class="slot-pin pin-1">SLOT 1 (badges)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════ Lin — Rank 3 ═════════ -->
+    <div class="audience-row rank-3">
+      <div class="audience-header">
+        <div class="audience-rank-big">🥉 #3</div>
+        <div class="audience-emoji-big">😴</div>
+        <div class="audience-name-big">Lin 33</div>
+        <div class="audience-stats">
+          S1 chronic<br>
+          2-4 mo postpartum<br>
+          <b>1.5M US</b><br>
+          🟡 MED-HIGH WTP
+        </div>
+      </div>
+      <div class="audience-content">
+        <div class="audience-block">
+          <div class="block-label">😣 Pain</div>
+          <p class="pain-quote">«Я сплю 3 часа в сутки, когда это кончится? Никакой плана нет. Партнёр не понимает. Sleep training — слишком жёстко?»</p>
+          <ul style="margin-top: 8px;">
+            <li>Chronic недосып normalized</li>
+            <li>Frustrated с partner</li>
+            <li>Wants predictability</li>
+            <li>Optimizing для sleep prediction</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎨 Visual cues что резонируют</div>
+          <ul>
+            <li>Calendar / timeline UI</li>
+            <li>Sleep prediction widget</li>
+            <li>Sleep Coach 🌙 persona avatar</li>
+            <li>Pattern visualization (7-day chart)</li>
+            <li>«Predicted nap 2:15 PM» callout</li>
+            <li>Method-neutral copy (no «cry-it-out»)</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">💬 Copy hooks (в порядке impact)</div>
+          <ul>
+            <li><b>«Predict the next nap.»</b></li>
+            <li><b>«Finally, a plan that respects your style.»</b></li>
+            <li><b>«Reclaim 1 hour/night — gently.»</b></li>
+            <li>«Sleep Coach grounded в Healthy Sleep Habits + RIE»</li>
+            <li>«Method-neutral — no cry-it-out forced»</li>
+            <li>«Built from YOUR baby's last 7 days»</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎁 WOW что закроет install</div>
+          <span class="wow-tag">🌙 Sleep Coach persona</span>
+          <span class="wow-tag">📈 Sleep prediction (V1.1)</span>
+          <span class="wow-tag">🎵 Soothing sounds 24/7</span>
+          <span class="wow-tag">⏰ Smart wake-window timer</span>
+          <p style="margin-top: 8px; font-size: 11px; color: #4a4a55;"><b>Где:</b></p>
+          <span class="slot-pin pin-2">SLOT 2 (badge)</span>
+          <span class="slot-pin pin-other">Slots 5-6 (deeper)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════ Carla — Rank 4 ═════════ -->
+    <div class="audience-row rank-4">
+      <div class="audience-header">
+        <div class="audience-rank-big">#4</div>
+        <div class="audience-emoji-big">🍼</div>
+        <div class="audience-name-big">Carla 29</div>
+        <div class="audience-stats">
+          Breastfeeding<br>
+          self-blame<br>
+          <b>1M US</b><br>
+          🟡 MED-HIGH WTP
+        </div>
+      </div>
+      <div class="audience-content">
+        <div class="audience-block">
+          <div class="block-label">😣 Pain</div>
+          <p class="pain-quote">«Что не так с моим молоком? Baby плачет после feeds. Партнёр предлагает formula — это значит я fail?»</p>
+          <ul style="margin-top: 8px;">
+            <li>Self-blame + supply anxiety</li>
+            <li>«Failed mom» framing</li>
+            <li>Defensive vs formula-pushers</li>
+            <li>Lactation chair, late evening</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎨 Visual cues что резонируют</div>
+          <ul>
+            <li>IBCLC + La Leche League badges</li>
+            <li>Lactation Consultant 🍼 persona</li>
+            <li>Gentle nursing iconography</li>
+            <li>Hunger vs gas distinction visual</li>
+            <li>Encouraging warm tones</li>
+            <li>Inclusive (skin tones varied)</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">💬 Copy hooks (в порядке impact)</div>
+          <ul>
+            <li><b>«Hunger or gas? We help you tell.»</b></li>
+            <li><b>«Lactation expert in your pocket.»</b></li>
+            <li><b>«No judgment. Just answers.»</b></li>
+            <li>«Cluster feeding is normal at 6 wks — here's why»</li>
+            <li>«IBCLC + La Leche League grounded»</li>
+            <li>«You're doing great. Let's troubleshoot together.»</li>
+          </ul>
+        </div>
+        <div class="audience-block">
+          <div class="block-label">🎁 WOW что закроет install</div>
+          <span class="wow-tag">🍼 Lactation persona 24/7</span>
+          <span class="wow-tag">📚 LLL/IBCLC grounded</span>
+          <span class="wow-tag">🔬 Hunger vs gas precision</span>
+          <span class="wow-tag">💚 No-judgment framing</span>
+          <p style="margin-top: 8px; font-size: 11px; color: #4a4a55;"><b>Где:</b></p>
+          <span class="slot-pin pin-2">SLOT 2 (badge)</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- WOW INVENTORY (NEW) -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="wow-inventory">
+    <h3>🤯 WOW Inventory — фишки которые заставят сказать «скачиваю»</h3>
+    <p style="font-size: 12px; color: #4a4a55; margin: 4px 0 8px;">
+      Каждая = scroll-stopping + share-worthy + конкретная цифра / уникальная механика. <b>Tier S</b> = должны быть в первых 3 screenshots. <b>Tier A</b> = slots 4-8 + paywall. <b>Tier B</b> = onboarding / app body.
+    </p>
+
+    <div class="wow-grid">
+
+      <!-- WOW 1: Voice mode 3am -->
+      <div class="wow-card" style="border: 2px solid #E8836A;">
+        <div class="wow-tier">🌟 Tier S · Slot 3</div>
+        <h4>🎙 «Don't open your eyes»</h4>
+        <div class="wow-quote">«It's 3am. He won't stop crying. ...» → answer plays via TTS — hands-free.</div>
+        <div class="wow-why"><b>Why WOW:</b> NONE из 7 competitors имеют voice mode. Visceral 3am moment каждый родитель узнаёт. Phone & mom both tired.</div>
+        <div class="wow-where"><b>Slot:</b> Hero slot 3 dark + onboarding WOW demo</div>
+      </div>
+
+      <!-- WOW 2: 3 sec verdict -->
+      <div class="wow-card" style="border: 2px solid #E8836A;">
+        <div class="wow-tier">🌟 Tier S · Slot 1</div>
+        <h4>⚡ «3 seconds vs 6 hours on Reddit»</h4>
+        <div class="wow-quote">Visible counter «00:03» рядом с verdict pill. Caption: «Reddit avg response: 6h. CrySnap: 3 sec.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Concrete time comparison. Quantifies pain (Reddit wait) vs solution. Shareable stat.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 1 hero + paywall value anchor</div>
+      </div>
+
+      <!-- WOW 3: Reasons not labels -->
+      <div class="wow-card" style="border: 2px solid #E8836A;">
+        <div class="wow-tier">🌟 Tier S · Slot 2</div>
+        <h4>💬 «Others give labels. We give reasons.»</h4>
+        <div class="wow-quote">Split: Nanni «HUNGRY» vs CrySnap «Try side-lying — easier latch when tongue tired by evening»</div>
+        <div class="wow-why"><b>Why WOW:</b> Direct compare = highest-CR pattern. Anxious mom мгновенно чувствует разницу. NB: формулировка subtle, не attack.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 2 hero only</div>
+      </div>
+
+      <!-- WOW 4: $1000 expert -->
+      <div class="wow-card">
+        <div class="wow-tier">⭐ Tier A · Slot 8 + paywall</div>
+        <h4>💰 «$1,000 of expert help for $39.99/yr»</h4>
+        <div class="wow-quote">Visual: $500 night nurse + $300 lactation + $150 sleep coach = $39.99 CrySnap</div>
+        <div class="wow-why"><b>Why WOW:</b> 25× value anchor. Justifies pricing. Memorable math.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 8 (pricing) + paywall hero</div>
+      </div>
+
+      <!-- WOW 5: Privacy moat -->
+      <div class="wow-card">
+        <div class="wow-tier">⭐ Tier A · Slot 7</div>
+        <h4>🔒 «Your baby's audio NEVER leaves your phone»</h4>
+        <div class="wow-quote">«100% on-device AI — even works on airplane mode. No cloud. No leaks.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Privacy moat for anxious S2. Apple-aligned messaging. Differentiator vs competitors using cloud APIs.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 7 + paywall trust strip</div>
+      </div>
+
+      <!-- WOW 6: Sleep prediction -->
+      <div class="wow-card">
+        <div class="wow-tier">⭐ Tier A · Slot 6</div>
+        <h4>📈 «Predict next nap from YOUR baby's pattern»</h4>
+        <div class="wow-quote">«Tonight: 10:00 PM swaddle, wake 2:15 AM (88% confidence). Tap to set alarm.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Personalization wow. Specific predicted time = concrete promise. Lin's exact need.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 6 + V1.1 paywall trigger</div>
+      </div>
+
+      <!-- WOW 7: 89% accuracy stat -->
+      <div class="wow-card">
+        <div class="wow-tier">⭐ Tier A · Slot 1 badges</div>
+        <h4>🔬 «89% accurate · 10,000+ recordings»</h4>
+        <div class="wow-quote">«Validated on 10,000+ peer-reviewed cry samples. Powered by DeepInfant + AAP guidelines.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Concrete authority stat. Anxiety relief signal. Differentiator vs «AI» buzzword.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 1 micro-strip + onb-4 proof</div>
+      </div>
+
+      <!-- WOW 8: 7-day trial -->
+      <div class="wow-card">
+        <div class="wow-tier">⭐ Tier A · Paywall</div>
+        <h4>🎁 «7 days free. Cancel anytime.»</h4>
+        <div class="wow-quote">«Get full 24/7 chat + voice + sounds for 7 days. Decide after.»</div>
+        <div class="wow-why"><b>Why WOW:</b> 7d > 3d (SOSA T2P 37.4% vs 25.5%, +47%). Covers peak cry week. Low-risk trial.</div>
+        <div class="wow-where"><b>Slot:</b> Slot 8 + every paywall surface</div>
+      </div>
+
+      <!-- WOW 9: Live counter -->
+      <div class="wow-card">
+        <div class="wow-tier">📌 Tier B · Onboarding</div>
+        <h4>🌍 «5,247 parents helped tonight»</h4>
+        <div class="wow-quote">Live-feeling counter в onboarding screen 4 (proof). Updates monthly.</div>
+        <div class="wow-why"><b>Why WOW:</b> Social proof. Не «trusted by 1M» (vague), а concrete current usage. Caveat: добавляем когда реально ≥1000 nightly.</div>
+        <div class="wow-where"><b>Slot:</b> Onboarding-4 proof (V1.1+)</div>
+      </div>
+
+      <!-- WOW 10: PDF for pediatrician -->
+      <div class="wow-card">
+        <div class="wow-tier">📌 Tier B · App body</div>
+        <h4>📄 «PDF report for pediatrician visit»</h4>
+        <div class="wow-quote">«Tap → 1-page summary of week's patterns. Bring to appointment.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Practical utility. Validates app investment to skeptical partner. V1.1 feature.</div>
+        <div class="wow-where"><b>Slot:</b> App body + V1.1 paywall trigger</div>
+      </div>
+
+      <!-- WOW 11: Multi-baby -->
+      <div class="wow-card">
+        <div class="wow-tier">📌 Tier B · Profile</div>
+        <h4>👶👶 «Twins? Switch profiles in one tap»</h4>
+        <div class="wow-quote">Multi-baby support — separate cry history per child.</div>
+        <div class="wow-why"><b>Why WOW:</b> Underserved twin parents (~3% всех births = 110K/yr US). Mention в slot 5 personas «built for twin caregivers too».</div>
+        <div class="wow-where"><b>Slot:</b> Slot 5 sub-bullet (V1.1)</div>
+      </div>
+
+      <!-- WOW 12: Apple Watch -->
+      <div class="wow-card">
+        <div class="wow-tier">📌 Tier B · Future</div>
+        <h4>⌚ «One-tap scan from Apple Watch» (V2)</h4>
+        <div class="wow-quote">«Wrist tap → record cry → result on watch. Don't put baby down.»</div>
+        <div class="wow-why"><b>Why WOW:</b> Hands-still-holding-baby moment. Wrist UX. Mention as «coming» в App Store description (V2).</div>
+        <div class="wow-where"><b>Slot:</b> Description V2 hint</div>
+      </div>
+
+    </div>
+
+    <p style="margin-top: 16px; padding: 10px 14px; background: white; border-radius: 8px; font-size: 12px; color: #4a4a55; line-height: 1.5;">
+      💡 <b>Slot allocation principle:</b> Tier S WOWs (3 штуки) → каждая получает свой слот в первых 3 screenshots. Tier A (5) → распределены по слотам 4-8 + paywall. Tier B (4) → onboarding / app body / V1.1+ paywall triggers.
+    </p>
+  </div>
+
+  <!-- JTBD × Killer Features Matrix (visible, not collapsed) -->
+  <div class="jtbd-matrix">
+    <h3>📊 4.1 — Quick reference: JTBD × killer features × slots</h3>
+    <p style="font-size: 12px; color: #6a6a70; margin-bottom: 8px;">Каждая JTBD-боль решается конкретной killer feature. Те 3 слота которые охватывают maximum audience × pain intensity = первые 3 screenshots.</p>
+
+    <table class="matrix-table">
+      <tr>
+        <th style="width: 18%;">Audience</th>
+        <th style="width: 28%;">Главная боль (JTBD)</th>
+        <th style="width: 28%;">Какая киллер фича решает</th>
+        <th style="width: 26%;">На каких слотах размещаем</th>
+      </tr>
+
+      <tr>
+        <td>
+          <span class="audience-rank ar-1">🥇 #1</span><br>
+          <b>Maya 28</b><br>
+          <span style="font-size: 11px; color: #6a6a70;">S1 new mother 0-4 mo<br>2-3M US active<br>🔴 EXTREME WTP</span>
+        </td>
+        <td><span class="pain">«3am, baby плачет 40 минут, fed/changed/rocked — ничего не работает. Я сама сейчас заплачу.»</span><br>
+          <span style="font-size: 11px; color: #6a6a70; margin-top: 4px; display:block;">Состояние: exhaustion + guilt + desperation</span>
+        </td>
+        <td>
+          <span class="feat">🎙 <b>Voice mode</b> — hands-free 3am, не открывает глаза, ~5 sec ответ</span><br><br>
+          <span class="feat">🔊 <b>9-class cry analyzer</b> — DeepInfant 3 sec verdict «🟢 hungry 87%»</span>
+        </td>
+        <td>
+          <span class="slot-tag slot-3">SLOT 3 (peak)</span><br>
+          <span style="font-size: 11px; color: #6a6a70;">Voice mode dark «3am phone dead-tired»</span><br><br>
+          <span class="slot-tag slot-1">SLOT 1 (hook)</span><br>
+          <span style="font-size: 11px; color: #6a6a70;">Cry verdict pill в hero</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <span class="audience-rank ar-2">🥈 #2</span><br>
+          <b>Sarah 31</b><br>
+          <span style="font-size: 11px; color: #6a6a70;">First-time anxious<br>4-5M US incl dads<br>🟠 HIGH WTP</span>
+        </td>
+        <td><span class="pain">«Это нормально что он так долго плачет? Reddit ответит через 6 часов. Мама не знает. Google пугает.»</span><br>
+          <span style="font-size: 11px; color: #6a6a70; margin-top: 4px; display:block;">Состояние: anxiety + self-doubt + isolation</span>
+        </td>
+        <td>
+          <span class="feat">💬 <b>3 expert chat personas</b> — Pediatric Nurse 24/7 даёт REASONS не labels</span><br><br>
+          <span class="feat">📚 <b>AAP/CDC/Mayo grounding</b> — RAG-cited authority</span>
+        </td>
+        <td>
+          <span class="slot-tag slot-2">SLOT 2 (diff)</span><br>
+          <span style="font-size: 11px; color: #6a6a70;">«Others give labels» split-screen с nurse persona</span><br><br>
+          <span class="slot-tag slot-1">SLOT 1</span>
+          <span style="font-size: 11px; color: #6a6a70;">AAP badge strip</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <span class="audience-rank ar-3">🥉 #3</span><br>
+          <b>Lin 33</b><br>
+          <span style="font-size: 11px; color: #6a6a70;">2-4 mo postpartum<br>1.5M US<br>🟡 MED-HIGH WTP</span>
+        </td>
+        <td><span class="pain">«Я сплю 3 часа в сутки, когда это кончится? Партнёр не понимает.»</span><br>
+          <span style="font-size: 11px; color: #6a6a70; margin-top: 4px; display:block;">Состояние: chronic exhaustion + frustration</span>
+        </td>
+        <td>
+          <span class="feat">🌙 <b>Sleep Coach persona</b> — wake windows, sleep regression help</span><br><br>
+          <span class="feat">📈 <b>Sleep prediction (V1.1)</b> — when next nap based on 7d patterns</span>
+        </td>
+        <td>
+          <span class="slot-tag slot-2">SLOT 2</span>
+          <span style="font-size: 11px; color: #6a6a70;">«SLEEP COACH» badge в персонах</span><br><br>
+          <span style="font-size: 11px; color: #6a6a70;">+ Slots 5-6 (deeper)</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <span class="audience-rank ar-4">#4</span><br>
+          <b>Carla 29</b><br>
+          <span style="font-size: 11px; color: #6a6a70;">Breastfeeding<br>1M US<br>🟡 MED-HIGH WTP</span>
+        </td>
+        <td><span class="pain">«Что не так с моим молоком? Baby плачет после feeds. Партнёр предлагает formula. Я feel failed.»</span><br>
+          <span style="font-size: 11px; color: #6a6a70; margin-top: 4px; display:block;">Состояние: self-blame + supply anxiety</span>
+        </td>
+        <td>
+          <span class="feat">🍼 <b>Lactation Consultant persona</b> — IBCLC + La Leche grounding</span><br><br>
+          <span class="feat">🔊 <b>Hunger vs discomfort discrimination</b> — точный verdict</span>
+        </td>
+        <td>
+          <span class="slot-tag slot-2">SLOT 2</span>
+          <span style="font-size: 11px; color: #6a6a70;">«LACTATION» badge в персонах</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Killer Features Cards -->
+  <h3 style="margin-top: 24px; font-size: 16px;">🚀 Наши killer features (что мы умеем уникально)</h3>
+  <p style="font-size: 12px; color: #6a6a70; margin: 4px 0 0;">Tier 1 (must-be-in-first-3-screenshots) + Tier 2 (slots 4-8 + paywall).</p>
+
+  <div class="killer-card-grid">
+
+    <div class="killer-card tier-1">
+      <div class="tier-label">🥇 Tier 1 · Killer #1</div>
+      <h4>💬 3 expert chat personas</h4>
+      <p>Pediatric Nurse / Sleep Coach / Lactation Consultant — 24/7. DeepSeek V3 + RAG (AAP/CDC/Mayo/LLL).</p>
+      <div class="competitive">vs Nanni: <b>label only, no chat</b><br>vs AYA: <b>tracker only, no chat</b><br>vs ChatterBaby: <b>abandoned 5y</b></div>
+    </div>
+
+    <div class="killer-card tier-1">
+      <div class="tier-label">🥇 Tier 1 · Killer #2</div>
+      <h4>🎙 Voice mode hands-free 3am</h4>
+      <p>Whisper STT → DeepSeek → Apple TTS = ~5 sec. Не открывая глаз. UNIQUE feature.</p>
+      <div class="competitive">vs ВСЕ 7 competitors: <b>NONE имеют voice mode</b></div>
+    </div>
+
+    <div class="killer-card tier-1">
+      <div class="tier-label">🥇 Tier 1 · Killer #3</div>
+      <h4>🔊 9-class cry analyzer + traffic-light</h4>
+      <p>DeepInfant V2 CoreML on-device, 89% accuracy. Hungry/burp/cold-hot 🟢 · tired/lonely/discomfort 🟡 · pain/scared/unknown 🔴.</p>
+      <div class="competitive">Most competitors дают label only без bucket framework + actions</div>
+    </div>
+
+    <div class="killer-card tier-2">
+      <div class="tier-label">🥈 Tier 2</div>
+      <h4>📚 AAP / CDC / Mayo / LLL grounding</h4>
+      <p>RAG-cited responses в каждом chat reply. Authority moat для anxious S2 audience.</p>
+      <div class="competitive">Nanni имеет «WHO/MIT/McGill» — proven CR converter. Мы делаем то же.</div>
+    </div>
+
+    <div class="killer-card tier-2">
+      <div class="tier-label">🥈 Tier 2</div>
+      <h4>🔒 On-device privacy</h4>
+      <p>DeepInfant CoreML — audio NEVER leaves device. Works offline в 3am no WiFi.</p>
+      <div class="competitive">Privacy moat для anxious parents (S2 segment)</div>
+    </div>
+
+    <div class="killer-card tier-2">
+      <div class="tier-label">🥈 Tier 2</div>
+      <h4>🌊 In-app soothing sounds</h4>
+      <p>White noise / womb / shushing (Karp 70dB) / lullabies / heartbeat. Background audio mode.</p>
+      <div class="competitive">«I'd buy app just for sounds» reaction. Day 1 immediate utility.</div>
+    </div>
+  </div>
+
+  <p style="font-size: 13px; color: #4a4a55; margin: 8px 0 16px; padding: 10px 14px; background: #fff4e6; border-radius: 8px; border-left: 3px solid #E8836A;">
+    🎯 <b>Slot allocation logic:</b> Из 3 Tier-1 killer features → каждый получает свой слот. Из 4 JTBDs → #1 (Maya 3am extreme) занимает slot 1 + slot 3 (largest audience × extreme pain), #2 (Sarah anxious) занимает slot 2 (validates с chat persona). #3 + #4 покрываются через slot 2 personas badge strip + slots 4-8 deeper.
+  </p>
+
+  <div class="hero-trio">
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SLOT 1 — HOOK: Lifestyle Scene + Verdict + AAP -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="hero-card">
+      <h3>Slot 1 — HOOK 🎯</h3>
+      <p class="slot-meta">
+        <b>Job:</b> Стоп scroll. JTBD-1 recognition в 0.4 sec.<br>
+        <b>JTBD:</b> #1 «3am 40 min crying»<br>
+        <b>Killer features:</b>
+      </p>
+      <div class="killer-feature-strip">
+        <span class="kf-pill">9-class cry analyzer</span>
+        <span class="kf-pill">Traffic-light verdict</span>
+        <span class="kf-pill">AAP authority</span>
+      </div>
+
+      <div class="hero-screenshot cream">
+        <div class="hero-headline">Your baby has<br>something to say.</div>
+        <div class="hero-subhead">Decode 9 cry types in 3 seconds — on-device AI.</div>
+
+        <div class="hero-stage">
+          <div class="hero-emoji-scene">👩‍🍼</div>
+          <div class="hero-waveform-bars" style="color: #E8836A;">
+            <div style="height: 6px"></div>
+            <div style="height: 12px"></div>
+            <div style="height: 18px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 10px"></div>
+            <div style="height: 16px"></div>
+            <div style="height: 8px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 18px"></div>
+            <div style="height: 12px"></div>
+            <div style="height: 6px"></div>
+          </div>
+          <div class="hero-verdict-pill" style="background: #5A8A6B;">
+            🟢 HUNGRY · 87%
+          </div>
+          <div class="hero-action-hint">→ Try side-lying feed</div>
+        </div>
+
+        <div class="hero-badges">
+          <span>AAP</span>
+          <span>CDC</span>
+          <span>MAYO</span>
+          <span>LLL</span>
+        </div>
+      </div>
+
+      <p class="slot-meta" style="margin-top: 4px;">
+        <b>Why works:</b> Pain validation в 1 sentence (recognition > aspiration). Verdict pill = product mechanic в sec 1. AAP strip = trust в sec 2. NO realistic crying baby (lowers CR).
+      </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SLOT 2 — DIFFERENTIATOR: Split vs Nanni -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="hero-card">
+      <h3>Slot 2 — DIFFERENTIATOR ⚔️</h3>
+      <p class="slot-meta">
+        <b>Job:</b> Show wedge vs Nanni/AYA. Validate JTBD-2.<br>
+        <b>JTBD:</b> #2 «Это нормально что плачет?»<br>
+        <b>Killer features:</b>
+      </p>
+      <div class="killer-feature-strip">
+        <span class="kf-pill">3 chat personas (KILLER #1)</span>
+        <span class="kf-pill">Actionable answers</span>
+      </div>
+
+      <div class="hero-screenshot cream">
+        <div class="hero-headline">Others give<br>labels.</div>
+        <div class="hero-subhead">We give you answers — chat 24/7.</div>
+
+        <div class="hero-stage" style="padding: 12px;">
+          <div class="split-stage">
+            <div class="split-side left">
+              <div class="split-label">Others</div>
+              <div class="nanni-label">HUNGRY</div>
+              <div style="font-size: 8px; color: #8a8a90; margin-top: 4px;">— that's it.</div>
+            </div>
+            <div class="split-side right">
+              <div class="split-label" style="color: #E8836A;">CrySnap</div>
+              <div class="persona-row">
+                <div class="persona-avatar">👩‍⚕️</div>
+                <div class="persona-bubble">
+                  <div class="persona-name">Pediatric Nurse</div>
+                  Try side-lying feed — easier latch when tongue is tired by evening.
+                  <div class="ask-followup">[Ask follow-up →]</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-badges">
+          <span>NURSE</span>
+          <span>SLEEP COACH</span>
+          <span>LACTATION</span>
+        </div>
+      </div>
+
+      <p class="slot-meta" style="margin-top: 4px;">
+        <b>Why works:</b> Split-screen = highest-CR pattern. LEFT honest grey ≠ attacking competitor. RIGHT warm coral persona = killer #1 viscerally. «Ask follow-up» = ongoing depth signal.
+      </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SLOT 3 — MEMORABLE BEAT: Voice Mode 3am DARK -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="hero-card">
+      <h3>Slot 3 — MEMORABLE BEAT 🌙</h3>
+      <p class="slot-meta">
+        <b>Job:</b> Make them REMEMBER us at 3am. Cement install.<br>
+        <b>JTBD:</b> #1 (peak emotional moment)<br>
+        <b>Killer features:</b>
+      </p>
+      <div class="killer-feature-strip">
+        <span class="kf-pill">Voice mode (KILLER #2)</span>
+        <span class="kf-pill">Hands-free</span>
+        <span class="kf-pill">Unique to us</span>
+      </div>
+
+      <div class="hero-screenshot dark">
+        <div class="hero-headline" style="color: white;">3am.<br>Phone dead-tired.</div>
+        <div class="hero-subhead">Just ask. We'll answer — hands-free.</div>
+
+        <div class="hero-stage">
+          <div class="hero-emoji-scene small">🌙</div>
+
+          <div class="voice-pulse">
+            <div style="height: 8px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 20px"></div>
+            <div style="height: 28px"></div>
+            <div style="height: 22px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 8px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 22px"></div>
+            <div style="height: 28px"></div>
+            <div style="height: 20px"></div>
+            <div style="height: 14px"></div>
+            <div style="height: 8px"></div>
+          </div>
+
+          <div class="voice-bubble">
+            <div class="label">🎙 You</div>
+            «It's 3am. He won't stop.»
+          </div>
+
+          <div class="response-bubble">
+            <div class="label">👩‍⚕️ Nurse</div>
+            Cluster feeding likely at 6 wks. Try swaddle + side-lying. 5-min hold...
+          </div>
+        </div>
+
+        <div class="hero-badges">
+          <span>POWERED BY AAP</span>
+        </div>
+      </div>
+
+      <p class="slot-meta" style="margin-top: 4px;">
+        <b>Why works:</b> ONLY dark slot = visual surprise after 2 light → memorable. «Phone dead-tired» = empathy framing (phone & mom both tired). 3am voice mode = unique vs ALL competitors.
+      </p>
+    </div>
+
+  </div>
+
+  <details class="consilium">
+    <summary>🧠 Почему именно эти 3 концепта (full reasoning)</summary>
+    <div class="consilium-body">
+
+      <h3 style="margin-top: 8px;">JTBD ranking (audience size × WTP)</h3>
+      <table class="vote-table">
+        <tr><th>Rank</th><th class="left">JTBD</th><th>Audience</th><th>WTP</th></tr>
+        <tr><td>🥇</td><td class="left">«40 min crying, не пойму почему» — 3am desperation</td><td>2-3M S1 mothers</td><td>🔴 EXTREME</td></tr>
+        <tr><td>🥈</td><td class="left">«Это нормально что он так долго плачет?»</td><td>4-5M first-timers</td><td>🟠 HIGH</td></tr>
+        <tr><td>🥉</td><td class="left">«Я сплю 3 часа в сутки»</td><td>1.5M 2-4mo postpartum</td><td>🟡 MED-HIGH</td></tr>
+        <tr><td>4</td><td class="left">«Что не так с моим молоком?»</td><td>1M breastfeeding</td><td>🟡 MED-HIGH</td></tr>
+      </table>
+
+      <h3 style="margin-top: 16px;">Killer features ranking</h3>
+      <table class="vote-table">
+        <tr><th>Tier</th><th class="left">Feature</th><th>Why killer</th></tr>
+        <tr><td>🥇 1</td><td class="left">3 expert chat personas</td><td>NONE из 7 competitors имеют</td></tr>
+        <tr><td>🥇 2</td><td class="left">Voice mode 3am hands-free</td><td>NONE из 7 competitors имеют</td></tr>
+        <tr><td>🥇 3</td><td class="left">9-class + traffic-light + AAP grounding</td><td>Combo never seen в нише</td></tr>
+        <tr><td>🥈 4</td><td class="left">On-device privacy (DeepInfant CoreML)</td><td>Privacy moat</td></tr>
+        <tr><td>🥈 5</td><td class="left">In-app soothing sounds</td><td>Immediate utility</td></tr>
+      </table>
+
+      <h3 style="margin-top: 16px;">Slot allocation logic</h3>
+      <ul style="margin-left: 20px; line-height: 1.7;">
+        <li><b>Slot 1 = JTBD #1 (largest × extreme WTP)</b> + show killer #3 (verdict) + #4 (AAP) — recognition framing pulls them in</li>
+        <li><b>Slot 2 = JTBD #2 (anxious need REASONS not labels)</b> + show killer #1 (chat personas) — split-screen = highest-CR format</li>
+        <li><b>Slot 3 = JTBD #1 emotional peak</b> + show killer #2 (voice mode) — memorable dark beat for later recall</li>
+      </ul>
+
+      <h3 style="margin-top: 16px;">Голоса консилиума по 3 концептам</h3>
+
+      <div class="voice-quote ux">
+        <div class="voice-name">🎯 UX Analyst</div>
+        «Slot 1 hook должен work без context — никакой brand awareness не assumed. "Your baby has something to say" — каждый родитель так подумал в 3am. Verdict pill «🟢 HUNGRY 87%» в той же frame = доказывает что мы реально решаем боль за 1 sec. AAP badges = trust enabler перед даже brand familiarity.»
+      </div>
+
+      <div class="voice-quote ui">
+        <div class="voice-name">🎨 UI Designer</div>
+        «Split-screen в slot 2 = validated highest-CR pattern (across categories). LEFT side держим honest grey — не агрессивный outdated label, просто бледный. RIGHT side = warm coral nurse bubble с actual answer. Зритель сам делает вывод "этот лучше". Никаких stamp'ов "BETTER" — Apple guideline + user preference.»
+      </div>
+
+      <div class="voice-quote maya">
+        <div class="voice-name">👶 Maya (3am)</div>
+        «Когда я вижу slot 3 dark "3am phone dead-tired" — это меня убивает наповал. Phone и я оба exhausted = solidarity. Voice mode = я ДАЖЕ НЕ ОТКРЫВАЮ ГЛАЗА. Это и есть sale moment — я скачаю, чтобы у меня была эта app в next 3am.»
+      </div>
+
+      <div class="voice-quote sarah">
+        <div class="voice-name">👩 Sarah (anxious)</div>
+        «Slot 2 для меня critical. Я хочу REASONS не labels — Nanni даёт "hungry" и я опять Google'ю. Coral nurse bubble «Try side-lying feed — easier latch when tongue is tired» — это объясняет ПОЧЕМУ. Мне это нужно для anxiety relief.»
+      </div>
+
+      <div class="voice-quote carla">
+        <div class="voice-name">🍼 Carla (lactation)</div>
+        «Lactation Consultant как одна из 3 personas в slot 2 badges = я знаю что меня видят. Не general "baby app", а специфично включает мой contexto. Это дифференциация vs Nanni которые лечат всех одинаково.»
+      </div>
+
+      <div class="voice-quote lin">
+        <div class="voice-name">🌙 Lin (chronic exhaustion)</div>
+        «Slot 3 voice + ответ "cluster feeding likely at 6 wks" — это ЭКСПЕРТНЫЙ ответ за 5 sec, не Reddit ждать 6h. Это меня cement'ит. Я готова заплатить $40/year не задумываясь.»
+      </div>
+
+      <h3 style="margin-top: 16px;">CR prediction для этих 3 concepts</h3>
+      <table class="vote-table">
+        <tr><th>Metric</th><th>Predicted impact</th></tr>
+        <tr><td class="left">Browse stop rate (impression → tap)</td><td>+30-40% vs single-screenshot competitors</td></tr>
+        <tr><td class="left">Tap → preview scroll past slot 1</td><td>+25% (recognition headline)</td></tr>
+        <tr><td class="left">Preview → install</td><td>+20-30% (memorable dark slot 3)</td></tr>
+        <tr><td class="left">Authority trust signal reach</td><td>100% viewers (slot 1 carries it)</td></tr>
+      </table>
+
+      <p style="margin-top: 16px; font-size: 13px; color: #b85a1a;"><b>Note:</b> Mockups в HTML — sketch direction для briefing illustrator/designer. Финальные screenshots = professional commission на основе approved layout + chosen palette + chosen icon. Используем workbench как brief, не как final asset.</p>
+
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: BROWSE ROW (renumbered) -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="browse" class="browse-section">
+  <h2>5. App Store browse row simulation</h2>
+  <p class="section-intro">Левая половина — наши 8 кандидатов. Правая — реальные иконки 7 конкурентов.</p>
+
+  <h3 style="margin-top: 16px;">Наши 8 кандидатов</h3>
+  <div class="row">
+    <div class="row-cell"><img class="icon-mini" src="../icons/01-letter-c-waveform-coral.png"><div class="label">C halo coral</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../icons/01-letter-c-waveform-sage.png"><div class="label">C halo sage</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../icons/02-speech-bubble-coral.png"><div class="label">Speech coral</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../icons/02-speech-bubble-sage.png"><div class="label">Speech sage</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../icons/03-voice-waveform-coral.png"><div class="label">Wave coral</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../icons/03-voice-waveform-sage.png"><div class="label">Wave sage</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../icons/04-heart-waveform-coral.png"><div class="label">Heart coral</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../icons/04-heart-waveform-sage.png"><div class="label">Heart sage</div></div>
+  </div>
+
+  <h3 style="margin-top: 20px;">7 конкурентов</h3>
+  <div class="row">
+    <div class="row-cell"><img class="icon-mini" src="../competitors/02-nanni-ai.png"><div class="label">Nanni AI</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../competitors/03-aya.png"><div class="label">AYA</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../competitors/01-huckleberry.png"><div class="label">Huckleberry</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../competitors/04-chatterbaby.png"><div class="label">ChatterBaby</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../competitors/05-gowalk-translator.png"><div class="label">Gowalk</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../competitors/06-cry-stopper-ninja.png"><div class="label">Ninja Chemist</div></div>
+    <div class="row-cell"><img class="icon-mini" src="../competitors/07-cry-analyzer-first-ascent.png"><div class="label">First Ascent</div></div>
+  </div>
+
+  <p class="footnote">💡 <b>Все 8 наших кандидатов выделяются</b> за счёт dark backgrounds vs light/colorful у конкурентов.</p>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: PAYWALL WORKBENCH (v2 — flexible, real iPhone 6.9, 10 presets) -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<style>
+  /* ═══ Section 6 v2 ═══ */
+  #paywall-workbench { background: #0F1115; color: #F2EDE5; padding: 36px 28px; }
+  #paywall-workbench h2 { color: white; }
+  #paywall-workbench h3 { color: white; font-size: 22px; }
+
+  .pw-banner {
+    text-align: center; padding: 18px 0 30px; border-bottom: 1px solid #2a2d35;
+    margin-bottom: 26px;
+  }
+  .pw-banner .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: #8a8a90; margin-bottom: 8px;
+  }
+  .pw-banner h2 {
+    font-size: 30px; font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    line-height: 1.15; max-width: 720px; margin: 0 auto 10px;
+  }
+  .pw-banner p {
+    font-size: 14px; color: #9CA0A8; max-width: 680px; margin: 0 auto;
+    line-height: 1.55;
+  }
+
+  .pw-step { margin-bottom: 28px; padding-bottom: 4px; border-bottom: 1px solid #1f222a; }
+  .pw-step:last-child { border-bottom: none; }
+  .pw-step-h { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+  .pw-step-n { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #6a6a70; }
+  .pw-step-i { font-size: 13px; color: #9CA0A8; max-width: 720px; line-height: 1.55; margin: 4px 0 16px; }
+
+  /* 01 Hero */
+  .pw-hero-card {
+    display: grid; grid-template-columns: 220px 1fr; gap: 18px;
+    background: #1a1d24; border: 1px solid #262932; border-radius: 16px;
+    padding: 18px;
+  }
+  .pw-dropzone {
+    background-image: repeating-linear-gradient(45deg, #232631, #232631 8px, #1c1f27 8px, #1c1f27 16px);
+    border: 2px dashed #3a3d47; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: #8a8a90; font-size: 11px; text-align: center; line-height: 1.4;
+    cursor: pointer; transition: all 0.15s ease;
+    background-size: cover; background-position: center;
+  }
+  .pw-dropzone:hover, .pw-dropzone.dragging { border-color: #E8836A; color: #E8836A; }
+  .pw-dropzone.has-image { border-style: solid; }
+  .pw-hero-fields { display: flex; flex-direction: column; gap: 12px; }
+  .pw-hero-fields .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pw-step .field { display: flex; flex-direction: column; gap: 4px; }
+  .pw-step .field label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    color: #8a8a90; text-transform: uppercase;
+  }
+  .pw-step input[type="text"], .pw-step input[type="email"], .pw-step textarea, .pw-step select {
+    background: #11141a; border: 1px solid #2a2d35; color: #F2EDE5;
+    padding: 8px 10px; border-radius: 8px; font-size: 13px;
+    font-family: inherit; width: 100%;
+  }
+  .pw-step input[type="text"]:focus, .pw-step textarea:focus, .pw-step select:focus {
+    outline: none; border-color: #E8836A;
+  }
+  .pw-step input[type="range"] { width: 100%; accent-color: #E8836A; }
+  .pw-step .field .out { font-size: 11px; color: #9CA0A8; }
+
+  .pw-builtin { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .pw-builtin .label { font-size: 11px; color: #8a8a90; align-self: center; }
+  .hero-pick {
+    display: flex; align-items: center; gap: 8px;
+    background: #1a1d24; border: 1px solid #2a2d35; color: #F2EDE5;
+    padding: 6px 10px 6px 6px; border-radius: 8px; cursor: pointer;
+    font-size: 12px; font-weight: 600;
+    transition: all 0.15s ease;
+  }
+  .hero-pick:hover { border-color: #E8836A; }
+  .hero-pick.active { border-color: #E8836A; box-shadow: 0 0 0 2px rgba(232,131,106,0.25); }
+  .hero-pick img { width: 40px; height: 28px; border-radius: 4px; object-fit: cover; }
+
+  .pw-btn {
+    background: #1a1d24; border: 1px solid #2a2d35; color: #F2EDE5;
+    padding: 7px 12px; border-radius: 8px; font-size: 12px; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all 0.15s ease;
+  }
+  .pw-btn:hover { border-color: #E8836A; color: #E8836A; }
+  .pw-btn.ghost { border-style: dashed; color: #8a8a90; }
+  .pw-btn.primary { background: linear-gradient(135deg, #E8836A 0%, #F2967D 100%); color: white; border-color: transparent; }
+  .pw-btn.primary:hover { color: white; transform: translateY(-1px); }
+
+  /* 02 Brief */
+  .pw-brief {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    background: #1a1d24; border: 1px solid #262932; border-radius: 16px;
+    padding: 18px;
+  }
+  .pw-brief textarea { resize: vertical; min-height: 60px; }
+
+  /* 03 Tokens */
+  .pw-tokens {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  }
+  .tk {
+    background: #1a1d24; border: 1px solid #262932; border-radius: 14px;
+    padding: 14px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .tk .tk-sw { width: 100%; height: 70px; border-radius: 10px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
+  .tk label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #8a8a90; text-transform: uppercase; }
+  .tk input { font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; }
+
+  /* 04 Gallery */
+  .pw-gallery {
+    display: flex; gap: 14px; overflow-x: auto;
+    padding: 4px 4px 18px; scroll-snap-type: x proximity;
+  }
+  .pw-gallery::-webkit-scrollbar { height: 8px; }
+  .pw-gallery::-webkit-scrollbar-track { background: #1a1d24; border-radius: 4px; }
+  .pw-gallery::-webkit-scrollbar-thumb { background: #3a3d47; border-radius: 4px; }
+  .preset-thumb {
+    flex: 0 0 auto; width: 200px;
+    display: flex; flex-direction: column; gap: 8px;
+    cursor: pointer; scroll-snap-align: start;
+    transition: transform 0.15s ease;
+  }
+  .preset-thumb:hover { transform: translateY(-3px); }
+  .preset-thumb.active .preset-thumb-frame {
+    box-shadow: 0 0 0 3px #E8836A, 0 16px 36px rgba(232,131,106,0.3);
+  }
+  .preset-thumb-frame {
+    width: 200px; height: 410px;
+    background: #0F1115; border-radius: 26px; padding: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    position: relative; overflow: hidden;
+  }
+  .preset-thumb-screen {
+    width: 430px; height: 932px;
+    transform: scale(0.4372); transform-origin: top left;
+    border-radius: 22px; overflow: hidden;
+    pointer-events: none;
+    position: absolute; top: 6px; left: 6px;
+  }
+  .preset-thumb-info { display: flex; flex-direction: column; gap: 2px; padding: 0 4px; }
+  .preset-thumb-info .num { font-size: 11px; color: #6a6a70; font-weight: 700; letter-spacing: 0.1em; }
+  .preset-thumb-info .name { font-size: 13px; font-weight: 700; color: #F2EDE5; line-height: 1.3; }
+  .preset-thumb-info .desc { font-size: 11px; color: #8a8a90; line-height: 1.4; }
+
+  /* 05 Deep dive */
+  .pw-dive {
+    display: grid; grid-template-columns: 454px 1fr; gap: 24px; align-items: start;
+  }
+  .pw-dive-frame { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .pw-realdevice {
+    width: 454px; height: 956px;
+    background: linear-gradient(180deg, #1a1d24 0%, #0F1115 100%);
+    border-radius: 60px; padding: 12px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+    position: relative;
+  }
+  .pw-realdevice .island {
+    position: absolute; top: 24px; left: 50%; transform: translateX(-50%);
+    width: 124px; height: 36px; background: #000; border-radius: 999px; z-index: 10;
+  }
+  .pw-realdevice .screen {
+    width: 100%; height: 100%; border-radius: 48px; overflow: hidden;
+    position: relative; background: #FBF8F4;
+  }
+  .pw-realdevice .screen-content {
+    width: 100%; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  }
+  .pw-realdevice .screen-content::-webkit-scrollbar { width: 0; }
+  .pw-dive-cap { font-size: 11px; color: #8a8a90; }
+
+  .pw-dive-tweaks {
+    background: #1a1d24; border: 1px solid #262932; border-radius: 14px;
+    padding: 18px; display: flex; flex-direction: column; gap: 10px;
+    position: sticky; top: 80px;
+  }
+  .pw-dive-tweaks .tw-h {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: #8a8a90; margin-bottom: 4px;
+  }
+  .pw-dive-tweaks .tw-row { font-size: 13px; color: #F2EDE5; }
+  .pw-dive-tweaks .tw-row label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+  .pw-dive-tweaks .tw-row select { margin-left: auto; max-width: 180px; }
+
+  /* Export pane */
+  .pw-export-pane {
+    background: #11141a; border: 1px solid #262932; border-radius: 14px;
+    padding: 16px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .pw-export-pane pre {
+    white-space: pre-wrap; word-break: break-word; max-height: 320px; overflow-y: auto;
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; line-height: 1.5;
+    color: #F2967D; margin: 0;
+  }
+  .pw-export-pane .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .pw-export-pane #pw-copy-toast { font-size: 11px; color: #9CB892; }
+
+  /* ═══ Paywall content (rendered into both thumbs and deep-dive) ═══ */
+  .pw-paywall {
+    width: 100%; min-height: 100%;
+    background: var(--pw-bg, #FBF8F4); color: var(--pw-fg, #1A1A1F);
+    display: flex; flex-direction: column;
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+  }
+  .pw-paywall .pw-status {
+    height: 59px; flex-shrink: 0; padding: 0 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 17px; font-weight: 600; padding-top: 16px;
+  }
+  .pw-paywall .pw-close {
+    position: absolute; top: 70px; right: 22px; z-index: 5;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.7); display: flex;
+    align-items: center; justify-content: center;
+    color: #1A1A1F; font-weight: 700;
+  }
+  .pw-paywall.scheme-dark .pw-close { background: rgba(255,255,255,0.12); color: white; }
+  .pw-paywall .pw-back {
+    position: absolute; top: 70px; left: 18px; z-index: 5;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.7); display: flex;
+    align-items: center; justify-content: center;
+    color: #1A1A1F; font-weight: 700;
+  }
+  .pw-paywall.scheme-dark .pw-back { background: rgba(255,255,255,0.12); color: white; }
+
+  .pw-pw-hero {
+    width: 100%; position: relative;
+    background-color: #2A3328; background-repeat: no-repeat;
+    flex-shrink: 0;
+  }
+  .pw-pw-hero.placeholder {
+    background: repeating-linear-gradient(135deg, #EDE8DF 0 12px, #E5DFD2 12px 24px);
+  }
+  .pw-paywall.scheme-dark .pw-pw-hero.placeholder {
+    background: repeating-linear-gradient(135deg, #1d2128 0 12px, #16191f 12px 24px);
+  }
+  .pw-pw-hero .placeholder-tag {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.85); color: #1A1A1F;
+    padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace; letter-spacing: 0.04em;
+  }
+  .pw-paywall.scheme-dark .pw-pw-hero .placeholder-tag {
+    background: rgba(255,255,255,0.12); color: white;
+  }
+  .pw-pw-hero.overlay-fade::after {
+    content:""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, transparent 50%, var(--pw-bg) 100%);
+  }
+  .pw-pw-hero.overlay-strong::after {
+    content:""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 30%, var(--pw-bg) 100%);
+  }
+  .pw-pw-hero.overlay-tint::after {
+    content:""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(135deg, rgba(232,131,106,0.18), rgba(122,154,110,0.18));
+  }
+  .pw-pw-hero .hero-text {
+    position: absolute; left: 0; right: 0; bottom: 22px; padding: 0 28px;
+    color: white; z-index: 2; text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .pw-pw-hero .hero-text .eyb {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--pw-pri); margin-bottom: 4px;
+  }
+
+  .pw-pw-body { padding: 24px 28px 32px; display: flex; flex-direction: column; gap: 18px; flex: 1; }
+  .pw-pw-headline {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-size: 28px; font-weight: 800; line-height: 1.15; text-align: center;
+  }
+  .pw-pw-subtitle { font-size: 15px; line-height: 1.45; text-align: center; opacity: 0.78; }
+
+  .pw-pw-trust {
+    display: inline-flex; align-items: center; gap: 8px; align-self: center;
+    background: var(--pw-trust-bg, rgba(122,154,110,0.16));
+    color: var(--pw-acc); padding: 6px 14px; border-radius: 999px;
+    font-size: 12px; font-weight: 700;
+  }
+  .pw-paywall.scheme-dark .pw-pw-trust { background: rgba(122,154,110,0.18); }
+
+  /* Features list */
+  .pw-pw-features { display: flex; flex-direction: column; gap: 14px; }
+  .pw-pw-feature { display: flex; gap: 14px; align-items: flex-start; }
+  .pw-pw-feature .ico {
+    width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .pw-paywall.scheme-dark .pw-pw-feature .ico { background: rgba(255,255,255,0.08); }
+  .pw-pw-feature .ft-title { font-size: 15px; font-weight: 700; line-height: 1.25; }
+  .pw-pw-feature .ft-sub { font-size: 13px; opacity: 0.65; line-height: 1.4; margin-top: 2px; }
+
+  /* Plans */
+  .pw-pw-plans.stacked { display: flex; flex-direction: column; gap: 10px; }
+  .pw-pw-plans.side { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pw-pw-plans.single { display: flex; }
+  .pw-pw-plans.single .pw-pw-plan { width: 100%; }
+
+  .pw-pw-plan {
+    border: 2px solid rgba(0,0,0,0.10); border-radius: 16px;
+    padding: 14px 16px; background: rgba(255,255,255,0.6);
+    position: relative; cursor: pointer;
+  }
+  .pw-paywall.scheme-dark .pw-pw-plan { border-color: rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); }
+  .pw-pw-plan.selected { border-color: var(--pw-pri); background: rgba(232,131,106,0.10); }
+  .pw-pw-plan .plan-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .pw-pw-plan .plan-name { font-size: 16px; font-weight: 800; }
+  .pw-pw-plan .plan-price { font-size: 18px; font-weight: 800; color: var(--pw-pri); }
+  .pw-pw-plan .plan-price .pu { font-size: 13px; opacity: 0.7; font-weight: 700; }
+  .pw-pw-plan .plan-sub { font-size: 12px; opacity: 0.65; margin-top: 4px; }
+  .pw-pw-plan .plan-badge {
+    position: absolute; top: -10px; left: 14px;
+    padding: 2px 10px; border-radius: 999px; font-size: 9px; font-weight: 800;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .pw-pw-plan.weekly .plan-badge { background: var(--pw-pri); color: white; }
+  .pw-pw-plan.annual .plan-badge { background: var(--pw-acc); color: white; }
+  .pw-pw-plans.side .pw-pw-plan { padding: 16px 14px; }
+  .pw-pw-plans.side .pw-pw-plan .plan-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+  /* Anchor */
+  .pw-pw-anchor {
+    background: rgba(122,154,110,0.10); border-left: 3px solid var(--pw-acc);
+    padding: 10px 12px; border-radius: 0 10px 10px 0;
+    font-size: 13px; line-height: 1.5;
+  }
+  .pw-paywall.scheme-dark .pw-pw-anchor { background: rgba(122,154,110,0.14); }
+
+  /* Timeline */
+  .pw-pw-timeline { display: grid; grid-template-columns: auto 1fr; gap: 10px 14px; }
+  .pw-pw-timeline .tl-icon {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+  }
+  .pw-pw-timeline .tl-icon.today { background: var(--pw-acc); color: white; }
+  .pw-pw-timeline .tl-icon.day5  { background: rgba(232,131,106,0.20); color: var(--pw-pri); }
+  .pw-pw-timeline .tl-icon.day7  { background: rgba(0,0,0,0.10); color: inherit; }
+  .pw-paywall.scheme-dark .pw-pw-timeline .tl-icon.day7 { background: rgba(255,255,255,0.10); }
+  .pw-pw-timeline .tl-text { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .pw-pw-timeline .tl-when { font-size: 13px; font-weight: 700; }
+  .pw-pw-timeline .tl-what { font-size: 13px; opacity: 0.7; }
+
+  /* CTA */
+  .pw-pw-cta {
+    text-align: center; padding: 16px; border-radius: 999px;
+    background: var(--pw-pri); color: white;
+    font-weight: 800; font-size: 17px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    box-shadow: 0 8px 22px rgba(232,131,106,0.35);
+  }
+
+  .pw-pw-compliance {
+    background: rgba(255,200,0,0.08); border-radius: 8px; padding: 8px 10px;
+    font-size: 10px; opacity: 0.75; line-height: 1.45;
+  }
+
+  .pw-pw-fine {
+    display: flex; gap: 14px; justify-content: center;
+    font-size: 11px; opacity: 0.6;
+  }
+
+  @media (max-width: 1100px) {
+    .pw-tokens { grid-template-columns: repeat(2, 1fr); }
+    .pw-brief { grid-template-columns: 1fr; }
+    .pw-dive { grid-template-columns: 1fr; }
+    .pw-hero-card { grid-template-columns: 1fr; }
+  }
+</style>
+
+<section id="paywall-workbench">
+  <div class="pw-banner">
+    <div class="eyebrow">Paywall · Project template</div>
+    <h2>Загрузи hero — собери пейволл — экспорт в Swift</h2>
+    <p>Шаги: 1) подмени hero · 2) уточни JTBD-бриф · 3) подкрути токены · 4) выбери из 10 пресетов · 5) deep-dive в реальный iPhone 16 Pro Max · 6) скопируй JSON или Claude-промпт.</p>
+  </div>
+
+  <!-- 01 HERO -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">01</span><h3>Hero-картинка</h3></div>
+    <p class="pw-step-i">Загрузи свой hero (drop/click/URL). Дальше выбери высоту, fit, position и overlay. Это включит режим hero=image автоматически. Кнопка <code>Clear</code> возвращает к built-in hero (A/B).</p>
+    <div class="pw-hero-card">
+      <div class="pw-dropzone" id="pw-dropzone" tabindex="0">
+        <div>CLICK or DROP<br>image here</div>
+      </div>
+      <div class="pw-hero-fields">
+        <div class="field"><label>IMAGE URL</label><input type="text" id="pw-h-url" placeholder="https://… or upload above"></div>
+        <div class="row2">
+          <div class="field"><label>HEIGHT</label><input type="range" id="pw-h-height" min="0" max="520" step="10"><span class="out" id="pw-h-h-out">280px</span></div>
+          <div class="field"><label>FIT</label><select id="pw-h-fit"><option value="cover">Cover</option><option value="contain">Contain</option></select></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>POSITION</label><select id="pw-h-pos"><option value="center">Center</option><option value="top">Top</option><option value="bottom">Bottom</option></select></div>
+          <div class="field"><label>OVERLAY</label><select id="pw-h-ov"><option value="fade">Fade to bg</option><option value="strong">Strong fade</option><option value="tint">Tint</option><option value="none">None</option></select></div>
+        </div>
+        <button class="pw-btn ghost" id="pw-h-clear">Clear & use built-in hero</button>
+      </div>
+    </div>
+    <div class="pw-builtin">
+      <span class="label">Built-in:</span>
+      <button class="hero-pick" data-pw-builtin="A"><img src="../paywall-heroes/onb-8-paywall.png" alt="Hero A">Hero A · rational</button>
+      <button class="hero-pick" data-pw-builtin="B"><img src="../paywall-heroes/onb-8-paywall-B.png" alt="Hero B">Hero B · emotional</button>
+      <button class="hero-pick" data-pw-builtin="none">No image (gradient)</button>
+    </div>
+  </div>
+
+  <!-- 02 JTBD -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">02</span><h3>JTBD-бриф</h3></div>
+    <p class="pw-step-i">Эти данные подставятся в Claude-промпт и помогут разметить экраны под аудиторию. В копи пресетов используются токены <code>{brand}</code>, <code>{audience}</code>, <code>{weeklyPrice}</code>, <code>{annualPrice}</code>, <code>{valueAnchor}</code>, <code>{trustLine}</code>.</p>
+    <div class="pw-brief">
+      <div class="field"><label>BRAND / PRODUCT</label><input id="pw-b-brand" type="text"></div>
+      <div class="field"><label>PRIMARY AUDIENCE</label><input id="pw-b-audience" type="text"></div>
+      <div class="field"><label>CORE PAIN</label><textarea id="pw-b-pain" rows="2"></textarea></div>
+      <div class="field"><label>KILLER FEATURE</label><textarea id="pw-b-killer" rows="2"></textarea></div>
+      <div class="field"><label>WEEKLY PRICE</label><input id="pw-b-weekly" type="text"></div>
+      <div class="field"><label>ANNUAL PRICE</label><input id="pw-b-annual" type="text"></div>
+      <div class="field"><label>VALUE ANCHOR</label><input id="pw-b-anchor" type="text"></div>
+      <div class="field"><label>TRUST LINE</label><input id="pw-b-trust" type="text"></div>
+    </div>
+  </div>
+
+  <!-- 03 TOKENS -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">03</span><h3>Бренд-токены</h3></div>
+    <p class="pw-step-i">4 цвета — primary CTA, trust accent, light bg, dark bg. Меняй hex чтобы перекрасить и thumbnails, и deep-dive.</p>
+    <div class="pw-tokens">
+      <div class="tk"><div class="tk-sw" id="tk-sw-primary"></div><label>PRIMARY / CTA</label><input id="pw-t-primary" type="text"></div>
+      <div class="tk"><div class="tk-sw" id="tk-sw-accent"></div><label>TRUST / ACCENT</label><input id="pw-t-accent" type="text"></div>
+      <div class="tk"><div class="tk-sw" id="tk-sw-lightbg" style="box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);"></div><label>LIGHT BG</label><input id="pw-t-lightbg" type="text"></div>
+      <div class="tk"><div class="tk-sw" id="tk-sw-darkbg"></div><label>DARK BG</label><input id="pw-t-darkbg" type="text"></div>
+    </div>
+  </div>
+
+  <!-- 04 GALLERY -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">04</span><h3>Галерея пресетов <span style="font-size: 13px; color: #9CA0A8; font-weight: 400;" id="pw-preset-count"></span></h3></div>
+    <p class="pw-step-i">Кликни чтобы загрузить пресет в deep-dive (секция 05). Hero подменится из секции 01, копи — из 02, цвета — из 03.</p>
+    <div class="pw-gallery" id="pw-gallery"><!-- presets --></div>
+  </div>
+
+  <!-- 05 DEEP DIVE -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">05</span><h3>Систематизатор пейволла · <span id="pw-active-pname" style="color:#E8836A;">—</span></h3></div>
+    <p class="pw-step-i">Выбранный пресет в реальных размерах iPhone 16 Pro Max (430×932 pt). Скроллится внутри экрана. Tweaks справа — крути любой блок отдельно.</p>
+    <div class="pw-dive">
+      <div class="pw-dive-frame">
+        <div class="pw-realdevice">
+          <div class="island"></div>
+          <div class="screen">
+            <div class="screen-content" id="pw-real-content"><!-- rendered --></div>
+          </div>
+        </div>
+        <div class="pw-dive-cap">iPhone 16 Pro Max · 430×932 pt · реальные размеры</div>
+      </div>
+      <div class="pw-dive-tweaks">
+        <div class="tw-h">Tweaks</div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showHero" checked> Hero block</label></div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showTrust" checked> Trust badge</label></div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showFeatures" checked> Features list</label></div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showAnchor" checked> Value anchor</label></div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showTimeline" checked> Trial timeline</label></div>
+        <div class="tw-row"><label><input type="checkbox" data-pw-tw="showCompliance" checked> Compliance</label></div>
+        <div class="tw-row"><label>Scheme:
+          <select data-pw-tw="scheme">
+            <option value="auto">auto (preset)</option>
+            <option value="light">light</option>
+            <option value="dark">dark</option>
+          </select>
+        </label></div>
+        <div class="tw-row"><label>Plans:
+          <select data-pw-tw="plans">
+            <option value="auto">auto (preset)</option>
+            <option value="stacked">stacked</option>
+            <option value="side">side-by-side</option>
+            <option value="single-weekly">weekly only</option>
+            <option value="single-annual">annual only</option>
+          </select>
+        </label></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPORT -->
+  <div class="pw-step">
+    <div class="pw-step-h"><span class="pw-step-n">⤓</span><h3>Экспорт</h3></div>
+    <p class="pw-step-i">JSON — снапшот state. Swift — готовые константы для <code>PaywallView.swift</code>. Claude prompt — полный бриф для углубления в новой беседе.</p>
+    <div class="pw-export-pane">
+      <pre id="pw-export-view">// pick a preset to preview</pre>
+      <div class="actions">
+        <button class="pw-btn" id="pw-copy-json">Copy JSON</button>
+        <button class="pw-btn" id="pw-copy-swift">Copy as Swift</button>
+        <button class="pw-btn primary" id="pw-copy-claude">Copy as Claude prompt</button>
+        <button class="pw-btn ghost" id="pw-reset-state">↺ Reset workbench</button>
+        <span id="pw-copy-toast" style="display:none">✔ copied</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Selection panel -->
+<div class="selection-panel">
+  <h3>📋 Твой выбор</h3>
+  <div class="field"><span class="field-label">Палитра:</span><span class="field-value" id="sel-palette">не выбрано</span></div>
+  <div class="field"><span class="field-label">Icon концепт:</span><span class="field-value" id="sel-concept">не выбран</span></div>
+  <div class="field"><span class="field-label">Icon glow:</span><span class="field-value" id="sel-glow">не выбран</span></div>
+  <div class="field"><span class="field-label">Screenshot strategy:</span><span class="field-value" id="sel-strategy">не выбрана</span></div>
+  <button onclick="copySelection()">📋 Скопировать выбор</button>
+  <div id="copy-toast" style="display:none; margin-top:8px; font-size:11px; color:#9CB892; text-align:center;">Скопировано!</div>
+</div>
+
+<script>
+  const selection = { palette: null, concept: null, glow: null, strategy: null };
+
+  function selectPalette(el, label) {
+    document.querySelectorAll('.palette-col').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    selection.palette = label;
+    document.getElementById('sel-palette').textContent = label;
+  }
+
+  function selectConcept(el, label) {
+    document.querySelectorAll('.concept-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    selection.concept = label;
+    document.getElementById('sel-concept').textContent = label;
+    const activeMini = el.querySelector('.mini.active');
+    if (activeMini) {
+      selection.glow = activeMini.dataset.glow;
+      document.getElementById('sel-glow').textContent = selection.glow;
+    }
+  }
+
+  function switchGlow(miniEl, conceptNum, glow) {
+    const card = miniEl.closest('.concept-card');
+    card.querySelectorAll('.mini').forEach(m => m.classList.remove('active'));
+    miniEl.classList.add('active');
+    const base = miniEl.dataset.base;
+    document.getElementById(`img-${conceptNum}`).src = `icons/${base}-${glow}.png`;
+    if (card.classList.contains('selected')) {
+      selection.glow = glow;
+      document.getElementById('sel-glow').textContent = glow;
+    }
+  }
+
+  function selectStrategy(el, label) {
+    document.querySelectorAll('.ss-strategy-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    selection.strategy = label;
+    document.getElementById('sel-strategy').textContent = label;
+  }
+
+  function copySelection() {
+    const text = `Палитра: ${selection.palette || 'не выбрано'}\nIcon концепт: ${selection.concept || 'не выбран'}\nIcon glow: ${selection.glow || 'не выбран'}\nScreenshot strategy: ${selection.strategy || 'не выбрана'}`;
+    navigator.clipboard.writeText(text).then(() => {
+      const toast = document.getElementById('copy-toast');
+      toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 2000);
+    });
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // SECTION 6 — PAYWALL WORKBENCH v2 (flexible, real iPhone 6.9, 10 presets)
+  //
+  // ┌─────────────────────────────────────────────────────────────────────┐
+  // │  PORTING TO A NEW PROJECT — edit ONLY this block (HEROES / DEFAULT_*│
+  // │  / PRESETS) and copy these files to <new-project>/ on gh-pages:    │
+  // │    1. design.html (this file)                                       │
+  // │    2. paywall-heroes/  (your 2-3 hero candidates)                   │
+  // │    3. paywall-refs/    (optional reference images)                  │
+  // │  See PAYWALL_WORKBENCH_PORTING.md for the full checklist.           │
+  // └─────────────────────────────────────────────────────────────────────┘
+  // ═══════════════════════════════════════════════════════════════════════
+  (function () {
+    // ═══ ▼ EDIT FOR NEW PROJECT ▼ ═══════════════════════════════════════════
+    // Paths are relative to the HTML file. Add as many as you like; the
+    // built-in picker only shows the first 2 by default — add more buttons
+    // in the HTML if needed.
+    const HEROES = {
+      A: 'paywall-heroes/onb-8-paywall.png',
+      B: 'paywall-heroes/onb-8-paywall-B.png',
+    };
+
+    // Brand tokens. From CrySnap "Coral + Sage Dual" — replace with your
+    // project's locked palette (see Section 1 of design.html).
+    const DEFAULT_TOKENS = {
+      primary: '#E8836A',  accent: '#7A9A6E',          // CTA / trust accent
+      lightBg: '#FBF8F4',  darkBg: '#0F1115',          // light/dark scheme bg
+      textOnLight: '#1A1A1F', textOnDark: '#F2EDE5',   // body text
+    };
+
+    // JTBD brief — feeds {tokens} interpolation in preset copy.
+    // Pull from <project>/PERSONAS.md, RESEARCH.md, MARKETING.md.
+    const DEFAULT_BRIEF = {
+      brand: 'CrySnap',
+      audience: 'New mom 0–4mo postpartum (Maya, 28)',
+      corePain: '3am, baby crying 40 min, fed/changed/rocked. Reddit takes 6h.',
+      killerFeature: '9-class cry decoder + voice mode hands-free + 3 expert chat personas',
+      weeklyPrice: '$4.99',
+      annualPrice: '$39.99',
+      valueAnchor: '$500 nurse + $300 lactation + $150 sleep coach ≈ $1,000/yr',
+      trustLine: 'AAP-trained · Cancel anytime',
+    };
+    // ═══ ▲ EDIT FOR NEW PROJECT ▲ ═══════════════════════════════════════════
+    const DEFAULT_HERO = {
+      src: '', builtIn: 'A', height: 280, fit: 'cover', position: 'center', overlay: 'fade',
+    };
+    const DEFAULT_TWEAKS = {
+      showHero: true, showTrust: true, showFeatures: true,
+      showAnchor: true, showTimeline: true, showCompliance: true,
+      scheme: 'auto', plans: 'auto',
+    };
+
+    // ═══ ▼ EDIT FOR NEW PROJECT ▼ ═══════════════════════════════════════════
+    // Preset library — flexible, data-driven. Headline / subtitle / cta /
+    // features / badges support {brand} {audience} {weeklyPrice} {annualPrice}
+    // {valueAnchor} {trustLine} interpolation from DEFAULT_BRIEF above.
+    //
+    // Per-preset fields:
+    //   scheme:    'light' | 'dark'
+    //   plans:     'stacked' | 'side' | 'single-weekly' | 'single-annual'
+    //   showFeatures, showTimeline: bool
+    //   features:  [{ icon: '🎯', title: '...', sub: '...' }, ...]
+    //
+    // Add/remove presets freely — the gallery (section 04) auto-renders
+    // however many you ship.
+    const PRESETS = [
+      {
+        id: 'experts-weekly', num: 1,
+        name: 'Experts Weekly Trial',
+        desc: 'AAP, weekly preselected, reminder timeline',
+        scheme: 'light', plans: 'stacked', defaultPlan: 'weekly',
+        showFeatures: true, showTimeline: true,
+        features: [
+          { icon: '👶', title: 'Decode 9 cry types in 3s', sub: 'On-device DeepInfant V2 — 89% accurate.' },
+          { icon: '💬', title: 'Chat with 3 experts — 24/7', sub: 'Nurse, lactation, sleep coach.' },
+          { icon: '🎵', title: 'Soothing sounds library',  sub: 'White noise, womb, shushing, lullabies.' },
+        ],
+        eyebrow: '7-DAY FREE TRIAL',
+        headline: 'Unlock all of {brand}',
+        subtitle: 'Everything you need at 3am, in one app.',
+        ctaText: 'Start Free — 7 Days',
+        weeklyTitle: 'Weekly', weeklySub: 'Cancel anytime',
+        annualTitle: 'Annual', annualSub: '~$0.77/wk',
+        weeklyBadge: 'RECOMMENDED', annualBadge: 'BEST VALUE',
+      },
+      {
+        id: 'experts-annual', num: 2,
+        name: 'Experts Annual',
+        desc: 'Annual preselected, no trial framing',
+        scheme: 'light', plans: 'stacked', defaultPlan: 'annual',
+        showFeatures: true, showTimeline: false,
+        features: [
+          { icon: '👶', title: 'Decode 9 cry types in 3s', sub: 'On-device DeepInfant V2 — 89% accurate.' },
+          { icon: '💬', title: 'Chat with 3 experts',       sub: 'Nurse, lactation, sleep coach.' },
+          { icon: '🎵', title: 'Soothing sounds library',   sub: 'White noise, womb, shushing.' },
+        ],
+        eyebrow: 'SAVE 85% YEARLY',
+        headline: 'A year of {brand}',
+        subtitle: 'Save 85% vs weekly. {trustLine}.',
+        ctaText: 'Get Annual',
+        weeklyTitle: 'Weekly', weeklySub: 'Billed weekly',
+        annualTitle: 'Annual', annualSub: '~$0.77/wk · Save 85%',
+        weeklyBadge: '', annualBadge: 'BEST VALUE',
+      },
+      {
+        id: '3am-voice-dark', num: 3,
+        name: '3am Voice Mode',
+        desc: 'Maya peak — dark hero, voice killer feature',
+        scheme: 'dark', plans: 'side', defaultPlan: 'weekly',
+        showFeatures: true, showTimeline: true,
+        features: [
+          { icon: '🎙', title: 'Voice mode at 3am',  sub: "Hands-free. Don't even open your eyes." },
+          { icon: '💬', title: '3 expert chat personas', sub: 'Nurse, lactation, sleep coach — 24/7.' },
+          { icon: '🔒', title: 'On-device privacy',  sub: 'Audio never leaves your phone.' },
+        ],
+        eyebrow: '3AM · WE ARE HERE',
+        headline: '3am. Phone dead-tired.',
+        subtitle: "Just ask. We'll answer — hands-free.",
+        ctaText: 'Try Free for 7 Days',
+        weeklyTitle: 'Weekly', weeklySub: 'Cancel anytime',
+        annualTitle: 'Annual', annualSub: '~$0.77/wk',
+        weeklyBadge: '7-DAY FREE TRIAL', annualBadge: 'SAVE 85%',
+      },
+      {
+        id: 'features-first', num: 4,
+        name: 'Features-first',
+        desc: 'Sarah anxious — chat killer feature listed',
+        scheme: 'light', plans: 'stacked', defaultPlan: 'weekly',
+        showFeatures: true, showTimeline: false,
+        features: [
+          { icon: '👶', title: 'Decode 9 cry types',     sub: 'Hungry, tired, pain, gas + 5 more.' },
+          { icon: '💬', title: 'Chat with 3 experts',    sub: 'Real reasons, not just labels.' },
+          { icon: '🎙', title: 'Voice mode at 3am',      sub: 'Eyes-closed mode for night feeds.' },
+          { icon: '🎵', title: 'Soothing sounds',        sub: 'White noise, womb, shushing.' },
+          { icon: '📈', title: 'Sleep & feed tracking',  sub: 'See patterns, predict next nap.' },
+        ],
+        eyebrow: '',
+        headline: 'Unlock all of {brand}',
+        subtitle: 'Everything you need at 3am, in one app.',
+        ctaText: 'Start Free — 7 Days',
+        weeklyTitle: 'Weekly', weeklySub: 'Cancel anytime',
+        annualTitle: 'Annual', annualSub: '~$0.77/wk · Save 85%',
+        weeklyBadge: 'RECOMMENDED', annualBadge: 'BEST VALUE',
+      },
+      {
+        id: 'sleep-lin', num: 5,
+        name: 'Sleep / Lin',
+        desc: 'Sage primary — chronic exhaustion JTBD',
+        scheme: 'light', plans: 'stacked', defaultPlan: 'weekly',
+        showFeatures: true, showTimeline: true,
+        features: [
+          { icon: '🌙', title: 'Predict the next nap',     sub: '+/- 8 min from your tracked patterns.' },
+          { icon: '🔇', title: 'Dim soothing sounds',      sub: 'Auto-fade as baby drifts.' },
+          { icon: '🤱', title: 'Sleep coach chat (Lin)',   sub: '24/7 — Ferber, RIE, gentle methods.' },
+        ],
+        eyebrow: 'SLEEP TONIGHT',
+        headline: 'Sleep tonight. Tomorrow too.',
+        subtitle: '{audience} — Lin will get you both there.',
+        ctaText: 'Start Sleeping — 7 Days Free',
+        weeklyTitle: 'Weekly', weeklySub: 'Cancel anytime',
+        annualTitle: 'Annual', annualSub: '~$0.77/wk',
+        weeklyBadge: '7-DAY FREE TRIAL', annualBadge: 'BEST VALUE',
+      },
+      {
+        id: 'lactation-carla', num: 6,
+        name: 'Lactation / Carla',
+        desc: 'Single hero plan, lactation framing',
+        scheme: 'light', plans: 'single-annual', defaultPlan: 'annual',
+        showFeatures: true, showTimeline: false,
+        features: [
+          { icon: '🍼', title: 'Latch confidence in 24h',  sub: 'IBCLC-trained Carla — chat 24/7.' },
+          { icon: '⚖️', title: 'Track each feed',          sub: 'Side, duration, milk supply trend.' },
+          { icon: '👶', title: 'Decode hungry vs gassy',   sub: '89% accurate cry classifier.' },
+        ],
+        eyebrow: 'IBCLC-TRAINED · 24/7',
+        headline: 'Latch confidence in 24h',
+        subtitle: 'Real feeding help, when nights are hardest.',
+        ctaText: 'Get Annual — {annualPrice}',
+        weeklyTitle: '', weeklySub: '',
+        annualTitle: 'Annual · {annualPrice}', annualSub: '{trustLine}',
+        weeklyBadge: '', annualBadge: '',
+      },
+      {
+        id: 'zen-single', num: 7,
+        name: 'Zen / single-plan',
+        desc: 'Calm-style: one annual hero plan, no toggle, big trust',
+        scheme: 'light', plans: 'single-annual', defaultPlan: 'annual',
+        showFeatures: false, showTimeline: false,
+        features: [],
+        eyebrow: 'ONE PLAN. ONE PRICE.',
+        headline: 'Just $0.77 a day.',
+        subtitle: '{trustLine}. {valueAnchor}.',
+        ctaText: 'One year of {brand}',
+        weeklyTitle: '', weeklySub: '',
+        annualTitle: 'Annual · {annualPrice}', annualSub: '{trustLine}',
+        weeklyBadge: '', annualBadge: '',
+      },
+      {
+        id: 'streak-urgency', num: 8,
+        name: 'Streak / urgency',
+        desc: 'Duolingo-style: high-energy CTA, 2 plans wide',
+        scheme: 'light', plans: 'side', defaultPlan: 'weekly',
+        showFeatures: true, showTimeline: false,
+        features: [
+          { icon: '🔥', title: '7-day streak unlocks chat', sub: 'Keep going — Sarah is waiting.' },
+          { icon: '⚡', title: 'Faster decoding',           sub: '2.4s avg vs 6h Reddit.' },
+          { icon: '🎯', title: 'Daily check-in',            sub: 'Quick "is this normal?" pulse.' },
+        ],
+        eyebrow: "DON'T LOSE TONIGHT",
+        headline: "Don't lose tonight.",
+        subtitle: 'Every cry decoded. Every parent backed.',
+        ctaText: 'Save tonight — 7 days free',
+        weeklyTitle: 'Weekly', weeklySub: 'Cancel anytime',
+        annualTitle: 'Annual', annualSub: 'Save 85%',
+        weeklyBadge: '7-DAY FREE', annualBadge: 'SAVE 85%',
+      },
+      {
+        id: 'headspace-dark', num: 9,
+        name: 'Headspace / dark hero',
+        desc: 'Big dark image, soft single-plan annual',
+        scheme: 'dark', plans: 'single-annual', defaultPlan: 'annual',
+        showFeatures: true, showTimeline: false,
+        features: [
+          { icon: '🌙', title: 'Calm at 3am',         sub: 'Voice mode hands-free.' },
+          { icon: '💬', title: '3 expert personas',   sub: 'Nurse, lactation, sleep coach.' },
+          { icon: '🔒', title: 'On-device privacy',   sub: 'Audio never leaves your phone.' },
+        ],
+        eyebrow: 'FIND CALM',
+        headline: 'Find calm. Tonight.',
+        subtitle: '{trustLine}.',
+        ctaText: 'One year — {annualPrice}',
+        weeklyTitle: '', weeklySub: '',
+        annualTitle: 'Annual · {annualPrice}', annualSub: '{trustLine}',
+        weeklyBadge: '', annualBadge: '',
+      },
+      {
+        id: 'split-anchor', num: 10,
+        name: 'Split anchor',
+        desc: 'When nothing works — big anchor, 2 plans tight',
+        scheme: 'light', plans: 'stacked', defaultPlan: 'weekly',
+        showFeatures: false, showTimeline: true,
+        features: [],
+        eyebrow: 'WHEN NOTHING WORKS',
+        headline: 'When nothing works — try one more thing.',
+        subtitle: '{valueAnchor}.',
+        ctaText: 'Get Help Tonight — 7 Days Free',
+        weeklyTitle: 'Weekly', weeklySub: '7-day trial · Cancel anytime',
+        annualTitle: 'Annual', annualSub: 'Save 85% · {annualPrice}',
+        weeklyBadge: 'RECOMMENDED', annualBadge: 'SAVE 85%',
+      },
+    ];
+
+    // ═══ ▲ EDIT FOR NEW PROJECT ▲ ═══════════════════════════════════════════
+
+    // STORAGE_KEY uniquely scopes localStorage so each project's workbench
+    // doesn't collide. Change suffix when porting (e.g. 'pestsnap.paywall.v2').
+    const STORAGE_KEY = 'crysnap.paywall.v2';
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const s = JSON.parse(raw);
+          // backfill missing keys
+          s.hero   = Object.assign({}, DEFAULT_HERO,   s.hero   || {});
+          s.brief  = Object.assign({}, DEFAULT_BRIEF,  s.brief  || {});
+          s.tokens = Object.assign({}, DEFAULT_TOKENS, s.tokens || {});
+          s.tweaks = Object.assign({}, DEFAULT_TWEAKS, s.tweaks || {});
+          if (!s.presetId || !PRESETS.find(p => p.id === s.presetId)) s.presetId = PRESETS[0].id;
+          return s;
+        }
+      } catch (_) {}
+      return {
+        hero: { ...DEFAULT_HERO },
+        brief: { ...DEFAULT_BRIEF },
+        tokens: { ...DEFAULT_TOKENS },
+        tweaks: { ...DEFAULT_TWEAKS },
+        presetId: PRESETS[0].id,
+      };
+    }
+    function saveState() {
+      try {
+        // strip blob: URLs that won't survive reload (custom upload)
+        const serializable = JSON.parse(JSON.stringify(state));
+        if (serializable.hero.src && serializable.hero.src.startsWith('blob:')) {
+          serializable.hero.src = '';
+          serializable.hero.builtIn = state.hero.builtIn || 'A';
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(serializable));
+      } catch (_) {}
+    }
+
+    let state = loadState();
+
+    // === Helpers ===
+    const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+    const interp = (str) => String(str ?? '').replace(/\{(\w+)\}/g, (_, k) => state.brief[k] ?? '');
+
+    function activeHeroSrc() {
+      if (state.hero.src) return state.hero.src;
+      if (state.hero.builtIn && HEROES[state.hero.builtIn]) return HEROES[state.hero.builtIn];
+      return ''; // gradient placeholder
+    }
+
+    function effectiveScheme(preset) {
+      return state.tweaks.scheme === 'auto' ? preset.scheme : state.tweaks.scheme;
+    }
+    function effectivePlans(preset) {
+      return state.tweaks.plans === 'auto' ? preset.plans : state.tweaks.plans;
+    }
+
+    // === Renderer (returns full paywall HTML for the screen) ===
+    function renderPaywall(preset, opts = {}) {
+      const tw = opts.tweaks || state.tweaks;
+      const scheme = opts.scheme || effectiveScheme(preset);
+      const plans = opts.plans || effectivePlans(preset);
+      const heroSrc = opts.heroSrc !== undefined ? opts.heroSrc : activeHeroSrc();
+      const bg = scheme === 'dark' ? state.tokens.darkBg : state.tokens.lightBg;
+      const fg = scheme === 'dark' ? state.tokens.textOnDark : state.tokens.textOnLight;
+      const styleVars = `--pw-bg:${bg}; --pw-fg:${fg}; --pw-pri:${state.tokens.primary}; --pw-acc:${state.tokens.accent};`;
+
+      const heroHtml = (tw.showHero && state.hero.height > 0) ? renderHero(preset, heroSrc, scheme) : '';
+      const trustHtml = tw.showTrust && state.brief.trustLine
+        ? `<div class="pw-pw-trust">★ ${esc(interp(state.brief.trustLine))}</div>` : '';
+      const featuresHtml = (tw.showFeatures && preset.showFeatures !== false && preset.features?.length)
+        ? renderFeatures(preset.features) : '';
+      const plansHtml = renderPlans(preset, plans);
+      const anchorHtml = (tw.showAnchor && state.brief.valueAnchor)
+        ? `<div class="pw-pw-anchor">${esc(interp(state.brief.valueAnchor))}.</div>` : '';
+      const timelineHtml = (tw.showTimeline && preset.showTimeline) ? renderTimeline() : '';
+      const complianceHtml = tw.showCompliance
+        ? `<div class="pw-pw-compliance"><b>Safety:</b> ${esc(state.brief.brand)} is a companion app — not a medical device. ER triggers (fever / blue lips / lethargy / breathing) → call 911.</div>`
+        : '';
+
+      return `
+        <div class="pw-paywall scheme-${scheme}" style="${styleVars}">
+          <div class="pw-status"><span>9:41</span><span style="font-size:13px;">●●● 5G ●●●</span></div>
+          <div class="pw-back">‹</div>
+          <div class="pw-close">×</div>
+          ${heroHtml}
+          <div class="pw-pw-body">
+            <div class="pw-pw-headline">${esc(interp(preset.headline))}</div>
+            <div class="pw-pw-subtitle">${esc(interp(preset.subtitle))}</div>
+            ${trustHtml}
+            ${featuresHtml}
+            ${plansHtml}
+            ${anchorHtml}
+            ${timelineHtml}
+            <div class="pw-pw-cta">${esc(interp(preset.ctaText))}</div>
+            ${complianceHtml}
+            <div class="pw-pw-fine"><span>Restore</span><span>Terms</span><span>Privacy</span></div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderHero(preset, heroSrc, scheme) {
+      const h = state.hero;
+      const overlayCls = h.overlay && h.overlay !== 'none' ? `overlay-${h.overlay}` : '';
+      const placeholder = !heroSrc;
+      const bgImage = heroSrc ? `background-image:url('${heroSrc}'); background-size:${h.fit}; background-position:${h.position};` : '';
+      const tagText = preset.eyebrow ? esc(preset.eyebrow) : 'hero / illustration / video poster';
+      return `
+        <div class="pw-pw-hero ${overlayCls} ${placeholder ? 'placeholder' : ''}" style="height:${h.height}px; ${bgImage}">
+          ${placeholder ? `<div class="placeholder-tag">${tagText}</div>` : ''}
+          ${heroSrc && preset.eyebrow ? `<div class="hero-text"><div class="eyb">${esc(preset.eyebrow)}</div></div>` : ''}
+        </div>
+      `;
+    }
+
+    function renderFeatures(features) {
+      return `
+        <div class="pw-pw-features">
+          ${features.map(f => `
+            <div class="pw-pw-feature">
+              <div class="ico">${esc(f.icon)}</div>
+              <div>
+                <div class="ft-title">${esc(interp(f.title))}</div>
+                <div class="ft-sub">${esc(interp(f.sub))}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function renderPlans(preset, plansLayout) {
+      const showWeekly = plansLayout !== 'single-annual';
+      const showAnnual = plansLayout !== 'single-weekly';
+      const layoutCls = ({
+        'side': 'side',
+        'single-weekly': 'single', 'single-annual': 'single',
+      })[plansLayout] || 'stacked';
+      const isWeeklyDefault = preset.defaultPlan === 'weekly';
+      const weekly = showWeekly ? `
+        <div class="pw-pw-plan weekly ${isWeeklyDefault ? 'selected' : ''}">
+          ${preset.weeklyBadge ? `<div class="plan-badge">${esc(interp(preset.weeklyBadge))}</div>` : ''}
+          <div class="plan-row">
+            <div>
+              <div class="plan-name">${esc(interp(preset.weeklyTitle || 'Weekly'))}</div>
+              <div class="plan-sub">${esc(interp(preset.weeklySub || ''))}</div>
+            </div>
+            <div class="plan-price">${esc(state.brief.weeklyPrice)}<span class="pu">/wk</span></div>
+          </div>
+        </div>` : '';
+      const annual = showAnnual ? `
+        <div class="pw-pw-plan annual ${!isWeeklyDefault ? 'selected' : ''}">
+          ${preset.annualBadge ? `<div class="plan-badge">${esc(interp(preset.annualBadge))}</div>` : ''}
+          <div class="plan-row">
+            <div>
+              <div class="plan-name">${esc(interp(preset.annualTitle || 'Annual'))}</div>
+              <div class="plan-sub">${esc(interp(preset.annualSub || ''))}</div>
+            </div>
+            <div class="plan-price">${esc(state.brief.annualPrice)}<span class="pu">/yr</span></div>
+          </div>
+        </div>` : '';
+      return `<div class="pw-pw-plans ${layoutCls}">${weekly}${annual}</div>`;
+    }
+
+    function renderTimeline() {
+      return `
+        <div class="pw-pw-timeline">
+          <div class="tl-icon today">✓</div>
+          <div class="tl-text"><span class="tl-when">Today</span><span class="tl-what">Full access to everything</span></div>
+          <div class="tl-icon day5">5</div>
+          <div class="tl-text"><span class="tl-when">Day 5</span><span class="tl-what">We'll remind you trial is ending</span></div>
+          <div class="tl-icon day7">7</div>
+          <div class="tl-text"><span class="tl-when">Day 7</span><span class="tl-what">${esc(state.brief.weeklyPrice)}/wk starts — cancel anytime</span></div>
+        </div>
+      `;
+    }
+
+    // === DOM bindings ===
+    const $ = (id) => document.getElementById(id);
+    const dz = $('pw-dropzone');
+    const heroUrl = $('pw-h-url');
+    const heroH = $('pw-h-height'), heroHOut = $('pw-h-h-out');
+    const heroFit = $('pw-h-fit'), heroPos = $('pw-h-pos'), heroOv = $('pw-h-ov');
+    const gallery = $('pw-gallery');
+    const realRoot = $('pw-real-content');
+    const exportView = $('pw-export-view');
+    const activeName = $('pw-active-pname');
+    const presetCount = $('pw-preset-count');
+
+    // ----- 01 Hero handlers -----
+    function applyHeroToControls() {
+      heroUrl.value = state.hero.src || '';
+      heroH.value = state.hero.height;
+      heroHOut.textContent = state.hero.height + 'px';
+      heroFit.value = state.hero.fit;
+      heroPos.value = state.hero.position;
+      heroOv.value = state.hero.overlay;
+      const src = activeHeroSrc();
+      if (src) {
+        dz.style.backgroundImage = `url('${src}')`;
+        dz.classList.add('has-image');
+        dz.firstElementChild && (dz.firstElementChild.style.opacity = '0');
+      } else {
+        dz.style.backgroundImage = '';
+        dz.classList.remove('has-image');
+        if (dz.firstElementChild) dz.firstElementChild.style.opacity = '1';
+      }
+      document.querySelectorAll('.hero-pick').forEach(b => {
+        b.classList.toggle('active', !state.hero.src && b.dataset.pwBuiltin === state.hero.builtIn);
+      });
+    }
+    function ingestFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const url = URL.createObjectURL(file);
+      state.hero.src = url;
+      state.hero.builtIn = null;
+      saveState();
+      applyHeroToControls();
+      renderAll();
+    }
+    dz.addEventListener('click', () => {
+      const i = document.createElement('input');
+      i.type = 'file'; i.accept = 'image/*';
+      i.onchange = () => ingestFile(i.files && i.files[0]);
+      i.click();
+    });
+    ['dragenter','dragover'].forEach(ev => dz.addEventListener(ev, (e) => { e.preventDefault(); dz.classList.add('dragging'); }));
+    ['dragleave','drop'].forEach(ev => dz.addEventListener(ev, (e) => { e.preventDefault(); dz.classList.remove('dragging'); }));
+    dz.addEventListener('drop', (e) => {
+      const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f) ingestFile(f);
+    });
+    heroUrl.addEventListener('input', () => {
+      state.hero.src = heroUrl.value.trim();
+      if (state.hero.src) state.hero.builtIn = null;
+      saveState(); applyHeroToControls(); renderAll();
+    });
+    heroH.addEventListener('input', () => {
+      state.hero.height = parseInt(heroH.value, 10);
+      heroHOut.textContent = state.hero.height + 'px';
+      saveState(); renderAll();
+    });
+    heroFit.addEventListener('change', () => { state.hero.fit = heroFit.value; saveState(); renderAll(); });
+    heroPos.addEventListener('change', () => { state.hero.position = heroPos.value; saveState(); renderAll(); });
+    heroOv.addEventListener('change',  () => { state.hero.overlay  = heroOv.value;  saveState(); renderAll(); });
+    $('pw-h-clear').addEventListener('click', () => {
+      state.hero.src = '';
+      state.hero.builtIn = state.hero.builtIn || 'A';
+      saveState(); applyHeroToControls(); renderAll();
+    });
+    document.querySelectorAll('.hero-pick').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const v = btn.dataset.pwBuiltin;
+        state.hero.builtIn = (v === 'none') ? null : v;
+        state.hero.src = '';
+        saveState(); applyHeroToControls(); renderAll();
+      });
+    });
+
+    // ----- 02 Brief handlers -----
+    const briefMap = {
+      'pw-b-brand':'brand','pw-b-audience':'audience','pw-b-pain':'corePain',
+      'pw-b-killer':'killerFeature','pw-b-weekly':'weeklyPrice','pw-b-annual':'annualPrice',
+      'pw-b-anchor':'valueAnchor','pw-b-trust':'trustLine',
+    };
+    function applyBriefToControls() {
+      Object.entries(briefMap).forEach(([id, key]) => { $(id).value = state.brief[key] || ''; });
+    }
+    Object.entries(briefMap).forEach(([id, key]) => {
+      $(id).addEventListener('input', () => {
+        state.brief[key] = $(id).value;
+        saveState(); renderAll();
+      });
+    });
+
+    // ----- 03 Tokens handlers -----
+    const tokenMap = {
+      'pw-t-primary':['primary','tk-sw-primary'],
+      'pw-t-accent':['accent','tk-sw-accent'],
+      'pw-t-lightbg':['lightBg','tk-sw-lightbg'],
+      'pw-t-darkbg':['darkBg','tk-sw-darkbg'],
+    };
+    function applyTokensToControls() {
+      Object.entries(tokenMap).forEach(([id, [key, swId]]) => {
+        $(id).value = state.tokens[key];
+        const sw = $(swId); if (sw) sw.style.background = state.tokens[key];
+      });
+    }
+    Object.entries(tokenMap).forEach(([id, [key, swId]]) => {
+      $(id).addEventListener('input', () => {
+        state.tokens[key] = $(id).value;
+        const sw = $(swId); if (sw) sw.style.background = state.tokens[key];
+        saveState(); renderAll();
+      });
+    });
+
+    // ----- Tweaks (05) -----
+    function applyTweaksToControls() {
+      document.querySelectorAll('[data-pw-tw]').forEach(el => {
+        const k = el.dataset.pwTw;
+        if (el.type === 'checkbox') el.checked = !!state.tweaks[k];
+        else el.value = state.tweaks[k];
+      });
+    }
+    document.querySelectorAll('[data-pw-tw]').forEach(el => {
+      el.addEventListener('change', () => {
+        const k = el.dataset.pwTw;
+        if (el.type === 'checkbox') state.tweaks[k] = el.checked;
+        else state.tweaks[k] = el.value;
+        saveState(); renderDeepDive();
+      });
+    });
+
+    // ----- 04 Gallery render -----
+    function renderGallery() {
+      gallery.innerHTML = PRESETS.map(p => `
+        <div class="preset-thumb ${p.id === state.presetId ? 'active' : ''}" data-pw-pick="${p.id}">
+          <div class="preset-thumb-frame">
+            <div class="preset-thumb-screen">${renderPaywall(p, { tweaks: DEFAULT_TWEAKS })}</div>
+          </div>
+          <div class="preset-thumb-info">
+            <div class="num">${String(p.num).padStart(2,'0')}</div>
+            <div class="name">${esc(p.name)}</div>
+            <div class="desc">${esc(p.desc)}</div>
+          </div>
+        </div>
+      `).join('');
+      presetCount.textContent = `(${PRESETS.length} готовых вариантов)`;
+    }
+    gallery.addEventListener('click', (e) => {
+      const t = e.target.closest('[data-pw-pick]');
+      if (!t) return;
+      state.presetId = t.dataset.pwPick;
+      saveState();
+      gallery.querySelectorAll('.preset-thumb').forEach(c => c.classList.toggle('active', c.dataset.pwPick === state.presetId));
+      renderDeepDive();
+      renderExport();
+      $('paywall-workbench').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    // ----- 05 Deep dive render -----
+    function activePreset() { return PRESETS.find(p => p.id === state.presetId) || PRESETS[0]; }
+    function renderDeepDive() {
+      const p = activePreset();
+      activeName.textContent = `${String(p.num).padStart(2,'0')} · ${p.name}`;
+      realRoot.innerHTML = renderPaywall(p);
+    }
+
+    // ----- Export pane -----
+    function renderExport() {
+      const p = activePreset();
+      const snap = {
+        presetId: p.id,
+        preset: p,
+        hero: state.hero,
+        brief: state.brief,
+        tokens: state.tokens,
+        tweaks: state.tweaks,
+      };
+      exportView.textContent = JSON.stringify(snap, null, 2);
+    }
+    function showToast() {
+      const t = $('pw-copy-toast');
+      t.style.display = 'inline'; setTimeout(() => t.style.display = 'none', 1600);
+    }
+    $('pw-copy-json').addEventListener('click', () => {
+      navigator.clipboard.writeText(exportView.textContent).then(showToast);
+    });
+    $('pw-copy-swift').addEventListener('click', () => {
+      const p = activePreset();
+      const swiftEsc = (s) => String(s ?? '').replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+      const heroAsset = state.hero.builtIn ? `PaywallHero${state.hero.builtIn}` : 'PaywallHeroCustom';
+      const lines = [
+        `// ${p.num.toString().padStart(2,'0')} · ${p.name} — generated by design.html workbench`,
+        `// Paste into Features/Paywall/PaywallView.swift`,
+        ``,
+        `let presetID         = "${p.id}"`,
+        `let scheme           = "${effectiveScheme(p)}"`,
+        `let plansLayout      = "${effectivePlans(p)}"`,
+        `let heroAsset        = "${heroAsset}"`,
+        `let heroHeight       = ${state.hero.height}`,
+        ``,
+        `let eyebrow          = "${swiftEsc(interp(p.eyebrow))}"`,
+        `let headline         = "${swiftEsc(interp(p.headline))}"`,
+        `let subtitle         = "${swiftEsc(interp(p.subtitle))}"`,
+        `let trustLine        = "${swiftEsc(state.brief.trustLine)}"`,
+        ``,
+        `let weeklyTitle      = "${swiftEsc(interp(p.weeklyTitle || ''))}"`,
+        `let weeklySub        = "${swiftEsc(interp(p.weeklySub || ''))}"`,
+        `let weeklyPrice      = "${swiftEsc(state.brief.weeklyPrice)}"`,
+        `let weeklyBadge      = "${swiftEsc(interp(p.weeklyBadge || ''))}"`,
+        ``,
+        `let annualTitle      = "${swiftEsc(interp(p.annualTitle || ''))}"`,
+        `let annualSub        = "${swiftEsc(interp(p.annualSub || ''))}"`,
+        `let annualPrice      = "${swiftEsc(state.brief.annualPrice)}"`,
+        `let annualBadge      = "${swiftEsc(interp(p.annualBadge || ''))}"`,
+        ``,
+        `let valueAnchor      = "${swiftEsc(state.brief.valueAnchor)}"`,
+        `let ctaText          = "${swiftEsc(interp(p.ctaText))}"`,
+        ``,
+        `// Brand tokens`,
+        `let primaryHex       = "${state.tokens.primary}"`,
+        `let accentHex        = "${state.tokens.accent}"`,
+        `let lightBgHex       = "${state.tokens.lightBg}"`,
+        `let darkBgHex        = "${state.tokens.darkBg}"`,
+      ];
+      if (p.features?.length) {
+        lines.push(``, `// Features`);
+        p.features.forEach((f, i) => {
+          lines.push(`let feature${i+1}Title  = "${swiftEsc(interp(f.title))}"`);
+          lines.push(`let feature${i+1}Sub    = "${swiftEsc(interp(f.sub))}"`);
+        });
+      }
+      navigator.clipboard.writeText(lines.join('\n')).then(showToast);
+    });
+    $('pw-copy-claude').addEventListener('click', () => {
+      const p = activePreset();
+      const prompt = `# Paywall implementation brief — ${p.name}
+
+**Source:** design.html paywall workbench (preset ${String(p.num).padStart(2,'0')} · ${p.id})
+
+## Project context
+- **Brand / product:** ${state.brief.brand}
+- **Primary audience:** ${state.brief.audience}
+- **Core pain:** ${state.brief.corePain}
+- **Killer feature:** ${state.brief.killerFeature}
+- **Pricing:** Weekly ${state.brief.weeklyPrice} (with 7-day trial) · Annual ${state.brief.annualPrice}
+- **Value anchor:** ${state.brief.valueAnchor}
+- **Trust line:** ${state.brief.trustLine}
+
+## Chosen preset
+- **Layout:** ${p.desc}
+- **Scheme:** ${effectiveScheme(p)}
+- **Plans:** ${effectivePlans(p)} (default plan: ${p.defaultPlan})
+- **Show features:** ${p.showFeatures ? 'yes' : 'no'} · **Show timeline:** ${p.showTimeline ? 'yes' : 'no'}
+
+## Copy (with brief tokens already interpolated)
+- **Eyebrow:** ${interp(p.eyebrow) || '—'}
+- **Headline:** ${interp(p.headline)}
+- **Subtitle:** ${interp(p.subtitle)}
+- **CTA:** ${interp(p.ctaText)}
+- **Weekly tile:** "${interp(p.weeklyTitle)}" · ${interp(p.weeklySub)} · ${state.brief.weeklyPrice} · badge="${interp(p.weeklyBadge)}"
+- **Annual tile:** "${interp(p.annualTitle)}" · ${interp(p.annualSub)} · ${state.brief.annualPrice} · badge="${interp(p.annualBadge)}"
+${p.features?.length ? '- **Features:**\n' + p.features.map((f,i) => `  ${i+1}. ${f.icon} **${interp(f.title)}** — ${interp(f.sub)}`).join('\n') : ''}
+
+## Brand tokens
+- Primary / CTA: \`${state.tokens.primary}\`
+- Trust / accent: \`${state.tokens.accent}\`
+- Light bg: \`${state.tokens.lightBg}\`
+- Dark bg: \`${state.tokens.darkBg}\`
+
+## Hero
+- Mode: ${state.hero.src ? 'custom upload' : (state.hero.builtIn ? 'built-in ' + state.hero.builtIn : 'no image / gradient')}
+- Height: ${state.hero.height}pt · Fit: ${state.hero.fit} · Position: ${state.hero.position} · Overlay: ${state.hero.overlay}
+
+## Tweaks (block visibility)
+${Object.entries(state.tweaks).filter(([k]) => k.startsWith('show')).map(([k,v]) => `- ${k}: ${v}`).join('\n')}
+
+## Task
+Implement this paywall in \`Features/Paywall/PaywallView.swift\` (SwiftUI, iOS 17+, RevenueCat). Match copy/scheme/plans layout above. Use existing \`PrimaryButton\` and design tokens from \`DesignTokens.swift\`. Do **not** invent new copy — use what's above verbatim. Compliance: never claim "diagnoses" / "cures crying" / "medical-grade" — keep "companion app, not medical device" + ER triggers footer. Reference golden source at \`apps/07-colorcheck/ColorCheck/ColorCheck/Views/Paywall/PaywallView.swift\`.`;
+      navigator.clipboard.writeText(prompt).then(showToast);
+    });
+    $('pw-reset-state').addEventListener('click', () => {
+      if (!confirm('Reset workbench to defaults? Your edits to brief, tokens, hero will be lost.')) return;
+      state = {
+        hero: { ...DEFAULT_HERO },
+        brief: { ...DEFAULT_BRIEF },
+        tokens: { ...DEFAULT_TOKENS },
+        tweaks: { ...DEFAULT_TWEAKS },
+        presetId: PRESETS[0].id,
+      };
+      saveState(); applyAllControls(); renderAll();
+    });
+
+    function applyAllControls() {
+      applyHeroToControls();
+      applyBriefToControls();
+      applyTokensToControls();
+      applyTweaksToControls();
+    }
+    function renderAll() {
+      renderGallery();
+      renderDeepDive();
+      renderExport();
+    }
+
+    applyAllControls();
+    renderAll();
+  })();
+</script>
+
+<p style="margin-top: 24px; color: #8a8a90; font-size: 11px; text-align: center;">
+  Source: <code>apps/12-crysnap/docs/CONSILIUM_DESIGN_SYSTEM_2026-04-25_iter2.md</code> ·
+  CrySnap design workbench · 2026-04-25
+</p>
+
+</body>
+</html>

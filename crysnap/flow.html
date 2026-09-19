@@ -1,0 +1,162 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>CrySnap · Онбординг V2</title>
+<style>
+:root{color-scheme:light;--ink:#2B2622;--coral:#E8836A;--coral-deep:#C9654D;--coral-soft:#FBE3DA;--sage:#7A9A6E;--sage-deep:#5C7A52;--sage-soft:#E3ECDD;--amber:#C49A4A;--amber-soft:#F5E8CC;--red:#C25C4F;--bg:#F4EFE7;--cream:#FAF7F2;--card:#FFFDF9;--line:#E2D9CC;--muted:#766B60;--navy:#0F1115}
+*{box-sizing:border-box}body{margin:0;font:15px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+h1,h2,h3,h4,.r{font-family:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,sans-serif}
+a{color:inherit;text-underline-offset:4px}button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+nav{max-width:1320px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:20px 28px;border-bottom:1px solid var(--line)}
+.wordmark{font-size:21px;font-weight:800;text-decoration:none;letter-spacing:-.8px;color:var(--coral-deep)}
+.links{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;align-items:center}.links a{text-decoration:none}
+main{max-width:1320px;margin:auto;padding:28px 28px 60px}
+h1{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1.2px;line-height:1.15;margin:6px 0 10px}
+.eyebrow{text-transform:uppercase;letter-spacing:1.3px;font-size:11px;font-weight:800;color:var(--muted)}
+.lead{font-size:16px;max-width:860px}.muted{color:var(--muted);font-size:13px;max-width:860px}
+.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:20px 0 8px}
+.seg{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;padding:8px 13px;border-radius:9px;min-height:40px;font-size:13px;color:var(--ink)}
+.seg button[aria-pressed=true]{background:var(--coral-deep);color:#FFF8F4}
+.stage{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:start;margin-top:18px}
+.notes{max-width:560px}.notes .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:12px}
+.notes h3{margin:0 0 6px;font-size:16px}.notes p{margin:4px 0;font-size:13.5px}.notes .num{font-weight:800;font-variant-numeric:tabular-nums}
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 0}.steps button{border:1px solid var(--line);background:var(--card);border-radius:20px;padding:5px 11px;font-size:12px;min-height:34px}.steps button[aria-current=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* phone */
+.phone{width:330px;height:714px;border-radius:50px;background:#111;padding:10px;box-shadow:0 30px 60px -20px #2b262255,0 0 0 1px #0002;position:relative;flex:none}
+.screen{position:relative;width:100%;height:100%;border-radius:41px;overflow:hidden;background:var(--cream);isolation:isolate}
+.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:94px;height:27px;border-radius:20px;background:#000;z-index:40}
+.status{position:absolute;top:14px;left:28px;right:28px;display:flex;justify-content:space-between;font-size:12px;font-weight:700;z-index:35;color:#fff}
+.status.dark{color:var(--ink)}
+.photo{position:absolute;inset:0;background-size:cover;background-position:center 30%;z-index:0}
+.shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,17,21,.25) 0%,rgba(15,17,21,0) 25%,rgba(15,17,21,0) 42%,rgba(15,17,21,.55) 62%,rgba(15,17,21,.92) 100%)}
+.glass{background:rgba(255,255,255,.14);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);box-shadow:inset 0 0 0 .6px rgba(255,255,255,.45),0 10px 30px -10px rgba(0,0,0,.35);border-radius:26px}
+.glass.light{background:rgba(255,253,249,.72);box-shadow:inset 0 0 0 .6px rgba(255,255,255,.9),0 10px 30px -12px rgba(43,38,34,.25)}
+.copy{position:absolute;left:18px;right:18px;bottom:96px;z-index:5;color:#FFF8F4;padding:18px 18px 16px}
+.copy h4{font-size:28px;line-height:1.08;letter-spacing:-.7px;margin:0 0 8px;font-weight:800}
+.copy p{margin:0;font-size:14.5px;opacity:.92}
+.cta{position:absolute;left:18px;right:18px;bottom:30px;z-index:6;height:54px;border-radius:27px;border:0;background:var(--coral);color:#fff;font-weight:750;font-size:16.5px;box-shadow:0 10px 24px -8px rgba(232,131,106,.7)}
+.cta.two{height:62px;display:flex;flex-direction:column;justify-content:center;line-height:1.15}.cta.two small{font-weight:500;font-size:10.5px;opacity:.92;white-space:nowrap}
+.pad{position:absolute;inset:58px 18px 100px;overflow:auto;z-index:5}.pad::-webkit-scrollbar{display:none}
+.h{font-size:25px;font-weight:800;letter-spacing:-.6px;line-height:1.12;margin:6px 0 8px}
+.sub{font-size:14px;color:var(--muted);margin:0 0 14px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 14px;margin-bottom:10px}
+.chip{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:18px;padding:7px 12px;margin:0 6px 8px 0;font-size:13.5px}
+.chip.on{background:var(--sage-soft);border-color:var(--sage);color:var(--sage-deep);font-weight:650}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:14px;padding:4px 10px;font-size:12.5px;font-weight:700}
+.amber{background:var(--amber-soft);color:#86621E}.sagep{background:var(--sage-soft);color:var(--sage-deep)}.coralp{background:var(--coral-soft);color:var(--coral-deep)}
+.row{display:flex;align-items:center;gap:10px}.row b{font-weight:700}
+.check{width:22px;height:22px;border-radius:50%;background:var(--sage);color:#fff;display:grid;place-items:center;font-size:12px;flex:none}
+.small{font-size:12px;color:var(--muted)}
+.plan{border:1.5px solid var(--line);border-radius:18px;padding:11px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;background:var(--card)}
+.plan.sel{border-color:var(--coral);box-shadow:0 0 0 3px var(--coral-soft)}
+.plan .p{font-size:18px;font-weight:800}
+.legal{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:10px;color:var(--muted);z-index:6}
+.tl{position:relative;padding-left:18px;margin:8px 0 12px}.tl:before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--sage-soft)}
+.tl div{position:relative;margin:0 0 8px;font-size:13px}.tl div:before{content:"";position:absolute;left:-17px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--sage)}
+.wave{display:flex;gap:3px;align-items:center;height:44px;justify-content:center}.wave i{width:4px;border-radius:3px;background:var(--coral);animation:w 1s ease-in-out infinite}
+@keyframes w{0%,100%{height:8px}50%{height:40px}}
+.big{width:150px;height:150px;border-radius:50%;margin:10px auto;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#F4A48F,var(--coral) 60%,var(--coral-deep));color:#fff;font-weight:800;font-size:17px;text-align:center;box-shadow:0 18px 40px -12px rgba(232,131,106,.8),0 0 0 14px rgba(232,131,106,.12)}
+.tabbar{position:absolute;left:14px;right:14px;bottom:14px;height:62px;z-index:8;display:flex;justify-content:space-around;align-items:center;font-size:10.5px;color:var(--muted)}
+.tabbar span{display:flex;flex-direction:column;align-items:center;gap:2px}.tabbar span.on{color:var(--coral-deep);font-weight:700}
+.tabbar i{font-style:normal;font-size:18px}
+.old{filter:saturate(.85)}
+.badge{position:absolute;top:56px;right:18px;z-index:9;font-size:10px;font-weight:800;letter-spacing:.8px;padding:3px 8px;border-radius:10px;background:#0009;color:#fff}
+@media(max-width:900px){.stage{grid-template-columns:1fr}.phone{margin:auto}}
+@media(max-width:600px){nav,main{padding-left:16px;padding-right:16px}.phone{width:300px;height:650px}}
+</style></head><body>
+<nav><a class="wordmark" href="design.html">CrySnap</a><div class="links"><a href="design.html">Продуктовый справочник V2</a><a href="design.html#decisions">Открытые решения</a></div></nav>
+<main>
+<div class="eyebrow">Онбординг V2 · кликабельный прототип · 19 сентября 2026 · черновик</div>
+<h1>Боль → демо → «запоминает, что работает» → первая неделя → цена → 3 тапа → свой плейбук</h1>
+<p class="lead">До цены — ни одного поля ввода: только визуальный ряд «боль → решение». Квиз и дисклеймер — после оплаты, и сразу дают свой результат: «Плейбук Лео начат» и план на сегодня. Разрешение на уведомления — только после этого.</p>
+<p class="muted">Прототип — HTML-макет для согласования смысла и порядка, не пиксель-в-пиксель. Иллюстрации — существующие ассеты 1.3; новые (экраны «Learns», «First week», hero пейвола без ценников) будут сгенерированы в той же живописной серии. Цифры — Jev, 24 человека × 2 прохода.</p>
+<div class="controls"><div class="seg" role="group" aria-label="Версия"><button id="vA" aria-pressed="true">V2 · предложение</button><button id="vB" aria-pressed="false">1.3 · сейчас</button></div></div>
+<div class="steps" id="steps"></div>
+<div class="stage"><div class="phone"><div class="screen" id="screen"></div></div><div class="notes" id="notes"></div></div>
+</main>
+<script>
+const ST = (dark) => `<div class="island"></div><div class="status ${dark?'dark':''}"><span>3:07</span><span>●●● 82%</span></div>`;
+const V2 = [
+ {k:'Pain', html:`${ST()}<div class="photo" style="background-image:url(flow/pain.jpg)"></div><div class="shade"></div>
+  <div class="copy glass"><h4>It's 3am.<br>You've tried everything.</h4><p>Fed. Changed. Rocked. Still crying.<br>Let's figure out what he needs.</p></div><button class="cta">Show me how</button>`,
+  n:[['Зачем этот экран','Самое сильное чувство панели — «кормила, меняла, качала — ничего не помогает» (сила <span class="num">2.82</span>/4). Узнавание себя в первую секунду.'],['Что поменялось vs 1.3','Та же иллюстрация, но текст на стеклянной плашке (Liquid Glass), без «Step 1 of 6». CTA ведёт к демо.']]},
+ {k:'Demo', html:`${ST()}<div class="photo" style="background-image:url(flow/method.jpg);background-position:center 10%"></div>
+  <div class="pad" style="top:250px"><div class="glass light" style="padding:16px"><div class="wave">${Array.from({length:16},(_,j)=>`<i style="animation-delay:${(j%7)/10}s"></i>`).join('')}</div>
+  <div class="small" style="text-align:center;margin:4px 0 10px">Listening… 0:03</div>
+  <div class="row" style="justify-content:space-between"><span class="pill amber">◌ Most likely: tired</span><span class="small">also possible: hungry</span></div>
+  <div class="small" style="margin-top:10px;font-weight:700">Your plan</div><div style="margin-top:4px;font-size:13.5px"><div class="row"><span class="check">✓</span>Quick check: fed 2h ago, dry diaper</div><div class="row" style="margin-top:6px"><span class="check">2</span>Swaddle, carry and walk <b style="margin-left:auto;color:var(--coral-deep)">5:00</b></div><div class="row" style="margin-top:6px"><span class="check" style="background:#C9D8C1">3</span>Sit holding him, then lay down <span class="small" style="margin-left:auto">8:00</span></div></div></div></div>
+  <button class="cta">Next</button>`,
+  n:[['Зачем','Скан — то, за что платят (pay <span class="num">0.20</span>) и главный WOW первых 2 минут (<span class="num">0.50</span>). Результат — <b>план с таймером</b>, а не ярлык: самая полезная функция турнира (<span class="num">3.26</span>/4), работает при любой причине плача (RIKEN 2022: «носить 5 минут, посидеть 8»).'],['Правила','3 секунды, автоплей, без процентов точности и без «89%»: причина плача по звуку научно ненадёжна, у конкурентов главная жалоба — «разные ответы на один плач». Показываем честный второй вариант («also possible») с контекстом. Из 1.3 убрана цепочка «Asleep at 8:51 PM».']]},
+ {k:'Learns', html:`${ST(1)}<div class="pad" style="top:64px"><div class="h">Did it work?<br>One tap — CrySnap remembers.</div><p class="sub">Every night it learns what calms <b>your</b> baby, and shows that first next time.</p>
+  <div class="tile"><div class="small">Tried: swaddle + shush</div><div class="row" style="margin-top:8px;gap:8px"><span class="pill sagep" style="padding:8px 14px">👍 It helped</span><span class="pill" style="background:#EEE7DC;padding:8px 14px">Not really</span></div></div>
+  <div class="tile" style="border-color:var(--sage)"><div class="row" style="justify-content:space-between"><b class="r">Your baby's playbook</b><span class="pill sagep">learning</span></div>
+  <div class="small" style="margin:6px 0 4px">Tired cries — try first:</div>
+  <div class="row" style="font-size:13.5px"><span class="check">✓</span>Swaddle + shush <span class="small" style="margin-left:auto">worked 4 of 5</span></div>
+  <div class="row" style="font-size:13.5px;margin-top:6px"><span class="check" style="background:#C9D8C1">2</span>Dim lights, rocking <span class="small" style="margin-left:auto">2 of 4</span></div>
+  <div class="row" style="font-size:13.5px;margin-top:6px"><span class="check" style="background:#E4E0D6;color:#766B60">3</span>Pacifier <span class="small" style="margin-left:auto">new</span></div></div></div>
+  <button class="cta">Next</button>`,
+  n:[['Главная находка консилиума','Продлевают не за скан, а за то, что приложение <b>учится именно на их ребёнке</b>: плейбук — pay <span class="num">0.19</span>, возврат D2–D7 <span class="num">0.16</span>, рычаг продления <span class="num">0.36</span>.'],['Онбординг с этим экраном','<span class="num">0.64</span> против <span class="num">0.04</span> у онбординга 1.3 (вероятность триала 2.73 vs 2.32).'],['Ассет','Новый: иллюстрация «плейбук» (карточка с галочками в руках мамы) — генерируем.']]},
+ {k:'First week', html:`${ST()}<div class="photo" style="background-image:url(flow/wow-newborn.jpg);background-position:center 40%"></div><div class="shade"></div>
+  <div class="copy glass" style="bottom:96px"><div class="small" style="color:#FBE3DA;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Your first week</div>
+  <div class="tl" style="color:#fff"><div><b>Tonight</b> — a plan for your baby's age + a 3am nurse who's awake</div><div><b>Night 3</b> — the playbook knows what works for him</div><div><b>Day 7</b> — his first week: fussy hours, what works, one pattern</div></div>
+  <p style="font-size:12.5px">Plus: “Is this crying normal?” — for his exact age.</p></div><button class="cta">Continue</button>`,
+  n:[['Зачем','Мост к цене: показывает, что будет в триале, с датами ценности. Отвечает на «зачем вернусь» ещё до оплаты.'],['Колики','Строка «Is this crying normal?» — для когорты colic (этот вопрос выбирают <span class="num">0.83</span>), не отдельный экран.']]},
+ {k:'Paywall', html:`${ST(1)}<div style="position:absolute;inset:0;height:210px;background:url(flow/wow-newborn.jpg) center 45%/cover"></div><div style="position:absolute;top:150px;left:0;right:0;height:60px;background:linear-gradient(180deg,transparent,var(--cream))"></div>
+  <div class="pad" style="top:176px;bottom:120px"><div class="h" style="font-size:23px">Know why your baby cries — and what to try next.</div>
+  <div class="tile" style="background:var(--sage-soft);border:0;font-size:13px"><b style="color:var(--sage-deep)">Sarah, RN</b> · “Try a side-lying feed first. If he's still crying in 15 minutes, we'll check a few other things together.”</div>
+  <div class="tl" style="margin-top:4px"><div><b>Today</b> · your baby's playbook starts</div><div><b>Night 3</b> · first pattern</div><div><b>Day 7</b> · his first-week summary</div></div>
+  <div class="plan sel"><div><b>Weekly</b><div class="small">7 days free, then $7.99/week</div></div><div class="p">$7.99<span class="small">/wk</span></div></div>
+  <div class="plan"><div><b>Yearly</b><div class="small">≈ $0.77/week · no free trial</div></div><div class="p">$39.99<span class="small">/yr</span></div></div>
+  <div class="small" style="text-align:center">Companion, not a medical device · always know when to call the pediatrician</div></div>
+  <button class="cta two" style="bottom:34px">$7.99 per week<small>7 days free, then auto-renews · Cancel anytime</small></button><div class="legal">Restore · Terms · Privacy</div>`,
+  n:[['Структура','Ценность → цена. Заголовок-победитель Jev <span class="num">0.37</span> (текущий «Understand the cry…» — 0.18). Строка медсестры — сильнейший элемент (<span class="num">0.46</span>). Таймлайн с датами ценности, без «напомним на 5-й день».'],['3.1.2 strict','Цена — самый крупный элемент CTA, триал второй строкой, без «No charge today»/«$0». Годовой — без триала, «≈ $0.77/week» простым текстом.'],['Убираем','«SAVE 90%» (эффект <span class="num">1.30</span> — отталкивает), зачёркнутые «$150+» (2.16), ценники на hero. Безопасная строка «Companion, not a medical device» помогает (3.04).']]},
+ {k:'Quiz 1', html:`${ST(1)}<div class="pad" style="top:64px"><div class="small">1 of 3 · 20 seconds</div><div class="h">Who are we helping?</div>
+  <div class="tile"><div class="small">Baby's name</div><div class="r" style="font-size:20px;font-weight:700;margin-top:2px">Leo</div></div>
+  <div class="tile"><div class="small">Born</div><div class="r" style="font-size:20px;font-weight:700;margin-top:2px">August 14 · <span style="color:var(--sage-deep)">5 weeks</span></div></div>
+  <div class="small">Used only on this phone to tailor tips to his age.</div></div><button class="cta">Next</button>`,
+  n:[['После оплаты','Ввод до цены раздражает (Cysta: 72%). Здесь человек уже в триале и хочет результат — 3 шага, ~20 секунд.'],['Зачем возраст','Нормы плача (пик ~6 недель), fussy hour, окна бодрствования, контекст для классификатора и чата.']]},
+ {k:'Quiz 2', html:`${ST(1)}<div class="pad" style="top:64px"><div class="small">2 of 3</div><div class="h">How is Leo fed?</div>
+  <span class="chip on">Breast</span><span class="chip">Bottle</span><span class="chip">Both</span>
+  <div class="h" style="font-size:20px;margin-top:18px">What's hardest right now?</div>
+  <span class="chip on">Crying I can't read</span><span class="chip">Evening fussing</span><span class="chip">Sleep</span><span class="chip">Feeding</span></div><button class="cta">Next</button>`,
+  n:[['Персонализация','Кормление → какой эксперт первым (lactation vs nurse). «Что тяжелее всего» → что стоит сверху на Tonight: «Evening fussing» включает блок «Is this normal?» (когорта colic).']]},
+ {k:'Quiz 3', html:`${ST(1)}<div class="pad" style="top:64px"><div class="small">3 of 3</div><div class="h">What usually calms Leo?</div><p class="sub">Tap all that sometimes work. This starts his playbook.</p>
+  <span class="chip on">Feeding</span><span class="chip on">Swaddle</span><span class="chip on">Shushing</span><span class="chip">Rocking</span><span class="chip">Pacifier</span><span class="chip on">White noise</span><span class="chip">Car ride</span><span class="chip">Skin-to-skin</span><span class="chip">Not sure yet</span>
+  <div class="tile" style="margin-top:14px;font-size:12.5px"><div class="row"><span class="check">✓</span>I understand CrySnap is a companion, not a medical device. In an emergency I call 911.</div></div></div><button class="cta">Build Leo's playbook</button>`,
+  n:[['Семя плейбука','Это то, что панель выбрала первой победой, когда малыш спокоен: <span class="num">0.40</span> (план на сегодня 0.27, пустой микрофон 1.3 — <span class="num">0.01</span>).'],['Дисклеймер','Чекбокс переехал сюда из отдельного экрана 1.3 — одна строка, без Poison Control (решение U1).']]},
+ {k:'First win', html:`${ST(1)}<div class="pad" style="top:58px;bottom:96px"><div class="pill sagep">✓ Leo's playbook — started</div><div class="h" style="font-size:23px;margin-top:8px">Tonight with Leo, 5 weeks</div>
+  <div class="tile"><div class="small">When he cries — try first</div><div style="font-size:13.5px;margin-top:4px"><b>Hungry?</b> Feeding · <b>Tired?</b> Swaddle + shush · <b>Fussy?</b> White noise</div><div class="small" style="margin-top:4px">Sharpens every time you tap “Did it work?”</div></div>
+  <div class="tile"><div class="small">This week is normal</div><div style="font-size:13.5px;margin-top:4px">Crying often peaks around 6 weeks, mostly in the evening, then eases by 3–4 months.</div></div>
+  <div class="tile" style="border-color:#EBC7BE"><div class="small" style="color:var(--red)">Call the pediatrician or 911 if</div><div style="font-size:12.5px;margin-top:2px">fever ≥100.4°F · trouble breathing · blue lips · very sleepy, hard to wake</div></div></div>
+  <button class="cta">When Leo cries, tap here</button>`,
+  n:[['Первая настоящая победа (≤60 с после оплаты)','Свой плейбук + что нормально на его неделе + когда звонить. Работает, даже если малыш сейчас спит — это главная проблема первой сессии 1.3 (пустой экран с микрофоном).'],['Событие','<code>first_value_reached</code>. Дальше — карточка про уведомления.']]},
+ {k:'Reminders', html:`${ST(1)}<div class="pad" style="top:260px"><div class="glass light" style="padding:18px"><div class="small" style="font-weight:800;letter-spacing:1px;text-transform:uppercase">Want a gentle heads-up?</div>
+  <div class="r" style="font-size:19px;font-weight:750;margin:6px 0">A morning recap of Leo's night, and a nudge before his fussy hour.</div><div class="small">Never after 10pm unless you ask. Change any time.</div>
+  <button class="cta" style="position:static;width:100%;margin-top:14px">Yes, remind me</button><div style="text-align:center;margin-top:10px" class="small">Not now</div></div></div>`,
+  n:[['Сначала ценность, потом разрешение','Карточка после «плейбук начат» — <span class="num">0.62</span> «примет и не выключит». Системный диалог в конце онбординга (как в 1.3) — <span class="num">0.01</span>.'],['Что будет приходить (14 дней)','Утренний итог ночи, «что нормально на N неделе» (день 2), перед fussy hour, «Помогло?» через 15 минут, итог первой недели. Ни одного пуша про триал и оплату.']]},
+ {k:'Tonight · day 2', html:`${ST(1)}<div class="pad" style="top:56px;bottom:90px"><div class="small">Tuesday · Leo is 5 weeks</div><div class="h" style="font-size:24px">Last night: 3 cries</div>
+  <div class="tile"><div class="small">What helped</div><div style="font-size:13.5px;margin-top:4px">Swaddle + shush worked <b>twice</b>. Feeding at 2:10am.</div></div>
+  <div class="big">He's<br>crying</div>
+  <div class="tile"><div class="row" style="justify-content:space-between"><b class="r">What works for Leo</b><span class="small">3 tries logged</span></div><div class="small" style="margin-top:4px">Tired → swaddle + shush · Hungry → feed</div></div></div>
+  <div class="tabbar glass light"><span class="on"><i>☾</i>Tonight</span><span><i>💬</i>Ask</span><span><i>≋</i>Soothe</span><span><i>👶</i>Leo</span></div>`,
+  n:[['Главная Tonight','Одна главная кнопка «He\'s crying». Сверху — итог ночи (утренний пуш ведёт сюда). Снизу — что работает у Лео. День 6 обязан выглядеть иначе, чем день 0.'],['Навигация','Tonight / Ask / Soothe / Leo (профиль, история, настройки). Стеклянный tab bar iOS 26.'],['Продление','С такой неделей «продолжит платить» <span class="num">1.86 → 2.76</span> (Jev, все когорты растут).']]},
+];
+const V13 = [
+ {k:'Pain', html:`${ST()}<div class="badge">STEP 1 OF 6</div><div class="photo old" style="background-image:url(flow/pain.jpg)"></div><div class="shade"></div><div class="copy"><h4>It's 3am. Again.</h4><p>Fed. Changed. Rocked. Still crying.<br>Tonight, we help.</p></div><button class="cta">Show me how</button>`, n:[['1.3','Хорошая иллюстрация, сильная боль. Счётчик «Step N of 6» с первого экрана.']]},
+ {k:'WOW', html:`${ST()}<div class="photo old" style="background-image:url(flow/wow-sleep.jpg)"></div><div class="shade"></div><div class="copy"><p>Cry detected — 0:03 · Analyzing 9 cry patterns…<br><b>🟡 Hungry · 87%</b><br>Sarah Chen, RN: “Try side-lying feed first…”<br>Playing: 5-7-1 White Noise<br>✨ Calm in 9 minutes · 💤 Asleep at 8:51 PM</p></div><button class="cta" style="opacity:.5">Sounds good</button>`, n:[['1.3','Обязательное ожидание 4.8 с, CTA неактивна. «87%» и «Asleep at 8:51 PM» — обещания, которые реальный продукт не выполняет (классификатор сейчас — заглушка).']]},
+ {k:'Proof', html:`${ST(1)}<div class="pad" style="top:90px;text-align:center"><div style="font-size:64px;font-weight:800" class="r">89%</div><div>accuracy on cry classification</div><div class="small">Trained on a 10,000+ recording research dataset.</div><div class="small" style="margin-top:20px">AAP · CDC · Mayo · LLL</div><div class="small">10K+ recordings · On-device AI · Private no upload</div></div><button class="cta">What you get</button>`, n:[['Риск','Заявление о точности, которой нет в бандле. Apple 1.4.1 / 2.3.1 и отзывы «always says hungry».']]},
+ {k:'Bullets', html:`${ST(1)}<div class="pad" style="top:70px"><div class="h">Tonight, and every night.</div><div class="tile">Cry Translator · 9 cry types · 89% accurate</div><div class="tile">3 Experts</div><div class="tile">Voice Mode</div><div class="tile">Calming Sounds</div></div><button class="cta">See plans</button>`, n:[['1.3','Список функций вместо результата. Jev: онбординг 1.3 целиком — <span class="num">0.04</span>.']]},
+ {k:'Paywall', html:`${ST(1)}<div style="position:absolute;inset:0;height:190px;background:url(flow/paywall-A-hero.jpg) center/cover"></div><div class="pad" style="top:196px;bottom:120px"><div class="h" style="font-size:21px">Understand the cry.<br>Soothe your baby faster.</div><div class="small">Typical 1:1 consultation <s>$150+</s> → CrySnap $7.99</div><div class="plan sel" style="margin-top:8px"><b>Weekly</b><span class="p">$7.99</span></div><div class="plan"><b>Annual <span class="pill coralp">SAVE 90%</span></b><span class="p">$39.99</span></div></div><button class="cta two" style="bottom:34px">Continue<small>$7.99 billed today</small></button>`, n:[['1.3','Без триала. «SAVE 90%» и ценники $500/$300/$150 на hero. Пейвол можно пролистать свайпом (paged TabView).']]},
+ {k:'Disclaimer', html:`${ST(1)}<div class="pad" style="top:80px"><div class="h">A companion. Not a doctor.</div><div class="tile">911 · Poison Control · when to go to ER</div><div class="tile">☐ I understand</div></div><button class="cta">Open CrySnap</button>`, n:[['1.3','После нажатия — сразу системный запрос уведомлений (до всякой пользы), затем пустой экран с микрофоном.']]},
+ {k:'Home', html:`${ST(1)}<div class="pad" style="top:120px;text-align:center"><div class="r" style="font-size:20px;font-weight:700">Tough night? One tap and we'll listen.</div><div class="big" style="margin-top:40px">🎙</div><div class="small">Tap and hold near baby. We listen for 8 seconds.</div></div><div class="tabbar" style="background:#fff;border-radius:20px"><span class="on"><i>🎙</i>Scan</span><span><i>💬</i>Chat</span><span><i>≋</i>Sounds</span><span><i>⚙︎</i>Settings</span></div>`, n:[['Первая сессия 1.3','Если малыш не плачет — делать нечего. Jev: «пустой микрофон» как первый опыт — <span class="num">0.01</span>, вернётся завтра 2.05/4.']]},
+];
+let flow = V2, i = 0;
+const screen = document.getElementById('screen'), notes = document.getElementById('notes'), steps = document.getElementById('steps');
+function render(){ const s = flow[i]; screen.innerHTML = s.html; notes.innerHTML = `<div class="eyebrow">${flow===V2?'V2':'1.3'} · экран ${i+1} из ${flow.length}</div>` + s.n.map(([h,p])=>`<div class="card"><h3>${h}</h3><p>${p}</p></div>`).join('');
+  steps.innerHTML = flow.map((x,j)=>`<button aria-current="${j===i}" data-j="${j}">${j+1}. ${x.k}</button>`).join('');
+  screen.querySelectorAll('.cta').forEach(b => b.onclick = () => { if (i < flow.length-1) { i++; render(); } }); }
+steps.onclick = e => { const j = e.target.dataset.j; if (j !== undefined) { i = +j; render(); } };
+const set = v => { flow = v; i = 0; document.getElementById('vA').setAttribute('aria-pressed', v===V2); document.getElementById('vB').setAttribute('aria-pressed', v===V13); render(); };
+document.getElementById('vA').onclick = () => set(V2); document.getElementById('vB').onclick = () => set(V13);
+const h = location.hash.match(/^#(v2|v13)-(\d+)$/); if (h) { flow = h[1]==='v2'?V2:V13; i = Math.min(+h[2]-1, flow.length-1); document.getElementById('vA').setAttribute('aria-pressed', flow===V2); document.getElementById('vB').setAttribute('aria-pressed', flow===V13); }
+render();
+</script></body></html>
