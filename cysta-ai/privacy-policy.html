@@ -20,7 +20,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="date">Effective date: September 18, 2026 (updated for Cysta AI 2.0)</p>
+<p class="date">Effective date: September 19, 2026 (updated for Cysta AI 2.0)</p>
 
 <p>Cysta AI: PCOS Coach ("the App") is developed and published by Valeriy Loveiko. We take your privacy seriously and are committed to protecting your personal information. This Privacy Policy explains how the App collects, uses, stores, and protects your data.</p>
 
@@ -95,11 +95,11 @@
 <h3>1.5 AI Coach Chat Data</h3>
 <p>When you use the AI Coach, your messages and the AI's responses are processed and stored as follows:</p>
 <ul>
-    <li>Messages are sent via encrypted HTTPS to our text-AI partner (proxied through our Cloudflare Worker) for response generation</li>
+    <li>Messages are sent via encrypted HTTPS to our text-AI partner for response generation — outside mainland China through our Cloudflare Worker (§3.1–3.3), in mainland China only through Alibaba Cloud (§3.4)</li>
     <li>Chat history is stored locally on your device</li>
     <li>Every Coach response is grounded in our on-device PCOS knowledge base (≈7 MB, ACOG / ESHRE / Endocrine Society / AAP / PubMed PCOS guidelines) — citations link to the source guideline</li>
     <li>The on-device knowledge base never leaves your device</li>
-    <li>No personal identifiers, lab images, or full chat history is sent alongside chat messages — only the current message + a brief on-device context summary (cohort, week-in-app, recent lab snapshot)</li>
+    <li>No personal identifiers or lab images are sent alongside chat messages — only the current message, the recent turns of the same conversation, and a brief on-device context summary (your topic, recent lab values, cycle estimate). When you ask about a saved meal, that meal's description and what you noted about how you felt that day are included. Outside English, the question may also be turned into a short English search phrase by the same text partner to find sources.</li>
 </ul>
 
 <h3>1.6 Subscription Information</h3>
@@ -131,19 +131,23 @@
 <h2>3. Third-Party Services</h2>
 <p>Cysta uses the following third-party services. Only the data described below is shared, and only for the purpose stated. No personal identifiers are sent alongside.</p>
 
-<h3>3.1 AI Vision Partner (OpenAI, via Cloudflare Worker)</h3>
+<p>Which AI service processes a request depends on your region, not on the app language: if your App Store country is China mainland or your device region is set to China mainland, only the China mainland service in §3.4 is used; everywhere else, only the global services in §3.1–3.3 are used. A request never switches between them.</p>
+<h3>3.1 AI Vision Partner outside mainland China (OpenAI, via Cloudflare Worker)</h3>
 <p>Lab photos / PDFs, meal photos and (optionally) progress photos are sent for image analysis. The text of your Coach question is also sent to create a search embedding that finds the most relevant medical sources. The provider processes the request under a zero-retention policy and does not use the data to train models. The Cloudflare Worker proxy forwards the request without logging or storing content. <a href="https://openai.com/policies/api-data-usage-policies">OpenAI API Data Usage Policy</a>.</p>
 
-<h3>3.2 AI Text Partner (DeepSeek, via Cloudflare Worker)</h3>
-<p>AI Coach messages are sent for response generation. Only the current message text + a brief on-device context summary (cohort, week-in-app, recent lab snapshot) is sent. No photos, identifiers, or chat history. The Cloudflare Worker proxy forwards the request without logging or storing content.</p>
+<h3>3.2 AI Text Partner outside mainland China (DeepSeek, via Cloudflare Worker)</h3>
+<p>AI guide messages are sent for response generation: the current message, recent turns of the same conversation and a brief on-device context summary (see 1.5). No photos or identifiers. The Cloudflare Worker proxy forwards the request without logging or storing content.</p>
 
 <h3>3.3 Cloudflare Worker Proxy</h3>
-<p>Both AI partners are reached through a Cloudflare Worker proxy that holds the API keys server-side. The proxy never logs request bodies; it forwards them as opaque payloads. This protects the API keys from being extracted from the iOS binary and centralizes the zero-retention promise.</p>
+<p>Outside mainland China, both AI partners are reached through a Cloudflare Worker proxy that holds the API keys server-side. The proxy never logs request bodies; it forwards them as opaque payloads. This protects the API keys from being extracted from the iOS binary and centralizes the zero-retention promise.</p>
 
-<h3>3.4 RevenueCat</h3>
+<h3>3.4 Mainland China: Qwen through Alibaba Cloud</h3>
+<p>In mainland China (see the routing rule above), guide answers, meal and lab photo reading and source-search embeddings are processed only by Alibaba Cloud Model Studio in Beijing (Qwen qwen3.7-plus for text and images, text-embedding-v4 for search), reached through our Alibaba Cloud Function Compute service, which holds the credentials server-side and does not store request content. The global services in §3.1–3.3 are not used for these requests, and there is no fallback to them. <a href="https://www.alibabacloud.com/help/en/legal/latest/alibaba-cloud-international-website-privacy-policy">Alibaba Cloud Privacy Policy</a>.</p>
+
+<h3>3.5 RevenueCat</h3>
 <p>Used solely to track subscription entitlement. Receives an anonymous app user ID — no personal information is shared. <a href="https://www.revenuecat.com/privacy/">RevenueCat Privacy Policy</a>.</p>
 
-<h3>3.5 Apple</h3>
+<h3>3.6 Apple</h3>
 <p>StoreKit handles all subscription payments and renewals. App Store Connect receives anonymous crash logs (if you opted in at iOS setup). <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</p>
 
 <h2>4. Data Storage & Security</h2>
@@ -157,7 +161,7 @@
 <h2>5. Data Retention</h2>
 <ul>
     <li>Your local data persists until you delete it inside the App or uninstall the App.</li>
-    <li>AI partners do not retain your data per their zero-retention policies (linked in §3.1 and §3.2).</li>
+    <li>AI partners process requests to return a result and do not use them to train models; our proxies (Cloudflare Worker, Alibaba Cloud Function Compute) do not store request content (§3).</li>
     <li>Apple and RevenueCat retain only the subscription metadata required to manage your billing relationship.</li>
 </ul>
 
@@ -181,6 +185,7 @@
     <li><strong>Germany:</strong> Cysta is not a DiGA (Digital Health Application) and is not reimbursable through statutory health insurance.</li>
     <li><strong>California (CCPA / CPRA):</strong> We do not sell or share personal information. You may request access or deletion via the email above.</li>
     <li><strong>Canada (PIPEDA), Brazil (LGPD), Australia:</strong> Same posture as EU — local-first, consent-based, no selling.</li>
+    <li><strong>China mainland:</strong> AI requests are processed in mainland China by Alibaba Cloud Model Studio (Qwen), a filed generative AI service (model filing ZheJiang-TongYiQianWen-20230901). Health records stay on your device.</li>
     <li><strong>United States (FDA):</strong> Cysta has not been evaluated by the FDA. The App is not intended to diagnose, treat, cure, or prevent any disease.</li>
 </ul>
 
