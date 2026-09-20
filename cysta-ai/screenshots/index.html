@@ -28,7 +28,17 @@ p{margin:0 0 10px;max-width:820px}
 .set.hero{grid-template-columns:repeat(3,minmax(0,1fr));border:0;padding-top:8px}
 .set.hero img{border:0;box-shadow:0 10px 30px #3a2a3d22}
 .set.mine{background:#F3ECF3;margin:0 -12px;padding:16px 12px;border-radius:12px;border:0}
+.view-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:15px 0}
+.view-tools button{background:white;border:1px solid #c9b8ce;border-radius:9px;padding:10px 14px;color:var(--plum-deep);font:600 13px Manrope,system-ui;cursor:pointer}
+.view-tools button[aria-pressed="true"]{background:var(--plum-deep);color:white}
+.hero img{cursor:zoom-in}
+.thumbs .set.hero{grid-template-columns:repeat(3,220px);overflow-x:auto}
+dialog{border:0;border-radius:12px;padding:0;background:#f7f0eb;max-width:95vw;max-height:95vh;overflow:auto}
+dialog::backdrop{background:#201525da}
+dialog img{display:block;width:auto;max-width:90vw;height:auto;max-height:none}
+dialog button{position:sticky;top:8px;float:right;margin:8px;border:0;border-radius:30px;background:#352039;color:white;padding:10px 17px;font:700 14px system-ui;cursor:pointer}
 @media (max-width:760px){.set{grid-template-columns:repeat(3,minmax(0,1fr))}.set .who{grid-column:1/-1}}
+@media (max-width:760px){.set.hero{grid-template-columns:repeat(3,min(74vw,300px));overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px}.set.hero img{scroll-snap-align:start}.thumbs .set.hero{grid-template-columns:repeat(3,220px)}h1{font-size:25px}nav{position:static}}
 ul.find{margin:8px 0 0;padding-left:20px}ul.find li{margin:6px 0}
 .big{font-weight:800;color:var(--ok)}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#E7F5EC;color:var(--ok);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
@@ -44,30 +54,39 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
 <nav><a class="wordmark" href="../design.html">Cysta AI</a><div class="links"><a href="../design.html">Design</a><a href="../flow.html">Flow</a><a href="./" aria-current="page">Screenshots</a></div></nav>
 <main>
   <h1>Скриншоты App Store — первые три кадра</h1>
-  <p class="muted">Все итерации на одной странице: новый вариант всегда сверху, неподошедшие опускаются ниже. Первые три кадра показаны рядом в масштабе реального App Store-пролистывания.</p>
+  <p class="muted">Новый вариант сверху, история ниже. На телефоне листайте ряд вбок. Нажатие увеличивает кадр прямо здесь.</p>
 
-  <h2><span class="step">1</span>Новый вариант · r8</h2>
-  <span class="badge">На утверждение</span>
-  <p style="margin-top:10px">Одна огромная мысль, одна мгновенно понятная сцена, одна крупная карточка результата. Без телефона и без рядов мелких буллетов.</p>
-  <div class="set hero">
-    <img src="r8/S01.png" alt="S01 · Your PCOS Labs. Made Clear.">
-    <img src="r8/S02.png" alt="S02 · What Should I Eat With PCOS?">
-    <img src="r8/S05.png" alt="S05 · Doctor Visit? Walk In Ready.">
+  <h2>Новый вариант · r9</h2>
+  <span class="badge">На рассмотрение</span>
+  <p style="margin-top:10px">Светлая палитра r6/r7, короткие крупные заголовки и по одному увеличенному фрагменту приложения. Сцены показывают отчёт в руках, блюдо и передачу страницы врачу.</p>
+  <div class="view-tools"><button id="size-toggle" type="button" aria-pressed="false">Смотреть в ширине 220 px</button><span class="muted">Одинаковый масштаб для сравнения вариантов</span></div>
+  <div class="set hero" id="r9">
+    <img src="r9/S01-preview.jpg" data-full="r9/S01.png" width="1320" height="2868" alt="r9 · PCOS Labs Explained">
+    <img src="r9/S02-preview.jpg" data-full="r9/S02.png" width="1320" height="2868" alt="r9 · What to Eat With PCOS">
+    <img src="r9/S05-preview.jpg" data-full="r9/S05.png" width="1320" height="2868" alt="r9 · Doctor Visit? Walk In Ready">
   </div>
-  <div class="decision"><b>Что проверить:</b> останавливают ли три заголовка свайп; понятны ли «анализы → еда → врач» без чтения нижней карточки; достаточно ли одного результата на кадр.</div>
+  <p class="muted">Макет для обсуждения. Карточки — увеличенные детали продукта по его текстам и примерам данных.</p>
 
-  <h2><span class="step">2</span>Предыдущий вариант · r7</h2>
+  <h2>r8 · Не утверждён</h2>
+  <p><span class="rejected">Не подошёл:</span> тяжёлое затемнение, слабая иерархия и потеря контекста при кадрировании. Общие карточки ослабили показ продукта.</p>
+  <div class="set hero">
+    <img loading="lazy" src="r8/S01.png" alt="S01 · Your PCOS Labs. Made Clear.">
+    <img loading="lazy" src="r8/S02.png" alt="S02 · What Should I Eat With PCOS?">
+    <img loading="lazy" src="r8/S05.png" alt="S05 · Doctor Visit? Walk In Ready.">
+  </div>
+
+  <h2>r7 · Предыдущий вариант</h2>
   <p><span class="rejected">Не подошёл:</span> интерфейс и три буллета слишком мелкие; сцены не становятся главным визуальным якорем.</p>
   <div class="set hero">
-    <img src="r7/S01.png" alt="r7 S01 labs">
-    <img src="r7/S02.png" alt="r7 S02 food">
-    <img src="r7/S05.png" alt="r7 S05 doctor">
+    <img loading="lazy" src="r7/S01.png" alt="r7 S01 labs">
+    <img loading="lazy" src="r7/S02.png" alt="r7 S02 food">
+    <img loading="lazy" src="r7/S05.png" alt="r7 S05 doctor">
   </div>
 
   <h2><span class="step">3</span>Как у лидеров</h2>
   <p class="muted">Только те, кто зарабатывает: Flo и Clue (лидеры женского здоровья) и PCOS-лидеры по выручке. Первые три скриншота из App Store США, 19.09.2026.</p>
   <div class="set mine">
-    <div class="who"><b>Cysta · r6</b><span>наш вариант, для сравнения</span><em>Jev: <span class="big">0.57</span> — выбирают чаще всех</em></div>
+    <div class="who"><b>Cysta · r6</b><span>предыдущая итерация</span><em>Светлый фон и интерфейс в телефоне.</em></div>
     <a href="r6/S01.jpg" target="_blank"><img src="r6/S01.jpg" alt=""></a><a href="r6/S02.jpg" target="_blank"><img src="r6/S02.jpg" alt=""></a><a href="r6/S03.jpg" target="_blank"><img src="r6/S03.jpg" alt=""></a>
   </div>
   <div class="set">
@@ -95,8 +114,9 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
     <a href="leaders/pcospolly-1.jpg" target="_blank"><img src="leaders/pcospolly-1.jpg" alt=""></a><a href="leaders/pcospolly-2.jpg" target="_blank"><img src="leaders/pcospolly-2.jpg" alt=""></a><a href="leaders/pcospolly-3.jpg" target="_blank"><img src="leaders/pcospolly-3.jpg" alt=""></a>
   </div>
 
-  <h2><span class="step">4</span>Что показал Jev</h2>
-  <p class="muted">24 синтетических человека из 5 когорт + из поиска, 2 прохода с обратным порядком. Описания всех наборов одинаковой длины.</p>
+  <h2>История исследований Jev</h2>
+  <p class="muted">Jev оценивал текстовые описания через синтетические персоны. Это гипотезы для выбора сюжетов, а не оценка пикселей или измеренная конверсия. r8 не прошёл рассмотрение владельцем, несмотря на эти оценки.</p>
+  <details><summary>Прежние результаты r6–r8</summary>
   <ul class="find">
     <li><b>Новый r8: сцена зависит от задачи.</b> S01 — отчёт в руках 0.46; S02 — предметная тарелка 0.60; S05 — передача страницы врачу 0.53. Это не правило «люди / без людей», а самый быстро узнаваемый момент каждого кадра.</li>
     <li><b>Новый r8: крупные заголовки.</b> «Your PCOS Labs. Made Clear.» 0.58 · «What Should I Eat With PCOS?» 0.59 · «Doctor Visit? Walk In Ready.» 0.70.</li>
@@ -107,6 +127,7 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
     <li><b>Доверие.</b> «Answers from NHS, NIH &amp; medical guidelines» 0.70; «читает ваш бланк» 0.24; приватность 0.04.</li>
   </ul>
   <p class="muted" style="margin-top:10px">Данные: <code>research/competitor-screens-2026-09-19/</code> в репозитории CystaAI. Jev — модель, а не опрос; перед запуском стоит проверить в App Store Product Page Optimization.</p>
+  </details>
 
   <h2><span class="step">5</span>Отклонённые варианты</h2>
   <div class="set">
@@ -127,14 +148,23 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
   </div>
 
   <h2><span class="step">6</span>Ваше решение</h2>
-  <p class="muted">Скопируйте и заполните — или просто «r8 ок».</p>
-<pre>Стиль: r8 affinity / другой
+  <p class="muted">Текущий вариант для обсуждения — r9.</p>
+<pre>Стиль: r9 / другой
 Первый кадр: анализы / еда / врач
 S01: ок / изменить: …
 S02: ок / изменить: …
 S05: ок / изменить: …
 Дальше: делать кадры 4–8 тем же шаблоном — да / нет</pre>
 </main>
-<footer>Cysta AI · скриншоты App Store · r8 · 20.09.2026 · данные в примерах иллюстративные; продуктовые формулировки — по возможностям приложения · архив: <a href="archive/r4/">r4</a> · <a href="archive/r3/">r3</a> · <a href="archive/r2/">r2</a> · <a href="archive/r1/">r1</a></footer>
+<footer>Cysta AI · скриншоты App Store · r9 · 20.09.2026 · данные в примерах иллюстративные; продуктовые формулировки — по возможностям приложения · архив: <a href="archive/r4/">r4</a> · <a href="archive/r3/">r3</a> · <a href="archive/r2/">r2</a> · <a href="archive/r1/">r1</a></footer>
+<dialog id="zoom" aria-label="Увеличенный скриншот"><button type="button" id="close-zoom">Закрыть</button><img id="zoom-image" alt=""></dialog>
+<script>
+const toggle=document.getElementById('size-toggle');
+toggle.addEventListener('click',()=>{const active=document.body.classList.toggle('thumbs');toggle.setAttribute('aria-pressed',String(active));toggle.textContent=active?'Вернуть крупный просмотр':'Смотреть в ширине 220 px';});
+const zoom=document.getElementById('zoom'),zoomImage=document.getElementById('zoom-image');
+document.querySelectorAll('.hero img').forEach(img=>{img.tabIndex=0;img.setAttribute('role','button');const open=()=>{zoomImage.src=img.dataset.full||img.src;zoomImage.alt=img.alt;zoom.showModal();zoom.scrollTop=0;};img.addEventListener('click',open);img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});});
+document.getElementById('close-zoom').addEventListener('click',()=>zoom.close());
+zoom.addEventListener('click',e=>{if(e.target===zoom)zoom.close();});
+</script>
 </body>
 </html>
