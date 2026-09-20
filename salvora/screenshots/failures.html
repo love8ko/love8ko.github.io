@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#3F5A3B">
+<title>Salvora · скриншоты — что не получилось</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--brand:#6F8567;--deep:#3F5A3B;--cta:#C97D60;--ctadeep:#A85F45;--ink:#2C2419;--muted:#5C5042;--line:#E6D9BE;--bg:#FAF4E5;--card:#FFFDF8;--ok:#3F7A4E}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Manrope,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+nav{display:flex;align-items:center;gap:20px;padding:12px 24px;border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:10;flex-wrap:wrap}
+nav .wordmark{font-weight:800;color:var(--deep);text-decoration:none;font-size:17px}
+nav .links{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--muted);text-decoration:none;font-weight:600}nav a[aria-current]{color:var(--deep)}
+main{max-width:1060px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:30px;line-height:1.15;margin:0 0 8px;color:var(--deep);letter-spacing:-.02em}
+h2{font-size:22px;margin:48px 0 6px;color:var(--deep);padding-top:18px;border-top:2px solid var(--line)}
+h3{font-size:17px;margin:26px 0 4px}
+p{margin:0 0 10px;max-width:860px}
+.muted{color:var(--muted);font-size:14px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px;background:var(--card);border-radius:10px;overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:#F1EBDC;font-weight:800;color:var(--deep)}
+code{font:600 13px ui-monospace,SFMono-Regular,monospace;background:#F1EBDC;padding:1px 5px;border-radius:5px}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start;margin:14px 0}
+.pair figure{margin:0}
+.pair img{width:100%;height:auto;border-radius:10px;box-shadow:0 10px 26px #2c241922;display:block;cursor:zoom-in}
+figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.scenes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:12px 0}
+.scenes img{width:100%;height:auto;border-radius:10px;display:block;cursor:zoom-in}
+.no{color:#A0403F;font-weight:700}.ok{color:var(--ok);font-weight:700}
+dialog{border:0;border-radius:12px;padding:0;background:#f4efe3;max-width:95vw;max-height:95vh;overflow:auto}
+dialog::backdrop{background:#2c2419dd}
+dialog img{display:block;width:auto;max-width:90vw;height:auto}
+dialog button{position:sticky;top:8px;float:right;margin:8px;border:0;border-radius:30px;background:#2c2419;color:#fff;padding:10px 17px;font:700 14px system-ui;cursor:pointer}
+@media(max-width:800px){.scenes{grid-template-columns:repeat(2,minmax(0,1fr))}.pair{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="wordmark" href="/salvora/design.html">Salvora</a>
+  <span class="links">
+    <a href="/salvora/design.html">Design</a>
+    <a href="/salvora/marketing.html">Marketing</a>
+    <a href="/salvora/screenshots/">Screenshots</a>
+    <a href="/salvora/screenshots/failures.html" aria-current="page">Failures</a>
+  </span>
+</nav>
+<main>
+  <h1>Что не получилось — раунд t1</h1>
+  <p class="muted">Честный журнал производства от 20.09.2026: где ошибся Codex, где ошибся я, где упёрлись в приложение. Без этого списка кажется, что кадры «просто получились».</p>
+
+  <h2>1. Сцены: Codex (GPT-Image)</h2>
+  <p>Семь промптов — семь сцен с первого прохода, ни одного брака по compliance: лиц нет нигде, экранов и текста в кадре нет, экзема показана мягко (сухое покраснение, без мокнутия и корок). Но три вещи не получились.</p>
+  <div class="scenes">
+    <figure><img src="t1/scenes/S01.jpg" alt="Сцена S01"><figcaption>S01 — внизу кадра детская кисть читается как стопа. В финальном кадре это место закрыто карточкой, но сама генерация неаккуратна.</figcaption></figure>
+    <figure><img src="t1/scenes/S06.jpg" alt="Сцена S06"><figcaption><span class="no">Слабая сцена.</span> S06: рука, кружка, тумбочка. Красиво, но «про что приложение» не читается — пятно на костяшке почти не видно. Кандидат на пересъёмку в t2.</figcaption></figure>
+    <figure><img src="t1/scenes/S02.jpg" alt="Сцена S02"><figcaption><span class="ok">Лучшая сцена.</span> S02: шерстяной свитер рядом с предплечьем — триггер и его след в одном кадре, понятно без слов.</figcaption></figure>
+    <figure><img src="t1/scenes/S03.jpg" alt="Сцена S03"><figcaption><span class="ok">S03:</span> ночник, детская рука в руке взрослого. Тихо, не страшно — важно, потому что «страшный» заголовок про 3 ночи Jev и так оценил как пугающий (0.67).</figcaption></figure>
+  </div>
+  <table>
+    <tr><th>Что</th><th>Как вышло</th><th>Что сделали</th></tr>
+    <tr><td><b>Разрешение</b></td><td>Codex отдаёт 1024 × 1536, а полоса фото в кадре — 1290 px по ширине</td><td>Апскейл на 1,26× при отрисовке. На глаз при 100 % терпимо, но для ASC лучше просить максимальное разрешение или апскейлить Real-ESRGAN</td></tr>
+    <tr><td><b>S01, нижний край</b></td><td>Кисть ребёнка читается как стопа</td><td>Кадрирование: проблемная зона уходит под карточку</td></tr>
+    <tr><td><b>S06, аффинитивность</b></td><td>Сцена не говорит об экземе — это просто уютная тумбочка</td><td>Оставлено в t1, помечено как слабое место. В t2: рука с телефоном ночью, пятно в фокусе</td></tr>
+    <tr><td><b>Натюрморт без людей</b></td><td>Не генерировали вовсе</td><td>Jev дал «предметный натюрморт без людей» <span class="no">0.00</span> — деньги и время на него тратить незачем</td></tr>
+  </table>
+
+  <h2>2. Съёмка живых экранов: симулятор</h2>
+  <p>Правило было одно: в карточке должны быть настоящие пиксели сборки, а не нарисованный в дизайне интерфейс. Из-за этого пришлось собрать приложение и снять экраны, и вот что мешало.</p>
+  <div class="pair">
+    <figure>
+      <img src="t1/fails/fail-paywall-instead-of-doctor.jpg" alt="Вместо вкладки Doctor открылся пейвол">
+      <figcaption><b>Первые два снимка — пейвол.</b> Сид ставит <code>isPro = true</code>, но менеджер подписок при старте перетирает флаг: без песочничной покупки приложение честно считает пользователя бесплатным. Лечится подменой домена аргументов: <code>-salvora.subscription.isPro YES</code> (плюс <code>onboarding.done</code>, <code>setup.complete</code>, <code>disclaimer.acceptedAt</code>).</figcaption>
+    </figure>
+    <figure>
+      <img src="t1/fails/fail-3lines.jpg" alt="Заголовок в три строки">
+      <figcaption><b>Заголовок расползся на три строки</b> и съел сцену, буллет тоже переносился. Лечится авто-подгонкой: каждая строка заголовка — <code>nowrap</code>, кегль уменьшается с 47 pt, пока обе строки не влезут; то же для двух строк пользы (19,5 → минимум 16 pt).</figcaption>
+    </figure>
+  </div>
+  <table>
+    <tr><th>Проблема</th><th>Причина</th><th>Решение / статус</th></tr>
+    <tr><td>Вкладка и лист одновременно не открываются</td><td><code>debug.startTab</code> переключает таб и сбрасывает уже поднятый <code>sheet</code></td><td>Снимаем раздельно: либо таб, либо лист</td></tr>
+    <tr><td>Лист не успевал открыться</td><td>Снимок через 5 с после запуска — приложение ещё сидит на Today</td><td>8–9 с. Два кадра (месячный обзор, красные флаги) переснимались</td></tr>
+    <tr><td>Не переключилась аудитория на «взрослый / TSW»</td><td><code>-salvora.debugAudience self</code> не применился, имя ребёнка «Mia» осталось; бейдж «TSW · month 9» при этом встал</td><td>Вся серия t1 снята на родительском сценарии. Кадры под Jessica/Sarah — после разбора ключа аудитории</td></tr>
+    <tr><td>Не удалось снять саму страницу для врача</td><td>«Open page» открывает экран экспорта PDF; сама страница — после тапа «Generate PDF»</td><td>В S01 карточка «6 of 7» + «Next visit». Страница-PDF — в t2, нужна UI-автоматизация</td></tr>
+    <tr><td>UI-автоматизации нет</td><td>osascript не авторизован слать события в System Events (<code>-1743</code>), прокрутка и тапы недоступны</td><td>Все кадры сняты только тем, что достижимо флагами запуска. Карточка триггеров поэтому взята из месячного обзора, а не с прокрученного Today</td></tr>
+    <tr><td>Отладочная «гайка» в кадре</td><td>Первый снимок вкладки Doctor сделан без <code>-salvora.hideDebugUI YES</code></td><td>Переснято; кроп с гайкой выброшен</td></tr>
+  </table>
+
+  <h2>3. Вёрстка кадров</h2>
+  <table>
+    <tr><th>Проблема</th><th>Причина</th><th>Решение</th></tr>
+    <tr><td>Первые семь кадров вышли пустыми — один кремовый фон</td><td>Страница читает <code>frames.json</code> через <code>fetch</code>, а Chrome по <code>file://</code> его блокирует</td><td>Локальный http-сервер на время сборки</td></tr>
+    <tr><td>Chrome подвисал и не выходил</td><td><code>--headless=new</code> с общим профилем; процессы копились, кадры не дописывались</td><td><code>--headless=old</code> + отдельный <code>--user-data-dir</code> + сторож на 45 с</td></tr>
+    <tr><td>Карточка «Next visit» обрезалась на полуслове</td><td>Кроп захватывал начало строки «Change date»</td><td>Нижняя граница кропа поднята на 38 px</td></tr>
+  </table>
+
+  <h2>4. Осталось честно недоделанным</h2>
+  <table>
+    <tr><th>Что</th><th>Почему важно</th></tr>
+    <tr><td><b>S06: ответ Ask с чипами источников</b></td><td>Сейчас в карточке шапка вкладки («Answers with sources · AI, not a doctor»), а не сам ответ. Заголовок обещает источник — показать его нужно буквально</td></tr>
+    <tr><td><b>6.5″ (1284 × 2778)</b></td><td>Вторая обязательная витрина; та же вёрстка, другой холст</td></tr>
+    <tr><td><b>Локализация</b></td><td>de-DE — полная пересъёмка («Neurodermitis», «Schub»), en-GB/CA/AU — только текст</td></tr>
+    <tr><td><b>Баг приложения</b></td><td>На вкладке Ask для ребёнка по имени Mia предлагается вопрос «…start working for <b>Emma</b>?» — имя не подставляется в шаблон. Починить до съёмки t2</td></tr>
+  </table>
+
+  <p class="muted" style="margin-top:28px">← <a href="/salvora/screenshots/">вернуться к кадрам</a></p>
+
+  <dialog id="zoom"><button onclick="zoom.close()">Закрыть</button><img id="zoomimg" alt=""></dialog>
+</main>
+<script>
+document.querySelectorAll('.pair img,.scenes img').forEach(img => img.onclick = () => {
+  zoomimg.src = img.src; zoomimg.alt = img.alt; zoom.showModal();
+});
+</script>
+</body>
+</html>
