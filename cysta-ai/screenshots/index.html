@@ -31,6 +31,10 @@ p{margin:0 0 10px;max-width:820px}
 @media (max-width:760px){.set{grid-template-columns:repeat(3,minmax(0,1fr))}.set .who{grid-column:1/-1}}
 ul.find{margin:8px 0 0;padding-left:20px}ul.find li{margin:6px 0}
 .big{font-weight:800;color:var(--ok)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#E7F5EC;color:var(--ok);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.badge:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.rejected{color:#A0403F;font-weight:800}
+.decision{margin-top:12px;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid var(--line);max-width:820px}
 pre{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font:14px/1.6 ui-monospace,Menlo,monospace;white-space:pre-wrap}
 .no{color:#A0403F;font-weight:700}
 footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
@@ -40,17 +44,27 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
 <nav><a class="wordmark" href="../design.html">Cysta AI</a><div class="links"><a href="../design.html">Design</a><a href="../flow.html">Flow</a><a href="./" aria-current="page">Screenshots</a></div></nav>
 <main>
   <h1>Скриншоты App Store — первые три кадра</h1>
-  <p class="muted">Страница читается сверху вниз: <b>1</b> рекомендация → <b>2</b> как у лидеров → <b>3</b> что показал Jev → <b>4</b> отклонённые варианты → <b>5</b> ваше решение. Любой кадр открывается в полном размере по нажатию.</p>
+  <p class="muted">Все итерации на одной странице: новый вариант всегда сверху, неподошедшие опускаются ниже. Первые три кадра показаны рядом в масштабе реального App Store-пролистывания.</p>
 
-  <h2><span class="step">1</span>Рекомендую · r6</h2>
-  <p>Светлый стиль категории + конкретный результат на телефоне + слово PCOS в первом кадре + строка доверия «Answers from NHS, NIH &amp; medical guidelines».</p>
+  <h2><span class="step">1</span>Новый вариант · r8</h2>
+  <span class="badge">На утверждение</span>
+  <p style="margin-top:10px">Одна огромная мысль, одна мгновенно понятная сцена, одна крупная карточка результата. Без телефона и без рядов мелких буллетов.</p>
   <div class="set hero">
-    <a href="r6/S01.jpg" target="_blank"><img src="r6/S01.jpg" alt="S01 labs"></a>
-    <a href="r6/S02.jpg" target="_blank"><img src="r6/S02.jpg" alt="S02 food"></a>
-    <a href="r6/S03.jpg" target="_blank"><img src="r6/S03.jpg" alt="S03 doctor"></a>
+    <img src="r8/S01.png" alt="S01 · Your PCOS Labs. Made Clear.">
+    <img src="r8/S02.png" alt="S02 · What Should I Eat With PCOS?">
+    <img src="r8/S05.png" alt="S05 · Doctor Visit? Walk In Ready.">
+  </div>
+  <div class="decision"><b>Что проверить:</b> останавливают ли три заголовка свайп; понятны ли «анализы → еда → врач» без чтения нижней карточки; достаточно ли одного результата на кадр.</div>
+
+  <h2><span class="step">2</span>Предыдущий вариант · r7</h2>
+  <p><span class="rejected">Не подошёл:</span> интерфейс и три буллета слишком мелкие; сцены не становятся главным визуальным якорем.</p>
+  <div class="set hero">
+    <img src="r7/S01.png" alt="r7 S01 labs">
+    <img src="r7/S02.png" alt="r7 S02 food">
+    <img src="r7/S05.png" alt="r7 S05 doctor">
   </div>
 
-  <h2><span class="step">2</span>Как у лидеров</h2>
+  <h2><span class="step">3</span>Как у лидеров</h2>
   <p class="muted">Только те, кто зарабатывает: Flo и Clue (лидеры женского здоровья) и PCOS-лидеры по выручке. Первые три скриншота из App Store США, 19.09.2026.</p>
   <div class="set mine">
     <div class="who"><b>Cysta · r6</b><span>наш вариант, для сравнения</span><em>Jev: <span class="big">0.57</span> — выбирают чаще всех</em></div>
@@ -81,9 +95,11 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
     <a href="leaders/pcospolly-1.jpg" target="_blank"><img src="leaders/pcospolly-1.jpg" alt=""></a><a href="leaders/pcospolly-2.jpg" target="_blank"><img src="leaders/pcospolly-2.jpg" alt=""></a><a href="leaders/pcospolly-3.jpg" target="_blank"><img src="leaders/pcospolly-3.jpg" alt=""></a>
   </div>
 
-  <h2><span class="step">3</span>Что показал Jev</h2>
+  <h2><span class="step">4</span>Что показал Jev</h2>
   <p class="muted">24 синтетических человека из 5 когорт + из поиска, 2 прохода с обратным порядком. Описания всех наборов одинаковой длины.</p>
   <ul class="find">
+    <li><b>Новый r8: сцена зависит от задачи.</b> S01 — отчёт в руках 0.46; S02 — предметная тарелка 0.60; S05 — передача страницы врачу 0.53. Это не правило «люди / без людей», а самый быстро узнаваемый момент каждого кадра.</li>
+    <li><b>Новый r8: крупные заголовки.</b> «Your PCOS Labs. Made Clear.» 0.58 · «What Should I Eat With PCOS?» 0.59 · «Doctor Visit? Walk In Ready.» 0.70.</li>
     <li><b>Стиль решает.</b> Тот же текст и те же экраны: светлый <span class="big">0.57</span> против тёмного 0.08. Отдельный вопрос о стиле: светлый с реальными фото и телефоном <span class="big">0.98</span>, пастель с маскотом 0.01, тёмный 0.01.</li>
     <li><b>Что говорит «это PCOS».</b> Строка анализов «Testosterone · AMH · Insulin · LH:FSH» 0.63, светящаяся цифра 0.28, фон 0.06, заголовок 0.04.</li>
     <li><b>Тема первого кадра — ничья.</b> Еда 0.33 · врач 0.33 · анализы 0.28. Еда — только у Wendy (0.93); анализы — Anna, Naomi. Анализов нет ни у одного конкурента, поэтому они первыми.</li>
@@ -92,7 +108,7 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
   </ul>
   <p class="muted" style="margin-top:10px">Данные: <code>research/competitor-screens-2026-09-19/</code> в репозитории CystaAI. Jev — модель, а не опрос; перед запуском стоит проверить в App Store Product Page Optimization.</p>
 
-  <h2><span class="step">4</span>Отклонённые варианты</h2>
+  <h2><span class="step">5</span>Отклонённые варианты</h2>
   <div class="set">
     <div class="who"><b>r5 · тёмный</b><span class="no">стиль не для категории</span><em>Jev 0.08 против светлого 0.57 при том же содержании.</em></div>
     <a href="r5/S01.jpg" target="_blank"><img src="r5/S01.jpg" alt=""></a><a href="r5/S02.jpg" target="_blank"><img src="r5/S02.jpg" alt=""></a><a href="r5/S03.jpg" target="_blank"><img src="r5/S03.jpg" alt=""></a>
@@ -110,15 +126,15 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
     <a href="previews/r2/S01.jpg" target="_blank"><img src="previews/r2/S01.jpg" alt=""></a><a href="previews/r2/S02.jpg" target="_blank"><img src="previews/r2/S02.jpg" alt=""></a><a href="previews/r2/S05.jpg" target="_blank"><img src="previews/r2/S05.jpg" alt=""></a>
   </div>
 
-  <h2><span class="step">5</span>Ваше решение</h2>
-  <p class="muted">Скопируйте и заполните — или просто «r6 ок».</p>
-<pre>Стиль: r6 светлый / другой
+  <h2><span class="step">6</span>Ваше решение</h2>
+  <p class="muted">Скопируйте и заполните — или просто «r8 ок».</p>
+<pre>Стиль: r8 affinity / другой
 Первый кадр: анализы / еда / врач
 S01: ок / изменить: …
 S02: ок / изменить: …
-S03: ок / изменить: …
+S05: ок / изменить: …
 Дальше: делать кадры 4–8 тем же шаблоном — да / нет</pre>
 </main>
-<footer>Cysta AI · скриншоты App Store · r6 · 19.09.2026 · данные в примерах вымышленные; интерфейс — по строкам приложения · прежние страницы: <a href="archive/r4/">r4</a> · <a href="archive/r3/">r3</a> · <a href="archive/r2/">r2</a> · <a href="archive/r1/">r1</a></footer>
+<footer>Cysta AI · скриншоты App Store · r8 · 20.09.2026 · данные в примерах иллюстративные; продуктовые формулировки — по возможностям приложения · архив: <a href="archive/r4/">r4</a> · <a href="archive/r3/">r3</a> · <a href="archive/r2/">r2</a> · <a href="archive/r1/">r1</a></footer>
 </body>
 </html>
