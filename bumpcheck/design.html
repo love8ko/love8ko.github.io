@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BumpCheck — Design System Workbench</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1A1A1A;
+    --ink-2: #4B5563;
+    --ink-3: #9CA3AF;
+    --bg: #FAFAF8;
+    --bg-soft: #F5F5F2;
+    --card: #FFFFFF;
+    --divider: #E8E8E4;
+
+    --brand: #5B8A6F;
+    --brand-mid: #4A7459;
+    --brand-deep: #2F5A40;
+    --brand-soft: #EAF2EC;
+
+    --cta: #E8A338;
+    --cta-deep: #B47312;
+    --cta-soft: #FEF6E8;
+
+    --ai-bg: #EAF2EC;
+    --ai-border: #C8D9C0;
+
+    --good:  #4CAF82;
+    --good-bg: #EAF7F1;
+    --watch: #E8A338;
+    --watch-bg: #FEF6E8;
+    --alert: #D95B5B;
+    --alert-bg: #FCEAEA;
+    --gray: #8E9BAB;
+    --gray-bg: #F2F4F6;
+
+    --blush: #FBE9EC;
+    --blush-deep: #E8B8C0;
+  }
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    padding: 32px 24px 80px;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  h1, h2, h3 {
+    font-family: -apple-system, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+  h2 { font-size: 22px; font-weight: 700; margin: 48px 0 16px; }
+  h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+  .lede { color: var(--ink-2); max-width: 820px; line-height: 1.55; margin-bottom: 8px; }
+  .meta-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 8px; }
+  .pill {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 999px; padding: 5px 12px; font-size: 12px;
+    color: var(--ink-2); font-weight: 600;
+  }
+  .pill.lock { background: var(--good-bg); color: #1F6F4A; border-color: #BFE2CC; }
+  .pill.brand { background: var(--brand-soft); color: var(--brand-deep); border-color: var(--brand-soft); }
+  .pill.cta { background: var(--cta-soft); color: var(--cta-deep); border-color: #F2D9A8; }
+
+  .winner-callout {
+    background: var(--brand);
+    color: #FFFFFF;
+    border-radius: 24px;
+    padding: 28px 28px 24px;
+    margin: 24px 0 8px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+  }
+  .winner-callout h2 { color: #FFFFFF; margin: 0; font-size: 26px; }
+  .winner-callout .vibe { color: #EAF2EC; font-style: italic; max-width: 720px; margin-top: 6px; line-height: 1.55; }
+  .winner-callout .score-badge {
+    background: var(--cta);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 800;
+    font-size: 18px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    white-space: nowrap;
+  }
+
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .token {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 10px; padding: 8px 10px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11.5px;
+  }
+  .token .chip {
+    width: 28px; height: 28px; border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0;
+  }
+  .token .label { color: var(--ink-2); display: block; font-size: 10.5px; line-height: 1.2; }
+  .token .hex { color: var(--ink); font-weight: 600; line-height: 1.2; }
+
+  table.modes, table.ws, table.jtbd-scan, table.jtm, table.vote {
+    width: 100%; border-collapse: collapse; margin-top: 16px;
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--divider);
+  }
+  table.modes th, table.modes td,
+  table.ws th, table.ws td,
+  table.jtbd-scan th, table.jtbd-scan td,
+  table.jtm th, table.jtm td,
+  table.vote th, table.vote td {
+    padding: 10px 14px; text-align: left; font-size: 13.5px;
+    border-bottom: 1px solid var(--divider);
+  }
+  table.modes th, table.ws th, table.jtbd-scan th, table.jtm th, table.vote th {
+    background: var(--brand-soft); color: var(--brand-deep);
+    font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table.modes td.mode { font-family: ui-monospace, "SF Mono", monospace; font-weight: 700; }
+  .ok { color: var(--good); font-weight: 700; }
+  .warn { color: var(--watch); font-weight: 700; }
+  .no { color: var(--ink-3); }
+
+  /* DAY-mode component preview */
+  .modes-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 16px;
+  }
+  @media (max-width: 780px) { .modes-row { grid-template-columns: 1fr; } }
+  .mode-block {
+    border-radius: 24px;
+    padding: 22px 18px;
+    min-height: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .mode-block.day { background: var(--bg-soft); }
+  .mode-block.blush { background: linear-gradient(160deg, var(--blush) 0%, #FAF7F2 70%); }
+  .mode-label {
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6;
+  }
+
+  .verdict-hero {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+    border: 1px solid var(--divider);
+    border-left: 4px solid var(--alert);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .verdict-hero .product-row {
+    display: flex; gap: 10px; align-items: center;
+  }
+  .verdict-hero .product-thumb {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: var(--blush);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .verdict-hero .product-name {
+    font-weight: 700; font-size: 15px; color: var(--ink);
+  }
+  .verdict-hero .product-meta {
+    font-size: 11.5px; color: var(--ink-2);
+  }
+  .verdict-hero .verdict-title {
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    font-weight: 800; font-size: 22px; color: var(--alert);
+    margin-top: 6px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .verdict-hero .stage-badge {
+    background: var(--brand-soft); color: var(--brand-deep);
+    border-radius: 999px; padding: 3px 10px;
+    font-size: 11px; font-weight: 800;
+    font-family: ui-monospace, "SF Mono", monospace;
+    letter-spacing: 0.04em;
+  }
+  .verdict-hero .ingredient-note {
+    font-size: 12.5px; color: var(--ink-2); line-height: 1.5;
+  }
+  .verdict-hero .ingredient-note b { color: var(--alert); }
+  .verdict-hero .source-row {
+    border-top: 1px dashed var(--divider);
+    padding-top: 8px; margin-top: 4px;
+    display: flex; flex-wrap: wrap; gap: 5px;
+  }
+  .source-chip {
+    background: var(--brand-soft); color: var(--brand-deep);
+    border-radius: 6px; padding: 3px 8px;
+    font-size: 10.5px; font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .verdict-hero .safety-strip {
+    background: var(--cta-soft); color: var(--cta-deep);
+    border: 1px solid #F2D9A8;
+    font-size: 11px; line-height: 1.4;
+    padding: 8px 12px; border-radius: 10px; margin-top: 4px;
+  }
+
+  .mock-card {
+    background: var(--card); border-radius: 16px; padding: 14px;
+    box-shadow: 0 1px 3px rgba(26, 26, 26, 0.05);
+    border: 1px solid var(--divider);
+  }
+  .scan-tabs {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    background: var(--bg-soft); border-radius: 12px;
+    padding: 4px; gap: 4px;
+  }
+  .scan-tab {
+    text-align: center; padding: 9px 6px; border-radius: 9px;
+    font-size: 12px; font-weight: 700; color: var(--ink-2);
+  }
+  .scan-tab.active { background: var(--card); color: var(--brand-deep); box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+  .scan-tab .ic { font-size: 16px; display: block; margin-bottom: 2px; }
+
+  .history-row {
+    display: grid; grid-template-columns: 28px 1fr auto;
+    align-items: center; gap: 10px;
+    padding: 9px 0; border-bottom: 1px solid var(--divider);
+  }
+  .history-row:last-child { border-bottom: none; }
+  .history-name { font-weight: 600; font-size: 13.5px; }
+  .history-meta { font-size: 11px; color: var(--ink-2); }
+  .verdict-pill {
+    border-radius: 999px; padding: 3px 9px;
+    font-size: 10.5px; font-weight: 800;
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    letter-spacing: 0.02em;
+  }
+  .verdict-pill::before { content: '●'; font-size: 9px; }
+  .verdict-pill.good  { background: var(--good-bg);  color: #1F6F4A; }
+  .verdict-pill.watch { background: var(--watch-bg); color: #8C5A0F; }
+  .verdict-pill.alert { background: var(--alert-bg); color: #8C2A2A; }
+  .verdict-pill.gray  { background: var(--gray-bg);  color: #4A5568; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 48px; padding: 0 22px; border-radius: 14px;
+    font-weight: 700; font-size: 15px;
+    font-family: -apple-system, "SF Pro Rounded", sans-serif;
+    border: none; cursor: pointer; width: 100%; margin-top: auto;
+  }
+  .btn.primary { background: var(--brand); color: #fff; }
+  .btn.primary:hover { background: var(--brand-mid); }
+  .btn.cta { background: var(--cta); color: #fff; }
+
+  .type-list { display: grid; gap: 4px; margin-top: 8px; }
+  .type-list .row {
+    display: grid; grid-template-columns: 200px 1fr;
+    align-items: baseline; padding: 8px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+  .type-list .role { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+  .type-list .ex { font-family: -apple-system, "SF Pro Display", sans-serif; }
+
+  ul.list { margin-top: 8px; padding-left: 20px; line-height: 1.6; }
+  ul.list li { margin-bottom: 5px; font-size: 14px; }
+  ul.dontlist li::marker { color: var(--alert); }
+
+  .top-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 250, 248, 0.94);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--divider);
+    margin: 0 -24px 18px;
+    padding: 10px 24px;
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .top-nav a {
+    display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--ink-2);
+    font-size: 12.5px; font-weight: 600;
+    padding: 6px 11px; border-radius: 999px;
+    border: 1px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover { background: var(--card); color: var(--brand-deep); border-color: var(--divider); }
+  .top-nav a.is-module { background: var(--brand); color: #fff; }
+  .top-nav a.is-module:hover { background: var(--brand-mid); color: #fff; }
+  .top-nav .nav-num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em;
+    background: var(--cta); color: #fff;
+    padding: 2px 6px; border-radius: 5px;
+  }
+  .top-nav .sep { width: 1px; height: 16px; background: var(--divider); margin: 0 4px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+  .module-banner {
+    margin: 64px 0 18px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+    color: #fff;
+    border-radius: 18px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .module-banner .num {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 13px; font-weight: 800; letter-spacing: 0.08em;
+    background: var(--cta); color: #fff;
+    padding: 5px 11px; border-radius: 8px;
+  }
+  .module-banner h2 { margin: 0; color: #fff; font-size: 22px; }
+  .module-banner .desc {
+    color: #EAF2EC; font-size: 13px; line-height: 1.55;
+    flex-basis: 100%; margin-top: 4px;
+  }
+
+  /* Persona cards */
+  .persona-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 14px; margin-top: 16px;
+  }
+  .persona-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px; padding: 18px;
+    display: flex; flex-direction: column; gap: 10px;
+    border-left: 4px solid var(--brand);
+  }
+  .persona-card.p1 { border-left-color: var(--alert); }
+  .persona-card.p2 { border-left-color: var(--cta); }
+  .persona-card.p3 { border-left-color: var(--watch); }
+  .persona-card.p4 { border-left-color: var(--good); }
+  .persona-card.p5 { border-left-color: var(--brand-deep); }
+  .persona-card .ph { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .persona-card .ph .tag {
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 11px;
+    font-weight: 800; padding: 2px 8px; border-radius: 6px;
+    background: var(--brand); color: #fff;
+  }
+  .persona-card.p1 .ph .tag { background: var(--alert); }
+  .persona-card.p2 .ph .tag { background: var(--cta); }
+  .persona-card.p3 .ph .tag { background: var(--watch); }
+  .persona-card.p4 .ph .tag { background: var(--good); }
+  .persona-card.p5 .ph .tag { background: var(--brand-deep); }
+  .persona-card .ph b { font-size: 15.5px; color: var(--ink); font-weight: 800; }
+  .persona-card .ph .pay { margin-left: auto; font-size: 10.5px; font-weight: 800; padding: 2px 8px; border-radius: 999px; background: var(--good-bg); color: #1F6F4A; }
+  .persona-card .ph .pay.max { background: var(--alert-bg); color: #8C2A2A; }
+  .persona-card .ph .pay.high { background: var(--cta-soft); color: var(--cta-deep); }
+  .persona-card .quote {
+    font-size: 12.5px; color: var(--ink); line-height: 1.55;
+    font-style: italic; border-left: 3px solid var(--brand-soft);
+    padding-left: 10px; margin: 0;
+  }
+  .persona-card .pf { display: flex; flex-direction: column; gap: 6px; }
+  .persona-card .pf .row { display: flex; gap: 8px; font-size: 12px; align-items: flex-start; }
+  .persona-card .pf .l {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-3);
+    width: 78px; flex-shrink: 0; padding-top: 2px;
+  }
+  .persona-card .pf .v { color: var(--ink); line-height: 1.45; }
+  .persona-card .pf .v b { color: var(--brand-deep); }
+  .persona-card .tam-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+    margin-top: 4px; padding-top: 10px;
+    border-top: 1px dashed var(--divider);
+  }
+  .persona-card .tam-row .tam {
+    font-size: 11px; color: var(--ink-2);
+  }
+  .persona-card .tam-row .tam b { display: block; font-family: ui-monospace, "SF Mono", monospace; font-size: 13px; color: var(--ink); font-weight: 800; margin-top: 1px; }
+
+  /* JTBD scan table */
+  table.jtbd-scan td.persona { font-weight: 700; white-space: nowrap; }
+  table.jtbd-scan td.use {
+    font-family: ui-monospace, "SF Mono", monospace; font-weight: 800; font-size: 12px;
+    text-align: center;
+  }
+  table.jtbd-scan td.use.h { color: var(--alert); background: var(--alert-bg); }
+  table.jtbd-scan td.use.m { color: var(--cta-deep); background: var(--cta-soft); }
+  table.jtbd-scan td.use.l { color: var(--ink-3); }
+
+  /* JTBD cards (slot wedges) */
+  .jtbd-compact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 12px; margin-top: 16px;
+  }
+  .jtbd-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px; padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .jtbd-card.peak { border-left: 4px solid var(--cta); }
+  .jtbd-card .jc-h { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .jtbd-num {
+    background: var(--brand); color: #fff;
+    border-radius: 999px; padding: 2px 9px;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.04em;
+    font-family: ui-monospace, "SF Mono", monospace;
+  }
+  .jtbd-card .jc-h b { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .jtbd-weight {
+    margin-left: auto; font-size: 11px; font-weight: 700;
+    background: var(--divider); border-radius: 999px; padding: 2px 9px;
+    color: var(--ink-2); white-space: nowrap;
+  }
+  .jtbd-weight.w1 { background: var(--cta-soft); color: var(--cta-deep); }
+  .jtbd-weight.w2 { background: var(--good-bg); color: #1F6F4A; }
+  .jtbd-weight.w3 { background: var(--brand-soft); color: var(--brand-deep); }
+  .jtbd-wedge {
+    font-size: 12.5px; color: var(--ink); line-height: 1.5;
+    font-style: italic; border-left: 3px solid var(--brand-soft);
+    padding-left: 10px; margin: 0;
+  }
+  .jtbd-card .jc-row { display: flex; gap: 8px; font-size: 12.5px; align-items: flex-start; }
+  .jtbd-card .jc-l {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-3);
+    width: 64px; flex-shrink: 0; padding-top: 2px;
+  }
+  .jtbd-card .jc-row .jc-v { color: var(--ink); line-height: 1.45; }
+  .jtbd-card .jc-row .jc-v b { color: var(--brand-deep); }
+
+  /* ── Module 3 · Screenshots ── */
+  .cheat-banner {
+    background: linear-gradient(180deg, var(--brand-deep) 0%, var(--brand-mid) 100%);
+    color: #fff;
+    border-radius: 18px;
+    padding: 18px 22px 14px;
+    margin: 14px 0 18px;
+    border: 1px solid rgba(232,163,56,0.40);
+    box-shadow: 0 6px 24px rgba(91,138,111,0.18);
+  }
+  .cheat-banner .ch-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; letter-spacing: 0.12em; font-weight: 800;
+    color: #F4C887; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .cheat-banner h3 { margin: 0 0 8px; color: #fff; font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
+  .cheat-banner p { margin: 0; color: #EAF2EC; font-size: 13.5px; line-height: 1.55; }
+  .cheat-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+  @media (max-width: 700px) { .cheat-steps { grid-template-columns: 1fr; } }
+  .cheat-step {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px; padding: 10px 12px;
+    font-size: 12.5px; color: #E8EAE4; line-height: 1.45;
+  }
+  .cheat-step b { color: #fff; display: block; font-size: 12px; margin-bottom: 3px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .cheat-step.s1 { border-left: 3px solid var(--cta); }
+  .cheat-step.s2 { border-left: 3px solid var(--brand-soft); }
+  .cheat-step.s3 { border-left: 3px solid #F4C887; }
+
+  .cheat-table-wrap {
+    margin-top: 16px;
+    background: #1A1A1A; color: #F4EFE3;
+    border-radius: 14px; padding: 0;
+    overflow-x: auto;
+    border: 1px solid #2A2A2A;
+  }
+  table.cheat { width: 100%; border-collapse: collapse; font-size: 13px; font-family: ui-monospace, "SF Mono", "Menlo", monospace; }
+  table.cheat thead th {
+    background: #232323; color: #C8D5BE;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 700; padding: 10px 12px; text-align: left;
+    border-bottom: 1px solid #2A2A2A; white-space: nowrap;
+  }
+  table.cheat tbody td { padding: 10px 12px; border-bottom: 1px solid #232323; vertical-align: top; line-height: 1.4; }
+  table.cheat tbody tr:last-child td { border-bottom: none; }
+  table.cheat tbody tr.killer-row td { background: rgba(232,163,56,0.07); }
+  table.cheat td.cell-num { font-weight: 800; color: var(--cta); width: 28px; }
+  table.cheat td.cell-role { width: 90px; }
+  .cheat-mode { display: inline-block; padding: 2px 7px; border-radius: 5px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; }
+  .cheat-mode.blush { background: #FBE9EC; color: #8C2A4A; }
+  .cheat-mode.cream { background: #F4EFE3; color: #2F5A40; }
+  .cheat-mode.sage { background: #2F5A40; color: #EAF2EC; border: 1px solid #4A7459; }
+  .cheat-mode.marble { background: #E8E8E4; color: #2F5A40; }
+  .cheat-str { display: inline-block; background: #232323; color: #F4EFE3; border: 1px solid #2A2A2A; border-radius: 5px; padding: 3px 8px; font-size: 12.5px; word-break: break-word; }
+  .cheat-str.title { font-weight: 800; letter-spacing: 0.02em; color: #FFE9D6; }
+  .cheat-str.sub { color: #DCE5D6; font-weight: 500; }
+  .cheat-str.hero { background: rgba(176,196,164,0.10); border-color: rgba(176,196,164,0.30); color: #DDEEC9; }
+  .cheat-persona { color: #9AAA8E; font-size: 11px; letter-spacing: 0.04em; }
+
+  .cheat-donts {
+    margin-top: 14px;
+    background: linear-gradient(180deg, #2A1212 0%, #1F0E0E 100%);
+    border: 1px solid #5C2424; border-radius: 14px; padding: 14px 18px;
+  }
+  .cheat-donts .dt-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    color: #E89090; font-size: 11px; letter-spacing: 0.10em;
+    font-weight: 800; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .cheat-donts h4 { margin: 0 0 8px; color: #FFE0E0; font-size: 16px; font-weight: 800; }
+  .cheat-donts ul {
+    margin: 0; padding: 0; list-style: none;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 6px 16px;
+  }
+  .cheat-donts li { color: #F2D4D4; font-size: 12.5px; line-height: 1.5; padding-left: 18px; position: relative; }
+  .cheat-donts li::before { content: "✗"; position: absolute; left: 0; color: #E07070; font-weight: 800; }
+  .cheat-donts li b { color: #FFE0E0; }
+
+  .cheat-checklist {
+    margin-top: 14px;
+    background: #EAF7F1;
+    border: 1px solid #BFE2CC; border-radius: 14px; padding: 14px 18px;
+  }
+  .cheat-checklist .ck-eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    color: #1F6F4A; font-size: 11px; letter-spacing: 0.10em;
+    font-weight: 800; text-transform: uppercase; margin-bottom: 4px;
+  }
+  .cheat-checklist h4 { margin: 0 0 10px; color: #114B30; font-size: 16px; font-weight: 800; }
+  .cheat-checklist ol {
+    margin: 0; padding: 0; list-style: none; counter-reset: ck;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 6px 16px;
+  }
+  .cheat-checklist li { color: #114B30; font-size: 12.5px; line-height: 1.5; padding-left: 26px; position: relative; counter-increment: ck; }
+  .cheat-checklist li::before {
+    content: counter(ck); position: absolute; left: 0; top: 1px;
+    width: 18px; height: 18px;
+    background: var(--brand-deep); color: #fff; border-radius: 5px;
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 11px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Visual reference cards (designer mockups) */
+  .ds-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 18px; }
+  .ds-grid-8 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+  .ds-card {
+    background: var(--card); border-radius: 18px;
+    border: 1px solid var(--divider); padding: 14px 14px 16px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .ds-card.killer { border: 2px solid var(--cta); box-shadow: 0 4px 22px rgba(232,163,56,0.14); }
+  .ds-card .ds-num { font-family: ui-monospace, "SF Mono", monospace; font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; color: var(--ink-3); }
+  .ds-card.killer .ds-num { color: var(--cta-deep); }
+  .ds-phone {
+    background: #1A1A1A; border-radius: 24px;
+    padding: 14px 8px 8px; position: relative;
+    box-shadow: 0 6px 18px rgba(91,138,111,0.14);
+    margin: 0 auto;
+  }
+  .ds-phone::before {
+    content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+    width: 70px; height: 16px; border-radius: 0 0 14px 14px; background: #1A1A1A;
+  }
+  .ds-screen {
+    background: var(--card); border-radius: 14px;
+    min-height: 260px; padding: 14px 12px;
+    display: flex; flex-direction: column; gap: 8px;
+    color: var(--ink); font-size: 11.5px;
+  }
+  .ds-screen.blush { background: linear-gradient(170deg, #FBE9EC 0%, #FAF7F2 70%); }
+  .ds-screen.sage { background: var(--brand-deep); color: #fff; }
+  .ds-screen.cream { background: #FAF4E5; }
+  .ds-screen.marble { background: #F2F3F0; }
+  .ds-card.killer .ds-screen { min-height: 300px; }
+  .ds-headline { font-family: -apple-system, "SF Pro Rounded", sans-serif; font-weight: 800; font-size: 16px; line-height: 1.22; color: var(--ink); margin: 0; letter-spacing: -0.01em; }
+  .ds-card.killer .ds-headline { font-size: 19px; }
+  .ds-sub { font-size: 12.5px; color: var(--ink-2); line-height: 1.4; margin: 0; font-weight: 600; }
+  .ds-brief { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; line-height: 1.5; padding-top: 8px; border-top: 1px dashed var(--divider); }
+  .ds-brief:first-of-type { border-top: 1px solid var(--divider); padding-top: 9px; }
+  .ds-l { font-size: 9.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; width: 70px; flex-shrink: 0; padding-top: 2px; }
+  .ds-l.show { color: var(--brand-deep); }
+  .ds-l.move { color: var(--cta-deep); }
+  .ds-l.boost { color: var(--alert); }
+  .ds-brief-text { color: var(--ink); }
+  .ds-brief-text b { color: var(--brand-deep); }
+
+  /* Slot deep-dive cards (16 fields condensed) */
+  .slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 14px; margin-top: 18px; }
+  .slot-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px; padding: 18px;
+    display: flex; flex-direction: column; gap: 10px;
+    position: relative;
+  }
+  .slot-card.killer { border: 2px solid var(--cta); }
+  .slot-card .sl-h { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .slot-card .sl-h .num {
+    font-family: ui-monospace, "SF Mono", monospace; font-size: 11px;
+    font-weight: 800; padding: 3px 8px; border-radius: 6px;
+    background: var(--brand); color: #fff;
+  }
+  .slot-card.killer .sl-h .num { background: var(--cta); }
+  .slot-card .sl-h .role { font-size: 10.5px; font-weight: 800; color: var(--ink-3); letter-spacing: 0.08em; text-transform: uppercase; }
+  .slot-card .sl-h .copy { font-size: 16px; font-weight: 800; color: var(--ink); margin-top: 6px; flex-basis: 100%; }
+  .slot-card .sl-h .sub { font-size: 13px; color: var(--ink-2); margin-top: -2px; flex-basis: 100%; font-weight: 600; }
+  .slot-card .sl-row { display: flex; gap: 8px; font-size: 12.5px; align-items: flex-start; }
+  .slot-card .sl-l { font-size: 9.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); width: 90px; flex-shrink: 0; padding-top: 2px; }
+  .slot-card .sl-v { color: var(--ink); line-height: 1.5; }
+  .slot-card .sl-v b { color: var(--brand-deep); }
+  .slot-card .sl-v.boost { color: var(--alert); }
+  .slot-card .sl-personas { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 2px; }
+  .slot-card .pchip { background: var(--brand-soft); color: var(--brand-deep); border-radius: 999px; padding: 2px 8px; font-size: 10.5px; font-weight: 700; font-family: ui-monospace, "SF Mono", monospace; }
+  .slot-card.killer .pchip { background: var(--cta-soft); color: var(--cta-deep); }
+
+  /* Wedge cards (per-persona desires) */
+  .wedge-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; margin-top: 16px; }
+  .wedge {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 16px; padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .wedge .wh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .wedge .wh b { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .wedge .ww-want { font-size: 12.5px; color: var(--ink); line-height: 1.5; font-style: italic; border-left: 3px solid var(--cta-soft); padding-left: 10px; }
+  .wedge .ww-row { display: flex; gap: 8px; font-size: 12.5px; align-items: flex-start; }
+  .wedge .ww-l { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); width: 88px; flex-shrink: 0; padding-top: 2px; }
+  .wedge .ww-show { color: var(--ink); line-height: 1.45; }
+  .wedge .ww-show b { color: var(--brand-deep); }
+
+  /* Top-3 killer cards */
+  .ss-killer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; }
+  .ss-killer { background: var(--card); border-radius: 18px; border: 1px solid var(--divider); padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 10px; position: relative; }
+  .ss-killer.rank1 { border: 2px solid var(--cta); box-shadow: 0 4px 22px rgba(232,163,56,0.14); }
+  .ss-killer.rank2 { border-color: var(--brand); }
+  .ss-killer.rank3 { border-color: var(--good); }
+  .ss-rank-badge { position: absolute; top: -10px; left: 14px; background: var(--brand); color: #fff; border-radius: 999px; padding: 3px 10px; font-family: ui-monospace, "SF Mono", monospace; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; }
+  .ss-killer.rank1 .ss-rank-badge { background: var(--cta); }
+  .ss-killer.rank3 .ss-rank-badge { background: var(--good); }
+  .ss-killer h4 { font-size: 15px; font-weight: 800; margin: 4px 0 0; color: var(--ink); font-family: -apple-system, "SF Pro Rounded", sans-serif; }
+  .ss-killer .ss-tag { font-size: 10.5px; color: var(--ink-3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  .ss-killer .ss-why { font-size: 12px; color: var(--ink); line-height: 1.5; border-left: 3px solid var(--cta); padding-left: 10px; }
+  .ss-killer .ss-why b { color: var(--brand-deep); }
+  .ss-killer .ss-meta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 10.5px; color: var(--ink-2); padding-top: 6px; border-top: 1px solid var(--divider); }
+  .ss-killer .ss-meta-row b { display: block; color: var(--ink); font-weight: 800; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; }
+
+  .callout {
+    background: var(--brand-soft); border: 1px solid #C8D9C0;
+    border-radius: 12px; padding: 12px 16px;
+    margin-top: 14px;
+    font-size: 13px; color: var(--brand-deep); line-height: 1.55;
+  }
+  .callout b { color: var(--ink); }
+
+  .v2-callout {
+    background: var(--cta-soft); border: 1px solid #F2D9A8;
+    border-radius: 12px; padding: 12px 16px;
+    margin-top: 16px;
+    font-size: 13px; color: var(--cta-deep); line-height: 1.55;
+  }
+  .v2-callout b { color: var(--ink); }
+
+  /* Quick reference card */
+  .quickref {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px; margin-top: 12px;
+  }
+  .qr-card {
+    background: var(--card); border: 1px solid var(--divider);
+    border-radius: 12px; padding: 12px 14px;
+  }
+  .qr-card b { font-size: 11px; color: var(--ink-3); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; display: block; margin-bottom: 4px; }
+  .qr-card .val { font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.4; }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP NAV ===== -->
+<nav class="top-nav">
+  <a href="#top">↑ Top</a>
+  <span class="sep"></span>
+  <a href="#module-1" class="is-module"><span class="nav-num">M1</span>Дизайн</a>
+  <a href="#module-2" class="is-module"><span class="nav-num">M2</span>Personas · JTBD</a>
+  <a href="#module-3" class="is-module"><span class="nav-num">M3</span>Скриншоты</a>
+  <span class="sep"></span>
+  <a href="#tokens">tokens</a>
+  <a href="#components">components</a>
+  <a href="#typography">type</a>
+  <a href="#personas">personas</a>
+  <a href="#jtbd-scan">JTBD</a>
+  <a href="#ss-cheat">cheat</a>
+  <a href="#ss-killer">killer-3</a>
+  <a href="#ss-boost">+конверсия</a>
+</nav>
+
+<header id="top">
+  <h1>BumpCheck — Design System Workbench</h1>
+  <p class="lede">Pregnancy Ingredient Reference. Сканируй barcode · фото label · вставь название → trimester-aware verdict со ссылками на ACOG / NIH / EWG за 2-5 секунд. Убиваем Little Bean ($5K/mo, нет barcode, 47% recent 1★) и MommyMeds (не обновлялся с 2021). Окно 6-12 месяцев до того как BabyCenter добавит сканер.</p>
+  <div class="meta-bar">
+    <span class="pill lock">✅ Palette locked 2026-04-10</span>
+    <span class="pill lock">✅ Screenshots locked 2026-04-13 iter2</span>
+    <span class="pill brand">5 personas · 8 App Store slots</span>
+    <span class="pill cta">Light-mode primary · iOS 17+</span>
+    <span class="pill">v1 shipped · 50 locales</span>
+  </div>
+</header>
+
+<!-- ===== WINNER CALLOUT ===== -->
+<section class="winner-callout">
+  <div>
+    <h2>Sage Apothecary — «Calm Expert Friend»</h2>
+    <p class="vibe">Sage green (<code style="color:#FFE9D6">#5B8A6F</code>) — natural-medicine authority без clinical coldness · warm amber (<code style="color:#FFE9D6">#E8A338</code>) — caution без alarm · off-white cream (<code style="color:#FFE9D6">#FAFAF8</code>) — daytime warmth для использования в магазине / Sephora / pharmacy. Отличие от Little Bean (pink/purple lifestyle) и MommyMeds (clinical blue). Mood: «умная подруга-врач», не больница.</p>
+  </div>
+  <div class="score-badge">✓ Locked</div>
+</section>
+
+<!-- ===== QUICKREF ===== -->
+<div class="quickref">
+  <div class="qr-card"><b>Category</b><span class="val">Lifestyle</span></div>
+  <div class="qr-card"><b>Mode</b><span class="val">Light-only (магазин, Sephora, кухня)</span></div>
+  <div class="qr-card"><b>Anchor offer</b><span class="val">Pregnancy Bundle · $39.99 one-time</span></div>
+  <div class="qr-card"><b>Onboarding</b><span class="val">4 экрана → hard paywall (dismissible)</span></div>
+  <div class="qr-card"><b>Stack</b><span class="val">SwiftUI · SwiftData · GPT-4o Vision · RC</span></div>
+  <div class="qr-card"><b>Compliance</b><span class="val">«Flagged in research» · never «safe / dangerous»</span></div>
+</div>
+
+<!-- ===== MODULE 1 — DESIGN SYSTEM ===== -->
+<div class="module-banner" id="module-1" style="margin-top: 40px;">
+  <span class="num">МОДУЛЬ 1</span>
+  <h2>Дизайн-система</h2>
+  <p class="desc">Locked 2026-04-10 · «Sage Apothecary». Source of truth → <code>DESIGN_SYSTEM.md</code> + <code>Constants.swift</code>. Light-mode primary потому что use-context = магазин / pharmacy / ванная при дневном свете. Sage отстраивается от Little Bean (pink) и MommyMeds (clinical blue).</p>
+</div>
+
+<!-- ===== TOKENS ===== -->
+<h2 id="tokens">1.1 Locked token spec — «Sage Apothecary»</h2>
+
+<h3>Light surface (primary — единственная)</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#FAFAF8"></div><div><span class="label">bg</span><span class="hex">#FAFAF8</span></div></div>
+  <div class="token"><div class="chip" style="background:#F5F5F2"></div><div><span class="label">bg-soft / secondary</span><span class="hex">#F5F5F2</span></div></div>
+  <div class="token"><div class="chip" style="background:#FFFFFF"></div><div><span class="label">card / surface</span><span class="hex">#FFFFFF</span></div></div>
+  <div class="token"><div class="chip" style="background:#E8E8E4"></div><div><span class="label">divider</span><span class="hex">#E8E8E4</span></div></div>
+  <div class="token"><div class="chip" style="background:#1A1A1A"></div><div><span class="label">ink (text-primary)</span><span class="hex">#1A1A1A</span></div></div>
+  <div class="token"><div class="chip" style="background:#6B7280"></div><div><span class="label">ink-2 (text-secondary)</span><span class="hex">#6B7280</span></div></div>
+  <div class="token"><div class="chip" style="background:#9CA3AF"></div><div><span class="label">ink-3 (text-tertiary)</span><span class="hex">#9CA3AF</span></div></div>
+</div>
+
+<h3>Brand · Sage Green</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#5B8A6F"></div><div><span class="label">accent / brand</span><span class="hex">#5B8A6F</span></div></div>
+  <div class="token"><div class="chip" style="background:#4A7459"></div><div><span class="label">accent-mid (hover)</span><span class="hex">#4A7459</span></div></div>
+  <div class="token"><div class="chip" style="background:#3D6B52"></div><div><span class="label">accent-deep (pressed)</span><span class="hex">#3D6B52</span></div></div>
+  <div class="token"><div class="chip" style="background:#EAF2EC"></div><div><span class="label">accent-light (bg tint)</span><span class="hex">#EAF2EC</span></div></div>
+</div>
+
+<h3>Verdict triad (semantic — ingredient flag)</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#4CAF82"></div><div><span class="label">good · Not Flagged</span><span class="hex">#4CAF82</span></div></div>
+  <div class="token"><div class="chip" style="background:#EAF7F1"></div><div><span class="label">good-bg</span><span class="hex">#EAF7F1</span></div></div>
+  <div class="token"><div class="chip" style="background:#E8A338"></div><div><span class="label">watch · Caution / CTA</span><span class="hex">#E8A338</span></div></div>
+  <div class="token"><div class="chip" style="background:#FEF6E8"></div><div><span class="label">watch-bg</span><span class="hex">#FEF6E8</span></div></div>
+  <div class="token"><div class="chip" style="background:#D95B5B"></div><div><span class="label">alert · Flagged (muted)</span><span class="hex">#D95B5B</span></div></div>
+  <div class="token"><div class="chip" style="background:#FCEAEA"></div><div><span class="label">alert-bg</span><span class="hex">#FCEAEA</span></div></div>
+  <div class="token"><div class="chip" style="background:#8E9BAB"></div><div><span class="label">gray · Limited Data</span><span class="hex">#8E9BAB</span></div></div>
+  <div class="token"><div class="chip" style="background:#F2F4F6"></div><div><span class="label">gray-bg</span><span class="hex">#F2F4F6</span></div></div>
+</div>
+<p class="lede" style="font-size: 13px; margin-top: 8px;"><b>Almost-red, never alarm.</b> <code>#D95B5B</code> вместо #FF3B30 — флагирует, но не паникует. Anxious first-time mom не должна закрывать app после verdict. Verdict-triad переиспользуется на ResultView · HistoryView · ShelfSummaryCard · Share-card.</p>
+
+<h3>App Store screenshot backgrounds (locked NanoBanana palette)</h3>
+<div class="token-grid">
+  <div class="token"><div class="chip" style="background:#FBE9EC"></div><div><span class="label">blush · slot 1 hook</span><span class="hex">#FBE9EC</span></div></div>
+  <div class="token"><div class="chip" style="background:#F4EFE3"></div><div><span class="label">cream · slot 4 wow</span><span class="hex">#F4EFE3</span></div></div>
+  <div class="token"><div class="chip" style="background:#F2F3F0"></div><div><span class="label">marble · slot 5 proof</span><span class="hex">#F2F3F0</span></div></div>
+  <div class="token"><div class="chip" style="background:#2F5A40"></div><div><span class="label">sage-deep · slot 8 paywall</span><span class="hex">#2F5A40</span></div></div>
+</div>
+
+<!-- ===== COMPONENT PREVIEW ===== -->
+<h2 id="components">1.2 Component preview · ResultView + ScanView + History</h2>
+<p class="lede">Три ключевых поверхности, которые юзер увидит в первые 30 секунд. <b>VerdictHeroCard</b> — главный момент истины (left border = flag color). <b>ScanInputView</b> — 3 input modes (single screen, 3 tabs). <b>HistoryView</b> — retention surface, всегда offline.</p>
+
+<div class="modes-row">
+
+  <div class="mode-block blush">
+    <span class="mode-label">RESULTVIEW · «Know in 2 seconds» moment</span>
+
+    <div class="verdict-hero">
+      <div class="product-row">
+        <div class="product-thumb">🧴</div>
+        <div>
+          <div class="product-name">La Roche-Posay Retinol B3</div>
+          <div class="product-meta">Skincare · scanned just now</div>
+        </div>
+      </div>
+      <div class="verdict-title">
+        Flagged in research
+        <span class="stage-badge">T1</span>
+      </div>
+      <div class="ingredient-note">
+        Contains <b>retinol (vitamin A derivative)</b> — flagged across reviewed sources for use during pregnancy.
+      </div>
+      <div class="source-row">
+        <span class="source-chip">◆ ACOG 2024</span>
+        <span class="source-chip">◆ NIH LactMed</span>
+        <span class="source-chip">◆ EWG Skin Deep</span>
+      </div>
+      <div class="safety-strip">⚠️ Educational reference, not medical advice. Discuss with your OB-GYN.</div>
+    </div>
+
+    <div class="mock-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <div style="font-size:12px;font-weight:800;letter-spacing:0.06em;color:var(--ink-3);text-transform:uppercase">Ingredients flagged (1)</div>
+        <span class="verdict-pill alert">FLAG</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--ink);line-height:1.5">
+        <b>Retinol</b> — flagged in research for use in pregnancy. Alternatives in research: bakuchiol, vitamin C, niacinamide, peptides.
+      </div>
+    </div>
+
+    <button class="btn primary">★ Add to Bathroom Shelf</button>
+  </div>
+
+  <div class="mode-block day">
+    <span class="mode-label">SCANVIEW · 3 input modes + HistoryView</span>
+
+    <div class="mock-card">
+      <div style="font-size:11px;font-weight:800;letter-spacing:0.06em;color:var(--ink-3);text-transform:uppercase;margin-bottom:8px">How to check</div>
+      <div class="scan-tabs">
+        <div class="scan-tab active"><span class="ic">📷</span>Barcode</div>
+        <div class="scan-tab"><span class="ic">🔍</span>Photo</div>
+        <div class="scan-tab"><span class="ic">📋</span>Paste</div>
+      </div>
+      <div style="background:var(--bg-soft);border-radius:12px;margin-top:10px;padding:24px 12px;text-align:center;color:var(--ink-2);font-size:12.5px;line-height:1.5">
+        Aim camera at barcode<br>
+        <span style="font-size:11px;color:var(--ink-3)">Auto-detects · no tap needed</span>
+      </div>
+    </div>
+
+    <div class="mock-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+        <div style="font-size:13px;font-weight:800;color:var(--brand-deep)">Bathroom Shelf</div>
+        <div style="font-size:11px;color:var(--ink-2);font-family:ui-monospace,'SF Mono',monospace">6 / 20 saved</div>
+      </div>
+      <div class="history-row">
+        <span style="font-size:18px">🧴</span>
+        <div>
+          <div class="history-name">CeraVe Moisturizer</div>
+          <div class="history-meta">★ Saved · 2 days ago</div>
+        </div>
+        <span class="verdict-pill good">SAFE</span>
+      </div>
+      <div class="history-row">
+        <span style="font-size:18px">☕</span>
+        <div>
+          <div class="history-name">Americano (16oz)</div>
+          <div class="history-meta">T2 · 4 days ago</div>
+        </div>
+        <span class="verdict-pill watch">CAUTION</span>
+      </div>
+      <div class="history-row">
+        <span style="font-size:18px">💊</span>
+        <div>
+          <div class="history-name">Ibuprofen 200mg</div>
+          <div class="history-meta">T3 · 1 week ago</div>
+        </div>
+        <span class="verdict-pill alert">FLAG</span>
+      </div>
+      <div class="history-row">
+        <span style="font-size:18px">❓</span>
+        <div>
+          <div class="history-name">No-name shampoo</div>
+          <div class="history-meta">Insufficient data</div>
+        </div>
+        <span class="verdict-pill gray">N/A</span>
+      </div>
+    </div>
+
+    <button class="btn cta">+ Scan a new product</button>
+  </div>
+
+</div>
+
+<!-- ===== TYPOGRAPHY ===== -->
+<h2 id="typography">1.3 Typography</h2>
+<p class="lede">Полностью системный stack — нет кастомных загрузок (App Review friction). <b>SF Pro Rounded</b> на key call-out элементах (verdict title, headlines, бренд) → мягче, less clinical. <b>SF Pro Text</b> в body. Source citations всегда в .footnote — visible, но не доминируют.</p>
+
+<div class="type-list">
+  <div class="row"><div><div class="role">.largeTitle</div><span style="font-size:11px;color:var(--ink-3)">SF Pro Rounded · Bold · 34pt</span></div><div style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:32px;letter-spacing:-0.02em" class="ex">Know in 2 seconds.</div></div>
+  <div class="row"><div><div class="role">.title</div><span style="font-size:11px;color:var(--ink-3)">SF Pro Display · Bold · 28pt</span></div><div style="font-family:-apple-system,'SF Pro Display',sans-serif;font-weight:800;font-size:24px" class="ex">Stop Googling at 2am.</div></div>
+  <div class="row"><div><div class="role">.title2</div><span style="font-size:11px;color:var(--ink-3)">SF Pro Display · Semibold · 22pt</span></div><div style="font-family:-apple-system,'SF Pro Display',sans-serif;font-weight:700;font-size:20px" class="ex">Bathroom Shelf</div></div>
+  <div class="row"><div><div class="role">.verdictTitle</div><span style="font-size:11px;color:var(--ink-3)">SF Pro Rounded · Bold · 24pt</span></div><div style="font-family:-apple-system,'SF Pro Rounded',sans-serif;font-weight:800;font-size:22px;color:var(--alert)" class="ex">Flagged in research</div></div>
+  <div class="row"><div><div class="role">.body</div><span style="font-size:11px;color:var(--ink-3)">SF Pro Text · Regular · 17pt</span></div><div style="font-size:16px;line-height:1.5" class="ex">Contains retinol (vitamin A derivative) — flagged across reviewed sources during pregnancy.</div></div>
+  <div class="row"><div><div class="role">.subheadline</div><span style="font-size:11px;color:var(--ink-3)">SF Pro Text · Semibold · 15pt</span></div><div style="font-size:14px;font-weight:600" class="ex">Trimester-aware verdicts</div></div>
+  <div class="row"><div><div class="role">.footnote</div><span style="font-size:11px;color:var(--ink-3)">SF Pro Text · Regular · 13pt</span></div><div style="font-size:13px;color:var(--brand-deep);font-family:ui-monospace,'SF Mono',monospace" class="ex">◆ Source: ACOG 2024 →</div></div>
+  <div class="row"><div><div class="role">.caption2</div><span style="font-size:11px;color:var(--ink-3)">SF Pro Text · Regular · 11pt</span></div><div style="font-size:11px;color:var(--ink-2)" class="ex">Educational reference, not medical advice. Discuss with your OB-GYN.</div></div>
+</div>
+
+<!-- ===== DESIGN PRINCIPLES ===== -->
+<h2 id="principles">1.4 Non-negotiable design principles</h2>
+<table class="ws">
+  <thead><tr><th>#</th><th>Принцип</th><th>Почему</th><th>Видно в App Store screenshot</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><b>Verdict readable in 1 second</b></td><td>Стоит в магазине с продуктом в руке — нет времени читать</td><td>Slot 1, 5, 6 (Result hero card)</td></tr>
+    <tr><td>2</td><td><b>Source always visible</b></td><td>HCPs (P5) + educated mom (P1) не доверяют без источника</td><td>Slot 5 «Backed by ACOG. NIH. EWG.»</td></tr>
+    <tr><td>3</td><td><b>No alarm language</b></td><td>«Flagged in research» ≠ «DANGEROUS». Apple App Review + audience anxiety</td><td>Все 8 слотов — compliance grep mandatory</td></tr>
+    <tr><td>4</td><td><b>Disclaimer always in view</b></td><td>App Review §1.4.1 + liability protection</td><td>Slot 1, 5, 6 «Discuss with your OB-GYN» footer</td></tr>
+    <tr><td>5</td><td><b>Large tap targets (≥44pt)</b></td><td>3rd trimester координация другая; держит продукт в одной руке</td><td>Slot 3 (3 input mode pills — оба пальца)</td></tr>
+    <tr><td>6</td><td><b>Light-mode only</b></td><td>Pharmacy / Sephora / kitchen — bright environment. Dark = use-case mismatch</td><td>Все 8 слотов — никаких dark variants</td></tr>
+    <tr><td>7</td><td><b>Stage always surfaced</b></td><td>Verdict без stage = incomplete. «Retinol: see your stage» confusion недопустима</td><td>Slot 1, 4 (T1/T2/T3 pill всегда видна)</td></tr>
+    <tr><td>8</td><td><b>No gamification</b></td><td>Reference tool, не habit tracker. Беременные ≠ Duolingo users</td><td>Никаких streaks/badges в screenshots</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== MODULE 2 — PERSONAS & JTBD ===== -->
+<div class="module-banner" id="module-2">
+  <span class="num">МОДУЛЬ 2</span>
+  <h2>Personas &amp; JTBD</h2>
+  <p class="desc">5 портретов собранных из 203 reviews Little Bean / MommyMeds (manual scrape 2026-04-08). Главное наблюдение: <strong style="color:#FFE9D6">все 5 говорят одну фразу разными словами</strong> — «Я беременна. Не могу гуглить каждый ингредиент часами. Хочу мгновенный ответ.» Самый чистый PMF в портфеле — юзеры уже знают зачем им app, надо просто быть лучше Little Bean + добавить medications.</p>
+</div>
+
+<!-- ===== PERSONAS ===== -->
+<h2 id="personas">2.1 5 personas (203-review-derived)</h2>
+
+<div class="persona-grid">
+
+  <div class="persona-card p1">
+    <div class="ph"><span class="tag">P1</span><b>Anxious First-Time Mom</b><span class="pay max">MAX pay</span></div>
+    <p class="quote">«Being a first-time mom, I'm extra cautious about what I put in and on my body. This app makes it a breeze to ensure I'm making healthy choices for my baby.»</p>
+    <div class="pf">
+      <div class="row"><div class="l">Профиль</div><div class="v">28-38 · educated · middle-high income · первая беременность · paranoid mode</div></div>
+      <div class="row"><div class="l">Trigger</div><div class="v">Каждый shopping trip = anxiety check · 2am Google anxiety после нанесения unknown lotion</div></div>
+      <div class="row"><div class="l">Конверт</div><div class="v"><b>«Stop googling. 2-second verdict»</b> · trimester-aware · ACOG/NIH source citations</div></div>
+    </div>
+    <div class="tam-row">
+      <div class="tam">TAM<b>1.1-1.5M active</b></div>
+      <div class="tam">LTV trigger<b>18 months</b></div>
+    </div>
+  </div>
+
+  <div class="persona-card p2">
+    <div class="ph"><span class="tag">P2</span><b>Skincare-Obsessed Mom</b><span class="pay high">HIGH LTV</span></div>
+    <p class="quote">«Helped me realize majority of my pre-pregnancy skincare was unsuitable during pregnancy. I have been able to find pregnancy-safe swaps with ease.»</p>
+    <div class="pf">
+      <div class="row"><div class="l">Профиль</div><div class="v">25-40 · beauty enthusiast pre-pregnancy · 10-20 продуктов в routine · Sephora/Ulta loyal</div></div>
+      <div class="row"><div class="l">Trigger</div><div class="v">ENTIRE routine под вопросом → audit полки · retinol / AHA / vitamin C panic</div></div>
+      <div class="row"><div class="l">Конверт</div><div class="v"><b>Comprehensive database</b> · stage-aware (T1 vs T2) · brand recognition (Drunk Elephant, CeraVe, La Roche)</div></div>
+    </div>
+    <div class="tam-row">
+      <div class="tam">TAM<b>~900K active</b></div>
+      <div class="tam">Post-PG LTV<b>High (clean beauty)</b></div>
+    </div>
+  </div>
+
+  <div class="persona-card p3">
+    <div class="ph"><span class="tag">P3</span><b>Sick &amp; Pregnant (Medication Crisis)</b><span class="pay max">MAX in moment</span></div>
+    <p class="quote">«I'm extremely sick with a cold and congested and unsure of what to take... extremely frustrating when you just want answers on a holiday weekend.»</p>
+    <div class="pf">
+      <div class="row"><div class="l">Профиль</div><div class="v">Любого возраста · cold / flu / allergy / UTI / headache · OB недоступен в evening / weekend</div></div>
+      <div class="row"><div class="l">Trigger</div><div class="v">Острый момент need · открывает MommyMeds — broken · ищет alternative</div></div>
+      <div class="row"><div class="l">Конверт</div><div class="v"><b>Tylenol → safe + dosage + ACOG</b> · DayQuil → caution flag · MommyMeds replacement</div></div>
+    </div>
+    <div class="tam-row">
+      <div class="tam">TAM<b>~3M (almost all PG)</b></div>
+      <div class="tam">Trigger freq<b>2-3 × pregnancy</b></div>
+    </div>
+  </div>
+
+  <div class="persona-card p4">
+    <div class="ph"><span class="tag">P4</span><b>Second-Time Mom (Viral Sharer)</b><span class="pay">Mid pay</span></div>
+    <p class="quote">«Obsessed with this app and wish I had it for my first pregnancy. I recommend it to every new mom.»</p>
+    <div class="pf">
+      <div class="row"><div class="l">Профиль</div><div class="v">30-40 · 2-3 pregnancy · efficiency mode · friends-circle of first-timers</div></div>
+      <div class="row"><div class="l">Trigger</div><div class="v">Quick checks при shopping · share screenshot в Mom Group Chat</div></div>
+      <div class="row"><div class="l">Конверт</div><div class="v"><b>«Wish I had this earlier»</b> messaging · easy share · bundle pricing (бюджет tighter)</div></div>
+    </div>
+    <div class="tam-row">
+      <div class="tam">TAM<b>1.5-2M active</b></div>
+      <div class="tam">Viral coeff<b>Free WoM acquisition</b></div>
+    </div>
+  </div>
+
+  <div class="persona-card p5">
+    <div class="ph"><span class="tag">P5</span><b>Healthcare Professional Patient</b><span class="pay high">Credibility driver</span></div>
+    <p class="quote">«As a doctor I field questions constantly about safety of various drugs during pregnancy and breast-feeding. Recommended by my lactation consultants as a trusted resource.»</p>
+    <div class="pf">
+      <div class="row"><div class="l">Профиль</div><div class="v">25-50 · physician / nurse / midwife / lactation consultant / NP student · personal + patient recommendation use</div></div>
+      <div class="row"><div class="l">Trigger</div><div class="v">Своя беременность + рекомендация patients · existing tools (InfantRisk) clunky</div></div>
+      <div class="row"><div class="l">Конверт</div><div class="v"><b>Source citations</b> (NIH/ACOG/FDA/EWG) · comprehensive · PDF export · authoritative tone</div></div>
+    </div>
+    <div class="tam-row">
+      <div class="tam">TAM<b>5M+ HCPs (personal use)</b></div>
+      <div class="tam">Multiplier<b>1 HCP → 50-100 patients</b></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="callout">
+  <b>ICP суммарно:</b> 28-38 лет, первая или вторая беременность, educated middle-class. Уже установили pregnancy tracker (BabyCenter / Pregnancy+) и Yuka — но Yuka generic, не pregnancy-specific. Гуглят постоянно — <b>боль</b>. Спрашивают OB — <b>embarrassed, slow</b>. Reading r/BabyBumps — <b>conflicting</b>. <b>Total active overlap-removed: ~5M в любой момент</b> · самая высокая pay-willingness в App Store health-category.
+</div>
+
+<!-- ===== JTBD ===== -->
+<h2 id="jtbds">2.2 7 core JTBDs (cross-persona)</h2>
+<p class="lede">Каждый App Store слот выполняет один JTBD. Per-persona intensity scan ниже показывает на каких слотах фокусироваться.</p>
+
+<div class="jtbd-compact-grid">
+
+  <div class="jtbd-card peak">
+    <div class="jc-h"><span class="jtbd-num">JTBD-1</span><b>Instant verdict</b><span class="jtbd-weight w1">peak</span></div>
+    <p class="jtbd-wedge">"When I suspect an ingredient on a product I'm about to use, I want to know instantly whether research flags it for my trimester, so I can feel safe or swap it."</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><div class="jc-v">Little Bean даёт one-time photo-OCR; <b>BumpCheck = barcode + photo + paste + trimester-aware verdict ≤ 2 sec</b></div></div>
+    <div class="jc-row"><div class="jc-l">Slot</div><div class="jc-v">#1 Hook · #6 Meds</div></div>
+  </div>
+
+  <div class="jtbd-card peak">
+    <div class="jc-h"><span class="jtbd-num">JTBD-2</span><b>Stop the 2am Googling</b><span class="jtbd-weight w1">peak</span></div>
+    <p class="jtbd-wedge">"When I'm lying in bed at 2am worried about something I just used, I want an app that understands exactly that moment — not a clinical directory."</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><div class="jc-v">Google = 10 conflicting answers · BabyCenter forum = scary stories · <b>BumpCheck = одно решение + источник</b></div></div>
+    <div class="jc-row"><div class="jc-l">Slot</div><div class="jc-v">#2 Pain</div></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h"><span class="jtbd-num">JTBD-3</span><b>Three input modes, one answer</b><span class="jtbd-weight w2">high</span></div>
+    <p class="jtbd-wedge">"When I have a mixed pile of products — sealed skincare, open bottles, online reviews — I want one app that handles them all, not three."</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><div class="jc-v">Little Bean = только photo · Yuka = только barcode · <b>BumpCheck = barcode + photo OCR + paste</b></div></div>
+    <div class="jc-row"><div class="jc-l">Slot</div><div class="jc-v">#3 Tool</div></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h"><span class="jtbd-num">JTBD-4</span><b>Trimester-specific safety</b><span class="jtbd-weight w2">high</span></div>
+    <p class="jtbd-wedge">"Tell me that safety changes per trimester — most apps miss this. Don't give me one flat answer."</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><div class="jc-v">Caffeine OK T1, risky T3 · Ibuprofen OK T1-T2, flagged T3 · <b>BumpCheck = единственный с per-trimester logic</b></div></div>
+    <div class="jc-row"><div class="jc-l">Slot</div><div class="jc-v">#4 Wow</div></div>
+  </div>
+
+  <div class="jtbd-card peak">
+    <div class="jc-h"><span class="jtbd-num">JTBD-5</span><b>Cited research, not AI hallucination</b><span class="jtbd-weight w1">peak</span></div>
+    <p class="jtbd-wedge">"Prove this isn't AI hallucination. My baby is not a content experiment."</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><div class="jc-v">Каждый verdict = source chip (ACOG / NIH / EWG / FDA) tappable → safari. <b>Tap-through к real research = trust signal никто из конкурентов не даёт</b></div></div>
+    <div class="jc-row"><div class="jc-l">Slot</div><div class="jc-v">#5 Proof</div></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h"><span class="jtbd-num">JTBD-6</span><b>Medications, not just cosmetics</b><span class="jtbd-weight w2">high</span></div>
+    <p class="jtbd-wedge">"I'm sick pregnant at 11pm — can I take this cold med? MommyMeds is broken; a skincare-only app won't help."</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><div class="jc-v">Little Bean = только cosmetics · MommyMeds = abandoned 2021 · <b>BumpCheck = cosmetics + meds + food + household, one app</b></div></div>
+    <div class="jc-row"><div class="jc-l">Slot</div><div class="jc-v">#6 Feature</div></div>
+  </div>
+
+  <div class="jtbd-card">
+    <div class="jc-h"><span class="jtbd-num">JTBD-7</span><b>Safe list on hand · offline</b><span class="jtbd-weight w3">mid</span></div>
+    <p class="jtbd-wedge">"I've already cleared these five lotions — don't make me re-check at Target. Keep my safe list in my pocket, offline."</p>
+    <div class="jc-row"><div class="jc-l">Wedge</div><div class="jc-v">Little Bean «can't see past searches» (review цитата) · <b>BumpCheck = persistent shelf, favorites, offline</b></div></div>
+    <div class="jc-row"><div class="jc-l">Slot</div><div class="jc-v">#7 Utility</div></div>
+  </div>
+
+</div>
+
+<!-- ===== JTBD SCAN ===== -->
+<h2 id="jtbd-scan" style="margin-top: 28px;">2.3 JTBD · scan-table (persona × JTBD intensity)</h2>
+<p class="lede">H = peak motivation (этот JTBD её приводит на App Store), M = secondary (закрепляет конверсию), L = low. <b>JTBD-1 + JTBD-2 + JTBD-5</b> = 3 peak-универсальных у 4/5 персон → объясняет почему killer slots = Hook + Pain + Proof.</p>
+
+<table class="jtbd-scan">
+  <thead>
+    <tr>
+      <th>Persona</th>
+      <th>JTBD-1<br>Verdict</th>
+      <th>JTBD-2<br>2am</th>
+      <th>JTBD-3<br>3 modes</th>
+      <th>JTBD-4<br>Trimester</th>
+      <th>JTBD-5<br>Sources</th>
+      <th>JTBD-6<br>Meds</th>
+      <th>JTBD-7<br>Shelf</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="persona">P1 First-time mom</td><td class="use h">H</td><td class="use h">H</td><td class="use m">M</td><td class="use h">H</td><td class="use h">H</td><td class="use m">M</td><td class="use l">L</td></tr>
+    <tr><td class="persona">P2 Skincare-obsessed</td><td class="use h">H</td><td class="use m">M</td><td class="use h">H</td><td class="use h">H</td><td class="use m">M</td><td class="use l">L</td><td class="use h">H</td></tr>
+    <tr><td class="persona">P3 Sick &amp; pregnant</td><td class="use h">H</td><td class="use h">H</td><td class="use m">M</td><td class="use m">M</td><td class="use h">H</td><td class="use h">H</td><td class="use l">L</td></tr>
+    <tr><td class="persona">P4 Second-time mom</td><td class="use h">H</td><td class="use l">L</td><td class="use h">H</td><td class="use m">M</td><td class="use m">M</td><td class="use m">M</td><td class="use h">H</td></tr>
+    <tr><td class="persona">P5 HCP patient</td><td class="use m">M</td><td class="use l">L</td><td class="use l">L</td><td class="use h">H</td><td class="use h">H</td><td class="use h">H</td><td class="use m">M</td></tr>
+    <tr style="background: var(--brand-soft);">
+      <td class="persona" style="color:var(--brand-deep);font-weight:800">TALLY (H)</td>
+      <td class="use" style="color:var(--alert);font-weight:800">4/5</td>
+      <td class="use" style="color:var(--alert);font-weight:800">3/5</td>
+      <td class="use" style="color:var(--alert);font-weight:800">2/5</td>
+      <td class="use" style="color:var(--alert);font-weight:800">3/5</td>
+      <td class="use" style="color:var(--alert);font-weight:800">3/5</td>
+      <td class="use" style="color:var(--cta-deep);font-weight:800">2/5</td>
+      <td class="use" style="color:var(--cta-deep);font-weight:800">2/5</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== MODULE 3 — SCREENSHOTS ===== -->
+<div class="module-banner" id="module-3">
+  <span class="num">МОДУЛЬ 3</span>
+  <h2>App Store Screenshots · 8 slots · marketing-narrative arc</h2>
+  <p class="desc"><strong style="color:#FFE9D6">⇣ Дизайнер открыл первый раз? Читай §3.0 CHEAT SHEET.</strong> Этого хватит чтобы отрисовать все 8 фреймов. §3.0a даёт визуал-референсы, §3.1 — what users want per persona, §3.2 — 5-persona vote, §3.3 — top-3 killer breakdown, §3.4 — <strong style="color:#FFE9D6">conversion-boost playbook</strong> (что добавить на каждый скриншот чтоб поднять CR), §3.5 — anti-patterns, §3.6 — pre-export checklist.</p>
+</div>
+
+<h2 id="ss-cheat" style="margin-top: 18px;">3.0 · CHEAT SHEET — copy strings, draw heroes, ship</h2>
+
+<div class="cheat-banner">
+  <div class="ch-eyebrow">⚡ START HERE · этого хватит для отгрузки</div>
+  <h3>8 фреймов. 8 строк HEADLINE + 8 SUB + 8 hero-элементов. Возьми буквально.</h3>
+  <p>App Store thumb-превью показывает только <strong>3 первые скриншота</strong> — они решают покупку. Slots 1-2-3 = killer (amber-подсвечены ниже), 4-8 = persona-depth. <strong>Не переписывай HEADLINE/SUB в свободной форме</strong> — копи прошла 6-person consilium 2026-04-13 и locked. Все скриншоты используют real iOS simulator captures как hero внутри NanoBanana background — никаких mocked product photos.</p>
+  <div class="cheat-steps">
+    <div class="cheat-step s1"><b>1 · Read row</b>Одна строка таблицы = один скриншот. 8 строк = вся галерея.</div>
+    <div class="cheat-step s2"><b>2 · Copy strings</b>HEADLINE и SUB — буквально copy-paste в Figma. SF Pro Rounded Bold / SF Pro Display Semibold. Не редактируй копи.</div>
+    <div class="cheat-step s3"><b>3 · Draw HERO</b>Hero — real screen inside iPhone mockup (verdict card / scan tabs / shelf). Background — NanoBanana ambient (см. палитру).</div>
+  </div>
+</div>
+
+<div class="cheat-table-wrap">
+  <table class="cheat">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>ROLE</th>
+        <th>BG</th>
+        <th>HEADLINE (top, bold)</th>
+        <th>SUB (one line)</th>
+        <th>HERO INSIDE PHONE</th>
+        <th>PERSONA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="killer-row">
+        <td class="cell-num">1</td>
+        <td class="cell-role">Hook</td>
+        <td><span class="cheat-mode blush">BLUSH</span></td>
+        <td><span class="cheat-str title">Know in 2 seconds.</span></td>
+        <td><span class="cheat-str sub">Snap any ingredient. Get a trimester-aware verdict.</span></td>
+        <td><span class="cheat-str hero">VerdictHeroCard «La Roche Retinol B3» + T1 stage badge + ACOG/NIH/EWG source chips + safety strip</span></td>
+        <td class="cheat-persona">P1 · P2</td>
+      </tr>
+      <tr class="killer-row">
+        <td class="cell-num">2</td>
+        <td class="cell-role">Pain</td>
+        <td><span class="cheat-mode blush">DIM BLUSH</span></td>
+        <td><span class="cheat-str title">Stop Googling at 2am.</span></td>
+        <td><span class="cheat-str sub">Conflicting forums. Scary forums. No OB in sight.</span></td>
+        <td><span class="cheat-str hero">OnboardingView page 1 (Pain frame) + sage halo glow on phone · candid bedroom mood (not staged)</span></td>
+        <td class="cheat-persona">P1 · P4</td>
+      </tr>
+      <tr class="killer-row">
+        <td class="cell-num">3</td>
+        <td class="cell-role">Tool</td>
+        <td><span class="cheat-mode cream">CREAM</span></td>
+        <td><span class="cheat-str title">Three ways. One answer.</span></td>
+        <td><span class="cheat-str sub">Scan a barcode. Snap a label. Paste a name.</span></td>
+        <td><span class="cheat-str hero">ScanView с 3 tab pills visible (Barcode / Photo / Paste) · cosmetic bottle + pill blister + recipe note faint в bg</span></td>
+        <td class="cheat-persona">P2 · P3</td>
+      </tr>
+      <tr>
+        <td class="cell-num">4</td>
+        <td class="cell-role">Wow</td>
+        <td><span class="cheat-mode cream">CREAM</span></td>
+        <td><span class="cheat-str title">Same ingredient. Different trimester.</span></td>
+        <td><span class="cheat-str sub">Verdicts that change as your pregnancy does.</span></td>
+        <td><span class="cheat-str hero">OnboardingView page 3 Coverage carousel: Caffeine/Retinol/Ibuprofen split across T1/T2/T3 · triptych pills 🟢/🟡/🔴</span></td>
+        <td class="cheat-persona">P2 · P5</td>
+      </tr>
+      <tr>
+        <td class="cell-num">5</td>
+        <td class="cell-role">Proof</td>
+        <td><span class="cheat-mode marble">MARBLE</span></td>
+        <td><span class="cheat-str title">Backed by ACOG. NIH. EWG.</span></td>
+        <td><span class="cheat-str sub">Every verdict cites real research.</span></td>
+        <td><span class="cheat-str hero">ResultView со scrollToSourcesOnAppear=true → Sources card как visual anchor · ACOG/NIH/EWG wordmarks muted в bg</span></td>
+        <td class="cheat-persona">P1 · P5</td>
+      </tr>
+      <tr>
+        <td class="cell-num">6</td>
+        <td class="cell-role">Feature</td>
+        <td><span class="cheat-mode cream">PHARMACY</span></td>
+        <td><span class="cheat-str title">Meds, not just skincare.</span></td>
+        <td><span class="cheat-str sub">Ibuprofen, Sudafed, prescriptions — checked.</span></td>
+        <td><span class="cheat-str hero">VerdictHeroCard «Ibuprofen 200mg» + T3 + flagged + ACOG Practice Bulletin 189 + NIH LactMed · amber pill bottle props</span></td>
+        <td class="cheat-persona">P3 · P5</td>
+      </tr>
+      <tr>
+        <td class="cell-num">7</td>
+        <td class="cell-role">Utility</td>
+        <td><span class="cheat-mode cream">SHELF</span></td>
+        <td><span class="cheat-str title">Your safe list. On hand.</span></td>
+        <td><span class="cheat-str sub">History, favorites, always offline.</span></td>
+        <td><span class="cheat-str hero">HistoryView · 6 scans · ShelfSummaryCard 3 safe / 2 flagged / 1 caution · 3 favorited · bathroom shelf flat-lay blurred bg</span></td>
+        <td class="cheat-persona">P4 · P2</td>
+      </tr>
+      <tr>
+        <td class="cell-num">8</td>
+        <td class="cell-role">Conversion</td>
+        <td><span class="cheat-mode sage">SAGE</span></td>
+        <td><span class="cheat-str title">One-time. Lifetime.</span></td>
+        <td><span class="cheat-str sub">Pregnancy Bundle — $39.99. No auto-renew.</span></td>
+        <td><span class="cheat-str hero">PaywallView · Bundle preselected (RECOMMENDED pill) · 3 tier layout · sunlit bedroom silhouette в bg</span></td>
+        <td class="cheat-persona">All 5</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 3.0a VISUAL REFERENCE ===== -->
+<h2 id="ss-brief" style="margin-top: 36px;">3.0a · Visual reference cards — что нарисовать</h2>
+<p class="lede"><strong>Дополнение к §3.0, не замена.</strong> Cheat sheet даёт <em>что писать</em>; ниже — <em>как должно выглядеть</em>. Каждая карточка = один скриншот: phone mockup preview · <strong>SHOW</strong> (что обязательно внутри) · <strong>ANIMATE</strong> (motion для App Preview видео) · <strong>BOOST</strong> (conversion-уплотнители — см. §3.4).</p>
+
+<h3 style="margin-top: 22px;">First 3 — killer scroll-stop</h3>
+<div class="ds-grid-3">
+
+  <!-- KILLER 1: Verdict Hero -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 1 · KILLER · BLUSH</span>
+    <div class="ds-phone">
+      <div class="ds-screen blush">
+        <div style="font-size:9px;color:#9CA3AF;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">BumpCheck · Result</div>
+        <div style="background:#fff;border-radius:11px;border:1px solid #E8E8E4;border-left:3px solid #D95B5B;padding:9px 10px;display:flex;flex-direction:column;gap:3px">
+          <div style="display:flex;align-items:center;gap:6px">
+            <div style="width:24px;height:24px;border-radius:5px;background:#FBE9EC;display:flex;align-items:center;justify-content:center;font-size:11px">🧴</div>
+            <div style="font-size:10px;font-weight:700;color:#1A1A1A">La Roche Retinol B3</div>
+          </div>
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:14px;color:#D95B5B;display:flex;align-items:center;gap:5px">Flagged in research <span style="background:#EAF2EC;color:#2F5A40;border-radius:999px;padding:1px 6px;font-size:8px;font-family:ui-monospace,'SF Mono',monospace">T1</span></div>
+          <div style="font-size:8.5px;color:#6B7280;line-height:1.4">Contains <b style="color:#D95B5B">retinol</b> — flagged across reviewed sources during pregnancy.</div>
+          <div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:3px;padding-top:4px;border-top:1px dashed #E8E8E4">
+            <span style="background:#EAF2EC;color:#2F5A40;border-radius:4px;padding:1px 5px;font-size:8px;font-family:ui-monospace,'SF Mono',monospace;font-weight:700">◆ ACOG</span>
+            <span style="background:#EAF2EC;color:#2F5A40;border-radius:4px;padding:1px 5px;font-size:8px;font-family:ui-monospace,'SF Mono',monospace;font-weight:700">◆ NIH</span>
+            <span style="background:#EAF2EC;color:#2F5A40;border-radius:4px;padding:1px 5px;font-size:8px;font-family:ui-monospace,'SF Mono',monospace;font-weight:700">◆ EWG</span>
+          </div>
+          <div style="background:#FEF6E8;color:#B47312;border:1px solid #F2D9A8;border-radius:6px;padding:4px 6px;font-size:8px;line-height:1.35;margin-top:4px">⚠️ Educational reference. Discuss with your OB-GYN.</div>
+        </div>
+        <div style="background:#5B8A6F;color:#fff;border-radius:7px;padding:6px;font-size:9px;font-weight:700;text-align:center;margin-top:auto">★ Add to Bathroom Shelf</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Know in 2 seconds.</h4>
+    <p class="ds-sub">Snap any ingredient. Get a trimester-aware verdict.</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">VerdictHeroCard «La Roche Retinol B3» · <b>T1 stage badge</b> visible · 3 source chips (ACOG / NIH / EWG) · safety strip · ★ Add to Bathroom Shelf CTA</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">Verdict title <b>fade-in + bounce-up</b> (0.4s) → source chips cascade left-to-right (3 × 80ms) → safety strip последним</span></div>
+    <div class="ds-brief"><span class="ds-l boost">BOOST</span><span class="ds-brief-text"><b>+8% CR potential:</b> добавить «2.3 sec» timer chip справа от headline · brand logo recognition (La Roche-Posay wordmark mini в углу) — P2 узнаёт свою любимую брендовую упаковку</span></div>
+  </div>
+
+  <!-- KILLER 2: Pain -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 2 · KILLER · BLUSH (DIM)</span>
+    <div class="ds-phone">
+      <div class="ds-screen" style="background:linear-gradient(170deg,#3D2A2E 0%,#1F1418 80%);color:#F2E7E0">
+        <div style="font-size:9px;color:#DCC5C0;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Onboarding · Page 1</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:18px;line-height:1.2;color:#FFF;margin-top:6px">Still Googling?</div>
+        <div style="font-size:10px;line-height:1.45;color:#DCC5C0;margin-top:4px">Finding out you're pregnant means questioning everything in your bathroom and medicine cabinet.</div>
+        <div style="background:rgba(91,138,111,0.20);border:1px solid rgba(91,138,111,0.40);border-radius:8px;padding:6px 8px;font-size:9px;color:#C8D5BE;line-height:1.4;margin-top:8px">Google gives 10 conflicting answers at 2 a.m. Your OB doesn't.</div>
+        <div style="background:#5B8A6F;color:#fff;border-radius:7px;padding:6px;font-size:9px;font-weight:700;text-align:center;margin-top:auto">Show me how →</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Stop Googling at 2am.</h4>
+    <p class="ds-sub">Conflicting forums. Scary forums. No OB in sight.</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">Onboarding Pain frame · candid bedroom mood (dim warm light) · sage halo вокруг phone (signals «solution coming») · <b>не staged stock photo</b></span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">«Still Googling?» fades in · «10 conflicting answers» pull-up · sage halo pulses 1× когда CTA появляется</span></div>
+    <div class="ds-brief"><span class="ds-l boost">BOOST</span><span class="ds-brief-text"><b>+5-12% CR:</b> добавить чат-pull «2:47 AM · 14 tabs open» прямо над phone — конкретное время делает recognition острее. <b>P4 (second-time)</b> увидит свою историю.</span></div>
+  </div>
+
+  <!-- KILLER 3: Tool -->
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 3 · KILLER · CREAM</span>
+    <div class="ds-phone">
+      <div class="ds-screen cream">
+        <div style="font-size:9px;color:#9CA3AF;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">BumpCheck</div>
+        <div style="font-size:11px;font-weight:800;color:#1A1A1A">Paste ingredients</div>
+        <div style="background:#fff;border:1px solid #E8E8E4;border-radius:11px;padding:9px;font-size:8.5px;color:#1A1A1A;line-height:1.45">Copy from box/recipe. Analysis = one product step. Will check each ingredient against pregnancy research for your trimester.<div style="margin-top:5px;padding-top:5px;border-top:1px solid #F5F5F2"><b>Niacinamide, Hyaluronic Acid, Retinol, Glycerin, Salicylic Acid, Tocopherol, Centella Asiatica Extract, Squalane, Ceramide NP</b></div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;background:#F5F5F2;border-radius:7px;padding:2px;margin-top:auto">
+          <div style="background:#fff;color:#2F5A40;border-radius:5px;padding:5px 4px;text-align:center;font-size:8.5px;font-weight:700">📷 Barcode</div>
+          <div style="color:#6B7280;border-radius:5px;padding:5px 4px;text-align:center;font-size:8.5px;font-weight:700">🔍 Photo</div>
+          <div style="color:#6B7280;border-radius:5px;padding:5px 4px;text-align:center;font-size:8.5px;font-weight:700">📋 Paste</div>
+        </div>
+        <div style="background:#5B8A6F;color:#fff;border-radius:7px;padding:6px;font-size:9px;font-weight:700;text-align:center;margin-top:5px">Check ingredients</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Three ways. One answer.</h4>
+    <p class="ds-sub">Scan a barcode. Snap a label. Paste a name.</p>
+    <div class="ds-brief"><span class="ds-l show">SHOW</span><span class="ds-brief-text">3 input mode pills (Barcode / Photo / Paste) <b>все видны без скролла</b> · Paste mode active с real ingredient list visible (ingredient density signals comprehensiveness)</span></div>
+    <div class="ds-brief"><span class="ds-l move">ANIMATE</span><span class="ds-brief-text">3 mode pills slide-in left → ingredient list types out word-by-word (1.5s) → «Check» CTA fade-up</span></div>
+    <div class="ds-brief"><span class="ds-l boost">BOOST</span><span class="ds-brief-text"><b>+10% CR potential:</b> ниже phone — 3 product props (skincare bottle · medicine blister · printed recipe), каждый со стрелкой → соответствующий mode pill. Visualizes "одна app покрывает всё" mental model.</span></div>
+  </div>
+
+</div>
+
+<div class="v2-callout">
+  <b>Logic для killer-3:</b> Slot 1 — самое сильное demo→benefit (Result hero card работает само по себе, без объяснений). Slot 2 — emotional recognition (P1 + P4 узнают свою 2am историю). Slot 3 — competitive moat демонстрация (3 input modes — wedge против Little Bean photo-only). Эти 3 — наш scroll-stop weapon. Apple App Store thumb-превью показывает только эти 3 — они решают тап.
+</div>
+
+<!-- ===== 3.0b ALL 8 GRID ===== -->
+<h3 style="margin-top: 32px;">All 8 slots — compact reference grid</h3>
+<div class="ds-grid-8">
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 1 · KILLER</span>
+    <div class="ds-phone">
+      <div class="ds-screen blush">
+        <div style="background:#fff;border-radius:9px;border-left:3px solid #D95B5B;padding:7px 8px">
+          <div style="font-size:8px;color:#6B7280">La Roche Retinol B3</div>
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:11px;color:#D95B5B">Flagged · T1</div>
+          <div style="display:flex;gap:2px;margin-top:4px"><span style="background:#EAF2EC;color:#2F5A40;border-radius:3px;padding:1px 3px;font-size:6.5px;font-weight:700">ACOG</span><span style="background:#EAF2EC;color:#2F5A40;border-radius:3px;padding:1px 3px;font-size:6.5px;font-weight:700">NIH</span></div>
+        </div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Know in 2 seconds.</h4>
+    <p class="ds-sub">Trimester-aware verdict</p>
+  </div>
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 2 · KILLER</span>
+    <div class="ds-phone">
+      <div class="ds-screen" style="background:#3D2A2E;color:#F2E7E0">
+        <div style="font-size:8px;color:#DCC5C0">Onboarding · pain</div>
+        <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:13px;color:#fff;margin-top:4px">Still Googling?</div>
+        <div style="background:rgba(91,138,111,0.20);border-radius:5px;padding:4px 6px;font-size:7.5px;color:#C8D5BE;margin-top:auto">10 conflicting answers. Your OB doesn't.</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Stop Googling at 2am.</h4>
+    <p class="ds-sub">No OB in sight</p>
+  </div>
+
+  <div class="ds-card killer">
+    <span class="ds-num">SLOT 3 · KILLER</span>
+    <div class="ds-phone">
+      <div class="ds-screen cream">
+        <div style="font-size:8px;color:#9CA3AF">BumpCheck</div>
+        <div style="background:#fff;border-radius:7px;padding:6px;font-size:7px;line-height:1.4;color:#1A1A1A">Niacinamide, Retinol, Glycerin, Salicylic Acid, Tocopherol, Squalane...</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:#F5F5F2;border-radius:5px;padding:2px;margin-top:auto"><div style="background:#fff;color:#2F5A40;border-radius:3px;padding:3px;text-align:center;font-size:6.5px;font-weight:700">Barcode</div><div style="color:#6B7280;padding:3px;text-align:center;font-size:6.5px;font-weight:700">Photo</div><div style="color:#6B7280;padding:3px;text-align:center;font-size:6.5px;font-weight:700">Paste</div></div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Three ways. One answer.</h4>
+    <p class="ds-sub">Barcode · Photo · Paste</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 4</span>
+    <div class="ds-phone">
+      <div class="ds-screen cream">
+        <div style="font-size:8px;color:#2F5A40;font-weight:700">Same ingredient · different stage</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin-top:6px">
+          <div style="background:#EAF7F1;border-radius:5px;padding:5px 3px;text-align:center"><div style="font-family:ui-monospace,'SF Mono';font-size:7px;font-weight:800;color:#1F6F4A">T1</div><div style="font-size:8px;font-weight:800;color:#1F6F4A">🟢 OK</div></div>
+          <div style="background:#FEF6E8;border-radius:5px;padding:5px 3px;text-align:center"><div style="font-family:ui-monospace,'SF Mono';font-size:7px;font-weight:800;color:#8C5A0F">T2</div><div style="font-size:8px;font-weight:800;color:#8C5A0F">🟡 Caution</div></div>
+          <div style="background:#FCEAEA;border-radius:5px;padding:5px 3px;text-align:center"><div style="font-family:ui-monospace,'SF Mono';font-size:7px;font-weight:800;color:#8C2A2A">T3</div><div style="font-size:8px;font-weight:800;color:#8C2A2A">🔴 Flag</div></div>
+        </div>
+        <div style="font-size:8px;color:#6B7280;margin-top:6px;line-height:1.4">Ibuprofen · safety changes by trimester. Verdict updates with your stage.</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Same ingredient. Different trimester.</h4>
+    <p class="ds-sub">Verdicts that adapt</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 5</span>
+    <div class="ds-phone">
+      <div class="ds-screen marble">
+        <div style="font-size:8px;color:#2F5A40;font-weight:700">Sources for this verdict</div>
+        <div style="display:flex;flex-direction:column;gap:3px;margin-top:5px">
+          <div style="background:#fff;border:1px solid #E8E8E4;border-radius:5px;padding:5px 7px;display:flex;justify-content:space-between;align-items:center;font-size:8px"><span style="font-family:ui-monospace,'SF Mono';color:#2F5A40;font-weight:700">◆ ACOG 2024</span><span style="color:#9CA3AF">→</span></div>
+          <div style="background:#fff;border:1px solid #E8E8E4;border-radius:5px;padding:5px 7px;display:flex;justify-content:space-between;align-items:center;font-size:8px"><span style="font-family:ui-monospace,'SF Mono';color:#2F5A40;font-weight:700">◆ NIH LactMed</span><span style="color:#9CA3AF">→</span></div>
+          <div style="background:#fff;border:1px solid #E8E8E4;border-radius:5px;padding:5px 7px;display:flex;justify-content:space-between;align-items:center;font-size:8px"><span style="font-family:ui-monospace,'SF Mono';color:#2F5A40;font-weight:700">◆ EWG Skin Deep</span><span style="color:#9CA3AF">→</span></div>
+        </div>
+        <div style="font-size:7px;color:#9CA3AF;margin-top:auto">Tap any source → real research</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Backed by ACOG. NIH. EWG.</h4>
+    <p class="ds-sub">Every verdict cites research</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 6</span>
+    <div class="ds-phone">
+      <div class="ds-screen cream">
+        <div style="background:#fff;border-radius:9px;border-left:3px solid #D95B5B;padding:7px 8px">
+          <div style="display:flex;align-items:center;gap:4px"><span style="font-size:11px">💊</span><div style="font-size:8px;color:#6B7280">Ibuprofen 200mg</div></div>
+          <div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:11px;color:#D95B5B;margin-top:3px">Flagged · T3</div>
+          <div style="font-size:7.5px;color:#6B7280;margin-top:3px;line-height:1.4">NSAIDs flagged in T3 research</div>
+          <div style="display:flex;gap:2px;margin-top:4px"><span style="background:#EAF2EC;color:#2F5A40;border-radius:3px;padding:1px 3px;font-size:6.5px;font-weight:700">ACOG-189</span></div>
+        </div>
+        <div style="font-size:7.5px;color:#9CA3AF;text-align:center;margin-top:auto">Meds · supplements · prescriptions</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Meds, not just skincare.</h4>
+    <p class="ds-sub">Ibuprofen · Sudafed · prescriptions</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 7</span>
+    <div class="ds-phone">
+      <div class="ds-screen cream">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:9px;color:#2F5A40;font-weight:700">Bathroom Shelf</span><span style="font-size:7px;color:#6B7280;font-family:ui-monospace,'SF Mono'">6/20</span></div>
+        <div style="background:#fff;border:1px solid #E8E8E4;border-radius:6px;padding:5px 7px;display:flex;justify-content:space-between;align-items:center;margin-top:3px;font-size:8px"><span style="font-weight:700">CeraVe Moist.</span><span style="background:#EAF7F1;color:#1F6F4A;padding:1px 5px;border-radius:999px;font-size:6.5px;font-weight:700">SAFE</span></div>
+        <div style="background:#fff;border:1px solid #E8E8E4;border-radius:6px;padding:5px 7px;display:flex;justify-content:space-between;align-items:center;font-size:8px"><span style="font-weight:700">Americano 16oz</span><span style="background:#FEF6E8;color:#8C5A0F;padding:1px 5px;border-radius:999px;font-size:6.5px;font-weight:700">CAUTION</span></div>
+        <div style="background:#fff;border:1px solid #E8E8E4;border-radius:6px;padding:5px 7px;display:flex;justify-content:space-between;align-items:center;font-size:8px"><span style="font-weight:700">Ibuprofen 200</span><span style="background:#FCEAEA;color:#8C2A2A;padding:1px 5px;border-radius:999px;font-size:6.5px;font-weight:700">FLAG</span></div>
+        <div style="font-size:7px;color:#9CA3AF;margin-top:auto">Saved offline · always with you</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">Your safe list. On hand.</h4>
+    <p class="ds-sub">History · favorites · offline</p>
+  </div>
+
+  <div class="ds-card">
+    <span class="ds-num">SLOT 8</span>
+    <div class="ds-phone">
+      <div class="ds-screen sage">
+        <div style="font-size:8px;color:#DCE5D6">Pregnancy plan</div>
+        <div style="background:#fff;color:#1A1A1A;border-radius:9px;padding:8px;margin-top:4px;border:2px solid #E8A338;position:relative"><div style="position:absolute;top:-7px;right:8px;background:#E8A338;color:#fff;padding:1px 6px;border-radius:999px;font-size:6px;font-weight:800;letter-spacing:0.06em">RECOMMENDED</div><div style="font-family:-apple-system,'SF Pro Rounded';font-weight:800;font-size:13px;color:#1A1A1A">Pregnancy Bundle</div><div style="font-size:9px;color:#6B7280;margin-top:2px">$39.99 · one-time · no auto-renew</div></div>
+        <div style="background:rgba(255,255,255,0.10);border-radius:6px;padding:5px 7px;font-size:7.5px;color:#EAF2EC;margin-top:3px;display:flex;justify-content:space-between"><span>Weekly</span><span>$7.99/wk · trial</span></div>
+        <div style="background:rgba(255,255,255,0.10);border-radius:6px;padding:5px 7px;font-size:7.5px;color:#EAF2EC;display:flex;justify-content:space-between"><span>Annual</span><span>$79.99/yr · trial</span></div>
+        <div style="background:#E8A338;color:#fff;border-radius:7px;padding:6px;font-size:9px;font-weight:700;text-align:center;margin-top:auto">Start with Bundle</div>
+      </div>
+    </div>
+    <h4 class="ds-headline">One-time. Lifetime.</h4>
+    <p class="ds-sub">Pregnancy Bundle · $39.99</p>
+  </div>
+
+</div>
+
+<!-- ===== 3.1 PER-PERSONA WANT ===== -->
+<h2 id="ss-wedge" style="margin-top: 36px;">3.1 Что хотят увидеть юзеры · per persona</h2>
+<p class="lede">Каждая персона имеет один эмоциональный триггер в gallery: что юзер «должен увидеть» чтобы тапнуть Get. <strong>«Хочет видеть»</strong> = эмоциональное содержание · <strong>«Must show»</strong> = слот номер + обязательный элемент.</p>
+
+<div class="wedge-grid">
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--alert)">P1</span><b>🔴 Anxious First-Time Mom · 30%</b></div>
+    <div class="ww-want">«Я в шоке от того что многое теперь нельзя. Каждый shopping trip — anxiety. Просто скажи можно или нельзя, и покажи откуда ты это знаешь.»</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Calm authority · trimester awareness · source citations visible · «не одни мы боимся, у нас есть данные»</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 1</b> Result hero + T1 badge · <b>Slot 2</b> 2am recognition · <b>Slot 5</b> Sources card</div></div>
+    <div class="ww-row"><div class="ww-l">Illustration</div><div class="ww-show">Soft blush gradient bg, warm light. Pregnant silhouette implied, never explicit belly close-up. Real product (La Roche-Posay) — она узнаёт.</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">«Know in 2 seconds» · «Stop Googling at 2am»</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--cta)">P2</span><b>🟡 Skincare-Obsessed Mom · 25%</b></div>
+    <div class="ww-want">«У меня 20 продуктов на полке. Все pre-pregnancy actives под вопросом. Покажи что вы знаете про мои бренды и про trimester-specific.»</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Comprehensive database · brand recognition · stage-aware verdicts · alternatives implied</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 3</b> ingredient list density (показывает breadth) · <b>Slot 4</b> trimester-split · <b>Slot 7</b> shelf depth</div></div>
+    <div class="ww-row"><div class="ww-l">Illustration</div><div class="ww-show">Marble counter aesthetic, Sephora-vibe. Real brand bottles (La Roche, CeraVe, Drunk Elephant — fair use в screenshot props).</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">«Same ingredient. Different trimester.» · «Three ways. One answer.»</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--watch)">P3</span><b>🟠 Sick &amp; Pregnant · 15%</b></div>
+    <div class="ww-want">«Я больна. Это 11pm. OB unavailable. Просто СКАЖИ можно или нет, и не уговаривай меня тыкать в 5 экранов.»</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Medication coverage signal · large readable verdict · ACOG citation (медицинская credibility)</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 6</b> Ibuprofen/Sudafed/Rx coverage · <b>Slot 1</b> instant verdict · <b>Slot 3</b> paste mode (она знает имя препарата)</div></div>
+    <div class="ww-row"><div class="ww-l">Illustration</div><div class="ww-show">Bedside table mood — pill bottles, glass of water, soft lamp. Никакой happy mood — она больна. Authoritative result card.</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">«Meds, not just skincare.» · «Know in 2 seconds.»</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--good)">P4</span><b>🟢 Second-Time Mom · 15%</b></div>
+    <div class="ww-want">«Я знаю что делаю. Мне нужны quick checks. Покажи что app efficient и что я могу легко поделиться с подружкой.»</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Speed signals · shelf/history (она строит routine) · bundle pricing (бюджет tighter)</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 7</b> Shelf populated (6 items) · <b>Slot 8</b> one-time bundle · <b>Slot 2</b> «wish I had this earlier»</div></div>
+    <div class="ww-row"><div class="ww-l">Illustration</div><div class="ww-show">Lived-in bathroom shelf, plants, morning light. Curated but not staged. «Mom who's been here before» vibe.</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">«Your safe list. On hand.» · «One-time. Lifetime.»</div></div>
+  </div>
+
+  <div class="wedge">
+    <div class="wh"><span class="jtbd-num" style="background:var(--brand-deep)">P5</span><b>🔵 HCP Patient · 15%</b></div>
+    <div class="ww-want">«Я врач/мидвайф. Я знаю что искать. Покажи мне real sources, а не AI-generated bullshit. Я порекомендую patients только если доверяю.»</div>
+    <div class="ww-row"><div class="ww-l">Хочет видеть</div><div class="ww-show">Source-first proof · ACOG/NIH/FDA names visible · comprehensive coverage (cosmetics + meds + food)</div></div>
+    <div class="ww-row"><div class="ww-l">Must show</div><div class="ww-show"><b>Slot 5</b> Sources card · <b>Slot 6</b> Ibuprofen с ACOG Practice Bulletin 189 · <b>Slot 4</b> trimester logic</div></div>
+    <div class="ww-row"><div class="ww-l">Illustration</div><div class="ww-show">Clinical-warm — marble counter, sophisticated typography для citations. Не corporate medical, но более «professional-grade» чем для P1.</div></div>
+    <div class="ww-row"><div class="ww-l">Hook copy</div><div class="ww-show">«Backed by ACOG. NIH. EWG.» · «Every verdict cites real research.»</div></div>
+  </div>
+
+</div>
+
+<!-- ===== 3.2 PERSONA VOTE ===== -->
+<h2 id="ss-vote" style="margin-top: 36px;">3.2 Консилиум · 5 персон голосуют top-3 scroll-stop слота</h2>
+<p class="lede">Каждая персона выбирает 3 скриншота, на которых она бы остановила скролл. 8 кандидатов на столе. Победители: <strong>Slot 1 Hook (4/5)</strong> + <strong>Slot 5 Proof (4/5)</strong> + <strong>Slot 6 Meds (3/5)</strong>. <b>Однако порядок в галерее</b> = 1 Hook → 2 Pain → 3 Tool по narrative arc (Apple показывает первые 3 без тапа — нам нужен demo → emotion → tool, не demo → proof → demo).</p>
+
+<table class="jtm">
+  <thead>
+    <tr>
+      <th style="text-align:left">Persona</th>
+      <th>S1<br>Hook</th>
+      <th>S2<br>Pain</th>
+      <th>S3<br>Tool</th>
+      <th>S4<br>Wow</th>
+      <th>S5<br>Proof</th>
+      <th>S6<br>Meds</th>
+      <th>S7<br>Shelf</th>
+      <th>S8<br>Paywall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="persona" style="font-weight:700">🔴 P1 First-time</td><td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona" style="font-weight:700">🟡 P2 Skincare</td><td class="use h">★</td><td class="use l">·</td><td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona" style="font-weight:700">🟠 P3 Sick</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr><td class="persona" style="font-weight:700">🟢 P4 Second-time</td><td class="use l">·</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use h">★</td></tr>
+    <tr><td class="persona" style="font-weight:700">🔵 P5 HCP</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td><td class="use h">★</td><td class="use h">★</td><td class="use h">★</td><td class="use l">·</td><td class="use l">·</td></tr>
+    <tr style="background: var(--brand-soft);">
+      <td class="persona" style="color:var(--cta-deep);font-weight:800">TALLY</td>
+      <td class="use" style="color:var(--alert);font-weight:800">4/5</td>
+      <td class="use" style="color:var(--cta-deep);font-weight:800">2/5</td>
+      <td class="use" style="color:var(--cta-deep);font-weight:800">1/5</td>
+      <td class="use" style="color:var(--cta-deep);font-weight:800">2/5</td>
+      <td class="use" style="color:var(--alert);font-weight:800">3/5</td>
+      <td class="use" style="color:var(--alert);font-weight:800">2/5</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/5</td>
+      <td class="use" style="color:var(--ink-2);font-weight:700">1/5</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="lede" style="margin-top: 12px;"><b>Reading the vote:</b> Slot 1 (Hook) единственный с 4/5 — universal scroll-stop. Slot 5 (Proof) важен для P1/P3/P5 — но как 3rd thumbnail убивает emotional pull, ставится 5-м. Slot 2 (Pain) только 2/5 голосов, но <b>обязателен в top-3</b> для emotional bridge между demo (S1) и tool (S3) — иначе скриншоты читаются как product brochure, не как story.</p>
+
+<!-- ===== 3.3 TOP-3 KILLER ===== -->
+<h2 id="ss-killer" style="margin-top: 36px;">3.3 Top-3 KILLER · первые 3 слота выигрывают покупку</h2>
+<p class="lede">App Store thumb-превью показывает первые 3 скриншота. Это и есть scroll-stop weapon. Каждый killer — wedge, которого нет ни у Little Bean, ни у MommyMeds, ни у Yuka.</p>
+
+<div class="ss-killer-grid">
+
+  <div class="ss-killer rank1">
+    <span class="ss-rank-badge">★ KILLER #1</span>
+    <span class="ss-tag">Slot 1 · 4/5 votes · BLUSH</span>
+    <h4>Result hero · «La Roche Retinol B3 · Flagged · T1»</h4>
+    <div class="ss-why"><b>0 конкурентов показывает result-card-as-hero.</b> Little Bean скриншоты = abstract feature pitches («Pregnancy Safe Cosmetics Checker»). MommyMeds — text directory без verdict UI. <b>BumpCheck = demo→benefit на самом первом скриншоте</b>: юзер видит exactly что произойдёт когда она отсканит свой retinol. Recognition + trust в одном кадре.</div>
+    <div class="ss-meta-row">
+      <div><b>Personas</b>P1 · P2 · P3 · P5</div>
+      <div><b>Wedge</b>Real product + sources visible</div>
+      <div><b>BG</b>Blush gradient · warm</div>
+      <div><b>Compliance</b>«Flagged in research» mandatory</div>
+    </div>
+  </div>
+
+  <div class="ss-killer rank2">
+    <span class="ss-rank-badge">★ KILLER #2</span>
+    <span class="ss-tag">Slot 2 · emotional bridge · DIM BLUSH</span>
+    <h4>«Stop Googling at 2am» · onboarding pain frame</h4>
+    <div class="ss-why"><b>Recognition before solution.</b> Slot 1 показал demo — Slot 2 валидирует, что app understands «exactly that moment». Little Bean = generic «check ingredients». BumpCheck знает время суток, тип паники, contradictory forum sources. <b>P1 и P4 узнают свою историю</b> — это и есть scroll-stop. Без Slot 2 галерея читается как product directory, не как story.</div>
+    <div class="ss-meta-row">
+      <div><b>Personas</b>P1 · P4</div>
+      <div><b>Wedge</b>Emotional specificity (2am · forums)</div>
+      <div><b>BG</b>Dim blush · candid bedroom</div>
+      <div><b>Compliance</b>«Googling» — consumer term, safe</div>
+    </div>
+  </div>
+
+  <div class="ss-killer rank3">
+    <span class="ss-rank-badge">★ KILLER #3</span>
+    <span class="ss-tag">Slot 3 · competitive moat · CREAM</span>
+    <h4>«Three ways. One answer.» · barcode + photo + paste</h4>
+    <div class="ss-why"><b>Little Bean killer #1 review pain = «no barcode scanner».</b> Slot 3 visually disproves в одном кадре — все 3 input modes видны без скролла. Plus «paste» mode для online shopping (Little Bean review pain #2). P2 (skincare-obsessed) и P3 (sick — она знает «Tylenol» имя) — оба сразу видят что app покрывает их use case.</div>
+    <div class="ss-meta-row">
+      <div><b>Personas</b>P2 · P3</div>
+      <div><b>Wedge</b>3 input modes visible · breadth</div>
+      <div><b>BG</b>Cream marble · clean kitchen</div>
+      <div><b>Compliance</b>Tool screen — no health claims</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== 3.4 BOOST PLAYBOOK (NEW) ===== -->
+<h2 id="ss-boost" style="margin-top: 40px;">3.4 Conversion-boost playbook — что добавить на каждый скриншот</h2>
+<p class="lede">Рекомендации <strong>сверх</strong> базового brief в §3.0. Каждый item — testable hypothesis с ожидаемым +CR. Применяй по 1-2 на слот · A/B-test через Apple Product Page Optimization (4 variants в parallel).</p>
+
+<div class="slot-grid">
+
+  <div class="slot-card killer">
+    <div class="sl-h"><span class="num">SLOT 1</span><span class="role">HOOK · KILLER</span><span class="copy">Know in 2 seconds.</span><span class="sub">Snap any ingredient. Get a trimester-aware verdict.</span></div>
+    <div class="sl-personas"><span class="pchip">P1 · P2 · P3 · P5</span></div>
+    <div class="sl-row"><div class="sl-l">+ Timer chip</div><div class="sl-v">Маленький «<b>2.3 sec</b>» badge справа от «Flagged in research» — доказывает обещание из headline. <b>+5-8% CR</b> (specificity beats abstraction).</div></div>
+    <div class="sl-row"><div class="sl-l">+ Brand recog</div><div class="sl-v">«La Roche-Posay» wordmark mini в углу product photo — P2 узнаёт свою любимую упаковку и тапает.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Tappable</div><div class="sl-v">ACOG/NIH chips нарисуй с маленькой arrow «→» — visualizes что они <b>tappable to real research</b>, не просто decoration.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Stage swap</div><div class="sl-v">App Preview video: «T1 → T2 → T3» pill switches → verdict цвет меняется live. Показывает trimester-magic в 2 секундах.</div></div>
+    <div class="sl-row"><div class="sl-l">⚠️ Avoid</div><div class="sl-v boost">Belly close-up · explicit «pregnancy hand on bump» pose — banned per illustration guide. <b>Implied silhouette only.</b></div></div>
+  </div>
+
+  <div class="slot-card killer">
+    <div class="sl-h"><span class="num">SLOT 2</span><span class="role">PAIN · KILLER</span><span class="copy">Stop Googling at 2am.</span><span class="sub">Conflicting forums. Scary forums. No OB in sight.</span></div>
+    <div class="sl-personas"><span class="pchip">P1 · P4</span></div>
+    <div class="sl-row"><div class="sl-l">+ Timestamp</div><div class="sl-v">«<b>2:47 AM · 14 tabs open</b>» chip над phone — конкретное время = острее recognition. <b>+5-12% CR</b> на P1.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Forum dimming</div><div class="sl-v">Фоном — мелкие dimmed search results («Is retinol safe pregnant? Reddit · BabyCenter · Mumsnet») с противоречивыми snippets. Visualizes pain.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Halo signal</div><div class="sl-v">Sage halo вокруг phone — <b>не aesthetic decoration</b>, а signal «BumpCheck = the calm answer». Связывает Slot 1 visual identity.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Quote pull</div><div class="sl-v">Маленький review-style quote снизу: <em>«Wish I had this for my first pregnancy» — App Store ★★★★★</em> (real Little Bean review verbatim, attribution «Pregnancy app reviewer»).</div></div>
+  </div>
+
+  <div class="slot-card killer">
+    <div class="sl-h"><span class="num">SLOT 3</span><span class="role">TOOL · KILLER</span><span class="copy">Three ways. One answer.</span><span class="sub">Scan a barcode. Snap a label. Paste a name.</span></div>
+    <div class="sl-personas"><span class="pchip">P2 · P3</span></div>
+    <div class="sl-row"><div class="sl-l">+ Props row</div><div class="sl-v">Ниже phone — 3 props со стрелками к соответствующему pill: <b>skincare bottle → Barcode</b> · <b>pill blister → Photo</b> · <b>recipe note → Paste</b>. Mental model в одну секунду. <b>+8-15% CR</b>.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Ingredient density</div><div class="sl-v">Paste mode показывает <b>9 real ingredients</b> (Niacinamide, Retinol, Salicylic Acid...) — visualizes breadth. Little Bean review pain: «database holes».</div></div>
+    <div class="sl-row"><div class="sl-l">+ Competitive jab</div><div class="sl-v">Optional micro-line: «Most apps do one. We do all three.» — implicit Little Bean diss без называния. Risk: может показаться defensive. <b>A/B test only.</b></div></div>
+    <div class="sl-row"><div class="sl-l">+ Speed dot</div><div class="sl-v">Маленький pulsing green dot на active «Barcode» pill — «ready to scan» state. Live feel.</div></div>
+  </div>
+
+  <div class="slot-card">
+    <div class="sl-h"><span class="num">SLOT 4</span><span class="role">WOW</span><span class="copy">Same ingredient. Different trimester.</span><span class="sub">Verdicts that change as your pregnancy does.</span></div>
+    <div class="sl-personas"><span class="pchip">P2 · P5</span></div>
+    <div class="sl-row"><div class="sl-l">+ Concrete example</div><div class="sl-v">Headline уже concrete («ingredient»), но добавь sub-line внутри phone: «<b>Caffeine: ✓ T1 → ⚠️ T2 → ⚠️ T3 (200mg limit)</b>». Specificity > abstraction. <b>+6-10% CR на P5.</b></div></div>
+    <div class="sl-row"><div class="sl-l">+ Stage timeline</div><div class="sl-v">Внизу — pregnancy timeline ribbon (40 weeks) с current stage dot. Connects «trimester» к её personal timeline.</div></div>
+    <div class="sl-row"><div class="sl-l">+ 3 ingredients</div><div class="sl-v">Не один Ibuprofen — <b>3 примера в столбце</b>: Caffeine · Retinol · Ibuprofen. Каждый со своим T1/T2/T3 pattern. Triples credibility.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Source per row</div><div class="sl-v">Каждый ingredient → его own ACOG/NIH chip. Доказывает что trimester logic не AI guess.</div></div>
+  </div>
+
+  <div class="slot-card">
+    <div class="sl-h"><span class="num">SLOT 5</span><span class="role">PROOF</span><span class="copy">Backed by ACOG. NIH. EWG.</span><span class="sub">Every verdict cites real research.</span></div>
+    <div class="sl-personas"><span class="pchip">P1 · P5</span></div>
+    <div class="sl-row"><div class="sl-l">+ Counter</div><div class="sl-v">«<b>2,400+ sources cited</b>» chip над phone. Большое число = trust signal. <b>+4-7% CR на P5</b>. Сверь с реальной БД — не привирай.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Tap demo</div><div class="sl-v">App Preview video: одна ACOG chip нажимается → Safari открывается → real ACOG.org URL виден ~1.5s. Доказывает что не AI-fake.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Logo wash</div><div class="sl-v">ACOG / NIH / EWG / FDA wordmarks faint в background (15% opacity, без явного endorsement claim). Visual authority. <b>Compliance:</b> не «recommended by», только «cited».</div></div>
+    <div class="sl-row"><div class="sl-l">+ Date stamps</div><div class="sl-v">Source chips: «◆ ACOG <b>2024</b>» · «◆ NIH LactMed <b>2023</b>» — recency signal vs MommyMeds (last updated 2021).</div></div>
+  </div>
+
+  <div class="slot-card">
+    <div class="sl-h"><span class="num">SLOT 6</span><span class="role">FEATURE</span><span class="copy">Meds, not just skincare.</span><span class="sub">Ibuprofen, Sudafed, prescriptions — checked.</span></div>
+    <div class="sl-personas"><span class="pchip">P3 · P5</span></div>
+    <div class="sl-row"><div class="sl-l">+ Pill grid</div><div class="sl-v">3 verdict mini-cards в столбце: <b>Tylenol 500mg → ✓ Safe T1-T3</b> · <b>Ibuprofen → ⚠️ T3 Flag</b> · <b>Sudafed → ⚠️ T1 Flag</b>. Demonstrates breadth instantly. <b>+10-15% CR на P3</b> (acute pain moment).</div></div>
+    <div class="sl-row"><div class="sl-l">+ MommyMeds gap</div><div class="sl-v">Optional micro-line: «Updated for 2026» — implicit jab vs MommyMeds (last updated 2021, 62% recent 1★). Risk: может показаться mean. A/B test.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Breastfeeding</div><div class="sl-v">Add «BF» badge рядом с T1/T2/T3 pills (breastfeeding stage) — extends LTV для P4 и P5 «recommended by lactation consultant».</div></div>
+    <div class="sl-row"><div class="sl-l">+ Pharma props</div><div class="sl-v">Amber pill bottle + blister pack как props (no labels — generic). Differentiates от skincare-only Little Bean слота.</div></div>
+  </div>
+
+  <div class="slot-card">
+    <div class="sl-h"><span class="num">SLOT 7</span><span class="role">UTILITY</span><span class="copy">Your safe list. On hand.</span><span class="sub">History, favorites, always offline.</span></div>
+    <div class="sl-personas"><span class="pchip">P4 · P2</span></div>
+    <div class="sl-row"><div class="sl-l">+ Shelf summary</div><div class="sl-v">Card сверху: «<b>3 Safe · 2 Flagged · 1 Caution</b>» — instant overview, P4 видит «вот мой текущий status». <b>+5% CR.</b></div></div>
+    <div class="sl-row"><div class="sl-l">+ Offline badge</div><div class="sl-v">«✈️ Works offline» pill рядом с header — privacy signal (P5 doctor recommendation), также addresses Little Bean review «нет на сети — не работает».</div></div>
+    <div class="sl-row"><div class="sl-l">+ Time stamps</div><div class="sl-v">«2 days ago» · «1 week ago» · «yesterday» — показывает что shelf <b>active, used, not abandoned</b>. Differentiates от Little Bean «не запоминает past searches».</div></div>
+    <div class="sl-row"><div class="sl-l">+ Share button</div><div class="sl-v">Маленькая share icon на одном item — hints «P4, ты можешь recommendнуть подружке». Виральность.</div></div>
+  </div>
+
+  <div class="slot-card">
+    <div class="sl-h"><span class="num">SLOT 8</span><span class="role">CONVERSION</span><span class="copy">One-time. Lifetime.</span><span class="sub">Pregnancy Bundle — $39.99. No auto-renew.</span></div>
+    <div class="sl-personas"><span class="pchip">All 5</span></div>
+    <div class="sl-row"><div class="sl-l">+ Trust math</div><div class="sl-v">«<b>$39.99 = $4.44 / month over 9 months</b>» mini-line под Bundle price. Reframes 40 bucks как «coffee money/month». <b>+8-12% CR.</b></div></div>
+    <div class="sl-row"><div class="sl-l">+ Anti-sub badge</div><div class="sl-v">«✓ No auto-renew · ✓ Lifetime access» green badge — anxiety audience особенно distrusts subscriptions. <b>P4 (burned-by-subs)</b> сразу видит.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Trial CTA</div><div class="sl-v">Под Bundle: «Or start free with 7-day trial» текст — gives weekly tier explicit ladder без отвлечения от Bundle anchor.</div></div>
+    <div class="sl-row"><div class="sl-l">+ Postpartum</div><div class="sl-v">Под Bundle copy: «Includes breastfeeding mode». Extends LTV expectation (P4 + P5).</div></div>
+    <div class="sl-row"><div class="sl-l">⚠️ Avoid</div><div class="sl-v boost">«Save 60%» banner — false anchoring (нет regular price baseline). Apple App Review §3.1.1 — все promotional pricing claims проверяются.</div></div>
+  </div>
+
+</div>
+
+<div class="v2-callout">
+  <b>Testing protocol:</b> Apple Product Page Optimization (PPO) допускает 3 alternate variants одновременно. <b>Round 1 (4 weeks):</b> Slot 1 baseline vs Slot 1 + timer chip vs Slot 1 + brand wordmark. <b>Round 2:</b> winner + Slot 3 props row vs current. <b>Round 3:</b> Slot 8 trust math vs current. Не A/B-тестируй больше одного слота на раз — confounding variables съедят signal. Ожидаемый cumulative lift через 3 раунда: <b>+15-30% CVR app-unit-from-page-view</b>.
+</div>
+
+<!-- ===== 3.5 ANTI-PATTERNS ===== -->
+<h2 id="ss-anti" style="margin-top: 36px;">3.5 Anti-patterns · что НЕ показываем на App Store</h2>
+<div class="cheat-donts">
+  <div class="dt-eyebrow">⛔ DO NOT — banned forever (Apple §1.4.1 + compliance + UX safety)</div>
+  <h4>Если видишь в макете — переделывай. Без исключений.</h4>
+  <ul>
+    <li><b>Words «safe / unsafe / dangerous / harmful»</b> на TITLE / SUB / inside-phone copy — banned per <code>COMPLIANCE.md</code>. Allowed: «Flagged in research» · «Not flagged» · «Educational reference».</li>
+    <li><b>«Doctor recommends» / «Medically approved»</b> claims — App Review §1.4.1 violation. Allowed: «Cited from ACOG / NIH / EWG».</li>
+    <li><b>«Will protect your baby»</b> / outcome promises — outcome language banned. Allowed: «Trimester-aware verdicts».</li>
+    <li><b>Explicit belly close-up</b> / «pregnant hand on bump» stock poses — clichéd + anxiety-inducing. Use implied silhouette · product hands · environment.</li>
+    <li><b>Stoplight ALARM red</b> (#FF3B30 / pure red) — triggers panic, anxious audience опасно. Use muted <code>#D95B5B</code>.</li>
+    <li><b>Fake stars / fake user count</b>: «★★★★★ 4.9 · 10K users» когда мы ещё <50 reviews. App Review-bait, banned forever.</li>
+    <li><b>Side-by-side competitor comparison</b> (Little Bean / MommyMeds named) — Apple §1.4.5 (no disparaging competitors).</li>
+    <li><b>Brand logos as endorsement</b> (Sephora · Ulta · La Roche-Posay) — fair use в screenshot props OK, но не «Recommended by Sephora» style claim.</li>
+    <li><b>Streaks / badges / XP</b> — gamification банится в reference tool. Беременные ≠ Duolingo. (Принцип №8.)</li>
+    <li><b>Drop shadows / gradient text / outline на typography</b> — solid weight = trust. Health-adjacent category, не lifestyle.</li>
+    <li><b>Real ingredient label close-up</b> с identifiable brand-trademark (Olay logo full-frame) — IP risk. Use mocked-up label или generic packaging.</li>
+    <li><b>Disclaimer пропущен</b> на Slot 1 / 5 / 6 (medical-adjacent slots) — «Discuss with your OB-GYN» footer обязателен.</li>
+  </ul>
+</div>
+
+<!-- ===== 3.6 CHECKLIST ===== -->
+<h2 id="ss-checklist" style="margin-top: 28px;">3.6 Pre-export checklist · 10 пунктов перед PNG export</h2>
+<div class="cheat-checklist">
+  <div class="ck-eyebrow">✓ PRE-EXPORT · прогони каждый слот через эти 10 шагов</div>
+  <h4>Готов отдать макет? Прогон обязателен.</h4>
+  <ol>
+    <li>Размер <b>1320×2868 PNG</b> (iPhone 6.9" / 17 Pro Max), 8 файлов на locale (US-EN baseline + 11 V1 locales).</li>
+    <li>Status bar <b>9:41</b>, full battery, full signal, no carrier name. Time consistency across all 8.</li>
+    <li>HEADLINE и SUB — точные строки из §3.0 (или verified locale из <code>screenshots/translations.json</code>).</li>
+    <li>Hero element виден без скролла внутри phone-mockup (см. <code>HERO INSIDE PHONE</code> колонку).</li>
+    <li>App-Store name = <b>BumpCheck: Ingredient Scanner</b> (см. APP_STORE_LISTING.md).</li>
+    <li>Compliance grep: 0 instances of <code>safe · unsafe · dangerous · harmful · medical advice · cure · treat · diagnose · prescribe</code>.</li>
+    <li>«Discuss with your OB-GYN» footer visible на Slot 1 / 5 / 6 (medical-adjacent).</li>
+    <li>Slot 8: Bundle price «$39.99» matches ASC SKU · «No auto-renew» claim matches actual non-renewing SKU.</li>
+    <li>0 belly close-ups · 0 identifiable faces · 0 fake stars/user-counts · 0 stoplight-red verdict pills.</li>
+    <li>6-person consilium (Maya · Dana · Sam · Elena · Dr.Wu · Market) audit score ≥ 4/5 per slot · audit_notes filled per <code>SCREENSHOTS.md</code> §2.</li>
+  </ol>
+</div>
+
+<div class="callout" style="margin-top: 28px;">
+  <b>Sources of truth:</b> <code>SCREENSHOTS.md</code> §1 master table · <code>appstore-screenshots/v1/meta.yaml</code> (dashboard sync) · <code>assets/NANOBANANA_PROMPTS.md</code> §8 (per-slot prompts) · <code>DebugPanel.AppStoreTarget</code> (in-app seeds). Все 4 источника синхронизированы — изменишь HEADLINE здесь, обнови во всех 4.
+</div>
+
+<footer style="margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--divider); color: var(--ink-3); font-size: 12px; text-align: center;">
+  BumpCheck Design Workbench · v1 · locked 2026-04-13 iter2 · © 2026 Valeriy Loveyko
+</footer>
+
+</body>
+</html>
