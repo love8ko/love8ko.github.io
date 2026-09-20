@@ -61,17 +61,44 @@ table.cmp th{color:var(--muted);font-weight:700;font-size:12px;text-transform:up
 table.cmp td b{color:var(--plum-deep)}
 .row220{display:block;max-width:700px;width:100%;height:auto;border:1px solid #ddd2ca;background:#fff;border-radius:8px}
 .win{font-weight:800;color:var(--ok)}
+.set.hero.series{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.series figure{margin:0;min-width:0}
+.series figcaption{font-size:13px;font-weight:750;color:var(--plum-deep);padding:10px 0 5px}
+.thumbs .set.hero.series{grid-template-columns:repeat(8,220px);overflow-x:auto}
+@media(max-width:760px){.set.hero.series{grid-template-columns:repeat(8,min(74vw,300px));overflow-x:auto}.thumbs .set.hero.series{grid-template-columns:repeat(8,220px)}.series figure{scroll-snap-align:start}}
 </style>
 </head>
 <body>
 <nav><a class="wordmark" href="../design.html">Cysta AI</a><div class="links"><a href="../design.html">Design</a><a href="../flow.html">Flow</a><a href="./" aria-current="page">Screenshots</a></div></nav>
 <main>
-  <h1>Скриншоты App Store — первые три кадра</h1>
-  <p class="muted">Финал наверху, история во вкладках ниже. На телефоне листайте ряд вбок. Нажатие увеличивает кадр прямо здесь.</p>
+  <h1>Скриншоты App Store — восемь сцен</h1>
+  <p class="muted">Полная серия сверху, выбранный r10 и история S/T ниже. На телефоне листайте ряд вбок. Нажатие увеличивает кадр прямо здесь.</p>
+
+  <h2 style="border-top:0;margin-top:18px">S r11 · Полный набор из 8 сцен</h2>
+  <span class="badge">Продолжение выбранного r10 · на рассмотрение</span>
+  <p style="margin-top:10px">Первые два кадра сохранены без изменений. В третьем — новая фотореалистичная пациентка. Дальше: то, что принимаю → нерегулярный цикл → вопросы о PCOS → контроль данных → поддержка между визитами. Без подзаголовков и мелких списков.</p>
+  <div class="view-tools"><button id="size-toggle" type="button" aria-pressed="false">Смотреть в ширине 220 px</button><span class="muted">Общий масштаб для новой серии и референсов</span></div>
+  <div class="set hero series" id="r11">
+    <figure><img src="r11/S01-preview.jpg" data-full="r11/S01.png" width="1320" height="2868" alt="01 · PCOS Labs Explained"><figcaption>01 · Понять анализы</figcaption></figure>
+    <figure><img src="r11/S02-preview.jpg" data-full="r11/S02.png" width="1320" height="2868" alt="02 · What to Eat With PCOS"><figcaption>02 · Что есть при PCOS</figcaption></figure>
+    <figure><img src="r11/S03-preview.jpg" data-full="r11/S03.png" width="1320" height="2868" alt="03 · Doctor Visit? Walk In Ready"><figcaption>03 · Подготовиться к врачу</figcaption></figure>
+    <figure><img src="r11/S04-preview.jpg" data-full="r11/S04.png" width="1320" height="2868" alt="04 · Is It Helping? Keep Track"><figcaption>04 · Следить за тем, что принимаю</figcaption></figure>
+    <figure><img src="r11/S05-preview.jpg" data-full="r11/S05.png" width="1320" height="2868" alt="05 · Irregular Cycle? No Fake Dates"><figcaption>05 · Понять свой цикл</figcaption></figure>
+    <figure><img src="r11/S06-preview.jpg" data-full="r11/S06.png" width="1320" height="2868" alt="06 · PCOS Advice. Check It"><figcaption>06 · Проверять ответы</figcaption></figure>
+    <figure><img src="r11/S07-preview.jpg" data-full="r11/S07.png" width="1320" height="2868" alt="07 · Your Data. Your Call"><figcaption>07 · Управлять своими данными</figcaption></figure>
+    <figure><img src="r11/S08-preview.jpg" data-full="r11/S08.png" width="1320" height="2868" alt="08 · Your PCOS. Between Visits"><figcaption>08 · Не потеряться между визитами</figcaption></figure>
+  </div>
+  <p class="muted">Композиции для утверждения: укрупнённые иллюстративные модули, не точные снимки интерфейса. Примеры данных и источников не являются медицинским советом. Новые кадры ещё не утверждены.</p>
+  <details class="decision"><summary>Jev и порядок сцен</summary>
+    <p style="margin-top:10px">Второй разбор r10: отчёт + телефон 0.64 против 0.31 у одного телефона; фото еды → одна замена 0.96; сводка с PDF 0.82. Это средние вероятности выбора модели по описаниям, не доли пользователей и не конверсия.</p>
+    <p>В сравнении Claude T против S r10 модель предпочла r10 по намерению открыть (0.60 против 0.40), но T — по понятности (0.74 против 0.26). Это смешанный результат, а не единогласная победа. Продолжаем выбранный владельцем r10, сохраняя минимум текста.</p>
+    <p>Первые три сцены сохраняют выбранный владельцем порядок. Продолжение опирается на проектный рейтинг болей: работает ли то, что принимаю → нерегулярный цикл → непонятные и противоречивые советы. Последние две сцены закрывают доверие и общее позиционирование. Строгого доказанного рейтинга всех восьми тем нет.</p>
+    <p class="muted">Новый Jev-прогон готовых восьми изображений не проводился. Ранние рейтинги — модельные оценки синтетических персон. Детали и исходные ответы сохранены в репозитории.</p>
+  </details>
 
 
-  <h2 style="border-top:0;margin-top:10px">Финал · S r10 (Codex) — выбор владельца 20.09.2026</h2>
-  <span class="badge">Основной набор</span>
+  <h2>Утверждённый референс · S r10 — первые 3 кадра</h2>
+  <span class="badge">Выбор владельца 20.09.2026 · сохранён без изменений</span>
   <p style="margin-top:10px">Сцена + телефон снизу + одна выноска. Без подзаголовка: мелкий никто не прочитает. Jev по описаниям: «нажму и установлю» 0.60 против 0.40 у T — это сигнал, не измеренная конверсия; измерит только Product Page Optimization в App Store Connect.</p>
   <div class="set hero" id="final">
     <img src="r10/S01-preview.jpg" data-full="r10/S01.png" alt="S01 — PCOS Labs Explained">
@@ -155,7 +182,7 @@ T03: ок / без лиц / изменить: …
   <h2>Новый вариант · r10</h2>
   <span class="badge">На рассмотрение</span>
   <p style="margin-top:10px">Те же сцены и крупные заголовки, без подзаголовков. Телефон связывает сцену с действием приложения: объяснить анализ, сфотографировать еду, собрать страницу для врача.</p>
-  <div class="view-tools"><button id="size-toggle" type="button" aria-pressed="false">Смотреть в ширине 220 px</button><span class="muted">Одинаковый масштаб для сравнения вариантов</span></div>
+  <p class="muted">Для сравнения в ширине 220 px используйте переключатель над новой серией.</p>
   <div class="set hero" id="r10">
     <img src="r10/S01-preview.jpg" data-full="r10/S01.png" width="1320" height="2868" alt="r10 · PCOS Labs Explained · отчёт и объяснение в телефоне">
     <img src="r10/S02-preview.jpg" data-full="r10/S02.png" width="1320" height="2868" alt="r10 · What to Eat With PCOS · фото блюда и одна замена">
@@ -263,16 +290,16 @@ T03: ок / без лиц / изменить: …
   </div>
 
   <h2><span class="step">6</span>Ваше решение</h2>
-  <p class="muted">Текущий вариант для обсуждения — r10; r9 сохранён как референс.</p>
-<pre>Стиль: r10 / r9 / другой
+  <p class="muted">Полная серия для обсуждения — r11 наверху; r10 и r9 сохранены как референсы.</p>
+<pre>Стиль: r11 / r10 / r9 / другой
 Первый кадр: анализы / еда / врач
 S01: ок / изменить: …
 S02: ок / изменить: …
 S05: ок / изменить: …
-Дальше: делать кадры 4–8 тем же шаблоном — да / нет</pre>
+Новые кадры 4–8: ок / изменить: …</pre>
   </section>
 </main>
-<footer>Cysta AI · скриншоты App Store · T t1 (Claude) + S r10 (Codex) · 20.09.2026 · данные в примерах иллюстративные; продуктовые формулировки — по возможностям приложения · архив: <a href="archive/r4/">r4</a> · <a href="archive/r3/">r3</a> · <a href="archive/r2/">r2</a> · <a href="archive/r1/">r1</a></footer>
+<footer>Cysta AI · скриншоты App Store · S r11 (8 сцен), референсы S r10 + T t1 · 20.09.2026 · данные в примерах иллюстративные; продуктовые формулировки — по возможностям приложения · архив: <a href="archive/r4/">r4</a> · <a href="archive/r3/">r3</a> · <a href="archive/r2/">r2</a> · <a href="archive/r1/">r1</a></footer>
 <dialog id="zoom" aria-label="Увеличенный скриншот"><button type="button" id="close-zoom">Закрыть</button><img id="zoom-image" alt=""></dialog>
 <script>
 const tabs={T:document.getElementById('tab-T'),S:document.getElementById('tab-S')};
