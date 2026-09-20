@@ -48,6 +48,19 @@ ul.find{margin:8px 0 0;padding-left:20px}ul.find li{margin:6px 0}
 pre{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font:14px/1.6 ui-monospace,Menlo,monospace;white-space:pre-wrap}
 .no{color:#A0403F;font-weight:700}
 footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+
+.tabs{display:flex;gap:8px;margin:14px 0 6px;flex-wrap:wrap}
+.tabs a{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid #c9b8ce;background:#fff;color:var(--plum-deep);font-weight:800;text-decoration:none;font-size:14px}
+.tabs a[aria-selected="true"]{background:var(--plum-deep);color:#fff;border-color:var(--plum-deep)}
+.tabs a .l{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:#E2D6E0;color:var(--plum-deep);font-size:12px}
+.tabs a[aria-selected="true"] .l{background:#fff}
+section[hidden]{display:none}
+table.cmp{border-collapse:collapse;width:100%;max-width:820px;font-size:14px;margin:8px 0 4px}
+table.cmp th,table.cmp td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.cmp th{color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+table.cmp td b{color:var(--plum-deep)}
+.row220{display:block;max-width:700px;width:100%;height:auto;border:1px solid #ddd2ca;background:#fff;border-radius:8px}
+.win{font-weight:800;color:var(--ok)}
 </style>
 </head>
 <body>
@@ -55,6 +68,71 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
 <main>
   <h1>Скриншоты App Store — первые три кадра</h1>
   <p class="muted">Новый вариант сверху, история ниже. На телефоне листайте ряд вбок. Нажатие увеличивает кадр прямо здесь.</p>
+
+  <div class="tabs" role="tablist"><a href="#T" id="tab-btn-T" role="tab" aria-selected="true"><span class="l">T</span>Вариант Claude · t1</a><a href="#S" id="tab-btn-S" role="tab" aria-selected="false"><span class="l">S</span>Вариант Codex · r10</a></div>
+
+  <section id="tab-T" role="tabpanel">
+  <h2 style="border-top:0;margin-top:18px">T · Один заголовок, одна сцена, один результат</h2>
+  <span class="badge">На рассмотрение</span>
+  <p style="margin-top:10px">Формула Hepatica/SnapFlip: заголовок в четверть кадра (64 pt на макете 440, второй строкой сливовый акцент), одна крупная строка подзаголовка (23 pt — в r6 было 13), одна свежая сцена от Codex без запечённого текста и одна белая карточка с одним большим значением из реальных строк приложения. Без телефона, без чипов, без рядов буллетов. Идентификаторы кадров T01–T03.</p>
+  <div class="set hero" id="t1">
+    <img src="t1/T01-preview.jpg" data-full="t1/T01.png" alt="T01 — PCOS Labs, Explained">
+    <img src="t1/T02-preview.jpg" data-full="t1/T02.png" alt="T02 — PCOS Food, No Diet Rules">
+    <img src="t1/T03-preview.jpg" data-full="t1/T03.png" alt="T03 — Doctor Visit? Walk In Ready">
+  </div>
+  <p class="muted" style="margin-top:14px">Как это выглядит в выдаче поиска (220 px, без увеличения):</p>
+  <img class="row220" src="t1/row-220.png" alt="ряд из трёх кадров шириной 220 px">
+
+  <h2>T-B · То же, но карточка в телефоне</h2>
+  <p>Jev по описаниям: без телефона понятнее (0.74 против 0.26) и «это про меня» (0.55), но «нажму и установлю» — 0.40 против 0.60 у r10: Anna 0.69, Tanya 0.68, Maya 0.63 читают телефон как «настоящее приложение». Поэтому второй ряд — та же композиция, карточка внутри телефона. Выбор — на картинках, не на цифрах.</p>
+  <div class="set hero" id="t1b">
+    <img src="t1/T01-B-preview.jpg" data-full="t1/T01-B.png" alt="T01-B">
+    <img src="t1/T02-B-preview.jpg" data-full="t1/T02-B.png" alt="T02-B">
+    <img src="t1/T03-B-preview.jpg" data-full="t1/T03-B.png" alt="T03-B">
+  </div>
+
+  <h2>Почему r2–r10 не сработали (разбор Claude)</h2>
+  <table class="cmp">
+    <tr><th>Раунд</th><th>Что делали</th><th>Почему не читается на телефоне</th></tr>
+    <tr><td><b>r2</b></td><td>фото + плотная карточка</td><td>много текста, нет одной сцены</td></tr>
+    <tr><td><b>r3</b></td><td>натюрморт, заголовок слева</td><td>бедно, мелко, нет результата приложения</td></tr>
+    <tr><td><b>r4–r5</b></td><td>тёмный кинематограф, телефон крупно</td><td>не стиль категории (светлый 0.57 против тёмного 0.08); предмет и слово PCOS не видны в 220 px</td></tr>
+    <tr><td><b>r6</b></td><td>светлый, телефон по центру, 2–3 чипа, подзаголовок 13 pt</td><td>подзаголовок и чипы не читаются; сцена — реквизит, а не её жизнь; чипы называют функции, а не пользу</td></tr>
+    <tr><td><b>r7</b></td><td>героини онбординга + телефон + 3 буллета</td><td>три мелких буллета и мелкий интерфейс; сцена не становится якорем</td></tr>
+    <tr><td><b>r8</b></td><td>огромный заголовок, одна карточка, сливовая пелена на весь кадр</td><td>кроп потерял врача, пелена убила контраст</td></tr>
+    <tr><td><b>r9</b></td><td>Manrope 60 pt, сцена + панель продукта</td><td>панель снова плотная реконструкция интерфейса (диапазоны, подстроки)</td></tr>
+    <tr><td><b>r10</b></td><td>сцена + телефон снизу + карточка</td><td>ближе всего; но два объекта (телефон и карточка) спорят, объяснение уехало в самый низ</td></tr>
+  </table>
+  <p class="muted">Общий узор: каждый раунд либо уменьшал текст, чтобы вместить больше, либо добавлял второй объект. Hepatica, WatchSnap и SnapFlip конвертируют одним заголовком, одной сценой и одним результатом.</p>
+
+  <h2>Что показал Jev для T</h2>
+  <p class="muted">24 синтетических человека × 2 прохода с обратным порядком, 48/48. Веса когорт Naomi .25 · Tanya .20 · Wendy .25 · Maya .15 · Anna .15. Jev оценивает описания, а не пиксели.</p>
+  <ul class="find">
+    <li><b>Формат.</b> Без телефона, одна большая карточка <span class="big">0.94</span>; телефон с двумя чипами 0.06. Первый кадр — анализы 0.47, еда 0.31, врач 0.22.</li>
+    <li><b>T01.</b> «PCOS Labs, Explained» <span class="big">0.54</span> против «What Do Your PCOS Labs Mean?» 0.27. Широкий кликбейт «Is It Your Hormones?» — <span class="no">0.00</span>: без слова PCOS в этой категории не работает. Сцена: руки с бланком 0.55, телефон фотографирует бланк 0.43. Карточка: значение + одна строка по-человечески <span class="big">0.74</span>.</li>
+    <li><b>T02.</b> На «нажать» лидирует «Snap Your Plate. Get One Swap.» 0.49, но на понятность — 0.08; «PCOS Food, No Diet Rules» 0.42 на «нажать» и <span class="big">0.51</span> на понятность — взят он. Сцена: тарелка сверху с рукой и телефоном 0.48, женщина в кафе 0.43, одна тарелка 0.10. Карточка «Cysta noticed» 0.54, «one swap» 0.43 — объединены.</li>
+    <li><b>T03.</b> «Doctor Visit? Walk In Ready» <span class="big">0.48</span>; «Get Heard at Your Next Visit» 0.20. Сцена: передача страницы врачу <span class="big">0.67</span>. Карточка «5 of 6 filled · Send as PDF» 0.54.</li>
+    <li><b>T против r10 Codex.</b> Понятность <span class="big">0.74</span> / 0.26 и «про меня» 0.55 / 0.45 — за T; «нажму» 0.40 / <span class="win">0.60</span> — за r10 (телефон как знак «настоящего приложения»). Отсюда ряд T-B.</li>
+  </ul>
+  <p class="muted">Данные: <code>research/screenshots-t1-jev-2026-09-20/</code>, рендер и промпты: <code>marketing/appstore-v2/t1/</code>, разбор: <code>t1/DECISION.md</code>.</p>
+
+  <h2>Слабые места T</h2>
+  <ul class="find">
+    <li>T02: «No Diet Rules» — понятный; «Snap Your Plate. Get One Swap.» — заводной. Второй — кандидат для Custom Product Page Wendy.</li>
+    <li>T03: в кадре спина и край лица врача. Если лиц не нужно совсем — запасная сцена «руки со страницей в приёмной» (0.31).</li>
+    <li>T01: самая длинная карточка (две строки объяснения); в 220 px читаются «58» и «Above your report’s range», объяснение — только при увеличении.</li>
+  </ul>
+
+  <h2>Ваше решение по T</h2>
+  <p class="muted">Скопируйте и заполните — или просто «T ок» / «T-B ок».</p>
+<pre>Серия: T (карточка) / T-B (в телефоне) / S r10 / другое
+T01: ок / изменить: …
+T02: ок / заголовок Snap Your Plate / изменить: …
+T03: ок / без лиц / изменить: …
+Дальше: кадры 4–8 по формуле T — да / нет</pre>
+  </section>
+
+  <section id="tab-S" role="tabpanel" hidden>
 
   <h2>Новый вариант · r10</h2>
   <span class="badge">На рассмотрение</span>
@@ -174,10 +252,16 @@ S01: ок / изменить: …
 S02: ок / изменить: …
 S05: ок / изменить: …
 Дальше: делать кадры 4–8 тем же шаблоном — да / нет</pre>
+  </section>
 </main>
-<footer>Cysta AI · скриншоты App Store · r10 · 20.09.2026 · данные в примерах иллюстративные; продуктовые формулировки — по возможностям приложения · архив: <a href="archive/r4/">r4</a> · <a href="archive/r3/">r3</a> · <a href="archive/r2/">r2</a> · <a href="archive/r1/">r1</a></footer>
+<footer>Cysta AI · скриншоты App Store · T t1 (Claude) + S r10 (Codex) · 20.09.2026 · данные в примерах иллюстративные; продуктовые формулировки — по возможностям приложения · архив: <a href="archive/r4/">r4</a> · <a href="archive/r3/">r3</a> · <a href="archive/r2/">r2</a> · <a href="archive/r1/">r1</a></footer>
 <dialog id="zoom" aria-label="Увеличенный скриншот"><button type="button" id="close-zoom">Закрыть</button><img id="zoom-image" alt=""></dialog>
 <script>
+const tabs={T:document.getElementById('tab-T'),S:document.getElementById('tab-S')};
+function showTab(k){if(!tabs[k])k='T';for(const [n,el] of Object.entries(tabs)){el.hidden=n!==k;document.getElementById('tab-btn-'+n).setAttribute('aria-selected',String(n===k));}}
+document.querySelectorAll('.tabs a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const k=a.getAttribute('href').slice(1);history.replaceState(null,'','#'+k);showTab(k);}));
+showTab(location.hash.replace('#','')||'T');
+
 const toggle=document.getElementById('size-toggle');
 toggle.addEventListener('click',()=>{const active=document.body.classList.toggle('thumbs');toggle.setAttribute('aria-pressed',String(active));toggle.textContent=active?'Вернуть крупный просмотр':'Смотреть в ширине 220 px';});
 const zoom=document.getElementById('zoom'),zoomImage=document.getElementById('zoom-image');
