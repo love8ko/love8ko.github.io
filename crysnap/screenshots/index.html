@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#1E2A3F">
+<title>CrySnap · скриншоты App Store</title>
+<style>
+:root{--coral:#E8836A;--navy:#1E2A3F;--sage:#7A9A6E;--ink:#1A1A1F;--muted:#6B6B72;--line:#E6DFD6;--bg:#FAF7F2;--ok:#4E7B3F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,system-ui,"SF Pro Text",sans-serif;-webkit-font-smoothing:antialiased}
+nav{display:flex;align-items:center;gap:20px;padding:12px 24px;border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10;flex-wrap:wrap}
+nav .wordmark{font-weight:800;color:var(--navy);text-decoration:none;font-size:17px}
+nav .links{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--muted);text-decoration:none;font-weight:600}nav a[aria-current]{color:var(--navy)}
+main{max-width:1100px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:30px;line-height:1.15;margin:0 0 8px;color:var(--navy);letter-spacing:-.02em}
+h2{font-size:22px;margin:52px 0 6px;color:var(--navy);padding-top:18px;border-top:2px solid var(--line)}
+p{margin:0 0 10px;max-width:820px}
+.muted{color:var(--muted);font-size:14px}
+.set{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start;padding:16px 0}
+.set img{display:block;width:100%;height:auto;background:#eee;border-radius:6px;box-shadow:0 10px 30px #1e2a3f22;cursor:zoom-in}
+.set figure{margin:0}.set figcaption{font-size:13px;color:var(--muted);margin-top:8px}.set figcaption b{color:var(--navy)}
+.view-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:15px 0}
+.view-tools button{background:white;border:1px solid #c9c0b5;border-radius:9px;padding:10px 14px;color:var(--navy);font:600 13px system-ui;cursor:pointer}
+.view-tools button[aria-pressed="true"]{background:var(--navy);color:white}
+.thumbs .set{grid-template-columns:repeat(3,220px);overflow-x:auto}
+dialog{border:0;border-radius:12px;padding:0;background:#f7f0eb;max-width:95vw;max-height:95vh;overflow:auto}
+dialog::backdrop{background:#0f1115da}
+dialog img{display:block;width:auto;max-width:90vw;height:auto}
+dialog button{position:sticky;top:8px;float:right;margin:8px;border:0;border-radius:30px;background:var(--navy);color:white;padding:10px 17px;font:700 14px system-ui;cursor:pointer}
+@media (max-width:760px){.set{grid-template-columns:repeat(3,min(74vw,300px));overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px}.set figure{scroll-snap-align:start}.thumbs .set{grid-template-columns:repeat(3,220px)}h1{font-size:25px}nav{position:static}}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#E7F5EC;color:var(--ok);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.badge:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.badge.wait{background:#F3EBE4;color:#9A5A3F}.badge.wait:before{background:#9A5A3F}
+pre{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font:14px/1.6 ui-monospace,Menlo,monospace;white-space:pre-wrap;max-width:820px}
+.tabs{display:flex;gap:8px;margin:14px 0 6px;flex-wrap:wrap}
+.tabs a{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid #c9c0b5;background:#fff;color:var(--navy);font-weight:800;text-decoration:none;font-size:14px}
+.tabs a[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tabs a .l{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:#E6DFD6;color:var(--navy);font-size:12px}
+.tabs a[aria-selected="true"] .l{background:var(--coral);color:#fff}
+section[hidden]{display:none}
+.scroll{overflow-x:auto;max-width:900px;-webkit-overflow-scrolling:touch}
+table.cmp{border-collapse:collapse;min-width:560px;width:100%;max-width:900px;font-size:14px;margin:8px 0 4px}
+table.cmp th,table.cmp td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.cmp th{color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+table.cmp td b{color:var(--navy)}
+.row220{display:block;max-width:700px;width:100%;height:auto;border:1px solid #ddd2ca;background:#fff;border-radius:8px}
+.win{font-weight:800;color:var(--ok)}.no{color:#A0403F;font-weight:700}.big{font-weight:800;color:var(--ok)}
+ul.find{margin:8px 0 0;padding-left:20px;max-width:820px}ul.find li{margin:6px 0}
+footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<nav><a class="wordmark" href="../design.html">CrySnap</a><div class="links"><a href="../design.html">Design</a><a href="../flow.html">Онбординг</a><a href="./" aria-current="page">Screenshots</a></div></nav>
+<main>
+  <h1>Скриншоты App Store — первые три кадра</h1>
+  <p class="muted">Две вкладки: <b>T</b> — вариант Claude (рассуждение + Jev, сцены Codex GPT Image), <b>S</b> — вариант Codex. На телефоне листайте ряд вбок; нажатие увеличивает кадр. Пришлите номера кадров и правки.</p>
+
+  <div class="tabs" role="tablist"><a href="#T" id="tab-btn-T" role="tab" aria-selected="true"><span class="l">T</span>Claude · t1</a><a href="#S" id="tab-btn-S" role="tab" aria-selected="false"><span class="l">S</span>Codex</a></div>
+
+  <section id="tab-T" role="tabpanel">
+  <h2 style="border-top:0;margin-top:18px">T · Один заголовок, одна сцена, один результат</h2>
+  <span class="badge">На ревью · 20.09.2026</span>
+  <p style="margin-top:10px">Заголовок 64 pt SF Pro Rounded (192 px в экспорте), две строки, вторая — coral. Подзаголовок 23 pt — одна строка, читается на 220 px. Сцена — живопись онбординга V2 (мама со спины, лиц нет, ребёнок не кричит). Одна белая карточка внутри телефона с одним крупным результатом — реальные строки экранов V2. Ни чипов, ни буллетов.</p>
+  <div class="view-tools"><button id="size-toggle" type="button" aria-pressed="false">Смотреть в ширине 220 px</button><span class="muted">Так кадры выглядят в поиске App Store</span></div>
+  <div class="set">
+    <figure><img src="t1/T01-preview.jpg" data-full="t1/T01.png" width="1320" height="2868" alt="T01 Why Is Your Baby Crying?"><figcaption><b>T01</b> · боль №1 «все плачи одинаковые» · <b>Why Is Your / Baby Crying?</b> · Most likely reason, in 8 seconds · карточка: MOST LIKELY · Hungry · or overtired · Last feed 2h 10m ago</figcaption></figure>
+    <figure><img src="t1/T02-preview.jpg" data-full="t1/T02.png" width="1320" height="2868" alt="T02 Tried Everything?"><figcaption><b>T02</b> · боль №2 «кормила, меняла, качала — ничего» · <b>Tried / Everything?</b> · Timed steps. Remembers what worked · карточка: STEP 3 OF 6 · Carry and walk · 4:32 · worked before</figcaption></figure>
+    <figure><img src="t1/T03-preview.jpg" data-full="t1/T03.png" width="1320" height="2868" alt="T03 Someone to Ask at 3am"><figcaption><b>T03</b> · боли №3 «это нормально?» + №5 «спросить некого» · <b>Someone / to Ask at 3am</b> · Nurse guide, sleep coach, lactation · карточка: Sarah · AI nurse guide · 3:07am</figcaption></figure>
+  </div>
+  <p class="muted">Ряд 220 px как в поиске: <a href="t1/row-220.png">открыть</a>.</p>
+  <img class="row220" src="t1/row-220.png" alt="Три кадра T в ширине 220 px" loading="lazy">
+
+  <h2>T-B · То же, светлая рамка</h2>
+  <p>Jev за тёмный фон 0.56 против 0.44, но проходы разошлись (0.61 / 0.43) — неустойчиво. Ночные мамы и отцы — за тёмный; colic, feed, second и бабушки — за светлый. Поэтому обе версии. Дизайн-система CrySnap: 7 светлых + 1 тёмный.</p>
+  <div class="set">
+    <figure><img src="t1/T01-B-preview.jpg" data-full="t1/T01-B.png" width="1320" height="2868" alt="T01-B"><figcaption><b>T01-B</b></figcaption></figure>
+    <figure><img src="t1/T02-B-preview.jpg" data-full="t1/T02-B.png" width="1320" height="2868" alt="T02-B"><figcaption><b>T02-B</b></figcaption></figure>
+    <figure><img src="t1/T03-B-preview.jpg" data-full="t1/T03-B.png" width="1320" height="2868" alt="T03-B"><figcaption><b>T03-B</b></figcaption></figure>
+  </div>
+  <img class="row220" src="t1/row-220-B.png" alt="Три кадра T-B в ширине 220 px" loading="lazy">
+
+  <h2>Боли — от большей к меньшей (Jev, панель 24 родителя × 2 прохода)</h2>
+  <p>Рейтинг из исследования спринта 19.09 (сила 0–4 · «заплатит $7.99/нед»), плюс новый вопрос 20.09: <b>какую боль показать первым кадром</b>.</p>
+  <div class="scroll"><table class="cmp"><tr><th>#</th><th>Боль словами родителя</th><th>Сила</th><th>Заплатит</th><th>Первым кадром</th><th>Кадр</th></tr>
+  <tr><td>1</td><td>Все плачи одинаковые — голод, усталость или боль?</td><td>2.52</td><td><b>0.30</b></td><td><b>0.30</b> (feed 0.58)</td><td><b>T01</b></td></tr>
+  <tr><td>2</td><td>Кормила, меняла, качала — ничего не помогает, идеи кончились</td><td><b>2.82</b></td><td>0.08</td><td>0.20 (second 0.38)</td><td><b>T02</b></td></tr>
+  <tr><td>3</td><td>Это нормально, столько плакать? Когда пройдёт?</td><td>2.57</td><td>0.05</td><td>0.08 (<b>colic 0.33</b>)</td><td>T03 / CPP colic</td></tr>
+  <tr><td>4</td><td>Без сил, сон хаотичный, не угадать дневной сон</td><td>2.37</td><td>0.10</td><td>0.04</td><td>—</td></tr>
+  <tr><td>5</td><td>Ночью спросить некого</td><td>2.26</td><td>0.07</td><td>0.17 (night 0.27, dad 0.28)</td><td><b>T03</b></td></tr>
+  <tr><td>6</td><td>Советы противоречат друг другу</td><td>2.19</td><td>0.03</td><td>0.06</td><td>—</td></tr>
+  <tr><td>7</td><td>Нечего показать педиатру</td><td>1.97</td><td>0.08</td><td>0.07 (colic 0.24)</td><td>—</td></tr>
+  <tr><td>8</td><td>Боюсь пропустить серьёзное</td><td>1.95</td><td>0.08</td><td>0.09 (<b>colic 0.26</b>)</td><td>CPP colic</td></tr></table></div>
+  <p class="muted">Colic-мамы (20 %) во всех вопросах хотят другое: «Is this normal?», красные флаги, карточку про норму (0.69). Это отдельная Custom Product Page под запрос <code>colic</code>, а не правка основной серии.</p>
+
+  <h2>Что показал Jev для T</h2>
+  <ul class="find">
+    <li><b>T01 заголовок.</b> «Stop Guessing at 3am» нажали бы чаще (0.37), но понимают 0.03 и проходы разошлись на 0.10. <b>«Why Is Your Baby Crying?»</b> — 0.29 нажму / 0.18 понял, второе место по обеим шкалам, и слово <i>crying</i> объясняет категорию. «Baby Cry Translator» понимают 0.71, но не нажимают (0.05) — категория остаётся в названии приложения.</li>
+    <li><b>T02 заголовок.</b> <span class="win">«Tried Everything?» 0.50</span> стабильно во всех когортах, но понимают 0.01. «Fed. Changed. Still Crying?» понимают <b>0.79</b>, нажимают 0.28. Выбран первый — категорию несут сцена и карточка; второй свёрстан как запасной.</li>
+    <li><b>T03 заголовок.</b> «Someone to Ask at 3am» 0.39 (понял 0.52) + «Nobody to Ask at 3am?» 0.34 — одна идея 0.73. «Three Experts, Any Hour» — 0.11.</li>
+    <li><b>Сцены.</b> Героиня нужна: мама со спины — кухня 0.45 (T01), гостиная <span class="win">0.76</span> (T02), край кровати 0.62 (T03). «Только руки» ≤0.07. Отцы (15 %) везде хотят отца (0.71–0.93) — сцены для CPP уже сгенерированы.</li>
+    <li><b>Карточки.</b> Один результат побеждает: «Hungry · or overtired · Last feed 2h 10m» <span class="win">0.84</span>; таймер «4:32 · worked before» 0.62; реплика nurse guide 0.72. Списки и кнопки «Calmer / Still crying» ≤0.35.</li>
+    <li><b>Формат.</b> Карточка внутри телефона 0.47 · карточка без телефона 0.35 · телефон + чипы <span class="no">0.18</span>.</li>
+    <li><b>Первый кадр.</b> По описанию кадров — T02 0.46 (dad .61, second .65); по болям — скан 0.30. Порядок оставлен T01 → T02 → T03 (рейтинг болей + за что платят). Открытый вопрос: поставить ли «Tried Everything?» первым.</li>
+  </ul>
+  <p class="muted">Jev судит описания, не пиксели. Реальный ответ даст Product Page Optimization в App Store Connect. Данные: <code>research/screenshots-headlines-jev-2026-09-20/</code> в репозитории CrySnap.</p>
+
+  <h2>Почему предыдущие раунды не сработали (разбор Claude)</h2>
+  <div class="scroll"><table class="cmp"><tr><th>Раунд</th><th>Что делали</th><th>Почему не читается на телефоне</th></tr>
+  <tr><td><b>CrySnap iter1</b> апр.</td><td>«It's 3am. You need answers.» / «From cry to answer in 8 seconds» с реальным фото кроватки / тёмный voice mode</td><td>F2 6.8: ушли от сцены-wedge, реальное фото ребёнка против DECISIONS, жёлтая плашка Hungry ≠ светофор; тон F1 обвинительный</td></tr>
+  <tr><td><b>Codex r2–r3</b></td><td>фото + плотная карточка; натюрморт, заголовок слева</td><td>много текста, нет одной сцены, нет результата приложения</td></tr>
+  <tr><td><b>Codex r4–r5</b></td><td>тёмное кино, телефон огромный</td><td>объект и суть не видны на 220 px</td></tr>
+  <tr><td><b>Codex r6</b></td><td>светлый, телефон в центре, 2–3 чипа, подзаголовок 13 pt</td><td>подзаголовок и чипы не читаются; сцена — реквизит; чипы называют функции, не пользу («буллетов слишком много, мелко, научно»)</td></tr>
+  <tr><td><b>Codex r7</b></td><td>героини онбординга + телефон + 3 буллета</td><td>три мелких буллета + мелкий UI; сцена не становится якорем</td></tr>
+  <tr><td><b>Codex r8</b></td><td>огромный заголовок, одна карточка, оверлей на весь кадр</td><td>кроп потерял смысл сцены, оверлей убил контраст</td></tr>
+  <tr><td><b>Codex r9–r10</b></td><td>60 px заголовок, сцена + панель продукта / телефон + карточка</td><td>панель — снова плотная реконструкция продукта; два объекта спорят; точки в конце заголовков</td></tr></table></div>
+  <p>Узор один: каждый раунд либо уменьшал текст, чтобы вместить больше, либо добавлял второй объект. WatchSnap, SnapFlip, JewelSnap конвертируют одним заголовком, одной сценой, одним результатом — T строит только это.</p>
+
+  <h2>Слабые места T</h2>
+  <ul class="find">
+    <li>T02 «Tried Everything?» — ставка на нажатие, не на понятность. Запасной «Fed. Changed. / Still Crying?» — одна правка copy.json.</li>
+    <li>Тёмный / светлый фон Jev не развёл — решение за вами или PPO.</li>
+    <li>Реплика Sarah в T03 — четыре строки 19 pt; на 220 px читаются заголовок и имя. Строка реальная, резать нельзя.</li>
+    <li>T01/T02 обещают V2 (план, «remembers what worked»). Пока в App Store версия 1.3 — грузить нельзя, только вместе с V2.</li>
+  </ul>
+
+  <h2>Ваше решение по T</h2>
+<pre>Кадры: T01 / T02 / T03 — оставить / переделать (что именно)
+Фон: T тёмный / T-B светлый / решит PPO
+T02 заголовок: Tried Everything? / Fed. Changed. Still Crying?
+Первый кадр: T01 (скан) / T02 (tried everything)
+CPP: colic («Is This Normal?») — да / нет · dad (отец в кадре) — да / нет
+Дальше: кадры 4–8 по этой формуле — да / нет</pre>
+  </section>
+
+  <section id="tab-S" role="tabpanel" hidden>
+  <h2 style="border-top:0;margin-top:18px">S · Вариант Codex</h2>
+  <span class="badge wait">Ожидается</span>
+  <p style="margin-top:10px">Кадры Codex для CrySnap ещё не опубликованы. Когда появятся, они лягут в <code>screenshots/s1/</code> и в эту вкладку тем же рядом из трёх, чтобы сравнивать с T в одном масштабе.</p>
+  </section>
+</main>
+<footer>CrySnap · внутренняя страница ревью, не для индексации · <a href="../design.html">design.html</a></footer>
+<dialog id="zoom" aria-label="Увеличенный скриншот"><button type="button" id="close-zoom">Закрыть</button><img id="zoom-image" alt=""></dialog>
+<script>
+const tabs={T:document.getElementById('tab-T'),S:document.getElementById('tab-S')};
+function showTab(k){if(!tabs[k])k='T';for(const [n,el] of Object.entries(tabs)){el.hidden=n!==k;document.getElementById('tab-btn-'+n).setAttribute('aria-selected',String(n===k));}}
+document.querySelectorAll('.tabs a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const k=a.getAttribute('href').slice(1);history.replaceState(null,'','#'+k);showTab(k);}));
+showTab(location.hash.replace('#','')||'T');
+const toggle=document.getElementById('size-toggle');
+toggle.addEventListener('click',()=>{const active=document.body.classList.toggle('thumbs');toggle.setAttribute('aria-pressed',String(active));toggle.textContent=active?'Вернуть крупный просмотр':'Смотреть в ширине 220 px';});
+const zoom=document.getElementById('zoom'),zoomImage=document.getElementById('zoom-image');
+document.querySelectorAll('.set img').forEach(img=>{img.tabIndex=0;img.setAttribute('role','button');const open=()=>{zoomImage.src=img.dataset.full||img.src;zoomImage.alt=img.alt;zoom.showModal();zoom.scrollTop=0;};img.addEventListener('click',open);img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});});
+document.getElementById('close-zoom').addEventListener('click',()=>zoom.close());
+zoom.addEventListener('click',e=>{if(e.target===zoom)zoom.close();});
+</script>
+</body>
+</html>
