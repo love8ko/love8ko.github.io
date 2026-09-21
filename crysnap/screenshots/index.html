@@ -55,7 +55,7 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
   <h1>Скриншоты App Store — первые три кадра</h1>
   <p class="muted">Две вкладки: <b>T</b> — вариант Claude (рассуждение + Jev, сцены Codex GPT Image), <b>S</b> — вариант Codex. На телефоне листайте ряд вбок; нажатие увеличивает кадр. Пришлите номера кадров и правки.</p>
 
-  <div class="tabs" role="tablist"><a href="#S" id="tab-btn-S" role="tab" aria-selected="true"><span class="l">S</span>Codex · s2 · новое</a><a href="#T" id="tab-btn-T" role="tab" aria-selected="false"><span class="l">T</span>Claude · t1</a></div>
+  <div class="tabs" role="tablist"><a href="#S" id="tab-btn-S" role="tab" aria-selected="true"><span class="l">S</span>Codex · s3 · новое</a><a href="#T" id="tab-btn-T" role="tab" aria-selected="false"><span class="l">T</span>Claude · t1</a></div>
   <div class="view-tools"><button id="size-toggle" type="button" aria-pressed="false">Смотреть в ширине 220 px</button><span class="muted">Проверка читаемости в миниатюре</span></div>
 
   <section id="tab-T" role="tabpanel">
@@ -133,6 +133,35 @@ CPP: colic («Is This Normal?») — да / нет · dad (отец в кадр�
   </section>
 
   <section id="tab-S" role="tabpanel" hidden>
+  <div id="s3">
+  <h2 style="border-top:0;margin-top:18px">S3 · Сначала узнаваемая ситуация, затем продукт</h2>
+  <span class="badge">Светлый основной ряд · 21.09.2026 · на ревью</span>
+  <p style="margin-top:12px">Заголовки и сцены S1, телефоны на <b>31% уже</b>, одна выделенная плашка «функция + польза» на кадр. Телефон опущен и смещён вправо: мама, папа и малыш снова видны. Цифры не главный акцент.</p>
+  <p><a href="s3/CrySnap-S3-first-three.zip">Скачать три PNG</a> · 1320 × 2868, RGB, без альфы. <a href="s3/row-220.png">Весь ряд</a> · <a href="s3/row-180.png">Миниатюра 180 px</a>. Нажмите кадр для увеличения.</p>
+  <div class="set">
+    <figure><img src="s3/S01-preview.jpg" data-full="s3/S01.png" width="1320" height="2868" alt="Fed. Changed. Still crying? AI Baby Cry Translator. Check what your baby may need. Mother holding baby; small phone detects crying and suggests possible need from feeding and awake time."><figcaption><b>01 · Fed. Changed. Still crying?</b><br>Боль — в заголовке. AI Baby Cry Translator и польза — в плашке. В телефоне — возможная потребность и переход к плану.<br><a href="s3/S01.png" download>Скачать PNG</a></figcaption></figure>
+    <figure><img src="s3/S02-preview.jpg" data-full="s3/S02.png" width="1320" height="2868" alt="Soothe your baby. Step by step. Follow timed steps. Save what helped your baby. Father carrying baby; small phone shows Carry and walk with a secondary timer."><figcaption><b>02 · Soothe your baby. Step by step.</b><br>Узнаваемое действие папы, конкретный следующий шаг и сохранение того, что помогло. Таймер стал вторичным.<br><a href="s3/S02.png" download>Скачать PNG</a></figcaption></figure>
+    <figure><img src="s3/S03-preview.jpg" data-full="s3/S03.png" width="1320" height="2868" alt="Someone to ask. Even at 3am. Ask about feeding, sleep and crying. AI guidance, any time. Mother beside crib and a small phone with Sarah, AI nurse guide."><figcaption><b>03 · Someone to ask. Even at 3am.</b><br>Помощь ночью — не только сон: кормление, сон и плач. Sarah явно подписана как AI; показан пример следующего шага.<br><a href="s3/S03.png" download>Скачать PNG</a></figcaption></figure>
+  </div>
+  <p class="muted">Основной ряд при 220 px:</p>
+  <img class="row220" src="s3/row-220.png" alt="Светлый S3: три кадра с небольшими телефонами и открытыми родительскими сценами" loading="lazy">
+  <h2>Нужен ли переход в тёмный?</h2>
+  <p><b>Для основного S3 — не делаю его обязательным.</b> Ночь уже понятна из «3am» и самой сцены. Светлый фон сохраняет цельность S1. Ниже тот же ряд, где изменены только цвета третьего кадра: тексты, сцены и размеры телефонов идентичны.</p>
+  <img class="row220" src="s3/row-night-220.png" alt="Альтернатива S3: те же кадры, но третий фон тёмно-синий" loading="lazy">
+  <p style="margin-top:10px"><a href="s3/S03-night.png">Тёмный третий кадр PNG</a> · <a href="s3/CrySnap-S3-night-first-three.zip">Скачать ряд с тёмным третьим</a> · <a href="s3/row-night-220.png">Открыть весь ряд</a></p>
+  <p>Jev по описаниям палитр: <b>нет существенной разницы — 0.553</b>, тёмный третий — 0.334, весь светлый — 0.113. Среди двух цветов модель предпочитает тёмный; светлый выбран ради сохранения композиции S1, а не потому, что он «победил по конверсии». Пиксели модель не видела.</p>
+  <h2>Конверсия: S1 остаётся контролем</h2>
+  <p>Финальный текстовый замер: 24 синтетических профиля × два порядка вариантов, 48 успешных вызовов. Шесть когорт поровну; реальные доли трафика неизвестны. S1 и S3 представлены в одинаковой структуре, без повторения одного варианта в контексте.</p>
+  <div class="scroll"><table class="cmp"><thead><tr><th>Вопрос</th><th>S1</th><th>S3</th><th>Ни один</th></tr></thead><tbody>
+  <tr><td>Модельный мотив скачать</td><td><b>0.375</b></td><td>0.256</td><td>0.368</td></tr>
+  <tr><td>Понятность по полному тексту</td><td><b>0.517</b></td><td>0.147</td><td>0.336</td></tr>
+  </tbody></table></div>
+  <p>S1 впереди в обоих порядках; величина разницы чувствительна к порядку. S3 — запрошенная визуальная доработка, <b>не доказанный рост скачиваний</b>. Jev не оценивал восстановленную видимость родителей. Для выбора по конверсии нужны реальные первые скачивания на сопоставимом трафике; S1 сохранён ниже.</p>
+  <details><summary style="cursor:pointer">Что меняли после первых проверок</summary><p style="margin-top:10px">Ранний S3 с короткими плашками и Emma уступил S1 (0.122 против 0.562 по мотиву скачать). Вернули объясняющие строки и широкую помощь ночью. Промежуточная версия с полной репликой Sarah была близка к S1, но направление менялось между порядками. Перед выпуском оставили только первое предложение из примера пейвола: убрали непроверенное обещание управления таймером из чата. В таблице выше — именно последняя, опубликованная копия. Все раунды сохранены отдельно, не объединены в «победу».</p></details>
+  <p style="margin-top:16px" class="muted">Сцены сохранены из S1 без перегенерации. Телефоны — HTML/CSS-макеты поддерживаемых деталей продукта, не снимки симулятора. Sarah — дословное первое предложение из примера V2-пейвола, не запись живого чата. «Translator» не означает точное определение причины по звуку: возможная потребность основана на кормлении и времени бодрствования.</p>
+  <p class="muted">Исходники: <code>marketing/appstore-v2/s3/</code>; метод и результаты: <code>research/screenshots-s3-2026-09-21/</code>. Проверены шрифты, RGB PNG, границы UI, оба ряда 180/220 px. Продуктовый код не меняли; в App Store Connect не загружено.</p>
+  </div>
+  <details id="s2-archive" style="margin-top:36px"><summary style="cursor:pointer;font-size:20px;font-weight:750;color:var(--navy)">S2 · большие телефоны — открыть для сравнения</summary>
   <div id="s2">
   <h2 style="border-top:0;margin-top:18px">S2 · AI Baby Cry Translator → действие → сон</h2>
   <span class="badge">Более смелый вариант · 21.09.2026 · на ревью</span>
@@ -164,6 +193,7 @@ CPP: colic («Is This Normal?») — да / нет · dad (отец в кадр�
   <p>Телефоны и UI — редактируемая HTML/CSS-композиция поддерживаемых деталей, не снимки симулятора. Первые две иллюстрации сохранены из S1; третья создана заново. Вопрос Emma взят из существующего quick prompt, вымышленного ответа нет. Продуктовый код не меняли.</p>
   <p class="muted">Проверены PNG, загрузка шрифта, границы UI и миниатюры 180/220 px. Исходники: <code>marketing/appstore-v2/s2/</code>; метод и сырые результаты: <code>research/screenshots-s2-2026-09-21/</code>. Не загружено в App Store Connect; перед отправкой нужен соответствующий релиз продукта.</p>
   </div>
+  </details>
   <details id="s1-archive" style="margin-top:36px"><summary style="cursor:pointer;font-size:20px;font-weight:750;color:var(--navy)">S1 · предыдущий вариант — открыть для сравнения</summary>
   <h2 style="border-top:0;margin-top:18px">S1 · Что ему нужно → что попробовать → кого спросить</h2>
   <span class="badge wait">Предыдущий вариант · 21.09.2026</span>
