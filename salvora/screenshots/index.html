@@ -12,14 +12,15 @@ body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Manrope,-appl
 nav{display:flex;align-items:center;gap:20px;padding:12px 24px;border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:10;flex-wrap:wrap}
 nav .wordmark{font-weight:800;color:var(--deep);text-decoration:none;font-size:17px}
 nav .links{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--muted);text-decoration:none;font-weight:600}nav a[aria-current]{color:var(--deep)}
-main{max-width:1180px;margin:0 auto;padding:26px 16px 72px}
+main{max-width:1180px;margin:0 auto;padding:26px 16px 80px}
 h1{font-size:31px;line-height:1.14;margin:0 0 8px;color:var(--deep);letter-spacing:-.02em}
-h2{font-size:22px;margin:46px 0 6px;color:var(--deep);padding-top:18px;border-top:2px solid var(--line)}
-h3{font-size:17px;margin:24px 0 4px;color:var(--ink)}
+h2{font-size:23px;margin:54px 0 6px;color:var(--deep);padding-top:20px;border-top:3px solid var(--deep)}
+h3{font-size:18px;margin:30px 0 4px;color:var(--ink)}
+h4{font-size:15px;margin:20px 0 2px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 p{margin:0 0 10px;max-width:920px}
 .lead{font-size:16px;max-width:920px}
 .muted{color:var(--muted);font-size:14px}
-.quick{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 2px}
+.quick{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 2px}
 .quick a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);color:var(--deep);font-weight:700;font-size:14px;text-decoration:none;padding:9px 14px;border-radius:999px}
 .quick a.primary{background:var(--deep);border-color:var(--deep);color:#fff}
 table{border-collapse:collapse;width:100%;margin:12px 0 6px;font-size:14px;background:var(--card);border-radius:10px;overflow:hidden}
@@ -31,16 +32,16 @@ code{font:600 13px ui-monospace,SFMono-Regular,monospace;background:#F1EBDC;padd
 .hl em{font-style:normal;color:var(--ctadeep)}
 .sub{color:var(--muted);font-size:13px;display:block}
 .idea{font-weight:700}
-.w{white-space:nowrap}
 .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:800}
 .pill.ok{background:#E7EFE3;color:var(--deep)}
 .pill.mid{background:#F7E9DF;color:var(--ctadeep)}
-.pill.no{background:#F6E2E1;color:#A0403F}
 .set{display:grid;gap:14px;align-items:start;padding:14px 0}
 .set img{display:block;width:100%;height:auto;background:#eee;border-radius:10px;box-shadow:0 10px 30px #2c241922;cursor:zoom-in}
 .set.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .set.four{grid-template-columns:repeat(4,minmax(0,1fr))}
 .set.six{grid-template-columns:repeat(6,minmax(0,1fr))}
+.set figure{margin:0}
+.set figcaption{font-size:13px;color:var(--muted);margin-top:6px}
 .row220{display:block;max-width:920px;width:100%;height:auto;border:1px solid var(--line);background:#fff;border-radius:10px}
 ul.find{margin:8px 0 0;padding-left:20px}ul.find li{margin:7px 0;max-width:920px}
 .big{font-weight:800;color:var(--ok)}
@@ -49,10 +50,8 @@ ul.find{margin:8px 0 0;padding-left:20px}ul.find li{margin:7px 0;max-width:920px
 .badge:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--brand)}
 .badge.draft{background:#F7E9DF;color:var(--ctadeep)}.badge.draft:before{background:var(--cta)}
 .badge.old{background:#EFEAE2;color:var(--muted)}.badge.old:before{background:#B9AE9B}
-.tabs{display:flex;gap:8px;margin:16px 0 6px;flex-wrap:wrap}
-.tabs button{border:1px solid var(--line);background:var(--card);color:var(--muted);font:700 14px Manrope,system-ui;padding:9px 14px;border-radius:999px;cursor:pointer}
-.tabs button[aria-selected=true]{background:var(--deep);border-color:var(--deep);color:#fff}
 .note{background:#F1EBDC;border-left:4px solid var(--cta);padding:12px 14px;border-radius:0 10px 10px 0;margin:14px 0;max-width:920px}
+.when{display:inline-block;font-size:13px;font-weight:800;color:var(--muted);letter-spacing:.03em;margin-bottom:2px}
 dialog{border:0;border-radius:12px;padding:0;background:#f4efe3;max-width:95vw;max-height:95vh;overflow:auto}
 dialog::backdrop{background:#2c2419dd}
 dialog img{display:block;width:auto;max-width:90vw;height:auto}
@@ -67,29 +66,28 @@ dialog button{position:sticky;top:8px;float:right;margin:8px;border:0;border-rad
     <a href="/salvora/design.html">Design</a>
     <a href="/salvora/marketing.html">Marketing</a>
     <a href="/salvora/screenshots/" aria-current="page">Скриншоты</a>
-    <a href="/salvora/screenshots/brief.html">Бриф на съёмку</a>
-    <a href="/salvora/screenshots/failures.html">Failures</a>
   </span>
 </nav>
 <main>
   <h1>Скриншоты App Store — Salvora</h1>
-  <p class="lead">Страница отвечает на три вопроса: <b>какие боли по порядку</b>, <b>что нарисовано на каждом кадре</b> и <b>какой заголовок и почему именно он</b>. Порядок сверху вниз: текущее предложение <b>t2</b>, под ним отвергнутый <b>t1</b> с разбором, почему не сработал.</p>
+  <p class="lead">Одна страница на всё: кадры, боли по порядку, заголовки с обоснованием, бриф на съёмку и разбор провалов. <b>Сверху — самое свежее</b>, ниже — предыдущие попытки и справочные разделы. Так и продолжаем: каждый новый раунд добавляется сверху.</p>
 
-  <div class="note"><b>Статус на 20.09.2026:</b> t2 — рабочая версия для передачи в производство (Астра). Сцены сняты как черновики: композиция и смысл проверены, финальные генерации не доделаны. Заголовки и порядок — закреплены двумя турнирами Jev и раундом Fable.</div>
+  <div class="note"><b>Статус 20.09.2026.</b> Актуален раунд <b>t2</b>: заголовки, порядок кадров и состав карточек закреплены двумя турнирами Jev и раундом Fable. Сцены — черновые генерации: композиция и смысл проверены, финальная отрисовка передаётся в производство (Астра).</div>
 
   <div class="quick">
-    <a class="primary" href="#table">Таблица кадров t2</a>
-    <a href="#frames">Кадры</a>
+    <a class="primary" href="#t2">t2 — текущий раунд</a>
     <a href="#why">Почему эти заголовки</a>
     <a href="#fable">Что сказали персоны</a>
-    <a href="#t1">Отвергнутый t1</a>
-    <a href="/salvora/screenshots/brief.html">Бриф на съёмку →</a>
-    <a href="/salvora/screenshots/failures.html">Провалы производства →</a>
+    <a href="#brief">Бриф на съёмку</a>
+    <a href="#t1">t1 — отвергнут</a>
+    <a href="#fails">Провалы производства</a>
+    <a href="#archive">Архив мая 2026</a>
   </div>
 
-  <!-- ===================== ГЛАВНАЯ ТАБЛИЦА ===================== -->
-  <h2 id="table">t2 · шесть кадров по болям — от большей к меньшей</h2>
-  <p class="muted">Порядок считался с позиции человека, который <b>только что набрал в поиске «eczema»</b>, о Salvora не слышал и видит лишь иконку, имя <code>Salvora: AI Eczema Tracker</code>, строку <code>Atopic Dermatitis &amp; Flares</code> и три маленьких кадра. «Скачает» — вероятность выбора заголовка в слепом турнире; «понятно» — доля, где этот заголовок назвали самым ясным объяснением, что за приложение.</p>
+  <!-- ==================================================== T2 -->
+  <h2 id="t2">t2 · шесть кадров по болям — от большей к меньшей</h2>
+  <span class="when">20 сентября 2026 · текущее предложение</span>
+  <p class="muted">Порядок считался с позиции человека, который <b>только что набрал в поиске «eczema»</b>, о Salvora не слышал и видит лишь иконку, имя <code>Salvora: AI Eczema Tracker</code>, строку <code>Atopic Dermatitis &amp; Flares</code> и три миниатюры шириной с палец. «Скачает» — вероятность выбора заголовка в слепом турнире; «понятно» — доля, где заголовок назвали самым ясным объяснением, что это за приложение.</p>
   <table>
     <tr>
       <th style="width:14%">Боль по порядку</th>
@@ -104,16 +102,16 @@ dialog button{position:sticky;top:8px;float:right;margin:8px;border:0;border-rad
       <td><span class="hl">What do I do about this flare <em>tonight?</em></span><span class="sub">One step for tonight, from NEA<br>Tomorrow: did it help? 10 seconds.</span></td>
       <td><b>0.41</b> · 0.12<br><span class="pill ok">кликбейт</span></td>
       <td class="idea">«Мне скажут, что сделать до сна — прямо сегодня, а не через месяц наблюдений».</td>
-      <td>Вечер, лампа у кровати. Взрослая рука намазывает эмолент на предплечье ребёнка, на сгибе видно сухое покраснение; открытая белая банка без надписей на тумбочке. Лица нет.</td>
-      <td>Карточка <b>«TONIGHT · ONE THING TO TRY — Cool, not hot»</b> с бейджем NEA и строкой «Tomorrow, a 10-second check shows if it helped».</td>
+      <td>Вечер, лампа у кровати. Взрослая рука намазывает эмолент на предплечье ребёнка, на сгибе сухое покраснение; открытая белая банка без надписей на тумбочке. Лица нет.</td>
+      <td>Карточка <b>«TONIGHT · ONE THING TO TRY — Cool, not hot»</b>, бейдж NEA, строка «Tomorrow, a 10-second check shows if it helped».</td>
     </tr>
     <tr>
-      <td><b>2 · Ночь: звонить или ждать</b><br><span class="big">0.11 боль</span><br><span class="sub">Mike .58 · Linda</span></td>
+      <td><b>2 · Ночь: звонить или ждать</b><br><span class="big">0.11 боль</span><br><span class="sub">Mike .58</span></td>
       <td><span class="hl">Up at <em>3 a.m.</em> with a scratching child?</span><span class="sub">Four signs to check, in ten seconds<br>Then one step for tonight, either way</span></td>
       <td><b>0.55</b> · —<br><span class="pill ok">кликбейт</span></td>
       <td class="idea">«В три ночи не буду гуглить: четыре признака — и понятно, звонить сейчас или дожить до утра».</td>
       <td>Ночник, детская рука в ладони взрослого поверх шалфейного одеяла, сухое пятно на запястье. Тихо, не страшно, лиц нет.</td>
-      <td>Лист <b>«Is it serious?»</b> — четыре красных флага, вердикт «None → a daytime call is fine», подпись «Based on NEA guidance».</td>
+      <td>Лист <b>«Is it serious?»</b>: четыре красных флага, вердикт «None → a daytime call is fine», подпись «Based on NEA guidance».</td>
     </tr>
     <tr>
       <td><b>3 · Что делает хуже</b><br><span class="big">0.20 · 0.20</span><br><span class="sub">Rachel .51</span></td>
@@ -125,7 +123,7 @@ dialog button{position:sticky;top:8px;float:right;margin:8px;border:0;border-rad
     </tr>
     <tr>
       <td><b>4 · Стало лучше или хуже</b><br><span class="big">0.10 · 0.06</span><br><span class="sub">Jessica .28</span></td>
-      <td><span class="hl"><em>Better or worse</em> than last week?</span><span class="sub">Same spot, same light, dated for you<br>Day 1 was 13. Today: 5 of 28.</span></td>
+      <td><span class="hl"><em>Better or worse</em> than last week?</span><span class="sub">Same spot, same light, dated for you<br>Day 1 was 13. Two weeks later: 7.</span></td>
       <td><b>0.26</b> · —<br><span class="pill mid">понятный</span></td>
       <td class="idea">«Глаз замылился, а два снимка с датами и числом показывают правду».</td>
       <td>Рука с телефоном над предплечьем: тот же ракурс и свет, что на снимках внутри приложения. Утро, льняная ткань.</td>
@@ -148,12 +146,10 @@ dialog button{position:sticky;top:8px;float:right;margin:8px;border:0;border-rad
       <td>Живой ответ Ask с раскрытым блоком <b>«5 sources»</b>: Cleveland Clinic — Eczema, AAD — Eczema Resource Center, AAD — Itch relief &amp; skin care for childhood eczema.</td>
     </tr>
   </table>
-  <p class="muted"><b>Что изменилось против t1 и почему.</b> В t1 порядок строился по «за что заплатит» — первой стояла страница для дерматолога. Для человека, который уже пользуется приложением, это верно (0.39). Но холодный замер показал другое: тема «что делать сегодня вечером» как первый кадр — <b>0.85</b> против 0.20 у страницы для врача, а сам заголовок «Walk in with proof, not guesses» объясняет, что это за приложение, лишь в <b>0.11</b> случаев (у Mike 0.03). Отдельно: «витрина продаёт результат четвёртой недели человеку, у которого проблема сегодня ночью» — согласие <b>0.76</b>.</p>
+  <p class="muted"><b>Что изменилось против t1.</b> В t1 порядок строился по «за что заплатит» — первой стояла страница для дерматолога. Для действующего пользователя это верно (0.39). Холодный замер показал другое: тема «что делать сегодня вечером» первым кадром — <b>0.85</b> против 0.20 у страницы для врача, а заголовок «Walk in with proof, not guesses» объясняет, что это за приложение, лишь в <b>0.11</b> случаев (Mike 0.03). Согласие с претензией «витрина продаёт четвёртую неделю человеку, у которого проблема сегодня» — <b>0.76</b>.</p>
 
-  <!-- ===================== КАДРЫ ===================== -->
-  <h2 id="frames">Кадры t2</h2>
+  <h3>Первые три кадра — то, что видно в выдаче</h3>
   <p><span class="badge draft">Черновые генерации</span> Нажатие увеличивает кадр.</p>
-  <h3>Первые три — то, что видно в выдаче поиска</h3>
   <div class="set three">
     <img src="t2/T01.png" alt="T01 — What do I do about this flare tonight?">
     <img src="t2/T02.png" alt="T02 — Up at 3 a.m. with a scratching child?">
@@ -170,31 +166,41 @@ dialog button{position:sticky;top:8px;float:right;margin:8px;border:0;border-rad
   <p class="muted">Весь ряд при 220 px:</p>
   <img class="row220" src="t2/contact-220.jpg" alt="Шесть кадров t2 при ширине 220 px">
 
-  <h3>Карточки — это настоящие пиксели сборки, не рисунок</h3>
-  <p class="muted">Каждая карточка вырезана из снимка симулятора 1320 × 2868 (ветка <code>love8ko/sprint</code>). В t2 появились два экрана, которых в t1 не было: совет на вечер и живой ответ Ask с источниками — их сняли через управление симулятором (тап, свайп), а не «дорисовали».</p>
+  <h3>Карточки — настоящие пиксели сборки, не рисунок</h3>
+  <p class="muted">Каждая карточка вырезана из снимка симулятора 1320 × 2868 (ветка <code>love8ko/sprint</code>). В t2 появились два экрана, которых в t1 не было: совет на вечер и живой ответ Ask с источниками — их сняли управлением симулятором (тап, свайп), а не дорисовали.</p>
   <div class="set four">
-    <img src="t2/scenes/card-tonight_card.jpg" alt="Карточка: совет на вечер">
-    <img src="t2/scenes/card-trigger_card.jpg" alt="Карточка: триггеры">
-    <img src="t2/scenes/card-ask_sources.jpg" alt="Карточка: ответ с источниками">
-    <img src="t2/scenes/card-score_big.jpg" alt="Карточка: балл 13 из 28">
+    <figure><img src="t2/scenes/card-tonight_card.jpg" alt="Карточка: совет на вечер"><figcaption>Кадр 1 — совет на вечер, бейдж NEA</figcaption></figure>
+    <figure><img src="t2/scenes/card-trigger_card.jpg" alt="Карточка: триггеры"><figcaption>Кадр 3 — триггеры, 6.8 против 3.1</figcaption></figure>
+    <figure><img src="t2/scenes/card-ask_sources.jpg" alt="Карточка: ответ с источниками"><figcaption>Кадр 6 — живой ответ и пять источников</figcaption></figure>
+    <figure><img src="t2/scenes/card-score_big.jpg" alt="Карточка: балл 13 из 28"><figcaption>Резерв — балл 13/28 «Moderate»</figcaption></figure>
   </div>
 
-  <!-- ===================== ПОЧЕМУ ===================== -->
+  <h3>Что доделать в t2 (передаётся в производство)</h3>
+  <ul class="find">
+    <li><b>Сцены.</b> Заново сгенерирована только первая (вечер, эмолент). Остальные пять — черновики из t1: нужна пересъёмка в одном свете, с одной «рукой-героиней».</li>
+    <li><b>CPP со взрослыми руками</b> (Jessica, Sarah, Rachel): те же шесть кадров, сцены без ребёнка, карточки из сценария «me». Сейчас в выдаче два педиатрических кадра из трёх — взрослые персоны отсекаются за полсекунды.</li>
+    <li><b>6.5″</b> (1284 × 2778) — та же вёрстка, другой холст.</li>
+    <li><b>Локализация</b> после утверждения английской серии: de-DE — полная пересъёмка, en-GB/CA/AU — только текст.</li>
+    <li><b>Баг сборки:</b> на вкладке Ask для ребёнка «Mia» предлагается вопрос «…start working for <b>Emma</b>?» — имя не подставляется в шаблон.</li>
+  </ul>
+
+  <!-- ==================================================== WHY -->
   <h2 id="why">Почему именно эти заголовки</h2>
-  <p class="muted">Три замера Jev подряд, каждый — 24 синтетических человека × 2 прохода с обратным порядком вариантов, 48/48 без ошибок. Первый ставил вопросы человеку, которому уже объяснили продукт; второй и третий — <b>холодному</b> человеку в выдаче по слову «eczema». Это структурированное мнение модели, а не опрос: годится выбирать между вариантами, не годится как прогноз конверсии.</p>
+  <p class="muted">Три прогона Jev подряд, каждый — 24 синтетических человека × 2 прохода с обратным порядком вариантов, 48/48 без ошибок. Первый ставил вопросы человеку, которому продукт уже объяснили; второй и третий — <b>холодному</b> человеку в выдаче по слову «eczema». Это структурированное мнение модели, а не опрос: годится выбирать между вариантами, не годится как прогноз конверсии.</p>
   <table>
     <tr><th style="width:34%">Что проверяли</th><th style="width:12%">Число</th><th>Что это значит для кадров</th></tr>
-    <tr><td><b>Слово «eczema» или «flare» внутри самого заголовка</b></td><td><span class="big">0.69</span></td><td>Человек останавливается чаще. Имя приложения в выдаче он читает по диагонали — категорию должен назвать и кадр.</td></tr>
-    <tr><td><b>Заголовок-вопрос, который человек уже задаёт себе</b></td><td><span class="big">0.66</span></td><td>«Что мне делать сегодня?», «Что делает хуже?», «Это инфекция?» — сильнее утверждений о пользе. В t2 пять кадров из шести — вопросы.</td></tr>
-    <tr><td><b>«Витрина продаёт четвёртую неделю, а проблема сегодня»</b></td><td><span class="no">0.76</span></td><td>Претензия к t1 подтвердилась. Поэтому первый кадр — сегодняшний вечер, а графики и «4 weeks · 5 scores» ушли глубже.</td></tr>
-    <tr><td><b>«Проще обойтись камерой и заметками, чем платить»</b></td><td><span class="no">0.70</span></td><td>Главная угроза категории. Отвечают на неё кадры 3 и 5: сравнение дней, которое вручную не сделать, и страница для врача.</td></tr>
-    <tr><td><b>Детская рука и «Mia's page» отсекают взрослых</b></td><td>0.53<br><span class="sub">Rachel .65</span></td><td>Половина взрослой аудитории читает витрину как «для родителей малышей». Лечится вариантом CPP со взрослыми руками — сцены под это уже сняты.</td></tr>
-    <tr><td><b>Капс в заголовке</b></td><td><span class="no">0.71 «крик»</span></td><td>Только строчные, 47 pt. Крупно ≠ капсом.</td></tr>
+    <tr><td><b>Слово «eczema» или «flare» внутри заголовка</b></td><td><span class="big">0.69</span></td><td>Человек останавливается чаще. Имя приложения он читает по диагонали — категорию должен называть и кадр.</td></tr>
+    <tr><td><b>Заголовок-вопрос, который человек уже задаёт себе</b></td><td><span class="big">0.66</span></td><td>«Что делать сегодня?», «Что делает хуже?», «Это инфекция?» сильнее утверждений о пользе. В t2 пять кадров из шести — вопросы.</td></tr>
+    <tr><td><b>«Витрина продаёт четвёртую неделю, а проблема сегодня»</b></td><td><span class="no">0.76</span></td><td>Претензия к t1 подтвердилась: первый кадр теперь про сегодняшний вечер, графики ушли глубже.</td></tr>
+    <tr><td><b>«Проще обойтись камерой и заметками, чем платить»</b></td><td><span class="no">0.70</span></td><td>Главная угроза категории. Отвечают кадры 3 и 5: сравнение дней, которое вручную не сделать, и страница для врача.</td></tr>
+    <tr><td><b>Детская рука и «Mia's page» отсекают взрослых</b></td><td>0.53<br><span class="sub">Rachel .65</span></td><td>Половина взрослой аудитории читает витрину как «для родителей малышей» → отдельный CPP.</td></tr>
+    <tr><td><b>Капс в заголовке</b></td><td><span class="no">0.71 «крик»</span></td><td>Только строчные, 47 pt на холсте 430. Крупно ≠ капсом.</td></tr>
     <tr><td><b>Ровно две крупные строки пользы</b></td><td><span class="big">0.55</span></td><td>Только заголовок 0.35, три строки 0.09, мелкий подзаголовок с 4–5 буллетами <span class="no">0.01</span>.</td></tr>
     <tr><td><b>Кожа и руки без лиц</b></td><td><span class="big">0.74</span></td><td>Человек с лицом 0.17, кабинет врача 0.05, натюрморт без людей <span class="no">0.00</span>. Улыбающаяся модель с телефоном читается как сток (0.59).</td></tr>
   </table>
-  <h3>Понятность против кликбейтности — это разные оси</h3>
-  <p>Самый понятный заголовок («Track every flare in 60 seconds» — 0.51 по «понятно, что за приложение») почти не заставляет скачивать (0.09). Самый кликбейтный из t1 («Walk in with proof, not guesses» — 0.39 по «скачаю») почти ничего не объясняет (0.11). Поэтому в t2 сделано так: <b>заголовок бьёт в боль, а категорию называют две строки под ним и карточка</b> — «one step for tonight», «wool days: itch 6.8», «5 sources · AAD». Кадр, где обе оси сходятся в одном заголовке, в этой серии не нашёлся — если Астра найдёт, это следующий раунд.</p>
+
+  <h3>Понятность и кликбейтность — разные оси</h3>
+  <p>Самый понятный заголовок («Track every flare in 60 seconds» — 0.51 по «понятно, что за приложение») почти не заставляет скачивать (0.09). Самый кликбейтный из t1 («Walk in with proof, not guesses» — 0.39 по «скачаю») почти ничего не объясняет (0.11). Поэтому в t2: <b>заголовок бьёт в боль, а категорию называют две строки под ним и карточка</b> — «one step for tonight», «wool days: itch 6.8», «5 sources · AAD». Заголовка, где обе оси сходятся, в этой серии не нашлось — если найдётся, это следующий раунд.</p>
   <table>
     <tr><th>Кадр</th><th>Победитель t2</th><th>Скачает</th><th>Кого обошёл</th></tr>
     <tr><td>T01</td><td>What do I do about this flare tonight?</td><td><b>0.41</b></td><td>Walk in with proof 0.39 (Sarah 0.90) · Track every flare in 60 s 0.09 · How bad is your eczema today? 0.02</td></tr>
@@ -204,31 +210,75 @@ dialog button{position:sticky;top:8px;float:right;margin:8px;border:0;border-rad
     <tr><td>T05</td><td>Show the doctor what really happened</td><td><b>0.37</b></td><td>Walk in with proof, not guesses 0.28 · POEM scores your dermatologist will read 0.19</td></tr>
     <tr><td>T06</td><td>Is this cream OK for eczema?</td><td><b>0.37</b></td><td>Stop googling your eczema at 2 a.m. 0.32 · Ask anything. See the source. 0.12</td></tr>
   </table>
-  <p class="muted">Данные: <code>research/screenshots-pains-jev-2026-09-20/</code> (боли, сцена, формат), <code>research/screenshots-cold-jev-2026-09-20/</code> (холодная выдача), <code>research/screenshots-lock-jev-2026-09-20/</code> (финальный турнир) в ветке <code>love8ko/screenshots</code>.</p>
+  <p class="muted">Данные: <code>research/screenshots-pains-jev-2026-09-20/</code> (боли, сцена, формат) · <code>research/screenshots-cold-jev-2026-09-20/</code> (холодная выдача) · <code>research/screenshots-lock-jev-2026-09-20/</code> (финальный турнир), ветка <code>love8ko/screenshots</code>.</p>
 
-  <!-- ===================== FABLE ===================== -->
+  <!-- ==================================================== FABLE -->
   <h2 id="fable">Что сказали пять персон о кадрах t1 (Fable)</h2>
+  <span class="when">20 сентября 2026</span>
   <p class="muted">Пять персон смотрели готовые картинки t1 глазами человека, который только что искал «eczema»: сначала ряд 220 px, потом полные кадры. Оценки 1–5.</p>
   <table>
-    <tr><th>Персона</th><th>Понятно, что за приложение</th><th>Это про меня</th><th>Скачаю</th><th>Её заголовки своими словами</th></tr>
-    <tr><td><b>Linda</b> — мама Мии, 3 года</td><td class="no">2</td><td>3</td><td class="no">2</td><td>What is making her itch? · Show the doctor what really happened · Is the cream actually helping her?</td></tr>
-    <tr><td><b>Mike</b> — папа, первый эпизод</td><td class="no">2</td><td>3</td><td>3</td><td>Call the doctor now or wait? · Is this infected or just eczema? · Tell me what to do tonight</td></tr>
-    <tr><td><b>Jessica</b> — TSW, 4-й год</td><td>4</td><td class="no">2</td><td class="no">2</td><td>Are my flares getting shorter? · No one telling you to moisturize more · Face and neck, week by week</td></tr>
-    <tr><td><b>Sarah</b> — на Dupixent</td><td>4</td><td class="no">2</td><td class="no">2</td><td>Is the biologic actually working? · POEM scores your derm will read · Proof for the insurance renewal</td></tr>
-    <tr><td><b>Rachel</b> — взрослая экзема, руки</td><td>4</td><td>3</td><td>3</td><td>Which product is breaking you out? · Was it the new serum? · Your hands, week by week</td></tr>
+    <tr><th>Персона</th><th>Понятно, что за приложение</th><th>Это про меня</th><th>Скачаю</th><th>Какой кадр должен быть первым</th><th>Её заголовки своими словами</th></tr>
+    <tr><td><b>Linda</b> — мама Мии, 3 года</td><td class="no">2</td><td>3</td><td class="no">2</td><td>ночной триаж</td><td>What is making her itch? · Show the doctor what really happened · Is the cream actually helping her?</td></tr>
+    <tr><td><b>Mike</b> — папа, первый эпизод</td><td class="no">2</td><td>3</td><td>3</td><td>ночной триаж, затем Ask</td><td>Call the doctor now or wait? · Is this infected or just eczema? · Tell me what to do tonight</td></tr>
+    <tr><td><b>Jessica</b> — TSW, 4-й год</td><td>4</td><td class="no">2</td><td class="no">2</td><td>фото во времени</td><td>Are my flares getting shorter? · No one telling you to moisturize more · Face and neck, week by week</td></tr>
+    <tr><td><b>Sarah</b> — на Dupixent</td><td>4</td><td class="no">2</td><td class="no">2</td><td>страница для врача</td><td>Is the biologic actually working? · POEM scores your derm will read · Proof for the insurance renewal</td></tr>
+    <tr><td><b>Rachel</b> — взрослая экзема, руки</td><td>4</td><td>3</td><td>3</td><td>триггеры</td><td>Which product is breaking you out? · Was it the new serum? · Your hands, week by week</td></tr>
   </table>
   <ul class="find">
-    <li><b>Mike:</b> «Ни в одном из первых трёх заголовков нет слова eczema, rash, skin или itch. “Walk in with proof” я прочитал как спор со страховой». Его же приговор витрине: «она продаёт выгоду четвёртой недели человеку, у которого проблема в ближайшие четыре часа».</li>
-    <li><b>Linda:</b> три её заголовка — ровно то, что в t2 стало кадрами 3, 5 и запасным. Фраза «Show the doctor what really happened» взята дословно и выиграла турнир (0.37 против 0.28 у нашей).</li>
-    <li><b>Jessica и Sarah:</b> «Mia's page», детская рука и «fever with a listless child» читаются как витрина для родителей дошкольника. Отсюда вариант CPP со взрослыми руками.</li>
+    <li><b>Mike:</b> «Ни в одном из первых трёх заголовков нет слова eczema, rash, skin или itch. “Walk in with proof” я прочитал как спор со страховой». И приговор: «витрина продаёт выгоду четвёртой недели человеку, у которого проблема в ближайшие четыре часа».</li>
+    <li><b>Linda:</b> её фраза «Show the doctor what really happened» взята дословно и выиграла турнир (0.37 против 0.28 у нашей). Зелёная сетка «6 of 7» прочиталась как трекер привычек.</li>
+    <li><b>Jessica и Sarah:</b> «Mia's page», детская рука и «fever with a listless child» читаются как витрина для родителей дошкольника. Sarah: биологика в кадрах не существует, а из «Walk in with proof» не видно, что получается выгружаемый документ.</li>
+    <li><b>Rachel:</b> единственный показанный триггер — шерсть, а её подозреваемые (сыворотка, крем, порошок) в кадре отсутствуют, поэтому отличия от бесплатных она не видит.</li>
     <li><b>Что персонам понравилось:</b> «That's a lead, not a cause» (честность вместо обещания причины), «A change of 3 or more is one you can feel», подпись «Example data · illustrative scene» на каждом кадре, палитра без «больнички».</li>
+    <li><b>Фактические замечания, принятые в работу:</b> в t1 два кадра показывали один и тот же график (дубль слота); в t2 такого нет. И числа на одном кадре должны совпадать с карточкой — строка кадра 4 исправлена на «Day 1 was 13. Two weeks later: 7», как в самой карточке.</li>
   </ul>
   <p class="muted">Полные протоколы: <code>research/fable-screenshots-2026-09-20/{linda,mike,jessica,sarah,rachel}.md</code>.</p>
 
-  <!-- ===================== T1 ===================== -->
+  <!-- ==================================================== BRIEF -->
+  <h2 id="brief">Бриф на съёмку — правила, запреты, как снимать</h2>
+  <p class="muted">Всё, что нужно, чтобы следующий раунд собрали без повторного обсуждения.</p>
+  <h3>Шесть правил формы</h3>
+  <table>
+    <tr><th style="width:26%">Правило</th><th style="width:14%">Число</th><th>Что это значит на кадре</th></tr>
+    <tr><td><b>Огромный заголовок в две строки, строчными</b></td><td>формат <span class="big">0.55</span> · капс <span class="no">0.71</span></td><td>47 pt на холсте 430 × 932 — примерно четверть кадра, ключевая фраза терракотой <code>#A85F45</code>. Три строки не допускаются: кегль ужимается автоматически.</td></tr>
+    <tr><td><b>Ровно две крупные строки пользы</b></td><td><span class="big">0.55</span></td><td>19,5 pt, каждая строка целиком, без переносов. Ни рядов буллетов, ни мелкого подзаголовка.</td></tr>
+    <tr><td><b>Кожа и руки, без лиц</b></td><td><span class="big">0.74</span></td><td>Предплечье, кисть, локоть, шея, детская рука во взрослой ладони. Детских лиц нет ни при каких условиях.</td></tr>
+    <tr><td><b>Кожа честная, но мягкая</b></td><td>0.62 против 0.43</td><td>Сухое покраснение и шелушение — да; мокнутие, корки, кровь — нет.</td></tr>
+    <tr><td><b>Настоящие числа в строках</b></td><td>0.60</td><td>«6.8 против 3.1», «13 → 7», «6 of 7». Голое число непонятно (0.30) — всегда с единицей: «of 28», «day 1 was 13».</td></tr>
+    <tr><td><b>Карточка — пиксели живой сборки</b></td><td>—</td><td>Кроп настоящего снимка 1320 × 2868, увеличенный до читаемости в 220 px. Нет экрана в сборке — нет кадра.</td></tr>
+  </table>
+  <h3>Чего не снимаем</h3>
+  <ul class="find">
+    <li><b>Приватность отдельным кадром</b> — 0.01 и как причина скачать, и как причина заплатить. Это строка доверия в описании, а не слот.</li>
+    <li><b>Стероидофобия</b> — 0.01. Больная тема Jessica, но не то, за что открывают витрину.</li>
+    <li><b>Ночи и пробуждения</b> — 0.05: этим пользуются, но за это не скачивают.</li>
+    <li><b>Лица и «героини»</b> — 0.17 против 0.74 у кожи и рук, плюс запрет на узнаваемых детей в маркетинге.</li>
+    <li><b>Телефон с полным интерфейсом</b> — в 220 px это серое пятно.</li>
+    <li><b>Натюрморт без людей</b> — 0.00.</li>
+  </ul>
+  <h3>Чего нельзя писать на кадрах</h3>
+  <ul class="find">
+    <li>Никакой причинности: «крем подействовал», «шерсть вызывает обострение». Показываем разницу и дату проверки, а не причину.</li>
+    <li>Никакого диагноза и слов «cure», «heal», «clear your eczema».</li>
+    <li>Число всегда с единицей: «13 of 28», «down 8 since day 1».</li>
+    <li>Фото не подписываем баллом POEM: POEM — недельный опросник из семи вопросов, а не оценка снимка.</li>
+    <li>Никаких «N пользователей», отзывов и цифр рейтинга.</li>
+  </ul>
+  <h3>Как снимать экраны</h3>
+  <ul class="find">
+    <li>Симулятор iPhone 17 Pro Max, 1320 × 2868, светлая тема, статус-бар <code>--time 9:41 --batteryLevel 100</code>.</li>
+    <li>Чистый кадр: <code>-salvora.hideDebugUI YES</code> убирает плавающий ключ отладки.</li>
+    <li>Гейты (иначе приложение честно открывает пейвол): <code>-salvora.onboarding.done YES -salvora.subscription.isPro YES -salvora.setup.complete YES -salvora.disclaimer.acceptedAt &lt;ts&gt;</code>.</li>
+    <li>Данные: <code>-salvora.debugScenario day30visit</code> · <code>-salvora.debugAudience child|me</code> · <code>-salvora.debugSituation tsw|biologic|flares|nights</code> · <code>-salvora.debugPhotoDir &lt;testdata/photos&gt;</code>.</li>
+    <li>Экран и лист вместе не открываются: <code>-salvora.debug.startTab N</code> гасит уже поднятый лист. Снимать раздельно, пауза 8–9 с.</li>
+    <li>Тапы и свайпы — через serve-sim (<code>tap -d &lt;udid&gt; x y</code>, координаты 0–1). Так сняты совет на вечер и живой ответ Ask с источниками.</li>
+    <li>Ничего не перерисовываем в дизайне и не придумываем строк. Если строки в сборке нет — сначала правим сборку.</li>
+  </ul>
+
+  <!-- ==================================================== T1 -->
   <h2 id="t1">t1 · предыдущая попытка — не подошла</h2>
-  <p><span class="badge old">Отвергнуто 20.09.2026</span></p>
-  <p>Та же форма (огромный заголовок, сцена без лиц, карточка из сборки, две строки), но порядок и слова строились для человека, которому продукт уже объяснили. Холодная выдача это не прощает.</p>
+  <span class="when">20 сентября 2026 · отвергнуто</span>
+  <p><span class="badge old">Архив</span> Та же форма (огромный заголовок, сцена без лиц, карточка из сборки, две строки), но порядок и слова строились для человека, которому продукт уже объяснили. Холодная выдача этого не прощает.</p>
   <div class="set six">
     <img src="t1/S01.png" alt="t1 S01"><img src="t1/S02.png" alt="t1 S02"><img src="t1/S03.png" alt="t1 S03">
     <img src="t1/S04.png" alt="t1 S04"><img src="t1/S05.png" alt="t1 S05"><img src="t1/S06.png" alt="t1 S06">
@@ -237,21 +287,57 @@ dialog button{position:sticky;top:8px;float:right;margin:8px;border:0;border-rad
     <tr><th style="width:28%">Кадр t1</th><th>Почему не сработал</th></tr>
     <tr><td><b>S01 Walk in with proof, not guesses</b></td><td>Объясняет, что за приложение, в 0.11 случаев (Mike 0.03, generic 0.02). Читается как страховой спор. Тема «страница для врача» первой — 0.20 против 0.85 у «сегодня вечером».</td></tr>
     <tr><td><b>S02 Find what sets it off</b></td><td>0.30 против 0.52 у прямого вопроса «What is making it worse?». Название приёма вместо вопроса человека.</td></tr>
-    <tr><td><b>S03 3 a.m. — doctor now, or morning?</b></td><td>Сильный кадр, но стоял третьим и без слова «scratching»: 0.27 против 0.55 у «Up at 3 a.m. with a scratching child?».</td></tr>
-    <tr><td><b>S04 When you can't tell if it's better</b></td><td>0.13 — последнее место в своей группе. Фраза Jessica, но для холодного человека слишком внутренняя.</td></tr>
-    <tr><td><b>S05 60 seconds. A score derms know.</b></td><td>Как первый кадр — 0.02. Балл понятен только тому, кто уже понял, зачем ему балл. Остался внутри карточек.</td></tr>
-    <tr><td><b>S06 Ask anything. See the source.</b></td><td>0.12 против 0.37 у «Is this cream OK for eczema?». Плюс в кадре была шапка вкладки вместо живого ответа — в t2 это исправлено.</td></tr>
-    <tr><td><b>Общее</b></td><td>Шесть кадров из семи показывали состояние «месяц спустя»: 4 недели, 5 баллов, «6 of 7», «down 8 since day 1». Согласие с претензией «продаёте четвёртую неделю» — 0.76.</td></tr>
+    <tr><td><b>S03 3 a.m. — doctor now, or morning?</b></td><td>Сильный кадр, но третьим и без слова «scratching»: 0.27 против 0.55 у «Up at 3 a.m. with a scratching child?».</td></tr>
+    <tr><td><b>S04 When you can't tell if it's better</b></td><td>0.13 — последнее место в группе. Фраза Jessica, но для холодного человека слишком внутренняя.</td></tr>
+    <tr><td><b>S05 60 seconds. A score derms know.</b></td><td>Как первый кадр — 0.02. Балл понятен тому, кто уже понял, зачем ему балл. Остался внутри карточек.</td></tr>
+    <tr><td><b>S06 Ask anything. See the source.</b></td><td>0.12 против 0.37 у «Is this cream OK for eczema?». Плюс в кадре была шапка вкладки вместо живого ответа — в t2 исправлено.</td></tr>
+    <tr><td><b>Общее</b></td><td>Шесть кадров из семи показывали состояние «месяц спустя»: 4 недели, 5 баллов, «6 of 7», «down 8 since day 1». Согласие с претензией «продаёте четвёртую неделю» — 0.76. Плюс два кадра дублировали один и тот же график.</td></tr>
   </table>
-  <p class="muted">Разбор t1 по кадрам от персон и журнал провалов производства — <a href="/salvora/screenshots/failures.html">на странице Failures</a>.</p>
 
-  <h2>Что дальше (передаётся в производство)</h2>
+  <!-- ==================================================== FAILS -->
+  <h2 id="fails">Провалы производства — честный журнал</h2>
+  <span class="when">20 сентября 2026</span>
+  <p class="muted">Без этого списка кажется, что кадры «просто получились».</p>
+  <h3>Сцены (Codex, GPT-Image)</h3>
+  <div class="set four">
+    <figure><img src="t2/scenes/T01.jpg" alt="Сцена t2 — вечер, эмолент"><figcaption><b>t2:</b> единственная пересобранная сцена — вечер, лампа, эмолент на детском предплечье. Ровно то, о чём кадр.</figcaption></figure>
+    <figure><img src="t1/scenes/S02.jpg" alt="Сцена S02 — шерсть"><figcaption><b>Лучшая из t1:</b> шерстяной свитер рядом с предплечьем — триггер и его след в одном кадре, понятно без слов.</figcaption></figure>
+    <figure><img src="t1/scenes/S06.jpg" alt="Сцена S06 — тумбочка"><figcaption><span class="no">Слабая:</span> рука, кружка, тумбочка. Красиво, но «про что приложение» не читается.</figcaption></figure>
+    <figure><img src="t1/scenes/S01.jpg" alt="Сцена S01 — приёмная"><figcaption>Внизу кадра детская кисть читается как стопа; в готовом кадре место закрыто карточкой.</figcaption></figure>
+  </div>
+  <table>
+    <tr><th>Что</th><th>Как вышло</th><th>Что сделали</th></tr>
+    <tr><td><b>Разрешение</b></td><td>Codex отдаёт 1024 × 1536, полосе фото нужно 1290 px по ширине</td><td>Апскейл 1,26× при отрисовке. Для ASC лучше просить максимальное разрешение или апскейлить отдельно</td></tr>
+    <tr><td><b>Аффинитивность S06</b></td><td>Сцена не говорит об экземе — просто уютная тумбочка</td><td>В t2 этот слот получил другую сцену; пересъёмка остальных — в производстве</td></tr>
+    <tr><td><b>Натюрморт без людей</b></td><td>Не генерировали вовсе</td><td>Jev дал 0.00 — тратить время незачем</td></tr>
+  </table>
+  <h3>Съёмка живых экранов</h3>
+  <div class="set four">
+    <figure><img src="t1/fails/fail-paywall-instead-of-doctor.jpg" alt="Пейвол вместо вкладки Doctor"><figcaption><b>Первые снимки — пейвол.</b> Сид ставит <code>isPro</code>, но менеджер подписок при старте перетирает флаг. Лечится аргументом <code>-salvora.subscription.isPro YES</code>.</figcaption></figure>
+    <figure><img src="t1/fails/fail-3lines.jpg" alt="Заголовок в три строки"><figcaption><b>Заголовок расползся на три строки</b> и съел сцену. Лечится авто-подгонкой кегля: каждая строка — <code>nowrap</code>, кегль падает с 47 pt, пока не влезет.</figcaption></figure>
+  </div>
+  <table>
+    <tr><th>Проблема</th><th>Причина</th><th>Решение / статус</th></tr>
+    <tr><td>Вкладка и лист одновременно не открываются</td><td><code>debug.startTab</code> гасит уже поднятый <code>sheet</code></td><td>Снимаем раздельно</td></tr>
+    <tr><td>Лист не успевал открыться</td><td>Снимок через 5 с после запуска</td><td>8–9 с; два кадра переснимались</td></tr>
+    <tr><td>Не переключалась аудитория на взрослую</td><td>Передавали <code>-salvora.debugAudience self</code>; правильное значение — <code>me</code></td><td>Найдено, взрослые сценарии теперь снимаются</td></tr>
+    <tr><td>Не удалось снять страницу-PDF для врача</td><td>«Open page» открывает экран экспорта; дальше системный share sheet и чужое приложение Preview</td><td>В кадре 5 — карточка «6 of 7» и «Next visit». Сама страница — задача на производство</td></tr>
+    <tr><td>Нет UI-автоматизации</td><td>osascript не авторизован слать события (<code>-1743</code>)</td><td>Решено через serve-sim: тапы и свайпы. Так сняты совет на вечер и ответ Ask</td></tr>
+    <tr><td>Отладочная «гайка» в кадре</td><td>Первый снимок без <code>-salvora.hideDebugUI YES</code></td><td>Переснято</td></tr>
+    <tr><td>Пустые кадры при сборке</td><td>Chrome по <code>file://</code> не читает <code>frames.json</code> через fetch</td><td>Локальный http-сервер на время рендера</td></tr>
+    <tr><td>Chrome подвисал</td><td><code>--headless=new</code> с общим профилем</td><td><code>--headless=old</code> + отдельный профиль + сторож 45 с</td></tr>
+  </table>
+
+  <!-- ==================================================== ARCHIVE -->
+  <h2 id="archive">Архив · план мая 2026</h2>
+  <span class="when">май 2026 · не используется</span>
+  <p>В <code>SCREENSHOTS.md</code> лежал план: <b>5 Custom Product Pages × 6 слотов × 5 устройств = 150 композиций</b>, у каждой персоны свой герой («Calm child illustration sleeping», «Anti-pharma framing», «Premium aesthetic + injection log»). В производство не пошёл:</p>
   <ul class="find">
-    <li>Финальные генерации сцен: T01 (вечер, эмолент) снят заново, остальные пять — черновики из t1, их стоит переснять в одном свете и с одной героиней-рукой.</li>
-    <li>Вариант CPP со взрослыми руками (Jessica, Sarah, Rachel): те же шесть кадров, сцены без ребёнка, карточки — из сценария «me».</li>
-    <li>6.5″ (1284 × 2778) — та же вёрстка, другой холст.</li>
-    <li>Локализация после утверждения английской серии: de-DE — полная пересъёмка, en-GB/CA/AU — только текст.</li>
-    <li>Баг сборки: на вкладке Ask для ребёнка «Mia» предлагается вопрос «…start working for <b>Emma</b>?» — имя не подставляется в шаблон.</li>
+    <li><b>Объём.</b> 150 композиций до первого релиза — способ не выпустить ничего.</li>
+    <li><b>Герои-персоны.</b> Сцена с лицом 0.17 против 0.74 у кожи и рук; детские лица в маркетинге запрещены нашим же <code>COMPLIANCE.md</code>.</li>
+    <li><b>Слоты по фичам.</b> «Photo journal demo», «AI Coach chat», «POEM severity tracking» — названия функций; в турнирах они стабильно проигрывают вопросу или результату.</li>
+    <li><b>Диагностический заголовок.</b> «Track Emma's eczema in seconds» подразумевает поставленный диагноз и имя ребёнка на витрине.</li>
+    <li><b>5.5″ и iPad.</b> Apple больше не требует их для новых приложений.</li>
   </ul>
 
   <dialog id="zoom"><button onclick="zoom.close()">Закрыть</button><img id="zoomimg" alt=""></dialog>
