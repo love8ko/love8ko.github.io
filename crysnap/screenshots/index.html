@@ -55,13 +55,13 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
   <h1>Скриншоты App Store — первые три кадра</h1>
   <p class="muted">Две вкладки: <b>T</b> — вариант Claude (рассуждение + Jev, сцены Codex GPT Image), <b>S</b> — вариант Codex. На телефоне листайте ряд вбок; нажатие увеличивает кадр. Пришлите номера кадров и правки.</p>
 
-  <div class="tabs" role="tablist"><a href="#T" id="tab-btn-T" role="tab" aria-selected="true"><span class="l">T</span>Claude · t1</a><a href="#S" id="tab-btn-S" role="tab" aria-selected="false"><span class="l">S</span>Codex</a></div>
+  <div class="tabs" role="tablist"><a href="#S" id="tab-btn-S" role="tab" aria-selected="true"><span class="l">S</span>Codex · s1 · новое</a><a href="#T" id="tab-btn-T" role="tab" aria-selected="false"><span class="l">T</span>Claude · t1</a></div>
+  <div class="view-tools"><button id="size-toggle" type="button" aria-pressed="false">Смотреть в ширине 220 px</button><span class="muted">Проверка читаемости в миниатюре</span></div>
 
   <section id="tab-T" role="tabpanel">
   <h2 style="border-top:0;margin-top:18px">T · Один заголовок, одна сцена, один результат</h2>
   <span class="badge">На ревью · 20.09.2026</span>
   <p style="margin-top:10px">Заголовок 64 pt SF Pro Rounded (192 px в экспорте), две строки, вторая — coral. Подзаголовок 23 pt — одна строка, читается на 220 px. Сцена — живопись онбординга V2 (мама со спины, лиц нет, ребёнок не кричит). Одна белая карточка внутри телефона с одним крупным результатом — реальные строки экранов V2. Ни чипов, ни буллетов.</p>
-  <div class="view-tools"><button id="size-toggle" type="button" aria-pressed="false">Смотреть в ширине 220 px</button><span class="muted">Так кадры выглядят в поиске App Store</span></div>
   <div class="set">
     <figure><img src="t1/T01-preview.jpg" data-full="t1/T01.png" width="1320" height="2868" alt="T01 Why Is Your Baby Crying?"><figcaption><b>T01</b> · боль №1 «все плачи одинаковые» · <b>Why Is Your / Baby Crying?</b> · Most likely reason, in 8 seconds · карточка: MOST LIKELY · Hungry · or overtired · Last feed 2h 10m ago</figcaption></figure>
     <figure><img src="t1/T02-preview.jpg" data-full="t1/T02.png" width="1320" height="2868" alt="T02 Tried Everything?"><figcaption><b>T02</b> · боль №2 «кормила, меняла, качала — ничего» · <b>Tried / Everything?</b> · Timed steps. Remembers what worked · карточка: STEP 3 OF 6 · Carry and walk · 4:32 · worked before</figcaption></figure>
@@ -133,18 +133,46 @@ CPP: colic («Is This Normal?») — да / нет · dad (отец в кадр�
   </section>
 
   <section id="tab-S" role="tabpanel" hidden>
-  <h2 style="border-top:0;margin-top:18px">S · Вариант Codex</h2>
-  <span class="badge wait">Ожидается</span>
-  <p style="margin-top:10px">Кадры Codex для CrySnap ещё не опубликованы. Когда появятся, они лягут в <code>screenshots/s1/</code> и в эту вкладку тем же рядом из трёх, чтобы сравнивать с T в одном масштабе.</p>
+  <h2 style="border-top:0;margin-top:18px">S1 · Что ему нужно → что попробовать → кого спросить</h2>
+  <span class="badge">Новый вариант · 21.09.2026 · на ревью</span>
+  <p style="margin-top:12px">Первые три кадра для скачивания: узнаваемая ситуация, два крупных пояснения и один результат. Новые сцены, светлая серия, мама и папа с малышом. Продукт сверен с <code>love8ko/sprint @ 0c69cd5</code>.</p>
+  <p><a href="s1/CrySnap-S1-first-three.zip">Скачать все три PNG</a> · 1320 × 2868, RGB, без альфы. Нажмите кадр для увеличения.</p>
+  <div class="set">
+    <figure><img src="s1/S01-preview.jpg" data-full="s1/S01.png" width="1320" height="2868" alt="S01: Fed. Changed. Still crying? Check what your baby may need. Get a step-by-step soothing plan."><figcaption><b>S01 · Fed. Changed. Still crying?</b><br>«Кормила, меняла — почему всё ещё плачет?» Возможная потребность с объяснением из кормления и времени бодрствования.<br><a href="s1/S01.png" download>Скачать PNG</a></figcaption></figure>
+    <figure><img src="s1/S02-preview.jpg" data-full="s1/S02.png" width="1320" height="2868" alt="S02: Soothe your baby. Step by step. Follow timed steps. Save what helped your baby."><figcaption><b>S02 · Soothe your baby. Step by step.</b><br>«Что делать и как долго?» Действие, таймер и отметка, что уже помогало малышу.<br><a href="s1/S02.png" download>Скачать PNG</a></figcaption></figure>
+    <figure><img src="s1/S03-preview.jpg" data-full="s1/S03.png" width="1320" height="2868" alt="S03: Someone to ask. Even at 3am. Ask about feeding, sleep and crying. AI guidance, any time."><figcaption><b>S03 · Someone to ask. Even at 3am.</b><br>«Некому задать вопрос ночью». Пример ответа, крупная пометка AI; кормление, сон и плач.<br><a href="s1/S03.png" download>Скачать PNG</a></figcaption></figure>
+  </div>
+  <p class="muted">Три кадра при 220 px. <a href="s1/row-180.png">Проверка при 180 px</a> · <a href="s1/row-220.png">Открыть ряд</a></p>
+  <img class="row220" src="s1/row-220.png" alt="Серия S1 при ширине каждого кадра 220 px" loading="lazy">
+  <h2>Боли → задачи → доказательство в продукте</h2>
+  <div class="scroll"><table class="cmp"><thead><tr><th>Кадр</th><th>Работа родителя</th><th>Что продаём</th><th>Почему здесь</th></tr></thead><tbody>
+  <tr><td>S01</td><td>Разобраться, с чего начать, когда кормление и смена подгузника не решили проблему</td><td>Возможная потребность + объяснение + план</td><td>Свежий замер sprint предпочитает связку ситуации и объяснения по намерению скачать</td></tr>
+  <tr><td>S02</td><td>Получить конкретный следующий шаг и длительность</td><td>План с таймером, сохранение того, что помогло</td><td>Показывает действие и пользу уже сегодня</td></tr>
+  <tr><td>S03</td><td>Задать вопрос о кормлении, сне или плаче ночью</td><td>AI-помощники с контекстом малыша</td><td>В новом сравнении даёт больше дополнительного мотива скачать, чем отдельный кадр памяти</td></tr>
+  </tbody></table></div>
+  <p class="muted">Это предложенный порядок витрины, а не универсальный рейтинг силы боли. Когорта colic сильнее реагирует на «Is it normal?»; помощники — на память малыша.</p>
+  <h2>Что проверили через Jev</h2>
+  <p>24 синтетических профиля × два порядка вариантов, 48 успешных вызовов. Равное представительство шести когорт; реальные доли трафика неизвестны. Сравнивали точные тексты и описания сцен, не пиксели.</p>
+  <div class="scroll"><table class="cmp"><thead><tr><th>Вопрос</th><th>Результат</th><th>Решение</th></tr></thead><tbody>
+  <tr><td>Какой третий кадр добавляет мотив скачать после первых двух?</td><td>Помощь ночью <b>0.475</b> · память малыша 0.286 · «это нормально?» 0.122 · ничего 0.117</td><td>Помощь ночью; лидирует в обоих порядках (0.523 / 0.427)</td></tr>
+  <tr><td>Заголовок второго кадра при той же карточке</td><td>«Soothe your baby. Step by step.» <b>0.527</b> · «What to try. For how long.» 0.421</td><td>Первый; стабилен между проходами (0.531 / 0.523)</td></tr>
+  <tr><td>Первый кадр, предыдущий замер sprint от 21.09</td><td>«Fed. Changed…» + объяснение: балл намерения скачать <b>2.64/4</b>; прежний T01 — 2.31</td><td>Взяли концепт за основу; это не замер новых изображений S1</td></tr>
+  </tbody></table></div>
+  <p>Числа — предпочтения модели, не доли родителей и не конверсия. Проверка смысла первого кадра согласуется с объяснением из контекста, но входной текст прямо подсказывает этот механизм. Рост скачиваний ещё не измерен. Следующий тест: T против S1 на сопоставимом трафике, основная метрика — первые скачивания.</p>
+  <h2>Что настоящее и что иллюстрация</h2>
+  <p>Три сцены созданы через ImageGen. Белые карточки — увеличенное представление деталей V2, а не новые снимки симулятора. Возможная потребность из контекста, таймер и отметка <i>worked before</i> сверены с кодом. Реплика Sarah дословно взята из примера на пейволе V2; это не запись живого диалога. Пример не подтверждает управление таймером из чата.</p>
+  <p>Шрифт 54 px (S02 — 50), пояснения 23 px на холсте 440 px. Проверены три RGB PNG 1320 × 2868, загрузка шрифта, переполнение и границы карточек; просмотрены миниатюры 220 px. Серию можно обсуждать и тестировать. Для загрузки в App Store она должна сопровождать соответствующую релизную V2.</p>
+  <p class="muted">Исходники и промпты: <code>marketing/appstore-v2/s1/</code>. Метод и сырые результаты: <code>research/screenshots-s1-2026-09-21/</code>. Предыдущие T/T-B сохранены в соседней вкладке.</p>
   </section>
 </main>
 <footer>CrySnap · внутренняя страница ревью, не для индексации · <a href="../design.html">design.html</a></footer>
 <dialog id="zoom" aria-label="Увеличенный скриншот"><button type="button" id="close-zoom">Закрыть</button><img id="zoom-image" alt=""></dialog>
 <script>
 const tabs={T:document.getElementById('tab-T'),S:document.getElementById('tab-S')};
-function showTab(k){if(!tabs[k])k='T';for(const [n,el] of Object.entries(tabs)){el.hidden=n!==k;document.getElementById('tab-btn-'+n).setAttribute('aria-selected',String(n===k));}}
+function showTab(k){if(!tabs[k])k='S';for(const [n,el] of Object.entries(tabs)){el.hidden=n!==k;document.getElementById('tab-btn-'+n).setAttribute('aria-selected',String(n===k));}}
 document.querySelectorAll('.tabs a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const k=a.getAttribute('href').slice(1);history.replaceState(null,'','#'+k);showTab(k);}));
-showTab(location.hash.replace('#','')||'T');
+showTab(location.hash.replace('#','')||'S');
+window.addEventListener('hashchange',()=>showTab(location.hash.replace('#','')));
 const toggle=document.getElementById('size-toggle');
 toggle.addEventListener('click',()=>{const active=document.body.classList.toggle('thumbs');toggle.setAttribute('aria-pressed',String(active));toggle.textContent=active?'Вернуть крупный просмотр':'Смотреть в ширине 220 px';});
 const zoom=document.getElementById('zoom'),zoomImage=document.getElementById('zoom-image');
