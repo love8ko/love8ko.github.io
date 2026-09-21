@@ -55,7 +55,7 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
   <h1>Скриншоты App Store — первые три кадра</h1>
   <p class="muted">Две вкладки: <b>T</b> — вариант Claude (рассуждение + Jev, сцены Codex GPT Image), <b>S</b> — вариант Codex. На телефоне листайте ряд вбок; нажатие увеличивает кадр. Пришлите номера кадров и правки.</p>
 
-  <div class="tabs" role="tablist"><a href="#S" id="tab-btn-S" role="tab" aria-selected="true"><span class="l">S</span>Codex · s1 · новое</a><a href="#T" id="tab-btn-T" role="tab" aria-selected="false"><span class="l">T</span>Claude · t1</a></div>
+  <div class="tabs" role="tablist"><a href="#S" id="tab-btn-S" role="tab" aria-selected="true"><span class="l">S</span>Codex · s2 · новое</a><a href="#T" id="tab-btn-T" role="tab" aria-selected="false"><span class="l">T</span>Claude · t1</a></div>
   <div class="view-tools"><button id="size-toggle" type="button" aria-pressed="false">Смотреть в ширине 220 px</button><span class="muted">Проверка читаемости в миниатюре</span></div>
 
   <section id="tab-T" role="tabpanel">
@@ -133,8 +133,40 @@ CPP: colic («Is This Normal?») — да / нет · dad (отец в кадр�
   </section>
 
   <section id="tab-S" role="tabpanel" hidden>
+  <div id="s2">
+  <h2 style="border-top:0;margin-top:18px">S2 · AI Baby Cry Translator → действие → сон</h2>
+  <span class="badge">Более смелый вариант · 21.09.2026 · на ревью</span>
+  <p style="margin-top:12px">Сразу называем продукт. Крупный телефон показывает распознавание плача, следующий шаг и AI-помощь со сном. Общая волна и положение телефонов связывают кадры; фон переходит от кремового к ночному синему.</p>
+  <p><a href="s2/CrySnap-S2-first-three.zip">Скачать три PNG</a> · 1320 × 2868, RGB, без альфы. Нажмите кадр для увеличения.</p>
+  <div class="set">
+    <figure><img src="s2/S01-preview.jpg" data-full="s2/S01.png" width="1320" height="2868" alt="AI Baby Cry Translator. Hear the cry. Find your next step. Phone: Cry detected; possible need Tired; uses feeding and awake time."><figcaption><b>01 · AI Baby Cry Translator</b><br>«Помоги понять малыша». Волна → плач обнаружен → возможная потребность → план.<br><a href="s2/S01.png" download>Скачать PNG</a></figcaption></figure>
+    <figure><img src="s2/S02-preview.jpg" data-full="s2/S02.png" width="1320" height="2868" alt="Still crying? Try this next. A soothing plan. Made for your baby. Phone: Carry and walk; then sit and keep holding. Remembers what helped."><figcaption><b>02 · Still crying? Try this next.</b><br>«Скажи, что делать сейчас». Крупное действие вместо главного акцента на цифрах. Память о том, что помогло.<br><a href="s2/S02.png" download>Скачать PNG</a></figcaption></figure>
+    <figure><img src="s2/S03-preview.jpg" data-full="s2/S03.png" width="1320" height="2868" alt="Baby won’t sleep? Ask your AI sleep coach. Even at 3am. Phone: Emma, AI sleep coach. She fights sleep — why? Ask Emma."><figcaption><b>03 · Baby won’t sleep?</b><br>«Помоги разобраться со сном, даже ночью». Emma — AI sleep coach; конкретный вопрос вместо абстрактной поддержки.<br><a href="s2/S03.png" download>Скачать PNG</a></figcaption></figure>
+  </div>
+  <p class="muted">Единый ряд при 220 px. <a href="s2/row-180.png">Проверка при 180 px</a> · <a href="s2/row-220.png">Открыть ряд</a></p>
+  <img class="row220" src="s2/row-220.png" alt="Три кадра S2: AI Baby Cry Translator, soothing plan, AI sleep coach" loading="lazy">
+  <h2>Логика первых трёх</h2>
+  <div class="scroll"><table class="cmp"><thead><tr><th>JTBD</th><th>Что продаём</th><th>Доказательство</th></tr></thead><tbody>
+  <tr><td>Понять, с чего начать, когда малыш плачет</td><td>AI Baby Cry Translator</td><td>Обнаружение плача + возможная потребность из кормления и времени бодрствования</td></tr>
+  <tr><td>Перестать гадать и получить действие</td><td>Персональный план успокоения</td><td>Carry and walk → Sit and keep holding; таймер вторичен; память результата</td></tr>
+  <tr><td>Разобраться, почему малыш сопротивляется сну</td><td>AI sleep coach даже в 3am</td><td>Emma, существующий быстрый вопрос, темы naps / bedtime / wake windows</td></tr>
+  </tbody></table></div>
+  <p>В разведочном Jev-сравнении понимание плача — 0.620, конкретное успокоение — 0.192, сон — 0.048. Поэтому сон здесь третий дополнительный мотив, а не заявленная главная боль всех когорт.</p>
+  <h2>Jev: понятнее — да. Больше скачиваний — пока не доказано</h2>
+  <p>Финальные тексты S1/S2 сравнены в одинаковой структуре: 24 синтетических профиля × два порядка вариантов, 48 успешных вызовов. Шесть когорт представлены поровну. Это предпочтения модели по текстам, не оценка пикселей и не реальные родители.</p>
+  <div class="scroll"><table class="cmp"><thead><tr><th>Вопрос</th><th>S1</th><th>S2</th><th>Ни один</th></tr></thead><tbody>
+  <tr><td>Какой ряд яснее объясняет продукт?</td><td>0.089</td><td><b>0.896</b></td><td>0.016</td></tr>
+  <tr><td>Какой ряд сильнее мотивирует скачать?</td><td><b>0.475</b></td><td>0.401</td><td>0.125</td></tr>
+  </tbody></table></div>
+  <p>Направление сохраняется в обоих порядках. Предварительный раунд с описаниями разной подробности тоже предпочитал S1 по скачиванию; он сохранён, но не смешан с финальным. S2 отвечает запросу на смелую подачу и явный AI, а S1 оставлен ниже как контроль для настоящего теста.</p>
+  <h2>Граница обещания</h2>
+  <p><i>Translator</i> — позиционирование категории, не обещание точного перевода причины по одному звуку. Поэтому в телефоне видно <b>POSSIBLE NEED</b> и <b>Uses feeding + awake time</b>. Код sprint определяет наличие плача по аудио, а возможную потребность — по контексту. AI sleep coach помогает с вопросами сна, но не гарантирует засыпание.</p>
+  <p>Телефоны и UI — редактируемая HTML/CSS-композиция поддерживаемых деталей, не снимки симулятора. Первые две иллюстрации сохранены из S1; третья создана заново. Вопрос Emma взят из существующего quick prompt, вымышленного ответа нет. Продуктовый код не меняли.</p>
+  <p class="muted">Проверены PNG, загрузка шрифта, границы UI и миниатюры 180/220 px. Исходники: <code>marketing/appstore-v2/s2/</code>; метод и сырые результаты: <code>research/screenshots-s2-2026-09-21/</code>. Не загружено в App Store Connect; перед отправкой нужен соответствующий релиз продукта.</p>
+  </div>
+  <details id="s1-archive" style="margin-top:36px"><summary style="cursor:pointer;font-size:20px;font-weight:750;color:var(--navy)">S1 · предыдущий вариант — открыть для сравнения</summary>
   <h2 style="border-top:0;margin-top:18px">S1 · Что ему нужно → что попробовать → кого спросить</h2>
-  <span class="badge">Новый вариант · 21.09.2026 · на ревью</span>
+  <span class="badge wait">Предыдущий вариант · 21.09.2026</span>
   <p style="margin-top:12px">Первые три кадра для скачивания: узнаваемая ситуация, два крупных пояснения и один результат. Новые сцены, светлая серия, мама и папа с малышом. Продукт сверен с <code>love8ko/sprint @ 0c69cd5</code>.</p>
   <p><a href="s1/CrySnap-S1-first-three.zip">Скачать все три PNG</a> · 1320 × 2868, RGB, без альфы. Нажмите кадр для увеличения.</p>
   <div class="set">
@@ -163,6 +195,7 @@ CPP: colic («Is This Normal?») — да / нет · dad (отец в кадр�
   <p>Три сцены созданы через ImageGen. Белые карточки — увеличенное представление деталей V2, а не новые снимки симулятора. Возможная потребность из контекста, таймер и отметка <i>worked before</i> сверены с кодом. Реплика Sarah дословно взята из примера на пейволе V2; это не запись живого диалога. Пример не подтверждает управление таймером из чата.</p>
   <p>Шрифт 54 px (S02 — 50), пояснения 23 px на холсте 440 px. Проверены три RGB PNG 1320 × 2868, загрузка шрифта, переполнение и границы карточек; просмотрены миниатюры 220 px. Серию можно обсуждать и тестировать. Для загрузки в App Store она должна сопровождать соответствующую релизную V2.</p>
   <p class="muted">Исходники и промпты: <code>marketing/appstore-v2/s1/</code>. Метод и сырые результаты: <code>research/screenshots-s1-2026-09-21/</code>. Предыдущие T/T-B сохранены в соседней вкладке.</p>
+  </details>
   </section>
 </main>
 <footer>CrySnap · внутренняя страница ревью, не для индексации · <a href="../design.html">design.html</a></footer>
