@@ -1,0 +1,383 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>PestSnap · Поток V2 экран за экраном</title>
+<style>
+:root{color-scheme:dark;
+--bg:#0A0A0C;--surface:#141619;--elevated:#1E212A;--line:#262A33;--line-soft:#1B1F26;
+--gold:#D4AF5A;--gold-deep:#A88541;--gold-soft:#2A2214;
+--coral:#FF4A3D;--coral-soft:#2B120F;
+--ok:#4ADE80;--ok-soft:#10241A;--warn:#FBBF24;--warn-soft:#2A2110;--bad:#EF4444;--bad-soft:#2A1414;
+--ink:#F5F5F5;--muted:#9CA3AF;--dim:#6B7280}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--gold);text-underline-offset:4px}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:10px;background:var(--elevated);padding:8px 12px;border-radius:8px}
+nav{position:sticky;top:0;z-index:20;background:rgba(10,10,12,.93);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+.navin{max-width:1240px;margin:auto;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;padding:12px 24px}
+.wordmark{font-size:18px;font-weight:800;letter-spacing:-.5px;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--gold)}
+.links{display:flex;gap:6px;flex-wrap:wrap;font-size:12.5px}
+.links a{text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:999px;border:1px solid transparent}
+.links a:hover{color:var(--ink);border-color:var(--line);background:var(--surface)}
+.links a.pri{color:#12100B;background:var(--gold);font-weight:700}
+.links .n{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:800;background:#241D10;color:var(--gold);padding:1px 5px;border-radius:4px;margin-right:5px}
+main{max-width:1240px;margin:auto;padding:30px 24px 60px}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(27px,3.4vw,38px);line-height:1.18;letter-spacing:-.7px;margin:10px 0 12px}
+h2{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:25px;letter-spacing:-.4px;margin:0 0 4px}
+h3{font-size:16px;margin:0 0 8px}
+h4{font-size:11px;margin:16px 0 6px;text-transform:uppercase;letter-spacing:1.1px;color:var(--dim)}
+p{margin:8px 0;max-width:900px}
+.eyebrow{text-transform:uppercase;letter-spacing:1.4px;font-size:11px;font-weight:800;color:var(--dim)}
+.lead{font-size:17px;color:#DDE1E6;max-width:880px}
+.muted{color:var(--muted);font-size:13px;max-width:900px}
+.src{color:var(--dim);font-size:12px;margin-top:10px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#15181D;border:1px solid var(--line);padding:1px 5px;border-radius:5px;color:#C9CFD8}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
+.pill{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:4px 11px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.pill.gold{background:var(--gold-soft);border-color:#3A2F1B;color:var(--gold)}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;border-radius:20px;padding:2px 9px;letter-spacing:.4px;text-transform:uppercase}
+.ok{background:var(--ok-soft);color:var(--ok);border:1px solid #1E4432}
+.warn{background:var(--warn-soft);color:var(--warn);border:1px solid #453516}
+.bad{background:var(--bad-soft);color:#F87171;border:1px solid #4A2020}
+.banner{background:linear-gradient(135deg,#171A21 0%,#101216 100%);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:18px;padding:20px 22px;margin:46px 0 16px}
+.banner .step{font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--gold);margin-bottom:6px}
+.banner .sub{font-size:13.5px;color:var(--muted);max-width:860px;margin-top:6px}
+section{scroll-margin-top:86px}
+.block{display:grid;grid-template-columns:320px 1fr;gap:26px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:16px}
+.phone{width:300px;margin:0 auto;background:#000;border:1px solid #2A2E36;border-radius:34px;padding:8px;box-shadow:0 20px 44px -20px rgba(0,0,0,.9)}
+.phone img{width:100%;display:block;border-radius:27px}
+.phone .cap{font-size:11px;color:var(--dim);text-align:center;padding:8px 4px 2px;line-height:1.4}
+.ann h3{color:var(--ink)}
+.copybox{background:#0E1115;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:6px}
+.copybox .l{font-size:10.5px;text-transform:uppercase;letter-spacing:.9px;color:var(--dim);margin-top:10px}
+.copybox .l:first-child{margin-top:0}
+.copybox .t{font-size:14px;color:#E6EAEF;margin-top:3px}
+.copybox .t.big{font-family:Georgia,serif;font-size:19px;line-height:1.25}
+.copybox .t.small{font-size:13px;color:var(--muted)}
+ul.plain{margin:8px 0;padding-left:18px;font-size:13.5px;color:#D3D8DE}
+ul.plain li{margin:5px 0}
+ul.plain li b{color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+.note{background:#12161C;border:1px solid var(--line);border-left:3px solid var(--coral);border-radius:12px;padding:12px 14px;font-size:13px;color:#D3D8DE;margin-top:14px}
+.note.gold{border-left-color:var(--gold)}
+.note.green{border-left-color:var(--ok)}
+.shots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:16px 0 6px}
+.shot{background:#0F1216;border:1px solid var(--line);border-radius:16px;padding:10px}
+.shot img{width:100%;display:block;border-radius:10px;border:1px solid #000}
+.shot figcaption{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.45}
+.shot figcaption b{color:var(--ink)}
+.table-wrap{overflow-x:auto;margin-top:14px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:640px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line-soft)}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.9px;color:var(--dim);background:#101317}
+tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums;font-weight:700;color:var(--gold);white-space:nowrap}
+footer{max-width:1240px;margin:auto;padding:24px;font-size:12px;color:var(--dim);border-top:1px solid var(--line)}
+@media(max-width:1000px){.block{grid-template-columns:1fr}.phone{max-width:300px}.shots{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.navin,main,footer{padding-left:14px;padding-right:14px}.two{grid-template-columns:1fr}.shots{grid-template-columns:1fr}h1{font-size:26px}h2{font-size:21px}.block{padding:14px}}
+</style></head><body>
+<a class="skip" href="#main">К содержанию</a>
+<nav><div class="navin">
+<a class="wordmark" href="flow.html">Pest<span>Snap</span> · поток V2</a>
+<div class="links">
+<a href="#overview">Обзор</a>
+<a href="#s1"><span class="n">1</span>Плитки</a>
+<a href="#s2"><span class="n">2</span>Ситуация</a>
+<a href="#s3"><span class="n">3</span>Пример результата</a>
+<a href="#s4"><span class="n">4</span>Пейвол</a>
+<a href="#s5"><span class="n">5</span>После оплаты</a>
+<a href="#next">Дальше</a>
+<a class="pri" href="design.html">Справочник →</a>
+</div></div></nav>
+
+<main id="main">
+<div class="eyebrow">Поток V2 · снято 20 сентября 2026 · симулятор, 1320×2868 (440×956 @3×)</div>
+<h1 id="overview">Четыре экрана до цены —<br>и один тап, который задаёт все четыре</h1>
+<p class="lead">Онбординг V2 не спрашивает ничего. Человек тапает по плитке, которая описывает его ситуацию, и этот тап меняет фотографию, заголовок, пример результата, план действий, три буллета пейвола и надпись на кнопке. В коде это одна структура — <code>TopicContent.swift</code>, четыре темы плюс развилка «ребёнок или взрослый» у укуса.</p>
+<div class="pills">
+<span class="pill gold">tiles → ситуация → пример результата → пейвол</span>
+<span class="pill">4 темы × 3 экрана + 1 общий</span>
+<span class="pill">нет ввода, нет камеры, нет квиза до цены</span>
+<span class="pill">коммит <code>cb84694</code></span>
+</div>
+
+<div class="note">⚠️ <b>Честно про скриншоты.</b> Все кадры сняты 20 сентября, <b>до</b> правок по итогам раунда Fable. Поэтому на них ещё видно: «One seen in daylight…» вместо «One seen at all», нет шага «Check now · 2 min», у темы «укус» старая строка «when it stops being a home problem», буллеты пейвола в прежней редакции и строка «A typical exterminator visit runs $300+» на всех темах. В коде это уже исправлено — в подписях ниже каждый расхождение отмечено. Пейвол снят без права на триал (introductory offer в ASC ещё не создан), поэтому показана честная строка «$7.99 today», а не «$0.00 today».</div>
+
+<div class="table-wrap"><table>
+<thead><tr><th>#</th><th>Экран</th><th>Задача</th><th>Чем подтверждён (Jev / Fable)</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td>Плитки «What happened?»</td><td>Дать человеку узнать свою ситуацию за секунду и одним тапом персонализировать всё дальнейшее</td><td>Плитки <span class="num">0.33</span> против <span class="num">0.05</span> у старого тёмного экрана с тараканом; квиз <span class="num">0.00</span></td></tr>
+<tr><td class="num">2</td><td>Ситуация его словами</td><td>Подтвердить «это про меня» и (для укуса) уточнить, кого укусили</td><td>Самый слабый экран потока: Fable единогласно предложил его удалить</td></tr>
+<tr><td class="num">3</td><td>Пример результата</td><td>Показать, что возвращает скан: вид, светофор, честная полоса уверенности, план на сегодня и на сроки</td><td>«Свой результат до цены» <span class="num">0.61</span>; Fable — лучший экран приложения</td></tr>
+<tr><td class="num">4</td><td>Пейвол по теме</td><td>Продать то, что находится <i>за</i> стеной: разбор своего фото, запись, наблюдение</td><td>Карточка результата героем <span class="num">0.70</span>; «$0.00 today» <span class="num">0.32</span>; CTA-глагол <span class="num">0.52</span></td></tr>
+<tr><td class="num">5</td><td>После оплаты</td><td>Дисклеймер и первый скан ≤ 60 с — <b>пока не перестроен</b></td><td>Место, где сейчас теряется весь набранный импульс</td></tr>
+</tbody></table></div>
+
+<section id="s1">
+<div class="banner"><div class="step">ЭКРАН 1</div><h2>Плитки — «What happened?»</h2>
+<div class="sub">Плитка и есть кнопка: тап по ней и выбирает тему, и переводит дальше. Отдельного CTA нет — в 1.8 весь экран нёс одна золотая пилюля.</div></div>
+
+<div class="block">
+<div>
+<div class="phone"><img src="img/tiles-v3.jpg" alt="Экран выбора темы: четыре фотографические плитки"><div class="cap">Текущие ассеты (перегенерированы после Fable)</div></div>
+</div>
+<div class="ann">
+<h3>Копия экрана</h3>
+<div class="copybox">
+<div class="l">Эйбрау</div><div class="t small">PESTSNAP</div>
+<div class="l">Заголовок</div><div class="t big">What happened?</div>
+<div class="l">Подзаголовок</div><div class="t">Tap the one that matches. That's the whole setup.</div>
+<div class="l">Плитки</div>
+<div class="t">🐛 <b>I found a bug</b> — kitchen · basement · garage</div>
+<div class="t">🩹 <b>Something bit us</b> — marks on me or my kid</div>
+<div class="t">🕵 <b>Signs, but no bug</b> — mud tubes · droppings · damage</div>
+<div class="t">🐕 <b>It's on my pet</b> — tick · flea · skin</div>
+<div class="l">Низ экрана</div><div class="t small">Already a member? <b>Restore</b></div>
+</div>
+
+<h4>Что экран обязан сделать</h4>
+<ul class="plain">
+<li><b>Узнавание за секунду.</b> Человек пришёл не «определять насекомое», а с конкретной сценой: кухня ночью, рука с укусами, стена в трубках, собака.</li>
+<li><b>Персонализация без анкеты.</b> Тап = когорта. Дальше ни одного вопроса до цены.</li>
+<li><b>Вернуть покупку.</b> «Restore» внизу — единственный выход для уже платящего.</li>
+</ul>
+
+<h4>Чем подтверждено</h4>
+<ul class="plain">
+<li>Первый экран: плитки <span class="num">0.33</span> · сразу камера <span class="num">0.29</span> · демо-вердикт <span class="num">0.21</span> · спокойное обещание <span class="num">0.12</span> · <b>прежний тёмный экран с тараканом <span class="num">0.05</span></b>.</li>
+<li>По когортам: родитель <span class="num">0.54</span> и арендатор <span class="num">0.48</span> — за плитки; домовладелец <span class="num">0.36</span> и владелец собаки <span class="num">0.47</span> — за «сразу камеру».</li>
+<li>Мультяшная иллюстрация — <span class="num">0.06</span>, худшая из восьми вариантов. Все плитки — реалистичная фотография.</li>
+</ul>
+
+<div class="note gold"><b>Что исправили после Fable.</b> В первом наборе плитка «улики» читалась как «грязная стена или потёк», а клещ на плитке «питомец» был «размером с точку в конце предложения». Перегенерировали четыре ассета через Codex и проверяли их именно в размере плитки, а не в полный экран.</div>
+</div></div>
+
+<div class="shots">
+<figure class="shot"><img src="img/tiles-r1.jpg" alt="Плитки, первый набор"><figcaption><b>Раунд 1.</b> Улики и клещ не читаются; укус — детская рука.</figcaption></figure>
+<figure class="shot"><img src="img/tiles-v3.jpg" alt="Плитки, текущий набор"><figcaption><b>Сейчас.</b> Трубки различимы, клещ виден, укус — взрослая рука; детская версия живёт внутри темы.</figcaption></figure>
+<figure class="shot"><img src="img/debug-panel.jpg" alt="Отладочная панель"><figcaption><b>Стенд.</b> «Start from zero» стирает состояние и закрывает приложение — каждый раунд съёмки начинается с чистого экрана 1.</figcaption></figure>
+<figure class="shot"><img src="img/paywall-18.jpg" alt="Пейвол 1.8"><figcaption><b>Откуда ушли.</b> Пейвол 1.8: стоковый дом, <s>$300</s>, SAVE 90%, «Continue».</figcaption></figure>
+</div>
+</section>
+
+<section id="s2">
+<div class="banner"><div class="step">ЭКРАН 2</div><h2>Ситуация его словами</h2>
+<div class="sub">Фотография темы на весь верх, заголовок в два слова и одна фраза о том, что человек сейчас хочет понять. У темы «укус» здесь же единственный тап во всём онбординге: кого укусили.</div></div>
+
+<div class="block">
+<div>
+<div class="phone"><img src="img/bite-pain.jpg" alt="Экран ситуации для темы «укус»"><div class="cap">Тема «укус» — единственная с развилкой</div></div>
+</div>
+<div class="ann">
+<h3>Копия экрана · по темам</h3>
+<div class="copybox">
+<div class="l">Жук</div><div class="t big">Something ran under the counter.</div>
+<div class="t small">You need two things fast: what it is, and whether there are more behind the cabinets.</div>
+<div class="l">Укус · взрослый</div><div class="t big">Three marks in a row.</div>
+<div class="t small">You want to know what bit you, what to check tonight, and whether the answer is in your bedroom or outside it.</div>
+<div class="l">Укус · ребёнок</div><div class="t big">Three marks on your kid's arm.</div>
+<div class="t small">You want to know what bit them, what to do tonight, and what would mean calling the doctor.</div>
+<div class="l">Улики</div><div class="t big">Mud tubes on the foundation.</div>
+<div class="t small">The bug is gone but the trace is not. What left it decides whether this waits or costs thousands.</div>
+<div class="l">Питомец</div><div class="t big">Something dug in under the fur.</div>
+<div class="t small">Ticks and fleas are a clock, not a question. What it is decides what you do in the next 72 hours.</div>
+<div class="l">Развилка (только укус)</div><div class="t small">WHO WAS BITTEN? → <b>My child</b> · <b>Me or an adult</b></div>
+<div class="l">Кнопка</div><div class="t"><b>Show me the answer I'd get</b></div>
+</div>
+
+<h4>Что экран обязан сделать</h4>
+<ul class="plain">
+<li><b>Подтвердить «это про меня»</b> до того, как появится цена.</li>
+<li><b>Развести взрослый и детский путь</b> у укуса: меняется фотография, текст, проверки в плане и буллеты пейвола.</li>
+</ul>
+
+<h4>Чем подтверждено — и чем опровергнуто</h4>
+<ul class="plain">
+<li>Раздельные картинки подтверждены: детская рука у родителя <span class="num">0.71</span>, взрослая рука <span class="num">0.36</span> и шов матраса <span class="num">0.35</span> у арендатора, собака с клещом <span class="num">0.98</span> у владельца питомца.</li>
+<li><b>Сам экран не подтверждён ничем.</b> В списке «что обязательно увидеть до цены» его содержимое не набрало ничего: свой результат <span class="num">0.61</span>, шаги <span class="num">0.14</span>, пример <span class="num">0.11</span> — а «скорость», «4 режима», «отзывы» и прочая подводка — <span class="num">0.00</span>.</li>
+</ul>
+
+<div class="note"><b>Fable сказал удалить этот экран.</b> Mark: «Плитка уже сказала „я нашёл жука“… идите от плитки сразу к примеру результата. Тогда фраза „вот и вся настройка“ станет правдой». Sarah читает его текст как написанный для кого-то другого. Решение принято, но <b>в коде экран пока остался</b> (<code>OnboardingContainer.swift</code>, шаг <code>.pain</code>): на нём висит тап «ребёнок или взрослый», который надо куда-то перенести. Это открытый вопрос к владельцу №2 в справочнике.</div>
+<div class="note gold"><b>Расхождение со скриншотом.</b> На кадре у темы «укус» ещё старая строка «…and when it stops being a home problem» — Jordan прочитал её как написанную для домовладельца. В коде она уже переписана.</div>
+</div></div>
+
+<div class="shots">
+<figure class="shot"><img src="img/bug-pain.jpg" alt="Ситуация, тема жук"><figcaption><b>Жук.</b> Ночная кухня. Mark: «настолько недоэкспонирована, что читается как сломанная» → ассет перегенерирован.</figcaption></figure>
+<figure class="shot"><img src="img/bite-pain.jpg" alt="Ситуация, тема укус"><figcaption><b>Укус.</b> Три следа + развилка «ребёнок / взрослый».</figcaption></figure>
+<figure class="shot"><img src="img/evidence-pain.jpg" alt="Ситуация, тема улики"><figcaption><b>Улики.</b> «Что оставило след — решает, ждёт это или стоит тысячи».</figcaption></figure>
+<figure class="shot"><img src="img/pet-pain.jpg" alt="Ситуация, тема питомец"><figcaption><b>Питомец.</b> Единственная тема, где речь сразу о часах, а не о виде.</figcaption></figure>
+</div>
+</section>
+
+<section id="s3">
+<div class="banner"><div class="step">ЭКРАН 3</div><h2>Пример результата — «вот что вернёт ваш скан»</h2>
+<div class="sub">Тот же макет, что у настоящего результата в приложении, честно помеченный как пример. Здесь же, строкой внутри результата, живёт чат — не отдельным экраном и не персонажем.</div></div>
+
+<div class="block">
+<div>
+<div class="phone"><img src="img/bug-example.jpg" alt="Пример результата, тема жук"><div class="cap">Тема «жук» · 🔴 URGENT ACTION</div></div>
+</div>
+<div class="ann">
+<h3>Копия экрана</h3>
+<div class="copybox">
+<div class="l">Эйбрау</div><div class="t small">AN EXAMPLE — THIS IS WHAT YOUR SCAN RETURNS</div>
+<div class="l">Карточка вердикта</div><div class="t big">German cockroach</div>
+<div class="t small">🔴 URGENT ACTION · Confident match</div>
+<div class="t small">Consistent with a German cockroach — the species that breeds indoors. One seen at all usually means many more in harborages you can't see.</div>
+<div class="l">WHAT TO DO</div>
+<div class="t small"><b>Tonight</b> — Place gel bait in pea-size dots along cabinet edges and hinges — not in the middle of the floor.</div>
+<div class="t small"><b>Don't</b> — Skip the repellent spray. It scatters them into the walls and ruins the bait.</div>
+<div class="t small"><b>Check now · 2 min</b> — Torch under the sink and behind the fridge. Pepper-like specks or a musty smell mean a colony, not a stray.</div>
+<div class="t small"><b>Day 14–28</b> — Expect a second wave: eggs survive the bait. That is the re-treat point, not a failure.</div>
+<div class="l">Чат</div><div class="t small">«Why do I keep seeing them after baiting?» — Ask PestSnap Guide · AI, about your own scan</div>
+<div class="l">Дисклеймер</div><div class="t small">AI-assisted identification, not a diagnosis. PestSnap is not a doctor, vet or exterminator.</div>
+<div class="l">Кнопка</div><div class="t"><b>Scan mine</b> · Your scan, your photo, your plan — in about 3 seconds.</div>
+</div>
+
+<h4>Что экран обязан сделать</h4>
+<ul class="plain">
+<li><b>Показать продукт, а не обещание.</b> Не «мы определяем за 3 секунды», а конкретный вердикт с конкретным планом.</li>
+<li><b>Быть честным трижды:</b> полоса уверенности вместо выдуманного процента, «consistent with» вместо «is», дисклеймер и экстренная строка не за оплатой.</li>
+<li><b>Побить Reddit специфичностью:</b> класс средства, куда именно класть, какая ошибка всё портит, через сколько ждать результат.</li>
+</ul>
+
+<h4>Чем подтверждено</h4>
+<ul class="plain">
+<li>«Увидеть результат до цены» — <span class="num">0.61</span>, первое место с большим отрывом.</li>
+<li>Чат внутри результата, как вопрос про <i>этого</i> вредителя, — <span class="num">0.61</span>; именованный «Dr.» — <span class="num">0.06</span>, худший вариант.</li>
+<li>Fable: лучший экран приложения. Mark — «первое приложение про жуков, которое сказало мне, что <i>делать</i>»; Sarah — «„позвоните врачу сегодня“ за десять секунд сделало то, ради чего я скачала приложение».</li>
+</ul>
+
+<div class="note gold"><b>Что изменилось после Fable.</b> «One seen in daylight» → «one seen at all» (Mark увидел жука в 23:47, и прежняя формулировка была для него просто неверной). Добавлен шаг «Check now · 2 min» — он просил, чтобы вопрос заселения был проверкой, которую он сделает сам за две минуты. У детского пути проверки матраса заменены на уличные: одежда, обувь, линия травы.</div>
+<div class="note"><b>Осознанная честность у темы «укус».</b> «Ни приложение, ни врач не может определить укус по одной фотографии». Jordan: «любой, кто по фото обещает 100% клопов, врёт, чтобы мне что-то продать» — то есть эта фраза <i>повышает</i> доверие. Она же — требование compliance: список «звонить врачу сегодня» жёстко зашит в код и никогда не генерируется моделью.</div>
+</div></div>
+
+<div class="shots">
+<figure class="shot"><img src="img/bug-example.jpg" alt="Пример результата, жук"><figcaption><b>Жук.</b> 🔴 Urgent · Confident match. План: приманка, ошибка, вторая волна.</figcaption></figure>
+<figure class="shot"><img src="img/bite-example.jpg" alt="Пример результата, укус"><figcaption><b>Укус.</b> 🟡 Monitor · <b>Narrowed to a group</b>. Пять мест сегодня, фото через 48 часов, признаки «к врачу» + красная строка Poison Control 1-800-222-1222 · 911.</figcaption></figure>
+<figure class="shot"><img src="img/evidence-example.jpg" alt="Пример результата, улики"><figcaption><b>Улики.</b> 🔴 Urgent. Сломать одну трубку → через 48 часов восстановлена = активная колония → датированные фото для лицензированной инспекции.</figcaption></figure>
+<figure class="shot"><img src="img/pet-example.jpg" alt="Пример результата, питомец"><figcaption><b>Питомец.</b> 🟡 Monitor. Вид + степень набухания ≈ 24–48 часов на коже; пинцет у самой кожи, дата и место на теле, 30 дней наблюдения.</figcaption></figure>
+</div>
+</section>
+
+<section id="s4">
+<div class="banner"><div class="step">ЭКРАН 4</div><h2>Пейвол по теме</h2>
+<div class="sub">Один экран с закреплённым низом. Порядок блоков: карточка результата → заголовок → три буллета → строка цены → Weekly → Yearly → кнопка → строка спокойствия → правовые ссылки.</div></div>
+
+<div class="block">
+<div>
+<div class="phone"><img src="img/bug-paywall.jpg" alt="Пейвол темы «жук»"><div class="cap">Снято без права на триал → «$7.99 today»</div></div>
+</div>
+<div class="ann">
+<h3>Копия экрана · тема «жук»</h3>
+<div class="copybox">
+<div class="l">Герой</div><div class="t small">🔴 URGENT ACTION · German cockroach · Example · your scan looks like this</div>
+<div class="l">Заголовок</div><div class="t big">Know what it is.<br>Know what to do tonight.</div>
+<div class="l">Буллеты (текущая редакция в коде)</div>
+<div class="t small">· Scan your own bug — your photo, named, with how sure we are</div>
+<div class="t small">· One stray or a colony: the two-minute check that tells you which</div>
+<div class="t small">· When to call a pro, what it should cost, and what to ask so you aren't upsold</div>
+<div class="l">Цена</div><div class="t"><b>$0.00 today</b> — при подтверждённом праве на триал; иначе «$7.99 today · Auto-renews until cancelled.»</div>
+<div class="t small">Weekly $7.99 a week (предвыбран, бейдж «7 DAYS FREE» только при праве) · Yearly $39.99 a year, без бейджа</div>
+<div class="l">Кнопка</div><div class="t"><b>See what to do tonight</b> (у темы «питомец» — See what to do now)</div>
+<div class="l">Под кнопкой</div><div class="t small">No charge today. Cancel anytime in Settings. — либо честное «$7.99 charged today, then every week.»</div>
+<div class="l">Мелким</div><div class="t small">If a photo can't be read, it doesn't use up a scan. Fair-use limit 50 scans a week.</div>
+<div class="t small">Restore Purchases · Terms of Use · Privacy Policy</div>
+</div>
+
+<h4>Что экран обязан сделать</h4>
+<ul class="plain">
+<li><b>Продавать то, что за стеной</b>, а не повторять предыдущий экран: разбор её собственного фото, датированную запись, наблюдение.</li>
+<li><b>Не врать ни одной строкой.</b> Слово «free» появляется только когда RevenueCat подтвердил право на триал; лимит сканов назван одной цифрой; никаких «unlimited».</li>
+<li><b>Первым буллетом бить в боль когорты</b>, а не в общий список возможностей.</li>
+</ul>
+
+<h4>Чем подтверждено</h4>
+<div class="table-wrap"><table>
+<thead><tr><th>Решение</th><th>Число</th><th>Что проиграло</th></tr></thead>
+<tbody>
+<tr><td>Карточка результата вместо стокового героя</td><td class="num">0.70</td><td>Фото желаемого результата <span class="num">0.02</span> — именно таким был герой 1.8</td></tr>
+<tr><td>Первый буллет = боль когорты</td><td class="num">0.32–0.57</td><td>Чат как буллет <span class="num">0.00</span></td></tr>
+<tr><td>«$0.00 today» + дата первого списания</td><td class="num">0.32</td><td>SAVE 90% <span class="num">0.01</span> · BEST VALUE <span class="num">0.01</span> · «≈$0.77/нед» <span class="num">0.13</span></td></tr>
+<tr><td>CTA-глагол</td><td class="num">0.52</td><td>«Continue» <span class="num">0.03</span> — кнопка 1.8</td></tr>
+<tr><td>«No charge today. Cancel anytime in Settings.»</td><td class="num">0.60</td><td>Напоминание за 2 дня <span class="num">0.02</span></td></tr>
+</tbody></table></div>
+
+<div class="note"><b>Где мы сознательно не взяли победителя.</b> Зачёркнутые $300 выиграли блок цены (<span class="num">0.36</span> против <span class="num">0.32</span> у «$0.00 today»), но доверие к ним — <span class="num">2.21–2.37</span> из 5, и голос compliance назвал это недоказанным утверждением об экономии. Оставили одну серую строку сравнения — и только у тем «жук» и «улики»: Jordan прямо сказал, что «$300 за визит — счёт домовладельца, а не арендатора», а Sarah — что это вообще не тот счёт, когда решаешь про приёмный покой. <b>На скриншотах строка ещё стоит у всех четырёх тем — это и есть та правка, что сделана после съёмки.</b></div>
+
+<div class="note"><b>Что тестеры назвали ловушкой.</b> Недельная подписка, выбранная по умолчанию, со списанием сегодня. Sarah: «я забуду отменить и буду в бешенстве». Dave: «сделать дорогой вариант выбранным по умолчанию — это то, из-за чего я перестаю доверять всему, что написано выше». Ответ — 7-дневный триал, уже утверждённый владельцем; в ASC его нужно создать заново.</div>
+</div></div>
+
+<div class="shots">
+<figure class="shot"><img src="img/bug-paywall.jpg" alt="Пейвол, жук"><figcaption><b>Жук.</b> «Know what it is. Know what to do tonight.»</figcaption></figure>
+<figure class="shot"><img src="img/bite-paywall.jpg" alt="Пейвол, укус"><figcaption><b>Укус.</b> «Know what to check tonight — and what needs a doctor.» У взрослого пути второй буллет — датированная запись для хозяина квартиры (<span class="num">0.57</span> у арендатора).</figcaption></figure>
+<figure class="shot"><img src="img/evidence-paywall.jpg" alt="Пейвол, улики"><figcaption><b>Улики.</b> «Know what left it — and how urgent it is.» 48-часовой тест «активно или старое».</figcaption></figure>
+<figure class="shot"><img src="img/pet-paywall.jpg" alt="Пейвол, питомец"><figcaption><b>Питомец.</b> «Know what it is — and what the next 72 hours need.» Журнал по питомцу и 30 дней наблюдения — то, за что Dave готов платить весь сезон.</figcaption></figure>
+</div>
+</section>
+
+<section id="s5">
+<div class="banner"><div class="step">ЭКРАН 5</div><h2>После оплаты — самое слабое место потока</h2>
+<div class="sub">Здесь V2 заканчивается и начинается приложение 1.8: дисклеймер с галочкой, а за ним главная, которая не знает, зачем человек пришёл.</div></div>
+
+<div class="block">
+<div>
+<div class="phone"><img src="img/home.jpg" alt="Главная версии 1.8"><div class="cap">Главная 1.8 — в V2 не менялась</div></div>
+</div>
+<div class="ann">
+<h3>Копия экрана согласия</h3>
+<div class="copybox">
+<div class="l">Заголовок</div><div class="t big">Before you scan</div>
+<div class="t small">A quick note so we're on the same page.</div>
+<div class="l">Четыре строки</div>
+<div class="t small"><b>Educational tool</b> — Scans help you identify. They don't diagnose.</div>
+<div class="t small"><b>Not medical or veterinary advice</b> — For severe reactions — or anything affecting a pet — contact a doctor or vet.</div>
+<div class="t small"><b>Confirm infestations with a pro</b> — For termites, roaches, or anything with a colony, a licensed exterminator is the right next step.</div>
+<div class="t small"><b>Emergency</b> — Poison Control 1-800-222-1222 · 911</div>
+<div class="l">Галочка и кнопка</div><div class="t small">I understand and agree to the Terms &amp; Privacy → <b>Start scanning →</b></div>
+</div>
+
+<h4>Что этот участок обязан делать — и не делает</h4>
+<ul class="plain">
+<li><b>Должен:</b> открыть камеру сразу на выбранной теме, довести до её собственного результата за ≤ 60 секунд и открыть дело с датами контроля.</li>
+<li><b>Делает:</b> показывает «Pest patrol», счётчик «PESTS IDENTIFIED 0» и четыре равные плитки — ровно тот экран, который человек видел в 1.8. Тема, выбранная на первом экране, до камеры не доходит.</li>
+<li><b>Следствие:</b> оплата произошла, ценность ещё нет. Именно в этом промежутке живёт «отменю в понедельник» из всех четырёх интервью Fable.</li>
+</ul>
+
+<div class="note">Отдельного кадра экрана «Before you scan» в этом раунде нет — он не снимался. Копия выше взята дословно из <code>PostPurchaseWelcomeView.swift</code>.</div>
+<div class="note gold"><b>Что утверждено на замену.</b> Навигация <i>Home · My Home · Ask · Settings</i>, плавающая строка скана над таб-баром, карточка «Your case is open» с шагами на сегодня, день 2 и день 7, и карточка-объяснение уведомлений — системный диалог только после «да». Ничего из этого пока не построено.</div>
+</div></div>
+</section>
+
+<section id="next">
+<div class="banner"><div class="step">ДАЛЬШЕ</div><h2>Чего в потоке ещё нет</h2>
+<div class="sub">Всё построенное продаёт триал. Ничто из построенного не удерживает после него — и это видно в цифрах: «буду платить через 4 недели» = 1 из 5 у всех четырёх тестеров Fable и 1.03–1.32 из 5 у Jev.</div></div>
+
+<div class="two">
+<div class="block" style="grid-template-columns:1fr;margin:0">
+<div class="ann"><h3>Три рычага, утверждённых к постройке</h3>
+<ul class="plain">
+<li><b>Дело-трекер «ушло ли»</b> с контролем на 2-й и 7-й день — <span class="num">0.20</span> на продление. Единственный, который кладёт датированную причину вернуться <i>внутрь</i> 7-дневного триала.</li>
+<li><b>Наблюдение за укусом и клещом</b> — <span class="num">0.19</span> (родитель <span class="num">0.68</span>): повтор фото через 48 часов, 30 дней по клещу, собачьи симптомы, а не человеческие.</li>
+<li><b>Запись дома и PDF</b> — <span class="num">0.17</span> (арендатор <span class="num">0.66</span>). Jordan: «если бы на пейволе показали миниатюру этого документа, моё „куплю сейчас“ стало бы 4».</li>
+</ul></div>
+</div>
+<div class="block" style="grid-template-columns:1fr;margin:0">
+<div class="ann"><h3>Что ещё открыто по потоку</h3>
+<ul class="plain">
+<li><b>Удалять ли экран 2</b> и куда переносить тап «ребёнок или взрослый».</li>
+<li><b>Настоящий скан до цены</b> (<span class="num">0.72</span> против <span class="num">0.14</span> у примера) — это отменяет правило «0 бесплатных сканов».</li>
+<li><b>Триал в App Store Connect</b> — пока не создан, поэтому пейвол честно пишет «$7.99 today».</li>
+<li><b>Строка «Fair-use limit 50 scans a week»</b> — Sarah читает её как «это приложение не для меня», но убрать цифру нельзя.</li>
+</ul>
+<p class="src">Подробности и полный список решений — в <a href="design.html">справочнике</a>, раздел «Открытые решения владельцу».</p></div>
+</div>
+</div>
+</section>
+
+<p class="src" style="margin-top:34px">Кадры: <code>research/flow-v2-2026-09-20/</code> (плитки, ситуация, пример, пейвол ×4 темы) и <code>research/verify-2026-09-19/</code> (главная, отладочная панель, пейвол 1.8, перегенерированные плитки). Копия экранов — дословно из <code>TopicContent.swift</code>, <code>TopicTilesScreen.swift</code>, <code>TopicPainScreen.swift</code>, <code>ExampleResultScreen.swift</code>, <code>PaywallV2View.swift</code>, <code>PostPurchaseWelcomeView.swift</code>. Числа — <code>research/*-jev-2026-09-19/FINDINGS.md</code> и <code>research/fable-r1-2026-09-20/FINDINGS.md</code>.</p>
+
+</main>
+<footer>PestSnap · поток V2 экран за экраном · 20 сентября 2026 · <a href="design.html">Продуктовый справочник</a></footer>
+</body></html>
