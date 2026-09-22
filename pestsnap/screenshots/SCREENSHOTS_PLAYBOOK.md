@@ -1,4 +1,4 @@
-# PestSnap — конверсионные скриншоты, r2
+# PestSnap — конверсионные скриншоты, r3
 
 Постоянная галерея: https://love8ko.github.io/pestsnap/screenshots/
 
@@ -16,7 +16,7 @@
 |---|---|---|---|
 | P01 | What’s this bug? / Snap to find out. | Identify pests from a photo / Know what to do next | Широкая исходная потребность; сразу понятны объект и действие |
 | P02 | How do I / get rid of pests? | Know what to do today / Know when to call a pro | Желание решить проблему, а не получить латинское имя |
-| P03 | Droppings? Damage? / What left this? | Photograph the clues / Find the likely pest | Широкая потребность домовладельцев/арендаторов, когда жука нет |
+| P03 | Hidden pests? / Scan the signs. | Scan droppings & damage / Find the likely pest | Широкая потребность домовладельцев/арендаторов, когда жука нет |
 
 Основной ряд рассчитан прежде всего на домовладельца. В отдельном варианте для арендаторов сильнее PDF-запись; r0 сохранён, его нельзя считать безусловно проигравшим.
 
@@ -104,6 +104,12 @@ PDF уже подключён в My home. Генератор LandlordLetter су
 Питомца в общую тройку не добавляем. Отдельный pet-вход: «что в шерсти?» → «что делать?» → «что проверить дома?» → «что показать ветеринару?». Сканируем видимого паразита; не обещаем определить здоровье животного или инфекцию по фото. Предлагаемые заголовки: `Tick or flea? / Know what you found.`, `Found a tick? / Know your next step.`, `Fleas keep coming back? / Know where to check.` Это редакционные варианты, не отдельно протестированные победители. В продукте полезен контекст «дома кошка / собака» при составлении плана, но не дополнительный сюжет в первых трёх кадрах.
 
 Полный протокол, точные результаты и источники: `research/screenshots-r2-2026-09-22/FINDINGS.md`, `summary.json`, `raw/`. Сцены мониторинга и устранения пищи/влаги сверены с [UC IPM](https://ipm.ucanr.edu/home-and-landscape/cockroaches/), термин mud tubes — с [EPA](https://www.epa.gov/safepestcontrol/termites-how-identify-and-control-them).
+
+## r3 — ясный крупный заголовок P03
+
+По прямой обратной связи владельца: «What left this?» трудно понять без расшифровки «this», а длинная первая строка визуально уменьшала заголовок. Выбран **Hidden pests? / Scan the signs.**: называем скрытого вредителя и действие. Первая строка пользы — **Scan droppings & damage**, вторая сохранена: **Find the likely pest**. Шрифт 46 CSS px вместо 37 (+24%), как в P01; та же высота строк, отступы и вес. Вопрос «What's damaging your home?» слишком сужал кадр до повреждений, а «Signs of pests? / Snap to find out.» повторял первый кадр.
+
+Это редакционная итерация, не новый результат Jev/Astra и не измеренный рост конверсии. Фото и карточка результата сохранены. r2 остаётся по прежним URL `site/r2`, текущая версия — `site/r3`. Проверки: рендер 1320×2868 RGB, отсутствие переполнений, фактический размер заголовка 46 px, просмотр 180/220 px, responsive-галерея и ZIP.
 
 ## Следующая итерация
 
