@@ -48,7 +48,7 @@ section[hidden]{display:none}
 .current a{color:var(--deep);text-underline-offset:3px}.view-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:18px 0 12px}
 .view-tools button,.view-tools a{font:700 13px/1.4 Manrope,system-ui;min-height:44px;border:1px solid #b9cbbf;border-radius:10px;padding:11px 15px;background:white;color:var(--deep);cursor:pointer;text-decoration:none}
 .view-tools a.primary,.view-tools button[aria-pressed="true"]{background:var(--deep);color:white;border-color:var(--deep)}
-.thumbs #c1-gallery{grid-template-columns:repeat(3,220px);overflow-x:auto}.thumbs #c1-gallery figcaption{font-size:12px}
+.thumbs #c1-gallery{grid-template-columns:repeat(4,220px);overflow-x:auto}.thumbs #c1-gallery figcaption{font-size:12px}
 .note{max-width:900px;padding:16px 18px;border:1px solid #d7e2d6;border-radius:12px;background:#f0f5ec;margin:20px 0}
 .current details{max-width:960px;margin:22px 0}.current summary{font-size:18px;font-weight:800;color:var(--deep);cursor:pointer;min-height:44px;padding:9px 0}.current details p{margin-top:12px}
 .comparison{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:18px}.comparison img{display:block;width:100%;height:auto;cursor:zoom-in}.comparison figure{margin:0}.comparison figcaption{margin-top:8px;font-size:13px}
@@ -58,25 +58,51 @@ table.cmp th,table.cmp td{text-align:left;padding:7px 10px;border-bottom:1px sol
 table.cmp th{color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
 table.cmp td b{color:var(--deep)}
 @media (max-width:760px){.set.hero,.set.four,.set.five{grid-template-columns:repeat(3,min(74vw,300px));overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px}.set img{scroll-snap-align:start}h1{font-size:25px}nav{position:static}table.cmp{display:block;overflow-x:auto}}
+.set.hero.eight{grid-template-columns:repeat(4,minmax(0,1fr))}.thumbs .set.hero.eight{grid-template-columns:repeat(4,220px)}.archive>summary{cursor:pointer;color:var(--deep);font-size:20px;font-weight:800;padding:20px 0}
+@media(max-width:760px){.set.hero.eight{grid-template-columns:repeat(8,min(74vw,300px))}.thumbs .set.hero.eight{grid-template-columns:repeat(8,220px)}}
 </style>
 </head>
 <body>
 <nav><a class="wordmark" href="../design.html">BumpCheck</a><div class="links"><a href="../design.html">Design</a><a href="../marketing.html">Marketing</a><a href="./" aria-current="page">Screenshots</a></div></nav>
 <main>
   <h1>Скриншоты App Store — BumpCheck</h1>
-  <p class="muted">Новая тройка C2 наверху: изменён только второй кадр. На телефоне листайте ряд вбок. Нажатие увеличивает кадр прямо здесь.</p>
+  <p class="muted">Полная серия C3 — восемь кадров. На телефоне листайте ряд вбок. Утверждённые первые три не изменены.</p>
 
-  <section class="current" id="c2" aria-labelledby="c2-title">
+  <section class="current" id="c3" aria-labelledby="c3-title">
+    <h2 id="c3-title">C3 · Полная серия из восьми</h2>
+    <span class="badge">Первые три сохранены · пять новых</span>
+    <p style="margin-top:12px">Та же формула: узнаваемая ситуация → понятное действие → видимый результат. Первые три кадра сохранены побайтно из утверждённой C2.</p>
+    <div class="view-tools"><a class="primary" href="c3/BumpCheck-C3-eight.zip" download>Скачать все 8 PNG</a><button id="size-toggle" type="button" aria-pressed="false" aria-controls="c1-gallery">Смотреть в ширине 220 px</button><a href="#c3-why">Логика серии</a></div>
+    <p class="muted">1320 × 2868 · RGB PNG · en-US · 22 сентября 2026 · нажмите на кадр для увеличения</p>
+    <div class="set hero eight" id="c1-gallery"><figure><img src="c3/C01-preview.png" data-full="c3/C01.png" width="440" height="956" alt="C01 — Is it pregnancy-safe?. Проверить состав при беременности: понятный вопрос, действие и результат."><figcaption><b>01 · Сохранён · главный вопрос</b>Проверить состав при беременности: понятный вопрос, действие и результат.<br><a href="c3/C01.png" download="BumpCheck-C01.png">Скачать PNG 1</a></figcaption></figure>
+<figure><img src="c3/C02-preview.png" data-full="c3/C02.png" width="440" height="956" alt="C02 — Scan before you buy. Штрихкод у магазинной полки показывает, как пользоваться приложением."><figcaption><b>02 · Сохранён · до покупки</b>Штрихкод у магазинной полки показывает, как пользоваться приложением.<br><a href="c3/C02.png" download="BumpCheck-C02.png">Скачать PNG 2</a></figcaption></figure>
+<figure><img src="c3/C03-preview.png" data-full="c3/C03.png" width="440" height="956" alt="C03 — Your trimester matters. Триместры и грудное вскармливание — отличие от общего сканера состава."><figcaption><b>03 · Сохранён · ваш срок</b>Триместры и грудное вскармливание — отличие от общего сканера состава.<br><a href="c3/C03.png" download="BumpCheck-C03.png">Скачать PNG 3</a></figcaption></figure>
+<figure><img src="c3/C04-preview.png" data-full="c3/C04.png" width="440" height="956" alt="C04 — Check your medicine too. Узнаваемые блистер и флакон; фото или название, затем ингредиент и источник."><figcaption><b>04 · Лекарства · проверка этикетки</b>Узнаваемые блистер и флакон; фото или название, затем ингредиент и источник.<br><a href="c3/C04.png" download="BumpCheck-C04.png">Скачать PNG 4</a></figcaption></figure>
+<figure><img src="c3/C05-preview.png" data-full="c3/C05.png" width="440" height="956" alt="C05 — Your shelf. All saved.. Сохранённые результаты под рукой. Видно, что уже проверено."><figcaption><b>05 · Полка · не проверять заново</b>Сохранённые результаты под рукой. Видно, что уже проверено.<br><a href="c3/C05.png" download="BumpCheck-C05.png">Скачать PNG 5</a></figcaption></figure>
+<figure><img src="c3/C06-preview.png" data-full="c3/C06.png" width="440" height="956" alt="C06 — Food label? Check it too. Конкретный пример ингредиента: непастеризованное молоко, не вердикт по внешнему виду сыра."><figcaption><b>06 · Еда · состав тоже важен</b>Конкретный пример ингредиента: непастеризованное молоко, не вердикт по внешнему виду сыра.<br><a href="c3/C06.png" download="BumpCheck-C06.png">Скачать PNG 6</a></figcaption></figure>
+<figure><img src="c3/C07-preview.png" data-full="c3/C07.png" width="440" height="956" alt="C07 — Flagged? Find out why. Контекстный AI-ответ с источником. Не чат с врачом и не медицинская консультация."><figcaption><b>07 · Объяснение · почему отмечено</b>Контекстный AI-ответ с источником. Не чат с врачом и не медицинская консультация.<br><a href="c3/C07.png" download="BumpCheck-C07.png">Скачать PNG 7</a></figcaption></figure>
+<figure><img src="c3/C08-preview.png" data-full="c3/C08.png" width="440" height="956" alt="C08 — Questions for your OB. Отмеченные продукты попадают в список автоматически. Его можно отправить перед приёмом."><figcaption><b>08 · Врач · вопросы уже собраны</b>Отмеченные продукты попадают в список автоматически. Его можно отправить перед приёмом.<br><a href="c3/C08.png" download="BumpCheck-C08.png">Скачать PNG 8</a></figcaption></figure></div>
+    <div class="note"><b>Готовые концепты для проверки.</b> Карточки — укрупнённая поясняющая графика по существующим функциям, не снимки интерфейса. Рост конверсии пока не измерен. Никаких обещаний «за 2 секунды», PDF или гарантированной безопасности.</div>
+    <details id="c3-why" open><summary>Зачем каждый следующий кадр</summary>
+    <p>После утверждённой тройки добавлены лекарства (04), сохранённая полка (05), еда (06), объяснение отметки (07) и подготовка к приёму (08). Лекарства и полка стоят раньше дополнительных сценариев: это сильные потребности в материалах спринта. AI показан как объяснение результата, а не отдельная медицинская услуга.</p>
+    <p>Сверено с <code>sprint-v2 @ 8f4e318</code>: фактический ввод по имени/фото, история проверок, AskWhySheet и DoctorView. Врачебный список уже собирается автоматически; отправка — текстом. PDF не реализован и в серии не обещан. Новая сборка приложения не выполнялась.</p>
+    <p>Новый Jev-прогон не запускался. Порядок — редакционная гипотеза на основе спринта и вашей обратной связи, не измерение скачиваний.</p>
+    <p><a href="c3/all-eight-220.png">Восемь кадров при 220 px</a> · <a href="c3/all-eight-180.png">При 180 px</a> · <a href="c3/DECISION.md">Обоснование</a> · <a href="c3/manifest.json">Размеры и SHA-256</a></p></details>
+    <details><summary>Источники, визуалы и ограничения</summary>
+    <p>Лекарственный пример сверён с <a href="https://www.fda.gov/drugs/drug-safety-and-availability/fda-recommends-avoiding-use-nsaids-pregnancy-20-weeks-or-later-because-they-can-result-low-amniotic">FDA об NSAIDs при беременности</a>, пищевой — с <a href="https://www.fda.gov/food/health-educators/listeria-food-safety-moms-be">FDA о Listeria и непастеризованных продуктах</a>, объяснение ретинола — с <a href="https://www.acog.org/womens-health/faqs/skin-conditions-during-pregnancy">ACOG о коже при беременности</a>. Все примеры образовательные, не разрешение принимать препарат или заключение о всём продукте. По фотографии сыра нельзя установить пастеризацию: для этого нужна этикетка.</p>
+    <p>Для 04 и 07 созданы новые сцены встроенным ImageGen; для 05, 06 и 08 переиспользованы исходники T1. Типографика и карточки собраны отдельно. <a href="c3/C04.prompt.md">Промпт 04</a> · <a href="c3/C07.prompt.md">Промпт 07</a>.</p></details>
+  </section>
+
+  <details class="current archive" id="c2"><summary>Архив C2 · утверждённые первые три</summary>
     <h2 id="c2-title">C2 · Проверить перед покупкой</h2>
     <span class="badge">Новый второй кадр</span>
     <p style="margin-top:12px">Первый и третий сохранены без изменений. Во втором — конкретный момент у магазинной полки: штрихкод, телефон и результат проверки ингредиента.</p>
     <div class="view-tools">
       <a class="primary" href="c2/BumpCheck-C2-first-three.zip" download>Скачать 3 PNG одним архивом</a>
-      <button id="size-toggle" type="button" aria-pressed="false" aria-controls="c1-gallery">Смотреть в ширине 220 px</button>
       <a href="#c1-why">Почему эта тройка</a>
     </div>
     <p class="muted">1320 × 2868 · RGB PNG · en-US · 22 сентября 2026</p>
-    <div class="set hero" id="c1-gallery">
+    <div class="set hero" id="c2-gallery">
       <figure>
         <img src="c2/C01-preview.png" data-full="c2/C01.png" width="440" height="956" alt="C01 — Is it pregnancy-safe? Сканирование этикетки и пример результата: ретинол, исследовательский флаг и источник ACOG.">
         <figcaption><b>01 · Сохранён без изменений</b>Проверить состав продукта при беременности. Вопрос, действие и пример результата в одном кадре.<br><a href="c2/C01.png" download="BumpCheck-C01.png">Скачать PNG 01</a></figcaption>
@@ -135,7 +161,7 @@ table.cmp td b{color:var(--deep)}
       <p>Пример с ретинолом сверён с <a href="https://www.acog.org/womens-health/faqs/skin-conditions-during-pregnancy">материалом ACOG о коже во время беременности</a>. Zinc oxide и FDA-источник есть в базе спринта; контекст минерального санскрина проверен по <a href="https://www.aad.org/public/everyday-care/skin-care-secrets/routine/pregnancy-skin-care">AAD о коже при беременности</a>. <a href="https://www.fda.gov/drugs/understanding-over-counter-medicines/sunscreen-how-help-protect-your-skin-sun">FDA</a> — источник о солнцезащитных средствах, не одобрение конкретного продукта для беременности. Карточка относится к ингредиенту, а не всей формуле товара.</p>
       <p class="muted">C02 проверен по коду спринта 8f4e318; C01/C03 сохранены из C1. Новая сборка приложения в этой сессии не выполнялась. <a href="c2/manifest.json">Размеры и SHA-256 экспортов</a> · <a href="c2/DECISION.md">Обоснование</a> · <a href="c2/C02.prompt.md">Промпт новой сцены, встроенный ImageGen</a>.</p>
     </details>
-  </section>
+  </details>
 
   <h2>Предыдущие варианты</h2>
 
