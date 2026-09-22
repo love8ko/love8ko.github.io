@@ -43,6 +43,15 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
 .tabs a .l{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:var(--soft);color:var(--deep);font-size:12px}
 .tabs a[aria-selected="true"] .l{background:#fff}
 section[hidden]{display:none}
+.current{scroll-margin-top:90px}.current h2{border:0;margin-top:22px;padding-top:0}
+.current figure{margin:0;min-width:0}.current figcaption{margin-top:12px;font-size:14px;line-height:1.5}.current figcaption b{display:block;color:var(--deep)}
+.current a{color:var(--deep);text-underline-offset:3px}.view-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:18px 0 12px}
+.view-tools button,.view-tools a{font:700 13px/1.4 Manrope,system-ui;min-height:44px;border:1px solid #b9cbbf;border-radius:10px;padding:11px 15px;background:white;color:var(--deep);cursor:pointer;text-decoration:none}
+.view-tools a.primary,.view-tools button[aria-pressed="true"]{background:var(--deep);color:white;border-color:var(--deep)}
+.thumbs #c1-gallery{grid-template-columns:repeat(3,220px);overflow-x:auto}.thumbs #c1-gallery figcaption{font-size:12px}
+.note{max-width:900px;padding:16px 18px;border:1px solid #d7e2d6;border-radius:12px;background:#f0f5ec;margin:20px 0}
+.current details{max-width:960px;margin:22px 0}.current summary{font-size:18px;font-weight:800;color:var(--deep);cursor:pointer;min-height:44px;padding:9px 0}.current details p{margin-top:12px}
+:focus-visible{outline:3px solid #5b8a6f;outline-offset:5px}button,img[role="button"]{touch-action:manipulation}
 table.cmp{border-collapse:collapse;width:100%;max-width:960px;font-size:14px;margin:8px 0 4px}
 table.cmp th,table.cmp td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 table.cmp th{color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
@@ -54,7 +63,69 @@ table.cmp td b{color:var(--deep)}
 <nav><a class="wordmark" href="../design.html">BumpCheck</a><div class="links"><a href="../design.html">Design</a><a href="../marketing.html">Marketing</a><a href="./" aria-current="page">Screenshots</a></div></nav>
 <main>
   <h1>Скриншоты App Store — BumpCheck</h1>
-  <p class="muted">Новый вариант сверху, то что сейчас в сторе — ниже. На телефоне листайте ряд вбок. Нажатие увеличивает кадр прямо здесь.</p>
+  <p class="muted">Новая тройка C1 наверху, предыдущие варианты — во вкладках ниже. На телефоне листайте ряд вбок. Нажатие увеличивает кадр прямо здесь.</p>
+
+  <section class="current" id="c1" aria-labelledby="c1-title">
+    <h2 id="c1-title">C1 · Первые три с фокусом на скачивание</h2>
+    <span class="badge">Новый вариант · для обсуждения</span>
+    <p style="margin-top:12px">Понятная задача → проверка лекарств → контекст срока и кормления. Крупные заголовки, узнаваемые ситуации и одна читаемая карточка на кадр.</p>
+    <div class="view-tools">
+      <a class="primary" href="c1/BumpCheck-C1-first-three.zip" download>Скачать 3 PNG одним архивом</a>
+      <button id="size-toggle" type="button" aria-pressed="false" aria-controls="c1-gallery">Смотреть в ширине 220 px</button>
+      <a href="#c1-why">Почему эта тройка</a>
+    </div>
+    <p class="muted">1320 × 2868 · RGB PNG · en-US · 21 сентября 2026</p>
+    <div class="set hero" id="c1-gallery">
+      <figure>
+        <img src="c1/C01-preview.png" data-full="c1/C01.png" width="440" height="956" alt="C01 — Is it pregnancy-safe? Сканирование этикетки и пример результата: ретинол, исследовательский флаг и источник ACOG.">
+        <figcaption><b>01 · Что это и зачем скачивать</b>Проверить состав продукта при беременности. Вопрос, действие и пример результата в одном кадре.<br><a href="c1/C01.png" download="BumpCheck-C01.png">Скачать PNG 01</a></figcaption>
+      </figure>
+      <figure>
+        <img src="c1/C02-preview.png" data-full="c1/C02.png" width="440" height="956" alt="C02 — Cold meds while pregnant? Пример проверки псевдоэфедрина для первого триместра; обсудите с OB-GYN.">
+        <figcaption><b>02 · Лекарства тоже</b>Знакомый вопрос у ночной аптечки. Приложение показывает исследовательский контекст ингредиента.<br><a href="c1/C02.png" download="BumpCheck-C02.png">Скачать PNG 02</a></figcaption>
+      </figure>
+      <figure>
+        <img src="c1/C03-preview.png" data-full="c1/C03.png" width="440" height="956" alt="C03 — Your trimester matters. Проверка состава с учётом триместра и отдельного режима грудного вскармливания.">
+        <figcaption><b>03 · Учитывает именно ваш этап</b>Отличие от общего сканера состава: триместры и отдельный режим кормления.<br><a href="c1/C03.png" download="BumpCheck-C03.png">Скачать PNG 03</a></figcaption>
+      </figure>
+    </div>
+    <div class="note"><b>Концепт для ревью.</b> Фото переиспользованы из серии T1. Крупные карточки — поясняющая графика на основе существующих функций, а не новые снимки интерфейса. Реальный прирост скачиваний ещё не измерен.</div>
+    <details id="c1-why" open>
+      <summary>Почему именно эти первые три</summary>
+      <table class="cmp">
+        <thead><tr><th>Кадр</th><th>Роль в решении скачать</th><th>Что изменено относительно T1</th></tr></thead>
+        <tbody>
+          <tr><td><b>Is it pregnancy-safe?</b></td><td>Сразу называет беременность и узнаваемый вопрос к продукту.</td><td>Тема вынесена в крупный заголовок. В карточке — ингредиент, исследовательский статус и источник.</td></tr>
+          <tr><td><b>Cold meds while pregnant?</b></td><td>Расширяет пользу от косметики к лекарствам.</td><td>Конкретная ситуация вместо двусмысленной связки «можно принять сегодня» и зелёного разрешающего вердикта.</td></tr>
+          <tr><td><b>Your trimester matters</b></td><td>Объясняет персонализацию и пользу после родов.</td><td>Вместо ещё одного кадра про косметику — срок и кормление. Названия этапов без T1/T2/BF.</td></tr>
+        </tbody>
+      </table>
+      <p>По образцу <a href="https://love8ko.github.io/cysta-ai/screenshots/">Cysta</a> и <a href="https://love8ko.github.io/salvora/screenshots/">Salvora</a>: одна главная мысль, крупная сцена, видимый результат. Проверены отдельные превью при 180 и 220 px; заголовки и карточки не переполняются.</p>
+      <p class="muted"><a href="c1/first-three-220.png">Весь ряд при 220 px</a> · <a href="c1/first-three-180.png">При 180 px</a></p>
+    </details>
+    <details>
+      <summary>Что проверил Jev и как читать результаты</summary>
+      <p>12 синтетических профилей × два обратных порядка вариантов = 24 успешных запроса. По три профиля из четырёх потребительских когорт. Модель оценивала тексты и описания сцен; пиксели ей не передавались.</p>
+      <table class="cmp">
+        <thead><tr><th>Сравнение</th><th>Модельное предпочтение</th><th>Ограничение</th></tr></thead>
+        <tbody>
+          <tr><td>Ясность первого концепта «Is it pregnancy-safe?»</td><td>.678</td><td>Два порядка: .604 / .752. Сравнивался весь текстовый концепт, а не один заголовок.</td></tr>
+          <tr><td>Мотив скачать для того же концепта</td><td>.588</td><td>Сильно зависит от порядка: .388 / .788. Это не вероятность установки.</td></tr>
+          <tr><td>Дополнительная тема третьего кадра</td><td>Срок/кормление .448; источники .336; повторная рутина .021</td><td>Тема срока поддержана; финальная фраза «Your trimester matters» — редакционная переработка.</td></tr>
+          <tr><td>Ясность лекарственного концепта</td><td>«Cold meds while pregnant?» .600</td><td>Финальная графика отдельно моделью не тестировалась.</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Это суждения модели, не опрос реальных людей и не измерение конверсии. Реальная проверка — Product Page Optimization с установками и последующими триалами. <a href="c1/analysis.json">Подробные результаты</a>.</p>
+    </details>
+    <details>
+      <summary>Источники и границы примеров</summary>
+      <p>«Pregnancy-safe?» — вопрос человека, не обещание гарантированной безопасности. Результаты остаются образовательными и предлагают обсудить ингредиент с врачом.</p>
+      <p>Пример с ретинолом сверён с <a href="https://www.acog.org/womens-health/faqs/skin-conditions-during-pregnancy">материалом ACOG о коже во время беременности</a>. Контекст псевдоэфедрина в первом триместре — с <a href="https://mothertobaby.org/fact-sheets/pseudoephedrine/">MotherToBaby с указанием позиции ACOG</a>. Названия источников не означают одобрение приложения этими организациями.</p>
+      <p class="muted">Код продукта проверен на базе f84144b. Эта сессия не включала новую сборку приложения; карточки иллюстративные. <a href="c1/manifest.json">Размеры и SHA-256 экспортов</a>.</p>
+    </details>
+  </section>
+
+  <h2>Предыдущие варианты</h2>
 
   <div class="tabs" role="tablist"><a href="#T" id="tab-btn-T" role="tab" aria-selected="true"><span class="l">T</span>Вариант Claude · t1</a><a href="#S" id="tab-btn-S" role="tab" aria-selected="false"><span class="l">S</span>В сторе сейчас · r1 (1.3)</a></div>
 
@@ -167,11 +238,14 @@ T05: ок / без халата
 <dialog id="zoom"><button type="button" id="zoom-close">Закрыть</button><img alt=""></dialog>
 <script>
 const tabs=[...document.querySelectorAll('.tabs a')],panels={T:document.getElementById('tab-T'),S:document.getElementById('tab-S')};
-function show(k){if(!panels[k])k='T';tabs.forEach(a=>a.setAttribute('aria-selected',a.id==='tab-btn-'+k));Object.entries(panels).forEach(([p,el])=>el.hidden=p!==k);}
+function show(k){if(!panels[k])k='T';tabs.forEach(a=>{const active=a.id==='tab-btn-'+k;a.setAttribute('aria-selected',active);a.tabIndex=active?0:-1;});Object.entries(panels).forEach(([p,el])=>el.hidden=p!==k);}
 tabs.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();history.replaceState(null,'',a.getAttribute('href'));show(a.id.slice(-1));}));
 show((location.hash||'#T').slice(1));
-const dlg=document.getElementById('zoom'),dimg=dlg.querySelector('img');
-document.querySelectorAll('img[data-full]').forEach(i=>i.addEventListener('click',()=>{dimg.src=i.dataset.full;dlg.showModal();}));
+window.addEventListener('hashchange',()=>show(location.hash.slice(1)));
+tabs.forEach((tab,index)=>tab.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?tabs.length-1:(index+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;tabs[next].click();tabs[next].focus();}));
+const toggle=document.getElementById('size-toggle');toggle.onclick=()=>{const on=document.body.classList.toggle('thumbs');toggle.setAttribute('aria-pressed',on);toggle.textContent=on?'Вернуться к крупному просмотру':'Смотреть в ширине 220 px';};
+const dlg=document.getElementById('zoom'),dimg=dlg.querySelector('img');dlg.setAttribute('aria-label','Скриншот в полном размере');
+document.querySelectorAll('img[data-full]').forEach(i=>{i.tabIndex=0;i.setAttribute('role','button');i.setAttribute('aria-haspopup','dialog');const open=()=>{dimg.src=i.dataset.full;dimg.alt=i.alt;dlg.showModal();};i.addEventListener('click',open);i.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});});
 document.getElementById('zoom-close').onclick=()=>dlg.close();dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
 </script>
 </body>
