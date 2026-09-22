@@ -1,0 +1,24 @@
+{
+  "revision": "c2",
+  "status": "concept-for-review",
+  "dimensions": [
+    1320,
+    2868
+  ],
+  "frames": {
+    "C01": {
+      "path": "C01.png",
+      "sha256": "fb63dbef413642baf997577c391bb5146c9e1d31137377ab536333373eb37c1e",
+      "preservedFrom": "c1"
+    },
+    "C02": {
+      "path": "C02.png",
+      "sha256": "bf534b2a69b9d085226701bcc9676efea8ed8806f0b488a649fa76af5831f3a5"
+    },
+    "C03": {
+      "path": "C03.png",
+      "sha256": "7232f5ab71e17a09d6fa397684f77602b1bdaa8ce61b4f53fed2a1b298fa4ef9",
+      "preservedFrom": "c1"
+    }
+  }
+}
