@@ -53,20 +53,21 @@
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p class="app-name">CrySnap · AI Baby Cry Translator</p>
-    <p class="date">Effective date: September 1, 2026</p>
+    <p class="app-name">CrySnap: Baby Cry Translator</p>
+    <p class="date">Effective date: September 23, 2026</p>
 
     <div class="highlight">
-        <strong>Summary:</strong> CrySnap analyses your baby's cry on your device — the audio recording never leaves your iPhone. Chat messages and voice questions are sent as text only. No account is required. No analytics. No ad trackers. Your baby's audio is never uploaded.
+        <strong>Summary:</strong> CrySnap listens for eight seconds only to confirm your baby is crying. That check runs on your iPhone, and the recording is deleted straight after — it is never uploaded or kept. Questions you send to an AI guide travel as text only. No account is required. No analytics. No ad trackers.
     </div>
 
     <h2>1. Overview</h2>
-    <p>CrySnap is an AI-powered cry analysis and parenting companion app for new parents. It records a short clip of your baby crying, classifies it into one of nine common cry categories on-device, and returns a traffic-light verdict (🟢 Physical · 🟡 Comfort · 🔴 Regulation) with a confidence score and suggested next steps. Three expert chat personas (Pediatric Nurse, Sleep Coach, Lactation Consultant) answer follow-up questions, and a hands-free Voice Mode is available for the moments at 3am when you cannot open your eyes. CrySnap is a parenting companion. <strong>It is not a medical device, not a diagnostic tool, and not a substitute for professional medical advice.</strong></p>
+    <p>CrySnap is a parenting companion for parents of newborns. When your baby cries, the app listens for eight seconds to confirm the crying (using Apple's on-device sound analysis) and then gives you timed soothing steps built from your baby's age, last feed and time awake. It does not try to read the cause of a cry from the sound. Three AI guides (a pediatric nurse, a sleep coach and a lactation guide) answer questions, soothing sounds play on the device, and you can create a two-week summary of your own logs for your pediatrician. A Voice Mode lets you ask a question by speaking. CrySnap is a parenting companion. <strong>It is not a medical device, not a diagnostic tool, and not a substitute for professional medical advice.</strong></p>
 
     <h2>2. Data Stored on Your Device</h2>
     <p>The following data is stored <strong>locally on your device only</strong> using Apple's SwiftData framework and never leaves your device unless you explicitly share it:</p>
     <ul>
-        <li>Cry scan history (verdict, identified cry type, confidence, timestamps, brief notes you add)</li>
+        <li>Crying episodes you log (time, the soothing steps you tried, what helped, whether crying was detected) — not the audio</li>
+        <li>Last feed and wake times you tap in, and the pediatrician summary you create</li>
         <li>Baby profile (name, age in weeks, weight if you choose to enter it)</li>
         <li>Chat conversations with the in-app expert personas</li>
         <li>Onboarding completion status, disclaimer acceptance, notification preferences</li>
@@ -76,13 +77,15 @@
     <p>No account is required. No user profile, name, email, or identifying information is collected by CrySnap.</p>
 
     <div class="trust">
-        <strong>Audio recordings of your baby's cry never leave your device.</strong> Cry analysis runs entirely on-device. We have no upload path for raw cry audio.
+        <strong>Your baby's cry is never uploaded or kept.</strong> The eight-second recording is checked on your iPhone and deleted as soon as the check finishes. We have no upload path for audio.
     </div>
 
     <h2>3. Data Sent to External Services</h2>
-    <p>CrySnap connects to the following services to provide chat and voice features. Chat requests travel through our Cloudflare Worker proxy (<code>crysnap-api.veribag.workers.dev</code>), which injects the upstream API key so that no upstream credential exists in the app bundle.</p>
+    <p>CrySnap connects to the following services to provide chat and voice features. No provider key is stored in the app. Which chat service handles your question depends on your App Store country and device region, not on the app language:</p>
     <ul>
-        <li><strong>DeepSeek V4 Flash</strong> (via our Cloudflare Worker proxy) — text-only conversations with the three in-app AI guides. Each request includes only your typed or voice-transcribed message and a small context block (baby age, last cry type, time of day). No cry audio, photos, account name, email address, or location is included.</li>
+        <li><strong>Outside mainland China:</strong> DeepSeek, through our Cloudflare Worker proxy (<code>crysnap-api.veribag.workers.dev</code>).</li>
+        <li><strong>Mainland China</strong> (China App Store, or device region set to China mainland): Qwen on Alibaba Cloud Model Studio, through our Alibaba Cloud Function Compute service in Beijing. Requests from mainland China are never sent to the service above, and requests from elsewhere are never sent here.</li>
+        <li>Either way, a request contains only your typed or voice-transcribed message and a small context block (baby age, the current plan step, time of day). No audio, photos, name, email address or location is included, and our proxies do not log the content of messages.</li>
         <li><strong>Apple Speech Recognition</strong> — Voice Mode converts a spoken question to text. Recognition runs on-device when supported by the device and language; otherwise Apple's standard speech-recognition service may process the audio under Apple's privacy terms. CrySnap sends only the resulting transcript, not voice audio, to our chat Worker.</li>
     </ul>
     <p>Voice Mode replies are spoken back to you using <strong>Apple AVSpeechSynthesizer</strong>, which runs entirely on-device. No text-to-speech audio is generated on a server.</p>
@@ -92,7 +95,7 @@
     <p>Subscription purchases are managed by <strong>RevenueCat</strong>, a third-party subscription management service. RevenueCat receives:</p>
     <ul>
         <li>An anonymous device identifier generated by RevenueCat</li>
-        <li>Subscription status (active or expired, including legacy trial status where applicable)</li>
+        <li>Subscription status (active, in the 7-day free trial, or expired)</li>
         <li>Product identifier of the purchased tier (Weekly / Annual)</li>
     </ul>
     <p>RevenueCat does not receive any cry scans, chat messages, baby profile data, or audio. See <a href="https://www.revenuecat.com/privacy">RevenueCat's Privacy Policy</a> for details.</p>
@@ -102,25 +105,25 @@
     <p>Only Apple's built-in crash diagnostics are collected if you have them enabled. You can disable these in your device Settings under Privacy &amp; Security → Analytics &amp; Improvements.</p>
 
     <h2>6. Notifications (Optional, Off by Default)</h2>
-    <p>If you opt in via Settings, CrySnap may send a single local notification the day after a cry scan suggesting you check in again ("Yesterday at this time you logged a tired cry. Tap to check in."). All scheduling happens on-device using Apple's <code>UNCalendarNotificationTrigger</code>. We do not use OneSignal or any push provider, no notification content is generated on a server, and the feature is hard-capped to one notification per day, three per week, with quiet hours 22:00–09:00 enforced. Three consecutive dismissals automatically disable the reminder.</p>
+    <p>Reminders are switched on individually in Settings. They are local notifications scheduled on your device; we do not use a push provider, and no notification content is generated on a server.</p>
 
     <h2>7. Children's Privacy</h2>
-    <p>CrySnap is rated 4+ and is intended for use by adult parents and caregivers. The app records ambient sound for cry analysis, which may incidentally capture an infant's voice — but this audio is processed on-device only and never uploaded. We do not knowingly collect any data <em>about</em> a child that is uploaded off-device. If you have concerns about your baby's data, deleting the CrySnap app permanently removes everything from your device.</p>
+    <p>CrySnap is rated 4+ and is intended for use by adult parents and caregivers. The app briefly records sound to confirm crying, which may capture an infant's voice — that audio is checked on the device, deleted immediately, and never uploaded. We do not knowingly collect any data <em>about</em> a child that is uploaded off-device. If you have concerns about your baby's data, deleting the CrySnap app permanently removes everything from your device.</p>
 
     <h2>8. Medical Disclaimer</h2>
     <div class="warning">
         <p><strong>CrySnap is a parenting companion app. It is NOT a medical device, NOT a diagnostic tool, and NOT a substitute for professional medical advice, examination, diagnosis, or treatment.</strong></p>
-        <p>The cry classifier returns the most likely interpretation of a recording with a confidence score — it does not diagnose colic, reflux, GERD, or any other medical condition. The chat personas (Pediatric Nurse, Sleep Coach, Lactation Consultant) provide general parenting guidance grounded in published clinical guidelines (AAP, CDC, La Leche League) and explicitly redirect any diagnostic questions to your pediatrician.</p>
-        <p>For any of the following — call <strong>911</strong> or your pediatrician immediately:</p>
+        <p>CrySnap does not identify the cause of a cry and does not diagnose colic, reflux, GERD or any other medical condition; its soothing plans are built from your baby's age and routine. The chat personas (Pediatric Nurse, Sleep Coach, Lactation Consultant) provide general parenting guidance grounded in published clinical guidelines (AAP, CDC, La Leche League) and explicitly redirect any diagnostic questions to your pediatrician.</p>
+        <p>For any of the following — call your local emergency number (the app shows it for your region, for example 911 in the US, 112 in the EU, 999 in the UK, 120 in mainland China) or your pediatrician immediately:</p>
         <ul>
             <li>Fever in a baby under 3 months (rectal temperature ≥100.4°F / 38°C)</li>
             <li>Lethargy or unresponsiveness</li>
             <li>Blue lips or fingertips (cyanosis)</li>
             <li>Difficulty breathing, grunting, or laboured breathing</li>
             <li>Signs of dehydration (sunken fontanelle, no wet diapers for 8+ hours)</li>
-            <li>Suspected ingestion of a household substance — call <strong>Poison Control at 1-800-222-1222</strong></li>
+            <li>Suspected ingestion of a household substance — call your local poison control centre or emergency number</li>
         </ul>
-        <p>AI cry classification is not 100% accurate. Always trust your parental instinct; if something feels wrong, contact your pediatrician.</p>
+        <p>Always trust your parental instinct; if something feels wrong, contact your pediatrician.</p>
     </div>
 
     <h2>9. Pediatric Care Disclaimer</h2>
@@ -132,7 +135,7 @@
 
     <h2>11. Regional Compliance</h2>
     <p>CrySnap complies with the General Data Protection Regulation (GDPR) for users in the European Economic Area, the UK Data Protection Act for UK users, and the California Consumer Privacy Act (CCPA) for California residents. Because we do not collect personally identifying information, most data-subject rights (access, rectification, portability, deletion) are satisfied automatically — you already hold full control over your data on your device.</p>
-    <p>The app is US-first: emergency phone numbers shown inside the app and in localized listings are US numbers (911 / 1-800-222-1222). Users outside the US should rely on local emergency services for any urgent situation.</p>
+    <p>The emergency number shown in the app is chosen from your device's region. The 988 Suicide &amp; Crisis Lifeline and Postpartum Support International are shown only in the US and Canada.</p>
 
     <h2>12. Changes to This Policy</h2>
     <p>If we update this privacy policy, the revised version will be posted on this page with an updated effective date. Material changes will also be surfaced inside the app.</p>
