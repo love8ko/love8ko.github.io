@@ -1,0 +1,50 @@
+{
+  "locale": "en-US",
+  "revision": "r1",
+  "brand": "Two Sparrows",
+  "frames": [
+    {
+      "id": "TS01",
+      "headline": ["God’s Word.", "On your screen."],
+      "accent": 1,
+      "bullets": ["A fresh Bible verse each day", "On your Lock & Home Screens"],
+      "jtbd": "I want Scripture close during my ordinary day without remembering to open another app.",
+      "scene": "Warm linen composition. Familiar upright iPhone Lock Screen with clock and a compact scripture widget; existing Two Sparrows sparrow wallpaper. Enlarged Home Screen widget below shows the same verse. No mood label visible on Lock Screen.",
+      "ui": {
+        "date": "Thursday, September 24", "time": "9:41",
+        "verse": "The LORD is my shepherd; I shall not want.",
+        "reference": "Psalm 23:1 · KJV", "homeLabel": "Home Screen"
+      },
+      "visualLimit": "Editorial composition of Lock and Home widgets, not a device screenshot. No permanent-free claim; user adds widgets using setup. Verse excerpt is an entire KJV verse."
+    },
+    {
+      "id": "TS02",
+      "headline": ["A Bible verse", "for how you feel."],
+      "accent": 1,
+      "bullets": ["Choose what’s on your heart", "Find Scripture for that moment"],
+      "jtbd": "When something weighs on me, I want a relevant Bible verse without knowing where to look.",
+      "scene": "Cream and terracotta enlarged app composition. Anxious, Afraid and Grateful mood buttons, Anxious selected. A real KJV verse with reference, translation selector and Listen action. Warm familiar book typography.",
+      "ui": {
+        "prompt": "What’s on your heart?", "moods": ["Anxious", "Afraid", "Grateful"],
+        "label": "When worry won’t let go",
+        "verse": "Casting all your care upon him; for he careth for you.",
+        "reference": "1 Peter 5:7 · KJV", "listen": "Listen",
+        "translations": ["KJV", "BSB", "WEB"], "save": "Save this verse"
+      },
+      "visualLimit": "Enlarged editorial UI assembled from existing mood and verse flows. No diagnosis, healing promise or claim that God personally selected this verse."
+    },
+    {
+      "id": "TS03",
+      "headline": ["End your day", "with prayer."],
+      "accent": 1,
+      "bullets": ["Listen to a verse & prayer", "A quiet moment before bed"],
+      "jtbd": "At the end of a full day I want an easy way to pause and pray, even when I am tired of reading.",
+      "scene": "Warm dark Candle composition with the existing nestled sparrows artwork. Enlarged Tonight card with KJV verse, evening prayer label and a clear play control. No sleep score or medical benefit.",
+      "ui": {
+        "label": "Tonight", "verse": "I laid me down and slept; I awaked; for the LORD sustained me.",
+        "reference": "Psalm 3:5 · KJV", "prayer": "Evening prayer", "listen": "Listen to verse & prayer"
+      },
+      "visualLimit": "Enlarged editorial Tonight card, not an unchanged simulator screenshot. Audio flow exists in current code; end-to-end live audio not verified in this screenshot task. No timed duration or sleep guarantee."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "locale": "en-US",
+  "revision": "r2",
+  "frames": [
+    {
+      "id": "TS01",
+      "headline": [
+        "Busy morning?",
+        "Start with God."
+      ],
+      "accent": 1,
+      "bullets": [
+        "A new Bible verse every day",
+        "Read it. Or press play."
+      ],
+      "asset": "morning.png",
+      "scene": "An ordinary woman in her mid-thirties at her kitchen counter before leaving in the morning. Coffee, toast, work bag, phone in hand and an earbud. She pauses to listen while making breakfast. Below the photo, a large Today verse card and a clear Listen button.",
+      "jtbd": "I want Scripture in my daily life, but the morning gets busy before I find time for it.",
+      "ui": {
+        "title": "Today’s verse",
+        "verse": "The LORD is my shepherd; I shall not want.",
+        "reference": "Psalm 23:1 · KJV",
+        "action": "Listen",
+        "next": "A fresh verse tomorrow"
+      },
+      "visualLimit": "Fictional illustrative scene. Enlarged editorial app card. New daily content is implemented; specific KJV audio example still requires release verification. No duration guarantee."
+    },
+    {
+      "id": "TS02",
+      "headline": [
+        "Feeling anxious?",
+        "Find your verse."
+      ],
+      "accent": 1,
+      "bullets": [
+        "Bible verses for what you feel",
+        "Worry, grief, fear or gratitude"
+      ],
+      "asset": "commute.png",
+      "scene": "An ordinary man around thirty on a commuter train after work. He sits by the window, looking thoughtfully at his phone. Anxious is selected in a large row of feelings above a relevant verse with its Bible reference. No dramatic tears or miraculous change of mood.",
+      "jtbd": "Something is weighing on me and I do not know where in the Bible to look for encouragement.",
+      "ui": {
+        "moods": [
+          "Anxious",
+          "Grieving",
+          "Grateful"
+        ],
+        "verse": "Casting all your care upon him; for he careth for you.",
+        "reference": "1 Peter 5:7 · KJV",
+        "action": "Your verse for this moment"
+      },
+      "visualLimit": "Fictional illustrative scene. Curated Scripture by state, not treatment or divinely personalized messages. Mood chips are inside the app, not a public Lock Screen."
+    },
+    {
+      "id": "TS03",
+      "headline": [
+        "Too tired to read?",
+        "Listen & pray."
+      ],
+      "accent": 1,
+      "bullets": [
+        "Hear a Bible verse & prayer",
+        "A quiet moment before bed"
+      ],
+      "asset": "evening.png",
+      "scene": "An ordinary woman around fifty sitting upright in bed at the end of the day. Reading glasses and a closed book on the bedside table; an earbud, a phone and a warm lamp. Eyes gently closed while listening, not sleeping. Below the photo is a clear evening prayer audio card.",
+      "jtbd": "I want to end my day with God, but I am too tired to read and need an easy way to listen and pray.",
+      "ui": {
+        "title": "Tonight",
+        "verse": "I laid me down and slept; I awaked; for the LORD sustained me.",
+        "reference": "Psalm 3:5 · KJV",
+        "action": "Play verse & prayer"
+      },
+      "visualLimit": "Fictional illustrative scene. Audio sequence exists in code; the specific KJV verse and prayer must be tested before ASC. No promise to cure anxiety or make the user fall asleep."
+    }
+  ]
+}
