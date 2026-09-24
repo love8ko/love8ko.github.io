@@ -1,0 +1,37 @@
+{
+  "source_head": "241522db2f8b297dec6b1184f0c701564161afcc",
+  "inspection": "Current code, SQLite content, bundled audio file presence and existing simulator journey captures. No fresh interactive end-to-end playback test in this design task.",
+  "sha256": {
+    "TwoSparrows/Shared/Widgets/VerseWidgetViews.swift": "01810995e019c4aafd6ccb0c80f05609946e844bc1dd1aaeed3920a567a11766",
+    "TwoSparrows/Shared/State/VersePicker.swift": "778511e278a5816f62732d952c42be905138e01e60b32cfcdff8b8d9a14aaf2b",
+    "TwoSparrows/TwoSparrows/Main/MainView.swift": "3bb47161748f051b4e9732206d098d804f062aa4e02a6bbc97c09d225ef25127",
+    "TwoSparrows/TwoSparrows/UI/Components.swift": "e555fe659d607ff775dd5818487c925f1db7c0a5aa097a52a2f73f466874608f",
+    "TwoSparrows/TwoSparrows/Services/AudioService.swift": "122e3de986ecbca1358c97b7ffed6b4640c1dc4739d6d1f277d5e04d297d3548",
+    "TwoSparrows/TwoSparrows/Resources/Content/twosparrows.sqlite": "e16555628f1d4dea1e11c5a153b2736a750a3a488a9749d999157f33fc679570"
+  },
+  "audio": [
+    {
+      "id": "PSA.3.5",
+      "translation": "BSB",
+      "file": "tts_m1_BSB_PSA.3.5.m4a",
+      "bundled": true,
+      "files_found": [
+        "TwoSparrows/TwoSparrows/Resources/Audio/tts_m1_BSB_PSA.3.5.m4a",
+        "TwoSparrows/build/ddw/Build/Products/Debug-iphonesimulator/TwoSparrows.app/Audio/tts_m1_BSB_PSA.3.5.m4a",
+        "TwoSparrows/build/dd/Build/Products/Debug-iphonesimulator/TwoSparrows.app/Audio/tts_m1_BSB_PSA.3.5.m4a"
+      ]
+    },
+    {
+      "id": "pr_evening_lighten_bcp1662",
+      "translation": "",
+      "file": "tts_m1_KJV_pr_evening_lighten_bcp1662.m4a",
+      "bundled": true,
+      "files_found": [
+        "TwoSparrows/TwoSparrows/Resources/Audio/tts_m1_KJV_pr_evening_lighten_bcp1662.m4a",
+        "TwoSparrows/build/ddw/Build/Products/Debug-iphonesimulator/TwoSparrows.app/Audio/tts_m1_KJV_pr_evening_lighten_bcp1662.m4a",
+        "TwoSparrows/build/dd/Build/Products/Debug-iphonesimulator/TwoSparrows.app/Audio/tts_m1_KJV_pr_evening_lighten_bcp1662.m4a"
+      ]
+    }
+  ],
+  "anxious_first_ref": "1PE.5.7"
+}

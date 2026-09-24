@@ -1,0 +1,9 @@
+{
+  "locale": "en-US",
+  "revision": "r3",
+  "frames": [
+    {"id":"TS01","headline":["Before you scroll,","a Bible verse."],"subtitle":"A fresh verse. Every day.","label":"ON YOUR LOCK SCREEN","verse":"The LORD is my shepherd; I shall not want.","reference":"Psalm 23:1 · BSB","mission":"Understand Bible + daily habit + phone widget in one glance.","scenario":"I reach for my phone during a busy morning. Scripture is already on the Lock Screen, before I open another app.","proof":"Native Lock Screen widget with a full short verse and reference; enlarged editorial callout."},
+    {"id":"TS02","headline":["Anxious?","Find your verse."],"subtitle":"Bible verses for how you feel.","label":"CHOOSE A FEELING → FIND A VERSE","verse":"Cast all your anxiety on Him, because He cares for you.","reference":"1 Peter 5:7 · BSB","mission":"Show the input and useful result, then connect the result back to the widget.","scenario":"A worry keeps returning. I choose Anxious, read a relevant passage and keep it on my Lock Screen.","proof":"MainView statesSection → selection(forState:) → resultsSection → pin; 1PE.5.7 is ranked first for anxious in shipped content."},
+    {"id":"TS03","headline":["Too tired to read?","Listen & pray."],"subtitle":"Hear a Bible verse & prayer.","label":"A QUIET MOMENT BEFORE BED","verse":"I lie down and sleep; I wake again, for the LORD sustains me.","reference":"Psalm 3:5 · BSB","mission":"Make audio immediately recognizable, connected to an evening Bible habit.","scenario":"At bedtime I want Scripture but am tired of reading. I open Tonight and play the verse and prayer.","proof":"TonightContent → ListenButton → AudioService; PSA.3.5 has a bundled BSB recording. Enlarged play control; no invented waveform or duration."}
+  ]
+}
