@@ -1,0 +1,48 @@
+{
+  "locale": "en-US",
+  "revision": "r6",
+  "frames": [
+    {
+      "id": "TS01",
+      "headline": [
+        "Daily Bible",
+        "Widget."
+      ],
+      "subtitle": "",
+      "label": "",
+      "verse": "The LORD is my shepherd; I shall not want.",
+      "reference": "Psalm 23:1 · BSB",
+      "mission": "Recognize a daily Bible widget immediately, using the liked r3 composition plus a Bible book.",
+      "scenario": "I reach for my phone during a busy morning. Scripture is already on the Lock Screen, before I open another app.",
+      "proof": "Existing Lock Screen widget; enlarged verse composition; Bible prop is a source cue, not an app theme."
+    },
+    {
+      "id": "TS02",
+      "headline": [
+        "Bible comfort",
+        "for hard days."
+      ],
+      "subtitle": "",
+      "label": "",
+      "verse": "Cast all your anxiety on Him, because He cares for you.",
+      "reference": "1 Peter 5:7 · BSB",
+      "mission": "Show a familiar worry and a relevant Bible passage as the concrete result.",
+      "scenario": "I am worried about tomorrow. I write it in my own words, then read a Bible passage about anxiety.",
+      "proof": "MainView heartSection supports own-word input and Find verses. The example BSB verse exists in the anxious content. Editorial example, not a verified exact search ranking."
+    },
+    {
+      "id": "TS03",
+      "headline": [
+        "Too tired to read?",
+        "Listen & pray."
+      ],
+      "subtitle": "Hear a Bible verse & prayer.",
+      "label": "A QUIET MOMENT BEFORE BED",
+      "verse": "I lie down and sleep; I wake again, for the LORD sustains me.",
+      "reference": "Psalm 3:5 · BSB",
+      "mission": "Make audio immediately recognizable, connected to an evening Bible habit.",
+      "scenario": "At bedtime I want Scripture but am tired of reading. I open Tonight and play the verse and prayer.",
+      "proof": "TonightContent → ListenButton → AudioService; PSA.3.5 has a bundled BSB recording. Enlarged play control; no invented waveform or duration."
+    }
+  ]
+}

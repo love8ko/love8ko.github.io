@@ -13,3 +13,10 @@
 
 - Latest correction: remove small marketing subtitles, footer labels and fine-print callout captions from all new explorations. Judge all three frames together at iPhone width (~110 px each). Headlines and main visual must carry the message.
 - Additional exploration requested: antique Bible visually integrated with the phone; test whether this clarifies the source without obscuring the widget.
+
+## Latest selection — r6 revision from r3
+
+- Owner prefers r3 over r4/r5. Keep its first-frame phone/verse composition, add a Bible, use “Daily Bible Widget”.
+- Second frame must show a relatable situation and useful outcome without decoding the “Anxious” chip. r6 explores own-word worry → Bible passage.
+- Preserve r3 third frame exactly: the owner specifically likes its readable scripture. This explicit selection takes precedence over removing its existing small labels.
+- Changes to first/second headlines must not alter the selected third frame.
