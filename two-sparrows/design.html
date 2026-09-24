@@ -25,10 +25,18 @@ table.small{font-size:13px}table.small td,table.small th{padding:6px 8px}
 .lead{font-size:18px;color:var(--muted);margin:0 0 24px}.toc a{margin-right:14px;color:var(--accent);text-decoration:none;font-size:14px}
 .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}@media (max-width:820px){.kpi{grid-template-columns:1fr 1fr}}
 .kpi div{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:12px}.kpi b{display:block;font-size:24px}
-</style></head><body><main>
+
+.ts-nav{position:sticky;top:0;z-index:50;background:rgba(246,238,223,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #D9CBB6}
+.ts-nav .in{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;align-items:center;overflow-x:auto;white-space:nowrap}
+.ts-nav .brand{font:600 16px Georgia,'Times New Roman',serif;color:#2B211B;text-decoration:none;margin-right:10px}
+.ts-nav a.i{font:500 14px -apple-system,system-ui,sans-serif;color:#6F5A4C;text-decoration:none;padding:6px 10px;border-radius:999px}
+.ts-nav a.i:hover{background:#EAD3C4;color:#2B211B}.ts-nav a.i.on{background:#9C4E33;color:#FFFAF0}
+@media (prefers-color-scheme:dark){.ts-nav{background:rgba(23,18,15,.9);border-color:#3A302A}.ts-nav .brand{color:#E3D6C1}.ts-nav a.i{color:#A89886}.ts-nav a.i:hover{background:#4A3328;color:#E3D6C1}.ts-nav a.i.on{background:#D98B66;color:#17120F}}
+html{scroll-padding-top:64px}
+</style></head><body><nav class="ts-nav"><div class="in"><a class="brand" href="./">🕊️ Two Sparrows</a><a class="i" href="./">Главная</a><a class="i on" href="design.html">Витрина</a><a class="i" href="design.html#audience">Когорты</a><a class="i" href="voices/">Голоса</a><a class="i" href="screens/">Скриншоты</a><a class="i" href="design.html#decisions">Решения</a></div></nav><main>
 <h1>Two Sparrows 🕊️ — что мы строим (v1, 24.09.2026)</h1>
 <p class="lead">Стих дня и молитвы на виджетах iPhone. Позиционирование, аудитория, конкуренты, объём V1 и дизайн-система — по результатам волны 1 и турниров Jev.</p>
-<nav class="toc"><a href="voices/"><b>🎧 Голоса (выбор)</b></a><a href="#audience">Аудитория</a><a href="#pains">Боли и JTBD</a><a href="#jev">Что показал Jev</a><a href="#competitors">Конкуренты</a><a href="#v1">V1</a><a href="#design">Дизайн-система</a><a href="#decisions">Решения владельцу</a><a href="#sources">Источники</a></nav>
+<nav class="toc" style="margin-top:8px"><a href="voices/"><b>🎧 Голоса (выбор)</b></a><a href="#audience">Аудитория</a><a href="#pains">Боли и JTBD</a><a href="#jev">Что показал Jev</a><a href="#competitors">Конкуренты</a><a href="#v1">V1</a><a href="#design">Дизайн-система</a><a href="#decisions">Решения владельцу</a><a href="#sources">Источники</a></nav>
 <div class="kpi"><div><b>5.78</b><small>лучшая «фича»: Scripture only — no pastor quotes, no AI</small></div><div><b>7.39</b><small>позиционирование-победитель (grok)</small></div><div><b>E</b><small>дизайн: Linen Heritage — утверждён</small></div><div><b>5.83</b><small>пейвол: 3 screens · no paywall at all in onboa…</small></div></div>
 <section><h2 style="border:0;margin-top:8px">0. Позиционирование</h2>
 <blockquote style="font-size:22px;line-height:1.35;margin:8px 0 12px;padding-left:16px;border-left:3px solid var(--accent)">«When you are afraid, one verse on the screen you already check — not a chat and not a streak.»</blockquote>
