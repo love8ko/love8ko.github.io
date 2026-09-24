@@ -1,0 +1,167 @@
+{
+  "locale": "en-US",
+  "revision": "r7",
+  "frames": [
+    {
+      "id": "TS01",
+      "headline": [
+        "Daily Bible",
+        "Widget."
+      ],
+      "subtitle": "",
+      "label": "",
+      "verse": "The LORD is my shepherd; I shall not want.",
+      "reference": "Psalm 23:1 · BSB",
+      "mission": "Recognize a daily Bible widget immediately, using the liked r3 composition plus a Bible book.",
+      "scenario": "I reach for my phone during a busy morning. Scripture is already on the Lock Screen, before I open another app.",
+      "proof": "Existing Lock Screen widget; enlarged verse composition; Bible prop is a source cue, not an app theme."
+    },
+    {
+      "id": "TS02",
+      "headline": [
+        "Bible comfort",
+        "for hard days."
+      ],
+      "subtitle": "",
+      "label": "",
+      "verse": "Cast all your anxiety on Him, because He cares for you.",
+      "reference": "1 Peter 5:7 · BSB",
+      "mission": "Show a familiar worry and a relevant Bible passage as the concrete result.",
+      "scenario": "I am worried about tomorrow. I write it in my own words, then read a Bible passage about anxiety.",
+      "proof": "MainView heartSection supports own-word input and Find verses. The example BSB verse exists in the anxious content. Editorial example, not a verified exact search ranking."
+    },
+    {
+      "id": "TS03",
+      "headline": [
+        "Too tired to read?",
+        "Listen & pray."
+      ],
+      "subtitle": "Hear a Bible verse & prayer.",
+      "label": "A QUIET MOMENT BEFORE BED",
+      "verse": "I lie down and sleep; I wake again, for the LORD sustains me.",
+      "reference": "Psalm 3:5 · BSB",
+      "mission": "Make audio immediately recognizable, connected to an evening Bible habit.",
+      "scenario": "At bedtime I want Scripture but am tired of reading. I open Tonight and play the verse and prayer.",
+      "proof": "TonightContent → ListenButton → AudioService; PSA.3.5 has a bundled BSB recording. Enlarged play control; no invented waveform or duration."
+    },
+    {
+      "id": "TS04",
+      "headline": [
+        "Build a daily",
+        "Bible habit."
+      ],
+      "verse": "The LORD is my shepherd; I shall not want.",
+      "reference": "Psalm 23:1 · BSB",
+      "mission": "Help someone who wants a Bible habit but does not know where to start.",
+      "scenario": "Start the seven-day morning path and follow one manageable day of Scripture at a time.",
+      "proof": "release-sprint PathDayView + paths morning + path_days day 1. Existing bundled morning cover. Day count is a path length, not a streak.",
+      "pathTitle": "Start the day with God",
+      "dayTitle": "The Lord is my shepherd",
+      "subtitle": "",
+      "label": ""
+    },
+    {
+      "id": "TS05",
+      "headline": [
+        "Read the verse.",
+        "See the chapter."
+      ],
+      "verse": "The LORD is my shepherd; I shall not want.",
+      "reference": "Psalm 23 · BSB",
+      "mission": "Show the surrounding chapter for readers who want more than an isolated quotation.",
+      "scenario": "A verse speaks to me; I open Read in context to read the chapter around it.",
+      "proof": "ChapterCard uses store.chapter and expands all verses on Read in context. The screenshot shows the top of Psalm 23; remaining verses continue below.",
+      "chapterVerses": [
+        {
+          "number": 1,
+          "text": "The LORD is my shepherd; I shall not want."
+        },
+        {
+          "number": 2,
+          "text": "He makes me lie down in green pastures; He leads me beside quiet waters."
+        },
+        {
+          "number": 3,
+          "text": "He restores my soul; He guides me in the paths of righteousness for the sake of His name."
+        }
+      ],
+      "subtitle": "",
+      "label": ""
+    },
+    {
+      "id": "TS06",
+      "headline": [
+        "Keep the verses",
+        "you lean on."
+      ],
+      "verse": "When I am afraid, I put my trust in You.",
+      "reference": "Psalm 56:3 · BSB",
+      "mission": "Keep personally meaningful passages easy to find again.",
+      "scenario": "I save a verse with a heart and return to it in My verses.",
+      "proof": "HeartButton + settings.favorites + MyVersesView/SavedVerseRow. Saving is distinct from pinning to Lock Screen.",
+      "savedVerses": [
+        {
+          "verse": "When I am afraid, I put my trust in You.",
+          "reference": "Psalm 56:3 · BSB"
+        },
+        {
+          "verse": "The LORD is my shepherd; I shall not want.",
+          "reference": "Psalm 23:1 · BSB"
+        },
+        {
+          "verse": "Pray without ceasing.",
+          "reference": "1 Thessalonians 5:17 · BSB"
+        }
+      ],
+      "subtitle": "",
+      "label": ""
+    },
+    {
+      "id": "TS07",
+      "headline": [
+        "Your widget.",
+        "Your style."
+      ],
+      "verse": "When I am afraid, I put my trust in You.",
+      "reference": "Psalm 56:3 · BSB",
+      "mission": "Make the widget feel at home on a familiar personal phone.",
+      "scenario": "I choose a warm, light or dark look for my Home Screen Bible widget.",
+      "proof": "WidgetStyle / WidgetLook and WidgetsTabView support Linen, Paper and Candle. Lock Screen is system-tinted, so these colored previews represent Home Screen widgets.",
+      "subtitle": "",
+      "label": ""
+    },
+    {
+      "id": "TS08",
+      "headline": [
+        "Miss a day?",
+        "Nothing resets."
+      ],
+      "verse": "Pray without ceasing.",
+      "reference": "1 Thessalonians 5:17 · BSB",
+      "mission": "Reassure returning readers that a missed day does not erase their progress.",
+      "scenario": "Life interrupts my routine. I come back to my cumulative journey instead of restarting a streak.",
+      "proof": "MyVersesView journey counts days, path days, favorites and prayers; says it only grows. Example counts are illustrative personal activity, not audience or efficacy statistics.",
+      "stats": [
+        {
+          "value": "12",
+          "label": "days with God"
+        },
+        {
+          "value": "4",
+          "label": "path days done"
+        },
+        {
+          "value": "8",
+          "label": "verses kept"
+        },
+        {
+          "value": "6",
+          "label": "prayers heard"
+        }
+      ],
+      "subtitle": "",
+      "label": ""
+    }
+  ],
+  "approvedBase": "r6: TS01–TS03 unchanged"
+}

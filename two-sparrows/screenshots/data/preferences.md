@@ -20,3 +20,10 @@
 - Second frame must show a relatable situation and useful outcome without decoding the “Anxious” chip. r6 explores own-word worry → Bible passage.
 - Preserve r3 third frame exactly: the owner specifically likes its readable scripture. This explicit selection takes precedence over removing its existing small labels.
 - Changes to first/second headlines must not alter the selected third frame.
+
+## Approved direction — extend to eight
+
+- Owner explicitly approved r6 and requested a full set of 8 in the same logic.
+- Preserve TS01–TS03 exactly; add five concrete, product-supported customer jobs.
+- r7 continuation: daily path → chapter context → saved verses → widget appearance → returning after a missed day.
+- Keep warm book/phone compositions, large headlines and one main action per frame. New frames have no small marketing footer/subtitle.

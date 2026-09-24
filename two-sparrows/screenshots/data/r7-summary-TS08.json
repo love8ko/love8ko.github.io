@@ -1,0 +1,62 @@
+{
+  "calls": 19,
+  "personas": 19,
+  "passes": 1,
+  "focus": "TS08",
+  "cohorts": {
+    "aesthetic": {
+      "TS08_clarity": 3.24,
+      "TS08_affinity": 2.35,
+      "TS08_download": 1.6033333333333333
+    },
+    "moms": {
+      "TS08_clarity": 3.233333333333333,
+      "TS08_affinity": 2.43,
+      "TS08_download": 1.7233333333333334
+    },
+    "strugglers": {
+      "TS08_clarity": 3.063333333333333,
+      "TS08_affinity": 2.53,
+      "TS08_download": 1.7433333333333334
+    },
+    "catholics": {
+      "TS08_clarity": 3.1233333333333335,
+      "TS08_affinity": 1.6733333333333331,
+      "TS08_download": 1.2999999999999998
+    },
+    "purists": {
+      "TS08_clarity": 2.8866666666666667,
+      "TS08_affinity": 1.5666666666666664,
+      "TS08_download": 0.8500000000000001
+    },
+    "teens": {
+      "TS08_clarity": 3.045,
+      "TS08_affinity": 2.0200000000000005,
+      "TS08_download": 1.235
+    },
+    "spanish": {
+      "TS08_clarity": 2.925,
+      "TS08_affinity": 1.365,
+      "TS08_download": 1.1500000000000001
+    }
+  },
+  "weighted": {
+    "TS08_clarity": 3.137766666666667,
+    "TS08_affinity": 2.207516666666667,
+    "TS08_download": 1.5260500000000001
+  },
+  "weights": {
+    "aesthetic": 0.3,
+    "moms": 0.22,
+    "strugglers": 0.2,
+    "catholics": 0.1,
+    "purists": 0.08,
+    "teens": 0.05,
+    "spanish": 0.05
+  },
+  "models": [
+    "jev-1.13.0"
+  ],
+  "copySha256": "f322f1a5dc6f88bb03fca7020b24159877c0fea042239f457dee0e3bf8c426c1",
+  "limitations": "19 synthetic personas across 7 cohorts, one text-only pass. No pixels, real participants, observed CTR or conversion lift. Frame order not optimized. Weights estimated, not measured traffic. Scores are 0–4 judgments, not customer percentages. No comparison to older runs with different questions."
+}
