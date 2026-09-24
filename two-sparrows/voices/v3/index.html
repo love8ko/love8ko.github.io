@@ -14,7 +14,10 @@ main{max-width:1180px;margin:0 auto;padding:24px 16px 80px}h1{font:600 28px Geor
 .bar{position:sticky;top:52px;z-index:5;display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--bg);padding:10px 0;margin:10px 0}
 .btn{background:var(--accent);color:var(--card);border:0;border-radius:999px;padding:9px 16px;font:600 14px -apple-system,system-ui;cursor:pointer}.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
 #summary{color:var(--muted);font-size:14px}ul{color:var(--muted)}
-
+.ts-ver{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.ts-ver a{padding:7px 14px;border-radius:999px;border:1px solid var(--rule);
+color:var(--muted);text-decoration:none;font:600 14px -apple-system,system-ui,sans-serif}.ts-ver a.on{background:var(--accent);border-color:var(--accent);color:#FFFAF0}
+.ts-ver a:hover{border-color:var(--accent)}.ts-ver-note{background:#fff3e0;color:#7a3e1d;border-radius:10px;padding:10px 14px;margin:-6px 0 16px;font-size:14px}
+@media (prefers-color-scheme:dark){.ts-ver-note{background:#3a2418;color:#f0c9a8}}
 .ts-nav{position:sticky;top:0;z-index:50;background:rgba(246,238,223,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #D9CBB6}
 .ts-nav .in{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;gap:6px;align-items:center;overflow-x:auto;white-space:nowrap}
 .ts-nav .brand{font:600 16px Georgia,'Times New Roman',serif;color:#2B211B;text-decoration:none;margin-right:10px}
@@ -22,7 +25,7 @@ main{max-width:1180px;margin:0 auto;padding:24px 16px 80px}h1{font:600 28px Geor
 .ts-nav a.i:hover{background:#EAD3C4;color:#2B211B}.ts-nav a.i.on{background:#9C4E33;color:#FFFAF0}
 @media (prefers-color-scheme:dark){.ts-nav{background:rgba(23,18,15,.9);border-color:#3A302A}.ts-nav .brand{color:#E3D6C1}.ts-nav a.i{color:#A89886}.ts-nav a.i:hover{background:#4A3328;color:#E3D6C1}.ts-nav a.i.on{background:#D98B66;color:#17120F}}
 html{scroll-padding-top:64px}
-</style></head><body><nav class="ts-nav"><div class="in"><a class="brand" href="../../">🕊️ Two Sparrows</a><a class="i" href="../.././">Главная</a><a class="i" href="../../design.html">Витрина</a><a class="i" href="../../design.html#audience">Когорты</a><a class="i on" href="../../voices/v3/">Голоса</a><a class="i" href="../../screens/">Скриншоты</a><a class="i" href="../../design.html#decisions">Решения</a></div></nav><main>
+</style></head><body><nav class="ts-nav"><div class="in"><a class="brand" href="../../">🕊️ Two Sparrows</a><a class="i" href="../.././">Главная</a><a class="i" href="../../design.html">Витрина</a><a class="i" href="../../design.html#audience">Когорты</a><a class="i on" href="../../voices/v3/">Голоса</a><a class="i" href="../../screens/">Скриншоты</a><a class="i" href="../../design.html#decisions">Решения</a></div></nav><main><div class="ts-ver"><a class="" href="../v1/" title="Flash/Flash-Lite, женские + Souer; архив: в записях зачитана инструкция о стиле">v1 · первые пробы</a><a class="" href="../v2/" title="12 мужских голосов × Flash и Flash-Lite, стиль «пастор»">v2 · английский</a><a class="on" href="../v3/" title="12 мужских голосов, Flash, Синодальный текст, пометки">v3 · русский</a></div>
 <h1>Мужской голос · русский · v3</h1>
 <p class="lead">Gemini 3.8 Flash TTS, 12 мужских голосов, два текста Синодального перевода. Подача: «тёплый опытный пастор читает Писание общине — естественный темп, благоговейно». Ставьте звёзды, отмечайте «в финал» и пишите заметки — всё сохраняется в этом браузере. Когда закончите, нажмите «Скопировать мои пометки» и пришлите текст в чат.</p>
 <div class="bar"><button class="btn" id="copy">Скопировать мои пометки</button><button class="btn ghost" id="onlyfinal">Показать только финал</button><button class="btn ghost" id="clear">Очистить</button><span id="summary"></span></div>
@@ -76,7 +79,7 @@ html{scroll-padding-top:64px}
 <label class="fin"><input type="checkbox" data-v="Alnilam" class="final"> в финал</label>
 <textarea data-v="Alnilam" class="note" rows="2" placeholder="Заметка: тембр, темп, ударения, «звучит как пастор?»"></textarea></div></section></div>
 <h2 style="font:600 20px Georgia,serif;margin-top:36px">Тексты</h2><ul><li><b>Исаия 41:10:</b> Не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя, и помогу тебе, и поддержу тебя десницею правды Моей.</li><li><b>Матфей 10:29–31:</b> Не две ли малые птицы продаются за ассарий? И ни одна из них не упадёт на землю без воли Отца вашего; у вас же и волосы на голове все сочтены; не бойтесь же: вы лучше многих малых птиц.</li></ul>
-<p class="muted">Раньше: <a href="../">v2 — английский, Flash и Flash-Lite</a>. Пометки хранятся только в вашем браузере (localStorage), на сервер ничего не отправляется.</p>
+<p class="muted">Переключатель версий — вверху страницы. Пометки хранятся только в вашем браузере (localStorage), на сервер ничего не отправляется.</p>
 </main><script>
 const K='ts-voice-v3';const load=()=>{try{return JSON.parse(localStorage.getItem(K)||'{}')}catch(e){return {}}};
 let S=load();const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){};render()};
