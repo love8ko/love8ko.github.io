@@ -1,0 +1,40 @@
+{
+  "revision": "r1-first-three",
+  "calloutVariant": "A",
+  "qa": [
+    {
+      "id": "TS01",
+      "overflows": [],
+      "escaped": [],
+      "copyBottom": 250.4375,
+      "font": true,
+      "width": 1320,
+      "height": 2868,
+      "pngColorType": 2,
+      "sha256": "991ed4bd9e62328a4867d44c09cf5c4238dd8596965c0a377463fc6bad04dfb4"
+    },
+    {
+      "id": "TS02",
+      "overflows": [],
+      "escaped": [],
+      "copyBottom": 250.4375,
+      "font": true,
+      "width": 1320,
+      "height": 2868,
+      "pngColorType": 2,
+      "sha256": "cf17895e0d1954b80e8b4309dfe21e489fbfa96d9844dea75ffa42f9053a4576"
+    },
+    {
+      "id": "TS03",
+      "overflows": [],
+      "escaped": [],
+      "copyBottom": 250.4375,
+      "font": true,
+      "width": 1320,
+      "height": 2868,
+      "pngColorType": 2,
+      "sha256": "c9dfffbe306b67768bfdce939f5c2b03da6392310e333d007e2a64685c956599"
+    }
+  ],
+  "limitations": "Existing Two Sparrows artwork. Enlarged editorial UI compositions, not unmodified app screenshots. Jev evaluates text only, not real users or conversion."
+}
