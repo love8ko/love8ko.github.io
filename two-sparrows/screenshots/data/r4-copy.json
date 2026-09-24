@@ -1,0 +1,51 @@
+{
+  "locale": "en-US",
+  "revision": "r4-exploration",
+  "frames": [
+    {
+      "id": "TS01",
+      "headline": [
+        "Your daily",
+        "Bible widget."
+      ],
+      "subtitle": "",
+      "label": "",
+      "verse": "The LORD is my shepherd; I shall not want.",
+      "reference": "Psalm 23:1 · BSB",
+      "mission": "Understand Bible + daily habit + phone widget in one glance.",
+      "scenario": "I reach for my iPhone during a busy day. A Bible verse is already installed as a widget on the Home Screen, among my app icons.",
+      "proof": "Supported native Home Screen widget with a short BSB verse and source. Installed widget remains visible behind a matching enlarged projection. Phone app icons establish the system Home Screen.",
+      "visual": "Cream composition with 58px two-line headline Your daily / Bible widget. Recognizable iPhone HOME SCREEN: top installed rounded Bible verse widget, rows of app icons and bottom dock. Matching enlarged verse widget projects from the phone, while the original upper part remains visible. Small separate brown HOLY BIBLE book behind lower-left edge of projected verse. No marketing subtitle, footer or fine print."
+    },
+    {
+      "id": "TS02",
+      "headline": [
+        "Worried?",
+        "Find a verse."
+      ],
+      "subtitle": "",
+      "label": "",
+      "verse": "Cast all your anxiety on Him, because He cares for you.",
+      "reference": "1 Peter 5:7 · BSB",
+      "mission": "Show the input and useful result, then connect the result back to the widget.",
+      "scenario": "A worry keeps returning. I choose Anxious, read a relevant passage and keep it on my Lock Screen.",
+      "proof": "MainView statesSection → selection(forState:) → resultsSection → pin; 1PE.5.7 is ranked first for anxious in shipped content.",
+      "visual": "58px Literata headlines, versus 45px in r3. Large phone and one enlarged action. First frame adds a small warm brown Holy Bible book behind the widget, as a source-of-content cue. No award badge. No marketing subtitles, footer labels, widget callout caption, night caption or small player caption. The large headline and product action carry meaning."
+    },
+    {
+      "id": "TS03",
+      "headline": [
+        "Too tired?",
+        "Listen & pray."
+      ],
+      "subtitle": "",
+      "label": "",
+      "verse": "I lie down and sleep; I wake again, for the LORD sustains me.",
+      "reference": "Psalm 3:5 · BSB",
+      "mission": "Make audio immediately recognizable, connected to an evening Bible habit.",
+      "scenario": "At bedtime I want Scripture but am tired of reading. I open Tonight and play the verse and prayer.",
+      "proof": "TonightContent → ListenButton → AudioService; PSA.3.5 has a bundled BSB recording. Enlarged play control; no invented waveform or duration.",
+      "visual": "58px Literata headlines, versus 45px in r3. Large phone and one enlarged action. First frame adds a small warm brown Holy Bible book behind the widget, as a source-of-content cue. No award badge. No marketing subtitles, footer labels, widget callout caption, night caption or small player caption. The large headline and product action carry meaning."
+    }
+  ]
+}
