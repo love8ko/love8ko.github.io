@@ -23,7 +23,7 @@
 <body>
     <h1>Privacy Policy</h1>
     <p class="app-name"><strong>BumpCheck: Pregnancy Ingredient Reference</strong></p>
-    <p class="date">Effective date: April 13, 2026</p>
+    <p class="date">Effective date: April 13, 2026 · Updated September 25, 2026 (version 2.0)</p>
 
     <div class="highlight">
         <strong>Summary:</strong> BumpCheck stores all your scan history and preferences locally on your device. We do not collect, transmit, or sell personal health information. No account is required.
@@ -46,13 +46,13 @@
     <h2>3. Data Sent to External Services</h2>
     <p>BumpCheck connects to the following services to provide core functionality:</p>
     <ul>
-        <li><strong>OpenAI API</strong> (via our Cloudflare Worker proxy) — for ingredient extraction from photos you scan. Only the cropped label image is sent. Images are not stored after processing. Queries are not linked to your identity.</li>
-        <li><strong>DeepSeek API</strong> (via our Cloudflare Worker proxy) — for educational verdict reasoning on flagged ingredients. Only the ingredient name and your stage selection are sent.</li>
-        <li><strong>NIH RxNav API</strong> (rxnav.nlm.nih.gov) — to look up medications and potential interactions. Only the medication name is sent.</li>
-        <li><strong>NIH LactMed API</strong> (wsearch.nlm.nih.gov) — to reference breastfeeding compatibility information. Only the substance name is sent.</li>
+        <li><strong>OpenAI API</strong> (through our Cloudflare Worker proxy) — only if you allow it in the app. Used to read ingredient labels from photos you take, to reason about ingredients that are not in our reference database, and to answer "Ask why" questions. We send the label photo or ingredient text, the product category and your stage selection (for example, "2nd trimester"). We never send your name, due date, scan history or any account details. Our proxy does not store photos, text or answers. Under OpenAI's API terms, data sent through the API is not used to train their models.</li>
+        <li><strong>Our Cloudflare Worker proxy</strong> — to keep the service fair and prevent abuse, the proxy sees your IP address and the anonymous RevenueCat identifier described in section 4, and keeps usage counters for up to about a week. These counters are not linked to your identity or to what you checked.</li>
+        <li><strong>DeepSeek API</strong> (through the same proxy) — used only by app versions 1.x, which send an ingredient list and your stage selection for a second opinion. Version 2.0 does not use it.</li>
+        <li><strong>NIH LactMed</strong> (wsearch.nlm.nih.gov) — to reference breastfeeding information. Only the substance name is sent.</li>
         <li><strong>Open Beauty Facts &amp; Open Food Facts</strong> — public product barcode databases. Only the barcode is sent.</li>
     </ul>
-    <p>No personal information, device identifier, or pregnancy stage is ever sent to these services.</p>
+    <p>Checks by product name, barcode and the live label scan (read on your phone) work without the OpenAI permission. You can change it at any time in Settings.</p>
 
     <h2>4. Subscriptions</h2>
     <p>Subscription purchases are managed by <strong>RevenueCat</strong>, a third-party subscription management service. RevenueCat receives:</p>
