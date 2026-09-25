@@ -1,21 +1,21 @@
 {
- "updated_at": "2026-09-25T10:17+00:00",
+ "updated_at": "2026-09-25T10:36+00:00",
  "voice": {
   "langs": {
    "en": {
     "name": "English",
     "bible": "Berean Standard Bible",
-    "done": 45,
+    "done": 53,
     "total": 293,
-    "left": 248,
-    "pct": 15,
+    "left": 240,
+    "pct": 18,
     "tiers": {
      "1": {
-      "done": 24,
+      "done": 25,
       "total": 25
      },
      "2": {
-      "done": 6,
+      "done": 13,
       "total": 57
      },
      "3": {
@@ -57,17 +57,17 @@
    "pt": {
     "name": "Português (BR)",
     "bible": "Bíblia Portuguesa Mundial",
-    "done": 1,
+    "done": 27,
     "total": 263,
-    "left": 262,
-    "pct": 0,
+    "left": 236,
+    "pct": 10,
     "tiers": {
      "1": {
-      "done": 1,
+      "done": 21,
       "total": 21
      },
      "2": {
-      "done": 0,
+      "done": 6,
       "total": 37
      },
      "3": {
@@ -83,17 +83,17 @@
    "fr": {
     "name": "Français",
     "bible": "Louis Segond 1910",
-    "done": 1,
+    "done": 26,
     "total": 263,
-    "left": 262,
-    "pct": 0,
+    "left": 237,
+    "pct": 10,
     "tiers": {
      "1": {
-      "done": 1,
+      "done": 21,
       "total": 21
      },
      "2": {
-      "done": 0,
+      "done": 5,
       "total": 37
      },
      "3": {
@@ -109,17 +109,17 @@
    "de": {
     "name": "Deutsch",
     "bible": "Lutherbibel 1912",
-    "done": 0,
+    "done": 27,
     "total": 263,
-    "left": 263,
-    "pct": 0,
+    "left": 236,
+    "pct": 10,
     "tiers": {
      "1": {
-      "done": 0,
+      "done": 21,
       "total": 21
      },
      "2": {
-      "done": 0,
+      "done": 6,
       "total": 37
      },
      "3": {
@@ -133,13 +133,13 @@
     "store": "de-DE"
    }
   },
-  "done": 47,
+  "done": 133,
   "total": 1345,
-  "left": 1298,
+  "left": 1212,
   "daily": 100,
   "released": false,
   "eta": "2026-10-08",
-  "cost_usd": 0.19
+  "cost_usd": 0.53
  },
  "interface": null,
  "store": {
@@ -150,21 +150,38 @@
  "history": [
   {
    "date": "2026-09-25",
-   "made": 3
+   "made": 89
   }
  ],
  "last_run": {
-  "at": "2026-09-25T10:17+00:00",
-  "calls": 3,
+  "at": "2026-09-25T10:36+00:00",
+  "calls": 89,
   "made": {
-   "en": 1,
+   "en": 8,
    "es": 0,
-   "pt": 1,
-   "fr": 1,
-   "de": 0
+   "pt": 26,
+   "fr": 25,
+   "de": 27
   },
-  "qc_failed": [],
-  "errors": [],
-  "budget": 3
+  "qc_failed": [
+   {
+    "lang": "pt",
+    "item": "JHN.11.35",
+    "ratio": 1.0,
+    "pace": 4.7,
+    "heard": " Jesus chorou."
+   },
+   {
+    "lang": "fr",
+    "item": "JHN.11.35",
+    "ratio": 1.0,
+    "pace": 6.8,
+    "heard": " Jésus pleura."
+   }
+  ],
+  "errors": [
+   "fr/PSA.46.1-3: 429 b'{\"error\":{\"message\":\"Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). P"
+  ],
+  "budget": 100
  }
 }
