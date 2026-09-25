@@ -5,49 +5,79 @@
 :root{--bg:#F6EEDF;--surface:#FFFAF0;--ink:#2B211B;--muted:#6F5A4C;--accent:#9C4E33;--rule:#D9CBB6}
 @media (prefers-color-scheme:dark){:root{--bg:#17120F;--surface:#221B17;--ink:#E3D6C1;--muted:#A89886;--accent:#D98B66;--rule:#3A302A}}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:720px;margin:0 auto;padding:24px 16px 60px;line-height:1.7;color:var(--ink);background:var(--bg)}
-h1{font:600 1.9em Georgia,serif;margin-bottom:.2em}h2{font:600 1.25em Georgia,serif;margin-top:1.8em}
+h1{font:600 1.9em Georgia,serif;margin-bottom:.2em}h2{font:600 1.25em Georgia,serif;margin-top:1.8em}h3{font:600 1.05em Georgia,serif;margin:1.4em 0 .3em}
 .date{color:var(--muted);font-size:.9em;margin-bottom:2em}ul{padding-left:1.2em}li{margin-bottom:.4em}a{color:var(--accent)}
 .highlight{background:var(--surface);padding:14px 18px;border-left:3px solid var(--accent);margin:16px 0;border-radius:6px}
-nav{font-size:.9em;margin-bottom:1.5em}nav a{margin-right:14px}
+table{border-collapse:collapse;width:100%;font-size:.92em;margin:12px 0}th,td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:600}
+nav{font-size:.9em;margin-bottom:1.5em;display:flex;flex-wrap:wrap;gap:4px 14px}
 </style></head><body>
-<nav><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></nav>
+<nav><a href="marketing.html">Two Sparrows</a><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="credits.html">Licences &amp; credits</a></nav>
 <h1>Privacy Policy</h1>
-<p class="date">Effective date: September 24, 2026</p>
-<p>Two Sparrows: Bible Widget ("Two Sparrows" or "the App") is developed and published by Valerii Loveiko. This policy explains what the App keeps on your device, what it sends to outside services, and the choices you have.</p>
-<div class="highlight"><strong>Summary:</strong> No account is required. Your choices, saved verses and settings stay on your device. When you type or say what's on your heart, that text is sent through our server only to pick fitting Bible verses and is not stored. Purchases are handled by Apple and RevenueCat. We show no ads, we do not sell data, and we use no analytics or tracking SDKs.</div>
+<p class="date">Effective date: September 25, 2026</p>
+<p>Two Sparrows: Bible Widget ("Two Sparrows" or "the App") is developed and published by Valerii Loveiko ("we", "us"). This policy explains what the App keeps on your device, what it sends to outside services and why, how long anything is kept, and the choices you have.</p>
+<div class="highlight"><strong>Summary:</strong> No account, no name, no email. Your choices, saved verses and settings stay on your device. If you choose to type or say what's on your heart, the text goes through our server to an AI service that only picks verse references from the App's library; we do not store it. Purchases are handled by Apple and RevenueCat under a random ID. No ads, no analytics or tracking SDKs, no selling of data.</div>
 
-<h2>1. Data stored on your device</h2>
+<h2>1. Data stored only on your device</h2>
 <ul>
-<li>What you chose in onboarding (for example "Anxious"), your rhythm preferences (morning, through the day, night) and the evening prayer time</li>
-<li>Verses you save with ♥, the verse you keep on your Lock Screen, text size and appearance</li>
-<li>The state your widgets use, shared between the App and its widgets on your device</li>
-<li>Audio recordings of verses and prayers downloaded once and kept in the App's cache</li>
+<li>The feeling you chose (for example "Anxious"), your rhythm (morning, through the day, night) and the evening prayer time</li>
+<li>Verses you save with ♥, the verse you keep on your Lock Screen, your 7-day path progress, text size, theme and app icon</li>
+<li>The state your widgets use, shared between the App and its widgets through an App Group on your device</li>
+<li>Recordings of verses and prayers, downloaded once and kept in the App's cache</li>
 </ul>
-<p>This data is not sent to us and the developer cannot access it. Device backups may include it, depending on your Apple settings. Deleting the App deletes it.</p>
+<p>We cannot see this data. Your device backups may include it, depending on your Apple settings. Deleting the App deletes it.</p>
 
 <h2>2. Data sent to outside services</h2>
-<h3>2.1 Finding a verse in your own words</h3>
-<p>If you use "Tell me in your own words" (typing or speaking), the text (up to 500 characters) is sent to our Cloudflare Worker, which asks DeepSeek to choose fitting verse references from the App's Bible library. The model only picks references; it never writes Scripture or advice. Our server does not store or log your text (it records only the text length and the chosen state for abuse protection). DeepSeek processes the text to return the answer under its own terms. If the service is unavailable, the App picks verses on your device instead. Before anything is sent, the App checks your words on your device, and if they suggest you may be in danger it shows the 988 Suicide &amp; Crisis Lifeline.</p>
-<p>Speech is turned into text by Apple's speech recognition, on your device when your iPhone supports it; otherwise Apple processes it under Apple's privacy policy. No recording is kept.</p>
-<h3>2.2 Audio</h3>
-<p>When you tap Listen, the App downloads the recording of that verse or prayer from our server (Cloudflare). The request contains the verse or prayer identifier, the App version and an anonymous purchase identifier. Recordings are made from the public-domain Bible and prayer texts with a synthetic voice (Google Gemini); no personal data is sent to Google.</p>
+
+<h3>2.1 Finding a verse in your own words (optional)</h3>
+<p>"Tell me in your own words" is optional: you can always choose a feeling instead, and you can hide the feature in Settings → "Scripture only — no AI matching".</p>
+<p>When you use it, the App sends to our server (a Cloudflare Worker): your text (up to 500 characters), the translation code, your device's language and region setting, the App version and the App's random purchase ID (see 2.3). Our server passes <strong>only your text</strong> to <strong>DeepSeek</strong>, an AI service operated from the People's Republic of China, with instructions to answer with verse and prayer IDs from the App's library. The AI never writes Scripture, prayers or advice; every ID is checked against the library, and the words you see come from the Bible text in the App. DeepSeek processes the text under its own terms and privacy policy. If our server or DeepSeek is unavailable, the App picks verses on your device instead.</p>
+<p>Our server does not store or log your text. It logs only the length of the text, the feeling category chosen and whether the AI answered, without your purchase ID.</p>
+<p>The App also checks your words on your device. If they suggest you may be in danger, it shows the 988 Suicide &amp; Crisis Lifeline above the verses. This check is not recorded or sent anywhere.</p>
+<p><strong>Speaking instead of typing:</strong> speech is turned into text by Apple's speech recognition, on your iPhone when it supports on-device recognition; otherwise Apple processes the audio under Apple's privacy policy. The App keeps no recording, and only the resulting text is used as described above.</p>
+
+<h3>2.2 Listening to a verse or prayer</h3>
+<p>When you tap Listen and the recording is not already on your device, the App downloads it from our server. The request contains the verse or prayer ID, the voice, the translation code, the App version and the App's random purchase ID (used to confirm that you subscribe). Recordings are made from the public-domain text with a synthetic voice (Google Gemini text-to-speech). Only the library text is sent to Google, never anything about you.</p>
+
 <h3>2.3 Purchases</h3>
-<p>Subscriptions are processed by Apple. The App uses RevenueCat to check your subscription status with an anonymous identifier created by RevenueCat; it receives purchase information (product, dates, status), not your name or payment details. Apple and RevenueCat process this data under their own privacy policies.</p>
+<p>Subscriptions are processed by Apple; we never see your name or payment details. The App uses <strong>RevenueCat</strong> to know whether your subscription is active. RevenueCat creates a random ID for your installation of the App and receives purchase information (product, dates, trial and renewal status) and technical details such as device model, iOS version, App version and region. Our server sends that random ID to RevenueCat to check whether a subscription is active, so paid features like on-demand recordings are served only to subscribers. Apple and RevenueCat process this data under their own privacy policies.</p>
+
 <h3>2.4 Our server</h3>
-<p>Cloudflare, which runs our server, processes your IP address to deliver requests and to protect the service from abuse (rate limits). We do not use IP addresses to identify you.</p>
+<p>Cloudflare runs our server. To protect it from abuse, the server keeps daily request counters keyed by the random purchase ID and by IP address, and a short cache of whether a purchase ID has an active subscription. Counters are deleted after about two days; cache entries within about a week after they expire. Cloudflare's own service logs are kept for a few days. We do not use IP addresses to identify you or your location.</p>
+
+<h3>2.5 Sharing a verse</h3>
+<p>"Share this verse" makes the picture on your device. It leaves your device only through the share sheet, to the app or person you choose. "Save to Photos" asks for permission to add the picture to your photo library; the App cannot read your photos. "Send to someone" adds a line you choose and, unless you switch it off, a link to Two Sparrows on the App Store; nothing identifies you in it.</p>
 
 <h2>3. Notifications</h2>
-<p>If you allow them, evening prayer notifications are scheduled on your device. No push server is used.</p>
+<p>If you allow them, the evening prayer reminder is scheduled on your device at the time you choose. No push server is used, and there are no marketing notifications.</p>
 
-<h2>4. What we do not do</h2>
-<ul><li>No ads, no advertising or analytics SDKs, no tracking across apps or websites</li><li>No selling or sharing of personal data</li><li>No account, no email collection</li></ul>
+<h2>4. At a glance</h2>
+<table>
+<tr><th>What</th><th>Goes to</th><th>Why</th><th>Kept</th></tr>
+<tr><td>Your own words (optional)</td><td>Our server → DeepSeek</td><td>Pick verse references</td><td>Not stored by us; DeepSeek under its terms</td></tr>
+<tr><td>Random purchase ID</td><td>RevenueCat, our server</td><td>Subscription status, abuse limits</td><td>RevenueCat under its policy; our server ≈ 2–7 days</td></tr>
+<tr><td>Purchase history</td><td>Apple, RevenueCat</td><td>Subscription</td><td>Under Apple's and RevenueCat's policies</td></tr>
+<tr><td>IP address</td><td>Cloudflare (our server)</td><td>Deliver requests, abuse limits</td><td>≈ 2 days (counters), a few days (logs)</td></tr>
+<tr><td>Speech audio</td><td>On device, or Apple</td><td>Turn speech into text</td><td>Not kept by the App</td></tr>
+<tr><td>Settings, saved verses, progress</td><td>Your device only</td><td>The App and widgets</td><td>Until you delete the App</td></tr>
+</table>
 
-<h2>5. Children</h2>
+<h2>5. What we do not do</h2>
+<ul><li>No ads, no advertising or analytics SDKs, no tracking across apps or websites, no App Tracking Transparency prompt because nothing tracks you</li><li>No selling or sharing of personal data for marketing</li><li>No account, no email or phone collection</li></ul>
+
+<h2>6. Children</h2>
 <p>The App is not directed to children under 13, and we do not knowingly collect personal information from them.</p>
 
-<h2>6. Your choices</h2>
-<ul><li>You can use the App without typing or speaking anything: choose a state instead</li><li>You can turn notifications off in iOS Settings</li><li>You can delete all App data by deleting the App</li><li>Manage or cancel your subscription in iOS Settings → Apple Account → Subscriptions</li></ul>
+<h2>7. Your choices and rights</h2>
+<ul>
+<li>Use the App without typing or speaking anything: choose a feeling instead, or turn on "Scripture only — no AI matching" in Settings</li>
+<li>Turn the evening reminder off in Settings or in iOS Settings → Notifications</li>
+<li>Remove the microphone, speech recognition or Photos permission at any time in iOS Settings → Two Sparrows</li>
+<li>Delete everything on your device by deleting the App</li>
+<li>Manage or cancel your subscription in iOS Settings → your name → Subscriptions</li>
+<li>Ask us about, or ask us to delete, any data we hold that we can connect to you. Because we do not know who you are, include the order ID from Apple's receipt email if your request is about purchase records, and we will ask RevenueCat to delete them.</li>
+</ul>
+<p>Depending on where you live (for example the EU, UK or California), you may have rights to access, correct, delete or object to processing of your personal data. We process the limited data above to provide the App you asked for (the own-words feature only when you use it) and to protect our server from abuse. We do not sell or share personal data as those laws define it. Data may be processed in the United States (Cloudflare, RevenueCat, Google) and in China (DeepSeek, only when you use your own words).</p>
 
-<h2>7. Changes and contact</h2>
-<p>We will update this page if the App's data practices change and change the effective date above. Questions: <a href="mailto:sergejkar@gmail.com">sergejkar@gmail.com</a>.</p>
+<h2>8. Changes and contact</h2>
+<p>We will update this page if the App's data practices change and change the effective date above. Questions or requests: <a href="mailto:sergejkar@gmail.com">sergejkar@gmail.com</a>.</p>
 <p class="date" style="margin-top:3em">Two Sparrows: Bible Widget · Valerii Loveiko · <a href="mailto:sergejkar@gmail.com">sergejkar@gmail.com</a></p></body></html>
