@@ -1,0 +1,170 @@
+{
+ "updated_at": "2026-09-25T10:17+00:00",
+ "voice": {
+  "langs": {
+   "en": {
+    "name": "English",
+    "bible": "Berean Standard Bible",
+    "done": 45,
+    "total": 293,
+    "left": 248,
+    "pct": 15,
+    "tiers": {
+     "1": {
+      "done": 24,
+      "total": 25
+     },
+     "2": {
+      "done": 6,
+      "total": 57
+     },
+     "3": {
+      "done": 15,
+      "total": 211
+     }
+    },
+    "blocked": [],
+    "qc_waiting": [],
+    "verified": true,
+    "store": "en-US, en-GB, en-AU, en-CA"
+   },
+   "es": {
+    "name": "Español",
+    "bible": "Reina-Valera 1909",
+    "done": 0,
+    "total": 263,
+    "left": 263,
+    "pct": 0,
+    "tiers": {
+     "1": {
+      "done": 0,
+      "total": 21
+     },
+     "2": {
+      "done": 0,
+      "total": 37
+     },
+     "3": {
+      "done": 0,
+      "total": 205
+     }
+    },
+    "blocked": [],
+    "qc_waiting": [],
+    "verified": false,
+    "store": "es-MX, es-ES"
+   },
+   "pt": {
+    "name": "Português (BR)",
+    "bible": "Bíblia Portuguesa Mundial",
+    "done": 1,
+    "total": 263,
+    "left": 262,
+    "pct": 0,
+    "tiers": {
+     "1": {
+      "done": 1,
+      "total": 21
+     },
+     "2": {
+      "done": 0,
+      "total": 37
+     },
+     "3": {
+      "done": 0,
+      "total": 205
+     }
+    },
+    "blocked": [],
+    "qc_waiting": [],
+    "verified": true,
+    "store": "pt-BR, pt-PT"
+   },
+   "fr": {
+    "name": "Français",
+    "bible": "Louis Segond 1910",
+    "done": 1,
+    "total": 263,
+    "left": 262,
+    "pct": 0,
+    "tiers": {
+     "1": {
+      "done": 1,
+      "total": 21
+     },
+     "2": {
+      "done": 0,
+      "total": 37
+     },
+     "3": {
+      "done": 0,
+      "total": 205
+     }
+    },
+    "blocked": [],
+    "qc_waiting": [],
+    "verified": true,
+    "store": "fr-FR, fr-CA"
+   },
+   "de": {
+    "name": "Deutsch",
+    "bible": "Lutherbibel 1912",
+    "done": 0,
+    "total": 263,
+    "left": 263,
+    "pct": 0,
+    "tiers": {
+     "1": {
+      "done": 0,
+      "total": 21
+     },
+     "2": {
+      "done": 0,
+      "total": 37
+     },
+     "3": {
+      "done": 0,
+      "total": 205
+     }
+    },
+    "blocked": [],
+    "qc_waiting": [],
+    "verified": true,
+    "store": "de-DE"
+   }
+  },
+  "done": 47,
+  "total": 1345,
+  "left": 1298,
+  "daily": 100,
+  "released": false,
+  "eta": "2026-10-08",
+  "cost_usd": 0.19
+ },
+ "interface": null,
+ "store": {
+  "listing": "2026-09-25",
+  "subscriptions": "2026-09-25",
+  "caption_only_locales": 39
+ },
+ "history": [
+  {
+   "date": "2026-09-25",
+   "made": 3
+  }
+ ],
+ "last_run": {
+  "at": "2026-09-25T10:17+00:00",
+  "calls": 3,
+  "made": {
+   "en": 1,
+   "es": 0,
+   "pt": 1,
+   "fr": 1,
+   "de": 0
+  },
+  "qc_failed": [],
+  "errors": [],
+  "budget": 3
+ }
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Локализация и озвучка</title>
+<style>
+:root{--bg:#F6EEDF;--surface:#FFFAF0;--ink:#2B211B;--muted:#6F5A4C;--accent:#9C4E33;--soft:#EAD3C4;--rule:#D9CBB6;--ok:#4F7A43;--warn:#A5731F}
+@media (prefers-color-scheme:dark){:root{--bg:#17120F;--surface:#221B17;--ink:#E3D6C1;--muted:#A89886;--accent:#D98B66;--soft:#4A3328;--rule:#3A302A;--ok:#8DB47E;--warn:#D9A94E}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,system-ui,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:20px 16px 60px}
+a{color:var(--accent)}h1{font:600 30px/1.2 Georgia,'Times New Roman',serif;margin:8px 0 6px}h2{font:600 21px Georgia,serif;margin:30px 0 10px}
+.lead{color:var(--muted);margin:0 0 18px}.top{font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}@media (max-width:760px){.kpis{grid-template-columns:1fr 1fr}}
+.kpi{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:14px}.kpi b{display:block;font:600 26px Georgia,serif}.kpi span{color:var(--muted);font-size:13px}
+.wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}th,td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}tr:last-child td{border-bottom:0}
+.lang b{font-size:15px}.lang small{display:block;color:var(--muted)}
+.bar{height:8px;border-radius:99px;background:var(--soft);overflow:hidden;margin:4px 0 3px}.bar i{display:block;height:100%;background:var(--accent)}
+.ok{color:var(--ok);font-weight:600}.wait{color:var(--muted)}.warn{color:var(--warn);font-weight:600}
+.tiers{color:var(--muted);font-size:12px}.hist{display:flex;gap:4px;align-items:flex-end;height:60px}.hist div{flex:1;background:var(--accent);border-radius:3px 3px 0 0;min-height:2px}
+.note{color:var(--muted);font-size:13px;margin-top:10px}code{font-size:13px}
+</style></head><body><main>
+<div class="top"><a href="../">← Главная</a></div>
+<h1>Локализация и озвучка</h1>
+<p class="lead" id="lead">Загрузка…</p>
+<div class="kpis" id="kpis"></div>
+<h2>Языки приложения</h2>
+<div class="wrap"><table><thead><tr><th>Язык</th><th>Библия</th><th>Интерфейс</th><th>App Store и подписки</th><th>Озвучка (базовый набор)</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p class="note">Очередь идёт по уровням: 1 — первый сеанс (онбординг, день 1 путей, «Отче наш»), 2 — неделя путей, 3 — все стихи по чувствам и молитвы. Внутри уровня языки идут по кругу, поэтому каждый язык двигается каждый день. Каждая запись проверяется до загрузки: обрезка шума в конце, Whisper сверяет слова с текстом, темп.</p>
+<h2>Последние дни</h2><div class="hist" id="hist"></div><p class="note" id="histnote"></p>
+<h2>Последний запуск</h2><div id="run" class="note"></div>
+<script>
+const $=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const d=s=>s?new Date(s).toLocaleDateString('ru-RU',{day:'numeric',month:'long'}):'—';
+fetch('status.json',{cache:'no-store'}).then(r=>r.json()).then(s=>{
+  const v=s.voice;
+  $('lead').innerHTML=`1.0.1 выходит на пяти языках (D25). Обновлено ${new Date(s.updated_at).toLocaleString('ru-RU')}. Очередь: ${v.daily} записей в день${v.released?' (после релиза, 30 остаются слушателям)':' (до релиза)'}.`;
+  $('kpis').innerHTML=[[`${v.done} / ${v.total}`,'записей озвучено'],[v.left,'осталось'],[v.eta?d(v.eta):'готово','закончим (прогноз)'],[`$${v.cost_usd}`,'потрачено на Gemini, оценка']]
+    .map(([b,t])=>`<div class="kpi"><b>${esc(b)}</b><span>${esc(t)}</span></div>`).join('');
+  $('rows').innerHTML=Object.entries(v.langs).map(([k,l])=>{
+    const ui=s.interface?(s.interface[k]?`${s.interface[k].done} / ${s.interface[k].total}`:'—'):'<span class="wait">ждёт экранов</span>';
+    const t=l.tiers, tier=n=>t[n]?`${t[n].done}/${t[n].total}`:'—';
+    const flags=(l.verified?'':'<div class="wait">ждёт сверки стихов</div>')+(l.blocked.length?`<div class="warn">${l.blocked.length} стих(ов) на ручной проверке</div>`:'')+(l.qc_waiting.length?`<div class="warn">${l.qc_waiting.length} не прошли проверку 3 раза</div>`:'');
+    return `<tr><td class="lang"><b>${esc(l.name)}</b><small>${esc(k)}</small></td><td>${esc(l.bible)}<div class="ok">✓ текст загружен</div></td><td>${ui}</td>
+    <td><span class="ok">✓</span> описание · <span class="ok">✓</span> подписки<small style="display:block;color:var(--muted)">${esc(l.store)}</small></td>
+    <td><b>${l.done} / ${l.total}</b> · ${l.pct}%<div class="bar"><i style="width:${l.pct}%"></i></div><div class="tiers">1: ${tier(1)} · 2: ${tier(2)} · 3: ${tier(3)}</div>${flags}</td></tr>`}).join('');
+  const h=s.history||[], mx=Math.max(1,...h.map(x=>x.made));
+  $('hist').innerHTML=h.map(x=>`<div title="${esc(x.date)}: ${x.made}" style="height:${Math.round(100*x.made/mx)}%"></div>`).join('')||'<span class="note">Первый запуск ещё не прошёл.</span>';
+  $('histnote').textContent=h.length?`Записей в день, последние ${h.length} дн.; в App Store ещё ${s.store.caption_only_locales} языков страницы (интерфейс на английском).`:'';
+  const r=s.last_run;
+  $('run').innerHTML=r?`${new Date(r.at).toLocaleString('ru-RU')}: запросов ${r.calls} из ${r.budget}, сделано ${Object.entries(r.made).map(([k,n])=>k+' '+n).join(', ')}`+
+    (r.qc_failed&&r.qc_failed.length?`, не прошли проверку ${r.qc_failed.length}`:'')+(r.errors&&r.errors.length?`<div class="warn">Ошибки: ${r.errors.map(esc).join('; ')}</div>`:''):'Запусков ещё не было.';
+}).catch(()=>{$('lead').textContent='Статус пока не опубликован.'});
+</script></main></body></html>
