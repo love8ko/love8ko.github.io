@@ -54,7 +54,7 @@
 <body>
     <h1>Privacy Policy</h1>
     <p class="app-name">CrySnap: Baby Cry Translator</p>
-    <p class="date">Effective date: September 23, 2026</p>
+    <p class="date">Effective date: September 26, 2026</p>
 
     <div class="highlight">
         <strong>Summary:</strong> CrySnap listens for eight seconds only to confirm your baby is crying. That check runs on your iPhone, and the recording is deleted straight after — it is never uploaded or kept. Questions you send to an AI guide travel as text only. No account is required. No analytics. No ad trackers.
@@ -85,7 +85,8 @@
     <ul>
         <li><strong>Outside mainland China:</strong> DeepSeek, through our Cloudflare Worker proxy (<code>crysnap-api.veribag.workers.dev</code>).</li>
         <li><strong>Mainland China</strong> (China App Store, or device region set to China mainland): Qwen on Alibaba Cloud Model Studio, through our Alibaba Cloud Function Compute service in Beijing. Requests from mainland China are never sent to the service above, and requests from elsewhere are never sent here.</li>
-        <li>Either way, a request contains only your typed or voice-transcribed message and a small context block (baby age, the current plan step, time of day). No audio, photos, name, email address or location is included, and our proxies do not log the content of messages.</li>
+        <li>Either way, a request contains only your typed or voice-transcribed message and your baby's age, weight, feeding type and any health notes you added to the baby profile. <strong>Your baby's name is removed from every request on your device.</strong> No audio, photos, email address, contacts, location or device identifiers are included, and our proxies do not store the content of messages.</li>
+        <li><strong>Nothing is sent before you allow it.</strong> Before your first question, CrySnap shows what will be sent and to whom and asks you to allow AI answers. You can withdraw that permission at any time in Settings → AI answers; the guides then stop sending anything.</li>
         <li><strong>Apple Speech Recognition</strong> — Voice Mode converts a spoken question to text. Recognition runs on-device when supported by the device and language; otherwise Apple's standard speech-recognition service may process the audio under Apple's privacy terms. CrySnap sends only the resulting transcript, not voice audio, to our chat Worker.</li>
     </ul>
     <p>Voice Mode replies are spoken back to you using <strong>Apple AVSpeechSynthesizer</strong>, which runs entirely on-device. No text-to-speech audio is generated on a server.</p>
