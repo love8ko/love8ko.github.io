@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "noOverflow": true,
+      "tabs": true,
+      "shoppingFirst": true,
+      "downloads": true,
+      "lightbox": true,
+      "escape": true
+    },
+    {
+      "width": 390,
+      "noOverflow": true,
+      "tabs": true,
+      "shoppingFirst": true,
+      "downloads": true,
+      "lightbox": true,
+      "escape": true
+    },
+    {
+      "width": 320,
+      "noOverflow": true,
+      "tabs": true,
+      "shoppingFirst": true,
+      "downloads": true,
+      "lightbox": true,
+      "escape": true
+    }
+  ],
+  "preservedA": [
+    {
+      "id": "C01",
+      "sha256": "8badefe4835473407fd895172cbc0875579183e93d03bec31e6904a7e830ba88"
+    },
+    {
+      "id": "C02",
+      "sha256": "341829f45caeb15e1518515d59f984f7e2680ee730a401a92b07147a05a01c72"
+    },
+    {
+      "id": "C03",
+      "sha256": "cdb812288b3ca7dec37ac6e17394afa3e9dc62d0d8f5dfce909bce86b24f2cd8"
+    }
+  ],
+  "errors": []
+}

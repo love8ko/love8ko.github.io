@@ -1,0 +1,109 @@
+{
+  "revision": "v5",
+  "variant": "B",
+  "order": "scan-palette-alternatives",
+  "frames": [
+    {
+      "id": "C02",
+      "kind": "scan",
+      "asset": "C02-shopping.png",
+      "theme": "green",
+      "headline": [
+        "Buy or skip?",
+        "Scan first"
+      ],
+      "bullets": [
+        "Matched to you",
+        "Avoid costly color mistakes"
+      ],
+      "pain": "Подойдёт ли цвет этой вещи до покупки?",
+      "ui": {
+        "title": "Result",
+        "verdict": "BUY IT",
+        "color": "Warm olive",
+        "detail": "Matches your palette",
+        "button": "Scan Next"
+      },
+      "scene": "Candid close-up of hands comparing an olive knitted sweater in a normal clothing shop. No face.",
+      "statusTime": "9:41",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "readiness": "for-review",
+      "variant": "B",
+      "sourceProductCommit": "836e724aa8afbfdbe0f8e2af5b7858f67f81e8d0",
+      "visualLimit": "AI-generated illustrative photograph and editorial enlarged app UI, not a runtime capture. No measured savings or accuracy claim."
+    },
+    {
+      "id": "C01",
+      "kind": "palette",
+      "asset": "C01-palette.png",
+      "theme": "peach",
+      "headline": [
+        "Washed out?",
+        "Find your colors"
+      ],
+      "bullets": [
+        "Your season",
+        "Colors that suit you"
+      ],
+      "pain": "В некоторых цветах выгляжу бледнее — какие мне подходят?",
+      "ui": {
+        "title": "Your Colors",
+        "season": [
+          "Warm",
+          "Autumn"
+        ],
+        "undertone": "Warm undertone",
+        "best": "Your colors",
+        "avoid": "Colors to avoid"
+      },
+      "scene": "Natural close-up of lower face and neck with coral and lavender draping fabrics, plain wall, no window.",
+      "statusTime": "9:41",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "readiness": "for-review",
+      "variant": "B",
+      "sourceProductCommit": "836e724aa8afbfdbe0f8e2af5b7858f67f81e8d0",
+      "visualLimit": "AI-generated illustrative photograph and editorial enlarged app UI, not a runtime capture. No measured savings or accuracy claim."
+    },
+    {
+      "id": "C03",
+      "kind": "alternatives",
+      "asset": "C03-alternatives.png",
+      "theme": "blue",
+      "headline": [
+        "Wrong color?",
+        "Try these shades"
+      ],
+      "bullets": [
+        "Colors to skip",
+        "Shades to try instead"
+      ],
+      "pain": "Какой оттенок искать вместо неподходящего?",
+      "ui": {
+        "title": "Result",
+        "verdict": "SKIP",
+        "color": "Cool blue",
+        "detail": "Try instead",
+        "alternatives": [
+          "Warm olive",
+          "Terracotta"
+        ]
+      },
+      "scene": "Hands selecting a cool blue tagged blouse beside olive and terracotta clothes in an ordinary wardrobe.",
+      "statusTime": "9:41",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "readiness": "for-review",
+      "variant": "B",
+      "sourceProductCommit": "836e724aa8afbfdbe0f8e2af5b7858f67f81e8d0",
+      "visualLimit": "AI-generated illustrative photograph and editorial enlarged app UI, not a runtime capture. No measured savings or accuracy claim."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "completed": 60,
+  "uniqueProfiles": 30,
+  "synthetic": true,
+  "visualInput": false,
+  "aggregate": {
+    "primary": [
+      {
+        "option": "C",
+        "text": "Avoid costly color mistakes",
+        "mean": 0.584375,
+        "a": 0.48875,
+        "b": 0.6799999999999999
+      },
+      {
+        "option": "B",
+        "text": "Scan before you spend",
+        "mean": 0.28774999999999995,
+        "a": 0.388125,
+        "b": 0.18737500000000004
+      },
+      {
+        "option": "D",
+        "text": "Save money on clothes",
+        "mean": 0.1041875,
+        "a": 0.10187500000000001,
+        "b": 0.10650000000000001
+      },
+      {
+        "option": "none",
+        "text": "None",
+        "mean": 0.0131875,
+        "a": 0.013,
+        "b": 0.013375000000000001
+      },
+      {
+        "option": "A",
+        "text": "Matched to your palette",
+        "mean": 0.010500000000000002,
+        "a": 0.00825,
+        "b": 0.01275
+      }
+    ],
+    "shopper": [
+      {
+        "option": "C",
+        "text": "Avoid costly color mistakes",
+        "mean": 0.6012500000000001,
+        "a": 0.495,
+        "b": 0.7075
+      },
+      {
+        "option": "B",
+        "text": "Scan before you spend",
+        "mean": 0.27749999999999997,
+        "a": 0.39,
+        "b": 0.165
+      },
+      {
+        "option": "D",
+        "text": "Save money on clothes",
+        "mean": 0.1025,
+        "a": 0.0975,
+        "b": 0.1075
+      },
+      {
+        "option": "none",
+        "text": "None",
+        "mean": 0.01,
+        "a": 0.01,
+        "b": 0.01
+      },
+      {
+        "option": "A",
+        "text": "Matched to your palette",
+        "mean": 0.00875,
+        "a": 0.0075,
+        "b": 0.01
+      }
+    ],
+    "neutral": [
+      {
+        "option": "C",
+        "text": "Avoid costly color mistakes",
+        "mean": 0.5358333333333333,
+        "a": 0.43,
+        "b": 0.6416666666666667
+      },
+      {
+        "option": "B",
+        "text": "Scan before you spend",
+        "mean": 0.3358333333333334,
+        "a": 0.44500000000000006,
+        "b": 0.22666666666666666
+      },
+      {
+        "option": "D",
+        "text": "Save money on clothes",
+        "mean": 0.10499999999999998,
+        "a": 0.10333333333333333,
+        "b": 0.10666666666666667
+      },
+      {
+        "option": "A",
+        "text": "Matched to your palette",
+        "mean": 0.011666666666666667,
+        "a": 0.01,
+        "b": 0.013333333333333334
+      },
+      {
+        "option": "none",
+        "text": "None",
+        "mean": 0.011666666666666665,
+        "a": 0.011666666666666667,
+        "b": 0.011666666666666667
+      }
+    ]
+  }
+}
