@@ -56,11 +56,10 @@ footer{max-width:1100px;margin:0 auto;padding:22px 16px 40px;color:var(--muted);
 <body>
 <nav><a class="wordmark" href="../design.html">CrySnap</a><div class="links"><a href="../design.html">Design</a><a href="../flow.html">Онбординг</a><a href="./" aria-current="page">Screenshots</a></div></nav>
 <main>
-<p id="hybrid-review-link" style="padding:16px 18px;background:#e8eedf;border:1px solid #cbd7c1;border-radius:12px;margin:0 0 20px"><b>Новый гибрид · первые 3 английских кадра</b><br>Исходные сцены + настоящий интерфейс + выноски. <a href="../screenshots-v2/#hybrid">Открыть и сравнить с S3 и вариантом Claude →</a></p>
-  <h1>Скриншоты App Store — полная серия</h1>
+<h1>Скриншоты App Store — полная серия</h1>
   <p class="muted">Две вкладки: <b>T</b> — вариант Claude (рассуждение + Jev, сцены Codex GPT Image), <b>S</b> — вариант Codex. На телефоне листайте ряд вбок; нажатие увеличивает кадр. Пришлите номера кадров и правки.</p>
 
-  <div class="tabs" role="tablist"><a href="#S" id="tab-btn-S" role="tab" aria-selected="true"><span class="l">S</span>Codex · s3 · 8 кадров</a><a href="#T" id="tab-btn-T" role="tab" aria-selected="false"><span class="l">T</span>Claude · t1</a></div>
+  <div class="tabs" role="tablist"><a href="#S" id="tab-btn-S" role="tab" aria-selected="true"><span class="l">S</span>Codex · S6 / исходные S3</a><a href="#T" id="tab-btn-T" role="tab" aria-selected="false"><span class="l">T</span>Claude · t1</a></div>
   <div class="view-tools"><button id="size-toggle" type="button" aria-pressed="false">Смотреть в ширине 220 px</button><span class="muted">Проверка читаемости в миниатюре</span></div>
 
   <section id="tab-T" role="tabpanel">
@@ -138,6 +137,16 @@ CPP: colic («Is This Normal?») — да / нет · dad (отец в кадр�
   </section>
 
   <section id="tab-S" role="tabpanel" hidden>
+<div id="s6-preserved">
+<h2 style="border-top:0;margin-top:18px">S6 · Исходная композиция + настоящий интерфейс</h2>
+<span class="badge wait">Для обсуждения · 26.09.2026</span>
+<p style="margin-top:10px">Сохранены сцены, заголовки, буллеты и телефон: <b>те же размер, положение и наклон</b>. Изменено содержимое экрана. Без увеличенного телефона и дополнительных выносок.</p>
+<div class="set"><figure><img src="s6-preserved/S01-preview.jpg" data-full="s6-preserved/S01.png" width="1320" height="2868" alt="01 · Результат"><figcaption><b>01 · Результат</b><br>Реальный экран после сканирования: возможная потребность и первый шаг.<br><a href="s6-preserved/S01.png" download>Скачать PNG</a></figcaption></figure><figure><img src="s6-preserved/S02-preview.jpg" data-full="s6-preserved/S02.png" width="1320" height="2868" alt="02 · Пошаговый план"><figcaption><b>02 · Пошаговый план</b><br>Реальная карточка активного шага с таймером.<br><a href="s6-preserved/S02.png" download>Скачать PNG</a></figcaption></figure><figure><img src="s6-preserved/S03-preview.jpg" data-full="s6-preserved/S03.png" width="1320" height="2868" alt="03 · Короткий AI-диалог"><figcaption><b>03 · Короткий AI-диалог</b><br>Настоящий интерфейс с короткими демонстрационными сообщениями и системным крупным текстом.<br><a href="s6-preserved/S03.png" download>Скачать PNG</a></figcaption></figure></div>
+<p><a href="s6-preserved/CrySnap-S6-first3-en.zip">Скачать три PNG</a> · <a href="s6-preserved/row-first3-220.png">Сравнить при ширине 220 px</a> · <a href="#s3-full" onclick="showTab('S')">Исходные S3 ниже ↓</a></p>
+<p class="muted">В первых двух кадрах пока показан текущий UI — при прежнем размере телефона он остаётся плотным. Более короткий интерфейс требует правки самого приложения и включения её в отправляемый Apple билд. В чате используются два вымышленных демосообщения, отрисованных настоящим приложением.</p>
+<p class="muted">Для локализации: прежние переводы заголовков и буллетов, снимки приложения на нужном языке, два коротких текста демодиалога. Кандидат ещё не загружен в App Store Connect и не проходил проверку Apple. Остальные пять кадров пока не переработаны.</p>
+</div>
+
   <div id="s3-full">
   <h2 style="border-top:0;margin-top:18px">S3 · Полная серия из восьми скриншотов</h2>
   <span class="badge">Тёмный третий утверждён · 4–8 готовы к ревью</span>
