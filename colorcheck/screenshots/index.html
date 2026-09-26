@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>ColorCheck Screenshots V2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#FBF8F7;--surface:#FFFFFF;--ink:#231B1D;--muted:#6F6265;--line:#E9E1E0;--coral:#FF6B6B;--coral-ink:#C8423F;--buy:#1E9E95;--buy-bg:#E3F6F4;--skip:#C44569;--skip-bg:#FBE6EC;--pal-bg:#F4EDE6;--pal:#8A5A2B;--heat:255,107,107;--shot:#F2ECE9;
+--display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;--body:"IBM Plex Sans",system-ui,-apple-system,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#171214;--surface:#211A1C;--ink:#F4ECEA;--muted:#A8999C;--line:#3A2F32;--coral:#FF7B7B;--coral-ink:#FF8A86;--buy:#4ECDC4;--buy-bg:#123330;--skip:#E86A8D;--skip-bg:#3A1A24;--pal-bg:#2E2520;--pal:#E0B089;--shot:#2A2123}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#171214;--surface:#211A1C;--ink:#F4ECEA;--muted:#A8999C;--line:#3A2F32;--coral:#FF7B7B;--coral-ink:#FF8A86;--buy:#4ECDC4;--buy-bg:#123330;--skip:#E86A8D;--skip-bg:#3A1A24;--pal-bg:#2E2520;--pal:#E0B089;--shot:#2A2123}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);padding-inline:clamp(16px,4vw,48px);padding-block:32px 72px}
+main{max-width:1480px;margin:0 auto;display:grid;gap:56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(34px,5vw,56px);font-weight:800;line-height:1.02}
+h2{font-size:clamp(24px,3vw,32px);font-weight:700}
+h3{font-size:18px;font-weight:700}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:13px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{max-width:68ch;color:var(--muted);font-size:16px}
+header{display:grid;gap:14px}
+.swatches{display:flex;gap:6px}.swatches i{width:28px;height:10px;border-radius:2px}
+section{display:grid;gap:18px}
+.sec-head{display:grid;gap:6px;max-width:80ch}.sec-head p{color:var(--muted)}
+.strip{display:grid;grid-template-columns:repeat(8,minmax(150px,1fr));gap:14px;overflow-x:auto;padding-bottom:8px}
+.mini{margin:0;display:grid;gap:8px}
+.shot{aspect-ratio:1320/2868;max-width:100%;background:var(--shot);border-radius:14px;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;position:relative}
+.hl{padding:12px 10px 8px;display:grid;font-family:var(--display);line-height:1.02;font-size:clamp(14px,1.25vw,18px)}
+.hl span{font-weight:500}.hl b{font-weight:800;color:var(--coral-ink)}
+.ph{overflow:hidden}.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.noimg{height:100%;display:grid;place-items:center;color:var(--muted);font:12px var(--mono)}
+.phone{padding:0 10px 12px;margin-top:-26px;position:relative}
+.res{background:var(--surface);border-radius:10px;padding:8px;font:600 10.5px/1.3 var(--body);box-shadow:0 6px 18px rgba(0,0,0,.14);border-left:4px solid var(--pal)}
+.res.buy{border-color:var(--buy)}.res.skip{border-color:var(--skip)}
+.mini figcaption{font-size:12.5px;color:var(--muted);line-height:1.35}.mini figcaption b{color:var(--ink);font-family:var(--mono);margin-right:4px}
+.decision{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:grid;gap:12px}
+.decision ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.orders{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.order{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:6px}
+.order.rec{border-color:var(--coral)}
+.order ol{margin:0;padding-left:20px;font-size:14px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%}
+th{font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 12px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);vertical-align:bottom}
+td{padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.main-t{min-width:1640px}
+.main-t .n{font:700 22px/1 var(--display)}.main-t .n small{display:block;font:400 11px var(--mono);color:var(--muted);margin-top:6px;white-space:nowrap}
+.pain{width:240px}.pain b{font-weight:600;display:block}.meta{color:var(--muted);font-size:12.5px;margin-top:6px}
+.metr div{display:flex;justify-content:space-between;gap:10px;white-space:nowrap}.metr span{color:var(--muted);font-family:var(--body);font-size:12px}
+.alts{margin:0;padding:0;list-style:none;display:grid;gap:6px;width:250px}
+.alts li{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:13px}
+.alts li.win{color:var(--ink)}.alts li.win .hq{font:700 16px/1.2 var(--display)}
+.scene{width:260px}.scene .sc{width:86px;float:left;margin:0 10px 4px 0;border-radius:8px;aspect-ratio:3/4;object-fit:cover}
+.scene p{font-size:13px}
+.phone-cell{width:230px;display:table-cell}.phone-cell p{font-size:13px;margin-bottom:6px}
+.card{font-weight:600}
+.foot{color:var(--muted)}
+code{font:12px var(--mono);background:var(--pal-bg);padding:1px 5px;border-radius:4px;word-break:break-word}
+.proof{width:260px;font-size:13px}.proof code{display:block;word-break:break-all}.proof p{margin:6px 0}
+.chip{display:inline-block;font:600 11px/1 var(--mono);padding:4px 6px;border-radius:4px;letter-spacing:.04em}
+.chip.buy{background:var(--buy-bg);color:var(--buy)}.chip.skip{background:var(--skip-bg);color:var(--skip)}.chip.pal,.chip.chat{background:var(--pal-bg);color:var(--pal)}
+.tag{font:500 11px var(--mono);padding:3px 6px;border-radius:4px}.tag.ok{background:var(--buy-bg);color:var(--buy)}.tag.warn{background:var(--skip-bg);color:var(--skip)}
+.pain-t{min-width:980px}.pain-t tr.off td{color:var(--muted)}
+.bar-cell{display:flex;align-items:center;gap:8px;min-width:170px}.bar{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--coral)}
+.heat{background:rgba(var(--heat),calc(var(--t)*.45));text-align:center}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+.plain{min-width:600px}.coh{font-size:12.5px;color:var(--muted)}
+ul.clean{margin:0;padding-left:18px;display:grid;gap:8px;max-width:90ch}
+.note{font-size:13px;color:var(--muted);max-width:90ch}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:12.5px;color:var(--muted)}
+a{color:var(--coral-ink)}
+:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+body{margin:0}img{max-width:100%}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="swatches" aria-hidden="true"><i style="background:#FF6B6B"></i><i style="background:#4ECDC4"></i><i style="background:#C44569"></i><i style="background:#8A5A2B"></i></div>
+  <p class="eyebrow">ColorCheck · App Store screenshots V2 · 2026-09-26</p>
+  <h1>Скриншоты по болям: от большей к меньшей</h1>
+  <p class="lede">Один кадр — одна боль. Формат как у Cysta r10: заголовок в две строки (боль / обещание), одна фотосцена, телефон снизу, одна карточка результата, короткая сноска. Боли и заголовки ранжировал Jev на 24 синтетических персонах в 6 когортах, по два прохода с обратным порядком вариантов. Альтернативные боли, заголовки и сцены предложил Codex, фото сгенерированы через Codex ImageGen.</p>
+</header>
+
+<section>
+  <div class="sec-head"><p class="eyebrow">Серия · рекомендуемый порядок</p><h2>8 кадров</h2><p>Черновые мокапы: HTML-реконструкция поверх черновых сцен. Цифры на карточках — пример, не реальные данные пользователей.</p></div>
+  <div class="strip"><figure class="mini"><div class="shot"><div class="hl"><span>Stuck in the Store?</span><b>Scan. Buy or Skip.</b></div>
+  <div class="ph"><img src="scenes/S01-store.jpg" alt="Магазин, проход между рейлами, женщина ~30 держит оливковый свитер, сомневается; телефон в опущенной руке."></div>
+  <div class="phone"><div class="res buy">BUY · 91% match · «Warm olive suits your Warm Autumn»</div></div></div><figcaption><b>1</b> В магазине не понимаю, мой ли это цвет</figcaption></figure><figure class="mini"><div class="shot"><div class="hl"><span>Warm or Cool?</span><b>Know for Sure.</b></div>
+  <div class="ph"><img src="scenes/S02-season.jpg" alt="Окно, дневной свет, женщина ~25 делает селфи; на подоконнике лоскуты терракоты, оливы и коралла."></div>
+  <div class="phone"><div class="res pal">Warm Autumn · warm undertone · 6 свотчей</div></div></div><figcaption><b>2</b> Не знаю свой цветотип, фильтры спорят</figcaption></figure><figure class="mini"><div class="shot"><div class="hl"><span>Washed Out?</span><b>Wear Your Colors.</b></div>
+  <div class="ph"><img src="scenes/S03-washed.jpg" alt="Зеркало в спальне, в руках два топа: холодный лиловый и тёплый коралловый."></div>
+  <div class="phone"><div class="res pal">Avoid: icy lilac · Wear: warm coral</div></div></div><figcaption><b>3</b> В некоторых цветах выгляжу уставшей и серой</figcaption></figure><figure class="mini"><div class="shot"><div class="hl"><span>Stop Wasting Money</span><b>On Wrong Colors.</b></div>
+  <div class="ph"><img src="scenes/S04-unworn.jpg" alt="Рейл в шкафу, блузки холодных оттенков ещё с бирками; рука поднимает бирку, лицо не в фокусе."></div>
+  <div class="phone"><div class="res skip">SKIP · 24% match · Saved $79</div></div></div><figcaption><b>4</b> Покупаю и не ношу, деньги на ветер</figcaption></figure><figure class="mini"><div class="shot"><div class="hl"><span>Another Return?</span><b>Check Photo Colors.</b></div>
+  <div class="ph"><img src="scenes/S05-online.jpg" alt="Диван, ноутбук с размытой витриной, рядом вскрытая посылка с серо-голубым платьем."></div>
+  <div class="phone"><div class="res skip">SKIP · reads cool grey, not blue</div></div></div><figcaption><b>5</b> Онлайн цвет не тот, постоянные возвраты</figcaption></figure><figure class="mini"><div class="shot"><div class="hl"><span>Closet Full, Nothing Works?</span><b>Ask Your Stylist.</b></div>
+  <div class="ph"><img src="scenes/S06-stylist.jpg" alt="Край кровати напротив переполненного шкафа; в руке оливковая юбка, на кровати кремовый свитер и пальто цвета camel."></div>
+  <div class="phone"><div class="res pal">«Pair the olive skirt with your cream knit and camel coat.»</div></div></div><figcaption><b>6</b> Шкаф полный, надеть нечего</figcaption></figure><figure class="mini"><div class="shot"><div class="hl"><span>Always in Black?</span><b>Meet Your Neutrals.</b></div>
+  <div class="ph"><img src="scenes/S07-black.jpg" alt="Шкаф с чёрной одеждой, женщина ~42 достаёт один свитер цвета тёмного шоколада."></div>
+  <div class="phone"><div class="res pal">Your black → dark chocolate · Your white → ivory</div></div></div><figcaption><b>7</b> Ношу только чёрное, другое страшно</figcaption></figure><figure class="mini"><div class="shot"><div class="hl"><span>Wedding Coming Up?</span><b>Check Your Dress.</b></div>
+  <div class="ph"><img src="scenes/S08-event.jpg" alt="Зеркало, женщина ~50 прикладывает нефритовое платье; на кровати приглашение и коробка из-под туфель."></div>
+  <div class="phone"><div class="res buy">BUY · 94% match · «Photographs warm and bright on you»</div></div></div><figcaption><b>8</b> Важное событие, нужен свой цвет</figcaption></figure></div>
+</section>
+
+<section class="decision">
+  <p class="eyebrow">Нужно твоё решение</p>
+  <h3>Порядок: строго по силе боли или с сезоном на втором месте?</h3>
+  <div class="orders">
+    <div class="order"><b>A. Строго по боли</b><ol><li>Stuck in the Store? / Scan. Buy or Skip.</li><li>Stop Wasting Money / On Wrong Colors.</li><li>Washed Out? / Wear Your Colors.</li><li>Warm or Cool? / Know for Sure.</li><li>Always in Black? / Meet Your Neutrals.</li><li>Closet Full, Nothing Works? / Ask Your Stylist.</li><li>Wedding Coming Up? / Check Your Dress.</li><li>Another Return? / Check Photo Colors.</li></ol></div>
+    <div class="order rec"><b>B. Рекомендую</b><ol><li>Stuck in the Store? / Scan. Buy or Skip.</li><li>Warm or Cool? / Know for Sure.</li><li>Washed Out? / Wear Your Colors.</li><li>Stop Wasting Money / On Wrong Colors.</li><li>Another Return? / Check Photo Colors.</li><li>Closet Full, Nothing Works? / Ask Your Stylist.</li><li>Always in Black? / Meet Your Neutrals.</li><li>Wedding Coming Up? / Check Your Dress.</li></ol></div>
+  </div>
+  <ol>
+    <li>В варианте A в первых трёх кадрах нет цветотипа. При этом «color analysis» — наш главный поисковый запрос, и все конкуренты ставят анализ первым кадром. Человек, который искал анализ, может не узнать его в нашей странице.</li>
+    <li>Кадр сезона — второй по силе как первый кадр (0.22). Для TikTok-когорты он первый (0.70), и он же даёт бесплатный вход в приложение.</li>
+    <li>«Онлайн» в B поднят на 5-е место: за него готовы платить (0.15), это второе значение после магазина. Правда, почти всё это приходится на online-когорту.</li>
+    <li>«Know for Sure» обещает точность, которой у AI-типирования нет. Варианты: оставить со сноской «AI estimate from 3 photos» или взять «Filters Disagree? / 3 Photos. One Answer.» (0.30).</li>
+  </ol>
+</section>
+
+<section>
+  <div class="sec-head"><p class="eyebrow">Главная таблица · для производства кадров</p><h2>Боль → кадр</h2><p>Строки идут по силе боли. «Слот» — место кадра в рекомендуемом порядке B. Жирным выделен победитель турнира заголовков, рядом с каждым вариантом — его доля выбора.</p></div>
+  <div class="legend"><span><b>ранг</b> = сила + 4 × «заплатит» + 4 × «нажмёт Get»</span><span><b>сила</b> 0–4, среднее с весами когорт</span><span><b>1-й кадр / после 1-го / платить за</b> — доля выбора среди 9 кадров</span></div>
+  <div class="scroll"><table class="main-t">
+    <thead><tr><th>#</th><th>Боль (её словами)</th><th>Боль · Jev</th><th>Заголовок · турнир</th><th>Фотосцена</th><th>Телефон + карточка</th><th>Кадр · Jev</th><th>Честно ли это</th></tr></thead>
+    <tbody><tr>
+  <td class="n num">1<small>слот 1</small></td>
+  <td class="pain"><b>Стою в магазине с вещью в руках и не понимаю, мой это цвет или нет. Покупаю наугад.</b><div class="meta">Все когорты; сильнее всего shopper и «уже знает свой сезон»</div><div class="meta">+ Палитра есть, но как ей пользоваться?</div></td>
+  <td class="num metr"><div><span>ранг</span>5.56</div><div><span>сила</span>3.40</div><div><span>заплатит</span>0.26</div><div><span>нажмёт</span>0.28</div></td>
+  <td class="hl-cell"><ol class="alts"><li class="win"><span class="hq">Stuck in the Store? / Scan. Buy or Skip.</span><span class="num">0.58</span></li><li class=""><span class="hq">Right Color? / Scan It First.</span><span class="num">0.18</span></li><li class=""><span class="hq">Know Your Season? / Check Real Clothes.</span><span class="num">0.16</span></li><li class=""><span class="hq">Is This Your Color? / Know in 3 Seconds.</span><span class="num">0.08</span></li></ol></td>
+  <td class="scene"><img class="sc" src="scenes/S01-store.jpg" alt=""><p>Магазин, проход между рейлами, женщина ~30 держит оливковый свитер, сомневается; телефон в опущенной руке.</p></td>
+  <td class="phone-cell"><p>Экран сканера: камера на свитере, круглая кнопка SCAN (#FF6B6B).</p><p class="card"><span class="chip buy">BUY</span> BUY · 91% match · «Warm olive suits your Warm Autumn»</p><p class="foot">Сноска: <code>Example scan · AI color estimate</code></p></td>
+  <td class="num metr"><div><span>1-й кадр</span>0.25</div><div><span>после 1-го</span>0.24</div><div><span>платить за</span>0.47</div><div><span>понятно</span>0.84</div><div><span>верит</span>0.59</div></td>
+  <td class="proof"><span class="tag ok">есть в приложении</span><p>Сканер и вердикт BUY/SKIP с % есть в приложении.</p><code>Views/Scanner/ScannerView.swift, Views/Scanner/ScanResultView.swift</code></td></tr><tr>
+  <td class="n num">2<small>слот 4</small></td>
+  <td class="pain"><b>Покупаю вещи, которые на вешалке выглядят отлично, а потом не ношу. Деньги на ветер.</b><div class="meta">Shopper (главный плательщик), capsule</div></td>
+  <td class="num metr"><div><span>ранг</span>4.83</div><div><span>сила</span>3.31</div><div><span>заплатит</span>0.19</div><div><span>нажмёт</span>0.19</div></td>
+  <td class="hl-cell"><ol class="alts"><li class="win"><span class="hq">Stop Wasting Money / On Wrong Colors.</span><span class="num">0.39</span></li><li class=""><span class="hq">Hanger Love, Never Worn? / Scan Before Buying.</span><span class="num">0.33</span></li><li class=""><span class="hq">Another Unworn Bargain? / Check Before Checkout.</span><span class="num">0.23</span></li><li class=""><span class="hq">Tags Still On? / Never Again.</span><span class="num">0.05</span></li></ol></td>
+  <td class="scene"><img class="sc" src="scenes/S04-unworn.jpg" alt=""><p>Рейл в шкафу, блузки холодных оттенков ещё с бирками; рука поднимает бирку, лицо не в фокусе.</p></td>
+  <td class="phone-cell"><p>Результат скана: SKIP и объяснение причины.</p><p class="card"><span class="chip skip">SKIP</span> SKIP · 24% match · Saved $79</p><p class="foot">Сноска: <code>Savings = price of items you skipped</code></p></td>
+  <td class="num metr"><div><span>1-й кадр</span>0.11</div><div><span>после 1-го</span>0.16</div><div><span>платить за</span>0.06</div><div><span>понятно</span>0.85</div><div><span>верит</span>0.60</div></td>
+  <td class="proof"><span class="tag ok">есть в приложении</span><p>Экономия считается по цене, которую ввела сама пользовательница. Прогнозы вида «$80 в месяц» на кадр не выносим.</p><code>Views/Scanner/ScanResultView.swift (savings badge), Views/Dashboard/SavingsView.swift</code></td></tr><tr>
+  <td class="n num">3<small>слот 3</small></td>
+  <td class="pain"><b>В одних цветах я на фото выгляжу уставшей и серой, и не понимаю, в каких именно.</b><div class="meta">Все; самая высокая сила боли (3.52), но за неё реже платят</div></td>
+  <td class="num metr"><div><span>ранг</span>4.20</div><div><span>сила</span>3.52</div><div><span>заплатит</span>0.08</div><div><span>нажмёт</span>0.09</div></td>
+  <td class="hl-cell"><ol class="alts"><li class="win"><span class="hq">Washed Out? / Wear Your Colors.</span><span class="num">0.47</span></li><li class=""><span class="hq">Look Tired in Photos? / It's the Color.</span><span class="num">0.30</span></li><li class=""><span class="hq">Some Tops Drain You? / See Which Ones.</span><span class="num">0.22</span></li></ol></td>
+  <td class="scene"><img class="sc" src="scenes/S03-washed.jpg" alt=""><p>Зеркало в спальне, в руках два топа: холодный лиловый и тёплый коралловый.</p></td>
+  <td class="phone-cell"><p>Палитра: Best colors + Colors to avoid.</p><p class="card"><span class="chip pal">Палитра</span> Avoid: icy lilac · Wear: warm coral</p><p class="foot">Сноска: <code>Example palette</code></p></td>
+  <td class="num metr"><div><span>1-й кадр</span>0.14</div><div><span>после 1-го</span>0.16</div><div><span>платить за</span>0.05</div><div><span>понятно</span>0.86</div><div><span>верит</span>0.60</div></td>
+  <td class="proof"><span class="tag ok">есть в приложении</span><p>Лучшие и неподходящие цвета есть в профиле. Сцену перегенерировать: отражение в зеркале не совпадает с героиней.</p><code>Views/Analysis/ColorResultView.swift (best + worst colors)</code></td></tr><tr>
+  <td class="n num">4<small>слот 2</small></td>
+  <td class="pain"><b>Не знаю свой цветотип. TikTok-фильтры каждый раз говорят разное. Тёплая я или холодная?</b><div class="meta">TikTok (первый кадр — 0.70), capsule, midlife</div><div class="meta">+ Тёплый у меня подтон или холодный?</div></td>
+  <td class="num metr"><div><span>ранг</span>4.10</div><div><span>сила</span>3.38</div><div><span>заплатит</span>0.11</div><div><span>нажмёт</span>0.07</div></td>
+  <td class="hl-cell"><ol class="alts"><li class="win"><span class="hq">Warm or Cool? / Know for Sure.</span><span class="num">0.41</span></li><li class=""><span class="hq">Filters Disagree? / 3 Photos. One Answer.</span><span class="num">0.30</span></li><li class=""><span class="hq">What's Your Season? / Find Out Free.</span><span class="num">0.24</span></li><li class=""><span class="hq">Discover Your / Color Season.</span><span class="num">0.05</span></li></ol></td>
+  <td class="scene"><img class="sc" src="scenes/S02-season.jpg" alt=""><p>Окно, дневной свет, женщина ~25 делает селфи; на подоконнике лоскуты терракоты, оливы и коралла.</p></td>
+  <td class="phone-cell"><p>Season reveal: Warm Autumn, подтон, свотчи палитры.</p><p class="card"><span class="chip pal">Палитра</span> Warm Autumn · warm undertone · 6 свотчей</p><p class="foot">Сноска: <code>Example result · AI estimate from 3 photos</code></p></td>
+  <td class="num metr"><div><span>1-й кадр</span>0.22</div><div><span>после 1-го</span>0.11</div><div><span>платить за</span>0.06</div><div><span>понятно</span>0.82</div><div><span>верит</span>0.58</div></td>
+  <td class="proof"><span class="tag warn">частично</span><p>«Know for Sure» обещает точность, которой у AI-типирования нет. Нужна сноска или замена (см. вопрос ниже).</p><code>Views/Analysis/SelfieView.swift (3 фото), Views/Analysis/ColorResultView.swift</code></td></tr><tr>
+  <td class="n num">5<small>слот 7</small></td>
+  <td class="pain"><b>Ношу только чёрное и нейтральное, потому что не знаю, что ещё мне идёт.</b><div class="meta">Capsule, midlife</div></td>
+  <td class="num metr"><div><span>ранг</span>3.71</div><div><span>сила</span>3.39</div><div><span>заплатит</span>0.04</div><div><span>нажмёт</span>0.04</div></td>
+  <td class="hl-cell"><ol class="alts"><li class="win"><span class="hq">Always in Black? / Meet Your Neutrals.</span><span class="num">0.73</span></li><li class=""><span class="hq">Always Wearing Black? / Find Your Alternatives.</span><span class="num">0.14</span></li><li class=""><span class="hq">Color Feels Risky? / Start With Neutrals.</span><span class="num">0.12</span></li></ol></td>
+  <td class="scene"><img class="sc" src="scenes/S07-black.jpg" alt=""><p>Шкаф с чёрной одеждой, женщина ~42 достаёт один свитер цвета тёмного шоколада.</p></td>
+  <td class="phone-cell"><p>Профиль, прокрученный до Best neutrals.</p><p class="card"><span class="chip pal">Палитра</span> Your black → dark chocolate · Your white → ivory</p><p class="foot">Сноска: <code>Example neutrals</code></p></td>
+  <td class="num metr"><div><span>1-й кадр</span>0.03</div><div><span>после 1-го</span>0.05</div><div><span>платить за</span>0.01</div><div><span>понятно</span>0.80</div><div><span>верит</span>0.54</div></td>
+  <td class="proof"><span class="tag ok">есть в приложении</span><p>Блок best neutrals есть в профиле.</p><code>Models/ColorProfile.swift (BestNeutrals), Views/Analysis/ColorProfileView.swift</code></td></tr><tr>
+  <td class="n num">6<small>слот 6</small></td>
+  <td class="pain"><b>Шкаф забит, но ничего не сочетается. Надеть нечего.</b><div class="meta">Capsule (за этот кадр готовы платить — 0.42), midlife</div></td>
+  <td class="num metr"><div><span>ранг</span>3.60</div><div><span>сила</span>3.28</div><div><span>заплатит</span>0.04</div><div><span>нажмёт</span>0.04</div></td>
+  <td class="hl-cell"><ol class="alts"><li class="win"><span class="hq">Closet Full, Nothing Works? / Ask Your Stylist.</span><span class="num">0.63</span></li><li class=""><span class="hq">What Goes With This? / Ask Your Stylist.</span><span class="num">0.29</span></li><li class=""><span class="hq">Nothing to Wear? / Ask Your Stylist.</span><span class="num">0.08</span></li></ol></td>
+  <td class="scene"><img class="sc" src="scenes/S06-stylist.jpg" alt=""><p>Край кровати напротив переполненного шкафа; в руке оливковая юбка, на кровати кремовый свитер и пальто цвета camel.</p></td>
+  <td class="phone-cell"><p>Чат со стилистом, вопрос про юбку.</p><p class="card"><span class="chip chat">Чат</span> «Pair the olive skirt with your cream knit and camel coat.»</p><p class="foot">Сноска: <code>AI stylist · Example reply</code></p></td>
+  <td class="num metr"><div><span>1-й кадр</span>0.06</div><div><span>после 1-го</span>0.08</div><div><span>платить за</span>0.13</div><div><span>понятно</span>0.82</div><div><span>верит</span>0.58</div></td>
+  <td class="proof"><span class="tag warn">частично</span><p>Чат знает цветотип, но шкаф не видит. Отвечает только про ту вещь, о которой спросили.</p><code>Views/Chat/ChatView.swift, Services/ChatService.swift</code></td></tr><tr>
+  <td class="n num">7<small>слот 8</small></td>
+  <td class="pain"><b>Впереди свадьба, собеседование или фотосессия, и нужен цвет, в котором я буду хорошо выглядеть.</b><div class="meta">Midlife (первый кадр — 0.24), разовый повод</div></td>
+  <td class="num metr"><div><span>ранг</span>3.39</div><div><span>сила</span>3.19</div><div><span>заплатит</span>0.03</div><div><span>нажмёт</span>0.02</div></td>
+  <td class="hl-cell"><ol class="alts"><li class="win"><span class="hq">Wedding Coming Up? / Check Your Dress.</span><span class="num">0.59</span></li><li class=""><span class="hq">Photos Last Forever. / Wear Your Color.</span><span class="num">0.30</span></li><li class=""><span class="hq">Big Event? / Pick Your Color.</span><span class="num">0.10</span></li></ol></td>
+  <td class="scene"><img class="sc" src="scenes/S08-event.jpg" alt=""><p>Зеркало, женщина ~50 прикладывает нефритовое платье; на кровати приглашение и коробка из-под туфель.</p></td>
+  <td class="phone-cell"><p>Результат скана платья.</p><p class="card"><span class="chip buy">BUY</span> BUY · 94% match · «Photographs warm and bright on you»</p><p class="foot">Сноска: <code>Example scan</code></p></td>
+  <td class="num metr"><div><span>1-й кадр</span>0.04</div><div><span>после 1-го</span>0.04</div><div><span>платить за</span>0.04</div><div><span>понятно</span>0.80</div><div><span>верит</span>0.57</div></td>
+  <td class="proof"><span class="tag ok">есть в приложении</span><p>Это обычный скан вещи. Отдельного режима «событие» в приложении нет, и кадр его не обещает.</p><code>Views/Scanner/ScanResultView.swift</code></td></tr><tr>
+  <td class="n num">8<small>слот 5</small></td>
+  <td class="pain"><b>Онлайн цвет один, а приходит другой. Постоянно оформляю возвраты.</b><div class="meta">Online (первый кадр — 0.95, платить готовы — 0.94); остальным когортам кадр почти не нужен</div></td>
+  <td class="num metr"><div><span>ранг</span>3.11</div><div><span>сила</span>2.47</div><div><span>заплатит</span>0.08</div><div><span>нажмёт</span>0.08</div></td>
+  <td class="hl-cell"><ol class="alts"><li class="win"><span class="hq">Another Return? / Check Photo Colors.</span><span class="num">0.51</span></li><li class=""><span class="hq">Cart Color Doubts? / Scan Your Screenshot.</span><span class="num">0.38</span></li><li class=""><span class="hq">Shopping Online? / Check the Screenshot.</span><span class="num">0.11</span></li></ol></td>
+  <td class="scene"><img class="sc" src="scenes/S05-online.jpg" alt=""><p>Диван, ноутбук с размытой витриной, рядом вскрытая посылка с серо-голубым платьем.</p></td>
+  <td class="phone-cell"><p>Скан скриншота товара из галереи.</p><p class="card"><span class="chip skip">SKIP</span> SKIP · reads cool grey, not blue</p><p class="foot">Сноска: <code>Screen colors can differ from real fabric</code></p></td>
+  <td class="num metr"><div><span>1-й кадр</span>0.12</div><div><span>после 1-го</span>0.14</div><div><span>платить за</span>0.15</div><div><span>понятно</span>0.80</div><div><span>верит</span>0.57</div></td>
+  <td class="proof"><span class="tag warn">частично</span><p>Скриншот проверить можно. Восстановить настоящий цвет ткани по отретушированному фото нельзя, поэтому нужна сноска.</p><code>Views/Scanner/ScannerView.swift:127 (PhotosPicker)</code></td></tr></tbody>
+  </table></div>
+  <p class="note">Резерв (не в основных восьми): «Old Colors Look Off? / Refresh Your Palette.». Для когорты 45+ релевантность 0.79, у остальных низкая. Подходит для PPO или отдельной страницы продукта под аудиторию 45+.</p>
+</section>
+
+<section>
+  <div class="sec-head"><p class="eyebrow">Jev · 24 персоны × 2 прохода · 48/48</p><h2>Все 16 болей</h2><p>Приглушённые строки не получили своего кадра. Тепловая карта — сила боли по когортам (0–4).</p></div>
+  <div class="scroll"><table class="pain-t">
+    <thead><tr><th>#</th><th>Боль</th><th>Ранг</th><th>Сила</th><th>Самая сильная</th><th>Заплатит</th><th>Нажмёт Get</th><th>Shopper 28–38</th><th>TikTok 18–27</th><th>Capsule 30–45</th><th>Online</th><th>45+</th><th>Уже типирована</th></tr></thead>
+    <tbody><tr class=""><td class="num">1</td><td>В магазине не понимаю, мой ли это цвет</td>
+  <td class="bar-cell"><div class="bar"><i style="width:100.0%"></i></div><span class="num">5.56</span></td>
+  <td class="num">3.40</td><td class="num">0.19</td><td class="num">0.26</td><td class="num">0.28</td>
+  <td class="num heat" style="--t:0.90">3.64</td><td class="num heat" style="--t:0.53">2.73</td><td class="num heat" style="--t:0.78">3.36</td><td class="num heat" style="--t:0.84">3.51</td><td class="num heat" style="--t:0.80">3.41</td><td class="num heat" style="--t:0.85">3.53</td></tr><tr class=""><td class="num">2</td><td>Покупаю и не ношу, деньги на ветер</td>
+  <td class="bar-cell"><div class="bar"><i style="width:86.9%"></i></div><span class="num">4.83</span></td>
+  <td class="num">3.31</td><td class="num">0.22</td><td class="num">0.19</td><td class="num">0.19</td>
+  <td class="num heat" style="--t:0.97">3.82</td><td class="num heat" style="--t:0.54">2.74</td><td class="num heat" style="--t:0.75">3.27</td><td class="num heat" style="--t:0.78">3.34</td><td class="num heat" style="--t:0.57">2.83</td><td class="num heat" style="--t:0.68">3.10</td></tr><tr class=""><td class="num">3</td><td>В некоторых цветах выгляжу уставшей и серой</td>
+  <td class="bar-cell"><div class="bar"><i style="width:75.5%"></i></div><span class="num">4.20</span></td>
+  <td class="num">3.52</td><td class="num">0.10</td><td class="num">0.08</td><td class="num">0.09</td>
+  <td class="num heat" style="--t:0.87">3.58</td><td class="num heat" style="--t:0.72">3.21</td><td class="num heat" style="--t:0.87">3.57</td><td class="num heat" style="--t:0.78">3.35</td><td class="num heat" style="--t:0.96">3.81</td><td class="num heat" style="--t:0.80">3.40</td></tr><tr class=""><td class="num">4</td><td>Не знаю свой цветотип, фильтры спорят</td>
+  <td class="bar-cell"><div class="bar"><i style="width:73.7%"></i></div><span class="num">4.10</span></td>
+  <td class="num">3.38</td><td class="num">0.10</td><td class="num">0.11</td><td class="num">0.07</td>
+  <td class="num heat" style="--t:0.88">3.60</td><td class="num heat" style="--t:0.63">2.98</td><td class="num heat" style="--t:0.88">3.59</td><td class="num heat" style="--t:0.79">3.38</td><td class="num heat" style="--t:0.93">3.73</td><td class="num heat" style="--t:0.38">2.36</td></tr><tr class=""><td class="num">5</td><td>Ношу только чёрное, другое страшно</td>
+  <td class="bar-cell"><div class="bar"><i style="width:66.7%"></i></div><span class="num">3.71</span></td>
+  <td class="num">3.39</td><td class="num">0.04</td><td class="num">0.04</td><td class="num">0.04</td>
+  <td class="num heat" style="--t:0.78">3.36</td><td class="num heat" style="--t:0.72">3.21</td><td class="num heat" style="--t:0.86">3.56</td><td class="num heat" style="--t:0.77">3.32</td><td class="num heat" style="--t:0.88">3.61</td><td class="num heat" style="--t:0.73">3.22</td></tr><tr class=""><td class="num">6</td><td>Шкаф полный, надеть нечего</td>
+  <td class="bar-cell"><div class="bar"><i style="width:64.7%"></i></div><span class="num">3.60</span></td>
+  <td class="num">3.28</td><td class="num">0.05</td><td class="num">0.04</td><td class="num">0.04</td>
+  <td class="num heat" style="--t:0.90">3.65</td><td class="num heat" style="--t:0.52">2.71</td><td class="num heat" style="--t:0.82">3.44</td><td class="num heat" style="--t:0.68">3.10</td><td class="num heat" style="--t:0.66">3.05</td><td class="num heat" style="--t:0.68">3.11</td></tr><tr class=""><td class="num">7</td><td>Тёплый у меня подтон или холодный?</td>
+  <td class="bar-cell"><div class="bar"><i style="width:63.8%"></i></div><span class="num">3.55</span></td>
+  <td class="num">3.31</td><td class="num">0.03</td><td class="num">0.03</td><td class="num">0.03</td>
+  <td class="num heat" style="--t:0.82">3.45</td><td class="num heat" style="--t:0.66">3.04</td><td class="num heat" style="--t:0.84">3.49</td><td class="num heat" style="--t:0.81">3.42</td><td class="num heat" style="--t:0.93">3.72</td><td class="num heat" style="--t:0.32">2.19</td></tr><tr class=""><td class="num">8</td><td>Важное событие, нужен свой цвет</td>
+  <td class="bar-cell"><div class="bar"><i style="width:61.0%"></i></div><span class="num">3.39</span></td>
+  <td class="num">3.19</td><td class="num">0.02</td><td class="num">0.03</td><td class="num">0.02</td>
+  <td class="num heat" style="--t:0.72">3.20</td><td class="num heat" style="--t:0.54">2.75</td><td class="num heat" style="--t:0.71">3.17</td><td class="num heat" style="--t:0.70">3.14</td><td class="num heat" style="--t:0.88">3.60</td><td class="num heat" style="--t:0.76">3.29</td></tr><tr class=""><td class="num">9</td><td>Палитра есть, но как ей пользоваться?</td>
+  <td class="bar-cell"><div class="bar"><i style="width:56.3%"></i></div><span class="num">3.13</span></td>
+  <td class="num">3.13</td><td class="num">0.00</td><td class="num">0.00</td><td class="num">0.00</td>
+  <td class="num heat" style="--t:0.80">3.40</td><td class="num heat" style="--t:0.38">2.36</td><td class="num heat" style="--t:0.76">3.30</td><td class="num heat" style="--t:0.61">2.92</td><td class="num heat" style="--t:0.70">3.16</td><td class="num heat" style="--t:0.76">3.29</td></tr><tr class=""><td class="num">10</td><td>Онлайн цвет не тот, постоянные возвраты</td>
+  <td class="bar-cell"><div class="bar"><i style="width:55.9%"></i></div><span class="num">3.11</span></td>
+  <td class="num">2.47</td><td class="num">0.08</td><td class="num">0.08</td><td class="num">0.08</td>
+  <td class="num heat" style="--t:0.44">2.50</td><td class="num heat" style="--t:0.24">1.99</td><td class="num heat" style="--t:0.39">2.38</td><td class="num heat" style="--t:0.93">3.73</td><td class="num heat" style="--t:0.36">2.29</td><td class="num heat" style="--t:0.34">2.26</td></tr><tr class="off"><td class="num">11</td><td>Боюсь ошибиться с цветом волос</td>
+  <td class="bar-cell"><div class="bar"><i style="width:55.0%"></i></div><span class="num">3.06</span></td>
+  <td class="num">2.82</td><td class="num">0.03</td><td class="num">0.03</td><td class="num">0.03</td>
+  <td class="num heat" style="--t:0.55">2.78</td><td class="num heat" style="--t:0.63">2.98</td><td class="num heat" style="--t:0.58">2.85</td><td class="num heat" style="--t:0.57">2.83</td><td class="num heat" style="--t:0.57">2.83</td><td class="num heat" style="--t:0.50">2.64</td></tr><tr class=""><td class="num">12</td><td>С возрастом прежние цвета не идут</td>
+  <td class="bar-cell"><div class="bar"><i style="width:51.6%"></i></div><span class="num">2.87</span></td>
+  <td class="num">2.51</td><td class="num">0.05</td><td class="num">0.04</td><td class="num">0.05</td>
+  <td class="num heat" style="--t:0.50">2.65</td><td class="num heat" style="--t:0.01">1.42</td><td class="num heat" style="--t:0.62">2.96</td><td class="num heat" style="--t:0.16">1.81</td><td class="num heat" style="--t:0.88">3.60</td><td class="num heat" style="--t:0.26">2.04</td></tr><tr class="off"><td class="num">13</td><td>Не знаю свои оттенки тона, румян, помады</td>
+  <td class="bar-cell"><div class="bar"><i style="width:50.5%"></i></div><span class="num">2.81</span></td>
+  <td class="num">2.81</td><td class="num">0.00</td><td class="num">0.00</td><td class="num">0.00</td>
+  <td class="num heat" style="--t:0.53">2.73</td><td class="num heat" style="--t:0.67">3.08</td><td class="num heat" style="--t:0.56">2.79</td><td class="num heat" style="--t:0.51">2.68</td><td class="num heat" style="--t:0.58">2.85</td><td class="num heat" style="--t:0.56">2.81</td></tr><tr class="off"><td class="num">14</td><td>Разные приложения дали разные сезоны</td>
+  <td class="bar-cell"><div class="bar"><i style="width:48.4%"></i></div><span class="num">2.69</span></td>
+  <td class="num">2.33</td><td class="num">0.06</td><td class="num">0.04</td><td class="num">0.05</td>
+  <td class="num heat" style="--t:0.30">2.15</td><td class="num heat" style="--t:0.54">2.76</td><td class="num heat" style="--t:0.42">2.44</td><td class="num heat" style="--t:0.36">2.30</td><td class="num heat" style="--t:0.45">2.52</td><td class="num heat" style="--t:0.20">1.91</td></tr><tr class="off"><td class="num">15</td><td>Профессиональный анализ стоит $200–800</td>
+  <td class="bar-cell"><div class="bar"><i style="width:46.8%"></i></div><span class="num">2.60</span></td>
+  <td class="num">2.60</td><td class="num">0.00</td><td class="num">0.00</td><td class="num">0.00</td>
+  <td class="num heat" style="--t:0.54">2.75</td><td class="num heat" style="--t:0.36">2.30</td><td class="num heat" style="--t:0.45">2.52</td><td class="num heat" style="--t:0.53">2.72</td><td class="num heat" style="--t:0.59">2.88</td><td class="num heat" style="--t:0.30">2.14</td></tr><tr class="off"><td class="num">16</td><td>Мой сезон скучный, жаль любимых цветов</td>
+  <td class="bar-cell"><div class="bar"><i style="width:43.3%"></i></div><span class="num">2.41</span></td>
+  <td class="num">2.17</td><td class="num">0.03</td><td class="num">0.03</td><td class="num">0.03</td>
+  <td class="num heat" style="--t:0.34">2.25</td><td class="num heat" style="--t:0.08">1.61</td><td class="num heat" style="--t:0.41">2.42</td><td class="num heat" style="--t:0.29">2.13</td><td class="num heat" style="--t:0.42">2.45</td><td class="num heat" style="--t:0.22">1.94</td></tr></tbody>
+  </table></div>
+  <p class="note">Когорты и веса: Shopper .35 · TikTok .15 · Capsule .15 · 45+ .15 · Online .10 · Уже типирована .10. Когорты «45+» и «уже типирована» добавлены к аудитории из CLAUDE.md как проверка.</p>
+  <h3>Почему у этих болей нет кадра</h3>
+  <ul class="clean"><li><b>Тёплый у меня подтон или холодный?</b> — Объединена с кадром сезона: заголовок «Warm or Cool?» выиграл турнир.</li><li><b>Палитра есть, но как ей пользоваться?</b> — Объединена с магазином: её решает сканер. Сама по себе боль нулевая на выбор и оплату.</li><li><b>Боюсь ошибиться с цветом волос</b> — Честно показать нечего: гида по волосам нет, только ответ чата. Боль средняя (2.82).</li><li><b>Не знаю свои оттенки тона, румян, помады</b> — В приложении нет гида по макияжу, а в PDF 3–4 страницы, не 14. Ноль на выбор и оплату.</li><li><b>Разные приложения дали разные сезоны</b> — «Точного типирования» пообещать нельзя: по данным RESEARCH.md, AI угадывает примерно в 26% случаев. Работаем с этим через тон и сноску, а не отдельным кадром.</li><li><b>Профессиональный анализ стоит $200–800</b> — Это аргумент для пейволла («стилист за $200–800»), а не боль для кадра. На выбор и оплату — 0.</li><li><b>Мой сезон скучный, жаль любимых цветов</b> — Самая слабая боль (2.17). Решается тоном в результате анализа.</li></ul>
+</section>
+
+<section class="two">
+  <div style="display:grid;gap:14px">
+    <div class="sec-head"><p class="eyebrow">Позиционирование</p><h2>Обещание для подзаголовка</h2><p>Выбор «скачает и заплатит»: какое обещание скорее заставит скачать и оплатить.</p></div>
+    <div class="scroll"><table class="plain"><thead><tr><th>Обещание</th><th>Выбор</th><th>Перескажет</th><th>Как у всех</th><th>Верит</th></tr></thead><tbody><tr><td>Scan clothes before you buy — know in 3 seconds if the color suits you.</td><td class="num"><b>0.44</b></td><td class="num">0.47</td><td class="num">0.62</td><td class="num">0.67</td></tr><tr><td>Stop buying clothes you never wear — every item checked against your colors.</td><td class="num"><b>0.26</b></td><td class="num">0.23</td><td class="num">0.64</td><td class="num">0.65</td></tr><tr><td>A color analysis you can trust — 3 photos, one clear season, and why.</td><td class="num"><b>0.14</b></td><td class="num">0.10</td><td class="num">0.61</td><td class="num">0.58</td></tr><tr><td>A personal color stylist for less than a coffee a week.</td><td class="num"><b>0.08</b></td><td class="num">0.02</td><td class="num">0.67</td><td class="num">0.62</td></tr><tr><td>Find your color season with AI — free, in one minute.</td><td class="num"><b>0.04</b></td><td class="num">0.11</td><td class="num">0.67</td><td class="num">0.63</td></tr><tr><td>Your color palette in your pocket — check any item, in the store or online.</td><td class="num"><b>0.04</b></td><td class="num">0.08</td><td class="num">0.66</td><td class="num">0.64</td></tr></tbody></table></div>
+    <p class="note">«Scan before you buy» лидирует с отрывом. «Как у всех» у всех обещаний держится на 0.61–0.67, поэтому отличать нас должна картинка сканера с вердиктом, а не формулировка.</p>
+  </div>
+  <div style="display:grid;gap:14px">
+    <div class="sec-head"><p class="eyebrow">Раунд 3 · победившие заголовки</p><h2>Какой кадр первым</h2><p>Персона выбирает один кадр из девяти по трём вопросам.</p></div>
+    <div class="scroll"><table class="plain"><thead><tr><th>Кадр</th><th>1-й</th><th>После 1-го</th><th>Платить за</th><th>Про неё</th><th>Понятно</th><th>Сильнее всего у</th></tr></thead><tbody><tr><td>Stuck in the Store? / Scan. Buy or Skip.</td><td class="num"><b>0.25</b></td><td class="num">0.24</td><td class="num">0.47</td><td class="num">0.77</td><td class="num">0.84</td>
+  <td class="coh">Уже типирована 0.55 · Shopper 28–38 0.45 · 45+ 0.16</td></tr><tr><td>Another Return? / Check Photo Colors.</td><td class="num"><b>0.12</b></td><td class="num">0.14</td><td class="num">0.15</td><td class="num">0.80</td><td class="num">0.80</td>
+  <td class="coh">Online 0.95</td></tr><tr><td>Warm or Cool? / Know for Sure.</td><td class="num"><b>0.22</b></td><td class="num">0.11</td><td class="num">0.06</td><td class="num">0.77</td><td class="num">0.82</td>
+  <td class="coh">TikTok 18–27 0.70 · Capsule 30–45 0.26 · Уже типирована 0.21 · 45+ 0.19</td></tr><tr><td>Washed Out? / Wear Your Colors.</td><td class="num"><b>0.14</b></td><td class="num">0.16</td><td class="num">0.05</td><td class="num">0.83</td><td class="num">0.86</td>
+  <td class="coh">TikTok 18–27 0.27 · Shopper 28–38 0.18 · Уже типирована 0.17</td></tr><tr><td>Stop Wasting Money / On Wrong Colors.</td><td class="num"><b>0.11</b></td><td class="num">0.16</td><td class="num">0.06</td><td class="num">0.84</td><td class="num">0.85</td>
+  <td class="coh">Shopper 28–38 0.27</td></tr><tr><td>Closet Full, Nothing Works? / Ask Your Stylist.</td><td class="num"><b>0.06</b></td><td class="num">0.08</td><td class="num">0.13</td><td class="num">0.74</td><td class="num">0.82</td>
+  <td class="coh">Capsule 30–45 0.34</td></tr><tr><td>Wedding Coming Up? / Check Your Dress.</td><td class="num"><b>0.04</b></td><td class="num">0.04</td><td class="num">0.04</td><td class="num">0.65</td><td class="num">0.80</td>
+  <td class="coh">45+ 0.24</td></tr><tr><td>Always in Black? / Meet Your Neutrals.</td><td class="num"><b>0.03</b></td><td class="num">0.05</td><td class="num">0.01</td><td class="num">0.76</td><td class="num">0.80</td>
+  <td class="coh">Capsule 30–45 0.15</td></tr><tr><td>Old Colors Look Off? / Refresh Your Palette.</td><td class="num"><b>0.04</b></td><td class="num">0.02</td><td class="num">0.02</td><td class="num">0.55</td><td class="num">0.69</td>
+  <td class="coh">45+ 0.27</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><p class="eyebrow">Codex · независимый разбор репозитория</p><h2>Что ещё нашли</h2></div>
+  <ul class="clean">
+    <li><b>Сканер как таковой уникальным не считается.</b> В кадрах Style DNA уже есть подбор вещей по цвету, у Palette — «уверенность в покупке». Наше отличие — вердикт BUY/SKIP с % и причиной прямо в магазине. Поэтому главный кадр должен показывать именно вердикт.</li>
+    <li><b>Три свободных угла:</b> «цвета изменились с возрастом» (45+), «одно важное событие — одна дорогая покупка» (свадьба) и «первый шаг от чёрного». Все три вошли в таблицу: седина ушла в резерв, остальные два получили кадры 7 и 8.</li>
+    <li><b>Расхождения с CLAUDE.md:</b> PDF-отчёт занимает 3–4 страницы, не 14 (<code>Services/ShareRenderer.swift</code>). Гидов по макияжу и волосам нет, есть только ответы чата. На скриншотах этого обещать нельзя.</li>
+    <li><b>Риск в пейволле:</b> <code>PaywallView.swift</code> показывает «4.8» и цитату «Saved me from buying a $120 jacket…». Если за ними нет реальных отзывов, в App Store это считается фиктивным социальным доказательством. На скриншоты такие элементы не переносим.</li>
+    <li>Не показываем на кадрах: подарки другим людям (профиль только один), примерку цвета волос, номер тона тональника.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="sec-head"><p class="eyebrow">Метод и ограничения</p><h2>Как читать цифры</h2></div>
+  <ul class="clean">
+    <li>Это вероятности синтетических суждений модели Jev, а не доли пользователей и не конверсия. Реально проверить можно только через Product Page Optimization в App Store Connect.</li>
+    <li>Шкала силы у Jev сжата (почти всё около 3). Поэтому порядок держится на выборах «самая сильная», «заплатит» и «нажмёт Get», а сила только уточняет его.</li>
+    <li>Три раунда: боли и позиционирование → турнир заголовков внутри каждого кадра (варианты от Claude и Codex) → выбор первого кадра с победившими заголовками. Устойчивость проверялась обратным порядком вариантов (проходы a и b).</li>
+    <li>Фотосцены — черновики Codex ImageGen, не финал. В сценах 3 (washed) и 8 (event) отражение в зеркале не совпадает с героиней: перегенерировать без зеркала или со съёмкой прямо в зеркало. Телефоны на кадрах будут HTML-реконструкцией интерфейса, как в Cysta r11.</li>
+    <li>Исходники: <code>research/screenshots-pains-jev-2026-09-26/</code>: <code>run.mjs</code>, <code>run2.mjs</code>, <code>run3.mjs</code>, <code>analysis*.json</code>, <code>codex-pains.md</code>, <code>frames.json</code>, <code>scenes/</code>.</li>
+  </ul>
+</section>
+</main>
+</body>
+</html>
