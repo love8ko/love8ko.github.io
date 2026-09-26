@@ -1,0 +1,126 @@
+{
+  "revision": "v4",
+  "locale": "en-US",
+  "frames": [
+    {
+      "headline": [
+        "Which colors",
+        "suit you?"
+      ],
+      "benefit": "Find your season & palette",
+      "visibleProof": [
+        "Warm Autumn",
+        "Your colors"
+      ],
+      "scene": "Woman taking a selfie near a window; small phone showing a seasonal color profile and a large row of wearable color swatches.",
+      "id": "C01",
+      "asset": "S02-season.jpg",
+      "theme": "peach",
+      "pain": "Не знаю, какие цвета мне подходят",
+      "role": "Широкий вход в категорию: персональный результат",
+      "ui": {
+        "title": "Your Colors",
+        "season": "Warm Autumn",
+        "undertone": "Warm undertone",
+        "best": "Your Best Colors",
+        "avoid": "Colors to Avoid",
+        "button": "Start Scanning Clothes"
+      },
+      "proof": [
+        "Warm",
+        "Autumn"
+      ],
+      "source": "ColorCheck/ColorCheck/Views/Analysis/ColorResultView.swift",
+      "kind": "palette",
+      "brand": "COLORCHECK",
+      "statusTime": "9:41",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "readiness": "for-review",
+      "sourceProductCommit": "836e724aa8afbfdbe0f8e2af5b7858f67f81e8d0",
+      "visualLimit": "Illustrative composition and reconstructed UI based on code; not a live app capture. Example AI result. No measured accuracy or financial result."
+    },
+    {
+      "headline": [
+        "Your color?",
+        "Scan to check"
+      ],
+      "benefit": "Check clothes before you buy",
+      "visibleProof": [
+        "BUY or SKIP",
+        "Matched to you"
+      ],
+      "scene": "Woman comparing an olive sweater in a clothing store; small phone showing BUY result and explanation, with enlarged result callouts.",
+      "id": "C02",
+      "asset": "S01-store.jpg",
+      "theme": "green",
+      "pain": "Не понимаю, подходит ли цвет вещи до покупки",
+      "role": "Практическое применение своей палитры в магазине",
+      "ui": {
+        "title": "Result",
+        "verdict": "BUY IT",
+        "match": "Matches your palette",
+        "why": "Why it works",
+        "reason": "Warm olive complements your Warm Autumn palette.",
+        "button": "Scan Next"
+      },
+      "proof": [
+        "BUY or SKIP",
+        "Matched to you"
+      ],
+      "source": "ColorCheck/ColorCheck/Views/Scanner/ScanResultView.swift",
+      "kind": "scan",
+      "brand": "COLORCHECK",
+      "statusTime": "9:41",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "readiness": "for-review",
+      "sourceProductCommit": "836e724aa8afbfdbe0f8e2af5b7858f67f81e8d0",
+      "visualLimit": "Illustrative composition and reconstructed UI based on code; not a live app capture. Example AI result. No measured accuracy or financial result."
+    },
+    {
+      "headline": [
+        "Wrong color?",
+        "Try these shades"
+      ],
+      "benefit": "Get colors to look for instead",
+      "visibleProof": [
+        "SKIP",
+        "Try warm olive"
+      ],
+      "scene": "Woman looking at unworn cool blue clothing in her closet; small phone showing SKIP and suggested alternative colors, enlarged blue-to-olive swatches. This is color advice, not finding a shop product.",
+      "id": "C03",
+      "asset": "S04-unworn.jpg",
+      "theme": "blue",
+      "pain": "Цвет не подходит — какой искать вместо него?",
+      "role": "Следующее действие после SKIP: получить подходящие оттенки",
+      "ui": {
+        "title": "Result",
+        "verdict": "SKIP",
+        "match": "Cool blue",
+        "why": "Instead, Look For",
+        "reason": "Try warm olive or terracotta for your Warm Autumn palette.",
+        "button": "Scan Next"
+      },
+      "proof": [
+        "SKIP",
+        "Try warm olive"
+      ],
+      "source": "ColorCheck/ColorCheck/Views/Scanner/ScanResultView.swift:325",
+      "kind": "alternatives",
+      "brand": "COLORCHECK",
+      "statusTime": "9:41",
+      "dimensions": [
+        1320,
+        2868
+      ],
+      "readiness": "for-review",
+      "sourceProductCommit": "836e724aa8afbfdbe0f8e2af5b7858f67f81e8d0",
+      "visualLimit": "Illustrative composition and reconstructed UI based on code; not a live app capture. Example AI result. No measured accuracy or financial result."
+    }
+  ]
+}

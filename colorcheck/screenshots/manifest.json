@@ -1,0 +1,873 @@
+{
+  "revision": "v3",
+  "dimensions": [
+    1320,
+    2868
+  ],
+  "sourceProductCommit": "836e724",
+  "status": "review-concept",
+  "frames": [
+    {
+      "id": "01-store",
+      "kind": "store",
+      "headline": [
+        "Is This Your Color?",
+        "Scan Before You Buy."
+      ],
+      "scene": "S01-store",
+      "pain": "Стою в магазине и не понимаю, подходит ли мне цвет вещи.",
+      "feature": "Скан одежды → BUY/SKIP и объяснение",
+      "role": "Главный повторяемый сценарий: решение до покупки.",
+      "bullets": [
+        "BUY or SKIP",
+        "Matched to your palette"
+      ],
+      "footer": "Example scan · AI color estimate",
+      "source": "ColorCheck/ColorCheck/Views/Scanner/ScanResultView.swift",
+      "slot": 1
+    },
+    {
+      "id": "02-palette",
+      "kind": "palette",
+      "headline": [
+        "What's Your Season?",
+        "Find Your Palette."
+      ],
+      "scene": "S02-season",
+      "pain": "Не знаю свой цветотип и какие цвета мне подходят.",
+      "feature": "Сезон, подтон, подходящие и неподходящие цвета",
+      "role": "Объяснить персонализацию сканера и показать бесплатный вход через анализ.",
+      "bullets": [
+        "Your season & undertone",
+        "Colors to wear & avoid"
+      ],
+      "footer": "Example result · AI estimate from 3 photos",
+      "source": "ColorCheck/ColorCheck/Views/Analysis/ColorResultView.swift",
+      "slot": 2
+    },
+    {
+      "id": "03-savings",
+      "kind": "savings",
+      "headline": [
+        "Skipped the Wrong Color?",
+        "Track What You Saved."
+      ],
+      "scene": "S04-unworn",
+      "pain": "Покупаю вещи, которые потом не ношу; деньги уходят впустую.",
+      "feature": "История SKIP и сумма введённых цен",
+      "role": "Показать ценность решения и способ её учитывать. Счётчик сам по себе не предотвращает покупку.",
+      "bullets": [
+        "Track skipped items",
+        "Add the item price"
+      ],
+      "footer": "Example total · Prices of items you skipped",
+      "source": "ColorCheck/ColorCheck/Views/Scans/ScansView.swift",
+      "slot": 3
+    }
+  ],
+  "order": [
+    "store",
+    "palette",
+    "savings"
+  ],
+  "research": {
+    "painCopy": {
+      "completed": 48,
+      "aggregate": {
+        "primary": {
+          "pains": [
+            {
+              "k": "never_wear",
+              "intensity": 3.0069999999999997,
+              "priority": 0.28737500000000005,
+              "pay": 0.142375
+            },
+            {
+              "k": "store_freeze",
+              "intensity": 2.8178124999999996,
+              "priority": 0.2194375,
+              "pay": 0.47668749999999993
+            },
+            {
+              "k": "which_season",
+              "intensity": 2.805875,
+              "priority": 0.1649375,
+              "pay": 0.082625
+            },
+            {
+              "k": "washed_out",
+              "intensity": 2.8011250000000003,
+              "priority": 0.114,
+              "pay": 0.11468749999999998
+            },
+            {
+              "k": "warm_cool",
+              "intensity": 2.7106250000000003,
+              "priority": 0.04725,
+              "pay": 0.009812500000000002
+            },
+            {
+              "k": "distrust",
+              "intensity": 2.7978125,
+              "priority": 0.046375,
+              "pay": 0.0069375
+            },
+            {
+              "k": "online_colors",
+              "intensity": 2.7075625,
+              "priority": 0.04475000000000001,
+              "pay": 0.0554375
+            },
+            {
+              "k": "nothing_to_wear",
+              "intensity": 2.9144375,
+              "priority": 0.037,
+              "pay": 0.021875000000000002
+            },
+            {
+              "k": "only_black",
+              "intensity": 3.0138749999999996,
+              "priority": 0.025750000000000002,
+              "pay": 0.020625
+            },
+            {
+              "k": "none",
+              "intensity": null,
+              "priority": 0.006,
+              "pay": 0.0526875
+            },
+            {
+              "k": "aging_changed",
+              "intensity": 2.4780624999999996,
+              "priority": 0.00375,
+              "pay": 0.0015
+            },
+            {
+              "k": "palette_abstract",
+              "intensity": 2.8628749999999994,
+              "priority": 0.00175,
+              "pay": 0.0030625
+            },
+            {
+              "k": "pro_cost",
+              "intensity": 2.763125,
+              "priority": 0.0015,
+              "pay": 0.0070625
+            },
+            {
+              "k": "makeup_shades",
+              "intensity": 2.5828749999999996,
+              "priority": 0,
+              "pay": 0
+            },
+            {
+              "k": "hair_color",
+              "intensity": 2.437125,
+              "priority": 0,
+              "pay": 0
+            },
+            {
+              "k": "season_drab",
+              "intensity": 2.4633125,
+              "priority": 0,
+              "pay": 0
+            },
+            {
+              "k": "big_event",
+              "intensity": 2.528812499999999,
+              "priority": 0,
+              "pay": 0.004
+            }
+          ],
+          "headlines": {
+            "store": [
+              {
+                "option": "direct",
+                "text": "Is This Your Color? / Scan Before You Buy.",
+                "probability": 0.56675,
+                "a": 0.6112500000000001,
+                "b": 0.52225
+              },
+              {
+                "option": "current",
+                "text": "Stuck in the Store? / Scan. Buy or Skip.",
+                "probability": 0.3703125,
+                "a": 0.34225,
+                "b": 0.398375
+              },
+              {
+                "option": "old",
+                "text": "Scan Before You Buy / Point. Scan. 3 Seconds.",
+                "probability": 0.0591875,
+                "a": 0.044125,
+                "b": 0.07425000000000001
+              },
+              {
+                "option": "none",
+                "text": "None",
+                "probability": 0.0036249999999999998,
+                "a": 0.002125,
+                "b": 0.005125
+              }
+            ],
+            "savings": [
+              {
+                "option": "measured",
+                "text": "Skipped the Wrong Color? / Track What You Saved.",
+                "probability": 0.42731250000000004,
+                "a": 0.423125,
+                "b": 0.4315000000000001
+              },
+              {
+                "option": "situation",
+                "text": "Still Has the Tags? / Check Before You Buy.",
+                "probability": 0.37293750000000003,
+                "a": 0.37687499999999996,
+                "b": 0.36900000000000005
+              },
+              {
+                "option": "proposed",
+                "text": "Stop Wasting Money / On Wrong Colors.",
+                "probability": 0.190875,
+                "a": 0.19449999999999998,
+                "b": 0.18725
+              },
+              {
+                "option": "none",
+                "text": "None",
+                "probability": 0.008812500000000001,
+                "a": 0.0055,
+                "b": 0.012124999999999999
+              }
+            ],
+            "palette": [
+              {
+                "option": "appearance",
+                "text": "Washed Out? / Wear Your Colors.",
+                "probability": 0.3731875,
+                "a": 0.342125,
+                "b": 0.40425000000000005
+              },
+              {
+                "option": "season",
+                "text": "What's Your Season? / Find Your Palette.",
+                "probability": 0.3316875,
+                "a": 0.38899999999999996,
+                "b": 0.274375
+              },
+              {
+                "option": "proposed",
+                "text": "Which Colors Suit You? / Find Your Palette.",
+                "probability": 0.27762499999999996,
+                "a": 0.25262500000000004,
+                "b": 0.30262500000000003
+              },
+              {
+                "option": "none",
+                "text": "None",
+                "probability": 0.0175,
+                "a": 0.01625,
+                "b": 0.018750000000000003
+              }
+            ]
+          }
+        },
+        "expanded": {
+          "pains": [
+            {
+              "k": "store_freeze",
+              "intensity": 2.8718124999999994,
+              "priority": 0.2125,
+              "pay": 0.43356249999999996
+            },
+            {
+              "k": "never_wear",
+              "intensity": 3.0195624999999997,
+              "priority": 0.1725,
+              "pay": 0.09106249999999999
+            },
+            {
+              "k": "which_season",
+              "intensity": 2.873375,
+              "priority": 0.1174375,
+              "pay": 0.06
+            },
+            {
+              "k": "washed_out",
+              "intensity": 2.8936874999999995,
+              "priority": 0.0948125,
+              "pay": 0.088125
+            },
+            {
+              "k": "online_colors",
+              "intensity": 2.7319375,
+              "priority": 0.08793750000000002,
+              "pay": 0.09375
+            },
+            {
+              "k": "nothing_to_wear",
+              "intensity": 2.945375,
+              "priority": 0.052812500000000005,
+              "pay": 0.029437500000000002
+            },
+            {
+              "k": "distrust",
+              "intensity": 2.8646249999999998,
+              "priority": 0.052750000000000005,
+              "pay": 0.009500000000000001
+            },
+            {
+              "k": "aging_changed",
+              "intensity": 2.6153125,
+              "priority": 0.042874999999999996,
+              "pay": 0.04175
+            },
+            {
+              "k": "only_black",
+              "intensity": 3.0669375,
+              "priority": 0.0379375,
+              "pay": 0.030249999999999996
+            },
+            {
+              "k": "hair_color",
+              "intensity": 2.454125,
+              "priority": 0.033,
+              "pay": 0.00525
+            },
+            {
+              "k": "warm_cool",
+              "intensity": 2.777125,
+              "priority": 0.02925,
+              "pay": 0.007062499999999999
+            },
+            {
+              "k": "big_event",
+              "intensity": 2.6453124999999997,
+              "priority": 0.028312499999999997,
+              "pay": 0.024062499999999997
+            },
+            {
+              "k": "season_drab",
+              "intensity": 2.5484375000000004,
+              "priority": 0.025,
+              "pay": 0.014125000000000002
+            },
+            {
+              "k": "none",
+              "intensity": null,
+              "priority": 0.007437500000000001,
+              "pay": 0.048562499999999995
+            },
+            {
+              "k": "palette_abstract",
+              "intensity": 2.9163749999999995,
+              "priority": 0.0038125,
+              "pay": 0.0039375
+            },
+            {
+              "k": "pro_cost",
+              "intensity": 2.8210625,
+              "priority": 0.0008749999999999999,
+              "pay": 0.0058125
+            },
+            {
+              "k": "makeup_shades",
+              "intensity": 2.6142499999999997,
+              "priority": 0.0005625,
+              "pay": 0.01275
+            }
+          ],
+          "headlines": {
+            "store": [
+              {
+                "option": "direct",
+                "text": "Is This Your Color? / Scan Before You Buy.",
+                "probability": 0.6161875,
+                "a": 0.652125,
+                "b": 0.58025
+              },
+              {
+                "option": "current",
+                "text": "Stuck in the Store? / Scan. Buy or Skip.",
+                "probability": 0.3206875,
+                "a": 0.29912500000000003,
+                "b": 0.34225
+              },
+              {
+                "option": "old",
+                "text": "Scan Before You Buy / Point. Scan. 3 Seconds.",
+                "probability": 0.0554375,
+                "a": 0.0415,
+                "b": 0.06937499999999999
+              },
+              {
+                "option": "none",
+                "text": "None",
+                "probability": 0.007500000000000001,
+                "a": 0.006875,
+                "b": 0.008125
+              }
+            ],
+            "savings": [
+              {
+                "option": "measured",
+                "text": "Skipped the Wrong Color? / Track What You Saved.",
+                "probability": 0.424625,
+                "a": 0.42624999999999996,
+                "b": 0.42299999999999993
+              },
+              {
+                "option": "situation",
+                "text": "Still Has the Tags? / Check Before You Buy.",
+                "probability": 0.37312500000000004,
+                "a": 0.36712500000000003,
+                "b": 0.379125
+              },
+              {
+                "option": "proposed",
+                "text": "Stop Wasting Money / On Wrong Colors.",
+                "probability": 0.189875,
+                "a": 0.197125,
+                "b": 0.18262500000000004
+              },
+              {
+                "option": "none",
+                "text": "None",
+                "probability": 0.012249999999999999,
+                "a": 0.009500000000000001,
+                "b": 0.015000000000000001
+              }
+            ],
+            "palette": [
+              {
+                "option": "appearance",
+                "text": "Washed Out? / Wear Your Colors.",
+                "probability": 0.3548125,
+                "a": 0.32699999999999996,
+                "b": 0.382625
+              },
+              {
+                "option": "proposed",
+                "text": "Which Colors Suit You? / Find Your Palette.",
+                "probability": 0.32493749999999993,
+                "a": 0.28900000000000003,
+                "b": 0.36087499999999995
+              },
+              {
+                "option": "season",
+                "text": "What's Your Season? / Find Your Palette.",
+                "probability": 0.30074999999999996,
+                "a": 0.36462500000000003,
+                "b": 0.23687499999999997
+              },
+              {
+                "option": "none",
+                "text": "None",
+                "probability": 0.019500000000000003,
+                "a": 0.019375000000000003,
+                "b": 0.019625
+              }
+            ]
+          }
+        },
+        "equal": {
+          "pains": [
+            {
+              "k": "store_freeze",
+              "intensity": 2.8387499999999997,
+              "priority": 0.19291666666666665,
+              "pay": 0.393125
+            },
+            {
+              "k": "online_colors",
+              "intensity": 2.7420833333333334,
+              "priority": 0.14520833333333333,
+              "pay": 0.14624999999999996
+            },
+            {
+              "k": "which_season",
+              "intensity": 2.8493749999999998,
+              "priority": 0.10875,
+              "pay": 0.06145833333333334
+            },
+            {
+              "k": "washed_out",
+              "intensity": 2.895208333333333,
+              "priority": 0.09354166666666665,
+              "pay": 0.07729166666666666
+            },
+            {
+              "k": "never_wear",
+              "intensity": 2.987708333333333,
+              "priority": 0.08666666666666667,
+              "pay": 0.055625
+            },
+            {
+              "k": "distrust",
+              "intensity": 2.857083333333333,
+              "priority": 0.0725,
+              "pay": 0.013541666666666665
+            },
+            {
+              "k": "nothing_to_wear",
+              "intensity": 2.9135416666666667,
+              "priority": 0.05645833333333333,
+              "pay": 0.03208333333333333
+            },
+            {
+              "k": "aging_changed",
+              "intensity": 2.588333333333333,
+              "priority": 0.04625,
+              "pay": 0.04583333333333334
+            },
+            {
+              "k": "only_black",
+              "intensity": 3.0664583333333333,
+              "priority": 0.041874999999999996,
+              "pay": 0.033333333333333326
+            },
+            {
+              "k": "season_drab",
+              "intensity": 2.5458333333333334,
+              "priority": 0.041666666666666664,
+              "pay": 0.02354166666666667
+            },
+            {
+              "k": "hair_color",
+              "intensity": 2.4608333333333334,
+              "priority": 0.03666666666666667,
+              "pay": 0.005833333333333334
+            },
+            {
+              "k": "warm_cool",
+              "intensity": 2.7487500000000002,
+              "priority": 0.03208333333333333,
+              "pay": 0.007708333333333333
+            },
+            {
+              "k": "big_event",
+              "intensity": 2.638958333333333,
+              "priority": 0.03145833333333333,
+              "pay": 0.02666666666666666
+            },
+            {
+              "k": "none",
+              "intensity": null,
+              "priority": 0.0077083333333333335,
+              "pay": 0.052708333333333315
+            },
+            {
+              "k": "palette_abstract",
+              "intensity": 2.8897916666666665,
+              "priority": 0.004999999999999999,
+              "pay": 0.0045833333333333325
+            },
+            {
+              "k": "makeup_shades",
+              "intensity": 2.59875,
+              "priority": 0.0006249999999999999,
+              "pay": 0.014166666666666664
+            },
+            {
+              "k": "pro_cost",
+              "intensity": 2.78375,
+              "priority": 0.00041666666666666664,
+              "pay": 0.004999999999999999
+            }
+          ],
+          "headlines": {
+            "store": [
+              {
+                "option": "direct",
+                "text": "Is This Your Color? / Scan Before You Buy.",
+                "probability": 0.6712499999999999,
+                "a": 0.7004166666666666,
+                "b": 0.6420833333333333
+              },
+              {
+                "option": "current",
+                "text": "Stuck in the Store? / Scan. Buy or Skip.",
+                "probability": 0.26479166666666665,
+                "a": 0.2495833333333333,
+                "b": 0.27999999999999997
+              },
+              {
+                "option": "old",
+                "text": "Scan Before You Buy / Point. Scan. 3 Seconds.",
+                "probability": 0.05458333333333333,
+                "a": 0.04083333333333333,
+                "b": 0.06833333333333333
+              },
+              {
+                "option": "none",
+                "text": "None",
+                "probability": 0.009166666666666667,
+                "a": 0.008749999999999999,
+                "b": 0.009583333333333333
+              }
+            ],
+            "savings": [
+              {
+                "option": "measured",
+                "text": "Skipped the Wrong Color? / Track What You Saved.",
+                "probability": 0.42125,
+                "a": 0.42874999999999996,
+                "b": 0.41375
+              },
+              {
+                "option": "situation",
+                "text": "Still Has the Tags? / Check Before You Buy.",
+                "probability": 0.375625,
+                "a": 0.36375,
+                "b": 0.3875
+              },
+              {
+                "option": "proposed",
+                "text": "Stop Wasting Money / On Wrong Colors.",
+                "probability": 0.18874999999999997,
+                "a": 0.1958333333333333,
+                "b": 0.18166666666666664
+              },
+              {
+                "option": "none",
+                "text": "None",
+                "probability": 0.014166666666666666,
+                "a": 0.011666666666666665,
+                "b": 0.016666666666666666
+              }
+            ],
+            "palette": [
+              {
+                "option": "proposed",
+                "text": "Which Colors Suit You? / Find Your Palette.",
+                "probability": 0.3458333333333333,
+                "a": 0.30166666666666664,
+                "b": 0.39
+              },
+              {
+                "option": "season",
+                "text": "What's Your Season? / Find Your Palette.",
+                "probability": 0.31666666666666665,
+                "a": 0.3820833333333333,
+                "b": 0.25125
+              },
+              {
+                "option": "appearance",
+                "text": "Washed Out? / Wear Your Colors.",
+                "probability": 0.3154166666666667,
+                "a": 0.29333333333333333,
+                "b": 0.33749999999999997
+              },
+              {
+                "option": "none",
+                "text": "None",
+                "probability": 0.022083333333333333,
+                "a": 0.022916666666666665,
+                "b": 0.021249999999999998
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sequences": {
+      "completed": 48,
+      "chosen": {
+        "store": "Is This Your Color? / Scan Before You Buy.",
+        "savings": "Skipped the Wrong Color? / Track What You Saved.",
+        "palette": "What's Your Season? / Find Your Palette."
+      },
+      "aggregate": {
+        "primary": {
+          "series": [
+            {
+              "k": "palette_second",
+              "install": 0.3211875,
+              "installA": 0.3575,
+              "installB": 0.284875,
+              "recurring": 0.3215625
+            },
+            {
+              "k": "proposed",
+              "install": 0.26256250000000003,
+              "installA": 0.35125,
+              "installB": 0.173875,
+              "recurring": 0.319625
+            },
+            {
+              "k": "pain_first",
+              "install": 0.26181249999999995,
+              "installA": 0.179125,
+              "installB": 0.3445,
+              "recurring": 0.201375
+            },
+            {
+              "k": "none",
+              "install": 0.05775,
+              "installA": 0.042374999999999996,
+              "installB": 0.073125,
+              "recurring": 0.043750000000000004
+            },
+            {
+              "k": "current",
+              "install": 0.051125000000000004,
+              "installA": 0.032,
+              "installB": 0.07025,
+              "recurring": 0.05518750000000001
+            },
+            {
+              "k": "old",
+              "install": 0.045500000000000006,
+              "installA": 0.037750000000000006,
+              "installB": 0.05325000000000001,
+              "recurring": 0.05850000000000001
+            }
+          ],
+          "frames": [
+            {
+              "k": "store",
+              "clear": 0.7968749999999999,
+              "honest": 0.8738124999999999
+            },
+            {
+              "k": "savings",
+              "clear": 0.6805625000000001,
+              "honest": 0.7731874999999999
+            },
+            {
+              "k": "palette",
+              "clear": 0.8208125,
+              "honest": 0.8939375000000002
+            }
+          ]
+        },
+        "expanded": {
+          "series": [
+            {
+              "k": "palette_second",
+              "install": 0.348375,
+              "installA": 0.38187499999999996,
+              "installB": 0.31487499999999996,
+              "recurring": 0.3445625
+            },
+            {
+              "k": "proposed",
+              "install": 0.24812500000000004,
+              "installA": 0.345875,
+              "installB": 0.15037499999999998,
+              "recurring": 0.31106249999999996
+            },
+            {
+              "k": "pain_first",
+              "install": 0.235875,
+              "installA": 0.144625,
+              "installB": 0.327125,
+              "recurring": 0.18525000000000003
+            },
+            {
+              "k": "none",
+              "install": 0.077125,
+              "installA": 0.062125,
+              "installB": 0.092125,
+              "recurring": 0.0518125
+            },
+            {
+              "k": "current",
+              "install": 0.0491875,
+              "installA": 0.030750000000000003,
+              "installB": 0.06762499999999999,
+              "recurring": 0.0523125
+            },
+            {
+              "k": "old",
+              "install": 0.0411875,
+              "installA": 0.034749999999999996,
+              "installB": 0.04762500000000001,
+              "recurring": 0.0545
+            }
+          ],
+          "frames": [
+            {
+              "k": "store",
+              "clear": 0.79175,
+              "honest": 0.869
+            },
+            {
+              "k": "savings",
+              "clear": 0.6735625,
+              "honest": 0.761375
+            },
+            {
+              "k": "palette",
+              "clear": 0.8140625000000001,
+              "honest": 0.8906250000000001
+            }
+          ]
+        },
+        "equal": {
+          "series": [
+            {
+              "k": "palette_second",
+              "install": 0.36145833333333327,
+              "installA": 0.39374999999999993,
+              "installB": 0.32916666666666666,
+              "recurring": 0.35687499999999994
+            },
+            {
+              "k": "proposed",
+              "install": 0.24125,
+              "installA": 0.3470833333333333,
+              "installB": 0.13541666666666666,
+              "recurring": 0.30916666666666665
+            },
+            {
+              "k": "pain_first",
+              "install": 0.21895833333333334,
+              "installA": 0.11916666666666667,
+              "installB": 0.31875,
+              "recurring": 0.17270833333333332
+            },
+            {
+              "k": "none",
+              "install": 0.089375,
+              "installA": 0.07416666666666667,
+              "installB": 0.10458333333333333,
+              "recurring": 0.0575
+            },
+            {
+              "k": "current",
+              "install": 0.049999999999999996,
+              "installA": 0.0325,
+              "installB": 0.06749999999999999,
+              "recurring": 0.050416666666666665
+            },
+            {
+              "k": "old",
+              "install": 0.03875,
+              "installA": 0.03333333333333333,
+              "installB": 0.04416666666666667,
+              "recurring": 0.05270833333333333
+            }
+          ],
+          "frames": [
+            {
+              "k": "store",
+              "clear": 0.7883333333333333,
+              "honest": 0.8660416666666666
+            },
+            {
+              "k": "savings",
+              "clear": 0.6685416666666667,
+              "honest": 0.7516666666666666
+            },
+            {
+              "k": "palette",
+              "clear": 0.809375,
+              "honest": 0.8879166666666666
+            }
+          ]
+        }
+      }
+    }
+  }
+}
