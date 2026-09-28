@@ -55,6 +55,7 @@ table.tr tr.row{cursor:pointer}table.tr tr.row:hover{background:var(--surface)}.
 .kv div:nth-child(odd){color:var(--muted)}.sent{display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--rule)}.sent p{margin:0;flex:1}
 .sent audio{height:30px;max-width:220px}audio{max-width:100%}pre{white-space:pre-wrap;word-break:break-word;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:10px;font-size:12.5px;max-height:420px;overflow:auto}
 .att{border:1px solid var(--rule);border-radius:12px;padding:10px 14px;margin:10px 0}.iss{color:#8B2C2C}.ok{color:#2E6B34}
+.aff{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:16px 20px}.aff p{font:18px/1.55 Georgia,serif;margin:10px 0}
 .note{background:var(--surface);border-left:3px solid var(--accent);padding:8px 12px;margin:8px 0;border-radius:6px}.muted{color:var(--muted)}
 .ev{font-size:13px;display:grid;grid-template-columns:90px 180px 1fr;gap:2px 10px}.ev div{border-bottom:1px solid var(--rule);padding:3px 0;overflow-wrap:anywhere}
 a.back{display:inline-block;margin:6px 0 10px}
@@ -67,19 +68,26 @@ const STATUS = {started:'начат', recorded:'записала', scene:'тек
 const get = async (path, type='json') => { const r = await fetch(`${R2}/${path}?t=${Date.now()}`); if (!r.ok) throw new Error(r.status); return type === 'json' ? r.json() : r.text(); };
 const url = (run, f) => `${R2}/runs/${run}/${f}`;
 
+const isCheck = (r) => (r.tester || '').startsWith('Claude');
+function numbering(runs) {   // Тест 1, 2… by creation order; Claude's own runs are checks
+  const n = {}; let k = 0;
+  [...runs].sort((a, b) => a.created.localeCompare(b.created)).forEach((r) => { n[r.id] = isCheck(r) ? 'Проверка' : `Тест ${++k}`; });
+  return n;
+}
 async function list() {
   let d;
   try { d = await get('runs/index.json'); } catch (e) { $('#app').innerHTML = '<p class="muted">Прогонов пока нет — или доступ к хранилищу закрыт.</p>'; return; }
   const u = d.usage || {};
   const top = `<div class="tr-top">
-    <div><b>${d.runs.length}</b><span>прогонов</span></div>
+    <div><b>${d.runs.filter((r) => !isCheck(r)).length}</b><span>тестов</span></div>
     <div><b>${(u.character_count ?? '—').toLocaleString?.('ru-RU') ?? u.character_count} / ${(u.character_limit ?? '—').toLocaleString?.('ru-RU') ?? ''}</b><span>символов ElevenLabs (${esc(u.tier || '')}) в этом месяце</span></div>
     <div><b>${u.voice_add_edit_counter ?? '—'}</b><span>созданий голоса в этом месяце</span></div>
     <div><b>${when(d.updated)}</b><span>обновлено</span></div></div>`;
-  const rows = d.runs.map((r, i) => `<tr class="row" data-id="${esc(r.id)}"><td>${d.runs.length - i}</td><td>${when(r.created)}</td><td>${esc(r.tester)}</td>
+  const num = numbering(d.runs);
+  const rows = d.runs.map((r) => `<tr class="row" data-id="${esc(r.id)}"><td><b>${esc(num[r.id])}</b></td><td>${when(r.created)}</td><td>${esc(r.tester)}</td>
     <td>${esc(r.lang)}</td><td>${esc(r.want)}</td><td>${esc(r.title)}</td><td><span class="st ${esc(r.status)}">${esc(STATUS[r.status] || r.status)}</span></td>
     <td>${r.words ?? ''}</td><td>${r.attempts ?? ''}</td><td>${esc(r.qc ?? '')}</td><td>${esc(r.feeling ?? '')}</td><td>${r.notes || ''}</td><td>${r.review || ''}</td><td>${r.errors || ''}</td></tr>`).join('');
-  $('#app').innerHTML = top + `<div class="tbl"><table class="tr"><tr><th>№</th><th>Когда</th><th>Тестер</th><th>Язык</th><th>Цель</th><th>Сцена</th><th>Статус</th>
+  $('#app').innerHTML = top + `<div class="tbl"><table class="tr"><tr><th>Тест</th><th>Когда</th><th>Тестер</th><th>Язык</th><th>Цель</th><th>Сцена</th><th>Статус</th>
     <th>Слов</th><th>Попыток DeepSeek</th><th>Запись</th><th>Как отозвалось</th><th>Замечаний</th><th>Пометок</th><th>Ошибок</th></tr>${rows}</table></div>`;
   document.querySelectorAll('tr.row').forEach((tr) => tr.onclick = () => { location.hash = 'run=' + tr.dataset.id; });
 }
@@ -96,7 +104,23 @@ async function run(id) {
   const attempts = (await Promise.all(m.files.filter((f) => f.startsWith('deepseek/')).sort().map((f) => get(`runs/${id}/${f}`).catch(() => null)))).filter(Boolean);
   const rec = m.files.find((f) => f.startsWith('recording.'));
   const tts = Object.fromEntries((m.tts || []).map((t) => [t.file, t]));
-  let h = `<a class="back" href="#">← Все прогоны</a><h1>${esc(m.title || 'Прогон')} <small class="muted">${esc(m.id)}</small></h1>`;
+  let label = 'Прогон';
+  try { label = numbering((await get('runs/index.json')).runs)[id] || label; } catch (e) {}
+  let h = `<a class="back" href="#">← Все тесты</a><h1>${esc(label)}${m.title ? ' — ' + esc(m.title) : ''} <small class="muted">${esc(m.id)}</small></h1>`;
+  if (scene) {
+    const paras = []; (scene.sentences || []).forEach((s) => { (paras[s.para] = paras[s.para] || []).push(s.text); });
+    h += `<div class="sec aff"><h2>Финальная аффирмация</h2>${has('final.m4a') ? `<audio controls preload="none" src="${url(id, 'final.m4a')}"></audio>` : '<p class="muted">Аудио ещё не загружено.</p>'}
+      ${paras.filter(Boolean).map((p) => `<p>${esc(p.join(' '))}</p>`).join('')}
+      <p class="muted">${scene.words} слов · ${esc(scene.lang || '')} · подача ${esc(scene.tone || '')}</p>
+      ${(scene.phrases || []).length ? '<p><b>Фразы для повтора:</b> ' + scene.phrases.map(esc).join(' · ') + '</p>' : ''}
+      ${has('final-phrases.m4a') ? `<audio controls preload="none" src="${url(id, 'final-phrases.m4a')}"></audio>` : ''}</div>`;
+  }
+  const LABEL = {want: 'Цель', focus_most: 'Главное внутри цели', focus_some: 'Ещё немного', details: 'Три реальные вещи', people: 'Люди', step: 'Шаг на неделю',
+    tone: 'Подача', critic: 'Критик (до пейвола)', obstacle_thought: 'Старый голос', desired_feeling: 'Чувство', self_line: 'Сказала бы подруге',
+    proof: 'По чему поймёт, что работает', her_words: 'Своими словами', wish: 'Желание', why: 'Зачем', moment: 'Момент', cards: 'Карточки', checkin: 'Что изменилось',
+    gentle: 'Мягкий режим (горе)', lang: 'Язык', remake: 'Переделка', edit: 'Её правка текста'};
+  if (answers) h += '<div class="sec"><h2>Ответы</h2><div class="kv">' + Object.entries(answers).filter(([, v]) => v !== '' && v !== null && !(Array.isArray(v) && !v.length) && v !== false)
+    .map(([k, v]) => `<div>${esc(LABEL[k] || k)}</div><div>${esc(Array.isArray(v) ? v.join(' · ') : typeof v === 'object' ? JSON.stringify(v) : v)}</div>`).join('') + '</div></div>';
   h += kv({Тестер: m.tester, Статус: STATUS[m.status] || m.status, Начат: when(m.created), Обновлён: when(m.updated), Язык: m.lang || m.meta?.lang,
            Цель: m.want, Подача: m.tone, Сборка: m.meta?.build, Версия: m.meta?.app_version, Устройство: m.meta?.device, iOS: m.meta?.os,
            'Копия голоса удалена': m.voice_deleted === undefined ? '' : (m.voice_deleted ? 'да' : 'нет')});
@@ -104,21 +128,19 @@ async function run(id) {
   const review = (m.review || []).map((n) => `<div class="note"><b>${esc(n.author)}</b> · <span class="muted">${when(n.at)}</span><br>${esc(n.text)}</div>`).join('');
   h += `<div class="sec"><h2>Что поправить</h2>${review || '<p class="muted">Пометок команды пока нет: <code>python3 scripts/test_runs/note.py ' + esc(m.id) + ' "текст"</code></p>'}</div>`;
   h += `<div class="sec"><h2>Замечания тестера</h2>${notes || '<p class="muted">Нет.</p>'}${(m.feeling || []).length ? '<p>Как это отозвалось: <b>' + m.feeling.map((f) => esc(f.value)).join(', ') + '</b></p>' : ''}</div>`;
-  if (has('final.m4a')) h += `<div class="sec"><h2>Итог — как услышала она</h2><audio controls preload="none" src="${url(id, 'final.m4a')}"></audio>${has('final-phrases.m4a') ? `<p class="muted">Фразы для повтора</p><audio controls preload="none" src="${url(id, 'final-phrases.m4a')}"></audio>` : ''}</div>`;
   if (scene) {
     const sents = (scene.sentences || []).map((s, i) => { const f = `tts/scene-${String(i).padStart(2, '0')}.mp3`;
       return `<div class="sent"><p>${esc(s.text)}</p>${has(f) ? `<audio controls preload="none" src="${url(id, f)}"></audio>` : ''}</div>`; }).join('');
     const phr = (scene.phrases || []).map((s, i) => { const f = `tts/phrases-${String(i).padStart(2, '0')}.mp3`;
       return `<div class="sent"><p>${esc(s)}</p>${has(f) ? `<audio controls preload="none" src="${url(id, f)}"></audio>` : ''}</div>`; }).join('');
     const t0 = Object.values(tts)[0];
-    h += `<div class="sec"><h2>Сцена: ${esc(scene.title)} · ${scene.words} слов</h2>${sents}<h3>Фразы</h3>${phr}
+    h += `<div class="sec"><h2>По фразам: как озвучил ElevenLabs</h2>${sents}<h3>Фразы</h3>${phr}
       ${t0 ? '<p class="muted">ElevenLabs: ' + esc(t0.model) + ', пресет ' + esc(t0.preset) + ', ' + esc(JSON.stringify(t0.settings)) + ' · всего ' + (m.tts || []).reduce((n, t) => n + t.chars, 0) + ' символов</p>' : ''}</div>`;
   }
   h += `<div class="sec"><h2>Запись голоса</h2>${rec ? `<audio controls preload="none" src="${url(id, rec)}"></audio>` : '<p class="muted">Нет записи.</p>'}
     ${m.qc ? kv({Вердикт: m.qc.verdict, 'Речь, с': m.qc.speech_s, 'Пик, дБ': m.qc.peak_db, 'Речь, дБ': m.qc.speech_db, 'Шум, дБ': m.qc.noise_db, 'SNR, дБ': m.qc.snr_db,
       Музыка: m.qc.music, 'Совпадение слов': m.qc.word_match, 'Отправила в обход проверки': m.qc.override ? 'да' : '', Пороги: m.qc.thresholds}) + (m.qc.transcript ? '<p class="muted">Распознано:</p><pre>' + esc(m.qc.transcript) + '</pre>' : '') : ''}
     ${voice ? '<p class="muted">ElevenLabs: ' + esc(JSON.stringify(voice)) + '</p>' : ''}</div>`;
-  if (answers) h += `<div class="sec"><h2>Ответы → в сцену</h2>${kv(answers)}</div>`;
   if (follow) h += `<div class="sec"><h2>Своими словами → DeepSeek</h2>${kv(follow)}</div>`;
   if (attempts.length) {
     h += '<div class="sec"><h2>Как DeepSeek писал сцену</h2>' + attempts.map((a) => {
