@@ -146,12 +146,15 @@ async function run(id) {
   h += `<div class="sec"><h2>Что поправить</h2>${review || '<p class="muted">Пометок команды пока нет: <code>python3 scripts/test_runs/note.py ' + esc(m.id) + ' "текст"</code></p>'}</div>`;
   h += `<div class="sec"><h2>Замечания тестера</h2>${notes || '<p class="muted">Нет.</p>'}${(m.feeling || []).length ? '<p>Как это отозвалось: <b>' + m.feeling.map((f) => esc(f.value)).join(', ') + '</b></p>' : ''}</div>`;
   if (scene) {
-    const sents = (scene.sentences || []).map((s, i) => { const f = `tts/scene-${String(i).padStart(2, '0')}.mp3`;
+    const paraTts = (m.tts || []).filter((t) => t.kind === 'para').sort((a, b) => a.index - b.index);
+    const sents = paraTts.length   // worker ≥ 2026-09-28.8: one request per paragraph, sentence starts from the alignment
+      ? paraTts.map((t) => `<div class="sent"><p>${esc(t.text)}<br><span class="muted">начала предложений, с: ${esc((t.starts || []).join(' · '))}</span></p><audio controls preload="none" src="${url(id, t.file)}"></audio></div>`).join('')
+      : (scene.sentences || []).map((s, i) => { const f = `tts/scene-${String(i).padStart(2, '0')}.mp3`;
       return `<div class="sent"><p>${esc(s.text)}</p>${has(f) ? `<audio controls preload="none" src="${url(id, f)}"></audio>` : ''}</div>`; }).join('');
     const phr = (scene.phrases || []).map((s, i) => { const f = `tts/phrases-${String(i).padStart(2, '0')}.mp3`;
       return `<div class="sent"><p>${esc(s)}</p>${has(f) ? `<audio controls preload="none" src="${url(id, f)}"></audio>` : ''}</div>`; }).join('');
     const t0 = Object.values(tts)[0];
-    h += `<div class="sec"><h2>По фразам: как озвучил ElevenLabs</h2>${sents}<h3>Фразы</h3>${phr}
+    h += `<div class="sec"><h2>${paraTts.length ? 'По абзацам' : 'По фразам'}: как озвучил ElevenLabs</h2>${sents}<h3>Фразы</h3>${phr}
       ${t0 ? '<p class="muted">ElevenLabs: ' + esc(t0.model) + ', пресет ' + esc(t0.preset) + ', ' + esc(JSON.stringify(t0.settings)) + ' · всего ' + (m.tts || []).reduce((n, t) => n + t.chars, 0) + ' символов</p>' : ''}</div>`;
   }
   h += `<div class="sec"><h2>Запись голоса</h2>${rec ? `<audio controls preload="none" src="${url(id, rec)}"></audio>` : '<p class="muted">Нет записи.</p>'}
