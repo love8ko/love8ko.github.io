@@ -59,6 +59,10 @@ table.tr tr.row{cursor:pointer}table.tr tr.row:hover{background:var(--surface)}.
 .note{background:var(--surface);border-left:3px solid var(--accent);padding:8px 12px;margin:8px 0;border-radius:6px}.muted{color:var(--muted)}
 .ev{font-size:13px;display:grid;grid-template-columns:90px 180px 1fr;gap:2px 10px}.ev div{border-bottom:1px solid var(--rule);padding:3px 0;overflow-wrap:anywhere}
 a.back{display:inline-block;margin:6px 0 10px}
+.cmp{border:1px solid var(--rule);border-radius:16px;padding:14px 18px;margin:12px 0 22px;background:var(--surface)}.cmp h2{font:600 21px Georgia,serif;margin:0 0 6px}
+.cmp h3{font:600 16px Georgia,serif;margin:16px 0 6px}.var{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:6px 0;border-bottom:1px dashed var(--rule)}
+.var b{min-width:28px}.var audio{height:32px;flex:1;min-width:200px;max-width:420px}.var span{color:var(--muted);font-size:13px;flex-basis:100%}
+.cmp .txt{font:15px/1.5 Georgia,serif;white-space:pre-wrap;margin:6px 0}.cmp table{border-collapse:collapse;font-size:13.5px;margin:6px 0}.cmp td,.cmp th{padding:4px 8px;border-bottom:1px solid var(--rule);text-align:left}
 </style><script>
 const R2 = 'https://pub-a5850bbb23094e24a55b1ae404652155.r2.dev';
 const $ = (s) => document.querySelector(s);
@@ -74,6 +78,19 @@ function numbering(runs) {   // Тест 1, 2… by creation order; Claude's own
   [...runs].sort((a, b) => a.created.localeCompare(b.created)).forEach((r) => { n[r.id] = isCheck(r) ? 'Проверка' : `Тест ${++k}`; });
   return n;
 }
+// comparisons (compare/index.json in R2): blind audio variants and texts; «что есть что» stays folded
+async function comparisons() {
+  let d; try { d = await get('compare/index.json'); } catch (e) { return ''; }
+  const md = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+  return (d.items || []).map((c) => `<details class="cmp" ${c.open ? 'open' : ''}><summary><h2 style="display:inline">${esc(c.title)}</h2> <span class="muted">${esc(c.date || '')}</span></summary>
+    ${(c.intro || []).map((p) => `<p>${md(p)}</p>`).join('')}
+    ${(c.groups || []).map((g) => `<h3>${esc(g.title)}</h3>${(g.intro || []).map((p) => `<p>${md(p)}</p>`).join('')}
+      ${g.text ? `<div class="txt">${esc(g.text)}</div>` : ''}
+      ${g.table ? `<div class="tbl"><table>${g.table.map((r, i) => `<tr>${r.map((x) => i ? `<td>${md(String(x))}</td>` : `<th>${esc(x)}</th>`).join('')}</tr>`).join('')}</table></div>` : ''}
+      ${(g.variants || []).map((v) => `<div class="var"><b>${esc(v.label)}</b>${v.file ? `<audio controls preload="none" src="${R2}/${v.file}"></audio>` : ''}${v.note ? `<span>${md(v.note)}</span>` : ''}${v.text ? `<div class="txt">${esc(v.text)}</div>` : ''}</div>`).join('')}
+      ${g.reveal ? `<details><summary>Что есть что</summary>${g.reveal.map((p) => `<p>${md(p)}</p>`).join('')}</details>` : ''}`).join('')}
+    ${(c.outro || []).map((p) => `<p>${md(p)}</p>`).join('')}</details>`).join('');
+}
 async function list() {
   let d;
   try { d = await get('runs/index.json'); } catch (e) { $('#app').innerHTML = '<p class="muted">Прогонов пока нет — или доступ к хранилищу закрыт.</p>'; return; }
@@ -87,7 +104,7 @@ async function list() {
   const rows = d.runs.map((r) => `<tr class="row" data-id="${esc(r.id)}"><td><b>${esc(num[r.id])}</b></td><td>${when(r.created)}</td><td>${esc(r.tester)}</td>
     <td>${esc(r.lang)}</td><td>${esc(r.want)}</td><td>${esc(r.title)}</td><td><span class="st ${esc(r.status)}">${esc(STATUS[r.status] || r.status)}</span></td>
     <td>${r.words ?? ''}</td><td>${r.attempts ?? ''}</td><td>${esc(r.qc ?? '')}</td><td>${esc(r.feeling ?? '')}</td><td>${r.notes || ''}</td><td>${r.review || ''}</td><td>${r.errors || ''}</td></tr>`).join('');
-  $('#app').innerHTML = top + `<div class="tbl"><table class="tr"><tr><th>Тест</th><th>Когда</th><th>Тестер</th><th>Язык</th><th>Цель</th><th>Сцена</th><th>Статус</th>
+  $('#app').innerHTML = (await comparisons()) + top + `<div class="tbl"><table class="tr"><tr><th>Тест</th><th>Когда</th><th>Тестер</th><th>Язык</th><th>Цель</th><th>Сцена</th><th>Статус</th>
     <th>Слов</th><th>Попыток DeepSeek</th><th>Запись</th><th>Как отозвалось</th><th>Замечаний</th><th>Пометок</th><th>Ошибок</th></tr>${rows}</table></div>`;
   document.querySelectorAll('tr.row').forEach((tr) => tr.onclick = () => { location.hash = 'run=' + tr.dataset.id; });
 }
