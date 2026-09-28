@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — CrySnap</title>
     <style>
+        table.data { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+        table.data th, table.data td { border: 1px solid #e0dcd4; padding: 8px 10px; text-align: left; vertical-align: top; }
+        table.data th { background: #f5f1ea; }
+        @media (prefers-color-scheme: dark) { table.data th { background: #2a2a2e; } table.data th, table.data td { border-color: #3a3a40; } }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             max-width: 720px;
@@ -80,18 +84,27 @@
         <strong>Your baby's cry is never uploaded or kept.</strong> The eight-second recording is checked on your iPhone and deleted as soon as the check finishes. We have no upload path for audio.
     </div>
 
-    <h2>3. Data Sent to External Services</h2>
-    <p>CrySnap connects to the following services to provide chat and voice features. No provider key is stored in the app. Which chat service handles your question depends on your App Store country and device region, not on the app language:</p>
+    <h2>3. Data Shared With Third-Party AI Services</h2>
+    <p>The three guides in CrySnap (Sarah, Emma and Linda) are AI. Their answers are written by a <strong>third-party AI service</strong>, not by CrySnap and not by a person. <strong>Nothing is sent to an AI service until you allow it.</strong> Right after you subscribe — and again before your first question if you skipped it — the app shows a screen that lists what will be sent and who receives it, and asks you to choose “Allow AI answers” or “Not now”. You can withdraw that permission at any time in <strong>Settings → AI answers</strong>; after that the app sends nothing to any AI service.</p>
+
+    <table class="data">
+        <tr><th>What is sent</th><th>How it is collected</th><th>Why it is used</th></tr>
+        <tr><td>The question you type or dictate, and recent messages in that chat</td><td>You enter it in the chat (dictation is turned into text by Apple's speech recognition)</td><td>To write the answer to your question</td></tr>
+        <tr><td>Baby-profile details: age in weeks, weight, feeding type, birth and prematurity information, health notes</td><td>You enter them in the baby profile (all optional)</td><td>So the answer fits your baby's age and situation</td></tr>
+        <tr><td>Related context from the app: the current crying check and soothing plan, recent crying and soothing logs, and a short summary of earlier conversations</td><td>Created on your device from what you log in the app</td><td>So the guide knows what you have already tried and does not repeat itself</td></tr>
+    </table>
+
+    <p><strong>Not sent:</strong> audio recordings, photos, contacts, email address, location, device or advertising identifiers. The baby's name is not part of the profile context, and the app removes the saved name from outgoing text on your device. Text you type yourself may still contain personal details, so please don't include anything you don't want to share.</p>
+
+    <p><strong>Who receives it.</strong> Which service answers depends on your App Store country and device region, not on the app language:</p>
     <ul>
-        <li><strong>Outside mainland China:</strong> DeepSeek, through our Cloudflare Worker proxy (<code>crysnap-api.veribag.workers.dev</code>).</li>
-        <li><strong>Mainland China</strong> (China App Store, or device region set to China mainland): Qwen on Alibaba Cloud Model Studio, through our Alibaba Cloud Function Compute service in Beijing. Requests from mainland China are never sent to the service above, and requests from elsewhere are never sent here.</li>
-        <li>Either way, a request may contain: your typed or voice-transcribed question and recent messages in that chat; baby-profile details you entered (age in weeks, weight, feeding type, birth and prematurity information, health notes); and related context from the app — the current crying check and plan, recent crying and soothing logs, and a short summary of earlier conversations.</li>
-        <li>The baby's name is not part of that profile context, and the app removes occurrences of the saved name from outgoing text on your device. Text you type yourself may still contain personal details, so please don't include information you don't want to share. No audio, photos, contacts, email address, location or device or advertising identifiers are attached, and our proxies do not store the content of messages.</li>
-        <li><strong>Nothing is sent before you allow it.</strong> Before your first question, CrySnap shows what will be sent and to whom and asks you to allow AI answers. You can withdraw that permission at any time in Settings → AI answers; the guides then stop sending anything.</li>
-        <li><strong>Apple Speech Recognition</strong> — Voice Mode converts a spoken question to text. Recognition runs on-device when supported by the device and language; otherwise Apple's standard speech-recognition service may process the audio under Apple's privacy terms. CrySnap sends only the resulting transcript, not voice audio, to our chat Worker.</li>
+        <li><strong>Outside mainland China:</strong> DeepSeek (Hangzhou DeepSeek Artificial Intelligence Basic Technology Research Co., Ltd.), through our proxy on Cloudflare Workers (Cloudflare, Inc.).</li>
+        <li><strong>Mainland China</strong> (China App Store, or device region set to China mainland): Qwen on Alibaba Cloud Model Studio (Alibaba Cloud), through our Alibaba Cloud Function Compute service in Beijing. Requests from mainland China are never sent to the service above, and requests from elsewhere are never sent here.</li>
     </ul>
-    <p>Voice Mode replies are spoken back to you using <strong>Apple AVSpeechSynthesizer</strong>, which runs entirely on-device. No text-to-speech audio is generated on a server.</p>
-    <p>No personal information, device identifier, contact data, or location is sent to these services.</p>
+    <p><strong>How it is protected.</strong> Requests travel encrypted (HTTPS). Our proxies pass them on and do not store their content. No provider key is stored in the app. We share this data only to get an answer to your question, and only with providers whose terms require them to keep it confidential and secure — protection equal to that described in this policy. The data is not used by us for advertising, profiling or to identify you, and it is not sold.</p>
+
+    <h3>Apple speech recognition</h3>
+    <p>Voice Mode converts a spoken question to text with Apple Speech Recognition — on the device when the device and language support it, otherwise by Apple under Apple's privacy terms. Only the resulting text is sent on, and only as part of an AI request described above. Voice Mode replies are spoken on the device with Apple AVSpeechSynthesizer.</p>
 
     <h2>4. Subscriptions</h2>
     <p>Subscription purchases are managed by <strong>RevenueCat</strong>, a third-party subscription management service. RevenueCat receives:</p>
