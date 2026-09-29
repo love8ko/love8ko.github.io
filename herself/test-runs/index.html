@@ -62,6 +62,8 @@ a.back{display:inline-block;margin:6px 0 10px}
 .cmp{border:1px solid var(--rule);border-radius:16px;padding:14px 18px;margin:12px 0 22px;background:var(--surface)}.cmp h2{font:600 21px Georgia,serif;margin:0 0 6px}
 .cmp h3{font:600 16px Georgia,serif;margin:16px 0 6px}.var{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:6px 0;border-bottom:1px dashed var(--rule)}
 .var b{min-width:28px}.var audio{height:32px;flex:1;min-width:200px;max-width:420px}.var span{color:var(--muted);font-size:13px;flex-basis:100%}
+.cmp table.ga{width:100%;table-layout:fixed;min-width:560px}.cmp table.ga th,.cmp table.ga td{vertical-align:top;padding:10px 8px}.cmp table.ga tr>th:first-child{width:110px}
+.cmp table.ga td b{display:block;margin-bottom:6px}.cmp table.ga audio{width:100%;height:34px}.cmp table.ga td span{display:block;color:var(--muted);font-size:12.5px;margin-top:4px}
 .cmp .txt{font:15px/1.5 Georgia,serif;white-space:pre-wrap;margin:6px 0}.cmp table{border-collapse:collapse;font-size:13.5px;margin:6px 0}.cmp td,.cmp th{padding:4px 8px;border-bottom:1px solid var(--rule);text-align:left}
 </style><script>
 const R2 = 'https://pub-a5850bbb23094e24a55b1ae404652155.r2.dev';
@@ -87,6 +89,7 @@ async function comparisons() {
     ${(c.groups || []).map((g) => `<h3>${esc(g.title)}</h3>${(g.intro || []).map((p) => `<p>${md(p)}</p>`).join('')}
       ${g.text ? `<div class="txt">${esc(g.text)}</div>` : ''}
       ${g.table ? `<div class="tbl"><table>${g.table.map((r, i) => `<tr>${r.map((x) => i ? `<td>${md(String(x))}</td>` : `<th>${esc(x)}</th>`).join('')}</tr>`).join('')}</table></div>` : ''}
+      ${g.grid ? `<div class="tbl"><table class="ga"><tr><th></th>${g.grid.cols.map((c) => `<th>${md(c)}</th>`).join('')}</tr>${g.grid.rows.map((r) => `<tr><th>${md(r.label)}</th>${r.cells.map((x) => x ? `<td><b>${esc(x.label || '')}</b><audio controls preload="none" src="${R2}/${x.file}"></audio>${x.note ? `<span>${md(x.note)}</span>` : ''}</td>` : '<td class="muted">—</td>').join('')}</tr>`).join('')}</table></div>` : ''}
       ${(g.variants || []).map((v) => `<div class="var"><b>${esc(v.label)}</b>${v.file ? `<audio controls preload="none" src="${R2}/${v.file}"></audio>` : ''}${v.note ? `<span>${md(v.note)}</span>` : ''}${v.text ? `<div class="txt">${esc(v.text)}</div>` : ''}</div>`).join('')}
       ${g.reveal ? `<details><summary>Что есть что</summary>${g.reveal.map((p) => `<p>${md(p)}</p>`).join('')}</details>` : ''}`).join('')}
     ${(c.outro || []).map((p) => `<p>${md(p)}</p>`).join('')}</details>`).join('');
