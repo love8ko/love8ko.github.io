@@ -2,9 +2,11 @@
 <title>Herself — твои пути</title><style>*{box-sizing:border-box}body{font:16px/1.5 -apple-system,system-ui,sans-serif;max-width:680px;margin:0 auto;padding:16px;background:#fff;color:#111}
 section{border-top:2px solid #b0306a;margin-top:28px;padding-top:8px}h2{margin:4px 0}h3{font-size:16px;margin:18px 0 6px}audio{width:100%}
 .scene{background:#fbf3f6;padding:10px 14px;border-radius:8px}table{border-collapse:collapse;width:100%;font-size:15px}td{border-bottom:1px solid #ddd;padding:6px 4px;vertical-align:top}td:first-child{color:#777;width:38%}
-pre{white-space:pre-wrap;word-break:break-word;background:#f0f0f0;padding:10px;border-radius:8px;font-size:13px}summary{cursor:pointer;margin:8px 0;color:#b0306a}
+.muted{color:#888;font-size:14px}pre{white-space:pre-wrap;word-break:break-word;background:#f0f0f0;padding:10px;border-radius:8px;font-size:13px}summary{cursor:pointer;margin:8px 0;color:#b0306a}
 @media (prefers-color-scheme:dark){body{background:#111;color:#eee}.scene{background:#2a1a22}pre{background:#222}td{border-color:#333}}</style></head><body>
-<h1>Твои пути в тапалке</h1><p>Анкета — <a href="../tapper/">тапалка</a>. Новые сверху. Сцена: новый промпт на deepseek-flash; голос — библиотечная Марина, целиком без склеек.</p>
+<h1>Твои пути</h1><p><a href="../talk/">Разговор</a> (новая анкета, лаб) · <a href="../tapper/">старая тапалка</a>. Новые сверху.</p>
+<div id="lab"></div>
+<h1 style="margin-top:40px">Старая тапалка</h1>
 <section><h2>деньги-1</h2>
 <h3>Аффирмация «Прошу без дрожи»</h3><audio controls preload="none" src="https://pub-a5850bbb23094e24a55b1ae404652155.r2.dev/compare/tapper/%D0%B4%D0%B5%D0%BD%D1%8C%D0%B3%D0%B8-1.m4a"></audio><div class="scene"><p>Утро, я сижу с чашкой кофе и пишу письмо. Ретривер улёгся у ног, дышит спокойно. Я называю сумму, которую давно держала в уме. И тут знакомое: «У тебя не получится». Раньше я бы добавила скидку, сгладила, дописала лишний абзац. Но я не пишу. Отправляю как есть и закрываю ноутбук. Через два дня приходит ответ, и там просто цифра. Собеседник не спорит, не торгуется. Он просто соглашается. Я смотрю на экран и понимаю: это не про деньги. Это про то, что я больше не прячу свою цену.</p><p>Раньше я просила меньше, чем стою, а потом злилась на себя. Теперь я знаю, что моё место не нужно выпрашивать.</p><p>На этой неделе я называю свою сумму и держу паузу, не заполняя её первой.</p><p>Мне не нужно заслуживать место здесь.</p></div>
 <h3>Что ты ввёл</h3><table><tr><td>Направление</td><td>Деньги</td></tr><tr><td>Что ближе</td><td>Просить то, чего я стою, не дрогнув</td></tr><tr><td>Как пойму, что работает</td><td>Они молчат — и я не спешу заполнять эту паузу.</td></tr><tr><td>Где</td><td>письмо, которое я пишу</td></tr><tr><td>Сказала бы подруге</td><td>Тебе не нужно заслуживать место здесь.</td></tr><tr><td>Критик</td><td>У тебя не получится.</td></tr><tr><td>Голос</td><td>Уверенно — чётко и твёрдо</td></tr><tr><td>Почему важно</td><td>Я снова прошу меньше, чем стою, а потом злюсь на это.</td></tr><tr><td>Что ещё знать сцене</td><td>я в пентхаусе и у меня собака ретривер</td></tr><tr><td>Фраза от «я» (готовлю я)</td><td>Мне не нужно заслуживать место здесь.</td></tr></table>
@@ -91,4 +93,24 @@ LANGUAGE — RUSSIAN. Write the title, every block and every phrase in natural s
 25–40 talks to herself — not a translation from English. She is a woman: first person FEMININE grammar everywhere (&quot;я сказала&quot;,
 &quot;я готова&quot;, &quot;сама&quot;); never masculine forms. Never &quot;вы&quot;. Russian length replaces the English one: 105–120 words in total (a Russian minute). Count the words before answering. The bridge is present tense: «На этой неделе я делаю / говорю / выбираю…», never «сделаю / скажу». The critic&#x27;s sentence is quoted in «…» exactly as she gave it, without «Старый голос говорит». Her answers are in Russian: quote her words verbatim. Always write «ё» where it
 is pronounced — всё, её, ещё, идёт, and in names (Лёха, Алёна, Семён) even when she typed «е»: the voice reads «е» literally.
-No &quot;всегда/никогда/идеально&quot;, no вселенная / энергия / вибрации / манифестация, no терапия / лечение.</pre></details></section></body></html>
+No &quot;всегда/никогда/идеально&quot;, no вселенная / энергия / вибрации / манифестация, no терапия / лечение.</pre></details></section>
+<script>
+const R2 = "https://pub-a5850bbb23094e24a55b1ae404652155.r2.dev", e = (x) => String(x ?? "").replace(/[&<>"]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"})[c]);
+(async () => {
+  const box = document.getElementById("lab");
+  let idx = []; try { idx = await (await fetch(R2 + "/lab/index.json?t=" + Date.now())).json() } catch (x) { return }
+  for (const it of idx) {
+    let r; try { r = await (await fetch(R2 + "/lab/" + encodeURIComponent(it.id) + "/record.json?t=" + Date.now())).json() } catch (x) { continue }
+    const q = Object.entries(r.answers || {}).map(([k, v]) => "<tr><td>" + e(k) + "</td><td>" + e(v) + "</td></tr>").join("");
+    const sc = (r.scene?.blocks || []).map((b) => "<p>" + e(b.text) + "</p>").join("");
+    box.insertAdjacentHTML("beforeend", "<section><h2>" + e(r.name) + "</h2><p class='muted'>" + e(r.direction) + " · " + e((r.saved_at || "").slice(0, 16).replace("T", " ")) + "</p>"
+      + "<h3>Аффирмация «" + e(r.scene?.title) + "»</h3><div class='scene'>" + sc + "</div>"
+      + ((r.scene?.issues || []).length ? "<p class='muted'>Проверки: " + e(r.scene.issues.join("; ")) + "</p>" : "")
+      + "<h3>Что ты написал и ответил</h3><table><tr><td>Своими словами</td><td>" + e(r.text) + "</td></tr>" + q
+      + "<tr><td>Фраза в конце</td><td>" + e(r.close) + "</td></tr><tr><td>Голос</td><td>" + e(r.tone) + "</td></tr></table>"
+      + "<p class='muted'>Зеркало: " + e(r.understanding?.mirror) + "</p>"
+      + "<details><summary>Что понял DeepSeek (шаг 1)</summary><pre>" + e(JSON.stringify(r.understanding, null, 1)) + "</pre></details>"
+      + "<details><summary>План (шаг 2)</summary><pre>" + e(JSON.stringify(r.plan, null, 1)) + "</pre></details></section>");
+  }
+})();
+</script></body></html>
