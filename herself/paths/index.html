@@ -116,7 +116,7 @@ const R2 = "https://pub-a5850bbb23094e24a55b1ae404652155.r2.dev", e = (x) => Str
       + (r.scene?.crisis ? "<p class='muted'>" + e(r.scene.support || "Кризис → экран помощи, сцены нет") + "</p>" : "")
       + (r.scene?.voice ? "<details><summary>Что уйдёт в ElevenLabs (" + e(r.scene.voice.model) + ", ≈ " + e(r.scene.voice.seconds) + " с)</summary><pre>"
           + e(JSON.stringify({ model_id: r.scene.voice.model, voice_settings: r.scene.voice.settings, text: r.scene.voice.tts_text }, null, 1)) + "</pre></details>" : "")
-      + "<h3>Что ты написал и ответил</h3><table><tr><td>Своими словами</td><td>" + e(r.text) + "</td></tr>" + q
+      + "<h3>Что ты написал и ответил</h3><table><tr><td>Своими словами</td><td>" + e(r.text) + "</td></tr>" + (r.feeling ? "<tr><td>Чувство (тап)</td><td>" + e(r.feeling) + "</td></tr>" : "") + q + (r.extra ? "<tr><td>Что ещё важно</td><td>" + e(r.extra) + "</td></tr>" : "")
       + "<tr><td>Фраза в конце</td><td>" + e(r.close) + "</td></tr><tr><td>Голос</td><td>" + e(r.tone) + "</td></tr></table>"
       + "<p class='muted'>Зеркало: " + e(r.understanding?.mirror) + "</p>"
       + "<details><summary>Что понял DeepSeek (шаг 1)</summary><pre>" + e(JSON.stringify(r.understanding, null, 1)) + "</pre></details>"
