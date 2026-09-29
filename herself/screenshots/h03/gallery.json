@@ -1,0 +1,24 @@
+{
+  "round": "H03",
+  "date": "2026-09-29",
+  "status": "on-review",
+  "approved": false,
+  "shots": [
+    {
+      "id": "H03-01",
+      "topic": "confidence",
+      "sha256": "080cc89dafea09db15ae1548bcbddca6de0f53b3f8f1031d2863d3c56ae14f3b"
+    },
+    {
+      "id": "H03-02",
+      "topic": "love",
+      "sha256": "620cf9cd29362b9f3ac64dad8417850a602dfc1ce70b645887b5e0b765425012"
+    },
+    {
+      "id": "H03-03",
+      "topic": "body",
+      "sha256": "ea96740366078f9e8cc4834a7a1a0216b7a768ffc015c7e3cf40b3158efb7b3f"
+    }
+  ],
+  "copy_sha256": "2b937db2e1aefba9a9b318b5b13805354d2cfffd316c85aeb99d6565a05c68de"
+}
