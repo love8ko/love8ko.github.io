@@ -33,7 +33,7 @@ async function draw() {
   D.starters.forEach(s => { const b = $("button", { textContent: s + " …" }); b.onclick = () => { t.value = (t.value ? t.value + ". " : "") + s; st.text = t.value }; box.appendChild(b) });
   const t = $("textarea", { rows: 4, placeholder: D.ex }); t.value = st.text || ""; t.oninput = () => { st.text = t.value }; app.appendChild(t);
   if (!st.und) { const g = $("button", { className: "go", textContent: "Дальше" }); g.onclick = async () => { if (!st.text) return; g.textContent = "Думаю…"; try { st.und = await call("/lab/understand", { direction: st.direction, text: st.text, lang: "ru" }); st.ans = {} } catch (e) { alert(e.message) } draw() }; app.appendChild(g); return }
-  if (st.und.crisis) { app.appendChild($("div", { className: "mirror" }, "Похоже, сейчас тебе очень тяжело. Сцену писать не будем — вот где помогут прямо сейчас: 988 (США), 8-800-2000-122 (Россия).")); return }
+  if (st.und.crisis) { app.appendChild($("div", { className: "mirror" }, st.und.support || "Похоже, сейчас тебе очень тяжело. 8-800-2000-122 (Россия), 988 (США).")); return }
   app.appendChild($("div", { className: "mirror" }, st.und.mirror || ""));
   (st.und.questions || []).forEach(q => { app.appendChild($("h2", {}, q.text)); const b = $("div"); app.appendChild(b);
     opts(b, q.options || [], "q_" + q.id, o => { st["q_" + q.id] = o; st.ans[q.text] = o; delete st.scene; draw() });
@@ -47,6 +47,7 @@ async function draw() {
       st.scene = await call("/lab/write2", { direction: st.direction, understanding: st.und, answers: st.ans, close: st.close || "", tone: st.tone, text: st.text, seed: st.direction + st.text, lang: "ru" });
       st.id = (st.name || st.direction).replace(/[^\wа-яё-]+/gi, "-").toLowerCase() + "-" + Date.now().toString(36); await save()
     } catch (e) { alert(e.message) } draw() }; app.appendChild(g); return }
+  if (st.scene.crisis) { app.appendChild($("div", { className: "mirror" }, st.scene.support)); return }
   app.appendChild($("h2", {}, "Сцена «" + (st.scene.title || "") + "»" + (st.scene.seconds ? " · ≈ " + st.scene.seconds + " с звучания" : ""))); const sc = $("div", { className: "mirror scene" }); (st.scene.blocks || []).forEach(b => sc.appendChild($("p", { textContent: b.text }))); app.appendChild(sc);
   if (st.scene.close_replaced) app.appendChild($("div", { className: "mirror" }, st.scene.close_replaced.note));
   if ((st.scene.close_options || []).length) { app.appendChild($("h2", {}, "Какая фраза твоя — в конце?")); const cur = (st.scene.blocks || []).find(b => b.type === "close");
