@@ -1,0 +1,40 @@
+{
+  "round": "H02",
+  "date": "2026-09-29",
+  "status": "on-review",
+  "locale": "en-US",
+  "shots": [
+    {
+      "id": "H02-A01",
+      "topic": "confidence",
+      "sha256": "d16d249fd392662dd6cbc5e9841354bc81c4b562a4af2c8c964da778909cd7c1"
+    },
+    {
+      "id": "H02-A02",
+      "topic": "love",
+      "sha256": "3201651e9f26b1457e224f39470ea4fc29be9b84487b7835ec5eb6c8713554b0"
+    },
+    {
+      "id": "H02-A03",
+      "topic": "body",
+      "sha256": "fcbb53fa495de59a6533728e90f848c075a1e7d01d16474ce4146ce08d6d0277"
+    },
+    {
+      "id": "H02-B01",
+      "topic": "confidence",
+      "sha256": "8f921418b83039357065bbb0c1df2c8e8ef9888b206b20b80dc64ead602d493b"
+    },
+    {
+      "id": "H02-B02",
+      "topic": "love",
+      "sha256": "ad4be6f7f2389a088fffd874f15b7a77a2df2941a8afbf23b9da0c798c390438"
+    },
+    {
+      "id": "H02-B03",
+      "topic": "body",
+      "sha256": "76335a12b40d9ee64bb721cf0ffd1fac8666424841a2e57b0ac6741909c7a0bf"
+    }
+  ],
+  "approved": false,
+  "copy_sha256": "218a8761407c6f881d2eafb2a6c492b9fcc9fc62640db4ad33dd50d682b80a87"
+}
