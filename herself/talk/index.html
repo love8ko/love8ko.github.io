@@ -45,10 +45,12 @@ async function draw() {
   if (!st.scene) { const n = $("input", { placeholder: "Имя пути, например: деньги-2" }); n.value = st.name || ""; n.oninput = () => st.name = n.value; app.appendChild(n);
     const g = $("button", { className: "go", textContent: "Написать сцену" }); g.onclick = async () => { g.textContent = "Пишу…"; try {
       st.scene = await call("/lab/write", { direction: st.direction, understanding: st.und, answers: st.ans, plan: st.plan, close: st.close, tone: st.tone, text: st.text, lang: "ru" });
+      if (st.scene.close) st.close = st.scene.close;
       const id = (st.name || st.direction).replace(/[^\wа-яё-]+/gi, "-").toLowerCase() + "-" + Date.now().toString(36);
       await call("/lab/save", { id, record: { name: st.name || id, direction: st.direction, text: st.text, understanding: st.und, answers: st.ans, plan: st.plan, close: st.close, tone: st.tone, scene: st.scene } }); st.saved = id
     } catch (e) { alert(e.message) } draw() }; app.appendChild(g); return }
   app.appendChild($("h2", {}, "Сцена «" + (st.scene.title || "") + "»")); const sc = $("div", { className: "mirror scene" }); (st.scene.blocks || []).forEach(b => sc.appendChild($("p", { textContent: b.text }))); app.appendChild(sc);
+  if (st.scene.close_replaced) app.appendChild($("div", { className: "mirror" }, st.scene.close_replaced.note));
   if ((st.scene.issues || []).length) app.appendChild($("p", { className: "muted" }, "Проверки не прошли: " + st.scene.issues.join("; ")));
   const d1 = $("details", {}, "<summary>Что понял DeepSeek (шаг 1)</summary>"); d1.appendChild($("pre", { textContent: JSON.stringify(st.und, null, 1) })); app.appendChild(d1);
   const d2 = $("details", {}, "<summary>План сцены (шаг 2)</summary>"); d2.appendChild($("pre", { textContent: JSON.stringify(st.plan, null, 1) })); app.appendChild(d2);
