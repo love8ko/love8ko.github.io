@@ -105,7 +105,10 @@ const R2 = "https://pub-a5850bbb23094e24a55b1ae404652155.r2.dev", e = (x) => Str
     const sc = (r.scene?.blocks || []).map((b) => "<p>" + e(b.text) + "</p>").join("");
     box.insertAdjacentHTML("beforeend", "<section><h2>" + e(r.name) + "</h2><p class='muted'>" + e(r.direction) + " · " + e((r.saved_at || "").slice(0, 16).replace("T", " ")) + "</p>"
       + "<h3>Аффирмация «" + e(r.scene?.title) + "»</h3><div class='scene'>" + sc + "</div>"
+      + (r.scene?.close_replaced ? "<p class='muted'>Твою последнюю фразу «" + e(r.scene.close_replaced.from) + "» система заменила: " + e(r.scene.close_replaced.note) + "</p>" : "")
+      + ((r.scene?.close_options || []).length ? "<p class='muted'>Другие варианты последней фразы: " + e(r.scene.close_options.join(" · ")) + "</p>" : "")
       + ((r.scene?.issues || []).length ? "<p class='muted'>Проверки: " + e(r.scene.issues.join("; ")) + "</p>" : "")
+      + (r.before ? "<details open><summary>Было (старая логика, тот же ввод)</summary><p class='muted'>Зеркало: " + e(r.before.mirror) + "</p><div class='scene' style='opacity:.8'>" + (r.before.scene?.blocks || []).map((b) => "<p>" + e(b.text) + "</p>").join("") + "</div></details>" : "")
       + "<h3>Что ты написал и ответил</h3><table><tr><td>Своими словами</td><td>" + e(r.text) + "</td></tr>" + q
       + "<tr><td>Фраза в конце</td><td>" + e(r.close) + "</td></tr><tr><td>Голос</td><td>" + e(r.tone) + "</td></tr></table>"
       + "<p class='muted'>Зеркало: " + e(r.understanding?.mirror) + "</p>"
