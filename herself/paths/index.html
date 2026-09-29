@@ -107,7 +107,9 @@ const R2 = "https://pub-a5850bbb23094e24a55b1ae404652155.r2.dev", e = (x) => Str
     const q = Object.entries(r.answers || {}).map(([k, v]) => "<tr><td>" + e(k) + "</td><td>" + e(v) + "</td></tr>").join("");
     const sc = (r.scene?.blocks || []).map((b) => "<p>" + e(b.text) + "</p>").join("");
     box.insertAdjacentHTML("beforeend", "<section><h2>" + e(r.name) + "</h2><p class='muted'>" + e(r.direction) + " · " + e((r.saved_at || "").slice(0, 16).replace("T", " ")) + "</p>"
-      + "<h3>Аффирмация «" + e(r.scene?.title) + "» · ≈ " + secs(r.scene, r.tone) + " с звучания</h3><div class='scene'>" + sc + "</div>"
+      + "<h3>Аффирмация «" + e(r.scene?.title) + "» · ≈ " + secs(r.scene, r.tone) + " с звучания</h3>"
+      + (r.audio ? "<audio controls preload='none' src='" + R2 + "/" + r.audio + "'></audio><p class='muted'>" + e(r.voice_note || "") + "</p>" : "")
+      + "<div class='scene'>" + sc + "</div>"
       + (r.scene?.close_replaced ? "<p class='muted'>Твою последнюю фразу «" + e(r.scene.close_replaced.from) + "» система заменила: " + e(r.scene.close_replaced.note) + "</p>" : "")
       + ((r.scene?.close_options || []).length ? "<p class='muted'>Другие варианты последней фразы: " + e(r.scene.close_options.join(" · ")) + "</p>" : "")
       + ((r.scene?.issues || []).length ? "<p class='muted'>Проверки: " + e(r.scene.issues.join("; ")) + "</p>" : "")
