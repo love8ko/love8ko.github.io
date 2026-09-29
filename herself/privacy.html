@@ -72,13 +72,13 @@ nav.toc li { margin-bottom: 2px; }
 <p class="draft" role="note">DRAFT — pending legal review. Not yet in force.</p>
 <main>
 <h1>Privacy Policy</h1>
-<p class="meta">Herself: Manifest Affirmations · Loveiko Labs<br>Last updated: September 27, 2026 (draft)</p>
+<p class="meta">Herself: Manifest Affirmations · Loveiko Labs<br>Last updated: September 29, 2026 (draft)</p>
 
 <div class="card">
 <p><strong>In short.</strong></p>
 <ul>
   <li>Your answers go to DeepSeek, our AI provider, to write your scene. DeepSeek processes data in China.</li>
-  <li>Each recording goes to ElevenLabs to make a temporary AI voice. The voice is deleted right after your scene is made, and in any case within 1 hour.</li>
+  <li>Each recording goes to ElevenLabs to make a temporary AI voice. The voice is deleted within 1 hour after your scene is made, so you can re-voice edits. Your recording stays on your iPhone for 24 hours for edits, then it is deleted.</li>
   <li>Your finished scenes stay on your iPhone. They are not backed up to iCloud.</li>
   <li>No ads. No tracking SDKs. We do not sell or share your personal information.</li>
   <li>Herself is for adults 18 and older. It is not therapy or medical care.</li>
@@ -136,7 +136,7 @@ nav.toc li { margin-bottom: 2px; }
 <h2 id="device">3. What stays on your iPhone</h2>
 <ul>
   <li>Your finished scenes (audio and text) are saved only on your iPhone. They are excluded from iCloud backup.</li>
-  <li>Your raw recording is deleted from your iPhone right after the scene is made.</li>
+  <li>Your raw recording stays on your iPhone for 24 hours after the scene is made, so you can edit and re-voice your scene, and is then deleted.</li>
   <li>The app keeps a simple usage journal (for example, which screen you reached) on your iPhone only. It is not sent to us.</li>
   <li>If you delete the app, the scenes on your iPhone are deleted with it.</li>
 </ul>
@@ -148,7 +148,7 @@ nav.toc li { margin-bottom: 2px; }
 <thead><tr><th>Provider</th><th>What they receive</th><th>Why</th></tr></thead>
 <tbody>
 <tr><td><strong>DeepSeek</strong></td><td>Your answers, notes and check-ins</td><td>To write your scene and suggest follow-up questions. DeepSeek processes data in China. <span class="todo">[TO CONFIRM: DeepSeek API retention period and whether API inputs are used for training]</span></td></tr>
-<tr><td><strong>ElevenLabs</strong></td><td>Each voice recording; the scene text</td><td>To make a temporary AI voice and read your scene in it. We delete the voice right after the scene is made. <span class="todo">[TO CONFIRM: that deleting the voice also deletes the uploaded sample at ElevenLabs, and that our account is set so data is not used for training]</span></td></tr>
+<tr><td><strong>ElevenLabs</strong></td><td>Each voice recording; the scene text</td><td>To make a temporary AI voice and read your scene in it, including edits you make to the scene. We delete the voice within 1 hour after the scene is made. <span class="todo">[TO CONFIRM: that deleting the voice also deletes the uploaded sample at ElevenLabs, and that our account is set so data is not used for training]</span></td></tr>
 <tr><td><strong>Cloudflare</strong></td><td>Requests from the app, the install ID, scene text</td><td>Hosts our server. Stores scene text for up to 1 hour, only while your audio is made, and daily usage counters. Our own logs record only the route, the result and sizes — no names, emails, IP addresses, IDs or your text. <span class="todo">[TO CONFIRM: Cloudflare's own network and security log retention for our account; Cloudflare necessarily sees IP addresses to deliver requests]</span></td></tr>
 <tr><td><strong>Apple</strong></td><td>Payment and subscription details</td><td>To take payment through the App Store. Apple's privacy policy applies to that.</td></tr>
 </tbody>
@@ -162,7 +162,7 @@ nav.toc li { margin-bottom: 2px; }
   <li><strong>Purpose.</strong> Only to read your own scenes in an AI copy of your voice. Not to identify you, and not for any other use.</li>
   <li><strong>Written consent.</strong> We ask before your first recording, with a separate checkbox. Nothing is recorded without it. The consent covers each recording you make.</li>
   <li><strong>Who receives it.</strong> ElevenLabs only, as our processor, to make the voice.</li>
-  <li><strong>Retention.</strong> The AI voice and the uploaded recording are deleted right after each scene is made. In any case, an automatic job deletes every AI voice older than 1 hour. The raw recording on your iPhone is deleted right after the scene is made.</li>
+  <li><strong>Retention.</strong> The AI voice and the uploaded recording are kept for up to 1 hour after each scene is made, so you can re-voice edits, and are then deleted. An automatic job deletes every AI voice older than 1 hour. The raw recording on your iPhone is kept for 24 hours after the scene is made, for edits, and is then deleted.</li>
   <li><strong>No sale.</strong> We do not sell, lease, trade or otherwise profit from your voice data.</li>
   <li><strong>No other disclosure,</strong> unless you ask us to, or the law or a court order requires it.</li>
   <li><strong>Protection.</strong> Sent over encrypted connections and handled with at least the care we use for other sensitive data.</li>
@@ -174,8 +174,8 @@ nav.toc li { margin-bottom: 2px; }
 <table>
 <thead><tr><th>Data</th><th>Where</th><th>How long</th></tr></thead>
 <tbody>
-<tr><td>Raw voice recording</td><td>Your iPhone</td><td>Deleted right after the scene is made</td></tr>
-<tr><td>Recording sample and AI voice</td><td>ElevenLabs</td><td>Deleted right after the scene is made; in any case within 1 hour <span class="todo">[TO CONFIRM: ElevenLabs sample deletion]</span></td></tr>
+<tr><td>Raw voice recording</td><td>Your iPhone</td><td>24 hours after the scene is made, for edits; then deleted</td></tr>
+<tr><td>Recording sample and AI voice</td><td>ElevenLabs</td><td>Deleted within 1 hour after the scene is made (kept that long so you can re-voice edits) <span class="todo">[TO CONFIRM: ElevenLabs sample deletion]</span></td></tr>
 <tr><td>Scene text</td><td>Our server (Cloudflare)</td><td>Up to 1 hour, only while the audio is made; then deleted automatically</td></tr>
 <tr><td>Daily usage counters (by install ID)</td><td>Our server</td><td>About 1–2 days</td></tr>
 <tr><td>Scene credit record (install ID, time of first and last scene, count)</td><td>Our server</td><td><span class="todo">[TO CONFIRM: retention period and deletion rule]</span></td></tr>
