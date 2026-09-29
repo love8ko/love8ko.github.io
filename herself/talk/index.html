@@ -1,0 +1,59 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Herself — разговор</title><style>*{box-sizing:border-box}body{font:16px/1.5 -apple-system,system-ui,sans-serif;max-width:640px;margin:0 auto;padding:16px;background:#fff;color:#111}
+button{display:block;width:100%;text-align:left;padding:10px 12px;margin:6px 0;border:1px solid #bbb;border-radius:8px;background:#f6f6f6;color:#111;font:inherit;-webkit-appearance:none;white-space:normal}
+button.on{border:2px solid #b0306a;background:#fbe7ef}.go{background:#b0306a;color:#fff;text-align:center;border:0}
+textarea,input{width:100%;font:inherit;padding:8px;border:1px solid #bbb;border-radius:8px}.mirror{background:#fbf3f6;padding:10px 14px;border-radius:8px;margin:12px 0}
+.scene p{margin:.4em 0}.muted{color:#888;font-size:14px}pre{white-space:pre-wrap;word-break:break-word;background:#f0f0f0;padding:10px;border-radius:8px;font-size:13px}
+h2{font-size:18px;margin:22px 0 6px}summary{color:#b0306a;cursor:pointer;margin:8px 0}
+@media (prefers-color-scheme:dark){body{background:#111;color:#eee}button{background:#262626;color:#f2f2f2;border-color:#555}button.on{background:#4a1f33;border-color:#e07aa5}
+textarea,input{background:#222;color:#eee;border-color:#555}.mirror{background:#2a1a22}pre{background:#222}.go{background:#b0306a;color:#fff}}</style></head><body>
+<h1>Herself — разговор</h1><p class="muted">Черновик: анкета как разговор с экспертом. DeepSeek на каждом шаге; озвучки пока нет. <a href="../paths/">→ Твои пути</a> · <a href="../tapper/">старая тапалка</a></p>
+<div id="app"></div>
+<script>
+const LAB = "https://herself-lab.love8ko.workers.dev";
+const st = {}; let pass = ""; try { pass = localStorage.getItem("labpass") || "" } catch (e) {}
+const $ = (t, a, h) => { const e = document.createElement(t); Object.assign(e, a || {}); if (h != null) e.innerHTML = h; return e };
+async function call(path, body) {
+  const r = await fetch(LAB + path, { method: "POST", headers: { "Content-Type": "application/json", "X-Lab-Pass": pass }, body: JSON.stringify(body) });
+  const d = await r.json(); if (!r.ok) throw new Error(d.error || r.status); return d;
+}
+function busy(app, text) { app.appendChild($("p", { className: "muted" }, text)) }
+function opts(box, list, key, onpick) { list.forEach(o => { const b = $("button", { textContent: o }); if (st[key] === o) b.className = "on"; b.onclick = () => onpick(o); box.appendChild(b) }) }
+async function draw() {
+  const app = document.getElementById("app"); app.innerHTML = "";
+  if (!pass) { app.appendChild($("h2", {}, "Пароль лаба")); const i = $("input", { type: "password" }); app.appendChild(i);
+    const g = $("button", { className: "go", textContent: "Войти" }); g.onclick = () => { pass = i.value; try { localStorage.setItem("labpass", pass) } catch (e) {} ; draw() }; app.appendChild(g); return }
+  if (!st.dirs) { busy(app, "Загружаю…"); try { st.dirs = await call("/lab/directions", {}) } catch (e) { app.innerHTML = "Ошибка: " + e.message + " (пароль?)"; pass = ""; try { localStorage.removeItem("labpass") } catch (x) {} ; return } return draw() }
+  app.appendChild($("h2", {}, "Чего тебе сейчас хочется больше?")); opts(app, Object.keys(st.dirs), "direction", o => { st.direction = o; st.text = ""; delete st.und; delete st.plan; delete st.scene; draw() });
+  if (!st.direction) return;
+  const D = st.dirs[st.direction];
+  app.appendChild($("h2", {}, D.q)); const box = $("div"); app.appendChild(box);
+  D.starters.forEach(s => { const b = $("button", { textContent: s + " …" }); b.onclick = () => { t.value = (t.value ? t.value + ". " : "") + s; st.text = t.value }; box.appendChild(b) });
+  const t = $("textarea", { rows: 4, placeholder: D.ex }); t.value = st.text || ""; t.oninput = () => { st.text = t.value }; app.appendChild(t);
+  if (!st.und) { const g = $("button", { className: "go", textContent: "Дальше" }); g.onclick = async () => { if (!st.text) return; g.textContent = "Думаю…"; try { st.und = await call("/lab/understand", { direction: st.direction, text: st.text, lang: "ru" }); st.ans = {} } catch (e) { alert(e.message) } draw() }; app.appendChild(g); return }
+  if (st.und.crisis) { app.appendChild($("div", { className: "mirror" }, "Похоже, сейчас тебе очень тяжело. Сцену писать не будем — вот где помогут прямо сейчас: 988 (США), 8-800-2000-122 (Россия).")); return }
+  app.appendChild($("div", { className: "mirror" }, st.und.mirror || ""));
+  (st.und.questions || []).forEach(q => { app.appendChild($("h2", {}, q.text)); const b = $("div"); app.appendChild(b);
+    opts(b, q.options || [], "q_" + q.id, o => { st["q_" + q.id] = o; st.ans[q.text] = o; delete st.plan; delete st.scene; draw() });
+    const own = $("input", { placeholder: "По-другому…" }); own.value = st["own_" + q.id] || ""; own.onchange = () => { st["own_" + q.id] = own.value; st.ans[q.text] = own.value; delete st.plan; delete st.scene; draw() }; b.appendChild(own) });
+  if ((st.und.questions || []).some(q => !st.ans[q.text])) return;
+  if (!st.plan) { const g = $("button", { className: "go", textContent: "Дальше" }); g.onclick = async () => { g.textContent = "Собираю сцену…"; try { st.plan = await call("/lab/plan", { direction: st.direction, understanding: st.und, answers: st.ans, seed: st.direction + st.text, lang: "ru" }) } catch (e) { alert(e.message) } draw() }; app.appendChild(g); return }
+  app.appendChild($("h2", {}, "Какая фраза твоя — в конце сцены?")); opts(app, st.plan.last_lines || [], "close", o => { st.close = o; delete st.scene; draw() });
+  const own = $("input", { placeholder: "Или своя фраза, от «я»" }); own.onchange = () => { st.close = own.value; delete st.scene; draw() }; app.appendChild(own);
+  app.appendChild($("h2", {}, "Как звучит твой голос, когда всё получается?")); opts(app, ["спокойно", "мягко", "уверенно"], "tonelabel", o => { st.tonelabel = o; st.tone = { "спокойно": "calm", "мягко": "soft", "уверенно": "confident" }[o]; delete st.scene; draw() });
+  if (!st.close || !st.tone) return;
+  if (!st.scene) { const n = $("input", { placeholder: "Имя пути, например: деньги-2" }); n.value = st.name || ""; n.oninput = () => st.name = n.value; app.appendChild(n);
+    const g = $("button", { className: "go", textContent: "Написать сцену" }); g.onclick = async () => { g.textContent = "Пишу…"; try {
+      st.scene = await call("/lab/write", { direction: st.direction, understanding: st.und, answers: st.ans, plan: st.plan, close: st.close, tone: st.tone, text: st.text, lang: "ru" });
+      const id = (st.name || st.direction).replace(/[^\wа-яё-]+/gi, "-").toLowerCase() + "-" + Date.now().toString(36);
+      await call("/lab/save", { id, record: { name: st.name || id, direction: st.direction, text: st.text, understanding: st.und, answers: st.ans, plan: st.plan, close: st.close, tone: st.tone, scene: st.scene } }); st.saved = id
+    } catch (e) { alert(e.message) } draw() }; app.appendChild(g); return }
+  app.appendChild($("h2", {}, "Сцена «" + (st.scene.title || "") + "»")); const sc = $("div", { className: "mirror scene" }); (st.scene.blocks || []).forEach(b => sc.appendChild($("p", { textContent: b.text }))); app.appendChild(sc);
+  if ((st.scene.issues || []).length) app.appendChild($("p", { className: "muted" }, "Проверки не прошли: " + st.scene.issues.join("; ")));
+  const d1 = $("details", {}, "<summary>Что понял DeepSeek (шаг 1)</summary>"); d1.appendChild($("pre", { textContent: JSON.stringify(st.und, null, 1) })); app.appendChild(d1);
+  const d2 = $("details", {}, "<summary>План сцены (шаг 2)</summary>"); d2.appendChild($("pre", { textContent: JSON.stringify(st.plan, null, 1) })); app.appendChild(d2);
+  app.appendChild($("p", { className: "muted" }, "Сохранено: " + (st.saved || "—") + " — видно на странице «Твои пути»."));
+  const again = $("button", { textContent: "Новый путь" }); again.onclick = () => { for (const k in st) if (k !== "dirs") delete st[k]; draw(); scrollTo(0, 0) }; app.appendChild(again);
+}
+draw();
+</script></body></html>
