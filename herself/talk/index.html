@@ -20,12 +20,12 @@ async function call(path, body) {
 function busy(app, text) { app.appendChild($("p", { className: "muted" }, text)) }
 function opts(box, list, key, onpick) { list.forEach(o => { const b = $("button", { textContent: o }); if (st[key] === o) b.className = "on"; b.onclick = () => onpick(o); box.appendChild(b) }) }
 async function save() { await call("/lab/save", { id: st.id, record: { name: st.name || st.id, direction: st.direction, text: st.text, understanding: st.und, answers: st.ans,
-  close: ((st.scene.blocks || []).find(b => b.type === "close") || {}).text, tone: st.tone, scene: st.scene, plan: { form: st.scene.form }, logic: "v2" } }) }
+  close: ((st.scene.blocks || []).find(b => b.type === "close") || {}).text, tone: st.tone, extra: st.extra || "", feeling: st.feeling || null, scene: st.scene, plan: { form: st.scene.form }, logic: "v2" } }) }
 async function draw() {
   const app = document.getElementById("app"); app.innerHTML = "";
   if (!pass) { app.appendChild($("h2", {}, "Пароль лаба")); const i = $("input", { type: "password" }); app.appendChild(i);
     const g = $("button", { className: "go", textContent: "Войти" }); g.onclick = () => { pass = i.value; try { localStorage.setItem("labpass", pass) } catch (e) {} ; draw() }; app.appendChild(g); return }
-  if (!st.dirs) { busy(app, "Загружаю…"); try { const cfg = await call("/lab/config", {}); st.dirs = cfg.directions; st.chips = cfg.feeling_chips.ru; st.noCritic = cfg.no_critic.ru } catch (e) { app.innerHTML = "Ошибка: " + e.message + " (пароль?)"; pass = ""; try { localStorage.removeItem("labpass") } catch (x) {} ; return } return draw() }
+  if (!st.dirs) { busy(app, "Загружаю…"); try { const cfg = await call("/lab/config", {}); st.dirs = cfg.directions; st.chips = cfg.feeling_chips.ru; st.noCritic = cfg.no_critic.ru; st.extraCfg = cfg.extra.ru } catch (e) { app.innerHTML = "Ошибка: " + e.message + " (пароль?)"; pass = ""; try { localStorage.removeItem("labpass") } catch (x) {} ; return } return draw() }
   app.appendChild($("h2", {}, "Чего тебе сейчас хочется больше?")); opts(app, Object.keys(st.dirs), "direction", o => { st.direction = o; st.text = ""; delete st.und; delete st.scene; draw() });
   if (!st.direction) return;
   const D = st.dirs[st.direction];
@@ -45,9 +45,13 @@ async function draw() {
   app.appendChild($("h2", {}, "Как звучит твой голос, когда всё получается?")); opts(app, ["спокойно", "мягко", "уверенно"], "tonelabel", o => { st.tonelabel = o; st.tone = { "спокойно": "calm", "мягко": "soft", "уверенно": "confident" }[o]; delete st.scene; draw() });
   const own = $("input", { placeholder: "Своя фраза для конца сцены, от «я» (можно пропустить)" }); own.value = st.close || ""; own.onchange = () => { st.close = own.value; delete st.scene }; app.appendChild(own);
   if (!st.tone) return;
+  { const X = st.extraCfg, D2 = X.by_direction[st.direction] || { q: X.title, examples: [] };
+    app.appendChild($("h2", {}, X.title)); app.appendChild($("p", {}, D2.q));
+    if (D2.examples.length) app.appendChild($("p", { className: "muted" }, X.example_label + " " + D2.examples.map(x => "«" + x + "»").join(" · ")));
+    const xt = $("textarea", { rows: 3, placeholder: X.placeholder }); xt.value = st.extra || ""; xt.oninput = () => { st.extra = xt.value; delete st.scene }; app.appendChild(xt) }
   if (!st.scene) { const n = $("input", { placeholder: "Имя пути, например: деньги-2" }); n.value = st.name || ""; n.oninput = () => st.name = n.value; app.appendChild(n);
     const g = $("button", { className: "go", textContent: "Написать сцену" }); g.onclick = async () => { g.textContent = "Пишу…"; try {
-      st.scene = await call("/lab/write2", { direction: st.direction, understanding: st.und, answers: st.ans, close: st.close || "", tone: st.tone, text: st.text, seed: st.direction + st.text, lang: "ru" });
+      st.scene = await call("/lab/write2", { direction: st.direction, understanding: st.und, answers: st.ans, close: st.close || "", tone: st.tone, text: st.text, extra: st.extra || "", seed: st.direction + st.text, lang: "ru" });
       st.id = (st.name || st.direction).replace(/[^\wа-яё-]+/gi, "-").toLowerCase() + "-" + Date.now().toString(36); await save()
     } catch (e) { alert(e.message) } draw() }; app.appendChild(g); return }
   if (st.scene.crisis) { app.appendChild($("div", { className: "mirror" }, st.scene.support)); return }
