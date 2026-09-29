@@ -25,14 +25,17 @@ async function draw() {
   const app = document.getElementById("app"); app.innerHTML = "";
   if (!pass) { app.appendChild($("h2", {}, "Пароль лаба")); const i = $("input", { type: "password" }); app.appendChild(i);
     const g = $("button", { className: "go", textContent: "Войти" }); g.onclick = () => { pass = i.value; try { localStorage.setItem("labpass", pass) } catch (e) {} ; draw() }; app.appendChild(g); return }
-  if (!st.dirs) { busy(app, "Загружаю…"); try { st.dirs = await call("/lab/directions", {}) } catch (e) { app.innerHTML = "Ошибка: " + e.message + " (пароль?)"; pass = ""; try { localStorage.removeItem("labpass") } catch (x) {} ; return } return draw() }
+  if (!st.dirs) { busy(app, "Загружаю…"); try { const cfg = await call("/lab/config", {}); st.dirs = cfg.directions; st.chips = cfg.feeling_chips.ru; st.noCritic = cfg.no_critic.ru } catch (e) { app.innerHTML = "Ошибка: " + e.message + " (пароль?)"; pass = ""; try { localStorage.removeItem("labpass") } catch (x) {} ; return } return draw() }
   app.appendChild($("h2", {}, "Чего тебе сейчас хочется больше?")); opts(app, Object.keys(st.dirs), "direction", o => { st.direction = o; st.text = ""; delete st.und; delete st.scene; draw() });
   if (!st.direction) return;
   const D = st.dirs[st.direction];
   app.appendChild($("h2", {}, D.q)); const box = $("div"); app.appendChild(box);
   D.starters.forEach(s => { const b = $("button", { textContent: s + " …" }); b.onclick = () => { t.value = (t.value ? t.value + ". " : "") + s; st.text = t.value }; box.appendChild(b) });
   const t = $("textarea", { rows: 4, placeholder: D.ex }); t.value = st.text || ""; t.oninput = () => { st.text = t.value }; app.appendChild(t);
-  if (!st.und) { const g = $("button", { className: "go", textContent: "Дальше" }); g.onclick = async () => { if (!st.text) return; g.textContent = "Думаю…"; try { st.und = await call("/lab/understand", { direction: st.direction, text: st.text, lang: "ru" }); st.ans = {} } catch (e) { alert(e.message) } draw() }; app.appendChild(g); return }
+  app.appendChild($("h2", {}, st.chips.q)); const fb = $("div", { style: "display:flex;flex-wrap:wrap;gap:6px" }); app.appendChild(fb);
+  Object.entries(st.chips.options).forEach(([k, l]) => { const b = $("button", { textContent: l, style: "width:auto;display:inline-block" }); if (st.feeling === k) b.className = "on";
+    b.onclick = () => { st.text = t.value; st.feeling = st.feeling === k ? null : k; delete st.und; delete st.scene; draw() }; fb.appendChild(b) });
+  if (!st.und) { const g = $("button", { className: "go", textContent: "Дальше" }); g.onclick = async () => { if (!st.text) return; g.textContent = "Думаю…"; try { st.und = await call("/lab/understand", { direction: st.direction, text: st.text, feeling: st.feeling || null, lang: "ru" }); st.ans = {} } catch (e) { alert(e.message) } draw() }; app.appendChild(g); return }
   if (st.und.crisis) { app.appendChild($("div", { className: "mirror" }, st.und.support || "Похоже, сейчас тебе очень тяжело. 8-800-2000-122 (Россия), 988 (США).")); return }
   app.appendChild($("div", { className: "mirror" }, st.und.mirror || ""));
   (st.und.questions || []).forEach(q => { app.appendChild($("h2", {}, q.text)); const b = $("div"); app.appendChild(b);
