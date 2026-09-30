@@ -1,0 +1,145 @@
+{
+  "locale": "en-US",
+  "shots": [
+    {
+      "id": "EO8-01",
+      "key": "wish",
+      "headline": "Hear the life\nyou want. In\nyour own voice.",
+      "photo": "bg1_window.png",
+      "subtitle": "Affirmations in your own AI voice.",
+      "callout": "My voice can shake and still be heard.",
+      "highlight": "your own voice.",
+      "frozen_from": "EO6-01"
+    },
+    {
+      "id": "EO8-02",
+      "key": "critic",
+      "headline": "Your inner\ncritic is loud.\nLet your voice\nanswer.",
+      "photo": "bg3_walk.png",
+      "subtitle": "For the days you feel “not enough”.",
+      "callout": "Feeling sure of myself",
+      "highlight": "your voice",
+      "frozen_from": "EO6-02"
+    },
+    {
+      "id": "EO8-03",
+      "key": "night",
+      "headline": "Overthinking\ntonight? Hear a\nkinder voice:\nyours.",
+      "photo": "bg2_night.png",
+      "subtitle": "Ten quiet minutes in your own voice.",
+      "callout": "I do not have to solve it all tonight.",
+      "highlight": "yours.",
+      "ui_sample": {
+        "header": "Your chapters",
+        "chapters": [
+          "Money",
+          "Relationships",
+          "Body",
+          "Dreams"
+        ],
+        "line": "I do not have to solve it all tonight."
+      },
+      "frozen_from": "EO6-03"
+    },
+    {
+      "id": "EO8-04",
+      "key": "proof",
+      "headline": "Why track\nthe small steps?",
+      "highlight": "small steps?",
+      "subtitle": "Goal tracking supports follow-through.",
+      "callout": "138 studies of goal tracking",
+      "stat": "138",
+      "stat_label": "studies of goal tracking",
+      "citation": "Harkin et al. · 2016",
+      "qualification": "Research on goal tracking.\nHerself itself has not been tested.",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/26479070/",
+      "ui": "design/screenshots-v2/h04/ui/change.png",
+      "photo": null,
+      "jtbd": "J5: bridge intention to action",
+      "ui_text": [
+        "Your chapters",
+        "YOUR STEP THIS WEEK",
+        "I will send one job application this week.",
+        "Chapter 3 arrives Tuesday"
+      ]
+    },
+    {
+      "id": "EO8-05",
+      "key": "love",
+      "headline": "You can ask\nfor what\nyou need.",
+      "highlight": "you need.",
+      "subtitle": "A little support before the hard talk.",
+      "callout": "There is room for what I need.",
+      "ui": "design/screenshots-v2/h04/ui/love.png",
+      "photo": "design/screenshots-v2/eo7/sources/relationships.png",
+      "jtbd": "J2/J3: feel worthy and speak before a hard relationship conversation",
+      "ui_text": [
+        "There is room for what I need.",
+        "I can speak with warmth and honesty.",
+        "I do not have to make myself smaller.",
+        "You're ready. Go.",
+        "Done"
+      ]
+    },
+    {
+      "id": "EO8-06",
+      "key": "body",
+      "headline": "Your body isn't\na problem\nto solve.",
+      "highlight": "a problem",
+      "subtitle": "Personal words for the mirror moment.",
+      "callout": "My body deserves kind words today.",
+      "ui": "design/screenshots-v2/h03/ui/body.png",
+      "photo": "design/screenshots-v2/h02/sources/body.png",
+      "jtbd": "J7: self-kindness at the mirror",
+      "ui_text": [
+        "My body deserves kind words today.",
+        "I stand by the mirror and notice the morning light instead of searching for a flaw.",
+        "I choose clothes that feel comfortable and give myself time to get ready.",
+        "You're ready. Go.",
+        "Done"
+      ]
+    },
+    {
+      "id": "EO8-07",
+      "key": "work",
+      "headline": "Your next chapter\nstarts with\none step.",
+      "highlight": "one step.",
+      "subtitle": "A fresh chapter built around your next step.",
+      "callout": "I will send one job application this week.",
+      "callout_label": "YOUR STEP THIS WEEK",
+      "ui": "design/screenshots-v2/h04/ui/change.png",
+      "photo": "research/imagery-2026-09-26/img/M12.png",
+      "jtbd": "J5: get unstuck at work with a personally chosen weekly step",
+      "ui_text": [
+        "Your chapters",
+        "YOUR STEP THIS WEEK",
+        "I will send one job application this week.",
+        "Chapter 3 arrives Tuesday"
+      ]
+    },
+    {
+      "id": "EO8-08",
+      "key": "chapter",
+      "headline": "Start again.\nYou're\nallowed.",
+      "highlight": "allowed.",
+      "subtitle": "Choose what you want for your next chapter.",
+      "callout": "A new chapter",
+      "ui": "design/screenshots-v2/eo6/ui/critic.png",
+      "photo": "research/imagery-2026-09-26/img/M10.png",
+      "jtbd": "J6: choose a direction after life changes",
+      "ui_text": [
+        "What do you want more of right now?",
+        "Still the one—or is something else louder today? One tap.",
+        "Feeling sure of myself",
+        "Love that feels safe",
+        "Calm about money",
+        "Being seen at work",
+        "Feeling good in my body",
+        "A place of my own",
+        "My people close",
+        "A new chapter",
+        "Yesterday's answer is a fine answer, too."
+      ]
+    }
+  ]
+}
