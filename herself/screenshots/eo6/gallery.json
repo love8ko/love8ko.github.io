@@ -1,0 +1,36 @@
+{
+  "round": "EO6",
+  "date": "2026-09-30",
+  "status": "on-review",
+  "approved": false,
+  "base": "EO5",
+  "shots": [
+    {
+      "id": "EO6-01",
+      "topic": "wish",
+      "sha256": "f7152cc8b16cc9467293b1ed6f309c4f0aa8384dd90bbf774a82910ed105ee27",
+      "photo_sha256": "7bc5f012610552a88c328b49aec09aaa470ff711daedbbc44978ff67b0e787f1",
+      "ui_sha256": "da18d9a5d3b01e0252f41dc64626e961b52bf37ca30317c382825e5a4050f701",
+      "ui_provenance": "Existing native Herself screenshot, fictional sample content"
+    },
+    {
+      "id": "EO6-02",
+      "topic": "critic",
+      "sha256": "9ff6a785e05bcd03e463c9caf23194a708992f09c8081a15b106780dc9ad1082",
+      "photo_sha256": "3be2456d9f25652e75240f4ee08640f4057c1833a6694d40f494cdcb44a8b855",
+      "ui_sha256": "a675a9cdb91311b5d4905faf9b1e300cb366c727968c1c4bde8b993bacadbcae",
+      "ui_provenance": "Existing native Herself screenshot, fictional sample content"
+    },
+    {
+      "id": "EO6-03",
+      "topic": "night",
+      "sha256": "e1112cef151a4c0937c39ef911e2e160c19ebfd12b4a8ecb4388f10976a9ad20",
+      "photo_sha256": "a29c25f25f0bad1faac8dfbd6ddb4a47b991e7830b339b23d718b5d7fe6c20a0",
+      "ui_sha256": "f38053895fd1a82417dea82371642ae572cfdcc23b73ea4becbe4aa182d8365e",
+      "ui_provenance": "Dark chapter-library example adapted by imagegen from Herself UI and Ink tokens"
+    }
+  ],
+  "copy_sha256": "f7139d8bf77f959e975878c22f2adea3ebbb359e66b703ec1d540a883af1e7d5",
+  "gallery": "https://love8ko.github.io/herself/screenshots/#eo6",
+  "format": "One headline, one subtitle, one phone-linked affinity excerpt. Same EO photos; first two screenshots frozen. Third phone shows Ink dark chapter library with owner-requested names."
+}

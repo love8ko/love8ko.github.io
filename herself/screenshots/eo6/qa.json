@@ -1,0 +1,86 @@
+{
+  "dimensions": "1320x2868",
+  "mode": "RGB",
+  "layout": [
+    {
+      "id": "EO6-01",
+      "head_bottom": 796.390625,
+      "callout_bottom": 2770,
+      "horizontal_overflow": false,
+      "phone_top": 1820,
+      "subtitles": 1,
+      "callouts": 1
+    },
+    {
+      "id": "EO6-02",
+      "head_bottom": 950.40625,
+      "callout_bottom": 2770,
+      "horizontal_overflow": false,
+      "phone_top": 1820,
+      "subtitles": 1,
+      "callouts": 1
+    },
+    {
+      "id": "EO6-03",
+      "head_bottom": 950.40625,
+      "callout_bottom": 2770,
+      "horizontal_overflow": false,
+      "phone_top": 1820,
+      "subtitles": 1,
+      "callouts": 1
+    }
+  ],
+  "visual_review_widths": [
+    110,
+    180,
+    220
+  ],
+  "status": "passed",
+  "gallery_checks": [
+    {
+      "width": 390,
+      "document_width": 390,
+      "images_loaded": true,
+      "image_count": 6,
+      "card_gap": 8,
+      "rounds": [
+        "eo6",
+        "eo5",
+        "eo4",
+        "eo3",
+        "eo2",
+        "h04",
+        "h03",
+        "h02"
+      ],
+      "ids": [
+        "EO6-01",
+        "EO6-02",
+        "EO6-03"
+      ]
+    },
+    {
+      "width": 1280,
+      "document_width": 1280,
+      "images_loaded": true,
+      "image_count": 6,
+      "card_gap": 8,
+      "rounds": [
+        "eo6",
+        "eo5",
+        "eo4",
+        "eo3",
+        "eo2",
+        "h04",
+        "h03",
+        "h02"
+      ],
+      "ids": [
+        "EO6-01",
+        "EO6-02",
+        "EO6-03"
+      ]
+    }
+  ],
+  "visual_review": "First two full PNGs frozen byte-for-byte. Third retains photo/headline/subtitle/callout and same phone geometry, with imagegen-adapted Ink chapter library. All four requested chapter names and Play controls are visible above callout; daily-line component remains lower in UI asset, covered in the composite. Headline/phone recognizable at110px; subtitle and callout better at180/220px. Chapter microtext needs full-size view. No external wordmark or tiny footer."
+}
