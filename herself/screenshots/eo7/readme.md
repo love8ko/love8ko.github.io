@@ -12,7 +12,7 @@ The owner selected the EO6 direction and requested five more frames, a fourth pr
 | 07 | Get unstuck at work through a chosen action | Weekly step, no job application sent by the app; h04/ui/change.png |
 | 08 | Choose what comes next after changes | Wish picker / Onboarding/IntakeScreens.swift; eo6/ui/critic.png. A new chapter is an available choice; the picker also shows the earlier confidence choice. No home or moving outcome promised. |
 
-One headline, one subtitle with one thought, one meaningful external plaque per new frame. Four distinct photographic situations plus one paper evidence frame. Native interface bitmaps are unchanged; phone placement/crop and exact phrase excerpts are HTML/CSS. No external Herself wordmark or tiny Subscription required / Example content footer. The scientific qualification is part of the main evidence plaque, not a service footer.
+One headline, one subtitle with one thought, one meaningful external plaque per new frame. Four distinct photographic situations plus one paper evidence frame. The reused UI bitmaps are unchanged in this round. Frame05 is the earlier H04 imagegen adaptation of native MomentSheet, with fictional relationship phrases; 04/06/07/08 use existing native captures. Phone placement/crop and exact phrase excerpts are HTML/CSS. No external Herself wordmark or tiny Subscription required / Example content footer. The scientific qualification is part of the main evidence plaque, not a service footer.
 
 ## Proof scope
 

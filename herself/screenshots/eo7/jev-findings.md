@@ -60,6 +60,10 @@ Text-model probability of unsupported clinical-app inference after reading the w
 
 Payne2021 primary abstract describes unfamiliar voices associated with self/friend/stranger, not a trial of recorded own voices. Do not reuse the prior evidence file's own-voice interpretation. That paper is not used for this proof. App source Why-section wording is outside this task; not silently fixed here.
 
+## Source provenance correction
+
+The cached text state calls frame5 native. Its source is actually the prior H04 imagegen adaptation of the native MomentSheet with fictional relationship phrases (H04 README / prompts/love-ui.txt). Other new-frame UI assets are existing native captures. No UI pixels or advertised function changed. This correction is reflected in the final manifest and gallery; original audited request states are retained verbatim. Jev did not view images and its UI authenticity assumptions must not be treated as verified.
+
 ## Author audit and publication decision
 
 - Opening1–3: keep selected assets exactly; already explain own-AI-voice differentiation, self-worth, and evening use. Additional sequence needs broader situations rather than redoing the first three.
