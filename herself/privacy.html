@@ -12,21 +12,18 @@
 :root {
   --paper: #F4EEE6; --card: #FBF8F3; --ink: #1F1A17; --muted: #5E534C;
   --accent: #7B1E2B; --accent-soft: #EBD8D3; --line: #DDD2C6;
-  --todo-bg: #FFF1C9; --todo-ink: #5A4300;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #16110F; --card: #201916; --ink: #EFE6DA; --muted: #B7AA9C;
     --accent: #E0848E; --accent-soft: #3A2226; --line: #3A2F2A;
-    --todo-bg: #3D3313; --todo-ink: #F5DE95;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #16110F; --card: #201916; --ink: #EFE6DA; --muted: #B7AA9C;
   --accent: #E0848E; --accent-soft: #3A2226; --line: #3A2F2A;
-  --todo-bg: #3D3313; --todo-ink: #F5DE95;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -34,11 +31,6 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0; background: var(--paper); color: var(--ink);
   font: 400 17px/1.6 "DM Sans", system-ui, -apple-system, sans-serif;
-}
-.draft {
-  position: sticky; top: 0; z-index: 2; margin: 0; padding: 10px 16px;
-  background: var(--accent); color: var(--paper); text-align: center;
-  font-weight: 600; font-size: 15px; letter-spacing: .01em;
 }
 main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
 h1, h2, h3 { font-family: "Newsreader", Georgia, serif; font-weight: 600; line-height: 1.2; }
@@ -52,11 +44,14 @@ a { color: var(--accent); text-underline-offset: 2px; }
 .meta { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin: 16px 0; }
 .card p:last-child, .card ul:last-child { margin-bottom: 0; }
-.todo { background: var(--todo-bg); color: var(--todo-ink); padding: 1px 5px; border-radius: 4px; font-size: .92em; font-weight: 500; }
+.notes { background: transparent; border-style: dashed; font-size: 15px; color: var(--muted); margin-top: 48px; }
+.notes h2 { font-size: 18px; margin: 0 0 8px; padding: 0; border: 0; color: var(--ink); }
+.notes li { margin-bottom: 4px; }
 .table-wrap { overflow-x: auto; margin: 12px 0 16px; }
 table { width: 100%; border-collapse: collapse; font-size: 15px; }
 th, td { text-align: left; vertical-align: top; padding: 9px 8px; border-bottom: 1px solid var(--line); }
 th { font-weight: 600; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+.foot { margin-top: 32px; color: var(--muted); font-size: 15px; }
 .crisis { border-left: 4px solid var(--accent); }
 nav.toc ol { padding-left: 22px; margin: 0; }
 nav.toc li { margin-bottom: 2px; }
@@ -69,17 +64,18 @@ nav.toc li { margin-bottom: 2px; }
 </style>
 </head>
 <body>
-<p class="draft" role="note">DRAFT — pending legal review. Not yet in force.</p>
 <main>
 <h1>Privacy Policy</h1>
-<p class="meta">Herself: Manifest Affirmations · Loveiko Labs<br>Last updated: September 29, 2026 (draft)</p>
+<p class="meta">Herself: Manifest Affirmations · Loveiko Labs<br>Last updated: September 30, 2026</p>
 
 <div class="card">
 <p><strong>In short.</strong></p>
 <ul>
   <li>Your answers go to DeepSeek, our AI provider, to write your scene. DeepSeek processes data in China.</li>
-  <li>Each recording goes to ElevenLabs to make a temporary AI voice. The voice is deleted within 1 hour after your scene is made, so you can re-voice edits. Your recording stays on your iPhone for 24 hours for edits, then it is deleted.</li>
+  <li>Each recording goes to ElevenLabs to make a temporary AI voice. The voice is deleted within about 1 hour after your scene is made, so you can re-voice edits. Your recording stays on your iPhone for 24 hours for edits, then it is deleted.</li>
+  <li>Our server keeps your scene text for about 1 hour and the words you wrote for up to 24 hours, only so your scene can be made, voiced and, if something fails, made again for free.</li>
   <li>Your finished scenes stay on your iPhone. They are not backed up to iCloud.</li>
+  <li>Purchases go through Apple. RevenueCat records them for us under a random install ID, not your name or email.</li>
   <li>No ads. No tracking SDKs. We do not sell or share your personal information.</li>
   <li>Herself is for adults 18 and older. It is not therapy or medical care.</li>
 </ul>
@@ -106,38 +102,49 @@ nav.toc li { margin-bottom: 2px; }
 </nav>
 
 <h2 id="who">1. Who we are</h2>
-<p>Herself: Manifest Affirmations ("Herself", "the app") is an iOS app made by Loveiko Labs ("we", "us"). <span class="todo">[TO CONFIRM: legal entity name, form and postal address]</span></p>
+<p>Herself: Manifest Affirmations ("Herself", "the app") is an iOS app made by Loveiko Labs ("we", "us"), a small independent app developer.</p>
 <p>This policy explains what the app collects, why, who helps us process it, and how long it is kept.</p>
 
 <h2 id="collect">2. What we collect and why</h2>
 <p>We collect only what is needed to make your scenes. We do not ask for your name, email or phone number.</p>
 
 <h3>Your answers</h3>
-<p>You tell us what you want to change and describe a moment: where, when, who, small details, one step you'll take, and the tone (calm or bold). You may pick thoughts from your inner critic, write a short note (up to 400 characters), and answer a weekly check-in (up to 200 characters). We send these to DeepSeek to write your scene. What you write can be personal. We use it only to make your scenes.</p>
+<p>You pick what you want to change and write a few sentences in your own words (up to 600 characters). You may say how you feel about it. Herself reflects it back and asks two short questions; you answer them, pick how your voice should sound (calm, soft or confident), and may add something else (up to 300 characters). You may also edit the scene's words afterwards, by hand or by asking Herself to rewrite a line. We send these to DeepSeek to write and edit your scene. Our server keeps your words and Herself's understanding of them for up to 24 hours, so that if something goes wrong (for example, the voice fails) the same chapter can be made again without asking you again or using another chapter. What you write can be personal. We use it only to make your scenes.</p>
 
 <h3>Your voice recordings</h3>
 <p>Before each chapter you read a short text aloud (15–30 seconds). The app first checks the recording on your iPhone: sound levels, background music, and whether the words match. This check uses Apple's on-device speech recognition and sends nothing anywhere. The recording is then sent through our server to ElevenLabs, which makes a temporary AI voice from it. That voice reads your scene. See the <a href="#voice">Voice data notice</a>.</p>
 
 <h3>Scene text</h3>
-<p>The scene DeepSeek writes is kept on our server for a limited time so that ElevenLabs can read it aloud sentence by sentence. The text is sent to ElevenLabs for that purpose.</p>
+<p>The scene DeepSeek writes is kept on our server for about 1 hour, so that ElevenLabs can read it aloud in your AI voice and you can make edits. The text is sent to ElevenLabs for that purpose. If you edit a scene later, the app sends its copy of the text back for that edit, and it is again kept for about 1 hour.</p>
 
 <h3>Install ID</h3>
-<p>The app creates a random install ID. It is not linked to your name, email or Apple ID. We use it to count scene credits (one new scene per week), to keep the extra chapters you buy, and to apply daily usage limits that protect the service from abuse. The app also attaches it to your App Store purchases (Apple calls this an app account token), so a purchase is credited only to the app that made it and a subscription is not used on more devices than one person would have. The install ID is kept in your iPhone's Keychain, only on this iPhone (it is not synced to iCloud). It stays if you delete and reinstall the app or use Settings → Your data, so the chapters you bought come back; it is removed when the iPhone is erased.</p>
+<p>The app creates a random install ID. It is not linked to your name, email or Apple ID. We use it to count scene credits (one new chapter per week), to keep the extra chapters you buy, and to apply daily usage limits that protect the service from abuse. The app also attaches it to your App Store purchases (Apple calls this an app account token), so a purchase is credited only to the app that made it and a subscription is not used on more devices than one person would have. The install ID is kept in your iPhone's Keychain, only on this iPhone (it is not synced to iCloud). It stays if you delete and reinstall the app or use Settings → Your voice &amp; data, so the chapters you bought come back; it is removed when the iPhone is erased.</p>
 
 <h3>Purchases</h3>
-<p>Subscriptions are handled by Apple through the App Store. We learn whether your subscription is active. We never receive your card details. <span class="todo">[TO CONFIRM: whether a subscription service such as RevenueCat will process subscription status and an app user ID; if so, name it here and in section 4]</span></p>
+<p>Subscriptions and extra chapters are sold by Apple through the App Store. We never receive your card details, name or Apple ID. We learn:</p>
+<ul>
+  <li><strong>Whether your subscription is active.</strong> The app sends our server your subscription's transaction ID. Our server asks Apple (the App Store Server API) whether that subscription is active, and keeps the answer for 1 hour before asking again.</li>
+  <li><strong>What you bought.</strong> When you buy extra chapters, our server checks Apple's signature on the purchase (or asks Apple about it) and records the transaction ID, the product and the time, so each purchase is credited exactly once.</li>
+  <li><strong>Purchase history, through RevenueCat.</strong> The app reports your purchases to RevenueCat, using the install ID as its user ID. RevenueCat shows us subscription and revenue statistics and helps restore purchases.</li>
+</ul>
 
 <h3>Your consent record</h3>
-<p>When you agree to the three confirmations, the app saves which version you agreed to, when, and each box separately. This record stays on your iPhone. <span class="todo">[TO CONFIRM: whether a copy of the consent record is also kept on our server as evidence of written consent]</span></p>
+<p>When you agree to the three confirmations, the app saves which version you agreed to, when, and each box separately. This record stays on your iPhone.</p>
 
 <h3>Safety check</h3>
 <p>If your answers mention self-harm or wanting to die, the app stops making the scene and shows crisis resources. We do not store that result.</p>
+
+<h3>Usage counts and service logs</h3>
+<p>Our server counts how many scenes, voices and AI requests are made each day, in total and without any IDs or text, so we can keep costs and limits under control. Its logs record only the route, the result and sizes — no names, emails, IP addresses, IDs or your text.</p>
+<p>To make the app's safety filter better, our server may keep short harsh phrases you used about yourself (for example, "I'm lazy"), as single words or short phrases with a count, without your install ID or any link to you.</p>
 
 <h2 id="device">3. What stays on your iPhone</h2>
 <ul>
   <li>Your finished scenes (audio and text) are saved only on your iPhone. They are excluded from iCloud backup.</li>
   <li>Your raw recording stays on your iPhone for 24 hours after the scene is made, so you can edit and re-voice your scene, and is then deleted.</li>
+  <li>An unfinished questionnaire is saved on your iPhone, so you can come back to it.</li>
   <li>The app keeps a simple usage journal (for example, which screen you reached) on your iPhone only. It is not sent to us.</li>
+  <li>If you use the Herself widget, today's line is shared with the widget on your iPhone.</li>
   <li>If you delete the app, the scenes on your iPhone are deleted with it.</li>
 </ul>
 
@@ -145,24 +152,25 @@ nav.toc li { margin-bottom: 2px; }
 <p>We use these companies to run Herself. They act on our instructions. We do not allow them to sell your data.</p>
 <div class="table-wrap">
 <table>
-<thead><tr><th>Provider</th><th>What they receive</th><th>Why</th></tr></thead>
+<thead><tr><th>Provider</th><th>What they receive</th><th>Why, and where</th></tr></thead>
 <tbody>
-<tr><td><strong>DeepSeek</strong></td><td>Your answers, notes and check-ins</td><td>To write your scene and suggest follow-up questions. DeepSeek processes data in China. <span class="todo">[TO CONFIRM: DeepSeek API retention period and whether API inputs are used for training]</span></td></tr>
-<tr><td><strong>ElevenLabs</strong></td><td>Each voice recording; the scene text</td><td>To make a temporary AI voice and read your scene in it, including edits you make to the scene. We delete the voice within 1 hour after the scene is made. <span class="todo">[TO CONFIRM: that deleting the voice also deletes the uploaded sample at ElevenLabs, and that our account is set so data is not used for training]</span></td></tr>
-<tr><td><strong>Cloudflare</strong></td><td>Requests from the app, the install ID, scene text</td><td>Hosts our server. Stores scene text for up to 1 hour, only while your audio is made, and daily usage counters. Our own logs record only the route, the result and sizes — no names, emails, IP addresses, IDs or your text. <span class="todo">[TO CONFIRM: Cloudflare's own network and security log retention for our account; Cloudflare necessarily sees IP addresses to deliver requests]</span></td></tr>
-<tr><td><strong>Apple</strong></td><td>Payment and subscription details</td><td>To take payment through the App Store. Apple's privacy policy applies to that.</td></tr>
+<tr><td><strong>DeepSeek</strong></td><td>Your answers and edit requests; the scene text when you ask for an edit</td><td>To write and edit your scene. DeepSeek processes data in China and keeps it under its own policy.</td></tr>
+<tr><td><strong>ElevenLabs</strong></td><td>Each voice recording; the scene text</td><td>To make a temporary AI voice and read your scene in it, including edits you make. We delete the voice within about 1 hour after the scene is made. Mainly the United States.</td></tr>
+<tr><td><strong>Cloudflare</strong></td><td>Requests from the app, the install ID, your words, scene text, purchase transaction IDs</td><td>Hosts our server and its storage (see <a href="#retention">section 6</a> for what is kept and for how long). Cloudflare necessarily sees IP addresses to deliver requests. United States and Cloudflare's global network.</td></tr>
+<tr><td><strong>RevenueCat</strong></td><td>The install ID (as its app user ID), your purchase and subscription history, your App Store country, and technical details of each request (such as app and iOS version and IP address)</td><td>Purchase and subscription analytics for us, and restoring purchases. United States. Kept by RevenueCat under its terms for as long as we use it, and deleted when we ask.</td></tr>
+<tr><td><strong>Apple</strong></td><td>Payment and subscription details (from you, through the App Store); our server sends Apple your purchase transaction IDs</td><td>To take payment, and to confirm that a subscription is active or a purchase is genuine (App Store Server API). Apple's privacy policy applies to payments.</td></tr>
 </tbody>
 </table>
 </div>
 <p>We may also disclose information if the law requires it, or to protect the safety of a person. If the business is sold or merged, this policy would continue to apply to your data.</p>
 
 <h2 id="voice">5. Voice data notice</h2>
-<p>A voice recording and an AI voice made from it may count as biometric data under laws such as the Illinois Biometric Information Privacy Act (BIPA), the Texas Capture or Use of Biometric Identifier Act (CUBI) and Washington's biometric law (RCW 19.375). We treat them that way. <span class="todo">[TO CONFIRM by counsel: wording, applicability and any additional state requirements]</span></p>
+<p>A voice recording and an AI voice made from it may count as biometric data under laws such as the Illinois Biometric Information Privacy Act (BIPA), the Texas Capture or Use of Biometric Identifier Act (CUBI) and Washington's biometric law (RCW 19.375). We treat them that way.</p>
 <ul>
   <li><strong>Purpose.</strong> Only to read your own scenes in an AI copy of your voice. Not to identify you, and not for any other use.</li>
   <li><strong>Written consent.</strong> We ask before your first recording, with a separate checkbox. Nothing is recorded without it. The consent covers each recording you make.</li>
   <li><strong>Who receives it.</strong> ElevenLabs only, as our processor, to make the voice.</li>
-  <li><strong>Retention.</strong> The AI voice and the uploaded recording are kept for up to 1 hour after each scene is made, so you can re-voice edits, and are then deleted. An automatic job deletes every AI voice older than 1 hour. The raw recording on your iPhone is kept for 24 hours after the scene is made, for edits, and is then deleted.</li>
+  <li><strong>Retention.</strong> The AI voice is kept for up to 1 hour after each scene is made, so you can re-voice edits, and is then deleted at ElevenLabs together with the recording it was made from. An automatic job runs every 10 minutes and deletes every AI voice older than 1 hour. Deleting your data or withdrawing consent in the app deletes a live voice right away. The raw recording on your iPhone is kept for 24 hours after the scene is made, for edits, and is then deleted.</li>
   <li><strong>No sale.</strong> We do not sell, lease, trade or otherwise profit from your voice data.</li>
   <li><strong>No other disclosure,</strong> unless you ask us to, or the law or a court order requires it.</li>
   <li><strong>Protection.</strong> Sent over encrypted connections and handled with at least the care we use for other sensitive data.</li>
@@ -175,11 +183,18 @@ nav.toc li { margin-bottom: 2px; }
 <thead><tr><th>Data</th><th>Where</th><th>How long</th></tr></thead>
 <tbody>
 <tr><td>Raw voice recording</td><td>Your iPhone</td><td>24 hours after the scene is made, for edits; then deleted</td></tr>
-<tr><td>Recording sample and AI voice</td><td>ElevenLabs</td><td>Deleted within 1 hour after the scene is made (kept that long so you can re-voice edits) <span class="todo">[TO CONFIRM: ElevenLabs sample deletion]</span></td></tr>
-<tr><td>Scene text</td><td>Our server (Cloudflare)</td><td>Up to 1 hour, only while the audio is made; then deleted automatically</td></tr>
+<tr><td>AI voice and the recording it was made from</td><td>ElevenLabs</td><td>Deleted within about 1 hour after the scene is made (kept that long so you can re-voice edits)</td></tr>
+<tr><td>The words you wrote and Herself's understanding of them</td><td>Our server (Cloudflare)</td><td>24 hours, so a failed chapter can be made again for free; then deleted automatically (a cleanup job runs every 10 minutes)</td></tr>
+<tr><td>Scene text and its edits</td><td>Our server (Cloudflare)</td><td>1 hour, while the audio is made and you edit; then deleted automatically</td></tr>
+<tr><td>Edit counters for a scene (numbers only, no text)</td><td>Our server</td><td>8 days</td></tr>
+<tr><td>Chapter record (which chapter was used for which scene, whether it was voiced or given back; no text)</td><td>Our server</td><td>30 days</td></tr>
 <tr><td>Daily usage counters (by install ID)</td><td>Our server</td><td>About 1–2 days</td></tr>
-<tr><td>Scene credit record (install ID, time of first and last scene, count)</td><td>Our server</td><td><span class="todo">[TO CONFIRM: retention period and deletion rule]</span></td></tr>
-<tr><td>Answers sent for writing</td><td>DeepSeek</td><td><span class="todo">[TO CONFIRM: DeepSeek API retention]</span></td></tr>
+<tr><td>Scene credit record (install ID, time of first and last scene, count, extra chapters left)</td><td>Our server</td><td>While you use Herself, so your weekly schedule and bought chapters are kept; deleted on request</td></tr>
+<tr><td>Subscription status (install ID, the subscription's transaction ID, active or not)</td><td>Our server</td><td>Checked with Apple again after 1 hour; the record is kept while you use Herself; deleted on request</td></tr>
+<tr><td>Purchase records (transaction ID, install ID, product, time) and which install IDs used a subscription</td><td>Our server</td><td>While you use Herself, so a purchase is credited once and bought chapters come back; deleted on request</td></tr>
+<tr><td>Purchase and subscription history</td><td>RevenueCat</td><td>Under RevenueCat's terms while we use it; deleted on request</td></tr>
+<tr><td>Daily usage totals (no IDs, no text)</td><td>Our server</td><td>120 days</td></tr>
+<tr><td>Answers sent for writing</td><td>DeepSeek</td><td>Under DeepSeek's own retention policy</td></tr>
 <tr><td>Finished scenes</td><td>Your iPhone</td><td>Until you delete them or the app</td></tr>
 </tbody>
 </table>
@@ -196,10 +211,11 @@ nav.toc li { margin-bottom: 2px; }
 
 <h2 id="choices">8. Your choices and deleting data</h2>
 <ul>
-  <li><strong>Delete scenes and recordings:</strong> Settings → Your data.</li>
-  <li><strong>Withdraw consent:</strong> in Settings. After that, the app will not send new recordings or answers. <span class="todo">[TO CONFIRM: exact Settings path and what the app does after consent is withdrawn]</span></li>
+  <li><strong>Delete scenes and recordings:</strong> Settings → Your voice &amp; data → Delete my scenes and recordings. This deletes your scenes, recordings, unfinished answers and a live AI voice.</li>
+  <li><strong>Withdraw consent:</strong> Settings → Your voice &amp; data → Withdraw consent. After that, the app sends no new recordings or answers until you agree again; your recording and any live AI voice are deleted right away. Your saved scenes stay on your iPhone and keep playing.</li>
   <li><strong>Microphone:</strong> you can turn off microphone access in iOS Settings at any time.</li>
-  <li><strong>Server data:</strong> <span class="todo">[TO CONFIRM: whether Settings → Your data also deletes the scene text and credit record on our server; if not, how to request it]</span></li>
+  <li><strong>Server data:</strong> your scene text is deleted from our server automatically within about 1 hour, and your words within 24 hours. The records kept by install ID (credits, subscription status and purchases) are not personal content, and they are what brings bought chapters back after a reinstall. To have them deleted, write to us from Settings → Write to us (the email includes your install ID). Deleting them also removes chapters you bought and have not used.</li>
+  <li><strong>Subscription:</strong> cancel in iPhone Settings → your name → Subscriptions. Deleting the app does not cancel it.</li>
 </ul>
 
 <h2 id="rights">9. Your US state privacy rights</h2>
@@ -213,11 +229,11 @@ nav.toc li { margin-bottom: 2px; }
   <li>limit the use of sensitive personal information (we use it only to provide the app);</li>
   <li>not be treated differently for using these rights.</li>
 </ul>
-<p><strong>Categories (California).</strong> In the last 12 months we collected: identifiers (a random install ID); sensitive personal information (voice recordings, and anything sensitive you choose to write in your answers); commercial information (subscription status). We disclosed them only to the service providers in section 4, for the purposes described. We did not sell or share them.</p>
-<p>To make a request, contact us (section 15). Because we do not know your name or email, we may ask for your install ID or other details to find your data. An authorized agent may act for you with your signed permission. If we deny a request, you may appeal by replying to our answer. <span class="todo">[TO CONFIRM by counsel: which state laws apply, response times, and whether an in-app way to show the install ID is needed]</span></p>
+<p><strong>Categories (California).</strong> In the last 12 months we collected: identifiers (a random install ID); sensitive personal information (voice recordings, and anything sensitive you choose to write in your answers); commercial information (subscription status and purchase history). We disclosed them only to the service providers in section 4, for the purposes described. We did not sell or share them.</p>
+<p>To make a request, contact us (section 15). Because we do not know your name or email, we may ask for your install ID to find your data; an email sent from Settings → Write to us includes it. An authorized agent may act for you with your signed permission. We answer within the time the law of your state requires. If we deny a request, you may appeal by replying to our answer.</p>
 
 <h2 id="transfers">10. Where data is processed</h2>
-<p>We are based in <span class="todo">[TO CONFIRM: country]</span>. Your answers are processed by DeepSeek in China. Other data is processed by our providers in the United States and other countries where they operate. <span class="todo">[TO CONFIRM by counsel: whether US federal or state rules on transfers of sensitive data to China require further steps or notice]</span></p>
+<p>Your answers are processed by DeepSeek in China. Other data is processed by our providers in the United States and other countries where they operate. By using Herself, you understand that your data may be processed outside your state or country.</p>
 
 <h2 id="children">11. Children</h2>
 <p>Herself is only for people 18 and older. We do not knowingly collect data from anyone under 18. If you believe someone under 18 used the app, contact us and we will delete what we hold.</p>
@@ -235,7 +251,22 @@ nav.toc li { margin-bottom: 2px; }
 <p>We may update this policy. We will change the date at the top. If a change affects how we use your voice or your answers, we will ask for your consent again in the app before it applies.</p>
 
 <h2 id="contact">15. Contact</h2>
-<p>Loveiko Labs · <a href="mailto:loveykovl@gmail.com?subject=Herself">loveykovl@gmail.com</a> · <span class="todo">[TO CONFIRM: postal address]</span></p>
+<p>Loveiko Labs · <a href="mailto:loveykovl@gmail.com?subject=Herself%20%E2%80%94%20privacy">loveykovl@gmail.com</a></p>
+<p class="foot"><a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a></p>
+
+<aside class="card notes" aria-label="Notes pending legal review">
+<h2>Notes pending legal review</h2>
+<p>This policy describes how Herself works today. These points are being confirmed with counsel and may change the wording above:</p>
+<ul>
+  <li>The legal entity's name, form, country and postal address.</li>
+  <li>DeepSeek API retention period and whether API inputs are used for training; whether US rules on sending sensitive data to China require further steps.</li>
+  <li>That deleting an ElevenLabs voice also deletes the uploaded sample, and that our ElevenLabs account is set so data is not used for training.</li>
+  <li>Cloudflare's own network, security and Workers log retention for our account.</li>
+  <li>RevenueCat's exact retention period under its data processing terms.</li>
+  <li>The wording of the voice data notice under BIPA, CUBI and RCW 19.375, and which state privacy laws apply, with their response times.</li>
+  <li>Whether a copy of the consent record should also be kept on our server as evidence of written consent.</li>
+</ul>
+</aside>
 </main>
 </body>
 </html>
