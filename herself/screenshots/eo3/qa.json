@@ -1,0 +1,71 @@
+{
+  "dimensions": "1320x2868",
+  "mode": "RGB",
+  "layout": [
+    {
+      "id": "EO3-01",
+      "head_bottom": 929.046875,
+      "horizontal_overflow": false,
+      "phone_top": 1820
+    },
+    {
+      "id": "EO3-02",
+      "head_bottom": 1083.0625,
+      "horizontal_overflow": false,
+      "phone_top": 1820
+    },
+    {
+      "id": "EO3-03",
+      "head_bottom": 1155.53125,
+      "horizontal_overflow": false,
+      "phone_top": 1820
+    }
+  ],
+  "visual_review_widths": [
+    110,
+    180,
+    220
+  ],
+  "status": "passed",
+  "gallery_checks": [
+    {
+      "width": 390,
+      "document_width": 390,
+      "images_loaded": true,
+      "image_count": 6,
+      "card_gap": 8,
+      "rounds": [
+        "eo3",
+        "eo2",
+        "h04",
+        "h03",
+        "h02"
+      ],
+      "ids": [
+        "EO3-01",
+        "EO3-02",
+        "EO3-03"
+      ]
+    },
+    {
+      "width": 1280,
+      "document_width": 1280,
+      "images_loaded": true,
+      "image_count": 6,
+      "card_gap": 8,
+      "rounds": [
+        "eo3",
+        "eo2",
+        "h04",
+        "h03",
+        "h02"
+      ],
+      "ids": [
+        "EO3-01",
+        "EO3-02",
+        "EO3-03"
+      ]
+    }
+  ],
+  "visual_review": "Headlines, earbuds and player recognizable at 110px; bullets more readable at 180/220px. Phone microtext requires enlargement; no external header or footer is present. Full interface examples reviewed separately; evening sample content adapted by prompt from an existing Herself screenshot."
+}
