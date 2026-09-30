@@ -72,8 +72,8 @@ nav.toc li { margin-bottom: 2px; }
 <p><strong>In short.</strong></p>
 <ul>
   <li>Your answers go to DeepSeek, our AI provider, to write your scene. DeepSeek processes data in China.</li>
-  <li>Each recording goes to ElevenLabs to make a temporary AI voice. The voice is deleted within about 1 hour after your scene is made, so you can re-voice edits. Your recording stays on your iPhone for 24 hours for edits, then it is deleted.</li>
-  <li>Our server keeps your scene text for about 1 hour and the words you wrote for up to 24 hours, only so your scene can be made, voiced and, if something fails, made again for free.</li>
+  <li>Each recording goes to ElevenLabs to make a temporary AI voice, one per chapter. Your recording is deleted right after that voice is made. The voice is deleted within 1 hour after your scene is made; in that hour you can re-voice one edit.</li>
+  <li>Our server keeps your scene text for 1 hour, and your words, your answers and Herself's understanding of them as text for up to 24 hours, so a failed scene can be rebuilt without using another chapter.</li>
   <li>Your finished scenes stay on your iPhone. They are not backed up to iCloud.</li>
   <li>Purchases go through Apple. RevenueCat records them for us under a random install ID, not your name or email.</li>
   <li>No ads. No tracking SDKs. We do not sell or share your personal information.</li>
@@ -109,13 +109,13 @@ nav.toc li { margin-bottom: 2px; }
 <p>We collect only what is needed to make your scenes. We do not ask for your name, email or phone number.</p>
 
 <h3>Your answers</h3>
-<p>You pick what you want to change and write a few sentences in your own words (up to 600 characters). You may say how you feel about it. Herself reflects it back and asks two short questions; you answer them, pick how your voice should sound (calm, soft or confident), and may add something else (up to 300 characters). You may also edit the scene's words afterwards, by hand or by asking Herself to rewrite a line. We send these to DeepSeek to write and edit your scene. Our server keeps your words and Herself's understanding of them for up to 24 hours, so that if something goes wrong (for example, the voice fails) the same chapter can be made again without asking you again or using another chapter. What you write can be personal. We use it only to make your scenes.</p>
+<p>You pick what you want to change and write a few sentences in your own words (up to 600 characters). You may say how you feel about it. Herself reflects it back and asks two short questions; you answer them, pick how your voice should sound (calm, soft or confident), and may add something else (up to 300 characters). You may also edit the scene's words afterwards, by hand or by asking Herself to rewrite a line. We send these to DeepSeek to write and edit your scene. Our server keeps your words, your answers and Herself's understanding of them, as text only, for up to 24 hours, so that if something goes wrong (for example, the voice fails) the scene can be rebuilt without asking you again or using another chapter. What you write can be personal. We use it only to make your scenes.</p>
 
 <h3>Your voice recordings</h3>
-<p>Before each chapter you read a short text aloud (15–30 seconds). The app first checks the recording on your iPhone: sound levels, background music, and whether the words match. This check uses Apple's on-device speech recognition and sends nothing anywhere. The recording is then sent through our server to ElevenLabs, which makes a temporary AI voice from it. That voice reads your scene. See the <a href="#voice">Voice data notice</a>.</p>
+<p>Before each chapter you read a short text aloud (15–30 seconds). The app first checks the recording on your iPhone: sound levels, background music, and whether the words match. This check uses Apple's on-device speech recognition and sends nothing anywhere. The recording is then sent through our server to ElevenLabs, which makes a temporary AI voice from it. That voice reads your scene. One voice copy is made per chapter, and your recording is deleted from your iPhone right after it is made. See the <a href="#voice">Voice data notice</a>.</p>
 
 <h3>Scene text</h3>
-<p>The scene DeepSeek writes is kept on our server for about 1 hour, so that ElevenLabs can read it aloud in your AI voice and you can make edits. The text is sent to ElevenLabs for that purpose. If you edit a scene later, the app sends its copy of the text back for that edit, and it is again kept for about 1 hour.</p>
+<p>The scene DeepSeek writes is kept on our server for 1 hour, so that ElevenLabs can read it aloud in your AI voice and you can make edits. The text is sent to ElevenLabs for that purpose. If you edit a scene later, the app sends its copy of the text back for that edit, and it is again kept for about 1 hour.</p>
 
 <h3>Install ID</h3>
 <p>The app creates a random install ID. It is not linked to your name, email or Apple ID. We use it to count scene credits (one new chapter per week), to keep the extra chapters you buy, and to apply daily usage limits that protect the service from abuse. The app also attaches it to your App Store purchases (Apple calls this an app account token), so a purchase is credited only to the app that made it and a subscription is not used on more devices than one person would have. The install ID is kept in your iPhone's Keychain, only on this iPhone (it is not synced to iCloud). It stays if you delete and reinstall the app or use Settings → Your voice &amp; data, so the chapters you bought come back; it is removed when the iPhone is erased.</p>
@@ -141,7 +141,7 @@ nav.toc li { margin-bottom: 2px; }
 <h2 id="device">3. What stays on your iPhone</h2>
 <ul>
   <li>Your finished scenes (audio and text) are saved only on your iPhone. They are excluded from iCloud backup.</li>
-  <li>Your raw recording stays on your iPhone for 24 hours after the scene is made, so you can edit and re-voice your scene, and is then deleted.</li>
+  <li>Your raw recording is deleted from your iPhone right after the AI voice is made from it.</li>
   <li>An unfinished questionnaire is saved on your iPhone, so you can come back to it.</li>
   <li>The app keeps a simple usage journal (for example, which screen you reached) on your iPhone only. It is not sent to us.</li>
   <li>If you use the Herself widget, today's line is shared with the widget on your iPhone.</li>
@@ -155,7 +155,7 @@ nav.toc li { margin-bottom: 2px; }
 <thead><tr><th>Provider</th><th>What they receive</th><th>Why, and where</th></tr></thead>
 <tbody>
 <tr><td><strong>DeepSeek</strong></td><td>Your answers and edit requests; the scene text when you ask for an edit</td><td>To write and edit your scene. DeepSeek processes data in China and keeps it under its own policy.</td></tr>
-<tr><td><strong>ElevenLabs</strong></td><td>Each voice recording; the scene text</td><td>To make a temporary AI voice and read your scene in it, including edits you make. We delete the voice within about 1 hour after the scene is made. Mainly the United States.</td></tr>
+<tr><td><strong>ElevenLabs</strong></td><td>Each voice recording; the scene text</td><td>To make a temporary AI voice (one per chapter) and read your scene in it, including one re-voiced edit. We delete the voice within 1 hour after the scene is made. Mainly the United States.</td></tr>
 <tr><td><strong>Cloudflare</strong></td><td>Requests from the app, the install ID, your words, scene text, purchase transaction IDs</td><td>Hosts our server and its storage (see <a href="#retention">section 6</a> for what is kept and for how long). Cloudflare necessarily sees IP addresses to deliver requests. United States and Cloudflare's global network.</td></tr>
 <tr><td><strong>RevenueCat</strong></td><td>The install ID (as its app user ID), your purchase and subscription history, your App Store country, and technical details of each request (such as app and iOS version and IP address)</td><td>Purchase and subscription analytics for us, and restoring purchases. United States. Kept by RevenueCat under its terms for as long as we use it, and deleted when we ask.</td></tr>
 <tr><td><strong>Apple</strong></td><td>Payment and subscription details (from you, through the App Store); our server sends Apple your purchase transaction IDs</td><td>To take payment, and to confirm that a subscription is active or a purchase is genuine (App Store Server API). Apple's privacy policy applies to payments.</td></tr>
@@ -170,7 +170,7 @@ nav.toc li { margin-bottom: 2px; }
   <li><strong>Purpose.</strong> Only to read your own scenes in an AI copy of your voice. Not to identify you, and not for any other use.</li>
   <li><strong>Written consent.</strong> We ask before your first recording, with a separate checkbox. Nothing is recorded without it. The consent covers each recording you make.</li>
   <li><strong>Who receives it.</strong> ElevenLabs only, as our processor, to make the voice.</li>
-  <li><strong>Retention.</strong> The AI voice is kept for up to 1 hour after each scene is made, so you can re-voice edits, and is then deleted at ElevenLabs together with the recording it was made from. An automatic job runs every 10 minutes and deletes every AI voice older than 1 hour. Deleting your data or withdrawing consent in the app deletes a live voice right away. The raw recording on your iPhone is kept for 24 hours after the scene is made, for edits, and is then deleted.</li>
+  <li><strong>Retention.</strong> One AI voice is made per chapter. Your recording is deleted from your iPhone right after the voice is made. The AI voice is kept for up to 1 hour after the scene is made, so you can re-voice one edit, and is then deleted at ElevenLabs together with the recording it was made from. An automatic job deletes every AI voice when its hour ends. Deleting your data or withdrawing consent in the app deletes a live voice right away.</li>
   <li><strong>No sale.</strong> We do not sell, lease, trade or otherwise profit from your voice data.</li>
   <li><strong>No other disclosure,</strong> unless you ask us to, or the law or a court order requires it.</li>
   <li><strong>Protection.</strong> Sent over encrypted connections and handled with at least the care we use for other sensitive data.</li>
@@ -182,12 +182,12 @@ nav.toc li { margin-bottom: 2px; }
 <table>
 <thead><tr><th>Data</th><th>Where</th><th>How long</th></tr></thead>
 <tbody>
-<tr><td>Raw voice recording</td><td>Your iPhone</td><td>24 hours after the scene is made, for edits; then deleted</td></tr>
-<tr><td>AI voice and the recording it was made from</td><td>ElevenLabs</td><td>Deleted within about 1 hour after the scene is made (kept that long so you can re-voice edits)</td></tr>
-<tr><td>The words you wrote and Herself's understanding of them</td><td>Our server (Cloudflare)</td><td>24 hours, so a failed chapter can be made again for free; then deleted automatically (a cleanup job runs every 10 minutes)</td></tr>
+<tr><td>Raw voice recording</td><td>Your iPhone</td><td>Deleted right after the AI voice is made from it</td></tr>
+<tr><td>AI voice and the recording it was made from</td><td>ElevenLabs</td><td>Deleted within 1 hour after the scene is made (kept that long so you can re-voice one edit)</td></tr>
+<tr><td>Your words, your answers and Herself's understanding of them (text only)</td><td>Our server (Cloudflare)</td><td>24 hours, so a failed scene can be rebuilt without using another chapter; then deleted automatically (a cleanup job runs every 10 minutes)</td></tr>
 <tr><td>Scene text and its edits</td><td>Our server (Cloudflare)</td><td>1 hour, while the audio is made and you edit; then deleted automatically</td></tr>
 <tr><td>Edit counters for a scene (numbers only, no text)</td><td>Our server</td><td>8 days</td></tr>
-<tr><td>Chapter record (which chapter was used for which scene, whether it was voiced or given back; no text)</td><td>Our server</td><td>30 days</td></tr>
+<tr><td>Chapter record (scene ID, whether it was voiced or the chapter given back; no text)</td><td>Our server</td><td>Up to 30 days</td></tr>
 <tr><td>Daily usage counters (by install ID)</td><td>Our server</td><td>About 1–2 days</td></tr>
 <tr><td>Scene credit record (install ID, time of first and last scene, count, extra chapters left)</td><td>Our server</td><td>While you use Herself, so your weekly schedule and bought chapters are kept; deleted on request</td></tr>
 <tr><td>Subscription status (install ID, the subscription's transaction ID, active or not)</td><td>Our server</td><td>Checked with Apple again after 1 hour; the record is kept while you use Herself; deleted on request</td></tr>
@@ -212,9 +212,9 @@ nav.toc li { margin-bottom: 2px; }
 <h2 id="choices">8. Your choices and deleting data</h2>
 <ul>
   <li><strong>Delete scenes and recordings:</strong> Settings → Your voice &amp; data → Delete my scenes and recordings. This deletes your scenes, recordings, unfinished answers and a live AI voice.</li>
-  <li><strong>Withdraw consent:</strong> Settings → Your voice &amp; data → Withdraw consent. After that, the app sends no new recordings or answers until you agree again; your recording and any live AI voice are deleted right away. Your saved scenes stay on your iPhone and keep playing.</li>
+  <li><strong>Withdraw consent:</strong> Settings → Your voice &amp; data → Withdraw consent. After that, the app sends no new recordings or answers until you agree again; any recording and live AI voice are deleted right away. Your saved scenes stay on your iPhone and keep playing.</li>
   <li><strong>Microphone:</strong> you can turn off microphone access in iOS Settings at any time.</li>
-  <li><strong>Server data:</strong> your scene text is deleted from our server automatically within about 1 hour, and your words within 24 hours. The records kept by install ID (credits, subscription status and purchases) are not personal content, and they are what brings bought chapters back after a reinstall. To have them deleted, write to us from Settings → Write to us (the email includes your install ID). Deleting them also removes chapters you bought and have not used.</li>
+  <li><strong>Server data:</strong> your scene text is deleted from our server automatically within 1 hour, and your words and answers within 24 hours. The records kept by install ID (credits, subscription status and purchases) are not personal content, and they are what brings bought chapters back after a reinstall. To have them deleted, write to us from Settings → Write to us (the email includes your install ID). Deleting them also removes chapters you bought and have not used.</li>
   <li><strong>Subscription:</strong> cancel in iPhone Settings → your name → Subscriptions. Deleting the app does not cancel it.</li>
 </ul>
 
