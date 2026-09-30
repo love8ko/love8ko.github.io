@@ -1,0 +1,36 @@
+{
+  "round": "EO5",
+  "date": "2026-09-30",
+  "status": "on-review",
+  "approved": false,
+  "base": "EO4",
+  "shots": [
+    {
+      "id": "EO5-01",
+      "topic": "wish",
+      "sha256": "f7152cc8b16cc9467293b1ed6f309c4f0aa8384dd90bbf774a82910ed105ee27",
+      "photo_sha256": "7bc5f012610552a88c328b49aec09aaa470ff711daedbbc44978ff67b0e787f1",
+      "ui_sha256": "da18d9a5d3b01e0252f41dc64626e961b52bf37ca30317c382825e5a4050f701",
+      "ui_provenance": "Existing native Herself screenshot, fictional sample content"
+    },
+    {
+      "id": "EO5-02",
+      "topic": "critic",
+      "sha256": "9ff6a785e05bcd03e463c9caf23194a708992f09c8081a15b106780dc9ad1082",
+      "photo_sha256": "3be2456d9f25652e75240f4ee08640f4057c1833a6694d40f494cdcb44a8b855",
+      "ui_sha256": "a675a9cdb91311b5d4905faf9b1e300cb366c727968c1c4bde8b993bacadbcae",
+      "ui_provenance": "Existing native Herself screenshot, fictional sample content"
+    },
+    {
+      "id": "EO5-03",
+      "topic": "night",
+      "sha256": "6254003abd269dd234526c114581f4faff854b3888d3a79bf15cd76317b7c3ea",
+      "photo_sha256": "a29c25f25f0bad1faac8dfbd6ddb4a47b991e7830b339b23d718b5d7fe6c20a0",
+      "ui_sha256": "b3fc97cb5118a506e1cecd59705f485f39d1e1f4cc1ce32d63fcd731fe5392d5",
+      "ui_provenance": "Existing Herself home capture, evening example adapted by imagegen"
+    }
+  ],
+  "copy_sha256": "4b70eddf7527c2b9f8545efb23d42927f7a3bb78762f2a2d7c75bfaf8b73d617",
+  "gallery": "https://love8ko.github.io/herself/screenshots/#eo5",
+  "format": "One headline, one subtitle, one phone-linked affinity excerpt. Same EO photos and UI. JewelSnap principle only; not its layout."
+}

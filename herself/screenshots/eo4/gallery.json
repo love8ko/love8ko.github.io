@@ -1,0 +1,46 @@
+{
+  "round": "EO4",
+  "date": "2026-09-30",
+  "status": "on-review",
+  "approved": false,
+  "base": "EO3",
+  "shots": [
+    {
+      "id": "EO4-01",
+      "topic": "wish",
+      "sha256": "8788f8a83fad6598919c4e926ead0537b36587a0239040a744d311622fa3221a",
+      "photo_sha256": "7bc5f012610552a88c328b49aec09aaa470ff711daedbbc44978ff67b0e787f1",
+      "ui_sha256": "da18d9a5d3b01e0252f41dc64626e961b52bf37ca30317c382825e5a4050f701",
+      "ui_provenance": "Existing native Herself screenshot, fictional sample content"
+    },
+    {
+      "id": "EO4-02",
+      "topic": "critic",
+      "sha256": "c60a68ba37b42525b009a0e95a64c614aa235b7602d0d0215ff1faba7bc9a74e",
+      "photo_sha256": "3be2456d9f25652e75240f4ee08640f4057c1833a6694d40f494cdcb44a8b855",
+      "ui_sha256": "a675a9cdb91311b5d4905faf9b1e300cb366c727968c1c4bde8b993bacadbcae",
+      "ui_provenance": "Existing native Herself screenshot, fictional sample content"
+    },
+    {
+      "id": "EO4-03",
+      "topic": "night",
+      "sha256": "41bfb475da8a9f879b0ec5c53f3921c103510a0a7c9984311938d9c550300cba",
+      "photo_sha256": "a29c25f25f0bad1faac8dfbd6ddb4a47b991e7830b339b23d718b5d7fe6c20a0",
+      "ui_sha256": "b3fc97cb5118a506e1cecd59705f485f39d1e1f4cc1ce32d63fcd731fe5392d5",
+      "ui_provenance": "Existing Herself home capture, evening example adapted by imagegen"
+    }
+  ],
+  "copy_sha256": "650f566b987358d850da2b6855ffae3d5b26dc16eae53d06b3111a7d185d3f62",
+  "gallery": "https://love8ko.github.io/herself/screenshots/#eo4",
+  "selection": {
+    "one_bullet_per_frame": true,
+    "source_candidates": [
+      "D",
+      "C",
+      "C"
+    ],
+    "stage1_requests": 54,
+    "first_bullet_followup_requests": 54,
+    "basis": "Focused text-only bullet comparisons on existing personas, not CVR."
+  }
+}

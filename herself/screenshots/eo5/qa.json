@@ -1,0 +1,84 @@
+{
+  "dimensions": "1320x2868",
+  "mode": "RGB",
+  "layout": [
+    {
+      "id": "EO5-01",
+      "head_bottom": 796.390625,
+      "callout_bottom": 2770,
+      "horizontal_overflow": false,
+      "phone_top": 1820,
+      "subtitles": 1,
+      "callouts": 1
+    },
+    {
+      "id": "EO5-02",
+      "head_bottom": 950.40625,
+      "callout_bottom": 2770,
+      "horizontal_overflow": false,
+      "phone_top": 1820,
+      "subtitles": 1,
+      "callouts": 1
+    },
+    {
+      "id": "EO5-03",
+      "head_bottom": 950.40625,
+      "callout_bottom": 2770,
+      "horizontal_overflow": false,
+      "phone_top": 1820,
+      "subtitles": 1,
+      "callouts": 1
+    }
+  ],
+  "visual_review_widths": [
+    110,
+    180,
+    220
+  ],
+  "status": "passed",
+  "gallery_checks": [
+    {
+      "width": 390,
+      "document_width": 390,
+      "images_loaded": true,
+      "image_count": 6,
+      "card_gap": 8,
+      "rounds": [
+        "eo5",
+        "eo4",
+        "eo3",
+        "eo2",
+        "h04",
+        "h03",
+        "h02"
+      ],
+      "ids": [
+        "EO5-01",
+        "EO5-02",
+        "EO5-03"
+      ]
+    },
+    {
+      "width": 1280,
+      "document_width": 1280,
+      "images_loaded": true,
+      "image_count": 6,
+      "card_gap": 8,
+      "rounds": [
+        "eo5",
+        "eo4",
+        "eo3",
+        "eo2",
+        "h04",
+        "h03",
+        "h02"
+      ],
+      "ids": [
+        "EO5-01",
+        "EO5-02",
+        "EO5-03"
+      ]
+    }
+  ],
+  "visual_review": "Headlines, earbuds and phone recognizable at 110px; subtitles and excerpt cards readable at 180/220px. Cards do not cover faces, scene title or Play. Lower phone text is covered intentionally by an enlarged exact excerpt from that same screen. One subtitle and one affinity callout per frame, matching card sizes. No external brand or footer. Evening UI sample previously adapted by prompt from an existing Herself screenshot."
+}
