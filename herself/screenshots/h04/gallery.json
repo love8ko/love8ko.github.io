@@ -1,0 +1,37 @@
+{
+  "round": "H04",
+  "date": "2026-09-30",
+  "status": "on-review",
+  "approved": false,
+  "shots": [
+    {
+      "id": "H04-01",
+      "topic": "confidence",
+      "jtbd": "J1",
+      "sha256": "d64904d96dca9649123aaec2e77f9b20b39fc7e607d1de9c4be9f851bf98b8b5",
+      "photo_sha256": "3c1d7c4ce8ae7234db717556294c04dcd1948d4396b1f08248da07c23b2e9fee",
+      "ui_sha256": "da18d9a5d3b01e0252f41dc64626e961b52bf37ca30317c382825e5a4050f701",
+      "ui_provenance": "Native Herself capture, fictional sample content"
+    },
+    {
+      "id": "H04-02",
+      "topic": "love",
+      "jtbd": "J2",
+      "sha256": "336ff81cb3e14bad3d9d0e4e96eab84b26d34d7009cdf7f397bf3c7ac83baa10",
+      "photo_sha256": "22eaee2cbe497e27f9470006c200ff74d153db611a9968c526f838162a0c93f6",
+      "ui_sha256": "da0af437b19fb3570c1e26fe59364f91bc3d30e29228bfc524fde4f1f08d2dfd",
+      "ui_provenance": "Prompt-adapted existing Herself MomentSheet screenshot, relationship sample phrases"
+    },
+    {
+      "id": "H04-03",
+      "topic": "change",
+      "jtbd": "J5",
+      "sha256": "fd13767c6127ce0150d8d2db08a220edac0dfbea13a12a5b2f16d597f8f3bbc8",
+      "photo_sha256": "445776d2c396790762c2b1eace54ae86b3ef28167c9b9ad8706c0c7d0bfb7738",
+      "ui_sha256": "2dc19010923a5bcb633fca19493f1343be34df48875564d322ded94bb4d11480",
+      "ui_provenance": "Native Herself capture, fictional sample content"
+    }
+  ],
+  "copy_sha256": "bde7892a7b34f529282dd83fc71fd2e88074b1984d5903c94e2347a523165c0a",
+  "gallery": "https://love8ko.github.io/herself/screenshots/#h04"
+}
