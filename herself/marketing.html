@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herself — Your Future Self, Your Voice</title>
+<meta name="description" content="Answer a few questions, read aloud for 15 seconds, and hear a one-minute scene where your moment has already gone well, read by an AI voice made from your recording. For iPhone.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Herself">
+<meta property="og:title" content="Herself — Your Future Self, Your Voice">
+<meta property="og:description" content="Your inner critic has had the mic long enough. A one-minute scene of your moment going well, in your own voice.">
+<meta property="og:url" content="https://love8ko.github.io/herself/marketing.html">
+<meta property="og:image" content="https://love8ko.github.io/herself/competitors/00-herself/icon.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:alt" content="The Herself app icon">
+<meta name="twitter:card" content="summary">
+<meta name="apple-itunes-app" content="app-id=6816159497">
+<meta name="theme-color" content="#F4EEE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16110F" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+/* «Oxblood Editorial» — the app's Theme.swift tokens; the lit card is the widget/Settings gradient */
+:root {
+  --paper: #F4EEE6; --card: #FBF8F3; --ink: #1F1A17; --muted: #675C54;
+  --accent: #7B1E2B; --accent-soft: #EBD8D3; --line: #DDD2C6; --on-lit: #FBF8F3;
+  --lit: linear-gradient(135deg, #6E1A26 0%, #A8404E 58%, #E09A83 100%);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #16110F; --card: #211A17; --ink: #EFE6DA; --muted: #A99C90;
+    --accent: #E0848E; --accent-soft: #3C2327; --line: #352B27; --on-lit: #FBF8F3;
+    --lit: linear-gradient(135deg, #4E1119 0%, #8A3240 58%, #B86F62 100%);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #16110F; --card: #211A17; --ink: #EFE6DA; --muted: #A99C90;
+  --accent: #E0848E; --accent-soft: #3C2327; --line: #352B27; --on-lit: #FBF8F3;
+  --lit: linear-gradient(135deg, #4E1119 0%, #8A3240 58%, #B86F62 100%);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 400 17px/1.6 "DM Sans", system-ui, -apple-system, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 0 16px 56px; }
+h1, h2, h3 { font-family: "Newsreader", Georgia, serif; font-weight: 600; line-height: 1.15; margin: 0; }
+p { margin: 0 0 14px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+
+.hero { text-align: center; padding: 56px 0 8px; }
+.icon { width: 96px; height: 96px; border-radius: 22px; display: block; margin: 0 auto 18px; box-shadow: 0 6px 20px rgba(31,26,23,.18); }
+.hero h1 { font-size: 52px; letter-spacing: -.01em; }
+.subtitle { font: italic 500 21px/1.35 "Newsreader", Georgia, serif; color: var(--accent); margin: 6px 0 22px; }
+.lead { color: var(--muted); max-width: 540px; margin: 0 auto; }
+.badge { display: inline-block; margin-top: 26px; line-height: 0; border-radius: 9px; }
+.badge svg { width: 180px; height: 60px; }
+.badge:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.small { font-size: 14px; color: var(--muted); margin-top: 12px; }
+
+.lit { background: var(--lit); color: var(--on-lit); border-radius: 22px; padding: 30px 26px; margin: 40px 0 8px; text-align: center; }
+.lit .over { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; opacity: .82; margin-bottom: 10px; }
+.lit p.line { font: 500 27px/1.3 "Newsreader", Georgia, serif; margin: 0 auto; max-width: 520px; }
+.lit p.after { font-size: 16px; opacity: .9; margin: 14px auto 0; max-width: 520px; }
+
+section { margin-top: 48px; }
+section > h2 { font-size: 30px; margin-bottom: 16px; }
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.steps li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+.num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font: 600 19px "Newsreader", Georgia, serif; }
+.steps b { display: block; font: 600 19px/1.3 "Newsreader", Georgia, serif; margin: 5px 0 3px; }
+.steps span { color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+.card b { display: block; font: 600 19px/1.3 "Newsreader", Georgia, serif; margin-bottom: 4px; }
+.card span { color: var(--muted); font-size: 16px; }
+
+.privacy { border-left: 4px solid var(--accent); }
+.privacy ul { margin: 0; padding-left: 20px; }
+.privacy li { margin-bottom: 8px; }
+.privacy li:last-child { margin-bottom: 0; }
+
+.note { background: var(--accent-soft); border-radius: 14px; padding: 16px 18px; margin-top: 48px; font-size: 16px; }
+.note p:last-child { margin-bottom: 0; }
+
+.again { text-align: center; margin-top: 48px; }
+.again h2 { font-size: 30px; margin-bottom: 6px; }
+
+footer { max-width: 760px; margin: 0 auto; padding: 22px 16px 40px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 15px; }
+footer nav a { margin: 0 8px; display: inline-block; padding: 4px 0; }
+footer p { margin: 10px 0 0; }
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .hero { padding-top: 40px; }
+  .hero h1 { font-size: 42px; }
+  .subtitle { font-size: 19px; }
+  .lit { padding: 26px 20px; }
+  .lit p.line { font-size: 23px; }
+  section > h2, .again h2 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="appstore-badge" viewBox="0 0 119.66407 40"><g><g><g><path d="M110.13477,0H9.53468c-.3667,0-.729,0-1.09473.002-.30615.002-.60986.00781-.91895.0127A13.21476,13.21476,0,0,0,5.5171.19141a6.66509,6.66509,0,0,0-1.90088.627A6.43779,6.43779,0,0,0,1.99757,1.99707,6.25844,6.25844,0,0,0,.81935,3.61816a6.60119,6.60119,0,0,0-.625,1.90332,12.993,12.993,0,0,0-.1792,2.002C.00587,7.83008.00489,8.1377,0,8.44434V31.5586c.00489.3105.00587.6113.01515.9219a12.99232,12.99232,0,0,0,.1792,2.0019,6.58756,6.58756,0,0,0,.625,1.9043A6.20778,6.20778,0,0,0,1.99757,38.001a6.27445,6.27445,0,0,0,1.61865,1.1787,6.70082,6.70082,0,0,0,1.90088.6308,13.45514,13.45514,0,0,0,2.0039.1768c.30909.0068.6128.0107.91895.0107C8.80567,40,9.168,40,9.53468,40H110.13477c.3594,0,.7246,0,1.084-.002.3047,0,.6172-.0039.9219-.0107a13.279,13.279,0,0,0,2-.1768,6.80432,6.80432,0,0,0,1.9082-.6308,6.27742,6.27742,0,0,0,1.6172-1.1787,6.39482,6.39482,0,0,0,1.1816-1.6143,6.60413,6.60413,0,0,0,.6191-1.9043,13.50643,13.50643,0,0,0,.1856-2.0019c.0039-.3106.0039-.6114.0039-.9219.0078-.3633.0078-.7246.0078-1.0938V9.53613c0-.36621,0-.72949-.0078-1.09179,0-.30664,0-.61426-.0039-.9209a13.5071,13.5071,0,0,0-.1856-2.002,6.6177,6.6177,0,0,0-.6191-1.90332,6.46619,6.46619,0,0,0-2.7988-2.7998,6.76754,6.76754,0,0,0-1.9082-.627,13.04394,13.04394,0,0,0-2-.17676c-.3047-.00488-.6172-.01074-.9219-.01269-.3594-.002-.7246-.002-1.084-.002Z" style="fill: #a6a6a6"/><path d="M8.44483,39.125c-.30468,0-.602-.0039-.90429-.0107a12.68714,12.68714,0,0,1-1.86914-.1631,5.88381,5.88381,0,0,1-1.65674-.5479,5.40573,5.40573,0,0,1-1.397-1.0166,5.32082,5.32082,0,0,1-1.02051-1.3965,5.72186,5.72186,0,0,1-.543-1.6572,12.41351,12.41351,0,0,1-.1665-1.875c-.00634-.2109-.01464-.9131-.01464-.9131V8.44434S.88185,7.75293.8877,7.5498a12.37039,12.37039,0,0,1,.16553-1.87207,5.7555,5.7555,0,0,1,.54346-1.6621A5.37349,5.37349,0,0,1,2.61183,2.61768,5.56543,5.56543,0,0,1,4.01417,1.59521a5.82309,5.82309,0,0,1,1.65332-.54394A12.58589,12.58589,0,0,1,7.543.88721L8.44532.875H111.21387l.9131.0127a12.38493,12.38493,0,0,1,1.8584.16259,5.93833,5.93833,0,0,1,1.6709.54785,5.59374,5.59374,0,0,1,2.415,2.41993,5.76267,5.76267,0,0,1,.5352,1.64892,12.995,12.995,0,0,1,.1738,1.88721c.0029.2832.0029.5874.0029.89014.0079.375.0079.73193.0079,1.09179V30.4648c0,.3633,0,.7178-.0079,1.0752,0,.3252,0,.6231-.0039.9297a12.73126,12.73126,0,0,1-.1709,1.8535,5.739,5.739,0,0,1-.54,1.67,5.48029,5.48029,0,0,1-1.0156,1.3857,5.4129,5.4129,0,0,1-1.3994,1.0225,5.86168,5.86168,0,0,1-1.668.5498,12.54218,12.54218,0,0,1-1.8692.1631c-.2929.0068-.5996.0107-.8974.0107l-1.084.002Z"/></g><g id="_Group_" data-name="&lt;Group&gt;"><g id="_Group_2" data-name="&lt;Group&gt;"><g id="_Group_3" data-name="&lt;Group&gt;"><path id="_Path_" data-name="&lt;Path&gt;" d="M24.76888,20.30068a4.94881,4.94881,0,0,1,2.35656-4.15206,5.06566,5.06566,0,0,0-3.99116-2.15768c-1.67924-.17626-3.30719,1.00483-4.1629,1.00483-.87227,0-2.18977-.98733-3.6085-.95814a5.31529,5.31529,0,0,0-4.47292,2.72787c-1.934,3.34842-.49141,8.26947,1.3612,10.97608.9269,1.32535,2.01018,2.8058,3.42763,2.7533,1.38706-.05753,1.9051-.88448,3.5794-.88448,1.65876,0,2.14479.88448,3.591.8511,1.48838-.02416,2.42613-1.33124,3.32051-2.66914a10.962,10.962,0,0,0,1.51842-3.09251A4.78205,4.78205,0,0,1,24.76888,20.30068Z" style="fill: #fff"/><path id="_Path_2" data-name="&lt;Path&gt;" d="M22.03725,12.21089a4.87248,4.87248,0,0,0,1.11452-3.49062,4.95746,4.95746,0,0,0-3.20758,1.65961,4.63634,4.63634,0,0,0-1.14371,3.36139A4.09905,4.09905,0,0,0,22.03725,12.21089Z" style="fill: #fff"/></g></g><g><path d="M42.30227,27.13965h-4.7334l-1.13672,3.35645H34.42727l4.4834-12.418h2.083l4.4834,12.418H43.438ZM38.0591,25.59082h3.752l-1.84961-5.44727h-.05176Z" style="fill: #fff"/><path d="M55.15969,25.96973c0,2.81348-1.50586,4.62109-3.77832,4.62109a3.0693,3.0693,0,0,1-2.84863-1.584h-.043v4.48438h-1.8584V21.44238H48.4302v1.50586h.03418a3.21162,3.21162,0,0,1,2.88281-1.60059C53.645,21.34766,55.15969,23.16406,55.15969,25.96973Zm-1.91016,0c0-1.833-.94727-3.03809-2.39258-3.03809-1.41992,0-2.375,1.23047-2.375,3.03809,0,1.82422.95508,3.0459,2.375,3.0459C52.30227,29.01563,53.24953,27.81934,53.24953,25.96973Z" style="fill: #fff"/><path d="M65.12453,25.96973c0,2.81348-1.50586,4.62109-3.77832,4.62109a3.0693,3.0693,0,0,1-2.84863-1.584h-.043v4.48438h-1.8584V21.44238H58.395v1.50586h.03418A3.21162,3.21162,0,0,1,61.312,21.34766C63.60988,21.34766,65.12453,23.16406,65.12453,25.96973Zm-1.91016,0c0-1.833-.94727-3.03809-2.39258-3.03809-1.41992,0-2.375,1.23047-2.375,3.03809,0,1.82422.95508,3.0459,2.375,3.0459C62.26711,29.01563,63.21438,27.81934,63.21438,25.96973Z" style="fill: #fff"/><path d="M71.71047,27.03613c.1377,1.23145,1.334,2.04,2.96875,2.04,1.56641,0,2.69336-.80859,2.69336-1.91895,0-.96387-.67969-1.541-2.28906-1.93652l-1.60937-.3877c-2.28027-.55078-3.33887-1.61719-3.33887-3.34766,0-2.14258,1.86719-3.61426,4.51855-3.61426,2.624,0,4.42285,1.47168,4.4834,3.61426h-1.876c-.1123-1.23926-1.13672-1.9873-2.63379-1.9873s-2.52148.75684-2.52148,1.8584c0,.87793.6543,1.39453,2.25488,1.79l1.36816.33594c2.54785.60254,3.60645,1.626,3.60645,3.44238,0,2.32324-1.85059,3.77832-4.79395,3.77832-2.75391,0-4.61328-1.4209-4.7334-3.667Z" style="fill: #fff"/><path d="M83.34621,19.2998v2.14258h1.72168v1.47168H83.34621v4.99121c0,.77539.34473,1.13672,1.10156,1.13672a5.80752,5.80752,0,0,0,.61133-.043v1.46289a5.10351,5.10351,0,0,1-1.03223.08594c-1.833,0-2.54785-.68848-2.54785-2.44434V22.91406H80.16262V21.44238H81.479V19.2998Z" style="fill: #fff"/><path d="M86.065,25.96973c0-2.84863,1.67773-4.63867,4.29395-4.63867,2.625,0,4.29492,1.79,4.29492,4.63867,0,2.85645-1.66113,4.63867-4.29492,4.63867C87.72609,30.6084,86.065,28.82617,86.065,25.96973Zm6.69531,0c0-1.9541-.89551-3.10742-2.40137-3.10742s-2.40039,1.16211-2.40039,3.10742c0,1.96191.89453,3.10645,2.40039,3.10645S92.76027,27.93164,92.76027,25.96973Z" style="fill: #fff"/><path d="M96.18606,21.44238h1.77246v1.541h.043a2.1594,2.1594,0,0,1,2.17773-1.63574,2.86616,2.86616,0,0,1,.63672.06934v1.73828a2.59794,2.59794,0,0,0-.835-.1123,1.87264,1.87264,0,0,0-1.93652,2.083v5.37012h-1.8584Z" style="fill: #fff"/><path d="M109.3843,27.83691c-.25,1.64355-1.85059,2.77148-3.89844,2.77148-2.63379,0-4.26855-1.76465-4.26855-4.5957,0-2.83984,1.64355-4.68164,4.19043-4.68164,2.50488,0,4.08008,1.7207,4.08008,4.46582v.63672h-6.39453v.1123a2.358,2.358,0,0,0,2.43555,2.56445,2.04834,2.04834,0,0,0,2.09082-1.27344Zm-6.28223-2.70215h4.52637a2.1773,2.1773,0,0,0-2.2207-2.29785A2.292,2.292,0,0,0,103.10207,25.13477Z" style="fill: #fff"/></g></g></g><g id="_Group_4" data-name="&lt;Group&gt;"><g><path d="M37.82619,8.731a2.63964,2.63964,0,0,1,2.80762,2.96484c0,1.90625-1.03027,3.002-2.80762,3.002H35.67092V8.731Zm-1.22852,5.123h1.125a1.87588,1.87588,0,0,0,1.96777-2.146,1.881,1.881,0,0,0-1.96777-2.13379h-1.125Z" style="fill: #fff"/><path d="M41.68068,12.44434a2.13323,2.13323,0,1,1,4.24707,0,2.13358,2.13358,0,1,1-4.24707,0Zm3.333,0c0-.97607-.43848-1.54687-1.208-1.54687-.77246,0-1.207.5708-1.207,1.54688,0,.98389.43457,1.55029,1.207,1.55029C44.57522,13.99463,45.01369,13.42432,45.01369,12.44434Z" style="fill: #fff"/><path d="M51.57326,14.69775h-.92187l-.93066-3.31641h-.07031l-.92676,3.31641h-.91309l-1.24121-4.50293h.90137l.80664,3.436h.06641l.92578-3.436h.85254l.92578,3.436h.07031l.80273-3.436h.88867Z" style="fill: #fff"/><path d="M53.85354,10.19482H54.709v.71533h.06641a1.348,1.348,0,0,1,1.34375-.80225,1.46456,1.46456,0,0,1,1.55859,1.6748v2.915h-.88867V12.00586c0-.72363-.31445-1.0835-.97168-1.0835a1.03294,1.03294,0,0,0-1.0752,1.14111v2.63428h-.88867Z" style="fill: #fff"/><path d="M59.09377,8.437h.88867v6.26074h-.88867Z" style="fill: #fff"/><path d="M61.21779,12.44434a2.13346,2.13346,0,1,1,4.24756,0,2.1338,2.1338,0,1,1-4.24756,0Zm3.333,0c0-.97607-.43848-1.54687-1.208-1.54687-.77246,0-1.207.5708-1.207,1.54688,0,.98389.43457,1.55029,1.207,1.55029C64.11232,13.99463,64.5508,13.42432,64.5508,12.44434Z" style="fill: #fff"/><path d="M66.4009,13.42432c0-.81055.60352-1.27783,1.6748-1.34424l1.21973-.07031v-.38867c0-.47559-.31445-.74414-.92187-.74414-.49609,0-.83984.18213-.93848.50049h-.86035c.09082-.77344.81836-1.26953,1.83984-1.26953,1.12891,0,1.76563.562,1.76563,1.51318v3.07666h-.85547v-.63281h-.07031a1.515,1.515,0,0,1-1.35254.707A1.36026,1.36026,0,0,1,66.4009,13.42432Zm2.89453-.38477v-.37646l-1.09961.07031c-.62012.0415-.90137.25244-.90137.64941,0,.40527.35156.64111.835.64111A1.0615,1.0615,0,0,0,69.29543,13.03955Z" style="fill: #fff"/><path d="M71.34816,12.44434c0-1.42285.73145-2.32422,1.86914-2.32422a1.484,1.484,0,0,1,1.38086.79h.06641V8.437h.88867v6.26074h-.85156v-.71143h-.07031a1.56284,1.56284,0,0,1-1.41406.78564C72.0718,14.772,71.34816,13.87061,71.34816,12.44434Zm.918,0c0,.95508.4502,1.52979,1.20313,1.52979.749,0,1.21191-.583,1.21191-1.52588,0-.93848-.46777-1.52979-1.21191-1.52979C72.72121,10.91846,72.26613,11.49707,72.26613,12.44434Z" style="fill: #fff"/><path d="M79.23,12.44434a2.13323,2.13323,0,1,1,4.24707,0,2.13358,2.13358,0,1,1-4.24707,0Zm3.333,0c0-.97607-.43848-1.54687-1.208-1.54687-.77246,0-1.207.5708-1.207,1.54688,0,.98389.43457,1.55029,1.207,1.55029C82.12453,13.99463,82.563,13.42432,82.563,12.44434Z" style="fill: #fff"/><path d="M84.66945,10.19482h.85547v.71533h.06641a1.348,1.348,0,0,1,1.34375-.80225,1.46456,1.46456,0,0,1,1.55859,1.6748v2.915H87.605V12.00586c0-.72363-.31445-1.0835-.97168-1.0835a1.03294,1.03294,0,0,0-1.0752,1.14111v2.63428h-.88867Z" style="fill: #fff"/><path d="M93.51516,9.07373v1.1416h.97559v.74854h-.97559V13.2793c0,.47168.19434.67822.63672.67822a2.96657,2.96657,0,0,0,.33887-.02051v.74023a2.9155,2.9155,0,0,1-.4834.04541c-.98828,0-1.38184-.34766-1.38184-1.21582v-2.543h-.71484v-.74854h.71484V9.07373Z" style="fill: #fff"/><path d="M95.70461,8.437h.88086v2.48145h.07031a1.3856,1.3856,0,0,1,1.373-.80664,1.48339,1.48339,0,0,1,1.55078,1.67871v2.90723H98.69v-2.688c0-.71924-.335-1.0835-.96289-1.0835a1.05194,1.05194,0,0,0-1.13379,1.1416v2.62988h-.88867Z" style="fill: #fff"/><path d="M104.76125,13.48193a1.828,1.828,0,0,1-1.95117,1.30273A2.04531,2.04531,0,0,1,100.73,12.46045a2.07685,2.07685,0,0,1,2.07617-2.35254c1.25293,0,2.00879.856,2.00879,2.27V12.688h-3.17969v.0498a1.1902,1.1902,0,0,0,1.19922,1.29,1.07934,1.07934,0,0,0,1.07129-.5459Zm-3.126-1.45117h2.27441a1.08647,1.08647,0,0,0-1.1084-1.1665A1.15162,1.15162,0,0,0,101.63527,12.03076Z" style="fill: #fff"/></g></g></g></symbol></defs></svg>
+<main>
+<header class="hero">
+<img class="icon" src="data:image/jpeg;base64,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" alt="Herself app icon" width="96" height="96">
+<h1>Herself</h1>
+<p class="subtitle">Your Future Self, Your Voice</p>
+<p class="lead">Answer a few questions, read aloud for 15 seconds, and hear a one-minute scene where your moment has already gone well, read by an AI voice made from your recording.</p>
+<a class="badge" href="https://apps.apple.com/app/id6816159497"><svg viewBox="0 0 119.66407 40" role="img" aria-label="Download on the App Store"><use href="#appstore-badge"/></svg></a>
+<p class="small">iPhone · 7-day free trial on the weekly plan · 18+</p>
+</header>
+
+<div class="lit">
+<p class="over">Hear it in your own voice</p>
+<p class="line">Your inner critic has had the mic long enough.</p>
+<p class="after">Play it in the morning, before the big conversation, or at night.</p>
+</div>
+
+<section>
+<h2>How it works</h2>
+<ol class="steps">
+<li><span class="num">1</span><div><b>Tell Herself what you want</b><span>To believe in yourself, love, calm about money, a new job, a home of your own. A few taps and a line in your own words.</span></div></li>
+<li><span class="num">2</span><div><b>Read aloud for 15 seconds</b><span>A short text, read in your own voice.</span></div></li>
+<li><span class="num">3</span><div><b>Listen to your scene</b><span>A one-minute scene of your moment going well, in an AI voice made from yours.</span></div></li>
+</ol>
+</section>
+
+<section>
+<h2>What you get</h2>
+<div class="grid">
+<div class="card"><b>A new chapter every week</b><span>Your first chapter right away, the second on day 4, then a new one every week, built from what changed for you.</span></div>
+<div class="card"><b>Your line on your screens</b><span>Your line of the day on your Lock Screen and Home Screen widget.</span></div>
+<div class="card"><b>20 seconds, on repeat</b><span>A short version of your own lines, for right before the hard moment.</span></div>
+<div class="card"><b>Make it yours</b><span>Change any sentence of your scene for free, and re-voice it once within an hour.</span></div>
+<div class="card"><b>Extra chapters</b><span>Want more than one a week? Extra chapters are one-time purchases while your plan is active, and they never expire.</span></div>
+</div>
+</section>
+
+<section>
+<h2>Your voice stays yours</h2>
+<div class="card privacy">
+<ul>
+<li>You read a fresh 15 seconds before each chapter. The recording is deleted right after your voice copy is made.</li>
+<li>The voice copy is deleted within an hour after your scene, and it only ever reads your own scenes.</li>
+<li>Your scenes stay on your iPhone. You can delete them and withdraw consent anytime in Settings.</li>
+</ul>
+</div>
+<p class="small">Details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+</section>
+
+<div class="note">
+<p><strong>Good to know.</strong> Herself is a self-practice tool for calm and confidence. It's not therapy or medical care, and it doesn't promise results. For adults 18+. If you're in crisis, call or text 988 (US) or your local emergency number.</p>
+</div>
+
+<div class="again">
+<h2>Start with 7 days free</h2>
+<a class="badge" href="https://apps.apple.com/app/id6816159497"><svg viewBox="0 0 119.66407 40" role="img" aria-label="Download on the App Store"><use href="#appstore-badge"/></svg></a>
+</div>
+</main>
+
+<footer>
+<nav><a href="support.html">Support</a>·<a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Use</a>·<a href="mailto:loveykovl@gmail.com?subject=Herself">Contact</a></nav>
+<p>Questions? <a href="mailto:loveykovl@gmail.com?subject=Herself">loveykovl@gmail.com</a></p>
+<p>© 2026 Valerii Loveiko · Apple, iPhone and App Store are trademarks of Apple Inc.</p>
+</footer>
+</body>
+</html>
