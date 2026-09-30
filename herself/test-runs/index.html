@@ -72,7 +72,33 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'
 const when = (s) => s ? new Date(s).toLocaleString('ru-RU', {day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit'}) : '';
 const STATUS = {started:'начат', recorded:'записала', scene:'текст готов', voiced:'озвучивается', done:'готово', crisis:'кризис', error:'ошибка'};
 const get = async (path, type='json') => { const r = await fetch(`${R2}/${path}?t=${Date.now()}`); if (!r.ok) throw new Error(r.status); return type === 'json' ? r.json() : r.text(); };
-const url = (run, f) => `${R2}/runs/${run}/${f}`;
+// voices are private (audit 30.09): her recording, TTS and the finished scene come from herself-api behind the same password as
+// «ElevenLabs сейчас» on the home page (sessionStorage hs-stats-pass); the page plays them as blobs. JSON stays in public R2.
+const API = ((/^(localhost|127\.0\.0\.1)$/.test(location.hostname) && new URLSearchParams(location.search).get('api')) || 'https://herself-api.love8ko.workers.dev').replace(/\/$/, '');
+const AUDIO = /^(recording\.(m4a|wav|mp3)|final(-phrases)?\.m4a|tts\/[a-z0-9-]+\.mp3)$/;
+const url = (run, f) => AUDIO.test(f) ? `#audio:${run}/${f}` : `${R2}/runs/${run}/${f}`;
+const PASS = 'hs-stats-pass';
+async function voices(msg) {
+  const els = [...document.querySelectorAll('audio[src^="#audio:"]')];
+  if (!els.length) return;
+  let pass = null; try { pass = sessionStorage.getItem(PASS); } catch {}
+  const box = $('#voices-lock');
+  if (!pass) {
+    box.innerHTML = `<form class="note" autocomplete="off">Голоса тестеров закрыты паролем — тем же, что у «ElevenLabs сейчас» на главной.
+      <input type="password" name="p" placeholder="Пароль" required> <button type="submit">Открыть</button>${msg ? ` <b>${esc(msg)}</b>` : ''}</form>`;
+    box.querySelector('form').onsubmit = (e) => { e.preventDefault(); try { sessionStorage.setItem(PASS, e.target.p.value); } catch {} voices(); };
+    return;
+  }
+  box.innerHTML = '';
+  for (const el of els) {
+    const [run, ...rest] = el.getAttribute('src').slice(7).split('/');
+    let r;
+    try { r = await fetch(`${API}/v1/test/audio?run=${encodeURIComponent(run)}&name=${encodeURIComponent(rest.join('/'))}`, { headers: { 'X-Stats-Pass': pass } }); }
+    catch { continue; }
+    if (r.status === 401) { try { sessionStorage.removeItem(PASS); } catch {} return voices('Неверный пароль.'); }
+    if (r.ok) el.src = URL.createObjectURL(await r.blob());
+  }
+}
 
 const isCheck = (r) => (r.tester || '').startsWith('Claude');
 function numbering(runs) {   // Тест 1, 2… by creation order; Claude's own runs are checks
@@ -97,11 +123,9 @@ async function comparisons() {
 async function list() {
   let d;
   try { d = await get('runs/index.json'); } catch (e) { $('#app').innerHTML = '<p class="muted">Прогонов пока нет — или доступ к хранилищу закрыт.</p>'; return; }
-  const u = d.usage || {};
   const top = `<div class="tr-top">
     <div><b>${d.runs.filter((r) => !isCheck(r)).length}</b><span>тестов</span></div>
-    <div><b>${(u.character_count ?? '—').toLocaleString?.('ru-RU') ?? u.character_count} / ${(u.character_limit ?? '—').toLocaleString?.('ru-RU') ?? ''}</b><span>символов ElevenLabs (${esc(u.tier || '')}) в этом месяце</span></div>
-    <div><b>${u.voice_add_edit_counter ?? '—'}</b><span>созданий голоса в этом месяце</span></div>
+    <div><a href="../#elevenlabs-now"><b>ElevenLabs →</b></a><span>тариф и созданий голоса — на главной, под паролем</span></div>
     <div><b>${when(d.updated)}</b><span>обновлено</span></div></div>`;
   const num = numbering(d.runs);
   const rows = d.runs.map((r) => `<tr class="row" data-id="${esc(r.id)}"><td><b>${esc(num[r.id])}</b></td><td>${when(r.created)}</td><td>${esc(r.tester)}</td>
@@ -176,8 +200,9 @@ async function run(id) {
   if ((m.events || []).length) h += `<div class="sec"><h2>Шаги и выборы</h2><div class="ev">${m.events.map((e) =>
     `<div>${esc((e.at || '').slice(11, 19))}</div><div>${esc(e.event)}</div><div>${esc(JSON.stringify(e.props || {}))}</div>`).join('')}</div></div>`;
   if ((m.errors || []).length) h += `<div class="sec"><h2>Ошибки</h2>${m.errors.map((e) => `<div class="note">${esc(e.where)}: ${esc(e.message)}</div>`).join('')}</div>`;
-  h += `<details class="sec"><summary>Все файлы прогона</summary><ul>${m.files.map((f) => `<li><a href="${url(id, f)}">${esc(f)}</a></li>`).join('')}</ul></details>`;
-  $('#app').innerHTML = h;
+  h += `<details class="sec"><summary>Все файлы прогона</summary><ul>${m.files.map((f) => `<li>${AUDIO.test(f) ? `${esc(f)} <span class="muted">(аудио — выше, под паролем)</span>` : `<a href="${url(id, f)}">${esc(f)}</a>`}</li>`).join('')}</ul></details>`;
+  $('#app').innerHTML = '<div id="voices-lock"></div>' + h;
+  voices();
 }
 
 function route() { const m = location.hash.match(/run=([A-Za-z0-9_-]+)/); (m ? run(m[1]) : list()).catch((e) => { $('#app').textContent = 'Ошибка: ' + e.message; }); window.scrollTo(0, 0); }
