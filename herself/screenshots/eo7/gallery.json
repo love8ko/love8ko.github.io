@@ -1,0 +1,95 @@
+{
+  "round": "EO7",
+  "date": "2026-09-30",
+  "status": "on-review",
+  "approved": false,
+  "base": "EO6",
+  "shots": [
+    {
+      "id": "EO7-01",
+      "topic": "wish",
+      "sha256": "f7152cc8b16cc9467293b1ed6f309c4f0aa8384dd90bbf774a82910ed105ee27",
+      "photo_sha256": "7bc5f012610552a88c328b49aec09aaa470ff711daedbbc44978ff67b0e787f1",
+      "ui_sha256": "da18d9a5d3b01e0252f41dc64626e961b52bf37ca30317c382825e5a4050f701",
+      "ui_provenance": "Existing native Herself screenshot, fictional sample content",
+      "frozen_from": "EO6-01"
+    },
+    {
+      "id": "EO7-02",
+      "topic": "critic",
+      "sha256": "9ff6a785e05bcd03e463c9caf23194a708992f09c8081a15b106780dc9ad1082",
+      "photo_sha256": "3be2456d9f25652e75240f4ee08640f4057c1833a6694d40f494cdcb44a8b855",
+      "ui_sha256": "a675a9cdb91311b5d4905faf9b1e300cb366c727968c1c4bde8b993bacadbcae",
+      "ui_provenance": "Existing native Herself screenshot, fictional sample content",
+      "frozen_from": "EO6-02"
+    },
+    {
+      "id": "EO7-03",
+      "topic": "night",
+      "sha256": "e1112cef151a4c0937c39ef911e2e160c19ebfd12b4a8ecb4388f10976a9ad20",
+      "photo_sha256": "a29c25f25f0bad1faac8dfbd6ddb4a47b991e7830b339b23d718b5d7fe6c20a0",
+      "ui_sha256": "f38053895fd1a82417dea82371642ae572cfdcc23b73ea4becbe4aa182d8365e",
+      "ui_provenance": "Dark chapter-library example adapted by imagegen from Herself UI and Ink tokens",
+      "frozen_from": "EO6-03"
+    },
+    {
+      "id": "EO7-04",
+      "topic": "proof",
+      "sha256": "f9b9240c5d82b6c66c677e534391d7986b2757043a2528c49de7ed8735f8dd6b",
+      "photo_sha256": null,
+      "ui_sha256": "2dc19010923a5bcb633fca19493f1343be34df48875564d322ded94bb4d11480",
+      "ui_source": "design/screenshots-v2/h04/ui/change.png",
+      "photo_source": null,
+      "ui_provenance": "Existing Herself interface example; unmodified bitmap, layout adapted in HTML",
+      "jtbd": "J5: bridge intention to action"
+    },
+    {
+      "id": "EO7-05",
+      "topic": "love",
+      "sha256": "67423610726dee0ff0f3ece27e0a379e487539d7f094195a376e42d6dc87fe01",
+      "photo_sha256": "ec8c9d0cac9cf4cb414dc3b71c49401790087baf58ddb58ce30386e2987ef613",
+      "ui_sha256": "da0af437b19fb3570c1e26fe59364f91bc3d30e29228bfc524fde4f1f08d2dfd",
+      "ui_source": "design/screenshots-v2/h04/ui/love.png",
+      "photo_source": "design/screenshots-v2/eo7/sources/relationships.png",
+      "ui_provenance": "Existing Herself interface example; unmodified bitmap, layout adapted in HTML",
+      "jtbd": "J2/J3: feel worthy and speak before a hard relationship conversation"
+    },
+    {
+      "id": "EO7-06",
+      "topic": "body",
+      "sha256": "9bf86c9063e51933aa854d8233513ca2c6bf34badca37f5c4b730c37729dce16",
+      "photo_sha256": "ee6f666bc04d6b5e64538b8973a32d089352fddcbbd7f475900942164cb78a6f",
+      "ui_sha256": "58a29ce8b8d236e93ea544d9f79f2d3932ddfd7e7e6e08762430d1d2ec9bbbe8",
+      "ui_source": "design/screenshots-v2/h03/ui/body.png",
+      "photo_source": "design/screenshots-v2/h02/sources/body.png",
+      "ui_provenance": "Existing Herself interface example; unmodified bitmap, layout adapted in HTML",
+      "jtbd": "J7: self-kindness at the mirror"
+    },
+    {
+      "id": "EO7-07",
+      "topic": "work",
+      "sha256": "cb5f5c75cd95032b06f20f2c6aad7056ea0b8f11e5c7439ff09ccba1be8908aa",
+      "photo_sha256": "d5694c50f8a817db50bd92d5853126d72682e8e27a4d22eaeaa535cc0789d50a",
+      "ui_sha256": "2dc19010923a5bcb633fca19493f1343be34df48875564d322ded94bb4d11480",
+      "ui_source": "design/screenshots-v2/h04/ui/change.png",
+      "photo_source": "research/imagery-2026-09-26/img/M12.png",
+      "ui_provenance": "Existing Herself interface example; unmodified bitmap, layout adapted in HTML",
+      "jtbd": "J5: get unstuck at work with a personally chosen weekly step"
+    },
+    {
+      "id": "EO7-08",
+      "topic": "chapter",
+      "sha256": "02bdc62501dd6784e663d990e4322a3b43e036300bd57b0e12484206f08f747c",
+      "photo_sha256": "a7cbee547fc1e972931300c210ae17611f23d3ecef094f7c2f9b8f6679608724",
+      "ui_sha256": "a675a9cdb91311b5d4905faf9b1e300cb366c727968c1c4bde8b993bacadbcae",
+      "ui_source": "design/screenshots-v2/eo6/ui/critic.png",
+      "photo_source": "research/imagery-2026-09-26/img/M10.png",
+      "ui_provenance": "Existing Herself interface example; unmodified bitmap, layout adapted in HTML",
+      "jtbd": "J6: choose a direction after life changes"
+    }
+  ],
+  "copy_sha256": "123f9a46a07f767b9b51bf792789351d5d99f28f5074462019764871417ae014",
+  "gallery": "https://love8ko.github.io/herself/screenshots/#eo7",
+  "format": "EO6 first three frozen byte-for-byte. Proof, conversation, mirror, work step, new chapter. One subtitle and one meaningful plaque per new frame.",
+  "proof_source": "https://pubmed.ncbi.nlm.nih.gov/26479070/"
+}

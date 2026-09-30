@@ -1,0 +1,123 @@
+{
+  "dimensions": "1320x2868",
+  "mode": "RGB",
+  "layout": [
+    {
+      "id": "EO7-04",
+      "head_bottom": 642.375,
+      "card_top": 910.55859375,
+      "card_bottom": 1743.66015625,
+      "horizontal_overflow": false,
+      "subtitles": 1,
+      "cards": 1
+    },
+    {
+      "id": "EO7-05",
+      "head_bottom": 796.390625,
+      "card_top": 1243.6953125,
+      "card_bottom": 1540.6796875,
+      "horizontal_overflow": false,
+      "subtitles": 1,
+      "cards": 1
+    },
+    {
+      "id": "EO7-06",
+      "head_bottom": 796.390625,
+      "card_top": 2490,
+      "card_bottom": 2754.375,
+      "horizontal_overflow": false,
+      "subtitles": 1,
+      "cards": 1
+    },
+    {
+      "id": "EO7-07",
+      "head_bottom": 950.40625,
+      "card_top": 2440,
+      "card_bottom": 2783.171875,
+      "horizontal_overflow": false,
+      "subtitles": 1,
+      "cards": 1
+    },
+    {
+      "id": "EO7-08",
+      "head_bottom": 796.390625,
+      "card_top": 2530,
+      "card_bottom": 2704.1875,
+      "horizontal_overflow": false,
+      "subtitles": 1,
+      "cards": 1
+    }
+  ],
+  "visual_review_widths": [
+    110,
+    180,
+    220
+  ],
+  "status": "passed",
+  "gallery_checks": [
+    {
+      "width": 390,
+      "document_width": 390,
+      "images_loaded": true,
+      "image_count": 14,
+      "gaps": [
+        8,
+        8
+      ],
+      "rounds": [
+        "eo7",
+        "eo6",
+        "eo5",
+        "eo4",
+        "eo3",
+        "eo2",
+        "h04",
+        "h03",
+        "h02"
+      ],
+      "ids": [
+        "EO7-01",
+        "EO7-02",
+        "EO7-03",
+        "EO7-04",
+        "EO7-05",
+        "EO7-06",
+        "EO7-07",
+        "EO7-08"
+      ]
+    },
+    {
+      "width": 1280,
+      "document_width": 1280,
+      "images_loaded": true,
+      "image_count": 14,
+      "gaps": [
+        8,
+        8
+      ],
+      "rounds": [
+        "eo7",
+        "eo6",
+        "eo5",
+        "eo4",
+        "eo3",
+        "eo2",
+        "h04",
+        "h03",
+        "h02"
+      ],
+      "ids": [
+        "EO7-01",
+        "EO7-02",
+        "EO7-03",
+        "EO7-04",
+        "EO7-05",
+        "EO7-06",
+        "EO7-07",
+        "EO7-08"
+      ]
+    }
+  ],
+  "first_three": "EO6 PNGs byte-identical",
+  "visual_review": "Full/contact and 110/180/220 inspected. Headline and situation readable at110; subtitle small, plaque excerpts require180/220 or larger. Native fine print needs full-size. Proof source and explicit untested-app distinction remain within the main plaque; qualification small at110, readable at220. Each new frame carries one card; two hands/two mugs, ordinary-clothes mirror, work earbud/laptop and keys visible. No external wordmark/service footer. The evidence and work-step phones intentionally share the actual weekly-step UI, with distinct composition."
+}
