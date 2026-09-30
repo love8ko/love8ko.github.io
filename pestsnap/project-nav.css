@@ -1,0 +1,12 @@
+.ps-project-nav{position:sticky;top:0;z-index:60;display:block;width:100%;max-width:none;margin:0;padding:0;border:0;border-bottom:1px solid #DDD5C3;background:rgba(245,240,229,.97);color:#23241F;font:14px/1.4 -apple-system,system-ui,sans-serif;backdrop-filter:blur(12px)}
+.ps-project-nav .ps-nav-inner{max-width:1200px;margin:auto;padding:10px 24px;display:flex;align-items:center;gap:8px;overflow-x:auto;white-space:nowrap}
+.ps-project-nav a{text-decoration:none;color:#6B6658;padding:9px 13px;border-radius:100px;flex:0 0 auto}
+.ps-project-nav .ps-brand{display:flex;align-items:center;gap:9px;padding-left:0;margin-right:12px;font-size:18px;font-weight:750;letter-spacing:-.6px;color:#23241F}
+.ps-project-nav .ps-brand img{width:29px;height:29px;border-radius:22%;display:block}
+.ps-project-nav a:hover{background:#E9E1D1;color:#23241F}
+.ps-project-nav a[aria-current=page]{background:#AE4B2E;color:#FCF8EE}
+.ps-project-nav a:focus-visible{outline:3px solid #AE4B2E;outline-offset:3px}
+.ps-section-links{max-width:1200px;margin:auto;padding:14px 24px 0;display:flex;gap:18px;overflow-x:auto;white-space:nowrap;font-size:13px;color:#6B6658}
+.ps-section-links a{text-decoration:none}
+html{scroll-padding-top:86px}
+@media(max-width:600px){.ps-project-nav .ps-nav-inner{padding:8px 16px;gap:4px}.ps-project-nav a{padding:9px 11px}.ps-project-nav .ps-brand{margin-right:4px}.ps-section-links{padding-left:16px}}
