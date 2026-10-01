@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Sakinah</title>
+<meta name="description" content="What Sakinah keeps on your iPhone, what it sends and why, how long anything is kept, and your choices.">
+<style>
+:root{--bg:#F4EDE1;--surface:#FFFBF3;--ink:#16352F;--muted:#5A6B64;--accent:#7A5C26;--rule:#DCCFB8}
+@media (prefers-color-scheme:dark){:root{--bg:#151A33;--surface:#1F2547;--ink:#F2E8D5;--muted:#A9A28F;--accent:#E3C58F;--rule:#323A63}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:720px;margin:0 auto;padding:24px 16px 60px;line-height:1.7;color:var(--ink);background:var(--bg)}
+h1{font:600 1.9em Georgia,'New York',serif;margin-bottom:.2em}h2{font:600 1.25em Georgia,'New York',serif;margin-top:1.8em}h3{font:600 1.05em Georgia,serif;margin:1.4em 0 .3em}
+.date{color:var(--muted);font-size:.9em;margin-bottom:2em}ul{padding-left:1.2em}li{margin-bottom:.4em}a{color:var(--accent)}
+.highlight{background:var(--surface);padding:14px 18px;border-left:3px solid var(--accent);margin:16px 0;border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:.92em;margin:12px 0}th,td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:600}
+.scroll{overflow-x:auto}nav{font-size:.9em;margin-bottom:1.5em;display:flex;flex-wrap:wrap;gap:4px 14px}footer{margin-top:3em;color:var(--muted);font-size:.85em}
+</style></head><body>
+<nav><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
+<h1>Privacy Policy</h1>
+<p class="date">Effective date: October 1, 2026</p>
+<p>Sakinah ("the App") teaches the meaning of the Arabic you say in salah. It is developed and published by Valerii Loveiko ("we", "us"). This policy explains what the App keeps on your iPhone, what it sends to outside services and why, how long anything is kept, and the choices you have.</p>
+<div class="highlight"><strong>Summary:</strong> No account, no email, no tracking. Your answers, your name (if you give one), your progress and your conversations stay on your iPhone. Recitations are downloaded from Quran.com's public audio service. Only if you turn on AI answers in Ask, the text of a question goes through our server to an AI service to write an answer from your lesson; our server does not store it. Purchases are handled by Apple and RevenueCat under a random ID. No ads, no analytics, no selling of data.</div>
+
+<h2>1. Data stored only on your iPhone</h2>
+<ul>
+<li>Your onboarding answers: why you came, how much you understand, the short chapters you recite, and the time of your daily “minute before prayer”</li>
+<li>The first name you type, if you choose to (it only labels your route, for example “Amir’s salah”)</li>
+<li>Your lesson progress, answers to questions in lessons, phrases you marked to review or saved, and the wording of formulas you chose</li>
+<li>Your conversations in Ask, prepared answers you opened and any AI answers you received</li>
+<li>Your consent choices with the date, and your appearance and reminder settings</li>
+<li>The phrase of the day your widget shows, shared between the App and its widget through an App Group on your iPhone</li>
+<li>Recitation recordings downloaded for lessons, kept in the App’s cache for at most 7 days</li>
+</ul>
+<p>We cannot see this data. Your device backups may include it, depending on your Apple settings. Profile → Your data → “Delete my progress and conversations” removes progress, saved phrases and conversations; deleting the App removes everything.</p>
+
+<h2>2. Data sent to outside services</h2>
+<h3>2.1 Recitations</h3>
+<p>When you listen in a lesson, the App downloads the recitation by Mishary Rashid Alafasy from Quran.com’s public audio service (Quran Foundation: <code>verses.quran.com</code>, <code>download.quranicaudio.com</code>, <code>audio.qurancdn.com</code>). The request contains only the address of the recording; like any web request it reveals your IP address to that service. Nothing about you or your progress is sent.</p>
+
+<h3>2.2 Ask — AI answers (optional, only with your consent)</h3>
+<p>Prepared answers in Ask work without AI and send nothing. Asking your own question needs “AI answers my questions in Ask” on the consent screen, which you can change at any time in Profile → Your data.</p>
+<p>When it is on, the App sends to our server (a Cloudflare Worker): the text of your question (up to 500 characters), the lesson and word you asked about, up to four earlier messages of that conversation, a “tell me more” flag, the App version and the App’s random purchase ID (see 2.3). Our server builds the instructions from the lesson’s reviewed material and passes <strong>your question, the earlier messages and the lesson material</strong> — not your purchase ID, name or progress — to <strong>DeepSeek</strong>, an AI service operated from the People’s Republic of China. DeepSeek processes the text under its own terms and privacy policy and may keep it as described there.</p>
+<p>Our server does not store or log the text of your questions or answers. It logs only the outcome (answered, limited or unavailable).</p>
+<p>Questions about the meaning of prayer can reveal religious beliefs. We send them only after your explicit consent and only to write the answer you asked for. If you turn AI answers off, nothing more is sent; your earlier conversation stays on your iPhone.</p>
+
+<h3>2.3 Purchases</h3>
+<p>Subscriptions are processed by Apple; we never see your name or payment details. The App uses <strong>RevenueCat</strong> to know whether your subscription is active. RevenueCat creates a random ID for your installation of the App and receives purchase information (product, dates, trial and renewal status, Family Sharing) and technical details such as device model, iOS version, App version and region. Our server sends that random ID to RevenueCat to check whether a subscription is active, so AI answers are served to subscribers. Apple and RevenueCat process this data under their own privacy policies.</p>
+
+<h3>2.4 Our server</h3>
+<p>Cloudflare runs our server. To protect it from abuse, it keeps daily request counters keyed by the random purchase ID and by a one-way hash of your IP address, and a short cache of whether a purchase ID has an active subscription (up to 6 hours). Counters are deleted when the day ends; cache entries within about a week after they expire. Cloudflare’s own service logs are kept for a few days. We do not use IP addresses to identify you or your location.</p>
+
+<h3>2.5 Write to us</h3>
+<p>“Write to us” opens your mail app with the App version, iOS version, language and the random ID filled in below a line, so we can help. You can delete those lines before sending. We keep your email only to answer you.</p>
+
+<h2>3. Notifications</h2>
+<p>If you allow them, the daily “minute before prayer” reminder is scheduled on your iPhone at the time you choose. No push server is used, and there are no marketing or payment notifications.</p>
+
+<h2>4. At a glance</h2>
+<div class="scroll"><table>
+<tr><th>What</th><th>Goes to</th><th>Why</th><th>Kept</th></tr>
+<tr><td>Progress, answers, name, saved phrases, conversations</td><td>Your iPhone only</td><td>Your lessons and review</td><td>Until you delete them or the App</td></tr>
+<tr><td>Phrase of the day</td><td>Your iPhone (App Group)</td><td>The widget</td><td>Until you remove the App</td></tr>
+<tr><td>Recording request (IP address)</td><td>Quran Foundation audio service</td><td>Download a recitation</td><td>Under its policy; the file stays in the App’s cache ≤ 7 days</td></tr>
+<tr><td>Your question in Ask (only with consent)</td><td>Our server → DeepSeek (China)</td><td>Write an answer from your lesson</td><td>Not stored by us; DeepSeek under its terms</td></tr>
+<tr><td>Random purchase ID</td><td>RevenueCat, our server</td><td>Subscription status, abuse limits</td><td>RevenueCat under its policy; our server ≤ 1 day (counters), ≈ a week (cache)</td></tr>
+<tr><td>Purchase history</td><td>Apple, RevenueCat</td><td>Subscription</td><td>Under Apple’s and RevenueCat’s policies</td></tr>
+<tr><td>IP address (hashed)</td><td>Cloudflare (our server)</td><td>Deliver requests, abuse limits</td><td>Until the end of the day (counters), a few days (logs)</td></tr>
+</table></div>
+
+<h2>5. What we do not do</h2>
+<ul>
+<li>No ads, no advertising or analytics SDKs, no tracking across apps or websites</li>
+<li>No selling or sharing of personal data for marketing</li>
+<li>No account, no email sign-up</li>
+<li>We do not use your questions to train AI models</li>
+<li>The App does not record your voice or judge your prayer or pronunciation</li>
+</ul>
+
+<h2>6. Your choices and rights</h2>
+<ul>
+<li><strong>AI answers:</strong> Profile → Your data → “AI answers in Ask” on or off. “What’s shared” there shows the details.</li>
+<li><strong>Delete:</strong> Profile → Your data → “Delete my progress and conversations”, or delete the App. We hold no account to delete.</li>
+<li><strong>Access or questions:</strong> write to us at <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a>. Include the random ID from “Write to us” if you want us to look for data linked to it (RevenueCat records and server counters).</li>
+<li>Depending on where you live (for example the EU, the UK or California), you may have rights to access, correct, delete or restrict the use of your data and to object or complain to your data protection authority. We will answer such requests within the time the law requires.</li>
+</ul>
+
+<h2>7. Where data is processed</h2>
+<p>Your lessons and conversations stay on your iPhone. Our server runs on Cloudflare’s global network. RevenueCat processes data in the United States. AI answers are produced by DeepSeek in the People’s Republic of China, only after your explicit consent.</p>
+
+<h2>8. Children</h2>
+<p>Sakinah is not directed to children under 13. AI answers in Ask are for people aged 16 and over, and the consent screen asks you to confirm this.</p>
+
+<h2>9. Security</h2>
+<p>Connections to our server and to the audio service use HTTPS. AI provider keys live only on our server, never in the App. Requests to our server are checked against the App’s secret and your subscription.</p>
+
+<h2>10. Changes and contact</h2>
+<p>If we change what the App collects, where it goes or how long it is kept, we update this policy and its effective date, and the App asks for your consent again where needed. Contact: <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a>.</p>
+<footer>Sakinah · Valerii Loveiko · <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></footer>
+</body></html>
