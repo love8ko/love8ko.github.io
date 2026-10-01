@@ -1,14 +1,14 @@
 {
- "updated_at": "2026-09-29T07:23+00:00",
+ "updated_at": "2026-10-01T07:22+00:00",
  "voice": {
   "langs": {
    "en": {
     "name": "English",
     "bible": "Berean Standard Bible",
-    "done": 132,
+    "done": 168,
     "total": 293,
-    "left": 161,
-    "pct": 45,
+    "left": 125,
+    "pct": 57,
     "tiers": {
      "1": {
       "done": 25,
@@ -19,7 +19,7 @@
       "total": 57
      },
      "3": {
-      "done": 51,
+      "done": 87,
       "total": 211
      }
     },
@@ -31,10 +31,10 @@
    "es": {
     "name": "Español",
     "bible": "Reina-Valera 1909",
-    "done": 94,
+    "done": 132,
     "total": 263,
-    "left": 169,
-    "pct": 36,
+    "left": 131,
+    "pct": 50,
     "tiers": {
      "1": {
       "done": 21,
@@ -45,7 +45,7 @@
       "total": 37
      },
      "3": {
-      "done": 36,
+      "done": 74,
       "total": 205
      }
     },
@@ -57,10 +57,10 @@
    "pt": {
     "name": "Português (BR)",
     "bible": "Bíblia Portuguesa Mundial",
-    "done": 95,
+    "done": 133,
     "total": 263,
-    "left": 168,
-    "pct": 36,
+    "left": 130,
+    "pct": 51,
     "tiers": {
      "1": {
       "done": 21,
@@ -71,7 +71,7 @@
       "total": 37
      },
      "3": {
-      "done": 37,
+      "done": 75,
       "total": 205
      }
     },
@@ -83,10 +83,10 @@
    "fr": {
     "name": "Français",
     "bible": "Louis Segond 1910",
-    "done": 94,
+    "done": 132,
     "total": 263,
-    "left": 169,
-    "pct": 36,
+    "left": 131,
+    "pct": 50,
     "tiers": {
      "1": {
       "done": 21,
@@ -97,7 +97,7 @@
       "total": 37
      },
      "3": {
-      "done": 36,
+      "done": 74,
       "total": 205
      }
     },
@@ -109,10 +109,10 @@
    "de": {
     "name": "Deutsch",
     "bible": "Lutherbibel 1912",
-    "done": 94,
+    "done": 130,
     "total": 263,
-    "left": 169,
-    "pct": 36,
+    "left": 133,
+    "pct": 49,
     "tiers": {
      "1": {
       "done": 21,
@@ -123,7 +123,7 @@
       "total": 37
      },
      "3": {
-      "done": 36,
+      "done": 72,
       "total": 205
      }
     },
@@ -133,13 +133,13 @@
     "store": "de-DE"
    }
   },
-  "done": 509,
+  "done": 695,
   "total": 1345,
-  "left": 836,
+  "left": 650,
   "daily": 100,
   "released": false,
   "eta": "2026-10-08",
-  "cost_usd": 2.04
+  "cost_usd": 2.78
  },
  "interface": null,
  "store": {
@@ -167,25 +167,32 @@
   {
    "date": "2026-09-29",
    "made": 90
+  },
+  {
+   "date": "2026-09-30",
+   "made": 92
+  },
+  {
+   "date": "2026-10-01",
+   "made": 94
   }
  ],
  "last_run": {
-  "at": "2026-09-29T07:23+00:00",
-  "calls": 95,
+  "at": "2026-10-01T07:22+00:00",
+  "calls": 98,
   "made": {
    "en": 18,
-   "es": 17,
+   "es": 19,
    "pt": 19,
-   "fr": 18,
-   "de": 18
+   "fr": 19,
+   "de": 19
   },
   "qc_failed": [],
   "errors": [
    "en/ROM.8.38-39: 400 b'{\"error\":{\"message\":\"Request blocked for an unspecified policy reason. Please modify your input and retry.\",\"code\"",
    "en/2CO.1.3-4: 400 b'{\"error\":{\"message\":\"Request blocked for an unspecified policy reason. Please modify your input and retry.\",\"code\"",
-   "es/HEB.13.8: R2 upload failed",
-   "es/2CO.1.3-4: 400 b'{\"error\":{\"message\":\"Request blocked for an unspecified policy reason. Please modify your input and retry.\",\"code\"",
-   "fr/PSA.116.15: 429 b'{\"error\":{\"message\":\"Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). P"
+   "en/DEU.26.11: R2 upload failed",
+   "es/PSA.107.1: 429 b'{\"error\":{\"message\":\"Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). P"
   ],
   "budget": 100
  }
