@@ -14,7 +14,7 @@ table{border-collapse:collapse;width:100%;font-size:.92em;margin:12px 0}th,td{bo
 </style></head><body>
 <nav><a href="marketing.html">Sakinah</a><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
 <h1>Privacy Policy</h1>
-<p class="date">Effective date: October 1, 2026</p>
+<p class="date">Effective date: October 3, 2026</p>
 <p>Sakinah ("the App") teaches the meaning of the Arabic you say in salah. It is developed and published by Valerii Loveiko ("we", "us"). This policy explains what the App keeps on your iPhone, what it sends to outside services and why, how long anything is kept, and the choices you have.</p>
 <div class="highlight"><strong>Summary:</strong> No account, no email, no tracking. Your answers, your name (if you give one), your progress and your conversations stay on your iPhone. Recitations are downloaded from Quran.com's public audio service. Only if you turn on AI answers in Ask, the text of a question goes through our server to an AI service to write an answer from your lesson; our server does not store it. Purchases are handled by Apple and RevenueCat under a random ID. No ads, no analytics, no selling of data.</div>
 
@@ -46,7 +46,13 @@ table{border-collapse:collapse;width:100%;font-size:.92em;margin:12px 0}th,td{bo
 <h3>2.4 Our server</h3>
 <p>Cloudflare runs our server. To protect it from abuse, it keeps daily request counters keyed by the random purchase ID and by a one-way hash of your IP address, and a short cache of whether a purchase ID has an active subscription (up to 6 hours). Counters are deleted when the day ends; cache entries within about a week after they expire. Cloudflare’s own service logs are kept for a few days. We do not use IP addresses to identify you or your location.</p>
 
-<h3>2.5 Write to us</h3>
+<h3>2.5 Cartoons in the children’s mode (YouTube)</h3>
+<p>The children’s mode can show cartoons by other authors. They are not made or hosted by us: they play in YouTube’s embedded player from the authors’ channels, using the privacy-enhanced address <code>youtube-nocookie.com</code>, and the App keeps no cookies or website data from it. When a cartoon plays, YouTube (Google) receives the request like any web request, including your IP address and device details, under <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>. YouTube may show ads and suggest other videos from the same channel; we cannot turn that off. A grown-up opens the cartoons once, and they can be turned off in “Widget and family”.</p>
+
+<h3>2.6 Age check for AI answers</h3>
+<p>Where your Apple Account shares an age range (iOS 26 and later), the App asks Apple one thing when you turn on AI answers: whether you are 16 or older. Apple answers with an age range, never a birth date. The answer stays on your iPhone and is not sent to us or anyone else.</p>
+
+<h3>2.7 Write to us</h3>
 <p>“Write to us” opens your mail app with the App version, iOS version, language and the random ID filled in below a line, so we can help. You can delete those lines before sending. We keep your email only to answer you.</p>
 
 <h2>3. Notifications</h2>
@@ -60,6 +66,8 @@ table{border-collapse:collapse;width:100%;font-size:.92em;margin:12px 0}th,td{bo
 <tr><td>Recording request (IP address)</td><td>Quran Foundation audio service</td><td>Download a recitation</td><td>Under its policy; the file stays in the App’s cache ≤ 7 days</td></tr>
 <tr><td>Your question in Ask (only with consent)</td><td>Our server → DeepSeek (China)</td><td>Write an answer from your lesson</td><td>Not stored by us; DeepSeek under its terms</td></tr>
 <tr><td>Random purchase ID</td><td>RevenueCat, our server</td><td>Subscription status, abuse limits</td><td>RevenueCat under its policy; our server ≤ 1 day (counters), ≈ a week (cache)</td></tr>
+<tr><td>Cartoon request (IP address, device details), children’s mode only</td><td>YouTube (Google)</td><td>Play the cartoon</td><td>Under Google’s policy</td></tr>
+<tr><td>Age range from Apple (16 or older)</td><td>Your iPhone only</td><td>Keep AI answers for 16 and over</td><td>Until you delete the App</td></tr>
 <tr><td>Purchase history</td><td>Apple, RevenueCat</td><td>Subscription</td><td>Under Apple’s and RevenueCat’s policies</td></tr>
 <tr><td>IP address (hashed)</td><td>Cloudflare (our server)</td><td>Deliver requests, abuse limits</td><td>Until the end of the day (counters), a few days (logs)</td></tr>
 </table></div>
@@ -85,7 +93,8 @@ table{border-collapse:collapse;width:100%;font-size:.92em;margin:12px 0}th,td{bo
 <p>Your lessons and conversations stay on your iPhone. Our server runs on Cloudflare’s global network. RevenueCat processes data in the United States. AI answers are produced by DeepSeek in the People’s Republic of China, only after your explicit consent.</p>
 
 <h2>8. Children</h2>
-<p>Sakinah is not directed to children under 13. AI answers in Ask are for people aged 16 and over, and the consent screen asks you to confirm this.</p>
+<p>Sakinah can be used by people of any age, including children together with a parent. AI answers in Ask are for people aged 16 and over: they are off until you turn them on and confirm you are 16 or older, and where your Apple Account shares an age range, the App checks it first; under 16, AI answers stay off and everything else stays available.</p>
+<p>The children’s mode has no AI, no chat, no account, no profile and no notifications, and it collects nothing about the child: no name, age or progress leaves the device (the stars a child earns stay on the iPhone). Leaving the children’s mode, opening the cartoons and purchases are behind a grown-up check. Cartoons play through YouTube as described in 2.5. If you believe a child has sent us personal data, write to us and we will delete it.</p>
 
 <h2>9. Security</h2>
 <p>Connections to our server and to the audio service use HTTPS. AI provider keys live only on our server, never in the App. Requests to our server are checked against the App’s secret and your subscription.</p>
