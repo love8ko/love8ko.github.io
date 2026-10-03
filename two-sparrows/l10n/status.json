@@ -1,14 +1,14 @@
 {
- "updated_at": "2026-10-02T07:23+00:00",
+ "updated_at": "2026-10-03T07:21+00:00",
  "voice": {
   "langs": {
    "en": {
     "name": "English",
     "bible": "Berean Standard Bible",
-    "done": 186,
+    "done": 204,
     "total": 293,
-    "left": 107,
-    "pct": 63,
+    "left": 89,
+    "pct": 70,
     "tiers": {
      "1": {
       "done": 25,
@@ -19,7 +19,7 @@
       "total": 57
      },
      "3": {
-      "done": 105,
+      "done": 123,
       "total": 211
      }
     },
@@ -31,10 +31,10 @@
    "es": {
     "name": "Español",
     "bible": "Reina-Valera 1909",
-    "done": 151,
+    "done": 168,
     "total": 263,
-    "left": 112,
-    "pct": 57,
+    "left": 95,
+    "pct": 64,
     "tiers": {
      "1": {
       "done": 21,
@@ -45,7 +45,7 @@
       "total": 37
      },
      "3": {
-      "done": 93,
+      "done": 110,
       "total": 205
      }
     },
@@ -57,10 +57,10 @@
    "pt": {
     "name": "Português (BR)",
     "bible": "Bíblia Portuguesa Mundial",
-    "done": 152,
+    "done": 170,
     "total": 263,
-    "left": 111,
-    "pct": 58,
+    "left": 93,
+    "pct": 65,
     "tiers": {
      "1": {
       "done": 21,
@@ -71,7 +71,7 @@
       "total": 37
      },
      "3": {
-      "done": 94,
+      "done": 112,
       "total": 205
      }
     },
@@ -83,10 +83,10 @@
    "fr": {
     "name": "Français",
     "bible": "Louis Segond 1910",
-    "done": 149,
+    "done": 166,
     "total": 263,
-    "left": 114,
-    "pct": 57,
+    "left": 97,
+    "pct": 63,
     "tiers": {
      "1": {
       "done": 21,
@@ -97,7 +97,7 @@
       "total": 37
      },
      "3": {
-      "done": 91,
+      "done": 108,
       "total": 205
      }
     },
@@ -109,10 +109,10 @@
    "de": {
     "name": "Deutsch",
     "bible": "Lutherbibel 1912",
-    "done": 147,
+    "done": 165,
     "total": 263,
-    "left": 116,
-    "pct": 56,
+    "left": 98,
+    "pct": 63,
     "tiers": {
      "1": {
       "done": 21,
@@ -123,7 +123,7 @@
       "total": 37
      },
      "3": {
-      "done": 89,
+      "done": 107,
       "total": 205
      }
     },
@@ -133,13 +133,13 @@
     "store": "de-DE"
    }
   },
-  "done": 785,
+  "done": 873,
   "total": 1345,
-  "left": 560,
+  "left": 472,
   "daily": 100,
   "released": false,
   "eta": "2026-10-08",
-  "cost_usd": 3.14
+  "cost_usd": 3.49
  },
  "interface": null,
  "store": {
@@ -179,38 +179,70 @@
   {
    "date": "2026-10-02",
    "made": 90
+  },
+  {
+   "date": "2026-10-03",
+   "made": 88
   }
  ],
  "last_run": {
-  "at": "2026-10-02T07:23+00:00",
-  "calls": 95,
+  "at": "2026-10-03T07:21+00:00",
+  "calls": 97,
   "made": {
    "en": 18,
-   "es": 19,
-   "pt": 19,
+   "es": 17,
+   "pt": 18,
    "fr": 17,
-   "de": 17
+   "de": 18
   },
   "qc_failed": [
-   {
-    "lang": "de",
-    "item": "EPH.5.20",
-    "ratio": 0.8,
-    "pace": 11.8,
-    "heard": " Und sage Dank alle Zeit für alles Gott und dem Vater in dem Namen unseres Herrn Jesu Christi."
-   },
    {
     "lang": "fr",
     "item": "COL.4.2",
     "ratio": 0.8,
-    "pace": 9.3,
+    "pace": 10.5,
     "heard": " Persévérez dans la prière. Veillez-y avec action de grâce."
+   },
+   {
+    "lang": "de",
+    "item": "EPH.5.20",
+    "ratio": 0.8,
+    "pace": 10.8,
+    "heard": " Und sage Dank alle Zeit für alles, Gott und dem Vater, in dem Namen unseres Herrn Jesu Christi."
+   },
+   {
+    "lang": "es",
+    "item": "PSA.150.6",
+    "ratio": 0.8,
+    "pace": 7.3,
+    "heard": " Todo lo que respira, alabe ajá. Aleluya."
+   },
+   {
+    "lang": "pt",
+    "item": "GAL.5.22",
+    "ratio": 1.0,
+    "pace": 7.0,
+    "heard": " Mas o fruto do Espírito é amor, alegria, paz, paciência, benignidade, bondade, fé."
+   },
+   {
+    "lang": "es",
+    "item": "GAL.5.22",
+    "ratio": 1.0,
+    "pace": 6.4,
+    "heard": " Mas el fruto del Espíritu es caridad, gozo, paz, tolerancia, benignidad, bondad, fe."
+   },
+   {
+    "lang": "fr",
+    "item": "2CO.9.15",
+    "ratio": 0.667,
+    "pace": 11.1,
+    "heard": " Grâce soit rendue à Dieu pour son don ineffable."
    }
   ],
   "errors": [
    "en/ROM.8.38-39: 400 b'{\"error\":{\"message\":\"Request blocked for an unspecified policy reason. Please modify your input and retry.\",\"code\"",
    "en/2CO.1.3-4: 400 b'{\"error\":{\"message\":\"Request blocked for an unspecified policy reason. Please modify your input and retry.\",\"code\"",
-   "fr/PSA.136.1: 429 b'{\"error\":{\"message\":\"Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). P"
+   "en/2CO.9.8: 429 b'{\"error\":{\"message\":\"Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). P"
   ],
   "budget": 100
  }
