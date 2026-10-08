@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Morno</title><meta name="description" content="Help with Morno alarms, missions and your subscription."><meta name="color-scheme" content="light dark">
+<link rel="icon" href="img/icon.png">
+<style>
+:root{--bg:#F2F3F5;--surface:#FFFFFF;--ink:#15171C;--muted:#5B6070;--accent:#2B3BEB;--soft:#E4E7FF;--rule:#E2E4E9;--lime:#D8F45A;--lime-ink:#4A6000;--lime-soft:#F1F8D6}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1013;--surface:#1A1C21;--ink:#F2F3F5;--muted:#9EA3AE;--accent:#7F8CFF;--soft:#22264A;--rule:#2A2D34;--lime-ink:#D8F45A;--lime-soft:#2A3310}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+main{max-width:760px;margin:0 auto;padding:28px 16px 56px}
+nav{display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-size:.95em;margin-bottom:8px}nav b{margin-right:auto;font-size:1.1em}
+nav a{color:var(--muted);text-decoration:none}nav a[aria-current]{color:var(--ink);font-weight:600}
+h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;line-height:1.2;letter-spacing:-.01em}
+h1{font-size:2.3em;margin:.4em 0 .2em}h2{font-size:1.45em;margin:2em 0 .5em}h3{font-size:1.08em;margin:1.4em 0 .3em}
+a{color:var(--accent)}ul{padding-left:1.2em}li{margin:.3em 0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:16px 18px;margin:14px 0}
+.summary{background:var(--lime-soft);border-radius:18px;padding:14px 18px;margin:18px 0}
+.meta{color:var(--muted);font-size:.92em}
+table{width:100%;border-collapse:collapse;font-size:.93em;margin:10px 0}th,td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+.wrap{overflow-x:auto}
+footer{text-align:center;font-size:.85em;color:var(--muted);margin-top:3em}footer a{margin:0 6px;color:var(--muted)}
+.hero{text-align:center}.icon{width:104px;height:104px;border-radius:24px;box-shadow:0 10px 28px rgba(43,59,235,.25)}
+.tag{font-size:1.25em;font-weight:600;margin:0 0 .5em}.lead{font-size:1.08em;max-width:560px;margin:0 auto 1.2em;color:var(--muted)}
+.dot{display:inline-block;width:.5em;height:.5em;border-radius:.15em;background:var(--lime);transform:rotate(-12deg);margin:0 .35em .1em 0}
+.badge svg{height:54px;width:auto}
+.steps{display:grid;gap:12px;counter-reset:s}.step{display:flex;gap:14px;background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:16px}
+.n{flex:0 0 32px;height:32px;border-radius:50%;background:var(--lime);color:#15171C;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step h3{margin:0 0 .2em}.step p,.grid p{margin:0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid .card{margin:0}.grid h3{margin:0 0 .3em}
+.shots{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;margin:0 -16px;padding-left:16px;padding-right:16px}
+.shots img{flex:0 0 auto;width:min(46vw,220px);height:auto;border-radius:18px;scroll-snap-align:start;border:1px solid var(--rule)}
+.cta{text-align:center;margin-top:2.4em}
+@media (max-width:560px){h1{font-size:1.9em}.grid{grid-template-columns:1fr}nav b{flex-basis:100%}}
+</style></head><body>
+<main>
+<nav><b>Morno</b><a href="marketing.html">Morno</a><a href="support.html" aria-current="page">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<h1>Support</h1>
+<p>Questions, a missed alarm, or an idea? Write to us. A real person reads every message and replies within 24 hours.</p>
+<div class="card"><p style="margin:0"><b>In the App:</b> Settings → Write to us (it adds your App version, which helps us).<br><b>Email:</b> <a href="mailto:loveykovl@gmail.com?subject=Morno%20%E2%80%94%20question%20or%20feedback">loveykovl@gmail.com</a></p></div>
+
+<h2>Common questions</h2>
+<h3>Will my alarm ring in Silent mode or Focus?</h3>
+<p>Yes. Morno schedules alarms through Apple's AlarmKit, which rings even in Silent mode and Focus. Allow Morno to schedule alarms when asked (or in iOS Settings → Morno), and keep your iPhone on and charged. Use "Test alarm" in the Missions tab the evening before an important morning.</p>
+<h3>I tapped Stop. Why is it ringing again?</h3>
+<p>That's Morno working. Stopping the alarm doesn't end your morning: backup alarms ring every 2 minutes, up to 10 times, until you finish your mission. Then, 10 minutes later, Morno checks again (30 steps by default); miss it and the backup alarms come back.</p>
+<h3>My photo isn't recognized.</h3>
+<p>Turn on a light, stand where you took the original photo and frame the same object. If it still doesn't match, tap "Walk 30 steps instead" to finish the morning, then update the photo of your spot in the Missions tab. Objects that stay in one place, like a coffee machine or kettle, work best.</p>
+<h3>Push-ups or squats aren't counted.</h3>
+<p>Prop the phone on the floor about 1 m (3 ft) away, facing you, so your head and shoulders are in view. Good light helps. Only choose exercise if it's safe for you.</p>
+<h3>I'm away from home.</h3>
+<p>Switch tonight's mission to push-ups or 30 steps, or save a new spot where you're staying.</p>
+<h3>How do I skip tomorrow?</h3>
+<p>On the Alarms tab, or from Control Center, choose "Skip tomorrow". You can also skip the next alarm or turn alarms off until Monday. A Big morning rings even while alarms are off until Monday.</p>
+
+<h2>Subscription</h2>
+<ul>
+<li><b>Cancel:</b> iOS Settings → your name → Subscriptions → Morno. Cancel at least 24 hours before the trial or period ends to avoid the next charge. Deleting the App does not cancel it.</li>
+<li><b>Restore on a new iPhone:</b> Settings → Restore purchases, with the same Apple Account.</li>
+<li><b>Refunds</b> are handled by Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</li>
+<li><b>Switch to yearly:</b> Settings in the App, at the top.</li>
+</ul>
+
+<h2>Your data</h2>
+<p>Your photos and step counts never leave your iPhone. See the <a href="privacy.html">Privacy Policy</a> for details, and the <a href="terms.html">Terms of Use</a>.</p>
+
+<footer><a href="marketing.html">Morno</a>·<a href="support.html">Support</a>·<a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Use</a><br>© 2026 Valerii Loveiko</footer>
+</main></body></html>
