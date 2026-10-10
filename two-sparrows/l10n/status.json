@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-09T07:13+00:00",
+ "updated_at": "2026-10-10T07:10+00:00",
  "voice": {
   "langs": {
    "en": {
@@ -143,7 +143,7 @@
   "left": 5,
   "daily": 100,
   "released": false,
-  "eta": "2026-10-10",
+  "eta": "2026-10-11",
   "cost_usd": 5.36
  },
  "interface": null,
@@ -153,10 +153,6 @@
   "caption_only_locales": 39
  },
  "history": [
-  {
-   "date": "2026-09-26",
-   "made": 96
-  },
   {
    "date": "2026-09-27",
    "made": 94
@@ -208,17 +204,21 @@
   {
    "date": "2026-10-09",
    "made": 21
+  },
+  {
+   "date": "2026-10-10",
+   "made": 0
   }
  ],
  "last_run": {
-  "at": "2026-10-09T07:13+00:00",
-  "calls": 23,
+  "at": "2026-10-10T07:10+00:00",
+  "calls": 2,
   "made": {
-   "en": 1,
-   "es": 6,
+   "en": 0,
+   "es": 0,
    "pt": 0,
-   "fr": 6,
-   "de": 8
+   "fr": 0,
+   "de": 0
   },
   "qc_failed": [],
   "errors": [
