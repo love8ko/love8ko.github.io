@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TVRescue — your iPhone as the TV remote</title><meta name="description" content="TVRescue turns your iPhone into a remote for smart TVs and, with an IR bridge, air conditioners."><meta name="color-scheme" content="light dark">
+<link rel="icon" href="img/icon.png">
+<style>
+:root{--bg:#F2F3F5;--surface:#FFFFFF;--ink:#15171C;--muted:#5B6070;--accent:#1E5BD8;--soft:#E3ECFF;--rule:#E2E4E9;--lime:#2F7BF6;--lime-ink:#1E5BD8;--lime-soft:#E8F0FF}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1013;--surface:#1A1C21;--ink:#F2F3F5;--muted:#9EA3AE;--accent:#8DB2FF;--soft:#1B2A4A;--rule:#2A2D34;--lime-ink:#8DB2FF;--lime-soft:#17243D}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+main{max-width:760px;margin:0 auto;padding:28px 16px 56px}
+nav{display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-size:.95em;margin-bottom:8px}nav b{margin-right:auto;font-size:1.1em}
+nav a{color:var(--muted);text-decoration:none}nav a[aria-current]{color:var(--ink);font-weight:600}
+h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;line-height:1.2;letter-spacing:-.01em}
+h1{font-size:2.3em;margin:.4em 0 .2em}h2{font-size:1.45em;margin:2em 0 .5em}h3{font-size:1.08em;margin:1.4em 0 .3em}
+a{color:var(--accent)}ul{padding-left:1.2em}li{margin:.3em 0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:16px 18px;margin:14px 0}
+.summary{background:var(--lime-soft);border-radius:18px;padding:14px 18px;margin:18px 0}
+.meta{color:var(--muted);font-size:.92em}
+table{width:100%;border-collapse:collapse;font-size:.93em;margin:10px 0}th,td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+.wrap{overflow-x:auto}
+footer{text-align:center;font-size:.85em;color:var(--muted);margin-top:3em}footer a{margin:0 6px;color:var(--muted)}
+.hero{text-align:center}.icon{width:104px;height:104px;border-radius:24px;box-shadow:0 10px 28px rgba(30,91,216,.25)}
+.tag{font-size:1.25em;font-weight:600;margin:0 0 .5em}.lead{font-size:1.08em;max-width:560px;margin:0 auto 1.2em;color:var(--muted)}
+.dot{display:inline-block;width:.5em;height:.5em;border-radius:.15em;background:var(--lime);transform:rotate(-12deg);margin:0 .35em .1em 0}
+.badge svg{height:54px;width:auto}
+.steps{display:grid;gap:12px;counter-reset:s}.step{display:flex;gap:14px;background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:16px}
+.n{flex:0 0 32px;height:32px;border-radius:50%;background:var(--lime);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step h3{margin:0 0 .2em}.step p,.grid p{margin:0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid .card{margin:0}.grid h3{margin:0 0 .3em}
+.shots{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;margin:0 -16px;padding-left:16px;padding-right:16px}
+.shots img{flex:0 0 auto;width:min(46vw,220px);height:auto;border-radius:18px;scroll-snap-align:start;border:1px solid var(--rule)}
+.cta{text-align:center;margin-top:2.4em}
+@media (max-width:560px){h1{font-size:1.9em}.grid{grid-template-columns:1fr}nav b{flex-basis:100%}}
+</style></head><body>
+<main>
+<nav><b>TVRescue</b><a href="index.html" aria-current="page">TVRescue</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<div class="hero">
+<img class="icon" src="img/icon.png" alt="TVRescue app icon" width="104" height="104">
+<h1>TVRescue</h1>
+<p class="tag">Lost the remote? Your iPhone is the remote.</p>
+<p class="lead">Snap a photo of your TV, follow the steps for your exact model, and use your iPhone as the remote. Something stops working? Tap Fix. Air conditioners and older TVs work too, with a Wi-Fi IR bridge sold separately.</p>
+</div>
+
+<h2>How it works</h2>
+<div class="steps">
+<div class="step"><div class="n">1</div><div><h3>Snap your TV</h3><p>Take a photo of the sticker on the back of the TV, its remote or the box. TVRescue recognises the brand and model, or you pick them yourself.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Follow the steps for your TV</h3><p>Most smart TVs show a code or an "Allow" prompt, so you usually don't need the old remote. Stuck? Listen to the step or ask the chat.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Use your remote</h3><p>Power, volume, channels, arrows, OK, back, home and a keyboard. TVRescue finds your TV again even if its network address changes.</p></div></div>
+</div>
+
+<h2>What it works with</h2>
+<div class="grid">
+<div class="card"><h3>Smart TVs on your Wi-Fi</h3><p>Samsung, LG, Google TV and Android TV, Roku TV and Roku players, Fire TV, Vizio, Sony Bravia, Panasonic VIERA, Sharp AQUOS, Philips and Hisense VIDAA. Your iPhone and TV must be on the same Wi-Fi. Available buttons depend on the model.</p></div>
+<div class="card"><h3>Air conditioners and infrared TVs</h3><p>With a Wi-Fi IR bridge (BroadLink RM4 mini or RM4 pro), sold separately and not included in the subscription: power, temperature, mode, fan, Swing and Eco. The app shows where to buy one near you.</p></div>
+</div>
+
+<h2>Try it free</h2>
+<p>TVRescue Plus starts with 7 days free on the weekly or yearly plan for new subscribers. There is no charge today, you see the date your trial ends before you confirm, and if you cancel in Settings at least 24 hours before that date you pay nothing. Family Sharing is included. No ads.</p>
+
+<div class="cta"><p class="meta">TVRescue is an iPhone app by Valerii Loveiko. Questions: <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></p></div>
+
+<footer><a href="index.html">TVRescue</a>·<a href="support.html">Support</a>·<a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Use</a><br>TVRescue is not affiliated with Samsung, LG, Roku, Amazon, Google, Vizio, Sony, Hisense, Panasonic, Sharp, Philips or BroadLink.<br>© 2026 Valerii Loveiko</footer>
+</main></body></html>
