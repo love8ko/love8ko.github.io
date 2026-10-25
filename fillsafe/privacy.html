@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fillsafe Privacy Policy</title>
+<style>
+:root {
+  --paper: #F0F3F1; --card: #FAFCFA; --ink: #182722; --muted: #53645D;
+  --accent: #294CCF; --mark: #27856B; --line: #C7D2CB;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131C19; --card: #1D2B25; --ink: #EEF5EF; --muted: #A7BAB0;
+    --accent: #A6B8FF; --mark: #9BE7CC; --line: #53685C;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131C19; --card: #1D2B25; --ink: #EEF5EF; --muted: #A7BAB0;
+  --accent: #A6B8FF; --mark: #9BE7CC; --line: #53685C;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif; font-weight: 650; line-height: 1.2; letter-spacing: -0.01em; }
+h1 { font-size: 34px; margin: 0 0 6px; }
+h1::before { content: ""; display: block; width: 5px; height: 40px; border-radius: 3px; background: var(--mark); margin-bottom: 14px; }
+h2 { font-size: 22px; margin: 40px 0 10px; padding-top: 12px; border-top: 1px solid var(--line); }
+h3 { font-size: 18px; margin: 22px 0 6px; }
+p, ul, ol { margin: 0 0 14px; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 6px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+.meta { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin: 16px 0; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+.notes { background: transparent; border-style: dashed; font-size: 15px; color: var(--muted); margin-top: 48px; }
+.notes h2 { font-size: 17px; margin: 0 0 8px; padding: 0; border: 0; color: var(--ink); }
+.table-wrap { overflow-x: auto; margin: 12px 0 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 9px 8px; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+.foot { margin-top: 32px; color: var(--muted); font-size: 15px; }
+nav.toc ol { margin: 0; }
+nav.toc li { margin-bottom: 2px; }
+@media (max-width: 480px) { body { font-size: 16px; } h1 { font-size: 29px; } h2 { font-size: 20px; } th, td { padding: 8px 6px; font-size: 14px; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy Policy</h1>
+<p class="meta">Fillsafe: PDF Form Filler · Loveiko Labs<br>Last updated: October 24, 2026</p>
+
+<div class="card">
+<p><strong>In short.</strong></p>
+<ul>
+  <li>Your details, your family's and company's details, your documents, photos, signatures and filled PDFs are stored and read on your iPhone. They are not sent to our servers or to AI.</li>
+  <li>To understand a public blank form, the app sends that blank form — its printed text, field names and layout, with no answers of yours — to an AI model through our server. The AI returns a plan of which kind of detail goes where. Your iPhone fills in the values.</li>
+  <li>Voice answers are optional and need their own consent. If you turn them on, a short recording of the answer you say is sent for transcription and is not stored on our servers. It can contain whatever you say.</li>
+  <li>iCloud backup is optional and goes to your own private iCloud, not to us.</li>
+  <li>Purchases go through Apple. RevenueCat records them for us under a random install ID, not your name or email.</li>
+  <li>No ads. No tracking. No analytics SDKs. We don't sell or share your personal information.</li>
+  <li>Fillsafe is for adults 18 and older.</li>
+</ul>
+</div>
+
+<nav class="toc card" aria-label="Contents">
+<ol>
+  <li><a href="#who">Who we are</a></li>
+  <li><a href="#device">What stays on your iPhone</a></li>
+  <li><a href="#sent">What is sent, and why</a></li>
+  <li><a href="#voice">Voice answers (optional)</a></li>
+  <li><a href="#icloud">iCloud backup (optional)</a></li>
+  <li><a href="#purchases">Purchases and the install ID</a></li>
+  <li><a href="#providers">Service providers</a></li>
+  <li><a href="#retention">How long data is kept</a></li>
+  <li><a href="#dont">What we don't do</a></li>
+  <li><a href="#choices">Your choices and deleting data</a></li>
+  <li><a href="#rights">Your privacy rights</a></li>
+  <li><a href="#where">Where data is processed</a></li>
+  <li><a href="#children">Children</a></li>
+  <li><a href="#security">Security</a></li>
+  <li><a href="#beta">Beta features</a></li>
+  <li><a href="#changes">Changes to this policy</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ol>
+</nav>
+
+<h2 id="who">1. Who we are</h2>
+<p>Fillsafe: PDF Form Filler ("Fillsafe", "the app") is an iOS app made by Loveiko Labs ("we", "us"), a small independent app developer. This policy explains what the app keeps on your iPhone, what it sends, to whom, why, and for how long.</p>
+<p>Fillsafe doesn't have accounts. We don't ask for your name, email or phone number to use it.</p>
+
+<h2 id="device">2. What stays on your iPhone</h2>
+<p>These are stored on your iPhone, encrypted, with the key kept in the iPhone's Keychain. They are read and used on the iPhone and are <strong>not sent to our servers or to AI</strong>:</p>
+<ul>
+  <li><strong>Saved details</strong> of you, your family members, children and companies — for example names, addresses, dates of birth, tax and ID numbers.</li>
+  <li><strong>Documents</strong> you photograph or import (for example a passport, driver's license or bank letter) and the text read from them. Text is recognized on the iPhone with Apple's Vision framework; on iPhones that support it, Apple's on-device models may help sort what was read. Nothing of this leaves the iPhone.</li>
+  <li><strong>Your forms</strong>: photos and files of forms you bring in, their recognized text, your answers, drafts, signatures and finished PDFs.</li>
+  <li><strong>Files shared into Fillsafe</strong> from other apps wait in an encrypted queue on the iPhone until you import or delete them.</li>
+  <li><strong>Your consent record</strong>: which version you agreed to, when, and each box separately.</li>
+</ul>
+<p>Sensitive fields such as passport or Social Security numbers are optional. The app works without them.</p>
+<p>If you turn on Face ID lock, Face ID is handled by iOS; the app only receives "yes" or "no".</p>
+
+<h2 id="sent">3. What is sent, and why</h2>
+<h3>Understanding a public blank form (smart filling)</h3>
+<p>When you fill a form from Fillsafe's catalogue of official forms, the app first downloads the blank form from the agency's website and checks that the file is exactly the one expected. Only for such an independently downloaded, unfilled public form, and only after you agree on the consent screen, the app sends to our server:</p>
+<ul>
+  <li>the blank form's printed text, field names, field types and positions, and images of its pages;</li>
+  <li>the form's country and language;</li>
+  <li>a copy of the form filled with a fictional person, "Jordan Sample", so the AI can check the layout.</li>
+</ul>
+<p>Our server asks an AI model to describe the form and return a plan of which kind of detail goes in which field and in what format (for example "date of birth, MM/DD/YYYY"). The plan contains no values. Your iPhone then fills in your saved details on the device, and you check each answer before it goes into the form.</p>
+<p><strong>Never part of this request:</strong> your saved details, documents, photos or files of your own forms, their recognized text, your answers or signatures. Before each request the app checks that none of your saved values are inside it and blocks it if they are.</p>
+<p>The plan for a public blank form contains no personal details, so we keep it in a shared cache and reuse it to fill the same blank faster for everyone.</p>
+
+<h3>Downloading official forms</h3>
+<p>Forms are downloaded directly from the agency's website, without cookies or IDs. Like any website, the agency's site sees your IP address. If the agency's site doesn't respond, the app asks our server to fetch the same official file by its catalogue number; nothing about you is sent.</p>
+
+<h3>Links you paste</h3>
+<p>A link you paste is downloaded straight from that site, without cookies, IDs or anything else from the app. A link that contains one of your saved details isn't opened. A form downloaded from a link you pasted is treated as your own file: it stays on your iPhone and is not sent to AI.</p>
+
+<h3>Service limits</h3>
+<p>To keep the service fair and costs under control, our server counts requests per day using a random install ID and a salted hash of your IP address. The counts contain no content.</p>
+
+<h2 id="voice">4. Voice answers (optional)</h2>
+<p>Voice answers are off unless you tick the separate, optional voice box. With it on, when you tap the microphone and stop, the app sends a short recording of the current answer (up to 30 seconds, or 60 for an address or explanation), the kind of answer (for example "date") and the language, through our server and OpenRouter to Google's Gemini model on Google Vertex AI in the United States, to type out what you said.</p>
+<ul>
+  <li>The recording can contain personal details you say aloud.</li>
+  <li>Your saved details, documents, earlier answers and the filled PDF are not attached.</li>
+  <li>We don't store recordings or transcripts on our servers or in logs. The route requires OpenRouter's zero data retention setting and uses no other provider as a fallback.</li>
+  <li>The temporary recording on your iPhone is deleted once it has been sent or when you cancel.</li>
+  <li>The text is a suggestion: you check and edit it before it goes into the form.</li>
+  <li>We don't use recordings to identify you or to build a voiceprint.</li>
+</ul>
+<p>You can withdraw voice consent in Settings at any time; requests in progress are cancelled and nothing more is sent. Typing, documents and saved forms keep working.</p>
+
+<h2 id="icloud">5. iCloud backup (optional)</h2>
+<p>If you turn on iCloud backup in Settings, an encrypted copy of your details, documents, forms, saved PDFs, signatures and the key to open them is saved in your own iCloud private database (Apple CloudKit), so you can restore on another iPhone. We have no access to it, and our servers and AI never receive it. Apple's iCloud protection applies; with Advanced Data Protection off, Apple's standard data protection applies. Turning backup off keeps the last copy; Settings → Delete the iCloud copy removes it once iCloud confirms.</p>
+
+<h2 id="purchases">6. Purchases and the install ID</h2>
+<p>Subscriptions are sold by Apple. We never receive your card details, name or Apple ID.</p>
+<ul>
+  <li>The app creates a <strong>random install ID</strong>. It isn't linked to your name, email or Apple ID.</li>
+  <li>The app reports your purchases to <strong>RevenueCat</strong> under that ID. RevenueCat tells the app and our server whether your subscription is active, shows us subscription statistics and helps restore purchases.</li>
+  <li>Our server sends the install ID with requests so it can apply the limits of your plan.</li>
+</ul>
+
+<h2 id="providers">7. Service providers</h2>
+<p>These companies help run Fillsafe. They act on our instructions, and we don't allow them to sell your data.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Provider</th><th>What they receive</th><th>Why, and where</th></tr></thead>
+<tbody>
+<tr><td>Cloudflare</td><td>Requests from the app, the install ID, public blank forms, voice recordings if you use voice; your IP address</td><td>Hosts our server and its cache. United States and Cloudflare's global network. Request logging is off.</td></tr>
+<tr><td>OpenRouter</td><td>Public blank-form requests; voice recordings if you use voice</td><td>Routes each request to the AI model host we choose, with zero data retention and data collection denied. United States.</td></tr>
+<tr><td>Google (Gemini on Vertex AI)</td><td>Public blank-form requests; voice recordings if you use voice</td><td>To describe the form and plan its filling; to transcribe a voice answer. United States hosts.</td></tr>
+<tr><td>Anthropic (Claude, on Google Vertex AI or Amazon Bedrock)</td><td>Public blank-form requests and page images</td><td>To read the layout of a blank form and check it with the fictional sample. United States hosts.</td></tr>
+<tr><td>RevenueCat</td><td>The install ID, purchase and subscription history, App Store country, technical details of requests (such as app and iOS version and IP address)</td><td>Subscription status, statistics and restoring purchases. United States. Kept under RevenueCat's terms while we use it, deleted when we ask.</td></tr>
+<tr><td>Apple</td><td>Payment details (from you, through the App Store); your iCloud backup if you turn it on</td><td>Payments, subscriptions, iCloud storage. Apple's privacy policy applies.</td></tr>
+</tbody>
+</table>
+</div>
+<p>We may also disclose information if the law requires it, or to protect someone's safety. If the business is sold or merged, this policy continues to apply to your data.</p>
+
+<h2 id="retention">8. How long data is kept</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Data</th><th>Where</th><th>How long</th></tr></thead>
+<tbody>
+<tr><td>Saved details, documents, forms, signatures, PDFs</td><td>Your iPhone</td><td>Until you delete them or the app</td></tr>
+<tr><td>iCloud backup</td><td>Your iCloud</td><td>Until you delete the iCloud copy</td></tr>
+<tr><td>Voice recording</td><td>Your iPhone, then in transit</td><td>Deleted after sending or cancel; not stored on our servers</td></tr>
+<tr><td>Confirmed voice answer</td><td>Your iPhone, with the form</td><td>Until you delete the form</td></tr>
+<tr><td>Fill plans of public blank forms (no personal data)</td><td>Our server's cache</td><td>Kept and reused for everyone</td></tr>
+<tr><td>Layouts of public blank forms (no personal data)</td><td>Our server's cache</td><td>180 days</td></tr>
+<tr><td>Official form files (public)</td><td>Our server's cache</td><td>30 days</td></tr>
+<tr><td>Fill-plan receipts (no personal data)</td><td>Your iPhone and our server</td><td>7 days</td></tr>
+<tr><td>Daily request counts (hashed install ID and hashed IP)</td><td>Our server</td><td>2 days</td></tr>
+<tr><td>Subscription status</td><td>Our server</td><td>Up to 6 hours, then checked again</td></tr>
+<tr><td>Purchase records</td><td>RevenueCat</td><td>Under RevenueCat's terms while we use it</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="dont">9. What we don't do</h2>
+<ul>
+  <li>We don't sell or "share" personal information for advertising, and we don't track you across apps or websites.</li>
+  <li>We don't use analytics, advertising or crash-reporting SDKs.</li>
+  <li>We don't send your saved details, documents or private forms to AI, and we don't use them to train models. Our AI requests require providers that don't keep the request and don't use it for training.</li>
+  <li>We don't give legal, tax or immigration advice.</li>
+</ul>
+
+<h2 id="choices">10. Your choices and deleting data</h2>
+<ul>
+  <li><strong>AI consent:</strong> Settings → AI &amp; Privacy → Withdraw consent. Nothing more is sent; requests in progress are cancelled; everything on your iPhone stays usable, and you can fill fields by hand.</li>
+  <li><strong>Voice consent:</strong> withdraw it separately under Voice answers.</li>
+  <li><strong>Delete everything:</strong> Settings → Delete everything removes your data from this iPhone. It works offline.</li>
+  <li><strong>Delete one person, document or form:</strong> swipe or use Delete in My documents or Forms.</li>
+  <li><strong>iCloud copy:</strong> Settings → Delete the iCloud copy.</li>
+  <li><strong>Records kept by install ID</strong> (purchases at RevenueCat, daily counts): write to us and we'll delete them.</li>
+</ul>
+
+<h2 id="rights">11. Your privacy rights</h2>
+<p>Depending on where you live (for example California and other US states, the European Union, the UK), you may have the right to know what personal information we have, to get a copy, to correct or delete it, to object to or restrict processing, and to withdraw consent. We don't sell or share personal information, so there is nothing to opt out of. We won't treat you differently for using your rights.</p>
+<p>Most of your data never reaches us: it is on your iPhone, where you can see and delete it yourself. For what we or our providers hold (purchase records and counts by install ID), write to us from the address below. We'll answer within 30 days, or within the time your law sets. If you're in the EU or UK, you can also complain to your data protection authority.</p>
+<p><strong>Legal basis (EU/UK):</strong> performing our contract with you (running the features you use), your consent (AI features and voice answers, withdrawable at any time), and our legitimate interest in keeping the service secure and within limits.</p>
+
+<h2 id="where">12. Where data is processed</h2>
+<p>Data on your iPhone stays on your iPhone. Requests to our server are handled by Cloudflare's network and sent on to AI model hosts in the United States. If you're outside the United States, this means your public-form requests and, if you use them, voice recordings are processed in the United States, with safeguards our providers offer such as Standard Contractual Clauses.</p>
+
+<h2 id="children">13. Children</h2>
+<p>Fillsafe is for adults 18 and older and is not directed to children. Parents and guardians may save their children's details to fill in forms for them. Those details stay on the parent's iPhone, encrypted, and are not sent to AI. If you believe a child has used Fillsafe, write to us.</p>
+
+<h2 id="security">14. Security</h2>
+<p>Data on your iPhone is encrypted with a key in the iPhone's Keychain, and you can add a Face ID lock. Connections to our server use HTTPS. Our server doesn't keep your requests, and request logging is off. No system is perfectly secure; keep your iPhone protected with a passcode.</p>
+
+<h2 id="beta">15. Beta features</h2>
+<p>Some features are tested only with invited TestFlight testers and are not part of the App Store version, such as searching official websites for a form or restoring a blank form from a photo. If any of them comes to the App Store version, we will update this policy and ask for consent in the app before it is used.</p>
+
+<h2 id="changes">16. Changes to this policy</h2>
+<p>We may update this policy and will change the date at the top. If a change affects what is sent or to whom, we ask for your consent again in the app before it applies.</p>
+
+<h2 id="contact">17. Contact</h2>
+<p>Loveiko Labs · <a href="mailto:loveykovl@gmail.com?subject=Fillsafe%20%E2%80%94%20privacy">loveykovl@gmail.com</a></p>
+<p class="foot"><a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a></p>
+
+<aside class="card notes" aria-label="Notes pending legal review">
+<h2>Notes pending legal review</h2>
+<p>This policy describes how Fillsafe works today. These points are being confirmed with counsel and may change the wording above:</p>
+<ul>
+  <li>The developer's legal name, form, country and postal address, and EU trader status.</li>
+  <li>The written zero-retention and no-training commitments of OpenRouter, Google and Anthropic for our account, and Cloudflare's own log retention.</li>
+  <li>RevenueCat's exact retention period under its data processing terms.</li>
+  <li>Which US state laws apply, response times, and the voice-recording wording under biometric laws.</li>
+  <li>The legal basis and transfer mechanism for EU and UK users.</li>
+</ul>
+</aside>
+</main>
+</body>
+</html>

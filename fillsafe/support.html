@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fillsafe Support</title>
+<style>
+:root {
+  --paper: #F0F3F1; --card: #FAFCFA; --ink: #182722; --muted: #53645D;
+  --accent: #294CCF; --mark: #27856B; --line: #C7D2CB;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131C19; --card: #1D2B25; --ink: #EEF5EF; --muted: #A7BAB0;
+    --accent: #A6B8FF; --mark: #9BE7CC; --line: #53685C;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131C19; --card: #1D2B25; --ink: #EEF5EF; --muted: #A7BAB0;
+  --accent: #A6B8FF; --mark: #9BE7CC; --line: #53685C;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif; font-weight: 650; line-height: 1.2; letter-spacing: -0.01em; }
+h1 { font-size: 34px; margin: 0 0 6px; }
+h1::before { content: ""; display: block; width: 5px; height: 40px; border-radius: 3px; background: var(--mark); margin-bottom: 14px; }
+h2 { font-size: 22px; margin: 40px 0 10px; padding-top: 12px; border-top: 1px solid var(--line); }
+h3 { font-size: 18px; margin: 22px 0 6px; }
+p, ul, ol { margin: 0 0 14px; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 6px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+.meta { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin: 16px 0; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+.notes { background: transparent; border-style: dashed; font-size: 15px; color: var(--muted); margin-top: 48px; }
+.notes h2 { font-size: 17px; margin: 0 0 8px; padding: 0; border: 0; color: var(--ink); }
+.table-wrap { overflow-x: auto; margin: 12px 0 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 9px 8px; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+.foot { margin-top: 32px; color: var(--muted); font-size: 15px; }
+nav.toc ol { margin: 0; }
+nav.toc li { margin-bottom: 2px; }
+@media (max-width: 480px) { body { font-size: 16px; } h1 { font-size: 29px; } h2 { font-size: 20px; } th, td { padding: 8px 6px; font-size: 14px; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Support</h1>
+<p class="meta">Fillsafe: PDF Form Filler · Loveiko Labs</p>
+
+<p>Fillsafe fills forms with the details you keep on your iPhone. Open or photograph a form, check what was filled in, sign with your finger and share one PDF. Your details and documents stay on your iPhone; AI only helps understand public blank forms.</p>
+
+<h2>Write to us</h2>
+<p>A question, an idea, or something broke — write to <a href="mailto:loveykovl@gmail.com?subject=Fillsafe%20%E2%80%94%20support">loveykovl@gmail.com</a>. It goes straight to the people who make Fillsafe. Please don't send us your documents or personal details; a description and, if useful, a screenshot with personal details covered is enough.</p>
+
+<h2>Cancel your subscription</h2>
+<p>Subscriptions are managed by Apple. On your iPhone:</p>
+<ol>
+  <li>Open Settings.</li>
+  <li>Tap your name (Apple ID) → Subscriptions.</li>
+  <li>Tap Fillsafe → Cancel Subscription.</li>
+</ol>
+<p>Cancel at least 24 hours before the free trial or the current period ends so you aren't charged again. Deleting the app doesn't cancel your subscription. You keep access until the end of the period you paid for. Refunds are handled by Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<h2>Restore purchases</h2>
+<p>New iPhone, or reinstalled the app? On the Fillsafe plans screen, tap Restore, signed in with the same Apple ID you subscribed with.</p>
+
+<h2>Move to a new iPhone</h2>
+<p>Your details and forms are stored on your iPhone. To take them to a new iPhone, turn on iCloud backup in Fillsafe → Settings before you switch, then choose Restore from iCloud on the new iPhone. Without a backup, data on the old iPhone can't be recovered by us — we never have a copy.</p>
+
+<h2>Delete your data</h2>
+<ul>
+  <li>Fillsafe → Settings → Delete everything removes your details, documents, forms and PDFs from this iPhone. It works offline.</li>
+  <li>Settings → Delete the iCloud copy removes your iCloud backup.</li>
+  <li>Settings → AI &amp; Privacy → Withdraw consent stops smart filling from sending anything; voice answers have their own switch.</li>
+  <li>To delete purchase records kept under your install ID, write to us.</li>
+</ul>
+<p>Details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<h2>Good to know</h2>
+<ul>
+  <li>Fillsafe isn't legal, tax or immigration advice and doesn't tell you which form to use. Check every form before you send it.</li>
+  <li>Some recipients need an ink signature. Print the form, sign it and scan it back in.</li>
+</ul>
+
+<p class="foot"><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
+
+<h2 lang="ru">По-русски</h2>
+<div lang="ru">
+<p>Fillsafe заполняет бланки сведениями, которые хранятся на вашем iPhone: откройте или сфотографируйте бланк, проверьте, подпишите пальцем и отправьте один PDF.</p>
+<p><strong>Написать нам:</strong> <a href="mailto:loveykovl@gmail.com?subject=Fillsafe">loveykovl@gmail.com</a>. Не присылайте документы и личные данные.</p>
+<p><strong>Отменить подписку:</strong> Настройки iPhone → ваше имя (Apple ID) → Подписки → Fillsafe → Отменить подписку. Удаление приложения подписку не отменяет.</p>
+<p><strong>Восстановить покупки:</strong> экран тарифов Fillsafe → «Восстановить», с тем же Apple ID.</p>
+<p><strong>Удалить данные:</strong> Fillsafe → Настройки → удалить всё (работает без интернета); копию iCloud удаляет отдельная кнопка там же.</p>
+</div>
+</main>
+</body>
+</html>
