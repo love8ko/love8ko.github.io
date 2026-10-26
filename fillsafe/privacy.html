@@ -53,14 +53,15 @@ nav.toc li { margin-bottom: 2px; }
 <body>
 <main>
 <h1>Privacy Policy</h1>
-<p class="meta">Fillsafe: PDF Form Filler · Loveiko Labs<br>Last updated: October 25, 2026</p>
+<p class="meta">Fillsafe: PDF Form Filler · Loveiko Labs<br>Last updated: October 26, 2026</p>
 
 <div class="card">
 <p><strong>In short.</strong></p>
 <ul>
-  <li>Your details, your family's and company's details, your documents, photos, signatures and filled PDFs are stored and read on your iPhone. They are not sent to our servers or to AI.</li>
+  <li>Your details, your family's and company's details, your documents, signatures and filled PDFs are stored and read on your iPhone. They are not sent to our servers or to AI. Photos and files of your forms stay on your iPhone too, unless you choose the optional photo restore described below.</li>
   <li>To understand a public blank form, the app sends that blank form — its printed text, field names and layout, with no answers of yours — to an AI model through our server. The AI returns a plan of which kind of detail goes where. Your iPhone fills in the values.</li>
-  <li>Voice answers are optional and need their own consent. If you turn them on, a short recording of the answer you say is sent for transcription and is not stored on our servers. It can contain whatever you say.</li>
+  <li>Photo restore is optional, is part of the paid plan and needs its own consent. If you use it, the one form page you choose, which can show earlier answers written on it, is sent to the cloud so an empty copy can be drawn. The empty copy stays on your iPhone. Your saved details, identity documents, typed answers and signatures are never sent.</li>
+<li>Voice answers are optional and need their own consent. If you turn them on, a short recording of the answer you say is sent for transcription and is not stored on our servers. It can contain whatever you say.</li>
   <li>iCloud backup is optional and goes to your own private iCloud, not to us.</li>
   <li>Purchases go through Apple. RevenueCat records them for us under a random install ID, not your name or email.</li>
   <li>No ads. No tracking. No general app-usage analytics SDKs. RevenueCat provides subscription statistics. We don't sell personal information or share it for advertising. The service providers below process requests for the features you choose.</li>
@@ -74,6 +75,7 @@ nav.toc li { margin-bottom: 2px; }
   <li><a href="#device">What stays on your iPhone</a></li>
   <li><a href="#sent">What is sent, and why</a></li>
   <li><a href="#voice">Voice answers (optional)</a></li>
+  <li><a href="#restore">Photo restore (optional)</a></li>
   <li><a href="#icloud">iCloud backup (optional)</a></li>
   <li><a href="#purchases">Purchases and the install ID</a></li>
   <li><a href="#providers">Service providers</a></li>
@@ -84,7 +86,7 @@ nav.toc li { margin-bottom: 2px; }
   <li><a href="#where">Where data is processed</a></li>
   <li><a href="#children">Children</a></li>
   <li><a href="#security">Security</a></li>
-  <li><a href="#beta">Beta features</a></li>
+  <li><a href="#beta">Test features</a></li>
   <li><a href="#changes">Changes to this policy</a></li>
   <li><a href="#contact">Contact</a></li>
 </ol>
@@ -95,7 +97,7 @@ nav.toc li { margin-bottom: 2px; }
 <p>Fillsafe doesn't have accounts. We don't ask for your name, email or phone number to use it.</p>
 
 <h2 id="device">2. What stays on your iPhone</h2>
-<p>These are stored on your iPhone, encrypted, with the key kept in the iPhone's Keychain. They are read and used on the iPhone and are <strong>not sent to our servers or to AI</strong>:</p>
+<p>These are stored on your iPhone, encrypted, with the key kept in the iPhone's Keychain. They are read and used on the iPhone and are <strong>not sent to our servers or to AI</strong> (the only exception is a form page you choose to send for photo restore, section 5):</p>
 <ul>
   <li><strong>Saved details</strong> of you, your family members, children and companies — for example names, addresses, dates of birth, tax and ID numbers.</li>
   <li><strong>Documents</strong> you photograph or import (for example a passport, driver's license or bank letter) and the text read from them. Text is recognized on the iPhone with Apple's Vision framework; on iPhones that support it, Apple's on-device models may help sort what was read. This document-reading route sends nothing to AI; optional iCloud backup is described separately below.</li>
@@ -122,7 +124,7 @@ nav.toc li { margin-bottom: 2px; }
 <p>Forms are downloaded directly from the agency's website, without cookies or IDs. Like any website, the agency's site sees your IP address. If the agency's site doesn't respond, the app asks our server to fetch the same official file by its catalogue number. This request also carries the install ID and IP address used for service limits; it carries no saved profile values or identity documents.</p>
 
 <h3>Links you paste</h3>
-<p>A link you paste is downloaded straight from that site, without cookies, IDs or anything else from the app. A link that contains one of your saved details isn't opened. A form downloaded from a link you pasted is treated as your own file: it stays on your iPhone and is not sent to AI.</p>
+<p>A link you paste is downloaded straight from that site, without cookies, IDs or anything else from the app. A link that contains one of your saved details isn't opened. A form downloaded from a link you pasted is treated as your own file: it is not sent to AI for smart filling.</p>
 
 <h3>Service limits</h3>
 <p>To keep the service fair and costs under control, our server counts requests per day using a random install ID and a salted hash of your IP address. The counts contain no content.</p>
@@ -139,10 +141,21 @@ nav.toc li { margin-bottom: 2px; }
 </ul>
 <p>You can withdraw voice consent in Settings at any time; requests in progress are cancelled and nothing more is sent. Typing, documents and saved forms keep working.</p>
 
-<h2 id="icloud">5. iCloud backup (optional)</h2>
+<h2 id="restore">5. Photo restore (optional)</h2>
+<p>Photo restore turns a photo or scan of a form, often one already filled in, into an empty copy that you then fill with your own details. It is part of the paid plan, it is off until you agree on its separate consent screen, and Fillsafe works without it.</p>
+<ul>
+  <li><strong>What is sent:</strong> only the form page you choose and see in a preview, as a JPEG of up to 2000 pixels with camera and location details removed. The page can show earlier answers written on it, and they go with it. If a result needs repair, parts of the same page, the empty copy we drew and a short note, if you write one, may be sent again.</li>
+  <li><strong>Never sent:</strong> your saved details, identity documents, answers you type and signatures. Your iPhone fills the empty copy with your details locally.</li>
+  <li><strong>Who receives it:</strong> our server on Cloudflare, then OpenRouter, then Anthropic's Claude Haiku 5.5 on Google Vertex AI in the United States. TypeSafe's Jev model, through OpenRouter, checks the result against the page. The empty PDF is drawn on our own Cloudflare server, without AI.</li>
+  <li><strong>Why:</strong> only to draw the empty copy and check it. We don't use pages or results to train models, and the route has no other provider as a fallback.</li>
+  <li><strong>How long:</strong> each request requires OpenRouter's zero data retention setting and denies data collection. We don't store the page or the result. After the answer we keep only hashed IDs, counts and amounts that apply fair-use limits per form, per day and per month. The empty copy is stored on your iPhone with your form, and your original photo stays there too.</li>
+  <li><strong>Withdraw:</strong> Settings → Restore from photo → Withdraw consent. Requests in progress are cancelled and nothing more is sent. Your forms and saved details stay on your iPhone.</li>
+</ul>
+
+<h2 id="icloud">6. iCloud backup (optional)</h2>
 <p>If you turn on iCloud backup in Settings, an encrypted copy of your details, documents, forms, saved PDFs, signatures and the key to open them is saved in your own iCloud private database (Apple CloudKit), so you can restore on another iPhone. We have no access to it, and our servers and AI never receive it. Apple's iCloud protection applies; with Advanced Data Protection off, Apple's standard data protection applies. Turning backup off keeps the last copy; Settings → Delete the iCloud copy removes it once iCloud confirms.</p>
 
-<h2 id="purchases">6. Purchases and the install ID</h2>
+<h2 id="purchases">7. Purchases and the install ID</h2>
 <p>Subscriptions are sold by Apple. We never receive your card details, name or Apple ID.</p>
 <ul>
   <li>The app creates a <strong>random install ID</strong>. It isn't linked to your name, email or Apple ID.</li>
@@ -150,16 +163,17 @@ nav.toc li { margin-bottom: 2px; }
   <li>Our server sends the install ID with requests so it can apply the limits of your plan.</li>
 </ul>
 
-<h2 id="providers">7. Service providers</h2>
+<h2 id="providers">8. Service providers</h2>
 <p>These companies help run Fillsafe for the purposes below. Their privacy policies and applicable service terms also describe their processing.</p>
 <div class="table-wrap">
 <table>
 <thead><tr><th>Provider</th><th>What they receive</th><th>Why, and where</th></tr></thead>
 <tbody>
-<tr><td>Cloudflare</td><td>Requests from the app, the install ID, public blank forms, voice recordings if you use voice; your IP address</td><td>Hosts our server and its cache. United States and Cloudflare's global network. Request logging is off.</td></tr>
-<tr><td>OpenRouter</td><td>Public blank-form requests; voice recordings if you use voice</td><td>Routes requests to permitted AI model hosts. Requests require zero data retention and data collection denied. OpenRouter is a US-based service provider; routing requirements and endpoint policies apply.</td></tr>
+<tr><td>Cloudflare</td><td>Requests from the app, the install ID, public blank forms, voice recordings if you use voice, form pages if you use photo restore; your IP address</td><td>Hosts our server and its cache, and draws the empty PDF for photo restore. United States and Cloudflare's global network. Request logging is off.</td></tr>
+<tr><td>OpenRouter</td><td>Public blank-form requests; voice recordings if you use voice; form pages if you use photo restore</td><td>Routes requests to permitted AI model hosts. Requests require zero data retention and data collection denied. OpenRouter is a US-based service provider; routing requirements and endpoint policies apply.</td></tr>
 <tr><td>Google (Gemini on Vertex AI)</td><td>Public blank-form requests; voice recordings if you use voice</td><td>To describe public blank forms; this route does not pin a region. Voice answers use the pinned Google Vertex US endpoint.</td></tr>
-<tr><td>Anthropic (Claude, on Google Vertex AI or Amazon Bedrock)</td><td>Public blank-form requests and page images</td><td>To read the layout of a public blank form and check it with the fictional sample. Google and Amazon are US-based providers; the public-form route does not pin a region.</td></tr>
+<tr><td>Anthropic (Claude, on Google Vertex AI or Amazon Bedrock)</td><td>Public blank-form requests and page images; the form page you choose if you use photo restore</td><td>To read the layout of a public blank form and check it with the fictional sample, and, with photo restore, to draw the empty copy. Google and Amazon are US-based providers; the public-form route does not pin a region. Photo restore uses Google Vertex AI in the United States only.</td></tr>
+<tr><td>TypeSafe (Jev model)</td><td>If you use photo restore, the page you sent and the empty copy, through OpenRouter</td><td>To check that the empty copy matches the page. Requires zero data retention.</td></tr>
 <tr><td>RevenueCat</td><td>The install ID, purchase and subscription history, App Store country, technical details of requests (such as app and iOS version and IP address)</td><td>Subscription status, statistics and restoring purchases. United States. Kept under RevenueCat's terms while we use it, deleted when we ask.</td></tr>
 <tr><td>Apple</td><td>Payment details (from you, through the App Store); your iCloud backup if you turn it on</td><td>Payments, subscriptions, iCloud storage. Apple's privacy policy applies.</td></tr>
 </tbody>
@@ -168,7 +182,7 @@ nav.toc li { margin-bottom: 2px; }
 <p>Provider policies: <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> · <a href="https://openrouter.ai/privacy">OpenRouter</a> · <a href="https://cloud.google.com/terms/cloud-privacy-notice">Google Cloud</a> · <a href="https://www.anthropic.com/legal/privacy">Anthropic</a> · <a href="https://aws.amazon.com/privacy/">Amazon Web Services</a> · <a href="https://www.revenuecat.com/privacy">RevenueCat</a> · <a href="https://www.apple.com/legal/privacy/">Apple</a>.</p>
 <p>We may also disclose information if the law requires it, or to protect someone's safety. If the business is sold or merged, this policy continues to apply to your data.</p>
 
-<h2 id="retention">8. How long data is kept</h2>
+<h2 id="retention">9. How long data is kept</h2>
 <div class="table-wrap">
 <table>
 <thead><tr><th>Data</th><th>Where</th><th>How long</th></tr></thead>
@@ -176,6 +190,9 @@ nav.toc li { margin-bottom: 2px; }
 <tr><td>Saved details, documents, forms, signatures, PDFs</td><td>Your iPhone</td><td>Until you delete them or the app</td></tr>
 <tr><td>iCloud backup</td><td>Your iCloud</td><td>Until you delete the iCloud copy</td></tr>
 <tr><td>Voice recording</td><td>Your iPhone, then in transit</td><td>Deleted after sending or cancel; not stored on our servers</td></tr>
+<tr><td>Form page sent for photo restore, and the result</td><td>In transit; not stored on our servers</td><td>Processed for the request only</td></tr>
+<tr><td>Hashed IDs, counts and amounts for photo restore limits</td><td>Our server</td><td>No content. A later request removes old daily and monthly counts; during inactivity there is no fixed deletion deadline</td></tr>
+<tr><td>Empty copy from photo restore</td><td>Your iPhone, with the form</td><td>Until you delete the form</td></tr>
 <tr><td>Confirmed voice answer</td><td>Your iPhone, with the form</td><td>Until you delete the form</td></tr>
 <tr><td>Fill plans of public blank forms (no personal data)</td><td>Our server's cache</td><td>Kept and reused for everyone</td></tr>
 <tr><td>Layouts of public blank forms (no personal data)</td><td>Our server's cache</td><td>180 days</td></tr>
@@ -188,45 +205,46 @@ nav.toc li { margin-bottom: 2px; }
 </table>
 </div>
 
-<h2 id="dont">9. What we don't do</h2>
+<h2 id="dont">10. What we don't do</h2>
 <ul>
   <li>We don't sell or "share" personal information for advertising, and we don't track you across apps or websites.</li>
   <li>We don't use advertising, general app-usage analytics or crash-reporting SDKs. RevenueCat provides purchase and subscription statistics as described above.</li>
-  <li>We don't send your saved details, documents or private forms to AI, and we don't use them to train models. Our AI requests require providers that don't keep the request and don't use it for training.</li>
+  <li>We don't send your saved details or identity documents to AI. A page of your own form goes to AI only if you choose photo restore and agree. We don't use any of it to train models. Our AI requests require providers that don't keep the request and don't use it for training.</li>
   <li>We don't give legal, tax or immigration advice.</li>
 </ul>
 
-<h2 id="choices">10. Your choices and deleting data</h2>
+<h2 id="choices">11. Your choices and deleting data</h2>
 <ul>
   <li><strong>AI consent:</strong> Settings → AI &amp; Privacy → Withdraw consent. Nothing more is sent; requests in progress are cancelled; everything on your iPhone stays usable, and you can fill fields by hand.</li>
   <li><strong>Voice consent:</strong> withdraw it separately under Voice answers.</li>
+  <li><strong>Photo restore consent:</strong> withdraw it separately under Settings → Restore from photo.</li>
   <li><strong>Delete everything:</strong> Settings → Delete everything removes your data from this iPhone. It works offline, keeps the separate iCloud copy, and does not cancel your subscription.</li>
   <li><strong>Delete one person, document or form:</strong> swipe or use Delete in My documents or Forms.</li>
   <li><strong>iCloud copy:</strong> Settings → Delete the iCloud copy.</li>
   <li><strong>Records kept by install ID</strong> (purchases at RevenueCat, daily counts): use Settings → Write to us to request deletion. The draft email includes your install ID, app version, iOS version and app language so we can find your records. Your documents, form answers and recordings are not attached. You choose whether to send the email. Apple purchase records remain subject to Apple’s policies and legal retention requirements.</li>
 </ul>
 
-<h2 id="rights">11. Your privacy rights</h2>
+<h2 id="rights">12. Your privacy rights</h2>
 <p>Depending on where you live (for example California and other US states, the European Union, the UK), you may have the right to know what personal information we have, to get a copy, to correct or delete it, to object to or restrict processing, and to withdraw consent. We don't sell personal information or share it for cross-app advertising; no advertising opt-out is needed. We won't treat you differently for using your rights.</p>
-<p>Most of your data never reaches us: it is on your iPhone, where you can see and delete it yourself. For what we or our providers hold (purchase records and counts by install ID), write to us from the address below. We'll answer within 30 days, or within the time your law sets. If you're in the EU or UK, you can also complain to your data protection authority.</p>
-<p><strong>Legal basis (EU/UK):</strong> performing our contract with you (running the features you use), your consent (AI features and voice answers, withdrawable at any time), and our legitimate interest in keeping the service secure and within limits.</p>
+<p>Most of your data never reaches us: it is on your iPhone (a page you send for photo restore is processed for the request and not stored by us), where you can see and delete it yourself. For what we or our providers hold (purchase records and counts by install ID), write to us from the address below. We'll answer within 30 days, or within the time your law sets. If you're in the EU or UK, you can also complain to your data protection authority.</p>
+<p><strong>Legal basis (EU/UK):</strong> performing our contract with you (running the features you use), your consent (AI features, voice answers and photo restore, withdrawable at any time), and our legitimate interest in keeping the service secure and within limits.</p>
 
-<h2 id="where">12. Where data is processed</h2>
-<p>Data on your iPhone stays on your iPhone. Requests pass through Cloudflare's global network and OpenRouter to Google Vertex or Amazon Bedrock. These are US-based service providers. The public blank-form route does not pin an inference region. Voice recordings are routed only to the Google Vertex US endpoint. These services may process data outside your country. Applicable provider data-processing terms and transfer safeguards govern those transfers; contact us for information.</p>
+<h2 id="where">13. Where data is processed</h2>
+<p>Data on your iPhone stays on your iPhone. Requests pass through Cloudflare's global network and OpenRouter to Google Vertex or Amazon Bedrock. These are US-based service providers. The public blank-form route does not pin an inference region. Voice recordings and photo-restore pages are routed only to the Google Vertex US endpoint. These services may process data outside your country. Applicable provider data-processing terms and transfer safeguards govern those transfers; contact us for information.</p>
 
-<h2 id="children">13. Children</h2>
-<p>Fillsafe is for adults 18 and older and is not directed to children. Parents and guardians may save their children's details to fill in forms for them. Those saved details stay on the parent's iPhone, encrypted, with optional iCloud backup. They are not attached to blank-form AI requests. If an adult chooses voice input, the recording can contain the details they say. If you believe a child has used Fillsafe, write to us.</p>
+<h2 id="children">14. Children</h2>
+<p>Fillsafe is for adults 18 and older and is not directed to children. Parents and guardians may save their children's details to fill in forms for them. Those saved details stay on the parent's iPhone, encrypted, with optional iCloud backup. They are not attached to blank-form AI requests or photo restore. If an adult chooses voice input, the recording can contain the details they say. If you believe a child has used Fillsafe, write to us.</p>
 
-<h2 id="security">14. Security</h2>
+<h2 id="security">15. Security</h2>
 <p>Data on your iPhone is encrypted with a key in the iPhone's Keychain, and you can add a Face ID lock. Connections to our server use HTTPS. Our server does not store voice recordings or transcripts. Content logging is off; operational logs can contain the route, model, timing, usage, cost and outcome, without your document contents or answers. Service-limit and purchase-status records are described above. No system is perfectly secure; keep your iPhone protected with a passcode.</p>
 
-<h2 id="beta">15. Beta features</h2>
-<p>Some features are tested only with invited TestFlight testers and are not part of the App Store version, such as searching official websites for a form or restoring a blank form from a photo. If any of them comes to the App Store version, we will update this policy and ask for consent in the app before it is used.</p>
+<h2 id="beta">16. Test features</h2>
+<p>Some features, such as searching official websites for a form, are tested only with invited TestFlight testers and are not part of the App Store version. If any of them comes to the App Store version, we will update this policy and ask for consent in the app before it is used.</p>
 
-<h2 id="changes">16. Changes to this policy</h2>
+<h2 id="changes">17. Changes to this policy</h2>
 <p>We may update this policy and will change the date at the top. If a change affects what is sent or to whom, we ask for your consent again in the app before it applies.</p>
 
-<h2 id="contact">17. Contact</h2>
+<h2 id="contact">18. Contact</h2>
 <p>Loveiko Labs · <a href="mailto:loveykovl@gmail.com?subject=Fillsafe%20%E2%80%94%20privacy">loveykovl@gmail.com</a></p>
 <p class="foot"><a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a></p>
 
