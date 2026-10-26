@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fillsafe: PDF Form Filler</title>
+<meta name="description" content="Open or photograph a form, fill it with the details you keep on your iPhone, check it, sign with your finger and share one PDF.">
+<style>
+:root {
+  --paper: #F0F3F1; --card: #FAFCFA; --ink: #182722; --muted: #53645D;
+  --accent: #294CCF; --mark: #27856B; --line: #C7D2CB;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131C19; --card: #1D2B25; --ink: #EEF5EF; --muted: #A7BAB0;
+    --accent: #A6B8FF; --mark: #9BE7CC; --line: #53685C;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131C19; --card: #1D2B25; --ink: #EEF5EF; --muted: #A7BAB0;
+  --accent: #A6B8FF; --mark: #9BE7CC; --line: #53685C;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif; font-weight: 650; line-height: 1.2; letter-spacing: -0.01em; }
+h1 { font-size: 34px; margin: 0 0 6px; }
+h1::before { content: ""; display: block; width: 5px; height: 40px; border-radius: 3px; background: var(--mark); margin-bottom: 14px; }
+h2 { font-size: 22px; margin: 40px 0 10px; padding-top: 12px; border-top: 1px solid var(--line); }
+h3 { font-size: 18px; margin: 22px 0 6px; }
+p, ul, ol { margin: 0 0 14px; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 6px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+.meta { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin: 16px 0; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+.notes { background: transparent; border-style: dashed; font-size: 15px; color: var(--muted); margin-top: 48px; }
+.notes h2 { font-size: 17px; margin: 0 0 8px; padding: 0; border: 0; color: var(--ink); }
+.table-wrap { overflow-x: auto; margin: 12px 0 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 9px 8px; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+.foot { margin-top: 32px; color: var(--muted); font-size: 15px; }
+nav.toc ol { margin: 0; }
+nav.toc li { margin-bottom: 2px; }
+@media (max-width: 480px) { body { font-size: 16px; } h1 { font-size: 29px; } h2 { font-size: 20px; } th, td { padding: 8px 6px; font-size: 14px; } }
+</style>
+<style>
+.hero { padding: 8px 0 8px; }
+.hero .sub { font-size: 20px; color: var(--muted); margin: 0 0 18px; }
+.badge img { height: 48px; }
+.steps { counter-reset: s; list-style: none; padding: 0; }
+.steps li { counter-increment: s; position: relative; padding-left: 40px; margin-bottom: 14px; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--card); border: 1px solid var(--line); color: var(--mark); font-weight: 650; text-align: center; line-height: 27px; font-size: 15px; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.plans .card { margin: 0; }
+.price { font-size: 26px; font-weight: 650; }
+.small { color: var(--muted); font-size: 15px; }
+</style>
+</head>
+<body>
+<main>
+<div class="hero">
+<h1>Fillsafe</h1>
+<p class="sub">PDF Form Filler · Scan, Autofill &amp; Sign Forms</p>
+<p>Open or photograph a form, fill it with the details you keep on your iPhone, check every field, sign with your finger and share one PDF. No account, no login.</p>
+<p><a class="badge" href="https://apps.apple.com/app/id6823489021"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a></p>
+</div>
+
+<h2>How it works</h2>
+<ol class="steps">
+  <li><strong>Open a form.</strong> Pick a common form, import a PDF from Files, or take a photo of the paper you were given.</li>
+  <li><strong>Fill it from your details.</strong> Names, dates and document numbers you saved — for you, your family, children or your company — go into the right boxes. Type or say the rest.</li>
+  <li><strong>Check and sign.</strong> See every answer on the page, fix anything, and sign with your finger.</li>
+  <li><strong>Share one PDF.</strong> Send it by mail or message, save it, or print it. Saved forms stay ready to reuse.</li>
+</ol>
+
+<h2>Your details stay on your iPhone</h2>
+<div class="card">
+<ul>
+  <li>Profiles, identity documents, answers and signatures are stored encrypted on your iPhone and are never sent to AI.</li>
+  <li>AI helps read public blank forms; the values are filled in on your iPhone.</li>
+  <li>Photo restore is optional, part of the paid plan and asks its own consent: only the page you choose is sent to draw an empty copy.</li>
+  <li>No ads, no tracking. iCloud backup is optional and off by default.</li>
+</ul>
+</div>
+<p class="small">Details: <a href="privacy.html">Privacy Policy</a>.</p>
+
+<h2>Made for real forms</h2>
+<ul>
+  <li>20 interface languages; the app follows your iPhone's language.</li>
+  <li>Voice answers, with their own optional consent.</li>
+  <li>Built for iPhone, including the wide layout on iPhone Duo.</li>
+</ul>
+
+<h2>Pricing</h2>
+<div class="plans">
+  <div class="card"><h3>Weekly</h3><p class="price">$7.99<span class="small"> / week</span></p><p class="small">7-day free trial for eligible new subscribers.</p></div>
+  <div class="card"><h3>Annual</h3><p class="price">$39.99<span class="small"> / year</span></p><p class="small">Billed immediately.</p></div>
+</div>
+<p class="small">U.S. prices shown; Apple shows your local price before purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel in Settings → your name → Subscriptions.</p>
+<p class="small">Fillsafe provides document tools, not legal, tax or immigration advice. A drawn signature is a mark you place; acceptance by an agency is not guaranteed. Fillsafe is not affiliated with any government agency.</p>
+
+<p class="foot">© 2026 Loveiko Labs · <a href="support.html">Support</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
+</main>
+</body>
+</html>
