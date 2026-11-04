@@ -76,7 +76,7 @@ nav.toc li { margin-bottom: 2px; }
   <li>The host's voice is made by ElevenLabs from text our server writes. That text can contain words and names from your topics. The finished audio can stay in a cache on our server for up to 30 days.</li>
   <li>Your topics, album, results and name are stored on your iPhone. They are included in your iPhone backups. A cloud copy across your devices is a separate, optional switch, and it uses Sign in with Apple.</li>
   <li>We do not make a voiceprint and do not identify you by your voice. No ads, no tracking, no sale of your data, and we do not train our own AI models on it.</li>
-  <li>This version of Memjoy has no purchases. If that changes, Apple will process payment and we will not see your card.</li>
+  <li>Memjoy is sold by subscription through the App Store. Apple processes payment; RevenueCat, our subscription service, tells the app and our server whether your plan is active. We never see your card.</li>
 </ul>
 </div>
 
@@ -123,7 +123,7 @@ nav.toc li { margin-bottom: 2px; }
 <p>If you add a name in Settings, it is stored on your iPhone and is not part of the cloud copy. The current visit format does not send it to our servers. A retired older show format that is still inside the app can include it in the text sent to Google and ElevenLabs so the host can greet you by name.</p>
 
 <h3>Install ID</h3>
-<p>The app creates a random install ID. It is not linked to your name, email or Apple ID. It is sent with every request to our server and used to count daily requests, so we can keep costs and abuse under control. It is stored in the iPhone's Keychain, which can survive deleting the app, so reinstalling may reuse the same ID. The app has no button to reset it.</p>
+<p>The app creates a random install ID. It is not linked to your name, email or Apple ID. It is sent with every request to our server and used to count daily requests, so we can keep costs and abuse under control. It is stored in the iPhone's Keychain, which can survive deleting the app, so reinstalling may reuse the same ID. The app has no button to reset it. The same ID is also your customer ID at RevenueCat, so the app and our server can check your subscription (section 10).</p>
 
 <h3>Your consent record</h3>
 <p>When you agree on the consent screen, the app saves on your iPhone which version of the text you agreed to, when, and each box. If you turn on the optional cloud copy, our server also stores which version of its consent you accepted.</p>
@@ -156,7 +156,8 @@ nav.toc li { margin-bottom: 2px; }
 <tr><td><strong>Google (Gemini API)</strong></td><td>Short clips of your voice answers; text of what you said or typed; topic titles and short quotes</td><td>To turn speech into text, find topics and objects in your words, and build scenes. Processed in Google's cloud.</td><td>We use Google's paid Gemini API. Under its terms, Google does not use our prompts and responses to improve its products, and keeps them only for a limited period to detect abuse and meet legal requirements. We do not keep these clips or texts ourselves.</td></tr>
 <tr><td><strong>ElevenLabs</strong></td><td>Text of the host's lines, which can include words and names from your topics. No recording of your voice.</td><td>To make the host's voice.</td><td>Under ElevenLabs' privacy policy and terms. We have not yet enabled a zero-retention setting, so ElevenLabs may keep this text and audio for the period its policy allows.</td></tr>
 <tr><td><strong>Cloudflare</strong></td><td>Every request from the app passes through its network, including your voice clips and texts, the install ID, and the IP address. Our optional cloud copy is stored in its database.</td><td>Runs our servers: passes requests to Google and ElevenLabs, keeps provider keys off your iPhone, counts requests, caches host audio, and stores the cloud copy. United States and Cloudflare's global network.</td><td>See <a href="#retention">section 6</a> for what we keep there. Cloudflare keeps its own network logs under its privacy policy.</td></tr>
-<tr><td><strong>Apple</strong></td><td>On your iPhone: speech recognition, notifications. If you use the cloud copy: your Sign in with Apple identity token. Later, if we sell subscriptions: payment details, handled by Apple.</td><td>Apple's on-device speech recognition works on your iPhone and does not send the clip to us. Sign in with Apple proves who you are to the cloud copy.</td><td>Under Apple's privacy policy.</td></tr>
+<tr><td><strong>Apple</strong></td><td>On your iPhone: speech recognition, notifications. If you use the cloud copy: your Sign in with Apple identity token. Subscriptions: payment, handled by Apple.</td><td>Apple's on-device speech recognition works on your iPhone and does not send the clip to us. Sign in with Apple proves who you are to the cloud copy.</td><td>Under Apple's privacy policy.</td></tr>
+<tr><td><strong>RevenueCat</strong></td><td>The random install ID as your customer ID; your App Store purchase and renewal records and subscription status; basic device and app details its SDK uses (such as app version and country). No voice, stories, topics or name.</td><td>To confirm purchases, restore them on a new phone, and tell the app and our server whether your plan is active. United States.</td><td>Under RevenueCat's privacy policy, for as long as we use the service. On request we delete your customer record there (section 8).</td></tr>
 </tbody>
 </table>
 </div>
@@ -190,6 +191,8 @@ nav.toc li { margin-bottom: 2px; }
 <tr><td>Text of the host's lines</td><td>ElevenLabs</td><td>Under ElevenLabs' privacy policy</td></tr>
 <tr><td>Daily request counters by install ID</td><td>Our server (Cloudflare)</td><td>About 1–2 days. Counters more than a day old are deleted the next time the server handles a metered request.</td></tr>
 <tr><td>Install ID</td><td>Your iPhone (Keychain)</td><td>Until you remove it from the Keychain; it can outlive the app.</td></tr>
+<tr><td>Subscription records under your install ID</td><td>RevenueCat</td><td>Under RevenueCat's policy while we use the service, or until you ask us to delete them. Apple keeps its own purchase history.</td></tr>
+<tr><td>Subscription status (active or not)</td><td>Our server's memory</td><td>Up to 10 minutes.</td></tr>
 <tr><td>Cloud copy: topics, quotes, album pages, actions, stories</td><td>Our server (Cloudflare database)</td><td>Until you delete the cloud copy or "Forget" an item. Database backups may keep deleted data for up to 30 days.</td></tr>
 <tr><td>Sign-in session for the cloud copy</td><td>Our server (stored as a one-way hash); your iPhone (Keychain)</td><td>30 days, or until you delete the cloud copy.</td></tr>
 <tr><td>Apple account identifier for the cloud copy</td><td>Our server (stored as a one-way hash); your iPhone (Keychain)</td><td>While the cloud copy exists.</td></tr>
@@ -217,7 +220,7 @@ nav.toc li { margin-bottom: 2px; }
   <li><strong>Delete the cloud copy:</strong> Settings → "My world across devices" (Мой мир между устройствами) → "Disconnect and delete cloud copy" (Отключить и удалить облачную копию). Your data on the iPhone stays.</li>
   <li><strong>Forget a topic:</strong> in "My world", "Forget this" (Забыть это) removes the topic, its pages, and, if the cloud copy is on, the matching records on our server.</li>
   <li><strong>Delete everything:</strong> Settings → Your data → "Delete everything: album, name, progress" (Ваши данные → «Удалить всё: альбом, имя, прогресс»). This clears the data in the app on your iPhone, deletes the cloud copy if you have it, and asks our server to delete test-session data. "Delete album stories" (Удалить истории из Альбома) removes only the written stories.</li>
-  <li><strong>What these do not remove:</strong> the install ID in your Keychain and the daily counters on our server (about 1–2 days), which are not personal content; the host-audio cache on our server (up to 30 days); data at Google and ElevenLabs; and your own iPhone backups.</li>
+  <li><strong>What these do not remove:</strong> the install ID in your Keychain and the daily counters on our server (about 1–2 days), which are not personal content; the host-audio cache on our server (up to 30 days); data at Google and ElevenLabs; your subscription records at RevenueCat and Apple; and your own iPhone backups. To delete your RevenueCat customer record, write to us (section 18).</li>
   <li><strong>Microphone and speech recognition:</strong> you can turn them off in iOS Settings at any time.</li>
   <li><strong>Reminders:</strong> turn them off in Memjoy Settings or iOS Settings.</li>
 </ul>
@@ -233,7 +236,9 @@ nav.toc li { margin-bottom: 2px; }
 </ul>
 
 <h2 id="purchases">10. Subscriptions and Apple purchases</h2>
-<p>This version of Memjoy has no in-app purchases or subscriptions. If we add them, they will be sold by Apple through the App Store. Apple will process the payment; we will not receive your card details, your name or your Apple ID. We will update this policy, and tell you in the app, before we begin using any service to check or record purchases. You can manage or cancel a subscription in iPhone Settings → your name → Subscriptions. Deleting the app does not cancel it.</p>
+<p>Memjoy is sold by auto-renewable subscription through the App Store. Apple processes the payment; we do not receive your card details, your name or your Apple ID.</p>
+<p>We use RevenueCat to manage subscriptions. When the app starts, it registers your random install ID with RevenueCat as your customer ID. RevenueCat receives your App Store purchase and renewal records and tells the app whether your plan is active, so you can restore it on a new phone. When the app asks our server for paid features, the server asks RevenueCat about the same install ID and remembers the answer for up to 10 minutes. Nothing else from the app, such as your voice, stories or topics, goes to RevenueCat.</p>
+<p>You can manage or cancel a subscription in iPhone Settings → your name → Subscriptions. Deleting the app does not cancel it. Prices, trials and renewal rules are in the <a href="terms.html#subs">Terms of Use</a>.</p>
 
 <h2 id="care">11. Not medical care</h2>
 <div class="card crisis">
@@ -255,7 +260,7 @@ nav.toc li { margin-bottom: 2px; }
   <li>limit the use of sensitive personal information (we use it only to provide the app);</li>
   <li>not be treated differently for using these rights.</li>
 </ul>
-<p><strong>Categories (California).</strong> In the last 12 months we collected: identifiers (a random install ID; with the optional cloud copy, a hash of your Apple account identifier); audio recordings of your voice answers, which we pass to the providers in section 4 and do not keep; user content (text of what you said or typed, topics, quotes, album pages, stories); and app activity (daily request counts; with the cloud copy, the actions you took on album pages). Voice is not used to identify you. If you choose to say sensitive things in your own words, we use them only to run the game. We disclosed these categories only to the service providers in section 4, for the purposes described. We did not sell or share them.</p>
+<p><strong>Categories (California).</strong> In the last 12 months we collected: identifiers (a random install ID, also used as your customer ID at RevenueCat; with the optional cloud copy, a hash of your Apple account identifier); commercial information (your subscription purchases and status); audio recordings of your voice answers, which we pass to the providers in section 4 and do not keep; user content (text of what you said or typed, topics, quotes, album pages, stories); and app activity (daily request counts; with the cloud copy, the actions you took on album pages). Voice is not used to identify you. If you choose to say sensitive things in your own words, we use them only to run the game. We disclosed these categories only to the service providers in section 4, for the purposes described. We did not sell or share them.</p>
 <p>Most of your data is on your iPhone, where you can delete it in the app, and the cloud copy can be deleted in the app too. We do not hold your name or email, so we cannot look up server records by person; the app currently has no way to show your install ID. To make a request, contact us (section 18) and tell us what you need; we may ask you to prove the request is yours in a way that fits the data. An authorized agent may act for you with your signed permission. We answer within the time the law of your state requires. If we deny a request, you may appeal by replying to our answer.</p>
 
 <h2 id="gdpr">14. If you are in the EU or UK</h2>
@@ -288,6 +293,7 @@ nav.toc li { margin-bottom: 2px; }
   <li>ElevenLabs: how long it keeps submitted text and generated audio for our account, whether it may train on it, and where it processes it.</li>
   <li>Cloudflare: how long it keeps its own network logs, the exact backup period for our database plan, and processing regions.</li>
   <li>Google: the processing region for our Gemini API requests.</li>
+  <li>RevenueCat: the exact retention of subscription records for our account.</li>
   <li>Whether voice used only for speech-to-text falls under BIPA, CUBI, RCW 19.375 and similar laws, and the wording of the voice notice.</li>
   <li>Which state privacy laws apply, how we verify requests when we hold only a random install ID, and how the California categories are classified.</li>
   <li>The legal basis for each use and the legal mechanism for transfers from the EU and UK.</li>
