@@ -20,39 +20,69 @@
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p class="app-name"><strong>WatchSnap: Watch Identifier</strong></p>
-    <p class="date">Effective date: April 1, 2026</p>
+    <!-- Updated 2026-11-11 to match the code (worker, China route, price service, iCloud). TO CONFIRM by counsel. -->
+    <h1>Privacy Policy &mdash; <span class="app-name">WatchSnap</span></h1>
+    <p class="date">Last updated: November 11, 2026</p>
 
     <h2>Overview</h2>
-    <p>WatchSnap is an AI-powered luxury watch identification and appraisal app. Your privacy is important to us.</p>
+    <p>WatchSnap is made by Loveiko Labs. It helps you identify watches, check them for red flags and see asking prices. This page says what leaves your phone, who receives it and why. The app has no accounts and does not ask for your name or email.</p>
 
-    <h2>Data Collection</h2>
-    <p><strong>We do not collect or store any personal data.</strong></p>
+    <h2>On your device</h2>
+    <p>Your scans, photos, saved watches, watches you follow in Value, notes and reminders are stored on your device.</p>
 
-    <h2>Photos</h2>
-    <p>When you scan a watch, the photo is sent to our AI service for real-time analysis. Photos are processed immediately and are not stored on any server. No images are retained after analysis is complete.</p>
+    <h2>Your iCloud copy</h2>
+    <p>If iCloud is on, the app also keeps a copy of your saved watches, their photos and your price checks in your own private iCloud account (Apple CloudKit), so you can bring them back on a new iPhone. That copy belongs to your Apple account and we cannot read it. We do not keep a copy. You can stop the copy or delete it in Settings under Your data (&ldquo;Delete my iCloud copy&rdquo;).</p>
 
-    <h2>AI Chat</h2>
-    <p>Chat messages are sent to our AI service for processing. Messages are not stored or retained after the conversation ends.</p>
+    <h2>Photos, lookups and chat</h2>
+    <p>These happen only when you tap the matching button, and only after you agree on the first screen.</p>
+    <ul>
+        <li><strong>Scan.</strong> The photo or photos you take go through our server on Cloudflare to OpenAI (USA), which identifies the watch.</li>
+        <li><strong>Red-flag check.</strong> When you tap Check, up to five photos (the main photo and close-ups of the dial, the inner ring or serial number, the caseback and the clasp), together with the brand, model and reference of that watch, go through our server to OpenAI (USA).</li>
+        <li><strong>Finding a model by name.</strong> The name you type goes through our server to OpenAI (USA). The answer is kept on our server for 30 days without any ID and is shown to other people who type the same name. When you choose a model for your watch, we count the choice with a one-way code made from your subscription, so a model chosen by two subscribers can be marked as checked. We keep that code and the model entry until the entry is removed.</li>
+        <li><strong>Chat.</strong> Your messages, with the details of the watch you are asking about (brand, model, reference, your notes, the scan result) and its current asking prices, go through our server to DeepSeek (China). Photos are not sent to chat.</li>
+        <li><strong>Listing draft.</strong> The details of the watch you choose go through our server to DeepSeek (China). No photos are sent.</li>
+    </ul>
+    <p>Our server does not save your photos or messages, and our logs do not contain them. The AI providers may keep what they receive for a period set by their own terms.</p>
 
-    <h2>Local Storage</h2>
-    <p>Your watch collection and scan history are stored locally on your device using Apple's SwiftData framework. This data never leaves your device.</p>
+    <h2>Phones set to mainland China</h2>
+    <p>If your phone is set to Simplified Chinese with China (mainland) as its region, the app uses a server we run on Alibaba Cloud in Hangzhou, China, instead of the Cloudflare route. Your requests go straight to that server, which sees your network address. There, scans, red-flag checks and name lookups are processed by Alibaba Cloud (Qwen model), and chat and listing drafts by DeepSeek. To check your subscription and limits, to use the shared model list and to get prices, that server calls our other services described on this page. In this case your photos and messages are not sent to OpenAI.</p>
+
+    <h2>Asking prices</h2>
+    <p>When you tap to check a price, the watch reference, your country (taken from your phone&rsquo;s region setting) and an anonymous app ID are sent to our price service, WatchMarket. If you use the deal check, the price you typed is sent too. No photos and no names are sent.</p>
+    <p>WatchMarket reads public marketplace listings through a web data provider, context.dev (USA), and through the eBay Browse API. From eBay we keep a listing&rsquo;s title, price, condition, the seller&rsquo;s country and whether the seller is a business or a private person for at most 24 hours, and the app shows eBay data only when it is less than 6 hours old. We keep no seller names, listing photos or listing links from eBay. Results are cached for 24 hours and shared across users.</p>
+    <p>Our server passes your network address to WatchMarket, which keeps only a one-way hash of it.</p>
+
+    <h2>The weekly list of new watches</h2>
+    <p>Loading this list reaches our server on Cloudflare (or the Alibaba Cloud server in mainland China), which sees your network address. No account identifier is sent with this request. Names, references, dates and retail prices in the list are as reported by the publications named on each watch. When you open an article, you go to that publication&rsquo;s website. It sees your network address, may use its own cookies, and follows its own privacy policy. We do not control those sites.</p>
+
+    <h2>Usage limits</h2>
+    <p>To prevent abuse, our server counts scans, red-flag checks, name lookups, chat messages and price checks against an anonymous app ID, your subscription&rsquo;s identifier and a one-way hash of your network address. It also remembers your subscription status for up to 7 days. These records are deleted automatically within about a week. WatchMarket keeps daily counts per anonymous app ID and hourly counts per network-address hash for its own limits; they hold no names, and we delete the ones linked to your ID if you ask (see Deleting your data).</p>
 
     <h2>Subscriptions</h2>
-    <p>Subscription purchases are processed entirely by Apple through StoreKit. We do not have access to your payment information.</p>
+    <p>Purchases are processed by Apple. RevenueCat (USA) records your purchases and subscription status against an anonymous app ID, and receives your network address when the app talks to it. It starts when you open the app. Our server asks RevenueCat whether your subscription is active, using that ID. We do not receive your payment details.</p>
 
-    <h2>Third-Party Services</h2>
-    <p>WatchSnap does not use any third-party analytics, advertising networks, or tracking SDKs.</p>
+    <h2>Analytics and advertising</h2>
+    <p>WatchSnap does not use advertising networks, analytics SDKs or tracking.</p>
 
-    <h2>Children's Privacy</h2>
-    <p>WatchSnap does not knowingly collect data from anyone, including children under 13.</p>
+    <h2>Your choices</h2>
+    <p>You can withdraw your consent in Settings. Scans, red-flag checks, name lookups, chat, listing drafts, price checks and the weekly list then stop, and your saved watches stay on your device. You can stop the iCloud copy or delete it in Settings under Your data. Deleting the app removes the data stored on your device but not the iCloud copy, so delete that copy first if you want it gone.</p>
 
-    <h2>Changes to This Policy</h2>
-    <p>If we update this privacy policy, the revised version will be posted on this page with an updated effective date.</p>
+    <h2>Deleting your data</h2>
+    <p>Because there are no accounts, most of your data is on your device or in your iCloud, where you control it. To delete or correct anything held by our services, or to ask about it, write to us at the address below and include the install ID shown at the bottom of the email that opens from Settings &rarr; Write to us. We will remove what we can link to that ID. Data held by an AI provider or another provider named on this page follows that provider&rsquo;s own rules.</p>
+
+    <h2>Your rights</h2>
+    <p>Depending on where you live, you may have the right to access, correct, delete or receive a copy of your personal data, to object to its use, and to complain to your data protection authority. We process your data with your consent and to provide the app you subscribed to. For anything we or our providers hold, contact us below.</p>
+
+    <h2>International transfers</h2>
+    <p>The providers named above process data in the United States and, for chat, listing drafts and phones set to mainland China, in China. These countries may not offer the same protections as your own.</p>
+
+    <h2>Children</h2>
+    <p>WatchSnap is not directed to children under 13 and we do not knowingly collect their data.</p>
+
+    <h2>Changes</h2>
+    <p>If we change this policy, we will update this page and its date. If the change affects what you agreed to, the app will ask you again.</p>
 
     <h2>Contact</h2>
-    <p>If you have questions about this privacy policy, contact us at:<br>
-    <a href="mailto:loveykovl@gmail.com">loveykovl@gmail.com</a></p>
+    <p>loveykovl@gmail.com</p>
 </body>
 </html>
