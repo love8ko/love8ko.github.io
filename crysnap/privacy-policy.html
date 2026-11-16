@@ -58,17 +58,17 @@
 <body>
     <h1>Privacy Policy</h1>
     <p class="app-name">CrySnap: Baby Cry Translator</p>
-    <p class="date">Effective date: September 26, 2026</p>
+    <p class="date">Last updated: November 16, 2026</p>
 
     <div class="highlight">
-        <strong>Summary:</strong> CrySnap listens for eight seconds only to confirm your baby is crying. That check runs on your iPhone, and the recording is deleted straight after — it is never uploaded or kept. Questions you send to an AI guide travel as text only. No account is required. No analytics. No ad trackers.
+        <strong>Summary:</strong> CrySnap listens for eight seconds only to confirm your baby is crying. That check runs on your iPhone, and the recording is deleted straight after — it is never uploaded or kept. Questions you send to an AI guide travel as text only. No account is required. No ad trackers. Subscription analytics are handled by RevenueCat.
     </div>
 
     <h2>1. Overview</h2>
     <p>CrySnap is a parenting companion for parents of newborns. When your baby cries, the app listens for eight seconds to confirm the crying (using Apple's on-device sound analysis) and then gives you timed soothing steps built from your baby's age, last feed and time awake. It does not try to read the cause of a cry from the sound. Three AI guides (a pediatric nurse, a sleep coach and a lactation guide) answer questions, soothing sounds play on the device, and you can create a two-week summary of your own logs for your pediatrician. A Voice Mode lets you ask a question by speaking. CrySnap is a parenting companion. <strong>It is not a medical device, not a diagnostic tool, and not a substitute for professional medical advice.</strong></p>
 
     <h2>2. Data Stored on Your Device</h2>
-    <p>The following data is stored <strong>locally on your device only</strong> using Apple's SwiftData framework and never leaves your device unless you explicitly share it:</p>
+    <p>The following records are stored locally using Apple's SwiftData framework. With your AI permission, relevant text and profile details can also be sent as described in section 3. Audio remains on your device:</p>
     <ul>
         <li>Crying episodes you log (time, the soothing steps you tried, what helped, whether crying was detected) — not the audio</li>
         <li>Last feed and wake times you tap in, and the pediatrician summary you create</li>
@@ -78,7 +78,7 @@
         <li>Soothing sounds last-used / favourites, sleep timer preferences</li>
         <li>Recent cry events (used by the optional D+1 reminder if you opt in to it)</li>
     </ul>
-    <p>No account is required. No user profile, name, email, or identifying information is collected by CrySnap.</p>
+    <p>No account registration or email address is required. Optional profile details and information you type can include personal or sensitive information. RevenueCat creates an anonymous app user ID for purchases and access checks; this ID is also sent to our proxy to choose the correct access allowance.</p>
 
     <div class="trust">
         <strong>Your baby's cry is never uploaded or kept.</strong> The eight-second recording is checked on your iPhone and deleted as soon as the check finishes. We have no upload path for audio.
@@ -99,31 +99,34 @@
     <p><strong>Who receives it.</strong> Which service answers depends on your App Store country and device region, not on the app language:</p>
     <ul>
         <li><strong>Outside mainland China:</strong> DeepSeek (Hangzhou DeepSeek Artificial Intelligence Basic Technology Research Co., Ltd.), through our proxy on Cloudflare Workers (Cloudflare, Inc.).</li>
-        <li><strong>Mainland China</strong> (China App Store, or device region set to China mainland): Qwen on Alibaba Cloud Model Studio (Alibaba Cloud), through our Alibaba Cloud Function Compute service in Beijing. Requests from mainland China are never sent to the service above, and requests from elsewhere are never sent here.</li>
+        <li><strong>Mainland China</strong> (China App Store, or device region set to China mainland): Qwen on Alibaba Cloud Model Studio (Alibaba Cloud), through our Alibaba Cloud Function Compute service in Beijing. AI questions on this route are not forwarded to the global AI proxy. Voluntary answer-report metadata uses our Cloudflare feedback service as described below.</li>
     </ul>
-    <p><strong>How it is protected.</strong> Requests travel encrypted (HTTPS). Our proxies pass them on and do not store their content. No provider key is stored in the app. We share this data only to get an answer to your question, and only with providers whose terms require them to keep it confidential and secure — protection equal to that described in this policy. The data is not used by us for advertising, profiling or to identify you, and it is not sold.</p>
+    <p><strong>How it is protected.</strong> Requests travel encrypted (HTTPS). Our proxies pass them on and do not store their content. No provider key is stored in the app. We share AI text to provide your requested answers and associated chat memory or brief. AI-provider retention and training settings for these accounts have not been independently verified; the providers' current policies and account terms apply. See <a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html">DeepSeek</a>, <a href="https://www.alibabacloud.com/help/en/legal/latest/alibaba-cloud-international-website-privacy-policy">Alibaba Cloud</a>, and <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>. The data is not used by us for advertising, profiling or to identify you, and it is not sold.</p>
 
+    <h3>Safety, usage limits and voluntary reports</h3>
+    <p>Our proxies filter unsafe input and answers. Quota records use hashed references, not conversation text. In version 2.1, hold an AI answer and choose <strong>Report answer</strong> to send its answer ID, selected category and app version. Reports also use an anonymous app reference to investigate reports and block abuse. Reports from all regions, including the China AI route, go to our Cloudflare feedback service. No conversation text is included. Hashed quota counters and reports are scheduled for cleanup after seven UTC days. Entitlement status may be cached briefly to verify access.</p>
+    <p>AI permission is recorded separately from your purchase, with its version, decision time and purpose choices. Choosing <strong>Not now</strong> leaves local plans, history and sounds usable. Withdrawing permission stops new AI requests and cancels in-flight app requests; it does not delete data already processed by providers.</p>
     <h3>Apple speech recognition</h3>
     <p>Voice Mode converts a spoken question to text with Apple Speech Recognition — on the device when the device and language support it, otherwise by Apple under Apple's privacy terms. Only the resulting text is sent on, and only as part of an AI request described above. Voice Mode replies are spoken on the device with Apple AVSpeechSynthesizer.</p>
 
     <h2>4. Subscriptions</h2>
     <p>Subscription purchases are managed by <strong>RevenueCat</strong>, a third-party subscription management service. RevenueCat receives:</p>
     <ul>
-        <li>An anonymous device identifier generated by RevenueCat</li>
+        <li>An anonymous app user ID generated by RevenueCat (not the advertising identifier or a hardware device ID)</li>
         <li>Subscription status (active, in the 7-day free trial, or expired)</li>
-        <li>Product identifier of the purchased tier (Weekly / Annual)</li>
+        <li>Product identifier, purchase history, transaction and subscription events, and app/device metadata used to manage purchases and subscription analytics</li>
     </ul>
     <p>RevenueCat does not receive any cry scans, chat messages, baby profile data, or audio. See <a href="https://www.revenuecat.com/privacy">RevenueCat's Privacy Policy</a> for details.</p>
 
     <h2>5. Analytics and Tracking</h2>
-    <p><strong>CrySnap does not use any third-party analytics, advertising networks, or tracking SDKs.</strong></p>
+    <p><strong>CrySnap uses no advertising networks or cross-app tracking SDKs.</strong> RevenueCat processes purchase and subscription events for subscription analytics. Local activation records are kept on your phone; no separate general analytics SDK is integrated.</p>
     <p>Only Apple's built-in crash diagnostics are collected if you have them enabled. You can disable these in your device Settings under Privacy &amp; Security → Analytics &amp; Improvements.</p>
 
     <h2>6. Notifications (Optional, Off by Default)</h2>
     <p>Reminders are switched on individually in Settings. They are local notifications scheduled on your device; we do not use a push provider, and no notification content is generated on a server.</p>
 
     <h2>7. Children's Privacy</h2>
-    <p>CrySnap is rated 4+ and is intended for use by adult parents and caregivers. The app briefly records sound to confirm crying, which may capture an infant's voice — that audio is checked on the device, deleted immediately, and never uploaded. We do not knowingly collect any data <em>about</em> a child that is uploaded off-device. If you have concerns about your baby's data, deleting the CrySnap app permanently removes everything from your device.</p>
+    <p>CrySnap is rated 4+ and is intended for use by adult parents and caregivers. The app briefly records sound to confirm crying, which may capture an infant's voice — that audio is checked on the device, deleted immediately, and never uploaded. Parents may choose to provide a baby's age, feeding and health context for AI answers after granting permission. Those text details are processed as described above; the app is not intended for children to use independently. You can withdraw AI permission and delete local care records in Settings.</p>
 
     <h2>8. Medical Disclaimer</h2>
     <div class="warning">
@@ -145,11 +148,11 @@
     <p>CrySnap suggestions are not a substitute for a pediatrician's examination. For persistent crying that does not respond to feeding, changing, or soothing for over an hour; for any change in feeding, sleeping, or behaviour patterns that concerns you; or for any medical question — please contact your pediatrician or a registered children's nurse. The chat personas inside the app will say the same thing.</p>
 
     <h2>10. Data Deletion</h2>
-    <p>All cry scans, chat messages, baby profile, and preferences are stored locally on your device. Deleting the CrySnap app permanently removes this data from your device. No server-side record of your scans, chats, or baby data exists to be deleted. Your RevenueCat anonymous ID resets when you reinstall.</p>
+    <p>Care records are stored on your phone. In version 2.1, <strong>Settings → Delete data on this iPhone</strong> removes local history, baby profiles, chat, soothing sessions and team memory, and withdraws AI permission. Deleting the app also removes its local records. Neither action cancels an Apple subscription or deletes purchase records or data already sent to AI providers. Contact us for requests concerning report or purchase records; provider retention policies continue to apply.</p>
     <p>You can also clear your team chat memory at any time via <strong>Settings → Reset Team Memory</strong> without deleting the app.</p>
 
     <h2>11. Regional Compliance</h2>
-    <p>CrySnap complies with the General Data Protection Regulation (GDPR) for users in the European Economic Area, the UK Data Protection Act for UK users, and the California Consumer Privacy Act (CCPA) for California residents. Because we do not collect personally identifying information, most data-subject rights (access, rectification, portability, deletion) are satisfied automatically — you already hold full control over your data on your device.</p>
+    <p>Depending on your region, you may have rights to access, correct, export or delete personal data, withdraw consent, and complain to a data protection authority. Local records can be managed on your phone. For requests involving data processed by us or our service providers, contact us below. Deleting local data does not automatically delete provider records.</p>
     <p>The emergency number shown in the app is chosen from your device's region. The 988 Suicide &amp; Crisis Lifeline and Postpartum Support International are shown only in the US and Canada.</p>
 
     <h2>12. Changes to This Policy</h2>
