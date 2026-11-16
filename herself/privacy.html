@@ -66,7 +66,7 @@ nav.toc li { margin-bottom: 2px; }
 <body>
 <main>
 <h1>Privacy Policy</h1>
-<p class="meta">Herself: Manifest Affirmations · Loveiko Labs<br>Last updated: November 15, 2026</p>
+<p class="meta">Herself: Manifest Affirmations · Loveiko Labs<br>Last updated: November 16, 2026</p>
 
 <div class="card">
 <p><strong>In short.</strong></p>
@@ -120,10 +120,12 @@ nav.toc li { margin-bottom: 2px; }
 <h3>Install ID</h3>
 <p>The app creates a random install ID. It is not linked to your name, email or Apple ID. We use it to count scene credits (one new chapter per week), to keep the extra chapters you buy, and to apply daily usage limits that protect the service from abuse. The app also attaches it to your App Store purchases (Apple calls this an app account token), so a purchase is credited only to the app that made it and a subscription is not used on more devices than one person would have. The install ID is kept in your iPhone's Keychain, only on this iPhone (it is not synced to iCloud). It stays if you delete and reinstall the app or use Settings → Your voice &amp; data, so the chapters you bought come back; it is removed when the iPhone is erased.</p>
 
+<p>To prevent abuse, our server also keeps request counters under a daily, secret-salted hash of the network IP address. We do not store the raw IP address in these counters. The hash changes each day, is not used for advertising or tracking, and expired counters are removed automatically within about two days, including when no further requests arrive.</p>
+
 <h3>Purchases</h3>
 <p>Subscriptions and extra chapters are sold by Apple through the App Store. We never receive your card details, name or Apple ID. We learn:</p>
 <ul>
-  <li><strong>Whether your subscription is active.</strong> The app sends our server your subscription's transaction ID. Our server asks Apple (the App Store Server API) whether that subscription is active, and keeps the answer for 1 hour before asking again.</li>
+  <li><strong>Whether your subscription is active.</strong> The app sends an Apple-signed subscription transaction to our server. We verify its signature and expiry, or ask Apple's App Store Server API when that service is configured. A confirmed access result is cached for up to five minutes and never beyond the verified expiry.</li>
   <li><strong>What you bought.</strong> When you buy extra chapters, our server checks Apple's signature on the purchase (or asks Apple about it) and records the transaction ID, the product and the time, so each purchase is credited exactly once.</li>
   <li><strong>Purchase history, through RevenueCat.</strong> The app reports your purchases to RevenueCat, using the install ID as its user ID. RevenueCat shows us subscription and revenue statistics and helps restore purchases.</li>
 </ul>
@@ -190,9 +192,9 @@ nav.toc li { margin-bottom: 2px; }
 <tr><td>Scene text and its edits</td><td>Our server (Cloudflare)</td><td>1 hour, while the audio is made and you edit; then deleted automatically</td></tr>
 <tr><td>Edit counters for a scene (numbers only, no text)</td><td>Our server</td><td>8 days</td></tr>
 <tr><td>Chapter record (scene ID, whether it was voiced or the chapter given back; no text)</td><td>Our server</td><td>Up to 30 days</td></tr>
-<tr><td>Daily usage counters (by install ID)</td><td>Our server</td><td>About 1–2 days</td></tr>
+<tr><td>Daily usage counters (by install ID and daily network hash; no raw IP)</td><td>Our server</td><td>About 1–2 days</td></tr>
 <tr><td>Scene credit record (install ID, time of first and last scene, count, extra chapters left)</td><td>Our server</td><td>While you use Herself, so your weekly schedule and bought chapters are kept; deleted on request</td></tr>
-<tr><td>Subscription status (install ID, the subscription's transaction ID, active or not)</td><td>Our server</td><td>Checked with Apple again after 1 hour; the record is kept while you use Herself; deleted on request</td></tr>
+<tr><td>Subscription status (install ID, the subscription's transaction ID, active or not)</td><td>Our server</td><td>Rechecked after at most five minutes; cached access never outlasts the verified expiry. The record is kept while you use Herself; deleted on request</td></tr>
 <tr><td>Purchase records (transaction ID, install ID, product, time) and which install IDs used a subscription</td><td>Our server</td><td>While you use Herself, so a purchase is credited once and bought chapters come back; deleted on request</td></tr>
 <tr><td>Purchase and subscription history</td><td>RevenueCat</td><td>Under RevenueCat's terms while we use it; deleted on request</td></tr>
 <tr><td>Daily usage totals (no IDs, no text)</td><td>Our server</td><td>120 days</td></tr>
